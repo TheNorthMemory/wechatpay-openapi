@@ -1,0 +1,23 @@
+get:
+  x-role: [从业机构, 渠道商]
+  tags:
+    -  商户进件∙通用接口
+  summary: 获取商户开户意愿确认状态API
+  description: 当服务商需要确认微信支付子商户号是否完成确认时，如果调用此接口提到”已授权“状态，则说明该商户号已完成开户意愿确认。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/applysubject/chapter5_4.shtml)
+  parameters:
+    - name: sub_mchid
+      in: path
+      type: string
+      format: numeric
+      description: 特约商户号
+      minLength: 8
+      maxLength: 32
+      required: true
+  responses:
+    200:
+      schema:
+        type: object
+        required: [authorize_state]
+        properties:
+          authorize_state:
+            $ref: '../../../../../definitions/Enumerations.yaml#AuthorizeState'

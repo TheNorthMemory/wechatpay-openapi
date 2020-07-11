@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="format-detection" content="telephone=no,email=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, maximum-scale=1, minimum-scale=1, viewport-fit=cover">
+    <title>微信支付APIv3接口文档</title>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/swagger-ui-dist@3.25.0/swagger-ui.css" >
+    <style>
+      html{box-sizing:border-box;overflow:-moz-scrollbars-vertical;overflow-y:scroll}
+      *,*:before,*:after{box-sizing:inherit}
+      body{margin:0 auto;background:#fafafa}
+      .topbar,.download-contents,.opblock-summary-method,.response-col_description__inner,.response-content-type,.swagger-ui .opblock .opblock-section-header label{display: none}
+      .swagger-ui .highlight-code > .microlight{max-height: inherit}
+      .swagger-ui .info{margin:5px 0 0;}
+      .swagger-ui .response ul.tab, .swagger-ui div.model-example{margin-top: 0}
+      .swagger-ui .info .title{font-size:18px}
+      .swagger-ui .opblock-tag{font-size:16px;}
+      .swagger-ui .opblock-tag .markdown p{margin-block-start:0;margin-block-end:0}
+      .swagger-ui .scheme-container{margin-bottom:10px;padding-bottom:10px}
+      .swagger-ui .expand-methods svg,.swagger-ui .expand-operation svg{height:14px}
+      @media (max-width:768px) {.swagger-ui textarea{max-width:100%}.swagger-ui .opblock-tag{padding-right:0}.swagger-ui .opblock .opblock-summary-path{width:60%}}
+    </style>
+  </head>
+  <body>
+    <div id="swagger-ui"></div>
+    <script src="https://unpkg.com/swagger-ui-dist@3.25.0/swagger-ui-bundle.js"></script>
+    <script src="https://unpkg.com/swagger-ui-dist@3.25.0/swagger-ui-standalone-preset.js"></script>
+    <script>
+    window.onload = function() {
+      const ui = SwaggerUIBundle({
+        url: "./swagger.yaml",
+        dom_id: '#swagger-ui',
+        deepLinking: true,
+        showExtensions: true,
+        // docExpansion: 'none',
+        validatorUrl: null,
+        showCommonExtensions: true,
+        defaultModelsExpandDepth: -1,
+        presets: [
+          SwaggerUIBundle.presets.apis,
+          SwaggerUIStandalonePreset
+        ],
+        layout: "StandaloneLayout"
+      })
+      window.ui = ui
+    }
+  </script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-125471285-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-125471285-1');
+  </script>
+  </body>
+</html>

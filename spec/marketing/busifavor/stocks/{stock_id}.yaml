@@ -1,0 +1,42 @@
+get:
+  x-role: [微信支付商户]
+  tags:
+    -  运营工具∙商家券
+  summary: 查询商家券详情API
+  description: 服务商可通过该接口查询已创建的商家券批次详情信息。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/applyment4sub/chapter3_2.shtml)
+  parameters:
+    - name: stock_id
+      in: path
+      type: string
+      description: 批次号
+      required: true
+      maxLength: 20
+  responses:
+    200:
+      schema:
+        allOf:
+          - $ref: ../../../../definitions/StockBase.yaml
+          - type: object
+            properties:
+              stock_state:
+                $ref: '../../../../definitions/Enumerations.yaml#StockState'
+              send_count_information:
+                type: object
+                properties:
+                  total_send_num:
+                    type: number
+                    format: uint64
+                    description: 已发放券张数
+                  total_send_amount:
+                    type: number
+                    format: uint64
+                    description: 已发放券金额
+                  today_send_num:
+                    type: number
+                    format: uint64
+                    description: 单天已发放券张数
+                  today_send_amount:
+                    type: number
+                    format: uint64
+                    description: 单天已发放券金额
+

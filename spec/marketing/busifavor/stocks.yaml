@@ -1,0 +1,30 @@
+post:
+  x-role: [微信支付商户]
+  tags:
+    -  运营工具∙商家券
+  summary: 创建商家券API
+  description: ''
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        allOf:
+          - $ref: ../../../definitions/StockBase.yaml
+  responses:
+    200:
+      schema:
+        allOf:
+          - type: object
+            required: [stock_id, create_time]
+            properties:
+              stock_id:
+                type: string
+                format: numeric
+                description: 批次号
+                example: '98065001'
+              create_time:
+                type: string
+                format: rfc3339
+                description: 创建时间
+                example: '2015-05-20T13:29:35.120+08:00'

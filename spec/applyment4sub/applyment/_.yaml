@@ -1,0 +1,350 @@
+post:
+  x-role: [普通服务商]
+  tags:
+    -  商户进件∙特约商户进件
+  summary: 提交申请单API
+  description: 普通服务商（银行、支付机构、电商平台不可用）使用该接口提交商家资料，帮助商家入驻成为微信支付的特约商户。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/applyment4sub/chapter3_1.shtml)
+  parameters:
+    - in: body
+      name: _
+      required: true
+      schema:
+        type: object
+        properties:
+          business_code:
+            type: string
+          contact_info:
+            type: object
+            required: [contact_name, mobile_phone, contact_email]
+            x-is-sensitive: [contact_name, contact_id_number, mobile_phone, contact_email]
+            properties:
+              contact_name:
+                type: string
+                description: 超级管理员姓名
+              contact_id_number:
+                type: string
+                description: 超级管理员身份证件号码
+              openid:
+                type: string
+                description: 超级管理员微信openid
+              mobile_phone:
+                type: string
+                description: 联系手机
+              contact_email:
+                type: string
+                format: email
+                description: 联系邮箱
+          subject_info:
+            type: object
+            required: [subject_type, business_license_info, certificate_info, identity_info]
+            properties:
+              subject_type:
+                $ref: '../../../definitions/Enumerations.yaml#SubjectType'
+              business_license_info:
+                type: object
+                required: [license_copy, license_number, merchant_name, legal_person]
+                properties:
+                  license_copy:
+                    type: string
+                    format: MediaId
+                    description: 营业执照照片
+                  license_number:
+                    type: string
+                    description: 注册号/统一社会信用代码
+                  merchant_name:
+                    type: string
+                    description: 商户名称
+                  legal_person:
+                    type: string
+                    description: 个体户经营者/法人姓名
+              certificate_info:
+                type: object
+                required: [cert_copy, cert_type, cert_number, merchant_name, company_address, legal_person, period_begin, period_end]
+                properties:
+                  cert_copy:
+                    type: string
+                    format: MediaId
+                    description: 登记证书照片
+                  cert_type:
+                    $ref: '../../../definitions/Enumerations.yaml#CertType'
+                  cert_number:
+                    type: string
+                    description: 证书号
+                  merchant_name:
+                    type: string
+                    description: 商户名称
+                  company_address:
+                    type: string
+                    description: 注册地址
+                  legal_person:
+                    type: string
+                    description: 法人姓名
+                  period_begin:
+                    type: string
+                    format: date
+                    description: 有效期限开始日期
+                  period_end:
+                    type: string
+                    description: 有效期限结束日期
+              organization_info:
+                type: object
+                required: [organization_copy, organization_code, org_period_begin, org_period_end]
+                properties:
+                  organization_copy:
+                    type: string
+                    format: MediaId
+                    description: 组织机构代码证照片
+                  organization_code:
+                    type: string
+                    description: 组织机构代码
+                  org_period_begin:
+                    type: string
+                    format: date
+                    description: 组织机构代码证有效期开始日期
+                  org_period_end:
+                    type: string
+                    description: 组织机构代码证有效期结束日期
+              certificate_letter_copy:
+                type: string
+                format: MediaId
+                description: 单位证明函照片
+              identity_info:
+                type: object
+                required: [id_doc_type]
+                properties:
+                  id_doc_type:
+                    $ref: '../../../definitions/Enumerations.yaml#IdType'
+                  id_card_info:
+                    type: object
+                    required: [id_card_copy, id_card_national, id_card_name, id_card_number, card_period_begin, card_period_end]
+                    x-is-sensitive: [id_card_name, id_card_number]
+                    properties:
+                      id_card_copy:
+                        type: string
+                        format: MediaId
+                        description: 身份证人像面照片
+                      id_card_national:
+                        type: string
+                        format: MediaId
+                        description: 身份证国徽面照片
+                      id_card_name:
+                        type: string
+                        description: 身份证姓名
+                      id_card_number:
+                        type: string
+                        description: 身份证号码
+                      card_period_begin:
+                        type: string
+                        format: date
+                        description: 身份证有效期开始时间
+                      card_period_end:
+                        type: string
+                        description: 身份证有效期结束时间
+                  id_doc_info:
+                    type: object
+                    required: [id_doc_copy, id_doc_national, id_doc_name, id_doc_number, doc_period_begin, doc_period_end]
+                    properties:
+                      id_doc_copy:
+                        type: string
+                        format: MediaId
+                        description: 证件照片
+                      id_doc_name:
+                        type: string
+                        description: 证件姓名
+                      id_doc_number:
+                        type: string
+                        description: 证件号码
+                      doc_period_begin:
+                        type: string
+                        format: date
+                        description: 证件有效期开始时间
+                      doc_period_end:
+                        type: string
+                        description: 证件有效期结束时间
+                  owner:
+                    type: boolean
+                    description: 经营者/法人是否为受益人
+              ubo_info:
+                type: object
+                required: [id_type, id_card_copy, id_card_national, id_doc_copy, name, id_number, id_period_begin, id_period_end]
+                x-is-sensitive: [name, id_number]
+                properties:
+                  id_type:
+                    $ref: '../../../definitions/Enumerations.yaml#IdType'
+                  id_card_copy:
+                    type: string
+                    format: MediaId
+                    description: 身份证人像面照片
+                  id_card_national:
+                    type: string
+                    format: MediaId
+                    description: 身份证国徽面照片
+                  id_doc_copy:
+                    type: string
+                    format: MediaId
+                    description: 证件照片
+                  name:
+                    type: string
+                    description: 受益人姓名
+                  id_number:
+                    type: string
+                    description: 证件号码
+                  id_period_begin:
+                    type: string
+                    format: date
+                    description: 证件有效期开始时间
+                  id_period_end:
+                    type: string
+                    description: 证件有效期结束时间
+          business_info:
+            type: object
+            required: [merchant_shortname, service_phone, sales_info]
+            properties:
+              merchant_shortname:
+                type: string
+                description: 商户简称
+              service_phone:
+                type: string
+                description: 客服电话
+              sales_info:
+                type: object
+                required: [sales_scenes_type]
+                properties:
+                  sales_scenes_type:
+                    type: array
+                    items:
+                      $ref: '../../../definitions/Enumerations.yaml#SalesScenesType'
+                  biz_store_info:
+                    type: object
+                    required: [biz_store_name, biz_address_code, biz_store_address, store_entrance_pic, indoor_pic]
+                    properties:
+                      biz_store_name:
+                        type: string
+                      biz_address_code:
+                        type: string
+                      biz_store_address:
+                        type: string
+                      store_entrance_pic:
+                        type: array
+                        items:
+                          type: string
+                          format: MediaId
+                      indoor_pic:
+                        type: array
+                        items:
+                          type: string
+                          format: MediaId
+                      biz_sub_appid:
+                        type: string
+                  mp_info:
+                    type: object
+                    properties:
+                      mp_appid:
+                        type: string
+                      mp_sub_appid:
+                        type: string
+                      mp_pics:
+                        type: array
+                        items:
+                          type: string
+                          format: MediaId
+                  mini_program_info:
+                    type: object
+                    properties:
+                      mini_program_appid:
+                        type: string
+                      mini_program_sub_appid:
+                        type: string
+                      mini_program_pics:
+                        type: array
+                        items:
+                          type: string
+                          format: MediaId
+                  app_info:
+                    type: object
+                    properties:
+                      app_appid:
+                        type: string
+                      app_sub_appid:
+                        type: string
+                      app_pics:
+                        type: array
+                        items:
+                          type: string
+                          format: MediaId
+                  web_info:
+                    type: object
+                    properties:
+                      domain:
+                        type: string
+                      web_authorisation:
+                        type: string
+                      web_appid:
+                        type: string
+                  wework_info:
+                    type: object
+                    properties:
+                      sub_corp_id:
+                        type: string
+                      wework_pics:
+                        type: array
+                        items:
+                          type: string
+                          format: MediaId
+          settlement_info:
+            type: object
+            properties:
+              settlement_id:
+                type: string
+              qualification_type:
+                type: string
+              qualifications:
+                type: array
+                items:
+                  type: string
+              activities_id:
+                type: string
+              activities_rate:
+                type: string
+              activities_additions:
+                type: array
+                items:
+                  type: string
+          bank_account_info:
+            allOf:
+              - type: object
+                required: [bank_account_type, account_name]
+                properties:
+                  bank_account_type:
+                    $ref: '../../../definitions/Enumerations.yaml#BankAccountType'
+                  account_name:
+                    type: string
+                    description: 开户名称
+              - $ref: ../../../definitions/BankAccountBase.yaml
+          addition_info:
+            type: object
+            properties:
+              legal_person_commitment:
+                type: string
+              legal_person_video:
+                type: string
+                format: MediaId
+              business_addition_pics:
+                type: array
+                items:
+                  type: string
+                  format: MediaId
+              business_addition_msg:
+                type: string
+  responses:
+    200:
+      schema:
+        allOf:
+          - type: object
+            required: [applyment_id]
+            properties:
+              applyment_id:
+                type: number
+                format: uint64
+                description: 微信支付申请单号
+                example: 2000002124775691

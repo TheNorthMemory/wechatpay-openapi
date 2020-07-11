@@ -1,0 +1,77 @@
+swagger: '2.0'
+host: 127.0.0.1:7788
+basePath: '/v3'
+info:
+  title: 微信支付APIv3文档
+  description: "整理自[微信支付官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pages/Overview.shtml) [WechatPay-API-v3](https://wechatpay-api.gitbook.io/wechatpay-api-v3/)
+    本项目/工具有如下约定：
+    1. 对于类型定义是 **string($MediaId)**， 需要用 */通用接口* 媒体(图片/视频)上传获取到返回值；
+    2. 对于类型定义是 **string($MediaUrl)**，需要用 */运营工具/通用接口* 营销图片上传接口取得返回值；
+    3. 对于类型定义是 **string($rfc3339)**，请使用时间带时区字符串；
+    4. 对于类型定义是 **string($rfc2397)**，官方文档说是可直接用于img标签，不确定是否符合RFC2397规范；
+    5. 对于类型定义是 **string($numeric)**，请留意其值传递实质是字符串类型，类型校对需要使用numeric校对；
+    6. 对于类型定义是 **string($jsonArrayLike)**，请使用数组对象转字符串；
+    7. 对于类型定义是 **string($date)**，请留意使用*东八区*日期格式；
+    8. 对于类型定义是 **string($url)**，请使用以https开头的URL；
+    9. 对于类型定义是 **number($uint64)**，请注意返回值JSON解码时，有可能整型溢出；
+    10. 对于对象属性 **x-is-sensitive**，请根据场景需要，在请求体内需要 *rsa.encrypt*, 在返回体需要 *rsa.decrypt*；
+"
+  version: 0.0.1
+schemes:
+  - http
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+tags:
+  - name: 商户进件∙特约商户进件
+  - name: 商户进件∙通用接口
+  - name: 运营工具∙商家券
+  - name: 运营工具∙通用接口
+  - name: 通用接口
+paths:
+  /apply4sub/sub_merchants/{sub_mchid}/modify-settlement:
+    $ref: ./spec/apply4sub/sub_merchants/{sub_mchid}/modify-settlement.yaml
+  /apply4sub/sub_merchants/{sub_mchid}/settlement:
+    $ref: ./spec/apply4sub/sub_merchants/{sub_mchid}/settlement.yaml
+  /apply4subject/applyment:
+    $ref: ./spec/apply4subject/applyment.yaml
+  /apply4subject/applyment/merchants/{sub_mchid}/state:
+    $ref: ./spec/apply4subject/applyment/merchants/{sub_mchid}/state.yaml
+  /apply4subject/applyment/{applyment_id}/cancel:
+    $ref: ./spec/apply4subject/applyment/{applyment_id}/cancel.yaml
+  /apply4subject/applyment/{business_code}/cancel:
+    $ref: ./spec/apply4subject/applyment/{business_code}/cancel.yaml
+  /applyment4sub/applyment/:
+    $ref: ./spec/applyment4sub/applyment/_.yaml
+  /applyment4sub/applyment/applyment_id/{applyment_id}:
+    $ref: ./spec/applyment4sub/applyment/applyment_id/{applyment_id}.yaml
+  /applyment4sub/applyment/business_code/{business_code}:
+    $ref: ./spec/applyment4sub/applyment/business_code/{business_code}.yaml
+  /certificates:
+    $ref: ./spec/certificates.yaml
+  /marketing/busifavor/callbacks:
+    $ref: ./spec/marketing/busifavor/callbacks.yaml
+  /marketing/busifavor/coupons/associate:
+    $ref: ./spec/marketing/busifavor/coupons/associate.yaml
+  /marketing/busifavor/coupons/disassociate:
+    $ref: ./spec/marketing/busifavor/coupons/disassociate.yaml
+  /marketing/busifavor/coupons/use:
+    $ref: ./spec/marketing/busifavor/coupons/use.yaml
+  /marketing/busifavor/stocks:
+    $ref: ./spec/marketing/busifavor/stocks.yaml
+  /marketing/busifavor/stocks/{stock_id}:
+    $ref: ./spec/marketing/busifavor/stocks/{stock_id}.yaml
+  /marketing/busifavor/stocks/{stock_id}/couponcodes:
+    $ref: ./spec/marketing/busifavor/stocks/{stock_id}/couponcodes.yaml
+  /marketing/busifavor/users/{openid}/coupons:
+    $ref: ./spec/marketing/busifavor/users/{openid}/coupons.yaml
+  /marketing/busifavor/users/{openid}/coupons/{coupon_code}/appids/{appid}:
+    $ref: ./spec/marketing/busifavor/users/{openid}/coupons/{coupon_code}/appids/{appid}.yaml
+  /marketing/favor/media/image-upload:
+    $ref: ./spec/marketing/favor/media/image-upload.yaml
+  /merchant/media/upload:
+    $ref: ./spec/merchant/media/upload.yaml
+  /merchant/media/video_upload:
+    $ref: ./spec/merchant/media/video_upload.yaml

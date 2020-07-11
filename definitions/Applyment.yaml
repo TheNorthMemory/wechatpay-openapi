@@ -1,0 +1,46 @@
+type: object
+required:
+  - applyment_state
+properties:
+  business_code:
+    type: string
+    description: 业务申请编号
+    example: 1900013511_10000
+  applyment_id:
+    type: number
+    format: uint64
+    description: 微信支付申请单号
+    example: 2000002124775691
+  sub_mchid:
+    type: string
+    description: 特约商户号
+    example: 1234567890
+  sign_url:
+    type: string
+    format: url
+    description: 超级管理员签约链接
+    example: https://pay.weixin.qq.com/public/apply4ec_sign/s?applymentId=2000002126198476&sign=b207b673049a32c858f3aabd7d27c7ec
+  applyment_state:
+    $ref: './Enumerations.yaml#ApplymentState'
+  applyment_state_msg:
+    type: string
+    description: 申请状态描述
+    example: 审核中
+  audit_detail:
+    type: array
+    description: 驳回原因详情
+    items:
+      type: object
+      properties:
+        field:
+          type: string
+          description: 字段名
+          example: id_card_copy
+        field_name:
+          type: string
+          description: 字段名称
+          example: 身份证复印件
+        reject_reason:
+          type: string
+          description: 驳回原因
+          example: 身份证背面识别失败，请上传更清晰的身份证图片。

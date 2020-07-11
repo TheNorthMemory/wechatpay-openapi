@@ -1,0 +1,49 @@
+post:
+  x-role: [微信支付商户]
+  tags:
+    -  运营工具∙商家券
+  summary: 核销用户券API
+  description: 在用户满足优惠门槛后，服务商可通过该接口核销用户微信卡包中具体某一张商家券。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/busifavor/chapter3_3.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required: [coupon_code, appid, use_time, use_request_no]
+        properties:
+          coupon_code:
+            type: string
+            description: 券code
+          stock_id:
+            type: string
+            description: 批次号
+          appid:
+            type: string
+            description: 公众账号ID
+          use_time:
+            type: string
+            format: rfc3339
+            description: 请求核销时间
+          use_request_no:
+            type: string
+            description: 核销请求单据号
+          openid:
+            type: string
+            description: 用户标识
+  responses:
+    200:
+      schema:
+        type: object
+        required: [stock_id, openid, wechatpay_use_time]
+        properties:
+          stock_id:
+            type: string
+            description: 批次号
+          openid:
+            type: string
+            description: 用户标识
+          wechatpay_use_time:
+            type: string
+            format: rfc3339
+            description: 系统核销券成功的时间

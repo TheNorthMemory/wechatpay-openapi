@@ -1,0 +1,59 @@
+allOf:
+  - type: object
+    required: [out_request_no, coupon_code_mode, stock_send_rule]
+    properties:
+      out_request_no:
+        type: string
+        description: 商户请求单号
+      coupon_code_mode:
+        $ref: './Enumerations.yaml#CouponCodeMode'
+      stock_send_rule:
+        type: object
+        description: 发放规则
+        required: [max_amount, max_coupons_per_user]
+        properties:
+          max_amount:
+            type: integer
+            minimum: 1
+            maximum: 100000000000
+            description: 批次总预算
+          max_coupons:
+            type: integer
+            minimum: 1
+            maximum: 1000000000
+            description: 批次最大发放个数
+          max_coupons_per_user:
+            type: integer
+            minimum: 1
+            maximum: 100
+            description: 用户最大可领个数
+          max_amount_by_day:
+            type: integer
+            minimum: 1
+            maximum: 10000000000
+            description: 单天发放上限金额
+          max_coupons_by_day:
+            type: integer
+            minimum: 1
+            maximum: 1000000000
+            description: 单天发放上限个数
+          natural_person_limit:
+            type: boolean
+            description: 是否开启自然人限制
+          prevent_api_abuse:
+            type: boolean
+            description: 可疑账号拦截
+          transferable:
+            type: boolean
+            description: 是否允许转赠
+          shareable:
+            type: boolean
+            description: 是否允许分享链接
+      notify_config:
+        type: object
+        description: 事件通知配置
+        properties:
+          notify_appid:
+            type: string
+            description: 事件通知appid
+  - $ref: ./CouponBase.yaml

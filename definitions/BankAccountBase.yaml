@@ -1,0 +1,24 @@
+type: object
+required: [account_bank, bank_address_code]
+x-is-sensitive: [account_number]
+properties:
+  account_bank:
+    type: string
+    description: 开户银行
+    example: 工商银行
+  bank_address_code:
+    type: string
+    description: 开户银行省市编码
+    example: '110000'
+  bank_name:
+    type: string
+    description: 开户银行全称（含支行）
+    example: 施秉县农村信用合作联社城关信用社
+  bank_branch_id:
+    type: string
+    description: 开户银行联行号
+    example: '402713354941'
+  account_number:
+    type: string
+    description: 银行账号
+    example: ciphertext

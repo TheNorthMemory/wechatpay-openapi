@@ -1,0 +1,115 @@
+get:
+  x-role: [微信支付商户]
+  tags:
+    -  运营工具∙商家券
+  summary: 根据过滤条件查询用户券API
+  description: 服务商自定义筛选条件（如创建商户号、归属商户号、发放商户号等），查询指定微信用户卡包中满足对应条件的所有商家券信息。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/applyment4sub/chapter3_4.shtml)
+  parameters:
+    - name: openid
+      in: path
+      type: string
+      required: true
+      description: 用户标识
+    - name: appid
+      in: query
+      type: string
+      required: true
+      description: 公众账号ID
+    - name: stock_id
+      in: query
+      type: string
+      description: 批次号
+      nullable: true
+    - name: coupon_state
+      in: query
+      type: string
+      description: 券状态
+      nullable: true
+      schema:
+        $ref: '../../../../../definitions/Enumerations.yaml#CouponState'
+    - name: creator_merchant
+      in: query
+      type: string
+      description: 创建批次的商户号
+      nullable: true
+    - name: belong_merchant
+      in: query
+      type: string
+      description: 批次归属商户号
+      nullable: true
+    - name: sender_merchant
+      in: query
+      type: string
+      description: 批次发放商户号
+      nullable: true
+    - name: offset
+      in: query
+      type: number
+      description: 分页页码
+      nullable: true
+    - name: limit
+      in: query
+      type: number
+      description: 分页大小
+      nullable: true
+  responses:
+    200:
+      schema:
+        type: object
+        required: [total_count, offset, limit, data]
+        properties:
+          total_count:
+            type: number
+            description: 总数量
+          offset:
+            type: number
+            description: 分页页码
+          limit:
+            type: number
+            description: 分页大小
+          data:
+            type: array
+            items:
+              allOf:
+                - $ref: ../../../../../definitions/CouponBase.yaml
+                - type: object
+                  properties:
+                    coupon_code:
+                      type: string
+                      description: 券code
+                    coupon_state:
+                      $ref: '../../../../../definitions/Enumerations.yaml#CouponState'
+                    stock_id:
+                      type: string
+                      description: 批次号
+                    transferable:
+                      type: boolean
+                      description: 是否允许转赠
+                    shareable:
+                      type: boolean
+                      description: 是否允许分享链接
+                - type: object
+                  required: [send_request_no, available_start_time, expire_time, receive_time]
+                  properties:
+                    send_request_no:
+                      type: string
+                      description: 发券请求单号
+                    use_request_no:
+                      type: string
+                      description: 核销请求单号
+                    available_start_time:
+                      type: string
+                      format: rfc3339
+                      description: 券可使用开始时间
+                    expire_time:
+                      type: string
+                      format: rfc3339
+                      description: 券过期时间
+                    receive_time:
+                      type: string
+                      format: rfc3339
+                      description: 券领券时间
+                    use_time:
+                      type: string
+                      format: rfc3339
+                      description: 券核销时间

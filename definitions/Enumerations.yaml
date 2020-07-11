@@ -1,0 +1,188 @@
+CouponCodeMode:
+  type: string
+  description: 券code模式(WECHATPAY_MODE：系统分配 MERCHANT_API：商户发放时接口指定 MERCHANT_UPLOAD：商户上传自定义)
+  enum:
+    - WECHATPAY_MODE
+    - MERCHANT_API
+    - MERCHANT_UPLOAD
+
+StockType:
+  type: string
+  maxLength: 32
+  description: 批次类型(NORMAL：固定面额满减券批次 DISCOUNT：折扣券批次 EXCHANGE：换购券批次)
+  enum:
+    - NORMAL
+    - DISCOUNT
+    - EXCHANGE
+
+UseMethod:
+  type: string
+  description: 核销方式(OFF_LINE：线下滴码 MINI_PROGRAMS：线上小程序 PAYMENT_CODE：微信支付付款码 SELF_CONSUME：用户自助)
+  enum:
+    - OFF_LINE
+    - MINI_PROGRAMS
+    - PAYMENT_CODE
+    - SELF_CONSUME
+
+BackgroundColor:
+  type: string
+  description: 背景颜色
+  enum:
+    - Color010
+    - Color020
+    - Color030
+    - Color040
+    - Color050
+    - Color060
+    - Color070
+    - Color080
+    - Color090
+    - Color100
+
+SubjectType:
+  type: string
+  description: 主体类型
+  enum:
+    - SUBJECT_TYPE_INDIVIDUAL
+    - SUBJECT_TYPE_ENTERPRISE
+    - SUBJECT_TYPE_INSTITUTIONS
+    - SUBJECT_TYPE_OTHERS
+    - SUBJECT_TYPE_MICRO
+
+IdType:
+  type: string
+  enum:
+    - IDENTIFICATION_TYPE_IDCARD
+    - IDENTIFICATION_TYPE_OVERSEA_PASSPORT
+    - IDENTIFICATION_TYPE_HONGKONG_PASSPORT
+    - IDENTIFICATION_TYPE_MACAO_PASSPORT
+    - IDENTIFICATION_TYPE_TAIWAN_PASSPORT
+
+CertType:
+  type: string
+  description: 登记证书类型
+  enum:
+    - CERTIFICATE_TYPE_2388
+    - CERTIFICATE_TYPE_2389
+    - CERTIFICATE_TYPE_2390
+    - CERTIFICATE_TYPE_2391
+    - CERTIFICATE_TYPE_2392
+    - CERTIFICATE_TYPE_2393
+    - CERTIFICATE_TYPE_2394
+    - CERTIFICATE_TYPE_2395
+    - CERTIFICATE_TYPE_2396
+    - CERTIFICATE_TYPE_2397
+    - CERTIFICATE_TYPE_2398
+    - CERTIFICATE_TYPE_2399
+    - CERTIFICATE_TYPE_2400
+
+SalesScenesType:
+  type: string
+  description: 经营场景类型
+  enum:
+    - SALES_SCENES_STORE
+    - SALES_SCENES_MP
+    - SALES_SCENES_MINI_PROGRAM
+    - SALES_SCENES_WEB
+    - SALES_SCENES_APP
+    - SALES_SCENES_WEWORK
+
+AccountType:
+  type: string
+  description: 账户类型
+  example: ACCOUNT_TYPE_BUSINESS
+  enum:
+    - ACCOUNT_TYPE_BUSINESS
+    - ACCOUNT_TYPE_PRIVATE
+
+BankAccountType:
+  type: string
+  description: 账户类型
+  enum:
+    - BANK_ACCOUNT_TYPE_CORPORATE
+    - BANK_ACCOUNT_TYPE_PERSONAL
+
+## 这些常量值，来源两个申请单接口，做合并去重处理
+ApplymentState:
+  type: string
+  description: 申请单状态
+  example: APPLYMENT_STATE_FINISHED
+  enum:
+    - APPLYMENT_STATE_WAITTING_FOR_AUDIT
+    - APPLYMENT_STATE_WAITTING_FOR_CONFIRM_CONTACT
+    - APPLYMENT_STATE_WAITTING_FOR_CONFIRM_LEGALPERSON
+    - APPLYMENT_STATE_PASSED
+    - APPLYMENT_STATE_FREEZED
+    - APPLYMENT_STATE_EDITTING
+    - APPLYMENT_STATE_AUDITING
+    - APPLYMENT_STATE_REJECTED
+    - APPLYMENT_STATE_TO_BE_CONFIRMED
+    - APPLYMENT_STATE_TO_BE_SIGNED
+    - APPLYMENT_STATE_SIGNING
+    - APPLYMENT_STATE_FINISHED
+    - APPLYMENT_STATE_CANCELED
+
+AuthorizeState:
+  type: string
+  description: 授权状态
+  example: AUTHORIZE_STATE_UNAUTHORIZED
+  enum:
+    - AUTHORIZE_STATE_UNAUTHORIZED
+    - AUTHORIZE_STATE_AUTHORIZED
+
+VerifyResult:
+  type: string
+  description: 汇款验证结果
+  example: VERIFY_SUCCESS
+  enum:
+    - VERIFYING
+    - VERIFY_SUCCESS
+    - VERIFY_FAIL
+
+StockState:
+  type: string
+  description: 批次状态
+  example: RUNNING
+  enum:
+    - UNAUDIT
+    - RUNNING
+    - STOPED
+    - PAUSED
+
+CouponState:
+  type: string
+  description: 券状态
+  example: SENDED
+  enum:
+    - SENDED
+    - USED
+    - EXPIRED
+
+MicroBizType:
+  type: string
+  description: 小微经营类型
+  example: MICRO_TYPE_STORE
+  enum:
+    - MICRO_TYPE_STORE
+    - MICRO_TYPE_MOBILE
+    - MICRO_TYPE_ONLINE
+
+## 这个定义有些非常不适，接口要求是int
+## 文档上是以0开头，为避免与八进制混淆，这里全部转换成十进制，并且去重处理
+CategoryId:
+  type: integer
+  description: 行业ID
+  enum:
+    - 44
+    - 33
+    - 22
+    - 41
+    - 42
+    - 49
+    - 50
+    - 51
+    - 36
+    - 54
+    - 55
+    - 32
+    - 52

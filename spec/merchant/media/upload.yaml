@@ -1,0 +1,39 @@
+post:
+  x-role: [微信支付商户]
+  tags:
+    - 通用接口
+  summary: 图片上传API
+  consumes:
+    - multipart/form-data
+  description: 部分微信支付业务指定商户需要使用图片上传 API来上报图片信息，从而获得必传参数的值：图片MediaID 。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/chapter3_1.shtml)
+  parameters:
+    - name: file
+      in: formData
+      type: file
+      description: 图片文件
+      required: true
+    - name: meta
+      in: formData
+      required: true
+      type: string
+      format: json
+      schema:
+        type: object
+        properties:
+          filename:
+            type: string
+            description: 文件名称
+          sha256:
+            type: string
+            description: 文件摘要
+  responses:
+    200:
+      schema:
+        allOf:
+          - type: object
+            required: [media_id]
+            properties:
+              media_id:
+                type: string
+                description: 媒体文件标识Id
+                example: 6uqyGjGrCf2GtyXP8bxrbuH9-aAoTjH-rKeSl3Lf4_So6kdkQu4w8BYVP3bzLtvR38lxt4PjtCDXsQpzqge_hQEovHzOhsLleGFQVRF-U_0

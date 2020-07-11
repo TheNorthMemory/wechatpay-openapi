@@ -1,0 +1,17 @@
+get:
+  x-role: [普通服务商]
+  tags:
+    -  商户进件∙特约商户进件
+  summary: 通过申请单号查询申请状态
+  description: 通过申请单号查询申请状态 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/applyment4sub/chapter3_2.shtml)
+  parameters:
+    - in: path
+      name: applyment_id
+      type: number
+      format: uint64
+      description: 业务申请编号
+      required: true
+  responses:
+    200:
+      schema:
+        $ref: ../../../../definitions/Applyment.yaml

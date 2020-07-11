@@ -1,0 +1,79 @@
+post:
+  x-role: [微信支付商户]
+  tags:
+    -  运营工具∙商家券
+  summary: 上传预存code API
+  description: 商家券的Code码可由微信后台随机分配，同时支持商户自定义。如商家已有自己的优惠券系统，可直接使用自定义模式。即商家预先向微信支付上传券Code，当券在发放时，微信支付自动从已导入的Code中随机取值（不能指定），派发给用户。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/busifavor/chapter3_6.shtml)
+  parameters:
+    - name: stock_id
+      in: path
+      type: string
+      required: true
+      description: 批次号
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required: [upload_request_no]
+        properties:
+          coupon_code_list:
+            type: array
+            minimum: 1
+            maximum: 200
+            items:
+              type: string
+              minLength: 1
+              maxLength: 32
+          upload_request_no:
+            type: string
+            description: 请求业务单据号
+  responses:
+    200:
+      schema:
+        type: object
+        required: [stock_id, total_count, success_count, success_time]
+        properties:
+          stock_id:
+            type: string
+            description: 批次号
+          total_count:
+            type: number
+            format: unit64
+            description: 去重后上传code总数
+          success_count:
+            type: number
+            format: unit64
+            description: 上传成功code个数
+          success_codes:
+            type: array
+            items:
+              type: string
+          success_time:
+            type: string
+            format: rfc3339
+            description: 上传成功时间
+          fail_count:
+            type: number
+            format: unit64
+            description: 上传失败code个数
+          fail_codes:
+            type: array
+            items:
+              type: object
+              required: [coupon_code, code, message]
+              properties:
+                coupon_code:
+                  type: string
+                code:
+                  type: string
+                message:
+                  type: string
+          exist_codes:
+            type: array
+            items:
+              type: string
+          duplicate_codes:
+            type: array
+            items:
+              type: string

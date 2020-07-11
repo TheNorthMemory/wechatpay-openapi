@@ -1,0 +1,38 @@
+post:
+  x-role: [微信支付商户]
+  tags:
+    - 运营工具∙通用接口
+  summary: （营销）图片上传API
+  description: 通过本接口上传图片后可获得图片url地址。图片url可在微信支付营销相关的API使用，包括商家券、代金券、支付有礼等。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/chapter3_1.shtml)
+  consumes:
+    - multipart/form-data
+  parameters:
+    - name: file
+      in: formData
+      type: file
+      description: 图片文件
+      required: true
+    - name: meta
+      in: formData
+      required: true
+      type: string
+      format: json
+      schema:
+        type: object
+        properties:
+          filename:
+            type: string
+            description: 文件名称
+          sha256:
+            type: string
+            description: 文件摘要
+  responses:
+    200:
+      schema:
+        type: object
+        required: [media_url]
+        properties:
+          media_url:
+            type: string
+            description: 媒体文件URL地址
+            example: https://qpic.cn/xxx

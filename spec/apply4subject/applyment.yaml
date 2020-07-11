@@ -1,0 +1,211 @@
+post:
+  x-role: [从业机构, 渠道商]
+  tags:
+    -  商户进件∙通用接口
+  summary: 提交商户开户意愿申请单API
+  description: 服务商可以通过该接口向微信支付提交商户的联系人信息、主体信息以及联系人信息。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/applysubject/chapter5_1.shtml)
+  parameters:
+    - name: channel_id
+      in: query
+      type: string
+      description: 渠道商户号
+      minLength: 8
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required: [business_code, contact_info, subject_info, identification_info]
+        properties:
+          business_code:
+            type: string
+            description: 业务申请编号
+          contact_info:
+            type: object
+            description: 联系人信息
+            required: [name, mobile, id_card_number]
+            x-is-sensitive: [name, mobile, id_card_number]
+            properties:
+              name:
+                type: string
+                description: 联系人姓名
+              mobile:
+                type: string
+                description: 联系人手机号
+              id_card_number:
+                type: string
+                description: 联系人身份证号码
+          subject_info:
+            type: object
+            description: 主体信息
+            required: [subject_type, business_license_info]
+            properties:
+              subject_type:
+                $ref: '../../../definitions/Enumerations.yaml#SubjectType'
+              business_license_info:
+                type: object
+                required: [licence_number, licence_copy, merchant_name, legal_person, company_address, licence_valid_date]
+                properties:
+                  licence_number:
+                    type: string
+                    description: 营业执照注册号
+                  licence_copy:
+                    type: string
+                    format: MediaId
+                    description: 营业执照照片
+                  merchant_name:
+                    type: string
+                    description: 商户名称
+                  legal_person:
+                    type: string
+                    description: 法人姓名
+                  company_address:
+                    type: string
+                    description: 注册地址
+                  licence_valid_date:
+                    type: string
+                    format: jsonArrayLike
+                    description: 营业执照有效日期
+                    example: '["1970-01-01","forever"]'
+              certificate_info:
+                type: object
+                required: [cert_type, cert_number, cert_copy, merchant_name, legal_person, company_address, cert_valid_date]
+                properties:
+                  cert_type:
+                    $ref: '../../../definitions/Enumerations.yaml#CertType'
+                  cert_number:
+                    type: string
+                    description: 证书编号
+                  cert_copy:
+                    type: string
+                    format: MediaId
+                    description: 登记证书照片
+                  merchant_name:
+                    type: string
+                    description: 商户名称
+                  legal_person:
+                    type: string
+                    description: 法人姓名
+                  company_address:
+                    type: string
+                    description: 注册地址
+                  cert_valid_date:
+                    type: string
+                    format: jsonArrayLike
+                    description: 营业执照有效日期
+                    example: '["1970-01-01","forever"]'
+              company_prove_copy:
+                type: string
+                format: MediaId
+                description: 单位证明函照片
+              assist_prove_info:
+                type: object
+                required: [micro_biz_type, store_name, store_address, store_header_copy, store_indoor_copy]
+                properties:
+                  micro_biz_type:
+                    $ref: '../../definitions/Enumerations.yaml#MicroBizType'
+                  store_name:
+                    type: string
+                    description: 门店名称
+                  store_address_code:
+                    type: string
+                    description: 门店省市编码
+                  store_address:
+                    type: string
+                    description: 门店地址
+                  store_header_copy:
+                    type: string
+                    description: 门店门头照片
+                  store_indoor_copy:
+                    type: string
+                    description: 店内环境照片
+              special_operation_info:
+                type: array
+                items:
+                  type: object
+                  required: [category_id]
+                  properties:
+                    category_id:
+                      $ref: '../../definitions/Enumerations.yaml#CategoryId'
+                    store_indoor_copy:
+                      type: array
+                      items:
+                        type: string
+                        format: MediaId
+                        description: 店内环境照片
+          identification_info:
+            type: object
+            description: 法人身份信息
+            required: [identification_type, identification_name, identification_number, identification_valid_date, identification_front_copy]
+            x-is-sensitive: [identification_name, identification_number]
+            properties:
+              identification_type:
+                $ref: '../../definitions/Enumerations.yaml#IdType'
+              identification_name:
+                type: string
+                description: 证件姓名
+              identification_number:
+                type: string
+                description: 证件号码
+              identification_valid_date:
+                type: string
+                format: jsonArrayLike
+                description: 证件有效日期
+                example: '["1970-01-01","forever"]'
+              identification_front_copy:
+                type: string
+                format: MediaId
+                description: 证件正面照片
+              identification_back_copy:
+                type: string
+                format: MediaId
+                description: 证件反面照片
+  responses:
+    200:
+      schema:
+        type: object
+        required: [applyment_id]
+        properties:
+          applyment_id:
+            type: number
+            format: uint64
+            description: 微信支付申请单号
+            example: 20000000011111
+get:
+  x-role: [从业机构, 渠道商]
+  tags:
+    -  商户进件∙通用接口
+  summary: 查询商户开户意愿申请单审核结果API
+  description: 当服务商提交申请单后，需要定期调用此接口查询申请单的审核状态。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/applysubject/chapter5_3.shtml)
+  parameters:
+    - name: applyment_id
+      in: query
+      type: string
+      format: numeric
+      description: 申请单编号
+    - name: business_code
+      in: query
+      type: string
+      description: 业务申请编号
+      maxLength: 128
+  responses:
+    200:
+      schema:
+        type: object
+        required: [applyment_state]
+        properties:
+          applyment_state:
+            $ref: '../../definitions/Enumerations.yaml#ApplymentState'
+          qrcode_data:
+            type: string
+            format: rfc2397
+            description: 小程序码图片
+            example: 'data:image/png;base64,cGFnZXMvYXBwbHkvYXBpdzQvd2VsY29tZS93ZWxjb21lP2FwcGx5bWVudF9pZD14eHg='
+          reject_param:
+            type: string
+            description: 驳回参数
+            example: merchant_name
+          reject_reason:
+            type: string
+            description: 驳回原因
+            example: 公司名称与工商局登记不一致

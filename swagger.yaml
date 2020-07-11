@@ -44,7 +44,7 @@ paths:
   /apply4subject/applyment/{business_code}/cancel:
     $ref: ./spec/apply4subject/applyment/{business_code}/cancel.yaml
   /applyment4sub/applyment/:
-    $ref: ./spec/applyment4sub/applyment/_.yaml
+    $ref: ./spec/applyment4sub/applyment/_default.yaml
   /applyment4sub/applyment/applyment_id/{applyment_id}:
     $ref: ./spec/applyment4sub/applyment/applyment_id/{applyment_id}.yaml
   /applyment4sub/applyment/business_code/{business_code}:

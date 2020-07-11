@@ -41,7 +41,7 @@ post:
             required: [subject_type, business_license_info]
             properties:
               subject_type:
-                $ref: '../../../definitions/Enumerations.yaml#SubjectType'
+                $ref: '../../definitions/Enumerations.yaml#SubjectType'
               business_license_info:
                 type: object
                 required: [licence_number, licence_copy, merchant_name, legal_person, company_address, licence_valid_date]
@@ -72,7 +72,7 @@ post:
                 required: [cert_type, cert_number, cert_copy, merchant_name, legal_person, company_address, cert_valid_date]
                 properties:
                   cert_type:
-                    $ref: '../../../definitions/Enumerations.yaml#CertType'
+                    $ref: '../../definitions/Enumerations.yaml#CertType'
                   cert_number:
                     type: string
                     description: 证书编号

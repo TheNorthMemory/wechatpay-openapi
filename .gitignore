@@ -1,0 +1,4 @@
+/swagger-ui-dist*
+.DS_Store
+.vscode
+thumbs.db

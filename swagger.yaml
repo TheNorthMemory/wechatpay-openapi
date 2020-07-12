@@ -4,7 +4,7 @@ basePath: '/v3'
 info:
   title: 微信支付APIv3文档
   description: "整理自[微信支付官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pages/Overview.shtml) [WechatPay-API-v3](https://wechatpay-api.gitbook.io/wechatpay-api-v3/)
-    本项目/工具有如下约定：
+    本[项目/工具](https://github.com/TheNorthMemory/wechatpay-openapi)有如下约定：
     1. 对于类型定义是 **string($MediaId)**， 需要用 */通用接口* 媒体(图片/视频)上传获取到返回值；
     2. 对于类型定义是 **string($MediaUrl)**，需要用 */运营工具/通用接口* 营销图片上传接口取得返回值；
     3. 对于类型定义是 **string($rfc3339)**，请使用时间带时区字符串；

@@ -1,0 +1,32 @@
+post:
+  x-role: [服务商, 渠道商]
+  tags:
+    - 经营工具∙点金计划
+  summary: 商家小票管理API
+  description: 用于服务商/服务商使用此接口为特约商户开通或关闭商家小票功能。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/goldplan/chapter3_2.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required: [sub_mchid, operation_type]
+        properties:
+          sub_mchid:
+            type: string
+            description: 子商户ID
+            example: '1234567890'
+          operation_type:
+            $ref: '../../../definitions/Enumerations.yaml#OoperationType'
+  responses:
+    200:
+      schema:
+        type: object
+        required: [sub_mchid, operation_type]
+        properties:
+          sub_mchid:
+            type: string
+            description: 子商户ID
+            example: '1234567890'
+          operation_type:
+            $ref: '../../../definitions/Enumerations.yaml#OoperationType'

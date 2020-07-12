@@ -186,3 +186,10 @@ CategoryId:
     - 55
     - 32
     - 52
+
+OoperationType:
+  type: string
+  description: 操作类型
+  enum:
+    - OPEN
+    - CLOSE

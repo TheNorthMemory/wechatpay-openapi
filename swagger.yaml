@@ -30,6 +30,7 @@ tags:
   - name: 运营工具∙商家券
   - name: 运营工具∙通用接口
   - name: 经营工具∙支付即服务
+  - name: 经营工具∙点金计划
   - name: 通用接口
 paths:
   /apply4sub/sub_merchants/{sub_mchid}/modify-settlement:
@@ -52,6 +53,10 @@ paths:
     $ref: ./spec/applyment4sub/applyment/business_code/{business_code}.yaml
   /certificates:
     $ref: ./spec/certificates.yaml
+  /goldplan/merchants/changecustompagestatus:
+    $ref: ./spec/goldplan/merchants/changecustompagestatus.yaml
+  /goldplan/merchants/changegoldplanstatus:
+    $ref: ./spec/goldplan/merchants/changegoldplanstatus.yaml
   /marketing/busifavor/callbacks:
     $ref: ./spec/marketing/busifavor/callbacks.yaml
   /marketing/busifavor/coupons/associate:

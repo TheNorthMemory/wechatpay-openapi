@@ -29,6 +29,7 @@ tags:
   - name: 商户进件∙通用接口
   - name: 运营工具∙商家券
   - name: 运营工具∙通用接口
+  - name: 经营工具∙支付即服务
   - name: 通用接口
 paths:
   /apply4sub/sub_merchants/{sub_mchid}/modify-settlement:
@@ -75,3 +76,7 @@ paths:
     $ref: ./spec/merchant/media/upload.yaml
   /merchant/media/video_upload:
     $ref: ./spec/merchant/media/video_upload.yaml
+  /smartguide/guides:
+    $ref: ./spec/smartguide/guides.yaml
+  /smartguide/guides/{guide_id}/assign:
+    $ref: ./spec/smartguide/guides/{guide_id}/assign.yaml

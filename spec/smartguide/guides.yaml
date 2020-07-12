@@ -1,0 +1,137 @@
+post:
+  x-role: [服务商, 直连商户]
+  tags:
+    - 经营工具∙支付即服务
+  summary: 服务人员注册API
+  description: 用于服务商/商户开发者为商户注册服务人员使用。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/smartguide/chapter3_1.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required: [corpid, store_id, userid, name, mobile, qr_code, avatar]
+        x-is-sensitive: [name, mobile]
+        properties:
+          sub_mchid:
+            type: string
+            description: 子商户ID
+          corpid:
+            type: string
+            description: 企业ID
+          store_id:
+            type: integer
+            description: 门店ID
+          userid:
+            type: string
+            description: 企业微信的员工ID
+          name:
+            type: string
+            description: 企业微信的员工姓名
+          mobile:
+            type: string
+            description: 手机号码
+          qr_code:
+            type: string
+            format: url
+            description: 员工个人二维码
+          avatar:
+            type: string
+            format: url
+            description: 头像URL
+  responses:
+    200:
+      schema:
+        type: object
+        required: [guide_id]
+        properties:
+          guide_id:
+            type: string
+            description: 服务人员ID
+            example: LLA3WJ6DSZUfiaZDS79FH5Wm5m4X69TBic
+get:
+  x-role: [服务商, 直连商户]
+  tags:
+    - 经营工具∙支付即服务
+  summary: 服务人员查询API
+  description: 用于服务商/商户开发者查询已注册的服务人员ID等信息。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/smartguide/chapter3_3.shtml)
+  x-is-sensitive: [mobile]
+  parameters:
+    - name: sub_mchid
+      in: query
+      type: string
+      description: 子商户ID
+    - name: store_id
+      in: query
+      type: integer
+      required: true
+      description: 门店ID
+    - name: userid
+      in: query
+      type: string
+      description: 企业微信的员工ID
+    - name: mobile
+      in: query
+      type: string
+      description: 手机号码
+    - name: work_id
+      in: query
+      type: string
+      description: 工号
+    - name: limit
+      in: query
+      type: integer
+      description: 最大资源条数
+      maximum: 10
+    - name: offset
+      in: query
+      type: integer
+      description: 请求资源起始位置
+      default: 0
+  responses:
+    200:
+      schema:
+        type: object
+        required: [guide_id]
+        properties:
+          total_count:
+            type: integer
+            description: 服务人员数量
+          limit:
+            type: integer
+            description: 最大资源条数
+            maximum: 10
+          offset:
+            type: integer
+            description: 请求资源起始位置
+            default: 0
+          data:
+            type: array
+            items:
+              type: object
+              x-is-sensitive: [name, mobile]
+              properties:
+                guide_id:
+                  type: string
+                  description: 服务人员ID
+                  example: LLA3WJ6DSZUfiaZDS79FH5Wm5m4X69TBic
+                store_id:
+                  type: integer
+                  description: 门店ID
+                  example: 12345678
+                name:
+                  type: string
+                  description: 企业微信的员工姓名
+                  example: pVd1HJ6v/69bDnuC4EL5Kz4jBHLiCa8MRtelw/wDa4SzfeespQO/0kjiwfqdfg==
+                mobile:
+                  type: string
+                  description: 手机号码
+                  example: pVd1HJ6v/69bDnuC4EL5Kz4jBHLiCa8MRtelw/wDa4SzfeespQO/0kjiwfqdfg==
+                userid:
+                  type: string
+                  description: 企业微信的员工ID
+                  example: robert
+                work_id:
+                  type: string
+                  description: 工号
+                  example: robert

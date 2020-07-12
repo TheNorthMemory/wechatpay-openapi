@@ -1,0 +1,37 @@
+post:
+  x-role: [服务商, 直连商户]
+  tags:
+    - 经营工具∙支付即服务
+  summary: 服务人员分配API
+  description: 用于服务商/商户开发者在顾客下单后为顾客分配服务人员使用。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/smartguide/chapter3_2.shtml)
+  parameters:
+    - name: guide_id
+      in: path
+      type: string
+      description: 服务人员ID
+      required: true
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required: [out_trade_no]
+        properties:
+          sub_mchid:
+            type: string
+            description: 子商户ID
+            example: '1234567890'
+          out_trade_no:
+            type: string
+            description: 商户订单号
+            example: '20150806125346'
+  responses:
+    200:
+      schema:
+        type: object
+        required: [guide_id]
+        properties:
+          guide_id:
+            type: string
+            description: 服务人员ID
+            example: LLA3WJ6DSZUfiaZDS79FH5Wm5m4X69TBic

@@ -17,7 +17,7 @@ post:
             description: 子商户ID
             example: '1234567890'
           operation_type:
-            $ref: '../../../definitions/Enumerations.yaml#OoperationType'
+            $ref: '../../../definitions/Enumerations.yaml#OperationType'
   responses:
     200:
       schema:
@@ -29,4 +29,4 @@ post:
             description: 子商户ID
             example: '1234567890'
           operation_type:
-            $ref: '../../../definitions/Enumerations.yaml#OoperationType'
+            $ref: '../../../definitions/Enumerations.yaml#OperationType'

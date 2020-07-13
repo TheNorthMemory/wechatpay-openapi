@@ -1,0 +1,42 @@
+post:
+  x-role: [直连商户]
+  tags:
+    - 运营工具∙消费卡
+  summary: 发放消费卡API
+  description: 商户通过调用本接口向用户发放消费卡，用户领到卡的同时会领取到一批代金券，消费卡会自动放入卡包中。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/coupons/chapter3_1.shtml)
+  parameters:
+    - name: card_id
+      in: path
+      type: string
+      description: 消费卡ID
+      required: true
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required: [appid, openid, out_request_no, send_time]
+        properties:
+          appid:
+            type: string
+            description: 消费卡归属appid
+          openid:
+            type: string
+            description: 用户openid
+          out_request_no:
+            type: string
+            description: 商户单据号
+          send_time:
+            type: string
+            format: rfc3339
+            description: 请求发卡时间
+  responses:
+    200:
+      schema:
+        type: object
+        required: [card_code]
+        properties:
+          card_code:
+            type: string
+            description: 消费卡code
+            example: '198555211279'

@@ -212,3 +212,49 @@ State:
   enum:
     - ESTABLISHED #已建立
     - TERMINATED  #已终止
+
+DeliveryPurpose:
+  type: string
+  description: 投放目的
+  enum:
+    - OFF_LINE_PAY  #拉用户回店消费
+    - JUMP_MINI_APP #引导用户前往小程序消费
+
+SendContent:
+  type: string
+  description: 发放内容
+  enum:
+    - SINGLE_COUPON #单张券
+    - GIFT_PACKAGE  #礼包
+
+AwardType:
+  type: string
+  description: 奖品类型
+  enum:
+    - BUSIFAVOR #奖品类型
+
+DeliveryUserCategory:
+  type: string
+  description: 投放用户类别
+  enum:
+    - DELIVERY_ALL_PERSON    #所有用户
+    - DELIVERY_MEMBER_PERSON #会员用户
+
+ActivityType:
+  type: string
+  description: 活动类型
+  enum:
+    - FULL_SEND_ACT_TYPE     #满额送
+    - STEP_SEND_ACT_TYPE     #阶梯送
+    - SPECIFIC_SEND_ACT_TYPE #满A送B
+
+ActivityStatus:
+  type: string
+  description: 活动状态
+  enum:
+    - CREATE_ACT_STATUS    #已创建
+    - ONGOING_ACT_STATUS   #运行中
+    - TERMINATE_ACT_STATUS #已终止
+    - STOP_ACT_STATUS      #已暂停
+    - OVER_TIME_ACT_STATUS #已过期
+    - CREATE_ACT_FAILED    #创建活动失败

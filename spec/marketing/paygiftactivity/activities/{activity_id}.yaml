@@ -1,0 +1,41 @@
+get:
+  x-role: [微信支付商户, 服务商, 渠道商]
+  tags:
+    - 运营工具∙支付有礼
+  summary: 查询活动详情接口API
+  description: 商户创建活动后，可以通过该接口查询支付有礼的活动详情，用于管理活动。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/paygiftactivity/chapter3_4.shtml)
+  parameters:
+    - name: activity_id
+      in: path
+      type: string
+      description: 活动id
+      required: true
+  responses:
+    200:
+      schema:
+        type: object
+        properties:
+          activity_id:
+            type: string
+          activity_type:
+            $ref: '../../../../definitions/Enumerations.yaml#ActivityType'
+          activity_status:
+            $ref: '../../../../definitions/Enumerations.yaml#ActivityStatus'
+          creator_merchant_id:
+            type: string
+          belong_merchant_id:
+            type: string
+          pause_time:
+            type: string
+            format: rfc3339
+            example: '2018-06-08T10:34:56+08:00'
+          recovery_time:
+            type: string
+            format: rfc3339
+            example: '2018-12-08T10:34:56+08:00'
+          create_time:
+            type: string
+            format: rfc3339
+          update_time:
+            type: string
+            format: rfc3339

@@ -1,0 +1,22 @@
+post:
+  x-role: [微信支付商户, 服务商, 渠道商]
+  tags:
+    - 运营工具∙支付有礼
+  summary: 终止活动API
+  description: 商户可通过该接口停止支付有礼活动。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/paygiftactivity/chapter3_7.shtml)
+  parameters:
+    - name: activity_id
+      in: path
+      type: string
+      description: 活动id
+      required: true
+  responses:
+    200:
+      schema:
+        type: object
+        properties:
+          activity_id:
+            type: string
+          terminate_time:
+            type: string
+            format: rfc3339

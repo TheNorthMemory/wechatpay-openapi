@@ -1,0 +1,43 @@
+post:
+  x-role: [微信支付商户, 服务商, 渠道商]
+  tags:
+    - 运营工具∙支付有礼
+  summary: 新增活动发券商户号API
+  description: 商户创建活动后，可以通过该接口增加支付有礼的发券商户号，用于管理活动。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/paygiftactivity/chapter3_8.shtml)
+  parameters:
+    - name: activity_id
+      in: path
+      type: string
+      description: 活动id
+      required: true
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        properties:
+          merchant_id_list:
+            type: array
+            items:
+              type: string
+          add_request_no:
+            type: string
+  responses:
+    200:
+      schema:
+        type: object
+        properties:
+          activity_id:
+            type: string
+          add_time:
+            type: string
+            format: rfc3339
+          invalid_merchant_id_list:
+            type: array
+            items:
+              type: object
+              properties:
+                mchid:
+                  type: string
+                invalid_reason:
+                  type: string

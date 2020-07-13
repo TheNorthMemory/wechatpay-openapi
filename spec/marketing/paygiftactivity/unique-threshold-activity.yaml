@@ -1,0 +1,111 @@
+post:
+  x-role: [微信支付商户, 服务商, 渠道商]
+  tags:
+    - 运营工具∙支付有礼
+  summary: 创建全场满额送活动API
+  description: 商户可以创建满额送活动，用户支付后送全场券，提升交易额。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/paygiftactivity/chapter3_2.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required: [activity_base_info, award_send_rule]
+        properties:
+          activity_base_info:
+            type: object
+            required: [activity_name, activity_second_title, merchant_logo_url, out_request_no, delivery_purpose]
+            properties:
+              activity_name:
+                type: string
+              activity_second_title:
+                type: string
+              merchant_logo_url:
+                type: string
+              background_color:
+                $ref: '../../../definitions/Enumerations.yaml#BackgroundColor'
+              begin_time:
+                type: string
+                format: rfc3339
+              end_time:
+                type: string
+                format: rfc3339
+              available_time:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    begin_time:
+                      type: string
+                      format: rfc3339
+                    end_time:
+                      type: string
+                      format: rfc3339
+              available_day_time:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    begin_day_time:
+                      type: string
+                    end_day_time:
+                      type: string
+              out_request_no:
+                type: string
+              delivery_purpose:
+                $ref: '../../../definitions/Enumerations.yaml#DeliveryPurpose'
+              mini_programs_appid:
+                type: string
+              mini_programs_path:
+                type: string
+          award_send_rule:
+            type: object
+            required: [out_request_no]
+            properties:
+              transaction_amount_minimum:
+                type: integer
+              send_content:
+                $ref: '../../../definitions/Enumerations.yaml#SendContent'
+              award_type:
+                $ref: '../../../definitions/Enumerations.yaml#AwardType'
+              award_list:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    stock_id:
+                      type: string
+                    original_image_url:
+                      type: string
+                      format: MediaUrl
+                    thumbnail_url:
+                      type: string
+                      format: MediaUrl
+              merchant_option:
+                type: string
+                merchant_id_list:
+                  type: array
+                  items:
+                    type: string
+          advanced_setting:
+            type: object
+            properties:
+              delivery_user_category:
+                $ref: '../../../definitions/Enumerations.yaml#AwardType'
+              merchant_member_appid:
+                type: string
+              goods_tags:
+                type: array
+                items:
+                  type: string
+  responses:
+    200:
+      schema:
+        type: object
+        required: [activity_id, create_time]
+        properties:
+          activity_id:
+            type: string
+          create_time:
+            type: string
+            format: rfc3339

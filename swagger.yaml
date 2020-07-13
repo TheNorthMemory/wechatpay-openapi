@@ -29,6 +29,7 @@ tags:
   - name: 商户进件∙通用接口
   - name: 运营工具∙商家券
   - name: 运营工具∙委托营销
+  - name: 运营工具∙支付有礼
   - name: 运营工具∙消费卡
   - name: 运营工具∙通用接口
   - name: 经营工具∙支付即服务
@@ -86,6 +87,22 @@ paths:
     $ref: ./spec/marketing/partnerships/build.yaml
   /marketing/partnerships/terminate:
     $ref: ./spec/marketing/partnerships/terminate.yaml
+  /marketing/paygiftactivity/activities:
+    $ref: ./spec/marketing/paygiftactivity/activities.yaml
+  /marketing/paygiftactivity/activities/{activity_id}:
+    $ref: ./spec/marketing/paygiftactivity/activities/{activity_id}.yaml
+  /marketing/paygiftactivity/activities/{activity_id}/goods:
+    $ref: ./spec//marketing/paygiftactivity/activities/{activity_id}/goods.yaml
+  /marketing/paygiftactivity/activities/{activity_id}/merchants:
+    $ref: ./spec/marketing/paygiftactivity/activities/{activity_id}/merchants.yaml
+  /marketing/paygiftactivity/activities/{activity_id}/merchants/add:
+    $ref: ./spec/marketing/paygiftactivity/activities/{activity_id}/merchants/add.yaml
+  /marketing/paygiftactivity/activities/{activity_id}/merchants/delete:
+    $ref: ./spec/marketing/paygiftactivity/activities/{activity_id}/merchants/delete.yaml
+  /marketing/paygiftactivity/activities/{activity_id}/terminate:
+    $ref: ./spec/marketing/paygiftactivity/activities/{activity_id}/terminate.yaml
+  /marketing/paygiftactivity/unique-threshold-activity:
+    $ref: ./spec/marketing/paygiftactivity/unique-threshold-activity.yaml
   /merchant-service/complaint-notifications:
     $ref: ./spec/merchant-service/complaint-notifications.yaml
   /merchant-service/complaints:

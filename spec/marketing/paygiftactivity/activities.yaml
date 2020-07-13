@@ -1,0 +1,42 @@
+get:
+  x-role: [微信支付商户, 服务商, 渠道商]
+  tags:
+    - 运营工具∙支付有礼
+  summary: 获取支付有礼活动列表API
+  description: 商户根据一定过滤条件，查询已创建的支付有礼活动。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/paygiftactivity/chapter3_9.shtml)
+  parameters:
+    - name: offset
+      in: query
+      type: integer
+    - name: limit
+      in: query
+      type: integer
+    - name: activity_name
+      in: query
+      type: string
+    - name: activity_status
+      in: query
+      allOf:
+        - $ref: '../../../definitions/Enumerations.yaml#ActivityStatus'
+    - name: award_type
+      in: query
+      allOf:
+        - $ref: '../../../definitions/Enumerations.yaml#AwardType'
+  responses:
+    200:
+      schema:
+        type: object
+        properties:
+          offset:
+            type: integer
+          limit:
+            type: integer
+          total_count:
+            type: integer
+          activity_id:
+            type: string
+          data:
+            type: array
+            items:
+              type: object
+              properties: {}

@@ -193,3 +193,15 @@ OperationType:
   enum:
     - OPEN
     - CLOSE
+
+ComplaintState:
+  type: string
+  description: 投诉单状态
+  enum:
+    - PAYER_COMPLAINTED #用户已投诉
+    - FROZENED          #交易已冻结
+    - FROZEN_FINISHED   #冻结已结束
+    - PAYER_CANCELED    #用户已撤诉
+    - MERCHANT_REFUNDED #商户已退款
+    - SYSTEM_REFUNDED   #系统（微信支付）已退款
+    - MANUAL_UNFROZEN   #人工（微信支付运营人员）手动解冻

@@ -32,6 +32,7 @@ tags:
   - name: 经营工具∙支付即服务
   - name: 经营工具∙点金计划
   - name: 通用接口
+  - name: 通用接口∙商业支付投诉
 paths:
   /apply4sub/sub_merchants/{sub_mchid}/modify-settlement:
     $ref: ./spec/apply4sub/sub_merchants/{sub_mchid}/modify-settlement.yaml
@@ -77,6 +78,10 @@ paths:
     $ref: ./spec/marketing/busifavor/users/{openid}/coupons/{coupon_code}/appids/{appid}.yaml
   /marketing/favor/media/image-upload:
     $ref: ./spec/marketing/favor/media/image-upload.yaml
+  /merchant-service/complaint-notifications:
+    $ref: ./spec/merchant-service/complaint-notifications.yaml
+  /merchant-service/complaints:
+    $ref: ./spec/merchant-service/complaints.yaml
   /merchant/media/upload:
     $ref: ./spec/merchant/media/upload.yaml
   /merchant/media/video_upload:

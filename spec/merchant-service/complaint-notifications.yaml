@@ -1,0 +1,99 @@
+post:
+  x-role: [直连商户, 服务商, 渠道商]
+  tags:
+    - 通用接口∙商业支付投诉
+  summary: 创建投诉通知回调API
+  description: 商户通过调用此接口创建投诉通知回调URL，当用户产生新投诉且投诉状态已变更时，微信支付会通过回 调URL通知商户。对于服务商、渠道商，会收到所有子商户的投诉信息推送。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/merchant-service/chapter3_2.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required: [url]
+        properties:
+          url:
+            type: string
+            format: url
+            description: 通知地址
+            example: https://www.xxx.com/notify
+  responses:
+    200:
+      schema:
+        type: object
+        required: [mchid, url]
+        properties:
+          mchid:
+            type: string
+            description: 商户号
+            example: '1900012181'
+          url:
+            type: string
+            format: url
+            description: 通知地址
+            example: https://www.xxx.com/notify
+get:
+  x-role: [直连商户, 服务商, 渠道商]
+  tags:
+    - 通用接口∙商业支付投诉
+  summary: 查询投诉通知回调API
+  description: 商户通过调用此接口查询投诉通知的回调URL。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/merchant-service/chapter3_3.shtml)
+  parameters: []
+  responses:
+    200:
+      schema:
+        type: object
+        required: [mchid, url]
+        properties:
+          mchid:
+            type: string
+            description: 商户号
+            example: '1900012181'
+          url:
+            type: string
+            format: url
+            description: 通知地址
+            example: https://www.xxx.com/notify
+put:
+  x-role: [直连商户, 服务商, 渠道商]
+  tags:
+    - 通用接口∙商业支付投诉
+  summary: 更新投诉通知回调API
+  description: 商户通过调用此接口更新投诉通知的回调URL。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/merchant-service/chapter3_4.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required: [url]
+        properties:
+          url:
+            type: string
+            format: url
+            description: 通知地址
+            example: https://www.xxx.com/notify
+  responses:
+    200:
+      schema:
+        type: object
+        required: [mchid, url]
+        properties:
+          mchid:
+            type: string
+            description: 商户号
+            example: '1900012181'
+          url:
+            type: string
+            format: url
+            description: 通知地址
+            example: https://www.xxx.com/notify
+delete:
+  x-role: [直连商户, 服务商, 渠道商]
+  tags:
+    - 通用接口∙商业支付投诉
+  summary: 删除投诉通知回调API
+  description: 当商户不再需要推送通知时，可通过调用此接口删除投诉通知的回调URL，取消通知回调。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/merchant-service/chapter3_5.shtml)
+  parameters: []
+  responses:
+    204: {}

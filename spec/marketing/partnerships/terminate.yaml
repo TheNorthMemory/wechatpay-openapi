@@ -1,0 +1,48 @@
+post:
+  x-role: [直连商户, 服务商, 渠道商]
+  tags:
+    - 运营工具∙委托营销
+  summary: 终止合作关系API
+  description: 该接口主要为商户提供营销资源的终止授权能力，便于商户管理运营现存的合作关系。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/partnerships/chapter3_2.shtml)
+  parameters:
+    - name: Idempotency-Key
+      in: header
+      type: string
+      description: 业务请求幂等值
+      required: true
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required: [partner, authorized_data]
+        properties:
+          partner:
+            type: object
+            required: [type]
+            properties:
+              type:
+                type: string
+              appid:
+                type: string
+              merchant_id:
+                type: string
+          authorized_data:
+            type: object
+            required: [business_type]
+            properties:
+              business_type:
+                type: string
+              stock_id:
+                type: string
+  responses:
+    200:
+      schema:
+        type: object
+        required: [terminate_time]
+        properties:
+          terminate_time:
+            type: string
+            format: rfc3339
+            description: 终止合作关系时间
+            example: '2015-05-20T13:29:35.120+08:00'

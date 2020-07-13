@@ -1,0 +1,72 @@
+post:
+  x-role: [直连商户, 服务商, 渠道商]
+  tags:
+    - 运营工具∙委托营销
+  summary: 建立合作关系API
+  description: 该接口主要为商户提供营销资源的授权能力，可授权给其他商户或小程序，方便商户间的互利合作。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/partnerships/chapter3_1.shtml)
+  parameters:
+    - name: Idempotency-Key
+      in: header
+      type: string
+      description: 业务请求幂等值
+      required: true
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required: [partner, authorized_data]
+        properties:
+          partner:
+            type: object
+            required: [type]
+            properties:
+              type:
+                type: string
+              appid:
+                type: string
+              merchant_id:
+                type: string
+          authorized_data:
+            type: object
+            required: [business_type]
+            properties:
+              business_type:
+                type: string
+              stock_id:
+                type: string
+  responses:
+    200:
+      schema:
+        type: object
+        required: [partner, authorized_data, state, build_time, create_time, update_time]
+        properties:
+          partner:
+            type: object
+            required: [type]
+            properties:
+              type:
+                type: string
+              appid:
+                type: string
+              merchant_id:
+                type: string
+          authorized_data:
+            type: object
+            required: [business_type]
+            properties:
+              business_type:
+                type: string
+              stock_id:
+                type: string
+          state:
+            $ref: '../../../definitions/Enumerations.yaml#State'
+          build_time:
+            type: string
+            format: rfc3339
+          create_time:
+            type: string
+            format: rfc3339
+          update_time:
+            type: string
+            format: rfc3339

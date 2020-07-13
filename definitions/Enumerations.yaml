@@ -205,3 +205,10 @@ ComplaintState:
     - MERCHANT_REFUNDED #商户已退款
     - SYSTEM_REFUNDED   #系统（微信支付）已退款
     - MANUAL_UNFROZEN   #人工（微信支付运营人员）手动解冻
+
+State:
+  type: string
+  description: 合作状态
+  enum:
+    - ESTABLISHED #已建立
+    - TERMINATED  #已终止

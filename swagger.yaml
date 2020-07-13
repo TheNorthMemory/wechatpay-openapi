@@ -28,6 +28,7 @@ tags:
   - name: 商户进件∙特约商户进件
   - name: 商户进件∙通用接口
   - name: 运营工具∙商家券
+  - name: 运营工具∙委托营销
   - name: 运营工具∙消费卡
   - name: 运营工具∙通用接口
   - name: 经营工具∙支付即服务
@@ -81,6 +82,10 @@ paths:
     $ref: ./spec/marketing/busifavor/users/{openid}/coupons/{coupon_code}/appids/{appid}.yaml
   /marketing/favor/media/image-upload:
     $ref: ./spec/marketing/favor/media/image-upload.yaml
+  /marketing/partnerships/build:
+    $ref: ./spec/marketing/partnerships/build.yaml
+  /marketing/partnerships/terminate:
+    $ref: ./spec/marketing/partnerships/terminate.yaml
   /merchant-service/complaint-notifications:
     $ref: ./spec/merchant-service/complaint-notifications.yaml
   /merchant-service/complaints:

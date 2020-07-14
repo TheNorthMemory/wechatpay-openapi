@@ -233,6 +233,19 @@ AwardType:
   enum:
     - BUSIFAVOR #奖品类型
 
+MerchantOption:
+  type: string
+  description: 发券商户号选项
+  enum:
+    - IN_SEVICE_COUPON_MERCHANT #在用券商户号
+    - MANUAL_INPUT_MERCHANT     #手动输入发券商户号
+
+PaymentScene:
+  type: string
+  description: #未知
+  enum:
+    - APP_SCENE
+
 DeliveryUserCategory:
   type: string
   description: 投放用户类别

@@ -38,5 +38,21 @@ get:
           data:
             type: array
             items:
-              type: object
-              properties: {}
+              allOf:
+                - $ref: '../../../definitions/PayGiftBase.yaml#ActivityBase'
+                - type: object
+                  properties:
+                    award_send_rule:
+                      type: object
+                      properties:
+                        full_send_rule:
+                          allOf:
+                            - $ref: '../../../definitions/PayGiftBase.yaml#FullSendRuleBase'
+                            - type: object
+                              properties:
+                                merchant_id_list:
+                                  type: array
+                                  items:
+                                    type: string
+                        step_send_rule:
+                            $ref: '../../../definitions/PayGiftBase.yaml#StepSendRuleBase'

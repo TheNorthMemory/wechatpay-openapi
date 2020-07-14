@@ -1,0 +1,120 @@
+ActivityBase:
+  type: object
+  required: [activity_base_info, award_send_rule]
+  properties:
+    activity_base_info:
+      type: object
+      required: [activity_name, activity_second_title, merchant_logo_url, out_request_no, delivery_purpose]
+      properties:
+        activity_name:
+          type: string
+        activity_second_title:
+          type: string
+        merchant_logo_url:
+          type: string
+        background_color:
+          $ref: './Enumerations.yaml#BackgroundColor'
+        begin_time:
+          type: string
+          format: rfc3339
+        end_time:
+          type: string
+          format: rfc3339
+        available_periods:
+          $ref: '#AvailablePeriods'
+        out_request_no:
+          type: string
+          pattern: /[a-zA-Z0-9\|\*_-]{1,128}/
+          description: 商户请求单号
+        delivery_purpose:
+          $ref: './Enumerations.yaml#DeliveryPurpose'
+        mini_programs_appid:
+          type: string
+        mini_programs_path:
+          type: string
+    advanced_setting:
+      type: object
+      properties:
+        delivery_user_category:
+          $ref: './Enumerations.yaml#AwardType'
+        merchant_member_appid:
+          type: string
+        payment_mode:  #未明晰参数
+          type: object
+          properties:
+            payment_scene_list:
+              type: array
+              items:
+                $ref: './Enumerations.yaml#PaymentScene'
+            payment_method_information:
+              type: object
+              properties:
+                payment_method:
+                  type: string
+                bank_abbreviation:
+                  type: string
+        goods_tags:
+          type: array
+          items:
+            type: string
+StepSendRuleBase:
+  type: object
+  required: [award_type, merchant_option]
+  properties:
+    award_type:
+      $ref: './Enumerations.yaml#AwardType'
+    merchant_option:
+      $ref: './Enumerations.yaml#MerchantOption'
+FullSendRuleBase:
+  allOf:
+    - $ref: '#StepSendRuleBase'
+    - type: object
+      required: [transaction_amount_minimum, send_content]
+      properties:
+        transaction_amount_minimum:
+          type: integer
+        send_content:
+          $ref: './Enumerations.yaml#SendContent'
+        award_list:
+          type: array
+          items:
+            type: object
+            properties:
+              stock_id:
+                type: string
+              original_image_url:
+                type: string
+                format: MediaUrl
+              thumbnail_url:
+                type: string
+                format: MediaUrl
+AvailablePeriods:
+  type: object
+  description: 可用时间段
+  properties:
+    available_time:
+      type: array
+      items:
+        type: object
+        properties:
+          begin_time:
+            type: string
+            format: rfc3339
+            description: 可用开始时间
+          end_time:
+            type: string
+            format: rfc3339
+            description: 可用结束时间
+    available_day_time:
+      type: array
+      items:
+        type: object
+        properties:
+          begin_day_time:
+            type: string
+            pattern: /[0-9]{6}/
+            description: 每日可用开始时间
+          end_day_time:
+            type: string
+            pattern: /[0-9]{6}/
+            description: 每日可用结束时间

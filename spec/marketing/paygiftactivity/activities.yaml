@@ -8,18 +8,28 @@ get:
     - name: offset
       in: query
       type: integer
+      required: true
+      description: 分页页码
     - name: limit
       in: query
       type: integer
+      required: true
+      minimum: 1
+      maximum: 100
+      description: 分页大小
     - name: activity_name
       in: query
       type: string
+      nullable: true
+      description: 活动名称
     - name: activity_status
       in: query
+      nullable: true
       allOf:
         - $ref: '../../../definitions/Enumerations.yaml#ActivityStatus'
     - name: award_type
       in: query
+      nullable: true
       allOf:
         - $ref: '../../../definitions/Enumerations.yaml#AwardType'
   responses:

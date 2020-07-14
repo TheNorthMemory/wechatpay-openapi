@@ -16,6 +16,13 @@ post:
       in: body
       required: true
       schema:
-        $ref: ../../../../definitions/BankAccountInfo.yaml
+        allOf:
+          - $ref: ../../../../definitions/BankAccountInfo.yaml
+          - type: object
+            properties:
+              bank_address_code:
+                type: string
+                description: 开户银行省市编码
+                example: '110000'
   responses:
     204: {}

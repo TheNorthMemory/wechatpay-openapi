@@ -19,5 +19,7 @@ get:
           - type: object
             required: [verify_result]
             properties:
+              account_type:
+                $ref: '../../../../definitions/Enumerations.yaml#AccountType'
               verify_result:
                 $ref: '../../../../definitions/Enumerations.yaml#VerifyResult'

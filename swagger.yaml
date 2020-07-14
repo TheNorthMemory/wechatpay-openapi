@@ -1,5 +1,5 @@
 swagger: '2.0'
-host: 127.0.0.1:7788
+host: api.mch.weixin.qq.com
 basePath: '/v3'
 info:
   title: 微信支付APIv3文档
@@ -27,7 +27,6 @@ info:
 "
   version: 0.0.1
 schemes:
-  - http
   - https
 consumes:
   - application/json

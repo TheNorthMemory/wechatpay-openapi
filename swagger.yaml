@@ -121,5 +121,7 @@ paths:
     $ref: ./spec/merchant/media/video_upload.yaml
   /v3/smartguide/guides:
     $ref: ./spec/smartguide/guides.yaml
+  /v3/smartguide/guides/{guide_id}:
+    $ref: ./spec/smartguide/guides/{guide_id}.yaml
   /v3/smartguide/guides/{guide_id}/assign:
     $ref: ./spec/smartguide/guides/{guide_id}/assign.yaml

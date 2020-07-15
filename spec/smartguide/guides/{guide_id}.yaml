@@ -1,0 +1,39 @@
+patch:
+  x-role: [服务商, 直连商户]
+  tags:
+    - 经营工具∙支付即服务
+  summary: 服务人员信息更新API
+  description: 用于服务商/用于服务商/商户开发者为商户更新门店服务人员的姓名、头像等信息 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/smartguide/chapter3_4.shtml)
+  parameters:
+    - name: guide_id
+      in: path
+      type: string
+      description: 服务人员ID
+      example: LLA3WJ6DSZUfiaZDS79FH5Wm5m4X69TBic
+      required: true
+    - name: _
+      in: body
+      schema:
+        type: object
+        x-is-sensitive: [name, mobile]
+        properties:
+          sub_mchid:
+            type: string
+            description: 子商户ID
+            example: '1234567890'
+          name:
+            type: string
+            description: 企业微信的员工姓名
+          mobile:
+            type: string
+            description: 手机号码
+          qr_code:
+            type: string
+            format: url
+            description: 员工个人二维码
+          avatar:
+            type: string
+            format: url
+            description: 头像URL
+  responses:
+    204: {}

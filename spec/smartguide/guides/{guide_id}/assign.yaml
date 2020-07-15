@@ -26,12 +26,4 @@ post:
             description: 商户订单号
             example: '20150806125346'
   responses:
-    200:
-      schema:
-        type: object
-        required: [guide_id]
-        properties:
-          guide_id:
-            type: string
-            description: 服务人员ID
-            example: LLA3WJ6DSZUfiaZDS79FH5Wm5m4X69TBic
+    204: {}

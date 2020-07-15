@@ -10,7 +10,7 @@
       html{box-sizing:border-box;overflow:-moz-scrollbars-vertical;overflow-y:scroll}
       *,*:before,*:after{box-sizing:inherit}
       body{margin:0 auto;background:#fafafa}
-      .topbar,.download-contents,.opblock-summary-method,.response-col_description__inner,.response-content-type,.swagger-ui .opblock .opblock-section-header label{display: none}
+      .topbar,.download-contents,.execute-wrapper:empty,.swagger-ui .body-param-options,.response-col_description__inner,.response-content-type,.swagger-ui .opblock .opblock-section-header label{display: none}
       .swagger-ui .info .main .base-url{float:left}
       .swagger-ui .info .main .link{float:right}
       .swagger-ui .info .main:after{content:' ';height:0;font-size:0;clear:both}
@@ -22,7 +22,7 @@
       .swagger-ui .opblock-tag .markdown p{margin-block-start:0;margin-block-end:0}
       .swagger-ui .scheme-container{margin-bottom:10px;padding-bottom:10px}
       .swagger-ui .expand-methods svg,.swagger-ui .expand-operation svg{height:14px}
-      @media (max-width:768px) {.swagger-ui textarea{max-width:100%}.swagger-ui .opblock-tag{padding-right:0}.swagger-ui .opblock .opblock-summary-path{width:60%}}
+      @media (max-width:768px) {.opblock-summary-method{display:none}.swagger-ui textarea{max-width:100%}.swagger-ui .opblock-tag{padding-right:0}.swagger-ui .opblock .opblock-summary-path{width:60%}}
     </style>
   </head>
   <body>

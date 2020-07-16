@@ -1,0 +1,32 @@
+post:
+  x-role: [服务商, 直连商户]
+  tags:
+    - 微信支付分∙免确认模式特有
+  summary: 商户解除用户授权关系API
+  description: 商户通过调用该接口，可主动与用户解除此前授权关系。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter9_1.shtml)
+  parameters:
+    - name: openid
+      in: query
+      type: string
+      description: 用户标识
+      required: true
+    - name: service_id
+      in: query
+      type: string
+      description: 公众账号ID
+      required: true
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required: [appid, reason]
+        properties:
+          appid:
+            type: string
+            description: 公众账号ID
+          reason:
+            type: string
+            description: 撤销原因
+  responses:
+    204: {}

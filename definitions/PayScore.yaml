@@ -1,0 +1,227 @@
+Order:
+  type: object
+  required: [out_order_no, appid, service_id, time_range]
+  properties:
+    out_order_no:
+      type: string
+      description: 商户服务订单号
+      example: 1234323JKHDFE1243252
+    appid:
+      type: string
+      description: 公众账号ID
+      example: wxd678efh567hg6787
+    service_id:
+      type: string
+      description: 服务ID
+      example: '500001'
+    post_payments:
+      type: array
+      items:
+        $ref: '#PostPayment'
+    post_discounts:
+      type: array
+      items:
+        $ref: '#PostDiscount'
+    time_range:
+      type: object
+      description: 服务时间段
+      properties:
+        start_time:
+          type: string
+          pattern: /\d{8}|\d{14}|OnAccept/
+        start_time_remark:
+          type: string
+          maxLength: 20
+        end_time:
+          type: string
+          pattern: /\d{8}|\d{14}/
+        end_time_remark:
+          type: string
+          maxLength: 50
+    location:
+      type: object
+      description: 服务位置
+      properties:
+        start_location:
+          type: string
+        end_location:
+          type: string
+
+ServiceOrder:
+  allOf:
+    - $ref: '#Order'
+    - type: object
+      required: [service_introduction, risk_fund, notify_url, need_user_confirm]
+      properties:
+        service_introduction:
+          type: string
+          description: 服务信息
+          example: 某某酒店
+        risk_fund:
+          type: object
+          description: 订单风险金
+          properties:
+            name:
+              $ref: './Enumerations.yaml#PayScoreRiskFundName'
+            amount:
+              type: integer
+              description: 风险金额
+              example: 10000
+            description:
+              type: string
+              description: 风险说明
+              maxLength: 30
+              example: 就餐的预估费用
+        attach:
+          type: string
+          description: 商户数据包
+          example: Easdfowealsdkjfnlaksjdlfkwqoi&wl3l2sald
+        notify_url:
+          type: string
+          description: 商户回调地址
+          example: https://api.test.com
+
+PostPayment:
+  type: object
+  description: 后付费项目
+  properties:
+    name:
+      type: string
+      description: 付费项目名称
+      maxLength: 20
+      example: 就餐费用, 服务费
+    amount:
+      type: integer
+      description: 金额
+      example: 40000
+    description:
+      type: string
+      description: 计费说明
+      example: 就餐人均100元，服务费：100/小时
+    count:
+      type: integer
+      description: 付费数量
+      example: 4
+
+PostDiscount:
+  type: object
+  description: 后付费商户优惠
+  properties:
+    name:
+      type: string
+      description: 优惠名称
+      maxLength: 20
+      example: 满20减1元
+    description:
+      type: string
+      description: 优惠说明
+      example: 不与其他优惠叠加
+    amount:
+      type: integer
+      description: 优惠金额
+      example: 100
+    count:
+      type: integer
+      description: 优惠数量
+      example: 2
+
+Collection:
+  type: object
+  properties:
+    state:
+      $ref: './Enumerations.yaml#PayScoreCollectionState'
+    total_amount:
+      type: integer
+      description: 总收款金额
+    paying_amount:
+      type: integer
+      description: 待收金额
+    paid_amount:
+      type: integer
+      description: 已收金额
+    details:
+      type: array
+      items:
+        $ref: '#CollectionDetail'
+
+CollectionDetail:
+  type: object
+  properties:
+    seq:
+      type: integer
+      description: 收款序号
+      example: 1
+    amount:
+      type: integer
+      description: 单笔收款金额
+      example: 10000
+    paid_type:
+      $ref: './Enumerations.yaml#PayScoreCollectionPaidType'
+    paid_time:
+      type: string
+      description: 收款成功时间
+      example: '20091225091210'
+    transaction_id:
+      type: string
+      description: 微信支付交易单号
+      example: '15646546545165651651'
+    promotion_detail:
+      type: array
+      items:
+        $ref: '#CollectionPromotionDetail'
+
+CollectionPromotionDetail:
+  type: object
+  properties:
+    coupon_id:
+      type: string
+      description: 券ID
+    name:
+      type: string
+      description: 优惠名称
+    scope:
+      $ref: './Enumerations.yaml#PayScoreCollectionPromotionScope'
+    type:
+      $ref: './Enumerations.yaml#PayScoreCollectionPromotionType'
+    amount:
+      type: integer
+      description: 优惠券面额
+    stock_id:
+      type: string
+      description: 活动ID，批次ID
+    wechatpay_contribute:
+      type: integer
+      description: 微信出资
+    merchant_contribute:
+      type: integer
+      description: 商户出资
+    other_contribute:
+      type: integer
+      description: 其他出资
+    currency:
+      type: string
+      description: 优惠币种
+      example: CNY
+    goods_detail:
+      type: array
+      items:
+        $ref: '#CollectionPromotionGoods'
+
+CollectionPromotionGoods:
+  type: object
+  properties:
+    goods_id:
+      type: string
+      description: 商品编码
+    quantity:
+      type: integer
+      description: 商品数量
+    unit_price:
+      type: integer
+      description: 商品价格
+    discount_amount:
+      type: integer
+      description: 商品优惠金额
+    goods_remark:
+      type: string
+      description: 商品备注

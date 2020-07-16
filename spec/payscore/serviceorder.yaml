@@ -1,0 +1,104 @@
+post:
+  x-role: [服务商, 直连商户]
+  tags:
+    - 微信支付分
+  summary: 创建支付分订单API
+  description: 用户申请使用服务时，商户可通过此接口申请创建微信支付分订单。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter3_1.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        allOf:
+          - $ref: '../../definitions/PayScore.yaml#ServiceOrder'
+          - type: object
+            properties:
+              openid:
+                type: string
+                description: 用户标识
+                example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+              need_user_confirm:
+                type: boolean
+                description: 是否需要用户确认
+  responses:
+    200:
+      schema:
+        allOf:
+          - $ref: '../../definitions/PayScore.yaml#ServiceOrder'
+          - type: object
+            required: [mchid, state, state_description]
+            properties:
+              mchid:
+                type: string
+                description: 商户号
+                example: '1230000109'
+              state:
+                $ref: '../../definitions/Enumerations.yaml#PayScoreState'
+              state_description:
+                $ref: '../../definitions/Enumerations.yaml#PayScoreStateDescription'
+              order_id:
+                type: string
+                description: 微信支付服务订单号
+                example: '15646546545165651651'
+              package:
+                type: string
+                description: 跳转微信侧小程序订单数据
+                example: DJIOSQPYWDxsjdldeuwhdodwxasd_dDiodnwjh9we
+get:
+  x-role: [服务商, 直连商户]
+  tags:
+    - 微信支付分
+  summary: 查询支付分订单API
+  description: 用于查询单笔微信支付分订单详细信息。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter3_2.shtml)
+  parameters:
+    - name: out_order_no
+      in: query
+      type: string
+      description: 商户服务订单号
+    - name: query_id
+      in: query
+      type: string
+      description: 回跳查询ID
+    - name: service_id
+      in: query
+      type: string
+      required: true
+      description: 服务ID
+    - name: appid
+      in: query
+      type: string
+      required: true
+      description: 公众账号ID
+  responses:
+    200:
+      schema:
+        allOf:
+          - $ref: '../../definitions/PayScore.yaml#ServiceOrder'
+          - type: object
+            required: [mchid, state, state_description]
+            properties:
+              mchid:
+                type: string
+                description: 商户号
+                example: '1230000109'
+              state:
+                $ref: '../../definitions/Enumerations.yaml#PayScoreState'
+              state_description:
+                $ref: '../../definitions/Enumerations.yaml#PayScoreStateDescription'
+              order_id:
+                type: string
+                description: 微信支付服务订单号
+                example: '15646546545165651651'
+              total_amount:
+                type: integer
+                description: 商户收款总金额
+                example: 40000
+              need_collection:
+                type: boolean
+                description: 是否需要收款
+              collection:
+                $ref: '../../definitions/PayScore.yaml#Collection'
+              openid:
+                type: string
+                description: 用户标识
+                example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o

@@ -1,0 +1,45 @@
+get:
+  x-role: [服务商, 直连商户]
+  tags:
+    - 微信支付分∙免确认模式特有
+  summary: 查询用户授权状态API
+  description: 用户申请使用服务时，商户可通过此接口查询用户是否“已授权”本服务。在“已授权”状态下的服务，用户才可以申请使用。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter3_8.shtml)
+  parameters:
+    - name: appid
+      in: query
+      type: string
+      description: 公众账号ID
+      required: true
+    - name: service_id
+      in: query
+      type: string
+      description: 服务ID
+      required: true
+    - name: openid
+      in: query
+      type: string
+      description: 用户标识
+      required: true
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - appid
+          - service_id
+          - use_service_state
+        properties:
+          appid:
+            type: string
+            description: 公众账号ID
+            example: wxd678efh567hg6787
+          service_id:
+            type: string
+            description: 服务ID
+            example: '500001'
+          openid:
+            type: string
+            description: 用户标识
+            example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+          use_service_state:
+            $ref: '../../definitions/Enumerations.yaml#PayScoreUserServiceState'

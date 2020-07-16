@@ -1,0 +1,77 @@
+post:
+  x-role: [服务商, 直连商户]
+  tags:
+    - 微信支付分
+  summary: 修改订单金额API
+  description: 完结订单总金额与实际金额不符时，可通过该接口修改订单金额。**前置条件：**服务订单支付状态为待支付 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter3_4.shtml)
+  parameters:
+    - name: out_order_no
+      in: path
+      type: string
+      description: 商户服务订单号
+      required: true
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - appid
+          - service_id
+          - post_payments
+          - total_amount
+          - reason
+        properties:
+          appid:
+            type: string
+            description: 公众账号ID
+            example: wxd678efh567hg6787
+          service_id:
+            type: string
+            description: 服务ID
+            example: '500001'
+          post_payments:
+            type: array
+            items:
+              $ref: '../../../../definitions/PayScore.yaml#PostPayment'
+          post_discounts:
+            type: array
+            items:
+              $ref: '../../../../definitions/PayScore.yaml#PostDiscount'
+          total_amount:
+            type: integer
+            description: 总金额
+            example: 50000
+          reason:
+            type: string
+            description: 修改原因
+            example: 用户投诉
+  responses:
+    200:
+      schema:
+        allOf:
+          - $ref: '../../../../definitions/PayScore.yaml#ServiceOrder'
+          - type: object
+            required: [mchid, state, state_description]
+            properties:
+              mchid:
+                type: string
+                description: 商户号
+                example: '1230000109'
+              state:
+                $ref: '../../../../definitions/Enumerations.yaml#PayScoreState'
+              state_description:
+                $ref: '../../../../definitions/Enumerations.yaml#PayScoreStateDescription'
+              order_id:
+                type: string
+                description: 微信支付服务订单号
+                example: '15646546545165651651'
+              total_amount:
+                type: integer
+                description: 商户收款总金额
+                example: 40000
+              need_collection:
+                type: boolean
+                description: 是否需要收款
+              collection:
+                $ref: '../../../../definitions/PayScore.yaml#Collection'

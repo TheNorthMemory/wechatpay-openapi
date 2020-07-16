@@ -271,3 +271,64 @@ ActivityStatus:
     - STOP_ACT_STATUS      #已暂停
     - OVER_TIME_ACT_STATUS #已过期
     - CREATE_ACT_FAILED    #创建活动失败
+
+PayScoreState:
+  type: string
+  description: 服务订单状态
+  enum:
+    - CREATED #商户已创建服务订单
+    - DOING   #服务订单进行中
+    - DONE    #服务订单完成
+    - REVOKED #商户取消服务订单
+    - EXPIRED #服务订单已失效
+
+PayScoreStateDescription:
+  type: string
+  description: 订单状态说明
+  enum:
+    - USER_CONFIRM #用户确认
+    - MCH_COMPLETE #商户完结
+
+PayScoreRiskFundName:
+  type: string
+  description: 风险金名称
+  enum:
+    - UDEPOSIT            #押金
+    - ADVANCE             #预付款
+    - CASH_DEPOSIT        #保证金
+    - ESTIMATE_ORDER_COST #预估订单费用
+
+PayScoreCollectionState:
+  type: string
+  description: 收款状态
+  enum:
+    - USER_PAYING #待支付
+    - USER_PAID   #已支付
+
+PayScoreCollectionPaidType:
+  type: string
+  description: 收款成功渠道
+  enum:
+    - NEWTON #微信支付分
+    - MCH    #商户渠道
+
+PayScoreCollectionPromotionScope:
+  type: string
+  description: 优惠范围
+  enum:
+    - GLOBAL #全场代金券
+    - SINGLE #单品优惠
+
+PayScoreCollectionPromotionType:
+  type: string
+  description: 优惠类型
+  enum:
+    - CASH   #充值
+    - NOCASH #免充值
+
+PayScoreUserServiceState:
+  type: string
+  description: 用户授权服务情况
+  enum:
+    - UNAVAILABLE #用户未授权服务
+    - AVAILABLE   #用户已授权服务

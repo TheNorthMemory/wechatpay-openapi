@@ -1,0 +1,67 @@
+post:
+  x-role: [服务商, 直连商户]
+  tags:
+    - 微信支付分
+  summary: 同步服务订单信息API
+  description: 由于收款商户进行的某些“线下操作”会导致微信支付侧的订单状态与实际情况不符。**前置条件：**同步商户渠道收款成功信息时，即场景类型=“Order_Paid”，订单的状态需为[FINISHED:商户完结订单] [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter3_6.shtml)
+  parameters:
+    - name: out_order_no
+      in: path
+      type: string
+      description: 商户服务订单号
+      required: true
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        properties:
+          appid:
+            type: string
+            description: 公众账号ID
+            example: wxd678efh567hg6787
+          service_id:
+            type: string
+            description: 服务ID
+            example: '500001'
+          type:
+            type: string
+            description: 场景类型
+            example: Order_Paid
+          detail:
+            type: object
+            properties:
+              paid_time:
+                type: string
+                description: 收款成功时间
+                pattern: /\d{8}|\d{14}/
+                example: '20091225091210'
+  responses:
+    200:
+      schema:
+        allOf:
+          - $ref: '../../../../definitions/PayScore.yaml#ServiceOrder'
+          - type: object
+            required: [mchid, state, state_description]
+            properties:
+              mchid:
+                type: string
+                description: 商户号
+                example: '1230000109'
+              state:
+                $ref: '../../../../definitions/Enumerations.yaml#PayScoreState'
+              state_description:
+                $ref: '../../../../definitions/Enumerations.yaml#PayScoreStateDescription'
+              order_id:
+                type: string
+                description: 微信支付服务订单号
+                example: '15646546545165651651'
+              total_amount:
+                type: integer
+                description: 商户收款总金额
+                example: 40000
+              need_collection:
+                type: boolean
+                description: 是否需要收款
+              collection:
+                $ref: '../../../../definitions/PayScore.yaml#Collection'

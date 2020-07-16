@@ -1,0 +1,65 @@
+post:
+  x-role: [服务商, 直连商户]
+  tags:
+    - 微信支付分
+  summary: 取消支付分订单API
+  description: 微信支付分订单创建之后，由于某些原因导致订单不能正常支付时，可使用此接口取消订单。前置条件：服务订单状态为已创单或进行中 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter3_3.shtml)
+  parameters:
+    - name: out_order_no
+      in: path
+      type: string
+      description: 商户服务订单号
+      required: true
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - appid
+          - service_id
+          - reason
+        properties:
+          appid:
+            type: string
+            description: 公众账号ID
+            example: wxd678efh567hg6787
+          service_id:
+            type: string
+            description: 服务ID
+            example: '500001'
+          reason:
+            type: string
+            description: 取消原因
+            example: 用户投诉
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - appid
+          - mchid
+          - out_order_no
+          - service_id
+          - order_id
+        properties:
+          appid:
+            type: string
+            description: 公众账号ID
+            example: wxd678efh567hg6787
+          mchid:
+            type: string
+            description: 商户号
+            example: '1230000109'
+          out_order_no:
+            type: string
+            description: 商户服务订单号
+            example: '2304203423948239423'
+          service_id:
+            type: string
+            description: 服务ID
+            example: '500001'
+          order_id:
+            type: string
+            description: 微信支付服务订单号
+            example: '15646546545165651651'

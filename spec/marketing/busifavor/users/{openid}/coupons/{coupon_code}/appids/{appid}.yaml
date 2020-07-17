@@ -3,7 +3,7 @@ get:
   tags:
     -  运营工具∙商家券
   summary: 查询用户单张券详情API
-  description: 服务商可通过该接口查询微信用户卡包中某一张商家券的详情信息。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/applyment4sub/chapter3_5.shtml)
+  description: 服务商可通过该接口查询微信用户卡包中某一张商家券的详情信息。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/busifavor/chapter3_5.shtml)
   parameters:
     - name: coupon_code
       in: path

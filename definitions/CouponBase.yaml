@@ -48,10 +48,8 @@ properties:
         properties:
           week_day:
             type: array
-            description: 可用星期数(0代表周日，1代表周一，以此类推)
             items:
-              type: integer
-              enum: [0, 1, 2, 3, 4, 5, 6]
+              $ref: './Enumerations.yaml#Weekday'
           available_day_time:
             type: array
             description: 当天可用时间段

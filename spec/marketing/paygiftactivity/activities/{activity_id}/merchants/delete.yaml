@@ -1,5 +1,5 @@
 post:
-  x-version: [V1.0, 2020年06月09日]
+  x-version: [V1.0, '2020-06-09']
   x-role: [微信支付商户, 服务商, 渠道商]
   tags:
     - 运营工具∙支付有礼
@@ -19,10 +19,17 @@ post:
         properties:
           merchant_id_list:
             type: array
+            minItems: 1
+            maxItems: 500
             items:
               type: string
+              description: 删除的发券商户号
+              example: 100123456
           delete_request_no:
             type: string
+            pattern: /[a-zA-Z0-9\|-_\*]{1,128}/
+            description: 商户请求单号
+            example: 100002322019090134234sfdf
   responses:
     200:
       schema:
@@ -30,6 +37,10 @@ post:
         properties:
           activity_id:
             type: string
+            description: 活动id
+            example: '126002309'
           delete_time:
             type: string
             format: rfc3339
+            description: 删除时间
+            example: '2015-05-20T13:29:35.120+08:00'

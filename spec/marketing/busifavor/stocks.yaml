@@ -3,7 +3,7 @@ post:
   tags:
     -  运营工具∙商家券
   summary: 创建商家券API
-  description: ''
+  description: 服务商可以通过该接口为有需求的商户创建商家券。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/busifavor/chapter3_1.shtml)
   parameters:
     - name: _
       in: body

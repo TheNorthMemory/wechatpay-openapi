@@ -53,18 +53,18 @@ paths:
     $ref: ./spec/apply4sub/sub_merchants/{sub_mchid}/settlement.yaml
   /v3/apply4subject/applyment:
     $ref: ./spec/apply4subject/applyment.yaml
-  /v3/apply4subject/applyment/merchants/{sub_mchid}/state:
-    $ref: ./spec/apply4subject/applyment/merchants/{sub_mchid}/state.yaml
   /v3/apply4subject/applyment/{applyment_id}/cancel:
     $ref: ./spec/apply4subject/applyment/{applyment_id}/cancel.yaml
   /v3/apply4subject/applyment/{business_code}/cancel:
     $ref: ./spec/apply4subject/applyment/{business_code}/cancel.yaml
-  /v3/applyment4sub/applyment/:
-    $ref: ./spec/applyment4sub/applyment/stub.yaml
+  /v3/apply4subject/applyment/merchants/{sub_mchid}/state:
+    $ref: ./spec/apply4subject/applyment/merchants/{sub_mchid}/state.yaml
   /v3/applyment4sub/applyment/applyment_id/{applyment_id}:
     $ref: ./spec/applyment4sub/applyment/applyment_id/{applyment_id}.yaml
   /v3/applyment4sub/applyment/business_code/{business_code}:
     $ref: ./spec/applyment4sub/applyment/business_code/{business_code}.yaml
+  /v3/applyment4sub/applyment/:
+    $ref: ./spec/applyment4sub/applyment/stub.yaml
   /v3/certificates:
     $ref: ./spec/certificates.yaml
   /v3/goldplan/merchants/changecustompagestatus:
@@ -73,14 +73,14 @@ paths:
     $ref: ./spec/goldplan/merchants/changegoldplanstatus.yaml
   /v3/marketing/busifavor/callbacks:
     $ref: ./spec/marketing/busifavor/callbacks.yaml
+  /v3/marketing/busifavor/coupons/{card_id}/send:
+    $ref: ./spec/marketing/busifavor/coupons/{card_id}/send.yaml
   /v3/marketing/busifavor/coupons/associate:
     $ref: ./spec/marketing/busifavor/coupons/associate.yaml
   /v3/marketing/busifavor/coupons/disassociate:
     $ref: ./spec/marketing/busifavor/coupons/disassociate.yaml
   /v3/marketing/busifavor/coupons/use:
     $ref: ./spec/marketing/busifavor/coupons/use.yaml
-  /v3/marketing/busifavor/coupons/{card_id}/send:
-    $ref: ./spec/marketing/busifavor/coupons/{card_id}/send.yaml
   /v3/marketing/busifavor/stocks:
     $ref: ./spec/marketing/busifavor/stocks.yaml
   /v3/marketing/busifavor/stocks/{stock_id}:
@@ -102,7 +102,7 @@ paths:
   /v3/marketing/paygiftactivity/activities/{activity_id}:
     $ref: ./spec/marketing/paygiftactivity/activities/{activity_id}.yaml
   /v3/marketing/paygiftactivity/activities/{activity_id}/goods:
-    $ref: ./spec//marketing/paygiftactivity/activities/{activity_id}/goods.yaml
+    $ref: ./spec/marketing/paygiftactivity/activities/{activity_id}/goods.yaml
   /v3/marketing/paygiftactivity/activities/{activity_id}/merchants:
     $ref: ./spec/marketing/paygiftactivity/activities/{activity_id}/merchants.yaml
   /v3/marketing/paygiftactivity/activities/{activity_id}/merchants/add:
@@ -123,8 +123,6 @@ paths:
     $ref: ./spec/merchant/media/video_upload.yaml
   /v3/payscore/serviceorder:
     $ref: ./spec/payscore/serviceorder.yaml
-  /v3/payscore/serviceorder/direct-complete:
-    $ref: ./spec/payscore/serviceorder/direct-complete.yaml
   /v3/payscore/serviceorder/{out_order_no}/cancel:
     $ref: ./spec/payscore/serviceorder/{out_order_no}/cancel.yaml
   /v3/payscore/serviceorder/{out_order_no}/complete:
@@ -135,6 +133,8 @@ paths:
     $ref: ./spec/payscore/serviceorder/{out_order_no}/pay.yaml
   /v3/payscore/serviceorder/{out_order_no}/sync:
     $ref: ./spec/payscore/serviceorder/{out_order_no}/sync.yaml
+  /v3/payscore/serviceorder/direct-complete:
+    $ref: ./spec/payscore/serviceorder/direct-complete.yaml
   /v3/payscore/user-service-state:
     $ref: ./spec/payscore/user-service-state.yaml
   /v3/payscore/users/{openid}/permissions/{service_id}/terminate:

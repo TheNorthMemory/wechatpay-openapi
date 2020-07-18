@@ -1,5 +1,5 @@
 post:
-  x-version: [V1.0, 2020年2月17日]
+  x-version: [V1.0, 2020.02.17]
   x-role: [直连商户, 服务商, 渠道商]
   tags:
     - 通用接口∙商业支付投诉
@@ -34,7 +34,7 @@ post:
             description: 通知地址
             example: https://www.xxx.com/notify
 get:
-  x-version: [V1.0, 2020年2月17日]
+  x-version: [V1.0, 2020.02.17]
   x-role: [直连商户, 服务商, 渠道商]
   tags:
     - 通用接口∙商业支付投诉
@@ -57,7 +57,7 @@ get:
             description: 通知地址
             example: https://www.xxx.com/notify
 put:
-  x-version: [V1.0, 2020年2月17日]
+  x-version: [V1.0, 2020.02.17]
   x-role: [直连商户, 服务商, 渠道商]
   tags:
     - 通用接口∙商业支付投诉
@@ -92,7 +92,7 @@ put:
             description: 通知地址
             example: https://www.xxx.com/notify
 delete:
-  x-version: [V1.0, 2020年2月17日]
+  x-version: [V1.0, 2020.02.17]
   x-role: [直连商户, 服务商, 渠道商]
   tags:
     - 通用接口∙商业支付投诉

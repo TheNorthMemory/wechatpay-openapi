@@ -1,5 +1,5 @@
 post:
-  x-version: [V1.0, 2019年12月20日]
+  x-version: [V1.0, 2019.12.20]
   x-role: [微信支付商户]
   tags:
     - 运营工具∙商家券
@@ -44,7 +44,7 @@ post:
             description: 通知URL地址
             minLength: 10
 get:
-  x-version: [V1.0, 2019年12月20日]
+  x-version: [V1.0, 2019.12.20]
   x-role: [微信支付商户]
   tags:
     - 运营工具∙商家券

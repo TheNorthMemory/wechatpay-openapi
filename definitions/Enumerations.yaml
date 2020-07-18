@@ -390,3 +390,25 @@ FavorCouponStatus:
     - SENDED  #可用
     - USED    #已实扣
     - EXPIRED #已过期
+
+BillType:
+  type: string
+  description: 账单类型
+  enum:
+    - ALL     #返回当日所有订单信息（不含充值退款订单）
+    - SUCCESS #返回当日成功支付的订单（不含充值退款订单）
+    - REFUND  #返回当日退款订单（不含充值退款订单）
+
+BillTarType:
+  type: string
+  description: 压缩类型
+  enum:
+    - GZIP #返回格式为.gzip的压缩包账单
+
+BillAccountType:
+  type: string
+  description: 资金账户类型
+  enum:
+    - BASIC     #基本账户
+    - OPERATION #运营账户
+    - FEES      #手续费账户

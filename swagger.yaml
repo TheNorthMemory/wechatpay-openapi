@@ -66,6 +66,12 @@ paths:
     $ref: ./spec/applyment4sub/applyment/business_code/{business_code}.yaml
   /v3/applyment4sub/applyment/:
     $ref: ./spec/applyment4sub/applyment/stub.yaml
+  /v3/bill/fundflowbill:
+    $ref: ./spec/bill/fundflowbill.yaml
+  /v3/bill/tradebill:
+    $ref: ./spec/bill/tradebill.yaml
+  /v3/billdownload/file:
+    $ref: ./spec/billdownload/file.yaml
   /v3/certificates:
     $ref: ./spec/certificates.yaml
   /v3/goldplan/merchants/changecustompagestatus:

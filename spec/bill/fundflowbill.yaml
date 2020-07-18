@@ -1,0 +1,56 @@
+get:
+  x-version: [V1.0, 2019.09.16]
+  x-role: [电商平台, 服务商, 直连商户]
+  tags:
+    - 基础支付∙账单
+  summary: 申请资金账单API
+  description: 微信支付按天提供微信支付账户的资金流水账单文件，商户可以通过该接口获取账单文件的下载地址。文件内包含该账户资金操作相关的业务单号、收支金额、记账时间等信息，供商户进行核对。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/bill/chapter3_2.shtml)
+  parameters:
+    - name: bill_date
+      in: query
+      required: true
+      type: string
+      description: 账单日期
+      example: '2019-06-11'
+    - name: sub_mchid
+      in: query
+      nullable: true
+      type: string
+      description: 二级商户号
+    - name: account_type
+      in: query
+      nullable: true
+      type: string
+      description: 资金账户类型
+      default: BASIC
+      allOf:
+        - $ref: '../../definitions/Enumerations.yaml#BillAccountType'
+    - name: tar_type
+      in: query
+      nullable: true
+      type: string
+      description: 压缩类型
+      example: GZIP
+      allOf:
+        - $ref: '../../definitions/Enumerations.yaml#BillTarType'
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - hash_type
+          - hash_value
+          - download_url
+        properties:
+          hash_type:
+            type: string
+            description: 哈希类型
+            example: SHA1
+          hash_value:
+            type: string
+            description: 哈希值
+            example: 79bb0f45fc4c42234a918000b2668d689e2bde04
+          download_url:
+            type: string
+            description: 账单下载地址
+            example: 'https://api.mch.weixin.qq.com/v3/billdownload/file?token=xxx'

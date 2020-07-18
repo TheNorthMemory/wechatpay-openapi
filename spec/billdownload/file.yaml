@@ -1,0 +1,21 @@
+get:
+  x-version: [V1.0, 2019.09.16]
+  x-role: [电商平台, 服务商, 直连商户]
+  tags:
+    - 基础支付∙账单
+  summary: 下载账单API
+  description: 下载账单API为通用接口，交易/资金账单都可以通过该接口获取到对应的账单。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/bill/chapter3_3.shtml)
+  produces:
+    - text/plain
+    - application/x-gzip
+  parameters:
+    - name: token
+      in: query
+      required: true
+      type: string
+    - name: tartype
+      in: query
+      nullable: true
+      type: string
+  responses:
+    200: {}

@@ -1,0 +1,45 @@
+post:
+  x-version: [V1.0, 2019.09.27]
+  x-role: [直连商户, 服务商, 渠道商]
+  tags:
+    - 运营工具∙代金券
+  summary: 设置消息通知地址API
+  description: 用于设置接收营销事件通知的URL，可接收营销相关的事件通知，包括核销、发放、退款等。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/convention/chapter3_12.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - mchid
+          - notify_url
+        properties:
+          mchid:
+            type: string
+            description: 商户号
+            example: '9856888'
+          notify_url:
+            type: string
+            description: 通知url地址
+            example: 'https://pay.weixin.qq.com'
+          switch:
+            type: boolean
+            description: 回调开关
+            example: 'true'
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - update_time
+          - notify_url
+        properties:
+          update_time:
+            type: string
+            description: 修改时间
+            example: '2015-05-20T13:29:35.120+08:00'
+          notify_url:
+            type: string
+            description: 通知地址
+            example: api.weixin.qq.com

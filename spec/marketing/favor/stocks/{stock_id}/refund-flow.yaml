@@ -1,0 +1,34 @@
+get:
+  x-version: [V1.0, 2019.09.29]
+  x-role: [直连商户, 服务商, 渠道商]
+  tags:
+    - 运营工具∙代金券
+  summary: 下载批次退款明细API
+  description: 可获取到某批次的退款明细数据，包括订单号、单品信息、银行流水号等，用于对账/数据分析。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/convention/chapter3_11.shtml)
+  parameters:
+    - name: stock_id
+      in: path
+      required: true
+      type: string
+      description: 批次号
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - url
+          - hash_value
+          - hash_type
+        properties:
+          url:
+            type: string
+            description: 下载链接
+            example: 'download://example.csv'
+          hash_value:
+            type: string
+            description: 安全校验码
+            example: 8ae0eb442c408d2e90d669d6f4ad6b7e6e049d6f
+          hash_type:
+            type: string
+            description: 哈希算法类型
+            example: SHA1

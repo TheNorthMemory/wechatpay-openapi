@@ -344,3 +344,49 @@ PayScoreUserServiceState:
   enum:
     - UNAVAILABLE #用户未授权服务
     - AVAILABLE   #用户已授权服务
+
+FavorTradeType:
+  type: string
+  description: 支付方式
+  enum:
+    - MICROAPP #小程序支付
+    - APPPAY   #APP支付
+    - PPAY     #免密支付
+    - CARD     #刷卡支付
+    - FACE     #人脸支付
+    - OTHER    #其他支付
+
+FavorStockType:
+  type: string
+  description: 批次类型
+  enum:
+    - NORMAL       #固定面额满减券批次
+    - DISCOUNT     #折扣券批次
+    - EXCHAHGE     #换购券批次
+    - RANDOM       #千人千面券批次
+    - DISCOUNT_CUT #立减与折扣
+
+FavorStockStatus:
+  type: string
+  description: 批次状态
+  enum:
+    - unactivated #未激活
+    - audit       #审核中
+    - running     #运行中
+    - stoped      #已停止
+    - paused      #暂停发放
+
+FavorCouponType:
+  type: string
+  description: 券类型
+  enum:
+    - NORMAL #满减券
+    - CUT_TO #减至券
+
+FavorCouponStatus:
+  type: string
+  description: 代金券状态
+  enum:
+    - SENDED  #可用
+    - USED    #已实扣
+    - EXPIRED #已过期

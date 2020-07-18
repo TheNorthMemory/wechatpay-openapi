@@ -1,0 +1,31 @@
+get:
+  x-version: [V1.0, 2019.09.27]
+  x-role: [直连商户, 服务商, 渠道商]
+  tags:
+    - 运营工具∙代金券
+  summary: 查询批次详情API
+  description: 通过此接口可查询批次信息，包括批次的配置信息以及批次概况数据。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/convention/chapter3_5.shtml)
+  parameters:
+    - name: stock_id
+      in: path
+      required: true
+      type: string
+      description: 批次号
+    - name: stock_creator_mchid
+      in: query
+      required: true
+      type: string
+      description: 创建批次的商户号
+  responses:
+    200:
+      schema:
+        allOf:
+          - $ref: '../../../../definitions/FavorCouponStock.yaml#StockBase'
+          - $ref: '../../../../definitions/FavorCouponStock.yaml#StockOwner'
+          - type: object
+            required:
+              - description
+            properties:
+              distributed_coupons:
+                type: integer
+                description: 已发券数量

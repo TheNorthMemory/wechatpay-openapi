@@ -1,0 +1,407 @@
+StockOwner:
+  type: object
+  properties:
+    stock_id:
+      type: string
+      description: 批次号
+    stock_creator_mchid:
+      type: string
+      description: 创建批次的商户号
+    status:
+      $ref: './Enumerations.yaml#FavorStockStatus'
+    description:
+      type: string
+      description: 使用说明
+      example: 微信支付营销
+    create_time:
+      type: string
+      format: rfc3339
+      description: 创建时间
+      example: '2015-05-20T13:29:35.120+08:00'
+    start_time:
+      type: string
+      format: rfc3339
+      description: 激活批次的时间
+      example: '2015-05-20T13:29:35.120+08:00'
+    stop_time:
+      type: string
+      format: rfc3339
+      description: 终止批次的时间
+      example: '2015-05-20T13:29:35.120+08:00'
+    singleitem:
+      type: boolean
+      description: 是否单品优惠
+    cut_to_message:
+      $ref: '#CutToMessage'
+
+StockBase:
+  type: object
+  required:
+    - stock_name
+    - available_begin_time
+    - available_end_time
+    - stock_use_rule
+    - no_cash
+    - stock_type
+  properties:
+    stock_name:
+      type: string
+      description: 批次名称
+      example: 微信支付代金券批次
+    available_begin_time:
+      type: string
+      format: rfc3339
+      description: 开始时间
+      example: '2015-05-20T13:29:35.120+08:00'
+    available_end_time:
+      type: string
+      format: rfc3339
+      description: 结束时间
+      example: '2015-05-20T13:29:35.120+08:00'
+    stock_use_rule:
+      $ref: '#StockUseRule'
+    no_cash:
+      type: boolean
+      description: 是否无资金流
+    stock_type:
+      $ref: './Enumerations.yaml#FavorStockType'
+
+StockExtra:
+  type: object
+  required:
+    - belong_merchant
+    - coupon_use_rule
+    - out_request_no
+  properties:
+    comment:
+      type: string
+      description: 批次备注
+      example: 零售批次
+    belong_merchant:
+      type: string
+      description: 归属商户号
+      example: '98568865'
+    pattern_info:
+      $ref: '#DisplayPatternInfo'
+    coupon_use_rule:
+      $ref: '#CouponUseRule'
+    out_request_no:
+      type: string
+      description: 商户单据号
+    ext_info:
+      type: string
+      description: 扩展属性
+      example: '{"exinfo1":"1234","exinfo2":"3456"}'
+
+StockUseRule:
+  type: object
+  description: 发放规则
+  required:
+    - max_coupons
+    - max_amount
+    - max_coupons_per_user
+    - natural_person_limit
+    - prevent_api_abuse
+  properties:
+    max_coupons:
+      type: integer
+      description: 发放总上限
+    max_amount:
+      type: integer
+      description: 总预算
+    max_amount_by_day:
+      type: integer
+      description: 单天发放上限金额
+    max_coupons_per_user:
+      type: integer
+      description: 单个用户可领个数
+    natural_person_limit:
+      type: boolean
+      description: 是否开启自然人限制
+    prevent_api_abuse:
+      type: boolean
+      description: api发券防刷
+
+DisplayPatternInfo:
+  type: object
+  description: 样式信息
+  properties:
+    description:
+      type: string
+      description: 使用说明
+    merchant_logo:
+      type: string
+      format: MediaUrl
+      description: 商户logo
+    merchant_name:
+      type: string
+      description: 商户名称
+    background_color:
+      $ref: './Enumerations.yaml#BackgroundColor'
+    coupon_image:
+      type: string
+      format: MediaUrl
+      description: 券详情图片
+
+CouponUseRule:
+  type: object
+  description: 核销规则
+  required:
+    - coupon_available_time
+    - use_method
+  properties:
+    coupon_available_time:
+      $ref: '#CouponAvailableTime'
+    fixed_normal_coupon:
+      $ref: '#FixedNormalCoupon'
+    discount_coupon:
+      $ref: '#DiscountCoupon'
+    exchange_coupon:
+      $ref: '#ExchangeCoupon'
+    goods_tag:
+      type: array
+      maxItems: 50
+      items:
+        type: string
+        description: 订单优惠标记
+        maxLength: 128
+        example: '123321'
+    limit_pay:
+      type: array
+      items:
+        type: string
+        description: 指定支付方式
+        example: ICBC_CREDIT
+    limit_card:
+      $ref: '#LimitCard'
+    trade_type:
+      type: array
+      items:
+        $ref: './Enumerations.yaml#FavorTradeType'
+    available_items:
+      type: array
+      maxItems: 50
+      items:
+        type: string
+        description: 可核销商品编码
+        maxLength: 128
+        example: '123321'
+    unavailable_items:
+      type: array
+      maxItems: 50
+      items:
+        type: string
+        description: 不参与优惠商品编码
+        maxLength: 128
+        example: '789987'
+    available_merchants:
+      type: array
+      maxItems: 50
+      items:
+        type: string
+        description: 可核销商户号
+        maxLength: 20
+        example: '9856000'
+
+CouponAvailableTime:
+  type: object
+  description: 券可核销时间
+  properties:
+    available_begin_time:
+      type: string
+      format: rfc3339
+      description: 开始时间
+    available_end_time:
+      type: string
+      format: rfc3339
+      description: 结束时间
+    fix_available_time:
+      $ref: '#FixAvailableTime'
+    second_day_available:
+      type: boolean
+      description: 领取第二天生效
+    available_time_after_receive:
+      type: integer
+      description: 领取后有效时间
+
+FixAvailableTime:
+  type: object
+  description: 固定时间段可用
+  properties:
+    available_week_day:
+      type: array
+      items:
+        $ref: './Enumerations.yaml#Weekday'
+    begin_time:
+      type: integer
+      minimum: 0
+      maximum: 86400
+      example: 3600
+      description: 当天开始时间
+    end_time:
+      type: integer
+      minimum: 1
+      maximum: 86399
+      example: 86399
+      description: 当天结束时间
+
+FixedNormalCoupon:
+  type: object
+  description: 固定面额满减券使用规则
+  required:
+    - coupon_amount
+    - transaction_minimum
+  properties:
+    coupon_amount:
+      type: integer
+      description: 面额
+    transaction_minimum:
+      type: integer
+      description: 门槛
+
+DiscountCoupon:
+  type: object
+  description: 折扣券使用规则
+  properties:
+    discount_amount_max:
+      type: integer
+      description: 最高折扣金额
+    discount_percent:
+      type: integer
+      description: 折扣百分比
+    transaction_minimum:
+      type: integer
+      description: 门槛
+
+ExchangeCoupon:
+  type: object
+  description: 换购券使用规则
+  properties:
+    exchange_price:
+      type: integer
+      description: 单品换购价
+    transaction_minimum:
+      type: integer
+      description: 消费门槛
+
+LimitCard:
+  type: object
+  description: 指定银行卡BIN
+  properties:
+    name:
+      type: string
+      description: 银行卡名称
+      example: 精粹白金
+    bin:
+      type: array
+      description: 指定卡BIN
+      maxItems: 10
+      items:
+        type: string
+        minLength: 6
+        maxLength: 9
+        example: '62123456'
+
+# @see https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/convention/chapter3_4.shtml
+CutToMessage:
+  type: object
+  description: 减至批次特定信息
+  properties:
+    single_price_max:
+      type: integer
+      description: 可用优惠的商品最高单价
+    cut_to_price:
+      type: integer
+      description: 减至后的优惠单价
+
+CouponOwner:
+  type: object
+  properties:
+    stock_creator_mchid:
+      type: string
+      description: 创建批次的商户号
+    stock_id:
+      type: string
+      description: 批次号
+    coupon_id:
+      type: string
+      description: 代金券id
+    coupon_name:
+      type: string
+      description: 代金券名称
+      example: 微信支付代金券
+    status:
+      $ref: './Enumerations.yaml#FavorCouponStatus'
+    description:
+      type: string
+      description: 使用说明
+      example: 微信支付营销
+    create_time:
+      type: string
+      format: rfc3339
+      description: 领券时间
+      example: '2015-05-20T13:29:35.120+08:00'
+    coupon_type:
+      $ref: './Enumerations.yaml#FavorCouponType'
+    start_time:
+      type: string
+      format: rfc3339
+      description: 激活批次的时间
+      example: '2015-05-20T13:29:35.120+08:00'
+    stop_time:
+      type: string
+      format: rfc3339
+      description: 终止批次的时间
+      example: '2015-05-20T13:29:35.120+08:00'
+    singleitem:
+      type: boolean
+      description: 是否单品优惠
+    cut_to_message:
+      $ref: '#CutToMessage'
+    available_begin_time:
+      type: string
+      format: rfc3339
+      description: 可用开始时间
+      example: '2015-05-20T13:29:35.120+08:00'
+    available_end_time:
+      type: string
+      format: rfc3339
+      description: 可用结束时间
+      example: '2015-05-20T13:29:35.120+08:00'
+    normal_coupon_information:
+      $ref: '#FixedNormalCoupon'
+    consume_information:
+      $ref: '#CouponConsumeInfo'
+
+CouponConsumeInfo:
+  type: object
+  description: 已实扣代金券核销信息
+  properties:
+    consume_time:
+      type: string
+      format: rfc3339
+      description: 核销时间
+      example: '2015-05-20T13:29:35.120+08:00'
+    consume_mchid:
+      type: string
+      description: 核销商户号
+    transaction_id:
+      type: string
+      description: 核销商户号
+    goods_detail:
+      type: array
+      items:
+        $ref: '#CouponConsumeGoodsDetail'
+
+CouponConsumeGoodsDetail:
+  type: object
+  description: 单品信息
+  properties:
+    goods_id:
+      type: string
+    quantity:
+      type: integer
+    price:
+      type: integer
+    discount_amount:
+      type: integer

@@ -1,0 +1,134 @@
+post:
+  x-version: [V1.0, 2019.09.27]
+  x-role: [直连商户, 服务商, 渠道商]
+  tags:
+    - 运营工具∙代金券
+  summary: 发放代金券API
+  description: 商户平台/API完成制券后，可使用发放代金券接口发券。通过调用此接口可发放指定批次给指定用户，发券场景可以是小程序、H5、APP等。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/convention/chapter3_2.shtml)
+  parameters:
+    - name: openid
+      in: path
+      required: true
+      type: string
+      description: 用户openid
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - stock_id
+          - openid
+          - out_request_no
+          - appid
+          - stock_creator_mchid
+        properties:
+          stock_id:
+            type: string
+            description: 批次号
+            example: '9856000'
+          out_request_no:
+            type: string
+            description: 商户单据号
+            example: '89560002019101000121'
+          appid:
+            type: string
+            description: 公众账号ID
+            example: wx233544546545989
+          stock_creator_mchid:
+            type: string
+            description: 创建批次的商户号
+            example: '8956000'
+          coupon_value:
+            type: integer
+            description: 指定面额发券，面额
+            example: 100
+          coupon_minimum:
+            type: integer
+            description: 指定面额发券，券门槛
+            example: 100
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - coupon_id
+        properties:
+          coupon_id:
+            type: string
+            description: 代金券id
+            example: '9867041'
+get:
+  x-version: [V1.0, 2019.09.27]
+  x-role: [直连商户, 服务商, 渠道商]
+  tags:
+    - 运营工具∙代金券
+  summary: 根据商户号查用户的券
+  description: 可通过该接口查询用户在某商户号可用的全部券，可用于商户的小程序/H5中，用户"我的代金券"或"提交订单页"展示优惠信息。无法查询到微信支付立减金。本接口查不到用户的微信支付立减金（又称“全平台通用券”），即在所有商户都可以使用的券，例如：摇摇乐红包 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/convention/chapter3_9.shtml)
+  parameters:
+    - name: openid
+      in: path
+      required: true
+      type: string
+      description: 用户openid
+    - name: appid
+      in: query
+      required: true
+      type: string
+      description: 公众账号ID
+    - name: stock_id
+      in: query
+      nullable: true
+      type: string
+      description: 批次号
+    - name: status
+      in: query
+      nullable: true
+      allOf:
+        - $ref: '../../../../../definitions/Enumerations.yaml#FavorCouponStatus'
+    - name: creator_mchid
+      in: query
+      nullable: true
+      type: string
+      description: 创建批次的商户号
+    - name: sender_mchid
+      in: query
+      nullable: true
+      type: string
+      description: 批次发放商户号
+    - name: available_mchid
+      in: query
+      nullable: true
+      type: string
+      description: 可用商户号
+    - name: offset
+      in: query
+      nullable: true
+      type: integer
+      default: 0
+      description: 分页页码
+    - name: limit
+      in: query
+      nullable: true
+      type: integer
+      default: 20
+      description: 分页大小
+  responses:
+    200:
+      schema:
+        type: object
+        required: [total_count, offset, limit, data]
+        properties:
+          total_count:
+            type: integer
+            description: 总数量
+          offset:
+            type: integer
+            description: 分页页码
+          limit:
+            type: integer
+            description: 分页大小
+          data:
+            type: array
+            items:
+              $ref: '../../../../../definitions/FavorCouponStock.yaml#CouponOwner'

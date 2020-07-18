@@ -1,0 +1,27 @@
+get:
+  x-version: [V1.0, 2019.09.27]
+  x-role: [直连商户, 服务商, 渠道商]
+  tags:
+    - 运营工具∙代金券
+  summary: 查询代金券详情API
+  description: 通过此接口可查询代金券信息，包括代金券的基础信息、状态。如代金券已核销，会包括代金券核销的订单信息（订单号、单品信息等）。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/convention/chapter3_6.shtml)
+  parameters:
+    - name: openid
+      in: path
+      required: true
+      type: string
+      description: 用户openid
+    - name: coupon_id
+      in: path
+      required: true
+      type: string
+      description: 代金券id
+    - name: appid
+      in: query
+      required: true
+      type: string
+      description: 公众账号ID
+  responses:
+    200:
+      schema:
+        $ref: '../../../../../../definitions/FavorCouponStock.yaml#CouponOwner'

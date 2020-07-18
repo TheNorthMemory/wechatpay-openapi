@@ -1,0 +1,32 @@
+post:
+  x-version: [V1.3, 2020.06.01]
+  x-role: [直连商户, 服务商, 渠道商]
+  tags:
+    - 运营工具∙代金券
+  summary: 创建代金券批次API
+  description: 通过调用此接口可创建代金券批次，包括预充值&免充值类型。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/convention/chapter3_1.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        allOf:
+          - $ref: '../../../definitions/FavorCouponStock.yaml#StockBase'
+          - $ref: '../../../definitions/FavorCouponStock.yaml#StockExtra'
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - stock_id
+          - create_time
+        properties:
+          stock_id:
+            type: string
+            description: 批次号
+            example: '98065001'
+          create_time:
+            type: string
+            format: rfc3339
+            description: 创建时间
+            example: '2015-05-20T13:29:35.120+08:00'

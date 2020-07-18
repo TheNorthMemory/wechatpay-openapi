@@ -1,0 +1,42 @@
+post:
+  x-version: [V1.0, 2019.10.22]
+  x-role: [直连商户, 服务商, 渠道商]
+  tags:
+    - 运营工具∙代金券
+  summary: 重启代金券批次API
+  description: 通过此接口可重启指定代金券批次。重启后，该代金券批次可以再次发放。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/convention/chapter3_14.shtml)
+  parameters:
+    - name: stock_id
+      in: path
+      required: true
+      type: string
+      description: 批次号
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - stock_creator_mchid
+        properties:
+          stock_creator_mchid:
+            type: string
+            description: 创建批次的商户号
+            example: '8956000'
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - start_time
+          - stock_id
+        properties:
+          start_time:
+            type: string
+            format: rfc3339
+            description: 生效时间
+            example: '2015-05-20T13:29:35.120+08:00'
+          stock_id:
+            type: string
+            description: 批次号
+            example: '9865000'

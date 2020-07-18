@@ -91,8 +91,34 @@ paths:
     $ref: ./spec/marketing/busifavor/users/{openid}/coupons.yaml
   /v3/marketing/busifavor/users/{openid}/coupons/{coupon_code}/appids/{appid}:
     $ref: ./spec/marketing/busifavor/users/{openid}/coupons/{coupon_code}/appids/{appid}.yaml
+  /v3/marketing/favor/callbacks:
+    $ref: ./spec/marketing/favor/callbacks.yaml
+  /v3/marketing/favor/coupon-stocks:
+    $ref: ./spec/marketing/favor/coupon-stocks.yaml
   /v3/marketing/favor/media/image-upload:
     $ref: ./spec/marketing/favor/media/image-upload.yaml
+  /v3/marketing/favor/stocks:
+    $ref: ./spec/marketing/favor/stocks.yaml
+  /v3/marketing/favor/stocks/{stock_id}:
+    $ref: ./spec/marketing/favor/stocks/{stock_id}.yaml
+  /v3/marketing/favor/stocks/{stock_id}/items:
+    $ref: ./spec/marketing/favor/stocks/{stock_id}/items.yaml
+  /v3/marketing/favor/stocks/{stock_id}/merchants:
+    $ref: ./spec/marketing/favor/stocks/{stock_id}/merchants.yaml
+  /v3/marketing/favor/stocks/{stock_id}/pause:
+    $ref: ./spec/marketing/favor/stocks/{stock_id}/pause.yaml
+  /v3/marketing/favor/stocks/{stock_id}/refund-flow:
+    $ref: ./spec/marketing/favor/stocks/{stock_id}/refund-flow.yaml
+  /v3/marketing/favor/stocks/{stock_id}/restart:
+    $ref: ./spec/marketing/favor/stocks/{stock_id}/restart.yaml
+  /v3/marketing/favor/stocks/{stock_id}/start:
+    $ref: ./spec/marketing/favor/stocks/{stock_id}/start.yaml
+  /v3/marketing/favor/stocks/{stock_id}/use-flow:
+    $ref: ./spec/marketing/favor/stocks/{stock_id}/use-flow.yaml
+  /v3/marketing/favor/users/{openid}/coupons:
+    $ref: ./spec/marketing/favor/users/{openid}/coupons.yaml
+  /v3/marketing/favor/users/{openid}/coupons/{coupon_id}:
+    $ref: ./spec/marketing/favor/users/{openid}/coupons/{coupon_id}.yaml
   /v3/marketing/partnerships/build:
     $ref: ./spec/marketing/partnerships/build.yaml
   /v3/marketing/partnerships/terminate:

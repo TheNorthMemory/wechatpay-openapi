@@ -1,0 +1,34 @@
+post:
+  x-version: [V1.2, 2020.06.09]
+  x-role: [电商平台, 服务商, 直连商户]
+  tags:
+    - 基础支付∙合单支付
+  summary: 合单下单-H5支付API
+  description: 使用合单支付接口，用户只输入一次密码，即可完成多个订单的支付。目前最多一次可支持50笔订单进行合单支付。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/combine/chapter3_9.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        allOf:
+          - $ref: '../../definitions/Transaction.yaml#CombinationBase'
+          - type: object
+            required:
+              - scene_info
+            properties:
+              scene_info:
+                type: object
+                properties:
+                  h5_info:
+                    $ref: '../../definitions/Transaction.yaml#H5Info'
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - h5_url
+        properties:
+          h5_url:
+            type: string
+            description: 支付跳转链接
+            example: 'https://wx.tenpay.com/cgi-bin/mmpayweb-bin/checkmweb?prepay_id=wx2016121516420242444321ca0631331346&package=1405458241'

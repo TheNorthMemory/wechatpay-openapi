@@ -1,0 +1,29 @@
+get:
+  x-version: [V1.1, 2020.03.27]
+  x-role: [电商平台, 服务商, 直连商户]
+  tags:
+    - 基础支付∙合单支付
+  summary: 合单查询订单API
+  description: 电商平台通过合单查询订单API查询订单状态，完成下一步的业务逻辑。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/combine/chapter3_3.shtml)
+  parameters:
+    - name: combine_out_trade_no
+      in: path
+      type: string
+      required: true
+      description: 合单商户订单号
+  responses:
+    200:
+      schema:
+        allOf:
+          - $ref: '../../../definitions/Transaction.yaml#CombinationBase'
+          - type: object
+            properties:
+              sub_orders:
+                type: array
+                items:
+                  allOf:
+                    - $ref: '../../../definitions/Transaction.yaml#TransactionOwner'
+                    - type: object
+                      properties:
+                        amount:
+                          $ref: '../../../definitions/Transaction.yaml#PayerAmount'

@@ -1,0 +1,26 @@
+post:
+  x-version: [V1.0, 2020.05.26]
+  x-role: [服务商]
+  tags:
+    - 基础支付∙普通支付∙服务商模式
+  summary: Native下单API
+  description: 除付款码支付场景以外，商户系统先调用该接口在微信支付服务后台生成预支付交易单，返回正确的预支付交易会话标识后再按Native、JSAPI、APP等不同场景生成交易串调起支付。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transactions/chapter5_3.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        allOf:
+          - $ref: '../../../../definitions/Transaction.yaml#TransactionServiceProvider'
+          - $ref: '../../../../definitions/Transaction.yaml#TransactionBase'
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - code_url
+        properties:
+          code_url:
+            type: string
+            description: 二维码链接
+            example: 'weixin://wxpay/bizpayurl/up?pr=NwY5Mz9&groupid=00'

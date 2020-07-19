@@ -1,0 +1,51 @@
+post:
+  x-version: [V1.1, 2020.03.31]
+  x-role: [电商平台, 服务商, 直连商户]
+  tags:
+    - 基础支付∙合单支付
+  summary: 合单关闭订单API
+  description: 合单支付订单只能使用此合单关单api完成关单。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/combine/chapter3_4.shtml)
+  parameters:
+    - name: combine_out_trade_no
+      in: path
+      type: string
+      required: true
+      description: 合单商户订单号
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - combine_appid
+          - sub_orders
+        properties:
+          combine_appid:
+            type: string
+            description: 合单商户appid
+            example: wxd678efh567hg6787
+          sub_orders:
+            type: array
+            description: 子单信息
+            maxItems: 50
+            items:
+              type: object
+              required:
+                - mchid
+                - out_trade_no
+                - sub_mchid
+              properties:
+                mchid:
+                  type: string
+                  description: 子单商户号
+                  example: '1900000109'
+                out_trade_no:
+                  type: string
+                  description: 子单商户订单号
+                  example: '20150806125346'
+                sub_mchid:
+                  type: string
+                  description: 二级商户号
+                  example: '1900000109'
+  responses:
+    204: {}

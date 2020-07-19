@@ -35,6 +35,10 @@ produces:
 tags:
   - name: 微信支付分
   - name: 微信支付分∙免确认模式特有
+  - name: 基础支付∙普通支付∙直连模式
+  - name: 基础支付∙普通支付∙服务商模式
+  - name: 基础支付∙合单支付
+  - name: 基础支付∙账单
   - name: 商户进件∙特约商户进件
   - name: 商户进件∙通用接口
   - name: 运营工具∙代金券
@@ -74,6 +78,18 @@ paths:
     $ref: ./spec/billdownload/file.yaml
   /v3/certificates:
     $ref: ./spec/certificates.yaml
+  /v3/combine-transactions/app:
+    $ref: ./spec/combine-transactions/app.yaml
+  /v3/combine-transactions/h5:
+    $ref: ./spec/combine-transactions/h5.yaml
+  /v3/combine-transactions/jsapi:
+    $ref: ./spec/combine-transactions/jsapi.yaml
+  /v3/combine-transactions/native:
+    $ref: ./spec/combine-transactions/native.yaml
+  /v3/combine-transactions/out-trade-no/{combine_out_trade_no}:
+    $ref: ./spec/combine-transactions/out-trade-no/{combine_out_trade_no}.yaml
+  /v3/combine-transactions/out-trade-no/{combine_out_trade_no}/close:
+    $ref: ./spec/combine-transactions/out-trade-no/{combine_out_trade_no}/close.yaml
   /v3/goldplan/merchants/changecustompagestatus:
     $ref: ./spec/goldplan/merchants/changecustompagestatus.yaml
   /v3/goldplan/merchants/changegoldplanstatus:
@@ -154,6 +170,34 @@ paths:
     $ref: ./spec/merchant/media/upload.yaml
   /v3/merchant/media/video_upload:
     $ref: ./spec/merchant/media/video_upload.yaml
+  /v3/pay/partner/transactions/app:
+    $ref: ./spec/pay/partner/transactions/app.yaml
+  /v3/pay/partner/transactions/h5:
+    $ref: ./spec/pay/partner/transactions/h5.yaml
+  /v3/pay/partner/transactions/id/{transaction_id}:
+    $ref: ./spec/pay/partner/transactions/id/{transaction_id}.yaml
+  /v3/pay/partner/transactions/jsapi:
+    $ref: ./spec/pay/partner/transactions/jsapi.yaml
+  /v3/pay/partner/transactions/native:
+    $ref: ./spec/pay/partner/transactions/native.yaml
+  /v3/pay/partner/transactions/out-trade-no/{out_trade_no}:
+    $ref: ./spec/pay/partner/transactions/out-trade-no/{out_trade_no}.yaml
+  /v3/pay/partner/transactions/out-trade-no/{out_trade_no}/close:
+    $ref: ./spec/pay/partner/transactions/out-trade-no/{out_trade_no}/close.yaml
+  /v3/pay/transactions/app:
+    $ref: ./spec/pay/transactions/app.yaml
+  /v3/pay/transactions/h5:
+    $ref: ./spec/pay/transactions/h5.yaml
+  /v3/pay/transactions/id/{transaction_id}:
+    $ref: ./spec/pay/transactions/id/{transaction_id}.yaml
+  /v3/pay/transactions/jsapi:
+    $ref: ./spec/pay/transactions/jsapi.yaml
+  /v3/pay/transactions/native:
+    $ref: ./spec/pay/transactions/native.yaml
+  /v3/pay/transactions/out-trade-no/{out_trade_no}:
+    $ref: ./spec/pay/transactions/out-trade-no/{out_trade_no}.yaml
+  /v3/pay/transactions/out-trade-no/{out_trade_no}/close:
+    $ref: ./spec/pay/transactions/out-trade-no/{out_trade_no}/close.yaml
   /v3/payscore/serviceorder:
     $ref: ./spec/payscore/serviceorder.yaml
   /v3/payscore/serviceorder/{out_order_no}/cancel:

@@ -1,0 +1,32 @@
+post:
+  x-version: [V1.0, 2020.05.26]
+  x-role: [服务商]
+  tags:
+    - 基础支付∙普通支付∙服务商模式
+  summary: 关单API
+  description: 以下情况需要调用关单接口：商户订单支付失败需要生成新单号重新发起支付，要对原订单号调用关单，避免重复支付；系统下单后，用户支付超时，系统退出不再受理，避免用户继续，请调用关单接口。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transactions/chapter5_6.shtml)
+  parameters:
+    - name: out_trade_no
+      in: path
+      type: string
+      required: true
+      description: 商户订单号
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - sp_mchid
+          - sub_mchid
+        properties:
+          sp_mchid:
+            type: string
+            description: 服务商户号
+            example: '1230000109'
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1900000109'
+  responses:
+    204: {}

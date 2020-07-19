@@ -39,6 +39,12 @@ tags:
   - name: 基础支付∙普通支付∙服务商模式
   - name: 基础支付∙合单支付
   - name: 基础支付∙账单
+  - name: 电商收付通∙商户进件
+  - name: 电商收付通∙补差
+  - name: 电商收付通∙分账
+  - name: 电商收付通∙退款
+  - name: 电商收付通∙余额查询
+  - name: 电商收付通∙提现
   - name: 商户进件∙特约商户进件
   - name: 商户进件∙通用接口
   - name: 运营工具∙代金券
@@ -90,6 +96,42 @@ paths:
     $ref: ./spec/combine-transactions/out-trade-no/{combine_out_trade_no}.yaml
   /v3/combine-transactions/out-trade-no/{combine_out_trade_no}/close:
     $ref: ./spec/combine-transactions/out-trade-no/{combine_out_trade_no}/close.yaml
+  /v3/ecommerce/applyments/{applyment_id}:
+    $ref: ./spec/ecommerce/applyments/{applyment_id}.yaml
+  /v3/ecommerce/applyments/out-request-no/{out_request_no}:
+    $ref: ./spec/ecommerce/applyments/out-request-no/{out_request_no}.yaml
+  /v3/ecommerce/applyments/:
+    $ref: ./spec/ecommerce/applyments/stub.yaml
+  /v3/ecommerce/fund/balance/{sub_mchid}:
+    $ref: ./spec/ecommerce/fund/balance/{sub_mchid}.yaml
+  /v3/ecommerce/fund/enddaybalance/{sub_mchid}:
+    $ref: ./spec/ecommerce/fund/enddaybalance/{sub_mchid}.yaml
+  /v3/ecommerce/fund/withdraw:
+    $ref: ./spec/ecommerce/fund/withdraw.yaml
+  /v3/ecommerce/fund/withdraw/{withdraw_id}:
+    $ref: ./spec/ecommerce/fund/withdraw/{withdraw_id}.yaml
+  /v3/ecommerce/profitsharing/finish-order:
+    $ref: ./spec/ecommerce/profitsharing/finish-order.yaml
+  /v3/ecommerce/profitsharing/orders:
+    $ref: ./spec/ecommerce/profitsharing/orders.yaml
+  /v3/ecommerce/profitsharing/receivers/add:
+    $ref: ./spec/ecommerce/profitsharing/receivers/add.yaml
+  /v3/ecommerce/profitsharing/receivers/delete:
+    $ref: ./spec/ecommerce/profitsharing/receivers/delete.yaml
+  /v3/ecommerce/profitsharing/returnorders:
+    $ref: ./spec/ecommerce/profitsharing/returnorders.yaml
+  /v3/ecommerce/refunds/apply:
+    $ref: ./spec/ecommerce/refunds/apply.yaml
+  /v3/ecommerce/refunds/id/{refund_id}:
+    $ref: ./spec/ecommerce/refunds/id/{refund_id}.yaml
+  /v3/ecommerce/refunds/out-refund-no/{out_refund_no}:
+    $ref: ./spec/ecommerce/refunds/out-refund-no/{out_refund_no}.yaml
+  /v3/ecommerce/subsidies/cancel:
+    $ref: ./spec/ecommerce/subsidies/cancel.yaml
+  /v3/ecommerce/subsidies/create:
+    $ref: ./spec/ecommerce/subsidies/create.yaml
+  /v3/ecommerce/subsidies/return:
+    $ref: ./spec/ecommerce/subsidies/return.yaml
   /v3/goldplan/merchants/changecustompagestatus:
     $ref: ./spec/goldplan/merchants/changecustompagestatus.yaml
   /v3/goldplan/merchants/changegoldplanstatus:
@@ -166,6 +208,16 @@ paths:
     $ref: ./spec/merchant-service/complaint-notifications.yaml
   /v3/merchant-service/complaints:
     $ref: ./spec/merchant-service/complaints.yaml
+  /v3/merchant/fund/balance/{account_type}:
+    $ref: ./spec/merchant/fund/balance/{account_type}.yaml
+  /v3/merchant/fund/dayendbalance/{account_type}:
+    $ref: ./spec/merchant/fund/dayendbalance/{account_type}.yaml
+  /v3/merchant/fund/withdraw:
+    $ref: ./spec/merchant/fund/withdraw.yaml
+  /v3/merchant/fund/withdraw/bill-type/{bill_type}:
+    $ref: ./spec/merchant/fund/withdraw/bill-type/{bill_type}.yaml
+  /v3/merchant/fund/withdraw/out-request-no/{out_request_no}:
+    $ref: ./spec/merchant/fund/withdraw/out-request-no/{out_request_no}.yaml
   /v3/merchant/media/upload:
     $ref: ./spec/merchant/media/upload.yaml
   /v3/merchant/media/video_upload:

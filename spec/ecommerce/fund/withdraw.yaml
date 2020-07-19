@@ -1,0 +1,58 @@
+post:
+  x-version: [V1.0, 2019.09.18]
+  x-role: [电商平台]
+  tags:
+    - 电商收付通∙提现
+  summary: 账户余额提现API
+  description: 电商平台通过余额提现API帮助二级商户发起账户余额提现申请，完成账户余额提现。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/fund/chapter3_2.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - sub_mchid
+          - out_request_no
+          - amount
+        properties:
+          sub_mchid:
+            type: string
+            description: 二级商户号
+            example: '1900000109'
+          out_request_no:
+            type: string
+            description: 商户提现单号
+            example: '20190611222222222200000000012122'
+          amount:
+            type: integer
+            description: 提现金额
+            example: 100
+          remark:
+            type: string
+            description: 备注
+            example: 交易提现
+          bank_memo:
+            type: string
+            description: 银行附言
+            example: 微信支付提现
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - sub_mchid
+          - withdraw_id
+        properties:
+          sub_mchid:
+            type: string
+            description: 二级商户号
+            example: '1900000109'
+          withdraw_id:
+            type: string
+            description: 微信支付提现单号
+            example: '12321937198237912739132791732912793127931279317929791239112123'
+          out_request_no:
+            type: string
+            description: 商户提现单号
+            example: '20190611222222222200000000012122'

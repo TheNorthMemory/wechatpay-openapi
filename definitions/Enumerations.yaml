@@ -449,3 +449,114 @@ TransactionPromotionType:
   enum:
     - CASH   #充值
     - NOCASH #预充值
+
+EcommerceApplymentState:
+  type: string
+  description: 申请状态
+  enum:
+    - CHECKING            #资料校验中
+    - ACCOUNT_NEED_VERIFY #待账户验证
+    - AUDITING            #审核中
+    - REJECTED            #已驳回
+    - NEED_SIGN           #待签约
+    - FINISH              #完成
+    - FROZEN              #已冻结
+
+SubsidyState:
+  type: string
+  description: 补差单状态
+  enum:
+    - SUCCESS #补差成功
+    - FAIL    #补差失败
+    - REFUND  #已全额回退
+
+SubsidyCancelState:
+  type: string
+  description: 补差单状态
+  enum:
+    - SUCCESS #成功
+    - FAIL    #失败
+
+ProfitSharingReceiverType:
+  type: string
+  description: 分账接收方类型
+  enum:
+    - MERCHANT_ID     #商户
+    - PERSONAL_OPENID #个人
+
+ProfitSharingReceiverRelationType:
+  type: string
+  description: 子商户与接收方的关系
+  enum:
+    - SUPPLIER         #供应商
+    - DISTRIBUTOR      #分销商
+    - SERVICE_PROVIDER #服务商
+    - PLATFORM         #平台
+    - OTHERS           #其他
+
+ProfitSharingOrderState:
+  type: string
+  description: 分账单状态
+  enum:
+    - ACCEPTED   #受理成功
+    - PROCESSING #处理中
+    - FINISHED   #分账成功
+    - CLOSED     #处理失败，已关单
+
+ProfitSharingResult:
+  type: string
+  description: 分账结果
+  enum:
+    - PENDING  #待分账
+    - SUCCESS  #分账成功
+    - ADJUST   #分账失败待调账
+    - RETURNED #已转回分账方
+    - CLOSED   #已关闭
+
+ProfitSharingFailReason:
+  type: string
+  description: 分账失败原因
+  enum:
+    - ACCOUNT_ABNORMAL   #分账接收账户异常
+    - NO_RELATION        #分账关系已解除
+    - RECEIVER_HIGH_RISK #高风险接收方
+
+ProfitSharingReturnResult:
+  type: string
+  description: 回退结果
+  enum:
+    - PROCESSING #处理中
+    - SUCCESS    #已成功
+    - FAIL       #已失败
+
+ProfitSharingReturnFailReason:
+  type: string
+  description: 回退失败的原因
+  enum:
+    - ACCOUNT_ABNORMAL #分账接收方账户异常
+    - TIME_OUT_CLOSED  #超时关单
+
+RefundPromotionDetailType:
+  type: string
+  description: 优惠类型
+  enum:
+    - COUPON   #充值型代金券，商户需要预先充值营销经费
+    - DISCOUNT #免充值型优惠券，商户不需要预先充值营销经费
+
+RefundChannel:
+  type: string
+  description: 退款渠道
+  enum:
+    - ORIGINAL       #原路退款
+    - BALANCE        #退回到余额
+    - OTHER_BALANCE  #原账户异常退到其他余额账户
+    - OTHER_BANKCARD #原银行卡异常退到其他银行卡
+
+RefundStatus:
+  type: string
+  description: 退款状态
+  enum:
+    - SUCCESS     #退款成功
+    - REFUNDCLOSE #退款关闭
+    - PROCESSING  #退款处理中
+    - ABNORMAL    #退款异常

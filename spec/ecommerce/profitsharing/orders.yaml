@@ -1,0 +1,205 @@
+post:
+  x-version: [V1.3, 2020.06.22]
+  x-role: [电商平台]
+  tags:
+    - 电商收付通∙分账
+  summary: 请求分账API
+  description: 微信订单支付成功后，由电商平台发起分账请求，将结算后的资金分给分账接收方。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/profitsharing/chapter3_1.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - appid
+          - sub_mchid
+          - transaction_id
+          - out_order_no
+          - receivers
+          - finish
+        properties:
+          appid:
+            type: string
+            description: 公众账号ID
+            example: wx8888888888888888
+          sub_mchid:
+            type: string
+            description: 二级商户号
+            example: '1900000109'
+          transaction_id:
+            type: string
+            description: 微信订单号
+            example: '4208450740201411110007820472'
+          out_order_no:
+            type: string
+            description: 商户分账单号
+            example: P20150806125346
+          receivers:
+            type: array
+            description: 分账接收方列表
+            items:
+              type: object
+              required:
+                - receiver_account
+                - amount
+                - description
+              properties:
+                type:
+                  type: string
+                  description: 分账接收方类型
+                  example: MERCHANT_ID
+                  $ref: '../../../definitions/Enumerations.yaml#ProfitSharingReceiverType'
+                receiver_account:
+                  type: string
+                  description: 分账接收方账号
+                  example: '1900000109'
+                amount:
+                  type: integer
+                  description: 分账金额
+                  example: 190
+                description:
+                  type: string
+                  description: 分账描述
+                  example: 分给商户1900000109
+          finish:
+            type: booleanean
+            description: 是否分账完成
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - sub_mchid
+          - transaction_id
+          - out_order_no
+          - order_id
+        properties:
+          sub_mchid:
+            type: string
+            description: 二级商户号
+            example: '1900000109'
+          transaction_id:
+            type: string
+            description: 微信订单号
+            example: '4208450740201411110007820472'
+          out_order_no:
+            type: string
+            description: 商户分账单号
+            example: P20150806125346
+          order_id:
+            type: string
+            description: 微信分账单号
+            example: '6754760740201411110007865434'
+get:
+  x-version: [V1.3, 2020.04.30]
+  x-role: [电商平台]
+  tags:
+    - 电商收付通∙分账
+  summary: 查询分账结果API
+  description: 发起分账请求后，可调用此接口查询分账结果 ;发起分账完结请求后，可调用此接口查询分账完结的结果。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/profitsharing/chapter3_2.shtml)
+  parameters:
+    - name: sub_mchid
+      in: path
+      type: string
+      description: 二级商户号
+      required: true
+    - name: transaction_id
+      in: query
+      required: true
+      type: string
+      description: 微信订单号
+    - name: out_order_no
+      in: query
+      required: true
+      type: string
+      description: 商户分账单号
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - sub_mchid
+          - transaction_id
+          - out_order_no
+          - order_id
+        properties:
+          sub_mchid:
+            type: string
+            description: 二级商户号
+            example: '1900000109'
+          transaction_id:
+            type: string
+            description: 微信订单号
+            example: '4208450740201411110007820472'
+          out_order_no:
+            type: string
+            description: 商户分账单号
+            example: P20150806125346
+          order_id:
+            type: string
+            description: 微信分账单号
+            example: '6754760740201411110007865434'
+          status:
+            type: string
+            description: 分账单状态
+            $ref: '../../../definitions/Enumerations.yaml#ProfitSharingOrderState'
+          receivers:
+            type: array
+            description: 分账接收方列表
+            items:
+              type: object
+              required:
+                - receiver_mchid
+                - amount
+                - description
+                - finish_time
+                - type
+                - receiver_account
+              properties:
+                receiver_mchid:
+                  type: string
+                  description: 分账接收商户号
+                  example: '1900000109'
+                amount:
+                  type: integer
+                  description: 分账金额
+                  example: 190
+                description:
+                  type: string
+                  description: 分账描述
+                  example: 分给商户1900000109
+                result:
+                  type: string
+                  description: 分账结果
+                  $ref: '../../../definitions/Enumerations.yaml#ProfitSharingResult'
+                finish_time:
+                  type: string
+                  format: rfc3339
+                  description: 完成时间
+                  example: '2015-05-20T13:29:35.120+08:00'
+                fail_reason:
+                  type: string
+                  description: 分账失败原因
+                  $ref: '../../../definitions/Enumerations.yaml#ProfitSharingFailReason'
+                type:
+                  type: string
+                  description: 分账接收方类型
+                  example: MERCHANT_ID
+                  $ref: '../../../definitions/Enumerations.yaml#ProfitSharingReceiverType'
+                receiver_account:
+                  type: string
+                  description: 分账接收方账号
+                  example: '1900000109'
+          close_reason:
+            type: string
+            description: 关单原因
+            example: NO_AUTH
+          finish_amount:
+            type: integer
+            description: 分账完结金额
+            example: 100
+          finish_description:
+            type: string
+            description: 分账完结描述
+            example: 分账完结

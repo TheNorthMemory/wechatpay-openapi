@@ -1,0 +1,37 @@
+get:
+  x-version: [V1.0, 2020.03.13]
+  x-role: [电商平台]
+  tags:
+    - 电商收付通∙余额查询
+  summary: 查询电商平台账户日终余额API
+  description: 通过此接口可以查询本商户号指定日期当天24点的账户余额。**注意：**• 可查询90天内的日终余额。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/amount/chapter3_4.shtml)
+  parameters:
+    - name: account_type
+      in: path
+      type: string
+      description: 账户类型
+      required: true
+      allOf:
+        - $ref: '../../../../definitions/Enumerations.yaml#BillAccountType'
+    - name: bill_date
+      in: query
+      required: true
+      type: string
+      format: date
+      description: 日期
+      example: '2019-06-11'
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - available_amount
+        properties:
+          available_amount:
+            type: integer
+            description: 可用余额
+            example: 100
+          pending_amount:
+            type: integer
+            description: 不可用余额
+            example: 100

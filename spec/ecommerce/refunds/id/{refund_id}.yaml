@@ -1,0 +1,127 @@
+get:
+  x-version: [V1.1, 2020.04.01]
+  x-role: [电商平台]
+  tags:
+    - 电商收付通∙退款
+  summary: 通过微信支付退款单号查询退款
+  description: 提交退款申请后，通过调用该接口查询退款状态。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/refunds/chapter3_2.shtml)
+  parameters:
+    - name: refund_id
+      in: path
+      type: string
+      description: 微信退款单号
+      required: true
+      example: '50000000382019052709732678859'
+    - name: sub_mchid
+      in: query
+      required: true
+      type: string
+      description: 二级商户号
+      example: '1900000109'
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - refund_id
+          - out_refund_no
+          - transaction_id
+          - out_trade_no
+          - create_time
+          - status
+          - amount
+        properties:
+          refund_id:
+            type: string
+            description: 微信退款单号
+            example: '1217752501201407033233368018'
+          out_refund_no:
+            type: string
+            description: 商户退款单号
+            example: '1217752501201407033233368018'
+          transaction_id:
+            type: string
+            description: 微信订单号
+            example: '1217752501201407033233368018'
+          out_trade_no:
+            type: string
+            description: 商户订单号
+            example: '1217752501201407033233368018'
+          channel:
+            type: string
+            description: 退款渠道
+            example: ORIGINAL
+            $ref: '../../../../definitions/Enumerations.yaml#RefundChannel'
+          user_received_account:
+            type: string
+            description: 退款入账账户
+            example: 招商银行信用卡0403
+          success_time:
+            type: string
+            format: rfc3339
+            description: 退款成功时间
+            example: '2018-06-08T10:34:56+08:00'
+          create_time:
+            type: string
+            format: rfc3339
+            description: 退款创建时间
+            example: '2018-06-08T10:34:56+08:00'
+          status:
+            type: string
+            description: 退款状态
+            example: SUCCESS
+            $ref: '../../../../definitions/Enumerations.yaml#RefundStatus'
+          amount:
+            type: object
+            description: 退款金额信息
+            properties:
+              refund:
+                type: integer
+                description: 退款金额
+                example: 888
+              payer_refund:
+                type: integer
+                description: 用户退款金额
+                example: 888
+              discount_refund:
+                type: integer
+                description: 优惠退款金额
+                example: 888
+              currency:
+                type: string
+                description: 退款币种
+                example: CNY
+          promotion_detail:
+            type: array
+            description: 营销详情
+            items:
+              type: object
+              required:
+                - promotion_id
+                - scope
+                - type
+                - amount
+                - refund_amount
+              properties:
+                promotion_id:
+                  type: string
+                  description: 券ID
+                  example: '109519'
+                scope:
+                  type: string
+                  description: 优惠范围
+                  example: SINGLE
+                  $ref: '../../../../definitions/Enumerations.yaml#TransactionPromotionScope'
+                type:
+                  type: string
+                  description: 优惠类型
+                  example: DISCOUNT
+                  $ref: '../../../../definitions/Enumerations.yaml#RefundPromotionDetailType'
+                amount:
+                  type: integer
+                  description: 优惠券面额
+                  example: 5
+                refund_amount:
+                  type: integer
+                  description: 优惠退款金额
+                  example: 100

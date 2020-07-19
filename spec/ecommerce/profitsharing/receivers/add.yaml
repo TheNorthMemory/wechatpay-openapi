@@ -1,0 +1,62 @@
+post:
+  x-version: [V1.1, 2020.04.30]
+  x-role: [电商平台]
+  tags:
+    - 电商收付通∙分账
+  summary: 添加分账接收方API
+  description: 电商平台可通过此接口添加分账接收方，建立分账接收方列表。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/profitsharing/chapter3_7.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - appid
+          - type
+          - account
+          - relation_type
+        properties:
+          appid:
+            type: string
+            description: 公众账号ID
+            example: wx8888888888888888
+          type:
+            type: string
+            description: 接收方类型
+            example: MERCHANT_ID
+            $ref: '../../../../definitions/Enumerations.yaml#ProfitSharingReceiverType'
+          account:
+            type: string
+            description: 接收方账号
+            example: '190001001'
+          name:
+            type: string
+            description: 接收方名称
+            example: 张三网络公司
+          encrypted_name:
+            type: string
+            description: 接收方名称的密文
+            example: hu89ohu89ohu89o
+          relation_type:
+            type: string
+            description: 与分账方的关系类型
+            example: SUPPLIER
+            $ref: '../../../../definitions/Enumerations.yaml#ProfitSharingReceiverType'
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - type
+          - account
+        properties:
+          type:
+            type: string
+            description: 接收方类型
+            example: MERCHANT_ID
+            $ref: '../../../../definitions/Enumerations.yaml#ProfitSharingReceiverType'
+          account:
+            type: string
+            description: 接收方账号
+            example: '190001001'

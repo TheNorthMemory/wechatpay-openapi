@@ -1,0 +1,66 @@
+get:
+  x-version: [V1.0, 2020.04.13]
+  x-role: [电商平台]
+  tags:
+    - 电商收付通∙提现
+  summary: 商户提现单号查询
+  description: 电商平台通过该接口查询其提现结果 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/fund/chapter3_3.shtml)
+  parameters:
+    - name: out_request_no
+      in: path
+      required: true
+      type: string
+      description: 商户提现单号
+      example: '20190611222222222200000000012122'
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - sp_mchid
+          - status
+          - withdraw_id
+          - out_request_no
+          - amount
+        properties:
+          sub_mchid:
+            type: string
+            description: 二级商户号
+            example: '1900000109'
+          sp_mchid:
+            type: string
+            description: 电商平台商户号
+            example: '1800000123'
+          status:
+            type: string
+            description: 提现单状态
+            example: SUCCESS
+          withdraw_id:
+            type: string
+            description: 微信支付提现单号
+          out_request_no:
+            type: string
+            description: 商户提现单号
+            example: '1217752501201407033233368018'
+          amount:
+            type: integer
+            description: 提现金额
+            example: 100
+          create_time:
+            type: string
+            description: 发起提现时间
+          update_time:
+            type: string
+            description: 提现状态更新时间
+          reason:
+            type: string
+            description: 失败原因
+            example: 卡号错误
+          remark:
+            type: string
+            description: 提现备注
+            example: 交易提现
+          bank_memo:
+            type: string
+            description: 银行备注
+            example: 微信提现

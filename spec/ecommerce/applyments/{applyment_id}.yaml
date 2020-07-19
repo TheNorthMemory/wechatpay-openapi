@@ -1,0 +1,103 @@
+get:
+  x-version: [V1.0, 2019.09.09]
+  x-role: [电商平台]
+  tags:
+    - 电商收付通∙商户进件
+  summary: 通过申请单ID查询申请状态
+  description: 电商平台通过查询申请状态API查询二级商户入驻申请结果。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/applyments/chapter3_2.shtml)
+  parameters:
+    - name: applyment_id
+      in: path
+      type: integer
+      description: 微信支付申请单号
+      required: true
+      example: 2000002124775691
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - out_request_no
+        properties:
+          applyment_state:
+            type: string
+            description: 申请状态
+            example: FINISH
+            $ref: '../../../definitions/Enumerations.yaml#EcommerceApplymentState'
+          applyment_state_desc:
+            type: string
+            description: 申请状态描述
+            example: “审核中”
+          sign_url:
+            type: string
+            description: 签约链接
+            example: 'https://pay.weixin.qq.com/public/apply4ec_sign/s?applymentId=2000002126198476&sign=b207b673049a32c858f3aabd7d27c7ec'
+          sub_mchid:
+            type: string
+            description: 电商平台二级商户号
+            example: '1542488631'
+          account_validation:
+            type: object
+            description: 汇款账户验证信息
+            properties:
+              account_name:
+                type: string
+                description: 付款户名
+              account_no:
+                type: string
+                description: 付款卡号
+                example: 9nZYDEvBT4rDdICA3ZYXshYqeOSslSjSauAE+as7mAEDJly+DgRuVs74msmKUH8pl+3oA==
+              pay_amount:
+                type: string
+                description: 汇款金额
+                example: '124'
+              destination_account_number:
+                type: string
+                description: 收款卡号
+                example: '7222223333322332'
+              destination_account_name:
+                type: string
+                description: 收款户名
+                example: 财付通支付科技有限公司
+              destination_account_bank:
+                type: string
+                description: 开户银行
+                example: 招商银行威盛大厦支行
+              city:
+                type: string
+                description: 省市信息
+                example: 深圳
+              remark:
+                type: string
+                description: 备注信息
+                example: 入驻账户验证
+              deadline:
+                type: string
+                description: 汇款截止时间
+                example: '2018-12-1017:09:01'
+          audit_detail:
+            type: array
+            description: 驳回原因详情
+            items:
+              type: object
+              properties:
+                param_name:
+                  type: string
+                  description: 参数名称
+                  example: id_card_copy
+                reject_reason:
+                  type: string
+                  description: 驳回原因
+                  example: 身份证背面识别失败，请上传更清晰的身份证图片
+          legal_validation_url:
+            type: string
+            description: 法人验证链接
+            example: 'https://pay.weixin.qq.com/public/apply4ec_sign/s?applymentId=2000002126198476&sign=b207b673049a32c858f3aabd7d27c7ec'
+          out_request_no:
+            type: string
+            description: 业务申请编号
+            example: APPLYMENT_00000000001
+          applyment_id:
+            type: integer
+            description: 微信支付申请单号
+            example: 2000002124775691

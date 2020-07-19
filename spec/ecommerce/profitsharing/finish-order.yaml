@@ -1,0 +1,61 @@
+post:
+  x-version: [V1.1, 2020.04.30]
+  x-role: [电商平台]
+  tags:
+    - 电商收付通∙分账
+  summary: 完结分账API
+  description: 不需要进行分账的订单，可直接调用本接口将订单的金额全部解冻给二级商户。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/profitsharing/chapter3_5.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - sub_mchid
+          - transaction_id
+          - out_order_no
+          - description
+        properties:
+          sub_mchid:
+            type: string
+            description: 二级商户号
+            example: '1900000109'
+          transaction_id:
+            type: string
+            description: 微信订单号
+            example: '4208450740201411110007820472'
+          out_order_no:
+            type: string
+            description: 商户分帐单号
+            example: P20150806125346
+          description:
+            type: string
+            description: 分账描述
+            example: 分账完结
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - sub_mchid
+          - transaction_id
+          - out_order_no
+          - order_id
+        properties:
+          sub_mchid:
+            type: string
+            description: 二级商户号
+            example: '1900000109'
+          transaction_id:
+            type: string
+            description: 微信订单号
+            example: '4208450740201411110007820472'
+          out_order_no:
+            type: string
+            description: 商户分帐单号
+            example: P20150806125346
+          order_id:
+            type: string
+            description: 微信分帐单号
+            example: '3008450740201411110007820472'

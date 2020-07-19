@@ -1,0 +1,98 @@
+post:
+  x-version: [V1.0, 2019.09.12]
+  x-role: [电商平台]
+  tags:
+    - 电商收付通∙补差
+  summary: 请求补差回退API
+  description: 订单发送退款的时候，可以对补贴成功的补差单发起回退。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/subsidies/chapter3_2.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - sub_mchid
+          - out_order_no
+          - transaction_id
+          - refund_id
+          - amount
+          - description
+        properties:
+          sub_mchid:
+            type: string
+            description: 二级商户号
+            example: '1900000109'
+          out_order_no:
+            type: string
+            description: 商户补差回退单号
+            example: P20150806125346
+          transaction_id:
+            type: string
+            description: 微信订单号
+            example: '4208450740201411110007820472'
+          refund_id:
+            type: string
+            description: 微信退款单号
+            example: '3008450740201411110007820472'
+          amount:
+            type: integer
+            description: 补差回退金额
+            example: 10
+          description:
+            type: string
+            description: 补差回退描述
+            example: 测试备注
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - sub_mchid
+          - transaction_id
+          - subsidy_refund_id
+          - refund_id
+          - out_order_no
+          - amount
+          - description
+          - result
+          - success_time
+        properties:
+          sub_mchid:
+            type: string
+            description: 二级商户号
+            example: '1900000109'
+          transaction_id:
+            type: string
+            description: 微信订单号
+            example: '4208450740201411110007820472'
+          subsidy_refund_id:
+            type: string
+            description: 微信补差回退单号
+            example: '3008450740201411110007820472'
+          refund_id:
+            type: string
+            description: 微信退款单号
+            example: '3008450740201411110007820472'
+          out_order_no:
+            type: string
+            description: 商户补差回退单号
+            example: P20150806125346
+          amount:
+            type: integer
+            description: 补差回退金额
+            example: 10
+          description:
+            type: string
+            description: 补差回退描述
+            example: 测试备注
+          result:
+            type: string
+            description: 补差回退结果
+            example: SUCCESS
+            $ref: '../../../definitions/Enumerations.yaml#SubsidyState'
+          success_time:
+            type: string
+            format: rfc3339
+            description: 补差回退完成时间
+            example: '2015-05-20T13:29:35.120+08:00'

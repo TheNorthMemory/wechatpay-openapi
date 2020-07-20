@@ -72,7 +72,7 @@ get:
             type: array
             items:
               allOf:
-                - $ref: ../../../../../definitions/CouponBase.yaml
+                - $ref: '../../../../../definitions/BusiFavorCouponStock.yaml#CouponBase'
                 - type: object
                   properties:
                     coupon_code:

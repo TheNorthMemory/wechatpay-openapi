@@ -1,7 +1,0 @@
-allOf:
-  - type: object
-    required: [account_type]
-    properties:
-      account_type:
-        $ref: './Enumerations.yaml#AccountType'
-  - $ref: ./BankAccountBase.yaml

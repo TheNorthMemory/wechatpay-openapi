@@ -16,7 +16,7 @@ get:
     200:
       schema:
         allOf:
-          - $ref: ../../../../definitions/BankAccountInfo.yaml
+          - $ref: '../../../../definitions/Applyment.yaml#BankAccountInfo'
           - required: [account_number, bank_branch_id, bank_name]
           - type: object
             required: [verify_result]

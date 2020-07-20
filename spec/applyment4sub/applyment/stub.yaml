@@ -321,7 +321,7 @@ post:
                   account_name:
                     type: string
                     description: 开户名称
-              - $ref: ../../../definitions/BankAccountBase.yaml
+              - $ref: '../../../definitions/Applyment.yaml#BankAccountBase'
           addition_info:
             type: object
             properties:

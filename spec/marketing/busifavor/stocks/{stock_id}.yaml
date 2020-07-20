@@ -16,7 +16,7 @@ get:
     200:
       schema:
         allOf:
-          - $ref: ../../../../definitions/StockBase.yaml
+          - $ref: '../../../../definitions/BusiFavorCouponStock.yaml#StockBase'
           - type: object
             properties:
               stock_state:

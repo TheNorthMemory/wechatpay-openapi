@@ -50,7 +50,7 @@ get:
             type: array
             items:
               allOf:
-                - $ref: '../../../definitions/PayGiftBase.yaml#ActivityBase'
+                - $ref: '../../../definitions/PayGiftActivity.yaml#ActivityBase'
                 - type: object
                   properties:
                     award_send_rule:
@@ -58,7 +58,7 @@ get:
                       properties:
                         full_send_rule:
                           allOf:
-                            - $ref: '../../../definitions/PayGiftBase.yaml#FullSendRuleBase'
+                            - $ref: '../../../definitions/PayGiftActivity.yaml#FullSendRuleBase'
                             - type: object
                               properties:
                                 merchant_id_list:
@@ -66,4 +66,4 @@ get:
                                   items:
                                     type: string
                         step_send_rule:
-                            $ref: '../../../definitions/PayGiftBase.yaml#StepSendRuleBase'
+                            $ref: '../../../definitions/PayGiftActivity.yaml#StepSendRuleBase'

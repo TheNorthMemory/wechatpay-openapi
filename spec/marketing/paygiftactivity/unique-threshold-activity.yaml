@@ -11,12 +11,12 @@ post:
       required: true
       schema:
         allOf:
-          - $ref: '../../../definitions/PayGiftBase.yaml#ActivityBase'
+          - $ref: '../../../definitions/PayGiftActivity.yaml#ActivityBase'
           - type: object
             properties:
               award_send_rule:
                 allOf:
-                  - $ref: '../../../definitions/PayGiftBase.yaml#FullSendRuleBase'
+                  - $ref: '../../../definitions/PayGiftActivity.yaml#FullSendRuleBase'
                   - type: object
                     properties:
                       merchant_id_list:

@@ -19,7 +19,7 @@ post:
       required: true
       schema:
         allOf:
-          - $ref: ../../../../definitions/BankAccountInfo.yaml
+          - $ref: '../../../../definitions/Applyment.yaml#BankAccountInfo'
           - type: object
             properties:
               bank_address_code:

@@ -41,13 +41,13 @@ get:
               update_time:
                 type: string
                 format: rfc3339
-          - $ref: '../../../../definitions/PayGiftBase.yaml#ActivityBase'
+          - $ref: '../../../../definitions/PayGiftActivity.yaml#ActivityBase'
           - type: object
             properties:
               award_send_rule:
                 type: object
                 properties:
                   full_send_rule:
-                      $ref: '../../../../definitions/PayGiftBase.yaml#FullSendRuleBase'
+                      $ref: '../../../../definitions/PayGiftActivity.yaml#FullSendRuleBase'
                   step_send_rule:
-                      $ref: '../../../../definitions/PayGiftBase.yaml#StepSendRuleBase'
+                      $ref: '../../../../definitions/PayGiftActivity.yaml#StepSendRuleBase'

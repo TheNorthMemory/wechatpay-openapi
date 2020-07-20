@@ -15,4 +15,4 @@ get:
   responses:
     200:
       schema:
-        $ref: ../../../../definitions/Applyment.yaml
+        $ref: '../../../../definitions/Applyment.yaml#Base'

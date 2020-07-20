@@ -59,6 +59,8 @@ tags:
   - name: 通用接口
   - name: 通用接口∙商业支付投诉
 paths:
+  /v3/.notify:
+    $ref: ./spec/.notify.yaml
   /v3/apply4sub/sub_merchants/{sub_mchid}/modify-settlement:
     $ref: ./spec/apply4sub/sub_merchants/{sub_mchid}/modify-settlement.yaml
   /v3/apply4sub/sub_merchants/{sub_mchid}/settlement:

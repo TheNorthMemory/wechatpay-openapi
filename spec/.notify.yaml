@@ -1,0 +1,179 @@
+post:
+  x-role: [微信平台商户]
+  tags:
+    - 通用接口
+  summary: 南桥接口-微信支付平台通知商户平台协议及数据结构
+  description: "对后台通知交互时，如果微信收到应答不是成功或超时，微信认为通知失败，微信会通过一定的策略定期重新发起通知，尽可能提高通知的成功率，但微信不保证通知最终能成功。（通知频率为15s/15s/30s/3m/10m/20m/30m/30m/30m/60m/3h/3h/3h/6h/6h - 总计 24h4m）使用*key*、*nonce*和*associated_data*，对数据密文*resource.ciphertext*使用**resource.algorithm(AEAD_AES_256_GCM)**进行解密，得到**JSON形式的资源对象**，每种**资源对象**参见以下链接：
+  [商圈支付结果通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/businesscircle/points/chapter3_1.shtml)
+  [普通支付通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transactions/chapter3_11.shtml)
+  [服务商支付通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transactions/chapter5_11.shtml)
+  [合单支付通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/combine/chapter3_7.shtml)
+  [分账动账通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/profitsharing/chapter3_6.shtml)
+  [投诉通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/merchant-service/chapter4_1.shtml)
+  [退款结果通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/refunds/chapter3_3.shtml)
+  [核销事件回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/convention/chapter4_1.shtml)
+  [领券事件回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/busifavor/chapter4_1.shtml)
+  [授权/解除授权服务回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter5_1.shtml)
+  [支付分确认订单回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter5_2.shtml)
+  [支付分支付成功回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter5_3.shtml)
+  "
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - id
+          - create_time
+          - event_type
+          - resource_type
+          - resource
+        properties:
+          id:
+            type: string
+            description: 通知ID
+            example: EV-2018022511223320873
+          create_time:
+            type: string
+            format: rfc3339
+            description: 通知创建时间
+            example: '2018-06-08T10:34:56+08:00'
+          event_type:
+            type: string
+            description: 通知类型
+            $ref: '#WechatpayNotificationEventType'
+          resource_type:
+            type: string
+            description: 通知资源数据
+            example: encrypt-resource
+          summary:
+            type: string
+            description: 回调摘要
+          resource:
+            type: object
+            description: 通知资源数据
+            required:
+              - algorithm
+              - nonce
+              - ciphertext
+            properties:
+              algorithm:
+                type: string
+                description: 加密算法类型
+                example: AEAD_AES_256_GCM
+              nonce:
+                type: string
+                description: 随机串
+                example: 61f9c719728a
+              original_type:
+                type: string
+                description: 原始回调类型
+                $ref: '#WechatpayNotificationOriginalType'
+                example: discount_card
+              associated_data:
+                type: string
+                description: 附加数据
+              ciphertext:
+                type: string
+                description: 数据密文
+                example: sRvt...
+  responses:
+    200:
+      schema:
+        allOf:
+          - $ref: '#MerchantBusinessException'
+          - type: object
+            properties:
+              code:
+                example: SUCCESS
+              message:
+                example: ''
+    204: {}
+    403:
+      schema:
+        $ref: '#MerchantBusinessException'
+    500:
+      schema:
+        $ref: '#MerchantBusinessException'
+
+MerchantBusinessException:
+  type: object
+  required:
+    - code
+    - message
+  properties:
+    code:
+      type: string
+      maxLength: 32
+      description: 返回状态码
+      example: ERROR_NAME
+    message:
+      type: string
+      maxLength: 64
+      description: 返回信息
+      example: 系统错误
+
+WechatpayNotificationOriginalType:
+  type: string
+  description: "原始回调类型
+  [商圈支付结果通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/businesscircle/points/chapter3_1.shtml)
+  [分账动账通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/profitsharing/chapter3_6.shtml)
+  [核销事件回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/convention/chapter4_1.shtml)
+  [领券事件回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/busifavor/chapter4_1.shtml)
+  "
+  enum:
+    # @see [商圈支付结果通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/businesscircle/points/chapter3_1.shtml)
+    - discount_card
+    # @see [分账动账通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/profitsharing/chapter3_6.shtml)
+    - profitsharing
+    # @see [核销事件回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/convention/chapter4_1.shtml)
+    # @see [领券事件回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/busifavor/chapter4_1.shtml)
+    - coupon
+
+WechatpayNotificationEventType:
+  type: string
+  description: "通知类型
+  [商圈支付结果通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/businesscircle/points/chapter3_1.shtml)
+  [普通支付通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transactions/chapter3_11.shtml)
+  [服务商支付通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transactions/chapter5_11.shtml)
+  [合单支付通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/combine/chapter3_7.shtml)
+  [分账动账通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/profitsharing/chapter3_6.shtml)
+  [投诉通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/merchant-service/chapter4_1.shtml)
+  [退款结果通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/refunds/chapter3_3.shtml)
+  [核销事件回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/convention/chapter4_1.shtml)
+  [领券事件回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/busifavor/chapter4_1.shtml)
+  [授权/解除授权服务回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter5_1.shtml)
+  [支付分确认订单回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter5_2.shtml)
+  [支付分支付成功回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter5_3.shtml)
+  "
+  enum:
+    # @see                        [商圈支付结果通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/businesscircle/points/chapter3_1.shtml)
+    - TRANSACTION.SUCCESS         #用户领卡通知的类型
+    # @see                        [普通支付通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transactions/chapter3_11.shtml)
+    - TRANSACTION.SUCCESS         #支付成功通知的类型
+    # @see                        [服务商支付通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transactions/chapter5_11.shtml)
+    - TRANSACTION.SUCCESS         #支付成功通知的类型
+    # @see                        [合单支付通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/combine/chapter3_7.shtml)
+    - TRANSACTION.SUCCESS         #支付成功通知的类型
+    # @see                        [分账动账通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/profitsharing/chapter3_6.shtml)
+    - PROFITSHARING               #分账
+    - PROFITSHARING_RETURN        #分账回退
+    # @see                        [投诉通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/merchant-service/chapter4_1.shtml)
+    - COMPLATINT.CREATE           #产生新投诉
+    - COMPLAINT.STATE_CHANGE      #投诉状态变化
+    # @see                        [退款结果通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/refunds/chapter3_3.shtml)
+    - REFUND.SUCCESS              #退款成功通知
+    - REFUND.ABNORMAL             #退款异常通知
+    - REFUND.CLOSED               #退款关闭通知
+    # @see                        [核销事件回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/convention/chapter4_1.shtml)
+    - COUPON.USE                  #代金券用券回调通知
+    # @see                        [领券事件回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/busifavor/chapter4_1.shtml)
+    - COUPON.SEND                 #领券
+    # @see                        [授权/解除授权服务回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter5_1.shtml)
+    - PAYSCORE.USER_OPEN_SERVICE  #授权成功通知
+    - PAYSCORE.USER_CLOSE_SERVICE #解除授权成功通知
+    # @see                        [支付分确认订单回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter5_2.shtml)
+    - PAYSCORE.USER_CONFIRM       #用户确认成功通知
+    # @see                        [支付分支付成功回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter5_3.shtml)
+    - PAYSCORE.USER_PAID          #支付成功通知

@@ -4,7 +4,9 @@ post:
     - 通用接口
   summary: 南桥接口-微信支付平台通知商户平台协议及数据结构
   description: "对后台通知交互时，如果微信收到应答不是成功或超时，微信认为通知失败，微信会通过一定的策略定期重新发起通知，尽可能提高通知的成功率，但微信不保证通知最终能成功。
-  （通知频率为15s/15s/30s/3m/10m/20m/30m/30m/30m/60m/3h/3h/3h/6h/6h - 总计 24h4m）
+  微信会对发送给商户的通知进行签名，并将签名值放在通知的HTTP头Wechatpay-Signature。商户应当验证签名，以确认请求来自微信，而不是其他的第三方。
+  签名验证的算法请参考《[微信支付APIv3签名方案](https://wechatpay-api.gitbook.io/wechatpay-api-v3/ren-zheng/qian-ming-he-zheng-shu#hui-tiao-tong-zhi-qian-ming)》。
+  （通知频率为15s/15s/30s /3m/10m/20m/30m/30m/30m/60m/ 3h/3h/3h/6h/6h - 总计 24h4m）
   使用*key*、*nonce*和*associated_data*，
   对数据密文*resource.ciphertext*使用**resource.algorithm(AEAD_AES_256_GCM)**进行解密，得到**JSON形式的资源对象**。
   每种**资源对象**参见以下链接：
@@ -22,6 +24,26 @@ post:
   [支付分支付成功回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter5_3.shtml)
   "
   parameters:
+    - name: Wechatpay-Nonce
+      required: true
+      in: header
+      type: string
+      description: 随机串
+    - name: Wechatpay-Serial
+      required: true
+      in: header
+      type: string
+      description: 证书序列号
+    - name: Wechatpay-Signature
+      required: true
+      in: header
+      type: string
+      description: 签名值
+    - name: Wechatpay-Timestamp
+      required: true
+      in: header
+      type: string
+      description: 时间戳
     - name: _
       in: body
       required: true

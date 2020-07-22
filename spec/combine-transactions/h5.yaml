@@ -1,6 +1,9 @@
 post:
   x-version: [V1.2, 2020.06.09]
-  x-role: [电商平台, 服务商, 直连商户]
+  x-role:
+    - 电商平台
+    - 服务商
+    - 直连商户
   tags:
     - 基础支付∙合单支付
   summary: 合单下单-H5支付API
@@ -10,17 +13,140 @@ post:
       in: body
       required: true
       schema:
-        allOf:
-          - $ref: '../../definitions/Transaction.yaml#CombinationBase'
-          - type: object
+        type: object
+        required:
+          - combine_appid
+          - combine_mchid
+          - combine_out_trade_no
+          - scene_info
+          - sub_orders
+          - notify_url
+        properties:
+          combine_appid:
+            type: string
+            description: 合单商户appid
+            example: wxd678efh567hg6787
+          combine_mchid:
+            type: string
+            description: 合单商户号
+            example: '1900000109'
+          combine_out_trade_no:
+            type: string
+            description: 合单商户订单号
+            example: P20150806125346
+          scene_info:
+            type: object
+            description: 场景信息
             required:
-              - scene_info
+              - device_id
+              - payer_client_ip
+              - h5_info
             properties:
-              scene_info:
+              device_id:
+                type: string
+                description: 商户端设备号
+                example: 'POS1:1'
+              payer_client_ip:
+                type: string
+                description: 用户终端IP
+                example: 14.17.22.32
+              h5_info:
                 type: object
+                description: H5场景信息
+                required:
+                  - type
                 properties:
-                  h5_info:
-                    $ref: '../../definitions/Transaction.yaml#H5Info'
+                  type:
+                    type: string
+                    description: 场景类型
+                    example: iOS
+                  app_name:
+                    type: string
+                    description: 应用名称
+                    example: 王者荣耀
+                  app_url:
+                    type: string
+                    description: 网站URL
+                    example: 'https://pay.qq.com'
+                  bundle_id:
+                    type: string
+                    description: iOS平台BundleID
+                    example: com.tencent.wzryiOS
+                  package_name:
+                    type: string
+                    description: Android平台PackageName
+                    example: com.tencent.tmgp.sgame
+          sub_orders:
+            type: array
+            description: 子单信息
+            items:
+              type: object
+              required:
+                - mchid
+                - attach
+                - amount
+                - out_trade_no
+                - sub_mchid
+                - description
+              properties:
+                mchid:
+                  type: string
+                  description: 子单商户号
+                  example: '1900000109'
+                attach:
+                  type: string
+                  description: 附加数据
+                  example: 深圳分店
+                amount:
+                  type: object
+                  description: 订单金额
+                  required:
+                    - total_amount
+                    - currency
+                  properties:
+                    total_amount:
+                      type: integer
+                      description: 标价金额
+                      example: 100
+                    currency:
+                      type: string
+                      description: 标价币种
+                      example: CNY
+                out_trade_no:
+                  type: string
+                  description: 子单商户订单号
+                  example: '20150806125346'
+                sub_mchid:
+                  type: string
+                  description: 二级商户号
+                  example: '1900000109'
+                description:
+                  type: string
+                  description: 商品描述
+                  example: 腾讯充值中心-QQ会员充值
+                settle_info:
+                  type: object
+                  description: 结算信息
+                  properties:
+                    profit_sharing:
+                      type: boolean
+                      description: 是否指定分账
+                    subsidy_amount:
+                      type: integer
+                      description: 补差金额
+                      example: 10
+          time_start:
+            type: string
+            description: 交易起始时间
+            example: '2019-12-31T15:59:60+08:00'
+          time_expire:
+            type: string
+            description: 交易结束时间
+            example: '2019-12-31T15:59:60+08:00'
+          notify_url:
+            type: string
+            description: 通知地址
+            example: 'https://yourapp.com/notify'
   responses:
     200:
       schema:

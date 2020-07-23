@@ -22,7 +22,21 @@
       .swagger-ui .opblock-tag .markdown p{margin-block-start:0;margin-block-end:0}
       .swagger-ui .scheme-container{margin-bottom:10px;padding-bottom:10px}
       .swagger-ui .expand-methods svg,.swagger-ui .expand-operation svg{height:14px}
-      @media (max-width:768px) {.opblock-summary-method{display:none}.swagger-ui textarea{max-width:100%}.swagger-ui .opblock-tag{padding-right:0}.swagger-ui .opblock .opblock-summary-path{width:60%}}
+      .swagger-ui .model-box{min-width: 100%}
+      .swagger-ui .parameters-col_description input[type=text]{max-width: 99.9%}
+      .swagger-ui .parameter__name.required:after{content:"";}
+      @media (max-width:768px) {
+        .opblock-summary-method,.parameters thead, .responses-table thead,.parameters-col_name,.response-col_status{display:none}
+        .swagger-ui textarea,.swagger-ui input[type="text"]{max-width:100%}
+        .swagger-ui .opblock-tag{padding-right:0}
+        .swagger-ui .opblock .opblock-summary-path{width:60%}
+        tr[data-param-in=header] .parameters-col_description .markdown p:after{content:' (header)';font-style:italic;font-size:11px;color:grey;}
+        tr[data-param-in=path] .parameters-col_description .markdown p:after{content:' (path)';font-style:italic;font-size:11px;color:grey;}
+        tr[data-param-in=formData] .parameters-col_description .markdown p:after{content:' (formData)';font-style:italic;font-size:11px;color:grey;}
+        tr[data-param-in=query] .parameters-col_description .markdown:first-of-type p:after{content:' (query)';font-style:italic;font-size:11px;color:grey;}
+        .response[data-code=200] .model-example .tab li:last-of-type:after,
+        tr[data-param-in=body] .parameters-col_description .tab li:last-of-type:after{content:' (body)';font-style:italic;font-size:11px;color:grey;}
+      }
     </style>
   </head>
   <body>
@@ -35,6 +49,7 @@
         url: "./swagger.yaml",
         dom_id: '#swagger-ui',
         deepLinking: true,
+        filter: true,
         showExtensions: true,
         // docExpansion: 'none',
         validatorUrl: null,

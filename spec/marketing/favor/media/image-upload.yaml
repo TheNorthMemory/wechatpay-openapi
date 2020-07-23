@@ -18,6 +18,7 @@ post:
       required: true
       type: string
       format: json
+      description: 媒体文件元信息
       schema:
         type: object
         properties:

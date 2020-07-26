@@ -1,0 +1,227 @@
+get:
+  x-version: [V1.0, 2020.03.26]
+  x-role:
+    - 直连商户
+  tags:
+    - 微信支付分∙先享卡
+  summary: 通过先享卡订单号查询订单API
+  description: 商户可以通过先享卡订单号或商户订单号查询用户目前的先享卡使用情况、订单状态，可用于对账或者界面展示。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter3_1.shtml)
+  parameters:
+    - name: out_trade_no
+      in: path
+      required: true
+      type: string
+      description: 商户订单号
+      example: 6e8369071cd942c0476613f9d1ce9ca3
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - out_order_no
+          - discount_card_id
+          - out_trade_no
+          - appid
+          - service_id
+          - order_id
+          - openid
+          - card_begin_time
+          - card_end_time
+          - card_name
+          - objective_description
+          - reward_description
+          - estimated_reward_amount
+          - state
+          - create_time
+        properties:
+          out_order_no:
+            type: string
+            description: 先享卡订单号
+            example: 233bcbf407e87789b8e471f251774f95
+          discount_card_id:
+            type: string
+            description: 先享卡ID
+            example: 87789b2f25177433bcbf407e8e471f95
+          out_trade_no:
+            type: string
+            description: 商户订单号
+            example: 6e8369071cd942c0476613f9d1ce9ca3
+          appid:
+            type: string
+            description: 公众账号ID
+            example: wxd678efh567hg6787
+          service_id:
+            type: string
+            description: 服务ID
+            example: '500001'
+          order_id:
+            type: string
+            description: 微信支付服务订单号
+            example: '15646546545165651651'
+          transaction_id:
+            type: string
+            description: 微信支付交易单号
+            example: '1009660380201506130728806387'
+          openid:
+            type: string
+            description: 用户标识
+            example: oUpF8uMuAJ2pxb1Q9zNjWeS6o
+          card_begin_time:
+            type: string
+            description: 先享卡开始时间
+            example: '2015-05-20T13:29:35.120+08:00'
+          card_end_time:
+            type: string
+            description: 先享卡结束时间
+            example: '2015-05-20T13:29:35.120+08:00'
+          card_name:
+            type: string
+            description: 先享卡名称
+            example: 五一品牌活动
+          objective_description:
+            type: string
+            description: 目标描述
+            example: 购买商品3次
+          reward_description:
+            type: string
+            description: 奖励描述
+            example: 每次减5元
+          estimated_reward_amount:
+            type: integer
+            description: 预估奖励金额
+            example: 1000
+          online_instructions:
+            type: string
+            description: 线上使用说明
+            example: 仅限商户APP使用
+          offline_instructions:
+            type: string
+            description: 线下使用说明
+            example: 仅限商户门店使用
+          state:
+            type: enum
+            description: 订单状态
+            example: CREATED
+          total_amount:
+            type: integer
+            description: 总金额
+            example: 1000
+          deduction_amount:
+            type: integer
+            description: 扣除金额
+            example: 1000
+          settlement_amount:
+            type: integer
+            description: 结算金额
+            example: 1000
+          create_time:
+            type: string
+            description: 创建时间
+            example: '2015-05-20T13:29:35.120+08:00'
+          pay_time:
+            type: string
+            description: 支付时间
+            example: '2015-05-20T13:29:35.120+08:00'
+          objectives:
+            type: array
+            description: 目标达成明细列表
+            items:
+              type: object
+              required:
+                - objective_serial_no
+                - objective_id
+                - performance_description
+                - performance_type
+                - count
+                - performance_time
+              properties:
+                objective_serial_no:
+                  type: string
+                  description: 目标流水号
+                  example: '578354545'
+                objective_id:
+                  type: integer
+                  description: 先享卡目标ID
+                  example: 123456
+                name:
+                  type: string
+                  description: 目标名称
+                  example: 一周购买三次商品
+                unit:
+                  type: string
+                  description: 目标单位
+                  example: 个
+                performance_description:
+                  type: string
+                  description: 履约描述
+                  example: 购买商品
+                performance_type:
+                  type: enum
+                  description: 履约类型
+                  example: INCREASE
+                count:
+                  type: integer
+                  description: 目标数量
+                  example: 1
+                performance_time:
+                  type: string
+                  description: 履约时间
+                  example: '2015-05-20T13:29:35.120+08:00'
+                remark:
+                  type: string
+                  description: 备注说明
+                  example: 特价商品
+          rewards:
+            type: array
+            description: 奖励明细列表
+            items:
+              type: object
+              required:
+                - reward_serial_no
+                - reward_id
+                - description
+                - reward_type
+                - count
+                - amount
+                - reward_time
+              properties:
+                reward_serial_no:
+                  type: string
+                  description: 奖励流水号
+                  example: '578354'
+                reward_id:
+                  type: integer
+                  description: 先享卡奖励ID
+                  example: 123456
+                name:
+                  type: string
+                  description: 奖励名称
+                  example: 八折优惠
+                unit:
+                  type: string
+                  description: 奖励单位
+                  example: 个
+                description:
+                  type: string
+                  description: 奖励描述
+                  example: 购买商品
+                reward_type:
+                  type: enum
+                  description: 奖励类型
+                  example: INCREASE
+                count:
+                  type: integer
+                  description: 奖励数量
+                  example: 1
+                amount:
+                  type: integer
+                  description: 奖励金额
+                  example: 100
+                reward_time:
+                  type: string
+                  description: 奖励时间
+                  example: '2015-05-20T13:29:35.120+08:00'
+                remark:
+                  type: string
+                  description: 备注说明
+                  example: 特价商品

@@ -35,6 +35,7 @@ produces:
 tags:
   - name: 微信支付分
   - name: 微信支付分∙免确认模式特有
+  - name: 微信支付分∙先享卡
   - name: 基础支付∙普通支付∙直连模式
   - name: 基础支付∙普通支付∙服务商模式
   - name: 基础支付∙合单支付
@@ -99,6 +100,10 @@ paths:
     $ref: ./spec/combine-transactions/out-trade-no/{combine_out_trade_no}.yaml
   /v3/combine-transactions/out-trade-no/{combine_out_trade_no}/close:
     $ref: ./spec/combine-transactions/out-trade-no/{combine_out_trade_no}/close.yaml
+  /v3/discount-card/orders/{out_order_no}:
+    $ref: ./spec/discount-card/orders/{out_order_no}.yaml
+  /v3/discount-card/orders/out-trade-no/{out_trade_no}:
+    $ref: ./spec/discount-card/orders/out-trade-no/{out_trade_no}.yaml
   /v3/ecommerce/applyments/{applyment_id}:
     $ref: ./spec/ecommerce/applyments/{applyment_id}.yaml
   /v3/ecommerce/applyments/out-request-no/{out_request_no}:

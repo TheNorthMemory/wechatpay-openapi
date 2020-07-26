@@ -47,9 +47,10 @@ patch:
                   description: 履约描述
                   example: 购买商品
                 performance_type:
-                  type: enum
+                  type: string
                   description: 履约类型
                   example: INCREASE
+                  $ref: '../../../definitions/Enumerations.yaml#PayScoreDiscountCardOrderPerformanceType'
                 count:
                   type: integer
                   description: 目标数量
@@ -89,9 +90,10 @@ patch:
                   description: 奖励描述
                   example: 购买商品
                 reward_type:
-                  type: enum
+                  type: string
                   description: 奖励类型
                   example: INCREASE
+                  $ref: '../../../definitions/Enumerations.yaml#PayScoreDiscountCardOrderRewardType'
                 count:
                   type: integer
                   description: 奖励数量
@@ -225,9 +227,10 @@ get:
             description: 线下使用说明
             example: 仅限商户门店使用
           state:
-            type: enum
+            type: string
             description: 订单状态
             example: CREATED
+            $ref: '../../../definitions/Enumerations.yaml#PayScoreDiscountCardOrderState'
           total_amount:
             type: integer
             description: 总金额
@@ -282,9 +285,10 @@ get:
                   description: 履约描述
                   example: 购买商品
                 performance_type:
-                  type: enum
+                  type: string
                   description: 履约类型
                   example: INCREASE
+                  $ref: '../../../definitions/Enumerations.yaml#PayScoreDiscountCardOrderPerformanceType'
                 count:
                   type: integer
                   description: 目标数量
@@ -332,9 +336,10 @@ get:
                   description: 奖励描述
                   example: 购买商品
                 reward_type:
-                  type: enum
+                  type: string
                   description: 奖励类型
                   example: INCREASE
+                  $ref: '../../../definitions/Enumerations.yaml#PayScoreDiscountCardOrderRewardType'
                 count:
                   type: integer
                   description: 奖励数量

@@ -353,6 +353,31 @@ PayScoreUserServiceState:
     - UNAVAILABLE #用户未授权服务
     - AVAILABLE   #用户已授权服务
 
+PayScoreDiscountCardOrderState:
+  type: string
+  description: 订单状态
+  enum:
+    - CREATED   #订单已创建，表示用户已经领取先享卡，订单已创建成功。
+    - SETTLING  #订单结算中，表示用户领取的先享卡已到期，订单正在结算。
+    - CHARGING  #订单扣款中，表示用户未完成先享卡目标且享受奖励金额，需要扣回相应奖励金额，正在扣款中。
+    - CHARGED   #订单扣款成功，表示用户未完成先享卡目标且享受奖励金额，需要扣回相应奖励金额，扣款已成功。
+    - NO_CHARGE #订单无需扣款，表示用户已完成先享卡目标或者未享受奖励。
+    - REVOKED   #订单已取消，表示用户未享受奖励且未完成先享卡目标。
+
+PayScoreDiscountCardOrderPerformanceType:
+  type: string
+  description: 履约类型
+  enum:
+    - INCREASE #增加
+    - DECREASE #减少
+
+PayScoreDiscountCardOrderRewardType:
+  type: string
+  description: 奖励类型
+  enum:
+    - INCREASE #增加
+    - DECREASE #减少
+
 FavorTradeType:
   type: string
   description: 支付方式

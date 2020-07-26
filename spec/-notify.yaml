@@ -22,6 +22,8 @@ post:
   [授权/解除授权服务回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter5_1.shtml)
   [支付分确认订单回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter5_2.shtml)
   [支付分支付成功回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter5_3.shtml)
+  [先享卡用户领卡通知API](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter4_1.shtml)
+  [先享卡用户结算通知API](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter4_2.shtml)
   "
   parameters:
     - name: Wechatpay-Nonce
@@ -79,6 +81,7 @@ post:
           resource:
             type: object
             description: 通知资源数据
+            x-is-sensitive: ciphertext
             required:
               - algorithm
               - nonce
@@ -174,6 +177,8 @@ WechatpayNotificationEventType:
   [授权/解除授权服务回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter5_1.shtml)
   [支付分确认订单回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter5_2.shtml)
   [支付分支付成功回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter5_3.shtml)
+  [先享卡用户领卡通知API](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter4_1.shtml)
+  [先享卡用户结算通知API](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter4_2.shtml)
   "
   enum:
     # @see                        [商圈支付结果通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/businesscircle/points/chapter3_1.shtml)
@@ -188,7 +193,7 @@ WechatpayNotificationEventType:
     - PROFITSHARING               #分账
     - PROFITSHARING_RETURN        #分账回退
     # @see                        [投诉通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/merchant-service/chapter4_1.shtml)
-    - COMPLATINT.CREATE           #产生新投诉
+    - COMPLAINT.CREATE            #产生新投诉
     - COMPLAINT.STATE_CHANGE      #投诉状态变化
     # @see                        [退款结果通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/refunds/chapter3_3.shtml)
     - REFUND.SUCCESS              #退款成功通知
@@ -205,3 +210,7 @@ WechatpayNotificationEventType:
     - PAYSCORE.USER_CONFIRM       #用户确认成功通知
     # @see                        [支付分支付成功回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter5_3.shtml)
     - PAYSCORE.USER_PAID          #支付成功通知
+    # @see                        [先享卡用户领卡通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter4_1.shtml)
+    - DISCOUNT_CARD.GET_CARD      #先享卡用户领卡通知
+    # @see                        [先享卡支付结算通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter4_2.shtml)
+    - DISCOUNT_CARD.SETTLEMENT    #先享卡支付结算通知

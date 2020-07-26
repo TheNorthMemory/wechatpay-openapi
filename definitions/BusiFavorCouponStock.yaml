@@ -224,6 +224,10 @@ CouponBase:
         store_id:
           type: string
           description: 可用门店id
+        code_display_mode:
+          type: string
+          description: code展示模式
+          $ref: './Enumerations.yaml#CouponCodeDisplayMode'
     display_pattern_info:
       type: object
       description: 样式信息

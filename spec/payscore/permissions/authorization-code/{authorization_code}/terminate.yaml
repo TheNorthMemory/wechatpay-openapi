@@ -1,0 +1,34 @@
+post:
+  x-version: [V1.0, 2020.07.20]
+  x-role:
+    - 直连商户
+  tags:
+    - 微信支付分∙免确认模式预授权
+  summary: 解除用户授权关系（授权协议号）API
+  description: 通过authorization_code，商户解除用户授权关系 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter9_4.shtml)
+  parameters:
+    - name: authorization_code
+      in: path
+      required: true
+      type: string
+      description: 授权协议号
+      example: 1234323JKHDFE1243252
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - service_id
+          - reason
+        properties:
+          service_id:
+            type: string
+            description: 服务id
+            example: '500001'
+          reason:
+            type: string
+            description: 撤销原因
+            example: 撤销原因
+  responses:
+    204: {}

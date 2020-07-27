@@ -378,6 +378,14 @@ PayScoreDiscountCardOrderRewardType:
     - INCREASE #增加
     - DECREASE #减少
 
+PayScorePermissionAuthorizationState:
+  type: string
+  description: 授权状态
+  enum:
+    - UNAVAILABLE #用户未授权服务
+    - AVAILABLE   #用户已授权服务
+    - UNBINDUSER  #未绑定用户
+
 FavorTradeType:
   type: string
   description: 支付方式

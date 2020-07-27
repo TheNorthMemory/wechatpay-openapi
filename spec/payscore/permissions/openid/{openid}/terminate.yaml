@@ -1,0 +1,39 @@
+post:
+  x-version: [V1.0, 2020.07.20]
+  x-role:
+    - 直连商户
+  tags:
+    - 微信支付分∙免确认模式预授权
+  summary: 解除用户授权关系（openid）API
+  description: 通过openid， 商户解除用户授权关系 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter9_6.shtml)
+  parameters:
+    - name: openid
+      in: path
+      required: true
+      type: string
+      description: 用户标识
+      example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - service_id
+          - appid
+          - reason
+        properties:
+          service_id:
+            type: string
+            description: 服务ID
+            example: '2002000000000558128851361561536'
+          appid:
+            type: string
+            description: 公众号id
+            example: wxd678efh567hg6787
+          reason:
+            type: string
+            description: 撤销原因
+            example: reason
+  responses:
+    204: {}

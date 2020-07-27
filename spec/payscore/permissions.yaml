@@ -1,0 +1,46 @@
+post:
+  x-version: [V1.0, 2020.07.20]
+  x-role:
+    - 直连商户
+  tags:
+    - 微信支付分∙免确认模式预授权
+  summary: 商户预授权API
+  description: '商户预授权 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter9_2.shtml)'
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - service_id
+          - appid
+          - authorization_code
+        properties:
+          service_id:
+            type: string
+            description: 服务id
+            example: '500001'
+          appid:
+            type: string
+            description: 公众号id
+            example: wxd678efh567hg6787
+          authorization_code:
+            type: string
+            description: 授权协议号
+            example: 1234323JKHDFE1243252
+          notify_url:
+            type: string
+            description: 通知地址
+            example: 'http://www.qq.com'
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - apply_permissions_token
+        properties:
+          apply_permissions_token:
+            type: string
+            description: 预授权token
+            example: apply_permissions_token

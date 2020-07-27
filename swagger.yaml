@@ -35,6 +35,7 @@ produces:
 tags:
   - name: 微信支付分
   - name: 微信支付分∙免确认模式特有
+  - name: 微信支付分∙免确认模式预授权
   - name: 微信支付分∙先享卡
   - name: 基础支付∙普通支付∙直连模式
   - name: 基础支付∙普通支付∙服务商模式
@@ -258,6 +259,16 @@ paths:
     $ref: ./spec/pay/transactions/out-trade-no/{out_trade_no}.yaml
   /v3/pay/transactions/out-trade-no/{out_trade_no}/close:
     $ref: ./spec/pay/transactions/out-trade-no/{out_trade_no}/close.yaml
+  /v3/payscore/permissions:
+    $ref: ./spec/payscore/permissions.yaml
+  /v3/payscore/permissions/authorization-code/{authorization_code}:
+    $ref: ./spec/payscore/permissions/authorization-code/{authorization_code}.yaml
+  /v3/payscore/permissions/authorization-code/{authorization_code}/terminate:
+    $ref: ./spec/payscore/permissions/authorization-code/{authorization_code}/terminate.yaml
+  /v3/payscore/permissions/openid/{openid}:
+    $ref: ./spec/payscore/permissions/openid/{openid}.yaml
+  /v3/payscore/permissions/openid/{openid}/terminate:
+    $ref: ./spec/payscore/permissions/openid/{openid}/terminate.yaml
   /v3/payscore/serviceorder:
     $ref: ./spec/payscore/serviceorder.yaml
   /v3/payscore/serviceorder/{out_order_no}/cancel:

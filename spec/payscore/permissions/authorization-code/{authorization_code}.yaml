@@ -1,0 +1,68 @@
+get:
+  x-version: [V1.0, 2020.07.20]
+  x-role:
+    - 直连商户
+  tags:
+    - 微信支付分∙免确认模式预授权
+  summary: 查询与用户授权记录（授权协议号）API
+  description: 通过authorization_code，商户查询与用户授权关系 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter9_3.shtml)
+  parameters:
+    - name: authorization_code
+      in: path
+      required: true
+      type: string
+      description: 授权协议号
+      example: 1234323JKHDFE1243252
+    - name: service_id
+      in: query
+      required: true
+      type: string
+      description: 服务ID
+      example: '500001'
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - service_id
+          - appid
+          - mchid
+          - authorization_state
+        properties:
+          service_id:
+            type: string
+            description: 服务id
+            example: '2002000000000558128851361561536'
+          appid:
+            type: string
+            description: 公众号id
+            example: wxd678efh567hg6787
+          mchid:
+            type: string
+            description: 商户号
+            example: '1230000109'
+          openid:
+            type: string
+            description: 用户标识
+            example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+          authorization_code:
+            type: string
+            description: 授权协议号
+            example: '1275342195190894594'
+          authorization_state:
+            $ref: '../../../../definitions/Enumerations.yaml#PayScorePermissionAuthorizationState'
+          notify_url:
+            type: string
+            format: url
+            description: 授权通知地址
+            example: 'https://www.weixin.com'
+          cancel_authorization_time:
+            type: string
+            format: rfc3339
+            description: 最近一次解除授权时间
+            example: '2015-05-20T13:29:35.120+08:00'
+          authorization_success_time:
+            type: string
+            format: rfc3339
+            description: 最近一次授权成功时间
+            example: '2015-05-20T13:29:35.120+08:00'

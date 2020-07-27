@@ -22,8 +22,8 @@ post:
   [授权/解除授权服务回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter5_1.shtml)
   [支付分确认订单回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter5_2.shtml)
   [支付分支付成功回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter5_3.shtml)
-  [先享卡用户领卡通知API](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter4_1.shtml)
-  [先享卡用户结算通知API](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter4_2.shtml)
+  [先享卡用户领卡通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter4_1.shtml)
+  [先享卡用户结算通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter4_2.shtml)
   "
   parameters:
     - name: Wechatpay-Nonce
@@ -150,9 +150,13 @@ WechatpayNotificationOriginalType:
   [分账动账通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/profitsharing/chapter3_6.shtml)
   [核销事件回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/convention/chapter4_1.shtml)
   [领券事件回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/busifavor/chapter4_1.shtml)
+  [先享卡用户领卡通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter4_1.shtml)
+  [先享卡用户结算通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter4_2.shtml)
   "
   enum:
     # @see [商圈支付结果通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/businesscircle/points/chapter3_1.shtml)
+    # @see [先享卡用户领卡通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter4_1.shtml)
+    # @see [先享卡用户结算通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter4_2.shtml)
     - discount_card
     # @see [分账动账通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/profitsharing/chapter3_6.shtml)
     - profitsharing
@@ -177,8 +181,8 @@ WechatpayNotificationEventType:
   [授权/解除授权服务回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter5_1.shtml)
   [支付分确认订单回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter5_2.shtml)
   [支付分支付成功回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter5_3.shtml)
-  [先享卡用户领卡通知API](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter4_1.shtml)
-  [先享卡用户结算通知API](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter4_2.shtml)
+  [先享卡用户领卡通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter4_1.shtml)
+  [先享卡用户结算通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter4_2.shtml)
   "
   enum:
     # @see                        [商圈支付结果通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/businesscircle/points/chapter3_1.shtml)

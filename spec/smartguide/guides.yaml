@@ -6,6 +6,7 @@ post:
   summary: 服务人员注册API
   description: 用于服务商/商户开发者为商户注册服务人员使用。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/smartguide/chapter3_1.shtml)
   parameters:
+    - $ref: '../../swagger.yaml#parameters/WECHATPAY_CERTIFICATE_SERIAL'
     - name: _
       in: body
       required: true
@@ -59,6 +60,7 @@ get:
   description: 用于服务商/商户开发者查询已注册的服务人员ID等信息。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/smartguide/chapter3_3.shtml)
   x-is-sensitive: [mobile]
   parameters:
+    - $ref: '../../swagger.yaml#parameters/WECHATPAY_CERTIFICATE_SERIAL'
     - name: sub_mchid
       in: query
       type: string

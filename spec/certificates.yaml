@@ -31,6 +31,7 @@ get:
                   example: '2018-12-08T10:34:56+08:00'
                 encrypt_certificate:
                   type: object
+                  x-is-sensitive: ciphertext
                   properties:
                     algorithm:
                       type: string

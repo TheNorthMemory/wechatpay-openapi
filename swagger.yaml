@@ -61,6 +61,12 @@ tags:
   - name: 经营工具∙点金计划
   - name: 通用接口
   - name: 通用接口∙商业支付投诉
+parameters:
+  WECHATPAY_CERTIFICATE_SERIAL:
+    name: Wechatpay-Serial
+    in: header
+    required: true
+    description: 微信支付平台公钥证书序列号
 paths:
   /v3/-notify:
     $ref: ./spec/-notify.yaml

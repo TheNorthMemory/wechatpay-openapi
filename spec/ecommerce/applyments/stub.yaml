@@ -6,6 +6,7 @@ post:
   summary: 二级商户进件API
   description: 电商平台通过提交二级商户资料，完成二级商户入驻，入驻成为微信支付商户。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/applyments/chapter3_1.shtml)
   parameters:
+    - $ref: '../../../swagger.yaml#parameters/WECHATPAY_CERTIFICATE_SERIAL'
     - name: _
       in: body
       required: true

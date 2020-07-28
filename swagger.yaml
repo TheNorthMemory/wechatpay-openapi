@@ -146,6 +146,8 @@ paths:
     $ref: ./spec/goldplan/merchants/changecustompagestatus.yaml
   /v3/goldplan/merchants/changegoldplanstatus:
     $ref: ./spec/goldplan/merchants/changegoldplanstatus.yaml
+  /v3/goldplan/merchants/set-advertising-industry-filter:
+    $ref: ./spec/goldplan/merchants/set-advertising-industry-filter.yaml
   /v3/marketing/busifavor/callbacks:
     $ref: ./spec/marketing/busifavor/callbacks.yaml
   /v3/marketing/busifavor/coupons/{card_id}/send:

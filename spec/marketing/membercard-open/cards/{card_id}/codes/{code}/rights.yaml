@@ -1,0 +1,48 @@
+patch:
+  x-version: [V1.0, 2020.07.15]
+  x-role:
+    - 直连商户
+    - 服务商
+  tags:
+    - 会员卡∙权益设置
+  summary: 设置会员权益API
+  description: 通过此接口商家可设置是否在用户的会员卡详情页展示积分、优惠、发票等权益及服务模块 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter5_2.shtml)
+  parameters:
+    - name: card_id
+      in: path
+      required: true
+      type: string
+      description: 会员卡id
+      example: pbLatjvWOibDc5-TBnbUk1pD12o0
+    - name: code
+      in: path
+      required: true
+      type: string
+      description: 会员卡code
+      example: '478515832665'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - out_request_no
+        properties:
+          before_bonus_value:
+            type: integer
+            description: 变更前的会员积分值
+            example: 500
+          bonus_value:
+            type: integer
+            description: 变更后的会员积分值
+            example: 600
+          add_bonus_value:
+            type: integer
+            description: 会员积分变动值
+            example: 100
+          out_request_no:
+            type: string
+            description: 商户请求单号
+            example: 100002322019090134234sfdf
+  responses:
+    204: {}

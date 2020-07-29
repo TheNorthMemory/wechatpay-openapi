@@ -1,0 +1,33 @@
+get:
+  x-version: [V1.0, 2020.07.15]
+  x-role:
+    - 直连商户
+    - 服务商
+  tags:
+    - 会员卡∙运营投放
+  summary: 加密code解码（跳转型激活）API
+  description: 如果商家选择跳转激活的投放方式，用户点击开卡跳转至商家H5网页/小程序时，会员组件会在跳转链接activate_url后拼接若干个参数，包括：用户的openid、加密的会员code(encrypt_code)、激活ticket(activate_ticket)。对于加密的encrypt_code，商家可调用此api解码接口，获取真实code。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter4_4.shtml)
+  parameters:
+    - name: card_id
+      in: path
+      required: true
+      type: string
+      description: 会员卡id
+      example: pbLatjvWOibDc5-TBnbUk1pD12o0
+    - name: encrypt_code
+      in: query
+      required: true
+      type: string
+      description: 加密code
+      example: XXIzTtMqCxwOaawoE91+VJdsFmv7b8g0VZIZkqf4GWA60Fzpc8ksZ/5ZZ0DVkXdE
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - code
+        properties:
+          code:
+            type: string
+            description: 会员卡code
+            example: '751234212312'

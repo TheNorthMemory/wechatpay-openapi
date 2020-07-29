@@ -1,0 +1,62 @@
+patch:
+  x-version: [V1.0, 2020.07.15]
+  x-role:
+    - 直连商户
+    - 服务商
+  tags:
+    - 会员卡
+  summary: 设置回调地址API
+  description: 通过此接口商户可设置回调地址，用于接收会员业务的相关信息营销事件推送：点击开通产品权限。由会员卡创建方登录Pay平台，操作开通。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter6_1.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - notify_url
+        properties:
+          notify_url:
+            type: string
+            description: 通知url地址
+            example: 'https://pay.weixin.qq.com'
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - notify_url
+        properties:
+          notify_url:
+            type: string
+            description: 通知url地址
+            example: 'https://shangjia.com'
+          mchid:
+            type: string
+            description: 商户号
+            example: '99999105'
+get:
+  x-version: [V1.0, 2020.07.15]
+  x-role:
+    - 直连商户
+    - 服务商
+  tags:
+    - 会员卡
+  summary: 查询回调地址API
+  description: 通过此接口可查询以前设置的回调地址 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter6_2.shtml)
+  parameters: []
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - notify_url
+        properties:
+          notify_url:
+            type: string
+            description: 通知url地址
+            example: 'https://shangjia.com'
+          mchid:
+            type: string
+            description: 商户号
+            example: '99999105'

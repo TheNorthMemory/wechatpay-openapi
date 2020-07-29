@@ -1,0 +1,66 @@
+get:
+  x-version: [V1.0, 2020.07.15]
+  x-role:
+    - 直连商户
+    - 服务商
+  tags:
+    - 会员卡∙基础功能
+  summary: 查询用户在品牌下所有会员卡API
+  description: 通过此接口可查询用户在当前品牌下领取的所有会员卡 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_5.shtml)
+  parameters:
+    - name: openid
+      in: query
+      required: true
+      description: 用户标识
+      example: obLatjnx9gnqzS4myYGmLZ7LgLBA
+    - name: appid
+      in: query
+      type: string
+      description: 商户AppId
+      example: wxea9c30890f48d5ae
+    - name: offset
+      in: query
+      required: true
+      type: integer
+      description: 分页页码
+      default: 0
+    - name: limit
+      in: query
+      required: true
+      type: integer
+      description: 分页大小
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - total_count
+          - offset
+          - limit
+        properties:
+          data:
+            type: array
+            description: 会员卡列表
+            items:
+              type: object
+              properties:
+                card_id:
+                  type: string
+                  description: 会员卡id
+                  example: pbLatjvWOibDc5-TBnbUk1pD12o0
+                code:
+                  type: string
+                  description: 会员卡code
+                  example: '478515832665'
+          total_count:
+            type: integer
+            description: 总数量
+            example: 20
+          offset:
+            type: integer
+            description: 分页页码
+            example: 1
+          limit:
+            type: integer
+            description: 分页大小
+            example: 20

@@ -1,0 +1,278 @@
+Record:
+  type: object
+  required:
+    - card_id
+    - brand
+    - appid
+    - logo_url
+    - title
+    - background_picture_url
+    - description
+    - code_type
+    - date_information
+    - code_mode
+    - out_request_no
+  properties:
+    card_id:
+      type: string
+      description: 会员卡id
+      example: pbLatjvWOibDc5-TBnbUk1pD12o0
+    create_time:
+      type: string
+      format: rfc3339
+      description: 创建时间
+      example: '2020-05-20T13:29:35.120+08:00'
+    update_time:
+      type: string
+      format: rfc3339
+      description: 更新时间
+      example: '2020-05-20T13:29:35.120+08:00'
+    remain_quantity:
+      type: integer
+      description: 剩余库存
+      example: 1004
+    status:
+      $ref: './Enumerations.yaml#MemberCardStatus'
+    brand:
+      type: object
+      description: 品牌信息
+      required:
+        - brand_id
+        - display_name
+      properties:
+        brand_id:
+          type: string
+          description: 品牌id
+          example: '1004'
+        display_name:
+          type: string
+          description: 品牌展示名称
+          example: 微信支付
+    appid:
+      type: string
+      description: 商户AppId
+      example: wxea9c30890f48d5ae
+    logo_url:
+      type: string
+      format: MediaUrl
+      description: 会员卡logo
+      example: 'https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/0'
+    title:
+      type: string
+      description: 卡名称
+      example: 微信支付测试卡
+    background_picture_url:
+      type: string
+      format: MediaUrl
+      description: 会员卡背景图
+      example: 'https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/0'
+    description:
+      type: string
+      description: 使用须知
+      example: 使用本会员卡表示你同意xxx公司的协议，最终解释权归xxx公司所有
+    service_phone:
+      type: string
+      description: 服务电话
+      example: 010-8877xxxx
+    code_type:
+      $ref: './Enumerations.yaml#MemberCardCodeType'
+    total_quantity:
+      type: integer
+      description: 会员卡总库存
+      example: 5000000
+    date_information:
+      type: object
+      description: 有效期
+      required:
+        - type
+      properties:
+        type:
+          $ref: './Enumerations.yaml#MemberCardDateInformationType'
+        available_begin_time:
+          type: string
+          description: 有效期开始时间
+          format: rfc3339
+          example: '2020-05-20T13:29:35.120+08:00'
+        available_end_time:
+          type: string
+          format: rfc3339
+          description: 有效期结束时间
+          example: '2030-05-20T13:29:35.120+08:00'
+        available_day_after_receive:
+          type: integer
+          description: 生效后N天内有效
+          example: 200
+        wait_days_after_receive:
+          type: integer
+          description: 领取后N天开始生效
+          example: 1
+    code_mode:
+      $ref: './Enumerations.yaml#MemberCardCodeMode'
+    need_display_level:
+      type: boolean
+      description: 是否展示会员等级
+    init_level:
+      type: string
+      description: 会员初始等级
+      example: 白银会员
+    out_request_no:
+      type: string
+      description: 商户请求单号
+      example: 100002322019090134234sfdf
+    balance_information:
+      type: object
+      description: 储值信息
+      properties:
+        need_balance:
+          type: boolean
+          description: 是否支持储值
+        balance_appid:
+          type: string
+          description: 储值小程序appid
+          example: wxea9c30890f48d5ae
+        balance_path:
+          type: string
+          description: 储值小程序path
+          example: pages/balance/balance
+        balance_url:
+          type: string
+          description: 储值url
+          example: 'https://xxx.com'
+    user_information_form:
+      type: object
+      description: 开卡信息
+      properties:
+        common_field_list:
+          type: array
+          description: 平台提供的通用开卡信息字段
+          items:
+            $ref: './Enumerations.yaml#MemberCardUserInformationCommonField'
+          example:
+            - USER_FORM_FLAG_MOBILE
+        custom_field_list:
+          type: array
+          description: 商户自定义的开卡信息字段
+          items:
+            type: object
+            properties:
+              type:
+                $ref: './Enumerations.yaml#MemberCardUserInformationCustomFieldType'
+              name:
+                type: string
+                description: 字段名称
+                example: 喜欢的运动
+              values:
+                type: array
+                items:
+                  type: string
+                description: 字段值
+                example:
+                  - 篮球
+                  - 足球
+                  - 羽毛球
+    additional_statement:
+      type: object
+      description: 商户补充声明
+      properties:
+        title:
+          type: string
+          description: 标题
+          example: xxx会员卡使用须知
+        url:
+          type: string
+          description: 跳转url
+          example: 'https://xxx.111.com'
+        appid:
+          type: string
+          description: 跳转小程序appid
+          example: wxea9c30890f48d5ae
+        path:
+          type: string
+          description: 跳转小程序path
+          example: pages/statement/statement
+
+CodeRecord:
+  type: object
+  properties:
+    card_id:
+      type: string
+      description: 会员卡id
+      example: pbLatjvWOibDc5-TBnbUk1pD12o0
+    code:
+      type: string
+      description: 会员卡code
+      example: '478515832665'
+    openid:
+      type: string
+      description: 用户标识
+      example: obLatjnx9gnqzS4myYGmLZ7LgLBA
+    membership_number:
+      type: string
+      description: 会员卡编号
+      example: '316510891298'
+    level:
+      type: string
+      description: 用户等级
+      example: 钻石会员
+    nickname:
+      type: string
+      description: 微信昵称
+      example: 周星星
+    head_image_url:
+      type: string
+      description: 微信头像url
+      example: 'http://wx.qlogo.cn/xxx'
+    background_picture_url:
+      type: string
+      format: MediaUrl
+      description: 会员卡背景图
+      example: 'https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/0'
+    balance:
+      type: integer
+      description: 用户储值余额
+      example: 888
+    user_card_status:
+      $ref: './Enumerations.yaml#MemberCardUserCardStatus'
+    user_information:
+      type: object
+      description: 用户开卡时填写的个人信息
+      properties:
+        common_field_list:
+          type: array
+          description: 平台提供的通用开卡信息字段
+          items:
+            type: object
+            properties:
+              name:
+                $ref: './Enumerations.yaml#MemberCardUserInformationCommonField'
+              value:
+                type: string
+                description: 用户开卡时填写的个人信息
+                example: 深圳
+        custom_field_list:
+          type: array
+          description: 商户自定义的开卡信息字段
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+                description: 字段名称
+                example: 喜欢的运动
+              value:
+                type: string
+                description: 字段值
+                example: 篮球
+              value_list:
+                type: array
+                items:
+                  type: string
+                description: 字段值列表
+                example:
+                  - 篮球
+                  - 足球
+                  - 羽毛球
+    bonus_value:
+      type: integer
+      description: 用户当前积分
+      example: 600

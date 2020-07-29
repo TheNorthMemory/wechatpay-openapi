@@ -51,6 +51,10 @@ tags:
   - name: 电商收付通∙账单
   - name: 商户进件∙特约商户进件
   - name: 商户进件∙通用接口
+  - name: 会员卡
+  - name: 会员卡∙基础功能
+  - name: 会员卡∙运营投放
+  - name: 会员卡∙权益设置
   - name: 运营工具∙代金券
   - name: 运营工具∙商家券
   - name: 运营工具∙委托营销
@@ -202,6 +206,34 @@ paths:
     $ref: ./spec/marketing/favor/users/{openid}/coupons.yaml
   /v3/marketing/favor/users/{openid}/coupons/{coupon_id}:
     $ref: ./spec/marketing/favor/users/{openid}/coupons/{coupon_id}.yaml
+  /v3/marketing/membercard-open/activate-informations/{activate_ticket}:
+    $ref: ./spec/marketing/membercard-open/activate-informations/{activate_ticket}.yaml
+  /v3/marketing/membercard-open/callback:
+    $ref: ./spec/marketing/membercard-open/callback.yaml
+  /v3/marketing/membercard-open/cards:
+    $ref: ./spec/marketing/membercard-open/cards.yaml
+  /v3/marketing/membercard-open/cards/{card_id}:
+    $ref: ./spec/marketing/membercard-open/cards/{card_id}.yaml
+  /v3/marketing/membercard-open/cards/{card_id}/codes/{code}:
+    $ref: ./spec/marketing/membercard-open/cards/{card_id}/codes/{code}.yaml
+  /v3/marketing/membercard-open/cards/{card_id}/codes/{code}/activate:
+    $ref: ./spec/marketing/membercard-open/cards/{card_id}/codes/{code}/activate.yaml
+  /v3/marketing/membercard-open/cards/{card_id}/codes/{code}/rights:
+    $ref: ./spec/marketing/membercard-open/cards/{card_id}/codes/{code}/rights.yaml
+  /v3/marketing/membercard-open/cards/{card_id}/codes/{code}/unavailable:
+    $ref: ./spec/marketing/membercard-open/cards/{card_id}/codes/{code}/unavailable.yaml
+  /v3/marketing/membercard-open/cards/{card_id}/codes/deposit:
+    $ref: ./spec/marketing/membercard-open/cards/{card_id}/codes/deposit.yaml
+  /v3/marketing/membercard-open/cards/{card_id}/decrypt-code:
+    $ref: ./spec/marketing/membercard-open/cards/{card_id}/decrypt-code.yaml
+  /v3/marketing/membercard-open/cards/{card_id}/qrcode:
+    $ref: ./spec/marketing/membercard-open/cards/{card_id}/qrcode.yaml
+  /v3/marketing/membercard-open/cards/{card_id}/rights:
+    $ref: ./spec/marketing/membercard-open/cards/{card_id}/rights.yaml
+  /v3/marketing/membercard-open/cards/{card_id}/upgrade:
+    $ref: ./spec/marketing/membercard-open/cards/{card_id}/upgrade.yaml
+  /v3/marketing/membercard-open/user/cards:
+    $ref: ./spec/marketing/membercard-open/user/cards.yaml
   /v3/marketing/partnerships/build:
     $ref: ./spec/marketing/partnerships/build.yaml
   /v3/marketing/partnerships/terminate:

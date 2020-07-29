@@ -1,0 +1,53 @@
+post:
+  x-version: [V1.0, 2020.07.15]
+  x-role:
+    - 直连商户
+    - 服务商
+  tags:
+    - 会员卡∙运营投放
+  summary: 创建会员卡二维码API
+  description: 商户创建会员卡后，可以调用此api创建二维码，用于投放会员卡，用户可扫码开通会员卡 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter4_3.shtml)
+  parameters:
+    - name: card_id
+      in: path
+      required: true
+      type: string
+      description: 会员卡id
+      example: pbLatjvWOibDc5-TBnbUk1pD12o0
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - activate_type
+        properties:
+          activate_type:
+            $ref: '../../../../../definitions/Enumerations.yaml#MemberCardActivateType'
+          activate_url:
+            type: string
+            description: 跳转激活的url
+            example: 'https://w.url.cn/s/Ahz3p2C'
+          activate_appid:
+            type: string
+            description: 跳转激活的appid
+            example: wxea9c30a90fs8d3fe
+          activate_path:
+            type: string
+            description: 跳转激活的path
+            example: pages/activate/activate
+          outer_str:
+            type: string
+            description: 自定义场景值
+            example: szwxtd
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - url
+        properties:
+          url:
+            type: string
+            description: 二维码对应的url
+            example: 'https://w.url.cn/s/Ahz3p2C'

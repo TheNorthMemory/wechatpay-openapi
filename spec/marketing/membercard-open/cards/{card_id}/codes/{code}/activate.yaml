@@ -1,0 +1,34 @@
+post:
+  x-version: [V1.0, 2020.07.15]
+  x-role:
+    - 直连商户
+    - 服务商
+  tags:
+    - 会员卡∙运营投放
+  summary: 激活会员卡（跳转型激活）API
+  description: 如果商家选择跳转激活的投放方式，用户跳转至商家页商家H5网页/小程序后，商家可调用激活会员卡接口激活会员。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_10.shtml)
+  parameters:
+    - name: card_id
+      in: path
+      required: true
+      type: string
+      description: 会员卡id
+      example: pbLatjvWOibDc5-TBnbUk1pD12o0
+    - name: code
+      in: path
+      required: true
+      type: string
+      description: 会员卡code
+      example: '478515832665'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        properties:
+          membership_number:
+            type: string
+            description: 会员卡编号
+            example: '316510891298'
+  responses:
+    204: {}

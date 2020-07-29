@@ -642,3 +642,91 @@ GoldPlanAdvertisingIndustry:
     - AGRICULTURE       #农林牧渔
     - PUBLISHING_MEDIA  #出版传媒
     - HOME_DIGITAL      #数码家电
+
+MemberCardCodeType:
+  type: string
+  description: 会员码型
+  enum:
+    - BAR_CODE            #条形码
+    - QRCODE              #二维码
+    - BAR_CODE_AND_QRCODE #条形码和二维码
+    - NONE_CODE           #不显示任何码型
+
+MemberCardDateInformationType:
+  type: string
+  description: 有效期类型
+  enum:
+    - FIX_TIME_RANGE #固定时间范围内有效
+    - FIX_TERM       #相对时间范围内有效
+    - PERMANENT      #永久有效
+
+MemberCardCodeMode:
+  type: string
+  description: 会员卡code分配类型
+  enum:
+    - SYSTEM_ALLOCATE  #系统分配
+    - MERCHANT_DEPOSIT #商户预存
+    - REAL_TIME        #实时传入
+
+MemberCardUserInformationCommonField:
+  type: string
+  description: 平台提供的通用开卡信息字段
+  enum:
+    - USER_FORM_FLAG_MOBILE   #手机号
+    - USER_FORM_FLAG_SEX      #性别
+    - USER_FORM_FLAG_NAME     #姓名
+    - USER_FORM_FLAG_BIRTHDAY #生日
+    - USER_FORM_FLAG_ADDRESS  #地址
+    - USER_FORM_FLAG_EMAIL    #邮箱
+    - USER_FORM_FLAG_CITY     #城市
+
+MemberCardUserInformationCustomFieldType:
+  type: string
+  description: 商户自定义的开卡信息字段类型
+  enum:
+    - TEXT      #文本型
+    - SELECT    #自定义选择项
+    - RADIO     #自定义单选
+    - CHECK_BOX #自定义多选
+
+MemberCardStatus:
+  type: string
+  description: 会员卡状态
+  enum:
+    - NOT_APPROVE  #待审核
+    - APPROVE_FAIL #审核失败
+    - APPROVED     #通过审核
+    - DELETED      #卡被商户删除
+
+MemberCardCodeDepositResult:
+  type: string
+  description: 导入结果
+  enum:
+    - SUCCESS   #成功
+    - DUPLICATE #重复
+    - FAIL      #失败
+
+MemberCardUserCardStatus:
+  type: string
+  description: 用户会员卡状态
+  enum:
+    - NOT_ACTIVATE #未激活
+    - EFFECTIVE    #生效中
+    - EXPIRE       #已过期
+    - UNAVAILABLE  #已失效
+    - DELETE       #已删除
+
+MemberCardActivateType:
+  type: string
+  description: 会员卡激活类型
+  enum:
+    - AUTO_ACTIVATE #一键自动激活
+    - JUMP_ACTIVATE #跳转激活
+
+MemberCardReceiveStatus:
+  type: string
+  description: 用户领取状态
+  enum:
+    - UNSHOWED   #未曝光
+    - UNRECEIVED #未领取
+    - RECEIVED   #已被领取

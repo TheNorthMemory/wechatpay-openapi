@@ -1,0 +1,35 @@
+post:
+  x-version: [V1.0, 2020.07.15]
+  x-role:
+    - 直连商户
+    - 服务商
+  tags:
+    - 会员卡∙基础功能
+  summary: 老会员卡模板升级API
+  description: 商户可调用此api将微信公众平台创建微信会员卡升级为微信支付新版会员卡，将老会员卡card_id绑定品牌id，完成会员卡升级后可以使用新版特性，包括会员权益、会员服务、会员有礼等功能。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_6.shtml)
+  parameters:
+    - name: card_id
+      in: path
+      required: true
+      type: string
+      description: 会员卡id
+      example: pbLatjvWOibDc5-TBnbUk1pD12o0
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - brand_id
+          - appid
+        properties:
+          brand_id:
+            type: string
+            description: 品牌id
+            example: '1001622624'
+          appid:
+            type: string
+            description: 商户AppId
+            example: wxea9c30890f48d5ae
+  responses:
+    204: {}

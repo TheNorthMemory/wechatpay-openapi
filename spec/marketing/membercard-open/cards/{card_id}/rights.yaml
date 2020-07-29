@@ -1,0 +1,98 @@
+patch:
+  x-version: [V1.0, 2020.07.15]
+  x-role:
+    - 直连商户
+    - 服务商
+  tags:
+    - 会员卡∙权益设置
+  summary: 设置会员卡模板权益项API
+  description: 通过此接口商家可设置是否在用户的会员卡详情页展示积分、优惠、发票等权益及服务模块 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter5_1.shtml)
+  parameters:
+    - name: card_id
+      in: path
+      required: true
+      type: string
+      description: 会员卡id
+      example: pbLatjvWOibDc5-TBnbUk1pD12o0
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - show_bonus
+          - show_favor
+        properties:
+          show_bonus:
+            type: boolean
+            description: 是否展示会员积分
+          show_favor:
+            type: boolean
+            description: 是否展示会员优惠
+          bonus:
+            type: object
+            description: 会员积分
+            required:
+              - init_bonus
+              - bonus_value_word
+              - bonus_cost_word
+            properties:
+              init_bonus:
+                type: integer
+                description: 会员初始积分值
+                example: 100
+              bonus_value_word:
+                type: string
+                description: 积分值文案
+                example: 我的积分
+              bonus_cost_title:
+                type: string
+                description: 积分价值项标题
+                example: 积分兑换
+              bonus_cost_word:
+                type: string
+                description: 积分价值项文案
+                example: 500积分=2小时免费停车券
+              bonus_jump_word:
+                type: string
+                description: 积分跳转文案
+                example: 更多礼品
+              bonus_jump_appid:
+                type: string
+                description: 积分跳转appid
+                example: wxea9c30a90fs8d3fe
+              bonus_jump_path:
+                type: string
+                description: 积分跳转path
+                example: /pages/bonus/bonus
+              bonus_support_appid:
+                type: string
+                description: 自助积分跳转appid
+                example: wxea9c30a90fs8d3fe
+              bonus_support_path:
+                type: string
+                description: 自助积分跳转path
+                example: pages/selfbonus/selfbonus
+          favor:
+            type: object
+            description: 会员优惠
+            required:
+              - show_coupon
+            properties:
+              show_coupon:
+                type: boolean
+                description: 是否展示优惠券
+              member_price_word:
+                type: string
+                description: 会员专享价文案
+                example: 周二会员全场八折
+              member_price_appid:
+                type: string
+                description: 会员专享价跳转appid
+                example: wxea9c30a90fs8d3fe
+              member_price_path:
+                type: string
+                description: 会员专享价跳转path
+                example: pages/favor/favor
+  responses:
+    204: {}

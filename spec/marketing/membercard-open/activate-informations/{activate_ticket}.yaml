@@ -1,0 +1,68 @@
+get:
+  x-version: [V1.0, 2020.07.15]
+  x-role:
+    - 直连商户
+    - 服务商
+  tags:
+    - 会员卡∙运营投放
+  summary: 获取用户信息（跳转型激活）API
+  description: 如果商家选择跳转激活的投放方式，用户点击开卡跳转至商家H5网页/小程序时，会员组件会在跳转链接activate_url后拼接若干个参数，包括：用户的openid、加密的会员code(encrypt_code)、激活ticket(activate_ticket)。对于其中的activate_ticket，商家可调用当前api，获取用户的开卡信息。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter4_5.shtml)
+  parameters:
+    - name: activate_ticket
+      in: path
+      required: true
+      type: string
+      description: 激活ticket
+      example: abcdefg
+  responses:
+    200:
+      schema:
+        type: object
+        properties:
+          nickname:
+            type: string
+            description: 微信昵称
+            example: 周星星
+          head_image_url:
+            type: string
+            description: 微信头像url
+            example: 'https://xxx.jpg'
+          user_information:
+            type: object
+            description: 用户开卡时填写的个人信息
+            properties:
+              common_field_list:
+                type: array
+                description: 平台提供的通用开卡信息字段
+                items:
+                  type: object
+                  properties:
+                    name:
+                      $ref: '../../../../definitions/Enumerations.yaml#MemberCardUserInformationCommonField'
+                    value:
+                      type: string
+                      description: 用户开卡时填写的个人信息
+                      example: 深圳
+              custom_field_list:
+                type: array
+                description: 商户自定义的开卡信息字段
+                items:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                      description: 字段名称
+                      example: 喜欢的运动
+                    value:
+                      type: string
+                      description: 字段值
+                      example: 篮球
+                    value_list:
+                      type: array
+                      items:
+                        type: string
+                      description: 字段值
+                      example:
+                        - 篮球
+                        - 足球
+                        - 羽毛球

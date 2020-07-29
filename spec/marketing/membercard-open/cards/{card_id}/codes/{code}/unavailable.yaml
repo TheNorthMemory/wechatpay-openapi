@@ -1,0 +1,34 @@
+post:
+  x-version: [V1.0, 2020.07.15]
+  x-role:
+    - 直连商户
+    - 服务商
+  tags:
+    - 会员卡∙基础功能
+  summary: 作废用户会员卡API
+  description: 将用户的会员卡设置为失效状态。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_12.shtml)
+  parameters:
+    - name: card_id
+      in: path
+      required: true
+      type: string
+      description: 会员卡id
+      example: pbLatjvWOibDc5-TBnbUk1pD12o0
+    - name: code
+      in: path
+      required: true
+      type: string
+      description: 会员卡code
+      example: '478515832665'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        properties:
+          reason:
+            type: string
+            description: 失效理由
+            example: 用户违反会员条例
+  responses:
+    204: {}

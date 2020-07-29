@@ -1,0 +1,46 @@
+post:
+  x-version: [V1.0, 2020.07.15]
+  x-role:
+    - 直连商户
+    - 服务商
+  tags:
+    - 会员卡∙基础功能
+  summary: 导入会员Code API
+  description: 如果会员卡的code分配类型是“预存code”模式，商户可向特定会员卡card_id导入code，导入后自动将会员卡库存数量更新成code数量。用户领取会员卡时，将从这些code里随机分配。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_7.shtml)
+  parameters:
+    - name: card_id
+      in: path
+      required: true
+      type: string
+      description: 会员卡id
+      example: pbLatjvWOibDc5-TBnbUk1pD12o0
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        properties:
+          code:
+            type: array
+            description: 会员卡code
+            items:
+              type: string
+            example:
+              - '478515832665'
+  responses:
+    200:
+      schema:
+        type: object
+        properties:
+          data:
+            type: array
+            description: 导入结果
+            items:
+              type: object
+              properties:
+                code:
+                  type: string
+                  description: 会员卡code
+                  example: '478515832665'
+                result:
+                  $ref: '../../../../../../definitions/Enumerations.yaml#MemberCardCodeDepositResult'

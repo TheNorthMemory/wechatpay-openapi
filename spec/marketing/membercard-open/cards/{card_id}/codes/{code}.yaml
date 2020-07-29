@@ -1,0 +1,97 @@
+get:
+  x-version: [V1.0, 2020.07.15]
+  x-role:
+    - 直连商户
+    - 服务商
+  tags:
+    - 会员卡∙基础功能
+  summary: 查询用户会员卡信息API
+  description: 通过此接口可查询指定用户会员卡的信息，如会员积分、储值余额、开卡信息等 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_4.shtml)
+  parameters:
+    - name: card_id
+      in: path
+      required: true
+      type: string
+      description: 会员卡id
+      example: pbLatjvWOibDc5-TBnbUk1pD12o0
+    - name: code
+      in: path
+      required: true
+      type: string
+      description: 会员卡code
+      example: '478515832665'
+  responses:
+    200:
+      schema:
+        $ref: '../../../../../../definitions/MemberCard.yaml#CodeRecord'
+patch:
+  x-version: [V1.0, 2020.07.15]
+  x-role:
+    - 直连商户
+    - 服务商
+  tags:
+    - 会员卡∙基础功能
+  summary: 修改用户会员卡信息API
+  description: 通过此接口可更新指定用户的会员卡背景图、会员卡号、等级、储值余额 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_8.shtml)
+  parameters:
+    - name: card_id
+      in: path
+      required: true
+      type: string
+      description: 会员卡id
+      example: pbLatjvWOibDc5-TBnbUk1pD12o0
+    - name: code
+      in: path
+      required: true
+      type: string
+      description: 会员卡code
+      example: '478515832665'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        properties:
+          membership_number:
+            type: string
+            description: 会员卡编号
+            example: '316510891298'
+          background_picture_url:
+            type: string
+            format: MediaUrl
+            description: 会员卡背景图
+            example: 'https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/0'
+          level:
+            type: string
+            description: 用户等级
+            example: 钻石会员
+          out_request_no:
+            type: string
+            description: 商户请求单号
+            example: 100002322019090134234sfdf
+          balance_information:
+            type: object
+            description: 用户储值变更信息
+            required:
+              - before_balance
+              - balance
+              - add_balance
+            properties:
+              before_balance:
+                type: integer
+                description: 更新前用户储值余额
+                example: 888
+              balance:
+                type: integer
+                description: 更新后用户储值余额
+                example: 888
+              add_balance:
+                type: integer
+                description: 本次余额变动值
+                example: 100
+              balance_remark:
+                type: string
+                description: 储值消耗记录
+                example: 购买一杯珍珠奶茶，消耗30元
+  responses:
+    204: {}

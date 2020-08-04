@@ -61,6 +61,7 @@ tags:
   - name: 运营工具∙支付有礼
   - name: 运营工具∙消费卡
   - name: 运营工具∙通用接口
+  - name: 经营工具∙智慧商圈
   - name: 经营工具∙支付即服务
   - name: 经营工具∙点金计划
   - name: 通用接口
@@ -98,6 +99,8 @@ paths:
     $ref: ./spec/bill/tradebill.yaml
   /v3/billdownload/file:
     $ref: ./spec/billdownload/file.yaml
+  /v3/businesscircle/points/notify:
+    $ref: ./spec/businesscircle/points/notify.yaml
   /v3/certificates:
     $ref: ./spec/certificates.yaml
   /v3/combine-transactions/app:

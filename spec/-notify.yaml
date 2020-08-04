@@ -195,8 +195,10 @@ WechatpayNotificationEventType:
   [先享卡用户结算通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter4_2.shtml)
   "
   enum:
-    # @see                        [商圈支付结果通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/businesscircle/points/chapter3_1.shtml)
-    - TRANSACTION.SUCCESS         #用户领卡通知的类型
+    # @see                        [商圈支付结果通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/businesscircle/chapter3_1.shtml)
+    - MALL_TRANSACTION.SUCCESS    #商圈支付成功通知的类型
+    # @see                        [商圈退款成功通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/businesscircle/chapter3_3.shtml)
+    - MALL_REFUND.SUCCESS         #商圈退款通知的类型
     # @see                        [普通支付通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transactions/chapter3_11.shtml)
     - TRANSACTION.SUCCESS         #支付成功通知的类型
     # @see                        [服务商支付通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transactions/chapter5_11.shtml)

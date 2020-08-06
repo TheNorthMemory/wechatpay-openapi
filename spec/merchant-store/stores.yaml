@@ -1,0 +1,102 @@
+post:
+  x-version: [V1.0, 2020.04.30]
+  x-role:
+    - 服务商
+  tags:
+    - 经营工具∙连锁品牌∙门店
+  summary: 创建门店API
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - sub_mchid
+          - store_basics
+          - store_address
+          - store_business
+          - store_recipient
+        properties:
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1900000109'
+          store_basics:
+            type: object
+            description: 门店基础信息
+            required:
+              - brand_name
+              - store_name
+            properties:
+              store_reference_id:
+                type: string
+                description: 商家门店编号
+              brand_name:
+                type: string
+                description: 品牌名称
+              store_name:
+                type: string
+                description: 门店名称
+              store_business:
+                type: string
+                description: 分店名称
+          store_address:
+            type: object
+            description: 门店地址信息
+            required:
+              - address_detail
+            properties:
+              address_code:
+                type: string
+                description: 门店省市编码
+                example: '440305'
+              address_detail:
+                type: string
+                description: 门店地址
+              address_complements:
+                type: string
+                description: 门店地址辅助描述
+              longitude:
+                type: string
+                description: 门店经度
+              latitude:
+                type: string
+                description: 门店纬度
+          store_business:
+            type: object
+            description: 门店经营信息
+            properties:
+              service_phone:
+                type: string
+                description: 门店服务电话
+                example: '0755-86013388'
+              business_hours:
+                type: string
+                description: 门店经营时间
+                example: '周一至周五 09:00-20:00|周六至周日 10:00-22:00'
+          store_recipient:
+            type: array
+            description: 门店收款信息
+            items:
+              type: object
+              required:
+                - mchid
+              properties:
+                mchid:
+                  type: string
+                  description: 门店收款商户号
+                company_name:
+                  type: string
+                  description: 门店收款主体
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - store_id
+        properties:
+          store_id:
+            type: integer
+            description: 微信支付商户门店ID
+            example: 20488000

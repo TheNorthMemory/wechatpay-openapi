@@ -1,0 +1,189 @@
+post:
+  x-version: [V1.0, 2020.03.18]
+  x-role:
+    - 服务商
+  tags:
+    - 经营工具∙连锁品牌∙分账
+  summary: 请求分账回退API
+  description: 如果订单已经分账，在退款时，可以先调此接口，将已分账的资金从商户类型的分账接收方的账户回退给分账方，再发起退款。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/brand/chapter3_3.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - sub_mchid
+          - out_return_no
+          - return_mchid
+          - amount
+          - description
+        properties:
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1900000109'
+          order_id:
+            type: string
+            description: 微信分账单号
+            example: '3008450740201411110007820472'
+          out_order_no:
+            type: string
+            description: 商户分账单号
+            example: P20150806125346
+          out_return_no:
+            type: string
+            description: 商户回退单号
+            example: R20190516001
+          return_mchid:
+            type: string
+            description: 回退商户号
+            example: '86693852'
+          amount:
+            type: integer
+            description: 回退金额
+            example: 10
+          description:
+            type: string
+            description: 回退描述
+            example: 分账回退
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - sub_mchid
+          - order_id
+          - out_order_no
+          - out_return_no
+          - return_mchid
+          - amount
+          - return_no
+          - result
+          - finish_time
+        properties:
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1900000109'
+          order_id:
+            type: string
+            description: 微信分账单号
+            example: '3008450740201411110007820472'
+          out_order_no:
+            type: string
+            description: 商户分账单号
+            example: P20150806125346
+          out_return_no:
+            type: string
+            description: 商户回退单号
+            example: R20190516001
+          return_mchid:
+            type: string
+            description: 回退商户号
+            example: '86693852'
+          amount:
+            type: integer
+            description: 回退金额
+            example: 10
+          return_no:
+            type: string
+            description: 微信回退单号
+            example: '3008450740201411110007820472'
+          result:
+            type: string
+            description: 回退结果
+            example: SUCCESS
+          fail_reason:
+            type: string
+            description: 失败原因
+            example: TIME_OUT_CLOSED
+          finish_time:
+            type: string
+            description: 完成时间
+            example: '2015-05-20T13:29:35.120+08:00'
+get:
+  x-version: [V1.0, 2020.03.18]
+  x-role:
+    - 服务商
+  tags:
+    - 经营工具∙连锁品牌∙分账
+  summary: 查询分账回退结果API
+  description: 商户需要核实回退结果，可调用此接口查询回退结果。如果分账回退接口返回状态为处理中，可调用此接口查询回退结果 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/brand/chapter3_4.shtml)
+  parameters:
+    - name: sub_mchid
+      in: query
+      required: true
+      type: string
+      description: 子商户号
+      example: '1900000109'
+    - name: out_return_no
+      in: query
+      required: true
+      type: string
+      description: 商户回退单号
+      example: R20190516001
+    - name: order_id
+      in: query
+      type: string
+      description: 微信分帐单号
+      example: '4208450740201411110007820472'
+    - name: out_order_no
+      in: query
+      type: string
+      description: 商户分账单号
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - sub_mchid
+          - order_id
+          - out_order_no
+          - out_return_no
+          - return_mchid
+          - return_no
+          - amount
+          - result
+          - finish_time
+        properties:
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1900000109'
+          order_id:
+            type: string
+            description: 微信分账单号
+            example: '3008450740201411110007820472'
+          out_order_no:
+            type: string
+            description: 商户分账单号
+            example: P20150806125346
+          out_return_no:
+            type: string
+            description: 商户回退单号
+            example: p86691234
+          return_mchid:
+            type: string
+            description: 回退商户号
+            example: '86693852'
+          return_no:
+            type: string
+            description: 微信回退单号
+            example: '3008450740201411110007820472'
+          amount:
+            type: integer
+            description: 回退金额
+            example: 10
+          result:
+            type: string
+            description: 回退结果
+            example: SUCCESS
+          fail_reason:
+            type: string
+            description: 失败原因
+            example: TIME_OUT_CLOSED
+          finish_time:
+            type: string
+            description: 完成时间
+            example: '2015-05-20T13:29:35.120+08:00'

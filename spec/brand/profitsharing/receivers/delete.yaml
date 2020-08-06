@@ -1,0 +1,61 @@
+post:
+  x-version: [V1.0, 2020.03.18]
+  x-role:
+    - 服务商
+  tags:
+    - 经营工具∙连锁品牌∙分账
+  summary: 删除分账接收方API
+  description: 服务商发起删除分账接收方请求。删除后，不再支持品牌主或门店分到该分账接收方。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/brand/chapter3_8.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - brand_mchid
+          - appid
+          - type
+          - account
+        properties:
+          brand_mchid:
+            type: string
+            description: 品牌主商户号
+            example: '1900000108'
+          appid:
+            type: string
+            description: 公众账号ID
+            example: wx8888888888888888
+          sub_appid:
+            type: string
+            description: 子商户公众账号ID
+            example: wx8888888888888889
+          type:
+            type: string
+            description: 分账接收方类型
+            example: MERCHANT_ID
+          account:
+            type: string
+            description: 分账接收方账号
+            example: '1900000109'
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - brand_mchid
+          - type
+          - account
+        properties:
+          brand_mchid:
+            type: string
+            description: 品牌主商户号
+            example: '1900000108'
+          type:
+            type: string
+            description: 分账接收方类型
+            example: MERCHANT_ID
+          account:
+            type: string
+            description: 分账接收方账号
+            example: '1900000109'

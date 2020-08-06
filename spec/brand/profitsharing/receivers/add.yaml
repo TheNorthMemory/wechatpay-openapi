@@ -1,0 +1,70 @@
+post:
+  x-version: [V1.0, 2020.03.18]
+  x-role:
+    - 服务商
+  tags:
+    - 经营工具∙连锁品牌∙分账
+  summary: 添加分账接收方API
+  description: 服务商可通过此接口添加分账接收方，建立分账接收方列表。连锁加盟模式下，服务商添加的分账接收方统一在品牌主商户号维度进行管理。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/brand/chapter3_7.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - brand_mchid
+          - appid
+          - type
+          - account
+          - relation_type
+        properties:
+          brand_mchid:
+            type: string
+            description: 品牌主商户号
+            example: '1900000108'
+          appid:
+            type: string
+            description: 公众账号ID
+            example: wx8888888888888888
+          sub_appid:
+            type: string
+            description: 子商户公众账号ID
+            example: wx8888888888888889
+          type:
+            type: string
+            description: 分账接收方类型
+            example: MERCHANT_ID
+          account:
+            type: string
+            description: 分账接收方账号
+            example: '1900000109'
+          name:
+            type: string
+            description: 接收方名称
+            example: 张三网络公司
+          relation_type:
+            type: string
+            description: 与品牌主商户的的关系类型
+            example: SUPPLIER
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - brand_mchid
+          - type
+          - account
+        properties:
+          brand_mchid:
+            type: string
+            description: 品牌主商户号
+            example: '1900000108'
+          type:
+            type: string
+            description: 分账接收方类型
+            example: MERCHANT_ID
+          account:
+            type: string
+            description: 分账接收方账号
+            example: '1900000109'

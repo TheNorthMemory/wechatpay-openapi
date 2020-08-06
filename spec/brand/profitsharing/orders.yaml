@@ -1,0 +1,220 @@
+post:
+  x-version: [V1.0, 2020.03.18]
+  x-role:
+    - 服务商
+  tags:
+    - 经营工具∙连锁品牌∙分账
+  summary: 请求分账API
+  description: 微信订单支付成功后，由服务商发起分账请求，将结算后的资金分给分账接收方。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/brand/chapter3_1.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - brand_mchid
+          - sub_mchid
+          - appid
+          - transaction_id
+          - out_order_no
+          - receivers
+          - finish
+        properties:
+          brand_mchid:
+            type: string
+            description: 品牌主商户号
+            example: '1900000108'
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1900000109'
+          appid:
+            type: string
+            description: 公众账号ID
+            example: wx8888888888888888
+          sub_appid:
+            type: string
+            description: 子商户公众账号ID
+            example: wx8888888888888889
+          transaction_id:
+            type: string
+            description: 微信订单号
+            example: '4208450740201411110007820472'
+          out_order_no:
+            type: string
+            description: 商户分账单号
+            example: P20150806125346
+          receivers:
+            type: array
+            description: 分账接收方列表
+            items:
+              type: object
+              required:
+                - type
+                - account
+                - amount
+                - description
+              properties:
+                type:
+                  type: string
+                  description: 分账接收方类型
+                  example: MERCHANT_ID
+                account:
+                  type: string
+                  description: 分账接收方账号
+                  example: '1900000109'
+                amount:
+                  type: integer
+                  description: 分账金额
+                  example: 190
+                description:
+                  type: string
+                  description: 分账描述
+                  example: 1900000109分给商户1900000110
+          finish:
+            type: boolean
+            description: 是否分账完成
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - brand_mchid
+          - sub_mchid
+          - transaction_id
+          - out_order_no
+          - order_id
+        properties:
+          brand_mchid:
+            type: string
+            description: 品牌主商户号
+            example: '1900000108'
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1900000109'
+          transaction_id:
+            type: string
+            description: 微信订单号
+            example: '4208450740201411110007820472'
+          out_order_no:
+            type: string
+            description: 商户分账单号
+            example: P20150806125346
+          order_id:
+            type: string
+            description: 微信分账单号
+            example: '6754760740201411110007865434'
+get:
+  x-version: [V1.1, 2020.04.01]
+  x-role:
+    - 服务商
+  tags:
+    - 经营工具∙连锁品牌∙分账
+  summary: 查询分账结果API
+  description: 发起分账请求后，可调用此接口查询分账结果。发起分账完结请求后，可调用此接口查询分账完结的结果。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/brand/chapter3_2.shtml)
+  parameters:
+    - name: sub_mchid
+      in: query
+      required: true
+      type: string
+      description: 子商户号
+      example: '1900000109'
+    - name: transaction_id
+      in: query
+      required: true
+      type: string
+      description: 微信订单号
+      example: '4208450740201411110007820472'
+    - name: out_order_no
+      in: query
+      required: true
+      type: string
+      description: 商户分账单号
+      example: P20150806125346
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - sub_mchid
+          - transaction_id
+          - out_order_no
+          - order_id
+          - status
+          - receivers
+        properties:
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1900000109'
+          transaction_id:
+            type: string
+            description: 微信订单号
+            example: '4208450740201411110007820472'
+          out_order_no:
+            type: string
+            description: 商户分账单号
+            example: P20150806125346
+          order_id:
+            type: string
+            description: 微信分账单号
+            example: '3008450740201411110007820472'
+          status:
+            type: string
+            description: 分账单状态
+            example: FINISHED
+          receivers:
+            type: array
+            description: 分账接收方列表
+            items:
+              type: object
+              required:
+                - type
+                - account
+                - amount
+                - description
+                - result
+                - finish_time
+              properties:
+                type:
+                  type: string
+                  description: 分账接收方类型
+                  example: MERCHANT_ID
+                account:
+                  type: string
+                  description: 分账接收方账号
+                  example: '1900000109'
+                amount:
+                  type: integer
+                  description: 分账金额
+                  example: 10
+                description:
+                  type: string
+                  description: 分账描述
+                  example: 分帐1900000110
+                result:
+                  type: string
+                  description: 分账结果
+                  example: SUCCESS
+                finish_time:
+                  type: string
+                  description: 完成时间
+                  example: '2015-05-20T13:29:35.120+08:00'
+                fail_reason:
+                  type: string
+                  description: 分账失败原因
+                  example: NO_RELATION
+          close_reason:
+            type: string
+            description: 关单原因
+            example: NO_AUTH
+          finish_amount:
+            type: integer
+            description: 分账完结金额
+            example: 100
+          finish_description:
+            type: string
+            description: 分账完结描述
+            example: 分账完结

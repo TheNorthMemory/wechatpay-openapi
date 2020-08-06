@@ -1,8 +1,11 @@
 get:
   x-version: [V1.0, 2020.05.26]
-  x-role: [服务商]
+  x-role:
+    - 服务商
+    - 电商平台
   tags:
     - 基础支付∙普通支付∙服务商模式
+    - 电商收付通∙普通支付
   summary: 商户订单号查询
   description: 商户可以通过查询订单接口主动查询订单状态，完成下一步的业务逻辑。查询订单状态可通过微信支付订单号或商户订单号两种方式查询 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transactions/chapter5_5.shtml)
   parameters:

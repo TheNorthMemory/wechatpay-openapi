@@ -55,6 +55,7 @@ tags:
   - name: 会员卡∙基础功能
   - name: 会员卡∙运营投放
   - name: 会员卡∙权益设置
+  - name: 会员卡∙会员有礼
   - name: 运营工具∙代金券
   - name: 运营工具∙商家券
   - name: 运营工具∙委托营销
@@ -64,6 +65,8 @@ tags:
   - name: 经营工具∙智慧商圈
   - name: 经营工具∙支付即服务
   - name: 经营工具∙点金计划
+  - name: 经营工具∙连锁品牌∙分账
+  - name: 经营工具∙连锁品牌∙门店
   - name: 通用接口
   - name: 通用接口∙商业支付投诉
 parameters:
@@ -99,6 +102,16 @@ paths:
     $ref: ./spec/bill/tradebill.yaml
   /v3/billdownload/file:
     $ref: ./spec/billdownload/file.yaml
+  /v3/brand/profitsharing/finish-order:
+    $ref: ./spec/brand/profitsharing/finish-order.yaml
+  /v3/brand/profitsharing/orders:
+    $ref: ./spec/brand/profitsharing/orders.yaml
+  /v3/brand/profitsharing/receivers/add:
+    $ref: ./spec/brand/profitsharing/receivers/add.yaml
+  /v3/brand/profitsharing/receivers/delete:
+    $ref: ./spec/brand/profitsharing/receivers/delete.yaml
+  /v3/brand/profitsharing/returnorders:
+    $ref: ./spec/brand/profitsharing/returnorders.yaml
   /v3/businesscircle/points/notify:
     $ref: ./spec/businesscircle/points/notify.yaml
   /v3/certificates:
@@ -209,6 +222,12 @@ paths:
     $ref: ./spec/marketing/favor/users/{openid}/coupons.yaml
   /v3/marketing/favor/users/{openid}/coupons/{coupon_id}:
     $ref: ./spec/marketing/favor/users/{openid}/coupons/{coupon_id}.yaml
+  /v3/marketing/membercard-activity/activities:
+    $ref: ./spec/marketing/membercard-activity/activities.yaml
+  /v3/marketing/membercard-activity/activities/{activity_id}:
+    $ref: ./spec/marketing/membercard-activity/activities/{activity_id}.yaml
+  /v3/marketing/membercard-activity/activities/{activity_id}/terminate:
+    $ref: ./spec/marketing/membercard-activity/activities/{activity_id}/terminate.yaml
   /v3/marketing/membercard-open/activate-informations/{activate_ticket}:
     $ref: ./spec/marketing/membercard-open/activate-informations/{activate_ticket}.yaml
   /v3/marketing/membercard-open/callback:
@@ -261,6 +280,10 @@ paths:
     $ref: ./spec/merchant-service/complaint-notifications.yaml
   /v3/merchant-service/complaints:
     $ref: ./spec/merchant-service/complaints.yaml
+  /v3/merchant-store/stores:
+    $ref: ./spec/merchant-store/stores.yaml
+  /v3/merchant-store/stores/{store_id}:
+    $ref: ./spec/merchant-store/stores/{store_id}.yaml
   /v3/merchant/fund/balance/{account_type}:
     $ref: ./spec/merchant/fund/balance/{account_type}.yaml
   /v3/merchant/fund/dayendbalance/{account_type}:

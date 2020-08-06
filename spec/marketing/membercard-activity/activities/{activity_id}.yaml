@@ -1,0 +1,218 @@
+get:
+  x-version: [V1.0, 2020.07.29]
+  x-role:
+    - 直连商户
+    - 服务商
+  tags:
+    - 会员卡∙会员有礼
+  summary: 查询活动详情API
+  description: 查出活动id对应的活动详情 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter8_4.shtml)
+  parameters:
+    - name: activity_id
+      in: path
+      required: true
+      type: string
+      description: 活动ID
+      example: '371067'
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - activity_id
+        properties:
+          activity_id:
+            type: string
+            description: 活动ID
+            example: '371067'
+          activity_status:
+            type: string
+            description: 活动的当前状态
+            example: ONGOING
+          create_time:
+            type: string
+            description: 创建时间
+            example: '2015-05-20T13:29:35.120+08:00'
+          update_time:
+            type: string
+            description: 更新时间
+            example: '2015-05-20T13:29:35.120+08:00'
+          card_id:
+            type: string
+            description: 会员卡ID
+            example: pbLatjvWOibDc5-TBnbUk1pD12o0
+          activity_name:
+            type: string
+            description: 活动名称
+            example: 良品铺子回馈活动
+          activity_type:
+            type: string
+            description: 活动类型
+            example: NON_MEMBER_AFTERPAY
+          begin_time:
+            type: string
+            description: 活动开始时间
+            example: '2020-01-20T13:29:35.120+08:00'
+          end_time:
+            type: string
+            description: 活动结束时间
+            example: '2020-01-29T13:29:35.120+08:00'
+          award_send_period:
+            type: object
+            description: 发放时间段
+            properties:
+              award_send_time:
+                type: array
+                description: 指定时间
+                items:
+                  type: object
+                  required:
+                    - begin_time
+                    - end_time
+                  properties:
+                    begin_time:
+                      type: string
+                      description: 发放开始时间
+                      example: '2020-01-21T00:00:00.000+08:00'
+                    end_time:
+                      type: string
+                      description: 发放结束时间
+                      example: '2020-01-27T00:00:00.000+08:00'
+              award_send_day_time:
+                type: array
+                description: 指定时间段
+                items:
+                  type: object
+                  required:
+                    - begin_day_time
+                    - end_day_time
+                  properties:
+                    begin_day_time:
+                      type: object
+                      description: 每日发放开始时间
+                      required:
+                        - hours
+                        - minutes
+                        - seconds
+                      properties:
+                        hours:
+                          type: integer
+                          description: 时
+                          example: 9
+                        minutes:
+                          type: integer
+                          description: 分
+                          example: 34
+                        seconds:
+                          type: integer
+                          description: 秒
+                          example: 6
+                    end_day_time:
+                      type: object
+                      description: 每日发放结束时间
+                      required:
+                        - hours
+                        - minutes
+                        - seconds
+                      properties:
+                        hours:
+                          type: integer
+                          description: 时
+                          example: 9
+                        minutes:
+                          type: integer
+                          description: 分
+                          example: 34
+                        seconds:
+                          type: integer
+                          description: 秒
+                          example: 6
+          stock_list:
+            type: array
+            description: 优惠券列表
+            items:
+              type: object
+              required:
+                - stock_creator_mchid
+                - stock_id
+              properties:
+                stock_creator_mchid:
+                  type: string
+                  description: 创建批次的商户号
+                  example: '10000022'
+                stock_id:
+                  type: string
+                  description: 券批次ID
+                  example: '98065001'
+          out_request_no:
+            type: string
+            description: 商户请求单号
+            example: 100002322019090134234sfdf
+          pay_activity_setting:
+            type: object
+            description: 支付后活动设置
+            required:
+              - logo_url
+              - activity_second_title
+            properties:
+              logo_url:
+                type: string
+                description: 商户logo
+                example: 'https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/0'
+              activity_second_title:
+                type: string
+                description: 支付结果页活动副标题
+                example: 湖南麻辣美食券
+              mchid_list:
+                type: array
+                description: 活动曝光商户号
+                example: '10000022,10000023'
+              activate_setting:
+                type: object
+                description: 激活方式设置
+                required:
+                  - activate_type
+                properties:
+                  activate_type:
+                    type: string
+                    description: 激活类型
+                    example: AUTO_ACTIVATE
+                  activate_url:
+                    type: string
+                    description: 跳转激活的url
+                    example: 'https://w.url.cn/s/Ahz3p2C'
+                  activate_miniprogram:
+                    type: object
+                    description: 跳转激活的小程序
+                    required:
+                      - activate_appid
+                      - activate_path
+                    properties:
+                      activate_appid:
+                        type: string
+                        description: 跳转激活的appid
+                        example: wxea9c30a90fs8d3fe
+                      activate_path:
+                        type: string
+                        description: 跳转激活的path
+                        example: pages/activate/activate
+              payment_setting:
+                type: object
+                description: 支付设置
+                properties:
+                  payment_mode:
+                    type: object
+                    description: 支付模式
+                    properties:
+                      payment_scene_list:
+                        type: array
+                        description: 支付场景列表
+                        example: APP
+                  limit_bank:
+                    type: string
+                    description: 指定银行的简称
+                    example: CFT
+                  goods_tags:
+                    type: array
+                    description: 订单优惠标记
+                    example: 'xxx,yyy'

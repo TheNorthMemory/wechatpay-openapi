@@ -1,0 +1,31 @@
+post:
+  x-version: [V1.0, 2020.07.29]
+  x-role:
+    - 直连商户
+    - 服务商
+  tags:
+    - 会员卡∙会员有礼
+  summary: 终止活动API
+  description: 将活动终止，不会再被曝光 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter8_2.shtml)
+  parameters:
+    - name: activity_id
+      in: path
+      required: true
+      type: string
+      description: 活动ID
+      example: '371067'
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - activity_id
+        properties:
+          activity_id:
+            type: string
+            description: 活动ID
+            example: '371067'
+          terminate_time:
+            type: string
+            description: 终止时间
+            example: '2015-05-20T13:29:35.120+08:00'

@@ -128,6 +128,12 @@ paths:
     $ref: ./spec/combine-transactions/out-trade-no/{combine_out_trade_no}.yaml
   /v3/combine-transactions/out-trade-no/{combine_out_trade_no}/close:
     $ref: ./spec/combine-transactions/out-trade-no/{combine_out_trade_no}/close.yaml
+  /v3/discount-card/cards:
+    $ref: ./spec/discount-card/cards.yaml
+  /v3/discount-card/cards/{out_card_code}:
+    $ref: ./spec/discount-card/cards/{out_card_code}.yaml
+  /v3/discount-card/cards/{out_card_code}/add-user-records:
+    $ref: ./spec/discount-card/cards/{out_card_code}/add-user-records.yaml
   /v3/discount-card/orders/{out_order_no}:
     $ref: ./spec/discount-card/orders/{out_order_no}.yaml
   /v3/discount-card/orders/out-trade-no/{out_trade_no}:

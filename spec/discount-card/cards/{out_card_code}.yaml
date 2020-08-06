@@ -1,0 +1,271 @@
+get:
+  x-version: [V1.1, 2020.06.12]
+  x-role:
+    - 直连商户
+  tags:
+    - 微信支付分∙先享卡
+  summary: 查询先享卡订单API
+  description: 商户可以通过商户领卡号查询指定的先享卡，可用于对账或者界面展示。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/discount-card/chapter3_3.shtml)
+  parameters:
+    - name: out_card_code
+      in: path
+      required: true
+      type: string
+      description: 商户领卡号
+      example: 6e8369071cd942c0476613f9d1ce9ca3
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - card_id
+          - card_template_id
+          - openid
+          - out_card_code
+          - appid
+          - mchid
+          - time_range
+          - state
+          - create_time
+        properties:
+          card_id:
+            type: string
+            description: 先享卡ID
+            example: 233bcbf407e87789b8e471f251774f95
+          card_template_id:
+            type: string
+            description: 先享卡模板ID
+            example: 87789b2f25177433bcbf407e8e471f95
+          openid:
+            type: 'string '
+            description: 用户标识
+            example: oUpF8uMuAJ2pxb1Q9zNjWeS6o
+          out_card_code:
+            type: string
+            description: 商户领卡号
+            example: 6e8369071cd942c0476613f9d1ce9ca3
+          appid:
+            type: string
+            description: 公众账号ID
+            example: wxd678efh567hg6787
+          mchid:
+            type: string
+            description: 商户号
+            example: '1230000109'
+          time_range:
+            type: object
+            description: 约定时间期限
+            required:
+              - begin_time
+              - end_time
+            properties:
+              begin_time:
+                type: string
+                description: 约定开始时间
+                example: '2015-05-20T13:29:35.120+08:00'
+              end_time:
+                type: string
+                description: 约定结束时间
+                example: '2015-05-20T13:29:35.120+08:00'
+          state:
+            type: string
+            description: 状态
+            example: ONGOING
+          unfinished_reason:
+            type: string
+            description: 未完成约定原因
+            example: DUE_TO_QUIT
+          total_amount:
+            type: integer
+            description: 享受优惠总金额
+            example: 1000
+          pay_information:
+            type: object
+            description: 用户退回优惠的付款信息
+            required:
+              - pay_amount
+              - pay_state
+            properties:
+              pay_amount:
+                type: integer
+                description: 付款金额
+                example: 100
+              pay_state:
+                type: string
+                description: 付款状态
+                example: '2015-05-20T13:29:35.120+08:00'
+              transaction_id:
+                type: string
+                description: 微信支付订单号
+                example: '1009660380201506130728806387'
+              pay_time:
+                type: string
+                description: 支付时间
+                example: '2015-05-20T13:29:35.120+08:00'
+          create_time:
+            type: string
+            description: 创卡时间
+            example: '2015-05-20T13:29:35.120+08:00'
+          objectives:
+            type: array
+            description: 目标列表
+            items:
+              type: object
+              required:
+                - objective_id
+                - name
+                - count
+                - unit
+              properties:
+                objective_id:
+                  type: string
+                  description: 目标ID
+                  example: '123456'
+                name:
+                  type: string
+                  description: 目标名称
+                  example: 一周购买三次商品
+                count:
+                  type: integer
+                  description: 目标数量
+                  example: 1
+                unit:
+                  type: string
+                  description: 目标单位
+                  example: 次
+                description:
+                  type: string
+                  description: 目标描述
+                  example: 特价商品
+                objective_completion_records:
+                  type: array
+                  description: 目标完成记录
+                  items:
+                    type: object
+                    required:
+                      - objective_completion_serial_no
+                      - objective_id
+                      - completion_time
+                      - completion_type
+                      - description
+                      - completion_count
+                    properties:
+                      objective_completion_serial_no:
+                        type: string
+                        description: 目标完成流水号
+                        example: '578354545'
+                      objective_id:
+                        type: string
+                        description: 目标ID
+                        example: '123456'
+                      completion_time:
+                        type: string
+                        description: 目标完成时间
+                        example: '2015-05-20T13:29:35.120+08:00'
+                      completion_type:
+                        type: string
+                        description: 目标完成类型
+                        example: INCREASE
+                      description:
+                        type: string
+                        description: 目标完成描述
+                        example: 购买商品
+                      completion_count:
+                        type: integer
+                        description: 目标完成数量
+                        example: 1
+                      remark:
+                        type: string
+                        description: 备注说明
+                        example: 特价商品
+          rewards:
+            type: array
+            description: 优惠列表
+            items:
+              type: object
+              required:
+                - reward_id
+                - name
+                - count_type
+                - count
+                - unit
+                - amount
+              properties:
+                reward_id:
+                  type: string
+                  description: 优惠ID
+                  example: '123456'
+                name:
+                  type: string
+                  description: 优惠名称
+                  example: 八折优惠
+                count_type:
+                  type: string
+                  description: 优惠数量类型
+                  example: COUNT_LIMIT
+                count:
+                  type: integer
+                  description: 优惠数量
+                  example: 1
+                unit:
+                  type: string
+                  description: 优惠单位
+                  example: 个
+                amount:
+                  type: integer
+                  description: 优惠金额
+                  example: 100
+                description:
+                  type: string
+                  description: 优惠描述
+                  example: 特价商品优惠
+                reward_usage_records:
+                  type: array
+                  description: 优惠使用记录列
+                  items:
+                    type: object
+                    required:
+                      - reward_usage_serial_no
+                      - reward_id
+                      - usage_time
+                      - usage_type
+                      - description
+                      - usage_count
+                      - amount
+                    properties:
+                      reward_usage_serial_no:
+                        type: string
+                        description: 优惠使用记录流水号
+                        example: '578354'
+                      reward_id:
+                        type: string
+                        description: 优惠ID
+                        example: '123456'
+                      usage_time:
+                        type: string
+                        description: 优惠使用时间
+                        example: '2015-05-20T13:29:35.120+08:00'
+                      usage_type:
+                        type: string
+                        description: 优惠使用类型
+                        example: INCREASE
+                      description:
+                        type: string
+                        description: 优惠使用描述
+                        example: 购买商品
+                      usage_count:
+                        type: integer
+                        description: 优惠使用数量
+                        example: 1
+                      amount:
+                        type: integer
+                        description: 优惠金额
+                        example: 100
+                      remark:
+                        type: string
+                        description: 备注说明
+                        example: 特价商品
+          sharer_openid:
+            type: string
+            description: 邀请者用户标识
+            example: oUpF8uMuAJ2pxb1Q9zNjWUHsd

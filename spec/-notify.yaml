@@ -24,6 +24,9 @@ post:
   [支付分支付成功回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter5_3.shtml)
   [先享卡用户领卡通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter4_1.shtml)
   [先享卡用户结算通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter4_2.shtml)
+  [先享卡用户领卡通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/discount-card/chapter5_1.shtml)
+  [先享卡用户守约状态变化通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/discount-card/chapter5_2.shtml)
+  [先享卡扣费状态变化通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/discount-card/chapter5_3.shtml)
   [会员卡领卡事件通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter7_1.shtml)
   [会员卡激活事件通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter7_2.shtml)
   [会员卡用户管理会员卡事件通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter7_3.shtml)
@@ -193,6 +196,9 @@ WechatpayNotificationEventType:
   [支付分支付成功回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter5_3.shtml)
   [先享卡用户领卡通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter4_1.shtml)
   [先享卡用户结算通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter4_2.shtml)
+  [先享卡用户领卡通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/discount-card/chapter5_1.shtml)
+  [先享卡用户守约状态变化通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/discount-card/chapter5_2.shtml)
+  [先享卡扣费状态变化通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/discount-card/chapter5_3.shtml)
   "
   enum:
     # @see                        [商圈支付结果通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/businesscircle/chapter3_1.shtml)
@@ -230,6 +236,12 @@ WechatpayNotificationEventType:
     - DISCOUNT_CARD.GET_CARD      #先享卡用户领卡通知
     # @see                        [先享卡支付结算通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter4_2.shtml)
     - DISCOUNT_CARD.SETTLEMENT    #先享卡支付结算通知
+    # @see                        [先享卡用户领卡通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/discount-card/chapter5_1.shtml)
+    - DISCOUNT_CARD.USER_ACCEPTED #先享卡用户领卡通知
+    # @see                        [先享卡用户守约状态变化通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/discount-card/chapter5_2.shtml)
+    - DISCOUNT_CARD.AGREEMENT_ENDED #先享卡用户守约状态变化通知
+    # @see                        [先享卡扣费状态变化通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/discount-card/chapter5_3.shtml)
+    - DISCOUNT_CARD.USER_PAID     #先享卡扣费状态变化通知
     # @see                        [会员卡领卡事件通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter7_1.shtml)
     - MEMBERCARD.ACCEPT_CARD      #领卡
     # @see                        [会员卡激活事件通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter7_2.shtml)

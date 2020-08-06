@@ -1,0 +1,47 @@
+post:
+  x-version: [V1.0, 2020.06.05]
+  x-role:
+    - 直连商户
+  tags:
+    - 微信支付分∙先享卡
+  summary: 预受理领卡请求API
+  description: 商户在引导用户跳转先享卡领卡前，需要请求先享卡预受理领卡请求接口，再根据返回数据引导用户跳转领卡。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/discount-card/chapter3_1.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - out_card_code
+          - card_template_id
+          - appid
+          - notify_url
+        properties:
+          out_card_code:
+            type: string
+            description: 商户领卡号
+            example: 6e8369071cd942c0476613f9d1ce9ca3
+          card_template_id:
+            type: string
+            description: 卡模板ID
+            example: 87789b2f25177433bcbf407e8e471f95
+          appid:
+            type: string
+            description: 公众账号ID
+            example: wxd678efh567hg6787
+          notify_url:
+            type: string
+            description: 通知商户URL
+            example: 'https://api.test.com'
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - prepare_card_token
+        properties:
+          prepare_card_token:
+            type: string
+            description: 预领卡请求token
+            example: zyx53Nkey8o4bHpxTQvd8m7e92nG5mG2

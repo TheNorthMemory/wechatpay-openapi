@@ -1,0 +1,116 @@
+post:
+  x-version: [V1.0, 2020.03.26]
+  x-role:
+    - 直连商户
+  tags:
+    - 微信支付分∙先享卡
+  summary: 增加用户记录API
+  description: 当用户在商户侧消费时，用户完成了微信先享卡的目标或者获取使用优惠时，商户需要把这个信息同步给微信先享卡平台，用于在微信先享卡小程序展示及先享卡到期后的用户结算。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/discount-card/chapter3_2.shtml)
+  parameters:
+    - name: out_card_code
+      in: path
+      required: true
+      type: string
+      description: 商户领卡号
+      example: 6e8369071cd942c0476613f9d1ce9ca3
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - card_template_id
+        properties:
+          card_template_id:
+            type: string
+            description: 卡模板ID
+            example: 87789b2f25177433bcbf407e8e471f95
+          objective_completion_records:
+            type: array
+            description: 目标完成记录
+            items:
+              type: object
+              required:
+                - objective_completion_serial_no
+                - objective_id
+                - completion_time
+                - completion_type
+                - description
+                - completion_count
+              properties:
+                objective_completion_serial_no:
+                  type: string
+                  description: 目标完成流水号
+                  example: '578354545'
+                objective_id:
+                  type: string
+                  description: 目标ID
+                  example: '123456'
+                completion_time:
+                  type: string
+                  description: 目标完成时间
+                  example: '2015-05-20T13:29:35.120+08:00'
+                completion_type:
+                  type: string
+                  description: 目标完成类型
+                  example: INCREASE
+                description:
+                  type: string
+                  description: 目标完成描述
+                  example: 购买商品
+                completion_count:
+                  type: integer
+                  description: 目标完成数量
+                  example: 1
+                remark:
+                  type: string
+                  description: 备注说明
+                  example: 特价商品
+          reward_usage_records:
+            type: array
+            description: 优惠使用记录
+            items:
+              type: object
+              required:
+                - reward_usage_serial_no
+                - reward_id
+                - usage_time
+                - usage_type
+                - description
+                - usage_count
+                - amount
+              properties:
+                reward_usage_serial_no:
+                  type: string
+                  description: 优惠使用记录流水号
+                  example: '578354'
+                reward_id:
+                  type: string
+                  description: 优惠ID
+                  example: '123456'
+                usage_time:
+                  type: string
+                  description: 优惠使用时间
+                  example: '2015-05-20T13:29:35.120+08:00'
+                usage_type:
+                  type: string
+                  description: 优惠使用类型
+                  example: INCREASE
+                description:
+                  type: string
+                  description: 优惠使用描述
+                  example: 购买商品
+                usage_count:
+                  type: integer
+                  description: 数量
+                  example: 1
+                amount:
+                  type: integer
+                  description: 金额
+                  example: 100
+                remark:
+                  type: string
+                  description: 备注说明
+                  example: 特价商品
+  responses:
+    204: {}

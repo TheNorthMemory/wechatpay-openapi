@@ -4,6 +4,7 @@ get:
     - 直连商户
   tags:
     - 微信支付分∙先享卡
+  deprecated: true
   summary: 通过先享卡订单号查询订单API
   description: 商户可以通过先享卡订单号或商户订单号查询用户目前的先享卡使用情况、订单状态，可用于对账或者界面展示。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter3_1.shtml)
   parameters:

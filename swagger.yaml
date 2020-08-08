@@ -74,7 +74,6 @@ parameters:
   WECHATPAY_CERTIFICATE_SERIAL:
     name: Wechatpay-Serial
     in: header
-    required: true
     description: 微信支付平台公钥证书序列号
 paths:
   /v3/-notify:

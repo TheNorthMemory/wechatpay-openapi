@@ -6,7 +6,7 @@ patch:
   summary: 服务人员信息更新API
   description: 用于服务商/用于服务商/商户开发者为商户更新门店服务人员的姓名、头像等信息 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/smartguide/chapter3_4.shtml)
   parameters:
-    - $ref: '../../../swagger.yaml#parameters/WECHATPAY_CERTIFICATE_SERIAL'
+    - $ref: '../../../definitions/Parameters.yaml#WECHATPAY_CERTIFICATE_SERIAL'
     - name: guide_id
       in: path
       type: string

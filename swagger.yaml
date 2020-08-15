@@ -71,11 +71,6 @@ tags:
   - name: 经营工具∙连锁品牌∙门店
   - name: 通用接口
   - name: 通用接口∙商业支付投诉
-parameters:
-  WECHATPAY_CERTIFICATE_SERIAL:
-    name: Wechatpay-Serial
-    in: header
-    description: 微信支付平台公钥证书序列号
 paths:
   /v3/-notify:
     $ref: ./spec/-notify.yaml
@@ -153,6 +148,8 @@ paths:
     $ref: ./spec/ecommerce/fund/withdraw.yaml
   /v3/ecommerce/fund/withdraw/{withdraw_id}:
     $ref: ./spec/ecommerce/fund/withdraw/{withdraw_id}.yaml
+  /v3/ecommerce/fund/withdraw/out-request-no/{out_request_no}:
+    $ref: ./spec/ecommerce/fund/withdraw/out-request-no/{out_request_no}.yaml
   /v3/ecommerce/profitsharing/finish-order:
     $ref: ./spec/ecommerce/profitsharing/finish-order.yaml
   /v3/ecommerce/profitsharing/orders:
@@ -261,6 +258,10 @@ paths:
     $ref: ./spec/marketing/membercard-open/cards/{card_id}/rights.yaml
   /v3/marketing/membercard-open/cards/{card_id}/upgrade:
     $ref: ./spec/marketing/membercard-open/cards/{card_id}/upgrade.yaml
+  /v3/marketing/membercard-open/phonenumber-member/import:
+    $ref: ./spec/marketing/membercard-open/phonenumber-member/import.yaml
+  /v3/marketing/membercard-open/phonenumber-member/search:
+    $ref: ./spec/marketing/membercard-open/phonenumber-member/search.yaml
   /v3/marketing/membercard-open/user/cards:
     $ref: ./spec/marketing/membercard-open/user/cards.yaml
   /v3/marketing/partnerships/build:

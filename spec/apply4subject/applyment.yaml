@@ -6,7 +6,7 @@ post:
   summary: 提交商户开户意愿申请单API
   description: 服务商可以通过该接口向微信支付提交商户的联系人信息、主体信息以及联系人信息。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/applysubject/chapter5_1.shtml)
   parameters:
-    - $ref: '../../swagger.yaml#parameters/WECHATPAY_CERTIFICATE_SERIAL'
+    - $ref: '../../definitions/Parameters.yaml#WECHATPAY_CERTIFICATE_SERIAL'
     - name: channel_id
       in: query
       type: string

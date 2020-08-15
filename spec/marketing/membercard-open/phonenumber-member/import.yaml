@@ -1,0 +1,55 @@
+post:
+  x-version: [V1.0, 2020.07.15]
+  x-role:
+    - 直连商户
+    - 服务商
+  tags:
+    - 会员卡
+  summary: 导入加密手机号提醒会员领卡API
+  description: 如商户有存量注册会员未领取会员卡，可导入最近一年在品牌内有微信支付交易的活跃会员手机号（需加密后才能导入），导入后微信将通过卡包提醒用户将会员卡领取到卡包。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter4_1.shtml)
+  parameters:
+    - $ref: '../../../../definitions/Parameters.yaml#WECHATPAY_CERTIFICATE_SERIAL'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - member_information
+          - encrypted_phone_number
+        x-is-sensitive: [encrypted_phone_number]
+        properties:
+          member_information:
+            type: object
+            description: 会员信息
+            required:
+              - card_id
+              - registration_time
+            properties:
+              card_id:
+                type: string
+                description: 会员卡id
+                example: pbLatjvWOibDc5-TBnbUk1pD12o0
+              code:
+                type: string
+                description: 会员卡code
+                example: '478515832665'
+              membership_number:
+                type: string
+                description: 会员卡编号
+                example: '316510891298'
+              registration_time:
+                type: string
+                format: rfc3339
+                description: 会员注册时间
+                example: '2015-05-20T13:29:35.120+08:00'
+          encrypted_phone_number:
+            type: string
+            description: 加密手机号
+            example: vvysDQeEaH3I+wRh14St0abIkvQyFgh/fbWYSs2bLtG9tj+bdJn4WSCPzqSyXnFbzaaKSE2j4mAFON3kzNexb/SYkHZNJAuCittaW4wpGj7U+h9A==
+          outer_str:
+            type: string
+            description: 自定义场景值
+            example: my_card_CARD
+  responses:
+    204: {}

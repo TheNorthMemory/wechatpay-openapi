@@ -1,0 +1,68 @@
+get:
+  x-version: [V1.0, 2020.07.15]
+  x-role:
+    - 直连商户
+    - 服务商
+  tags:
+    - 会员卡
+  summary: 通过加密手机号查询会员领卡状态API
+  description: 商户可查询导入成功的加密手机号是否已被用户领取。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter4_2.shtml)
+  x-is-sensitive: [encrypted_phone_number]
+  parameters:
+    - $ref: '../../../../definitions/Parameters.yaml#WECHATPAY_CERTIFICATE_SERIAL'
+    - name: card_id
+      in: query
+      type: string
+      required: true
+      description: 会员卡id
+      example: pbLatjvWOibDc5-TBnbUk1pD12o0
+    - name: encrypted_phone_number
+      in: query
+      type: string
+      required: true
+      description: 加密手机号
+      example: vvysDQeEaH3I+wRh14St0abIkvQyFgh/fbWYSs2bLtG9tj+bdJn4WSCPzLyXnFbzaaKSE2j4mAFON3kzNexb/SYkHZNJAuCittaW4wpGj7U+h9A==
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - receive_status
+        properties:
+          receive_status:
+            $ref: '../../../../definitions/Enumerations.yaml#MemberCardReceiveStatus'
+          user_card_information:
+            type: object
+            description: 用户会员卡信息
+            required:
+              - code
+              - openid
+              - receive_time
+              - card_appid
+              - card_id
+            properties:
+              code:
+                type: string
+                description: 会员卡code
+                example: '478515832665'
+              openid:
+                type: string
+                description: 用户标识
+                example: oHdb05U3pYMGsKSVAHN8AhIGhJaA
+              unionid:
+                type: string
+                description: 用户标识
+                example: oHdb05U3p11ahKSVAHN8AhIGhJaA
+              receive_time:
+                type: string
+                format: rfc3339
+                description: 会员卡领取时间
+                example: '2015-05-20T13:29:35.120+08:00'
+              card_appid:
+                type: string
+                description: 品牌appid
+                example: wx0c44f7dee34b04d1
+              card_id:
+                type: string
+                description: 会员卡id
+                example: pbLatjvWOibDc5-TBnbUk1pD12o0

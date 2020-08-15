@@ -2,7 +2,7 @@ post:
   x-version: [V1.0, 2020.03.25]
   x-role: [服务商, 直连商户]
   tags:
-    - 微信支付分∙免确认模式特有
+    - 微信支付分∙免确认模式∙普通授权
   summary: 商户解除用户授权关系API
   description: 商户通过调用该接口，可主动与用户解除此前授权关系。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter9_1.shtml)
   parameters:

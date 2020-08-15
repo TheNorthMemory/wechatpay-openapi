@@ -2,7 +2,7 @@ get:
   x-version: [V1.0, 2019.08.23]
   x-role: [服务商, 直连商户]
   tags:
-    - 微信支付分∙免确认模式特有
+    - 微信支付分∙免确认模式∙普通授权
   summary: 查询用户授权状态API
   description: 用户申请使用服务时，商户可通过此接口查询用户是否“已授权”本服务。在“已授权”状态下的服务，用户才可以申请使用。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter3_8.shtml)
   parameters:

@@ -100,7 +100,7 @@ get:
   description: 发起分账请求后，可调用此接口查询分账结果 ;发起分账完结请求后，可调用此接口查询分账完结的结果。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/profitsharing/chapter3_2.shtml)
   parameters:
     - name: sub_mchid
-      in: path
+      in: query
       type: string
       description: 二级商户号
       required: true

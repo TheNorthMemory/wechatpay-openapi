@@ -1,5 +1,5 @@
 post:
-  x-version: [V1.3, 2020.06.22]
+  x-version: [V1.4, 2020.09.14]
   x-role: [电商平台]
   tags:
     - 电商收付通∙分账
@@ -41,6 +41,7 @@ post:
             items:
               type: object
               required:
+                - type
                 - receiver_account
                 - amount
                 - description
@@ -63,7 +64,7 @@ post:
                   description: 分账描述
                   example: 分给商户1900000109
           finish:
-            type: booleanean
+            type: boolean
             description: 是否分账完成
   responses:
     200:
@@ -92,7 +93,7 @@ post:
             description: 微信分账单号
             example: '6754760740201411110007865434'
 get:
-  x-version: [V1.3, 2020.04.30]
+  x-version: [V1.4, 2020.09.14]
   x-role: [电商平台]
   tags:
     - 电商收付通∙分账
@@ -193,13 +194,13 @@ get:
                   example: '1900000109'
           close_reason:
             type: string
-            description: 关单原因
+            description: 关单原因描述，当分账单状态status为CLOSED（处理失败，已关单）时，返回该字段。
             example: NO_AUTH
           finish_amount:
             type: integer
-            description: 分账完结金额
+            description: 分账完结的分账金额，单位为分， 仅当查询分账完结的执行结果时，存在本字段。
             example: 100
           finish_description:
             type: string
-            description: 分账完结描述
+            description: 分账完结的原因描述，仅当查询分账完结的执行结果时，存在本字段。
             example: 分账完结

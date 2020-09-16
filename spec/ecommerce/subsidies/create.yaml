@@ -1,5 +1,5 @@
 post:
-  x-version: [V1.0, 2019.09.12]
+  x-version: [V1.0, 2020.09.15]
   x-role: [电商平台]
   tags:
     - 电商收付通∙补差
@@ -46,6 +46,7 @@ post:
           - transaction_id
           - subsidy_id
           - description
+          - amount
           - result
           - success_time
         properties:

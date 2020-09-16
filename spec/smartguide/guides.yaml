@@ -1,5 +1,5 @@
 post:
-  x-version: [V1.0, 2020.04.28]
+  x-version: [V1.1, 2020.09.15]
   x-role: [服务商, 直连商户]
   tags:
     - 经营工具∙支付即服务
@@ -52,7 +52,7 @@ post:
             description: 服务人员ID
             example: LLA3WJ6DSZUfiaZDS79FH5Wm5m4X69TBic
 get:
-  x-version: [V1.0, 2020.06.24]
+  x-version: [V1.1, 2020.09.15]
   x-role: [服务商, 直连商户]
   tags:
     - 经营工具∙支付即服务

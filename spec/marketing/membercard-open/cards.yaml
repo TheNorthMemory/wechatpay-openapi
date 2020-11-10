@@ -1,5 +1,5 @@
 post:
-  x-version: [V1.0, 2020.07.15]
+  x-version: [V1.1, 2020.10.22]
   x-role:
     - 直连商户
     - 服务商
@@ -94,10 +94,6 @@ post:
                 type: integer
                 description: 生效后N天内有效
                 example: 200
-              wait_days_after_receive:
-                type: integer
-                description: 领取后N天开始生效
-                example: 1
           code_mode:
             $ref: '../../../definitions/Enumerations.yaml#MemberCardCodeMode'
           need_display_level:

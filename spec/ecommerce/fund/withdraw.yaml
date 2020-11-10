@@ -1,5 +1,5 @@
 post:
-  x-version: [V1.0, 2019.09.18]
+  x-version: [V1.1, 2020.09.28]
   x-role: [电商平台]
   tags:
     - 电商收付通∙提现
@@ -43,6 +43,7 @@ post:
         required:
           - sub_mchid
           - withdraw_id
+          - out_request_no
         properties:
           sub_mchid:
             type: string

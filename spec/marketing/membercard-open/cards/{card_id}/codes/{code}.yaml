@@ -1,5 +1,5 @@
 get:
-  x-version: [V1.0, 2020.07.15]
+  x-version: [V1.1, 2020.09.22]
   x-role:
     - 直连商户
     - 服务商
@@ -25,7 +25,7 @@ get:
       schema:
         $ref: '../../../../../../definitions/MemberCard.yaml#CodeRecord'
 patch:
-  x-version: [V1.0, 2020.07.15]
+  x-version: [V1.1, 2020.10.13]
   x-role:
     - 直连商户
     - 服务商

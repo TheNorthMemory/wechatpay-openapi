@@ -102,10 +102,6 @@ Record:
           type: integer
           description: 生效后N天内有效
           example: 200
-        wait_days_after_receive:
-          type: integer
-          description: 领取后N天开始生效
-          example: 1
     code_mode:
       $ref: './Enumerations.yaml#MemberCardCodeMode'
     need_display_level:

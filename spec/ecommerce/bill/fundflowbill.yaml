@@ -1,0 +1,83 @@
+get:
+  x-version: [V1.0, 2020.08.10]
+  x-role:
+    - 电商平台
+  tags:
+    - 电商收付通∙账单
+  summary: 申请二级商户资金账单API
+  description: '微信支付按天提供微信支付账户的资金流水账单文件，电商平台可以通过该接口获取二级商户账单文件的下载地址。文件内包含电商平台二级商户资金操作相关的业务单号、收支金额、记账时间等信息，供电商平台进行核对。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/bill/chapter3_5.shtml)'
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - bill_date
+          - account_type
+          - algorithm
+        properties:
+          bill_date:
+            type: string
+            description: 账单日期
+            example: '2019-06-11'
+          account_type:
+            type: string
+            description: 资金账户类型
+            example: ALL
+          tar_type:
+            type: string
+            description: 压缩类型
+            example: GZIP
+          algorithm:
+            type: string
+            description: 加密算法
+            example: AEAD_AES_256_GCM
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - download_bill_count
+        properties:
+          download_bill_count:
+            type: integer
+            description: 下载信息总数
+            example: 1
+          download_bill_list:
+            type: array
+            description: 下载信息明细
+            items:
+              type: object
+              required:
+                - bill_sequence
+                - hash_type
+                - hash_value
+                - download_url
+                - encrypt_key
+                - nonce
+              properties:
+                bill_sequence:
+                  type: integer
+                  description: 账单文件序号
+                  example: 1
+                hash_type:
+                  type: string
+                  description: 哈希类型
+                  example: SHA1
+                hash_value:
+                  type: string
+                  description: 哈希值
+                  example: 79bb0f45fc4c42234a918000b2668d689e2bde04
+                download_url:
+                  type: string
+                  description: 账单下载地址
+                  example: 'https://api.mch.weixin.qq.com/v3/bill/downloadurl?token=xxx'
+                encrypt_key:
+                  type: string
+                  description: 加密密钥
+                  example: YpkbxSne+mDwyXq//xYPmtr9eQ5LsH7zLMZSs+GSEcY4wjhlsfioS4n9X6q1ZBL0wM1v5qd7KhWuj0rFJ4N1FidP7Q8KDy25QDTt46wiKnsPKSCAXWRFNw1D2JmJBqZsc9y5g0DupONWKYB2GfRigRDEBVszj67uOIILPdxOKX1w3N4jvu0U9IFanJa7ldm70KVvYrMWVgQFDPbgjh1gVDbuTAjmPN88AobLdkiegnBUS2woDZW+PfhPo13kweOiR3h1gXIKRlnKnN3Jkkwpna/AFFijXrFphO3voSuiV0CfptfzTtcae4X3DYG3RSroKqmpa+5tuy2aU2VJUSIuFQ==
+                nonce:
+                  type: string
+                  description: 随机字符串
+                  example: a8607ef79034c49c

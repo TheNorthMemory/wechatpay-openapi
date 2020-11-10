@@ -140,6 +140,8 @@ paths:
     $ref: ./spec/ecommerce/applyments/out-request-no/{out_request_no}.yaml
   /v3/ecommerce/applyments/:
     $ref: ./spec/ecommerce/applyments/stub.yaml
+  /v3/ecommerce/bill/fundflowbill:
+    $ref: ./spec/ecommerce/bill/fundflowbill.yaml
   /v3/ecommerce/fund/balance/{sub_mchid}:
     $ref: ./spec/ecommerce/fund/balance/{sub_mchid}.yaml
   /v3/ecommerce/fund/enddaybalance/{sub_mchid}:

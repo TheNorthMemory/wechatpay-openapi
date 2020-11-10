@@ -107,7 +107,7 @@ post:
             description: 微信分账单号
             example: '6754760740201411110007865434'
 get:
-  x-version: [V1.1, 2020.04.01]
+  x-version: [V1.2, 2020.11.06]
   x-role:
     - 服务商
   tags:
@@ -164,6 +164,7 @@ get:
           status:
             type: string
             description: 分账单状态
+            enum: [PROCESSING, FINISHED]
             example: FINISHED
           receivers:
             type: array
@@ -181,6 +182,7 @@ get:
                 type:
                   type: string
                   description: 分账接收方类型
+                  enum: [MERCHANT_ID, PERSONAL_OPENID, PERSONAL_SUB_OPENID]
                   example: MERCHANT_ID
                 account:
                   type: string
@@ -197,6 +199,7 @@ get:
                 result:
                   type: string
                   description: 分账结果
+                  enum: [PENDING, SUCEESS, CLOSED]
                   example: SUCCESS
                 finish_time:
                   type: string
@@ -205,10 +208,12 @@ get:
                 fail_reason:
                   type: string
                   description: 分账失败原因
+                  enum: [ACCOUNT_ABNORMAL, NO_RELATION, RECEIVER_HIGH_RISK]
                   example: NO_RELATION
           close_reason:
             type: string
             description: 关单原因
+            enum: [NO_AUTH]
             example: NO_AUTH
           finish_amount:
             type: integer

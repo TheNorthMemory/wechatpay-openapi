@@ -539,10 +539,8 @@ ProfitSharingOrderState:
   type: string
   description: 分账单状态
   enum:
-    - ACCEPTED   #受理成功
     - PROCESSING #处理中
     - FINISHED   #分账成功
-    - CLOSED     #处理失败，已关单
 
 ProfitSharingResult:
   type: string
@@ -550,8 +548,6 @@ ProfitSharingResult:
   enum:
     - PENDING  #待分账
     - SUCCESS  #分账成功
-    - ADJUST   #分账失败待调账
-    - RETURNED #已转回分账方
     - CLOSED   #已关闭
 
 ProfitSharingFailReason:
@@ -598,7 +594,7 @@ RefundStatus:
   description: 退款状态
   enum:
     - SUCCESS     #退款成功
-    - REFUNDCLOSE #退款关闭
+    - CLOSE       #退款关闭
     - PROCESSING  #退款处理中
     - ABNORMAL    #退款异常
 

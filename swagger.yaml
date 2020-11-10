@@ -304,6 +304,8 @@ paths:
     $ref: ./spec/merchant/fund/withdraw/bill-type/{bill_type}.yaml
   /v3/merchant/fund/withdraw/out-request-no/{out_request_no}:
     $ref: ./spec/merchant/fund/withdraw/out-request-no/{out_request_no}.yaml
+  /v3/merchant/fund/withdraw/withdraw-id/{withdraw_id}:
+    $ref: ./spec/merchant/fund/withdraw/withdraw-id/{withdraw_id}.yaml
   /v3/merchant/media/upload:
     $ref: ./spec/merchant/media/upload.yaml
   /v3/merchant/media/video_upload:

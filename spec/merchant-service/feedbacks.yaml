@@ -1,0 +1,47 @@
+post:
+  x-version: [V1.1, 2021.01.08]
+  x-role: [直连商户, 服务商, 渠道商]
+  tags:
+    - 通用接口∙商业支付投诉
+  summary: 商户反馈API
+  description: 商户上传反馈处理结果的接口。 包括商户反馈类型、商户反馈内容以及图片凭证。 其中上传图片凭证需首先调用“商户上传反馈图片”接口，得到图片id，再将id填入请求。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/merchant-service/chapter3_6.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - transaction_id
+          - complainted_mchid
+          - feedback_content
+        properties:
+          transaction_id:
+            type: string
+            description: 微信支付订单号
+            example: '4200000404201909069117582536'
+          complainted_mchid:
+            type: string
+            description: 被诉商户号
+            example: '9980456248'
+          feedback_type:
+            type: integer
+            description: 反馈内容类型
+            example: 1
+          feedback_content:
+            type: string
+            description: 反馈内容
+            example: 已与用户协商解决
+          feedback_images:
+            type: array
+            description: 图片凭证
+            items:
+              type: string
+              format: MediaId
+            example: '["BB04A5DEEFEA18D4F2554C1EDD3B610B.bmp","BB04A5DEEFEA18D4F2554C1EDD3B610B.bmp"]'
+          launch_confirm_process:
+            type: boolean
+            description: 反馈处理完成
+  responses:
+    204:
+      schema: {}

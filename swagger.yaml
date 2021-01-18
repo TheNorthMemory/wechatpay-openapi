@@ -290,6 +290,14 @@ paths:
     $ref: ./spec/merchant-service/complaint-notifications.yaml
   /v3/merchant-service/complaints:
     $ref: ./spec/merchant-service/complaints.yaml
+  /v3/merchant-service/complaints/{transaction_id}:
+    $ref: ./spec/merchant-service/complaints/{transaction_id}.yaml
+  /v3/merchant-service/complaints/{transaction_id}/negotiation-historys:
+    $ref: ./spec/merchant-service/complaints/{transaction_id}/negotiation-historys.yaml
+  /v3/merchant-service/feedbacks:
+    $ref: ./spec/merchant-service/feedbacks.yaml
+  /v3/merchant-service/images/upload:
+    $ref: ./spec/merchant-service/images/upload.yaml
   /v3/merchant-store/stores:
     $ref: ./spec/merchant-store/stores.yaml
   /v3/merchant-store/stores/{store_id}:

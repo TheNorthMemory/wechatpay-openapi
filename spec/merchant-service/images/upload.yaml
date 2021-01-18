@@ -1,0 +1,42 @@
+post:
+  x-version: [V1.0, 2020.09.02]
+  x-role: [直连商户, 服务商, 渠道商]
+  tags:
+    - 通用接口∙商业支付投诉
+  consumes:
+    - multipart/form-data
+  summary: 商户上传反馈图片API
+  description: 商户上传反馈图片的接口。 将媒体图片进行二进制转换，得到的媒体图片二进制内容，在请求body中上传此二进制内容。 媒体图片只支持jpg、png、bmp格式，文件大小不能超过2M。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/merchant-service/chapter5_1.shtml)
+  parameters:
+    - name: file
+      in: formData
+      type: file
+      description: 图片文件
+      required: true
+    - name: meta
+      in: formData
+      required: true
+      type: string
+      format: json
+      description: 媒体文件元信息
+      schema:
+        type: object
+        properties:
+          filename:
+            type: string
+            description: 文件名称
+          sha256:
+            type: string
+            description: 文件摘要
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - media_id
+        properties:
+          media_id:
+            type: string
+            format: MediaId
+            description: 媒体文件标识ID
+            example: BB04A5DEEFEA18D4F2554C1EDD3B610B.bmp

@@ -1,0 +1,41 @@
+post:
+  x-version: []
+  x-role:
+    - 服务商
+  tags:
+    - 通用接口∙商业支付投诉
+  summary: 提交回复API
+  description: 商户可通过调用此接口，提交回复内容。其中上传图片凭证需首先调用商户上传反馈图片接口，得到图片id，再将id填入请求。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_2_14.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - complaint_id
+          - complainted_mchid
+          - response_content
+        properties:
+          complaint_id:
+            type: string
+            description: 投诉单号
+            example: '200201820200101080076610000'
+          complainted_mchid:
+            type: string
+            description: 被诉商户号
+            example: '1900012181'
+          response_content:
+            type: string
+            description: 回复内容
+            example: 已与用户沟通解决
+          response_images:
+            type: array
+            items:
+              type: string
+              format: MediaId
+              description: 回复图片
+              example: file23578_21798531.jpg
+  responses:
+    '204':
+      schema: {}

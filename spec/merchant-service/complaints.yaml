@@ -3,6 +3,7 @@ get:
   x-role: [直连商户, 服务商, 渠道商]
   tags:
     - 通用接口∙商业支付投诉
+  deprecated: true
   summary: 查询投诉信息API
   description: 商户可通过调用此接口，查询指定时间段的所有用户投诉信息，并在返回结果分页输出查询结果。对于服务商、渠道商，可通过调用此接口，查询指定子商户号对应子商户的投诉信息，若不指定，则查询所有子商户投诉信。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/merchant-service/chapter3_1.shtml)
   parameters:

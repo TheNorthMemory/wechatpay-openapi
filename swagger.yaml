@@ -42,6 +42,7 @@ tags:
   - name: 基础支付∙普通支付∙服务商模式
   - name: 基础支付∙合单支付
   - name: 基础支付∙账单
+  - name: 基础支付∙退款
   - name: 电商收付通∙商户进件
   - name: 电商收付通∙普通支付
   - name: 电商收付通∙合单支付
@@ -288,6 +289,16 @@ paths:
     $ref: ./spec/marketing/paygiftactivity/unique-threshold-activity.yaml
   /v3/merchant-service/complaint-notifications:
     $ref: ./spec/merchant-service/complaint-notifications.yaml
+  /v3/merchant-service/complaints-v2:
+    $ref: ./spec/merchant-service/complaints-v2.yaml
+  /v3/merchant-service/complaints-v2/{complaint_id}:
+    $ref: ./spec/merchant-service/complaints-v2/{complaint_id}.yaml
+  /v3/merchant-service/complaints-v2/{complaint_id}/complete:
+    $ref: ./spec/merchant-service/complaints-v2/{complaint_id}/complete.yaml
+  /v3/merchant-service/complaints-v2/{complaint_id}/negotiation-historys:
+    $ref: ./spec/merchant-service/complaints-v2/{complaint_id}/negotiation-historys.yaml
+  /v3/merchant-service/complaints-v2/{complaint_id}/response:
+    $ref: ./spec/merchant-service/complaints-v2/{complaint_id}/response.yaml
   /v3/merchant-service/complaints:
     $ref: ./spec/merchant-service/complaints.yaml
   /v3/merchant-service/complaints/{transaction_id}:

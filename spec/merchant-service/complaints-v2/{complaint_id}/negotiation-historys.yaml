@@ -1,0 +1,79 @@
+get:
+  x-version: []
+  x-role:
+    - 服务商
+  tags:
+    - 通用接口∙商业支付投诉
+  summary: 查询投诉协商历史API
+  description: 商户可通过调用此接口，查询指定投诉的用户商户协商历史，以分页输出查询结果，方便商户根据处理历史来制定后续处理方案。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_2_12.shtml)
+  parameters:
+    - name: complaint_id
+      type: string
+      in: path
+      description: 投诉单号
+      required: true
+      example: '200201820200101080076610000'
+    - name: limit
+      type: integer
+      in: query
+      description: 分页大小
+      example: 50
+    - name: offset
+      type: integer
+      in: query
+      description: 分页开始位置
+      example: 10
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - limit
+          - offset
+        properties:
+          data:
+            type: array
+            description: 投诉协商历史
+            items:
+              type: object
+              required:
+                - log_id
+                - operator
+                - operate_time
+                - operate_type
+              properties:
+                log_id:
+                  type: string
+                  description: 操作流水号
+                  example: '300285320210322170000071077'
+                operator:
+                  type: string
+                  description: 操作人
+                  example: 投诉人
+                operate_time:
+                  type: string
+                  description: 操作时间
+                  example: '2015-05-20T13:29:35.120+08:00'
+                operate_type:
+                  type: string
+                  description: 操作类型
+                  example: USER_CREATE_COMPLAINT
+                operate_details:
+                  type: string
+                  description: 操作内容
+                  example: 已与用户电话沟通解决
+                image_list:
+                  type: array
+                  description: 图片凭证
+                  example: https://qpic.cn/xxx
+          limit:
+            type: integer
+            description: 分页大小
+          offset:
+            type: integer
+            description: 分页开始位置
+            example: 50
+          total_count:
+            type: integer
+            description: 投诉协商历史总条数
+            example: 1000

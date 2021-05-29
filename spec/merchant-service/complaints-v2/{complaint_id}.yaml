@@ -1,0 +1,89 @@
+get:
+  x-version: []
+  x-role:
+    - 服务商
+  tags:
+    - 通用接口∙商业支付投诉
+  summary: 查询投诉单详情API
+  description: 商户可通过调用此接口，查询指定投诉单的用户投诉详情，包含投诉内容、投诉关联订单、投诉人联系方式等信息，方便商户处理投诉。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_2_13.shtml)
+  parameters:
+    - name: complaint_id
+      in: path
+      type: string
+      description: 投诉单号
+      required: true
+      example: '200201820200101080076610000'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - complaint_id
+          - complaint_time
+          - complaint_detail
+          - complaint_state
+          - payer_openid
+          - complaint_full_refunded
+          - incoming_user_response
+          - user_complaint_times
+        properties:
+          complaint_id:
+            type: string
+            description: 投诉单号
+            example: '200201820200101080076610000'
+          complaint_time:
+            type: string
+            description: 投诉时间
+            example: '2015-05-20T13:29:35.120+08:00'
+          complaint_detail:
+            type: string
+            description: 投诉详情
+            example: 反馈一个重复扣费的问题
+          complaint_state:
+            type: string
+            description: 投诉单状态
+            example: PENDING
+          complainted_mchid:
+            type: string
+            description: 被诉商户号
+            example: '1900012181'
+          payer_phone:
+            type: string
+            description: 投诉人联系方式
+            example: sGdNeTHMQGlxCWiUyHu6XNO9GCYln2Luv4HhwJzZBfcL12sB
+          payer_openid:
+            type: string
+            description: 投诉人openid
+            example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+          complaint_order_info:
+            type: array
+            description: 投诉单关联订单信息
+            items:
+              type: object
+              required:
+                - transaction_id
+                - out_trade_no
+                - amount
+              properties:
+                transaction_id:
+                  type: string
+                  description: 微信订单号
+                  example: '4200000404201909069117582536'
+                out_trade_no:
+                  type: string
+                  description: 商户订单号
+                  example: '20190906154617947762231'
+                amount:
+                  type: integer
+                  description: 订单金额
+                  example: 3
+          complaint_full_refunded:
+            type: booleanean
+            description: 投诉单是否已全额退款
+          incoming_user_response:
+            type: booleanean
+            description: 是否有待回复的用户留言
+          user_complaint_times:
+            type: integer
+            description: 用户投诉次数
+            example: 1

@@ -43,6 +43,7 @@ tags:
   - name: 基础支付∙合单支付
   - name: 基础支付∙账单
   - name: 基础支付∙退款
+  - name: 资金应用∙分账
   - name: 电商收付通∙商户进件
   - name: 电商收付通∙普通支付
   - name: 电商收付通∙合单支付
@@ -111,6 +112,8 @@ paths:
     $ref: ./spec/brand/profitsharing/returnorders.yaml
   /v3/businesscircle/points/notify:
     $ref: ./spec/businesscircle/points/notify.yaml
+  /v3/businesscircle/user-authorizations/{openid}:
+    $ref: ./spec/businesscircle/user-authorizations/{openid}.yaml
   /v3/certificates:
     $ref: ./spec/certificates.yaml
   /v3/combine-transactions/app:
@@ -385,6 +388,24 @@ paths:
     $ref: ./spec/payscore/user-service-state.yaml
   /v3/payscore/users/{openid}/permissions/{service_id}/terminate:
     $ref: ./spec/payscore/users/{openid}/permissions/{service_id}/terminate.yaml
+  /v3/profitsharing/merchant-configs/{sub_mchid}:
+    $ref: ./spec/profitsharing/merchant-configs/{sub_mchid}.yaml
+  /v3/profitsharing/orders:
+    $ref: ./spec/profitsharing/orders.yaml
+  /v3/profitsharing/orders/{out_order_no}:
+    $ref: ./spec/profitsharing/orders/{out_order_no}.yaml
+  /v3/profitsharing/orders/unfreeze:
+    $ref: ./spec/profitsharing/orders/unfreeze.yaml
+  /v3/profitsharing/receivers/add:
+    $ref: ./spec/profitsharing/receivers/add.yaml
+  /v3/profitsharing/receivers/delete:
+    $ref: ./spec/profitsharing/receivers/delete.yaml
+  /v3/profitsharing/return-orders:
+    $ref: ./spec/profitsharing/return-orders.yaml
+  /v3/profitsharing/return-orders/{out_return_no}:
+    $ref: ./spec/profitsharing/return-orders/{out_return_no}.yaml
+  /v3/profitsharing/transactions/{transaction_id}/amounts:
+    $ref: ./spec/profitsharing/transactions/{transaction_id}/amounts.yaml
   /v3/refund/domestic/refunds:
     $ref: ./spec/refund/domestic/refunds.yaml
   /v3/refund/domestic/refunds/{out_refund_no}:

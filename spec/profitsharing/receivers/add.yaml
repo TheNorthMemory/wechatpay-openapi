@@ -1,0 +1,85 @@
+post:
+  x-version: []
+  x-role:
+    - 服务商
+  tags:
+    - 资金应用∙分账
+  summary: 添加分账接收方API
+  description: 服务商发起添加分账接收方请求，建立分账接收方列表。后续可通过发起分账请求，将分账方商户结算后的资金，分到该分账接收方 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_1_8.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - appid
+          - type
+          - account
+          - relation_type
+        properties:
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1900000109'
+          appid:
+            type: string
+            description: 应用ID
+            example: wx8888888888888888
+          sub_appid:
+            type: string
+            description: 子商户应用ID
+            example: wx8888888888888889
+          type:
+            type: string
+            description: 分账接收方类型
+            example: MERCHANT_ID
+          account:
+            type: string
+            description: 分账接收方帐号
+            example: '86693852'
+          name:
+            type: string
+            description: 分账个人接收方姓名
+            example: hu89ohu89ohu89o
+          relation_type:
+            type: string
+            description: 与分账方的关系类型
+            example: SERVICE_PROVIDER
+          custom_relation:
+            type: string
+            description: 自定义的分账关系
+            example: 代理商
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - type
+          - account
+          - relation_type
+        properties:
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1900000109'
+          type:
+            type: string
+            description: 分账接收方类型
+            example: MERCHANT_ID
+          account:
+            type: string
+            description: 分账接收方账号
+            example: '86693852'
+          name:
+            type: string
+            description: 分账接收方全称
+            example: hu89ohu89ohu89o
+          relation_type:
+            type: string
+            description: 与分账方的关系类型
+            example: SERVICE_PROVIDER
+          custom_relation:
+            type: string
+            description: 自定义的分账关系
+            example: 代理商

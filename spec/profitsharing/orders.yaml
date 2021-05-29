@@ -1,0 +1,151 @@
+post:
+  x-version: []
+  x-role:
+    - 服务商
+  tags:
+    - 资金应用∙分账
+  summary: 请求分账API
+  description: 微信订单支付成功后，服务商代特约商户发起分账请求，将结算后的资金分到分账接收方 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_1_1.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - appid
+          - transaction_id
+          - out_order_no
+          - unfreeze_unsplit
+        properties:
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1900000109'
+          appid:
+            type: string
+            description: 应用ID
+            example: wx8888888888888888
+          sub_appid:
+            type: string
+            description: 子商户应用ID
+            example: wx8888888888888889
+          transaction_id:
+            type: string
+            description: 微信订单号
+            example: '4208450740201411110007820472'
+          out_order_no:
+            type: string
+            description: 商户分账单号
+            example: P20150806125346
+          receivers:
+            type: array
+            description: 分账接收方列表
+            items:
+              type: object
+              required:
+                - type
+                - account
+                - amount
+                - description
+              properties:
+                type:
+                  type: string
+                  description: 分账接收方类型
+                  example: MERCHANT_ID
+                account:
+                  type: string
+                  description: 分账接收方帐号
+                  example: '86693852'
+                name:
+                  type: string
+                  description: 分账个人接收方姓名
+                  example: hu89ohu89ohu89o
+                amount:
+                  type: integer
+                  description: 分账金额
+                  example: 888
+                description:
+                  type: string
+                  description: 分账描述
+                  example: 分给商户A
+          unfreeze_unsplit:
+            type: boolean
+            description: 是否解冻剩余未分资金
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - transaction_id
+          - out_order_no
+          - order_id
+          - state
+        properties:
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1900000109'
+          transaction_id:
+            type: string
+            description: 微信订单号
+            example: '4208450740201411110007820472'
+          out_order_no:
+            type: string
+            description: 商户分账单号
+            example: P20150806125346
+          order_id:
+            type: string
+            description: 微信分账单号
+            example: '3008450740201411110007820472'
+          state:
+            type: string
+            description: 分账单状态
+            example: FINISHED
+          receivers:
+            type: array
+            description: 分账接收方列表
+            items:
+              type: object
+              required:
+                - amount
+                - description
+                - type
+                - account
+                - result
+                - fail_reason
+                - create_time
+                - finish_time
+              properties:
+                amount:
+                  type: integer
+                  description: 分账金额
+                  example: 100
+                description:
+                  type: string
+                  description: 分账描述
+                  example: 分给商户1900000110
+                type:
+                  type: string
+                  description: 分账接收方类型
+                  example: MERCHANT_ID
+                account:
+                  type: string
+                  description: 分账接收方帐号
+                  example: '1900000109'
+                result:
+                  type: string
+                  description: 分账结果
+                  example: SUCCESS
+                fail_reason:
+                  type: string
+                  description: 分账失败原因
+                  example: ACCOUNT_ABNORMAL
+                create_time:
+                  type: string
+                  description: 分账创建时间
+                  example: '2015-05-20T13:29:35.120+08:00'
+                finish_time:
+                  type: string
+                  description: 分账完成时间
+                  example: '2015-05-20T13:29:35.120+08:00'

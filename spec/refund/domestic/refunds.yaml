@@ -2,6 +2,9 @@ post:
   x-version: []
   x-role:
     - 直连商户
+    - 服务商
+  tags:
+    - 基础支付∙退款
   summary: 申请退款API
   description: 当交易发生之后一年内，由于买家或者卖家的原因需要退款时，卖家可以通过退款接口将支付金额退还给买家，微信支付将在收到退款请求并且验证成功之后，将支付款按原路退还至买家账号上。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_5_9.shtml)
   parameters:
@@ -14,6 +17,10 @@ post:
           - out_refund_no
           - amount
         properties:
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1900000109'
           transaction_id:
             type: string
             description: 微信支付订单号

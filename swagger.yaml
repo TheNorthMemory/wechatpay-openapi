@@ -374,6 +374,10 @@ paths:
     $ref: ./spec/payscore/user-service-state.yaml
   /v3/payscore/users/{openid}/permissions/{service_id}/terminate:
     $ref: ./spec/payscore/users/{openid}/permissions/{service_id}/terminate.yaml
+  /v3/refund/domestic/refunds:
+    $ref: ./spec/refund/domestic/refunds.yaml
+  /v3/refund/domestic/refunds/{out_refund_no}:
+    $ref: ./spec/refund/domestic/refunds/{out_refund_no}.yaml
   /v3/smartguide/guides:
     $ref: ./spec/smartguide/guides.yaml
   /v3/smartguide/guides/{guide_id}:

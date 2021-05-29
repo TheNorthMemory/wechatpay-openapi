@@ -1,5 +1,5 @@
 post:
-  x-version: [V1.4, 2020.07.24]
+  x-version: [V1.5, 2020.11.12]
   x-role: [微信支付商户]
   tags:
     -  运营工具∙商家券

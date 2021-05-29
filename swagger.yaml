@@ -75,344 +75,344 @@ tags:
   - name: 通用接口∙商业支付投诉
 paths:
   /v3/-notify:
-    $ref: ./spec/-notify.yaml
+    $ref: ./v3/-notify.yaml
   /v3/apply4sub/sub_merchants/{sub_mchid}/modify-settlement:
-    $ref: ./spec/apply4sub/sub_merchants/{sub_mchid}/modify-settlement.yaml
+    $ref: ./v3/apply4sub/sub_merchants/{sub_mchid}/modify-settlement.yaml
   /v3/apply4sub/sub_merchants/{sub_mchid}/settlement:
-    $ref: ./spec/apply4sub/sub_merchants/{sub_mchid}/settlement.yaml
+    $ref: ./v3/apply4sub/sub_merchants/{sub_mchid}/settlement.yaml
   /v3/apply4subject/applyment:
-    $ref: ./spec/apply4subject/applyment.yaml
+    $ref: ./v3/apply4subject/applyment.yaml
   /v3/apply4subject/applyment/{applyment_id}/cancel:
-    $ref: ./spec/apply4subject/applyment/{applyment_id}/cancel.yaml
+    $ref: ./v3/apply4subject/applyment/{applyment_id}/cancel.yaml
   /v3/apply4subject/applyment/{business_code}/cancel:
-    $ref: ./spec/apply4subject/applyment/{business_code}/cancel.yaml
+    $ref: ./v3/apply4subject/applyment/{business_code}/cancel.yaml
   /v3/apply4subject/applyment/merchants/{sub_mchid}/state:
-    $ref: ./spec/apply4subject/applyment/merchants/{sub_mchid}/state.yaml
+    $ref: ./v3/apply4subject/applyment/merchants/{sub_mchid}/state.yaml
   /v3/applyment4sub/applyment/applyment_id/{applyment_id}:
-    $ref: ./spec/applyment4sub/applyment/applyment_id/{applyment_id}.yaml
+    $ref: ./v3/applyment4sub/applyment/applyment_id/{applyment_id}.yaml
   /v3/applyment4sub/applyment/business_code/{business_code}:
-    $ref: ./spec/applyment4sub/applyment/business_code/{business_code}.yaml
+    $ref: ./v3/applyment4sub/applyment/business_code/{business_code}.yaml
   /v3/applyment4sub/applyment/:
-    $ref: ./spec/applyment4sub/applyment/stub.yaml
+    $ref: ./v3/applyment4sub/applyment/stub.yaml
   /v3/bill/fundflowbill:
-    $ref: ./spec/bill/fundflowbill.yaml
+    $ref: ./v3/bill/fundflowbill.yaml
   /v3/bill/tradebill:
-    $ref: ./spec/bill/tradebill.yaml
+    $ref: ./v3/bill/tradebill.yaml
   /v3/billdownload/file:
-    $ref: ./spec/billdownload/file.yaml
+    $ref: ./v3/billdownload/file.yaml
   /v3/brand/profitsharing/finish-order:
-    $ref: ./spec/brand/profitsharing/finish-order.yaml
+    $ref: ./v3/brand/profitsharing/finish-order.yaml
   /v3/brand/profitsharing/orders:
-    $ref: ./spec/brand/profitsharing/orders.yaml
+    $ref: ./v3/brand/profitsharing/orders.yaml
   /v3/brand/profitsharing/receivers/add:
-    $ref: ./spec/brand/profitsharing/receivers/add.yaml
+    $ref: ./v3/brand/profitsharing/receivers/add.yaml
   /v3/brand/profitsharing/receivers/delete:
-    $ref: ./spec/brand/profitsharing/receivers/delete.yaml
+    $ref: ./v3/brand/profitsharing/receivers/delete.yaml
   /v3/brand/profitsharing/returnorders:
-    $ref: ./spec/brand/profitsharing/returnorders.yaml
+    $ref: ./v3/brand/profitsharing/returnorders.yaml
   /v3/businesscircle/points/notify:
-    $ref: ./spec/businesscircle/points/notify.yaml
+    $ref: ./v3/businesscircle/points/notify.yaml
   /v3/businesscircle/user-authorizations/{openid}:
-    $ref: ./spec/businesscircle/user-authorizations/{openid}.yaml
+    $ref: ./v3/businesscircle/user-authorizations/{openid}.yaml
   /v3/certificates:
-    $ref: ./spec/certificates.yaml
+    $ref: ./v3/certificates.yaml
   /v3/combine-transactions/app:
-    $ref: ./spec/combine-transactions/app.yaml
+    $ref: ./v3/combine-transactions/app.yaml
   /v3/combine-transactions/h5:
-    $ref: ./spec/combine-transactions/h5.yaml
+    $ref: ./v3/combine-transactions/h5.yaml
   /v3/combine-transactions/jsapi:
-    $ref: ./spec/combine-transactions/jsapi.yaml
+    $ref: ./v3/combine-transactions/jsapi.yaml
   /v3/combine-transactions/native:
-    $ref: ./spec/combine-transactions/native.yaml
+    $ref: ./v3/combine-transactions/native.yaml
   /v3/combine-transactions/out-trade-no/{combine_out_trade_no}:
-    $ref: ./spec/combine-transactions/out-trade-no/{combine_out_trade_no}.yaml
+    $ref: ./v3/combine-transactions/out-trade-no/{combine_out_trade_no}.yaml
   /v3/combine-transactions/out-trade-no/{combine_out_trade_no}/close:
-    $ref: ./spec/combine-transactions/out-trade-no/{combine_out_trade_no}/close.yaml
+    $ref: ./v3/combine-transactions/out-trade-no/{combine_out_trade_no}/close.yaml
   /v3/discount-card/cards:
-    $ref: ./spec/discount-card/cards.yaml
+    $ref: ./v3/discount-card/cards.yaml
   /v3/discount-card/cards/{out_card_code}:
-    $ref: ./spec/discount-card/cards/{out_card_code}.yaml
+    $ref: ./v3/discount-card/cards/{out_card_code}.yaml
   /v3/discount-card/cards/{out_card_code}/add-user-records:
-    $ref: ./spec/discount-card/cards/{out_card_code}/add-user-records.yaml
+    $ref: ./v3/discount-card/cards/{out_card_code}/add-user-records.yaml
   /v3/discount-card/orders/{out_order_no}:
-    $ref: ./spec/discount-card/orders/{out_order_no}.yaml
+    $ref: ./v3/discount-card/orders/{out_order_no}.yaml
   /v3/discount-card/orders/out-trade-no/{out_trade_no}:
-    $ref: ./spec/discount-card/orders/out-trade-no/{out_trade_no}.yaml
+    $ref: ./v3/discount-card/orders/out-trade-no/{out_trade_no}.yaml
   /v3/ecommerce/applyments/{applyment_id}:
-    $ref: ./spec/ecommerce/applyments/{applyment_id}.yaml
+    $ref: ./v3/ecommerce/applyments/{applyment_id}.yaml
   /v3/ecommerce/applyments/out-request-no/{out_request_no}:
-    $ref: ./spec/ecommerce/applyments/out-request-no/{out_request_no}.yaml
+    $ref: ./v3/ecommerce/applyments/out-request-no/{out_request_no}.yaml
   /v3/ecommerce/applyments/:
-    $ref: ./spec/ecommerce/applyments/stub.yaml
+    $ref: ./v3/ecommerce/applyments/stub.yaml
   /v3/ecommerce/bill/fundflowbill:
-    $ref: ./spec/ecommerce/bill/fundflowbill.yaml
+    $ref: ./v3/ecommerce/bill/fundflowbill.yaml
   /v3/ecommerce/fund/balance/{sub_mchid}:
-    $ref: ./spec/ecommerce/fund/balance/{sub_mchid}.yaml
+    $ref: ./v3/ecommerce/fund/balance/{sub_mchid}.yaml
   /v3/ecommerce/fund/enddaybalance/{sub_mchid}:
-    $ref: ./spec/ecommerce/fund/enddaybalance/{sub_mchid}.yaml
+    $ref: ./v3/ecommerce/fund/enddaybalance/{sub_mchid}.yaml
   /v3/ecommerce/fund/withdraw:
-    $ref: ./spec/ecommerce/fund/withdraw.yaml
+    $ref: ./v3/ecommerce/fund/withdraw.yaml
   /v3/ecommerce/fund/withdraw/{withdraw_id}:
-    $ref: ./spec/ecommerce/fund/withdraw/{withdraw_id}.yaml
+    $ref: ./v3/ecommerce/fund/withdraw/{withdraw_id}.yaml
   /v3/ecommerce/fund/withdraw/out-request-no/{out_request_no}:
-    $ref: ./spec/ecommerce/fund/withdraw/out-request-no/{out_request_no}.yaml
+    $ref: ./v3/ecommerce/fund/withdraw/out-request-no/{out_request_no}.yaml
   /v3/ecommerce/profitsharing/finish-order:
-    $ref: ./spec/ecommerce/profitsharing/finish-order.yaml
+    $ref: ./v3/ecommerce/profitsharing/finish-order.yaml
   /v3/ecommerce/profitsharing/orders:
-    $ref: ./spec/ecommerce/profitsharing/orders.yaml
+    $ref: ./v3/ecommerce/profitsharing/orders.yaml
   /v3/ecommerce/profitsharing/receivers/add:
-    $ref: ./spec/ecommerce/profitsharing/receivers/add.yaml
+    $ref: ./v3/ecommerce/profitsharing/receivers/add.yaml
   /v3/ecommerce/profitsharing/receivers/delete:
-    $ref: ./spec/ecommerce/profitsharing/receivers/delete.yaml
+    $ref: ./v3/ecommerce/profitsharing/receivers/delete.yaml
   /v3/ecommerce/profitsharing/returnorders:
-    $ref: ./spec/ecommerce/profitsharing/returnorders.yaml
+    $ref: ./v3/ecommerce/profitsharing/returnorders.yaml
   /v3/ecommerce/refunds/apply:
-    $ref: ./spec/ecommerce/refunds/apply.yaml
+    $ref: ./v3/ecommerce/refunds/apply.yaml
   /v3/ecommerce/refunds/id/{refund_id}:
-    $ref: ./spec/ecommerce/refunds/id/{refund_id}.yaml
+    $ref: ./v3/ecommerce/refunds/id/{refund_id}.yaml
   /v3/ecommerce/refunds/out-refund-no/{out_refund_no}:
-    $ref: ./spec/ecommerce/refunds/out-refund-no/{out_refund_no}.yaml
+    $ref: ./v3/ecommerce/refunds/out-refund-no/{out_refund_no}.yaml
   /v3/ecommerce/subsidies/cancel:
-    $ref: ./spec/ecommerce/subsidies/cancel.yaml
+    $ref: ./v3/ecommerce/subsidies/cancel.yaml
   /v3/ecommerce/subsidies/create:
-    $ref: ./spec/ecommerce/subsidies/create.yaml
+    $ref: ./v3/ecommerce/subsidies/create.yaml
   /v3/ecommerce/subsidies/return:
-    $ref: ./spec/ecommerce/subsidies/return.yaml
+    $ref: ./v3/ecommerce/subsidies/return.yaml
   /v3/goldplan/merchants/changecustompagestatus:
-    $ref: ./spec/goldplan/merchants/changecustompagestatus.yaml
+    $ref: ./v3/goldplan/merchants/changecustompagestatus.yaml
   /v3/goldplan/merchants/changegoldplanstatus:
-    $ref: ./spec/goldplan/merchants/changegoldplanstatus.yaml
+    $ref: ./v3/goldplan/merchants/changegoldplanstatus.yaml
   /v3/goldplan/merchants/set-advertising-industry-filter:
-    $ref: ./spec/goldplan/merchants/set-advertising-industry-filter.yaml
+    $ref: ./v3/goldplan/merchants/set-advertising-industry-filter.yaml
   /v3/marketing/busifavor/callbacks:
-    $ref: ./spec/marketing/busifavor/callbacks.yaml
+    $ref: ./v3/marketing/busifavor/callbacks.yaml
   /v3/marketing/busifavor/coupons/{card_id}/send:
-    $ref: ./spec/marketing/busifavor/coupons/{card_id}/send.yaml
+    $ref: ./v3/marketing/busifavor/coupons/{card_id}/send.yaml
   /v3/marketing/busifavor/coupons/associate:
-    $ref: ./spec/marketing/busifavor/coupons/associate.yaml
+    $ref: ./v3/marketing/busifavor/coupons/associate.yaml
   /v3/marketing/busifavor/coupons/disassociate:
-    $ref: ./spec/marketing/busifavor/coupons/disassociate.yaml
+    $ref: ./v3/marketing/busifavor/coupons/disassociate.yaml
   /v3/marketing/busifavor/coupons/use:
-    $ref: ./spec/marketing/busifavor/coupons/use.yaml
+    $ref: ./v3/marketing/busifavor/coupons/use.yaml
   /v3/marketing/busifavor/stocks:
-    $ref: ./spec/marketing/busifavor/stocks.yaml
+    $ref: ./v3/marketing/busifavor/stocks.yaml
   /v3/marketing/busifavor/stocks/{stock_id}:
-    $ref: ./spec/marketing/busifavor/stocks/{stock_id}.yaml
+    $ref: ./v3/marketing/busifavor/stocks/{stock_id}.yaml
   /v3/marketing/busifavor/stocks/{stock_id}/couponcodes:
-    $ref: ./spec/marketing/busifavor/stocks/{stock_id}/couponcodes.yaml
+    $ref: ./v3/marketing/busifavor/stocks/{stock_id}/couponcodes.yaml
   /v3/marketing/busifavor/users/{openid}/coupons:
-    $ref: ./spec/marketing/busifavor/users/{openid}/coupons.yaml
+    $ref: ./v3/marketing/busifavor/users/{openid}/coupons.yaml
   /v3/marketing/busifavor/users/{openid}/coupons/{coupon_code}/appids/{appid}:
-    $ref: ./spec/marketing/busifavor/users/{openid}/coupons/{coupon_code}/appids/{appid}.yaml
+    $ref: ./v3/marketing/busifavor/users/{openid}/coupons/{coupon_code}/appids/{appid}.yaml
   /v3/marketing/favor/callbacks:
-    $ref: ./spec/marketing/favor/callbacks.yaml
+    $ref: ./v3/marketing/favor/callbacks.yaml
   /v3/marketing/favor/coupon-stocks:
-    $ref: ./spec/marketing/favor/coupon-stocks.yaml
+    $ref: ./v3/marketing/favor/coupon-stocks.yaml
   /v3/marketing/favor/media/image-upload:
-    $ref: ./spec/marketing/favor/media/image-upload.yaml
+    $ref: ./v3/marketing/favor/media/image-upload.yaml
   /v3/marketing/favor/stocks:
-    $ref: ./spec/marketing/favor/stocks.yaml
+    $ref: ./v3/marketing/favor/stocks.yaml
   /v3/marketing/favor/stocks/{stock_id}:
-    $ref: ./spec/marketing/favor/stocks/{stock_id}.yaml
+    $ref: ./v3/marketing/favor/stocks/{stock_id}.yaml
   /v3/marketing/favor/stocks/{stock_id}/items:
-    $ref: ./spec/marketing/favor/stocks/{stock_id}/items.yaml
+    $ref: ./v3/marketing/favor/stocks/{stock_id}/items.yaml
   /v3/marketing/favor/stocks/{stock_id}/merchants:
-    $ref: ./spec/marketing/favor/stocks/{stock_id}/merchants.yaml
+    $ref: ./v3/marketing/favor/stocks/{stock_id}/merchants.yaml
   /v3/marketing/favor/stocks/{stock_id}/pause:
-    $ref: ./spec/marketing/favor/stocks/{stock_id}/pause.yaml
+    $ref: ./v3/marketing/favor/stocks/{stock_id}/pause.yaml
   /v3/marketing/favor/stocks/{stock_id}/refund-flow:
-    $ref: ./spec/marketing/favor/stocks/{stock_id}/refund-flow.yaml
+    $ref: ./v3/marketing/favor/stocks/{stock_id}/refund-flow.yaml
   /v3/marketing/favor/stocks/{stock_id}/restart:
-    $ref: ./spec/marketing/favor/stocks/{stock_id}/restart.yaml
+    $ref: ./v3/marketing/favor/stocks/{stock_id}/restart.yaml
   /v3/marketing/favor/stocks/{stock_id}/start:
-    $ref: ./spec/marketing/favor/stocks/{stock_id}/start.yaml
+    $ref: ./v3/marketing/favor/stocks/{stock_id}/start.yaml
   /v3/marketing/favor/stocks/{stock_id}/use-flow:
-    $ref: ./spec/marketing/favor/stocks/{stock_id}/use-flow.yaml
+    $ref: ./v3/marketing/favor/stocks/{stock_id}/use-flow.yaml
   /v3/marketing/favor/users/{openid}/coupons:
-    $ref: ./spec/marketing/favor/users/{openid}/coupons.yaml
+    $ref: ./v3/marketing/favor/users/{openid}/coupons.yaml
   /v3/marketing/favor/users/{openid}/coupons/{coupon_id}:
-    $ref: ./spec/marketing/favor/users/{openid}/coupons/{coupon_id}.yaml
+    $ref: ./v3/marketing/favor/users/{openid}/coupons/{coupon_id}.yaml
   /v3/marketing/membercard-activity/activities:
-    $ref: ./spec/marketing/membercard-activity/activities.yaml
+    $ref: ./v3/marketing/membercard-activity/activities.yaml
   /v3/marketing/membercard-activity/activities/{activity_id}:
-    $ref: ./spec/marketing/membercard-activity/activities/{activity_id}.yaml
+    $ref: ./v3/marketing/membercard-activity/activities/{activity_id}.yaml
   /v3/marketing/membercard-activity/activities/{activity_id}/terminate:
-    $ref: ./spec/marketing/membercard-activity/activities/{activity_id}/terminate.yaml
+    $ref: ./v3/marketing/membercard-activity/activities/{activity_id}/terminate.yaml
   /v3/marketing/membercard-open/activate-informations/{activate_ticket}:
-    $ref: ./spec/marketing/membercard-open/activate-informations/{activate_ticket}.yaml
+    $ref: ./v3/marketing/membercard-open/activate-informations/{activate_ticket}.yaml
   /v3/marketing/membercard-open/callback:
-    $ref: ./spec/marketing/membercard-open/callback.yaml
+    $ref: ./v3/marketing/membercard-open/callback.yaml
   /v3/marketing/membercard-open/cards:
-    $ref: ./spec/marketing/membercard-open/cards.yaml
+    $ref: ./v3/marketing/membercard-open/cards.yaml
   /v3/marketing/membercard-open/cards/{card_id}:
-    $ref: ./spec/marketing/membercard-open/cards/{card_id}.yaml
+    $ref: ./v3/marketing/membercard-open/cards/{card_id}.yaml
   /v3/marketing/membercard-open/cards/{card_id}/codes/{code}:
-    $ref: ./spec/marketing/membercard-open/cards/{card_id}/codes/{code}.yaml
+    $ref: ./v3/marketing/membercard-open/cards/{card_id}/codes/{code}.yaml
   /v3/marketing/membercard-open/cards/{card_id}/codes/{code}/activate:
-    $ref: ./spec/marketing/membercard-open/cards/{card_id}/codes/{code}/activate.yaml
+    $ref: ./v3/marketing/membercard-open/cards/{card_id}/codes/{code}/activate.yaml
   /v3/marketing/membercard-open/cards/{card_id}/codes/{code}/rights:
-    $ref: ./spec/marketing/membercard-open/cards/{card_id}/codes/{code}/rights.yaml
+    $ref: ./v3/marketing/membercard-open/cards/{card_id}/codes/{code}/rights.yaml
   /v3/marketing/membercard-open/cards/{card_id}/codes/{code}/unavailable:
-    $ref: ./spec/marketing/membercard-open/cards/{card_id}/codes/{code}/unavailable.yaml
+    $ref: ./v3/marketing/membercard-open/cards/{card_id}/codes/{code}/unavailable.yaml
   /v3/marketing/membercard-open/cards/{card_id}/codes/deposit:
-    $ref: ./spec/marketing/membercard-open/cards/{card_id}/codes/deposit.yaml
+    $ref: ./v3/marketing/membercard-open/cards/{card_id}/codes/deposit.yaml
   /v3/marketing/membercard-open/cards/{card_id}/decrypt-code:
-    $ref: ./spec/marketing/membercard-open/cards/{card_id}/decrypt-code.yaml
+    $ref: ./v3/marketing/membercard-open/cards/{card_id}/decrypt-code.yaml
   /v3/marketing/membercard-open/cards/{card_id}/qrcode:
-    $ref: ./spec/marketing/membercard-open/cards/{card_id}/qrcode.yaml
+    $ref: ./v3/marketing/membercard-open/cards/{card_id}/qrcode.yaml
   /v3/marketing/membercard-open/cards/{card_id}/rights:
-    $ref: ./spec/marketing/membercard-open/cards/{card_id}/rights.yaml
+    $ref: ./v3/marketing/membercard-open/cards/{card_id}/rights.yaml
   /v3/marketing/membercard-open/cards/{card_id}/upgrade:
-    $ref: ./spec/marketing/membercard-open/cards/{card_id}/upgrade.yaml
+    $ref: ./v3/marketing/membercard-open/cards/{card_id}/upgrade.yaml
   /v3/marketing/membercard-open/phonenumber-member/import:
-    $ref: ./spec/marketing/membercard-open/phonenumber-member/import.yaml
+    $ref: ./v3/marketing/membercard-open/phonenumber-member/import.yaml
   /v3/marketing/membercard-open/phonenumber-member/search:
-    $ref: ./spec/marketing/membercard-open/phonenumber-member/search.yaml
+    $ref: ./v3/marketing/membercard-open/phonenumber-member/search.yaml
   /v3/marketing/membercard-open/user/cards:
-    $ref: ./spec/marketing/membercard-open/user/cards.yaml
+    $ref: ./v3/marketing/membercard-open/user/cards.yaml
   /v3/marketing/partnerships/build:
-    $ref: ./spec/marketing/partnerships/build.yaml
+    $ref: ./v3/marketing/partnerships/build.yaml
   /v3/marketing/partnerships/terminate:
-    $ref: ./spec/marketing/partnerships/terminate.yaml
+    $ref: ./v3/marketing/partnerships/terminate.yaml
   /v3/marketing/paygiftactivity/activities:
-    $ref: ./spec/marketing/paygiftactivity/activities.yaml
+    $ref: ./v3/marketing/paygiftactivity/activities.yaml
   /v3/marketing/paygiftactivity/activities/{activity_id}:
-    $ref: ./spec/marketing/paygiftactivity/activities/{activity_id}.yaml
+    $ref: ./v3/marketing/paygiftactivity/activities/{activity_id}.yaml
   /v3/marketing/paygiftactivity/activities/{activity_id}/goods:
-    $ref: ./spec/marketing/paygiftactivity/activities/{activity_id}/goods.yaml
+    $ref: ./v3/marketing/paygiftactivity/activities/{activity_id}/goods.yaml
   /v3/marketing/paygiftactivity/activities/{activity_id}/merchants:
-    $ref: ./spec/marketing/paygiftactivity/activities/{activity_id}/merchants.yaml
+    $ref: ./v3/marketing/paygiftactivity/activities/{activity_id}/merchants.yaml
   /v3/marketing/paygiftactivity/activities/{activity_id}/merchants/add:
-    $ref: ./spec/marketing/paygiftactivity/activities/{activity_id}/merchants/add.yaml
+    $ref: ./v3/marketing/paygiftactivity/activities/{activity_id}/merchants/add.yaml
   /v3/marketing/paygiftactivity/activities/{activity_id}/merchants/delete:
-    $ref: ./spec/marketing/paygiftactivity/activities/{activity_id}/merchants/delete.yaml
+    $ref: ./v3/marketing/paygiftactivity/activities/{activity_id}/merchants/delete.yaml
   /v3/marketing/paygiftactivity/activities/{activity_id}/terminate:
-    $ref: ./spec/marketing/paygiftactivity/activities/{activity_id}/terminate.yaml
+    $ref: ./v3/marketing/paygiftactivity/activities/{activity_id}/terminate.yaml
   /v3/marketing/paygiftactivity/unique-threshold-activity:
-    $ref: ./spec/marketing/paygiftactivity/unique-threshold-activity.yaml
+    $ref: ./v3/marketing/paygiftactivity/unique-threshold-activity.yaml
   /v3/merchant-service/complaint-notifications:
-    $ref: ./spec/merchant-service/complaint-notifications.yaml
+    $ref: ./v3/merchant-service/complaint-notifications.yaml
   /v3/merchant-service/complaints-v2:
-    $ref: ./spec/merchant-service/complaints-v2.yaml
+    $ref: ./v3/merchant-service/complaints-v2.yaml
   /v3/merchant-service/complaints-v2/{complaint_id}:
-    $ref: ./spec/merchant-service/complaints-v2/{complaint_id}.yaml
+    $ref: ./v3/merchant-service/complaints-v2/{complaint_id}.yaml
   /v3/merchant-service/complaints-v2/{complaint_id}/complete:
-    $ref: ./spec/merchant-service/complaints-v2/{complaint_id}/complete.yaml
+    $ref: ./v3/merchant-service/complaints-v2/{complaint_id}/complete.yaml
   /v3/merchant-service/complaints-v2/{complaint_id}/negotiation-historys:
-    $ref: ./spec/merchant-service/complaints-v2/{complaint_id}/negotiation-historys.yaml
+    $ref: ./v3/merchant-service/complaints-v2/{complaint_id}/negotiation-historys.yaml
   /v3/merchant-service/complaints-v2/{complaint_id}/response:
-    $ref: ./spec/merchant-service/complaints-v2/{complaint_id}/response.yaml
+    $ref: ./v3/merchant-service/complaints-v2/{complaint_id}/response.yaml
   /v3/merchant-service/complaints:
-    $ref: ./spec/merchant-service/complaints.yaml
+    $ref: ./v3/merchant-service/complaints.yaml
   /v3/merchant-service/complaints/{transaction_id}:
-    $ref: ./spec/merchant-service/complaints/{transaction_id}.yaml
+    $ref: ./v3/merchant-service/complaints/{transaction_id}.yaml
   /v3/merchant-service/complaints/{transaction_id}/negotiation-historys:
-    $ref: ./spec/merchant-service/complaints/{transaction_id}/negotiation-historys.yaml
+    $ref: ./v3/merchant-service/complaints/{transaction_id}/negotiation-historys.yaml
   /v3/merchant-service/feedbacks:
-    $ref: ./spec/merchant-service/feedbacks.yaml
+    $ref: ./v3/merchant-service/feedbacks.yaml
   /v3/merchant-service/images/upload:
-    $ref: ./spec/merchant-service/images/upload.yaml
+    $ref: ./v3/merchant-service/images/upload.yaml
   /v3/merchant-store/stores:
-    $ref: ./spec/merchant-store/stores.yaml
+    $ref: ./v3/merchant-store/stores.yaml
   /v3/merchant-store/stores/{store_id}:
-    $ref: ./spec/merchant-store/stores/{store_id}.yaml
+    $ref: ./v3/merchant-store/stores/{store_id}.yaml
   /v3/merchant/fund/balance/{account_type}:
-    $ref: ./spec/merchant/fund/balance/{account_type}.yaml
+    $ref: ./v3/merchant/fund/balance/{account_type}.yaml
   /v3/merchant/fund/dayendbalance/{account_type}:
-    $ref: ./spec/merchant/fund/dayendbalance/{account_type}.yaml
+    $ref: ./v3/merchant/fund/dayendbalance/{account_type}.yaml
   /v3/merchant/fund/withdraw:
-    $ref: ./spec/merchant/fund/withdraw.yaml
+    $ref: ./v3/merchant/fund/withdraw.yaml
   /v3/merchant/fund/withdraw/bill-type/{bill_type}:
-    $ref: ./spec/merchant/fund/withdraw/bill-type/{bill_type}.yaml
+    $ref: ./v3/merchant/fund/withdraw/bill-type/{bill_type}.yaml
   /v3/merchant/fund/withdraw/out-request-no/{out_request_no}:
-    $ref: ./spec/merchant/fund/withdraw/out-request-no/{out_request_no}.yaml
+    $ref: ./v3/merchant/fund/withdraw/out-request-no/{out_request_no}.yaml
   /v3/merchant/fund/withdraw/withdraw-id/{withdraw_id}:
-    $ref: ./spec/merchant/fund/withdraw/withdraw-id/{withdraw_id}.yaml
+    $ref: ./v3/merchant/fund/withdraw/withdraw-id/{withdraw_id}.yaml
   /v3/merchant/media/upload:
-    $ref: ./spec/merchant/media/upload.yaml
+    $ref: ./v3/merchant/media/upload.yaml
   /v3/merchant/media/video_upload:
-    $ref: ./spec/merchant/media/video_upload.yaml
+    $ref: ./v3/merchant/media/video_upload.yaml
   /v3/pay/partner/transactions/app:
-    $ref: ./spec/pay/partner/transactions/app.yaml
+    $ref: ./v3/pay/partner/transactions/app.yaml
   /v3/pay/partner/transactions/h5:
-    $ref: ./spec/pay/partner/transactions/h5.yaml
+    $ref: ./v3/pay/partner/transactions/h5.yaml
   /v3/pay/partner/transactions/id/{transaction_id}:
-    $ref: ./spec/pay/partner/transactions/id/{transaction_id}.yaml
+    $ref: ./v3/pay/partner/transactions/id/{transaction_id}.yaml
   /v3/pay/partner/transactions/jsapi:
-    $ref: ./spec/pay/partner/transactions/jsapi.yaml
+    $ref: ./v3/pay/partner/transactions/jsapi.yaml
   /v3/pay/partner/transactions/native:
-    $ref: ./spec/pay/partner/transactions/native.yaml
+    $ref: ./v3/pay/partner/transactions/native.yaml
   /v3/pay/partner/transactions/out-trade-no/{out_trade_no}:
-    $ref: ./spec/pay/partner/transactions/out-trade-no/{out_trade_no}.yaml
+    $ref: ./v3/pay/partner/transactions/out-trade-no/{out_trade_no}.yaml
   /v3/pay/partner/transactions/out-trade-no/{out_trade_no}/close:
-    $ref: ./spec/pay/partner/transactions/out-trade-no/{out_trade_no}/close.yaml
+    $ref: ./v3/pay/partner/transactions/out-trade-no/{out_trade_no}/close.yaml
   /v3/pay/transactions/app:
-    $ref: ./spec/pay/transactions/app.yaml
+    $ref: ./v3/pay/transactions/app.yaml
   /v3/pay/transactions/h5:
-    $ref: ./spec/pay/transactions/h5.yaml
+    $ref: ./v3/pay/transactions/h5.yaml
   /v3/pay/transactions/id/{transaction_id}:
-    $ref: ./spec/pay/transactions/id/{transaction_id}.yaml
+    $ref: ./v3/pay/transactions/id/{transaction_id}.yaml
   /v3/pay/transactions/jsapi:
-    $ref: ./spec/pay/transactions/jsapi.yaml
+    $ref: ./v3/pay/transactions/jsapi.yaml
   /v3/pay/transactions/native:
-    $ref: ./spec/pay/transactions/native.yaml
+    $ref: ./v3/pay/transactions/native.yaml
   /v3/pay/transactions/out-trade-no/{out_trade_no}:
-    $ref: ./spec/pay/transactions/out-trade-no/{out_trade_no}.yaml
+    $ref: ./v3/pay/transactions/out-trade-no/{out_trade_no}.yaml
   /v3/pay/transactions/out-trade-no/{out_trade_no}/close:
-    $ref: ./spec/pay/transactions/out-trade-no/{out_trade_no}/close.yaml
+    $ref: ./v3/pay/transactions/out-trade-no/{out_trade_no}/close.yaml
   /v3/payscore/permissions:
-    $ref: ./spec/payscore/permissions.yaml
+    $ref: ./v3/payscore/permissions.yaml
   /v3/payscore/permissions/authorization-code/{authorization_code}:
-    $ref: ./spec/payscore/permissions/authorization-code/{authorization_code}.yaml
+    $ref: ./v3/payscore/permissions/authorization-code/{authorization_code}.yaml
   /v3/payscore/permissions/authorization-code/{authorization_code}/terminate:
-    $ref: ./spec/payscore/permissions/authorization-code/{authorization_code}/terminate.yaml
+    $ref: ./v3/payscore/permissions/authorization-code/{authorization_code}/terminate.yaml
   /v3/payscore/permissions/openid/{openid}:
-    $ref: ./spec/payscore/permissions/openid/{openid}.yaml
+    $ref: ./v3/payscore/permissions/openid/{openid}.yaml
   /v3/payscore/permissions/openid/{openid}/terminate:
-    $ref: ./spec/payscore/permissions/openid/{openid}/terminate.yaml
+    $ref: ./v3/payscore/permissions/openid/{openid}/terminate.yaml
   /v3/payscore/serviceorder:
-    $ref: ./spec/payscore/serviceorder.yaml
+    $ref: ./v3/payscore/serviceorder.yaml
   /v3/payscore/serviceorder/{out_order_no}/cancel:
-    $ref: ./spec/payscore/serviceorder/{out_order_no}/cancel.yaml
+    $ref: ./v3/payscore/serviceorder/{out_order_no}/cancel.yaml
   /v3/payscore/serviceorder/{out_order_no}/complete:
-    $ref: ./spec/payscore/serviceorder/{out_order_no}/complete.yaml
+    $ref: ./v3/payscore/serviceorder/{out_order_no}/complete.yaml
   /v3/payscore/serviceorder/{out_order_no}/modify:
-    $ref: ./spec/payscore/serviceorder/{out_order_no}/modify.yaml
+    $ref: ./v3/payscore/serviceorder/{out_order_no}/modify.yaml
   /v3/payscore/serviceorder/{out_order_no}/pay:
-    $ref: ./spec/payscore/serviceorder/{out_order_no}/pay.yaml
+    $ref: ./v3/payscore/serviceorder/{out_order_no}/pay.yaml
   /v3/payscore/serviceorder/{out_order_no}/sync:
-    $ref: ./spec/payscore/serviceorder/{out_order_no}/sync.yaml
+    $ref: ./v3/payscore/serviceorder/{out_order_no}/sync.yaml
   /v3/payscore/serviceorder/direct-complete:
-    $ref: ./spec/payscore/serviceorder/direct-complete.yaml
+    $ref: ./v3/payscore/serviceorder/direct-complete.yaml
   /v3/payscore/user-service-state:
-    $ref: ./spec/payscore/user-service-state.yaml
+    $ref: ./v3/payscore/user-service-state.yaml
   /v3/payscore/users/{openid}/permissions/{service_id}/terminate:
-    $ref: ./spec/payscore/users/{openid}/permissions/{service_id}/terminate.yaml
+    $ref: ./v3/payscore/users/{openid}/permissions/{service_id}/terminate.yaml
   /v3/profitsharing/merchant-configs/{sub_mchid}:
-    $ref: ./spec/profitsharing/merchant-configs/{sub_mchid}.yaml
+    $ref: ./v3/profitsharing/merchant-configs/{sub_mchid}.yaml
   /v3/profitsharing/orders:
-    $ref: ./spec/profitsharing/orders.yaml
+    $ref: ./v3/profitsharing/orders.yaml
   /v3/profitsharing/orders/{out_order_no}:
-    $ref: ./spec/profitsharing/orders/{out_order_no}.yaml
+    $ref: ./v3/profitsharing/orders/{out_order_no}.yaml
   /v3/profitsharing/orders/unfreeze:
-    $ref: ./spec/profitsharing/orders/unfreeze.yaml
+    $ref: ./v3/profitsharing/orders/unfreeze.yaml
   /v3/profitsharing/receivers/add:
-    $ref: ./spec/profitsharing/receivers/add.yaml
+    $ref: ./v3/profitsharing/receivers/add.yaml
   /v3/profitsharing/receivers/delete:
-    $ref: ./spec/profitsharing/receivers/delete.yaml
+    $ref: ./v3/profitsharing/receivers/delete.yaml
   /v3/profitsharing/return-orders:
-    $ref: ./spec/profitsharing/return-orders.yaml
+    $ref: ./v3/profitsharing/return-orders.yaml
   /v3/profitsharing/return-orders/{out_return_no}:
-    $ref: ./spec/profitsharing/return-orders/{out_return_no}.yaml
+    $ref: ./v3/profitsharing/return-orders/{out_return_no}.yaml
   /v3/profitsharing/transactions/{transaction_id}/amounts:
-    $ref: ./spec/profitsharing/transactions/{transaction_id}/amounts.yaml
+    $ref: ./v3/profitsharing/transactions/{transaction_id}/amounts.yaml
   /v3/refund/domestic/refunds:
-    $ref: ./spec/refund/domestic/refunds.yaml
+    $ref: ./v3/refund/domestic/refunds.yaml
   /v3/refund/domestic/refunds/{out_refund_no}:
-    $ref: ./spec/refund/domestic/refunds/{out_refund_no}.yaml
+    $ref: ./v3/refund/domestic/refunds/{out_refund_no}.yaml
   /v3/smartguide/guides:
-    $ref: ./spec/smartguide/guides.yaml
+    $ref: ./v3/smartguide/guides.yaml
   /v3/smartguide/guides/{guide_id}:
-    $ref: ./spec/smartguide/guides/{guide_id}.yaml
+    $ref: ./v3/smartguide/guides/{guide_id}.yaml
   /v3/smartguide/guides/{guide_id}/assign:
-    $ref: ./spec/smartguide/guides/{guide_id}/assign.yaml
+    $ref: ./v3/smartguide/guides/{guide_id}/assign.yaml

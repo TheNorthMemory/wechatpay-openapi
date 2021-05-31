@@ -1,17 +1,22 @@
 post:
-  x-version: [V1.0, 2020.06.10]
-  x-role: [微信支付商户]
+  x-version: [2020.06.10]
+  x-role:
+    - 直连商户
   tags:
     - 运营工具∙商家券
   summary: 关联订单信息API
-  description: 将有效态（未核销）的商家券与订单信息关联，用于后续参与摇奖&返佣激励等操作的统计。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/busifavor/chapter3_9.shtml)
+  description: 将有效态（未核销）的商家券与订单信息关联，用于后续参与摇奖&返佣激励等操作的统计。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_9.shtml)
   parameters:
     - name: _
       in: body
       required: true
       schema:
         type: object
-        required: [stock_id, coupon_code, out_trade_no, out_request_no]
+        required:
+          - stock_id
+          - coupon_code
+          - out_trade_no
+          - out_request_no
         properties:
           stock_id:
             type: string
@@ -30,10 +35,11 @@ post:
             description: 商户请求单号
             minLength: 128
   responses:
-    200:
+    '200':
       schema:
         type: object
-        required: [wechatpay_associate_time]
+        required:
+          - wechatpay_associate_time
         properties:
           wechatpay_associate_time:
             type: string

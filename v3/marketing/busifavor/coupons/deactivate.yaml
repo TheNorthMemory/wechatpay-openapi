@@ -1,0 +1,46 @@
+post:
+  x-version: [2020.11.04]
+  x-role:
+    - 直连商户
+  tags:
+    - 运营工具∙商家券
+  summary: 使券失效API
+  description: 商户可以通过该接口将可用券进行失效处理，券失效后无法再被核销 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_14.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - coupon_code
+          - stock_id
+          - deactivate_request_no
+        properties:
+          coupon_code:
+            type: string
+            description: 券code
+            example: sxxe34343434
+          stock_id:
+            type: string
+            description: 批次号
+            example: '1234567891'
+          deactivate_request_no:
+            type: string
+            description: 失效请求单据号
+            example: '1002600620019090123143254436'
+          deactivate_reason:
+            type: string
+            description: 失效原因
+            example: 此券使用时间设置错误
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - wechatpay_deactivate_time
+        properties:
+          wechatpay_deactivate_time:
+            type: string
+            description: 券成功失效的时间
+            example: 2020-05-20T13:29:35.08:00

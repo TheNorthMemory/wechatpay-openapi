@@ -1,74 +1,76 @@
 post:
-  x-version: [V1.0, 2019.12.20]
-  x-role: [微信支付商户]
+  x-version: [2019.12.20]
+  x-role:
+    - 直连商户
   tags:
     - 运营工具∙商家券
   summary: 设置商家券事件通知地址API
-  description: 用于设置接收商家券相关事件通知的URL，可接收商家券相关的事件通知、包括发放通知等。需要设置接收通知的URL，并在商户平台开通营销事件推送的能力，即可接收到相关通知。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/busifavor/chapter3_7.shtml)
+  description: 用于设置接收商家券相关事件通知的URL，可接收商家券相关的事件通知、包括发放通知等。需要设置接收通知的URL，并在商户平台开通营销事件推送的能力，即可接收到相关通知。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_7.shtml)
   parameters:
     - name: _
       in: body
       required: true
       schema:
         type: object
-        required: [notify_url]
+        required:
+          - notify_url
         properties:
           mchid:
             type: string
-            minLength: 8
-            maxLength: 15
             description: 商户号
+            example: '10000098'
           notify_url:
             type: string
-            format: url
             description: 通知URL地址
-            minLength: 10
+            example: https://pay.weixin.qq.com
   responses:
-    200:
+    '200':
       schema:
         type: object
-        required: [mchid, notify_url]
+        required:
+          - notify_url
+          - mchid
         properties:
           update_time:
             type: string
-            format: rfc3339
             description: 修改时间
-          mchid:
-            type: string
-            minLength: 8
-            maxLength: 15
-            description: 商户号
+            example: '2015-05-20T13:29:35+08:00'
           notify_url:
             type: string
-            format: url
             description: 通知URL地址
-            minLength: 10
+            example: https://pay.weixin.qq.com
+          mchid:
+            type: string
+            description: 商户号
+            example: '10000098'
 get:
-  x-version: [V1.0, 2019.12.20]
-  x-role: [微信支付商户]
+  x-version: [2019.12.20]
+  x-role:
+    - 直连商户
   tags:
     - 运营工具∙商家券
   summary: 查询商家券事件通知地址API
-  description: 通过调用此接口可查询设置的通知URL。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/busifavor/chapter3_8.shtml)
+  description: 通过调用此接口可查询设置的通知URL。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_8.shtml)
   parameters:
     - name: mchid
       in: query
-      minLength: 8
-      maxLength: 15
+      type: string
+      required: true
       description: 商户号
+      example: '10000098'
   responses:
-    200:
+    '200':
       schema:
         type: object
-        required: [mchid, notify_url]
+        required:
+          - notify_url
+          - mchid
         properties:
-          mchid:
-            type: string
-            minLength: 8
-            maxLength: 15
-            description: 商户号
           notify_url:
             type: string
-            format: url
             description: 通知URL地址
-            minLength: 10
+            example: https://pay.weixin.qq.com
+          mchid:
+            type: string
+            description: 商户号
+            example: '10000098'

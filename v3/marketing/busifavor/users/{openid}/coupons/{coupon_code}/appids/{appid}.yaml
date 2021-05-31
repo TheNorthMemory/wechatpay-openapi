@@ -1,6 +1,7 @@
 get:
-  x-version: [V1.3, 2020.07.24]
-  x-role: [微信支付商户]
+  x-version: [2020.07.24]
+  x-role:
+    - 直连商户
   tags:
     -  运营工具∙商家券
   summary: 查询用户单张券详情API

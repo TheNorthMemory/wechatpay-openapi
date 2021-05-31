@@ -1,31 +1,301 @@
 post:
-  x-version: [V1.5, 2020.11.12]
-  x-role: [微信支付商户]
+  x-version: [2020.11.12]
+  x-role:
+    - 直连商户
   tags:
-    -  运营工具∙商家券
+    - 运营工具∙商家券
   summary: 创建商家券API
-  description: 服务商可以通过该接口为有需求的商户创建商家券。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/busifavor/chapter3_1.shtml)
+  description: 商户可以通过该接口创建商家券。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_1.shtml)
   parameters:
     - name: _
       in: body
       required: true
       schema:
-        allOf:
-          - $ref: '../../../definitions/BusiFavorCouponStock.yaml#StockBase'
-  responses:
-    200:
-      schema:
-        allOf:
-          - type: object
-            required: [stock_id, create_time]
+        type: object
+        required:
+          - stock_name
+          - belong_merchant
+          - goods_name
+          - stock_type
+          - coupon_use_rule
+          - stock_send_rule
+          - out_request_no
+          - coupon_code_mode
+        properties:
+          stock_name:
+            type: string
+            description: 商家券批次名称
+            example: 8月1日活动券
+          belong_merchant:
+            type: string
+            description: 批次归属商户号
+            example: '10000022'
+          comment:
+            type: string
+            description: 批次备注
+            example: 活动使用
+          goods_name:
+            type: string
+            description: 适用商品范围
+            example: xxx商品使用
+          stock_type:
+            type: string
+            description: 批次类型
+            example: NORMAL
+          coupon_use_rule:
+            type: object
+            description: 核销规则
+            required:
+              - coupon_available_time
+              - use_method
             properties:
-              stock_id:
+              coupon_available_time:
+                type: object
+                description: 券可核销时间
+                required:
+                  - available_begin_time
+                  - available_end_time
+                properties:
+                  available_begin_time:
+                    type: string
+                    description: 开始时间
+                    example: '2015-05-20T13:29:35+08:00'
+                  available_end_time:
+                    type: string
+                    description: 结束时间
+                    example: '2015-05-20T13:29:35+08:00'
+                  available_day_after_receive:
+                    type: integer
+                    description: 生效后N天内有效
+                    example: 3
+                  available_week:
+                    type: object
+                    description: 固定周期有效时间段
+                    properties:
+                      week_day:
+                        type: array
+                        description: 可用星期数
+                        example: 1, 2
+                      available_day_time:
+                        type: array
+                        description: 当天可用时间段
+                        items:
+                          type: object
+                          properties:
+                            begin_time:
+                              type: integer
+                              description: 当天可用开始时间
+                              example: 3600
+                            end_time:
+                              type: integer
+                              description: 当天可用结束时间
+                              example: 86399
+                  irregulary_avaliable_time:
+                    type: array
+                    description: 无规律的有效时间段
+                    items:
+                      type: object
+                      properties:
+                        begin_time:
+                          type: string
+                          description: 开始时间
+                          example: '2015-05-20T13:29:35+08:00'
+                        end_time:
+                          type: string
+                          description: 结束时间
+                          example: '2015-05-20T13:29:35+08:00'
+                  wait_days_after_receive:
+                    type: integer
+                    description: 领取后N天开始生效
+                    example: 7
+              fixed_normal_coupon:
+                type: object
+                description: 固定面额满减券使用规则
+                required:
+                  - discount_amount
+                  - transaction_minimum
+                properties:
+                  discount_amount:
+                    type: integer
+                    description: 优惠金额
+                    example: 5
+                  transaction_minimum:
+                    type: integer
+                    description: 消费门槛
+                    example: 100
+              discount_coupon:
+                type: object
+                description: 折扣券使用规则
+                required:
+                  - discount_percent
+                  - transaction_minimum
+                properties:
+                  discount_percent:
+                    type: integer
+                    description: 折扣比例
+                    example: 88
+                  transaction_minimum:
+                    type: integer
+                    description: 消费门槛
+                    example: 100
+              exchange_coupon:
+                type: object
+                description: 换购券使用规则
+                required:
+                  - exchange_price
+                  - transaction_minimum
+                properties:
+                  exchange_price:
+                    type: integer
+                    description: 单品换购价
+                    example: 100
+                  transaction_minimum:
+                    type: integer
+                    description: 消费门槛
+                    example: 100
+              use_method:
                 type: string
-                format: numeric
-                description: 批次号
-                example: '98065001'
-              create_time:
+                description: 核销方式
+                example: OFF_LINE
+              mini_programs_appid:
                 type: string
-                format: rfc3339
-                description: 创建时间
-                example: '2015-05-20T13:29:35.120+08:00'
+                description: 小程序appid
+                example: wx23232232323
+              mini_programs_path:
+                type: string
+                description: 小程序path
+                example: /path/index/index
+          stock_send_rule:
+            type: object
+            description: 发放规则
+            required:
+              - max_coupons
+              - max_coupons_per_user
+            properties:
+              max_coupons:
+                type: integer
+                description: 批次最大发放个数
+                example: 100
+              max_coupons_per_user:
+                type: integer
+                description: 用户最大可领个数
+                example: 5
+              max_coupons_by_day:
+                type: integer
+                description: 单天发放上限个数
+                example: 100
+              natural_person_limit:
+                type: boolean
+                description: 是否开启自然人限制
+              prevent_api_abuse:
+                type: boolean
+                description: 可疑账号拦截
+              transferable:
+                type: boolean
+                description: 是否允许转赠
+              shareable:
+                type: boolean
+                description: 是否允许分享链接
+          out_request_no:
+            type: string
+            description: 商户请求单号
+            example: 100002322019090134234sfdf
+          custom_entrance:
+            type: object
+            description: 自定义入口
+            properties:
+              mini_programs_info:
+                type: object
+                description: 小程序入口
+                required:
+                  - mini_programs_appid
+                  - mini_programs_path
+                  - entrance_words
+                properties:
+                  mini_programs_appid:
+                    type: string
+                    description: 商家小程序appid
+                    example: wx234545656765876
+                  mini_programs_path:
+                    type: string
+                    description: 商家小程序path
+                    example: /path/index/index
+                  entrance_words:
+                    type: string
+                    description: 入口文案
+                    example: 欢迎选购
+                  guiding_words:
+                    type: string
+                    description: 引导文案
+                    example: 获取更多优惠
+              appid:
+                type: string
+                description: 商户公众号appid
+                example: wx324345hgfhfghfg
+              hall_id:
+                type: string
+                description: 营销馆id
+                example: '233455656'
+              store_id:
+                type: string
+                description: 可用门店id
+                example: '233554655'
+              code_display_mode:
+                type: string
+                description: code展示模式
+                example: BARCODE
+          display_pattern_info:
+            type: object
+            description: 样式信息
+            properties:
+              description:
+                type: string
+                description: 使用须知
+                example: xxx门店可用
+              merchant_logo_url:
+                type: string
+                description: 商户logo
+                example: https://qpic.cn/xxx
+              merchant_name:
+                type: string
+                description: 商户名称
+                example: 微信支付
+              background_color:
+                type: string
+                description: 背景颜色
+                example: Color020
+              coupon_image_url:
+                type: string
+                description: 券详情图片
+                example: https://qpic.cn/xxx
+          coupon_code_mode:
+            type: string
+            description: 券code模式
+            example: WECHATPAY_MODE
+          notify_config:
+            type: object
+            description: 事件通知配置
+            properties:
+              notify_appid:
+                type: string
+                description: 事件通知appid
+                example: wx23232232323
+          subsidy:
+            type: boolean
+            description: 是否允许营销补贴
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - stock_id
+          - create_time
+        properties:
+          stock_id:
+            type: string
+            description: 批次号
+            example: '98065001'
+          create_time:
+            type: string
+            description: 创建时间
+            example: '2015-05-20T13:29:35+08:00'

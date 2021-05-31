@@ -1,5 +1,5 @@
 post:
-  x-version: [V1.1, 2020.08.06]
+  x-version: [2020.08.06]
   x-role:
     - 电商平台
   tags:

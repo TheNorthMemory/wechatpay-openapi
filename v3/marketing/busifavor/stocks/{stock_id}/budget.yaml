@@ -1,0 +1,57 @@
+patch:
+  x-version: [2020.11.04]
+  x-role:
+    - 直连商户
+  tags:
+    - 运营工具∙商家券
+  summary: 修改批次预算API
+  description: 商户可以通过该接口修改批次单天发放上限数量或者批次最大发放数量 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_11.shtml)
+  parameters:
+    - name: stock_id
+      in: path
+      type: string
+      required: true
+      description: 批次号
+      example: '98065001'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - modify_budget_request_no
+        properties:
+          target_max_coupons:
+            type: integer
+            description: 目标批次最大发放个数
+            example: 3000
+          target_max_coupons_by_day:
+            type: integer
+            description: 目标单天发放上限个数
+          current_max_coupons:
+            type: integer
+            description: 当前批次最大发放个数
+            example: 500
+          current_max_coupons_by_day:
+            type: integer
+            description: 当前单天发放上限个数
+            example: 300
+          modify_budget_request_no:
+            type: string
+            description: 修改预算请求单据号
+            example: '1002600620019090123143254436'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - max_coupons
+        properties:
+          max_coupons:
+            type: integer
+            description: 批次当前最大发放个数
+            example: 300
+          max_coupons_by_day:
+            type: integer
+            description: 当前单天发放上限个数
+            example: 100

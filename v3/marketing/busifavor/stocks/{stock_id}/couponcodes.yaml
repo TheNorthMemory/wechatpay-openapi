@@ -1,80 +1,99 @@
 post:
-  x-version: [V1.0, 2019.11.08]
-  x-role: [微信支付商户]
+  x-version: [2019.11.08]
+  x-role:
+    - 直连商户
   tags:
-    -  运营工具∙商家券
+    - 运营工具∙商家券
   summary: 上传预存code API
-  description: 商家券的Code码可由微信后台随机分配，同时支持商户自定义。如商家已有自己的优惠券系统，可直接使用自定义模式。即商家预先向微信支付上传券Code，当券在发放时，微信支付自动从已导入的Code中随机取值（不能指定），派发给用户。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/busifavor/chapter3_6.shtml)
+  description: 商家券的Code码可由微信后台随机分配，同时支持商户自定义。如商家已有自己的优惠券系统，可直接使用自定义模式。即商家预先向微信支付上传券Code，当券在发放时，微信支付自动从已导入的Code中随机取值（不能指定），派发给用户。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_6.shtml)
   parameters:
     - name: stock_id
       in: path
       type: string
       required: true
       description: 批次号
+      example: '98065001'
     - name: _
       in: body
       required: true
       schema:
         type: object
-        required: [upload_request_no]
+        required:
+          - upload_request_no
         properties:
           coupon_code_list:
             type: array
-            minimum: 1
-            maximum: 200
-            items:
-              type: string
-              minLength: 1
-              maxLength: 32
+            description: 券code列表
+            example: ABC9588200，ABC9588201
           upload_request_no:
             type: string
             description: 请求业务单据号
+            example: 100002322019090134234sfdf
   responses:
-    200:
+    '200':
       schema:
         type: object
-        required: [stock_id, total_count, success_count, success_time]
+        required:
+          - stock_id
+          - total_count
+          - success_count
+          - success_time
         properties:
           stock_id:
             type: string
             description: 批次号
+            example: '98065001'
           total_count:
-            type: number
-            format: unit64
+            type: integer
             description: 去重后上传code总数
+            example: 500
           success_count:
-            type: number
-            format: unit64
+            type: integer
             description: 上传成功code个数
+            example: 20
           success_codes:
             type: array
-            items:
-              type: string
+            description: 上传成功的code列表
+            example: MMAA12345
           success_time:
             type: string
-            format: rfc3339
             description: 上传成功时间
+            example: '2015-05-20T13:29:35+08:00'
           fail_count:
-            type: number
-            format: unit64
+            type: integer
             description: 上传失败code个数
+            example: 10
           fail_codes:
             type: array
+            description: 上传失败的code及原因
             items:
               type: object
-              required: [coupon_code, code, message]
+              required:
+                - coupon_code
+                - code
+                - message
               properties:
                 coupon_code:
                   type: string
+                  description: 上传失败的券code
+                  example: ABCD23456
                 code:
                   type: string
+                  description: 上传失败错误码
+                  example: LENGTH_LIMIT
                 message:
                   type: string
+                  description: 上传失败错误信息
+                  example: 长度超过最大值32位
           exist_codes:
             type: array
             items:
               type: string
+              description: 已存在的code列表
+              example: ABCD2345
           duplicate_codes:
             type: array
             items:
               type: string
+              description: 本次请求中重复的code列表
+              example: AACC2345

@@ -1,5 +1,5 @@
 post:
-  x-version: [V1.1, 2020.11.16]
+  x-version: [2020.11.16]
   x-role:
     - 直连商户
     - 服务商
@@ -403,7 +403,7 @@ post:
                     description: 订单优惠标记
                     example: 'xxx,yyy'
 get:
-  x-version: [V1.1, 2020.11.17]
+  x-version: [2020.11.17]
   x-role:
     - 直连商户
     - 服务商

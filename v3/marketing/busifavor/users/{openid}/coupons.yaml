@@ -1,10 +1,11 @@
 get:
-  x-version: [V1.3, 2020.07.24]
-  x-role: [微信支付商户]
+  x-version: [2020.07.24]
+  x-role:
+    - 直连商户
   tags:
     -  运营工具∙商家券
   summary: 根据过滤条件查询用户券API
-  description: 服务商自定义筛选条件（如创建商户号、归属商户号、发放商户号等），查询指定微信用户卡包中满足对应条件的所有商家券信息。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/busifavor/chapter3_4.shtml)
+  description: 服务商自定义筛选条件（如创建商户号、归属商户号、发放商户号等），查询指定微信用户卡包中满足对应条件的所有商家券信息。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_5.shtml)
   parameters:
     - name: openid
       in: path

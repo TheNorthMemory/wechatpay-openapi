@@ -1,50 +1,65 @@
 post:
-  x-version: [V1.0, 2019.08.20]
-  x-role: [微信支付商户]
+  x-version: [2019.08.20]
+  x-role:
+    - 直连商户
   tags:
-    -  运营工具∙商家券
+    - 运营工具∙商家券
   summary: 核销用户券API
-  description: 在用户满足优惠门槛后，服务商可通过该接口核销用户微信卡包中具体某一张商家券。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/busifavor/chapter3_3.shtml)
+  description: 在用户满足优惠门槛后，商户可通过该接口核销用户微信卡包中具体某一张商家券。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_3.shtml)
   parameters:
     - name: _
       in: body
       required: true
       schema:
         type: object
-        required: [coupon_code, appid, use_time, use_request_no]
+        required:
+          - coupon_code
+          - appid
+          - use_time
+          - use_request_no
         properties:
           coupon_code:
             type: string
             description: 券code
+            example: sxxe34343434
           stock_id:
             type: string
             description: 批次号
+            example: '100088'
           appid:
             type: string
             description: 公众账号ID
+            example: wx1234567889999
           use_time:
             type: string
-            format: rfc3339
             description: 请求核销时间
+            example: '2015-05-20T13:29:35+08:00'
           use_request_no:
             type: string
             description: 核销请求单据号
+            example: '1002600620019090123143254435'
           openid:
             type: string
             description: 用户标识
+            example: xsd3434454567676
   responses:
-    200:
+    '200':
       schema:
         type: object
-        required: [stock_id, openid, wechatpay_use_time]
+        required:
+          - stock_id
+          - openid
+          - wechatpay_use_time
         properties:
           stock_id:
             type: string
             description: 批次号
+            example: '100088'
           openid:
             type: string
             description: 用户标识
+            example: dsadas34345454545
           wechatpay_use_time:
             type: string
-            format: rfc3339
             description: 系统核销券成功的时间
+            example: '2015-05-20T13:29:35+08:00'

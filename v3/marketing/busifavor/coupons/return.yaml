@@ -1,0 +1,42 @@
+post:
+  x-version: [2020.11.04]
+  x-role:
+    - 直连商户
+  tags:
+    - 运营工具∙商家券
+  summary: 申请退券API
+  description: 商户可以通过该接口为已核销的券申请退券 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_13.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - coupon_code
+          - stock_id
+          - return_request_no
+        properties:
+          coupon_code:
+            type: string
+            description: 券code
+            example: sxxe34343434
+          stock_id:
+            type: string
+            description: 批次号
+            example: '1234567891'
+          return_request_no:
+            type: string
+            description: 退券请求单据号
+            example: '1002600620019090123143254436'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - wechatpay_return_time
+        properties:
+          wechatpay_return_time:
+            type: string
+            description: 微信退券成功的时间
+            example: '2020-05-20T13:29:35+08:00'

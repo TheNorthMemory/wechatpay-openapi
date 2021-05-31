@@ -1,5 +1,5 @@
 post:
-  x-version: [V1.1, 2020.04.23]
+  x-version: [2020.04.23]
   x-role: [服务商, 直连商户]
   tags:
     - 微信支付分

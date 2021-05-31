@@ -11,21 +11,23 @@ get:
       type: string
       format: json
       description: 合作方信息
+      default: '{"type":"APPID","appid":"wx4e1916a585d1f4e9"}'
     - name: authorized_data
       in: query
       type: string
       format: json
       description: 被授权数据
+      default: '{"business_type":"FAVOR_STOCK","stock_id":"2433405"}'
     - name: limit
       in: query
       type: integer
       description: 分页大小
-      example: 5
+      default: 50
     - name: offset
       in: query
       type: integer
       description: 分页页码
-      example: 10
+      default: 0
   responses:
     '200':
       schema:

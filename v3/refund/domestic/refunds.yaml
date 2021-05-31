@@ -1,5 +1,5 @@
 post:
-  x-version: [2021.01.15]
+  x-version: [2021.05.28]
   x-role:
     - 直连商户
     - 服务商
@@ -56,6 +56,23 @@ post:
                 type: integer
                 description: 退款金额
                 example: 888
+              from:
+                type: array
+                description: 退款出资账户及金额
+                items:
+                  type: object
+                  required:
+                    - account
+                    - amount
+                  properties:
+                    account:
+                      type: string
+                      description: 出资账户类型
+                      example: AVAILABLE
+                    amount:
+                      type: integer
+                      description: 出资金额
+                      example: 444
               total:
                 type: integer
                 description: 原订单金额
@@ -175,6 +192,23 @@ post:
                 type: integer
                 description: 退款金额
                 example: 100
+              from:
+                type: array
+                description: 退款出资账户及金额
+                items:
+                  type: object
+                  required:
+                    - account
+                    - amount
+                  properties:
+                    account:
+                      type: string
+                      description: 出资账户类型
+                      example: AVAILABLE
+                    amount:
+                      type: integer
+                      description: 出资金额
+                      example: 444
               payer_total:
                 type: integer
                 description: 用户支付金额

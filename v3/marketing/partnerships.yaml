@@ -1,0 +1,108 @@
+get:
+  x-version: [2020.04.09]
+  x-role: [直连商户, 服务商, 渠道商]
+  tags:
+    - 运营工具∙委托营销
+  summary: 查询合作关系列表API
+  description: 该接口主要为商户提供合作关系列表的查询能力。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_5_3.shtml)
+  parameters:
+    - name: partner
+      in: query
+      type: string
+      format: json
+      description: 合作方信息
+    - name: authorized_data
+      in: query
+      type: string
+      format: json
+      description: 被授权数据
+    - name: limit
+      in: query
+      type: integer
+      description: 分页大小
+      example: 5
+    - name: offset
+      in: query
+      type: integer
+      description: 分页页码
+      example: 10
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - limit
+          - offset
+        properties:
+          data:
+            type: array
+            description: 合作关系结果集
+            items:
+              type: object
+              required:
+                - partner
+                - authorized_data
+                - build_time
+                - create_time
+                - update_time
+              properties:
+                partner:
+                  type: object
+                  description: 合作方信息
+                  required:
+                    - type
+                  properties:
+                    type:
+                      type: string
+                      description: 合作方类别
+                      example: APPID
+                    appid:
+                      type: string
+                      description: 合作方APPID
+                      example: wx4e1916a585d1f4e9
+                    merchant_id:
+                      type: string
+                      description: 合作方商户ID
+                      example: '2480029552'
+                authorized_data:
+                  type: object
+                  description: 被授权数据
+                  required:
+                    - business_type
+                  properties:
+                    business_type:
+                      type: string
+                      description: 授权业务类别
+                      example: FAVOR_STOCK
+                    stock_id:
+                      type: string
+                      description: 授权批次ID
+                      example: '2433405'
+                build_time:
+                  type: string
+                  description: 建立合作关系时间
+                  example: '2015-05-20T13:29:35.120+08:00'
+                terminate_time:
+                  type: string
+                  description: 终止合作关系时间
+                  example: '2015-05-20T13:29:35.120+08:00'
+                create_time:
+                  type: string
+                  description: 创建时间
+                  example: '2015-05-20T13:29:35.120+08:00'
+                update_time:
+                  type: string
+                  description: 更新时间
+                  example: '2015-05-20T13:29:35.120+08:00'
+          limit:
+            type: integer
+            description: 分页大小
+            example: 5
+          offset:
+            type: integer
+            description: 分页页码
+            example: 10
+          total_count:
+            type: integer
+            description: 总数量
+            example: 1234

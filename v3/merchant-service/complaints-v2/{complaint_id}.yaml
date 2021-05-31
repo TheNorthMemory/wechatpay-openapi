@@ -78,10 +78,10 @@ get:
                   description: 订单金额
                   example: 3
           complaint_full_refunded:
-            type: booleanean
+            type: boolean
             description: 投诉单是否已全额退款
           incoming_user_response:
-            type: booleanean
+            type: boolean
             description: 是否有待回复的用户留言
           user_complaint_times:
             type: integer

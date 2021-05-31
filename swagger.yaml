@@ -190,16 +190,24 @@ paths:
     $ref: ./v3/marketing/busifavor/coupons/{card_id}/send.yaml
   /v3/marketing/busifavor/coupons/associate:
     $ref: ./v3/marketing/busifavor/coupons/associate.yaml
+  /v3/marketing/busifavor/coupons/deactivate:
+    $ref: ./v3/marketing/busifavor/coupons/deactivate.yaml
   /v3/marketing/busifavor/coupons/disassociate:
     $ref: ./v3/marketing/busifavor/coupons/disassociate.yaml
+  /v3/marketing/busifavor/coupons/return:
+    $ref: ./v3/marketing/busifavor/coupons/return.yaml
   /v3/marketing/busifavor/coupons/use:
     $ref: ./v3/marketing/busifavor/coupons/use.yaml
   /v3/marketing/busifavor/stocks:
     $ref: ./v3/marketing/busifavor/stocks.yaml
   /v3/marketing/busifavor/stocks/{stock_id}:
     $ref: ./v3/marketing/busifavor/stocks/{stock_id}.yaml
+  /v3/marketing/busifavor/stocks/{stock_id}/budget:
+    $ref: ./v3/marketing/busifavor/stocks/{stock_id}/budget.yaml
   /v3/marketing/busifavor/stocks/{stock_id}/couponcodes:
     $ref: ./v3/marketing/busifavor/stocks/{stock_id}/couponcodes.yaml
+  /v3/marketing/busifavor/subsidy/pay-receipts:
+    $ref: ./v3/marketing/busifavor/subsidy/pay-receipts.yaml
   /v3/marketing/busifavor/users/{openid}/coupons:
     $ref: ./v3/marketing/busifavor/users/{openid}/coupons.yaml
   /v3/marketing/busifavor/users/{openid}/coupons/{coupon_code}/appids/{appid}:
@@ -270,6 +278,8 @@ paths:
     $ref: ./v3/marketing/membercard-open/phonenumber-member/search.yaml
   /v3/marketing/membercard-open/user/cards:
     $ref: ./v3/marketing/membercard-open/user/cards.yaml
+  /v3/marketing/partnerships:
+    $ref: ./v3/marketing/partnerships.yaml
   /v3/marketing/partnerships/build:
     $ref: ./v3/marketing/partnerships/build.yaml
   /v3/marketing/partnerships/terminate:

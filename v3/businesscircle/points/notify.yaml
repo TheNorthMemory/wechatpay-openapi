@@ -38,7 +38,7 @@ post:
             description: 顾客openid
             example: oWmnN4xxxxxxxxxxe92NHIGf1xd8
           earn_points:
-            type: booleanean
+            type: boolean
             description: 是否获得积分
           increased_points:
             type: integer

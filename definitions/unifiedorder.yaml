@@ -1,0 +1,251 @@
+unifiedorder.request:
+  type: object
+  xml:
+    name: xml
+  required:
+    - appid
+    - mch_id
+    - nonce_str
+    - sign
+    - body
+    - out_trade_no
+    - total_fee
+    - spbill_create_ip
+    - notify_url
+    - trade_type
+  properties:
+    profit_sharing:
+      type: string
+      description: 是否指定服务商分账;Y-是，需要分账;N-否，不分账;字母要求大写，不传默认不分账
+      enum: [N,Y]
+      example: 'N'
+      maxLength: 1
+    appid:
+      type: string
+      description: 公众账号ID
+      example: wxd678efh567hg6787
+      maxLength: 32
+    mch_id:
+      type: string
+      description: 商户号
+      example: '1230000109'
+      maxLength: 32
+    device_info:
+      type: string
+      description: 设备号
+      example: '013467007045764'
+      maxLength: 32
+      nullable: true
+    nonce_str:
+      type: string
+      description: 随机字符串
+      example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+      maxLength: 32
+    sign:
+      type: string
+      description: 签名
+      example: C380BEC2BFD727A4B6845133519F3AD6
+      maxLength: 32
+    sign_type:
+      type: string
+      description: 签名类型
+      example: MD5
+      maxLength: 32
+      nullable: true
+    body:
+      type: string
+      description: 商品描述
+      example: 腾讯充值中心-QQ会员充值
+      maxLength: 128
+    detail:
+      type: string
+      description: 商品详情
+      maxLength: 6000
+      nullable: true
+    attach:
+      type: string
+      description: 附加数据
+      example: 深圳分店
+      maxLength: 127
+      nullable: true
+    out_trade_no:
+      type: string
+      description: 商户订单号
+      example: '20150806125346'
+      maxLength: 32
+    fee_type:
+      type: string
+      description: 标价币种
+      example: CNY
+      maxLength: 16
+      nullable: true
+    total_fee:
+      format: int32
+      type: integer
+      description: 标价金额
+      example: '88'
+    spbill_create_ip:
+      type: string
+      description: 终端IP
+      example: 123.12.12.123
+      maxLength: 64
+    time_start:
+      type: string
+      description: 交易起始时间
+      example: '20091225091010'
+      maxLength: 14
+      nullable: true
+    time_expire:
+      type: string
+      description: 交易结束时间
+      example: '20091227091010'
+      maxLength: 14
+      nullable: true
+    goods_tag:
+      type: string
+      description: 订单优惠标记
+      example: WXG
+      maxLength: 32
+      nullable: true
+    notify_url:
+      type: string
+      description: 通知地址
+      example: 'http://www.weixin.qq.com/wxpay/pay.php'
+      maxLength: 256
+    trade_type:
+      type: string
+      description: 交易类型
+      example: JSAPI
+      maxLength: 16
+    product_id:
+      type: string
+      description: 商品ID
+      example: '12235413214070356458058'
+      maxLength: 32
+      nullable: true
+    limit_pay:
+      type: string
+      description: 指定支付方式
+      example: no_credit
+      maxLength: 32
+      nullable: true
+    openid:
+      type: string
+      description: 用户标识
+      example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+      maxLength: 128
+      nullable: true
+    receipt:
+      type: string
+      description: 电子发票入口开放标识
+      example: 'Y'
+      maxLength: 8
+      nullable: true
+    scene_info:
+      xml:
+        x-cdata: true
+      type: string
+      description: +场景信息
+      example: '{"store_info" : {"id": "SZTX001","name": "腾大餐厅","area_code": "440305","address": "科技园中一路腾讯大厦" }}'
+      maxLength: 256
+      nullable: true
+unifiedorder.response:
+  allOf:
+    - type: object
+      xml:
+        name: xml
+      required:
+        - return_code
+        - return_msg
+      properties:
+        return_code:
+          type: string
+          description: 返回状态码
+          example: SUCCESS
+          maxLength: 16
+        return_msg:
+          type: string
+          description: 返回信息
+          example: OK
+          maxLength: 128
+    - type: object
+      xml:
+        name: xml
+      required:
+        - appid
+        - mch_id
+        - nonce_str
+        - sign
+        - result_code
+      properties:
+        appid:
+          type: string
+          description: 公众账号ID
+          example: wx8888888888888888
+          maxLength: 32
+        mch_id:
+          type: string
+          description: 商户号
+          example: '1900000109'
+          maxLength: 32
+        device_info:
+          type: string
+          description: 设备号
+          example: '013467007045764'
+          maxLength: 32
+          nullable: true
+        nonce_str:
+          type: string
+          description: 随机字符串
+          example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+          maxLength: 32
+        sign:
+          type: string
+          description: 签名
+          example: C380BEC2BFD727A4B6845133519F3AD6
+          maxLength: 32
+        result_code:
+          type: string
+          description: 业务结果
+          example: SUCCESS
+          maxLength: 16
+        err_code:
+          type: string
+          description: 错误代码
+          maxLength: 32
+          nullable: true
+        err_code_des:
+          type: string
+          description: 错误代码描述
+          maxLength: 128
+          nullable: true
+    - type: object
+      xml:
+        name: xml
+      required:
+        - trade_type
+        - prepay_id
+      properties:
+        trade_type:
+          type: string
+          description: 交易类型
+          enum: [JSAPI,NATIVE,APP,MWEB]
+          example: JSAPI
+          maxLength: 16
+        prepay_id:
+          type: string
+          description: 预支付交易会话标识
+          example: wx201410272009395522657a690389285100
+          maxLength: 64
+        code_url:
+          type: string
+          description: 二维码链接
+          example: 'weixin://wxpay/bizpayurl/up?pr=NwY5Mz9&groupid=00'
+          maxLength: 64
+          nullable: true
+        mweb_url:
+          type: string
+          description: 支付跳转链接，**mweb_url为拉起微信支付收银台的中间页面，可通过访问该url来拉起微信客户端，完成支付,mweb_url的有效期为5分钟。**
+          example: 'https://wx.tenpay.com/cgi-bin/mmpayweb-bin/checkmweb?prepay_id=wx2016121516420242444321ca0631331346&package=1405458241'
+          maxLength: 64
+          nullable: true

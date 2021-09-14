@@ -1,0 +1,12 @@
+micro.submitupgrade.request:
+  allOf:
+    - type: object
+      xml:
+        name: xml
+      properties: {}
+micro.submitupgrade.response:
+  allOf:
+    - type: object
+      xml:
+        name: xml
+      properties: {}

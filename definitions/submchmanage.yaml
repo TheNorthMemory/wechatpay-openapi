@@ -1,0 +1,12 @@
+submchmanage.request:
+  allOf:
+    - type: object
+      xml:
+        name: xml
+      properties: {}
+submchmanage.response:
+  allOf:
+    - type: object
+      xml:
+        name: xml
+      properties: {}

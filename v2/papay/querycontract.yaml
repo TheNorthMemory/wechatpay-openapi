@@ -1,0 +1,20 @@
+post:
+  tags:
+    - 支付∙委托扣款
+  summary: 查询签约关系
+  description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/api/pap.php?chapter=18_2&index=7)'
+  consumes:
+    - application/xml
+  produces:
+    - application/xml
+  parameters:
+    - name: buffer
+      in: body
+      required: true
+      schema:
+        $ref: '../../definitions/querycontract.yaml#/querycontract.request'
+  responses:
+    '200':
+      description: ''
+      schema:
+        $ref: '../../definitions/querycontract.yaml#/querycontract.response'

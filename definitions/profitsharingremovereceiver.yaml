@@ -1,0 +1,72 @@
+profitsharingremovereceiver.request:
+  allOf:
+    - type: object
+      xml:
+        name: xml
+      required:
+        - mch_id
+        - sub_mch_id
+        - appid
+        - nonce_str
+        - sign
+        - receiver
+        - type
+        - account
+      properties:
+        mch_id:
+          type: string
+          description: 商户号
+          example: '1900000100'
+          maxLength: 32
+        sub_mch_id:
+          type: string
+          description: 子商户号
+          example: '1900000109'
+          maxLength: 32
+        appid:
+          type: string
+          description: 公众账号ID
+          example: wx8888888888888888
+          maxLength: 32
+        sub_appid:
+          type: string
+          description: 子商户公众账号ID
+          example: wx8888888888888888
+          maxLength: 32
+          nullable: true
+        nonce_str:
+          type: string
+          description: 随机字符串
+          example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+          maxLength: 32
+        sign:
+          type: string
+          description: 签名
+          example: ABC6DD4AA85C0EECA82C35595A69EFGH
+          maxLength: 64
+        sign_type:
+          type: string
+          description: 签名类型
+          example: HMAC-SHA256
+          maxLength: 32
+          nullable: true
+        receiver:
+          type: string
+          description: +分账接收方
+          maxLength: 2048
+profitsharingremovereceiver.response:
+  allOf:
+    - $ref: './wxpay.service.yaml#/serviceprovider.subs'
+    - $ref: './wxpay.service.yaml#/general.response'
+    - $ref: './wxpay.service.yaml#/general.response.success'
+    - type: object
+      xml:
+        name: xml
+      required:
+        - receiver
+      properties:
+        receiver:
+          type: string
+          description: 分账接收方
+          example: '{"type":"MERCHANT_ID","account":"190001001"}'
+          maxLength: 128

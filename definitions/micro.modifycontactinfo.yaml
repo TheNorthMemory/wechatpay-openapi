@@ -1,0 +1,12 @@
+micro.modifycontactinfo.request:
+  allOf:
+    - type: object
+      xml:
+        name: xml
+      properties: {}
+micro.modifycontactinfo.response:
+  allOf:
+    - type: object
+      xml:
+        name: xml
+      properties: {}

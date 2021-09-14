@@ -1,0 +1,20 @@
+post:
+  tags:
+    - 支付∙人脸支付
+  summary: 提交刷脸支付
+  description: '[官方人脸支付文档](https://share.weiyun.com/5dxUgCw)'
+  consumes:
+    - application/xml
+  produces:
+    - application/xml
+  parameters:
+    - name: buffer
+      in: body
+      required: true
+      schema:
+        $ref: '../../definitions/facepay.yaml#/facepay.request'
+  responses:
+    '200':
+      description: ''
+      schema:
+        $ref: '../../definitions/facepay.yaml#/facepay.response'

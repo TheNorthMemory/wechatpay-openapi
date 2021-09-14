@@ -1,0 +1,81 @@
+general.response:
+  type: object
+  xml:
+    name: xml
+  required:
+    - return_code
+  properties:
+    return_code:
+      type: string
+      description: 返回状态码
+      maxLength: 16
+    return_msg:
+      type: string
+      description: 返回信息
+      maxLength: 128
+      nullable: true
+general.response.success:
+  type: object
+  xml:
+    name: xml
+  required:
+    - appid
+    - mch_id
+    - nonce_str
+    - sign
+    - result_code
+  properties:
+    appid:
+      type: string
+      description: 公众账号ID
+      maxLength: 32
+    mch_id:
+      type: string
+      description: 商户号
+      maxLength: 32
+    nonce_str:
+      type: string
+      description: 随机字符串
+      maxLength: 32
+    sign:
+      type: string
+      description: 签名
+      maxLength: 32
+    result_code:
+      type: string
+      description: 业务结果
+      maxLength: 16
+    err_code:
+      type: string
+      description: 错误代码
+      maxLength: 32
+      nullable: true
+    err_code_des:
+      type: string
+      description: 错误代码描述
+      maxLength: 128
+      nullable: true
+serviceprovider.subs:
+  type: object
+  xml:
+    name: xml
+  properties:
+    sub_appid:
+      type: string
+      description: 子商户公众账号ID
+      maxLength: 32
+      nullable: true
+    sub_mch_id:
+      type: string
+      description: 子商户号
+      maxLength: 32
+serviceprovider.sub_openid:
+  type: object
+  xml:
+    name: xml
+  properties:
+    sub_openid:
+      type: string
+      description: 用户子标识
+      maxLength: 128
+      nullable: true

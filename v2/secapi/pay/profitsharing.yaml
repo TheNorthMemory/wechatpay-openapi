@@ -1,0 +1,21 @@
+post:
+  x-api-cert-required: true
+  tags:
+    - 支付∙服务商∙分账
+  summary: 请求单次分账
+  description: '单次分账请求按照传入的分账接收方账号和资金进行分账，同时会将订单剩余的待分账金额解冻给特约商户。故操作成功后，订单不能再进行分账，也不能进行分账完结。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api/allocation_sl.php?chapter=25_1&index=1)'
+  consumes:
+    - application/xml
+  produces:
+    - application/xml
+  parameters:
+    - name: buffer
+      in: body
+      required: true
+      schema:
+        $ref: '../../../definitions/profitsharing.yaml#/profitsharing.request'
+  responses:
+    '200':
+      description: ''
+      schema:
+        $ref: '../../../definitions/profitsharing.yaml#/profitsharing.response'

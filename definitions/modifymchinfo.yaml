@@ -1,0 +1,12 @@
+modifymchinfo.request:
+  allOf:
+    - type: object
+      xml:
+        name: xml
+      properties: {}
+modifymchinfo.response:
+  allOf:
+    - type: object
+      xml:
+        name: xml
+      properties: {}

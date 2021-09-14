@@ -1,0 +1,21 @@
+post:
+  x-api-cert-required: true
+  tags:
+    - 支付∙代金券或立减优惠
+  summary: 发放代金券
+  description: 用于商户主动调用接口给用户发放代金券的场景，已做防小号处理，给小号发放代金券将返回错误码。**注意：通过接口发放的代金券不会进入微信卡包**[官方文档](https://pay.weixin.qq.com/wiki/doc/api/tools/sp_coupon.php?chapter=12_3&index=4)
+  consumes:
+    - application/xml
+  produces:
+    - application/xml
+  parameters:
+    - name: buffer
+      in: body
+      required: true
+      schema:
+        $ref: '../../definitions/send_coupon.yaml#/send_coupon.request'
+  responses:
+    '200':
+      description: ''
+      schema:
+        $ref: '../../definitions/send_coupon.yaml#/send_coupon.response'

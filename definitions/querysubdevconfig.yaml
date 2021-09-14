@@ -1,0 +1,12 @@
+querysubdevconfig.request:
+  allOf:
+    - type: object
+      xml:
+        name: xml
+      properties: {}
+querysubdevconfig.response:
+  allOf:
+    - type: object
+      xml:
+        name: xml
+      properties: {}

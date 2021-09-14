@@ -1,0 +1,20 @@
+post:
+  tags:
+    - 支付∙服务商∙分账
+  summary: 完结分账
+  description: '1、不需要进行分账的订单，可直接调用本接口将订单的金额全部解冻给特约商户 2、调用多次分账接口后，需要解冻剩余资金时，调用本接口将剩余的分账金额全部解冻给特约商户 3、已调用请求单次分账后，剩余待分账金额为零，不需要再调用此接口。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/allocation_sl.php?chapter=25_5&index=6)'
+  consumes:
+    - application/xml
+  produces:
+    - application/xml
+  parameters:
+    - name: buffer
+      in: body
+      required: true
+      schema:
+        $ref: '../../../definitions/profitsharingfinish.yaml#/profitsharingfinish.request'
+  responses:
+    '200':
+      description: ''
+      schema:
+        $ref: '../../../definitions/profitsharingfinish.yaml#/profitsharingfinish.response'

@@ -1,0 +1,12 @@
+channelquerymchauditinfo.request:
+  allOf:
+    - type: object
+      xml:
+        name: xml
+      properties: {}
+channelquerymchauditinfo.response:
+  allOf:
+    - type: object
+      xml:
+        name: xml
+      properties: {}

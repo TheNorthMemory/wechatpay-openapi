@@ -1,0 +1,21 @@
+post:
+  tags:
+    - 支付∙合单支付
+    - 支付∙服务商∙合单支付
+  summary: 合单查单
+  description: '所有微信支付订单的查询，商户可以通过查询订单接口主动查询订单状态，完成下一步的业务逻辑。**合单查单api只能使用合单单号combine_out_trade_no来查询，如果要使用子订单号查询，请使用公众api中的查单接口。**[官方合单支付文档](https://pay.weixin.qq.com/wiki/doc/api/combine.php?chapter=24_3&index=4)'
+  consumes:
+    - application/xml
+  produces:
+    - application/xml
+  parameters:
+    - name: buffer
+      in: body
+      required: true
+      schema:
+        $ref: '../../definitions/querycombinedorder.yaml#/querycombinedorder.request'
+  responses:
+    '200':
+      description: ''
+      schema:
+        $ref: '../../definitions/querycombinedorder.yaml#/querycombinedorder.response'

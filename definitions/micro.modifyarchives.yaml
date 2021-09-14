@@ -1,0 +1,12 @@
+micro.modifyarchives.request:
+  allOf:
+    - type: object
+      xml:
+        name: xml
+      properties: {}
+micro.modifyarchives.response:
+  allOf:
+    - type: object
+      xml:
+        name: xml
+      properties: {}

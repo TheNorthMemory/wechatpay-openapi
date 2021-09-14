@@ -1,0 +1,285 @@
+orderquery.request:
+  type: object
+  xml:
+    name: xml
+  required:
+    - appid
+    - mch_id
+    - transaction_id
+    - out_trade_no
+    - nonce_str
+    - sign
+  properties:
+    appid:
+      type: string
+      description: 公众账号ID
+      example: wxd678efh567hg6787
+      maxLength: 32
+    sub_appid:
+      type: string
+      description: 子商户公众账号ID
+      example: wx8888888888888888
+      maxLength: 32
+      nullable: true
+    mch_id:
+      type: string
+      description: 商户号
+      example: '1230000109'
+      maxLength: 32
+    sub_mch_id:
+      type: string
+      description: 子商户号
+      example: '1900000100'
+      maxLength: 32
+    transaction_id:
+      type: string
+      description: 微信订单号
+      example: '1009660380201506130728806387'
+      maxLength: 32
+    out_trade_no:
+      type: '20150806125346'
+      description: 商户订单号
+      example: 商户系统内部订单号，要求32个字符内，只能是数字、大小写字母_-|*@ ，且在同一个商户号下唯一。 详见商户订单号
+    nonce_str:
+      type: string
+      description: 随机字符串
+      example: C380BEC2BFD727A4B6845133519F3AD6
+      maxLength: 32
+    sign:
+      type: string
+      description: 签名
+      example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+      maxLength: 32
+    sign_type:
+      type: string
+      description: 签名类型
+      example: HMAC-SHA256
+      maxLength: 32
+      nullable: true
+orderquery.response:
+  allOf:
+    - type: object
+      xml:
+        name: xml
+      required:
+        - return_code
+        - return_msg
+      properties:
+        return_code:
+          type: string
+          description: 返回状态码
+          example: SUCCESS
+          maxLength: 16
+        return_msg:
+          type: string
+          description: 返回信息
+          example: OK
+          maxLength: 128
+    - type: object
+      xml:
+        name: xml
+      required:
+        - appid
+        - mch_id
+        - nonce_str
+        - sign
+        - result_code
+      properties:
+        appid:
+          type: string
+          description: 公众账号ID
+          example: wxd678efh567hg6787
+          maxLength: 32
+        sub_appid:
+          type: string
+          description: 子商户公众账号ID
+          example: wx8888888888888888
+          maxLength: 32
+          nullable: true
+        mch_id:
+          type: string
+          description: 商户号
+          example: '1230000109'
+          maxLength: 32
+        sub_mch_id:
+          type: string
+          description: 子商户号
+          example: '1900000100'
+          maxLength: 32
+        nonce_str:
+          type: string
+          description: 随机字符串
+          example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+          maxLength: 32
+        sign:
+          type: string
+          description: 签名
+          example: C380BEC2BFD727A4B6845133519F3AD6
+          maxLength: 32
+        result_code:
+          type: string
+          description: 业务结果
+          example: SUCCESS
+          maxLength: 16
+        err_code:
+          type: string
+          description: 错误代码
+          maxLength: 32
+          nullable: true
+        err_code_des:
+          type: string
+          description: 错误代码描述
+          maxLength: 128
+          nullable: true
+    - type: object
+      xml:
+        name: xml
+      required:
+        - openid
+        - is_subscribe
+        - trade_type
+        - trade_state
+        - bank_type
+        - total_fee
+        - cash_fee
+        - transaction_id
+        - out_trade_no
+        - time_end
+        - trade_state_desc
+      properties:
+        device_info:
+          type: string
+          description: 设备号
+          example: '013467007045764'
+          maxLength: 32
+          nullable: true
+        openid:
+          type: string
+          description: 用户标识
+          example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+          maxLength: 128
+        is_subscribe:
+          type: string
+          description: 是否关注公众账号
+          example: 'Y'
+          maxLength: 1
+        sub_openid:
+          type: string
+          description: 用户子标识
+          example: wxd930ea5d5a258f4f
+          maxLength: 128
+          nullable: true
+        sub_is_subscribe:
+          type: string
+          description: 是否关注子公众账号
+          example: 'Y'
+          maxLength: 1
+        trade_type:
+          type: string
+          description: 交易类型
+          example: JSAPI
+          maxLength: 16
+        trade_state:
+          type: string
+          description: 交易状态
+          example: SUCCESS
+          maxLength: 32
+        bank_type:
+          type: string
+          description: 付款银行
+          example: CMC
+          maxLength: 16
+        total_fee:
+          format: int32
+          type: integer
+          description: 标价金额
+          example: '100'
+        settlement_total_fee:
+          format: int32
+          type: integer
+          description: 应结订单金额
+          example: '100'
+          nullable: true
+        fee_type:
+          type: string
+          description: 标价币种
+          example: CNY
+          maxLength: 8
+          nullable: true
+        cash_fee:
+          format: int32
+          type: integer
+          description: 现金支付金额
+          example: '100'
+        cash_fee_type:
+          type: string
+          description: 现金支付币种
+          example: CNY
+          maxLength: 16
+          nullable: true
+        coupon_fee:
+          format: int32
+          type: integer
+          description: 代金券金额
+          example: '100'
+          nullable: true
+        coupon_count:
+          format: int32
+          type: integer
+          description: 代金券使用数量
+          example: '1'
+          nullable: true
+        coupon_type_$n:
+          type: string
+          description: 代金券类型
+          example: CASH
+          nullable: true
+        coupon_id_$n:
+          type: string
+          description: 代金券ID
+          example: '10000'
+          maxLength: 20
+          nullable: true
+        coupon_fee_$n:
+          format: int32
+          type: integer
+          description: 单个代金券支付金额
+          example: '100'
+          nullable: true
+        transaction_id:
+          type: string
+          description: 微信支付订单号
+          example: '1009660380201506130728806387'
+          maxLength: 32
+        out_trade_no:
+          type: string
+          description: 商户订单号
+          example: '20150806125346'
+          maxLength: 32
+        attach:
+          type: string
+          description: 附加数据
+          example: 深圳分店
+          maxLength: 128
+          nullable: true
+        time_end:
+          type: string
+          description: 支付完成时间
+          example: '20141030133525'
+          maxLength: 14
+        trade_state_desc:
+          type: string
+          description: 交易状态描述
+          example: 支付失败，请重新下单支付
+          maxLength: 256
+        promotion_detail:
+          type: string
+          description: 营销详情列表，使返回值为Json格式
+          maxLength: 6000
+          nullable: true
+        consume_fee:
+          format: int32
+          type: integer
+          description: 押金消费金额
+          example: '888'
+          nullable: true

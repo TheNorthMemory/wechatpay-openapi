@@ -1,0 +1,20 @@
+post:
+  tags:
+    - 支付∙银行服务商∙风控信息同步
+  summary: 间联模式查询商户审核状态开放接口
+  description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/api/mch_bank.php?chapter=9_291)'
+  consumes:
+    - application/xml
+  produces:
+    - application/xml
+  parameters:
+    - name: buffer
+      in: body
+      required: true
+      schema:
+        $ref: '../../definitions/bankquerymchauditinfo.yaml#/bankquerymchauditinfo.request'
+  responses:
+    '200':
+      description: ''
+      schema:
+        $ref: '../../definitions/bankquerymchauditinfo.yaml#/bankquerymchauditinfo.response'

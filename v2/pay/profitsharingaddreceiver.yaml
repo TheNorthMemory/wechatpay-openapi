@@ -1,0 +1,20 @@
+post:
+  tags:
+    - 支付∙服务商∙分账
+  summary: 添加分账接收方
+  description: '服务商代子商户发起添加分账接收方请求，后续可通过发起分账请求将结算后的钱分到该分账接收方。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/allocation_sl.php?chapter=25_3&index=4)'
+  consumes:
+    - application/xml
+  produces:
+    - application/xml
+  parameters:
+    - name: buffer
+      in: body
+      required: true
+      schema:
+        $ref: '../../definitions/profitsharingaddreceiver.yaml#/profitsharingaddreceiver.request'
+  responses:
+    '200':
+      description: ''
+      schema:
+        $ref: '../../definitions/profitsharingaddreceiver.yaml#/profitsharingaddreceiver.response'

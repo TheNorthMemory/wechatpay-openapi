@@ -1,0 +1,21 @@
+post:
+  x-api-cert-required: true
+  tags:
+    - 支付∙酒店押金
+  summary: 申请退款（押金）
+  description: '在押金已消费的情况下，部分金额已结算给商户的资金退还给用户，并为用户下发“退款发起提醒通知“；退款到账后，下发“押金退还到账通知”。可调用多次，允许部分退款; [官方文档](https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=27_5&index=6)'
+  consumes:
+    - application/xml
+  produces:
+    - application/xml
+  parameters:
+    - name: buffer
+      in: body
+      required: true
+      schema:
+        $ref: '../../definitions/refund.yaml#/refund.request'
+  responses:
+    '200':
+      description: ''
+      schema:
+        $ref: '../../definitions/refund.yaml#/refund.response'

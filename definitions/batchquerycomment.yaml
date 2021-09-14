@@ -1,0 +1,102 @@
+batchquerycomment.request:
+  type: object
+  xml:
+    name: xml
+  required:
+    - appid
+    - mch_id
+    - nonce_str
+    - sign
+    - begin_time
+    - end_time
+    - offset
+  properties:
+    appid:
+      type: string
+      description: 公众账号ID
+      example: wx8888888888888888
+      maxLength: 32
+    mch_id:
+      type: string
+      description: 商户号
+      example: '1900000109'
+      maxLength: 32
+    nonce_str:
+      type: string
+      description: 随机字符串
+      example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+      maxLength: 32
+    sign:
+      type: string
+      description: 签名
+      example: 3AE1368BD96B4644FA5823E024CFE938F1B852EFA87919EDDEE324AE24C8C04F
+      maxLength: 64
+    sign_type:
+      type: string
+      description: 签名类型
+      example: HMAC-SHA256
+      maxLength: 32
+      nullable: true
+    begin_time:
+      type: string
+      description: 开始时间
+      example: '20170724000000'
+      maxLength: 19
+    end_time:
+      type: string
+      description: 结束时间
+      example: '20170725000000'
+      maxLength: 19
+    offset:
+      type: uint
+      description: 位移
+      example: '0'
+      maxLength: 64
+    limit:
+      type: uint
+      description: 条数
+      example: '100'
+      maxLength: 32
+      nullable: true
+batchquerycomment.response:
+  allOf:
+    - type: object
+      xml:
+        name: xml
+      required:
+        - return_code
+        - return_msg
+      properties:
+        return_code:
+          type: string
+          description: 返回状态码
+          example: SUCCESS
+          maxLength: 16
+        return_msg:
+          type: string
+          description: 返回信息
+          example: OK
+          maxLength: 128
+    - type: object
+      xml:
+        name: xml
+      required:
+        - result_code
+        - err_code
+      properties:
+        result_code:
+          type: string
+          description: 业务结果
+          example: FAIL
+          maxLength: 16
+        err_code:
+          type: string
+          description: 错误代码
+          example: SYSTEMERROR
+          maxLength: 16
+        err_code_des:
+          type: string
+          description: 错误代码描述
+          example: 签名失败
+          maxLength: 128
+          nullable: true

@@ -1,0 +1,153 @@
+transfers.request:
+  type: object
+  xml:
+    name: xml
+  required:
+    - mch_appid
+    - mchid
+    - nonce_str
+    - sign
+    - partner_trade_no
+    - openid
+    - check_name
+    - amount
+    - desc
+    - spbill_create_ip
+  properties:
+    mch_appid:
+      type: string
+      description: 商户账号appid
+      example: wx8888888888888888
+      maxLength: 128
+    mchid:
+      type: string
+      description: 商户号
+      example: '1900000109'
+      maxLength: 32
+    device_info:
+      type: string
+      description: 设备号
+      example: '013467007045764'
+      maxLength: 32
+      nullable: true
+    nonce_str:
+      type: string
+      description: 随机字符串
+      example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+      maxLength: 32
+    sign:
+      type: string
+      description: 签名
+      example: C380BEC2BFD727A4B6845133519F3AD6
+      maxLength: 32
+    partner_trade_no:
+      type: string
+      description: 商户订单号
+      example: '10000098201411111234567890'
+      maxLength: 32
+    openid:
+      type: string
+      description: 用户openid
+      example: oxTWIuGaIt6gTKsQRLau2M0yL16E
+      maxLength: 64
+    check_name:
+      type: string
+      description: 校验用户姓名选项
+      example: FORCE_CHECK
+      maxLength: 16
+    re_user_name:
+      type: string
+      description: 收款用户姓名
+      example: 王小王
+      maxLength: 64
+      nullable: true
+    amount:
+      format: int32
+      type: integer
+      description: 金额
+      example: '10099'
+    desc:
+      type: string
+      description: 企业付款备注
+      example: 理赔
+      maxLength: 100
+    spbill_create_ip:
+      type: string
+      description: Ip地址
+      example: 192.168.0.1
+      maxLength: 32
+transfers.response:
+  type: object
+  xml:
+    name: xml
+  required:
+    - return_code
+    - result_code
+    - partner_trade_no
+    - payment_no
+    - payment_time
+  properties:
+    return_code:
+      type: string
+      description: 返回状态码
+      example: SUCCESS
+      maxLength: 16
+    return_msg:
+      type: string
+      description: 返回信息
+      example: 签名失败
+      maxLength: 128
+      nullable: true
+    mch_appid:
+      type: string
+      description: 商户appid
+      example: wx8888888888888888
+      maxLength: 128
+    mchid:
+      type: string
+      description: 商户号
+      example: '1900000109'
+      maxLength: 32
+    device_info:
+      type: string
+      description: 设备号
+      example: '013467007045764'
+      maxLength: 32
+      nullable: true
+    nonce_str:
+      type: string
+      description: 随机字符串
+      example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+      maxLength: 32
+    result_code:
+      type: string
+      description: 业务结果
+      example: SUCCESS
+      maxLength: 16
+    err_code:
+      type: string
+      description: 错误代码
+      example: SYSTEMERROR
+      maxLength: 32
+      nullable: true
+    err_code_des:
+      type: string
+      description: 错误代码描述
+      example: 系统错误
+      maxLength: 128
+      nullable: true
+    partner_trade_no:
+      type: string
+      description: 商户订单号
+      example: '1217752501201407033233368018'
+      maxLength: 32
+    payment_no:
+      type: string
+      description: 微信付款单号
+      example: '1007752501201407033233368018'
+      maxLength: 64
+    payment_time:
+      type: string
+      description: 付款成功时间
+      example: 2015-05-19 15：26：59
+      maxLength: 32

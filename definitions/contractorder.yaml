@@ -1,0 +1,12 @@
+contractorder.request:
+  allOf:
+    - type: object
+      xml:
+        name: xml
+      properties: {}
+contractorder.response:
+  allOf:
+    - type: object
+      xml:
+        name: xml
+      properties: {}

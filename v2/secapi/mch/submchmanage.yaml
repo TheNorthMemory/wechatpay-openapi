@@ -1,0 +1,26 @@
+post:
+  x-api-cert-required: true
+  tags:
+    - 支付∙银行服务商∙特约商户报备
+  summary: 银行特约商户录入/银行特约商户资料查询
+  description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/api/mch_bank.php?chapter=9_22&index=3&p=9)'
+  consumes:
+    - application/xml
+  produces:
+    - application/xml
+  parameters:
+    - name: action
+      in: query
+      type: string
+      enum: [add, query]
+      required: true
+    - name: buffer
+      in: body
+      required: true
+      schema:
+        $ref: '../../../definitions/submchmanage.yaml#/submchmanage.request'
+  responses:
+    '200':
+      description: ''
+      schema:
+        $ref: '../../../definitions/submchmanage.yaml#/submchmanage.response'

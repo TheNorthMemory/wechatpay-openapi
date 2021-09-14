@@ -1,0 +1,21 @@
+post:
+  x-api-cert-required: true
+  tags:
+    - 支付∙企业付款
+  summary: 查询企业向微信用户个人付款
+  description: 付款操作进行结果查询，返回付款操作详细结果。查询企业付款API只支持查询30天内的订单，30天之前的订单请登录商户平台查询。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/tools/mch_pay.php?chapter=14_3)
+  consumes:
+    - application/xml
+  produces:
+    - application/xml
+  parameters:
+    - name: buffer
+      in: body
+      required: true
+      schema:
+        $ref: '../../definitions/gettransferinfo.yaml#/gettransferinfo.request'
+  responses:
+    '200':
+      description: ''
+      schema:
+        $ref: '../../definitions/gettransferinfo.yaml#/gettransferinfo.response'

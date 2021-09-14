@@ -1,0 +1,12 @@
+bankquerymchauditinfo.request:
+  allOf:
+    - type: object
+      xml:
+        name: xml
+      properties: {}
+bankquerymchauditinfo.response:
+  allOf:
+    - type: object
+      xml:
+        name: xml
+      properties: {}

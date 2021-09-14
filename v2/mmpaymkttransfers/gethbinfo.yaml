@@ -1,0 +1,23 @@
+post:
+  x-api-cert-required: true
+  tags:
+    - 支付∙现金红包
+    - 支付∙服务商∙现金红包
+    - 支付∙银行服务商∙现金红包
+  summary: 查询红包记录
+  description: 用于商户对已发放的红包进行查询红包的具体信息，可支持普通红包和裂变包。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon.php?chapter=13_6&index=5)
+  consumes:
+    - application/xml
+  produces:
+    - application/xml
+  parameters:
+    - name: buffer
+      in: body
+      required: true
+      schema:
+        $ref: '../../definitions/gethbinfo.yaml#/gethbinfo.request'
+  responses:
+    '200':
+      description: ''
+      schema:
+        $ref: '../../definitions/gethbinfo.yaml#/gethbinfo.response'

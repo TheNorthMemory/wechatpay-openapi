@@ -1,0 +1,12 @@
+queryautowithdrawbydate.request:
+  allOf:
+    - type: object
+      xml:
+        name: xml
+      properties: {}
+queryautowithdrawbydate.response:
+  allOf:
+    - type: object
+      xml:
+        name: xml
+      properties: {}

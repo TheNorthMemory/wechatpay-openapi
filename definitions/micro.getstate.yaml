@@ -1,0 +1,12 @@
+micro.getstate.request:
+  allOf:
+    - type: object
+      xml:
+        name: xml
+      properties: {}
+micro.getstate.response:
+  allOf:
+    - type: object
+      xml:
+        name: xml
+      properties: {}

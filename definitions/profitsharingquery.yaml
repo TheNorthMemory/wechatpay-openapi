@@ -1,0 +1,112 @@
+profitsharingquery.request:
+  allOf:
+    - type: object
+      xml:
+        name: xml
+      required:
+        - mch_id
+        - sub_mch_id
+        - transaction_id
+        - out_order_no
+        - nonce_str
+        - sign
+      properties:
+        mch_id:
+          type: string
+          description: 商户号
+          example: '1900000100'
+          maxLength: 32
+        sub_mch_id:
+          type: string
+          description: 子商户号
+          example: '1900000109'
+          maxLength: 32
+        transaction_id:
+          type: string
+          description: 微信订单号
+          example: '4208450740201411110007820472'
+          maxLength: 32
+        out_order_no:
+          type: string
+          description: 商户分账单号
+          example: P20150806125346
+          maxLength: 32
+        nonce_str:
+          type: string
+          description: 随机字符串
+          example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+          maxLength: 32
+        sign:
+          type: string
+          description: 签名
+          example: C380BEC2BFD727A4B6845133519F3AD6
+          maxLength: 64
+        sign_type:
+          type: string
+          description: 签名类型
+          example: HMAC-SHA256
+          maxLength: 32
+          nullable: true
+profitsharingquery.response:
+  allOf:
+    - $ref: './wxpay.service.yaml#/serviceprovider.subs'
+    - $ref: './wxpay.service.yaml#/general.response'
+    - $ref: './wxpay.service.yaml#/general.response.success'
+    - type: object
+      xml:
+        name: xml
+      required:
+        - transaction_id
+        - out_order_no
+        - order_id
+        - status
+        - receivers
+        - amount
+        - description
+        - type
+        - account
+        - amount
+        - description
+        - result
+        - finish_time
+      properties:
+        transaction_id:
+          type: string
+          description: 微信订单号
+          example: '4208450740201411110007820472'
+          maxLength: 32
+        out_order_no:
+          type: string
+          description: 商户分账单号
+          example: P20150806125346
+          maxLength: 64
+        order_id:
+          type: string
+          description: 微信分账单号
+          example: '3008450740201411110007820472'
+          maxLength: 64
+        status:
+          type: string
+          description: 分账单状态
+          example: SUCCESS
+          maxLength: 16
+        close_reason:
+          type: string
+          description: 关单原因
+          example: NO_AUTH
+          maxLength: 32
+          nullable: true
+        receivers:
+          type: string
+          description: +分账接收方列表;分账接收方列表，json对象详细说明见下文，仅当查询分账请求结果时，存在本字段
+          maxLength: 10240
+        amount:
+          format: int32
+          type: integer
+          description: 分账金额
+          example: '888'
+        description:
+          type: string
+          description: 分账描述
+          example: 分账订单
+          maxLength: 80

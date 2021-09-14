@@ -1,0 +1,33 @@
+post:
+  tags:
+    - 支付∙付款码支付
+    - 支付∙JSAPI支付
+    - 支付∙Native支付
+    - 支付∙App支付
+    - 支付∙H5支付
+    - 支付∙小程序支付
+    - 支付∙人脸支付
+    - 支付∙服务商∙付款码支付
+    - 支付∙服务商∙JSAPI支付
+    - 支付∙服务商∙Native支付
+    - 支付∙服务商∙App支付
+    - 支付∙服务商∙H5支付
+    - 支付∙服务商∙小程序支付
+    - 支付∙服务商∙人脸支付
+  summary: 交易保障
+  description: '商户在调用微信支付提供的相关接口时，会得到微信支付返回的相关信息以及获得整个接口的响应时间。为提高整体的服务水平，协助商户一起提高服务质量，微信支付提供了相关接口调用耗时和返回信息的主动上报接口，微信支付可以根据商户侧上报的数据进一步优化网络部署，完善服务监控，和商户更好的协作为用户提供更好的业务体验。[官方付款码文档](https://pay.weixin.qq.com/wiki/doc/api/micropay.php?chapter=9_14&index=8) [官方JSAPI文档](https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=9_8&index=9) [官方NATIVE文档](https://pay.weixin.qq.com/wiki/doc/api/native.php?chapter=9_8&index=9) [官方APP文档](https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=9_8&index=10) [官方H5文档](https://pay.weixin.qq.com/wiki/doc/api/H5.php?chapter=9_8&index=9) [官方小程序支付文档](https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=9_8&index=9) [官方人脸支付文档](https://share.weiyun.com/5dxUgCw)'
+  consumes:
+    - application/xml
+  produces:
+    - application/xml
+  parameters:
+    - name: buffer
+      in: body
+      required: true
+      schema:
+        $ref: '../../definitions/report.yaml#/report.request'
+  responses:
+    '200':
+      description: ''
+      schema:
+        $ref: '../../definitions/report.yaml#/report.response'

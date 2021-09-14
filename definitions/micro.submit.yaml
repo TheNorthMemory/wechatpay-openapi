@@ -1,0 +1,12 @@
+micro.submit.request:
+  allOf:
+    - type: object
+      xml:
+        name: xml
+      properties: {}
+micro.submit.response:
+  allOf:
+    - type: object
+      xml:
+        name: xml
+      properties: {}

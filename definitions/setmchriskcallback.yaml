@@ -1,0 +1,12 @@
+setmchriskcallback.request:
+  allOf:
+    - type: object
+      xml:
+        name: xml
+      properties: {}
+setmchriskcallback.response:
+  allOf:
+    - type: object
+      xml:
+        name: xml
+      properties: {}

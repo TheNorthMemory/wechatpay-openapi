@@ -1,0 +1,83 @@
+report.request:
+  type: object
+  xml:
+    name: xml
+  required:
+    - appid
+    - mch_id
+    - nonce_str
+    - sign
+    - interface_url
+    - user_ip
+    - trades
+  properties:
+    appid:
+      type: string
+      description: 公众账号ID
+      example: wx8888888888888888
+      maxLength: 32
+    mch_id:
+      type: string
+      description: 商户号
+      example: '1900000109'
+      maxLength: 32
+    device_info:
+      type: string
+      description: 设备号
+      example: '013467007045764'
+      maxLength: 32
+      nullable: true
+    nonce_str:
+      type: string
+      description: 随机字符串
+      example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+      maxLength: 32
+    sign:
+      type: string
+      description: 签名
+      example: C380BEC2BFD727A4B6845133519F3AD6
+      maxLength: 32
+    interface_url:
+      type: string
+      description: 接口URL
+      example: 'https://api.mch.weixin.qq.com/pay/batchreport/micropay/total'
+      maxLength: 127
+    user_ip:
+      type: string
+      description: 访问接口IP
+      example: 8.8.8.8
+      maxLength: 16
+    trades:
+      type: string
+      description: 上报数据包
+      maxLength: 1024
+report.response:
+  allOf:
+    - type: object
+      xml:
+        name: xml
+      required:
+        - return_code
+        - return_msg
+      properties:
+        return_code:
+          type: string
+          description: 返回状态码
+          example: SUCCESS
+          maxLength: 16
+        return_msg:
+          type: string
+          description: 返回信息
+          example: OK
+          maxLength: 128
+    - type: object
+      xml:
+        name: xml
+      required:
+        - result_code
+      properties:
+        result_code:
+          type: string
+          description: 业务结果
+          example: SUCCESS
+          maxLength: 16

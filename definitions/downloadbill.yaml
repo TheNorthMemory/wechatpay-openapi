@@ -1,0 +1,72 @@
+downloadbill.request:
+  type: object
+  xml:
+    name: xml
+  required:
+    - appid
+    - mch_id
+    - nonce_str
+    - sign
+    - bill_date
+  properties:
+    appid:
+      type: string
+      description: 公众账号ID
+      example: wx8888888888888888
+      maxLength: 32
+    mch_id:
+      type: string
+      description: 商户号
+      example: '1900000109'
+      maxLength: 32
+    nonce_str:
+      type: string
+      description: 随机字符串
+      example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+      maxLength: 32
+    sign:
+      type: string
+      description: 签名
+      example: C380BEC2BFD727A4B6845133519F3AD6
+      maxLength: 32
+    bill_date:
+      type: string
+      description: 对账单日期
+      example: '20140603'
+      maxLength: 8
+    bill_type:
+      type: string
+      description: 账单类型
+      example: ALL
+      maxLength: 8
+      nullable: true
+    tar_type:
+      type: string
+      description: 压缩账单
+      example: GZIP
+      nullable: true
+downloadbill.response:
+  allOf:
+    - type: object
+      xml:
+        name: xml
+      required:
+        - return_code
+      properties:
+        return_code:
+          type: string
+          description: 返回状态码
+          example: FAIL
+          maxLength: 16
+        return_msg:
+          type: string
+          description: 错误码描述
+          example: 签名失败
+          maxLength: 128
+          nullable: true
+        error_code:
+          type: string
+          description: 错误码
+          example: '20002'
+          maxLength: 16
+          nullable: true

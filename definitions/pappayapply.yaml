@@ -1,0 +1,12 @@
+pappayapply.request:
+  allOf:
+    - type: object
+      xml:
+        name: xml
+      properties: {}
+pappayapply.response:
+  allOf:
+    - type: object
+      xml:
+        name: xml
+      properties: {}

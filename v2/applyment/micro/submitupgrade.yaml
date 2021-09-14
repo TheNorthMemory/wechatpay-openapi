@@ -1,0 +1,21 @@
+post:
+  x-api-cert-required: true
+  tags:
+    - 支付∙服务商∙小微商户
+  summary: 提交升级申请单
+  description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=28_2&index=2)'
+  consumes:
+    - application/xml
+  produces:
+    - application/xml
+  parameters:
+    - name: buffer
+      in: body
+      required: true
+      schema:
+        $ref: '../../../definitions/micro.submitupgrade.yaml#/micro.submitupgrade.request'
+  responses:
+    '200':
+      description: ''
+      schema:
+        $ref: '../../../definitions/micro.submitupgrade.yaml#/micro.submitupgrade.response'

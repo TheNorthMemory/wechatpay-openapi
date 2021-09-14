@@ -1,0 +1,12 @@
+deletecontract.request:
+  allOf:
+    - type: object
+      xml:
+        name: xml
+      properties: {}
+deletecontract.response:
+  allOf:
+    - type: object
+      xml:
+        name: xml
+      properties: {}

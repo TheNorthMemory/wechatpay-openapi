@@ -1,0 +1,12 @@
+paporderquery.request:
+  allOf:
+    - type: object
+      xml:
+        name: xml
+      properties: {}
+paporderquery.response:
+  allOf:
+    - type: object
+      xml:
+        name: xml
+      properties: {}

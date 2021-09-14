@@ -1,0 +1,23 @@
+post:
+  x-api-cert-required: true
+  tags:
+    - 支付∙现金红包
+    - 支付∙服务商∙现金红包
+    - 支付∙银行服务商∙现金红包
+  summary: 发放裂变红包
+  description: 裂变红包：一次可以发放一组红包。首先领取的用户为种子用户，种子用户领取一组红包当中的一个，并可以通过社交分享将剩下的红包给其他用户。裂变红包充分利用了人际传播的优势。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon.php?chapter=13_5&index=4)
+  consumes:
+    - application/xml
+  produces:
+    - application/xml
+  parameters:
+    - name: buffer
+      in: body
+      required: true
+      schema:
+        $ref: '../../definitions/sendgroupredpack.yaml#/sendgroupredpack.request'
+  responses:
+    '200':
+      description: ''
+      schema:
+        $ref: '../../definitions/sendgroupredpack.yaml#/sendgroupredpack.response'

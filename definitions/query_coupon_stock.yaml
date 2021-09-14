@@ -1,0 +1,200 @@
+query_coupon_stock.request:
+  type: object
+  xml:
+    name: xml
+  required:
+    - coupon_stock_id
+    - appid
+    - mch_id
+    - nonce_str
+    - sign
+  properties:
+    coupon_stock_id:
+      type: string
+      description: 代金券批次id
+      example: '1757'
+    appid:
+      type: string
+      description: 公众账号ID
+      example: wx5edab3bdfba3dc1c
+      maxLength: 32
+    mch_id:
+      type: string
+      description: 商户号
+      example: '10000098'
+      maxLength: 32
+    op_user_id:
+      type: string
+      description: 操作员
+      example: '10000098'
+      maxLength: 32
+      nullable: true
+    device_info:
+      type: string
+      description: 设备号
+      maxLength: 32
+      nullable: true
+    nonce_str:
+      type: string
+      description: 随机字符串
+      example: '1417574675'
+      maxLength: 32
+    sign:
+      type: string
+      description: 签名
+      example: 841B3002FE2220C87A2D08ABD8A8F791
+      maxLength: 32
+    version:
+      type: string
+      description: 协议版本
+      example: '1.0'
+      maxLength: 32
+      nullable: true
+    type:
+      type: string
+      description: 协议类型
+      example: XML
+      maxLength: 32
+      nullable: true
+query_coupon_stock.response:
+  type: object
+  xml:
+    name: xml
+  required:
+    - return_code
+    - appid
+    - mch_id
+    - nonce_str
+    - result_code
+    - coupon_stock_id
+    - coupon_value
+    - coupon_stock_status
+    - coupon_total
+    - begin_time
+    - end_time
+    - create_time
+    - begin_time_t
+    - end_time_t
+    - create_time_t
+  properties:
+    return_code:
+      type: string
+      description: 返回状态码
+      example: SUCCESS或者FAIL
+      maxLength: 16
+    return_msg:
+      type: string
+      description: 返回信息
+      example: 成功：返回空”
+      maxLength: 128
+      nullable: true
+    appid:
+      type: string
+      description: 公众账号ID
+      example: wx5edab3bdfba3dc1c
+      maxLength: 32
+    mch_id:
+      type: string
+      description: 商户号
+      example: '10000098'
+      maxLength: 32
+    device_info:
+      type: string
+      description: 设备号
+      example: 123456sb
+      maxLength: 32
+      nullable: true
+    nonce_str:
+      type: string
+      description: 随机字符串
+      example: '1417574675'
+      maxLength: 32
+    result_code:
+      type: string
+      description: 业务结果
+      example: SUCCESS或者FAIL
+      maxLength: 16
+    err_code:
+      type: string
+      description: 错误代码
+      example: COUPON_STOCK_ID_NOT_VALID
+      maxLength: 32
+      nullable: true
+    err_code_des:
+      type: string
+      description: 错误代码描述
+      example: 错误描述信息
+      maxLength: 128
+      nullable: true
+    coupon_stock_id:
+      type: string
+      description: 代金券批次ID
+      example: '1757'
+    coupon_name:
+      type: string
+      description: 代金券名称
+      example: 测试代金券
+      nullable: true
+    coupon_value:
+      format: int32
+      type: integer
+      description: 代金券面额
+      example: '5'
+    coupon_mininumn:
+      format: int32
+      type: integer
+      description: 代金券使用最低限额
+      example: '10'
+      nullable: true
+    coupon_stock_status:
+      format: int32
+      type: integer
+      description: 代金券批次状态
+      example: '4'
+    coupon_total:
+      format: int32
+      type: integer
+      description: 代金券数量
+      example: '100'
+    max_quota:
+      format: int32
+      type: integer
+      description: 代金券最大领取数量
+      example: '1'
+      nullable: true
+    is_send_num:
+      format: int32
+      type: integer
+      description: 代金券已经发送的数量
+      example: '0'
+      nullable: true
+    begin_time:
+      type: string
+      description: 生效开始时间
+      example: '1943787483'
+    end_time:
+      type: string
+      description: 生效结束时间
+      example: '1943787490'
+    create_time:
+      type: string
+      description: 创建时间
+      example: '1943787420'
+    coupon_budget:
+      format: int32
+      type: integer
+      description: 代金券预算额度
+      example: '500'
+      nullable: true
+    begin_time_t:
+      type: string
+      description: 生效开始时间
+      example: '20181126152401'
+    end_time_t:
+      type: string
+      description: 生效结束时间
+      example: '20181126152401'
+    create_time_t:
+      type: string
+      description: 创建时间
+      example: '20181126152401'

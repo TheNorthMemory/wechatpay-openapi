@@ -1,0 +1,12 @@
+querycontract.request:
+  allOf:
+    - type: object
+      xml:
+        name: xml
+      properties: {}
+querycontract.response:
+  allOf:
+    - type: object
+      xml:
+        name: xml
+      properties: {}

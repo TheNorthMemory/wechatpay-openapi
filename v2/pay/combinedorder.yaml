@@ -1,0 +1,21 @@
+post:
+  tags:
+    - 支付∙合单支付
+    - 支付∙服务商∙合单支付
+  summary: 合单下单
+  description: '使用合单支付接口，用户只输入一次密码，即可完成多个订单的支付。目前最多一次可支持10笔订单进行合单支付。用合单下单api在微信支付服务后台生成预支付交易单，返回正确的预支付交易会话标识后再按扫码、JSAPI、APP、H5等不同场景生成交易串调起支付。[官方合单支付文档](https://pay.weixin.qq.com/wiki/doc/api/combine.php?chapter=24_1&index=2)'
+  consumes:
+    - application/xml
+  produces:
+    - application/xml
+  parameters:
+    - name: buffer
+      in: body
+      required: true
+      schema:
+        $ref: '../../definitions/combinedorder.yaml#/combinedorder.request'
+  responses:
+    '200':
+      description: ''
+      schema:
+        $ref: '../../definitions/combinedorder.yaml#/combinedorder.response'

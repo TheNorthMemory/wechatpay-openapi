@@ -1,0 +1,20 @@
+post:
+  tags:
+    - 支付∙委托扣款
+  summary: 查询订单
+  description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/api/pap.php?chapter=18_10&index=14)'
+  consumes:
+    - application/xml
+  produces:
+    - application/xml
+  parameters:
+    - name: buffer
+      in: body
+      required: true
+      schema:
+        $ref: '../../definitions/paporderquery.yaml#/paporderquery.request'
+  responses:
+    '200':
+      description: ''
+      schema:
+        $ref: '../../definitions/paporderquery.yaml#/paporderquery.response'

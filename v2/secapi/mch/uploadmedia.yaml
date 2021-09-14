@@ -1,0 +1,59 @@
+post:
+  x-api-cert-required: true
+  tags:
+    - 支付∙服务商∙小微商户
+  summary: 图片上传API
+  description: '服务商操作员调用 API 接口，上传证件照片。支持 jpeg、jpg、bmp、png 格式，图片大小不超过2M。通过 POST 表单来调用该接口，表单媒体文件 id 为 media，需有 filename、filelength、content-type 等信息。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=19_9)'
+  consumes:
+    - multipart/form-data
+  produces:
+    - application/xml
+  parameters:
+    - name: mch_id
+      in: formData
+      type: string
+      description: 服务商商户号或渠道号
+      required: true
+      maxLength: 32
+    - name: media
+      in: formData
+      type: file
+      description: form-data中媒体文件标识，有filename、filelength、content-type等信息。**不参与签名计算**
+      required: true
+    - name: media_hash
+      in: formData
+      type: string
+      description: 根据媒体文件内容进行MD5计算后的值，注意小写
+      required: true
+      maxLength: 32
+    - name: sign
+      in: formData
+      type: string
+      description: 签名
+      required: true
+      maxLength: 32
+    - name: sign_type
+      in: formData
+      type: string
+      description: 签名方式
+      required: true
+      maxLength: 10
+      enum: [HMAC-SHA256,MD5]
+      default: MD5
+  responses:
+    '200':
+      description: ''
+      schema:
+        allOf:
+          - $ref: '../../../definitions/wxpay.service.yaml#/general.response'
+          - $ref: '../../../definitions/wxpay.service.yaml#/general.response.success'
+          - type: object
+            xml:
+              name: xml
+            required:
+              - media_id
+            properties:
+              media_id:
+                type: string
+                description: 媒体标识Id,微信返回的媒体文件标识Id
+                maxLength: 256

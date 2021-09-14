@@ -2,8 +2,8 @@ swagger: '2.0'
 host: api.mch.weixin.qq.com
 basePath: ''
 info:
-  title: 微信支付APIv3文档
-  description: "整理自[微信支付官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pages/Overview.shtml) [WechatPay-API-v3](https://wechatpay-api.gitbook.io/wechatpay-api-v3/) 本[项目/工具](https://github.com/TheNorthMemory/wechatpay-openapi)有如下约定：
+  title: 微信支付OpenAPI文档
+  description: "整理自[微信支付官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pages/Overview.shtml) 本[项目/工具](https://github.com/TheNorthMemory/wechatpay-openapi)有如下约定：
 
     1. 对于类型定义是 **string($MediaId)**， 需要用 */通用接口* 媒体(图片/视频)上传获取到返回值；
 
@@ -25,7 +25,7 @@ info:
 
     10. 对于对象属性 **x-is-sensitive**，请根据场景需要，在请求体内需要 *rsa.encrypt*, 在返回体需要 *rsa.decrypt*；
 "
-  version: 0.0.1
+  version: 0.0.2
 schemes:
   - https
 consumes:
@@ -73,7 +73,174 @@ tags:
   - name: 经营工具∙连锁品牌∙门店
   - name: 通用接口
   - name: 通用接口∙商业支付投诉
+  - name: 支付∙付款码支付
+  - name: 支付∙JSAPI支付
+  - name: 支付∙Native支付
+  - name: 支付∙App支付
+  - name: 支付∙H5支付
+  - name: 支付∙小程序支付
+  - name: 支付∙人脸支付
+  - name: 支付∙合单支付
+  - name: 支付∙代金券或立减优惠
+  - name: 支付∙现金红包
+  - name: 支付∙企业付款
+  - name: 支付∙酒店押金
+  - name: 支付∙委托扣款
+  - name: 支付∙服务商∙付款码支付
+  - name: 支付∙服务商∙JSAPI支付
+  - name: 支付∙服务商∙Native支付
+  - name: 支付∙服务商∙App支付
+  - name: 支付∙服务商∙H5支付
+  - name: 支付∙服务商∙小程序支付
+  - name: 支付∙服务商∙人脸支付
+  - name: 支付∙服务商∙合单支付
+  - name: 支付∙服务商∙现金红包
+  - name: 支付∙服务商∙小微商户
+  - name: 支付∙服务商∙分账
+  - name: 支付∙银行服务商∙现金红包
+  - name: 支付∙银行服务商∙企业付款
+  - name: 支付∙银行服务商∙特约商户报备
+  - name: 支付∙银行服务商∙特约商户配置
+  - name: 支付∙银行服务商∙风控信息同步
 paths:
+  /v2/applyment/micro/getstate:
+    $ref: ./v2/applyment/micro/getstate.yaml
+  /v2/applyment/micro/getupgradestate:
+    $ref: ./v2/applyment/micro/getupgradestate.yaml
+  /v2/applyment/micro/modifyarchives:
+    $ref: ./v2/applyment/micro/modifyarchives.yaml
+  /v2/applyment/micro/modifycontactinfo:
+    $ref: ./v2/applyment/micro/modifycontactinfo.yaml
+  /v2/applyment/micro/submit:
+    $ref: ./v2/applyment/micro/submit.yaml
+  /v2/applyment/micro/submitupgrade:
+    $ref: ./v2/applyment/micro/submitupgrade.yaml
+  /v2/billcommentsp/batchquerycomment:
+    $ref: ./v2/billcommentsp/batchquerycomment.yaml
+  /v2/deposit/consume:
+    $ref: ./v2/deposit/consume.yaml
+  /v2/deposit/facepay:
+    $ref: ./v2/deposit/facepay.yaml
+  /v2/deposit/micropay:
+    $ref: ./v2/deposit/micropay.yaml
+  /v2/deposit/orderquery:
+    $ref: ./v2/deposit/orderquery.yaml
+  /v2/deposit/refund:
+    $ref: ./v2/deposit/refund.yaml
+  /v2/deposit/refundquery:
+    $ref: ./v2/deposit/refundquery.yaml
+  /v2/deposit/reverse:
+    $ref: ./v2/deposit/reverse.yaml
+  /v2/fund/queryautowithdrawbydate:
+    $ref: ./v2/fund/queryautowithdrawbydate.yaml
+  /v2/fund/reautowithdrawbydate:
+    $ref: ./v2/fund/reautowithdrawbydate.yaml
+  /v2/mchrisk/bankquerymchauditinfo:
+    $ref: ./v2/mchrisk/bankquerymchauditinfo.yaml
+  /v2/mchrisk/channelquerymchauditinfo:
+    $ref: ./v2/mchrisk/channelquerymchauditinfo.yaml
+  /v2/mchrisk/querymchrisk:
+    $ref: ./v2/mchrisk/querymchrisk.yaml
+  /v2/mchrisk/setmchriskcallback:
+    $ref: ./v2/mchrisk/setmchriskcallback.yaml
+  /v2/mchrisk/syncmchriskresult:
+    $ref: ./v2/mchrisk/syncmchriskresult.yaml
+  /v2/mmpaymkttransfers/gethbinfo:
+    $ref: ./v2/mmpaymkttransfers/gethbinfo.yaml
+  /v2/mmpaymkttransfers/gettransferinfo:
+    $ref: ./v2/mmpaymkttransfers/gettransferinfo.yaml
+  /v2/mmpaymkttransfers/pay_bank:
+    $ref: ./v2/mmpaymkttransfers/pay_bank.yaml
+  /v2/mmpaymkttransfers/promotion/transfers:
+    $ref: ./v2/mmpaymkttransfers/promotion/transfers.yaml
+  /v2/mmpaymkttransfers/query_bank:
+    $ref: ./v2/mmpaymkttransfers/query_bank.yaml
+  /v2/mmpaymkttransfers/query_coupon_stock:
+    $ref: ./v2/mmpaymkttransfers/query_coupon_stock.yaml
+  /v2/mmpaymkttransfers/querycouponsinfo:
+    $ref: ./v2/mmpaymkttransfers/querycouponsinfo.yaml
+  /v2/mmpaymkttransfers/send_coupon:
+    $ref: ./v2/mmpaymkttransfers/send_coupon.yaml
+  /v2/mmpaymkttransfers/sendgroupredpack:
+    $ref: ./v2/mmpaymkttransfers/sendgroupredpack.yaml
+  /v2/mmpaymkttransfers/sendredpack:
+    $ref: ./v2/mmpaymkttransfers/sendredpack.yaml
+  /v2/papay/deletecontract:
+    $ref: ./v2/papay/deletecontract.yaml
+  /v2/papay/entrustweb:
+    $ref: ./v2/papay/entrustweb.yaml
+  /v2/papay/h5entrustweb:
+    $ref: ./v2/papay/h5entrustweb.yaml
+  /v2/papay/querycontract:
+    $ref: ./v2/papay/querycontract.yaml
+  /v2/pay/closecombinedorder:
+    $ref: ./v2/pay/closecombinedorder.yaml
+  /v2/pay/closeorder:
+    $ref: ./v2/pay/closeorder.yaml
+  /v2/pay/combinedorder:
+    $ref: ./v2/pay/combinedorder.yaml
+  /v2/pay/contractorder:
+    $ref: ./v2/pay/contractorder.yaml
+  /v2/pay/downloadbill:
+    $ref: ./v2/pay/downloadbill.yaml
+  /v2/pay/downloadfundflow:
+    $ref: ./v2/pay/downloadfundflow.yaml
+  /v2/pay/facepay:
+    $ref: ./v2/pay/facepay.yaml
+  /v2/pay/facepayquery:
+    $ref: ./v2/pay/facepayquery.yaml
+  /v2/pay/micropay:
+    $ref: ./v2/pay/micropay.yaml
+  /v2/pay/orderquery:
+    $ref: ./v2/pay/orderquery.yaml
+  /v2/pay/paporderquery:
+    $ref: ./v2/pay/paporderquery.yaml
+  /v2/pay/partner/pappayapply:
+    $ref: ./v2/pay/partner/pappayapply.yaml
+  /v2/pay/profitsharingaddreceiver:
+    $ref: ./v2/pay/profitsharingaddreceiver.yaml
+  /v2/pay/profitsharingquery:
+    $ref: ./v2/pay/profitsharingquery.yaml
+  /v2/pay/profitsharingremovereceiver:
+    $ref: ./v2/pay/profitsharingremovereceiver.yaml
+  /v2/pay/querycombinedorder:
+    $ref: ./v2/pay/querycombinedorder.yaml
+  /v2/pay/refundquery:
+    $ref: ./v2/pay/refundquery.yaml
+  /v2/pay/unifiedorder:
+    $ref: ./v2/pay/unifiedorder.yaml
+  /v2/payitil/report:
+    $ref: ./v2/payitil/report.yaml
+  /v2/risk/getviolation:
+    $ref: ./v2/risk/getviolation.yaml
+  /v2/secapi/mch/addsubdevconfig:
+    $ref: ./v2/secapi/mch/addsubdevconfig.yaml
+  /v2/secapi/mch/modifymchinfo:
+    $ref: ./v2/secapi/mch/modifymchinfo.yaml
+  /v2/secapi/mch/querysubdevconfig:
+    $ref: ./v2/secapi/mch/querysubdevconfig.yaml
+  /v2/secapi/mch/submchmanage:
+    $ref: ./v2/secapi/mch/submchmanage.yaml
+  /v2/secapi/mch/uploadmedia:
+    $ref: ./v2/secapi/mch/uploadmedia.yaml
+  /v2/secapi/mkt/addrecommendconf:
+    $ref: ./v2/secapi/mkt/addrecommendconf.yaml
+  /v2/secapi/pay/facepayreverse:
+    $ref: ./v2/secapi/pay/facepayreverse.yaml
+  /v2/secapi/pay/multiprofitsharing:
+    $ref: ./v2/secapi/pay/multiprofitsharing.yaml
+  /v2/secapi/pay/profitsharing:
+    $ref: ./v2/secapi/pay/profitsharing.yaml
+  /v2/secapi/pay/profitsharingfinish:
+    $ref: ./v2/secapi/pay/profitsharingfinish.yaml
+  /v2/secapi/pay/refund:
+    $ref: ./v2/secapi/pay/refund.yaml
+  /v2/secapi/pay/reverse:
+    $ref: ./v2/secapi/pay/reverse.yaml
+  /v2/tools/authcodetoopenid:
+    $ref: ./v2/tools/authcodetoopenid.yaml
+  /v2/tools/shorturl:
+    $ref: ./v2/tools/shorturl.yaml
   /v3/-notify:
     $ref: ./v3/-notify.yaml
   /v3/apply4sub/sub_merchants/{sub_mchid}/modify-settlement:

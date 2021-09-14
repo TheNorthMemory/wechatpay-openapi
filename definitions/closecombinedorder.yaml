@@ -1,0 +1,117 @@
+closecombinedorder.request:
+  allOf:
+    - type: object
+      xml:
+        name: xml
+      required:
+        - combine_appid
+        - combine_mch_id
+        - nonce_str
+        - sign
+        - sign_type
+        - combine_out_trade_no
+        - sub_order_list
+      properties:
+        combine_appid:
+          type: string
+          description: 合单appid
+          example: wx8888888888888888
+          maxLength: 32
+        combine_mch_id:
+          type: string
+          description: 合单商户号
+          example: '1900000109'
+          maxLength: 32
+        nonce_str:
+          type: string
+          description: 随机字符串
+          example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+          maxLength: 32
+        sign:
+          type: string
+          description: 签名
+          example: C380BEC2BFD727A4B6845133519F3AD6
+          maxLength: 128
+        sign_type:
+          type: string
+          description: 签名类型
+          example: HMAC-SHA256
+          maxLength: 64
+        combine_out_trade_no:
+          type: string
+          description: 合单商户订单号
+          example: '1217752501201407033233368018'
+          maxLength: 32
+        sub_order_list:
+          xml:
+            x-cdata: true
+          type: string
+          description: +子单信息
+          example: '{"order_list": [{"appid": "wxdace645e0bc2c424","mch_id": "1900009001","out_trade_no": "OD201708030001","sub_appid": "wxdace645e0bc2c423","sub_mch_id": 1900009002}],"order_num": 3}'
+          maxLength: 10240
+closecombinedorder.response:
+  allOf:
+    - type: object
+      xml:
+        name: xml
+      required:
+        - return_code
+      properties:
+        return_code:
+          type: string
+          description: 返回状态码
+          example: SUCCESS
+          maxLength: 16
+        return_msg:
+          type: string
+          description: 返回信息
+          example: 签名失败
+          maxLength: 128
+          nullable: true
+    - type: object
+      xml:
+        name: xml
+      required:
+        - combine_appid
+        - combine_mch_id
+        - nonce_str
+        - sign
+        - result_code
+      properties:
+        combine_appid:
+          type: string
+          description: 合单appid
+          example: wx8888888888888888
+          maxLength: 32
+        combine_mch_id:
+          type: string
+          description: 合单商户号
+          example: '1900000109'
+          maxLength: 32
+        nonce_str:
+          type: string
+          description: 随机字符串
+          example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+          maxLength: 32
+        sign:
+          type: string
+          description: 签名
+          example: C380BEC2BFD727A4B6845133519F3AD6
+          maxLength: 128
+        result_code:
+          type: string
+          description: 业务结果
+          example: SUCCESS
+          maxLength: 16
+        err_code:
+          type: string
+          description: 错误代码
+          example: SYSTEMERROR
+          maxLength: 32
+          nullable: true
+        err_code_des:
+          type: string
+          description: 错误代码描述
+          example: 系统错误
+          maxLength: 128
+          nullable: true

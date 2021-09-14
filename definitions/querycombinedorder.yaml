@@ -1,0 +1,146 @@
+querycombinedorder.request:
+  allOf:
+    - type: object
+      xml:
+        name: xml
+      required:
+        - combine_appid
+        - combine_mch_id
+        - nonce_str
+        - sign
+        - sign_type
+        - combine_out_trade_no
+      properties:
+        combine_appid:
+          type: string
+          description: 合单appid
+          example: wx8888888888888888
+          maxLength: 32
+        combine_mch_id:
+          type: string
+          description: 合单商户号
+          example: '1900000109'
+          maxLength: 32
+        nonce_str:
+          type: string
+          description: 随机字符串
+          example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+          maxLength: 32
+        sign:
+          type: string
+          description: 签名
+          example: C380BEC2BFD727A4B6845133519F3AD6
+          maxLength: 128
+        sign_type:
+          type: string
+          description: 签名类型
+          example: HMAC-SHA256
+          maxLength: 64
+        combine_out_trade_no:
+          type: string
+          description: 合单商户订单号
+          example: '1217752501201407033233368018'
+          maxLength: 32
+querycombinedorder.response:
+  allOf:
+    - type: object
+      xml:
+        name: xml
+      required:
+        - return_code
+      properties:
+        return_code:
+          type: string
+          description: 返回状态码
+          example: SUCCESS
+          maxLength: 16
+        return_msg:
+          type: string
+          description: 返回信息
+          example: 签名失败
+          maxLength: 128
+          nullable: true
+    - type: object
+      xml:
+        name: xml
+      required:
+        - combine_appid
+        - combine_mch_id
+        - nonce_str
+        - combine_out_trade_no
+        - sign
+        - result_code
+        - result_msg
+      properties:
+        combine_appid:
+          type: string
+          description: 合单appid
+          example: wx8888888888888888
+          maxLength: 32
+        combine_mch_id:
+          type: string
+          description: 合单商户号
+          example: '1900000109'
+          maxLength: 32
+        nonce_str:
+          type: string
+          description: 随机字符串
+          example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+          maxLength: 32
+        device_info:
+          type: string
+          description: 设备号
+          example: '000077'
+          maxLength: 32
+          nullable: true
+        combine_openid:
+          type: string
+          description: 合单用户标识
+          example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+          maxLength: 128
+          nullable: true
+        combine_out_trade_no:
+          type: string
+          description: 合单商户订单号
+          example: '1217752501201407033233368018'
+          maxLength: 32
+        sign:
+          type: string
+          description: 签名
+          example: C380BEC2BFD727A4B6845133519F3AD6
+          maxLength: 128
+        result_code:
+          type: string
+          description: 业务结果
+          example: SUCCESS
+          maxLength: 16
+        result_msg:
+          type: string
+          description: 业务结果描述
+          example: OK
+          maxLength: 32
+        err_code:
+          type: string
+          description: 错误代码
+          example: SYSTEMERROR
+          maxLength: 32
+          nullable: true
+        err_code_des:
+          type: string
+          description: 错误代码描述
+          example: 系统错误
+          maxLength: 128
+          nullable: true
+    - type: object
+      xml:
+        name: xml
+      required:
+        - sub_order_list
+      properties:
+        sub_order_list:
+          xml:
+            x-cdata: true
+          type: string
+          description: +子单信息
+          example: '{"order_num": 3,"order_list": [{"appid":"wx2421b1c4370ec43b","mch_id":"1230000109","openid":"oUpF8uMuAJO_M2pxb1Q9zNjWeS6o","total_fee":100,"cash_fee":100,"transaction_id":"4217752501201407033233368018","out_trade_no":"12177525012","attach":"test001","time_end":"20171030133525"},{"appid":"wx2421b1c4370ec43b","mch_id":"1230000109","openid":"oUpF8uMuAJO_M2pxb1Q9zNjWeS6o","sub_appid":"wx2421b1c437055ce","sub_mch_id":"1230000108","sub_openid":"oUp3rfMuAJO_123xb1Q9zNjWedco","trade_type":"JSAPI","total_fee":100,"cash_fee":100,"transaction_id":"4217752501201407033233368018","out_trade_no":"12177525012","attach":"test001","time_end":"20171030133525"},{"appid":"wx2421b1c4370ec43b","mch_id":"1230000109","openid":"oUpF8uMuAJO_M2pxb1Q9zNjWeS6o","trade_type":"JSAPI","total_fee":100,"fee_type":"USD","cash_fee":100,"cash_fee_type":"CNY","transaction_id":"4217752501201407033233368018","out_trade_no":"12177525012","attach":"test001","time_end":"20171030133525","rate_value":"65000000"}]}'
+          maxLength: 10240

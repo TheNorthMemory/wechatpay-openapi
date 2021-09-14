@@ -1,0 +1,22 @@
+post:
+  x-api-cert-required: true
+  tags:
+    - 支付∙企业付款
+    - 支付∙银行服务商∙企业付款
+  summary: 查询企业付款银行卡
+  description: 用于对商户企业付款到银行卡操作进行结果查询，返回付款操作详细结果。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/tools/mch_pay.php?chapter=24_3)
+  consumes:
+    - application/xml
+  produces:
+    - application/xml
+  parameters:
+    - name: buffer
+      in: body
+      required: true
+      schema:
+        $ref: '../../definitions/query_bank.yaml#/query_bank.request'
+  responses:
+    '200':
+      description: ''
+      schema:
+        $ref: '../../definitions/query_bank.yaml#/query_bank.response'

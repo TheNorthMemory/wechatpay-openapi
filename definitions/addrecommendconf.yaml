@@ -1,0 +1,12 @@
+addrecommendconf.request:
+  allOf:
+    - type: object
+      xml:
+        name: xml
+      properties: {}
+addrecommendconf.response:
+  allOf:
+    - type: object
+      xml:
+        name: xml
+      properties: {}

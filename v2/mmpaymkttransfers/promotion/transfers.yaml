@@ -1,0 +1,21 @@
+post:
+  x-api-cert-required: true
+  tags:
+    - 支付∙企业付款
+  summary: 向微信用户个人付款
+  description: 目前支持向指定微信用户的openid付款。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/tools/mch_pay.php?chapter=14_2)
+  consumes:
+    - application/xml
+  produces:
+    - application/xml
+  parameters:
+    - name: buffer
+      in: body
+      required: true
+      schema:
+        $ref: '../../../definitions/transfers.yaml#/transfers.request'
+  responses:
+    '200':
+      description: ''
+      schema:
+        $ref: '../../../definitions/transfers.yaml#/transfers.response'

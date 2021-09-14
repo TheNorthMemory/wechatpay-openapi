@@ -1,0 +1,183 @@
+send_coupon.request:
+  type: object
+  xml:
+    name: xml
+  required:
+    - coupon_stock_id
+    - openid_count
+    - partner_trade_no
+    - openid
+    - appid
+    - mch_id
+    - nonce_str
+    - sign
+  properties:
+    coupon_stock_id:
+      type: string
+      description: 代金券批次id
+      example: '1757'
+    openid_count:
+      format: int32
+      type: integer
+      description: openid记录数
+      example: '1'
+    partner_trade_no:
+      type: string
+      description: 商户单据号
+      example: '1000009820141203515766'
+    openid:
+      type: string
+      description: 用户openid
+      example: onqOjjrXT-776SpHnfexGm1_P7iE
+    appid:
+      type: string
+      description: 公众账号ID
+      example: wx5edab3bdfba3dc1c
+      maxLength: 32
+    mch_id:
+      type: string
+      description: 商户号
+      example: '10000098'
+      maxLength: 32
+    op_user_id:
+      type: string
+      description: 操作员
+      example: '10000098'
+      maxLength: 32
+      nullable: true
+    device_info:
+      type: string
+      description: 设备号
+      maxLength: 32
+      nullable: true
+    nonce_str:
+      type: string
+      description: 随机字符串
+      example: '1417574675'
+      maxLength: 32
+    sign:
+      type: string
+      description: 签名
+      example: 841B3002FE2220C87A2D08ABD8A8F791
+      maxLength: 32
+    version:
+      type: string
+      description: 协议版本
+      example: '1.0'
+      maxLength: 32
+      nullable: true
+    type:
+      type: string
+      description: 协议类型
+      example: XML
+      maxLength: 32
+      nullable: true
+send_coupon.response:
+  type: object
+  xml:
+    name: xml
+  required:
+    - return_code
+    - appid
+    - mch_id
+    - nonce_str
+    - sign
+    - result_code
+    - coupon_stock_id
+    - resp_count
+    - success_count
+    - failed_count
+    - openid
+    - ret_code
+    - coupon_id
+    - ret_msg
+  properties:
+    return_code:
+      type: string
+      description: 返回状态码
+      example: SUCCESS或者FAIL
+      maxLength: 16
+    return_msg:
+      type: string
+      description: 返回信息
+      example: 成功：返回空”
+      maxLength: 128
+      nullable: true
+    appid:
+      type: string
+      description: 公众账号ID
+      example: wx5edab3bdfba3dc1c
+      maxLength: 32
+    mch_id:
+      type: string
+      description: 商户号
+      example: '10000098'
+      maxLength: 32
+    device_info:
+      type: string
+      description: 设备号
+      example: 123456sb
+      maxLength: 32
+      nullable: true
+    nonce_str:
+      type: string
+      description: 随机字符串
+      example: '1417574675'
+      maxLength: 32
+    sign:
+      type: string
+      description: 签名
+      example: 841B3002FE2220C87A2D08ABD8A8F791
+      maxLength: 32
+    result_code:
+      type: string
+      description: 业务结果
+      example: SUCCESS或者FAIL
+      maxLength: 16
+    err_code:
+      type: string
+      description: 错误代码
+      example: PARAM_ERROR
+      maxLength: 32
+      nullable: true
+    err_code_des:
+      type: string
+      description: 错误代码描述
+      example: 错误描述信息
+      maxLength: 128
+      nullable: true
+    coupon_stock_id:
+      type: string
+      description: 代金券批次id
+      example: '1757'
+    resp_count:
+      format: int32
+      type: integer
+      description: 返回记录数
+      example: '1'
+    success_count:
+      format: int32
+      type: integer
+      description: 成功记录数
+      example: 1或者0
+    failed_count:
+      format: int32
+      type: integer
+      description: 失败记录数
+      example: 1或者0
+    openid:
+      type: string
+      description: 用户标识
+      example: onqOjjrXT-776SpHnfexGm1_P7iE
+    ret_code:
+      type: string
+      description: 返回码
+      example: SUCCESS或者FAILED
+    coupon_id:
+      type: string
+      description: 代金券id
+      example: '1870'
+    ret_msg:
+      type: string
+      description: 返回信息
+      example: 失败描述信息，例如：“用户已达领用上限”

@@ -1,0 +1,12 @@
+querymchrisk.request:
+  allOf:
+    - type: object
+      xml:
+        name: xml
+      properties: {}
+querymchrisk.response:
+  allOf:
+    - type: object
+      xml:
+        name: xml
+      properties: {}

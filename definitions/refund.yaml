@@ -1,0 +1,279 @@
+refund.request:
+  type: object
+  xml:
+    name: xml
+  required:
+    - appid
+    - mch_id
+    - nonce_str
+    - sign
+    - transaction_id
+    - out_trade_no
+    - out_refund_no
+    - total_fee
+    - refund_fee
+  properties:
+    appid:
+      type: string
+      description: 公众账号ID
+      example: wx8888888888888888
+      maxLength: 32
+    sub_appid:
+      type: string
+      description: 子商户公众账号ID
+      example: wx8888888888888888
+      maxLength: 32
+      nullable: true
+    mch_id:
+      type: string
+      description: 商户号
+      example: '1900000109'
+      maxLength: 32
+    sub_mch_id:
+      type: string
+      description: 子商户号
+      example: '1900000109'
+      maxLength: 32
+    nonce_str:
+      type: string
+      description: 随机字符串
+      example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+      maxLength: 32
+    sign:
+      type: string
+      description: 签名
+      example: C380BEC2BFD727A4B6845133519F3AD6
+      maxLength: 32
+    sign_type:
+      type: string
+      description: 签名类型
+      example: HMAC-SHA256
+      maxLength: 32
+      nullable: true
+    transaction_id:
+      type: string
+      description: 微信订单号
+      example: '1217752501201407033233368018'
+      maxLength: 32
+    out_trade_no:
+      type: '1217752501201407033233368018'
+      description: 商户订单号
+      example: 商户系统内部订单号，要求32个字符内，只能是数字、大小写字母_-|*@ ，且在同一个商户号下唯一。
+    out_refund_no:
+      type: string
+      description: 商户退款单号
+      example: '1217752501201407033233368018'
+      maxLength: 64
+    total_fee:
+      format: int32
+      type: integer
+      description: 订单金额
+      example: '100'
+    refund_fee:
+      format: int32
+      type: integer
+      description: 退款金额
+      example: '100'
+    refund_fee_type:
+      type: string
+      description: 退款货币种类
+      example: CNY
+      maxLength: 8
+      nullable: true
+    refund_desc:
+      type: string
+      description: 退款原因
+      example: 商品已售完
+      maxLength: 80
+      nullable: true
+    refund_account:
+      type: string
+      description: 退款资金来源
+      example: REFUND_SOURCE_RECHARGE_FUNDS
+      maxLength: 30
+      nullable: true
+    notify_url:
+      type: string
+      description: 退款结果通知url
+      example: 'https://weixin.qq.com/notify/'
+      maxLength: 256
+      nullable: true
+refund.response:
+  allOf:
+    - type: object
+      xml:
+        name: xml
+      required:
+        - return_code
+        - return_msg
+      properties:
+        return_code:
+          type: string
+          description: 返回状态码
+          example: SUCCESS
+          maxLength: 16
+        return_msg:
+          type: string
+          description: 返回信息
+          example: OK
+          maxLength: 128
+    - type: object
+      xml:
+        name: xml
+      required:
+        - result_code
+        - appid
+        - mch_id
+        - nonce_str
+        - sign
+        - transaction_id
+        - out_trade_no
+        - out_refund_no
+        - refund_id
+        - refund_fee
+        - total_fee
+        - cash_fee
+      properties:
+        result_code:
+          type: string
+          description: 业务结果
+          example: SUCCESS
+          maxLength: 16
+        err_code:
+          type: string
+          description: 错误代码
+          example: SYSTEMERROR
+          maxLength: 32
+          nullable: true
+        err_code_des:
+          type: string
+          description: 错误代码描述
+          example: 系统超时
+          maxLength: 128
+          nullable: true
+        appid:
+          type: string
+          description: 公众账号ID
+          example: wx8888888888888888
+          maxLength: 32
+        mch_id:
+          type: string
+          description: 商户号
+          example: '1900000109'
+          maxLength: 32
+        sub_appid:
+          type: string
+          description: 子商户公众账号ID
+          example: wx8888888888888888
+          maxLength: 32
+          nullable: true
+        sub_mch_id:
+          type: string
+          description: 子商户号
+          example: '1900000109'
+          maxLength: 32
+        nonce_str:
+          type: string
+          description: 随机字符串
+          example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+          maxLength: 32
+        sign:
+          type: string
+          description: 签名
+          example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+          maxLength: 32
+        transaction_id:
+          type: string
+          description: 微信订单号
+          example: '4007752501201407033233368018'
+          maxLength: 32
+        out_trade_no:
+          type: string
+          description: 商户订单号
+          example: '33368018'
+          maxLength: 32
+        out_refund_no:
+          type: string
+          description: 商户退款单号
+          example: '121775250'
+          maxLength: 64
+        refund_id:
+          type: string
+          description: 微信退款单号
+          example: '2007752501201407033233368018'
+          maxLength: 32
+        refund_fee:
+          format: int32
+          type: integer
+          description: 退款金额
+          example: '100'
+        settlement_refund_fee:
+          format: int32
+          type: integer
+          description: 应结退款金额
+          example: '100'
+          nullable: true
+        total_fee:
+          format: int32
+          type: integer
+          description: 标价金额
+          example: '100'
+        settlement_total_fee:
+          format: int32
+          type: integer
+          description: 应结订单金额
+          example: '100'
+          nullable: true
+        fee_type:
+          type: string
+          description: 标价币种
+          example: CNY
+          maxLength: 8
+          nullable: true
+        cash_fee:
+          format: int32
+          type: integer
+          description: 现金支付金额
+          example: '100'
+        cash_fee_type:
+          type: string
+          description: 现金支付币种
+          example: CNY
+          maxLength: 16
+          nullable: true
+        cash_refund_fee:
+          format: int32
+          type: integer
+          description: 现金退款金额
+          example: '100'
+          nullable: true
+        coupon_type_$n:
+          type: string
+          description: 代金券类型
+          example: CASH
+          maxLength: 8
+          nullable: true
+        coupon_refund_fee:
+          format: int32
+          type: integer
+          description: 代金券退款总金额
+          example: '100'
+          nullable: true
+        coupon_refund_fee_$n:
+          format: int32
+          type: integer
+          description: 单个代金券退款金额
+          example: '100'
+          nullable: true
+        coupon_refund_count:
+          format: int32
+          type: integer
+          description: 退款代金券使用数量
+          example: '1'
+          nullable: true
+        coupon_refund_id_$n:
+          type: string
+          description: 退款代金券ID
+          example: '10000'
+          maxLength: 20
+          nullable: true

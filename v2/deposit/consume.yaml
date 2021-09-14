@@ -1,0 +1,21 @@
+post:
+  x-api-cert-required: true
+  tags:
+    - 支付∙酒店押金
+  summary: 消费押金
+  description: '微信支付根据商户指令，将用户消费金额扣除手续费后结算给指定商户，剩余金额原路退还给用户，并生成押金退款交易记录，给用户下发押金退还发起通知，并更改押金支付的交易记录。用户押金退还到账后，下发押金退还到账通知。若全部消费，则下发押金全部消费通知;[官方文档](https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=27_4&index=5)'
+  consumes:
+    - application/xml
+  produces:
+    - application/xml
+  parameters:
+    - name: buffer
+      in: body
+      required: true
+      schema:
+        $ref: '../../definitions/consume.yaml#/consume.request'
+  responses:
+    '200':
+      description: ''
+      schema:
+        $ref: '../../definitions/consume.yaml#/consume.response'

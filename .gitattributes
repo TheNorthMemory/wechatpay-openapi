@@ -1,0 +1,10 @@
+.editorconfig          export-ignore
+.gitattributes         export-ignore
+/.github/              export-ignore
+.gitignore             export-ignore
+/v2/                   export-ignore
+/v3/                   export-ignore
+/definitions/          export-ignore
+/index.html            export-ignore
+/swagger.yaml          export-ignore
+/phpstan.neon.dist     export-ignore

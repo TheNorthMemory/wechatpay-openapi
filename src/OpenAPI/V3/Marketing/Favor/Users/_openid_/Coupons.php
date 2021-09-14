@@ -1,0 +1,85 @@
+<?php declare(strict_types=1);/* Generated file. DO NOT EDIT! */
+
+namespace WeChatPay\OpenAPI\V3\Marketing\Favor\Users\_openid_;
+
+use Psr\Http\Message\ResponseInterface;
+use GuzzleHttp\Promise\PromiseInterface;
+
+/**
+ * 这是一个纯接口描述文件，由程序自动生成，旨在为IDE提供结构提示，无他用。
+ * @property-read Coupons\_coupon_id_ $_coupon_id_
+ */
+interface Coupons
+{
+    /**
+     * 发放代金券(同步模式)
+     * @param array<string,mixed> $options
+     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/convention/chapter3_2.shtml
+     */
+    public function post(array $options = [
+        'openid' => '',
+        'json' => [
+            'stock_id' => '',
+            'out_request_no' => '',
+            'appid' => '',
+            'stock_creator_mchid' => '',
+            'coupon_value' => 0,
+            'coupon_minimum' => 0,
+        ],
+    ]): ResponseInterface;
+
+    /**
+     * 发放代金券(异步模式)
+     * @param array<string,mixed> $options
+     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/convention/chapter3_2.shtml#async
+     */
+    public function postAsync(array $options = [
+        'openid' => '',
+        'json' => [
+            'stock_id' => '',
+            'out_request_no' => '',
+            'appid' => '',
+            'stock_creator_mchid' => '',
+            'coupon_value' => 0,
+            'coupon_minimum' => 0,
+        ],
+    ]): PromiseInterface;
+
+    /**
+     * 根据商户号查用户的券(同步模式)
+     * @param array<string,mixed> $options
+     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/convention/chapter3_9.shtml
+     */
+    public function get(array $options = [
+        'openid' => '',
+        'query' => [
+            'appid' => '',
+            'stock_id' => '',
+            'status' => '',
+            'creator_mchid' => '',
+            'sender_mchid' => '',
+            'available_mchid' => '',
+            'offset' => 0,
+            'limit' => 0,
+        ],
+    ]): ResponseInterface;
+
+    /**
+     * 根据商户号查用户的券(异步模式)
+     * @param array<string,mixed> $options
+     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/convention/chapter3_9.shtml#async
+     */
+    public function getAsync(array $options = [
+        'openid' => '',
+        'query' => [
+            'appid' => '',
+            'stock_id' => '',
+            'status' => '',
+            'creator_mchid' => '',
+            'sender_mchid' => '',
+            'available_mchid' => '',
+            'offset' => 0,
+            'limit' => 0,
+        ],
+    ]): PromiseInterface;
+}

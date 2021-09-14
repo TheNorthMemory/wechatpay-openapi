@@ -2,3 +2,7 @@
 .DS_Store
 .vscode
 thumbs.db
+/vendor/
+/test/
+/.phpunit.result.cache
+composer.lock

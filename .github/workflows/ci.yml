@@ -41,11 +41,3 @@ jobs:
         run: composer install --prefer-dist --no-progress
 
       - run: vendor/bin/phpstan analyse --no-progress
-
-      - run: |
-          make keygen
-          make x509crt
-
-      - run: vendor/bin/phpunit
-
-      - run: make clean

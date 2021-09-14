@@ -29,7 +29,7 @@ jobs:
         run: echo "::set-output name=dir::$(composer config cache-files-dir)"
 
       - name: Cache dependencies on PHP${{ matrix.php-version }}@${{ matrix.os }}
-        id: dependencies-cache-${{ matrix.php-version }}
+        id: dependencies-cache
         uses: actions/cache@v2
         with:
           path: ${{ steps.composer-cache.outputs.dir }}

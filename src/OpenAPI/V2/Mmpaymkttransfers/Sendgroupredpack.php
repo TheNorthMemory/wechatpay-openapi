@@ -17,6 +17,21 @@ interface Sendgroupredpack
      */
     public function post(array $options = [
         'xml' => [
+            'nonce_str' => '',
+            'sign' => '',
+            'mch_billno' => '',
+            'mch_id' => '',
+            'wxappid' => '',
+            'send_name' => '',
+            're_openid' => '',
+            'total_amount' => '0',
+            'total_num' => '0',
+            'amt_type' => '',
+            'wishing' => '',
+            'act_name' => '',
+            'remark' => '',
+            'scene_id' => '',
+            'risk_info' => '',
         ],
         'security' => true,
     ]): ResponseInterface;
@@ -28,6 +43,21 @@ interface Sendgroupredpack
      */
     public function postAsync(array $options = [
         'xml' => [
+            'nonce_str' => '',
+            'sign' => '',
+            'mch_billno' => '',
+            'mch_id' => '',
+            'wxappid' => '',
+            'send_name' => '',
+            're_openid' => '',
+            'total_amount' => '0',
+            'total_num' => '0',
+            'amt_type' => '',
+            'wishing' => '',
+            'act_name' => '',
+            'remark' => '',
+            'scene_id' => '',
+            'risk_info' => '',
         ],
         'security' => true,
     ]): PromiseInterface;

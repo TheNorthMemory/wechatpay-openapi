@@ -17,6 +17,10 @@ interface Query_bank
      */
     public function post(array $options = [
         'xml' => [
+            'mch_id' => '',
+            'partner_trade_no' => '',
+            'nonce_str' => '',
+            'sign' => '',
         ],
         'security' => true,
     ]): ResponseInterface;
@@ -28,6 +32,10 @@ interface Query_bank
      */
     public function postAsync(array $options = [
         'xml' => [
+            'mch_id' => '',
+            'partner_trade_no' => '',
+            'nonce_str' => '',
+            'sign' => '',
         ],
         'security' => true,
     ]): PromiseInterface;

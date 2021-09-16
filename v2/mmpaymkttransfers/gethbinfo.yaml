@@ -15,9 +15,196 @@ post:
       in: body
       required: true
       schema:
-        $ref: '../../definitions/gethbinfo.yaml#/gethbinfo.request'
+        type: object
+        xml:
+          name: xml
+        required:
+          - nonce_str
+          - sign
+          - mch_billno
+          - mch_id
+          - appid
+          - bill_type
+        properties:
+          nonce_str:
+            type: string
+            description: 随机字符串
+            example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+            maxLength: 32
+          sign:
+            type: string
+            description: 签名
+            example: C380BEC2BFD727A4B6845133519F3AD6
+            maxLength: 32
+          mch_billno:
+            type: string
+            description: 商户订单号
+            example: '10000098201411111234567890'
+            maxLength: 28
+          mch_id:
+            type: string
+            description: 商户号
+            example: '10000098'
+            maxLength: 32
+          appid:
+            type: string
+            description: Appid
+            example: wxe062425f740d30d8
+            maxLength: 32
+          bill_type:
+            type: string
+            description: 订单类型
+            example: MCHT
+            maxLength: 32
   responses:
     '200':
       description: ''
       schema:
-        $ref: '../../definitions/gethbinfo.yaml#/gethbinfo.response'
+        type: object
+        xml:
+          name: xml
+        required:
+          - return_code
+          - result_code
+          - mch_billno
+          - mch_id
+          - detail_id
+          - status
+          - send_type
+          - hb_type
+          - total_num
+          - total_amount
+          - send_time
+          - openid
+          - amount
+          - rcv_time
+        properties:
+          return_code:
+            type: string
+            description: 返回状态码
+            example: SUCCESS
+            maxLength: 16
+          return_msg:
+            type: string
+            description: 返回信息
+            example: 签名失败
+            maxLength: 128
+            nullable: true
+          result_code:
+            type: string
+            description: 业务结果
+            example: SUCCESS
+            maxLength: 16
+          err_code:
+            type: string
+            description: 错误代码
+            example: SYSTEMERROR
+            maxLength: 32
+            nullable: true
+          err_code_des:
+            type: string
+            description: 错误代码描述
+            example: 系统错误
+            maxLength: 128
+            nullable: true
+          mch_billno:
+            type: string
+            description: 商户订单号
+            example: '10000098201411111234567890'
+            maxLength: 28
+          mch_id:
+            type: string
+            description: 商户号
+            example: '10000098'
+            maxLength: 32
+          detail_id:
+            type: string
+            description: 红包单号
+            example: '1000000000201503283103439304'
+            maxLength: 32
+          status:
+            type: string
+            description: 红包状态
+            example: RECEIVED
+            maxLength: 16
+          send_type:
+            type: string
+            description: 发放类型
+            example: API
+            maxLength: 32
+          hb_type:
+            type: string
+            description: 红包类型
+            example: GROUP
+            maxLength: 32
+          total_num:
+            format: int32
+            type: integer
+            description: 红包个数
+            example: '1'
+          total_amount:
+            format: int32
+            type: integer
+            description: 红包金额
+            example: '5000'
+          reason:
+            type: string
+            description: 失败原因
+            example: 余额不足
+            maxLength: 32
+            nullable: true
+          send_time:
+            type: string
+            description: 红包发送时间
+            example: '2015-04-21    20:00:00'
+            maxLength: 32
+          refund_time:
+            type: string
+            description: 红包退款时间
+            example: '2015-04-21    23:03:00'
+            maxLength: 32
+            nullable: true
+          refund_amount:
+            format: int32
+            type: integer
+            description: 红包退款金额
+            example: '8000'
+            nullable: true
+          wishing:
+            type: string
+            description: 祝福语
+            example: 新年快乐
+            maxLength: 128
+            nullable: true
+          remark:
+            type: string
+            description: 活动描述
+            example: 新年红包
+            maxLength: 256
+            nullable: true
+          act_name:
+            type: string
+            description: 活动名称
+            example: 新年红包
+            maxLength: 32
+            nullable: true
+          hblist:
+            type: ''
+            description: 裂变红包领取列表
+            example: 内容如下表
+            nullable: true
+          openid:
+            type: string
+            description: 领取红包的Openid
+            example: ohO4GtzOAAYMp2yapORH3dQB3W18
+            maxLength: 32
+          amount:
+            format: int32
+            type: integer
+            description: 金额
+            example: '100'
+          rcv_time:
+            type: string
+            description: 接收时间
+            example: '2015-04-21 20:00:00'
+            maxLength: 32

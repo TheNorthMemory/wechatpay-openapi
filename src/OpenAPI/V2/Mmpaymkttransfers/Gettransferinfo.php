@@ -17,6 +17,11 @@ interface Gettransferinfo
      */
     public function post(array $options = [
         'xml' => [
+            'nonce_str' => '',
+            'sign' => '',
+            'partner_trade_no' => '',
+            'mch_id' => '',
+            'appid' => '',
         ],
         'security' => true,
     ]): ResponseInterface;
@@ -28,6 +33,11 @@ interface Gettransferinfo
      */
     public function postAsync(array $options = [
         'xml' => [
+            'nonce_str' => '',
+            'sign' => '',
+            'partner_trade_no' => '',
+            'mch_id' => '',
+            'appid' => '',
         ],
         'security' => true,
     ]): PromiseInterface;

@@ -17,6 +17,18 @@ interface Transfers
      */
     public function post(array $options = [
         'xml' => [
+            'mch_appid' => '',
+            'mchid' => '',
+            'device_info' => '',
+            'nonce_str' => '',
+            'sign' => '',
+            'partner_trade_no' => '',
+            'openid' => '',
+            'check_name' => '',
+            're_user_name' => '',
+            'amount' => '0',
+            'desc' => '',
+            'spbill_create_ip' => '',
         ],
         'security' => true,
     ]): ResponseInterface;
@@ -28,6 +40,18 @@ interface Transfers
      */
     public function postAsync(array $options = [
         'xml' => [
+            'mch_appid' => '',
+            'mchid' => '',
+            'device_info' => '',
+            'nonce_str' => '',
+            'sign' => '',
+            'partner_trade_no' => '',
+            'openid' => '',
+            'check_name' => '',
+            're_user_name' => '',
+            'amount' => '0',
+            'desc' => '',
+            'spbill_create_ip' => '',
         ],
         'security' => true,
     ]): PromiseInterface;

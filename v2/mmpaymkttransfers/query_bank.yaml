@@ -14,9 +14,132 @@ post:
       in: body
       required: true
       schema:
-        $ref: '../../definitions/query_bank.yaml#/query_bank.request'
+        type: object
+        xml:
+          name: xml
+        required:
+          - mch_id
+          - partner_trade_no
+          - nonce_str
+          - sign
+        properties:
+          mch_id:
+            type: string
+            description: 商户号
+            example: '1900000109'
+            maxLength: 32
+          partner_trade_no:
+            type: string
+            description: 商户企业付款单号
+            example: '1212121221227'
+            maxLength: 32
+          nonce_str:
+            type: string
+            description: 随机字符串
+            example: 5K8264ILTKCH16CQ2502SI8ZNMTM67Vs
+            maxLength: 32
+          sign:
+            type: string
+            description: 签名
+            example: C380BEC2BFD727A4B6845133519F3AD6
+            maxLength: 32
   responses:
     '200':
       description: ''
       schema:
-        $ref: '../../definitions/query_bank.yaml#/query_bank.response'
+        allOf:
+          - type: object
+            xml:
+              name: xml
+            required:
+              - return_code
+            properties:
+              return_code:
+                type: string
+                description: 返回状态码
+                maxLength: 16
+              return_msg:
+                type: string
+                description: 返回信息
+                maxLength: 128
+                nullable: true
+          - type: object
+            xml:
+              name: xml
+            required:
+              - result_code
+            properties:
+              result_code:
+                type: string
+                description: 业务结果
+                maxLength: 16
+              err_code:
+                type: string
+                description: 错误代码
+                maxLength: 32
+                nullable: true
+              err_code_des:
+                type: string
+                description: 错误代码描述
+                maxLength: 128
+                nullable: true
+          - type: object
+            xml:
+              name: xml
+            required:
+              - mch_id
+              - partner_trade_no
+              - payment_no
+              - bank_no_md5
+              - true_name_md5
+              - amount
+              - status
+              - cmms_amt
+              - create_time
+            properties:
+              mch_id:
+                type: string
+                description: 商户号
+                maxLength: 32
+              partner_trade_no:
+                type: string
+                description: 商户企业付款单号
+                maxLength: 32
+              payment_no:
+                type: string
+                description: 微信企业付款单号
+                maxLength: 64
+              bank_no_md5:
+                type: string
+                description: 银行卡号
+                maxLength: 32
+              true_name_md5:
+                type: string
+                description: 用户真实姓名
+                maxLength: 32
+              amount:
+                format: int32
+                type: integer
+                description: 代付金额
+              status:
+                type: string
+                description: 代付单状态
+                maxLength: 16
+              cmms_amt:
+                format: int32
+                type: integer
+                description: 手续费金额
+              create_time:
+                type: string
+                description: 商户下单时间
+                maxLength: 32
+              pay_succ_time:
+                type: string
+                description: 成功付款时间
+                maxLength: 32
+                nullable: true
+              reason:
+                type: string
+                description: 失败原因
+                maxLength: 128
+                nullable: true

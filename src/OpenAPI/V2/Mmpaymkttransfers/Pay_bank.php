@@ -17,6 +17,15 @@ interface Pay_bank
      */
     public function post(array $options = [
         'xml' => [
+            'mch_id' => '',
+            'partner_trade_no' => '',
+            'nonce_str' => '',
+            'sign' => '',
+            'enc_bank_no' => '',
+            'enc_true_name' => '',
+            'bank_code' => '',
+            'amount' => '0',
+            'desc' => '',
         ],
         'security' => true,
     ]): ResponseInterface;
@@ -28,6 +37,15 @@ interface Pay_bank
      */
     public function postAsync(array $options = [
         'xml' => [
+            'mch_id' => '',
+            'partner_trade_no' => '',
+            'nonce_str' => '',
+            'sign' => '',
+            'enc_bank_no' => '',
+            'enc_true_name' => '',
+            'bank_code' => '',
+            'amount' => '0',
+            'desc' => '',
         ],
         'security' => true,
     ]): PromiseInterface;

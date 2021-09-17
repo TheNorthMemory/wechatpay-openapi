@@ -13,9 +13,113 @@ post:
       in: body
       required: true
       schema:
-        $ref: '../../definitions/shorturl.yaml#/shorturl.request'
+        type: object
+        xml:
+          name: xml
+        required:
+          - appid
+          - mch_id
+          - long_url
+          - nonce_str
+          - sign
+        properties:
+          appid:
+            type: string
+            description: 公众账号ID
+            example: wx8888888888888888
+            maxLength: 32
+          mch_id:
+            type: string
+            description: 商户号
+            example: '1900000109'
+            maxLength: 32
+          long_url:
+            type: string
+            description: URL链接
+            example: weixin：//wxpay/bizpayurl?sign=XXXXX&appid=XXXXX&mch_id=XXXXX&product_id=XXXXXX&time_stamp=XXXXXX&nonce_str=XXXXX
+            maxLength: 512
+          nonce_str:
+            type: string
+            description: 随机字符串
+            example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+            maxLength: 32
+          sign:
+            type: string
+            description: 签名
+            example: C380BEC2BFD727A4B6845133519F3AD6
+            maxLength: 32
+          sign_type:
+            type: string
+            description: 签名类型
+            example: HMAC-SHA256
+            maxLength: 32
+            nullable: true
   responses:
     '200':
       description: ''
       schema:
-        $ref: '../../definitions/shorturl.yaml#/shorturl.response'
+        allOf:
+          - type: object
+            xml:
+              name: xml
+            required:
+              - return_code
+              - return_msg
+            properties:
+              return_code:
+                type: string
+                description: 返回状态码
+                example: SUCCESS
+                maxLength: 16
+              return_msg:
+                type: string
+                description: 返回信息
+                example: OK
+                maxLength: 128
+          - type: object
+            xml:
+              name: xml
+            required:
+              - appid
+              - mch_id
+              - nonce_str
+              - sign
+              - result_code
+              - short_url
+            properties:
+              appid:
+                type: string
+                description: 公众账号ID
+                example: wx8888888888888888
+                maxLength: 32
+              mch_id:
+                type: string
+                description: 商户号
+                example: '1900000109'
+                maxLength: 32
+              nonce_str:
+                type: string
+                description: 随机字符串
+                example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+                maxLength: 32
+              sign:
+                type: string
+                description: 签名
+                example: C380BEC2BFD727A4B6845133519F3AD6
+                maxLength: 32
+              result_code:
+                type: string
+                description: 业务结果
+                example: SUCCESS
+                maxLength: 16
+              err_code:
+                type: string
+                description: 错误代码
+                example: SYSTEMERROR
+                maxLength: 32
+                nullable: true
+              short_url:
+                type: string
+                description: URL链接
+                example: weixin：//wxpay/s/XXXXXX
+                maxLength: 64

@@ -17,6 +17,13 @@ interface Authcodetoopenid
      */
     public function post(array $options = [
         'xml' => [
+            'appid' => '',
+            'mch_id' => '',
+            'sub_appid' => '',
+            'sub_mch_id' => '',
+            'auth_code' => '',
+            'nonce_str' => '',
+            'sign' => '',
         ],
     ]): ResponseInterface;
 
@@ -27,6 +34,13 @@ interface Authcodetoopenid
      */
     public function postAsync(array $options = [
         'xml' => [
+            'appid' => '',
+            'mch_id' => '',
+            'sub_appid' => '',
+            'sub_mch_id' => '',
+            'auth_code' => '',
+            'nonce_str' => '',
+            'sign' => '',
         ],
     ]): PromiseInterface;
 }

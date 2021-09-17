@@ -17,6 +17,12 @@ interface Shorturl
      */
     public function post(array $options = [
         'xml' => [
+            'appid' => '',
+            'mch_id' => '',
+            'long_url' => '',
+            'nonce_str' => '',
+            'sign' => '',
+            'sign_type' => '',
         ],
     ]): ResponseInterface;
 
@@ -27,6 +33,12 @@ interface Shorturl
      */
     public function postAsync(array $options = [
         'xml' => [
+            'appid' => '',
+            'mch_id' => '',
+            'long_url' => '',
+            'nonce_str' => '',
+            'sign' => '',
+            'sign_type' => '',
         ],
     ]): PromiseInterface;
 }

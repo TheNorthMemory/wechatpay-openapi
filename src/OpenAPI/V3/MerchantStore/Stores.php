@@ -17,7 +17,7 @@ interface Stores
      */
     public function post(array $options = [
         'json' => [
-            'sub_mchid' => '',
+            'sub_mchid' => '1900000109',
             'store_basics' => [],
             'store_address' => [],
             'store_business' => [],
@@ -32,7 +32,7 @@ interface Stores
      */
     public function postAsync(array $options = [
         'json' => [
-            'sub_mchid' => '',
+            'sub_mchid' => '1900000109',
             'store_basics' => [],
             'store_address' => [],
             'store_business' => [],

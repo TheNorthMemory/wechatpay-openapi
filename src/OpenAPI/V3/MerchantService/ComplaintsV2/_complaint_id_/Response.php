@@ -17,9 +17,9 @@ interface Response
      */
     public function post(array $options = [
         'json' => [
-            'complaint_id' => '',
-            'complainted_mchid' => '',
-            'response_content' => '',
+            'complaint_id' => '200201820200101080076610000',
+            'complainted_mchid' => '1900012181',
+            'response_content' => '已与用户沟通解决',
             'response_images' => [],
         ],
     ]): ResponseInterface;
@@ -31,9 +31,9 @@ interface Response
      */
     public function postAsync(array $options = [
         'json' => [
-            'complaint_id' => '',
-            'complainted_mchid' => '',
-            'response_content' => '',
+            'complaint_id' => '200201820200101080076610000',
+            'complainted_mchid' => '1900012181',
+            'response_content' => '已与用户沟通解决',
             'response_images' => [],
         ],
     ]): PromiseInterface;

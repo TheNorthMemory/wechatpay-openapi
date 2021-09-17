@@ -17,10 +17,10 @@ interface Fundflowbill
      */
     public function get(array $options = [
         'json' => [
-            'bill_date' => '',
-            'account_type' => '',
-            'tar_type' => '',
-            'algorithm' => '',
+            'bill_date' => '2019-06-11',
+            'account_type' => 'ALL',
+            'tar_type' => 'GZIP',
+            'algorithm' => 'AEAD_AES_256_GCM',
         ],
     ]): ResponseInterface;
 
@@ -31,10 +31,10 @@ interface Fundflowbill
      */
     public function getAsync(array $options = [
         'json' => [
-            'bill_date' => '',
-            'account_type' => '',
-            'tar_type' => '',
-            'algorithm' => '',
+            'bill_date' => '2019-06-11',
+            'account_type' => 'ALL',
+            'tar_type' => 'GZIP',
+            'algorithm' => 'AEAD_AES_256_GCM',
         ],
     ]): PromiseInterface;
 }

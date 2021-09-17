@@ -18,9 +18,9 @@ interface Cancel
     public function post(array $options = [
         'out_order_no' => '',
         'json' => [
-            'appid' => '',
-            'service_id' => '',
-            'reason' => '',
+            'appid' => 'wxd678efh567hg6787',
+            'service_id' => '500001',
+            'reason' => '用户投诉',
         ],
     ]): ResponseInterface;
 
@@ -32,9 +32,9 @@ interface Cancel
     public function postAsync(array $options = [
         'out_order_no' => '',
         'json' => [
-            'appid' => '',
-            'service_id' => '',
-            'reason' => '',
+            'appid' => 'wxd678efh567hg6787',
+            'service_id' => '500001',
+            'reason' => '用户投诉',
         ],
     ]): PromiseInterface;
 }

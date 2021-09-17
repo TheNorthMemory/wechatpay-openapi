@@ -17,14 +17,14 @@ interface PayReceipts
      */
     public function post(array $options = [
         'json' => [
-            'stock_id' => '',
-            'coupon_code' => '',
-            'transaction_id' => '',
-            'payer_merchant' => '',
-            'payee_merchant' => '',
-            'amount' => 0,
-            'description' => '',
-            'out_subsidy_no' => '',
+            'stock_id' => '128888000000001',
+            'coupon_code' => 'ABCD12345678',
+            'transaction_id' => '4200000913202101152566792388',
+            'payer_merchant' => '1900000001',
+            'payee_merchant' => '1900000002',
+            'amount' => 100,
+            'description' => '20210115DESCRIPTION',
+            'out_subsidy_no' => 'subsidy-abcd-12345678',
         ],
     ]): ResponseInterface;
 
@@ -35,14 +35,14 @@ interface PayReceipts
      */
     public function postAsync(array $options = [
         'json' => [
-            'stock_id' => '',
-            'coupon_code' => '',
-            'transaction_id' => '',
-            'payer_merchant' => '',
-            'payee_merchant' => '',
-            'amount' => 0,
-            'description' => '',
-            'out_subsidy_no' => '',
+            'stock_id' => '128888000000001',
+            'coupon_code' => 'ABCD12345678',
+            'transaction_id' => '4200000913202101152566792388',
+            'payer_merchant' => '1900000001',
+            'payee_merchant' => '1900000002',
+            'amount' => 100,
+            'description' => '20210115DESCRIPTION',
+            'out_subsidy_no' => 'subsidy-abcd-12345678',
         ],
     ]): PromiseInterface;
 }

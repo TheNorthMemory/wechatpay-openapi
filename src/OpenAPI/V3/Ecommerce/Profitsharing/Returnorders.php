@@ -17,13 +17,13 @@ interface Returnorders
      */
     public function post(array $options = [
         'json' => [
-            'sub_mchid' => '',
-            'order_id' => '',
+            'sub_mchid' => '1900000109',
+            'order_id' => '3008450740201411110007820472',
             'out_order_no' => '',
-            'out_return_no' => '',
-            'return_mchid' => '',
-            'amount' => 0,
-            'description' => '',
+            'out_return_no' => 'R20190516001',
+            'return_mchid' => '86693852',
+            'amount' => 10,
+            'description' => '分账回退',
         ],
     ]): ResponseInterface;
 
@@ -34,13 +34,13 @@ interface Returnorders
      */
     public function postAsync(array $options = [
         'json' => [
-            'sub_mchid' => '',
-            'order_id' => '',
+            'sub_mchid' => '1900000109',
+            'order_id' => '3008450740201411110007820472',
             'out_order_no' => '',
-            'out_return_no' => '',
-            'return_mchid' => '',
-            'amount' => 0,
-            'description' => '',
+            'out_return_no' => 'R20190516001',
+            'return_mchid' => '86693852',
+            'amount' => 10,
+            'description' => '分账回退',
         ],
     ]): PromiseInterface;
 

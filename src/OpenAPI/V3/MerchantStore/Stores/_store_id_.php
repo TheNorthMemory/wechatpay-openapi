@@ -40,7 +40,7 @@ interface _store_id_
     public function patch(array $options = [
         'store_id' => '',
         'json' => [
-            'sub_mchid' => '',
+            'sub_mchid' => '1900000109',
             'store_basics' => [],
             'store_address' => [],
             'store_business' => [],
@@ -55,7 +55,7 @@ interface _store_id_
     public function patchAsync(array $options = [
         'store_id' => '',
         'json' => [
-            'sub_mchid' => '',
+            'sub_mchid' => '1900000109',
             'store_basics' => [],
             'store_address' => [],
             'store_business' => [],

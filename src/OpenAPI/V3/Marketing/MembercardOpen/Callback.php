@@ -17,7 +17,7 @@ interface Callback
      */
     public function patch(array $options = [
         'json' => [
-            'notify_url' => '',
+            'notify_url' => 'https://pay.weixin.qq.com',
         ],
     ]): ResponseInterface;
 
@@ -28,7 +28,7 @@ interface Callback
      */
     public function patchAsync(array $options = [
         'json' => [
-            'notify_url' => '',
+            'notify_url' => 'https://pay.weixin.qq.com',
         ],
     ]): PromiseInterface;
 

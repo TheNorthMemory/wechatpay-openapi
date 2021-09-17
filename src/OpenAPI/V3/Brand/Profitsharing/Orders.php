@@ -17,12 +17,12 @@ interface Orders
      */
     public function post(array $options = [
         'json' => [
-            'brand_mchid' => '',
-            'sub_mchid' => '',
-            'appid' => '',
-            'sub_appid' => '',
-            'transaction_id' => '',
-            'out_order_no' => '',
+            'brand_mchid' => '1900000108',
+            'sub_mchid' => '1900000109',
+            'appid' => 'wx8888888888888888',
+            'sub_appid' => 'wx8888888888888889',
+            'transaction_id' => '4208450740201411110007820472',
+            'out_order_no' => 'P20150806125346',
             'receivers' => [],
             'finish' => '',
         ],
@@ -35,12 +35,12 @@ interface Orders
      */
     public function postAsync(array $options = [
         'json' => [
-            'brand_mchid' => '',
-            'sub_mchid' => '',
-            'appid' => '',
-            'sub_appid' => '',
-            'transaction_id' => '',
-            'out_order_no' => '',
+            'brand_mchid' => '1900000108',
+            'sub_mchid' => '1900000109',
+            'appid' => 'wx8888888888888888',
+            'sub_appid' => 'wx8888888888888889',
+            'transaction_id' => '4208450740201411110007820472',
+            'out_order_no' => 'P20150806125346',
             'receivers' => [],
             'finish' => '',
         ],

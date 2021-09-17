@@ -17,15 +17,13 @@ interface Pay_bank
      */
     public function post(array $options = [
         'xml' => [
-            'mch_id' => '',
-            'partner_trade_no' => '',
-            'nonce_str' => '',
-            'sign' => '',
-            'enc_bank_no' => '',
-            'enc_true_name' => '',
-            'bank_code' => '',
-            'amount' => '0',
-            'desc' => '',
+            'mch_id' => '1900000109',
+            'partner_trade_no' => '1212121221227',
+            'enc_bank_no' => '8609cb22e1774a50a930e414cc71eca06121bcd266335cda230d24a7886a8d9f',
+            'enc_true_name' => 'ca775af5f841bdf424b2e6eb86a6e21e',
+            'bank_code' => '1001',
+            'amount' => '100000',
+            'desc' => '理财',
         ],
         'security' => true,
     ]): ResponseInterface;
@@ -37,15 +35,13 @@ interface Pay_bank
      */
     public function postAsync(array $options = [
         'xml' => [
-            'mch_id' => '',
-            'partner_trade_no' => '',
-            'nonce_str' => '',
-            'sign' => '',
-            'enc_bank_no' => '',
-            'enc_true_name' => '',
-            'bank_code' => '',
-            'amount' => '0',
-            'desc' => '',
+            'mch_id' => '1900000109',
+            'partner_trade_no' => '1212121221227',
+            'enc_bank_no' => '8609cb22e1774a50a930e414cc71eca06121bcd266335cda230d24a7886a8d9f',
+            'enc_true_name' => 'ca775af5f841bdf424b2e6eb86a6e21e',
+            'bank_code' => '1001',
+            'amount' => '100000',
+            'desc' => '理财',
         ],
         'security' => true,
     ]): PromiseInterface;

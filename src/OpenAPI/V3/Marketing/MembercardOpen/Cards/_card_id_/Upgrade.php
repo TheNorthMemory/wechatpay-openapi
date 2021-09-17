@@ -18,8 +18,8 @@ interface Upgrade
     public function post(array $options = [
         'card_id' => '',
         'json' => [
-            'brand_id' => '',
-            'appid' => '',
+            'brand_id' => '1001622624',
+            'appid' => 'wxea9c30890f48d5ae',
         ],
     ]): ResponseInterface;
 
@@ -31,8 +31,8 @@ interface Upgrade
     public function postAsync(array $options = [
         'card_id' => '',
         'json' => [
-            'brand_id' => '',
-            'appid' => '',
+            'brand_id' => '1001622624',
+            'appid' => 'wxea9c30890f48d5ae',
         ],
     ]): PromiseInterface;
 }

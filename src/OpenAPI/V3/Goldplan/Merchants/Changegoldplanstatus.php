@@ -17,7 +17,7 @@ interface Changegoldplanstatus
      */
     public function post(array $options = [
         'json' => [
-            'sub_mchid' => '',
+            'sub_mchid' => '1234567890',
             'operation_type' => '',
         ],
     ]): ResponseInterface;
@@ -29,7 +29,7 @@ interface Changegoldplanstatus
      */
     public function postAsync(array $options = [
         'json' => [
-            'sub_mchid' => '',
+            'sub_mchid' => '1234567890',
             'operation_type' => '',
         ],
     ]): PromiseInterface;

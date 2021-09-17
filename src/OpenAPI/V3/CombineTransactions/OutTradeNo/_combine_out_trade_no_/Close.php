@@ -18,7 +18,7 @@ interface Close
     public function post(array $options = [
         'combine_out_trade_no' => '',
         'json' => [
-            'combine_appid' => '',
+            'combine_appid' => 'wxd678efh567hg6787',
             'sub_orders' => [],
         ],
     ]): ResponseInterface;
@@ -31,7 +31,7 @@ interface Close
     public function postAsync(array $options = [
         'combine_out_trade_no' => '',
         'json' => [
-            'combine_appid' => '',
+            'combine_appid' => 'wxd678efh567hg6787',
             'sub_orders' => [],
         ],
     ]): PromiseInterface;

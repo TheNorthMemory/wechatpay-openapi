@@ -18,8 +18,8 @@ interface Close
     public function post(array $options = [
         'out_trade_no' => '',
         'json' => [
-            'sp_mchid' => '',
-            'sub_mchid' => '',
+            'sp_mchid' => '1230000109',
+            'sub_mchid' => '1900000109',
         ],
     ]): ResponseInterface;
 
@@ -31,8 +31,8 @@ interface Close
     public function postAsync(array $options = [
         'out_trade_no' => '',
         'json' => [
-            'sp_mchid' => '',
-            'sub_mchid' => '',
+            'sp_mchid' => '1230000109',
+            'sub_mchid' => '1900000109',
         ],
     ]): PromiseInterface;
 }

@@ -18,7 +18,7 @@ interface Complete
     public function post(array $options = [
         'complaint_id' => '',
         'json' => [
-            'complainted_mchid' => '',
+            'complainted_mchid' => '1900012181',
         ],
     ]): ResponseInterface;
 
@@ -30,7 +30,7 @@ interface Complete
     public function postAsync(array $options = [
         'complaint_id' => '',
         'json' => [
-            'complainted_mchid' => '',
+            'complainted_mchid' => '1900012181',
         ],
     ]): PromiseInterface;
 }

@@ -17,10 +17,10 @@ interface Orders
      */
     public function post(array $options = [
         'json' => [
-            'appid' => '',
-            'sub_mchid' => '',
-            'transaction_id' => '',
-            'out_order_no' => '',
+            'appid' => 'wx8888888888888888',
+            'sub_mchid' => '1900000109',
+            'transaction_id' => '4208450740201411110007820472',
+            'out_order_no' => 'P20150806125346',
             'receivers' => [],
             'finish' => '',
         ],
@@ -33,10 +33,10 @@ interface Orders
      */
     public function postAsync(array $options = [
         'json' => [
-            'appid' => '',
-            'sub_mchid' => '',
-            'transaction_id' => '',
-            'out_order_no' => '',
+            'appid' => 'wx8888888888888888',
+            'sub_mchid' => '1900000109',
+            'transaction_id' => '4208450740201411110007820472',
+            'out_order_no' => 'P20150806125346',
             'receivers' => [],
             'finish' => '',
         ],

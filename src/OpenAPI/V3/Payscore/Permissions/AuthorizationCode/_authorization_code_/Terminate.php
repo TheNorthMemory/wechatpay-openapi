@@ -18,8 +18,8 @@ interface Terminate
     public function post(array $options = [
         'authorization_code' => '',
         'json' => [
-            'service_id' => '',
-            'reason' => '',
+            'service_id' => '500001',
+            'reason' => '撤销原因',
         ],
     ]): ResponseInterface;
 
@@ -31,8 +31,8 @@ interface Terminate
     public function postAsync(array $options = [
         'authorization_code' => '',
         'json' => [
-            'service_id' => '',
-            'reason' => '',
+            'service_id' => '500001',
+            'reason' => '撤销原因',
         ],
     ]): PromiseInterface;
 }

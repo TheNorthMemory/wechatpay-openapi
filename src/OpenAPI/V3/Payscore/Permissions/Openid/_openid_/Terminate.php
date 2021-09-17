@@ -18,9 +18,9 @@ interface Terminate
     public function post(array $options = [
         'openid' => '',
         'json' => [
-            'service_id' => '',
-            'appid' => '',
-            'reason' => '',
+            'service_id' => '2002000000000558128851361561536',
+            'appid' => 'wxd678efh567hg6787',
+            'reason' => 'reason',
         ],
     ]): ResponseInterface;
 
@@ -32,9 +32,9 @@ interface Terminate
     public function postAsync(array $options = [
         'openid' => '',
         'json' => [
-            'service_id' => '',
-            'appid' => '',
-            'reason' => '',
+            'service_id' => '2002000000000558128851361561536',
+            'appid' => 'wxd678efh567hg6787',
+            'reason' => 'reason',
         ],
     ]): PromiseInterface;
 }

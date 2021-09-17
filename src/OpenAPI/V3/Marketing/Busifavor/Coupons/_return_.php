@@ -18,9 +18,9 @@ interface _return_
     public function post(array $options = [
         'return' => 'return',
         'json' => [
-            'coupon_code' => '',
-            'stock_id' => '',
-            'return_request_no' => '',
+            'coupon_code' => 'sxxe34343434',
+            'stock_id' => '1234567891',
+            'return_request_no' => '1002600620019090123143254436',
         ],
     ]): ResponseInterface;
 
@@ -32,9 +32,9 @@ interface _return_
     public function postAsync(array $options = [
         'return' => 'return',
         'json' => [
-            'coupon_code' => '',
-            'stock_id' => '',
-            'return_request_no' => '',
+            'coupon_code' => 'sxxe34343434',
+            'stock_id' => '1234567891',
+            'return_request_no' => '1002600620019090123143254436',
         ],
     ]): PromiseInterface;
 }

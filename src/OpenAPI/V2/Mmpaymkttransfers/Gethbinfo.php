@@ -17,12 +17,10 @@ interface Gethbinfo
      */
     public function post(array $options = [
         'xml' => [
-            'nonce_str' => '',
-            'sign' => '',
-            'mch_billno' => '',
-            'mch_id' => '',
-            'appid' => '',
-            'bill_type' => '',
+            'mch_billno' => '10000098201411111234567890',
+            'mch_id' => '10000098',
+            'appid' => 'wxe062425f740d30d8',
+            'bill_type' => 'MCHT',
         ],
         'security' => true,
     ]): ResponseInterface;
@@ -34,12 +32,10 @@ interface Gethbinfo
      */
     public function postAsync(array $options = [
         'xml' => [
-            'nonce_str' => '',
-            'sign' => '',
-            'mch_billno' => '',
-            'mch_id' => '',
-            'appid' => '',
-            'bill_type' => '',
+            'mch_billno' => '10000098201411111234567890',
+            'mch_id' => '10000098',
+            'appid' => 'wxe062425f740d30d8',
+            'bill_type' => 'MCHT',
         ],
         'security' => true,
     ]): PromiseInterface;

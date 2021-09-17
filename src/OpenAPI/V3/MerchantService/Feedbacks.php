@@ -18,10 +18,10 @@ interface Feedbacks
      */
     public function post(array $options = [
         'json' => [
-            'transaction_id' => '',
-            'complainted_mchid' => '',
-            'feedback_type' => 0,
-            'feedback_content' => '',
+            'transaction_id' => '4200000404201909069117582536',
+            'complainted_mchid' => '9980456248',
+            'feedback_type' => 1,
+            'feedback_content' => '已与用户协商解决',
             'feedback_images' => [],
             'launch_confirm_process' => '',
         ],
@@ -35,10 +35,10 @@ interface Feedbacks
      */
     public function postAsync(array $options = [
         'json' => [
-            'transaction_id' => '',
-            'complainted_mchid' => '',
-            'feedback_type' => 0,
-            'feedback_content' => '',
+            'transaction_id' => '4200000404201909069117582536',
+            'complainted_mchid' => '9980456248',
+            'feedback_type' => 1,
+            'feedback_content' => '已与用户协商解决',
             'feedback_images' => [],
             'launch_confirm_process' => '',
         ],

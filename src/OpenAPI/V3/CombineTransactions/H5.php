@@ -17,14 +17,14 @@ interface H5
      */
     public function post(array $options = [
         'json' => [
-            'combine_appid' => '',
-            'combine_mchid' => '',
-            'combine_out_trade_no' => '',
+            'combine_appid' => 'wxd678efh567hg6787',
+            'combine_mchid' => '1900000109',
+            'combine_out_trade_no' => 'P20150806125346',
             'scene_info' => [],
             'sub_orders' => [],
-            'time_start' => '',
-            'time_expire' => '',
-            'notify_url' => '',
+            'time_start' => '2019-12-31T15:59:60+08:00',
+            'time_expire' => '2019-12-31T15:59:60+08:00',
+            'notify_url' => 'https://yourapp.com/notify',
         ],
     ]): ResponseInterface;
 
@@ -35,14 +35,14 @@ interface H5
      */
     public function postAsync(array $options = [
         'json' => [
-            'combine_appid' => '',
-            'combine_mchid' => '',
-            'combine_out_trade_no' => '',
+            'combine_appid' => 'wxd678efh567hg6787',
+            'combine_mchid' => '1900000109',
+            'combine_out_trade_no' => 'P20150806125346',
             'scene_info' => [],
             'sub_orders' => [],
-            'time_start' => '',
-            'time_expire' => '',
-            'notify_url' => '',
+            'time_start' => '2019-12-31T15:59:60+08:00',
+            'time_expire' => '2019-12-31T15:59:60+08:00',
+            'notify_url' => 'https://yourapp.com/notify',
         ],
     ]): PromiseInterface;
 }

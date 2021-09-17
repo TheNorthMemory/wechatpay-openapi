@@ -17,9 +17,9 @@ interface Delete
      */
     public function post(array $options = [
         'json' => [
-            'appid' => '',
-            'type' => '',
-            'account' => '',
+            'appid' => 'wx8888888888888888',
+            'type' => 'MERCHANT_ID',
+            'account' => '190001001',
         ],
     ]): ResponseInterface;
 
@@ -30,9 +30,9 @@ interface Delete
      */
     public function postAsync(array $options = [
         'json' => [
-            'appid' => '',
-            'type' => '',
-            'account' => '',
+            'appid' => 'wx8888888888888888',
+            'type' => 'MERCHANT_ID',
+            'account' => '190001001',
         ],
     ]): PromiseInterface;
 }

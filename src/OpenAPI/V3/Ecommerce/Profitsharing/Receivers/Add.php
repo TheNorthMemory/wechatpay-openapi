@@ -17,12 +17,12 @@ interface Add
      */
     public function post(array $options = [
         'json' => [
-            'appid' => '',
-            'type' => '',
-            'account' => '',
-            'name' => '',
-            'encrypted_name' => '',
-            'relation_type' => '',
+            'appid' => 'wx8888888888888888',
+            'type' => 'MERCHANT_ID',
+            'account' => '190001001',
+            'name' => '张三网络公司',
+            'encrypted_name' => 'hu89ohu89ohu89o',
+            'relation_type' => 'SUPPLIER',
         ],
         'headers' => [
             'Wechatpay-Serial' => '',
@@ -36,12 +36,12 @@ interface Add
      */
     public function postAsync(array $options = [
         'json' => [
-            'appid' => '',
-            'type' => '',
-            'account' => '',
-            'name' => '',
-            'encrypted_name' => '',
-            'relation_type' => '',
+            'appid' => 'wx8888888888888888',
+            'type' => 'MERCHANT_ID',
+            'account' => '190001001',
+            'name' => '张三网络公司',
+            'encrypted_name' => 'hu89ohu89ohu89o',
+            'relation_type' => 'SUPPLIER',
         ],
         'headers' => [
             'Wechatpay-Serial' => '',

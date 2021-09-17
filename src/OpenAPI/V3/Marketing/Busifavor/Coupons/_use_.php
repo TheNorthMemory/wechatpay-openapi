@@ -18,12 +18,12 @@ interface _use_
     public function post(array $options = [
         'use' => 'use',
         'json' => [
-            'coupon_code' => '',
-            'stock_id' => '',
-            'appid' => '',
-            'use_time' => '',
-            'use_request_no' => '',
-            'openid' => '',
+            'coupon_code' => 'sxxe34343434',
+            'stock_id' => '100088',
+            'appid' => 'wx1234567889999',
+            'use_time' => '2015-05-20T13:29:35+08:00',
+            'use_request_no' => '1002600620019090123143254435',
+            'openid' => 'xsd3434454567676',
         ],
     ]): ResponseInterface;
 
@@ -35,12 +35,12 @@ interface _use_
     public function postAsync(array $options = [
         'use' => 'use',
         'json' => [
-            'coupon_code' => '',
-            'stock_id' => '',
-            'appid' => '',
-            'use_time' => '',
-            'use_request_no' => '',
-            'openid' => '',
+            'coupon_code' => 'sxxe34343434',
+            'stock_id' => '100088',
+            'appid' => 'wx1234567889999',
+            'use_time' => '2015-05-20T13:29:35+08:00',
+            'use_request_no' => '1002600620019090123143254435',
+            'openid' => 'xsd3434454567676',
         ],
     ]): PromiseInterface;
 }

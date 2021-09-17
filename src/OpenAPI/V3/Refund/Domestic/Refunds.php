@@ -18,13 +18,13 @@ interface Refunds
      */
     public function post(array $options = [
         'json' => [
-            'sub_mchid' => '',
-            'transaction_id' => '',
+            'sub_mchid' => '1900000109',
+            'transaction_id' => '1217752501201407033233368018',
             'out_trade_no' => '',
-            'out_refund_no' => '',
-            'reason' => '',
-            'notify_url' => '',
-            'funds_account' => '',
+            'out_refund_no' => '1217752501201407033233368018',
+            'reason' => '商品已售完',
+            'notify_url' => 'https://weixin.qq.com',
+            'funds_account' => 'AVAILABLE',
             'amount' => [],
             'goods_detail' => [],
         ],
@@ -37,13 +37,13 @@ interface Refunds
      */
     public function postAsync(array $options = [
         'json' => [
-            'sub_mchid' => '',
-            'transaction_id' => '',
+            'sub_mchid' => '1900000109',
+            'transaction_id' => '1217752501201407033233368018',
             'out_trade_no' => '',
-            'out_refund_no' => '',
-            'reason' => '',
-            'notify_url' => '',
-            'funds_account' => '',
+            'out_refund_no' => '1217752501201407033233368018',
+            'reason' => '商品已售完',
+            'notify_url' => 'https://weixin.qq.com',
+            'funds_account' => 'AVAILABLE',
             'amount' => [],
             'goods_detail' => [],
         ],

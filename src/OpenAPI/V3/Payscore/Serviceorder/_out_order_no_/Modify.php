@@ -18,12 +18,12 @@ interface Modify
     public function post(array $options = [
         'out_order_no' => '',
         'json' => [
-            'appid' => '',
-            'service_id' => '',
+            'appid' => 'wxd678efh567hg6787',
+            'service_id' => '500001',
             'post_payments' => [],
             'post_discounts' => [],
-            'total_amount' => 0,
-            'reason' => '',
+            'total_amount' => 50000,
+            'reason' => '用户投诉',
         ],
     ]): ResponseInterface;
 
@@ -35,12 +35,12 @@ interface Modify
     public function postAsync(array $options = [
         'out_order_no' => '',
         'json' => [
-            'appid' => '',
-            'service_id' => '',
+            'appid' => 'wxd678efh567hg6787',
+            'service_id' => '500001',
             'post_payments' => [],
             'post_discounts' => [],
-            'total_amount' => 0,
-            'reason' => '',
+            'total_amount' => 50000,
+            'reason' => '用户投诉',
         ],
     ]): PromiseInterface;
 }

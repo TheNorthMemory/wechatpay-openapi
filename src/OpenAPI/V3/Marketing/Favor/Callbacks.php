@@ -17,8 +17,8 @@ interface Callbacks
      */
     public function post(array $options = [
         'json' => [
-            'mchid' => '',
-            'notify_url' => '',
+            'mchid' => '9856888',
+            'notify_url' => 'https://pay.weixin.qq.com',
             'switch' => '',
         ],
     ]): ResponseInterface;
@@ -30,8 +30,8 @@ interface Callbacks
      */
     public function postAsync(array $options = [
         'json' => [
-            'mchid' => '',
-            'notify_url' => '',
+            'mchid' => '9856888',
+            'notify_url' => 'https://pay.weixin.qq.com',
             'switch' => '',
         ],
     ]): PromiseInterface;

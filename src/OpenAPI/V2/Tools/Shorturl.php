@@ -17,12 +17,10 @@ interface Shorturl
      */
     public function post(array $options = [
         'xml' => [
-            'appid' => '',
-            'mch_id' => '',
-            'long_url' => '',
-            'nonce_str' => '',
-            'sign' => '',
-            'sign_type' => '',
+            'appid' => 'wx8888888888888888',
+            'mch_id' => '1900000109',
+            'long_url' => 'weixin：//wxpay/bizpayurl?sign=XXXXX&appid=XXXXX&mch_id=XXXXX&product_id=XXXXXX&time_stamp=XXXXXX&nonce_str=XXXXX',
+            'sign_type' => 'HMAC-SHA256',
         ],
     ]): ResponseInterface;
 
@@ -33,12 +31,10 @@ interface Shorturl
      */
     public function postAsync(array $options = [
         'xml' => [
-            'appid' => '',
-            'mch_id' => '',
-            'long_url' => '',
-            'nonce_str' => '',
-            'sign' => '',
-            'sign_type' => '',
+            'appid' => 'wx8888888888888888',
+            'mch_id' => '1900000109',
+            'long_url' => 'weixin：//wxpay/bizpayurl?sign=XXXXX&appid=XXXXX&mch_id=XXXXX&product_id=XXXXXX&time_stamp=XXXXXX&nonce_str=XXXXX',
+            'sign_type' => 'HMAC-SHA256',
         ],
     ]): PromiseInterface;
 }

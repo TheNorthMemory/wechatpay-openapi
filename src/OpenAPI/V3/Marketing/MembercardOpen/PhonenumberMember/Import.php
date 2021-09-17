@@ -18,8 +18,8 @@ interface Import
     public function post(array $options = [
         'json' => [
             'member_information' => [],
-            'encrypted_phone_number' => '',
-            'outer_str' => '',
+            'encrypted_phone_number' => 'vvysDQeEaH3I+wRh14St0abIkvQyFgh/fbWYSs2bLtG9tj+bdJn4WSCPzqSyXnFbzaaKSE2j4mAFON3kzNexb/SYkHZNJAuCittaW4wpGj7U+h9A==',
+            'outer_str' => 'my_card_CARD',
         ],
         'headers' => [
             'Wechatpay-Serial' => '',
@@ -34,8 +34,8 @@ interface Import
     public function postAsync(array $options = [
         'json' => [
             'member_information' => [],
-            'encrypted_phone_number' => '',
-            'outer_str' => '',
+            'encrypted_phone_number' => 'vvysDQeEaH3I+wRh14St0abIkvQyFgh/fbWYSs2bLtG9tj+bdJn4WSCPzqSyXnFbzaaKSE2j4mAFON3kzNexb/SYkHZNJAuCittaW4wpGj7U+h9A==',
+            'outer_str' => 'my_card_CARD',
         ],
         'headers' => [
             'Wechatpay-Serial' => '',

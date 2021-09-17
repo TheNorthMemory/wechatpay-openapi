@@ -17,11 +17,11 @@ interface Delete
      */
     public function post(array $options = [
         'json' => [
-            'sub_mchid' => '',
-            'appid' => '',
-            'sub_appid' => '',
-            'type' => '',
-            'account' => '',
+            'sub_mchid' => '1900000109',
+            'appid' => 'wx8888888888888888',
+            'sub_appid' => 'wx8888888888888889',
+            'type' => 'MERCHANT_ID',
+            'account' => '86693852',
         ],
     ]): ResponseInterface;
 
@@ -32,11 +32,11 @@ interface Delete
      */
     public function postAsync(array $options = [
         'json' => [
-            'sub_mchid' => '',
-            'appid' => '',
-            'sub_appid' => '',
-            'type' => '',
-            'account' => '',
+            'sub_mchid' => '1900000109',
+            'appid' => 'wx8888888888888888',
+            'sub_appid' => 'wx8888888888888889',
+            'type' => 'MERCHANT_ID',
+            'account' => '86693852',
         ],
     ]): PromiseInterface;
 }

@@ -18,10 +18,10 @@ interface Cards
      */
     public function post(array $options = [
         'json' => [
-            'out_card_code' => '',
-            'card_template_id' => '',
-            'appid' => '',
-            'notify_url' => '',
+            'out_card_code' => '6e8369071cd942c0476613f9d1ce9ca3',
+            'card_template_id' => '87789b2f25177433bcbf407e8e471f95',
+            'appid' => 'wxd678efh567hg6787',
+            'notify_url' => 'https://api.test.com',
         ],
     ]): ResponseInterface;
 
@@ -32,10 +32,10 @@ interface Cards
      */
     public function postAsync(array $options = [
         'json' => [
-            'out_card_code' => '',
-            'card_template_id' => '',
-            'appid' => '',
-            'notify_url' => '',
+            'out_card_code' => '6e8369071cd942c0476613f9d1ce9ca3',
+            'card_template_id' => '87789b2f25177433bcbf407e8e471f95',
+            'appid' => 'wxd678efh567hg6787',
+            'notify_url' => 'https://api.test.com',
         ],
     ]): PromiseInterface;
 }

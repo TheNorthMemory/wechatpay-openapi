@@ -18,11 +18,11 @@ interface Budget
     public function patch(array $options = [
         'stock_id' => '',
         'json' => [
-            'target_max_coupons' => 0,
+            'target_max_coupons' => 3000,
             'target_max_coupons_by_day' => 0,
-            'current_max_coupons' => 0,
-            'current_max_coupons_by_day' => 0,
-            'modify_budget_request_no' => '',
+            'current_max_coupons' => 500,
+            'current_max_coupons_by_day' => 300,
+            'modify_budget_request_no' => '1002600620019090123143254436',
         ],
     ]): ResponseInterface;
 
@@ -34,11 +34,11 @@ interface Budget
     public function patchAsync(array $options = [
         'stock_id' => '',
         'json' => [
-            'target_max_coupons' => 0,
+            'target_max_coupons' => 3000,
             'target_max_coupons_by_day' => 0,
-            'current_max_coupons' => 0,
-            'current_max_coupons_by_day' => 0,
-            'modify_budget_request_no' => '',
+            'current_max_coupons' => 500,
+            'current_max_coupons_by_day' => 300,
+            'modify_budget_request_no' => '1002600620019090123143254436',
         ],
     ]): PromiseInterface;
 }

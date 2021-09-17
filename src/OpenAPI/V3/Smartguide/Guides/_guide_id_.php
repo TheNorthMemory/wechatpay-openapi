@@ -19,7 +19,7 @@ interface _guide_id_
     public function patch(array $options = [
         'guide_id' => '',
         'json' => [
-            'sub_mchid' => '',
+            'sub_mchid' => '1234567890',
             'name' => '',
             'mobile' => '',
             'qr_code' => '',
@@ -38,7 +38,7 @@ interface _guide_id_
     public function patchAsync(array $options = [
         'guide_id' => '',
         'json' => [
-            'sub_mchid' => '',
+            'sub_mchid' => '1234567890',
             'name' => '',
             'mobile' => '',
             'qr_code' => '',

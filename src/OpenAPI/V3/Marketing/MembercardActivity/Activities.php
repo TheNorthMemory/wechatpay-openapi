@@ -18,14 +18,14 @@ interface Activities
      */
     public function post(array $options = [
         'json' => [
-            'card_id' => '',
-            'activity_name' => '',
-            'activity_type' => '',
-            'begin_time' => '',
-            'end_time' => '',
+            'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',
+            'activity_name' => '良品铺子回馈活动',
+            'activity_type' => 'NON_MEMBER_AFTERPAY',
+            'begin_time' => '2020-01-20T13:29:35.120+08:00',
+            'end_time' => '2020-01-29T13:29:35.120+08:00',
             'award_send_period' => [],
             'stock_list' => [],
-            'out_request_no' => '',
+            'out_request_no' => '100002322019090134234sfdf',
             'pay_activity_setting' => [],
         ],
     ]): ResponseInterface;
@@ -37,14 +37,14 @@ interface Activities
      */
     public function postAsync(array $options = [
         'json' => [
-            'card_id' => '',
-            'activity_name' => '',
-            'activity_type' => '',
-            'begin_time' => '',
-            'end_time' => '',
+            'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',
+            'activity_name' => '良品铺子回馈活动',
+            'activity_type' => 'NON_MEMBER_AFTERPAY',
+            'begin_time' => '2020-01-20T13:29:35.120+08:00',
+            'end_time' => '2020-01-29T13:29:35.120+08:00',
             'award_send_period' => [],
             'stock_list' => [],
-            'out_request_no' => '',
+            'out_request_no' => '100002322019090134234sfdf',
             'pay_activity_setting' => [],
         ],
     ]): PromiseInterface;

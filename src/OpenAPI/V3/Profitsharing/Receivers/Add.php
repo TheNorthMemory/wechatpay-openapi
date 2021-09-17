@@ -17,14 +17,14 @@ interface Add
      */
     public function post(array $options = [
         'json' => [
-            'sub_mchid' => '',
-            'appid' => '',
-            'sub_appid' => '',
-            'type' => '',
-            'account' => '',
-            'name' => '',
-            'relation_type' => '',
-            'custom_relation' => '',
+            'sub_mchid' => '1900000109',
+            'appid' => 'wx8888888888888888',
+            'sub_appid' => 'wx8888888888888889',
+            'type' => 'MERCHANT_ID',
+            'account' => '86693852',
+            'name' => 'hu89ohu89ohu89o',
+            'relation_type' => 'SERVICE_PROVIDER',
+            'custom_relation' => '代理商',
         ],
     ]): ResponseInterface;
 
@@ -35,14 +35,14 @@ interface Add
      */
     public function postAsync(array $options = [
         'json' => [
-            'sub_mchid' => '',
-            'appid' => '',
-            'sub_appid' => '',
-            'type' => '',
-            'account' => '',
-            'name' => '',
-            'relation_type' => '',
-            'custom_relation' => '',
+            'sub_mchid' => '1900000109',
+            'appid' => 'wx8888888888888888',
+            'sub_appid' => 'wx8888888888888889',
+            'type' => 'MERCHANT_ID',
+            'account' => '86693852',
+            'name' => 'hu89ohu89ohu89o',
+            'relation_type' => 'SERVICE_PROVIDER',
+            'custom_relation' => '代理商',
         ],
     ]): PromiseInterface;
 }

@@ -18,8 +18,8 @@ interface Assign
     public function post(array $options = [
         'guide_id' => '',
         'json' => [
-            'sub_mchid' => '',
-            'out_trade_no' => '',
+            'sub_mchid' => '1234567890',
+            'out_trade_no' => '20150806125346',
         ],
     ]): ResponseInterface;
 
@@ -31,8 +31,8 @@ interface Assign
     public function postAsync(array $options = [
         'guide_id' => '',
         'json' => [
-            'sub_mchid' => '',
-            'out_trade_no' => '',
+            'sub_mchid' => '1234567890',
+            'out_trade_no' => '20150806125346',
         ],
     ]): PromiseInterface;
 }

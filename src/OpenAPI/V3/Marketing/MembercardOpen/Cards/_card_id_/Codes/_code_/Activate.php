@@ -19,7 +19,7 @@ interface Activate
         'card_id' => '',
         'code' => '',
         'json' => [
-            'membership_number' => '',
+            'membership_number' => '316510891298',
         ],
     ]): ResponseInterface;
 
@@ -32,7 +32,7 @@ interface Activate
         'card_id' => '',
         'code' => '',
         'json' => [
-            'membership_number' => '',
+            'membership_number' => '316510891298',
         ],
     ]): PromiseInterface;
 }

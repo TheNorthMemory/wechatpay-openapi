@@ -19,7 +19,7 @@ interface Couponcodes
         'stock_id' => '',
         'json' => [
             'coupon_code_list' => [],
-            'upload_request_no' => '',
+            'upload_request_no' => '100002322019090134234sfdf',
         ],
     ]): ResponseInterface;
 
@@ -32,7 +32,7 @@ interface Couponcodes
         'stock_id' => '',
         'json' => [
             'coupon_code_list' => [],
-            'upload_request_no' => '',
+            'upload_request_no' => '100002322019090134234sfdf',
         ],
     ]): PromiseInterface;
 }

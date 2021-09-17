@@ -20,10 +20,10 @@ interface Withdraw
      */
     public function post(array $options = [
         'json' => [
-            'out_request_no' => '',
-            'amount' => 0,
-            'remark' => '',
-            'bank_memo' => '',
+            'out_request_no' => '20190611222222222200000000012122',
+            'amount' => 1,
+            'remark' => '交易体现',
+            'bank_memo' => 'xx平台提现',
             'account_type' => '',
         ],
     ]): ResponseInterface;
@@ -35,10 +35,10 @@ interface Withdraw
      */
     public function postAsync(array $options = [
         'json' => [
-            'out_request_no' => '',
-            'amount' => 0,
-            'remark' => '',
-            'bank_memo' => '',
+            'out_request_no' => '20190611222222222200000000012122',
+            'amount' => 1,
+            'remark' => '交易体现',
+            'bank_memo' => 'xx平台提现',
             'account_type' => '',
         ],
     ]): PromiseInterface;

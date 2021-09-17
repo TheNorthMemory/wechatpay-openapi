@@ -19,10 +19,10 @@ interface Rights
         'card_id' => '',
         'code' => '',
         'json' => [
-            'before_bonus_value' => 0,
-            'bonus_value' => 0,
-            'add_bonus_value' => 0,
-            'out_request_no' => '',
+            'before_bonus_value' => 500,
+            'bonus_value' => 600,
+            'add_bonus_value' => 100,
+            'out_request_no' => '100002322019090134234sfdf',
         ],
     ]): ResponseInterface;
 
@@ -35,10 +35,10 @@ interface Rights
         'card_id' => '',
         'code' => '',
         'json' => [
-            'before_bonus_value' => 0,
-            'bonus_value' => 0,
-            'add_bonus_value' => 0,
-            'out_request_no' => '',
+            'before_bonus_value' => 500,
+            'bonus_value' => 600,
+            'add_bonus_value' => 100,
+            'out_request_no' => '100002322019090134234sfdf',
         ],
     ]): PromiseInterface;
 }

@@ -19,12 +19,12 @@ interface Coupons
     public function post(array $options = [
         'openid' => '',
         'json' => [
-            'stock_id' => '',
-            'out_request_no' => '',
-            'appid' => '',
-            'stock_creator_mchid' => '',
-            'coupon_value' => 0,
-            'coupon_minimum' => 0,
+            'stock_id' => '9856000',
+            'out_request_no' => '89560002019101000121',
+            'appid' => 'wx233544546545989',
+            'stock_creator_mchid' => '8956000',
+            'coupon_value' => 100,
+            'coupon_minimum' => 100,
         ],
     ]): ResponseInterface;
 
@@ -36,12 +36,12 @@ interface Coupons
     public function postAsync(array $options = [
         'openid' => '',
         'json' => [
-            'stock_id' => '',
-            'out_request_no' => '',
-            'appid' => '',
-            'stock_creator_mchid' => '',
-            'coupon_value' => 0,
-            'coupon_minimum' => 0,
+            'stock_id' => '9856000',
+            'out_request_no' => '89560002019101000121',
+            'appid' => 'wx233544546545989',
+            'stock_creator_mchid' => '8956000',
+            'coupon_value' => 100,
+            'coupon_minimum' => 100,
         ],
     ]): PromiseInterface;
 

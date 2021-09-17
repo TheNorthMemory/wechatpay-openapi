@@ -17,11 +17,11 @@ interface Create
      */
     public function post(array $options = [
         'json' => [
-            'sub_mchid' => '',
-            'transaction_id' => '',
-            'amount' => 0,
-            'description' => '',
-            'refund_id' => '',
+            'sub_mchid' => '1900000109',
+            'transaction_id' => '4208450740201411110007820472',
+            'amount' => 10,
+            'description' => '测试备注',
+            'refund_id' => '3008450740201411110007820472',
         ],
     ]): ResponseInterface;
 
@@ -32,11 +32,11 @@ interface Create
      */
     public function postAsync(array $options = [
         'json' => [
-            'sub_mchid' => '',
-            'transaction_id' => '',
-            'amount' => 0,
-            'description' => '',
-            'refund_id' => '',
+            'sub_mchid' => '1900000109',
+            'transaction_id' => '4208450740201411110007820472',
+            'amount' => 10,
+            'description' => '测试备注',
+            'refund_id' => '3008450740201411110007820472',
         ],
     ]): PromiseInterface;
 }

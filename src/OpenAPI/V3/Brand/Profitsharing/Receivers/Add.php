@@ -17,13 +17,13 @@ interface Add
      */
     public function post(array $options = [
         'json' => [
-            'brand_mchid' => '',
-            'appid' => '',
-            'sub_appid' => '',
-            'type' => '',
-            'account' => '',
-            'name' => '',
-            'relation_type' => '',
+            'brand_mchid' => '1900000108',
+            'appid' => 'wx8888888888888888',
+            'sub_appid' => 'wx8888888888888889',
+            'type' => 'MERCHANT_ID',
+            'account' => '1900000109',
+            'name' => '张三网络公司',
+            'relation_type' => 'SUPPLIER',
         ],
     ]): ResponseInterface;
 
@@ -34,13 +34,13 @@ interface Add
      */
     public function postAsync(array $options = [
         'json' => [
-            'brand_mchid' => '',
-            'appid' => '',
-            'sub_appid' => '',
-            'type' => '',
-            'account' => '',
-            'name' => '',
-            'relation_type' => '',
+            'brand_mchid' => '1900000108',
+            'appid' => 'wx8888888888888888',
+            'sub_appid' => 'wx8888888888888889',
+            'type' => 'MERCHANT_ID',
+            'account' => '1900000109',
+            'name' => '张三网络公司',
+            'relation_type' => 'SUPPLIER',
         ],
     ]): PromiseInterface;
 }

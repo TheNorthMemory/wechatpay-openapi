@@ -19,10 +19,10 @@ interface Permissions
      */
     public function post(array $options = [
         'json' => [
-            'service_id' => '',
-            'appid' => '',
-            'authorization_code' => '',
-            'notify_url' => '',
+            'service_id' => '500001',
+            'appid' => 'wxd678efh567hg6787',
+            'authorization_code' => '1234323JKHDFE1243252',
+            'notify_url' => 'http://www.qq.com',
         ],
     ]): ResponseInterface;
 
@@ -33,10 +33,10 @@ interface Permissions
      */
     public function postAsync(array $options = [
         'json' => [
-            'service_id' => '',
-            'appid' => '',
-            'authorization_code' => '',
-            'notify_url' => '',
+            'service_id' => '500001',
+            'appid' => 'wxd678efh567hg6787',
+            'authorization_code' => '1234323JKHDFE1243252',
+            'notify_url' => 'http://www.qq.com',
         ],
     ]): PromiseInterface;
 }

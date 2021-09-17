@@ -18,7 +18,7 @@ interface Restart
     public function post(array $options = [
         'stock_id' => '',
         'json' => [
-            'stock_creator_mchid' => '',
+            'stock_creator_mchid' => '8956000',
         ],
     ]): ResponseInterface;
 
@@ -30,7 +30,7 @@ interface Restart
     public function postAsync(array $options = [
         'stock_id' => '',
         'json' => [
-            'stock_creator_mchid' => '',
+            'stock_creator_mchid' => '8956000',
         ],
     ]): PromiseInterface;
 }

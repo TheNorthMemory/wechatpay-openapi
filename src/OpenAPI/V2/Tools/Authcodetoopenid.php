@@ -22,8 +22,6 @@ interface Authcodetoopenid
             'sub_appid' => '',
             'sub_mch_id' => '',
             'auth_code' => '',
-            'nonce_str' => '',
-            'sign' => '',
         ],
     ]): ResponseInterface;
 
@@ -39,8 +37,6 @@ interface Authcodetoopenid
             'sub_appid' => '',
             'sub_mch_id' => '',
             'auth_code' => '',
-            'nonce_str' => '',
-            'sign' => '',
         ],
     ]): PromiseInterface;
 }

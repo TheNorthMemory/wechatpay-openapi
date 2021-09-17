@@ -18,8 +18,8 @@ interface Pay
     public function post(array $options = [
         'out_order_no' => '',
         'json' => [
-            'appid' => '',
-            'service_id' => '',
+            'appid' => 'wxd678efh567hg6787',
+            'service_id' => '500001',
         ],
     ]): ResponseInterface;
 
@@ -31,8 +31,8 @@ interface Pay
     public function postAsync(array $options = [
         'out_order_no' => '',
         'json' => [
-            'appid' => '',
-            'service_id' => '',
+            'appid' => 'wxd678efh567hg6787',
+            'service_id' => '500001',
         ],
     ]): PromiseInterface;
 }

@@ -19,7 +19,7 @@ interface Delete
         'activity_id' => '',
         'json' => [
             'merchant_id_list' => [],
-            'delete_request_no' => '',
+            'delete_request_no' => '100002322019090134234sfdf',
         ],
     ]): ResponseInterface;
 
@@ -32,7 +32,7 @@ interface Delete
         'activity_id' => '',
         'json' => [
             'merchant_id_list' => [],
-            'delete_request_no' => '',
+            'delete_request_no' => '100002322019090134234sfdf',
         ],
     ]): PromiseInterface;
 }

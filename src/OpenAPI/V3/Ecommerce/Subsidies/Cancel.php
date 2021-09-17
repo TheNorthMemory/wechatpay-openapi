@@ -17,9 +17,9 @@ interface Cancel
      */
     public function post(array $options = [
         'json' => [
-            'sub_mchid' => '',
-            'transaction_id' => '',
-            'description' => '',
+            'sub_mchid' => '1900000109',
+            'transaction_id' => '4208450740201411110007820472',
+            'description' => '订单退款',
         ],
     ]): ResponseInterface;
 
@@ -30,9 +30,9 @@ interface Cancel
      */
     public function postAsync(array $options = [
         'json' => [
-            'sub_mchid' => '',
-            'transaction_id' => '',
-            'description' => '',
+            'sub_mchid' => '1900000109',
+            'transaction_id' => '4208450740201411110007820472',
+            'description' => '订单退款',
         ],
     ]): PromiseInterface;
 }

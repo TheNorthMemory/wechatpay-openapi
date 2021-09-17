@@ -17,7 +17,7 @@ interface ComplaintNotifications
      */
     public function post(array $options = [
         'json' => [
-            'url' => '',
+            'url' => 'https://www.xxx.com/notify',
         ],
     ]): ResponseInterface;
 
@@ -28,7 +28,7 @@ interface ComplaintNotifications
      */
     public function postAsync(array $options = [
         'json' => [
-            'url' => '',
+            'url' => 'https://www.xxx.com/notify',
         ],
     ]): PromiseInterface;
 
@@ -53,7 +53,7 @@ interface ComplaintNotifications
      */
     public function put(array $options = [
         'json' => [
-            'url' => '',
+            'url' => 'https://www.xxx.com/notify',
         ],
     ]): ResponseInterface;
 
@@ -64,7 +64,7 @@ interface ComplaintNotifications
      */
     public function putAsync(array $options = [
         'json' => [
-            'url' => '',
+            'url' => 'https://www.xxx.com/notify',
         ],
     ]): PromiseInterface;
 

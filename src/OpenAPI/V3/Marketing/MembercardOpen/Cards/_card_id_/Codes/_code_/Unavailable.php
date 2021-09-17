@@ -19,7 +19,7 @@ interface Unavailable
         'card_id' => '',
         'code' => '',
         'json' => [
-            'reason' => '',
+            'reason' => '用户违反会员条例',
         ],
     ]): ResponseInterface;
 
@@ -32,7 +32,7 @@ interface Unavailable
         'card_id' => '',
         'code' => '',
         'json' => [
-            'reason' => '',
+            'reason' => '用户违反会员条例',
         ],
     ]): PromiseInterface;
 }

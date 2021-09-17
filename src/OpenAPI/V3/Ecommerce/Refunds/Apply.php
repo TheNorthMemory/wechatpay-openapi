@@ -17,15 +17,15 @@ interface Apply
      */
     public function post(array $options = [
         'json' => [
-            'sub_mchid' => '',
-            'sp_appid' => '',
-            'sub_appid' => '',
-            'transaction_id' => '',
-            'out_trade_no' => '',
-            'out_refund_no' => '',
-            'reason' => '',
+            'sub_mchid' => '1900000109',
+            'sp_appid' => 'wx8888888888888888',
+            'sub_appid' => 'wx8888888888888888',
+            'transaction_id' => '1217752501201407033233368018',
+            'out_trade_no' => '1217752501201407033233368018',
+            'out_refund_no' => '1217752501201407033233368018',
+            'reason' => '商品已售完',
             'amount' => [],
-            'notify_url' => '',
+            'notify_url' => 'https://weixin.qq.com',
         ],
     ]): ResponseInterface;
 
@@ -36,15 +36,15 @@ interface Apply
      */
     public function postAsync(array $options = [
         'json' => [
-            'sub_mchid' => '',
-            'sp_appid' => '',
-            'sub_appid' => '',
-            'transaction_id' => '',
-            'out_trade_no' => '',
-            'out_refund_no' => '',
-            'reason' => '',
+            'sub_mchid' => '1900000109',
+            'sp_appid' => 'wx8888888888888888',
+            'sub_appid' => 'wx8888888888888888',
+            'transaction_id' => '1217752501201407033233368018',
+            'out_trade_no' => '1217752501201407033233368018',
+            'out_refund_no' => '1217752501201407033233368018',
+            'reason' => '商品已售完',
             'amount' => [],
-            'notify_url' => '',
+            'notify_url' => 'https://weixin.qq.com',
         ],
     ]): PromiseInterface;
 }

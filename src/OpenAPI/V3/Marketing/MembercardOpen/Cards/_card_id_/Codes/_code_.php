@@ -42,10 +42,10 @@ interface _code_
         'card_id' => '',
         'code' => '',
         'json' => [
-            'membership_number' => '',
-            'background_picture_url' => '',
-            'level' => '',
-            'out_request_no' => '',
+            'membership_number' => '316510891298',
+            'background_picture_url' => 'https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/0',
+            'level' => '钻石会员',
+            'out_request_no' => '100002322019090134234sfdf',
             'balance_information' => [],
         ],
     ]): ResponseInterface;
@@ -59,10 +59,10 @@ interface _code_
         'card_id' => '',
         'code' => '',
         'json' => [
-            'membership_number' => '',
-            'background_picture_url' => '',
-            'level' => '',
-            'out_request_no' => '',
+            'membership_number' => '316510891298',
+            'background_picture_url' => 'https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/0',
+            'level' => '钻石会员',
+            'out_request_no' => '100002322019090134234sfdf',
             'balance_information' => [],
         ],
     ]): PromiseInterface;

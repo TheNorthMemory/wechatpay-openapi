@@ -19,11 +19,11 @@ interface Withdraw
      */
     public function post(array $options = [
         'json' => [
-            'sub_mchid' => '',
-            'out_request_no' => '',
-            'amount' => 0,
-            'remark' => '',
-            'bank_memo' => '',
+            'sub_mchid' => '1900000109',
+            'out_request_no' => '20190611222222222200000000012122',
+            'amount' => 100,
+            'remark' => '交易提现',
+            'bank_memo' => '微信支付提现',
         ],
     ]): ResponseInterface;
 
@@ -34,11 +34,11 @@ interface Withdraw
      */
     public function postAsync(array $options = [
         'json' => [
-            'sub_mchid' => '',
-            'out_request_no' => '',
-            'amount' => 0,
-            'remark' => '',
-            'bank_memo' => '',
+            'sub_mchid' => '1900000109',
+            'out_request_no' => '20190611222222222200000000012122',
+            'amount' => 100,
+            'remark' => '交易提现',
+            'bank_memo' => '微信支付提现',
         ],
     ]): PromiseInterface;
 }

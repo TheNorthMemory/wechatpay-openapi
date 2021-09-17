@@ -18,7 +18,7 @@ interface AddUserRecords
     public function post(array $options = [
         'out_card_code' => '',
         'json' => [
-            'card_template_id' => '',
+            'card_template_id' => '87789b2f25177433bcbf407e8e471f95',
             'objective_completion_records' => [],
             'reward_usage_records' => [],
         ],
@@ -32,7 +32,7 @@ interface AddUserRecords
     public function postAsync(array $options = [
         'out_card_code' => '',
         'json' => [
-            'card_template_id' => '',
+            'card_template_id' => '87789b2f25177433bcbf407e8e471f95',
             'objective_completion_records' => [],
             'reward_usage_records' => [],
         ],

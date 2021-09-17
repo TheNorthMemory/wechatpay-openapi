@@ -19,10 +19,10 @@ interface Qrcode
         'card_id' => '',
         'json' => [
             'activate_type' => '',
-            'activate_url' => '',
-            'activate_appid' => '',
-            'activate_path' => '',
-            'outer_str' => '',
+            'activate_url' => 'https://w.url.cn/s/Ahz3p2C',
+            'activate_appid' => 'wxea9c30a90fs8d3fe',
+            'activate_path' => 'pages/activate/activate',
+            'outer_str' => 'szwxtd',
         ],
     ]): ResponseInterface;
 
@@ -35,10 +35,10 @@ interface Qrcode
         'card_id' => '',
         'json' => [
             'activate_type' => '',
-            'activate_url' => '',
-            'activate_appid' => '',
-            'activate_path' => '',
-            'outer_str' => '',
+            'activate_url' => 'https://w.url.cn/s/Ahz3p2C',
+            'activate_appid' => 'wxea9c30a90fs8d3fe',
+            'activate_path' => 'pages/activate/activate',
+            'outer_str' => 'szwxtd',
         ],
     ]): PromiseInterface;
 }

@@ -17,10 +17,10 @@ interface FinishOrder
      */
     public function post(array $options = [
         'json' => [
-            'sub_mchid' => '',
-            'transaction_id' => '',
-            'out_order_no' => '',
-            'description' => '',
+            'sub_mchid' => '1900000109',
+            'transaction_id' => '4208450740201411110007820472',
+            'out_order_no' => 'P20150806125346',
+            'description' => '分账完结',
         ],
     ]): ResponseInterface;
 
@@ -31,10 +31,10 @@ interface FinishOrder
      */
     public function postAsync(array $options = [
         'json' => [
-            'sub_mchid' => '',
-            'transaction_id' => '',
-            'out_order_no' => '',
-            'description' => '',
+            'sub_mchid' => '1900000109',
+            'transaction_id' => '4208450740201411110007820472',
+            'out_order_no' => 'P20150806125346',
+            'description' => '分账完结',
         ],
     ]): PromiseInterface;
 }

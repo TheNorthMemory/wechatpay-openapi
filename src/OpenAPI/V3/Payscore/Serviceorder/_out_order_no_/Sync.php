@@ -18,9 +18,9 @@ interface Sync
     public function post(array $options = [
         'out_order_no' => '',
         'json' => [
-            'appid' => '',
-            'service_id' => '',
-            'type' => '',
+            'appid' => 'wxd678efh567hg6787',
+            'service_id' => '500001',
+            'type' => 'Order_Paid',
             'detail' => [],
         ],
     ]): ResponseInterface;
@@ -33,9 +33,9 @@ interface Sync
     public function postAsync(array $options = [
         'out_order_no' => '',
         'json' => [
-            'appid' => '',
-            'service_id' => '',
-            'type' => '',
+            'appid' => 'wxd678efh567hg6787',
+            'service_id' => '500001',
+            'type' => 'Order_Paid',
             'detail' => [],
         ],
     ]): PromiseInterface;

@@ -46,7 +46,7 @@ interface Serviceorder
             ],
             'service_introduction' => '某某酒店',
             'risk_fund' => [
-                'name' => '',
+                'name' => 'UDEPOSIT | ADVANCE | CASH_DEPOSIT | ESTIMATE_ORDER_COST',
                 'amount' => 10000,
                 'description' => '就餐的预估费用',
             ],
@@ -91,7 +91,7 @@ interface Serviceorder
             ],
             'service_introduction' => '某某酒店',
             'risk_fund' => [
-                'name' => '',
+                'name' => 'UDEPOSIT | ADVANCE | CASH_DEPOSIT | ESTIMATE_ORDER_COST',
                 'amount' => 10000,
                 'description' => '就餐的预估费用',
             ],

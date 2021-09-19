@@ -18,7 +18,7 @@ interface Qrcode
     public function post(array $options = [
         'card_id' => '',
         'json' => [
-            'activate_type' => '',
+            'activate_type' => 'AUTO_ACTIVATE | JUMP_ACTIVATE',
             'activate_url' => 'https://w.url.cn/s/Ahz3p2C',
             'activate_appid' => 'wxea9c30a90fs8d3fe',
             'activate_path' => 'pages/activate/activate',
@@ -34,7 +34,7 @@ interface Qrcode
     public function postAsync(array $options = [
         'card_id' => '',
         'json' => [
-            'activate_type' => '',
+            'activate_type' => 'AUTO_ACTIVATE | JUMP_ACTIVATE',
             'activate_url' => 'https://w.url.cn/s/Ahz3p2C',
             'activate_appid' => 'wxea9c30a90fs8d3fe',
             'activate_path' => 'pages/activate/activate',

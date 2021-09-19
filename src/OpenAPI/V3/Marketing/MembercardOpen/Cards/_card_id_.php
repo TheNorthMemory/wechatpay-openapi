@@ -49,7 +49,7 @@ interface _card_id_
             'service_phone' => '010-8877xxxx',
             'total_quantity' => 5000000,
             'date_information' => [
-                'type' => '',
+                'type' => 'FIX_TIME_RANGE | FIX_TERM | PERMANENT',
                 'available_end_time' => '2030-05-20T13:29:35.120+08:00',
                 'available_day_after_receive' => 200,
                 'wait_days_after_receive' => 2,
@@ -66,6 +66,7 @@ interface _card_id_
                 'can_modify_after_activate' => true,
                 'common_field_list' => ['string'],
                 'custom_field_list' => [[
+                    'type' => 'TEXT | SELECT | RADIO | CHECK_BOX',
                     'name' => '喜欢的运动',
                     'values' => ['string'],
                 ],],
@@ -95,7 +96,7 @@ interface _card_id_
             'service_phone' => '010-8877xxxx',
             'total_quantity' => 5000000,
             'date_information' => [
-                'type' => '',
+                'type' => 'FIX_TIME_RANGE | FIX_TERM | PERMANENT',
                 'available_end_time' => '2030-05-20T13:29:35.120+08:00',
                 'available_day_after_receive' => 200,
                 'wait_days_after_receive' => 2,
@@ -112,6 +113,7 @@ interface _card_id_
                 'can_modify_after_activate' => true,
                 'common_field_list' => ['string'],
                 'custom_field_list' => [[
+                    'type' => 'TEXT | SELECT | RADIO | CHECK_BOX',
                     'name' => '喜欢的运动',
                     'values' => ['string'],
                 ],],

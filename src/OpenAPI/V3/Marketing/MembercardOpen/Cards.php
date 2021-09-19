@@ -28,15 +28,15 @@ interface Cards
             'background_picture_url' => 'https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/0',
             'description' => '使用本会员卡表示你同意xxx公司的协议，最终解释权归xxx公司所有',
             'service_phone' => '010-8877xxxx',
-            'code_type' => '',
+            'code_type' => 'BAR_CODE | QRCODE | BAR_CODE_AND_QRCODE | NONE_CODE',
             'total_quantity' => 5000000,
             'date_information' => [
-                'type' => '',
+                'type' => 'FIX_TIME_RANGE | FIX_TERM | PERMANENT',
                 'available_begin_time' => '2020-05-20T13:29:35.120+08:00',
                 'available_end_time' => '2030-05-20T13:29:35.120+08:00',
                 'available_day_after_receive' => 200,
             ],
-            'code_mode' => '',
+            'code_mode' => 'SYSTEM_ALLOCATE | MERCHANT_DEPOSIT | REAL_TIME',
             'need_display_level' => true,
             'init_level' => '白银会员',
             'out_request_no' => '100002322019090134234sfdf',
@@ -49,6 +49,7 @@ interface Cards
             'user_information_form' => [
                 'common_field_list' => ['string'],
                 'custom_field_list' => [[
+                    'type' => 'TEXT | SELECT | RADIO | CHECK_BOX',
                     'name' => '喜欢的运动',
                     'values' => ['string'],
                 ],],
@@ -79,15 +80,15 @@ interface Cards
             'background_picture_url' => 'https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/0',
             'description' => '使用本会员卡表示你同意xxx公司的协议，最终解释权归xxx公司所有',
             'service_phone' => '010-8877xxxx',
-            'code_type' => '',
+            'code_type' => 'BAR_CODE | QRCODE | BAR_CODE_AND_QRCODE | NONE_CODE',
             'total_quantity' => 5000000,
             'date_information' => [
-                'type' => '',
+                'type' => 'FIX_TIME_RANGE | FIX_TERM | PERMANENT',
                 'available_begin_time' => '2020-05-20T13:29:35.120+08:00',
                 'available_end_time' => '2030-05-20T13:29:35.120+08:00',
                 'available_day_after_receive' => 200,
             ],
-            'code_mode' => '',
+            'code_mode' => 'SYSTEM_ALLOCATE | MERCHANT_DEPOSIT | REAL_TIME',
             'need_display_level' => true,
             'init_level' => '白银会员',
             'out_request_no' => '100002322019090134234sfdf',
@@ -100,6 +101,7 @@ interface Cards
             'user_information_form' => [
                 'common_field_list' => ['string'],
                 'custom_field_list' => [[
+                    'type' => 'TEXT | SELECT | RADIO | CHECK_BOX',
                     'name' => '喜欢的运动',
                     'values' => ['string'],
                 ],],

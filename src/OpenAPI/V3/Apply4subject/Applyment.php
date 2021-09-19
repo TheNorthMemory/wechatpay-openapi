@@ -27,7 +27,7 @@ interface Applyment
                 'id_card_number' => '',
             ],
             'subject_info' => [
-                'subject_type' => '',
+                'subject_type' => 'SUBJECT_TYPE_INDIVIDUAL | SUBJECT_TYPE_ENTERPRISE | SUBJECT_TYPE_INSTITUTIONS | SUBJECT_TYPE_OTHERS',
                 'business_license_info' => [
                     'licence_number' => '',
                     'licence_copy' => '',
@@ -37,7 +37,7 @@ interface Applyment
                     'licence_valid_date' => '["1970-01-01","forever"]',
                 ],
                 'certificate_info' => [
-                    'cert_type' => '',
+                    'cert_type' => 'CERTIFICATE_TYPE_2388 | CERTIFICATE_TYPE_2389 | CERTIFICATE_TYPE_2390 | CERTIFICATE_TYPE_2391',
                     'cert_number' => '',
                     'cert_copy' => '',
                     'merchant_name' => '',
@@ -55,11 +55,12 @@ interface Applyment
                     'store_indoor_copy' => '',
                 ],
                 'special_operation_info' => [[
+                    'category_id' => 0,
                     'store_indoor_copy' => ['MediaId'],
                 ],],
             ],
             'identification_info' => [
-                'identification_type' => '',
+                'identification_type' => 'IDENTIFICATION_TYPE_IDCARD | IDENTIFICATION_TYPE_OVERSEA_PASSPORT | IDENTIFICATION_TYPE_HONGKONG_PASSPORT | IDENTIFICATION_TYPE_MACAO_PASSPORT',
                 'identification_name' => '',
                 'identification_number' => '',
                 'identification_valid_date' => '["1970-01-01","forever"]',
@@ -89,7 +90,7 @@ interface Applyment
                 'id_card_number' => '',
             ],
             'subject_info' => [
-                'subject_type' => '',
+                'subject_type' => 'SUBJECT_TYPE_INDIVIDUAL | SUBJECT_TYPE_ENTERPRISE | SUBJECT_TYPE_INSTITUTIONS | SUBJECT_TYPE_OTHERS',
                 'business_license_info' => [
                     'licence_number' => '',
                     'licence_copy' => '',
@@ -99,7 +100,7 @@ interface Applyment
                     'licence_valid_date' => '["1970-01-01","forever"]',
                 ],
                 'certificate_info' => [
-                    'cert_type' => '',
+                    'cert_type' => 'CERTIFICATE_TYPE_2388 | CERTIFICATE_TYPE_2389 | CERTIFICATE_TYPE_2390 | CERTIFICATE_TYPE_2391',
                     'cert_number' => '',
                     'cert_copy' => '',
                     'merchant_name' => '',
@@ -117,11 +118,12 @@ interface Applyment
                     'store_indoor_copy' => '',
                 ],
                 'special_operation_info' => [[
+                    'category_id' => 0,
                     'store_indoor_copy' => ['MediaId'],
                 ],],
             ],
             'identification_info' => [
-                'identification_type' => '',
+                'identification_type' => 'IDENTIFICATION_TYPE_IDCARD | IDENTIFICATION_TYPE_OVERSEA_PASSPORT | IDENTIFICATION_TYPE_HONGKONG_PASSPORT | IDENTIFICATION_TYPE_MACAO_PASSPORT',
                 'identification_name' => '',
                 'identification_number' => '',
                 'identification_valid_date' => '["1970-01-01","forever"]',

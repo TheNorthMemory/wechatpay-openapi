@@ -24,7 +24,7 @@ interface Withdraw
             'amount' => 1,
             'remark' => '交易体现',
             'bank_memo' => 'xx平台提现',
-            'account_type' => '',
+            'account_type' => 'BASIC | OPERATION | FEES',
         ],
     ]): ResponseInterface;
 
@@ -39,7 +39,7 @@ interface Withdraw
             'amount' => 1,
             'remark' => '交易体现',
             'bank_memo' => 'xx平台提现',
-            'account_type' => '',
+            'account_type' => 'BASIC | OPERATION | FEES',
         ],
     ]): PromiseInterface;
 }

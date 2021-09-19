@@ -21,7 +21,7 @@ interface UniqueThresholdActivity
                 'activity_name' => '',
                 'activity_second_title' => '',
                 'merchant_logo_url' => '',
-                'background_color' => '',
+                'background_color' => 'Color010 | Color020 | Color030 | Color040',
                 'begin_time' => '',
                 'end_time' => '',
                 'available_periods' => [
@@ -35,12 +35,12 @@ interface UniqueThresholdActivity
                     ],],
                 ],
                 'out_request_no' => '',
-                'delivery_purpose' => '',
+                'delivery_purpose' => 'OFF_LINE_PAY | JUMP_MINI_APP',
                 'mini_programs_appid' => '',
                 'mini_programs_path' => '',
             ],
             'advanced_setting' => [
-                'delivery_user_category' => '',
+                'delivery_user_category' => 'BUSIFAVOR',
                 'merchant_member_appid' => '',
                 'payment_mode' => [
                     'payment_scene_list' => ['string'],
@@ -52,10 +52,10 @@ interface UniqueThresholdActivity
                 'goods_tags' => ['string'],
             ],
             'award_send_rule' => [
-                'award_type' => '',
-                'merchant_option' => '',
+                'award_type' => 'BUSIFAVOR',
+                'merchant_option' => 'IN_SEVICE_COUPON_MERCHANT | MANUAL_INPUT_MERCHANT',
                 'transaction_amount_minimum' => 0,
-                'send_content' => '',
+                'send_content' => 'SINGLE_COUPON | GIFT_PACKAGE',
                 'award_list' => [[
                     'stock_id' => '',
                     'original_image_url' => '',
@@ -77,7 +77,7 @@ interface UniqueThresholdActivity
                 'activity_name' => '',
                 'activity_second_title' => '',
                 'merchant_logo_url' => '',
-                'background_color' => '',
+                'background_color' => 'Color010 | Color020 | Color030 | Color040',
                 'begin_time' => '',
                 'end_time' => '',
                 'available_periods' => [
@@ -91,12 +91,12 @@ interface UniqueThresholdActivity
                     ],],
                 ],
                 'out_request_no' => '',
-                'delivery_purpose' => '',
+                'delivery_purpose' => 'OFF_LINE_PAY | JUMP_MINI_APP',
                 'mini_programs_appid' => '',
                 'mini_programs_path' => '',
             ],
             'advanced_setting' => [
-                'delivery_user_category' => '',
+                'delivery_user_category' => 'BUSIFAVOR',
                 'merchant_member_appid' => '',
                 'payment_mode' => [
                     'payment_scene_list' => ['string'],
@@ -108,10 +108,10 @@ interface UniqueThresholdActivity
                 'goods_tags' => ['string'],
             ],
             'award_send_rule' => [
-                'award_type' => '',
-                'merchant_option' => '',
+                'award_type' => 'BUSIFAVOR',
+                'merchant_option' => 'IN_SEVICE_COUPON_MERCHANT | MANUAL_INPUT_MERCHANT',
                 'transaction_amount_minimum' => 0,
-                'send_content' => '',
+                'send_content' => 'SINGLE_COUPON | GIFT_PACKAGE',
                 'award_list' => [[
                     'stock_id' => '',
                     'original_image_url' => '',

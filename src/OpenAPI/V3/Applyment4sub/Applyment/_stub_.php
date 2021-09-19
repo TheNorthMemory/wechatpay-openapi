@@ -27,7 +27,7 @@ interface _stub_
                 'contact_email' => '',
             ],
             'subject_info' => [
-                'subject_type' => '',
+                'subject_type' => 'SUBJECT_TYPE_INDIVIDUAL | SUBJECT_TYPE_ENTERPRISE | SUBJECT_TYPE_INSTITUTIONS | SUBJECT_TYPE_OTHERS',
                 'business_license_info' => [
                     'license_copy' => '',
                     'license_number' => '',
@@ -36,7 +36,7 @@ interface _stub_
                 ],
                 'certificate_info' => [
                     'cert_copy' => '',
-                    'cert_type' => '',
+                    'cert_type' => 'CERTIFICATE_TYPE_2388 | CERTIFICATE_TYPE_2389 | CERTIFICATE_TYPE_2390 | CERTIFICATE_TYPE_2391',
                     'cert_number' => '',
                     'merchant_name' => '',
                     'company_address' => '',
@@ -52,7 +52,7 @@ interface _stub_
                 ],
                 'certificate_letter_copy' => '',
                 'identity_info' => [
-                    'id_doc_type' => '',
+                    'id_doc_type' => 'IDENTIFICATION_TYPE_IDCARD | IDENTIFICATION_TYPE_OVERSEA_PASSPORT | IDENTIFICATION_TYPE_HONGKONG_PASSPORT | IDENTIFICATION_TYPE_MACAO_PASSPORT',
                     'id_card_info' => [
                         'id_card_copy' => '',
                         'id_card_national' => '',
@@ -71,7 +71,7 @@ interface _stub_
                     'owner' => true,
                 ],
                 'ubo_info' => [
-                    'id_type' => '',
+                    'id_type' => 'IDENTIFICATION_TYPE_IDCARD | IDENTIFICATION_TYPE_OVERSEA_PASSPORT | IDENTIFICATION_TYPE_HONGKONG_PASSPORT | IDENTIFICATION_TYPE_MACAO_PASSPORT',
                     'id_card_copy' => '',
                     'id_card_national' => '',
                     'id_doc_copy' => '',
@@ -129,7 +129,7 @@ interface _stub_
                 'activities_additions' => ['string'],
             ],
             'bank_account_info' => [
-                'bank_account_type' => '',
+                'bank_account_type' => 'BANK_ACCOUNT_TYPE_CORPORATE | BANK_ACCOUNT_TYPE_PERSONAL',
                 'account_name' => '',
                 'account_bank' => '工商银行',
                 'bank_name' => '施秉县农村信用合作联社城关信用社',
@@ -165,7 +165,7 @@ interface _stub_
                 'contact_email' => '',
             ],
             'subject_info' => [
-                'subject_type' => '',
+                'subject_type' => 'SUBJECT_TYPE_INDIVIDUAL | SUBJECT_TYPE_ENTERPRISE | SUBJECT_TYPE_INSTITUTIONS | SUBJECT_TYPE_OTHERS',
                 'business_license_info' => [
                     'license_copy' => '',
                     'license_number' => '',
@@ -174,7 +174,7 @@ interface _stub_
                 ],
                 'certificate_info' => [
                     'cert_copy' => '',
-                    'cert_type' => '',
+                    'cert_type' => 'CERTIFICATE_TYPE_2388 | CERTIFICATE_TYPE_2389 | CERTIFICATE_TYPE_2390 | CERTIFICATE_TYPE_2391',
                     'cert_number' => '',
                     'merchant_name' => '',
                     'company_address' => '',
@@ -190,7 +190,7 @@ interface _stub_
                 ],
                 'certificate_letter_copy' => '',
                 'identity_info' => [
-                    'id_doc_type' => '',
+                    'id_doc_type' => 'IDENTIFICATION_TYPE_IDCARD | IDENTIFICATION_TYPE_OVERSEA_PASSPORT | IDENTIFICATION_TYPE_HONGKONG_PASSPORT | IDENTIFICATION_TYPE_MACAO_PASSPORT',
                     'id_card_info' => [
                         'id_card_copy' => '',
                         'id_card_national' => '',
@@ -209,7 +209,7 @@ interface _stub_
                     'owner' => true,
                 ],
                 'ubo_info' => [
-                    'id_type' => '',
+                    'id_type' => 'IDENTIFICATION_TYPE_IDCARD | IDENTIFICATION_TYPE_OVERSEA_PASSPORT | IDENTIFICATION_TYPE_HONGKONG_PASSPORT | IDENTIFICATION_TYPE_MACAO_PASSPORT',
                     'id_card_copy' => '',
                     'id_card_national' => '',
                     'id_doc_copy' => '',
@@ -267,7 +267,7 @@ interface _stub_
                 'activities_additions' => ['string'],
             ],
             'bank_account_info' => [
-                'bank_account_type' => '',
+                'bank_account_type' => 'BANK_ACCOUNT_TYPE_CORPORATE | BANK_ACCOUNT_TYPE_PERSONAL',
                 'account_name' => '',
                 'account_bank' => '工商银行',
                 'bank_name' => '施秉县农村信用合作联社城关信用社',

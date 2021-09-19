@@ -17,6 +17,11 @@ interface Batchquerycomment
      */
     public function post(array $options = [
         'xml' => [
+            'appid' => 'wx8888888888888888',
+            'mch_id' => '1900000109',
+            'sign_type' => 'HMAC-SHA256',
+            'begin_time' => '20170724000000',
+            'end_time' => '20170725000000',
         ],
         'security' => true,
     ]): ResponseInterface;
@@ -28,6 +33,11 @@ interface Batchquerycomment
      */
     public function postAsync(array $options = [
         'xml' => [
+            'appid' => 'wx8888888888888888',
+            'mch_id' => '1900000109',
+            'sign_type' => 'HMAC-SHA256',
+            'begin_time' => '20170724000000',
+            'end_time' => '20170725000000',
         ],
         'security' => true,
     ]): PromiseInterface;

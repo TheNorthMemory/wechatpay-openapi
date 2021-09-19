@@ -19,8 +19,25 @@ interface AddUserRecords
         'out_card_code' => '',
         'json' => [
             'card_template_id' => '87789b2f25177433bcbf407e8e471f95',
-            'objective_completion_records' => [],
-            'reward_usage_records' => [],
+            'objective_completion_records' => [[
+                'objective_completion_serial_no' => '578354545',
+                'objective_id' => '123456',
+                'completion_time' => '2015-05-20T13:29:35.120+08:00',
+                'completion_type' => 'INCREASE',
+                'description' => '购买商品',
+                'completion_count' => 1,
+                'remark' => '特价商品',
+            ],],
+            'reward_usage_records' => [[
+                'reward_usage_serial_no' => '578354',
+                'reward_id' => '123456',
+                'usage_time' => '2015-05-20T13:29:35.120+08:00',
+                'usage_type' => 'INCREASE',
+                'description' => '购买商品',
+                'usage_count' => 1,
+                'amount' => 100,
+                'remark' => '特价商品',
+            ],],
         ],
     ]): ResponseInterface;
 
@@ -33,8 +50,25 @@ interface AddUserRecords
         'out_card_code' => '',
         'json' => [
             'card_template_id' => '87789b2f25177433bcbf407e8e471f95',
-            'objective_completion_records' => [],
-            'reward_usage_records' => [],
+            'objective_completion_records' => [[
+                'objective_completion_serial_no' => '578354545',
+                'objective_id' => '123456',
+                'completion_time' => '2015-05-20T13:29:35.120+08:00',
+                'completion_type' => 'INCREASE',
+                'description' => '购买商品',
+                'completion_count' => 1,
+                'remark' => '特价商品',
+            ],],
+            'reward_usage_records' => [[
+                'reward_usage_serial_no' => '578354',
+                'reward_id' => '123456',
+                'usage_time' => '2015-05-20T13:29:35.120+08:00',
+                'usage_type' => 'INCREASE',
+                'description' => '购买商品',
+                'usage_count' => 1,
+                'amount' => 100,
+                'remark' => '特价商品',
+            ],],
         ],
     ]): PromiseInterface;
 }

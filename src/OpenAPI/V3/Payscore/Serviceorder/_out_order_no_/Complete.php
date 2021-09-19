@@ -18,6 +18,34 @@ interface Complete
     public function post(array $options = [
         'out_order_no' => '',
         'json' => [
+            'out_order_no' => '1234323JKHDFE1243252',
+            'appid' => 'wxd678efh567hg6787',
+            'service_id' => '500001',
+            'post_payments' => [[
+                'name' => '就餐费用, 服务费',
+                'amount' => 40000,
+                'description' => '就餐人均100元，服务费：100/小时',
+                'count' => 4,
+            ],],
+            'post_discounts' => [[
+                'name' => '满20减1元',
+                'description' => '不与其他优惠叠加',
+                'amount' => 100,
+                'count' => 2,
+            ],],
+            'time_range' => [
+                'start_time' => '',
+                'start_time_remark' => '',
+                'end_time' => '',
+                'end_time_remark' => '',
+            ],
+            'location' => [
+                'start_location' => '',
+                'end_location' => '',
+            ],
+            'total_amount' => 50000,
+            'profit_sharing' => true,
+            'goods_tag' => '',
         ],
     ]): ResponseInterface;
 
@@ -29,6 +57,34 @@ interface Complete
     public function postAsync(array $options = [
         'out_order_no' => '',
         'json' => [
+            'out_order_no' => '1234323JKHDFE1243252',
+            'appid' => 'wxd678efh567hg6787',
+            'service_id' => '500001',
+            'post_payments' => [[
+                'name' => '就餐费用, 服务费',
+                'amount' => 40000,
+                'description' => '就餐人均100元，服务费：100/小时',
+                'count' => 4,
+            ],],
+            'post_discounts' => [[
+                'name' => '满20减1元',
+                'description' => '不与其他优惠叠加',
+                'amount' => 100,
+                'count' => 2,
+            ],],
+            'time_range' => [
+                'start_time' => '',
+                'start_time_remark' => '',
+                'end_time' => '',
+                'end_time_remark' => '',
+            ],
+            'location' => [
+                'start_location' => '',
+                'end_location' => '',
+            ],
+            'total_amount' => 50000,
+            'profit_sharing' => true,
+            'goods_tag' => '',
         ],
     ]): PromiseInterface;
 }

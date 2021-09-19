@@ -38,15 +38,40 @@ interface _stock_id_
     public function patch(array $options = [
         'stock_id' => '',
         'json' => [
-            'custom_entrance' => [],
+            'custom_entrance' => [
+                'mini_programs_info' => [
+                    'mini_programs_appid' => 'wx234545656765876',
+                    'mini_programs_path' => '/path/index/index',
+                    'entrance_words' => '欢迎选购',
+                    'guiding_words' => '获取更多优惠',
+                ],
+                'appid' => 'wx324345hgfhfghfg',
+                'hall_id' => '233455656',
+                'code_display_mode' => 'BARCODE',
+            ],
             'stock_name' => '8月1日活动券',
             'comment' => '活动使用',
             'goods_name' => 'xxx商品使用',
             'out_request_no' => '6122352020010133287985742',
-            'display_pattern_info' => [],
-            'coupon_use_rule' => [],
-            'stock_send_rule' => [],
-            'notify_config' => [],
+            'display_pattern_info' => [
+                'description' => 'xxx门店可用',
+                'merchant_logo_url' => 'https://xxx',
+                'merchant_name' => '微信支付',
+                'background_color' => 'Color020',
+                'coupon_image_url' => 'https://qpic.cn/xxx',
+            ],
+            'coupon_use_rule' => [
+                'use_method' => 'OFF_LINE',
+                'mini_programs_appid' => 'wx23232232323',
+                'mini_programs_path' => '/path/index/index',
+            ],
+            'stock_send_rule' => [
+                'natural_person_limit' => true,
+                'prevent_api_abuse' => true,
+            ],
+            'notify_config' => [
+                'notify_appid' => 'wx23232232323',
+            ],
         ],
     ]): ResponseInterface;
 
@@ -58,15 +83,40 @@ interface _stock_id_
     public function patchAsync(array $options = [
         'stock_id' => '',
         'json' => [
-            'custom_entrance' => [],
+            'custom_entrance' => [
+                'mini_programs_info' => [
+                    'mini_programs_appid' => 'wx234545656765876',
+                    'mini_programs_path' => '/path/index/index',
+                    'entrance_words' => '欢迎选购',
+                    'guiding_words' => '获取更多优惠',
+                ],
+                'appid' => 'wx324345hgfhfghfg',
+                'hall_id' => '233455656',
+                'code_display_mode' => 'BARCODE',
+            ],
             'stock_name' => '8月1日活动券',
             'comment' => '活动使用',
             'goods_name' => 'xxx商品使用',
             'out_request_no' => '6122352020010133287985742',
-            'display_pattern_info' => [],
-            'coupon_use_rule' => [],
-            'stock_send_rule' => [],
-            'notify_config' => [],
+            'display_pattern_info' => [
+                'description' => 'xxx门店可用',
+                'merchant_logo_url' => 'https://xxx',
+                'merchant_name' => '微信支付',
+                'background_color' => 'Color020',
+                'coupon_image_url' => 'https://qpic.cn/xxx',
+            ],
+            'coupon_use_rule' => [
+                'use_method' => 'OFF_LINE',
+                'mini_programs_appid' => 'wx23232232323',
+                'mini_programs_path' => '/path/index/index',
+            ],
+            'stock_send_rule' => [
+                'natural_person_limit' => true,
+                'prevent_api_abuse' => true,
+            ],
+            'notify_config' => [
+                'notify_appid' => 'wx23232232323',
+            ],
         ],
     ]): PromiseInterface;
 }

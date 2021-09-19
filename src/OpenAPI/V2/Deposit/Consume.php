@@ -17,6 +17,15 @@ interface Consume
      */
     public function post(array $options = [
         'xml' => [
+            'appid' => 'wx8888888888888888',
+            'sub_appid' => 'wx8888888888888888',
+            'mch_id' => '1900000100',
+            'sub_mch_id' => '1900000100',
+            'transaction_id' => '013467007045764',
+            'total_fee' => '888',
+            'consume_fee' => '888',
+            'fee_type' => 'CNY',
+            'sign_type' => 'HMAC-SHA256',
         ],
         'security' => true,
     ]): ResponseInterface;
@@ -28,6 +37,15 @@ interface Consume
      */
     public function postAsync(array $options = [
         'xml' => [
+            'appid' => 'wx8888888888888888',
+            'sub_appid' => 'wx8888888888888888',
+            'mch_id' => '1900000100',
+            'sub_mch_id' => '1900000100',
+            'transaction_id' => '013467007045764',
+            'total_fee' => '888',
+            'consume_fee' => '888',
+            'fee_type' => 'CNY',
+            'sign_type' => 'HMAC-SHA256',
         ],
         'security' => true,
     ]): PromiseInterface;

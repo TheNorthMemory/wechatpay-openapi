@@ -19,7 +19,11 @@ interface Close
         'combine_out_trade_no' => '',
         'json' => [
             'combine_appid' => 'wxd678efh567hg6787',
-            'sub_orders' => [],
+            'sub_orders' => [[
+                'mchid' => '1900000109',
+                'out_trade_no' => '20150806125346',
+                'sub_mchid' => '1900000109',
+            ],],
         ],
     ]): ResponseInterface;
 
@@ -32,7 +36,11 @@ interface Close
         'combine_out_trade_no' => '',
         'json' => [
             'combine_appid' => 'wxd678efh567hg6787',
-            'sub_orders' => [],
+            'sub_orders' => [[
+                'mchid' => '1900000109',
+                'out_trade_no' => '20150806125346',
+                'sub_mchid' => '1900000109',
+            ],],
         ],
     ]): PromiseInterface;
 }

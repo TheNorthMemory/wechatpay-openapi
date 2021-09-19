@@ -18,7 +18,7 @@ interface Deposit
     public function post(array $options = [
         'card_id' => '',
         'json' => [
-            'code' => [],
+            'code' => ['string'],
         ],
     ]): ResponseInterface;
 
@@ -30,7 +30,7 @@ interface Deposit
     public function postAsync(array $options = [
         'card_id' => '',
         'json' => [
-            'code' => [],
+            'code' => ['string'],
         ],
     ]): PromiseInterface;
 }

@@ -23,10 +23,49 @@ interface Activities
             'activity_type' => 'NON_MEMBER_AFTERPAY',
             'begin_time' => '2020-01-20T13:29:35.120+08:00',
             'end_time' => '2020-01-29T13:29:35.120+08:00',
-            'award_send_period' => [],
-            'stock_list' => [],
+            'award_send_period' => [
+                'award_send_time' => [[
+                    'begin_time' => '2020-01-21T00:00:00.000+08:00',
+                    'end_time' => '2020-01-27T00:00:00.000+08:00',
+                ],],
+                'award_send_day_time' => [[
+                    'begin_day_time' => [
+                        'hours' => 9,
+                        'minutes' => 34,
+                        'seconds' => 6,
+                    ],
+                    'end_day_time' => [
+                        'hours' => 9,
+                        'minutes' => 34,
+                        'seconds' => 6,
+                    ],
+                ],],
+            ],
+            'stock_list' => [[
+                'stock_creator_mchid' => '10000022',
+                'stock_id' => '98065001',
+            ],],
             'out_request_no' => '100002322019090134234sfdf',
-            'pay_activity_setting' => [],
+            'pay_activity_setting' => [
+                'logo_url' => 'https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/0',
+                'activity_second_title' => '湖南麻辣美食券',
+                'mchid_list' => ['string'],
+                'activate_setting' => [
+                    'activate_type' => 'AUTO_ACTIVATE',
+                    'activate_url' => 'https://w.url.cn/s/Ahz3p2C',
+                    'activate_miniprogram' => [
+                        'activate_appid' => 'wxea9c30a90fs8d3fe',
+                        'activate_path' => 'pages/activate/activate',
+                    ],
+                ],
+                'payment_setting' => [
+                    'payment_mode' => [
+                        'payment_scene_list' => ['string'],
+                    ],
+                    'limit_bank' => 'CFT',
+                    'goods_tags' => ['string'],
+                ],
+            ],
         ],
     ]): ResponseInterface;
 
@@ -42,10 +81,49 @@ interface Activities
             'activity_type' => 'NON_MEMBER_AFTERPAY',
             'begin_time' => '2020-01-20T13:29:35.120+08:00',
             'end_time' => '2020-01-29T13:29:35.120+08:00',
-            'award_send_period' => [],
-            'stock_list' => [],
+            'award_send_period' => [
+                'award_send_time' => [[
+                    'begin_time' => '2020-01-21T00:00:00.000+08:00',
+                    'end_time' => '2020-01-27T00:00:00.000+08:00',
+                ],],
+                'award_send_day_time' => [[
+                    'begin_day_time' => [
+                        'hours' => 9,
+                        'minutes' => 34,
+                        'seconds' => 6,
+                    ],
+                    'end_day_time' => [
+                        'hours' => 9,
+                        'minutes' => 34,
+                        'seconds' => 6,
+                    ],
+                ],],
+            ],
+            'stock_list' => [[
+                'stock_creator_mchid' => '10000022',
+                'stock_id' => '98065001',
+            ],],
             'out_request_no' => '100002322019090134234sfdf',
-            'pay_activity_setting' => [],
+            'pay_activity_setting' => [
+                'logo_url' => 'https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/0',
+                'activity_second_title' => '湖南麻辣美食券',
+                'mchid_list' => ['string'],
+                'activate_setting' => [
+                    'activate_type' => 'AUTO_ACTIVATE',
+                    'activate_url' => 'https://w.url.cn/s/Ahz3p2C',
+                    'activate_miniprogram' => [
+                        'activate_appid' => 'wxea9c30a90fs8d3fe',
+                        'activate_path' => 'pages/activate/activate',
+                    ],
+                ],
+                'payment_setting' => [
+                    'payment_mode' => [
+                        'payment_scene_list' => ['string'],
+                    ],
+                    'limit_bank' => 'CFT',
+                    'goods_tags' => ['string'],
+                ],
+            ],
         ],
     ]): PromiseInterface;
 

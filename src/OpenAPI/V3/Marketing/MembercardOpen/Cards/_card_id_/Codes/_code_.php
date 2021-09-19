@@ -46,7 +46,12 @@ interface _code_
             'background_picture_url' => 'https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/0',
             'level' => '钻石会员',
             'out_request_no' => '100002322019090134234sfdf',
-            'balance_information' => [],
+            'balance_information' => [
+                'before_balance' => 888,
+                'balance' => 888,
+                'add_balance' => 100,
+                'balance_remark' => '购买一杯珍珠奶茶，消耗30元',
+            ],
         ],
     ]): ResponseInterface;
 
@@ -63,7 +68,12 @@ interface _code_
             'background_picture_url' => 'https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/0',
             'level' => '钻石会员',
             'out_request_no' => '100002322019090134234sfdf',
-            'balance_information' => [],
+            'balance_information' => [
+                'before_balance' => 888,
+                'balance' => 888,
+                'add_balance' => 100,
+                'balance_remark' => '购买一杯珍珠奶茶，消耗30元',
+            ],
         ],
     ]): PromiseInterface;
 }

@@ -17,6 +17,13 @@ interface Facepayreverse
      */
     public function post(array $options = [
         'xml' => [
+            'appid' => 'wx8888888888888888',
+            'sub_appid' => 'wx8888888888888888',
+            'mch_id' => '1900000109',
+            'sub_mch_id' => '1900000100',
+            'transaction_id' => '1217752501201407033233368018',
+            'out_trade_no' => '1217752501201407033233368018',
+            'sign_type' => 'HMAC-SHA256',
         ],
         'security' => true,
     ]): ResponseInterface;
@@ -28,6 +35,13 @@ interface Facepayreverse
      */
     public function postAsync(array $options = [
         'xml' => [
+            'appid' => 'wx8888888888888888',
+            'sub_appid' => 'wx8888888888888888',
+            'mch_id' => '1900000109',
+            'sub_mch_id' => '1900000100',
+            'transaction_id' => '1217752501201407033233368018',
+            'out_trade_no' => '1217752501201407033233368018',
+            'sign_type' => 'HMAC-SHA256',
         ],
         'security' => true,
     ]): PromiseInterface;

@@ -19,7 +19,7 @@ interface Callbacks
         'json' => [
             'mchid' => '9856888',
             'notify_url' => 'https://pay.weixin.qq.com',
-            'switch' => '',
+            'switch' => true,
         ],
     ]): ResponseInterface;
 
@@ -32,7 +32,7 @@ interface Callbacks
         'json' => [
             'mchid' => '9856888',
             'notify_url' => 'https://pay.weixin.qq.com',
-            'switch' => '',
+            'switch' => true,
         ],
     ]): PromiseInterface;
 }

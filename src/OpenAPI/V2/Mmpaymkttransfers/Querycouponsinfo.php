@@ -17,6 +17,13 @@ interface Querycouponsinfo
      */
     public function post(array $options = [
         'xml' => [
+            'coupon_stock_id' => '1757',
+            'appid' => 'wx5edab3bdfba3dc1c',
+            'mch_id' => '10000098',
+            'op_user_id' => '10000098',
+            'device_info' => '',
+            'version' => '1.0',
+            'type' => 'XML',
         ],
     ]): ResponseInterface;
 
@@ -27,6 +34,13 @@ interface Querycouponsinfo
      */
     public function postAsync(array $options = [
         'xml' => [
+            'coupon_stock_id' => '1757',
+            'appid' => 'wx5edab3bdfba3dc1c',
+            'mch_id' => '10000098',
+            'op_user_id' => '10000098',
+            'device_info' => '',
+            'version' => '1.0',
+            'type' => 'XML',
         ],
     ]): PromiseInterface;
 }

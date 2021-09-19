@@ -21,7 +21,9 @@ interface Sync
             'appid' => 'wxd678efh567hg6787',
             'service_id' => '500001',
             'type' => 'Order_Paid',
-            'detail' => [],
+            'detail' => [
+                'paid_time' => '20091225091210',
+            ],
         ],
     ]): ResponseInterface;
 
@@ -36,7 +38,9 @@ interface Sync
             'appid' => 'wxd678efh567hg6787',
             'service_id' => '500001',
             'type' => 'Order_Paid',
-            'detail' => [],
+            'detail' => [
+                'paid_time' => '20091225091210',
+            ],
         ],
     ]): PromiseInterface;
 }

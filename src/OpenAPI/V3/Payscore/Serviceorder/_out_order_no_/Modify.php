@@ -20,8 +20,18 @@ interface Modify
         'json' => [
             'appid' => 'wxd678efh567hg6787',
             'service_id' => '500001',
-            'post_payments' => [],
-            'post_discounts' => [],
+            'post_payments' => [[
+                'name' => '就餐费用, 服务费',
+                'amount' => 40000,
+                'description' => '就餐人均100元，服务费：100/小时',
+                'count' => 4,
+            ],],
+            'post_discounts' => [[
+                'name' => '满20减1元',
+                'description' => '不与其他优惠叠加',
+                'amount' => 100,
+                'count' => 2,
+            ],],
             'total_amount' => 50000,
             'reason' => '用户投诉',
         ],
@@ -37,8 +47,18 @@ interface Modify
         'json' => [
             'appid' => 'wxd678efh567hg6787',
             'service_id' => '500001',
-            'post_payments' => [],
-            'post_discounts' => [],
+            'post_payments' => [[
+                'name' => '就餐费用, 服务费',
+                'amount' => 40000,
+                'description' => '就餐人均100元，服务费：100/小时',
+                'count' => 4,
+            ],],
+            'post_discounts' => [[
+                'name' => '满20减1元',
+                'description' => '不与其他优惠叠加',
+                'amount' => 100,
+                'count' => 2,
+            ],],
             'total_amount' => 50000,
             'reason' => '用户投诉',
         ],

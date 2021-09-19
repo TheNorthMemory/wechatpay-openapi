@@ -17,6 +17,10 @@ interface Closeorder
      */
     public function post(array $options = [
         'xml' => [
+            'appid' => 'wx8888888888888888',
+            'mch_id' => '1900000109',
+            'out_trade_no' => '1217752501201407033233368018',
+            'sign_type' => 'HMAC-SHA256',
         ],
     ]): ResponseInterface;
 
@@ -27,6 +31,10 @@ interface Closeorder
      */
     public function postAsync(array $options = [
         'xml' => [
+            'appid' => 'wx8888888888888888',
+            'mch_id' => '1900000109',
+            'out_trade_no' => '1217752501201407033233368018',
+            'sign_type' => 'HMAC-SHA256',
         ],
     ]): PromiseInterface;
 }

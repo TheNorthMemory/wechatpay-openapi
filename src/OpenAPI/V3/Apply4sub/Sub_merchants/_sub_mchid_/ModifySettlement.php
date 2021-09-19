@@ -18,6 +18,12 @@ interface ModifySettlement
     public function post(array $options = [
         'sub_mchid' => '',
         'json' => [
+            'account_type' => 'ACCOUNT_TYPE_BUSINESS',
+            'account_bank' => '工商银行',
+            'bank_name' => '施秉县农村信用合作联社城关信用社',
+            'bank_branch_id' => '402713354941',
+            'account_number' => 'ciphertext',
+            'bank_address_code' => '110000',
         ],
         'headers' => [
             'Wechatpay-Serial' => '',
@@ -32,6 +38,12 @@ interface ModifySettlement
     public function postAsync(array $options = [
         'sub_mchid' => '',
         'json' => [
+            'account_type' => 'ACCOUNT_TYPE_BUSINESS',
+            'account_bank' => '工商银行',
+            'bank_name' => '施秉县农村信用合作联社城关信用社',
+            'bank_branch_id' => '402713354941',
+            'account_number' => 'ciphertext',
+            'bank_address_code' => '110000',
         ],
         'headers' => [
             'Wechatpay-Serial' => '',

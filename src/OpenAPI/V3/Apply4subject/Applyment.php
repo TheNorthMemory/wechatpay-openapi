@@ -21,9 +21,51 @@ interface Applyment
     public function post(array $options = [
         'json' => [
             'business_code' => '',
-            'contact_info' => [],
-            'subject_info' => [],
-            'identification_info' => [],
+            'contact_info' => [
+                'name' => '',
+                'mobile' => '',
+                'id_card_number' => '',
+            ],
+            'subject_info' => [
+                'subject_type' => '',
+                'business_license_info' => [
+                    'licence_number' => '',
+                    'licence_copy' => '',
+                    'merchant_name' => '',
+                    'legal_person' => '',
+                    'company_address' => '',
+                    'licence_valid_date' => '["1970-01-01","forever"]',
+                ],
+                'certificate_info' => [
+                    'cert_type' => '',
+                    'cert_number' => '',
+                    'cert_copy' => '',
+                    'merchant_name' => '',
+                    'legal_person' => '',
+                    'company_address' => '',
+                    'cert_valid_date' => '["1970-01-01","forever"]',
+                ],
+                'company_prove_copy' => '',
+                'assist_prove_info' => [
+                    'micro_biz_type' => 'MICRO_TYPE_STORE',
+                    'store_name' => '',
+                    'store_address_code' => '',
+                    'store_address' => '',
+                    'store_header_copy' => '',
+                    'store_indoor_copy' => '',
+                ],
+                'special_operation_info' => [[
+                    'store_indoor_copy' => ['MediaId'],
+                ],],
+            ],
+            'identification_info' => [
+                'identification_type' => '',
+                'identification_name' => '',
+                'identification_number' => '',
+                'identification_valid_date' => '["1970-01-01","forever"]',
+                'identification_front_copy' => '',
+                'identification_back_copy' => '',
+            ],
         ],
         'query' => [
             'channel_id' => '',
@@ -41,9 +83,51 @@ interface Applyment
     public function postAsync(array $options = [
         'json' => [
             'business_code' => '',
-            'contact_info' => [],
-            'subject_info' => [],
-            'identification_info' => [],
+            'contact_info' => [
+                'name' => '',
+                'mobile' => '',
+                'id_card_number' => '',
+            ],
+            'subject_info' => [
+                'subject_type' => '',
+                'business_license_info' => [
+                    'licence_number' => '',
+                    'licence_copy' => '',
+                    'merchant_name' => '',
+                    'legal_person' => '',
+                    'company_address' => '',
+                    'licence_valid_date' => '["1970-01-01","forever"]',
+                ],
+                'certificate_info' => [
+                    'cert_type' => '',
+                    'cert_number' => '',
+                    'cert_copy' => '',
+                    'merchant_name' => '',
+                    'legal_person' => '',
+                    'company_address' => '',
+                    'cert_valid_date' => '["1970-01-01","forever"]',
+                ],
+                'company_prove_copy' => '',
+                'assist_prove_info' => [
+                    'micro_biz_type' => 'MICRO_TYPE_STORE',
+                    'store_name' => '',
+                    'store_address_code' => '',
+                    'store_address' => '',
+                    'store_header_copy' => '',
+                    'store_indoor_copy' => '',
+                ],
+                'special_operation_info' => [[
+                    'store_indoor_copy' => ['MediaId'],
+                ],],
+            ],
+            'identification_info' => [
+                'identification_type' => '',
+                'identification_name' => '',
+                'identification_number' => '',
+                'identification_valid_date' => '["1970-01-01","forever"]',
+                'identification_front_copy' => '',
+                'identification_back_copy' => '',
+            ],
         ],
         'query' => [
             'channel_id' => '',

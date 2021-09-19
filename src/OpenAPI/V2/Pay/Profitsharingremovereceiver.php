@@ -17,6 +17,12 @@ interface Profitsharingremovereceiver
      */
     public function post(array $options = [
         'xml' => [
+            'mch_id' => '1900000100',
+            'sub_mch_id' => '1900000109',
+            'appid' => 'wx8888888888888888',
+            'sub_appid' => 'wx8888888888888888',
+            'sign_type' => 'HMAC-SHA256',
+            'receiver' => '',
         ],
     ]): ResponseInterface;
 
@@ -27,6 +33,12 @@ interface Profitsharingremovereceiver
      */
     public function postAsync(array $options = [
         'xml' => [
+            'mch_id' => '1900000100',
+            'sub_mch_id' => '1900000109',
+            'appid' => 'wx8888888888888888',
+            'sub_appid' => 'wx8888888888888888',
+            'sign_type' => 'HMAC-SHA256',
+            'receiver' => '',
         ],
     ]): PromiseInterface;
 }

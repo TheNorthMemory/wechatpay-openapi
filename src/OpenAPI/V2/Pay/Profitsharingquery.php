@@ -17,6 +17,11 @@ interface Profitsharingquery
      */
     public function post(array $options = [
         'xml' => [
+            'mch_id' => '1900000100',
+            'sub_mch_id' => '1900000109',
+            'transaction_id' => '4208450740201411110007820472',
+            'out_order_no' => 'P20150806125346',
+            'sign_type' => 'HMAC-SHA256',
         ],
     ]): ResponseInterface;
 
@@ -27,6 +32,11 @@ interface Profitsharingquery
      */
     public function postAsync(array $options = [
         'xml' => [
+            'mch_id' => '1900000100',
+            'sub_mch_id' => '1900000109',
+            'transaction_id' => '4208450740201411110007820472',
+            'out_order_no' => 'P20150806125346',
+            'sign_type' => 'HMAC-SHA256',
         ],
     ]): PromiseInterface;
 }

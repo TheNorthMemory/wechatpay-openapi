@@ -21,8 +21,13 @@ interface Orders
             'sub_mchid' => '1900000109',
             'transaction_id' => '4208450740201411110007820472',
             'out_order_no' => 'P20150806125346',
-            'receivers' => [],
-            'finish' => '',
+            'receivers' => [[
+                'type' => 'MERCHANT_ID',
+                'receiver_account' => '1900000109',
+                'amount' => 190,
+                'description' => '分给商户1900000109',
+            ],],
+            'finish' => true,
         ],
     ]): ResponseInterface;
 
@@ -37,8 +42,13 @@ interface Orders
             'sub_mchid' => '1900000109',
             'transaction_id' => '4208450740201411110007820472',
             'out_order_no' => 'P20150806125346',
-            'receivers' => [],
-            'finish' => '',
+            'receivers' => [[
+                'type' => 'MERCHANT_ID',
+                'receiver_account' => '1900000109',
+                'amount' => 190,
+                'description' => '分给商户1900000109',
+            ],],
+            'finish' => true,
         ],
     ]): PromiseInterface;
 

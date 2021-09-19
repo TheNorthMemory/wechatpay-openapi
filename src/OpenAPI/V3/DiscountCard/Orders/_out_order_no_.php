@@ -19,8 +19,25 @@ interface _out_order_no_
     public function patch(array $options = [
         'out_order_no' => '',
         'json' => [
-            'objectives' => [],
-            'rewards' => [],
+            'objectives' => [[
+                'objective_serial_no' => '578354545',
+                'objective_id' => 123456,
+                'performance_description' => '购买商品',
+                'performance_type' => 'INCREASE',
+                'count' => 1,
+                'performance_time' => '2015-05-20T13:29:35.120+08:00',
+                'remark' => '特价商品',
+            ],],
+            'rewards' => [[
+                'reward_serial_no' => '578354',
+                'reward_id' => 123456,
+                'description' => '购买商品',
+                'reward_type' => 'INCREASE',
+                'count' => 1,
+                'amount' => 100,
+                'reward_time' => '2015-05-20T13:29:35.120+08:00',
+                'remark' => '特价商品',
+            ],],
         ],
     ]): ResponseInterface;
 
@@ -33,8 +50,25 @@ interface _out_order_no_
     public function patchAsync(array $options = [
         'out_order_no' => '',
         'json' => [
-            'objectives' => [],
-            'rewards' => [],
+            'objectives' => [[
+                'objective_serial_no' => '578354545',
+                'objective_id' => 123456,
+                'performance_description' => '购买商品',
+                'performance_type' => 'INCREASE',
+                'count' => 1,
+                'performance_time' => '2015-05-20T13:29:35.120+08:00',
+                'remark' => '特价商品',
+            ],],
+            'rewards' => [[
+                'reward_serial_no' => '578354',
+                'reward_id' => 123456,
+                'description' => '购买商品',
+                'reward_type' => 'INCREASE',
+                'count' => 1,
+                'amount' => 100,
+                'reward_time' => '2015-05-20T13:29:35.120+08:00',
+                'remark' => '特价商品',
+            ],],
         ],
     ]): PromiseInterface;
 

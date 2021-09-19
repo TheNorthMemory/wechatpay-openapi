@@ -17,6 +17,12 @@ interface Orderquery
      */
     public function post(array $options = [
         'xml' => [
+            'appid' => 'wxd678efh567hg6787',
+            'sub_appid' => 'wx8888888888888888',
+            'mch_id' => '1230000109',
+            'sub_mch_id' => '1900000100',
+            'transaction_id' => '1009660380201506130728806387',
+            'sign_type' => 'HMAC-SHA256',
         ],
     ]): ResponseInterface;
 
@@ -27,6 +33,12 @@ interface Orderquery
      */
     public function postAsync(array $options = [
         'xml' => [
+            'appid' => 'wxd678efh567hg6787',
+            'sub_appid' => 'wx8888888888888888',
+            'mch_id' => '1230000109',
+            'sub_mch_id' => '1900000100',
+            'transaction_id' => '1009660380201506130728806387',
+            'sign_type' => 'HMAC-SHA256',
         ],
     ]): PromiseInterface;
 }

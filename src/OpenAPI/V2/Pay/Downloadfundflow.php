@@ -17,6 +17,12 @@ interface Downloadfundflow
      */
     public function post(array $options = [
         'xml' => [
+            'appid' => 'wx8888888888888888',
+            'mch_id' => '1900000109',
+            'sign_type' => 'HMAC-SHA256',
+            'bill_date' => '20140603',
+            'account_type' => 'Basic',
+            'tar_type' => 'GZIP',
         ],
         'security' => true,
     ]): ResponseInterface;
@@ -28,6 +34,12 @@ interface Downloadfundflow
      */
     public function postAsync(array $options = [
         'xml' => [
+            'appid' => 'wx8888888888888888',
+            'mch_id' => '1900000109',
+            'sign_type' => 'HMAC-SHA256',
+            'bill_date' => '20140603',
+            'account_type' => 'Basic',
+            'tar_type' => 'GZIP',
         ],
         'security' => true,
     ]): PromiseInterface;

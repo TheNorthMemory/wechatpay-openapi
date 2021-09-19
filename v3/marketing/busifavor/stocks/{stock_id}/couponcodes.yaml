@@ -24,7 +24,9 @@ post:
           coupon_code_list:
             type: array
             description: 券code列表
-            example: ABC9588200，ABC9588201
+            items:
+              type: string
+            example: [ABC9588200, ABC9588201]
           upload_request_no:
             type: string
             description: 请求业务单据号

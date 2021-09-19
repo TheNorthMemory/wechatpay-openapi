@@ -25,8 +25,23 @@ interface Refunds
             'reason' => '商品已售完',
             'notify_url' => 'https://weixin.qq.com',
             'funds_account' => 'AVAILABLE',
-            'amount' => [],
-            'goods_detail' => [],
+            'amount' => [
+                'refund' => 888,
+                'from' => [[
+                    'account' => 'AVAILABLE',
+                    'amount' => 444,
+                ],],
+                'total' => 888,
+                'currency' => 'CNY',
+            ],
+            'goods_detail' => [[
+                'merchant_goods_id' => '1217752501201407033233368018',
+                'wechatpay_goods_id' => '1001',
+                'goods_name' => 'iPhone6s 16G',
+                'unit_price' => 528800,
+                'refund_amount' => 528800,
+                'refund_quantity' => 1,
+            ],],
         ],
     ]): ResponseInterface;
 
@@ -44,8 +59,23 @@ interface Refunds
             'reason' => '商品已售完',
             'notify_url' => 'https://weixin.qq.com',
             'funds_account' => 'AVAILABLE',
-            'amount' => [],
-            'goods_detail' => [],
+            'amount' => [
+                'refund' => 888,
+                'from' => [[
+                    'account' => 'AVAILABLE',
+                    'amount' => 444,
+                ],],
+                'total' => 888,
+                'currency' => 'CNY',
+            ],
+            'goods_detail' => [[
+                'merchant_goods_id' => '1217752501201407033233368018',
+                'wechatpay_goods_id' => '1001',
+                'goods_name' => 'iPhone6s 16G',
+                'unit_price' => 528800,
+                'refund_amount' => 528800,
+                'refund_quantity' => 1,
+            ],],
         ],
     ]): PromiseInterface;
 }

@@ -18,7 +18,7 @@ interface SetAdvertisingIndustryFilter
     public function post(array $options = [
         'json' => [
             'sub_mchid' => '1900000109',
-            'advertising_industry_filters' => [],
+            'advertising_industry_filters' => ['string'],
         ],
     ]): ResponseInterface;
 
@@ -30,7 +30,7 @@ interface SetAdvertisingIndustryFilter
     public function postAsync(array $options = [
         'json' => [
             'sub_mchid' => '1900000109',
-            'advertising_industry_filters' => [],
+            'advertising_industry_filters' => ['string'],
         ],
     ]): PromiseInterface;
 }

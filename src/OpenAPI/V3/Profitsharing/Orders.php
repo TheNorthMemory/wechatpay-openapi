@@ -24,8 +24,14 @@ interface Orders
             'sub_appid' => 'wx8888888888888889',
             'transaction_id' => '4208450740201411110007820472',
             'out_order_no' => 'P20150806125346',
-            'receivers' => [],
-            'unfreeze_unsplit' => '',
+            'receivers' => [[
+                'type' => 'MERCHANT_ID',
+                'account' => '86693852',
+                'name' => 'hu89ohu89ohu89o',
+                'amount' => 888,
+                'description' => '分给商户A',
+            ],],
+            'unfreeze_unsplit' => true,
         ],
     ]): ResponseInterface;
 
@@ -41,8 +47,14 @@ interface Orders
             'sub_appid' => 'wx8888888888888889',
             'transaction_id' => '4208450740201411110007820472',
             'out_order_no' => 'P20150806125346',
-            'receivers' => [],
-            'unfreeze_unsplit' => '',
+            'receivers' => [[
+                'type' => 'MERCHANT_ID',
+                'account' => '86693852',
+                'name' => 'hu89ohu89ohu89o',
+                'amount' => 888,
+                'description' => '分给商户A',
+            ],],
+            'unfreeze_unsplit' => true,
         ],
     ]): PromiseInterface;
 }

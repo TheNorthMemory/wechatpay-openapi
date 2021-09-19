@@ -18,7 +18,7 @@ interface Add
     public function post(array $options = [
         'activity_id' => '',
         'json' => [
-            'merchant_id_list' => [],
+            'merchant_id_list' => ['string'],
             'add_request_no' => '',
         ],
     ]): ResponseInterface;
@@ -31,7 +31,7 @@ interface Add
     public function postAsync(array $options = [
         'activity_id' => '',
         'json' => [
-            'merchant_id_list' => [],
+            'merchant_id_list' => ['string'],
             'add_request_no' => '',
         ],
     ]): PromiseInterface;

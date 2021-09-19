@@ -17,6 +17,26 @@ interface Facepay
      */
     public function post(array $options = [
         'xml' => [
+            'deposit' => 'Y',
+            'appid' => 'wx8888888888888888',
+            'sub_appid' => 'wx8888888888888888',
+            'mch_id' => '1900000100',
+            'sub_mch_id' => '1900000100',
+            'device_info' => '013467007045764',
+            'body' => 'image形象店-深圳腾大- QQ公仔',
+            'detail' => '',
+            'attach' => '说明',
+            'out_trade_no' => '1217472501201407033233367018',
+            'total_fee' => '888',
+            'fee_type' => 'CNY',
+            'spbill_create_ip' => '8.8.8.8',
+            'goods_tag' => '1234',
+            'limit_pay' => 'no_credit',
+            'time_start' => '20091225091010',
+            'time_expire' => '20091227091010',
+            'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
+            'face_code' => 'b713b5d2-666c-48',
+            'sign_type' => 'HMAC-SHA256',
         ],
     ]): ResponseInterface;
 
@@ -27,6 +47,26 @@ interface Facepay
      */
     public function postAsync(array $options = [
         'xml' => [
+            'deposit' => 'Y',
+            'appid' => 'wx8888888888888888',
+            'sub_appid' => 'wx8888888888888888',
+            'mch_id' => '1900000100',
+            'sub_mch_id' => '1900000100',
+            'device_info' => '013467007045764',
+            'body' => 'image形象店-深圳腾大- QQ公仔',
+            'detail' => '',
+            'attach' => '说明',
+            'out_trade_no' => '1217472501201407033233367018',
+            'total_fee' => '888',
+            'fee_type' => 'CNY',
+            'spbill_create_ip' => '8.8.8.8',
+            'goods_tag' => '1234',
+            'limit_pay' => 'no_credit',
+            'time_start' => '20091225091010',
+            'time_expire' => '20091227091010',
+            'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
+            'face_code' => 'b713b5d2-666c-48',
+            'sign_type' => 'HMAC-SHA256',
         ],
     ]): PromiseInterface;
 }

@@ -20,7 +20,7 @@ interface Response
             'complaint_id' => '200201820200101080076610000',
             'complainted_mchid' => '1900012181',
             'response_content' => '已与用户沟通解决',
-            'response_images' => [],
+            'response_images' => ['MediaId'],
         ],
     ]): ResponseInterface;
 
@@ -34,7 +34,7 @@ interface Response
             'complaint_id' => '200201820200101080076610000',
             'complainted_mchid' => '1900012181',
             'response_content' => '已与用户沟通解决',
-            'response_images' => [],
+            'response_images' => ['MediaId'],
         ],
     ]): PromiseInterface;
 }

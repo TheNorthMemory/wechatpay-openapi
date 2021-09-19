@@ -24,7 +24,11 @@ interface Apply
             'out_trade_no' => '1217752501201407033233368018',
             'out_refund_no' => '1217752501201407033233368018',
             'reason' => '商品已售完',
-            'amount' => [],
+            'amount' => [
+                'refund' => 888,
+                'total' => 888,
+                'currency' => 'CNY',
+            ],
             'notify_url' => 'https://weixin.qq.com',
         ],
     ]): ResponseInterface;
@@ -43,7 +47,11 @@ interface Apply
             'out_trade_no' => '1217752501201407033233368018',
             'out_refund_no' => '1217752501201407033233368018',
             'reason' => '商品已售完',
-            'amount' => [],
+            'amount' => [
+                'refund' => 888,
+                'total' => 888,
+                'currency' => 'CNY',
+            ],
             'notify_url' => 'https://weixin.qq.com',
         ],
     ]): PromiseInterface;

@@ -22,8 +22,8 @@ interface Feedbacks
             'complainted_mchid' => '9980456248',
             'feedback_type' => 1,
             'feedback_content' => '已与用户协商解决',
-            'feedback_images' => [],
-            'launch_confirm_process' => '',
+            'feedback_images' => ['MediaId'],
+            'launch_confirm_process' => true,
         ],
     ]): ResponseInterface;
 
@@ -39,8 +39,8 @@ interface Feedbacks
             'complainted_mchid' => '9980456248',
             'feedback_type' => 1,
             'feedback_content' => '已与用户协商解决',
-            'feedback_images' => [],
-            'launch_confirm_process' => '',
+            'feedback_images' => ['MediaId'],
+            'launch_confirm_process' => true,
         ],
     ]): PromiseInterface;
 }

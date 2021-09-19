@@ -17,8 +17,15 @@ interface Terminate
      */
     public function post(array $options = [
         'json' => [
-            'partner' => [],
-            'authorized_data' => [],
+            'partner' => [
+                'type' => '',
+                'appid' => '',
+                'merchant_id' => '',
+            ],
+            'authorized_data' => [
+                'business_type' => '',
+                'stock_id' => '',
+            ],
         ],
         'headers' => [
             'Idempotency-Key' => '',
@@ -32,8 +39,15 @@ interface Terminate
      */
     public function postAsync(array $options = [
         'json' => [
-            'partner' => [],
-            'authorized_data' => [],
+            'partner' => [
+                'type' => '',
+                'appid' => '',
+                'merchant_id' => '',
+            ],
+            'authorized_data' => [
+                'business_type' => '',
+                'stock_id' => '',
+            ],
         ],
         'headers' => [
             'Idempotency-Key' => '',

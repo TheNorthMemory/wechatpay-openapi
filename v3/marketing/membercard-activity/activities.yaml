@@ -150,7 +150,9 @@ post:
               mchid_list:
                 type: array
                 description: 活动曝光商户号
-                example: '10000022,10000023'
+                items:
+                  type: string
+                example: ['10000022','10000023']
               activate_setting:
                 type: object
                 description: 激活方式设置
@@ -191,6 +193,8 @@ post:
                       payment_scene_list:
                         type: array
                         description: 支付场景列表
+                        items:
+                          type: string
                         example: APP
                   limit_bank:
                     type: string
@@ -199,7 +203,9 @@ post:
                   goods_tags:
                     type: array
                     description: 订单优惠标记
-                    example: 'xxx,yyy'
+                    items:
+                      type: string
+                    example: [xxx, yyy]
   responses:
     200:
       schema:
@@ -352,7 +358,9 @@ post:
               mchid_list:
                 type: array
                 description: 活动曝光商户号
-                example: '10000022,10000023'
+                items:
+                  type: string
+                example: ['10000022','10000023']
               activate_setting:
                 type: object
                 description: 激活方式设置
@@ -596,7 +604,9 @@ get:
                     mchid_list:
                       type: array
                       description: 活动曝光商户号
-                      example: '10000022,10000023'
+                      items:
+                        type: string
+                      example: ['10000022','10000023']
                     activate_setting:
                       type: object
                       description: 激活方式设置

@@ -17,6 +17,10 @@ interface Querycombinedorder
      */
     public function post(array $options = [
         'xml' => [
+            'combine_appid' => 'wx8888888888888888',
+            'combine_mch_id' => '1900000109',
+            'sign_type' => 'HMAC-SHA256',
+            'combine_out_trade_no' => '1217752501201407033233368018',
         ],
     ]): ResponseInterface;
 
@@ -27,6 +31,10 @@ interface Querycombinedorder
      */
     public function postAsync(array $options = [
         'xml' => [
+            'combine_appid' => 'wx8888888888888888',
+            'combine_mch_id' => '1900000109',
+            'sign_type' => 'HMAC-SHA256',
+            'combine_out_trade_no' => '1217752501201407033233368018',
         ],
     ]): PromiseInterface;
 }

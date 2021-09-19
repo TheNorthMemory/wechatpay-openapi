@@ -48,12 +48,34 @@ interface _card_id_
             'description' => '使用本会员卡表示你同意xxx公司的协议，最终解释权归xxx公司所有',
             'service_phone' => '010-8877xxxx',
             'total_quantity' => 5000000,
-            'date_information' => [],
-            'need_display_level' => '',
+            'date_information' => [
+                'type' => '',
+                'available_end_time' => '2030-05-20T13:29:35.120+08:00',
+                'available_day_after_receive' => 200,
+                'wait_days_after_receive' => 2,
+            ],
+            'need_display_level' => true,
             'init_level' => '白银会员',
-            'balance_information' => [],
-            'user_information_form' => [],
-            'additional_statement' => [],
+            'balance_information' => [
+                'need_balance' => true,
+                'balance_appid' => 'wxea9c30890f48d5ae',
+                'balance_path' => 'pages/balance/balance',
+                'balance_url' => 'https://xxx.com',
+            ],
+            'user_information_form' => [
+                'can_modify_after_activate' => true,
+                'common_field_list' => ['string'],
+                'custom_field_list' => [[
+                    'name' => '喜欢的运动',
+                    'values' => ['string'],
+                ],],
+            ],
+            'additional_statement' => [
+                'title' => 'xxx会员卡使用须知',
+                'url' => 'https://xxx.111.com',
+                'appid' => 'wxea9c30890f48d5ae',
+                'path' => 'pages/statement/statement',
+            ],
         ],
     ]): ResponseInterface;
 
@@ -72,12 +94,34 @@ interface _card_id_
             'description' => '使用本会员卡表示你同意xxx公司的协议，最终解释权归xxx公司所有',
             'service_phone' => '010-8877xxxx',
             'total_quantity' => 5000000,
-            'date_information' => [],
-            'need_display_level' => '',
+            'date_information' => [
+                'type' => '',
+                'available_end_time' => '2030-05-20T13:29:35.120+08:00',
+                'available_day_after_receive' => 200,
+                'wait_days_after_receive' => 2,
+            ],
+            'need_display_level' => true,
             'init_level' => '白银会员',
-            'balance_information' => [],
-            'user_information_form' => [],
-            'additional_statement' => [],
+            'balance_information' => [
+                'need_balance' => true,
+                'balance_appid' => 'wxea9c30890f48d5ae',
+                'balance_path' => 'pages/balance/balance',
+                'balance_url' => 'https://xxx.com',
+            ],
+            'user_information_form' => [
+                'can_modify_after_activate' => true,
+                'common_field_list' => ['string'],
+                'custom_field_list' => [[
+                    'name' => '喜欢的运动',
+                    'values' => ['string'],
+                ],],
+            ],
+            'additional_statement' => [
+                'title' => 'xxx会员卡使用须知',
+                'url' => 'https://xxx.111.com',
+                'appid' => 'wxea9c30890f48d5ae',
+                'path' => 'pages/statement/statement',
+            ],
         ],
     ]): PromiseInterface;
 

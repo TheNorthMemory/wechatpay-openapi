@@ -41,9 +41,23 @@ interface _store_id_
         'store_id' => '',
         'json' => [
             'sub_mchid' => '1900000109',
-            'store_basics' => [],
-            'store_address' => [],
-            'store_business' => [],
+            'store_basics' => [
+                'store_reference_id' => '',
+                'brand_name' => '',
+                'store_name' => '',
+                'store_business' => '',
+            ],
+            'store_address' => [
+                'address_code' => '440305',
+                'address_detail' => '',
+                'address_complements' => '',
+                'longitude' => '',
+                'latitude' => '',
+            ],
+            'store_business' => [
+                'service_phone' => '0755-86013388',
+                'business_hours' => '周一至周五 09:00-20:00|周六至周日 10:00-22:00',
+            ],
         ],
     ]): ResponseInterface;
 
@@ -56,9 +70,23 @@ interface _store_id_
         'store_id' => '',
         'json' => [
             'sub_mchid' => '1900000109',
-            'store_basics' => [],
-            'store_address' => [],
-            'store_business' => [],
+            'store_basics' => [
+                'store_reference_id' => '',
+                'brand_name' => '',
+                'store_name' => '',
+                'store_business' => '',
+            ],
+            'store_address' => [
+                'address_code' => '440305',
+                'address_detail' => '',
+                'address_complements' => '',
+                'longitude' => '',
+                'latitude' => '',
+            ],
+            'store_business' => [
+                'service_phone' => '0755-86013388',
+                'business_hours' => '周一至周五 09:00-20:00|周六至周日 10:00-22:00',
+            ],
         ],
     ]): PromiseInterface;
 }

@@ -17,6 +17,11 @@ interface Downloadbill
      */
     public function post(array $options = [
         'xml' => [
+            'appid' => 'wx8888888888888888',
+            'mch_id' => '1900000109',
+            'bill_date' => '20140603',
+            'bill_type' => 'ALL',
+            'tar_type' => 'GZIP',
         ],
     ]): ResponseInterface;
 
@@ -27,6 +32,11 @@ interface Downloadbill
      */
     public function postAsync(array $options = [
         'xml' => [
+            'appid' => 'wx8888888888888888',
+            'mch_id' => '1900000109',
+            'bill_date' => '20140603',
+            'bill_type' => 'ALL',
+            'tar_type' => 'GZIP',
         ],
     ]): PromiseInterface;
 }

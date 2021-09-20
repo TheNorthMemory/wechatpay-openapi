@@ -1,0 +1,20 @@
+post:
+  tags:
+    - 支付∙沙箱环境
+  summary: 提交付款码支付
+  description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/api/micropay.php?chapter=9_10&index=1)'
+  consumes:
+    - application/xml
+  produces:
+    - application/xml
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        $ref: '../../../definitions/micropay.yaml#/micropay.request'
+  responses:
+    '200':
+      description: ''
+      schema:
+        $ref: '../../../definitions/micropay.yaml#/micropay.response'

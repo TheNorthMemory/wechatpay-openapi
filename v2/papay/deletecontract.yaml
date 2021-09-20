@@ -8,7 +8,7 @@ post:
   produces:
     - application/xml
   parameters:
-    - name: buffer
+    - name: _
       in: body
       required: true
       schema:

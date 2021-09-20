@@ -17,7 +17,12 @@ interface Addsubdevconfig
      */
     public function post(array $options = [
         'xml' => [
+            'appid' => 'wx8888888888888888',
+            'mch_id' => '1900000109',
+            'sub_mch_id' => '1900000100',
+            'jsapi_path' => 'http://www.qq.com/wechat/',
         ],
+        'nonceless' => true,
         'security' => true,
     ]): ResponseInterface;
 
@@ -28,7 +33,12 @@ interface Addsubdevconfig
      */
     public function postAsync(array $options = [
         'xml' => [
+            'appid' => 'wx8888888888888888',
+            'mch_id' => '1900000109',
+            'sub_mch_id' => '1900000100',
+            'jsapi_path' => 'http://www.qq.com/wechat/',
         ],
+        'nonceless' => true,
         'security' => true,
     ]): PromiseInterface;
 }

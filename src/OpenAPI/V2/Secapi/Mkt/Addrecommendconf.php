@@ -17,6 +17,11 @@ interface Addrecommendconf
      */
     public function post(array $options = [
         'xml' => [
+            'mch_id' => '1900000109',
+            'sub_mch_id' => '1900000100',
+            'sub_appid' => 'wx8888888888888888',
+            'subscribe_appid' => 'wx931386123456789e',
+            'sign_type' => 'HMAC-SHA256',
         ],
         'security' => true,
     ]): ResponseInterface;
@@ -28,6 +33,11 @@ interface Addrecommendconf
      */
     public function postAsync(array $options = [
         'xml' => [
+            'mch_id' => '1900000109',
+            'sub_mch_id' => '1900000100',
+            'sub_appid' => 'wx8888888888888888',
+            'subscribe_appid' => 'wx931386123456789e',
+            'sign_type' => 'HMAC-SHA256',
         ],
         'security' => true,
     ]): PromiseInterface;

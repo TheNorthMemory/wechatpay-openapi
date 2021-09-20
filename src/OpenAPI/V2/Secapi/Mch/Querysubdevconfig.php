@@ -17,7 +17,11 @@ interface Querysubdevconfig
      */
     public function post(array $options = [
         'xml' => [
+            'appid' => 'wx8888888888888888',
+            'mch_id' => '1900000109',
+            'sub_mch_id' => '1900000100',
         ],
+        'nonceless' => true,
         'security' => true,
     ]): ResponseInterface;
 
@@ -28,7 +32,11 @@ interface Querysubdevconfig
      */
     public function postAsync(array $options = [
         'xml' => [
+            'appid' => 'wx8888888888888888',
+            'mch_id' => '1900000109',
+            'sub_mch_id' => '1900000100',
         ],
+        'nonceless' => true,
         'security' => true,
     ]): PromiseInterface;
 }

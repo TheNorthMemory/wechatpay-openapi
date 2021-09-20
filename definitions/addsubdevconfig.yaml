@@ -3,10 +3,88 @@ addsubdevconfig.request:
     - type: object
       xml:
         name: xml
-      properties: {}
+      required:
+        - appid
+        - mch_id
+        - sub_mch_id
+        - jsapi_path
+        - sign
+      properties:
+        appid:
+          type: string
+          description: 公众账号ID
+          example: wx8888888888888888
+          maxLength: 32
+        mch_id:
+          type: string
+          description: 商户号
+          example: '1900000109'
+          maxLength: 32
+        sub_mch_id:
+          type: string
+          description: 子商户号
+          example: '1900000100'
+          maxLength: 32
+        jsapi_path:
+          type: string
+          description: 授权目录
+          example: http://www.qq.com/wechat/
+          maxLength: 256
+        sign:
+          type: string
+          description: 签名
+          example: C380BEC2BFD727A4B6845133519F3AD6
+          maxLength: 32
 addsubdevconfig.response:
   allOf:
     - type: object
       xml:
         name: xml
-      properties: {}
+      required:
+        - return_code
+        - return_msg
+      properties:
+        return_code:
+          type: string
+          description: 返回状态码
+          example: SUCCESS
+          maxLength: 16
+        return_msg:
+          type: string
+          description: 返回信息
+          example: OK
+          maxLength: 128
+    - type: object
+      xml:
+        name: xml
+      required:
+        - err_code
+        - err_code_des
+      properties:
+        err_code:
+          type: string
+          description: 错误代码
+          example: INVALID_REQUEST
+          maxLength: 32
+        err_code_des:
+          type: string
+          description: 错误代码描述
+          example: 子商户号信息有误，请检查修改后重试
+          maxLength: 128
+    - type: object
+      xml:
+        name: xml
+      required:
+        - sign
+        - result_code
+      properties:
+        result_code:
+          type: string
+          description: 业务结果
+          example: SUCCESS
+          maxLength: 32
+        sign:
+          type: string
+          description: 签名
+          example: C380BEC2BFD727A4B6845133519F3AD6
+          maxLength: 32

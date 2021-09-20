@@ -3,10 +3,100 @@ addrecommendconf.request:
     - type: object
       xml:
         name: xml
-      properties: {}
+      required:
+        - mch_id
+        - sub_mch_id
+        - sub_appid
+        - subscribe_appid
+        - nonce_str
+        - sign
+        - sign_type
+      properties:
+        mch_id:
+          type: string
+          description: 商户号
+          example: '1900000109'
+          maxLength: 32
+        sub_mch_id:
+          type: string
+          description: 子商户号
+          example: '1900000100'
+          maxLength: 32
+        sub_appid:
+          type: string
+          description: 特约商户APPID
+          example: wx8888888888888888
+          maxLength: 32
+        subscribe_appid:
+          type: string
+          description: 推荐关注APPID
+          example: wx931386123456789e
+          maxLength: 32
+        nonce_str:
+          type: string
+          description: 随机字符串
+          example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+          maxLength: 32
+        sign:
+          type: string
+          description: 签名
+          example: C380BEC2BFD727A4B6845133519F3AD6
+          maxLength: 32
+        sign_type:
+          type: string
+          description: 签名类型
+          example: HMAC-SHA256
+          maxLength: 32
 addrecommendconf.response:
   allOf:
     - type: object
       xml:
         name: xml
-      properties: {}
+      required:
+        - return_code
+        - return_msg
+      properties:
+        return_code:
+          type: string
+          description: 返回状态码
+          example: SUCCESS
+          maxLength: 16
+        return_msg:
+          type: string
+          description: 返回信息
+          example: OK
+          maxLength: 128
+    - type: object
+      xml:
+        name: xml
+      required:
+        - err_code
+        - err_code_des
+      properties:
+        err_code:
+          type: string
+          description: 错误代码
+          example: INVALID_REQUEST
+          maxLength: 32
+        err_code_des:
+          type: string
+          description: 错误代码描述
+          example: 子商户号信息有误，请检查修改后重试
+          maxLength: 128
+    - type: object
+      xml:
+        name: xml
+      required:
+        - sign
+        - result_code
+      properties:
+        result_code:
+          type: string
+          description: 业务结果
+          example: SUCCESS
+          maxLength: 32
+        sign:
+          type: string
+          description: 签名
+          example: C380BEC2BFD727A4B6845133519F3AD6
+          maxLength: 32

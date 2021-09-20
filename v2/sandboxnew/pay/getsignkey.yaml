@@ -1,0 +1,76 @@
+post:
+  tags:
+    - 支付∙沙箱环境
+  summary: 获取验签密钥API
+  description: '仿真系统与生产环境完全独立，包括存储层。商户在仿真系统所做的所有交易（如下单、支付、查询）均为无资金流的假数据，即：用户无需真实扣款，商户也不会有资金入账。代金券同理，沙箱环境中无需商户真实制券与发券，亦不会出现真实扣券情况。[官方JSAPI文档](https://pay.weixin.qq.com/wiki/doc/api/tools/sp_coupon.php?chapter=23_1&index=2)'
+  consumes:
+    - application/xml
+  produces:
+    - application/xml
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        xml:
+          name: xml
+        required:
+          - mch_id
+          - nonce_str
+          - sign
+        properties:
+          mch_id:
+            type: string
+            description: 商户号
+            example: '1900000109'
+            maxLength: 32
+          nonce_str:
+            type: string
+            description: 随机字符串
+            example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+            maxLength: 32
+          sign:
+            type: string
+            description: 签名
+            example: C380BEC2BFD727A4B6845133519F3AD6
+            maxLength: 32
+  responses:
+    '200':
+      description: ''
+      schema:
+        allOf:
+          - type: object
+            xml:
+              name: xml
+            required:
+              - return_code
+              - return_msg
+            properties:
+              return_code:
+                type: string
+                description: 返回状态码
+                example: SUCCESS
+                maxLength: 16
+              return_msg:
+                type: string
+                description: 返回信息
+                example: OK
+                maxLength: 128
+          - type: object
+            xml:
+              name: xml
+            required:
+              - mch_id
+              - sandbox_signkey
+            properties:
+              mch_id:
+                type: string
+                description: 商户号
+                example: 1305638280
+                maxLength: 32
+              sandbox_signkey:
+                type: string
+                description: 沙箱密钥
+                example: 013467007045764
+                maxLength: 32

@@ -52,6 +52,7 @@ tags:
   - name: 经营工具∙连锁品牌∙门店
   - name: 通用接口
   - name: 通用接口∙商业支付投诉
+  - name: 支付∙沙箱环境
   - name: 支付∙付款码支付
   - name: 支付∙JSAPI支付
   - name: 支付∙Native支付
@@ -192,6 +193,20 @@ paths:
     $ref: ./v2/payitil/report.yaml
   /v2/risk/getviolation:
     $ref: ./v2/risk/getviolation.yaml
+  /v2/sandboxnew/pay/downloadbill:
+    $ref: ./v2/sandboxnew/pay/downloadbill.yaml
+  /v2/sandboxnew/pay/getsignkey:
+    $ref: ./v2/sandboxnew/pay/getsignkey.yaml
+  /v2/sandboxnew/pay/micropay:
+    $ref: ./v2/sandboxnew/pay/micropay.yaml
+  /v2/sandboxnew/pay/orderquery:
+    $ref: ./v2/sandboxnew/pay/orderquery.yaml
+  /v2/sandboxnew/pay/refund:
+    $ref: ./v2/sandboxnew/pay/refund.yaml
+  /v2/sandboxnew/pay/refundquery:
+    $ref: ./v2/sandboxnew/pay/refundquery.yaml
+  /v2/sandboxnew/pay/unifiedorder:
+    $ref: ./v2/sandboxnew/pay/unifiedorder.yaml
   /v2/secapi/mch/addsubdevconfig:
     $ref: ./v2/secapi/mch/addsubdevconfig.yaml
   /v2/secapi/mch/modifymchinfo:

@@ -12,6 +12,12 @@ interface Upload
 {
     /**
      * 商户上传反馈图片(同步模式)
+     *
+     * ```php
+     * $media   = new \WeChatPay\Util\MediaUtil('fle:///path/to/image.jpg');
+     * $options = ['body' => $media->getStream(), 'headers' => ['Content-type' => $media->getContentType()]];
+     * ```
+     *
      * @param array<string,mixed> $options
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/merchant-service/chapter5_1.shtml
      */
@@ -19,6 +25,12 @@ interface Upload
 
     /**
      * 商户上传反馈图片(异步模式)
+     *
+     * ```php
+     * $media   = new \WeChatPay\Util\MediaUtil('fle:///path/to/image.jpg');
+     * $options = ['body' => $media->getStream(), 'headers' => ['Content-type' => $media->getContentType()]];
+     * ```
+     *
      * @param array<string,mixed> $options
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/merchant-service/chapter5_1.shtml#async
      */

@@ -24,7 +24,6 @@ interface _store_id_
     /**
      * 查询门店(异步模式)
      * @param array<string,mixed> $options
-     * @link #async
      */
     public function getAsync(array $options = [
         'store_id' => '',
@@ -64,7 +63,6 @@ interface _store_id_
     /**
      * 修改门店(异步模式)
      * @param array<string,mixed> $options
-     * @link #async
      */
     public function patchAsync(array $options = [
         'store_id' => '',

@@ -45,7 +45,6 @@ interface Stores
     /**
      * 创建门店(异步模式)
      * @param array<string,mixed> $options
-     * @link #async
      */
     public function postAsync(array $options = [
         'json' => [

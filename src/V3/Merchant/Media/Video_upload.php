@@ -14,7 +14,7 @@ interface Video_upload
      * 视频上传(同步模式)
      *
      * ```php
-     * $media   = new \WeChatPay\Util\MediaUtil('fle:///path/to/video.mp4');
+     * $media   = new \WeChatPay\Util\MediaUtil('file:///path/to/video.mp4');
      * $options = ['body' => $media->getStream(), 'headers' => ['Content-type' => $media->getContentType()]];
      * ```
      *
@@ -27,7 +27,7 @@ interface Video_upload
      * 视频上传(异步模式)
      *
      * ```php
-     * $media   = new \WeChatPay\Util\MediaUtil('fle:///path/to/video.mp4');
+     * $media   = new \WeChatPay\Util\MediaUtil('file:///path/to/video.mp4');
      * $options = ['body' => $media->getStream(), 'headers' => ['Content-type' => $media->getContentType()]];
      * ```
      *

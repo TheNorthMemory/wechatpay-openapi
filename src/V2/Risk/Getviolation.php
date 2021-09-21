@@ -17,6 +17,13 @@ interface Getviolation
      */
     public function post(array $options = [
         'xml' => [
+            'mch_id' => '1230000110',
+            'sign_type' => 'HMAC-SHA256',
+            'begin_time' => '2020-05-11 10:10:00',
+            'end_time' => '2020-05-11 10:10:00',
+            'page_index' => '1',
+            'page_size' => '10',
+            'violation_records_format' => 'json',
         ],
         'security' => true,
     ]): ResponseInterface;
@@ -28,6 +35,13 @@ interface Getviolation
      */
     public function postAsync(array $options = [
         'xml' => [
+            'mch_id' => '1230000110',
+            'sign_type' => 'HMAC-SHA256',
+            'begin_time' => '2020-05-11 10:10:00',
+            'end_time' => '2020-05-11 10:10:00',
+            'page_index' => '1',
+            'page_size' => '10',
+            'violation_records_format' => 'json',
         ],
         'security' => true,
     ]): PromiseInterface;

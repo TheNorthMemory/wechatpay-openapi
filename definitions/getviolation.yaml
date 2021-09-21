@@ -3,10 +3,121 @@ getviolation.request:
     - type: object
       xml:
         name: xml
-      properties: {}
+      properties:
+        mch_id:
+          description: 商户号
+          type: string
+          maxLength: 32
+          example: '1230000110'
+        nonce_str:
+          type: string
+          description: 随机字符串
+          example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+          maxLength: 32
+        sign:
+          description: 签名
+          type: string
+          maxLength: 32
+          example: C380BEC2BFD727A4B6845133519F3AD6
+        sign_type:
+          description: 签名类型
+          type: string
+          maxLength: 32
+          example: HMAC-SHA256
+        begin_time:
+          description: 开始时间
+          type: string
+          maxLength: 32
+          example: '2020-05-11 10:10:00'
+        end_time:
+          description: 结束时间
+          type: string
+          maxLength: 32
+          example: '2020-05-11 10:10:00'
+        page_index:
+          description: 页码
+          type: string
+          maxLength: 10
+          example: '1'
+        page_size:
+          description: 每页返回的数量
+          type: string
+          maxLength: 10
+          example: '10'
+        violation_records_format:
+          description: 违规记录数据格式
+          type: string
+          maxLength: 10
+          example: json
+          enum:
+            - csv
+            - json
 getviolation.response:
   allOf:
     - type: object
       xml:
         name: xml
-      properties: {}
+      required:
+        - return_code
+      properties:
+        return_code:
+          type: string
+          description: 返回状态码
+          example: FAIL
+          maxLength: 16
+        return_msg:
+          type: string
+          description: 错误码描述
+          example: 签名失败
+          maxLength: 128
+          nullable: true
+        error_code:
+          type: string
+          description: 错误码
+          example: '20002'
+          maxLength: 32
+          nullable: true
+        error_code_des:
+          type: string
+          description: 错误代码描述
+          example: 商户号信息有误，请检查修改后重试
+          maxLength: 128
+          nullable: true
+    - type: object
+      xml:
+        name: xml
+      required:
+        - result_code
+        - result_msg
+      properties:
+        result_code:
+          type: string
+          description: 返回状态码
+          example: FAIL
+          maxLength: 16
+        result_msg:
+          type: string
+          description: 错误码描述
+          example: 签名失败
+          maxLength: 128
+          nullable: true
+        error_code:
+          type: string
+          description: 错误码
+          example: '20002'
+          maxLength: 32
+          nullable: true
+        error_code_des:
+          type: string
+          description: 错误代码描述
+          example: 商户号信息有误，请检查修改后重试
+          maxLength: 128
+          nullable: true
+        violation_records:
+          xml:
+            x-cdata: true
+          type: string
+          description: 违规记录数据
+          example: '{"total_size":1,"violation_records":[{"company_name":"ABC公司","handle_method":"刷单欺诈,整改 限期 2天","handle_state":"超时未处理","illegal_type":"其他","punish_time":"2018-07-24 20:12:25","sub_mch_id":"1900012891"}]}'
+          maxLength: 1024
+          nullable: true

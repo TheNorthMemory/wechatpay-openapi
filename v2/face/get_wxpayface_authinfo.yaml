@@ -1,0 +1,157 @@
+post:
+  x-base-uri: https://payapp.weixin.qq.com/
+  tags:
+    - 支付∙人脸支付
+  summary: 人脸识别SDK-获取调用凭证
+  description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/android/faceuser.html)'
+  consumes:
+    - application/xml
+  produces:
+    - application/xml
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        xml:
+          name: xml
+        required:
+          - store_id
+          - store_name
+          - device_id
+          - rawdata
+          - appid
+          - mch_id
+          - now
+          - version
+          - sign_type
+          - nonce_str
+          - sign
+        properties:
+          store_id:
+            type: string
+            maxLength: 32
+            description: 门店编号， 由商户定义， 各门店唯一。
+            example: IMG001
+          store_name:
+            type: string
+            maxLength: 128
+            description: 门店名称，由商户定义。（可用于展示）
+            example: 爱马哥南山店
+          device_id:
+            type: string
+            maxLength: 32
+            description: 终端设备编号，由商户定义。
+            example: DEV001
+          attach:
+            type: string
+            description: 附加字段。字段格式使用Json
+          rawdata:
+            type: string
+            maxLength: 2048
+            description: 初始化数据。由微信人脸SDK的接口返回。
+            example: H0kvnUgGHKuqflNwtNqCdOVpbO4FPSowudTG
+          appid:
+            type: string
+            maxLength: 32
+            description: 商户号绑定的公众号/小程序 appid
+            example: wx31fdaErqR31
+          mch_id:
+            type: string
+            maxLength: 32
+            description: 商户号
+            example: 12345689
+          sub_appid:
+            type: string
+            maxLength: 32
+            description: 子商户绑定的公众号/小程序 appid(服务商模式)
+            example: wx31fdaErqR31
+          sub_mch_id:
+            type: string
+            maxLength: 32
+            description: 子商户号(服务商模式)
+            example: 12345689
+          now:
+            type: integer
+            description: 取当前时间，10位unix时间戳。
+            example: 1239878956
+          version:
+            type: string
+            maxLength:   版本号。固定为1
+            example: '1'
+          sign_type:
+            type: string
+            maxLength:   签名类型，目前支持HMAC-SHA256和MD5，默认为MD5
+            example: MD5
+            enum:
+              - MD5
+              - HMAC-SHA256
+          nonce_str:
+            type: string
+            maxLength: 32
+            description: 随机字符串，不长于32位
+            example: V37ZHZVf2OrwsUV7kXTjTguP74c0byvE
+          sign:
+            type: string
+            description: 参数签名。
+            example: O4TCVPAJDIK933NUSUUSS6MLIQT2PCXW
+  responses:
+    '200':
+      description: ''
+      schema:
+        allOf:
+          - type: object
+            xml:
+              name: xml
+            required:
+              - return_code
+            properties:
+              return_code:
+                type: string
+                description: 返回状态码
+                example: SUCCESS
+                maxLength: 16
+              return_msg:
+                type: string
+                description: 错误码描述
+                example: 签名失败
+                maxLength: 128
+                nullable: true
+          - type: object
+            xml:
+              name: xml
+            required:
+              - authinfo
+            properties:
+              authinfo:
+                type: string
+                maxLength: 4096
+                description: SDK调用凭证。用于调用SDK的人脸识别接口。
+              expires_in:
+                type: integer
+                description: authinfo的有效时间, 单位秒。
+                example: 3600
+              nonce_str:
+                type: string
+                maxLength: 32
+                description: 随机字符串，不长于32位
+              sign:
+                type: string
+                description: 参数签名。
+              appid:
+                type: string
+                description: 公众号
+                maxLength: 32
+              mch_id:
+                type: string
+                description: 商户号
+                maxLength: 32
+              sub_appid:
+                type: string
+                description: 子商户公众账号ID(服务商模式)
+                maxLength: 32
+              sub_mch_id:
+                type: string
+                description: 子商户号(服务商模式)
+                maxLength: 32

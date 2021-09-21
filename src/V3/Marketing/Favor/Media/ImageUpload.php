@@ -14,7 +14,7 @@ interface ImageUpload
      * （营销）图片上传(同步模式)
      *
      * ```php
-     * $media   = new \WeChatPay\Util\MediaUtil('fle:///path/to/image.jpg');
+     * $media   = new \WeChatPay\Util\MediaUtil('file:///path/to/image.jpg');
      * $options = ['body' => $media->getStream(), 'headers' => ['Content-type' => $media->getContentType()]];
      * ```
      *
@@ -27,7 +27,7 @@ interface ImageUpload
      * （营销）图片上传(异步模式)
      *
      * ```php
-     * $media   = new \WeChatPay\Util\MediaUtil('fle:///path/to/image.jpg');
+     * $media   = new \WeChatPay\Util\MediaUtil('file:///path/to/image.jpg');
      * $options = ['body' => $media->getStream(), 'headers' => ['Content-type' => $media->getContentType()]];
      * ```
      *

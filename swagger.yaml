@@ -111,6 +111,8 @@ paths:
     $ref: ./v2/deposit/refundquery.yaml
   /v2/deposit/reverse:
     $ref: ./v2/deposit/reverse.yaml
+  /v2/face/get_wxpayface_authinfo:
+    $ref: ./v2/face/get_wxpayface_authinfo.yaml
   /v2/fund/queryautowithdrawbydate:
     $ref: ./v2/fund/queryautowithdrawbydate.yaml
   /v2/fund/reautowithdrawbydate:
@@ -191,6 +193,8 @@ paths:
     $ref: ./v2/pay/unifiedorder.yaml
   /v2/payitil/report:
     $ref: ./v2/payitil/report.yaml
+  /v2/risk/getpublickey:
+    $ref: ./v2/risk/getpublickey.yaml
   /v2/risk/getviolation:
     $ref: ./v2/risk/getviolation.yaml
   /v2/sandboxnew/pay/downloadbill:

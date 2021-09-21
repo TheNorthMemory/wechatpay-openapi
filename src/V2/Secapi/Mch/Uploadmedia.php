@@ -14,9 +14,14 @@ interface Uploadmedia
      * 图片上传(同步模式)
      *
      * ```php
+     * $stack = $instance->getDriver()->select('v2')->getConfig('handler');
+     * $stack->remove('transform_request');
+     * $stream = new \GuzzleHttp\Psr7\LazyOpenStream('file:///path/to/image.jpg', 'rb');
+     * $mediaMd5Digest = \GuzzleHttp\Psr7\Utils::hash($stream, 'md5');
      * $options = [
+     *     'handler' => $stack,
      *     'body' => new \GuzzleHttp\Psr7\MultipartStream([
-     *         ['name' => 'media', 'content' => 'file:///path/to/image.jpg', 'filename' => 'image.jpg'],
+     *         ['name' => 'media', 'content' => $stream, 'filename' => 'image.jpg'],
      *         ['name' => 'mch_id', 'content' => $mchid],
      *         ['name' => 'media_hash', 'content' => $mediaMd5Digest],
      *         ['name' => 'sign_type', 'content' => $signType],
@@ -38,9 +43,14 @@ interface Uploadmedia
      * 图片上传(异步模式)
      *
      * ```php
+     * $stack = $instance->getDriver()->select('v2')->getConfig('handler');
+     * $stack->remove('transform_request');
+     * $stream = new \GuzzleHttp\Psr7\LazyOpenStream('file:///path/to/image.jpg', 'rb');
+     * $mediaMd5Digest = \GuzzleHttp\Psr7\Utils::hash($stream, 'md5');
      * $options = [
+     *     'handler' => $stack,
      *     'body' => new \GuzzleHttp\Psr7\MultipartStream([
-     *         ['name' => 'media', 'content' => 'file:///path/to/image.jpg', 'filename' => 'image.jpg'],
+     *         ['name' => 'media', 'content' => $stream, 'filename' => 'image.jpg'],
      *         ['name' => 'mch_id', 'content' => $mchid],
      *         ['name' => 'media_hash', 'content' => $mediaMd5Digest],
      *         ['name' => 'sign_type', 'content' => $signType],

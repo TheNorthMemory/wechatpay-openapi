@@ -19,14 +19,14 @@ CombinationBase:
       description: 合单商户订单号
       example: P20150806125346
     scene_info:
-      $ref: '#SceneInfo'
+      $ref: '#/SceneInfo'
     sub_orders:
       type: array
       description: 子单信息
       items:
-        $ref: '#SubOrder'
+        $ref: '#/SubOrder'
     combine_payer_info:
-      $ref: '#PayerDirection'
+      $ref: '#/PayerDirection'
     time_start:
       type: string
       format: rfc3339
@@ -44,7 +44,7 @@ CombinationBase:
 
 SubOrder:
   allOf:
-    - $ref: '#OrderBase'
+    - $ref: '#/OrderBase'
     - type: object
       required:
         - mchid
@@ -58,7 +58,7 @@ SubOrder:
           description: 二级商户号
           example: '1900000109'
         settle_info:
-          $ref: '#SettleInfo'
+          $ref: '#/SettleInfo'
 
 OrderBase:
   type: object
@@ -80,7 +80,7 @@ OrderBase:
       description: 商户订单号
       example: '1217752501201407033233368018'
     amount:
-      $ref: '#Amount'
+      $ref: '#/Amount'
 
 TransactionServiceProvider:
   type: object
@@ -106,7 +106,7 @@ TransactionServiceProvider:
       description: 子商户号
       example: '1900000109'
     settle_info:
-      $ref: '#SettleInfo'
+      $ref: '#/SettleInfo'
 
 TransactionDirection:
   type: object
@@ -132,10 +132,10 @@ TransactionOwner:
       example: '1217752501201407033233368018'
     trade_type:
       type: string
-      $ref: './Enumerations.yaml#TransactionTradeType'
+      $ref: './Enumerations.yaml#/TransactionTradeType'
     trade_state:
       type: string
-      $ref: './Enumerations.yaml#TransactionTradeState'
+      $ref: './Enumerations.yaml#/TransactionTradeState'
     trade_state_desc:
       type: string
       description: 交易状态描述
@@ -152,7 +152,7 @@ TransactionOwner:
 
 TransactionBase:
   allOf:
-    - $ref: '#OrderBase'
+    - $ref: '#/OrderBase'
     - type: object
       required:
         - notify_url
@@ -171,9 +171,9 @@ TransactionBase:
           description: 订单优惠标记
           example: WXG
         detail:
-          $ref: '#Detail'
+          $ref: '#/Detail'
         scene_info:
-          $ref: '#SceneInfo'
+          $ref: '#/SceneInfo'
 
 PayerDirection:
   type: object
@@ -247,7 +247,7 @@ Detail:
       type: array
       description: 单品列表
       items:
-        $ref: '#GoodsDetail'
+        $ref: '#/GoodsDetail'
 
 GoodsDetail:
   type: object
@@ -287,9 +287,9 @@ PromotionDetail:
       type: string
       description: 优惠名称
     scope:
-      $ref: './Enumerations.yaml#TransactionPromotionScope'
+      $ref: './Enumerations.yaml#/TransactionPromotionScope'
     type:
-      $ref: './Enumerations.yaml#TransactionPromotionType'
+      $ref: './Enumerations.yaml#/TransactionPromotionType'
     amount:
       type: integer
       description: 优惠券面额
@@ -312,7 +312,7 @@ PromotionDetail:
     goods_detail:
       type: array
       items:
-        $ref: '#GoodsDetail'
+        $ref: '#/GoodsDetail'
 
 SceneInfo:
   type: object
@@ -327,7 +327,7 @@ SceneInfo:
       description: 商户端设备号
       example: '013467007045764'
     store_info:
-      $ref: '#StoreInfo'
+      $ref: '#/StoreInfo'
 
 StoreInfo:
   type: object

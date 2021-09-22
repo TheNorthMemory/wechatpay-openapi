@@ -17,6 +17,10 @@ interface Channelquerymchauditinfo
      */
     public function post(array $options = [
         'xml' => [
+            'mch_id' => '1900000109',
+            'sub_mch_id' => '999990016',
+            'acquiring_bank_id' => '999990017',
+            'sign_type' => 'HMAC-SHA256',
         ],
     ]): ResponseInterface;
 
@@ -27,6 +31,10 @@ interface Channelquerymchauditinfo
      */
     public function postAsync(array $options = [
         'xml' => [
+            'mch_id' => '1900000109',
+            'sub_mch_id' => '999990016',
+            'acquiring_bank_id' => '999990017',
+            'sign_type' => 'HMAC-SHA256',
         ],
     ]): PromiseInterface;
 }

@@ -17,7 +17,12 @@ interface Bankquerymchauditinfo
      */
     public function post(array $options = [
         'xml' => [
+            'mch_id' => '1900000109',
+            'sub_mch_id' => '999990016',
+            'channel_id' => '999990017',
+            'sign_type' => 'HMAC-SHA256',
         ],
+        'security' => true,
     ]): ResponseInterface;
 
     /**
@@ -27,6 +32,11 @@ interface Bankquerymchauditinfo
      */
     public function postAsync(array $options = [
         'xml' => [
+            'mch_id' => '1900000109',
+            'sub_mch_id' => '999990016',
+            'channel_id' => '999990017',
+            'sign_type' => 'HMAC-SHA256',
         ],
+        'security' => true,
     ]): PromiseInterface;
 }

@@ -3,10 +3,143 @@ querymchrisk.request:
     - type: object
       xml:
         name: xml
-      properties: {}
+      required:
+        - mch_id
+        - nonce_str
+        - sign
+        - sign_type
+      properties:
+        mch_id:
+          type: string
+          description: 服务商号
+          example: '1900000109'
+          maxLength: 32
+        cert_serial_number:
+          type: string
+          description: 平台证书序列号
+          example: XXXXX
+          maxLength: 32
+          nullable: true
+        certificates_number:
+          type: string
+          description: 身份证号（需加密）
+          example: 8609cb22e1774a50a930e414cc71eca06121bcd266335cda230d24a7886a8d9f
+          maxLength: 344
+          nullable: true
+        certificates_name:
+          type: string
+          description: 身份证所有人姓名（需加密）
+          example: ca775af5f841bdf424b2e6eb86a6e21e
+          maxLength: 344
+          nullable: true
+        settlement_card_no:
+          type: string
+          description: 结算账号（需加密）
+          example: 8609cb22e1774a50a930e414cc71eca06121bcd266335cda230d24a7886a8d9f
+          maxLength: 344
+          nullable: true
+        settlement_card_name:
+          type: string
+          description: 结算户名（需加密）
+          example: ca775af5f841bdf424b2e6eb86a6e21e
+          maxLength: 344
+          nullable: true
+        settlement_card_bank:
+          type: string
+          description: 结算银行
+          example: 招商银行科技园支行
+          maxLength: 128
+          nullable: true
+        business_license_number:
+          type: string
+          description: 营业执照编号（需加密）
+          example: ca775af5f841bdf424b2e6eb86a6e21e
+          maxLength: 344
+          nullable: true
+        company_name:
+          type: string
+          description: 公司名称
+          example: XXXXX有限公司
+          maxLength: 128
+          nullable: true
+        store_address:
+          type: string
+          description: 门店地址
+          example: 广东省深圳市南山区深南大道10000号
+          maxLength: 256
+          nullable: true
+        store_longitude:
+          type: string
+          description: 门店经度
+          example: '22.5461478801'
+          maxLength: 32
+          nullable: true
+        store_latitude:
+          type: string
+          description: 门店纬度
+          example: '113.9410519639'
+          maxLength: 32
+          nullable: true
+        nonce_str:
+          type: string
+          description: 随机字符串
+          example: C380BEC2BFD787A4B6845227519F3AD6
+          maxLength: 32
+        sign:
+          type: string
+          description: 签名
+          example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+          maxLength: 32
+        sign_type:
+          type: string
+          description: 签名类型
+          example: HMAC-SHA256
+          maxLength: 32
 querymchrisk.response:
   allOf:
     - type: object
       xml:
         name: xml
-      properties: {}
+      required:
+        - return_code
+      properties:
+        return_code:
+          type: string
+          description: 返回状态码
+          example: SUCCESS
+          maxLength: 16
+        return_msg:
+          type: string
+          description: 返回信息
+          example: 签名失败
+          maxLength: 128
+          nullable: true
+    - type: object
+      xml:
+        name: xml
+      required:
+        - result_code
+        - mch_id
+        - risk_level
+        - risk_level_desc
+      properties:
+        result_code:
+          type: string
+          description: 业务结果
+          example: SUCCESS
+          maxLength: 16
+        mch_id:
+          type: string
+          description: 服务商号
+          example: '1900000109'
+          maxLength: 32
+        risk_level:
+          type: string
+          description: 风险级别
+          example: LOW建议不让高风险商户进件，禁止禁入商户进件
+          maxLength: 32
+        risk_level_desc:
+          type: string
+          description: 风险描述
+          example: 低风险
+          maxLength: 1024

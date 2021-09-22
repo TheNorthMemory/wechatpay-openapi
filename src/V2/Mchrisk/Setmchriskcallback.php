@@ -17,6 +17,9 @@ interface Setmchriskcallback
      */
     public function post(array $options = [
         'xml' => [
+            'mch_id' => '1900000109',
+            'callback_url' => 'https://pay.weixin.qq.com/wxpay/risk.action',
+            'sign_type' => 'HMAC-SHA256',
         ],
     ]): ResponseInterface;
 
@@ -27,6 +30,9 @@ interface Setmchriskcallback
      */
     public function postAsync(array $options = [
         'xml' => [
+            'mch_id' => '1900000109',
+            'callback_url' => 'https://pay.weixin.qq.com/wxpay/risk.action',
+            'sign_type' => 'HMAC-SHA256',
         ],
     ]): PromiseInterface;
 }

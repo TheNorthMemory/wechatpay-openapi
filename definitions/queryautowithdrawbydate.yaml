@@ -3,10 +3,166 @@ queryautowithdrawbydate.request:
     - type: object
       xml:
         name: xml
-      properties: {}
+      required:
+        - mch_id
+        - sub_mch_id
+        - sign
+        - sign_type
+        - date
+        - nonce_str
+      properties:
+        mch_id:
+          type: string
+          description: 商户号
+          example: '1900000109'
+          maxLength: 32
+        sub_mch_id:
+          type: string
+          description: 小微商户号
+          example: '1900000109'
+          maxLength: 32
+        sign:
+          type: string
+          description: 签名
+          example: 4219DA46A027E8C86DE1BE8CD252158B74DEFAA069CDB6DEFA235FFEA2437EA2
+          maxLength: 64
+        sign_type:
+          type: string
+          description: 签名类型
+          example: HMAC-SHA256
+          maxLength: 32
+        date:
+          type: string
+          description: 日期
+          example: '20180508'
+          maxLength: 32
+        nonce_str:
+          type: string
+          description: 随机字符串
+          example: ibuaiVcKdpRxkhJA
+          maxLength: 32
 queryautowithdrawbydate.response:
   allOf:
     - type: object
       xml:
         name: xml
-      properties: {}
+      required:
+        - return_code
+      properties:
+        return_code:
+          type: string
+          description: 返回状态码
+          example: FAIL/SUCCESS
+          maxLength: 16
+        return_msg:
+          type: string
+          description: 返回信息
+          example: OK
+          maxLength: 128
+          nullable: true
+    - type: object
+      xml:
+        name: xml
+      required:
+        - result_code
+        - err_code
+      properties:
+        result_code:
+          type: string
+          description: 业务结果
+          example: FAILSUCCESS
+          maxLength: 16
+        err_code:
+          type: string
+          description: 错误代码
+          example: SYSTEMERROR
+          maxLength: 16
+        err_code_des:
+          type: string
+          description: 错误代码描述
+          example: 参数签名错误
+          maxLength: 128
+          nullable: true
+        sign_type:
+          type: string
+          description: 签名类型
+          example: HMAC-SHA256
+          maxLength: 32
+          nullable: true
+        sign:
+          type: string
+          description: 签名
+          example: 4219DA46A027E8C86DE1BE8CD252158B74DEFAA069CDB6DEFA235FFEA2437EA2
+          maxLength: 64
+          nullable: true
+    - type: object
+      xml:
+        name: xml
+      required:
+        - date
+        - mch_id
+        - sub_mch_id
+        - nonce_str
+        - withdraw_status
+      properties:
+        date:
+          type: string
+          description: 日期
+          example: '20180508'
+          maxLength: 32
+        mch_id:
+          type: string
+          description: 商户号
+          example: '1900000109'
+          maxLength: 32
+        sub_mch_id:
+          type: string
+          description: 小微商户号
+          example: '1900000109'
+          maxLength: 32
+        nonce_str:
+          type: string
+          description: 随机字符
+          example: ibuaiVcKdpRxkhJA
+          maxLength: 32
+        withdraw_status:
+          type: string
+          description: 单据状态
+          example: PROCESSING
+          maxLength: 32
+        fail_reason:
+          type: string
+          description: 单据失败原因
+          maxLength: 64
+          nullable: true
+        withdraw_id:
+          type: string
+          description: 提现单单据ID
+          example: '10900999991802018050300326172000'
+          maxLength: 32
+          nullable: true
+        amount:
+          format: int32
+          type: integer
+          description: 金额
+          example: '550'
+          maxLength: 32
+          nullable: true
+        create_time:
+          type: string
+          description: 单据创建时间
+          example: 2018-05-1108:00:00
+          maxLength: 32
+          nullable: true
+        success_time:
+          type: string
+          description: 单据成功时间
+          example: 2018-05-1108:00:00
+          maxLength: 32
+          nullable: true
+        refund_time:
+          type: string
+          description: 单据退票时间
+          example: 2018-05-1108:00:00
+          maxLength: 32
+          nullable: true

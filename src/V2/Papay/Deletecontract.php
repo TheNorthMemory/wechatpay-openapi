@@ -17,7 +17,15 @@ interface Deletecontract
      */
     public function post(array $options = [
         'xml' => [
+            'appid' => 'wxcbda96de0b165486',
+            'mch_id' => '10000098',
+            'plan_id' => '12251',
+            'contract_code' => '1234',
+            'contract_id' => 'Wx15463511252015071056489715',
+            'contract_termination_remark' => '解约原因',
+            'version' => '1.0',
         ],
+        'nonceless' => true,
     ]): ResponseInterface;
 
     /**
@@ -27,6 +35,14 @@ interface Deletecontract
      */
     public function postAsync(array $options = [
         'xml' => [
+            'appid' => 'wxcbda96de0b165486',
+            'mch_id' => '10000098',
+            'plan_id' => '12251',
+            'contract_code' => '1234',
+            'contract_id' => 'Wx15463511252015071056489715',
+            'contract_termination_remark' => '解约原因',
+            'version' => '1.0',
         ],
+        'nonceless' => true,
     ]): PromiseInterface;
 }

@@ -3,10 +3,141 @@ micro.modifyarchives.request:
     - type: object
       xml:
         name: xml
-      properties: {}
+      required:
+        - version
+        - mch_id
+        - nonce_str
+        - sign_type
+        - sign
+        - sub_mch_id
+        - bank_address_code
+        - cert_sn
+      properties:
+        version:
+          type: string
+          description: 接口版本号
+          example: '1.0'
+          maxLength: 32
+        mch_id:
+          type: string
+          description: 商户号
+          example: '1230000109'
+          maxLength: 32
+        nonce_str:
+          type: string
+          description: 随机字符串
+          example: ibuaiVcKdpRxkhJA
+          maxLength: 32
+        sign_type:
+          type: string
+          description: 签名类型
+          example: HMAC-SHA256
+          maxLength: 128
+        sign:
+          type: string
+          description: 签名
+          example: D675A1E471DBF7C0B1AC5883B5BDA9EF
+          maxLength: 64
+        sub_mch_id:
+          type: string
+          description: 小微商户号
+          example: '1230000109'
+          maxLength: 32
+        account_number:
+          type: string
+          description: 银行卡号
+          maxLength: 50
+          nullable: true
+        bank_name:
+          type: string
+          description: 开户银行全称（含支行）
+          example: 深圳农村商业银行xxx支行
+          maxLength: 256
+          nullable: true
+        account_bank:
+          type: string
+          description: 开户银行
+          example: 中国银行
+          maxLength: 50
+          nullable: true
+        bank_address_code:
+          type: string
+          description: 开户银行省市编码
+          example: '110000'
+          maxLength: 6
+        cert_sn:
+          type: string
+          description: 平台证书序列号
+          example: 5430056GFRJK54YTFF653GDFH09HFGHF
+          maxLength: 64
 micro.modifyarchives.response:
   allOf:
     - type: object
       xml:
         name: xml
-      properties: {}
+      required:
+        - return_code
+      properties:
+        return_code:
+          type: string
+          description: 返回状态码
+          example: FAIL
+          maxLength: 16
+        return_msg:
+          type: string
+          description: 返回信息
+          example: 签名失败
+          maxLength: 128
+          nullable: true
+    - type: object
+      xml:
+        name: xml
+      required:
+        - nonce_str
+        - sign
+        - result_code
+      properties:
+        nonce_str:
+          type: string
+          description: 随机字符串
+          example: ibuaiVcKdpRxkhJA
+          maxLength: 32
+        sign:
+          type: string
+          description: 签名
+          example: D675A1E471DBF7C0B1AC5883B5BDA9EF
+          maxLength: 32
+        result_code:
+          type: string
+          description: 业务结果
+          example: SUCCESS
+          maxLength: 32
+        err_code:
+          type: string
+          description: 错误代码
+          example: PARAM_ERROR
+          maxLength: 32
+          nullable: true
+        err_code_des:
+          type: string
+          description: 错误代码描述
+          example: 商户号信息有误，请检查修改后重试
+          maxLength: 128
+          nullable: true
+    - type: object
+      xml:
+        name: xml
+      required:
+        - mch_id
+        - sub_mch_id
+      properties:
+        mch_id:
+          type: string
+          description: 商户号
+          example: '1230000109'
+          maxLength: 32
+        sub_mch_id:
+          type: string
+          description: 小微商户号
+          example: '1230000109'
+          maxLength: 32

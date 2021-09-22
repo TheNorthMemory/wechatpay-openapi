@@ -18,7 +18,13 @@ interface Submchmanage
     public function post(array $options = [
         'security' => true,
         'xml' => [
+            'appid' => 'wxd678efh567hg6787',
+            'mch_id' => '1230000109',
+            'merchant_name' => '商户名称',
+            'page_index' => '1',
+            'page_size' => '10',
         ],
+        'nonceless' => true,
         'query' => [
             'action' => '',
         ],
@@ -32,7 +38,13 @@ interface Submchmanage
     public function postAsync(array $options = [
         'security' => true,
         'xml' => [
+            'appid' => 'wxd678efh567hg6787',
+            'mch_id' => '1230000109',
+            'merchant_name' => '商户名称',
+            'page_index' => '1',
+            'page_size' => '10',
         ],
+        'nonceless' => true,
         'query' => [
             'action' => '',
         ],

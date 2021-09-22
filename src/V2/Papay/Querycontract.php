@@ -17,7 +17,14 @@ interface Querycontract
      */
     public function post(array $options = [
         'xml' => [
+            'appid' => 'wxcbda96de0b165486',
+            'mch_id' => '10000098',
+            'contract_id' => '100005698',
+            'plan_id' => '123',
+            'contract_code' => '1023658866',
+            'version' => '1.0',
         ],
+        'nonceless' => true,
     ]): ResponseInterface;
 
     /**
@@ -27,6 +34,13 @@ interface Querycontract
      */
     public function postAsync(array $options = [
         'xml' => [
+            'appid' => 'wxcbda96de0b165486',
+            'mch_id' => '10000098',
+            'contract_id' => '100005698',
+            'plan_id' => '123',
+            'contract_code' => '1023658866',
+            'version' => '1.0',
         ],
+        'nonceless' => true,
     ]): PromiseInterface;
 }

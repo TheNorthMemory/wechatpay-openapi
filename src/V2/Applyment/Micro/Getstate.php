@@ -17,6 +17,11 @@ interface Getstate
      */
     public function post(array $options = [
         'xml' => [
+            'version' => '1.0',
+            'mch_id' => '1230000109',
+            'sign_type' => 'HMAC-SHA256',
+            'applyment_id' => '1230000109',
+            'business_code' => '123456',
         ],
         'security' => true,
     ]): ResponseInterface;
@@ -28,6 +33,11 @@ interface Getstate
      */
     public function postAsync(array $options = [
         'xml' => [
+            'version' => '1.0',
+            'mch_id' => '1230000109',
+            'sign_type' => 'HMAC-SHA256',
+            'applyment_id' => '1230000109',
+            'business_code' => '123456',
         ],
         'security' => true,
     ]): PromiseInterface;

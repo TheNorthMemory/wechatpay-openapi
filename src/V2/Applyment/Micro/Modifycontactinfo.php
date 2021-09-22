@@ -17,6 +17,14 @@ interface Modifycontactinfo
      */
     public function post(array $options = [
         'xml' => [
+            'version' => '1.0',
+            'mch_id' => '1230000109',
+            'sign_type' => 'HMAC-SHA256',
+            'sub_mch_id' => '1230000109',
+            'mobile_phone' => '13734543456',
+            'email' => 'zhangsan@227.com',
+            'merchant_name' => '张三的小店',
+            'cert_sn' => '50062CE505775F070CAB06E697F1BBD1AD4F4D87',
         ],
         'security' => true,
     ]): ResponseInterface;
@@ -28,6 +36,14 @@ interface Modifycontactinfo
      */
     public function postAsync(array $options = [
         'xml' => [
+            'version' => '1.0',
+            'mch_id' => '1230000109',
+            'sign_type' => 'HMAC-SHA256',
+            'sub_mch_id' => '1230000109',
+            'mobile_phone' => '13734543456',
+            'email' => 'zhangsan@227.com',
+            'merchant_name' => '张三的小店',
+            'cert_sn' => '50062CE505775F070CAB06E697F1BBD1AD4F4D87',
         ],
         'security' => true,
     ]): PromiseInterface;

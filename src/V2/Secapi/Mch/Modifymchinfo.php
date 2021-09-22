@@ -17,7 +17,12 @@ interface Modifymchinfo
      */
     public function post(array $options = [
         'xml' => [
+            'mch_id' => '1230000109',
+            'sub_mch_id' => '11111111',
+            'merchant_shortname' => '商户简称',
+            'service_phone' => '075586010000',
         ],
+        'nonceless' => true,
         'security' => true,
     ]): ResponseInterface;
 
@@ -28,7 +33,12 @@ interface Modifymchinfo
      */
     public function postAsync(array $options = [
         'xml' => [
+            'mch_id' => '1230000109',
+            'sub_mch_id' => '11111111',
+            'merchant_shortname' => '商户简称',
+            'service_phone' => '075586010000',
         ],
+        'nonceless' => true,
         'security' => true,
     ]): PromiseInterface;
 }

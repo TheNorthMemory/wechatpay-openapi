@@ -3,10 +3,154 @@ micro.getstate.request:
     - type: object
       xml:
         name: xml
-      properties: {}
+      required:
+        - version
+        - mch_id
+        - nonce_str
+        - sign_type
+        - sign
+      properties:
+        version:
+          type: string
+          description: 接口版本号
+          example: '1.0'
+          maxLength: 32
+        mch_id:
+          type: string
+          description: 商户号
+          example: '1230000109'
+          maxLength: 32
+        nonce_str:
+          type: string
+          description: 随机字符串
+          example: ibuaiVcKdpRxkhJA
+          maxLength: 32
+        sign_type:
+          type: string
+          description: 签名类型
+          example: HMAC-SHA256
+          maxLength: 128
+        sign:
+          type: string
+          description: 签名
+          example: D675A1E471DBF7C0B1AC5883B5BDA9EF
+          maxLength: 64
+        applyment_id:
+          type: string
+          description: 商户申请单号
+          example: '1230000109'
+          maxLength: 32
+          nullable: true
+        business_code:
+          type: string
+          description: 业务申请编号
+          example: '123456'
+          maxLength: 32
+          nullable: true
 micro.getstate.response:
   allOf:
     - type: object
       xml:
         name: xml
-      properties: {}
+      required:
+        - return_code
+      properties:
+        return_code:
+          type: string
+          description: 返回状态码
+          example: FAIL
+          maxLength: 16
+        return_msg:
+          type: string
+          description: 返回信息
+          example: 签名失败
+          maxLength: 128
+          nullable: true
+    - type: object
+      xml:
+        name: xml
+      required:
+        - nonce_str
+        - sign
+        - result_code
+      properties:
+        nonce_str:
+          type: string
+          description: 随机字符串
+          example: ibuaiVcKdpRxkhJA
+          maxLength: 32
+        sign:
+          type: string
+          description: 签名
+          example: D675A1E471DBF7C0B1AC5883B5BDA9EF
+          maxLength: 32
+        result_code:
+          type: string
+          description: 业务结果
+          example: SUCCESS
+          maxLength: 32
+        err_code:
+          type: string
+          description: 错误代码
+          example: PARAM_ERROR
+          maxLength: 32
+          nullable: true
+        err_code_des:
+          type: string
+          description: 错误代码描述
+          example: 商户号信息有误，请检查修改后重试
+          maxLength: 128
+          nullable: true
+    - type: object
+      xml:
+        name: xml
+      required:
+        - applyment_id
+        - applyment_state
+        - applyment_state_desc
+        - param_name
+        - reject_reason
+      properties:
+        applyment_id:
+          type: string
+          description: 商户申请单号
+          example: '1230000109'
+          maxLength: 32
+        applyment_state:
+          type: string
+          description: 申请状态
+          example: REJECTED
+          maxLength: 32
+        applyment_state_desc:
+          type: string
+          description: 申请状态描述
+          example: 已驳回
+          maxLength: 32
+        sub_mch_id:
+          type: string
+          description: 小微商户号
+          example: '1230000109'
+          maxLength: 32
+          nullable: true
+        sign_url:
+          type: string
+          description: 签约链接
+          example: https://pay.weixin.qq.com
+          maxLength: 256
+          nullable: true
+        audit_detail:
+          type: string
+          description: 审核详情
+          example: '{"audit_detail":[{"param_name":"account_number","reject_reason":"银行账户不存在"},{"param_name":"mobile_phone","reject_reason":"号码不存在"}]}'
+          maxLength: 1024
+          nullable: true
+        param_name:
+          type: string
+          description: 参数名称
+          example: account_number
+          maxLength: 32
+        reject_reason:
+          type: string
+          description: 驳回原因
+          example: 银行账号不存在
+          maxLength: 32

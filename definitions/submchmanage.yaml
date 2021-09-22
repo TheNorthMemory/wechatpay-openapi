@@ -3,10 +3,142 @@ submchmanage.request:
     - type: object
       xml:
         name: xml
-      properties: {}
+      required:
+        - appid
+        - mch_id
+        - sign
+        - merchant_name
+        - sub_mch_id
+        - page_index
+      properties:
+        appid:
+          type: string
+          description: 公众账号ID
+          example: wxd678efh567hg6787
+          maxLength: 32
+        mch_id:
+          type: string
+          description: 商户号
+          example: '1230000109'
+          maxLength: 32
+        sign:
+          type: string
+          description: 签名
+          example: C380BEC2BFD727A4B6845133519F3AD6
+          maxLength: 32
+        merchant_name:
+          type: string
+          description: 商户名称
+          example: 商户名称
+          maxLength: 50
+        sub_mch_id:
+          type: '11111111'
+          description: 商户识别码
+          example: 微信支付分配的商户识别码
+        page_index:
+          type: string
+          description: 页码
+          example: '1'
+          maxLength: 10
+        page_size:
+          type: string
+          description: 展示资料个数
+          example: '10'
+          maxLength: 10
+          nullable: true
 submchmanage.response:
   allOf:
     - type: object
       xml:
         name: xml
-      properties: {}
+      required:
+        - return_code
+      properties:
+        return_code:
+          type: string
+          description: 返回状态码
+          example: SUCCESS
+          maxLength: 16
+        return_msg:
+          type: string
+          description: 返回信息
+          example: 签名失败
+          maxLength: 128
+          nullable: true
+    - type: object
+      xml:
+        name: xml
+      required:
+        - appid
+        - mch_id
+        - merchant_name
+        - merchant_shortname
+        - service_phone
+        - business
+        - channel_id
+        - channel_name
+        - total
+      properties:
+        appid:
+          type: string
+          description: 公众账号ID
+          example: wxd678efh567hg6787
+          maxLength: 32
+        mch_id:
+          type: string
+          description: 商户号
+          example: '1230000109'
+          maxLength: 32
+        merchant_name:
+          type: string
+          description: 商户名称
+          example: 商户名称
+          maxLength: 50
+        merchant_shortname:
+          type: string
+          description: 商户简称
+          example: 商户简称
+          maxLength: 20
+        service_phone:
+          type: string
+          description: 客服电话
+          example: '075586010000'
+          maxLength: 20
+        contact:
+          type: string
+          description: 联系人
+          example: 联系人
+          maxLength: 10
+          nullable: true
+        contact_phone:
+          type: string
+          description: 联系电话
+          example: '13000000000'
+          maxLength: 11
+          nullable: true
+        contact_email:
+          type: string
+          description: 联系邮箱
+          example: test@test.com
+          maxLength: 30
+          nullable: true
+        business:
+          type: string
+          description: 经营类目
+          example: '101'
+          maxLength: 10
+        channel_id:
+          type: string
+          description: 渠道商商户号
+          example: '100000001'
+          maxLength: 32
+        channel_name:
+          type: string
+          description: 渠道商名称
+          example: 渠道商的全称
+          maxLength: 50
+        total:
+          type: string
+          description: 总记录数
+          example: '1'
+          maxLength: 32

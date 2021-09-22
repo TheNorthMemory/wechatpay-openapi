@@ -17,6 +17,10 @@ interface Getupgradestate
      */
     public function post(array $options = [
         'xml' => [
+            'version' => '1.0',
+            'mch_id' => '1230000109',
+            'sign_type' => 'HMAC-SHA256',
+            'sub_mch_id' => '1230000109',
         ],
         'security' => true,
     ]): ResponseInterface;
@@ -28,6 +32,10 @@ interface Getupgradestate
      */
     public function postAsync(array $options = [
         'xml' => [
+            'version' => '1.0',
+            'mch_id' => '1230000109',
+            'sign_type' => 'HMAC-SHA256',
+            'sub_mch_id' => '1230000109',
         ],
         'security' => true,
     ]): PromiseInterface;

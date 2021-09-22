@@ -17,6 +17,10 @@ interface Queryautowithdrawbydate
      */
     public function post(array $options = [
         'xml' => [
+            'mch_id' => '1900000109',
+            'sub_mch_id' => '1900000109',
+            'sign_type' => 'HMAC-SHA256',
+            'date' => '20180508',
         ],
         'security' => true,
     ]): ResponseInterface;
@@ -28,6 +32,10 @@ interface Queryautowithdrawbydate
      */
     public function postAsync(array $options = [
         'xml' => [
+            'mch_id' => '1900000109',
+            'sub_mch_id' => '1900000109',
+            'sign_type' => 'HMAC-SHA256',
+            'date' => '20180508',
         ],
         'security' => true,
     ]): PromiseInterface;

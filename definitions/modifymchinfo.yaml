@@ -3,10 +3,95 @@ modifymchinfo.request:
     - type: object
       xml:
         name: xml
-      properties: {}
+      required:
+        - mch_id
+        - sub_mch_id
+        - sign
+      properties:
+        mch_id:
+          type: string
+          description: 商户号
+          example: '1230000109'
+          maxLength: 32
+        sub_mch_id:
+          type: string
+          description: 商户识别码
+          example: '11111111'
+          maxLength: 32
+        sign:
+          type: string
+          description: 签名
+          example: C380BEC2BFD727A4B6845133519F3AD6
+          maxLength: 32
+        merchant_shortname:
+          type: string
+          description: 商户简称
+          example: 商户简称
+          maxLength: 20
+          nullable: true
+        service_phone:
+          type: string
+          description: 客服电话
+          example: '075586010000'
+          maxLength: 20
+          nullable: true
 modifymchinfo.response:
   allOf:
     - type: object
       xml:
         name: xml
-      properties: {}
+      required:
+        - return_code
+      properties:
+        return_code:
+          type: string
+          description: 返回状态码
+          example: SUCCESS
+          maxLength: 16
+        return_msg:
+          type: string
+          description: 返回信息
+          example: 签名失败
+          maxLength: 128
+          nullable: true
+    - type: object
+      xml:
+        name: xml
+      required:
+        - result_code
+        - result_msg
+        - sign
+        - nonce_str
+      properties:
+        result_code:
+          type: string
+          description: 处理结果
+          example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+          maxLength: 32
+        result_msg:
+          type: string
+          description: 处理信息
+          example: C380BEC2BFD727A4B6845133519F3AD6
+          maxLength: 32
+        sign:
+          type: string
+          description: 签名
+          example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+          maxLength: 32
+        err_code:
+          type: string
+          description: 错误代码
+          example: INVALID_REQUEST
+          maxLength: 32
+          nullable: true
+        err_code_des:
+          type: string
+          description: 错误代码描述
+          example: 商户号信息有误，请检查修改后重试
+          maxLength: 128
+          nullable: true
+        nonce_str:
+          type: string
+          description: 随机字符串
+          example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+          maxLength: 32

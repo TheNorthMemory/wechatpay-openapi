@@ -17,6 +17,15 @@ interface Modifyarchives
      */
     public function post(array $options = [
         'xml' => [
+            'version' => '1.0',
+            'mch_id' => '1230000109',
+            'sign_type' => 'HMAC-SHA256',
+            'sub_mch_id' => '1230000109',
+            'account_number' => '',
+            'bank_name' => '深圳农村商业银行xxx支行',
+            'account_bank' => '中国银行',
+            'bank_address_code' => '110000',
+            'cert_sn' => '5430056GFRJK54YTFF653GDFH09HFGHF',
         ],
         'security' => true,
     ]): ResponseInterface;
@@ -28,6 +37,15 @@ interface Modifyarchives
      */
     public function postAsync(array $options = [
         'xml' => [
+            'version' => '1.0',
+            'mch_id' => '1230000109',
+            'sign_type' => 'HMAC-SHA256',
+            'sub_mch_id' => '1230000109',
+            'account_number' => '',
+            'bank_name' => '深圳农村商业银行xxx支行',
+            'account_bank' => '中国银行',
+            'bank_address_code' => '110000',
+            'cert_sn' => '5430056GFRJK54YTFF653GDFH09HFGHF',
         ],
         'security' => true,
     ]): PromiseInterface;

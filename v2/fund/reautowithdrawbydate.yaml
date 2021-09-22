@@ -1,5 +1,7 @@
 post:
   x-api-cert-required: true
+  deprecated: true
+  x-version: [unknown]
   tags:
     - 支付∙服务商∙小微商户
   summary: 重新发起提现

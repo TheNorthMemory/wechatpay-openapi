@@ -3,10 +3,156 @@ pappayapply.request:
     - type: object
       xml:
         name: xml
-      properties: {}
+      required:
+        - appid
+        - mch_id
+        - nonce_str
+        - sign
+        - body
+        - out_trade_no
+        - total_fee
+        - spbill_create_ip
+        - notify_url
+        - trade_type
+        - contract_id
+      properties:
+        appid:
+          type: string
+          description: 请求appid
+          example: wxcbda96de0b165486
+          maxLength: 32
+        mch_id:
+          type: string
+          description: 商户号
+          example: '10000098'
+          maxLength: 32
+        nonce_str:
+          type: string
+          description: 随机字符串
+          example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+          maxLength: 32
+        sign:
+          type: string
+          description: 签名
+          example: C380BEC2BFD727A4B6845133519F3AD6
+          maxLength: 64
+        body:
+          type: string
+          description: 商品描述
+          example: 水电代扣
+          maxLength: 128
+        detail:
+          type: string
+          description: 商品详情
+          example: 水电代扣：A水电代扣：B水电代扣：C
+          maxLength: 8192
+          nullable: true
+        attach:
+          type: string
+          description: 附加数据
+          example: 自定义参数
+          maxLength: 128
+          nullable: true
+        out_trade_no:
+          type: string
+          description: 商户订单号
+          example: '1217752501201407033233368018'
+          maxLength: 32
+        total_fee:
+          format: int32
+          type: integer
+          description: 总金额
+          example: '888'
+        fee_type:
+          type: string
+          description: 货币类型
+          example: CNY
+          maxLength: 16
+          nullable: true
+        spbill_create_ip:
+          type: string
+          description: 终端IP
+          example: 8.8.8.8
+          maxLength: 16
+        goods_tag:
+          type: string
+          description: 商品标记
+          example: WXG
+          maxLength: 32
+          nullable: true
+        notify_url:
+          type: string
+          description: 回调通知url
+          example: http://yoursite.com/wxpay.html
+        trade_type:
+          type: string
+          description: 交易类型
+          example: PAP
+        contract_id:
+          type: string
+          description: 委托代扣协议id
+          example: Wx15463511252015071056489715
+        receipt:
+          type: string
+          description: 电子发票入口开放标识
+          example: 'Y'
+          maxLength: 8
+          nullable: true
 pappayapply.response:
   allOf:
     - type: object
       xml:
         name: xml
-      properties: {}
+      required:
+        - return_code
+        - return_msg
+      properties:
+        return_code:
+          type: string
+          description: 返回状态码
+          example: SUCCESS
+        return_msg:
+          type: string
+          description: 返回信息
+          example: 签名失败
+    - type: object
+      xml:
+        name: xml
+      required:
+        - appid
+        - mch_id
+        - nonce_str
+        - sign
+        - result_code
+      properties:
+        appid:
+          type: string
+          description: 公众账号id
+          example: wxcbda96de0b165486
+        mch_id:
+          type: string
+          description: 商户号
+          example: '10000098'
+          maxLength: 10000098
+        nonce_str:
+          type: string
+          description: 随机字符串
+          example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+        sign:
+          type: string
+          description: 签名
+          example: C380BEC2BFD727A4B6845133519F3AD6
+        result_code:
+          type: string
+          description: 业务结果
+          example: SUCCESS
+        err_code:
+          type: string
+          description: 错误代码
+          example: SIGN_ERROR
+          nullable: true
+        err_code_des:
+          type: string
+          description: 错误代码描述
+          example: 签名错误
+          nullable: true

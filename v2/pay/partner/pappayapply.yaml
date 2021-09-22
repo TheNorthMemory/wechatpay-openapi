@@ -13,9 +13,13 @@ post:
       in: body
       required: true
       schema:
-        $ref: '../../../definitions/pappayapply.yaml#/pappayapply.request'
+        allOf:
+          - $ref: '../../../definitions/wxpay.service.yaml#/serviceprovider.subs'
+          - $ref: '../../../definitions/pappayapply.yaml#/pappayapply.request'
   responses:
     '200':
       description: ''
       schema:
-        $ref: '../../../definitions/pappayapply.yaml#/pappayapply.response'
+        allOf:
+          - $ref: '../../../definitions/wxpay.service.yaml#/serviceprovider.subs'
+          - $ref: '../../../definitions/pappayapply.yaml#/pappayapply.response'

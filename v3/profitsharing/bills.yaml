@@ -1,0 +1,51 @@
+get:
+  x-version: [2021.07.22]
+  x-role:
+    - 直连商户
+    - 电商平台
+    - 服务商
+  tags:
+    - 资金应用∙分账
+  summary: 申请分账账单API
+  description: 微信支付按天提供分账账单文件，商户可以通过该接口获取账单文件的下载地址。文件内包含分账相关的金额、时间等信息，供商户核对到账等情况。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_1_11.shtml)
+  parameters:
+    - name: sub_mchid
+      in: query
+      nullable: true
+      type: string
+      description: 二级商户号
+    - name: bill_date
+      in: query
+      required: true
+      type: string
+      description: 账单日期
+      example: '2019-06-11'
+    - name: tar_type
+      in: query
+      nullable: true
+      type: string
+      description: 压缩类型
+      example: GZIP
+      allOf:
+        - $ref: '../../definitions/Enumerations.yaml#BillTarType'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - download_url
+          - hash_type
+          - hash_value
+        properties:
+          download_url:
+            type: string
+            description: 下载地址
+            example: https://api.mch.weixin.qq.com/v3/bill/downloadurl?token=xxx
+          hash_type:
+            type: string
+            description: 哈希类型
+            example: SHA1
+          hash_value:
+            type: string
+            description: 哈希值
+            example: 79bb0f45fc4c42234a918000b2668d689e2bde04

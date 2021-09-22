@@ -4,6 +4,7 @@ namespace WeChatPay\OpenAPI;
 
 /**
  * 这是一个纯接口描述文件，由程序自动生成，旨在为IDE提供结构提示，无他用。
+ * @property-read V3\Vehicle $vehicle
  * @property-read V3\Smartguide $smartguide
  * @property-read V3\Refund $refund
  * @property-read V3\Profitsharing $profitsharing

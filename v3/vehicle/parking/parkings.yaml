@@ -1,0 +1,102 @@
+post:
+  x-version: [2021.08.06]
+  x-role:
+    - 服务商
+  tags:
+    - 微信支付分∙停车服务
+  summary: 创建停车入场API
+  description: 车辆入场以后，商户调用该接口，创建停车入场信息。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_8_2.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - sub_mchid
+          - out_parking_no
+          - plate_number
+          - plate_color
+          - notify_url
+          - start_time
+          - parking_name
+          - free_duration
+        properties:
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1900000109'
+          out_parking_no:
+            type: string
+            description: 商户入场id
+            example: '1231243'
+          plate_number:
+            type: string
+            description: 车牌号
+            example: 粤B888888
+          plate_color:
+            $ref: '../../../definitions/Enumerations.yaml#/VehiclePlateColor'
+          notify_url:
+            type: string
+            description: 回调通知url
+            example: https://yoursite.com/wxpay.html
+          start_time:
+            type: string
+            description: 入场时间
+            example: '2017-08-26T10:43:39+08:00'
+          parking_name:
+            type: string
+            description: 停车场名称
+            example: 欢乐海岸停车场
+          free_duration:
+            type: integer
+            description: 免费时长
+            example: 3600
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - id
+          - out_parking_no
+          - plate_number
+          - plate_color
+          - start_time
+          - parking_name
+          - free_duration
+          - state
+        properties:
+          id:
+            type: string
+            description: 停车入场id
+            example: 5K8264ILTKCH16CQ250
+          out_parking_no:
+            type: string
+            description: 商户入场id
+            example: '212434321'
+          plate_number:
+            type: string
+            description: 车牌号
+            example: 粤B888888
+          plate_color:
+            $ref: '../../../definitions/Enumerations.yaml#/VehiclePlateColor'
+          start_time:
+            type: string
+            description: 入场时间
+            example: '2017-08-26T10:43:39+08:00'
+          parking_name:
+            type: string
+            description: 停车场名称
+            example: 欢乐海岸停车场
+          free_duration:
+            type: integer
+            description: 免费时长
+            example: 3600
+          state:
+            type: string
+            description: 停车入场状态
+            example: NORMAL
+          block_reason:
+            type: string
+            description: 不可用状态描述
+            example: PAUSE

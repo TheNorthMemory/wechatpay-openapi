@@ -726,3 +726,15 @@ MemberCardReceiveStatus:
     - UNSHOWED   #未曝光
     - UNRECEIVED #未领取
     - RECEIVED   #已被领取
+
+VehiclePlateColor:
+  type: string
+  description: 车牌颜色
+  example: BLUE
+  enum:
+    - BLUE      #蓝色
+    - GREEN     #绿色
+    - YELLOW    #黄色
+    - BLACK     #黑色
+    - WHITE     #白色
+    - LIMEGREEN #黄绿色

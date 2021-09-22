@@ -1,0 +1,69 @@
+get:
+  x-version: [2021.08.06]
+  x-role:
+    - 服务商
+  tags:
+    - 微信支付分∙停车服务
+  summary: 查询车牌服务开通信息API
+  description: 该接口仅支持停车场景，商户首先请求查询车牌服务开通信息接口，确认该车牌，是否被该用户开通车主服务。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_8_1.shtml)
+  parameters:
+    - name: appid
+      in: query
+      type: string
+      description: 应用ID
+      required: true
+      example: wxcbda96de0b165486
+    - name: sub_mchid
+      in: query
+      type: string
+      description: 子商户号
+      required: true
+      example: '1900000109'
+    - name: plate_number
+      in: query
+      type: string
+      description: 车牌号
+      required: true
+      example: 粤B888888
+    - name: plate_color
+      in: query
+      type: string
+      description: 车牌颜色
+      required: true
+      example: BLUE
+      allOf:
+        - $ref: '../../../../definitions/Enumerations.yaml#/VehiclePlateColor'
+    - name: openid
+      in: query
+      type: string
+      description: 用户标识
+      required: true
+      example: oUpF8uMuAJOM2pxb1Q
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - plate_number
+          - plate_color
+          - openid
+          - service_state
+        properties:
+          plate_number:
+            type: string
+            description: 车牌号
+            example: 粤B888888
+          plate_color:
+            $ref: '../../../../definitions/Enumerations.yaml#/VehiclePlateColor'
+          service_open_time:
+            type: string
+            description: 车牌服务开通时间
+            example: '2017-08-26T10:43:39+08:00'
+          openid:
+            type: string
+            description: 用户标识
+            example: oUpF8uMuAJOM2pxb1Q
+          service_state:
+            type: string
+            description: 车牌服务开通状态
+            example: PAUSE

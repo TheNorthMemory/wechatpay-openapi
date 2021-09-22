@@ -1,0 +1,80 @@
+<?php declare(strict_types=1);/* Generated file. DO NOT EDIT! */
+
+namespace WeChatPay\OpenAPI\V3\Vehicle\Transactions;
+
+use Psr\Http\Message\ResponseInterface;
+use GuzzleHttp\Promise\PromiseInterface;
+
+/**
+ * 这是一个纯接口描述文件，由程序自动生成，旨在为IDE提供结构提示，无他用。
+ */
+interface Parking
+{
+    /**
+     * 扣费受理(同步模式)
+     * @param array<string,mixed> $options
+     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_8_3.shtml
+     */
+    public function post(array $options = [
+        'json' => [
+            'appid' => 'wxcbda96de0b165486',
+            'sub_appid' => 'wxcbda96de0b165486',
+            'sub_mchid' => '1900000109',
+            'description' => '停车场扣费',
+            'attach' => '深圳分店',
+            'out_trade_no' => '20150806125346',
+            'trade_scene' => 'PARKING',
+            'goods_tag' => 'WXG',
+            'notify_url' => 'https://yoursite.com/wxpay.html',
+            'profit_sharing' => 'Y',
+            'amount' => [
+                'total' => 888,
+                'currency' => 'CNY',
+            ],
+            'parking_info' => [
+                'parking_id' => '5K8264ILTKCH16CQ250',
+                'plate_number' => '粤B888888',
+                'plate_color' => 'BLUE',
+                'start_time' => '2017-08-26T10:43:39+08:00',
+                'end_time' => '2017-08-26T10:43:39+08:00',
+                'parking_name' => '欢乐海岸停车场',
+                'charging_duration' => 3600,
+                'device_id' => '12313',
+            ],
+        ],
+    ]): ResponseInterface;
+
+    /**
+     * 扣费受理(异步模式)
+     * @param array<string,mixed> $options
+     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_8_3.shtml#async
+     */
+    public function postAsync(array $options = [
+        'json' => [
+            'appid' => 'wxcbda96de0b165486',
+            'sub_appid' => 'wxcbda96de0b165486',
+            'sub_mchid' => '1900000109',
+            'description' => '停车场扣费',
+            'attach' => '深圳分店',
+            'out_trade_no' => '20150806125346',
+            'trade_scene' => 'PARKING',
+            'goods_tag' => 'WXG',
+            'notify_url' => 'https://yoursite.com/wxpay.html',
+            'profit_sharing' => 'Y',
+            'amount' => [
+                'total' => 888,
+                'currency' => 'CNY',
+            ],
+            'parking_info' => [
+                'parking_id' => '5K8264ILTKCH16CQ250',
+                'plate_number' => '粤B888888',
+                'plate_color' => 'BLUE',
+                'start_time' => '2017-08-26T10:43:39+08:00',
+                'end_time' => '2017-08-26T10:43:39+08:00',
+                'parking_name' => '欢乐海岸停车场',
+                'charging_duration' => 3600,
+                'device_id' => '12313',
+            ],
+        ],
+    ]): PromiseInterface;
+}

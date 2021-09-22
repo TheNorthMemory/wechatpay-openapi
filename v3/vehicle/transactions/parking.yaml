@@ -1,0 +1,325 @@
+post:
+  x-version: [2021.08.06]
+  x-role:
+    - 服务商
+  tags:
+    - 微信支付分∙停车服务
+  summary: 扣费受理API
+  description: 商户请求扣费受理接口，会完成订单受理。微信支付进行异步扣款，支付完成后，会将订单支付结果发送给商户。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_8_3.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - appid
+          - sub_appid
+          - sub_mchid
+          - description
+          - out_trade_no
+          - trade_scene
+          - notify_url
+          - amount
+        properties:
+          appid:
+            type: string
+            description: 应用ID
+            example: wxcbda96de0b165486
+          sub_appid:
+            type: string
+            description: 子商户应用ID
+            example: wxcbda96de0b165486
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1900000109'
+          description:
+            type: string
+            description: 服务描述
+            example: 停车场扣费
+          attach:
+            type: string
+            description: 附加数据
+            example: 深圳分店
+          out_trade_no:
+            type: string
+            description: 商户订单号
+            example: '20150806125346'
+          trade_scene:
+            type: string
+            description: 交易场景
+            example: PARKING
+          goods_tag:
+            type: string
+            description: 订单优惠标记
+            example: WXG
+          notify_url:
+            type: string
+            description: 回调通知url
+            example: https://yoursite.com/wxpay.html
+          profit_sharing:
+            type: string
+            description: 分账标识
+            example: 'Y'
+          amount:
+            type: object
+            description: 订单金额
+            required:
+              - total
+              - currency
+            properties:
+              total:
+                type: integer
+                description: 订单金额
+                example: 888
+              currency:
+                type: string
+                description: 货币类型
+                example: CNY
+          parking_info:
+            type: object
+            description: 停车场景信息
+            required:
+              - parking_id
+              - plate_number
+              - plate_color
+              - start_time
+              - end_time
+              - parking_name
+              - charging_duration
+              - device_id
+            properties:
+              parking_id:
+                type: string
+                description: 停车入场id
+                example: 5K8264ILTKCH16CQ250
+              plate_number:
+                type: string
+                description: 车牌号
+                example: 粤B888888
+              plate_color:
+                $ref: '../../../definitions/Enumerations.yaml#/VehiclePlateColor'
+              start_time:
+                type: string
+                description: 入场时间
+                example: '2017-08-26T10:43:39+08:00'
+              end_time:
+                type: string
+                description: 出场时间
+                example: '2017-08-26T10:43:39+08:00'
+              parking_name:
+                type: string
+                description: 停车场名称
+                example: 欢乐海岸停车场
+              charging_duration:
+                type: integer
+                description: 计费时长
+                example: 3600
+              device_id:
+                type: string
+                description: 停车场设备id
+                example: '12313'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - appid
+          - sp_mchid
+          - description
+          - create_time
+          - out_trade_no
+          - trade_state
+          - trade_scene
+          - payer
+          - amount
+        properties:
+          appid:
+            type: string
+            description: 应用ID
+            example: wxcbda96de0b165486
+          sub_appid:
+            type: string
+            description: 子商户应用ID
+            example: wxcbda96de0b165489
+          sp_mchid:
+            type: string
+            description: 商户号
+            example: '1230000109'
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1900000109'
+          description:
+            type: string
+            description: 服务描述
+            example: 停车场扣费
+          create_time:
+            type: string
+            description: 订单创建时间
+            example: '2017-08-26T10:43:39+08:00'
+          out_trade_no:
+            type: string
+            description: 商户订单号
+            example: '20150806125346'
+          transaction_id:
+            type: string
+            description: 微信支付订单号
+            example: '1009660380201506130728806387'
+          trade_state:
+            type: string
+            description: 交易状态
+            example: SUCCESS
+          trade_state_description:
+            type: string
+            description: 交易状态描述
+            example: 支付失败，请重新下单支付
+          success_time:
+            type: string
+            description: 支付完成时间
+            example: '2017-08-26T10:43:39+08:00'
+          bank_type:
+            type: string
+            description: 付款银行
+            example: CMC
+          user_repaid:
+            type: string
+            description: 用户是否已还款
+            example: 'Y'
+          attach:
+            type: string
+            description: 附加数据
+            example: 深圳分店
+          trade_scene:
+            type: string
+            description: 交易场景
+            example: PARKING
+          parking_info:
+            type: object
+            description: 停车场景信息
+            required:
+              - parking_id
+              - plate_number
+              - plate_color
+              - start_time
+              - end_time
+              - parking_name
+              - charging_duration
+              - device_id
+            properties:
+              parking_id:
+                type: string
+                description: 停车入场id
+                example: 5K8264ILTKCH16CQ250
+              plate_number:
+                type: string
+                description: 车牌号
+                example: 粤B888888
+              plate_color:
+                $ref: '../../../definitions/Enumerations.yaml#/VehiclePlateColor'
+              start_time:
+                type: string
+                description: 入场时间
+                example: '2017-08-26T10:43:39+08:00'
+              end_time:
+                type: string
+                description: 出场时间
+                example: '2017-08-26T10:43:39+08:00'
+              parking_name:
+                type: string
+                description: 停车场名称
+                example: 欢乐海岸停车场
+              charging_duration:
+                type: integer
+                description: 计费时长
+                example: 3600
+              device_id:
+                type: string
+                description: 停车场设备id
+                example: '12313'
+          payer:
+            type: object
+            description: 支付者信息
+            required:
+              - openid
+            properties:
+              openid:
+                type: string
+                description: 用户在appid下的标识
+                example: oUpF8uMuAJOM2pxb1Q
+              sub_openid:
+                type: string
+                description: 用户在sub_appid下的标识
+                example: oUpF8uMuAJOM2pxb1Q
+          amount:
+            type: object
+            description: 订单金额信息
+            required:
+              - total
+            properties:
+              total:
+                type: integer
+                description: 订单金额
+                example: 888
+              currency:
+                type: string
+                description: 货币类型
+                example: CNY
+              payer_total:
+                type: integer
+                description: 用户实际支付金额
+                example: 100
+              discount_total:
+                type: integer
+                description: 折扣
+                example: 100
+          promotion_detail:
+            type: array
+            description: 优惠信息
+            items:
+              type: object
+              required:
+                - coupon_id
+                - amount
+              properties:
+                coupon_id:
+                  type: string
+                  description: 券ID
+                  example: '109519'
+                name:
+                  type: string
+                  description: 优惠名称
+                  example: 单品惠-6
+                scope:
+                  type: string
+                  description: 优惠范围
+                  example: SINGLE
+                type:
+                  type: string
+                  description: 优惠类型
+                  example: CASH
+                stock_id:
+                  type: string
+                  description: 活动ID
+                  example: '931386'
+                amount:
+                  type: integer
+                  description: 优惠券面额
+                  example: 5
+                wechatpay_contribute:
+                  type: integer
+                  description: 微信出资
+                  example: 1
+                merchant_contribute:
+                  type: integer
+                  description: 商户出资
+                  example: 1
+                other_contribute:
+                  type: integer
+                  description: 其他出资
+                  example: 1
+                currency:
+                  type: string
+                  description: 优惠币种
+                  example: CNY

@@ -17,6 +17,7 @@ tags:
   - name: 微信支付分∙免确认模式∙普通授权
   - name: 微信支付分∙免确认模式∙预授权
   - name: 微信支付分∙先享卡
+  - name: 微信支付分∙停车服务
   - name: 基础支付∙普通支付∙直连模式
   - name: 基础支付∙普通支付∙服务商模式
   - name: 基础支付∙合单支付
@@ -563,6 +564,8 @@ paths:
     $ref: ./v3/payscore/user-service-state.yaml
   /v3/payscore/users/{openid}/permissions/{service_id}/terminate:
     $ref: ./v3/payscore/users/{openid}/permissions/{service_id}/terminate.yaml
+  /v3/profitsharing/bills:
+    $ref: ./v3/profitsharing/bills.yaml
   /v3/profitsharing/merchant-configs/{sub_mchid}:
     $ref: ./v3/profitsharing/merchant-configs/{sub_mchid}.yaml
   /v3/profitsharing/orders:
@@ -591,3 +594,11 @@ paths:
     $ref: ./v3/smartguide/guides/{guide_id}.yaml
   /v3/smartguide/guides/{guide_id}/assign:
     $ref: ./v3/smartguide/guides/{guide_id}/assign.yaml
+  /v3/vehicle/parking/parkings:
+    $ref: ./v3/vehicle/parking/parkings.yaml
+  /v3/vehicle/parking/services/find:
+    $ref: ./v3/vehicle/parking/services/find.yaml
+  /v3/vehicle/transactions/out-trade-no/{out_trade_no}:
+    $ref: ./v3/vehicle/transactions/out-trade-no/{out_trade_no}.yaml
+  /v3/vehicle/transactions/parking:
+    $ref: ./v3/vehicle/transactions/parking.yaml

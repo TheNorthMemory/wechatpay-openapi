@@ -359,6 +359,8 @@ paths:
     $ref: ./v3/goldplan/merchants/changegoldplanstatus.yaml
   /v3/goldplan/merchants/set-advertising-industry-filter:
     $ref: ./v3/goldplan/merchants/set-advertising-industry-filter.yaml
+  /v3/marketing/bank/packages/{package_id}/tasks:
+    $ref: ./v3/marketing/bank/packages/{package_id}/tasks.yaml
   /v3/marketing/busifavor/callbacks:
     $ref: ./v3/marketing/busifavor/callbacks.yaml
   /v3/marketing/busifavor/coupons/{card_id}/send:
@@ -495,6 +497,8 @@ paths:
     $ref: ./v3/merchant-service/complaints/{transaction_id}/negotiation-historys.yaml
   /v3/merchant-service/feedbacks:
     $ref: ./v3/merchant-service/feedbacks.yaml
+  /v3/merchant-service/images/{media_url_slot}:
+    $ref: ./v3/merchant-service/images/{media_url_slot}.yaml
   /v3/merchant-service/images/upload:
     $ref: ./v3/merchant-service/images/upload.yaml
   /v3/merchant-store/stores:

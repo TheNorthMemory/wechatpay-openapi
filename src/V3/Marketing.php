@@ -10,6 +10,7 @@ namespace WeChatPay\OpenAPI\V3;
  * @property-read Marketing\MembercardActivity $membercardActivity
  * @property-read Marketing\Favor $favor
  * @property-read Marketing\Busifavor $busifavor
+ * @property-read Marketing\Bank $bank
  */
 interface Marketing
 {

@@ -1,0 +1,93 @@
+post:
+  x-version: [2021.08.12]
+  x-role:
+    - 直连商户
+  summary: 导入定向用户协议号API
+  consumes:
+    - multipart/form-data
+  description: 创建快捷交易协议号上传任务，每个上传任务中需要上传一个快捷交易协议号文件。微信收到快捷交易协议号文件后，会识别出其中的微信用户，保存到指定的号码包中。一个号码包可以包含多个上传任务，这些上传任务导入的用户会被合并去重，再追加写到号码包。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_8_1.shtml)
+  parameters:
+    - name: package_id
+      in: path
+      required: true
+      type: string
+      description: 号码包id
+      example: '8473295'
+    - name: file
+      in: formData
+      required: true
+      type: file
+      description: 快捷交易协议号文件
+    - name: meta
+      in: formData
+      type: string
+      format: json
+      description: 文件元信息
+      schema:
+        type: object
+        required:
+          - bank_type
+          - sha256
+        properties:
+          bank_type:
+            type: string
+            description: 银行类型
+            example: ICBC_DEBIT
+          filename:
+            type: string
+            description: 文件名
+            example: active_user.csv
+          sha256:
+            type: string
+            description: 文件摘要
+            example: addca90a6a290b9642dbaccffdf01e8c22aa348940b2e96754169ba08c19e5db
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - create_time
+          - filename
+          - package_id
+          - task_id
+        properties:
+          bank_type:
+            type: string
+            description: 银行类型
+            example: ICBC_DEBIT
+          create_time:
+            type: string
+            description: 创建上传任务的时间
+            example: '2020-05-20T13:29:35+08:00'
+          fail_count:
+            type: integer
+            description: 失败数
+            example: 20
+          filename:
+            type: string
+            description: 文件名
+            example: active_user.csv
+          package_id:
+            type: string
+            description: 号码包id
+            example: '8473295'
+          status:
+            type: string
+            description: 任务状态
+            example: PROCESSING
+          success_count:
+            type: integer
+            description: 成功数
+            example: 1000
+          success_user_count:
+            type: integer
+            description: 匹配成功的微信用户数
+            example: 1000
+          task_id:
+            type: string
+            description: 上传任务
+            example: '101'
+          update_time:
+            type: string
+            description: 上传任务最近一次更新的时间
+            example: '2020-05-20T13:29:35+08:00'

@@ -17,6 +17,9 @@ interface Paporderquery
      */
     public function post(array $options = [
         'xml' => [
+            'appid' => 'wxcbda96de0b165486',
+            'mch_id' => '10000098',
+            'transaction_id' => '1009660380201506130728806387',
         ],
     ]): ResponseInterface;
 
@@ -27,6 +30,9 @@ interface Paporderquery
      */
     public function postAsync(array $options = [
         'xml' => [
+            'appid' => 'wxcbda96de0b165486',
+            'mch_id' => '10000098',
+            'transaction_id' => '1009660380201506130728806387',
         ],
     ]): PromiseInterface;
 }

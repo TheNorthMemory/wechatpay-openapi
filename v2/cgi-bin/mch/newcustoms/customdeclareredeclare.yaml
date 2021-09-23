@@ -1,0 +1,196 @@
+post:
+  tags:
+    - 支付∙自助清关
+  summary: 订单附加信息重推接口
+  description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/api/external/declarecustom.php?chapter=18_4)'
+  consumes:
+    - application/xml
+  produces:
+    - application/xml
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        allOf:
+          - type: object
+            xml:
+              name: xml
+            required:
+              - sign
+              - appid
+              - mch_id
+              - out_trade_no
+              - transaction_id
+              - customs
+              - mch_customs_no
+            properties:
+              sign_type:
+                type: string
+                description: 签名类型
+                example: MD5
+                maxLength: 32
+                nullable: true
+              sign:
+                type: string
+                description: 签名
+                example: C380BEC2BFD727A4B6845133519F3AD6
+                maxLength: 32
+              appid:
+                type: string
+                description: 公众账号ID
+                example: wxd678efh567hg6787
+                maxLength: 32
+              mch_id:
+                type: string
+                description: 商户号
+                example: '1230000109'
+                maxLength: 32
+              out_trade_no:
+                type: string
+                description: 商户订单号
+                example: '20150806125346'
+                maxLength: 32
+              transaction_id:
+                type: string
+                description: 微信支付订单号
+                example: '1000320306201511078440737890'
+                maxLength: 28
+              sub_order_no:
+                type: string
+                description: 商户子订单号
+                example: '20150806125346'
+                maxLength: 32
+                nullable: true
+              sub_order_id:
+                type: string
+                description: 微信子订单号
+                example: '1000320306201511078440737891'
+                maxLength: 32
+                nullable: true
+              customs:
+                type: string
+                description: 海关
+                example: SHANGHAI
+                maxLength: 32
+              mch_customs_no:
+                type: string
+                description: 商户海关备案号
+                example: '123456'
+                maxLength: 32
+  responses:
+    '200':
+      description: ''
+      schema:
+        allOf:
+          - type: object
+            xml:
+              name: xml
+            required:
+              - return_code
+            properties:
+              return_code:
+                type: string
+                description: 返回状态码
+                example: SUCCESS
+                maxLength: 16
+              return_msg:
+                type: string
+                description: 返回信息
+                example: 签名失败
+                maxLength: 128
+                nullable: true
+          - type: object
+            xml:
+              name: xml
+            required:
+              - sign_type
+              - sign
+              - appid
+              - mch_id
+              - result_code
+            properties:
+              sign_type:
+                type: string
+                description: 签名类型
+                example: MD5
+                maxLength: 32
+              sign:
+                type: string
+                description: 签名
+                example: C380BEC2BFD727A4B6845133519F3AD6
+                maxLength: 32
+              appid:
+                type: string
+                description: 公众账号ID
+                example: wxd678efh567hg6787
+                maxLength: 32
+              mch_id:
+                type: string
+                description: 商户号
+                example: '1230000109'
+                maxLength: 32
+              result_code:
+                type: string
+                description: 业务结果
+                example: SUCCESS
+                maxLength: 16
+              err_code:
+                type: string
+                description: 错误代码
+                example: SYSTEMERROR
+                maxLength: 32
+                nullable: true
+              err_code_des:
+                type: string
+                description: 错误代码描述
+                example: 系统错误
+                maxLength: 128
+                nullable: true
+          - type: object
+            xml:
+              name: xml
+            required:
+              - state
+              - transaction_id
+              - out_trade_no
+              - modify_time
+            properties:
+              state:
+                type: string
+                description: 状态码
+                example: UNDECLARED
+                maxLength: 32
+              transaction_id:
+                type: string
+                description: 微信支付订单号
+                example: '1000320306201511078440737890'
+                maxLength: 28
+              out_trade_no:
+                type: string
+                description: 商户订单号
+                example: '20150806125346'
+                maxLength: 32
+              sub_order_no:
+                type: string
+                description: 商户子订单号
+                example: '20150806125346'
+                maxLength: 32
+                nullable: true
+              sub_order_id:
+                type: string
+                description: 微信子订单号
+                example: '20150806125346'
+                maxLength: 32
+                nullable: true
+              modify_time:
+                type: string
+                description: 最后更新时间
+                example: '20091227091010'
+                maxLength: 14
+              explanation:
+                type: string
+                description: 申报结果说明
+                example: 支付单已存在并且为非退单状态
+                maxLength: 128
+                nullable: true

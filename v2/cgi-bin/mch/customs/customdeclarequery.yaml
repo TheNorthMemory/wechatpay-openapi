@@ -1,0 +1,244 @@
+post:
+  tags:
+    - 支付∙自助清关
+  summary: 订单附加信息查询接口
+  description: 商户通过订单号查询提交的订单附加信息。如果是微信收集的实名信息，查询接口不返回实名信息内容[官方文档](https://pay.weixin.qq.com/wiki/doc/api/external/declarecustom.php?chapter=18_2)
+  consumes:
+    - application/xml
+  produces:
+    - application/xml
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        allOf:
+          - type: object
+            xml:
+              name: xml
+            required:
+              - sign
+              - appid
+              - mch_id
+              - out_trade_no
+              - transaction_id
+              - sub_order_no
+              - sub_order_id
+              - customs
+            properties:
+              sign_type:
+                type: string
+                description: 签名类型
+                example: MD5
+                maxLength: 32
+                nullable: true
+              sign:
+                type: string
+                description: 签名
+                example: C380BEC2BFD727A4B6845133519F3AD6
+                maxLength: 32
+              appid:
+                type: string
+                description: 公众账号ID
+                example: wxd678efh567hg6787
+                maxLength: 32
+              mch_id:
+                type: string
+                description: 商户号
+                example: '1230000109'
+                maxLength: 32
+              out_trade_no:
+                type: string
+                description: 商户订单号
+                example: '20150806125346'
+                maxLength: 32
+              transaction_id:
+                type: string
+                description: 微信支付订单号
+                example: '1000320306201511078440737890'
+                maxLength: 28
+              sub_order_no:
+                type: string
+                description: 商户子订单号
+                example: '20150806125346'
+                maxLength: 32
+              sub_order_id:
+                type: string
+                description: 微信子订单号
+                example: '20150806125346'
+                maxLength: 32
+              customs:
+                type: string
+                description: 海关
+                example: SHANGHAI
+                maxLength: 32
+  responses:
+    '200':
+      description: ''
+      schema:
+        allOf:
+          - type: object
+            xml:
+              name: xml
+            required:
+              - return_code
+            properties:
+              return_code:
+                type: string
+                description: 返回状态码
+                example: SUCCESS
+                maxLength: 16
+              return_msg:
+                type: string
+                description: 返回信息
+                example: 签名失败
+                maxLength: 128
+                nullable: true
+          - type: object
+            xml:
+              name: xml
+            required:
+              - sign
+              - appid
+              - mch_id
+              - result_code
+            properties:
+              sign:
+                type: string
+                description: 签名
+                example: C380BEC2BFD727A4B6845133519F3AD6
+                maxLength: 32
+              appid:
+                type: string
+                description: 公众账号ID
+                example: wxd678efh567hg6787
+                maxLength: 32
+              mch_id:
+                type: string
+                description: 商户号
+                example: '1230000109'
+                maxLength: 32
+              result_code:
+                type: string
+                description: 业务结果
+                example: SUCCESS
+                maxLength: 16
+              err_code:
+                type: string
+                description: 错误代码
+                example: SYSTEMERROR
+                maxLength: 32
+                nullable: true
+              err_code_des:
+                type: string
+                description: 错误代码描述
+                example: 系统错误
+                maxLength: 128
+                nullable: true
+          - type: object
+            xml:
+              name: xml
+            required:
+              - transaction_id
+              - count
+              - customs_$n
+              - state_$n
+              - modify_time_$n
+              - cert_check_result_$n
+              - verify_department
+              - verify_department_trade_id
+            properties:
+              transaction_id:
+                type: string
+                description: 微信支付订单号
+                example: '1000320306201511078440737890'
+                maxLength: 28
+              count:
+                format: int32
+                type: integer
+                description: 笔数
+                example: '1'
+              sub_order_no_$n:
+                type: string
+                description: 商户子订单号
+                example: '20150806125346'
+                maxLength: 32
+                nullable: true
+              sub_order_id_$n:
+                type: string
+                description: 微信子订单号
+                example: '20150806125346'
+                maxLength: 32
+                nullable: true
+              mch_customs_no_$n:
+                type: string
+                description: 商户海关备案号
+                example: '1234567'
+                maxLength: 32
+                nullable: true
+              customs_$n:
+                type: string
+                description: 海关
+                example: SHANGHAI
+                maxLength: 2
+              fee_type_$n:
+                type: string
+                description: 币种
+                example: CNY
+                maxLength: 3
+                nullable: true
+              order_fee_$n:
+                format: int32
+                type: integer
+                description: 应付金额
+                example: '888'
+                nullable: true
+              duty_$n:
+                format: int32
+                type: integer
+                description: 关税
+                example: '888'
+                nullable: true
+              transport_fee_$n:
+                format: int32
+                type: integer
+                description: 物流费
+                example: '888'
+                nullable: true
+              product_fee_$n:
+                format: int32
+                type: integer
+                description: 商品价格
+                example: '888'
+                nullable: true
+              state_$n:
+                type: string
+                description: 状态码
+                example: UNDECLARED
+                maxLength: 2
+              explanation_$n:
+                type: string
+                description: 申报结果说明
+                example: 支付单已存在并且为非退单状态
+                maxLength: 128
+                nullable: true
+              modify_time_$n:
+                type: string
+                description: 最后更新时间
+                example: '20091227091010'
+                maxLength: 14
+              cert_check_result_$n:
+                type: string
+                description: 订购人和支付人身份信息校验结果
+                example: UNCHECKED
+                maxLength: 256
+              verify_department:
+                type: string
+                description: 验核机构
+                example: UNIONPAY
+                maxLength: 16
+              verify_department_trade_id:
+                type: string
+                description: 验核机构交易流水号
+                example: '2018112288340107038204310100000'
+                maxLength: 64

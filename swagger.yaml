@@ -67,6 +67,7 @@ tags:
   - name: 支付∙企业付款
   - name: 支付∙酒店押金
   - name: 支付∙委托扣款
+  - name: 支付∙自助清关
   - name: 支付∙服务商∙付款码支付
   - name: 支付∙服务商∙JSAPI支付
   - name: 支付∙服务商∙Native支付
@@ -98,6 +99,12 @@ paths:
     $ref: ./v2/applyment/micro/submitupgrade.yaml
   /billcommentsp/batchquerycomment:
     $ref: ./v2/billcommentsp/batchquerycomment.yaml
+  /cgi-bin/mch/customs/customdeclareorder:
+    $ref: ./v2/cgi-bin/mch/customs/customdeclareorder.yaml
+  /cgi-bin/mch/customs/customdeclarequery:
+    $ref: ./v2/cgi-bin/mch/customs/customdeclarequery.yaml
+  /cgi-bin/mch/newcustoms/customdeclareredeclare:
+    $ref: ./v2/cgi-bin/mch/newcustoms/customdeclareredeclare.yaml
   /deposit/consume:
     $ref: ./v2/deposit/consume.yaml
   /deposit/facepay:

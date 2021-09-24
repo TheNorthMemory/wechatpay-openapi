@@ -1,0 +1,105 @@
+post:
+  x-verison: [2020.05.08]
+  tags:
+    - 跨境支付
+  summary: 汇率查询API
+  description: 商户网站的商品以外币标价时，通过该接口可以实时查询到微信使用的转换汇率。汇率更新时间为北京时间上午10:00，一天更新一次。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/pay/In-AppPay/chapter8_10.shtml)
+  consumes:
+    - application/xml
+  produces:
+    - application/xml
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        xml:
+          name: xml
+        required:
+          - appid
+          - mch_id
+          - fee_type
+          - date
+          - sign
+        properties:
+          appid:
+            type: string
+            description: 公众账号ID
+            example: wxd678efh567hg6787
+          mch_id:
+            type: string
+            description: 商户号
+            example: '1230000109'
+          fee_type:
+            type: string
+            description: 币种
+            example: USD
+          date:
+            type: string
+            description: 日期
+            example: '20150807'
+          sign:
+            type: string
+            description: 签名
+            example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+  responses:
+    '200':
+      description: ''
+      schema:
+        allOf:
+          - type: object
+            xml:
+              name: xml
+            required:
+              - return_code
+              - return_msg
+            properties:
+              return_code:
+                type: string
+                description: 返回状态码
+                example: SUCCESS
+              return_msg:
+                type: string
+                description: 返回信息
+                example: 签名失败
+          - type: object
+            xml:
+              name: xml
+            required:
+              - appid
+              - mch_id
+              - fee_type
+              - rate_time
+              - rate
+              - sign
+            properties:
+              appid:
+                type: string
+                description: 公众账号ID
+                example: wxd678efh567hg6787
+              mch_id:
+                type: string
+                description: 商户号
+                example: '1230000109'
+              sub_mch_id:
+                type: string
+                description: 子商户号
+                example: '1230000100'
+                nullable: true
+              fee_type:
+                type: string
+                description: 币种
+                example: SUCCESS
+              rate_time:
+                type: string
+                description: 汇率时间
+                example: '20150807'
+              rate:
+                type: string
+                description: 现汇卖出价(汇率)
+                example: '650000000'
+              sign:
+                type: string
+                description: 签名
+                example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS

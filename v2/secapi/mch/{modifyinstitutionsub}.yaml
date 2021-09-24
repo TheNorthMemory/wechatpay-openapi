@@ -1,0 +1,221 @@
+post:
+  x-api-cert-required: true
+  x-verison: [2020.12.25]
+  tags:
+    - 跨境支付
+  summary: 修改子商户API
+  description: 用于机构子商户创建成功后，接口提供子商户信息修改。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/sub_merchant_entry/chapter3_3.shtml)
+  consumes:
+    - application/xml
+  produces:
+    - application/xml
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        xml:
+          name: xml
+        required:
+          - app_id
+          - mch_id
+          - sub_mch_id
+          - sign
+          - merchant_name
+          - merchant_shortname
+          - merchant_country_code
+          - merchant_type
+          - business_category
+          - mcc
+          - registration_certificate_number
+          - registration_certificate_date
+          - business_type
+          - app_download
+          - business_website
+          - office_account
+          - mini_program
+          - store_address
+          - office_phone
+          - contact_name
+          - contact_phone
+          - contact_email
+        properties:
+          app_id:
+            type: string
+            description: 机构appid
+            example: wx8888888888888888
+          mch_id:
+            type: string
+            description: 机构商户号
+            example: '3200000001'
+          sub_mch_id:
+            type: string
+            description: 子商户号
+            example: '12345678'
+          sign:
+            type: string
+            description: 签名
+            example: C380BEC2BFD727A4B6845133519F3AD6
+          merchant_name:
+            type: string
+            description: 子商户全称
+            example: Merchantname
+          channel_id:
+            type: string
+            description: 渠道编号
+            example: '101'
+            nullable: true
+          merchant_shortname:
+            type: string
+            description: 子商户简称
+            example: Merchantshortname
+          merchant_country_code:
+            type: string
+            description: 注册国家或区域
+            example: '344'
+          merchant_type:
+            type: string
+            description: 商户类型
+            example: ENTERPRISE
+          business_category:
+            type: string（3）
+            description: 业务类目
+            example: '343'
+          mcc:
+            type: string
+            description: MCC码
+            example: '4214'
+          registration_certificate_number:
+            type: string
+            description: 公司注册文件编号
+            example: 5555-8888
+          registration_certificate_date:
+            type: string
+            description: 公司注册文件过期时间
+            example: '2020-10-16'
+          registration_certificate_copy:
+            type: string
+            description: 公司注册文件照片
+            example: aoGhHuxkrIaqB4GzPCeo963zXKcO2hDVD8AjXIpgrj
+            nullable: true
+          business_type:
+            type: string
+            description: 业务类型
+            example: BOTH
+          app_download:
+            type: string
+            description: APP下载链接
+            example: https://download.qq.com
+          business_website:
+            type: string
+            description: 业务网站
+            example: https://www.qq.com
+          office_account:
+            type: string
+            description: 公众号
+            example: wx8888888888888888
+          mini_program:
+            type: string
+            description: 小程序
+            example: wx8888888888888888
+          store_address:
+            type: string
+            description: 门店地址
+            example: 广东省深圳市南山区科技中一道10000号
+          store_photos:
+            type: string
+            description: 门店照片
+            example: '[Media_id1,Media_id2,Media_id3]'
+            nullable: true
+          director_name:
+            type: string
+            description: 董事姓名
+            example: BobZhang
+            nullable: true
+          director_id_number:
+            type: string
+            description: 董事证件号码
+            example: 5555—8888
+            nullable: true
+          principal_name:
+            type: string
+            description: 负责人姓名
+            example: BobZhang
+            nullable: true
+          principal_id_number:
+            type: string
+            description: 负责人证件号
+            example: 5555—8888
+            nullable: true
+          office_phone:
+            type: string
+            description: 公司电话
+            example: '075586010000'
+          contact_name:
+            type: string
+            description: 联系人姓名
+            example: 李先生
+          contact_phone:
+            type: string
+            description: 联系人电话
+            example: '075586010000'
+          contact_email:
+            type: string
+            description: 联系人邮箱
+            example: test@test.com
+          settlement_bank_number:
+            type: string
+            description: 子商户结算银行账户
+            example: '555588889999'
+            nullable: true
+  responses:
+    '200':
+      description: ''
+      schema:
+        allOf:
+          - type: object
+            xml:
+              name: xml
+            required:
+              - return_code
+            properties:
+              return_code:
+                type: string
+                description: 返回状态码
+                example: SUCCESS
+              return_msg:
+                type: string
+                description: 返回信息
+                example: 签名失败
+                nullable: true
+          - type: object
+            xml:
+              name: xml
+            required:
+              - result_code
+              - sub_mch_id
+              - sign
+            properties:
+              result_code:
+                type: string
+                description: 业务返回码
+                example: SUCCESS
+              err_code:
+                type: string
+                description: 错误编码
+                example: 参数格式校验错误
+                nullable: true
+              err_code_des:
+                type: string
+                description: 错误描述
+                example: 系统错误
+                nullable: true
+              sub_mch_id:
+                type: string
+                description: 子商户号
+                example: '12345678'
+              sign:
+                type: string
+                description: 签名
+                example: C380BEC2BFD727A4B6845133519F3AD6

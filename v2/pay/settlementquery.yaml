@@ -1,0 +1,199 @@
+post:
+  x-verison: [2020.05.08]
+  tags:
+    - 跨境支付
+  summary: 查询结算资金
+  description: 通过此接口可以查询结算资金的明细。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/pay/In-AppPay/chapter8_9.shtml)
+  consumes:
+    - application/xml
+  produces:
+    - application/xml
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        xml:
+          name: xml
+        required:
+          - appid
+          - mchid
+          - usetag
+          - nonce_str
+          - offset
+          - limit
+          - date_start
+          - date_end
+          - sign
+        properties:
+          appid:
+            type: string
+            description: 公众账号ID
+            example: wxd678efh567hg6787
+          mchid:
+            type: string
+            description: 商户号
+            example: '1900000109'
+          sub_mch_id:
+            type: string
+            description: 子商户号
+            example: '1230000109'
+            nullable: true
+          usetag:
+            format: int32
+            type: integer
+            description: 结算状态
+            example: '1'
+          nonce_str:
+            type: string
+            description: 随机字符串
+            example: C380BEC2BFD727A4B6845133519F3AD6
+          offset:
+            format: int32
+            type: integer
+            description: 偏移量
+            example: '0'
+          limit:
+            format: int32
+            type: integer
+            description: 最大记录条数
+            example: '10'
+          date_start:
+            type: string
+            description: 开始日期
+            example: '20150807'
+          date_end:
+            type: string
+            description: 结束日期
+            example: '20150807'
+          sign:
+            type: string
+            description: 签名
+            example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+  responses:
+    '200':
+      description: ''
+      schema:
+        allOf:
+          - type: object
+            xml:
+              name: xml
+            required:
+              - return_code
+              - return_msg
+            properties:
+              return_code:
+                type: string
+                description: 返回状态码
+                example: SUCCESS
+              return_msg:
+                type: string
+                description: 返回信息
+                example: 签名失败
+          - type: object
+            xml:
+              name: xml
+            required:
+              - appid
+              - mch_id
+              - nonce_str
+              - result_code
+              - record_num
+            properties:
+              appid:
+                type: string
+                description: 公众账号ID
+                example: wxd678efh567hg6787
+              mch_id:
+                type: string
+                description: 商户号
+                example: '1230000109'
+              nonce_str:
+                type: string
+                description: 随机字符串
+                example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+              result_code:
+                type: string
+                description: 业务结果
+                example: SUCCESS
+              err_code:
+                type: string
+                description: 错误代码
+                example: SYSTEMERROR
+                nullable: true
+              err_code_des:
+                type: string
+                description: 错误代码描述
+                example: 系统错误
+                nullable: true
+              record_num:
+                type: string
+                description: 返回数据行数
+                example: '10'
+          - type: object
+            xml:
+              name: xml
+            required:
+              - fbatchno
+              - date_settlement
+              - date_start
+              - date_end
+              - settlement_fee
+              - unsettlement_fee
+              - settlementfee_type
+              - pay_fee
+              - refund_fee
+              - pay_net_fee
+              - poundage_fee
+            properties:
+              fbatchno:
+                type: string
+                description: 付汇批次号
+                example: '10'
+              date_settlement:
+                type: string
+                description: 结算日期
+                example: '20151101'
+              date_start:
+                type: string
+                description: 交易开始日期
+                example: '20151101'
+              date_end:
+                type: string
+                description: 交易结束日期
+                example: '20151101'
+              settlement_fee:
+                format: int32
+                type: integer
+                description: 划账金额
+                example: '1'
+              unsettlement_fee:
+                format: int32
+                type: integer
+                description: 未划账金额
+                example: '1'
+              settlementfee_type:
+                type: string
+                description: 结算币种
+                example: GBP
+              pay_fee:
+                format: int32
+                type: integer
+                description: 支付金额
+                example: '1'
+              refund_fee:
+                format: int32
+                type: integer
+                description: 退款金额
+                example: '1'
+              pay_net_fee:
+                format: int32
+                type: integer
+                description: 支付净额
+                example: '1'
+              poundage_fee:
+                format: int32
+                type: integer
+                description: 手续费金额
+                example: '1'

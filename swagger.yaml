@@ -84,6 +84,7 @@ tags:
   - name: 支付∙银行服务商∙特约商户报备
   - name: 支付∙银行服务商∙特约商户配置
   - name: 支付∙银行服务商∙风控信息同步
+  - name: 跨境支付
 paths:
   /applyment/micro/getstate:
     $ref: ./v2/applyment/micro/getstate.yaml
@@ -197,8 +198,12 @@ paths:
     $ref: ./v2/pay/profitsharingremovereceiver.yaml
   /pay/querycombinedorder:
     $ref: ./v2/pay/querycombinedorder.yaml
+  /pay/queryexchagerate:
+    $ref: ./v2/pay/queryexchagerate.yaml
   /pay/refundquery:
     $ref: ./v2/pay/refundquery.yaml
+  /pay/settlementquery:
+    $ref: ./v2/pay/settlementquery.yaml
   /pay/unifiedorder:
     $ref: ./v2/pay/unifiedorder.yaml
   /payitil/report:
@@ -221,6 +226,12 @@ paths:
     $ref: ./v2/sandboxnew/pay/refundquery.yaml
   /sandboxnew/pay/unifiedorder:
     $ref: ./v2/sandboxnew/pay/unifiedorder.yaml
+  /secapi/mch/{addinstitutionsub}:
+    $ref: ./v2/secapi/mch/{addinstitutionsub}.yaml
+  /secapi/mch/{modifyinstitutionsub}:
+    $ref: ./v2/secapi/mch/{modifyinstitutionsub}.yaml
+  /secapi/mch/{queryinstitutionsub}:
+    $ref: ./v2/secapi/mch/{queryinstitutionsub}.yaml
   /secapi/mch/addsubdevconfig:
     $ref: ./v2/secapi/mch/addsubdevconfig.yaml
   /secapi/mch/modifymchinfo:

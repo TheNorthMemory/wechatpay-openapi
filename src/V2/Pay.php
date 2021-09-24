@@ -21,7 +21,9 @@ namespace WeChatPay\OpenAPI\V2;
  * @property-read Pay\Profitsharingquery $profitsharingquery
  * @property-read Pay\Profitsharingremovereceiver $profitsharingremovereceiver
  * @property-read Pay\Querycombinedorder $querycombinedorder
+ * @property-read Pay\Queryexchagerate $queryexchagerate
  * @property-read Pay\Refundquery $refundquery
+ * @property-read Pay\Settlementquery $settlementquery
  * @property-read Pay\Unifiedorder $unifiedorder
  */
 interface Pay

@@ -1,0 +1,216 @@
+post:
+  x-api-cert-required: true
+  x-verison: [2020.06.08]
+  tags:
+    - 跨境支付
+  summary: 查询子商户
+  description: 用于机构查询子商户创建是否成功，接口只提供单个子商户信息查询。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/sub_merchant_entry/chapter3_2.shtml)
+  consumes:
+    - application/xml
+  produces:
+    - application/xml
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        xml:
+          name: xml
+        required:
+          - app_id
+          - mch_id
+          - sub_mch_id
+          - sign
+        properties:
+          app_id:
+            type: string
+            description: 机构appid
+            example: wx8888888888888888
+          mch_id:
+            type: string
+            description: 机构商户号
+            example: '3200000001'
+          sub_mch_id:
+            type: string
+            description: 子商户号
+            example: '20000100'
+          sign:
+            type: string
+            description: 签名
+            example: C380BEC2BFD727A4B6845133519F3AD6
+  responses:
+    '200':
+      description: ''
+      schema:
+        allOf:
+          - type: object
+            xml:
+              name: xml
+            required:
+              - return_code
+            properties:
+              return_code:
+                type: string
+                description: 返回状态码
+                example: SUCCESS
+              return_msg:
+                type: string
+                description: 返回信息
+                example: 签名失败
+                nullable: true
+          - type: object
+            xml:
+              name: xml
+            required:
+              - result_code
+              - sign
+              - sub_mch_id
+              - merchant_name
+              - merchant_shortname
+              - business_category
+              - office_phone
+              - merchant_remark
+            properties:
+              result_code:
+                type: string
+                description: 业务返回码
+                example: SUCCESS
+              err_code:
+                type: string
+                description: 错误编码
+                example: SYSTEMERROR
+                nullable: true
+              err_code_des:
+                type: string
+                description: 错误描述
+                example: 系统错误
+                nullable: true
+              sign:
+                type: string
+                description: 签名
+                example: C380BEC2BFD727A4B6845133519F3AD6
+              sub_mch_id:
+                type: string
+                description: 子商户号
+                example: '1234567'
+              merchant_name:
+                type: string
+                description: 子商户名称
+                example: 7-11
+              merchant_shortname:
+                type: string
+                description: 子商户简称
+                example: Merchantshortname
+              merchant_country_code:
+                type: string
+                description: 注册国家或区域
+                example: '344'
+                nullable: true
+              business_category:
+                type: string
+                description: 业务类目
+                example: '101'
+              mcc:
+                type: string
+                description: MCC
+                example: '075586010000'
+                nullable: true
+              office_phone:
+                type: string
+                description: 公司联系电话
+                example: '075586010000'
+              contact_name:
+                type: string
+                description: 联系人姓名
+                example: 张三
+                nullable: true
+              contact_phone:
+                type: string
+                description: 联系人手机
+                example: '1800000000'
+                nullable: true
+              contact_email:
+                type: string
+                description: 联系人邮箱
+                example: test@test.com
+                nullable: true
+              merchant_remark:
+                type: string
+                description: 子商户唯一标识
+                example: ABC1234567
+              business_type:
+                type: string
+                description: 业务类型
+                example: BOTH
+                nullable: true
+              merchant_type:
+                type: string
+                description: 商户类型
+                example: ENTERPRISE
+                nullable: true
+              registration_certificate_number:
+                type: string
+                description: 公司注册文件编号
+                example: 5555-8888
+                nullable: true
+              registration_certificate_date:
+                type: string
+                description: 公司注册文件过期时间
+                example: '2020-10-16'
+                nullable: true
+              app_download:
+                type: string
+                description: APP下载链接
+                example: https://download.qq.com
+                nullable: true
+              business_website:
+                type: string
+                description: 业务网站
+                example: https://www.qq.com
+                nullable: true
+              office_account:
+                type: string
+                description: 公众号
+                example: wx8888888888888888
+                nullable: true
+              mini_program:
+                type: string
+                description: 小程序
+                example: wx8888888888888888
+                nullable: true
+              store_address:
+                type: string
+                description: 门店地址
+                example: 10FWorldFinanceCentre(SouthOffice),11CantonRoad,TsimShaTsui,HongKong
+                nullable: true
+              director_name:
+                type: string
+                description: 董事姓名
+                example: BobZhang
+                nullable: true
+              director_id_number:
+                type: string
+                description: 董事证件编号
+                example: 5555-8888
+                nullable: true
+              principal_name:
+                type: string
+                description: 负责人姓名
+                example: BobZhang
+                nullable: true
+              principal_id_number:
+                type: string
+                description: 负责人证件编号
+                example: 5555-8888
+                nullable: true
+              settlement_bank_number:
+                type: string
+                description: 子商户结算银行账户
+                example: '555588889999'
+                nullable: true
+              channel_id:
+                type: string
+                description: 渠道编号
+                example: '101'
+                nullable: true

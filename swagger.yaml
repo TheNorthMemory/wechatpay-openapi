@@ -276,16 +276,16 @@ paths:
     $ref: ./v2/sandboxnew/pay/refundquery.yaml
   /sandboxnew/pay/unifiedorder:
     $ref: ./v2/sandboxnew/pay/unifiedorder.yaml
-  /secapi/mch/{addinstitutionsub}:
-    $ref: ./v2/secapi/mch/{addinstitutionsub}.yaml
-  /secapi/mch/{modifyinstitutionsub}:
-    $ref: ./v2/secapi/mch/{modifyinstitutionsub}.yaml
-  /secapi/mch/{queryinstitutionsub}:
-    $ref: ./v2/secapi/mch/{queryinstitutionsub}.yaml
+  /secapi/mch/addInstitutionsub:
+    $ref: ./v2/secapi/mch/addInstitutionsub.yaml
   /secapi/mch/addsubdevconfig:
     $ref: ./v2/secapi/mch/addsubdevconfig.yaml
+  /secapi/mch/modifyInstitutionsub:
+    $ref: ./v2/secapi/mch/modifyInstitutionsub.yaml
   /secapi/mch/modifymchinfo:
     $ref: ./v2/secapi/mch/modifymchinfo.yaml
+  /secapi/mch/queryInstitutionsub:
+    $ref: ./v2/secapi/mch/queryInstitutionsub.yaml
   /secapi/mch/querysubdevconfig:
     $ref: ./v2/secapi/mch/querysubdevconfig.yaml
   /secapi/mch/submchmanage:

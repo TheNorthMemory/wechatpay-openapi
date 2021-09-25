@@ -1,0 +1,388 @@
+post:
+  x-version:
+    - 2020.01.08
+  x-role:
+    - 直连模式
+    - 机构模式
+  tags:
+    - 跨境支付∙付款码支付
+  summary: 提交付款码支付
+  description: 通过本接口提交微信支付付款码支付订单。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/fusion_wallet_ch/QuickPay/chapter3_3.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - mchid
+          - appid
+          - sub_mchid
+          - sp_mchid
+          - sp_appid
+          - description
+          - out_trade_no
+          - trade_type
+          - merchant_category_code
+          - amount
+        properties:
+          mchid:
+            type: string
+            description: 商户号
+            example: '1900000109'
+          appid:
+            type: string
+            description: APPID
+            example: wx8888888888888888
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1900000109'
+          sp_mchid:
+            type: string
+            description: 机构商户号
+            example: '1900000100'
+          sp_appid:
+            type: string
+            description: 机构APPID
+            example: wx8888888888888888
+          sub_appid:
+            type: string
+            description: 子商户APPID
+            example: wx8888888888888888
+          description:
+            type: string
+            description: 商品描述
+            example: image形象店-深圳腾大- QQ公仔
+          attach:
+            type: string
+            description: 商户数据
+            example: 自定义数据
+          out_trade_no:
+            type: string
+            description: 商户订单号
+            example: '1217752501201407033233368018'
+          goods_tag:
+            type: string
+            description: 商品标记
+            example: WXG
+          trade_type:
+            type: string
+            description: 交易类型
+            example: MICROPAY
+          limit_pay:
+            type: string
+            description: 指定支付方式
+            example: no_credit
+          merchant_category_code:
+            type: string
+            description: MCC码
+            example: '1011'
+          payer:
+            type: object
+            description: 支付者
+            required:
+              - auth_code
+            properties:
+              auth_code:
+                type: string
+                description: 授权码
+                example: '120061098828009406'
+          amount:
+            type: object
+            description: 订单金额
+            required:
+              - total
+            properties:
+              total:
+                type: integer
+                description: 总金额
+                example: 888
+              currency:
+                type: string
+                description: 货币类型
+                example: HKD
+          scene_info:
+            type: object
+            description: 场景信息
+            properties:
+              device_id:
+                type: string
+                description: 商户端设备号
+                example: '013467007045764'
+              device_ip:
+                type: string
+                description: 商户端设备IP
+                example: 128.0.0.1
+              payer_client_ip:
+                type: string
+                description: 用户终端IP
+                example: 128.0.0.1
+              operator_id:
+                type: string
+                description: 操作员ID
+                example: '123145'
+              store_info:
+                type: object
+                description: 商户门店信息
+                required:
+                  - name
+                  - address
+                properties:
+                  id:
+                    type: string
+                    description: 编号
+                    example: '0001'
+                  name:
+                    type: string
+                    description: 名称
+                    example: 腾讯大厦分店
+                  address:
+                    type: string
+                    description: 详细地址
+                    example: 广东省深圳市南山区科技中一道10000号
+          promotion_detail:
+            type: array
+            description: 优惠功能
+            items:
+              type: object
+              properties:
+                cost_price:
+                  type: integer
+                  description: 订单原价
+                  example: 608800
+                receipt_id:
+                  type: string
+                  description: 商品小票ID
+                  example: wx123
+                goods_detail:
+                  type: array
+                  description: 单品列表
+                  items:
+                    type: object
+                    required:
+                      - goods_id
+                      - quantity
+                      - price
+                    properties:
+                      goods_id:
+                        type: string
+                        description: 商品编码
+                        example: 商品编码
+                      wxpay_goods_id:
+                        type: string
+                        description: 微信侧商品编码
+                        example: '1001'
+                      goods_name:
+                        type: string
+                        description: 商品名称
+                        example: iPhone6s 16G
+                      quantity:
+                        type: integer
+                        description: 商品数量
+                        example: 1
+                      price:
+                        type: integer
+                        description: 商品单价
+                        example: 528800
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - id
+          - mchid
+          - appid
+          - sub_mchid
+          - sp_mchid
+          - sp_appid
+          - out_trade_no
+          - trade_type
+          - trade_state
+          - trade_state_desc
+          - bank_type
+          - success_time
+          - amount
+        properties:
+          id:
+            type: string
+            description: 微信支付订单号
+            example: '1217752501201407033233368018'
+          mchid:
+            type: string
+            description: 商户号
+            example: '1900000109'
+          appid:
+            type: string
+            description: APPID
+            example: wx8888888888888888
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1900000109'
+          sp_mchid:
+            type: string
+            description: 机构商户号
+            example: '1900000100'
+          sp_appid:
+            type: string
+            description: 机构APPID
+            example: wx8888888888888888
+          sub_appid:
+            type: string
+            description: 子商户APPID
+            example: wx8888888888888888
+          out_trade_no:
+            type: string
+            description: 商户订单号
+            example: '1217752501201407033233368018'
+          trade_type:
+            type: string
+            description: 交易类型
+            example: MICROPAY
+          trade_state:
+            type: string
+            description: 交易状态
+            example: SUCCESS
+          trade_state_desc:
+            type: string
+            description: 交易状态描述
+            example: 支付失败，请重新下单支付
+          bank_type:
+            type: string
+            description: 付款银行
+            example: CMC
+          attach:
+            type: string
+            description: 商户数据
+            example: 自定义数据
+          success_time:
+            type: string
+            description: 支付完成时间
+            example: '2018-06-08T10:34:56+08:00'
+          payer:
+            type: object
+            description: 支付者
+            properties:
+              openid:
+                type: string
+                description: 用户标识
+                example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+              sp_openid:
+                type: string
+                description: 用户标识（机构）
+                example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+              sub_openid:
+                type: string
+                description: 用户标识（特约商户）
+                example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+          amount:
+            type: object
+            description: 订单金额
+            required:
+              - total
+              - payer_total
+            properties:
+              total:
+                type: integer
+                description: 订单金额
+                example: 888
+              currency:
+                type: string
+                description: 货币类型
+                example: CNY
+              payer_total:
+                type: integer
+                description: 用户支付金额
+                example: 888
+              payer _currency:
+                type: string
+                description: 支付货币类型
+                example: CNY
+              exchange_rate:
+                type: object
+                description: 汇率
+                properties:
+                  type:
+                    type: string
+                    description: 汇率类型
+                    example: SETTLEMENT_RATE
+                  rate:
+                    type: integer
+                    description: 汇率值
+                    example: 80000000
+          promotion_detail:
+            type: array
+            description: 优惠功能
+            items:
+              type: object
+              required:
+                - promotion_id
+                - amount
+              properties:
+                promotion_id:
+                  type: string
+                  description: 券ID
+                  example: '109519'
+                name:
+                  type: string
+                  description: 优惠名称
+                  example: 单品惠-6
+                scope:
+                  type: string
+                  description: 优惠范围
+                  example: SINGLE
+                type:
+                  type: string
+                  description: 优惠类型
+                  example: DISCOUNT
+                amount:
+                  type: integer
+                  description: 优惠券面额
+                  example: 5
+                currency:
+                  type: string
+                  description: 货币类型
+                  example: CNY
+                activity_id:
+                  type: string
+                  description: 活动ID
+                  example: '931386'
+                wechatpay_contribute_amount:
+                  type: integer
+                  description: 微信出资
+                  example: 0
+                merchant_contribute_amount:
+                  type: integer
+                  description: 商户出资
+                  example: 0
+                other_contribute_amount:
+                  type: integer
+                  description: 其他出资
+                  example: 5
+                goods_detail:
+                  type: array
+                  description: 单品列表
+                  items:
+                    type: object
+                    required:
+                      - goods_id
+                      - quantity
+                      - price
+                    properties:
+                      goods_id:
+                        type: string
+                        description: 商品编码
+                        example: '12345'
+                      goods_remark:
+                        type: string
+                        description: 商品备注
+                        example: '1001'
+                      quantity:
+                        type: integer
+                        description: 商品数量
+                        example: 1
+                      price:
+                        type: integer
+                        description: 商品价格
+                        example: 528800

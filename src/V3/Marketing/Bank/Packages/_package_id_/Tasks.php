@@ -12,6 +12,15 @@ interface Tasks
 {
     /**
      * 导入定向用户协议号(同步模式)
+     *
+     * ```php
+     * // available since wechatpay/wechatpay:>=1.3.2
+     * $media = new \WeChatPay\Util\MediaUtil('file:///path/to/active_user.csv');
+     * $json  = \json_decode($media->getMeta());
+     * $media->setMeta(\json_encode(['filename' => $json->filename, 'sha256' => $json->sha256, 'bank_type' => 'your_bank_id']));
+     * $options = ['body' => $media->getStream(), 'headers' => ['Content-type' => $media->getContentType()]];
+     * ```
+     *
      * @param array<string,mixed> $options
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_8_1.shtml
      */
@@ -21,6 +30,15 @@ interface Tasks
 
     /**
      * 导入定向用户协议号(异步模式)
+     *
+     * ```php
+     * // available since wechatpay/wechatpay:>=1.3.2
+     * $media = new \WeChatPay\Util\MediaUtil('file:///path/to/active_user.csv');
+     * $json  = \json_decode($media->getMeta());
+     * $media->setMeta(\json_encode(['filename' => $json->filename, 'sha256' => $json->sha256, 'bank_type' => 'your_bank_id']));
+     * $options = ['body' => $media->getStream(), 'headers' => ['Content-type' => $media->getContentType()]];
+     * ```
+     *
      * @param array<string,mixed> $options
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_8_1.shtml#async
      */

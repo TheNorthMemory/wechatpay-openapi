@@ -1,0 +1,25 @@
+get:
+  x-version:
+    - 2020.01.08
+  x-role:
+    - 直连模式
+    - 机构模式
+  tags:
+    - 跨境支付∙付款码支付
+  summary: 查询结算资金明细API
+  description: 商户可以通过该接口下载历史交易清单。比如掉单、系统错误等导致商户侧和微信侧数据不一致，通过对账单核对后可校正支付状态。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/fusion_wallet_ch/QuickPay/chapter8_5.shtml)
+  parameters:
+    - name: date
+      in: query
+      required: true
+      type: string
+      description: 账单日期
+      example: '20180130'
+    - name: mchid
+      in: query
+      type: string
+      description: 商户号
+      example: '1900000109'
+  responses:
+    '200':
+      schema: {}

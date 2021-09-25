@@ -16,7 +16,7 @@ interface _stub_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/applyments/chapter3_1.shtml
      */
     public function post(array $options = [
-        'stub' => '',
+        'stub' => '', // 固定参数(构造末尾SLASH需要)
         'json' => [
             'out_request_no' => '',
             'organization_type' => '',
@@ -86,7 +86,7 @@ interface _stub_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/applyments/chapter3_1.shtml#async
      */
     public function postAsync(array $options = [
-        'stub' => '',
+        'stub' => '', // 固定参数(构造末尾SLASH需要)
         'json' => [
             'out_request_no' => '',
             'organization_type' => '',

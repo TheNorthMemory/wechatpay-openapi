@@ -1,5 +1,5 @@
 {
-    "name": "wechatpay/openapi",
+    "name": "iwechatpay/openapi",
     "description": "这是一个纯接口描述包，源文件由程序自动生成，旨在为IDE提供结构提示，无他用。",
     "keywords": [
         "wechatpay",

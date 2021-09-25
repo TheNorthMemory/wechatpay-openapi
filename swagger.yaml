@@ -332,6 +332,8 @@ paths:
     $ref: ./v3/applyment4sub/applyment/stub.yaml
   /v3/bill/fundflowbill:
     $ref: ./v3/bill/fundflowbill.yaml
+  /v3/bill/sub-merchant-fundflowbill:
+    $ref: ./v3/bill/sub-merchant-fundflowbill.yaml
   /v3/bill/tradebill:
     $ref: ./v3/bill/tradebill.yaml
   /v3/billdownload/file:
@@ -610,6 +612,8 @@ paths:
     $ref: ./v3/pay/transactions/out-trade-no/{out_trade_no}.yaml
   /v3/pay/transactions/out-trade-no/{out_trade_no}/close:
     $ref: ./v3/pay/transactions/out-trade-no/{out_trade_no}/close.yaml
+  /v3/payscore/merchant-bill:
+    $ref: ./v3/payscore/merchant-bill.yaml
   /v3/payscore/permissions:
     $ref: ./v3/payscore/permissions.yaml
   /v3/payscore/permissions/authorization-code/{authorization_code}:

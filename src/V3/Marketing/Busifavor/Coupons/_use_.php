@@ -16,7 +16,7 @@ interface _use_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_3.shtml
      */
     public function post(array $options = [
-        'use' => 'use',
+        'use' => 'use', // 固定参数(PHP语法不允许)
         'json' => [
             'coupon_code' => 'sxxe34343434',
             'stock_id' => '100088',
@@ -33,7 +33,7 @@ interface _use_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_3.shtml#async
      */
     public function postAsync(array $options = [
-        'use' => 'use',
+        'use' => 'use', // 固定参数(PHP语法不允许)
         'json' => [
             'coupon_code' => 'sxxe34343434',
             'stock_id' => '100088',

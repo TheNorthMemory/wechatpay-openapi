@@ -1,0 +1,97 @@
+get:
+  x-version:
+    - 2021.08.20
+  x-role:
+    - 服务商
+    - 电商平台
+  tags:
+    - 基础支付∙账单
+    - 电商收付通∙账单
+  summary: 申请单个子商户资金账单API
+  description: 微信支付按天提供微信支付账户的资金流水账单文件，服务商可以通过该接口获取子商户账单文件的下载地址。文件内包含子商户资金操作相关的业务单号、收支金额、记账时间等信息，供商户进行核对。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter4_1_12.shtml)
+  parameters:
+    - name: sub_mchid
+      in: query
+      type: string
+      required: true
+      description: 子商户号
+      example: '19000000001'
+    - name: bill_date
+      in: query
+      required: true
+      type: string
+      description: 账单日期
+      example: '2019-06-11'
+    - name: tar_type
+      in: query
+      nullable: true
+      type: string
+      description: 压缩类型
+      example: GZIP
+      allOf:
+        - $ref: '../../definitions/Enumerations.yaml#BillTarType'
+    - name: algorithm
+      in: query
+      required: true
+      type: string
+      description: 加密算法
+      example: AEAD_AES_256_GCM
+    - name: account_type
+      in: query
+      required: true
+      type: string
+      description: 资金账户类型
+      example: BASIC
+      enum:
+        - BASIC
+        - OPERATION
+        - FEES
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - download_bill_count
+          - download_bill_list
+        properties:
+          download_bill_count:
+            type: integer
+            description: 下载信息总数
+            example: 1
+          download_bill_list:
+            type: array
+            description: 下载信息明细
+            items:
+              type: object
+              required:
+                - bill_sequence
+                - download_url
+                - encrypt_key
+                - hash_type
+                - hash_value
+                - nonce
+              properties:
+                bill_sequence:
+                  type: integer
+                  description: 账单文件序号
+                  example: 1
+                download_url:
+                  type: string
+                  description: 下载地址
+                  example: https://api.mch.weixin.qq.com/v3/bill/downloadurl?token=xxx
+                encrypt_key:
+                  type: string
+                  description: 加密密钥
+                  example: a0YK7p+9XaKzE9N4qtFfG/9za1oqKlLXXJWBkWQZ3UqSPQCguK6uLA==
+                hash_type:
+                  type: string
+                  description: 哈希类型
+                  example: SHA1
+                hash_value:
+                  type: string
+                  description: 哈希值
+                  example: 79bb0f45fc4c42234a918000b2668d689e2bde04
+                nonce:
+                  type: string
+                  description: 随机字符串
+                  example: a8607ef79034c49c

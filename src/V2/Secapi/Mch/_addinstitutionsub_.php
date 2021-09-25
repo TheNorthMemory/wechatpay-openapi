@@ -16,7 +16,7 @@ interface _addinstitutionsub_
      * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/sub_merchant_entry/chapter3_1.shtml
      */
     public function post(array $options = [
-        'addinstitutionsub' => 'addInstitutionsub',
+        'addinstitutionsub' => 'addInstitutionsub', // 固定参数(URI上有大写字符)
         'xml' => [
             'app_id' => 'wx8888888888888888',
             'mch_id' => '3200000001',
@@ -58,7 +58,7 @@ interface _addinstitutionsub_
      * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/sub_merchant_entry/chapter3_1.shtml#async
      */
     public function postAsync(array $options = [
-        'addinstitutionsub' => 'addInstitutionsub',
+        'addinstitutionsub' => 'addInstitutionsub', // 固定参数(URI上有大写字符)
         'xml' => [
             'app_id' => 'wx8888888888888888',
             'mch_id' => '3200000001',

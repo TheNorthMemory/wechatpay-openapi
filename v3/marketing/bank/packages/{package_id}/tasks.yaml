@@ -1,7 +1,8 @@
 post:
-  x-version: [2021.08.12]
+  x-version:
+    - 2021.09.23
   x-role:
-    - 直连商户
+    - 服务商
   tags:
     - 通用接口
   summary: 导入定向用户协议号API
@@ -93,3 +94,114 @@ post:
             type: string
             description: 上传任务最近一次更新的时间
             example: '2020-05-20T13:29:35+08:00'
+get:
+  x-version:
+    - 2021.09.23
+  x-role:
+    - 服务商
+  tags:
+    - 通用接口
+  summary: 查询上传任务列表API
+  description: 查询号码包中符合条件的上传任务 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter9_8_2.shtml)
+  parameters:
+    - name: package_id
+      type: string
+      in: path
+      description: 号码包id
+      example: '8473295'
+    - name: status
+      type: string
+      in: query
+      description: 任务状态
+      example: PROCESSING
+      enum:
+        - PROCESSING
+        - FINISHED
+    - name: filename
+      type: string
+      in: query
+      description: 文件名
+      example: active_user.csv
+    - name: offset
+      type: integer
+      in: query
+      description: 分页页码
+      example: 0
+    - name: limit
+      type: integer
+      in: query
+      description: 分页大小
+      example: 20
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - data
+          - total_count
+          - offset
+          - limit
+        properties:
+          data:
+            type: array
+            description: 上传任务列表
+            items:
+              type: object
+              required:
+                - task_id
+                - package_id
+                - filename
+                - create_time
+              properties:
+                task_id:
+                  type: string
+                  description: 上传任务
+                  example: '101'
+                package_id:
+                  type: string
+                  description: 号码包id
+                  example: '8473295'
+                filename:
+                  type: string
+                  description: 文件名
+                  example: active_user.csv
+                create_time:
+                  type: string
+                  description: 创建上传任务的时间
+                  example: '2020-05-20T13:29:35.120+08:00'
+                update_time:
+                  type: string
+                  description: 上传任务最近一次更新的时间
+                  example: '2020-05-20T13:29:35.120+08:00'
+                status:
+                  type: string
+                  description: 任务状态
+                  example: PROCESSING
+                success_count:
+                  type: integer
+                  description: 成功数
+                  example: 1000
+                fail_count:
+                  type: integer
+                  description: 失败数
+                  example: 20
+                success_user_count:
+                  type: integer
+                  description: 匹配成功的微信用户数
+                  example: 1000
+                bank_type:
+                  type: string
+                  description: 银行类型
+                  example: ICBC_DEBIT
+          total_count:
+            type: integer
+            description: 总数量
+            example: 20
+          offset:
+            type: integer
+            description: 分页页码
+            example: 0
+          limit:
+            type: integer
+            description: 分页大小
+            example: 20

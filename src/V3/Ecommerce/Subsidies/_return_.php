@@ -16,7 +16,7 @@ interface _return_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/subsidies/chapter3_2.shtml
      */
     public function post(array $options = [
-        'return' => 'return',
+        'return' => 'return', // 固定参数(PHP语法不允许)
         'json' => [
             'sub_mchid' => '1900000109',
             'out_order_no' => 'P20150806125346',
@@ -33,7 +33,7 @@ interface _return_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/subsidies/chapter3_2.shtml#async
      */
     public function postAsync(array $options = [
-        'return' => 'return',
+        'return' => 'return', // 固定参数(PHP语法不允许)
         'json' => [
             'sub_mchid' => '1900000109',
             'out_order_no' => 'P20150806125346',

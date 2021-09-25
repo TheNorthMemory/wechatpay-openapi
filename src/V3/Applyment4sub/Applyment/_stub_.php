@@ -16,7 +16,7 @@ interface _stub_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/applyment4sub/chapter3_1.shtml
      */
     public function post(array $options = [
-        'stub' => '',
+        'stub' => '', // 固定参数(构造末尾SLASH需要)
         'json' => [
             'business_code' => '',
             'contact_info' => [
@@ -154,7 +154,7 @@ interface _stub_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/applyment4sub/chapter3_1.shtml#async
      */
     public function postAsync(array $options = [
-        'stub' => '',
+        'stub' => '', // 固定参数(构造末尾SLASH需要)
         'json' => [
             'business_code' => '',
             'contact_info' => [

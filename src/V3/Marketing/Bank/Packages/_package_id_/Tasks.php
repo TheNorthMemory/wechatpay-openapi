@@ -45,4 +45,34 @@ interface Tasks
     public function postAsync(array $options = [
         'package_id' => '',
     ]): PromiseInterface;
+
+    /**
+     * 查询上传任务列表(同步模式)
+     * @param array<string,mixed> $options
+     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter9_8_2.shtml
+     */
+    public function get(array $options = [
+        'package_id' => '',
+        'query' => [
+            'status' => '',
+            'filename' => '',
+            'offset' => 0,
+            'limit' => 0,
+        ],
+    ]): ResponseInterface;
+
+    /**
+     * 查询上传任务列表(异步模式)
+     * @param array<string,mixed> $options
+     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter9_8_2.shtml#async
+     */
+    public function getAsync(array $options = [
+        'package_id' => '',
+        'query' => [
+            'status' => '',
+            'filename' => '',
+            'offset' => 0,
+            'limit' => 0,
+        ],
+    ]): PromiseInterface;
 }

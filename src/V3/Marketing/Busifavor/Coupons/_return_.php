@@ -16,7 +16,7 @@ interface _return_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_13.shtml
      */
     public function post(array $options = [
-        'return' => 'return',
+        'return' => 'return', // 固定参数(PHP语法不允许)
         'json' => [
             'coupon_code' => 'sxxe34343434',
             'stock_id' => '1234567891',
@@ -30,7 +30,7 @@ interface _return_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_13.shtml#async
      */
     public function postAsync(array $options = [
-        'return' => 'return',
+        'return' => 'return', // 固定参数(PHP语法不允许)
         'json' => [
             'coupon_code' => 'sxxe34343434',
             'stock_id' => '1234567891',

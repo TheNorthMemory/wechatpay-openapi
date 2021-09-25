@@ -8,24 +8,29 @@ get:
   description: 商户可通过调用此接口，查询指定时间段的所有用户投诉信息，以分页输出查询结果。对于服务商、渠道商，可通过调用此接口，查询指定子商户号对应子商户的投诉信息，若不指定则查询所有子商户投诉信息。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_2_11.shtml)
   parameters:
     - name: limit
+      in: query
       type: integer
       description: 分页大小
       example: 5
     - name: offset
+      in: query
       type: integer
       description: 分页开始位置
       example: 10
     - name: begin_date
+      in: query
       type: string
       description: 开始日期
       required: true
       example: '2019-01-01'
     - name: end_date
+      in: query
       type: string
       description: 结束日期
       required: true
       example: '2019-01-01'
     - name: complainted_mchid
+      in: query
       type: string
       description: 被诉商户号
       example: '1900012181'

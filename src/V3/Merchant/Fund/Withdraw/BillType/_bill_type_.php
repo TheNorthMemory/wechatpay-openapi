@@ -17,9 +17,9 @@ interface _bill_type_
      */
     public function get(array $options = [
         'query' => [
-            'bill_type' => '',
-            'bill_date' => '',
-            'tar_type' => '',
+            'bill_type' => 'NO_SUCC',
+            'bill_date' => '2019-06-11',
+            'tar_type' => 'GZIP',
         ],
     ]): ResponseInterface;
 
@@ -30,9 +30,9 @@ interface _bill_type_
      */
     public function getAsync(array $options = [
         'query' => [
-            'bill_type' => '',
-            'bill_date' => '',
-            'tar_type' => '',
+            'bill_type' => 'NO_SUCC',
+            'bill_date' => '2019-06-11',
+            'tar_type' => 'GZIP',
         ],
     ]): PromiseInterface;
 }

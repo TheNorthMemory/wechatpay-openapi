@@ -16,7 +16,7 @@ interface Qrcode
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter4_3.shtml
      */
     public function post(array $options = [
-        'card_id' => '',
+        'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',
         'json' => [
             'activate_type' => 'AUTO_ACTIVATE | JUMP_ACTIVATE',
             'activate_url' => 'https://w.url.cn/s/Ahz3p2C',
@@ -32,7 +32,7 @@ interface Qrcode
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter4_3.shtml#async
      */
     public function postAsync(array $options = [
-        'card_id' => '',
+        'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',
         'json' => [
             'activate_type' => 'AUTO_ACTIVATE | JUMP_ACTIVATE',
             'activate_url' => 'https://w.url.cn/s/Ahz3p2C',

@@ -17,10 +17,10 @@ interface Tradebill
      */
     public function get(array $options = [
         'query' => [
-            'bill_date' => '',
-            'sub_mchid' => '',
-            'bill_type' => '',
-            'tar_type' => '',
+            'bill_date' => '2019-06-11',
+            'sub_mchid' => '19000000001',
+            'bill_type' => 'ALL',
+            'tar_type' => 'GZIP',
         ],
     ]): ResponseInterface;
 
@@ -31,10 +31,10 @@ interface Tradebill
      */
     public function getAsync(array $options = [
         'query' => [
-            'bill_date' => '',
-            'sub_mchid' => '',
-            'bill_type' => '',
-            'tar_type' => '',
+            'bill_date' => '2019-06-11',
+            'sub_mchid' => '19000000001',
+            'bill_type' => 'ALL',
+            'tar_type' => 'GZIP',
         ],
     ]): PromiseInterface;
 }

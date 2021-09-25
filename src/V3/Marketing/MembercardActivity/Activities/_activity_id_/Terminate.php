@@ -16,7 +16,7 @@ interface Terminate
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter8_2.shtml
      */
     public function post(array $options = [
-        'activity_id' => '',
+        'activity_id' => '371067',
     ]): ResponseInterface;
 
     /**
@@ -25,6 +25,6 @@ interface Terminate
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter8_2.shtml#async
      */
     public function postAsync(array $options = [
-        'activity_id' => '',
+        'activity_id' => '371067',
     ]): PromiseInterface;
 }

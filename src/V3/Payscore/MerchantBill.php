@@ -17,10 +17,10 @@ interface MerchantBill
      */
     public function get(array $options = [
         'query' => [
-            'bill_date' => '',
-            'tar_type' => '',
-            'encryption_algorithm' => '',
-            'service_id' => '',
+            'bill_date' => '2019-06-11',
+            'tar_type' => 'GZIP',
+            'encryption_algorithm' => 'AEAD_AES_256_GCM',
+            'service_id' => '2002000000000558128851361561536',
         ],
     ]): ResponseInterface;
 
@@ -31,10 +31,10 @@ interface MerchantBill
      */
     public function getAsync(array $options = [
         'query' => [
-            'bill_date' => '',
-            'tar_type' => '',
-            'encryption_algorithm' => '',
-            'service_id' => '',
+            'bill_date' => '2019-06-11',
+            'tar_type' => 'GZIP',
+            'encryption_algorithm' => 'AEAD_AES_256_GCM',
+            'service_id' => '2002000000000558128851361561536',
         ],
     ]): PromiseInterface;
 }

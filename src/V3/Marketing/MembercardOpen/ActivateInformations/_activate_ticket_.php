@@ -16,7 +16,7 @@ interface _activate_ticket_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter4_5.shtml
      */
     public function get(array $options = [
-        'activate_ticket' => '',
+        'activate_ticket' => 'abcdefg',
     ]): ResponseInterface;
 
     /**
@@ -25,6 +25,6 @@ interface _activate_ticket_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter4_5.shtml#async
      */
     public function getAsync(array $options = [
-        'activate_ticket' => '',
+        'activate_ticket' => 'abcdefg',
     ]): PromiseInterface;
 }

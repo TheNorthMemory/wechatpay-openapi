@@ -19,8 +19,8 @@ interface _code_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_4.shtml
      */
     public function get(array $options = [
-        'card_id' => '',
-        'code' => '',
+        'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',
+        'code' => '478515832665',
     ]): ResponseInterface;
 
     /**
@@ -29,8 +29,8 @@ interface _code_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_4.shtml#async
      */
     public function getAsync(array $options = [
-        'card_id' => '',
-        'code' => '',
+        'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',
+        'code' => '478515832665',
     ]): PromiseInterface;
 
     /**
@@ -39,8 +39,8 @@ interface _code_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_8.shtml
      */
     public function patch(array $options = [
-        'card_id' => '',
-        'code' => '',
+        'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',
+        'code' => '478515832665',
         'json' => [
             'membership_number' => '316510891298',
             'background_picture_url' => 'https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/0',
@@ -61,8 +61,8 @@ interface _code_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_8.shtml#async
      */
     public function patchAsync(array $options = [
-        'card_id' => '',
-        'code' => '',
+        'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',
+        'code' => '478515832665',
         'json' => [
             'membership_number' => '316510891298',
             'background_picture_url' => 'https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/0',

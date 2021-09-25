@@ -16,7 +16,7 @@ interface _withdraw_id_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/fund/chapter3_6.shtml
      */
     public function get(array $options = [
-        'withdraw_id' => '',
+        'withdraw_id' => '12321937198237912739132791732123',
     ]): ResponseInterface;
 
     /**
@@ -25,6 +25,6 @@ interface _withdraw_id_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/fund/chapter3_6.shtml#async
      */
     public function getAsync(array $options = [
-        'withdraw_id' => '',
+        'withdraw_id' => '12321937198237912739132791732123',
     ]): PromiseInterface;
 }

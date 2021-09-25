@@ -60,7 +60,7 @@ interface Coupons
             'sender_mchid' => '',
             'available_mchid' => '',
             'offset' => 0,
-            'limit' => 0,
+            'limit' => 20,
         ],
     ]): ResponseInterface;
 
@@ -79,7 +79,7 @@ interface Coupons
             'sender_mchid' => '',
             'available_mchid' => '',
             'offset' => 0,
-            'limit' => 0,
+            'limit' => 20,
         ],
     ]): PromiseInterface;
 }

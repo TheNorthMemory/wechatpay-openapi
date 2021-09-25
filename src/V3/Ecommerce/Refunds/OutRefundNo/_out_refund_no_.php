@@ -16,9 +16,9 @@ interface _out_refund_no_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/refunds/chapter3_2.shtml
      */
     public function get(array $options = [
-        'out_refund_no' => '',
+        'out_refund_no' => '1217752501201407033233368018',
         'query' => [
-            'sub_mchid' => '',
+            'sub_mchid' => '1900000109',
         ],
     ]): ResponseInterface;
 
@@ -28,9 +28,9 @@ interface _out_refund_no_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/refunds/chapter3_2.shtml#async
      */
     public function getAsync(array $options = [
-        'out_refund_no' => '',
+        'out_refund_no' => '1217752501201407033233368018',
         'query' => [
-            'sub_mchid' => '',
+            'sub_mchid' => '1900000109',
         ],
     ]): PromiseInterface;
 }

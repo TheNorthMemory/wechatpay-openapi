@@ -17,11 +17,11 @@ interface SubMerchantFundflowbill
      */
     public function get(array $options = [
         'query' => [
-            'sub_mchid' => '',
-            'bill_date' => '',
-            'tar_type' => '',
-            'algorithm' => '',
-            'account_type' => '',
+            'sub_mchid' => '19000000001',
+            'bill_date' => '2019-06-11',
+            'tar_type' => 'GZIP',
+            'algorithm' => 'AEAD_AES_256_GCM',
+            'account_type' => 'BASIC',
         ],
     ]): ResponseInterface;
 
@@ -32,11 +32,11 @@ interface SubMerchantFundflowbill
      */
     public function getAsync(array $options = [
         'query' => [
-            'sub_mchid' => '',
-            'bill_date' => '',
-            'tar_type' => '',
-            'algorithm' => '',
-            'account_type' => '',
+            'sub_mchid' => '19000000001',
+            'bill_date' => '2019-06-11',
+            'tar_type' => 'GZIP',
+            'algorithm' => 'AEAD_AES_256_GCM',
+            'account_type' => 'BASIC',
         ],
     ]): PromiseInterface;
 }

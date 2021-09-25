@@ -16,10 +16,10 @@ interface NegotiationHistorys
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_2_12.shtml
      */
     public function get(array $options = [
-        'complaint_id' => '',
+        'complaint_id' => '200201820200101080076610000',
         'query' => [
-            'limit' => 0,
-            'offset' => 0,
+            'limit' => 50,
+            'offset' => 10,
         ],
     ]): ResponseInterface;
 
@@ -29,10 +29,10 @@ interface NegotiationHistorys
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_2_12.shtml#async
      */
     public function getAsync(array $options = [
-        'complaint_id' => '',
+        'complaint_id' => '200201820200101080076610000',
         'query' => [
-            'limit' => 0,
-            'offset' => 0,
+            'limit' => 50,
+            'offset' => 10,
         ],
     ]): PromiseInterface;
 }

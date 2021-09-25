@@ -17,7 +17,7 @@ interface NegotiationHistorys
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/merchant-service/chapter3_7.shtml
      */
     public function get(array $options = [
-        'transaction_id' => '',
+        'transaction_id' => '4200000404201909069117582536',
     ]): ResponseInterface;
 
     /**
@@ -27,6 +27,6 @@ interface NegotiationHistorys
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/merchant-service/chapter3_7.shtml#async
      */
     public function getAsync(array $options = [
-        'transaction_id' => '',
+        'transaction_id' => '4200000404201909069117582536',
     ]): PromiseInterface;
 }

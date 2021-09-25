@@ -16,10 +16,10 @@ interface _out_return_no_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_1_4.shtml
      */
     public function get(array $options = [
-        'out_return_no' => '',
+        'out_return_no' => 'R20190516001',
         'query' => [
-            'sub_mchid' => '',
-            'out_order_no' => '',
+            'sub_mchid' => '1900000109',
+            'out_order_no' => 'P20190806125346',
         ],
     ]): ResponseInterface;
 
@@ -29,10 +29,10 @@ interface _out_return_no_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_1_4.shtml#async
      */
     public function getAsync(array $options = [
-        'out_return_no' => '',
+        'out_return_no' => 'R20190516001',
         'query' => [
-            'sub_mchid' => '',
-            'out_order_no' => '',
+            'sub_mchid' => '1900000109',
+            'out_order_no' => 'P20190806125346',
         ],
     ]): PromiseInterface;
 }

@@ -16,7 +16,7 @@ interface _out_request_no_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/fund/chapter3_6.shtml
      */
     public function get(array $options = [
-        'out_request_no' => '',
+        'out_request_no' => '20190611222222222200000000012122',
     ]): ResponseInterface;
 
     /**
@@ -25,6 +25,6 @@ interface _out_request_no_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/fund/chapter3_6.shtml#async
      */
     public function getAsync(array $options = [
-        'out_request_no' => '',
+        'out_request_no' => '20190611222222222200000000012122',
     ]): PromiseInterface;
 }

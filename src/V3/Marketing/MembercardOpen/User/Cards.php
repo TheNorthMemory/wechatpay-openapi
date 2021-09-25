@@ -17,8 +17,8 @@ interface Cards
      */
     public function get(array $options = [
         'query' => [
-            'openid' => '',
-            'appid' => '',
+            'openid' => 'obLatjnx9gnqzS4myYGmLZ7LgLBA',
+            'appid' => 'wxea9c30890f48d5ae',
             'offset' => 0,
             'limit' => 0,
         ],
@@ -31,8 +31,8 @@ interface Cards
      */
     public function getAsync(array $options = [
         'query' => [
-            'openid' => '',
-            'appid' => '',
+            'openid' => 'obLatjnx9gnqzS4myYGmLZ7LgLBA',
+            'appid' => 'wxea9c30890f48d5ae',
             'offset' => 0,
             'limit' => 0,
         ],

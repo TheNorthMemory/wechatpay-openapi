@@ -16,7 +16,7 @@ interface _sub_mchid_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_1_7.shtml
      */
     public function get(array $options = [
-        'sub_mchid' => '',
+        'sub_mchid' => '1900000109',
     ]): ResponseInterface;
 
     /**
@@ -25,6 +25,6 @@ interface _sub_mchid_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_1_7.shtml#async
      */
     public function getAsync(array $options = [
-        'sub_mchid' => '',
+        'sub_mchid' => '1900000109',
     ]): PromiseInterface;
 }

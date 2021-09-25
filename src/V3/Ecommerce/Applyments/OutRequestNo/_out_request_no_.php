@@ -16,7 +16,7 @@ interface _out_request_no_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/applyments/chapter3_2.shtml
      */
     public function get(array $options = [
-        'out_request_no' => '',
+        'out_request_no' => 'APPLYMENT_00000000001',
     ]): ResponseInterface;
 
     /**
@@ -25,6 +25,6 @@ interface _out_request_no_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/applyments/chapter3_2.shtml#async
      */
     public function getAsync(array $options = [
-        'out_request_no' => '',
+        'out_request_no' => 'APPLYMENT_00000000001',
     ]): PromiseInterface;
 }

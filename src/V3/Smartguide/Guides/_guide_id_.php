@@ -17,7 +17,7 @@ interface _guide_id_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/smartguide/chapter3_4.shtml
      */
     public function patch(array $options = [
-        'guide_id' => '',
+        'guide_id' => 'LLA3WJ6DSZUfiaZDS79FH5Wm5m4X69TBic',
         'json' => [
             'sub_mchid' => '1234567890',
             'name' => '',
@@ -36,7 +36,7 @@ interface _guide_id_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/smartguide/chapter3_4.shtml#async
      */
     public function patchAsync(array $options = [
-        'guide_id' => '',
+        'guide_id' => 'LLA3WJ6DSZUfiaZDS79FH5Wm5m4X69TBic',
         'json' => [
             'sub_mchid' => '1234567890',
             'name' => '',

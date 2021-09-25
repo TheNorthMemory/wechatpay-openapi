@@ -16,7 +16,7 @@ interface Couponcodes
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_6.shtml
      */
     public function post(array $options = [
-        'stock_id' => '',
+        'stock_id' => '98065001',
         'json' => [
             'coupon_code_list' => ['string'],
             'upload_request_no' => '100002322019090134234sfdf',
@@ -29,7 +29,7 @@ interface Couponcodes
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_6.shtml#async
      */
     public function postAsync(array $options = [
-        'stock_id' => '',
+        'stock_id' => '98065001',
         'json' => [
             'coupon_code_list' => ['string'],
             'upload_request_no' => '100002322019090134234sfdf',

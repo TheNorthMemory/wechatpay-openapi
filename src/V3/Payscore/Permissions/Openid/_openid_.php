@@ -17,10 +17,10 @@ interface _openid_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter9_5.shtml
      */
     public function get(array $options = [
-        'openid' => '',
+        'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
         'query' => [
-            'service_id' => '',
-            'appid' => '',
+            'service_id' => '2002000000000558128851361561536',
+            'appid' => 'wxd678efh567hg6787',
         ],
     ]): ResponseInterface;
 
@@ -30,10 +30,10 @@ interface _openid_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter9_5.shtml#async
      */
     public function getAsync(array $options = [
-        'openid' => '',
+        'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
         'query' => [
-            'service_id' => '',
-            'appid' => '',
+            'service_id' => '2002000000000558128851361561536',
+            'appid' => 'wxd678efh567hg6787',
         ],
     ]): PromiseInterface;
 }

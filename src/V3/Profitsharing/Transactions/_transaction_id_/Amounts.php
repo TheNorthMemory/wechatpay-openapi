@@ -16,7 +16,7 @@ interface Amounts
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_1_6.shtml
      */
     public function get(array $options = [
-        'transaction_id' => '',
+        'transaction_id' => '4208450740201411110007820472',
     ]): ResponseInterface;
 
     /**
@@ -25,6 +25,6 @@ interface Amounts
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_1_6.shtml#async
      */
     public function getAsync(array $options = [
-        'transaction_id' => '',
+        'transaction_id' => '4208450740201411110007820472',
     ]): PromiseInterface;
 }

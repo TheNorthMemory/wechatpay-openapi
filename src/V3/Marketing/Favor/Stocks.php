@@ -21,8 +21,8 @@ interface Stocks
             'offset' => 0,
             'limit' => 0,
             'stock_creator_mchid' => '',
-            'create_start_time' => '',
-            'create_end_time' => '',
+            'create_start_time' => '2015-05-20T13:29:35.120+08:00',
+            'create_end_time' => '2015-05-20T13:29:35.120+08:00',
             'status' => '',
         ],
     ]): ResponseInterface;
@@ -37,8 +37,8 @@ interface Stocks
             'offset' => 0,
             'limit' => 0,
             'stock_creator_mchid' => '',
-            'create_start_time' => '',
-            'create_end_time' => '',
+            'create_start_time' => '2015-05-20T13:29:35.120+08:00',
+            'create_end_time' => '2015-05-20T13:29:35.120+08:00',
             'status' => '',
         ],
     ]): PromiseInterface;

@@ -16,9 +16,9 @@ interface DecryptCode
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter4_4.shtml
      */
     public function get(array $options = [
-        'card_id' => '',
+        'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',
         'query' => [
-            'encrypt_code' => '',
+            'encrypt_code' => 'XXIzTtMqCxwOaawoE91+VJdsFmv7b8g0VZIZkqf4GWA60Fzpc8ksZ/5ZZ0DVkXdE',
         ],
     ]): ResponseInterface;
 
@@ -28,9 +28,9 @@ interface DecryptCode
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter4_4.shtml#async
      */
     public function getAsync(array $options = [
-        'card_id' => '',
+        'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',
         'query' => [
-            'encrypt_code' => '',
+            'encrypt_code' => 'XXIzTtMqCxwOaawoE91+VJdsFmv7b8g0VZIZkqf4GWA60Fzpc8ksZ/5ZZ0DVkXdE',
         ],
     ]): PromiseInterface;
 }

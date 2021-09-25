@@ -16,7 +16,7 @@ interface _media_url_slot_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter10_2_18.shtml
      */
     public function get(array $options = [
-        'media_url_slot' => '',
+        'media_url_slot' => 'xxxxx',
     ]): ResponseInterface;
 
     /**
@@ -25,6 +25,6 @@ interface _media_url_slot_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter10_2_18.shtml#async
      */
     public function getAsync(array $options = [
-        'media_url_slot' => '',
+        'media_url_slot' => 'xxxxx',
     ]): PromiseInterface;
 }

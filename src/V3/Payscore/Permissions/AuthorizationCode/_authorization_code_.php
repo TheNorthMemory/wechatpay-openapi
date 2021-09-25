@@ -17,9 +17,9 @@ interface _authorization_code_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter9_3.shtml
      */
     public function get(array $options = [
-        'authorization_code' => '',
+        'authorization_code' => '1234323JKHDFE1243252',
         'query' => [
-            'service_id' => '',
+            'service_id' => '500001',
         ],
     ]): ResponseInterface;
 
@@ -29,9 +29,9 @@ interface _authorization_code_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter9_3.shtml#async
      */
     public function getAsync(array $options = [
-        'authorization_code' => '',
+        'authorization_code' => '1234323JKHDFE1243252',
         'query' => [
-            'service_id' => '',
+            'service_id' => '500001',
         ],
     ]): PromiseInterface;
 }

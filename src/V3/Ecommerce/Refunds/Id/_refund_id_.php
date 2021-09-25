@@ -16,9 +16,9 @@ interface _refund_id_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/refunds/chapter3_2.shtml
      */
     public function get(array $options = [
-        'refund_id' => '',
+        'refund_id' => '50000000382019052709732678859',
         'query' => [
-            'sub_mchid' => '',
+            'sub_mchid' => '1900000109',
         ],
     ]): ResponseInterface;
 
@@ -28,9 +28,9 @@ interface _refund_id_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/refunds/chapter3_2.shtml#async
      */
     public function getAsync(array $options = [
-        'refund_id' => '',
+        'refund_id' => '50000000382019052709732678859',
         'query' => [
-            'sub_mchid' => '',
+            'sub_mchid' => '1900000109',
         ],
     ]): PromiseInterface;
 }

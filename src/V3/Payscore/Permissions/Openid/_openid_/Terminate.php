@@ -16,7 +16,7 @@ interface Terminate
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter9_6.shtml
      */
     public function post(array $options = [
-        'openid' => '',
+        'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
         'json' => [
             'service_id' => '2002000000000558128851361561536',
             'appid' => 'wxd678efh567hg6787',
@@ -30,7 +30,7 @@ interface Terminate
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter9_6.shtml#async
      */
     public function postAsync(array $options = [
-        'openid' => '',
+        'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
         'json' => [
             'service_id' => '2002000000000558128851361561536',
             'appid' => 'wxd678efh567hg6787',

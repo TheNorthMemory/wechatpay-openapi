@@ -16,9 +16,9 @@ interface _out_trade_no_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_8_4.shtml
      */
     public function get(array $options = [
-        'out_trade_no' => '',
+        'out_trade_no' => '20150806125346',
         'query' => [
-            'sub_mchid' => '',
+            'sub_mchid' => '1900000109',
         ],
     ]): ResponseInterface;
 
@@ -28,9 +28,9 @@ interface _out_trade_no_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_8_4.shtml#async
      */
     public function getAsync(array $options = [
-        'out_trade_no' => '',
+        'out_trade_no' => '20150806125346',
         'query' => [
-            'sub_mchid' => '',
+            'sub_mchid' => '1900000109',
         ],
     ]): PromiseInterface;
 }

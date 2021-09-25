@@ -16,9 +16,9 @@ interface _sub_mchid_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/amount/chapter3_2.shtml
      */
     public function get(array $options = [
-        'sub_mchid' => '',
+        'sub_mchid' => '1222212222',
         'query' => [
-            'date' => '',
+            'date' => '2019-08-17',
         ],
     ]): ResponseInterface;
 
@@ -28,9 +28,9 @@ interface _sub_mchid_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/amount/chapter3_2.shtml#async
      */
     public function getAsync(array $options = [
-        'sub_mchid' => '',
+        'sub_mchid' => '1222212222',
         'query' => [
-            'date' => '',
+            'date' => '2019-08-17',
         ],
     ]): PromiseInterface;
 }

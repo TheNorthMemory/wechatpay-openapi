@@ -18,8 +18,8 @@ interface Bills
     public function get(array $options = [
         'query' => [
             'sub_mchid' => '',
-            'bill_date' => '',
-            'tar_type' => '',
+            'bill_date' => '2019-06-11',
+            'tar_type' => 'GZIP',
         ],
     ]): ResponseInterface;
 
@@ -31,8 +31,8 @@ interface Bills
     public function getAsync(array $options = [
         'query' => [
             'sub_mchid' => '',
-            'bill_date' => '',
-            'tar_type' => '',
+            'bill_date' => '2019-06-11',
+            'tar_type' => 'GZIP',
         ],
     ]): PromiseInterface;
 }

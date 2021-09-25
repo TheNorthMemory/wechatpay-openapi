@@ -16,9 +16,9 @@ interface _withdraw_id_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/fund/chapter3_3.shtml
      */
     public function get(array $options = [
-        'withdraw_id' => '',
+        'withdraw_id' => '1232193719823791273913279173',
         'query' => [
-            'sub_mchid' => '',
+            'sub_mchid' => '1900000109',
         ],
     ]): ResponseInterface;
 
@@ -28,9 +28,9 @@ interface _withdraw_id_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/fund/chapter3_3.shtml#async
      */
     public function getAsync(array $options = [
-        'withdraw_id' => '',
+        'withdraw_id' => '1232193719823791273913279173',
         'query' => [
-            'sub_mchid' => '',
+            'sub_mchid' => '1900000109',
         ],
     ]): PromiseInterface;
 }

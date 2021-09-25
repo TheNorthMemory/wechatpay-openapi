@@ -16,7 +16,7 @@ interface Terminate
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter9_4.shtml
      */
     public function post(array $options = [
-        'authorization_code' => '',
+        'authorization_code' => '1234323JKHDFE1243252',
         'json' => [
             'service_id' => '500001',
             'reason' => '撤销原因',
@@ -29,7 +29,7 @@ interface Terminate
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter9_4.shtml#async
      */
     public function postAsync(array $options = [
-        'authorization_code' => '',
+        'authorization_code' => '1234323JKHDFE1243252',
         'json' => [
             'service_id' => '500001',
             'reason' => '撤销原因',

@@ -18,6 +18,7 @@ get:
       nullable: true
       type: string
       description: 二级商户号
+      example: '19000000001'
     - name: bill_type
       in: query
       nullable: true

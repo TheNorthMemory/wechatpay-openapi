@@ -18,7 +18,7 @@ interface _stock_id_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_2.shtml
      */
     public function get(array $options = [
-        'stock_id' => '',
+        'stock_id' => '1212',
     ]): ResponseInterface;
 
     /**
@@ -27,7 +27,7 @@ interface _stock_id_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_2.shtml#async
      */
     public function getAsync(array $options = [
-        'stock_id' => '',
+        'stock_id' => '1212',
     ]): PromiseInterface;
 
     /**
@@ -36,7 +36,7 @@ interface _stock_id_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_12.shtml
      */
     public function patch(array $options = [
-        'stock_id' => '',
+        'stock_id' => '101156451224',
         'json' => [
             'custom_entrance' => [
                 'mini_programs_info' => [
@@ -81,7 +81,7 @@ interface _stock_id_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_12.shtml#async
      */
     public function patchAsync(array $options = [
-        'stock_id' => '',
+        'stock_id' => '101156451224',
         'json' => [
             'custom_entrance' => [
                 'mini_programs_info' => [

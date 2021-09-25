@@ -19,9 +19,9 @@ interface Partnerships
      */
     public function get(array $options = [
         'query' => [
-            'partner' => '',
-            'authorized_data' => '',
-            'limit' => 0,
+            'partner' => '{"type":"APPID","appid":"wx4e1916a585d1f4e9"}',
+            'authorized_data' => '{"business_type":"FAVOR_STOCK","stock_id":"2433405"}',
+            'limit' => 50,
             'offset' => 0,
         ],
     ]): ResponseInterface;
@@ -33,9 +33,9 @@ interface Partnerships
      */
     public function getAsync(array $options = [
         'query' => [
-            'partner' => '',
-            'authorized_data' => '',
-            'limit' => 0,
+            'partner' => '{"type":"APPID","appid":"wx4e1916a585d1f4e9"}',
+            'authorized_data' => '{"business_type":"FAVOR_STOCK","stock_id":"2433405"}',
+            'limit' => 50,
             'offset' => 0,
         ],
     ]): PromiseInterface;

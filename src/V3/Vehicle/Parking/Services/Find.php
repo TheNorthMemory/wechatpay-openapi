@@ -17,11 +17,11 @@ interface Find
      */
     public function get(array $options = [
         'query' => [
-            'appid' => '',
-            'sub_mchid' => '',
-            'plate_number' => '',
-            'plate_color' => '',
-            'openid' => '',
+            'appid' => 'wxcbda96de0b165486',
+            'sub_mchid' => '1900000109',
+            'plate_number' => '粤B888888',
+            'plate_color' => 'BLUE',
+            'openid' => 'oUpF8uMuAJOM2pxb1Q',
         ],
     ]): ResponseInterface;
 
@@ -32,11 +32,11 @@ interface Find
      */
     public function getAsync(array $options = [
         'query' => [
-            'appid' => '',
-            'sub_mchid' => '',
-            'plate_number' => '',
-            'plate_color' => '',
-            'openid' => '',
+            'appid' => 'wxcbda96de0b165486',
+            'sub_mchid' => '1900000109',
+            'plate_number' => '粤B888888',
+            'plate_color' => 'BLUE',
+            'openid' => 'oUpF8uMuAJOM2pxb1Q',
         ],
     ]): PromiseInterface;
 }

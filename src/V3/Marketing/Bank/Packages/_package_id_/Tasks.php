@@ -17,16 +17,19 @@ interface Tasks
      * // available since wechatpay/wechatpay:>=1.3.2
      * $media = new \WeChatPay\Util\MediaUtil('file:///path/to/active_user.csv');
      * $json  = \json_decode($media->getMeta());
-     * $media->setMeta(\json_encode(['filename' => $json->filename, 'sha256' => $json->sha256, 'bank_type' => 'your_bank_id']));
-     * $options = ['body' => $media->getStream(), 'headers' => ['Content-type' => $media->getContentType()]];
+     * $json->bank_type = 'your_bank_id';
+     * $media->setMeta(\json_encode($json));
+     * $options = [
+     *     'package_id' => '',
+     *     'body'       => $media->getStream(),
+     *     'headers'    => ['Content-type' => $media->getContentType()]
+     * ];
      * ```
      *
      * @param array<string,mixed> $options
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_8_1.shtml
      */
-    public function post(array $options = [
-        'package_id' => '',
-    ]): ResponseInterface;
+    public function post(array $options = []): ResponseInterface;
 
     /**
      * 导入定向用户协议号(异步模式)
@@ -35,16 +38,19 @@ interface Tasks
      * // available since wechatpay/wechatpay:>=1.3.2
      * $media = new \WeChatPay\Util\MediaUtil('file:///path/to/active_user.csv');
      * $json  = \json_decode($media->getMeta());
-     * $media->setMeta(\json_encode(['filename' => $json->filename, 'sha256' => $json->sha256, 'bank_type' => 'your_bank_id']));
-     * $options = ['body' => $media->getStream(), 'headers' => ['Content-type' => $media->getContentType()]];
+     * $json->bank_type = 'your_bank_id';
+     * $media->setMeta(\json_encode($json));
+     * $options = [
+     *     'package_id' => '',
+     *     'body'       => $media->getStream(),
+     *     'headers'    => ['Content-type' => $media->getContentType()]
+     * ];
      * ```
      *
      * @param array<string,mixed> $options
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_8_1.shtml#async
      */
-    public function postAsync(array $options = [
-        'package_id' => '',
-    ]): PromiseInterface;
+    public function postAsync(array $options = []): PromiseInterface;
 
     /**
      * 查询上传任务列表(同步模式)
@@ -52,12 +58,12 @@ interface Tasks
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter9_8_2.shtml
      */
     public function get(array $options = [
-        'package_id' => '',
+        'package_id' => '8473295',
         'query' => [
-            'status' => '',
-            'filename' => '',
+            'status' => 'PROCESSING',
+            'filename' => 'active_user.csv',
             'offset' => 0,
-            'limit' => 0,
+            'limit' => 20,
         ],
     ]): ResponseInterface;
 
@@ -67,12 +73,12 @@ interface Tasks
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter9_8_2.shtml#async
      */
     public function getAsync(array $options = [
-        'package_id' => '',
+        'package_id' => '8473295',
         'query' => [
-            'status' => '',
-            'filename' => '',
+            'status' => 'PROCESSING',
+            'filename' => 'active_user.csv',
             'offset' => 0,
-            'limit' => 0,
+            'limit' => 20,
         ],
     ]): PromiseInterface;
 }

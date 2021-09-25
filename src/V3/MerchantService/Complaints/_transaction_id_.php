@@ -18,7 +18,7 @@ interface _transaction_id_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/merchant-service/chapter3_8.shtml
      */
     public function get(array $options = [
-        'transaction_id' => '',
+        'transaction_id' => '4200000404201909069117582536',
     ]): ResponseInterface;
 
     /**
@@ -28,6 +28,6 @@ interface _transaction_id_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/merchant-service/chapter3_8.shtml#async
      */
     public function getAsync(array $options = [
-        'transaction_id' => '',
+        'transaction_id' => '4200000404201909069117582536',
     ]): PromiseInterface;
 }

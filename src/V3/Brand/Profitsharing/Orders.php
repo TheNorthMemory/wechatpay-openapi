@@ -63,9 +63,9 @@ interface Orders
      */
     public function get(array $options = [
         'query' => [
-            'sub_mchid' => '',
-            'transaction_id' => '',
-            'out_order_no' => '',
+            'sub_mchid' => '1900000109',
+            'transaction_id' => '4208450740201411110007820472',
+            'out_order_no' => 'P20150806125346',
         ],
     ]): ResponseInterface;
 
@@ -76,9 +76,9 @@ interface Orders
      */
     public function getAsync(array $options = [
         'query' => [
-            'sub_mchid' => '',
-            'transaction_id' => '',
-            'out_order_no' => '',
+            'sub_mchid' => '1900000109',
+            'transaction_id' => '4208450740201411110007820472',
+            'out_order_no' => 'P20150806125346',
         ],
     ]): PromiseInterface;
 }

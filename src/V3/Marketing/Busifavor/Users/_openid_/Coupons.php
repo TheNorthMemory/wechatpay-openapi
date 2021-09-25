@@ -14,38 +14,38 @@ interface Coupons
     /**
      * 根据过滤条件查询用户券(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_5.shtml
+     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_4.shtml
      */
     public function get(array $options = [
-        'openid' => '',
+        'openid' => '2323dfsdf342342',
         'query' => [
-            'appid' => '',
-            'stock_id' => '',
-            'coupon_state' => '',
-            'creator_merchant' => '',
-            'belong_merchant' => '',
-            'sender_merchant' => '',
-            'offset' => '',
-            'limit' => '',
+            'appid' => 'wx233544546545989',
+            'stock_id' => '9865000',
+            'coupon_state' => 'SENDED',
+            'creator_merchant' => '1000000001',
+            'belong_merchant' => '1000000002',
+            'sender_merchant' => '1000000003',
+            'offset' => 0,
+            'limit' => 20,
         ],
     ]): ResponseInterface;
 
     /**
      * 根据过滤条件查询用户券(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_5.shtml#async
+     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_4.shtml#async
      */
     public function getAsync(array $options = [
-        'openid' => '',
+        'openid' => '2323dfsdf342342',
         'query' => [
-            'appid' => '',
-            'stock_id' => '',
-            'coupon_state' => '',
-            'creator_merchant' => '',
-            'belong_merchant' => '',
-            'sender_merchant' => '',
-            'offset' => '',
-            'limit' => '',
+            'appid' => 'wx233544546545989',
+            'stock_id' => '9865000',
+            'coupon_state' => 'SENDED',
+            'creator_merchant' => '1000000001',
+            'belong_merchant' => '1000000002',
+            'sender_merchant' => '1000000003',
+            'offset' => 0,
+            'limit' => 20,
         ],
     ]): PromiseInterface;
 }

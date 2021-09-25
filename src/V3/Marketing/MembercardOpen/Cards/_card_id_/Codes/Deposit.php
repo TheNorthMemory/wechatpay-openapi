@@ -16,7 +16,7 @@ interface Deposit
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_7.shtml
      */
     public function post(array $options = [
-        'card_id' => '',
+        'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',
         'json' => [
             'code' => ['string'],
         ],
@@ -28,7 +28,7 @@ interface Deposit
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_7.shtml#async
      */
     public function postAsync(array $options = [
-        'card_id' => '',
+        'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',
         'json' => [
             'code' => ['string'],
         ],

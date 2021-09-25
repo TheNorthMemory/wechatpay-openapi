@@ -17,7 +17,7 @@ interface _out_order_no_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter3_2.shtml
      */
     public function patch(array $options = [
-        'out_order_no' => '',
+        'out_order_no' => '233bcbf407e87789b8e471f251774f95',
         'json' => [
             'objectives' => [[
                 'objective_serial_no' => '578354545',
@@ -48,7 +48,7 @@ interface _out_order_no_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter3_2.shtml#async
      */
     public function patchAsync(array $options = [
-        'out_order_no' => '',
+        'out_order_no' => '233bcbf407e87789b8e471f251774f95',
         'json' => [
             'objectives' => [[
                 'objective_serial_no' => '578354545',
@@ -79,7 +79,7 @@ interface _out_order_no_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter3_1.shtml
      */
     public function get(array $options = [
-        'out_order_no' => '',
+        'out_order_no' => '233bcbf407e87789b8e471f251774f95',
     ]): ResponseInterface;
 
     /**
@@ -89,6 +89,6 @@ interface _out_order_no_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter3_1.shtml#async
      */
     public function getAsync(array $options = [
-        'out_order_no' => '',
+        'out_order_no' => '233bcbf407e87789b8e471f251774f95',
     ]): PromiseInterface;
 }

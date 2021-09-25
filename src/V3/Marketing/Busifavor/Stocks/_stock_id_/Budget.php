@@ -16,7 +16,7 @@ interface Budget
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_11.shtml
      */
     public function patch(array $options = [
-        'stock_id' => '',
+        'stock_id' => '98065001',
         'json' => [
             'target_max_coupons' => 3000,
             'target_max_coupons_by_day' => 0,
@@ -32,7 +32,7 @@ interface Budget
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_11.shtml#async
      */
     public function patchAsync(array $options = [
-        'stock_id' => '',
+        'stock_id' => '98065001',
         'json' => [
             'target_max_coupons' => 3000,
             'target_max_coupons_by_day' => 0,

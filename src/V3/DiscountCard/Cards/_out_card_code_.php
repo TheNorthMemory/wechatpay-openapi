@@ -17,7 +17,7 @@ interface _out_card_code_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/discount-card/chapter3_3.shtml
      */
     public function get(array $options = [
-        'out_card_code' => '',
+        'out_card_code' => '6e8369071cd942c0476613f9d1ce9ca3',
     ]): ResponseInterface;
 
     /**
@@ -26,6 +26,6 @@ interface _out_card_code_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/discount-card/chapter3_3.shtml#async
      */
     public function getAsync(array $options = [
-        'out_card_code' => '',
+        'out_card_code' => '6e8369071cd942c0476613f9d1ce9ca3',
     ]): PromiseInterface;
 }

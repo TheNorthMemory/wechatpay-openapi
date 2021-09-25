@@ -16,7 +16,7 @@ interface Upgrade
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_6.shtml
      */
     public function post(array $options = [
-        'card_id' => '',
+        'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',
         'json' => [
             'brand_id' => '1001622624',
             'appid' => 'wxea9c30890f48d5ae',
@@ -29,7 +29,7 @@ interface Upgrade
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_6.shtml#async
      */
     public function postAsync(array $options = [
-        'card_id' => '',
+        'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',
         'json' => [
             'brand_id' => '1001622624',
             'appid' => 'wxea9c30890f48d5ae',

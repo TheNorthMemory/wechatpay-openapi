@@ -16,9 +16,9 @@ interface _openid_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter8_6_4.shtml
      */
     public function get(array $options = [
-        'openid' => '',
+        'openid' => 'oWmnN4xxxxxxxxxxe92NHIGf1xd8',
         'query' => [
-            'appid' => '',
+            'appid' => 'wx1234567890abcdef',
         ],
     ]): ResponseInterface;
 
@@ -28,9 +28,9 @@ interface _openid_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter8_6_4.shtml#async
      */
     public function getAsync(array $options = [
-        'openid' => '',
+        'openid' => 'oWmnN4xxxxxxxxxxe92NHIGf1xd8',
         'query' => [
-            'appid' => '',
+            'appid' => 'wx1234567890abcdef',
         ],
     ]): PromiseInterface;
 }

@@ -21,7 +21,7 @@ interface _card_id_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_2.shtml
      */
     public function get(array $options = [
-        'card_id' => '',
+        'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',
     ]): ResponseInterface;
 
     /**
@@ -30,7 +30,7 @@ interface _card_id_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_2.shtml#async
      */
     public function getAsync(array $options = [
-        'card_id' => '',
+        'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',
     ]): PromiseInterface;
 
     /**
@@ -39,7 +39,7 @@ interface _card_id_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_9.shtml
      */
     public function patch(array $options = [
-        'card_id' => '',
+        'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',
         'json' => [
             'appid' => 'wxea9c30890f48d5ae',
             'logo_url' => 'https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/0',
@@ -86,7 +86,7 @@ interface _card_id_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_9.shtml#async
      */
     public function patchAsync(array $options = [
-        'card_id' => '',
+        'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',
         'json' => [
             'appid' => 'wxea9c30890f48d5ae',
             'logo_url' => 'https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/0',
@@ -133,7 +133,7 @@ interface _card_id_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_11.shtml
      */
     public function delete(array $options = [
-        'card_id' => '',
+        'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',
     ]): ResponseInterface;
 
     /**
@@ -142,6 +142,6 @@ interface _card_id_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_11.shtml#async
      */
     public function deleteAsync(array $options = [
-        'card_id' => '',
+        'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',
     ]): PromiseInterface;
 }

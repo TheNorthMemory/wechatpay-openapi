@@ -17,8 +17,8 @@ interface Search
      */
     public function get(array $options = [
         'query' => [
-            'card_id' => '',
-            'encrypted_phone_number' => '',
+            'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',
+            'encrypted_phone_number' => 'vvysDQeEaH3I+wRh14St0abIkvQyFgh/fbWYSs2bLtG9tj+bdJn4WSCPzLyXnFbzaaKSE2j4mAFON3kzNexb/SYkHZNJAuCittaW4wpGj7U+h9A==',
         ],
         'headers' => [
             'Wechatpay-Serial' => '',
@@ -32,8 +32,8 @@ interface Search
      */
     public function getAsync(array $options = [
         'query' => [
-            'card_id' => '',
-            'encrypted_phone_number' => '',
+            'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',
+            'encrypted_phone_number' => 'vvysDQeEaH3I+wRh14St0abIkvQyFgh/fbWYSs2bLtG9tj+bdJn4WSCPzLyXnFbzaaKSE2j4mAFON3kzNexb/SYkHZNJAuCittaW4wpGj7U+h9A==',
         ],
         'headers' => [
             'Wechatpay-Serial' => '',

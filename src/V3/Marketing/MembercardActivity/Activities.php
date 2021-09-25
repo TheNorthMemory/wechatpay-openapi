@@ -134,11 +134,11 @@ interface Activities
      */
     public function get(array $options = [
         'query' => [
-            'limit' => 0,
-            'offset' => 0,
-            'activity_type' => '',
-            'card_id' => '',
-            'activity_status' => '',
+            'limit' => 5,
+            'offset' => 10,
+            'activity_type' => 'NON_MEMBER_AFTERPAY',
+            'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',
+            'activity_status' => 'ONGOING',
         ],
     ]): ResponseInterface;
 
@@ -149,11 +149,11 @@ interface Activities
      */
     public function getAsync(array $options = [
         'query' => [
-            'limit' => 0,
-            'offset' => 0,
-            'activity_type' => '',
-            'card_id' => '',
-            'activity_status' => '',
+            'limit' => 5,
+            'offset' => 10,
+            'activity_type' => 'NON_MEMBER_AFTERPAY',
+            'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',
+            'activity_status' => 'ONGOING',
         ],
     ]): PromiseInterface;
 }

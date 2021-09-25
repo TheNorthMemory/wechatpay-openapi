@@ -16,7 +16,7 @@ interface _applyment_id_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/applyments/chapter3_2.shtml
      */
     public function get(array $options = [
-        'applyment_id' => '',
+        'applyment_id' => '2000002124775691',
     ]): ResponseInterface;
 
     /**
@@ -25,6 +25,6 @@ interface _applyment_id_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/applyments/chapter3_2.shtml#async
      */
     public function getAsync(array $options = [
-        'applyment_id' => '',
+        'applyment_id' => '2000002124775691',
     ]): PromiseInterface;
 }

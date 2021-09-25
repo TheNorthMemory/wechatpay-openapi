@@ -18,7 +18,7 @@ interface _account_type_
     public function get(array $options = [
         'account_type' => '',
         'query' => [
-            'bill_date' => '',
+            'bill_date' => '2019-06-11',
         ],
     ]): ResponseInterface;
 
@@ -30,7 +30,7 @@ interface _account_type_
     public function getAsync(array $options = [
         'account_type' => '',
         'query' => [
-            'bill_date' => '',
+            'bill_date' => '2019-06-11',
         ],
     ]): PromiseInterface;
 }

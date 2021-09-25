@@ -16,8 +16,8 @@ interface Activate
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_10.shtml
      */
     public function post(array $options = [
-        'card_id' => '',
-        'code' => '',
+        'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',
+        'code' => '478515832665',
         'json' => [
             'membership_number' => '316510891298',
         ],
@@ -29,8 +29,8 @@ interface Activate
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_10.shtml#async
      */
     public function postAsync(array $options = [
-        'card_id' => '',
-        'code' => '',
+        'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',
+        'code' => '478515832665',
         'json' => [
             'membership_number' => '316510891298',
         ],

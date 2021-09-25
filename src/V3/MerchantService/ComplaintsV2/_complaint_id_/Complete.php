@@ -16,7 +16,7 @@ interface Complete
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_2_15.shtml
      */
     public function post(array $options = [
-        'complaint_id' => '',
+        'complaint_id' => '200201820200101080076610000',
         'json' => [
             'complainted_mchid' => '1900012181',
         ],
@@ -28,7 +28,7 @@ interface Complete
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_2_15.shtml#async
      */
     public function postAsync(array $options = [
-        'complaint_id' => '',
+        'complaint_id' => '200201820200101080076610000',
         'json' => [
             'complainted_mchid' => '1900012181',
         ],

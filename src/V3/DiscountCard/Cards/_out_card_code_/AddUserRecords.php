@@ -16,7 +16,7 @@ interface AddUserRecords
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/discount-card/chapter3_2.shtml
      */
     public function post(array $options = [
-        'out_card_code' => '',
+        'out_card_code' => '6e8369071cd942c0476613f9d1ce9ca3',
         'json' => [
             'card_template_id' => '87789b2f25177433bcbf407e8e471f95',
             'objective_completion_records' => [[
@@ -47,7 +47,7 @@ interface AddUserRecords
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/discount-card/chapter3_2.shtml#async
      */
     public function postAsync(array $options = [
-        'out_card_code' => '',
+        'out_card_code' => '6e8369071cd942c0476613f9d1ce9ca3',
         'json' => [
             'card_template_id' => '87789b2f25177433bcbf407e8e471f95',
             'objective_completion_records' => [[

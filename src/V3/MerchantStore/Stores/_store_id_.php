@@ -15,9 +15,9 @@ interface _store_id_
      * @param array<string,mixed> $options
      */
     public function get(array $options = [
-        'store_id' => '',
+        'store_id' => '20488000',
         'query' => [
-            'sub_mchid' => '',
+            'sub_mchid' => '1900000109',
         ],
     ]): ResponseInterface;
 
@@ -26,9 +26,9 @@ interface _store_id_
      * @param array<string,mixed> $options
      */
     public function getAsync(array $options = [
-        'store_id' => '',
+        'store_id' => '20488000',
         'query' => [
-            'sub_mchid' => '',
+            'sub_mchid' => '1900000109',
         ],
     ]): PromiseInterface;
 
@@ -37,7 +37,7 @@ interface _store_id_
      * @param array<string,mixed> $options
      */
     public function patch(array $options = [
-        'store_id' => '',
+        'store_id' => '20488000',
         'json' => [
             'sub_mchid' => '1900000109',
             'store_basics' => [
@@ -65,7 +65,7 @@ interface _store_id_
      * @param array<string,mixed> $options
      */
     public function patchAsync(array $options = [
-        'store_id' => '',
+        'store_id' => '20488000',
         'json' => [
             'sub_mchid' => '1900000109',
             'store_basics' => [

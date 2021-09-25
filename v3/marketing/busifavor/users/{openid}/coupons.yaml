@@ -5,55 +5,64 @@ get:
   tags:
     -  运营工具∙商家券
   summary: 根据过滤条件查询用户券API
-  description: 服务商自定义筛选条件（如创建商户号、归属商户号、发放商户号等），查询指定微信用户卡包中满足对应条件的所有商家券信息。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_5.shtml)
+  description: 服务商自定义筛选条件（如创建商户号、归属商户号、发放商户号等），查询指定微信用户卡包中满足对应条件的所有商家券信息。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_4.shtml)
   parameters:
     - name: openid
       in: path
       type: string
       required: true
       description: 用户标识
+      example: 2323dfsdf342342
     - name: appid
       in: query
       type: string
       required: true
       description: 公众账号ID
+      example: wx233544546545989
     - name: stock_id
       in: query
       type: string
       description: 批次号
       nullable: true
+      example: '9865000'
     - name: coupon_state
       in: query
       type: string
       description: 券状态
       nullable: true
+      example: SENDED
       allOf:
         - $ref: '../../../../../definitions/Enumerations.yaml#CouponState'
     - name: creator_merchant
       in: query
       type: string
       description: 创建批次的商户号
+      example: '1000000001'
       nullable: true
     - name: belong_merchant
       in: query
       type: string
       description: 批次归属商户号
       nullable: true
+      example: '1000000002'
     - name: sender_merchant
       in: query
       type: string
       description: 批次发放商户号
       nullable: true
+      example: '1000000003'
     - name: offset
       in: query
       type: number
       description: 分页页码
       nullable: true
+      example: 0
     - name: limit
       in: query
       type: number
       description: 分页大小
       nullable: true
+      example: 20
   responses:
     200:
       schema:

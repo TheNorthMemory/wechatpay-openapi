@@ -41,7 +41,7 @@ interface Callbacks
      */
     public function get(array $options = [
         'query' => [
-            'mchid' => '',
+            'mchid' => '10000098',
         ],
     ]): ResponseInterface;
 
@@ -52,7 +52,7 @@ interface Callbacks
      */
     public function getAsync(array $options = [
         'query' => [
-            'mchid' => '',
+            'mchid' => '10000098',
         ],
     ]): PromiseInterface;
 }

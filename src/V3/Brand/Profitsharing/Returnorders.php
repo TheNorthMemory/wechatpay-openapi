@@ -51,9 +51,9 @@ interface Returnorders
      */
     public function get(array $options = [
         'query' => [
-            'sub_mchid' => '',
-            'out_return_no' => '',
-            'order_id' => '',
+            'sub_mchid' => '1900000109',
+            'out_return_no' => 'R20190516001',
+            'order_id' => '4208450740201411110007820472',
             'out_order_no' => '',
         ],
     ]): ResponseInterface;
@@ -65,9 +65,9 @@ interface Returnorders
      */
     public function getAsync(array $options = [
         'query' => [
-            'sub_mchid' => '',
-            'out_return_no' => '',
-            'order_id' => '',
+            'sub_mchid' => '1900000109',
+            'out_return_no' => 'R20190516001',
+            'order_id' => '4208450740201411110007820472',
             'out_order_no' => '',
         ],
     ]): PromiseInterface;

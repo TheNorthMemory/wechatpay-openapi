@@ -17,7 +17,7 @@ interface _out_trade_no_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter3_1.shtml
      */
     public function get(array $options = [
-        'out_trade_no' => '',
+        'out_trade_no' => '6e8369071cd942c0476613f9d1ce9ca3',
     ]): ResponseInterface;
 
     /**
@@ -27,6 +27,6 @@ interface _out_trade_no_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter3_1.shtml#async
      */
     public function getAsync(array $options = [
-        'out_trade_no' => '',
+        'out_trade_no' => '6e8369071cd942c0476613f9d1ce9ca3',
     ]): PromiseInterface;
 }

@@ -16,8 +16,8 @@ interface Rights
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter5_2.shtml
      */
     public function patch(array $options = [
-        'card_id' => '',
-        'code' => '',
+        'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',
+        'code' => '478515832665',
         'json' => [
             'before_bonus_value' => 500,
             'bonus_value' => 600,
@@ -32,8 +32,8 @@ interface Rights
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter5_2.shtml#async
      */
     public function patchAsync(array $options = [
-        'card_id' => '',
-        'code' => '',
+        'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',
+        'code' => '478515832665',
         'json' => [
             'before_bonus_value' => 500,
             'bonus_value' => 600,

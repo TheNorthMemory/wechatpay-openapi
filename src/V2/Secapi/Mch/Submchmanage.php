@@ -26,7 +26,7 @@ interface Submchmanage
         ],
         'nonceless' => true,
         'query' => [
-            'action' => '',
+            'action' => 'add | query',
         ],
     ]): ResponseInterface;
 
@@ -46,7 +46,7 @@ interface Submchmanage
         ],
         'nonceless' => true,
         'query' => [
-            'action' => '',
+            'action' => 'add | query',
         ],
     ]): PromiseInterface;
 }

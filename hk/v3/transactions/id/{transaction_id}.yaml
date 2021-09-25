@@ -6,6 +6,10 @@ get:
     - 机构模式
   tags:
     - 跨境支付∙付款码支付
+    - 跨境支付∙扫码支付
+    - 跨境支付∙JSAPI支付
+    - 跨境支付∙APP支付
+    - 跨境支付∙H5支付
   summary: 查询订单(微信支付订单号)
   description: 该接口提供所有微信支付订单的查询，商户可以通过查询订单接口主动查询订单状态，完成下一步的业务逻辑。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/fusion_wallet_ch/QuickPay/chapter8_1.shtml)
   parameters:

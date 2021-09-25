@@ -4,7 +4,7 @@ basePath: ''
 info:
   title: 微信支付OpenAPI文档
   description: "整理自[微信支付官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/index.shtml) 本[项目/工具地址](https://github.com/TheNorthMemory/wechatpay-openapi)，WEB展示依赖适配XML CDATA版的[swagger-ui-dist](https://www.npmjs.com/package/@thenorthmemory/swagger-ui-dist)"
-  version: 0.0.2
+  version: 0.1.0
 schemes:
   - https
 consumes:
@@ -85,8 +85,19 @@ tags:
   - name: 支付∙银行服务商∙特约商户配置
   - name: 支付∙银行服务商∙风控信息同步
   - name: 跨境支付
+  - name: 跨境支付∙报关
   - name: 跨境支付∙付款码支付
+  - name: 跨境支付∙扫码支付
+  - name: 跨境支付∙JSAPI支付
+  - name: 跨境支付∙APP支付
+  - name: 跨境支付∙H5支付
 paths:
+  /global/v3/customs/orders:
+    $ref: ./global/v3/customs/orders.yaml
+  /global/v3/customs/redeclare:
+    $ref: ./global/v3/customs/redeclare.yaml
+  /global/v3/customs/verify-certificate:
+    $ref: ./global/v3/customs/verify-certificate.yaml
   /hk/v3/certificates:
     $ref: ./hk/v3/certificates.yaml
   /hk/v3/merchants:
@@ -99,16 +110,26 @@ paths:
     $ref: ./hk/v3/refunds/id/{refund_id}.yaml
   /hk/v3/refunds/out-refund-no/{out_refund_no}:
     $ref: ./hk/v3/refunds/out-refund-no/{out_refund_no}.yaml
+  /hk/v3/settle/settlements:
+    $ref: ./hk/v3/settle/settlements.yaml
   /hk/v3/statements:
     $ref: ./hk/v3/statements.yaml
+  /hk/v3/transactions/app:
+    $ref: ./hk/v3/transactions/app.yaml
   /hk/v3/transactions/id/{transaction_id}:
     $ref: ./hk/v3/transactions/id/{transaction_id}.yaml
   /hk/v3/transactions/id/{transaction_id}/close:
     $ref: ./hk/v3/transactions/id/{transaction_id}/close.yaml
   /hk/v3/transactions/id/{transaction_id}/reverse:
     $ref: ./hk/v3/transactions/id/{transaction_id}/reverse.yaml
+  /hk/v3/transactions/jsapi:
+    $ref: ./hk/v3/transactions/jsapi.yaml
   /hk/v3/transactions/micropay:
     $ref: ./hk/v3/transactions/micropay.yaml
+  /hk/v3/transactions/mweb:
+    $ref: ./hk/v3/transactions/mweb.yaml
+  /hk/v3/transactions/native:
+    $ref: ./hk/v3/transactions/native.yaml
   /hk/v3/transactions/out-trade-no/{out_trade_no}:
     $ref: ./hk/v3/transactions/out-trade-no/{out_trade_no}.yaml
   /hk/v3/transactions/out-trade-no/{out_trade_no}/close:

@@ -6,6 +6,10 @@ get:
     - 机构模式
   tags:
     - 跨境支付∙付款码支付
+    - 跨境支付∙扫码支付
+    - 跨境支付∙JSAPI支付
+    - 跨境支付∙APP支付
+    - 跨境支付∙H5支付
   summary: 查询单笔退款(微信支付退款订单号)
   description: 提交退款申请后，通过调用该接口查询退款状态。退款有一定延时，用零钱支付的退款20分钟内到账，银行卡支付的退款3个工作日后重新查询退款状态。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/fusion_wallet_ch/QuickPay/chapter8_3.shtml)
   parameters:

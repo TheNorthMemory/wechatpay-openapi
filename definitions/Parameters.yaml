@@ -4,3 +4,8 @@ WECHATPAY_CERTIFICATE_SERIAL:
   required: true
   name: Wechatpay-Serial
   description: 微信支付平台公钥证书序列号
+HTTP_ACCEPT_ENCODING:
+  in: header
+  name: Accept-Encoding
+  description: 账单压缩：如需对账单进行压缩，设置HTTP请求头值为gzip
+  example: gzip

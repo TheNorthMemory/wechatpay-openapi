@@ -1,0 +1,397 @@
+post:
+  x-version:
+    - 2020.04.03
+  x-role:
+    - 直连模式
+    - 机构模式
+  tags:
+    - 跨境支付∙报关
+  summary: 报关API
+  description: 该接口用于商户提交海关需要的订单附加信息。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/declarecustom_ch/chapter3_1.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - appid
+          - mchid
+          - out_trade_no
+          - transaction_id
+          - customs
+          - merchant_customs_no
+        properties:
+          appid:
+            type: string
+            description: 机构APPID
+            example: wxd678efh567hg6787
+          mchid:
+            type: string
+            description: 商户号
+            example: '1230000109'
+          out_trade_no:
+            type: string
+            description: 商户订单号
+            example: '20150806125346'
+          transaction_id:
+            type: string
+            description: 微信订单号
+            example: '1000320306201511078440737890'
+          customs:
+            type: string
+            description: 海关
+            example: SHANGHAI_ZS
+          merchant_customs_no:
+            type: string
+            description: 商户海关备案号
+            example: '123456'
+          duty:
+            type: integer
+            description: 关税
+            example: 888
+          sub_order_no:
+            type: string
+            description: 商户子订单号
+            example: '20150806125346'
+          fee_type:
+            type: string
+            description: 货币类型
+            example: CNY
+          order_fee:
+            type: integer
+            description: 子订单金额
+            example: 888
+          transport_fee:
+            type: integer
+            description: 物流费用
+            example: 888
+          product_fee:
+            type: integer
+            description: 商品费用
+            example: 888
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - appid
+          - mchid
+          - state
+          - out_trade_no
+          - transaction_id
+          - verify_department
+          - Verify_department_trade_id
+        properties:
+          appid:
+            type: string
+            description: 机构APPID
+            example: wxd678efh567hg6787
+          mchid:
+            type: string
+            description: 商户号
+            example: '1230000109'
+          state:
+            type: string
+            description: 报关状态
+            example: PROCESSING
+          out_trade_no:
+            type: string
+            description: 商户订单号
+            example: '20150806125346'
+          transaction_id:
+            type: string
+            description: 微信订单号
+            example: '1000320306201511078440737890'
+          sub_order_no:
+            type: string
+            description: 商户子订单号
+            example: '20150806125346'
+          sub_order_id:
+            type: string
+            description: 微信子订单号
+            example: '20150806125346'
+          verify_department:
+            type: string
+            description: 核验机构
+            example: UNIONPAY
+          Verify_department_trade_id:
+            type: string
+            description: 核验机构交易流水号
+            example: '2018112288340107038204310100000'
+get:
+  x-version:
+    - 2020.04.03
+  x-role:
+    - 直连模式
+    - 机构模式
+  tags:
+    - 跨境支付∙报关
+  summary: 报关查询API
+  description: 商户通过订单号查询提交的订单附加信息及订单报关状态。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/declarecustom_ch/chapter3_3.shtml)
+  parameters:
+    - name: appid
+      type: string
+      required: true
+      description: 机构APPID
+      example: wxd678efh567hg6787
+    - name: mchid
+      type: string
+      required: true
+      description: 商户号
+      example: '1230000109'
+    - name: order_type
+      type: string
+      required: true
+      description: 订单类型
+      example: out_trade_no
+      enum:
+        - out_trade_no
+        - transaction_id
+        - sub_order_no
+        - sub_order_id
+    - name: order_no
+      type: string
+      required: true
+      description: 订单号
+      example: '20150806125346'
+    - name: customs
+      type: string
+      required: true
+      description: 海关
+      example: SHANGHAI_ZS
+    - name: offset
+      type: integer
+      description: 偏移量
+      example: 1
+    - name: limit
+      type: integer
+      description: 请求最大记录条数
+      example: 20
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - appid
+          - mchid
+          - transaction_id
+          - verify_department
+          - verify_department_trade_id
+          - offset
+          - limit
+          - total_count
+          - data
+        properties:
+          appid:
+            type: string
+            description: 机构APPID
+            example: wxd678efh567hg6787
+          mchid:
+            type: string
+            description: 商户号
+            example: '1230000109'
+          transaction_id:
+            type: string
+            description: 微信订单号
+            example: '1000320306201511078440737890'
+          verify_department:
+            type: string
+            description: 核验机构
+            example: UNIONPAY
+          verify_department_trade_id:
+            type: string
+            description: 核验机构流水号
+            example: '2018112288340107038204310100000'
+          offset:
+            type: integer
+            description: 偏移量
+            example: 0
+          limit:
+            type: integer
+            description: 请求最大记录条数
+            example: 20
+          total_count:
+            type: integer
+            description: 查询结果总条数
+            example: 1
+          data:
+            type: array
+            description: 报关数据包
+            items:
+              type: object
+              required:
+                - customs
+                - state
+                - modify_time
+              properties:
+                sub_order_no:
+                  type: string
+                  description: 商户子单号
+                  example: '20150806125346'
+                sub_order_id:
+                  type: string
+                  description: 微信子单号
+                  example: '20150806125346'
+                mch_customs_no:
+                  type: string
+                  description: 商户海关备案号
+                  example: '1234567'
+                customs:
+                  type: string
+                  description: 海关代码
+                  example: SHANGHAI_ZS
+                fee_type:
+                  type: string
+                  description: 币种
+                  example: CNY
+                order_fee:
+                  type: integer
+                  description: 子单金额
+                  example: 888
+                duty:
+                  type: integer
+                  description: 关税
+                  example: 888
+                transport_fee:
+                  type: integer
+                  description: 物流费用
+                  example: 888
+                product_fee:
+                  type: integer
+                  description: 商品费用
+                  example: 888
+                state:
+                  type: string
+                  description: 报关状态
+                  example: PROCESSING
+                explanation:
+                  type: string
+                  description: 报关结果说明
+                  example: 支付单已存在并且为非退单状态
+                modify_time:
+                  type: string
+                  description: 最后更新时间
+                  example: '2015-09-01T10:00:00+08:00'
+patch:
+  x-version:
+    - 2020.04.03
+  x-role:
+    - 直连模式
+    - 机构模式
+  tags:
+    - 跨境支付∙报关
+  summary: 报关信息修改API
+  description: 该接口用于商户修改订单附加信息。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/declarecustom_ch/chapter3_5.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - appid
+          - mchid
+          - out_trade_no
+          - transaction_id
+          - customs
+          - merchant_customs_no
+        properties:
+          appid:
+            type: string
+            description: 机构APPID
+            example: wxd678efh567hg6787
+          mchid:
+            type: string
+            description: 商户号
+            example: '1230000109'
+          out_trade_no:
+            type: string
+            description: 商户订单号
+            example: '20150806125346'
+          transaction_id:
+            type: string
+            description: 微信订单号
+            example: '1000320306201511078440737890'
+          sub_order_no:
+            type: string
+            description: 商户子订单号
+            example: '20150806125346'
+          customs:
+            type: string
+            description: 海关编码
+            example: SHANGHAI_ZS
+          merchant_customs_no:
+            type: string
+            description: 商户海关备案号
+            example: '123456'
+          duty:
+            type: integer
+            description: 关税
+            example: 888
+          order_fee:
+            type: integer
+            description: 子订单金额
+            example: 888
+          transport_fee:
+            type: integer
+            description: 物流费用
+            example: 888
+          product_fee:
+            type: integer
+            description: 商品费用
+            example: 888
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - appid
+          - mchid
+          - state
+          - out_trade_no
+          - transaction_id
+          - modify_time
+          - verify_department
+          - verify_department_trade_id
+        properties:
+          appid:
+            type: string
+            description: 机构APPID
+            example: wxd678efh567hg6787
+          mchid:
+            type: string
+            description: 商户号
+            example: '1230000109'
+          state:
+            type: string
+            description: 报关状态
+            example: SUBMITTED
+          out_trade_no:
+            type: string
+            description: 商户订单号
+            example: '20150806125346'
+          transaction_id:
+            type: string
+            description: 微信订单号
+            example: '1000320306201511078440737890'
+          sub_order_no:
+            type: string
+            description: 商户子订单号
+            example: '20150806125346'
+          sub_order_id:
+            type: string
+            description: 微信子订单号
+            example: '20150806125346'
+          modify_time:
+            type: string
+            description: 最后更新时间
+            example: '2015-09-01T10:00:00+08:00'
+          verify_department:
+            type: string
+            description: 核验机构
+            example: UNIONPAY
+          verify_department_trade_id:
+            type: string
+            description: 核验机构流水号
+            example: '2018112288340107038204310100000'

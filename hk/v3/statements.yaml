@@ -6,7 +6,11 @@ get:
     - 机构模式
   tags:
     - 跨境支付∙付款码支付
-  summary: 查询结算资金明细API
+    - 跨境支付∙扫码支付
+    - 跨境支付∙JSAPI支付
+    - 跨境支付∙APP支付
+    - 跨境支付∙H5支付
+  summary: 下载对账单
   description: 商户可以通过该接口下载历史交易清单。比如掉单、系统错误等导致商户侧和微信侧数据不一致，通过对账单核对后可校正支付状态。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/fusion_wallet_ch/QuickPay/chapter8_5.shtml)
   parameters:
     - name: date
@@ -20,6 +24,25 @@ get:
       type: string
       description: 商户号
       example: '1900000109'
+    - $ref: '../../definitions/Parameters.yaml#/HTTP_ACCEPT_ENCODING'
   responses:
     '200':
+      headers:
+        Wechatpay-Serial:
+          type: string
+          description: 微信支付平台证书序列号
+          example: 5K8264ILTKch16CQ2502SI8ZNMTM67VS
+        Wechatpay-Nonce:
+          type: string
+          description: 应答随机串
+          example: 5K8264ILTKch16CQ2502SI8ZNMTM67VS
+        Wechatpay-Timestamp:
+          type: string
+          format: int32
+          description: 应答时间戳
+          example: 12345678999
+        Wechatpay-Statement-Sha1:
+          type: string
+          description: SHA1值
+          example: WcO+t3D8Kg71dTlKwN7r9PzUOXeaBJwp8/FOuSxcuSkXsoVYxBpsAidprySCjHCjmaglNcjoKJQLJ28/Asl93joTW39FX6i07lXhnbPknezAlwmvPdnQuI01HZsZF9V1i6ggZjBiAd5lG8bZtTxZOJ87ub2i9GuJ3Nr/NUc9VeY=
       schema: {}

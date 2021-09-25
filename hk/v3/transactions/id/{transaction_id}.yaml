@@ -36,6 +36,7 @@ get:
       required: true
       type: string
       description: 微信支付订单号
+      example: '1217752501201407033233368018'
   responses:
     '200':
       schema:

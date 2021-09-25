@@ -14,29 +14,35 @@ get:
   description: 商户在交易完结之后，可按结算日期查询已结算资金明细（sette_state为SETTLED），也可以查询未结算资金明细（sette_state为UNSETTLE）。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/fusion_wallet_ch/QuickPay/chapter8_10.shtml)
   parameters:
     - name: sub_mchid
+      in: query
       type: string
       description: 子商户号
       example: '1900000101'
     - name: settle_state
+      in: query
       type: string
       required: true
       description: 结算状态
       example: SETTLED
       enum: [SETTLED, UNSETTLE]
     - name: settle_start_date
+      in: query
       type: string
       description: 结算开始日期
       example: '20091225'
     - name: settle_end_date
+      in: query
       type: string
       description: 结算结束日期
       example: '20091226'
     - name: limit
+      in: query
       type: integer
       required: true
       description: 最大记录条数
       example: 5
     - name: offset
+      in: query
       type: integer
       required: true
       description: 记录起始位置

@@ -131,16 +131,19 @@ get:
   description: 商户通过订单号查询提交的订单附加信息及订单报关状态。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/declarecustom_ch/chapter3_3.shtml)
   parameters:
     - name: appid
+      in: query
       type: string
       required: true
       description: 机构APPID
       example: wxd678efh567hg6787
     - name: mchid
+      in: query
       type: string
       required: true
       description: 商户号
       example: '1230000109'
     - name: order_type
+      in: query
       type: string
       required: true
       description: 订单类型
@@ -151,20 +154,24 @@ get:
         - sub_order_no
         - sub_order_id
     - name: order_no
+      in: query
       type: string
       required: true
       description: 订单号
       example: '20150806125346'
     - name: customs
+      in: query
       type: string
       required: true
       description: 海关
       example: SHANGHAI_ZS
     - name: offset
+      in: query
       type: integer
       description: 偏移量
       example: 1
     - name: limit
+      in: query
       type: integer
       description: 请求最大记录条数
       example: 20

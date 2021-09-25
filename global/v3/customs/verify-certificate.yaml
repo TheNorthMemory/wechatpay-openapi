@@ -61,11 +61,11 @@ post:
           certificate_id:
             type: string
             description: 证件号
-            example: '330821198809085211'
+            example: 'Rsa::encrypt(0101211X, WechatpayPlatformCertificateInstance, OPENSSL_PKCS1_PADDING)'
           certificate_name:
             type: string
             description: 证件姓名
-            example: 张三
+            example: 'Rsa::encrypt(张三, WechatpayPlatformCertificateInstance, OPENSSL_PKCS1_PADDING)'
   responses:
     '200':
       schema:

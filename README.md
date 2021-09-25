@@ -2,6 +2,12 @@
 
 整理自[微信支付官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/index.shtml)
 
+## PHP包
+
+推荐使用 `composer v2` 安装
+
+`composer require --dev iwechatpay/openapi`
+
 ## 自有语法糖规则
 
 | URI | 模版变量 | 值 | 说明

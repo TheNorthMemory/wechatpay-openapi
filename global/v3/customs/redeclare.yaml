@@ -35,6 +35,7 @@ post:
           transaction_id:
             type: string
             description: 微信订单号
+            example: '1000320306201511078440737890'
           sub_order_no:
             type: string
             description: 商户子单号

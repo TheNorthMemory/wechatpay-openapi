@@ -27,7 +27,7 @@ get:
       type: string
       description: 机构商户号
       example: '1900000100'
-    - name: id
+    - name: transaction_id
       in: path
       required: true
       type: string

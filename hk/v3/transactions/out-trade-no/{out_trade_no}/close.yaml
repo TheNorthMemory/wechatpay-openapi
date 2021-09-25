@@ -1,0 +1,39 @@
+post:
+  x-version:
+    - 2020.01.08
+  x-role:
+    - 直连模式
+    - 机构模式
+  tags:
+    - 跨境支付∙付款码支付
+  summary: 关闭订单(商户订单号)
+  description: 以下情况需要调用关单接口：商户订单支付失败需要生成新单号重新发起支付，要对原订单号调用关单，避免重复支付；系统下单后，用户支付超时，系统退出不再受理，避免用户继续，请调用关单接口。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/fusion_wallet_ch/NativePay/chapter8_6.shtml)
+  parameters:
+    - name: out_trade_no
+      in: path
+      type: string
+      required: true
+      description: 商户订单号
+      example: '1217752501201407033233368018'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - mchid
+        properties:
+          mchid:
+            type: string
+            description: 直连商户号
+            example: '1230000109'
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1230000109'
+          sp_mchid:
+            type: string
+            description: 机构商户号
+            example: '1230000109'
+  responses:
+    204: {}

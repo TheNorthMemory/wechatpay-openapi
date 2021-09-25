@@ -101,14 +101,18 @@ paths:
     $ref: ./hk/v3/refunds/out-refund-no/{out_refund_no}.yaml
   /hk/v3/statements:
     $ref: ./hk/v3/statements.yaml
-  /hk/v3/transactions/id/{id}:
-    $ref: ./hk/v3/transactions/id/{id}.yaml
+  /hk/v3/transactions/id/{transaction_id}:
+    $ref: ./hk/v3/transactions/id/{transaction_id}.yaml
+  /hk/v3/transactions/id/{transaction_id}/close:
+    $ref: ./hk/v3/transactions/id/{transaction_id}/close.yaml
   /hk/v3/transactions/id/{transaction_id}/reverse:
     $ref: ./hk/v3/transactions/id/{transaction_id}/reverse.yaml
   /hk/v3/transactions/micropay:
     $ref: ./hk/v3/transactions/micropay.yaml
   /hk/v3/transactions/out-trade-no/{out_trade_no}:
     $ref: ./hk/v3/transactions/out-trade-no/{out_trade_no}.yaml
+  /hk/v3/transactions/out-trade-no/{out_trade_no}/close:
+    $ref: ./hk/v3/transactions/out-trade-no/{out_trade_no}/close.yaml
   /hk/v3/transactions/out-trade-no/{out_trade_no}/reverse:
     $ref: ./hk/v3/transactions/out-trade-no/{out_trade_no}/reverse.yaml
   /applyment/micro/getstate:

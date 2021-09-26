@@ -5,11 +5,15 @@ namespace WeChatPay\OpenAPI;
 /**
  * 这是一个纯接口描述文件，由程序自动生成，旨在为IDE提供结构提示，无他用。
  * @property-read V3\Vehicle $vehicle
+ * @property-read V3\Transactions $transactions
  * @property-read V3\Smartguide $smartguide
+ * @property-read V3\Settle $settle
+ * @property-read V3\Refunds $refunds
  * @property-read V3\Refund $refund
  * @property-read V3\Profitsharing $profitsharing
  * @property-read V3\Payscore $payscore
  * @property-read V3\Pay $pay
+ * @property-read V3\Merchants $merchants
  * @property-read V3\MerchantStore $merchantStore
  * @property-read V3\MerchantService $merchantService
  * @property-read V3\Merchant $merchant
@@ -17,6 +21,7 @@ namespace WeChatPay\OpenAPI;
  * @property-read V3\Goldplan $goldplan
  * @property-read V3\Ecommerce $ecommerce
  * @property-read V3\DiscountCard $discountCard
+ * @property-read V3\Customs $customs
  * @property-read V3\CombineTransactions $combineTransactions
  * @property-read V3\Businesscircle $businesscircle
  * @property-read V3\Brand $brand
@@ -25,6 +30,7 @@ namespace WeChatPay\OpenAPI;
  * @property-read V3\Applyment4sub $applyment4sub
  * @property-read V3\Apply4subject $apply4subject
  * @property-read V3\Apply4sub $apply4sub
+ * @property-read V3\Statements $statements
  * @property-read V3\Certificates $certificates
  */
 interface V3

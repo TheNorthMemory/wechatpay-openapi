@@ -1,6 +1,6 @@
 {
     "name": "iwechatpay/openapi",
-    "description": "这是一个纯接口描述包，源文件由程序自动生成，旨在为IDE提供结构提示，无他用。",
+    "description": "为 wechatpay/wechatpay 增加IDE提示的接口描述包。",
     "keywords": [
         "wechatpay",
         "openapi-chainable",

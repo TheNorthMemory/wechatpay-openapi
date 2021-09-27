@@ -1,0 +1,209 @@
+post:
+  x-api-cert-required: true
+  tags:
+    - 企微∙企业红包
+  summary: 发放企业红包
+  description: '[官方文档](https://open.work.weixin.qq.com/api/doc/90000/90135/90275)'
+  consumes:
+    - application/xml
+  produces:
+    - application/xml
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        xml:
+          name: xml
+        required:
+          - nonce_str
+          - sign
+          - mch_billno
+          - mch_id
+          - wxappid
+          - sender_name
+          - re_openid
+          - total_amount
+          - total_num
+          - wishing
+          - client_ip
+          - act_name
+          - remark
+        properties:
+          nonce_str:
+            type: string
+            description: 随机字符串
+            example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+            maxLength: 32
+          sign:
+            type: string
+            description: 签名
+            example: C380BEC2BFD727A4B6845133519F3AD6
+            maxLength: 32
+          mch_billno:
+            type: string
+            description: 商户订单号
+            example: '10000098201411111234567890'
+            maxLength: 28
+          mch_id:
+            type: string
+            description: 商户号
+            example: '10000098'
+            maxLength: 32
+          wxappid:
+            type: string
+            description: 公众账号appid
+            example: wx8888888888888888
+            maxLength: 32
+          agentid:
+            format: int32
+            type: integer
+            description: 发送红包的应用id
+            example: '1'
+          sender_name:
+            type: string
+            description: 发送者名称
+            example: XX活动
+            maxLength: 128
+          sender_header_media_id:
+            type: string
+            description: 发送者头像
+            example: 1G6nrLmr5EC3MMb_-zK1dDdzmd0p7cNliYu9V5w7o8K0
+            maxLength: 128
+          re_openid:
+            type: string
+            description: 用户openid
+            example: oxTWIuGaIt6gTKsQRLau2M0yL16E
+            maxLength: 32
+          total_amount:
+            format: int32
+            type: integer
+            description: 付款金额
+            example: '1000'
+          wishing:
+            type: string
+            description: 红包祝福语
+            example: 感谢您参加猜灯谜活动，祝您元宵节快乐！
+            maxLength: 128
+          act_name:
+            type: string
+            description: 活动名称
+            example: 猜灯谜抢红包活动
+            maxLength: 32
+          remark:
+            type: string
+            description: 备注
+            example: 猜越多得越多，快来抢！
+            maxLength: 256
+          scene_id:
+            type: string
+            description: 场景id
+            example: PRODUCT_8
+            maxLength: 32
+            nullable: true
+            enum:
+              - PRODUCT_1
+              - PRODUCT_2
+              - PRODUCT_3
+              - PRODUCT_4
+              - PRODUCT_5
+              - PRODUCT_6
+              - PRODUCT_7
+              - PRODUCT_8
+          workwx_sign:
+            type: string
+            required: true
+            description: 活动信息
+            example: C380BEC2BFD727A4B6845133519F3AD6
+            maxLength: 32
+  responses:
+    '200':
+      description: ''
+      schema:
+        type: object
+        xml:
+          name: xml
+        required:
+          - return_code
+          - result_code
+          - mch_billno
+          - mch_id
+          - wxappid
+          - re_openid
+          - total_amount
+          - send_listid
+        properties:
+          return_code:
+            type: string
+            description: 返回状态码
+            example: SUCCESS
+            maxLength: 16
+          return_msg:
+            type: string
+            description: 返回信息
+            example: 签名失败
+            maxLength: 128
+            nullable: true
+          sign:
+            type: string
+            description: 微信支付签名
+            example: C380BEC2BFD727A4B6845133519F3AD6
+            maxLength: 32
+          result_code:
+            type: string
+            description: 业务结果
+            example: SUCCESS
+            maxLength: 16
+          err_code:
+            type: string
+            description: 错误代码
+            example: SYSTEMERROR
+            maxLength: 32
+            nullable: true
+          err_code_des:
+            type: string
+            description: 错误代码描述
+            example: 系统错误
+            maxLength: 128
+            nullable: true
+          mch_billno:
+            type: string
+            description: 商户订单号
+            example: '10000098201411111234567890'
+            maxLength: 28
+          mch_id:
+            type: string
+            description: 商户号
+            example: '10000098'
+            maxLength: 32
+          wxappid:
+            type: string
+            description: 公众账号appid
+            example: wx8888888888888888
+            maxLength: 32
+          re_openid:
+            type: string
+            description: 用户openid
+            example: oxTWIuGaIt6gTKsQRLau2M0yL16E
+            maxLength: 32
+          total_amount:
+            format: int32
+            type: integer
+            description: 付款金额
+            example: '1000'
+          send_listid:
+            type: string
+            description: 微信单号
+            example: '100000000020150520314766074200'
+            maxLength: 32
+          sender_name:
+            type: string
+            description: 发送者名称
+            example: XX活动
+            maxLength: 128
+          sender_header_media_id:
+            type: string
+            description: 发送者头像
+            example: 1G6nrLmr5EC3MMb_-zK1dDdzmd0p7cNliYu9V5w7o8K0
+            maxLength: 128

@@ -1,0 +1,144 @@
+post:
+  x-api-cert-required: true
+  tags:
+    - 企微∙向员工付款
+  summary: 查询付款记录
+  description: '[官方文档](https://open.work.weixin.qq.com/api/doc/90000/90135/90279)'
+  consumes:
+    - application/xml
+  produces:
+    - application/xml
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        xml:
+          name: xml
+        required:
+          - nonce_str
+          - sign
+          - mch_billno
+          - mch_id
+          - appid
+        properties:
+          nonce_str:
+            type: string
+            description: 随机字符串
+            example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+            maxLength: 32
+          sign:
+            type: string
+            description: 签名
+            example: C380BEC2BFD727A4B6845133519F3AD6
+            maxLength: 32
+          partner_trade_no:
+            type: string
+            description: 商户订单号
+            example: '10000098201411111234567890'
+            maxLength: 28
+          mch_id:
+            type: string
+            description: 商户号
+            example: '10000098'
+            maxLength: 32
+          appid:
+            type: string
+            description: Appid
+            example: wxe062425f740d30d8
+            maxLength: 32
+  responses:
+    '200':
+      description: ''
+      schema:
+        type: object
+        xml:
+          name: xml
+        required:
+          - return_code
+          - result_code
+          - partner_trade_no
+          - mch_id
+          - detail_id
+          - status
+          - reason
+          - openid
+          - payment_amount
+          - transfer_time
+          - desc
+        properties:
+          return_code:
+            type: string
+            description: 返回状态码
+            example: SUCCESS
+            maxLength: 16
+          return_msg:
+            type: string
+            description: 返回信息
+            example: 签名失败
+            maxLength: 128
+            nullable: true
+          result_code:
+            type: string
+            description: 业务结果
+            example: SUCCESS
+            maxLength: 16
+          err_code:
+            type: string
+            description: 错误代码
+            example: SYSTEMERROR
+            maxLength: 32
+            nullable: true
+          err_code_des:
+            type: string
+            description: 错误代码描述
+            example: 系统错误
+            maxLength: 128
+            nullable: true
+          partner_trade_no:
+            type: string
+            description: 商户订单号
+            example: '10000098201411111234567890'
+            maxLength: 28
+          mch_id:
+            type: string
+            description: 商户号
+            example: '10000098'
+            maxLength: 32
+          detail_id:
+            type: string
+            description: 红包单号
+            example: '1000000000201503283103439304'
+            maxLength: 32
+          status:
+            type: string
+            description: 红包状态
+            example: RECEIVED
+            maxLength: 16
+          reason:
+            type: string
+            description: 失败原因
+            example: 余额不足
+            maxLength: 32
+            nullable: true
+          transfer_name:
+            type: string
+            description: 收款用户姓名
+            example: 王小王
+            maxLength: 64
+          payment_amount:
+            format: int32
+            type: integer
+            description: 红包退款金额
+            example: '8000'
+          transfer_time:
+            type: string
+            description: 转账时间
+            example: '2015-04-21 20:00:00'
+            maxLength: 32
+          desc:
+            type: string
+            description: 付款描述
+            example: 用车补贴
+            maxLength: 100

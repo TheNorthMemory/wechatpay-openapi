@@ -4,7 +4,7 @@ basePath: ''
 info:
   title: 微信支付OpenAPI文档
   description: "整理自[官方文档中心](https://pay.weixin.qq.com/wiki/doc/apiv3/index.shtml) 本[项目/工具地址](https://github.com/TheNorthMemory/wechatpay-openapi)，WEB展示依赖适配XML CDATA版的[swagger-ui-dist](https://www.npmjs.com/package/@thenorthmemory/swagger-ui-dist)"
-  version: 0.2.0
+  version: 0.3.0
 schemes:
   - https
 consumes:
@@ -84,6 +84,8 @@ tags:
   - name: 支付∙银行服务商∙特约商户报备
   - name: 支付∙银行服务商∙特约商户配置
   - name: 支付∙银行服务商∙风控信息同步
+  - name: 企微∙企业红包
+  - name: 企微∙向员工付款
   - name: 跨境支付
   - name: 跨境支付∙报关
   - name: 跨境支付∙付款码支付
@@ -192,6 +194,10 @@ paths:
     $ref: ./v2/mmpaymkttransfers/gettransferinfo.yaml
   /mmpaymkttransfers/pay_bank:
     $ref: ./v2/mmpaymkttransfers/pay_bank.yaml
+  /mmpaymkttransfers/promotion/paywwsptrans2pocket:
+    $ref: ./v2/mmpaymkttransfers/promotion/paywwsptrans2pocket.yaml
+  /mmpaymkttransfers/promotion/querywwsptrans2pocket:
+    $ref: ./v2/mmpaymkttransfers/promotion/querywwsptrans2pocket.yaml
   /mmpaymkttransfers/promotion/transfers:
     $ref: ./v2/mmpaymkttransfers/promotion/transfers.yaml
   /mmpaymkttransfers/query_bank:
@@ -200,12 +206,16 @@ paths:
     $ref: ./v2/mmpaymkttransfers/query_coupon_stock.yaml
   /mmpaymkttransfers/querycouponsinfo:
     $ref: ./v2/mmpaymkttransfers/querycouponsinfo.yaml
+  /mmpaymkttransfers/queryworkwxredpack:
+    $ref: ./v2/mmpaymkttransfers/queryworkwxredpack.yaml
   /mmpaymkttransfers/send_coupon:
     $ref: ./v2/mmpaymkttransfers/send_coupon.yaml
   /mmpaymkttransfers/sendgroupredpack:
     $ref: ./v2/mmpaymkttransfers/sendgroupredpack.yaml
   /mmpaymkttransfers/sendredpack:
     $ref: ./v2/mmpaymkttransfers/sendredpack.yaml
+  /mmpaymkttransfers/sendworkwxredpack:
+    $ref: ./v2/mmpaymkttransfers/sendworkwxredpack.yaml
   /papay/deletecontract:
     $ref: ./v2/papay/deletecontract.yaml
   /papay/entrustweb:

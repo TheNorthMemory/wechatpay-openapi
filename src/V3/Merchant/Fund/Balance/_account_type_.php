@@ -16,7 +16,7 @@ interface _account_type_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/amount/chapter3_3.shtml
      */
     public function get(array $options = [
-        'account_type' => '',
+        'account_type' => 'BASIC | OPERATION | FEES',
     ]): ResponseInterface;
 
     /**
@@ -25,6 +25,6 @@ interface _account_type_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/amount/chapter3_3.shtml#async
      */
     public function getAsync(array $options = [
-        'account_type' => '',
+        'account_type' => 'BASIC | OPERATION | FEES',
     ]): PromiseInterface;
 }

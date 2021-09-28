@@ -23,7 +23,7 @@ interface Stocks
             'stock_creator_mchid' => '',
             'create_start_time' => '2015-05-20T13:29:35.120+08:00',
             'create_end_time' => '2015-05-20T13:29:35.120+08:00',
-            'status' => '',
+            'status' => 'unactivated | audit | running | stoped',
         ],
     ]): ResponseInterface;
 
@@ -39,7 +39,7 @@ interface Stocks
             'stock_creator_mchid' => '',
             'create_start_time' => '2015-05-20T13:29:35.120+08:00',
             'create_end_time' => '2015-05-20T13:29:35.120+08:00',
-            'status' => '',
+            'status' => 'unactivated | audit | running | stoped',
         ],
     ]): PromiseInterface;
 }

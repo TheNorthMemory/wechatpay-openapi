@@ -11,6 +11,7 @@ get:
     - name: openid
       in: query
       required: true
+      type: string
       description: 用户标识
       example: obLatjnx9gnqzS4myYGmLZ7LgLBA
     - name: appid

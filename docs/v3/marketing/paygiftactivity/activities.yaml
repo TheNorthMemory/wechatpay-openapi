@@ -25,11 +25,13 @@ get:
       description: 活动名称
     - name: activity_status
       in: query
+      type: string
       nullable: true
       allOf:
         - $ref: '../../../definitions/Enumerations.yaml#ActivityStatus'
     - name: award_type
       in: query
+      type: string
       nullable: true
       allOf:
         - $ref: '../../../definitions/Enumerations.yaml#AwardType'

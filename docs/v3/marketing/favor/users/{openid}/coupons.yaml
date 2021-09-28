@@ -83,6 +83,7 @@ get:
       description: 批次号
     - name: status
       in: query
+      type: string
       nullable: true
       allOf:
         - $ref: '../../../../../definitions/Enumerations.yaml#FavorCouponStatus'

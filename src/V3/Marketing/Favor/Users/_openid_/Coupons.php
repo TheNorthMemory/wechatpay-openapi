@@ -55,7 +55,7 @@ interface Coupons
         'query' => [
             'appid' => '',
             'stock_id' => '',
-            'status' => '',
+            'status' => 'SENDED | USED | EXPIRED',
             'creator_mchid' => '',
             'sender_mchid' => '',
             'available_mchid' => '',
@@ -74,7 +74,7 @@ interface Coupons
         'query' => [
             'appid' => '',
             'stock_id' => '',
-            'status' => '',
+            'status' => 'SENDED | USED | EXPIRED',
             'creator_mchid' => '',
             'sender_mchid' => '',
             'available_mchid' => '',

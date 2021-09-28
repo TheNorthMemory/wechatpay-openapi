@@ -21,8 +21,8 @@ interface Activities
             'offset' => 0,
             'limit' => 0,
             'activity_name' => '',
-            'activity_status' => '',
-            'award_type' => '',
+            'activity_status' => 'CREATE_ACT_STATUS | ONGOING_ACT_STATUS | TERMINATE_ACT_STATUS | STOP_ACT_STATUS',
+            'award_type' => 'BUSIFAVOR',
         ],
     ]): ResponseInterface;
 
@@ -36,8 +36,8 @@ interface Activities
             'offset' => 0,
             'limit' => 0,
             'activity_name' => '',
-            'activity_status' => '',
-            'award_type' => '',
+            'activity_status' => 'CREATE_ACT_STATUS | ONGOING_ACT_STATUS | TERMINATE_ACT_STATUS | STOP_ACT_STATUS',
+            'award_type' => 'BUSIFAVOR',
         ],
     ]): PromiseInterface;
 }

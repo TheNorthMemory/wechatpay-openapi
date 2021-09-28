@@ -15,6 +15,7 @@ get:
     - name: sub_mchid
       in: query
       required: true
+      type: string
       description: 二级商户号
       example: '1900000109'
   responses:

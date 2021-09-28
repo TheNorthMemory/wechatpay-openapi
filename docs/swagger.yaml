@@ -4,7 +4,7 @@ basePath: ''
 info:
   title: 微信支付OpenAPI文档
   description: "整理自[官方文档中心](https://pay.weixin.qq.com/wiki/doc/apiv3/index.shtml) 本[项目/工具地址](https://github.com/TheNorthMemory/wechatpay-openapi)，WEB展示依赖适配XML CDATA版的[swagger-ui-dist](https://www.npmjs.com/package/@thenorthmemory/swagger-ui-dist)"
-  version: 0.3.0
+  version: 0.4.0
 schemes:
   - https
 consumes:
@@ -252,10 +252,16 @@ paths:
     $ref: ./v2/pay/partner/pappayapply.yaml
   /pay/profitsharingaddreceiver:
     $ref: ./v2/pay/profitsharingaddreceiver.yaml
+  /pay/profitsharingmerchantratioquery:
+    $ref: ./v2/pay/profitsharingmerchantratioquery.yaml
+  /pay/profitsharingorderamountquery:
+    $ref: ./v2/pay/profitsharingorderamountquery.yaml
   /pay/profitsharingquery:
     $ref: ./v2/pay/profitsharingquery.yaml
   /pay/profitsharingremovereceiver:
     $ref: ./v2/pay/profitsharingremovereceiver.yaml
+  /pay/profitsharingreturnquery:
+    $ref: ./v2/pay/profitsharingreturnquery.yaml
   /pay/querycombinedorder:
     $ref: ./v2/pay/querycombinedorder.yaml
   /pay/queryexchagerate:
@@ -312,6 +318,8 @@ paths:
     $ref: ./v2/secapi/pay/profitsharing.yaml
   /secapi/pay/profitsharingfinish:
     $ref: ./v2/secapi/pay/profitsharingfinish.yaml
+  /secapi/pay/profitsharingreturn:
+    $ref: ./v2/secapi/pay/profitsharingreturn.yaml
   /secapi/pay/refund:
     $ref: ./v2/secapi/pay/refund.yaml
   /secapi/pay/reverse:

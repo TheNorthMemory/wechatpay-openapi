@@ -53,7 +53,7 @@ post:
       description: ''
       schema:
         allOf:
-          - $ref: '../../../definitions/wxpay.service.yaml#/general.response'
+          - $ref: '../../definitions/wxpay.service.yaml#/general.response'
           - type: object
             xml:
               name: xml

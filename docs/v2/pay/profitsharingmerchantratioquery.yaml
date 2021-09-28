@@ -1,0 +1,102 @@
+post:
+  tags:
+    - 支付∙服务商∙分账
+  summary: 查询最大分账比例API
+  description: '服务商可以查询子商户设置的允许服务商分账的最大比例。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/allocation_sp.php?chapter=25_11&index=8)'
+  consumes:
+    - application/xml
+  produces:
+    - application/xml
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        xml:
+          name: xml
+        required:
+          - mch_id
+          - nonce_str
+          - sign
+        properties:
+          mch_id:
+            type: string
+            description: 商户号
+            example: '1900000100'
+            maxLength: 32
+          sub_mch_id:
+            type: string
+            description: 子商户号
+            example: '1900000109'
+            maxLength: 32
+          brand_mch_id:
+            type: string
+            description: 品牌主商户号
+            example: '1900000108'
+            nullable: true
+            maxLength: 32
+          nonce_str:
+            type: string
+            description: 随机字符串
+            example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+            maxLength: 32
+          sign:
+            type: string
+            description: 签名
+            example: C380BEC2BFD727A4B6845133519F3AD6C380BEC2BFD727A4B6845133519F3AD6
+            maxLength: 64
+          sign_type:
+            type: string
+            description: 签名类型
+            example: HMAC-SHA256
+            maxLength: 32
+  responses:
+    '200':
+      description: ''
+      schema:
+        allOf:
+          - $ref: '../../../definitions/wxpay.service.yaml#/general.response'
+          - type: object
+            xml:
+              name: xml
+            required:
+              - mch_id
+              - max_ratio
+              - nonce_str
+              - sign
+            properties:
+              mch_id:
+                type: string
+                description: 商户号
+                example: '1900000100'
+                maxLength: 32
+              sub_mch_id:
+                type: string
+                description: 子商户号
+                example: '1900000109'
+                maxLength: 32
+              brand_mch_id:
+                type: string
+                description: 品牌主商户号
+                example: '1900000108'
+                nullable: true
+                maxLength: 32
+              transaction_id:
+                type: string
+                description: 微信订单号
+                example: '4208450740201411110007820472'
+                maxLength: 32
+              max_ratio:
+                type: integer
+                description: 最大分账比例
+                example: '2000'
+              nonce_str:
+                type: string
+                description: 随机字符串
+                example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+                maxLength: 32
+              sign:
+                type: string
+                description: 签名
+                example: C380BEC2BFD727A4B6845133519F3AD6C380BEC2BFD727A4B6845133519F3AD6
+                maxLength: 64

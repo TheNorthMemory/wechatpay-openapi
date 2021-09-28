@@ -18,6 +18,8 @@ namespace WeChatPay\OpenAPI\V2;
  * @property-read Pay\Paporderquery $paporderquery
  * @property-read Pay\Pappayapply $pappayapply
  * @property-read Pay\Profitsharingaddreceiver $profitsharingaddreceiver
+ * @property-read Pay\Profitsharingmerchantratioquery $profitsharingmerchantratioquery
+ * @property-read Pay\Profitsharingorderamountquery $profitsharingorderamountquery
  * @property-read Pay\Profitsharingquery $profitsharingquery
  * @property-read Pay\Profitsharingremovereceiver $profitsharingremovereceiver
  * @property-read Pay\Querycombinedorder $querycombinedorder

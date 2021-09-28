@@ -1,0 +1,222 @@
+post:
+  x-api-cert-required: true
+  tags:
+    - 支付∙服务商∙分账
+  summary: 分账回退
+  description: '此功能需要接收方在商户平台-交易中心-分账-分账接收设置下，开启同意分账回退后，才能使用。分账回退的时限是180天。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/allocation_sp.php?chapter=25_7&index=9)'
+  consumes:
+    - application/xml
+  produces:
+    - application/xml
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        allOf:
+        - type: object
+          xml:
+            name: xml
+          required:
+            - mch_id
+            - sub_mch_id
+            - appid
+            - nonce_str
+            - sign
+            - out_return_no
+            - return_account_type
+            - return_account
+            - return_amount
+            - description
+          properties:
+            mch_id:
+              type: string
+              description: 商户号
+              example: '1900000100'
+              maxLength: 32
+            sub_mch_id:
+              type: string
+              description: 子商户号
+              example: '1900000109'
+              maxLength: 32
+            appid:
+              type: string
+              description: 公众账号ID
+              example: wx8888888888888888
+              maxLength: 32
+            sub_appid:
+              type: string
+              description: 子商户公众账号ID
+              example: wx8888888888888888
+              maxLength: 32
+              nullable: true
+            nonce_str:
+              type: string
+              description: 随机字符串
+              example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+              maxLength: 32
+            sign:
+              type: string
+              description: 签名
+              example: C380BEC2BFD727A4B6845133519F3AD6C380BEC2BFD727A4B6845133519F3AD6
+              maxLength: 64
+            sign_type:
+              type: string
+              description: 签名类型
+              example: HMAC-SHA256
+              maxLength: 32
+              nullable: true
+            order_id:
+              type: string
+              description: 微信分账单号
+              example: '3008450740201411110007820472'
+              maxLength: 64
+            out_order_no:
+              type: string
+              description: 商户分账单号
+              example: P20150806125346
+              maxLength: 64
+            out_return_no:
+              type: string
+              description: 商户回退单号
+              example: 'R20190516001'
+              maxLength: 32
+            return_account_type:
+              type: string
+              description: 回退方类型
+              example: 'MERCHANT_ID'
+              maxLength: 32
+            return_account:
+              type: string
+              description: 回退方账号
+              example: '86693852'
+              maxLength: 64
+            return_amount:
+              type: integer
+              description: 回退金额
+              example: '888'
+            description:
+              type: string
+              description: 回退描述
+              example: '用户退款'
+              maxLength: 80
+  responses:
+    '200':
+      description: ''
+      schema:
+        allOf:
+          - $ref: './wxpay.service.yaml#/general.response'
+          - $ref: './wxpay.service.yaml#/general.response.success'
+          - type: object
+            xml:
+              name: xml
+            required:
+              - mch_id
+              - sub_mch_id
+              - appid
+              - nonce_str
+              - sign
+              - out_return_no
+              - return_account_type
+              - return_account
+              - return_amount
+              - description
+            properties:
+              mch_id:
+                type: string
+                description: 商户号
+                example: '1900000100'
+                maxLength: 32
+              sub_mch_id:
+                type: string
+                description: 子商户号
+                example: '1900000109'
+                maxLength: 32
+              appid:
+                type: string
+                description: 公众账号ID
+                example: wx8888888888888888
+                maxLength: 32
+              sub_appid:
+                type: string
+                description: 子商户公众账号ID
+                example: wx8888888888888888
+                maxLength: 32
+                nullable: true
+              nonce_str:
+                type: string
+                description: 随机字符串
+                example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+                maxLength: 32
+              sign:
+                type: string
+                description: 签名
+                example: C380BEC2BFD727A4B6845133519F3AD6C380BEC2BFD727A4B6845133519F3AD6
+                maxLength: 64
+              sign_type:
+                type: string
+                description: 签名类型
+                example: HMAC-SHA256
+                maxLength: 32
+                nullable: true
+              order_id:
+                type: string
+                description: 微信分账单号
+                example: '3008450740201411110007820472'
+                maxLength: 64
+              out_order_no:
+                type: string
+                description: 商户分账单号
+                example: P20150806125346
+                maxLength: 64
+              out_return_no:
+                type: string
+                description: 商户回退单号
+                example: 'R20190516001'
+                maxLength: 32
+              return_no:
+                type: string
+                description: 微信回退单号
+                example: '3008450740201411110007820472'
+                maxLength: 64
+              return_account_type:
+                type: string
+                description: 回退方类型
+                example: 'MERCHANT_ID'
+                maxLength: 32
+              return_account:
+                type: string
+                description: 回退方账号
+                example: '86693852'
+                maxLength: 64
+              return_amount:
+                type: integer
+                description: 回退金额
+                example: '888'
+              description:
+                type: string
+                description: 回退描述
+                example: 用户退款
+                maxLength: 80
+              result:
+                type: string
+                description: 回退结果
+                example: SUCCESS
+                maxLength: 32
+                enum:
+                  - SUCCESS
+                  - PROCESSING
+                  - FAILED
+              fail_reason:
+                type: string
+                description: 失败原因
+                example: ACCOUNT_ABNORMAL
+                maxLength: 32
+                enum:
+                  - ACCOUNT_ABNORMAL
+                  - TIME_OUT_CLOSED
+              finish_time:
+                type: string
+                description: 完成时间
+                example: '20180608170132'
+                maxLength: 16

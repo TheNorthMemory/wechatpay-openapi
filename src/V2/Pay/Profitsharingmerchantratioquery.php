@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);/* Generated file. DO NOT EDIT! */
 
-namespace WeChatPay\OpenAPI\V2\Secapi\Pay;
+namespace WeChatPay\OpenAPI\V2\Pay;
 
 use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Promise\PromiseInterface;
@@ -8,41 +8,33 @@ use GuzzleHttp\Promise\PromiseInterface;
 /**
  * 这是一个纯接口描述文件，由程序自动生成，旨在为IDE提供结构提示，无他用。
  */
-interface Profitsharingfinish
+interface Profitsharingmerchantratioquery
 {
     /**
-     * 完结分账(同步模式)
+     * 查询最大分账比例(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/allocation_sl.php?chapter=25_5&index=6
+     * @link https://pay.weixin.qq.com/wiki/doc/api/allocation_sp.php?chapter=25_11&index=8
      */
     public function post(array $options = [
         'xml' => [
             'mch_id' => '1900000100',
             'sub_mch_id' => '1900000109',
-            'appid' => 'wx8888888888888888',
+            'brand_mch_id' => '1900000108',
             'sign_type' => 'HMAC-SHA256',
-            'transaction_id' => '4208450740201411110007820472',
-            'out_order_no' => 'P20150806125346',
-            'description' => '分账已完成',
         ],
-        'security' => true,
     ]): ResponseInterface;
 
     /**
-     * 完结分账(异步模式)
+     * 查询最大分账比例(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/allocation_sl.php?chapter=25_5&index=6#async
+     * @link https://pay.weixin.qq.com/wiki/doc/api/allocation_sp.php?chapter=25_11&index=8#async
      */
     public function postAsync(array $options = [
         'xml' => [
             'mch_id' => '1900000100',
             'sub_mch_id' => '1900000109',
-            'appid' => 'wx8888888888888888',
+            'brand_mch_id' => '1900000108',
             'sign_type' => 'HMAC-SHA256',
-            'transaction_id' => '4208450740201411110007820472',
-            'out_order_no' => 'P20150806125346',
-            'description' => '分账已完成',
         ],
-        'security' => true,
     ]): PromiseInterface;
 }

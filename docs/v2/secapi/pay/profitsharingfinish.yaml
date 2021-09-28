@@ -1,4 +1,5 @@
 post:
+  x-api-cert-required: true
   tags:
     - 支付∙服务商∙分账
   summary: 完结分账

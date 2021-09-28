@@ -27,6 +27,12 @@ profitsharing.request:
           description: 子商户号
           example: '1900000109'
           maxLength: 32
+        brand_mch_id:
+          type: string
+          description: 品牌主商户号
+          example: '1900000108'
+          nullable: true
+          maxLength: 32
         appid:
           type: string
           description: 公众账号ID
@@ -68,6 +74,9 @@ profitsharing.request:
           type: string
           description: +分账接收方列表
           maxLength: 10240
+          xml:
+            x-cdata: true
+          example: '[{"type": "MERCHANT_ID","account": "190001001","amount": 100,"description": "分到商户""detail_id": "36011111111111111111111""finish_time": "20180608170132""receiver_mchid": "1900000110""result": "SUCCESS"}, {"type": "PERSONAL_OPENID","account": "86693952","amount": 888,"description": "分到个人""detail_id": "36011111111111111111111""finish_time": "20180608170132""receiver_mchid": "1900000110""result": "SUCCESS"}]'
 profitsharing.response:
   allOf:
     - $ref: './wxpay.service.yaml#/serviceprovider.subs'
@@ -81,6 +90,12 @@ profitsharing.response:
         - out_order_no
         - order_id
       properties:
+        brand_mch_id:
+          type: string
+          description: 品牌主商户号
+          example: '1900000108'
+          nullable: true
+          maxLength: 32
         transaction_id:
           type: string
           description: 微信订单号
@@ -96,3 +111,18 @@ profitsharing.response:
           description: 微信分账单号
           example: '3008450740201411110007820472'
           maxLength: 64
+        status:
+          type: string
+          description: 分账单状态
+          example: 'FINISHED'
+          maxLength: 16
+          enum:
+            - FINISHED
+            - PROCESSING
+        receivers:
+          type: string
+          description: +分账接收方列表
+          maxLength: 10240
+          xml:
+            x-cdata: true
+          example: '[{"type": "MERCHANT_ID","account": "190001001","amount": 100,"description": "分到商户""detail_id": "36011111111111111111111""finish_time": "20180608170132""receiver_mchid": "1900000110""result": "SUCCESS"}, {"type": "PERSONAL_OPENID","account": "86693952","amount": 888,"description": "分到个人""detail_id": "36011111111111111111111""finish_time": "20180608170132""receiver_mchid": "1900000110""result": "SUCCESS"}]'

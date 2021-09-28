@@ -40,6 +40,7 @@ interface H5
                 ],
                 'out_trade_no' => '20150806125346',
                 'sub_mchid' => '1900000109',
+                'goods_tag' => 'WXG',
                 'description' => '腾讯充值中心-QQ会员充值',
                 'settle_info' => [
                     'profit_sharing' => true,
@@ -82,6 +83,7 @@ interface H5
                 ],
                 'out_trade_no' => '20150806125346',
                 'sub_mchid' => '1900000109',
+                'goods_tag' => 'WXG',
                 'description' => '腾讯充值中心-QQ会员充值',
                 'settle_info' => [
                     'profit_sharing' => true,

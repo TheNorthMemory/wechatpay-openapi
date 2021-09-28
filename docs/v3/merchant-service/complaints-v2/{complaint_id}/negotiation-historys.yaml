@@ -1,5 +1,5 @@
 get:
-  x-version: [2021.04.01]
+  x-version: [2021.08.27]
   x-role:
     - 服务商
   tags:
@@ -42,6 +42,23 @@ get:
                 - operate_time
                 - operate_type
               properties:
+                complaint_media_list:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      media_type:
+                        type: string
+                        description: 媒体文件业务类型
+                        example: USER_COMPLAINT_IMAGE
+                        enum:
+                          - USER_COMPLAINT_IMAGE
+                          - OPERATION_IMAGE
+                      media_url:
+                        type: string
+                        format: url
+                        description: 媒体文件请求url
+                        example: https://api.mch.weixin.qq.com/v3/merchant-service/images/xxxxx
                 log_id:
                   type: string
                   description: 操作流水号

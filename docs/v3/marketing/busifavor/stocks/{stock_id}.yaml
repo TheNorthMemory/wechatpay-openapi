@@ -333,7 +333,7 @@ get:
                 description: 单天已发放券金额
                 example: 34
 patch:
-  x-version: [2020.11.04]
+  x-version: [2021.09.27]
   x-role:
     - 直连商户
   tags:
@@ -395,10 +395,6 @@ patch:
                 type: string
                 description: code展示模式
                 example: BARCODE
-          stock_name:
-            type: string
-            description: 商家券批次名称
-            example: 8月1日活动券
           comment:
             type: string
             description: 批次备注
@@ -419,14 +415,6 @@ patch:
                 type: string
                 description: 使用须知
                 example: xxx门店可用
-              merchant_logo_url:
-                type: string
-                description: 商户logo
-                example: https://xxx
-              merchant_name:
-                type: string
-                description: 商户名称
-                example: 微信支付
               background_color:
                 type: string
                 description: 背景颜色

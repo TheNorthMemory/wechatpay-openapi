@@ -1,5 +1,5 @@
 get:
-  x-version: [2021.04.01]
+  x-version: [2021.08.27]
   x-role:
     - 服务商
   tags:
@@ -55,6 +55,23 @@ get:
             type: string
             description: 投诉人openid
             example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+          complaint_media_list:
+            type: array
+            items:
+              type: object
+              properties:
+                media_type:
+                  type: string
+                  description: 媒体文件业务类型
+                  example: USER_COMPLAINT_IMAGE
+                  enum:
+                    - USER_COMPLAINT_IMAGE
+                    - OPERATION_IMAGE
+                media_url:
+                  type: string
+                  format: url
+                  description: 媒体文件请求url
+                  example: https://api.mch.weixin.qq.com/v3/merchant-service/images/xxxxx
           complaint_order_info:
             type: array
             description: 投诉单关联订单信息
@@ -80,6 +97,10 @@ get:
           complaint_full_refunded:
             type: boolean
             description: 投诉单是否已全额退款
+          problem_description:
+            tpye: string
+            description: 问题描述
+            example: 不满意商家服务
           incoming_user_response:
             type: boolean
             description: 是否有待回复的用户留言

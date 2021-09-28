@@ -1,5 +1,5 @@
 post:
-  x-version: [2020.05.14]
+  x-version: [2021.08.23]
   x-role:
     - 电商平台
     - 服务商
@@ -92,6 +92,10 @@ post:
                   type: string
                   description: 二级商户号
                   example: '1900000109'
+                goods_tag:
+                  type: string
+                  description: 订单优惠标记
+                  example: WXG
                 description:
                   type: string
                   description: 商品描述

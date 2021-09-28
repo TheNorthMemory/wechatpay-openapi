@@ -141,6 +141,10 @@ post:
                   type: string
                   description: 分账失败原因
                   example: ACCOUNT_ABNORMAL
+                detail_id:
+                  type: string
+                  description: 分账明细单号
+                  example: '36011111111111111111111'
                 create_time:
                   type: string
                   description: 分账创建时间

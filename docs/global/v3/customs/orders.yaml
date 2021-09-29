@@ -81,7 +81,7 @@ post:
           - out_trade_no
           - transaction_id
           - verify_department
-          - Verify_department_trade_id
+          - verify_department_trade_id
         properties:
           appid:
             type: string
@@ -115,7 +115,7 @@ post:
             type: string
             description: 核验机构
             example: UNIONPAY
-          Verify_department_trade_id:
+          verify_department_trade_id:
             type: string
             description: 核验机构交易流水号
             example: '2018112288340107038204310100000'

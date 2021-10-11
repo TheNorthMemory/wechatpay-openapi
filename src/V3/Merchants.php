@@ -56,6 +56,10 @@ interface Merchants
                 'number' => '5555-8888',
             ],
         ],
+        'headers' => [
+            'Idempotency-Key' => 'GzPCeo963zXKcO2hDVD8AjXIpgrj',
+            'Wechatpay-Serial' => '',
+        ],
     ]): ResponseInterface;
 
     /**
@@ -102,6 +106,10 @@ interface Merchants
                 'name' => 'Bob',
                 'number' => '5555-8888',
             ],
+        ],
+        'headers' => [
+            'Idempotency-Key' => 'GzPCeo963zXKcO2hDVD8AjXIpgrj',
+            'Wechatpay-Serial' => '',
         ],
     ]): PromiseInterface;
 
@@ -151,6 +159,9 @@ interface Merchants
                 'number' => '5555-8888',
             ],
         ],
+        'headers' => [
+            'Wechatpay-Serial' => '',
+        ],
     ]): ResponseInterface;
 
     /**
@@ -198,6 +209,9 @@ interface Merchants
                 'name' => 'Bob',
                 'number' => '5555-8888',
             ],
+        ],
+        'headers' => [
+            'Wechatpay-Serial' => '',
         ],
     ]): PromiseInterface;
 }

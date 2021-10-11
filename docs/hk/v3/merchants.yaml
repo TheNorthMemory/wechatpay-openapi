@@ -3,10 +3,12 @@ post:
   x-role:
     - 机构模式
   tags:
-    - 跨境支付
+    - 跨境∙进件
   summary: 子商户进件（融合钱包）
   description: 机构提交子商户资料，微信支付系统会为每个子商户创建子商户号。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/Onborading_Sub_Merchant/chapter3_1.shtml)
   parameters:
+    - $ref: '../../definitions/Parameters.yaml#HTTP_IDEMPOTENCY_KEY'
+    - $ref: '../../definitions/Parameters.yaml#WECHATPAY_CERTIFICATE_SERIAL'
     - name: _
       in: body
       required: true
@@ -182,10 +184,11 @@ put:
   x-role:
     - 机构模式
   tags:
-    - 跨境支付
+    - 跨境∙进件
   summary: 修改子商户（融合钱包）
   description: 用于机构子商户创建成功后，接口提供子商户信息修改 [官方文档](https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/Onborading_Sub_Merchant/chapter3_3.shtml)
   parameters:
+    - $ref: '../../definitions/Parameters.yaml#WECHATPAY_CERTIFICATE_SERIAL'
     - name: _
       in: body
       required: true

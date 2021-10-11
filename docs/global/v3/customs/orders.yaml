@@ -5,7 +5,7 @@ post:
     - 直连模式
     - 机构模式
   tags:
-    - 跨境支付∙报关
+    - 跨境∙报关
   summary: 报关API
   description: 该接口用于商户提交海关需要的订单附加信息。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/declarecustom_ch/chapter3_1.shtml)
   parameters:
@@ -126,7 +126,7 @@ get:
     - 直连模式
     - 机构模式
   tags:
-    - 跨境支付∙报关
+    - 跨境∙报关
   summary: 报关查询API
   description: 商户通过订单号查询提交的订单附加信息及订单报关状态。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/declarecustom_ch/chapter3_3.shtml)
   parameters:
@@ -287,7 +287,7 @@ patch:
     - 直连模式
     - 机构模式
   tags:
-    - 跨境支付∙报关
+    - 跨境∙报关
   summary: 报关信息修改API
   description: 该接口用于商户修改订单附加信息。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/declarecustom_ch/chapter3_5.shtml)
   parameters:

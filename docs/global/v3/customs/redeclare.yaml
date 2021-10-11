@@ -5,7 +5,7 @@ post:
     - 直连模式
     - 机构模式
   tags:
-    - 跨境支付∙报关
+    - 跨境∙报关
   summary: 报关重推API
   description: 如果订单附加信息已请求报送海关，但电子口岸丢单，则可以使用报关重推接口重新向海关推送（订单附加信息的state必须为SUCCESS或者EXCEPT）。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/declarecustom_ch/chapter3_4.shtml)
   parameters:

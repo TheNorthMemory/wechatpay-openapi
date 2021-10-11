@@ -1,7 +1,7 @@
 post:
   x-verison: [2020.05.08]
   tags:
-    - 跨境支付
+    - 跨境
   summary: 查询结算资金
   description: 通过此接口可以查询结算资金的明细。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/pay/In-AppPay/chapter8_9.shtml)
   consumes:

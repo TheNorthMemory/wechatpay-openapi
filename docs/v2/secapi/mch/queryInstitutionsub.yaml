@@ -2,7 +2,7 @@ post:
   x-api-cert-required: true
   x-verison: [2020.06.08]
   tags:
-    - 跨境支付
+    - 跨境∙进件
   summary: 查询子商户
   description: 用于机构查询子商户创建是否成功，接口只提供单个子商户信息查询。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/sub_merchant_entry/chapter3_2.shtml)
   consumes:

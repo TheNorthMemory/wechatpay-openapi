@@ -3,7 +3,7 @@ get:
   x-role:
     - 机构模式
   tags:
-    - 跨境支付
+    - 跨境∙进件
   summary: 查询子商户（融合钱包）
   description: 用于机构查询子商户创建是否成功，接口只提供单个子商户信息查询。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/Onborading_Sub_Merchant/chapter3_2.shtml)
   parameters:

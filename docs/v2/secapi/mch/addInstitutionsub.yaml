@@ -2,7 +2,7 @@ post:
   x-api-cert-required: true
   x-verison: [2021.04.01]
   tags:
-    - 跨境支付
+    - 跨境∙进件
   summary: 进件子商户
   description: 机构提交子商户资料，微信支付系统会为每个子商户创建子商户号。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/sub_merchant_entry/chapter3_1.shtml)
   consumes:

@@ -4,7 +4,7 @@ basePath: ''
 info:
   title: 微信支付OpenAPI文档
   description: "整理自[官方文档中心](https://pay.weixin.qq.com/wiki/doc/apiv3/index.shtml) 本[项目/工具地址](https://github.com/TheNorthMemory/wechatpay-openapi)，WEB展示依赖适配XML CDATA版的[swagger-ui-dist](https://www.npmjs.com/package/@thenorthmemory/swagger-ui-dist)"
-  version: 0.5.0
+  version: 0.6.0
 schemes:
   - https
 consumes:
@@ -87,13 +87,11 @@ tags:
   - name: 支付∙银行服务商∙风控信息同步
   - name: 企微∙企业红包
   - name: 企微∙向员工付款
-  - name: 跨境支付
-  - name: 跨境支付∙报关
-  - name: 跨境支付∙付款码支付
-  - name: 跨境支付∙扫码支付
-  - name: 跨境支付∙JSAPI支付
-  - name: 跨境支付∙APP支付
-  - name: 跨境支付∙H5支付
+  - name: 跨境
+  - name: 跨境∙进件
+  - name: 跨境∙报关
+  - name: 跨境∙支付
+  - name: 跨境∙退款
 paths:
   /global/v3/customs/orders:
     $ref: ./global/v3/customs/orders.yaml
@@ -707,6 +705,16 @@ paths:
     $ref: ./v3/smartguide/guides/{guide_id}/assign.yaml
   /v3/transfer-detail/electronic-receipts:
     $ref: ./v3/transfer-detail/electronic-receipts.yaml
+  /v3/transfer/batches:
+    $ref: ./v3/transfer/batches.yaml
+  /v3/transfer/batches/batch-id/{batch_id}:
+    $ref: ./v3/transfer/batches/batch-id/{batch_id}.yaml
+  /v3/transfer/batches/batch-id/{batch_id}/details/detail-id/{detail_id}:
+    $ref: ./v3/transfer/batches/batch-id/{batch_id}/details/detail-id/{detail_id}.yaml
+  /v3/transfer/batches/out-batch-no/{out_batch_no}:
+    $ref: ./v3/transfer/batches/out-batch-no/{out_batch_no}.yaml
+  /v3/transfer/batches/out-batch-no/{out_batch_no}/details/out-detail-no/{out_detail_no}:
+    $ref: ./v3/transfer/batches/out-batch-no/{out_batch_no}/details/out-detail-no/{out_detail_no}.yaml
   /v3/transfer/bill-receipt:
     $ref: ./v3/transfer/bill-receipt.yaml
   /v3/transfer/bill-receipt/{out_batch_no}:

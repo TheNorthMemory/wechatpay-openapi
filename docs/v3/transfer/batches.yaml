@@ -1,12 +1,12 @@
 post:
   x-version:
-    - 2020.12.08
+    - 2020.07.09
   x-role:
-    - 服务商
+    - 直连商户
   tags:
     - 资金应用∙批量转账到零钱
   summary: 发起批量转账API
-  description: 服务商可以通过该接口，批量向用户零钱进行转账操作。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer_partner/chapter3_1.shtml)
+  description: 商户可以通过该接口同时向多个用户微信零钱进行转账操作。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer/chapter3_1.shtml)
   parameters:
     - $ref: '../../definitions/Parameters.yaml#WECHATPAY_CERTIFICATE_SERIAL'
     - name: _
@@ -15,8 +15,7 @@ post:
       schema:
         type: object
         required:
-          - sub_mchid
-          - authorization_type
+          - appid
           - out_batch_no
           - batch_name
           - batch_remark
@@ -24,22 +23,10 @@ post:
           - total_num
           - transfer_detail_list
         properties:
-          sub_mchid:
+          appid:
             type: string
-            description: 特约商户号
-            example: '1900000109'
-          sub_appid:
-            type: string
-            description: 特约商户appid
+            description: 直连商户的appid
             example: wxf636efh567hg4356
-          authorization_type:
-            type: string
-            description: 特约商户授权类型
-            example: INFORMATION_AUTHORIZATION_TYPE
-            enum:
-              - INFORMATION_AUTHORIZATION_TYPE
-              - FUND_AUTHORIZATION_TYPE
-              - INFORMATION_AND_FUND_AUTHORIZATION_TYPE
           out_batch_no:
             type: string
             description: 商家批次单号
@@ -86,7 +73,7 @@ post:
                   example: 2020年4月报销
                 openid:
                   type: string
-                  description: 收款用户openid
+                  description: 用户在直连商户应用下的用户标示
                   example: o-MYE42l80oelYMDE34nYD456Xoy
                 user_name:
                   type: string
@@ -96,21 +83,6 @@ post:
                   type: string
                   description: 收款用户身份证
                   example: 8609cb22e1774a50a930e414cc71eca06121bcd266335cda230d24a7886a8d9f
-          sp_appid:
-            type: string
-            description: 服务商的appid
-            example: wxf636efh567hg4388
-          transfer_purpose:
-            type: string
-            description: 批量转账用途
-            example: COMMISSION
-            enum:
-              - GOODSPAYMENT
-              - COMMISSION
-              - REFUND
-              - REIMBURSEMENT
-              - FREIGHT
-              - OTHERS
   responses:
     '200':
       schema:
@@ -126,7 +98,7 @@ post:
             example: plfk2020042013
           batch_id:
             type: string
-            description: 微信支付批次单号
+            description: 微信批次单号
             example: '1030000071100999991182020050700019480001'
           create_time:
             type: string

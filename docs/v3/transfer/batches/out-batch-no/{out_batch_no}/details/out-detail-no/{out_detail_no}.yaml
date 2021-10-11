@@ -1,0 +1,92 @@
+get:
+  x-version:
+    - 2020.07.09
+  x-role:
+    - 直连商户
+  tags:
+    - 资金应用∙批量转账到零钱
+  summary: 商家明细单号查询明细单API
+  description: 商户可以通过该接口查询单笔转账明细单。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer/chapter3_5.shtml)
+  parameters:
+    - name: out_detail_no
+      in: path
+      required: true
+      type: string
+      description: 商家明细单号
+      example: x23zy545Bd5436
+    - name: out_batch_no
+      in: path
+      required: true
+      type: string
+      description: 商家批次单号
+      example: plfk2020042013
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - out_batch_no
+          - batch_id
+          - appid
+          - out_detail_no
+          - detail_id
+          - detail_status
+          - transfer_amount
+          - transfer_remark
+          - openid
+          - user_name
+          - initiate_time
+          - update_time
+        properties:
+          out_batch_no:
+            type: string
+            description: 商家批次单号
+            example: plfk2020042013
+          batch_id:
+            type: string
+            description: 微信批次单号
+            example: '1030000071100999991182020050700019480001'
+          appid:
+            type: string
+            description: 直连商户的appid
+            example: wxf636efh567hg4356
+          out_detail_no:
+            type: string
+            description: 商家明细单号
+            example: x23zy545Bd5436
+          detail_id:
+            type: string
+            description: 微信明细单号
+            example: '1040000071100999991182020050700019500100'
+          detail_status:
+            type: string
+            description: 明细状态
+            example: SUCCESS
+          transfer_amount:
+            type: integer
+            description: 转账金额
+            example: 200000
+          transfer_remark:
+            type: string
+            description: 转账备注
+            example: 2020年4月报销
+          fail_reason:
+            type: string
+            description: 明细失败原因
+            example: ACCOUNT_FROZEN
+          openid:
+            type: string
+            description: 用户在直连商户应用下的用户标示
+            example: o-MYE42l80oelYMDE34nYD456Xoy
+          user_name:
+            type: string
+            description: 收款用户姓名
+            example: 757b340b45ebef5467rter35gf464344v3542sdf4t6re4tb4f54ty45t4yyry45
+          initiate_time:
+            type: string
+            description: 转账发起时间
+            example: '2015-05-20T13:29:35.120+08:00'
+          update_time:
+            type: string
+            description: 明细更新时间
+            example: '2015-05-20T13:29:35.120+08:00'

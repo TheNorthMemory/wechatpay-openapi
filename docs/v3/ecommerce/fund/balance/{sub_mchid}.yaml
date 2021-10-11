@@ -1,5 +1,5 @@
 get:
-  x-version: [2020.12.22]
+  x-version: [2020.12.23]
   x-role: [电商平台]
   tags:
     - 电商收付通∙余额查询
@@ -12,6 +12,13 @@ get:
       required: true
       description: 二级商户号
       example: '1900000109'
+    - name: account_type
+      in: query
+      type: string
+      description: 账户类型
+      example: BASIC
+      allOf:
+        - $ref: '../../../../definitions/Enumerations.yaml#BillAccountType'
   responses:
     200:
       schema:
@@ -24,6 +31,8 @@ get:
             type: string
             description: 二级商户号
             example: '1900000109'
+          account_type:
+            $ref: '../../../../definitions/Enumerations.yaml#BillAccountType'
           available_amount:
             type: integer
             description: 可用余额

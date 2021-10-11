@@ -1,0 +1,63 @@
+post:
+  x-version:
+    - 2020.11.10
+  x-role:
+    - 直连商户
+    - 服务商
+  tags:
+    - 资金应用∙批量转账到零钱
+  summary: 转账电子回单申请受理API
+  description: 转账电子回单申请受理接口，商户通过该接口可以申请受理电子回单服务。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer_partner/chapter4_1.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - out_batch_no
+        properties:
+          out_batch_no:
+            type: string
+            description: 商家批次单号
+            example: plfk2020042013
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - out_batch_no
+          - signature_no
+        properties:
+          out_batch_no:
+            type: string
+            description: 商家批次单号
+            example: plfk2020042013
+          signature_no:
+            type: string
+            description: 电子回单申请单号
+            example: '1050000010509999485212020110200058820001'
+          signature_status:
+            type: string
+            description: 电子回单状态
+            example: ACCEPTED
+          hash_type:
+            type: string
+            description: 电子回单文件的hash方法
+            example: SHA256
+          hash_value:
+            type: string
+            description: 电子回单文件的hash值
+            example: DE731F35146A0BEFADE5DB9D1E468D96C01CA8898119C674FEE9F11F4DBE5529
+          download_url:
+            type: string
+            description: 电子回单文件的下载地址
+            example: https://api.mch.weixin.qq.com/v3/billdownload/file?token=xxx
+          create_time:
+            type: string
+            description: 创建时间
+            example: '2020-05-20T13:29:35.120+08:00'
+          update_time:
+            type: string
+            description: 更新时间
+            example: '2020-05-21T13:29:35.120+08:00'

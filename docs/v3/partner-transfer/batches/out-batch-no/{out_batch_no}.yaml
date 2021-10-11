@@ -1,0 +1,163 @@
+get:
+  x-version:
+    - 2020.11.02
+  x-role:
+    - 服务商
+  tags:
+    - 资金应用∙批量转账到零钱
+  summary: 商家批次单号查询批次单API
+  description: 服务商可以通过该接口查询转账批次单以及指定状态的转账明细单。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer_partner/chapter3_4.shtml)
+  parameters:
+    - name: out_batch_no
+      in: path
+      required: true
+      type: string
+      description: 商家批次单号
+      example: plfk2020042013
+    - name: need_query_detail
+      required: true
+      in: query
+      type: boolean
+      description: 是否查询转账明细单
+    - name: offset
+      in: query
+      type: integer
+      description: 请求资源起始位置
+    - name: limit
+      in: query
+      type: integer
+      description: 最大资源条数
+      example: 20
+    - name: detail_status
+      in: query
+      type: string
+      description: 明细状态
+      example: FAIL
+      enum:
+        - ALL
+        - SUCCESS
+        - FAIL
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - sp_mchid
+          - sub_mchid
+          - out_batch_no
+          - batch_id
+          - batch_status
+          - batch_type
+          - authorization_type
+          - batch_name
+          - batch_remark
+          - total_amount
+          - total_num
+          - transfer_detail_list
+        properties:
+          sp_mchid:
+            type: string
+            description: 服务商商户号
+            example: '1900001109'
+          sub_mchid:
+            type: string
+            description: 特约商户号
+            example: '1900000109'
+          out_batch_no:
+            type: string
+            description: 商家批次单号
+            example: plfk2020042013
+          batch_id:
+            type: string
+            description: 微信支付批次单号
+            example: '1030000071100999991182020050700019480001'
+          sub_appid:
+            type: string
+            description: 特约商户appid
+            example: wxf636efh567hg4356
+          batch_status:
+            type: string
+            description: 批次状态
+            example: ACCEPTED
+          batch_type:
+            type: string
+            description: 批次类型
+            example: API
+          authorization_type:
+            type: string
+            description: 特约商户授权类型
+            example: INFORMATION_AUTHORIZATION_TYPE
+          batch_name:
+            type: string
+            description: 批次名称
+            example: 2019年1月深圳分部报销单
+          batch_remark:
+            type: string
+            description: 批次备注
+            example: 2019年1月深圳分部报销单
+          close_reason:
+            type: string
+            description: 批次关闭原因
+            example: OVERDUE_CLOSE
+          total_amount:
+            type: integer
+            description: 转账总金额
+            example: 4000000
+          total_num:
+            type: integer
+            description: 转账总笔数
+            example: 200
+          create_time:
+            type: string
+            description: 批次创建时间
+            example: '2015-05-20T13:29:35.120+08:00'
+          update_time:
+            type: string
+            description: 批次更新时间
+            example: '2015-05-20T13:29:35.120+08:00'
+          success_amount:
+            type: integer
+            description: 转账成功金额
+            example: 3900000
+          success_num:
+            type: integer
+            description: 转账成功笔数
+            example: 199
+          fail_amount:
+            type: integer
+            description: 转账失败金额
+            example: 100000
+          fail_num:
+            type: integer
+            description: 转账失败笔数
+            example: 1
+          transfer_detail_list:
+            type: array
+            description: 转账明细单列表
+            items:
+              type: object
+              required:
+                - detail_id
+                - out_detail_no
+                - detail_status
+              properties:
+                detail_id:
+                  type: string
+                  description: 微信支付明细单号
+                  example: '1040000071100999991182020050700019500100'
+                out_detail_no:
+                  type: string
+                  description: 商家明细单号
+                  example: x23zy545Bd5436
+                detail_status:
+                  type: string
+                  description: 明细状态
+                  example: SUCCESS
+          sp_appid:
+            type: string
+            description: 服务商的appid
+            example: wxf636efh567hg4388
+          transfer_purpose:
+            type: string
+            description: 批量转账用途
+            example: COMMISSION

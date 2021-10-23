@@ -17,16 +17,22 @@
 
 ## 特殊URI语法规则
 
-| URI | 模版变量 | 值 | 说明
-| --- | --- | --- | ---
-| `secapi/mch/addInstitutionsub` | `{addinstitutionsub}` | `addInstitutionsub` | URI上有大写字符
-| `secapi/mch/modifyInstitutionsub` | `{modifyinstitutionsub}` | `modifyInstitutionsub` | URI上有大写字符
-| `secapi/mch/queryInstitutionsub` | `{queryinstitutionsub}` | `queryInstitutionsub` | URI上有大写字符
-| `v3/applyment4sub/applyment/` | `{stub}` | | 固定值，空字符串，构造末尾是`/`需要
-| `v3/ecommerce/applyments/` | `{stub}` | | 固定值，空字符串，构造末尾是`/`需要
-| `v3/ecommerce/subsidies/return` | `{return}` | `return` | 固定值，`return`为PHP语法关键字
-| `v3/marketing/busifavor/coupons/return` | `{return}` | `return` | 固定值，`return`为PHP语法关键字
-| `v3/marketing/busifavor/coupons/use` | `{use}` | `use` | 固定值，`use`为PHP语法关键字
+| 源URI | 模版变量 | 值 |
+| --- | --- | --- |
+| `secapi/mch/addInstitutionsub` | `{addinstitutionsub}` [^1] | `addInstitutionsub` |
+| `secapi/mch/modifyInstitutionsub` | `{modifyinstitutionsub}` [^1] | `modifyInstitutionsub` |
+| `secapi/mch/queryInstitutionsub` | `{queryinstitutionsub}` [^1] | `queryInstitutionsub` |
+| `v3/applyment4sub/applyment/` | `{stub}` [^2] | |
+| `v3/ecommerce/applyments/` | `{stub}` [^2] | |
+| `v3/ecommerce/subsidies/return` | `{return}` [^3] | `return` |
+| `v3/marketing/busifavor/coupons/return` | `{return}` [^3] | `return` |
+| `v3/marketing/busifavor/coupons/use` | `{use}` [^4] | `use` |
+
+[^1]: 源URI上含有`I`大写字符，需要用模版变量构造
+[^2]: 源URI末尾以`/`结尾，需要值为用空的模版变量构造
+[^3]: 源URI末尾segment单词是`return`，其为PHP语法关键字，需要用模版变量构造
+[^4]: 源URI末尾segment单词是`use`，其为PHP语法关键字，需要用模版变量构造
+
 ## License
 
 [MIT](LICENSE)

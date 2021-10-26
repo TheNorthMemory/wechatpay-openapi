@@ -1,0 +1,129 @@
+post:
+  x-version:
+    - 2021.07.30
+  x-role:
+    - 服务商
+  tags:
+    - 校园轻松付
+  summary: 扣款API
+  description: 使用签约协议号发起扣款，本接口支持两种模式，通过参数模式（payment_mode）进行选择。 同步扣款模式会立即返回扣款结果，异步扣款模式会立即返回受理结果，最终的扣款结果会通过回调的方式通知给商户 两种模式下，若出现超时或未回调时，商户均可调用商户订单号查单接口查询订单扣款结果。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/edu/eduschoolpay/chapter4_1.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - appid
+          - description
+          - out_trade_no
+          - notify_url
+          - contract_id
+          - user_id
+          - amount
+          - scene_info
+          - device_info
+        properties:
+          appid:
+            type: string
+            description: 商户appid
+            example: wx8888888888888888
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1900000109'
+          sub_appid:
+            type: string
+            description: 子商户appid
+            example: wx8888888888888888
+          description:
+            type: string
+            description: 商品描述
+            example: 中山大学-第二食堂-海鲜炒饭
+          attach:
+            type: string
+            description: 商户数据
+            example: 自定义数据
+          out_trade_no:
+            type: string
+            description: 商户订单号
+            example: '121775250124070332'
+          goods_tag:
+            type: string
+            description: 订单优惠标记
+            example: test
+          notify_url:
+            type: string
+            description: 商户接收通知地址
+            example: https://www.weixin.qq.com/wxpay/pay
+          contract_id:
+            type: string
+            description: 签约协议号
+            example: '2045011120563805041758214605'
+          user_id:
+            type: string
+            description: 用户账号
+            example: 20200330tony
+          amount:
+            type: object
+            description: 订单金额
+            required:
+              - total
+              - currency
+            properties:
+              total:
+                type: integer
+                description: 总金额
+                example: 888
+              currency:
+                type: string
+                description: 货币类型
+                example: CNY
+          scene_info:
+            type: object
+            description: 场景信息
+            required:
+              - start_time
+              - school_id
+              - scene_type
+            properties:
+              start_time:
+                type: string
+                description: 消费时间
+                example: '2017-08-26T09:43:39+08:00'
+              school_id:
+                type: string
+                description: 学校编号
+                example: '18260256813396'
+              scene_type:
+                type: string
+                description: 消费场景类型
+                example: CANTEEN
+          device_info:
+            type: object
+            description: 设备信息
+            required:
+              - device_ip
+            properties:
+              device_id:
+                type: string
+                description: 设备号
+                example: '12343232'
+              device_ip:
+                type: string
+                description: 商户端设备ip
+                example: 123.12.12.123
+          settle_info:
+            type: object
+            description: 分账结算信息
+            properties:
+              profit_sharing:
+                type: boolean
+                description: 是否指定分账
+          payment_mode:
+            type: string
+            description: 扣款模式
+            example: SYNC
+  responses:
+    '200':
+      schema: {}

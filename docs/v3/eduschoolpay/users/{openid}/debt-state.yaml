@@ -1,0 +1,47 @@
+get:
+  x-version:
+    - 2020.11.16
+  x-role:
+    - 服务商
+  tags:
+    - 校园轻松付
+  summary: 商户查询用户欠款状态API
+  description: 商户通过调用该接口可主动查询微信用户的欠款状态。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/edu/eduschoolpay/chapter4_4.shtml)
+  parameters:
+    - name: openid
+      type: string
+      in: path
+      required: true
+      description: 商户appid下的用户标识
+      example: oUpF8uMuAJOM2pxb1Q
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - appid
+          - openid
+          - state
+          - debt_count
+          - update_time
+        properties:
+          appid:
+            type: string
+            description: 商户appid
+            example: wx8888888888888888
+          openid:
+            type: string
+            description: 商户appid下的用户标识
+            example: oUpF8uMuAJOM2pxb1Q
+          state:
+            type: string
+            description: 用户状态
+            example: FORBIDDEN
+          debt_count:
+            type: integer
+            description: 当前用户欠款笔数
+            example: 2
+          update_time:
+            type: string
+            description: 用户欠款状态更新时间
+            example: '2017-08-26T09:43:39+08:00'

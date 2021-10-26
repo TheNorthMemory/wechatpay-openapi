@@ -4,7 +4,7 @@ basePath: ''
 info:
   title: 微信支付OpenAPI文档
   description: "整理自[官方文档中心](https://pay.weixin.qq.com/wiki/doc/apiv3/index.shtml) 本[项目/工具地址](https://github.com/TheNorthMemory/wechatpay-openapi)，WEB展示依赖适配XML CDATA版的[swagger-ui-dist](https://www.npmjs.com/package/@thenorthmemory/swagger-ui-dist)"
-  version: 0.6.0
+  version: 0.8.0
 schemes:
   - https
 consumes:
@@ -41,6 +41,7 @@ tags:
   - name: 会员卡∙运营投放
   - name: 会员卡∙权益设置
   - name: 会员卡∙会员有礼
+  - name: 校园轻松付
   - name: 运营工具∙代金券
   - name: 运营工具∙商家券
   - name: 运营工具∙委托营销
@@ -433,6 +434,22 @@ paths:
     $ref: ./v3/ecommerce/subsidies/create.yaml
   /v3/ecommerce/subsidies/return:
     $ref: ./v3/ecommerce/subsidies/return.yaml
+  /v3/eduschoolpay/contracts/{contract_id}:
+    $ref: ./v3/eduschoolpay/contracts/{contract_id}.yaml
+  /v3/eduschoolpay/contracts/{contract_id}/terminate:
+    $ref: ./v3/eduschoolpay/contracts/{contract_id}/terminate.yaml
+  /v3/eduschoolpay/contracts/presign:
+    $ref: ./v3/eduschoolpay/contracts/presign.yaml
+  /v3/eduschoolpay/transactions:
+    $ref: ./v3/eduschoolpay/transactions.yaml
+  /v3/eduschoolpay/transactions/id/{transaction_id}:
+    $ref: ./v3/eduschoolpay/transactions/id/{transaction_id}.yaml
+  /v3/eduschoolpay/transactions/out-trade-no/{out_trade_no}:
+    $ref: ./v3/eduschoolpay/transactions/out-trade-no/{out_trade_no}.yaml
+  /v3/eduschoolpay/users/{openid}/contracts:
+    $ref: ./v3/eduschoolpay/users/{openid}/contracts.yaml
+  /v3/eduschoolpay/users/{openid}/debt-state:
+    $ref: ./v3/eduschoolpay/users/{openid}/debt-state.yaml
   /v3/goldplan/merchants/changecustompagestatus:
     $ref: ./v3/goldplan/merchants/changecustompagestatus.yaml
   /v3/goldplan/merchants/changegoldplanstatus:

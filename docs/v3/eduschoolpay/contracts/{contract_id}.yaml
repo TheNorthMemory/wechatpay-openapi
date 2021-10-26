@@ -1,0 +1,62 @@
+get:
+  x-version:
+    - 2020.08.20
+  x-role:
+    - 服务商
+  tags:
+    - 校园轻松付
+  summary: 通过协议号查询签约API
+  description: 商户通过签约协议号可查询签约信息，当合约不存在时返回NOT_FOUND错误码 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/edu/eduschoolpay/chapter3_2.shtml)
+  parameters:
+    - name: contract_id
+      in: path
+      required: true
+      type: string
+      description: 签约协议号
+      example: '2045011120563805041758214605'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - contract_id
+          - mchid
+          - appid
+          - openid
+          - plan_id
+          - contract_status
+          - create_time
+          - out_contract_code
+        properties:
+          contract_id:
+            type: string
+            description: 签约协议号
+            example: '2045011120563805041758214605'
+          mchid:
+            type: string
+            description: 商户号
+            example: '1230000109'
+          appid:
+            type: string
+            description: 商户appid
+            example: wx8888888888888888
+          openid:
+            type: string
+            description: 商户appid下的用户标识
+            example: oUpF8uMuAJOM2pxb1Q
+          plan_id:
+            type: string
+            description: 签约模板号
+            example: '101164396123311331'
+          contract_status:
+            type: string
+            description: 签约状态
+            example: ADD
+          create_time:
+            type: string
+            description: 签约时间
+            example: '2017-08-26T09:43:39+08:00'
+          out_contract_code:
+            type: string
+            description: 外部签约号
+            example: '20190806125346'

@@ -1,0 +1,125 @@
+get:
+  x-version:
+    - 2020.08.27
+  x-role:
+    - 服务商
+  tags:
+    - 校园轻松付
+  summary: 查询用户签约列表API
+  description: 商户使用本接口来查询用户签约信息，返回用户在该签约模板下的合约列表（包括处于「已解约」状态下的合约）；被用户主动删除的合约无法被查询到。结果中「已签约」合约排列于「已解约」合约之前。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/edu/eduschoolpay/chapter3_4.shtml)
+  parameters:
+    - name: openid
+      type: string
+      in: path
+      required: true
+      description: 商户appid下的用户标识
+      example: oUpF8uMuAJOM2pxb1Q
+    - name: plan_id
+      type: string
+      in: query
+      required: true
+      description: 签约模板号
+      example: '101164396123311331'
+    - name: contract_status
+      type: string
+      in: query
+      required: true
+      description: 签约状态
+      example: ADD
+    - name: offset
+      type: integer
+      in: query
+      description: 分页页码
+      example: 0
+    - name: limit
+      type: integer
+      in: query
+      description: 分页大小
+      example: 20
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - offset
+          - limit
+          - total_count
+          - links
+        properties:
+          data:
+            type: array
+            description: 查询结果列表
+            items:
+              type: object
+              required:
+                - contract_id
+                - mchid
+                - appid
+                - openid
+                - plan_id
+                - contract_status
+                - create_time
+                - out_contract_code
+              properties:
+                contract_id:
+                  type: string
+                  description: 签约协议号
+                  example: '2045011120563805041758214605'
+                mchid:
+                  type: string
+                  description: 商户号
+                  example: '1230000109'
+                appid:
+                  type: string
+                  description: 商户appid
+                  example: wx8888888888888888
+                openid:
+                  type: string
+                  description: 商户appid下的用户标识
+                  example: oUpF8uMuAJOM2pxb1Q
+                plan_id:
+                  type: string
+                  description: 签约模板号
+                  example: '101164396123311331'
+                contract_status:
+                  type: string
+                  description: 签约状态
+                  example: ADD
+                create_time:
+                  type: string
+                  description: 签约时间
+                  example: '2017-08-26T09:43:39+08:00'
+                out_contract_code:
+                  type: string
+                  description: 外部签约号
+                  example: '20190806125346'
+          offset:
+            type: integer
+            description: 请求资源起始位置
+            example: 10
+          limit:
+            type: integer
+            description: 最大资源条数
+            example: 20
+          total_count:
+            type: integer
+            description: 资源总条数
+            example: 1234
+          links:
+            type: object
+            description: 相关链接
+            required:
+              - self
+            properties:
+              next:
+                type: string
+                description: 下一页链接
+                example: /v3/eduschoolpay/users/{openid}/contracts?offset=5&limit=5
+              prev:
+                type: string
+                description: 上一页链接
+                example: /v3/eduschoolpay/users/{openid}/contracts?offset=5&limit=5
+              self:
+                type: string
+                description: 当前链接
+                example: /v3/eduschoolpay/users/{openid}/contracts?offset=10&limit=5

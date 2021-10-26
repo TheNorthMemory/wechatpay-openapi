@@ -1,0 +1,106 @@
+post:
+  x-version:
+    - 2021.07.30
+  x-role:
+    - 服务商
+  tags:
+    - 校园轻松付
+  summary: 预签约API
+  description: 商户调用该接口可获取预签约码（presign_token），预签约码对应用户一次的签约信息，之后用户可以从商户小程序跳转到微信签约小程序时使用该预签约码进行签约。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/edu/eduschoolpay/chapter3_1.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - appid
+          - openid
+          - plan_id
+          - user_id
+          - school_id
+          - out_contract_code
+        properties:
+          appid:
+            type: string
+            description: 商户appid
+            example: wx8888888888888888
+          openid:
+            type: string
+            description: 商户appid下的用户标识
+            example: oUpF8uMuAJOM2pxb1Q
+          plan_id:
+            type: string
+            description: 签约模板号
+            example: '101164396123311331'
+          user_id:
+            type: string
+            description: 用户账号
+            example: 20200330tony
+          school_id:
+            type: string
+            description: 学校编号
+            example: '18260256813396'
+          out_contract_code:
+            type: string
+            description: 外部签约号
+            example: '20190806125346'
+          contract_mode:
+            type: string
+            description: 签约模式
+            example: LIMIT_BANK_CARD
+          downgrade_default_contract:
+            type: boolean
+            description: 允许降级为普通签约模式
+          identity:
+            type: object
+            description: 实名信息
+            required:
+              - real_name
+              - credential_type
+            properties:
+              real_name:
+                type: string
+                description: 姓名
+                example: 6TqLAZvNZ4AXLNHLMbjA1yKq2k5krHM09m3tCuR
+              credential_type:
+                type: object
+                description: 证件类型
+                example: IDENTITY_CARD
+              id_card_number:
+                type: string
+                description: 身份证号
+                example: 6TqLAZvNZ4AXLNHLMbjA1yKq2k5krHM09m3tCuR
+          bank_card:
+            type: object
+            description: 签约银行卡
+            required:
+              - bank_card_no
+            properties:
+              bank_card_no:
+                type: string
+                description: 签约银行卡号
+                example: 6TqLAZvNZ4AXLNHLMbjA1yKq2k5krHM09m3tCuR
+              valid_thru:
+                type: string
+                description: 银行卡有效期
+                example: 08/21
+              phone:
+                type: string
+                description: 银行卡开卡预留手机号
+                example: j6PlFRRJ4nvGSbtDZzXbXScACvDSnIny67zk3BgT5uIbK4VfGmcjPBEk2mt5ASZ6UUHB4Gy0IZpbuanF9
+              bank_type:
+                type: string
+                description: 银行类型
+                example: CMC
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - presign_token
+        properties:
+          presign_token:
+            type: string
+            description: 预签约码
+            example: 0044de6c799739c2e8534b

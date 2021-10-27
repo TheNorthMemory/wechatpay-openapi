@@ -38,6 +38,9 @@ interface Presign
                 'bank_type' => 'CMC',
             ],
         ],
+        'headers' => [
+            'Wechatpay-Serial' => '',
+        ],
     ]): ResponseInterface;
 
     /**
@@ -67,6 +70,9 @@ interface Presign
                 'phone' => 'j6PlFRRJ4nvGSbtDZzXbXScACvDSnIny67zk3BgT5uIbK4VfGmcjPBEk2mt5ASZ6UUHB4Gy0IZpbuanF9',
                 'bank_type' => 'CMC',
             ],
+        ],
+        'headers' => [
+            'Wechatpay-Serial' => '',
         ],
     ]): PromiseInterface;
 }

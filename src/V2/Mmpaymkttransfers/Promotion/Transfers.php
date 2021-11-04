@@ -27,6 +27,9 @@ interface Transfers
             'amount' => '10099',
             'desc' => '理赔',
             'spbill_create_ip' => '192.168.0.1',
+            'scene' => 'BRAND_REDPACKET',
+            'brand_id' => '1234',
+            'finder_template_id' => '1243100000000000',
         ],
         'security' => true,
     ]): ResponseInterface;
@@ -48,6 +51,9 @@ interface Transfers
             'amount' => '10099',
             'desc' => '理赔',
             'spbill_create_ip' => '192.168.0.1',
+            'scene' => 'BRAND_REDPACKET',
+            'brand_id' => '1234',
+            'finder_template_id' => '1243100000000000',
         ],
         'security' => true,
     ]): PromiseInterface;

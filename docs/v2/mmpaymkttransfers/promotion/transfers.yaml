@@ -90,6 +90,21 @@ post:
             description: Ip地址
             example: 192.168.0.1
             maxLength: 32
+          scene:
+            type: string
+            description: 付款场景，BRAND_REDPACKET：品牌红包，其他值或不传则默认为普通付款到零钱
+            example: BRAND_REDPACKET
+            maxLength: 64
+          brand_id:
+            type: integer
+            format: int32
+            description: 品牌ID，品牌在微信支付的唯一标识。仅在付款场景为品牌红包时必填。
+            example: '1234'
+          finder_template_id:
+            type: string
+            description: 消息模板ID，品牌在微信支付的唯一标识。仅在付款场景为品牌红包时必填。
+            example: '1243100000000000'
+            maxLength: 128
   responses:
     '200':
       description: ''

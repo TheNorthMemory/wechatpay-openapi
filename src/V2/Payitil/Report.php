@@ -13,7 +13,7 @@ interface Report
     /**
      * 交易保障(同步模式)
      * @param array<string,mixed> $options
-     * @link https://share.weiyun.com/5dxUgCw
+     * @link https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=9_8&index=9
      */
     public function post(array $options = [
         'xml' => [
@@ -29,7 +29,7 @@ interface Report
     /**
      * 交易保障(异步模式)
      * @param array<string,mixed> $options
-     * @link https://share.weiyun.com/5dxUgCw#async
+     * @link https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=9_8&index=9#async
      */
     public function postAsync(array $options = [
         'xml' => [

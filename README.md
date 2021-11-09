@@ -15,6 +15,16 @@
 
 `composer require --dev iwechatpay/openapi`
 
+## IDE提示
+
+![vscode screenshot](./docs/how-it-works-screenshot-1.png)
+
+![vscode screenshot](./docs/how-it-works-screenshot-2.png)
+
+![vscode screenshot](./docs/how-it-works-screenshot-3.png)
+
+[工作原理及介绍见这里](https://developers.weixin.qq.com/community/develop/article/doc/000a0ce867842092f8cc65e5356013)
+
 ## 特殊URI语法规则
 
 | 源URI | 模版变量 | 值 |

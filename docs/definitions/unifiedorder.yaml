@@ -14,6 +14,11 @@ unifiedorder.request:
     - notify_url
     - trade_type
   properties:
+    version:
+      type: string
+      description: 接口版本号
+      example: '1.0'
+      maxLength: 32
     profit_sharing:
       type: string
       description: 是否指定服务商分账;Y-是，需要分账;N-否，不分账;字母要求大写，不传默认不分账
@@ -58,10 +63,13 @@ unifiedorder.request:
       example: 腾讯充值中心-QQ会员充值
       maxLength: 128
     detail:
+      xml:
+        x-cdata: true
       type: string
-      description: 商品详情
+      description: 单品优惠活动该字段必传，且必须按照规范上传，JSON格式
       maxLength: 6000
       nullable: true
+      example: '{"cost_price":1,"receipt_id":"wx123","goods_detail":[{"goods_id":"商品编码","wxpay_goods_id":"1001","goods_name":"iPhone6s 16G","quantity":1,"price":1},{"goods_id":"商品编码","wxpay_goods_id":"1002","goods_name":"iPhone6s 32G","quantity":1,"price":1}]}'
     attach:
       type: string
       description: 附加数据
@@ -249,3 +257,14 @@ unifiedorder.response:
           example: 'https://wx.tenpay.com/cgi-bin/mmpayweb-bin/checkmweb?prepay_id=wx2016121516420242444321ca0631331346&package=1405458241'
           maxLength: 64
           nullable: true
+    - type: object
+      xml:
+        name: xml
+      properties:
+        promotion_detail:
+          xml:
+            x-cdata: true
+          type: string
+          description: 营销详情
+          maxLength: 6000
+          example: '{"promotion_detail":[{"promotion_id":"109519","name":"单品惠-6","scope":"SINGLE","type":"DISCOUNT","amount":5,"activity_id":"931386","wxpay_contribute":0,"merchant_contribute":0,"other_contribute":5,"goods_detail":[{"goods_id":"a_goods1","goods_remark":"商品备注","quantity":7,"price":1,"discount_amount":4},{"goods_id":"a_goods2","goods_remark":"商品备注","quantity":1,"price":2,"discount_amount":1}]}]}'

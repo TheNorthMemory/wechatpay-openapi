@@ -10,6 +10,7 @@ namespace WeChatPay\OpenAPI\V2\Secapi;
  * @property-read Pay\Profitsharingfinish $profitsharingfinish
  * @property-read Pay\Profitsharingreturn $profitsharingreturn
  * @property-read Pay\Refund $refund
+ * @property-read Pay\Refundv2 $refundv2
  * @property-read Pay\Reverse $reverse
  */
 interface Pay

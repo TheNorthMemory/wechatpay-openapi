@@ -17,13 +17,14 @@ interface Unifiedorder
      */
     public function post(array $options = [
         'xml' => [
+            'version' => '1.0',
             'profit_sharing' => 'N',
             'appid' => 'wxd678efh567hg6787',
             'mch_id' => '1230000109',
             'device_info' => '013467007045764',
             'sign_type' => 'MD5',
             'body' => '腾讯充值中心-QQ会员充值',
-            'detail' => '',
+            'detail' => '{"cost_price":1,"receipt_id":"wx123","goods_detail":[{"goods_id":"商品编码","wxpay_goods_id":"1001","goods_name":"iPhone6s 16G","quantity":1,"price":1},{"goods_id":"商品编码","wxpay_goods_id":"1002","goods_name":"iPhone6s 32G","quantity":1,"price":1}]}',
             'attach' => '深圳分店',
             'out_trade_no' => '20150806125346',
             'fee_type' => 'CNY',
@@ -49,13 +50,14 @@ interface Unifiedorder
      */
     public function postAsync(array $options = [
         'xml' => [
+            'version' => '1.0',
             'profit_sharing' => 'N',
             'appid' => 'wxd678efh567hg6787',
             'mch_id' => '1230000109',
             'device_info' => '013467007045764',
             'sign_type' => 'MD5',
             'body' => '腾讯充值中心-QQ会员充值',
-            'detail' => '',
+            'detail' => '{"cost_price":1,"receipt_id":"wx123","goods_detail":[{"goods_id":"商品编码","wxpay_goods_id":"1001","goods_name":"iPhone6s 16G","quantity":1,"price":1},{"goods_id":"商品编码","wxpay_goods_id":"1002","goods_name":"iPhone6s 32G","quantity":1,"price":1}]}',
             'attach' => '深圳分店',
             'out_trade_no' => '20150806125346',
             'fee_type' => 'CNY',

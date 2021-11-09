@@ -8,39 +8,39 @@ use GuzzleHttp\Promise\PromiseInterface;
 /**
  * 这是一个纯接口描述文件，由程序自动生成，旨在为IDE提供结构提示，无他用。
  */
-interface Facepayquery
+interface Refundqueryv2
 {
     /**
-     * 查询订单(同步模式)
+     * 查询退款（支持单品）(同步模式)
      * @param array<string,mixed> $options
-     * @link https://share.weiyun.com/5dxUgCw
+     * @link https://pay.weixin.qq.com/wiki/doc/api/danpin.php?chapter=9_104&index=4
      */
     public function post(array $options = [
         'xml' => [
-            'version' => '1.0',
-            'appid' => 'wxd678efh567hg6787',
+            'appid' => 'wx8888888888888888',
+            'mch_id' => '1900000109',
             'sub_appid' => 'wx8888888888888888',
-            'mch_id' => '1230000109',
-            'sub_mch_id' => '1900000100',
-            'transaction_id' => '1009660380201506130728806387',
+            'sub_mch_id' => '1900000109',
             'sign_type' => 'HMAC-SHA256',
+            'transaction_id' => '1217752501201407033233368018',
+            'offset' => '15',
         ],
     ]): ResponseInterface;
 
     /**
-     * 查询订单(异步模式)
+     * 查询退款（支持单品）(异步模式)
      * @param array<string,mixed> $options
-     * @link https://share.weiyun.com/5dxUgCw#async
+     * @link https://pay.weixin.qq.com/wiki/doc/api/danpin.php?chapter=9_104&index=4#async
      */
     public function postAsync(array $options = [
         'xml' => [
-            'version' => '1.0',
-            'appid' => 'wxd678efh567hg6787',
+            'appid' => 'wx8888888888888888',
+            'mch_id' => '1900000109',
             'sub_appid' => 'wx8888888888888888',
-            'mch_id' => '1230000109',
-            'sub_mch_id' => '1900000100',
-            'transaction_id' => '1009660380201506130728806387',
+            'sub_mch_id' => '1900000109',
             'sign_type' => 'HMAC-SHA256',
+            'transaction_id' => '1217752501201407033233368018',
+            'offset' => '15',
         ],
     ]): PromiseInterface;
 }

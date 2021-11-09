@@ -26,6 +26,7 @@ namespace WeChatPay\OpenAPI\V2;
  * @property-read Pay\Querycombinedorder $querycombinedorder
  * @property-read Pay\Queryexchagerate $queryexchagerate
  * @property-read Pay\Refundquery $refundquery
+ * @property-read Pay\Refundqueryv2 $refundqueryv2
  * @property-read Pay\Settlementquery $settlementquery
  * @property-read Pay\Unifiedorder $unifiedorder
  */

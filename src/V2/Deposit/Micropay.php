@@ -17,6 +17,7 @@ interface Micropay
      */
     public function post(array $options = [
         'xml' => [
+            'version' => '1.0',
             'profit_sharing' => 'N',
             'deposit' => 'Y',
             'appid' => 'wx8888888888888888',
@@ -26,7 +27,7 @@ interface Micropay
             'device_info' => '013467007045764',
             'sign_type' => 'HMAC-SHA256',
             'body' => 'image形象店-深圳腾大- QQ公仔',
-            'detail' => '',
+            'detail' => '{"cost_price":1,"receipt_id":"wx123","goods_detail":[{"goods_id":"商品编码","wxpay_goods_id":"1001","goods_name":"iPhone6s 16G","quantity":1,"price":1},{"goods_id":"商品编码","wxpay_goods_id":"1002","goods_name":"iPhone6s 32G","quantity":1,"price":1}]}',
             'attach' => '说明',
             'out_trade_no' => '1217752501201407033233368018',
             'total_fee' => '888',
@@ -49,6 +50,7 @@ interface Micropay
      */
     public function postAsync(array $options = [
         'xml' => [
+            'version' => '1.0',
             'profit_sharing' => 'N',
             'deposit' => 'Y',
             'appid' => 'wx8888888888888888',
@@ -58,7 +60,7 @@ interface Micropay
             'device_info' => '013467007045764',
             'sign_type' => 'HMAC-SHA256',
             'body' => 'image形象店-深圳腾大- QQ公仔',
-            'detail' => '',
+            'detail' => '{"cost_price":1,"receipt_id":"wx123","goods_detail":[{"goods_id":"商品编码","wxpay_goods_id":"1001","goods_name":"iPhone6s 16G","quantity":1,"price":1},{"goods_id":"商品编码","wxpay_goods_id":"1002","goods_name":"iPhone6s 32G","quantity":1,"price":1}]}',
             'attach' => '说明',
             'out_trade_no' => '1217752501201407033233368018',
             'total_fee' => '888',

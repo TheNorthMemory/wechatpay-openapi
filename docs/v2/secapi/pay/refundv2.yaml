@@ -1,0 +1,53 @@
+post:
+  x-api-cert-required: true
+  tags:
+    - 支付∙付款码支付
+    - 支付∙JSAPI支付
+    - 支付∙Native支付
+    - 支付∙App支付
+    - 支付∙H5支付
+    - 支付∙小程序支付
+    - 支付∙人脸支付
+    - 支付∙委托扣款
+    - 支付∙服务商∙付款码支付
+    - 支付∙服务商∙JSAPI支付
+    - 支付∙服务商∙Native支付
+    - 支付∙服务商∙App支付
+    - 支付∙服务商∙H5支付
+    - 支付∙服务商∙小程序支付
+    - 支付∙服务商∙人脸支付
+  summary: 申请退款（支持单品）
+  description: '如果使用不支持单品优惠部分退款的历史接口，请看[这里](https://pay.weixin.qq.com/wiki/doc/api/jsapi_sl.php?chapter=9_4)，本接口支持单品优惠订单全额退款和单品优惠订单部分退款，推荐使用本接口，【官方文档](https://pay.weixin.qq.com/wiki/doc/api/danpin.php?chapter=9_103&index=3)'
+  consumes:
+    - application/xml
+  produces:
+    - application/xml
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        allOf:
+          - type: object
+            properties:
+              detail:
+                x-cdata: true
+                type: string
+                description: 退款包含的商品列表信息，全额退款可不传，必须按照规范上传，JSON格式
+                maxLength: 6000
+                example: '{"goods_detail":[{"goods_id":"商品编码","wxpay_goods_id":"1001","goods_name":"iPhone6s 16G","refund_amount":528800,"refund_quantity":1,"price":528800},{"goods_id":"商品编码","wxpay_goods_id":"1001","goods_name":"iPhone6s 16G","refund_amount":528800,"refund_quantity":1,"price":608800}]}'
+          - $ref: '../../../definitions/refund.yaml#/refund.request'
+  responses:
+    '200':
+      description: ''
+      schema:
+        allOf:
+          - $ref: '../../../definitions/refund.yaml#/refund.response'
+          - type: object
+            properties:
+              promotion_detail:
+                x-cdata: true
+                type: string
+                description: 营销详情列表
+                maxLength: 6000
+                example: '{"promotion_detail":[{"promotion_id":"109519","scope":"SINGLE","type":"DISCOUNT","refund_amout":5,"goods_detail":[{"goods_id":"a_goods1","refund_quantity":7,"price":1,"refund_amount":4},{"goods_id":"a_goods2","refund_quantity":1,"price":2,"refund_amount":1}]}]}'

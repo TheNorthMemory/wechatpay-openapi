@@ -17,6 +17,7 @@ interface Orderquery
      */
     public function post(array $options = [
         'xml' => [
+            'version' => '1.0',
             'appid' => 'wxd678efh567hg6787',
             'sub_appid' => 'wx8888888888888888',
             'mch_id' => '1230000109',
@@ -33,6 +34,7 @@ interface Orderquery
      */
     public function postAsync(array $options = [
         'xml' => [
+            'version' => '1.0',
             'appid' => 'wxd678efh567hg6787',
             'sub_appid' => 'wx8888888888888888',
             'mch_id' => '1230000109',

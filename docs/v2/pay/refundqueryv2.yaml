@@ -1,0 +1,34 @@
+post:
+  tags:
+    - 支付∙付款码支付
+    - 支付∙JSAPI支付
+    - 支付∙Native支付
+    - 支付∙App支付
+    - 支付∙H5支付
+    - 支付∙小程序支付
+    - 支付∙人脸支付
+    - 支付∙委托扣款
+    - 支付∙服务商∙付款码支付
+    - 支付∙服务商∙JSAPI支付
+    - 支付∙服务商∙Native支付
+    - 支付∙服务商∙App支付
+    - 支付∙服务商∙H5支付
+    - 支付∙服务商∙小程序支付
+    - 支付∙服务商∙人脸支付
+  summary: 查询退款（支持单品）
+  description: '注意：本接口支持查询单品优惠相关退款信息，且仅支持按微信退款单号或商户退款单号查询，[官方文档](https://pay.weixin.qq.com/wiki/doc/api/danpin.php?chapter=9_104&index=4)'
+  consumes:
+    - application/xml
+  produces:
+    - application/xml
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        $ref: '../../definitions/refundquery.yaml#/refundquery.request'
+  responses:
+    '200':
+      description: ''
+      schema:
+        $ref: '../../definitions/refundquery.yaml#/refundquery.response'

@@ -1,0 +1,114 @@
+post:
+  tags:
+    - 支付∙服务商∙小微商户
+  summary: 获取RSA加密公钥API
+  description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=19_11)'
+  consumes:
+    - application/xml
+  produces:
+    - application/xml
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        xml:
+          name: xml
+        required:
+          - mch_id
+          - nonce_str
+          - sign
+          - sign_type
+        properties:
+          mch_id:
+            type: string
+            description: 商户号
+            example: '1900000109'
+            maxLength: 32
+          nonce_str:
+            type: string
+            description: 随机字符串
+            example: 5K8264ILTKCH16CQ2502SI8ZNMTM67Vs
+            maxLength: 32
+          sign:
+            type: string
+            description: 签名
+            example: C380BEC2BFD727A4B6845133519F3AD6
+            maxLength: 32
+          sign_type:
+            type: string
+            description: 签名类型
+            example: 'HMAC-SHA256'
+            maxLength: 64
+            enum:
+              - HMAC-SHA256
+  responses:
+    '200':
+      description: ''
+      schema:
+        allOf:
+          - type: object
+            xml:
+              name: xml
+            required:
+              - return_code
+            properties:
+              return_code:
+                type: string
+                description: 返回状态码
+                example: SUCCESS
+                maxLength: 16
+              return_msg:
+                type: string
+                description: 错误码描述
+                example: 签名失败
+                maxLength: 128
+                nullable: true
+              nonce_str:
+                type: string
+                description: 随机字符串
+                example: ibuaiVcKdpRxkhJA
+                maxLength: 32
+              sign:
+                type: string
+                description: 签名
+                example: D675A1E471DBF7C0B1AC5883B5BDA9EF
+                maxLength: 32
+              error_code:
+                type: string
+                description: 错误码
+                example: '20002'
+                maxLength: 32
+                nullable: true
+              error_code_des:
+                type: string
+                description: 错误代码描述
+                example: 商户号信息有误，请检查修改后重试
+                maxLength: 128
+                nullable: true
+          - type: object
+            xml:
+              name: xml
+            required:
+              - result_code
+              - mch_id
+              - certificates
+            properties:
+              result_code:
+                type: string
+                description: 返回状态码
+                example: SUCCESS
+                maxLength: 16
+              mch_id:
+                type: string
+                description: 商户号
+                example: '1900000109'
+                maxLength: 32
+              certificates:
+                xml:
+                  x-cdata: true
+                type: string
+                description: 平台证书信息
+                example: '{"data":[{"serial_no":"42A5C4F7F70D57D0576BBEDA0E0928D6E5C4F003","effective_time":"2017-08-18 14:52:04","expire_time":"2022-08-17 14:52:04","encrypt_certificate":{"algorithm":"AEAD_AES_256_GCM","nonce":"bfcb2bd59c97","associated_data":"certificate","ciphertext":"vQ4N+lLNvtIhaV5Gqao44mbYBSaz3bZ4Md3M4f+OuquEJrp+/v4gA//UZqnQ1G0roYqnSMfcsRFj7ItTCP0tbYregpYqBKd4NSLiF/m1o01JD/9nzd3pBwBUJenUzvE1cuMO+fookaBYr+Z5AfesXUUmvl5qAbD3Yj+5GuMIkTCQcn4W6rls/W2YDo3o3T9sWtl5A/5w+U/Wsb9/UefNow6ND+2MAWRm1GK5tRTkBGVKMt699SM4p0pUns3D4g3slz6zeYIFY3+x+NzrxNq+Ov7I4e/wkp1s3QJd3vctDC4j5btvpCvdEIrBmzzTKzmJ+qhHIRVpXqiMTtOWSpCcTCptUt4v/ZrIlMihESdruDv7Zj4984+4tzBqmQ/Mt1Bwbs8RyKYe2UufmXSMyOeCW06TtkXduZ7M2QSKE4kTlRerEGPatymglepMnjpSMX/CnwaSaHcIBWN2oNjAcuBdMGFlbv05owBlkEZm4sRgZR9EMDIX/N469TUsJ3yXVLuN2k6XaAEM5wpX/Hc15R1o1rhpnLjGZpZoKOVpmcyqw5/0uBQgAAaTXOGgr6L2mrSsp9Au4J0hIX/SjfrjaovXEZTvSM+1oGlJmRVLZ+jxjTD/al7X2xsjTleYYggp4EN4aaC4DTwUNcAAzhHF9R7e+bIfyopa2FF+exXC9kZUYLywg9bwKOJwhkykz7NM669gXLjlyEu6W9gIa8sa3HKSfeLfcpTan7Ev9BjRbowQYmn7RZEyvizKJHJU3ge04OImeJFY4fT8JahzaOT8BQnvP4g2ZT65r4jQwXEbFqOJNH5SdRlTL+3oCqkgMx+1wccaj9ZKqxY9EFDwZgjLZWoySJvIbDQfEayo1pRzlcF9MbuFyGH0vblRLSx3viCc/q6oUkx2OjRw1Hp3sdtFGZMS2OE1+xICymLPglHuMzGkGYwl7ZxbotiXKkqAN46Zd7hNcTwHhxMjQXcoaUoGNEKK1fRZrBv0eUjhES8GbZvzS7+Xm1SR8dKTNMQyEvFesUY143nFt1GK+/bJR+0l2dz0zgpJGAS4yKBkWdsTng0a/jzRbMryRy+fAjWGfvHlVcXXD5b51kx1P3pxcQdMe3K0al+40gLilbegFUVPXhZ04BVgxiWHfeRPnDVwVXFzHG7MAjmPWS0PFzJupZExuy+jxIf5oyHLcYjnl2jwNNcWdzm5AFWYqy5oQI88lcOBx1X+fGuZTKAopk8/2zCa7uu9ILSyVBf801wagINDhxSNemoDoRPE0lvIYE/ax7RQehQ2Q3F2JNmpP6EfP1KZsT6nSWLBf1M5tvX/pAsPbYowNCgrwXLa68L5e03ScplSZrJWP7H3UcGxq9fRLgOYnF7ocRr0iviSRGVmSDqdtpIWwhb+UoAw4347hTQsEHRhYQdR6fTryiANB+H+6SnRJany/cozFV11J03w6h9Lmx95OJGYwF8Cei8S3pNkHpq90o7eUq2PmfS/wwxL3ZyJFPS8OY05zR4ykRnwir4L2X1RyCVoV34AAzVsvr93fVNPHtY3yf+i6sDWb4yGaXaYMM/cOnNs7wrxME44in+YZtPduI+8MZ5EGTbaqjJzrGnrbDnb515OOXg6gk+eV+bJkMXxxoNQGOkLCCI5pN+wrrokXRYhFZbYSkLd/rkg+T3JS23nO1TYOejewvatmQ97i9OFxNrwxOzDL9E87jLj26Wm+VSbm/SNafEh0eU0owwyVskg7evUe7XxcBErXC8M87MuK6AJo/IhhivYlEb/d+wG2r0gV7VesAjYC2n3ZAI1oz78WMMTmj6IqXgDc20uNmGYX0IEB+cxpJwejEfV72ArStqzumUzw3YhvD4L7Ozq0b6Y2gao88MONn9nevnydq5IvsG0bsGutXCFwjhYGxLyqigGIkVkXeq+BbxFpNxbogkB43cM"}}]}'
+                maxLength: 6000

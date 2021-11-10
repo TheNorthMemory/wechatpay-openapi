@@ -276,6 +276,8 @@ paths:
     $ref: ./v2/pay/unifiedorder.yaml
   /payitil/report:
     $ref: ./v2/payitil/report.yaml
+  /risk/getcertficates:
+    $ref: ./v2/risk/getcertficates.yaml
   /risk/getpublickey:
     $ref: ./v2/risk/getpublickey.yaml
   /risk/getviolation:

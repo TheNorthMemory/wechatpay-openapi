@@ -11,7 +11,7 @@ use GuzzleHttp\Promise\PromiseInterface;
 interface Getcertficates
 {
     /**
-     * 获取RSA加密公钥(同步模式)
+     * 获取平台证书(同步模式)
      * @param array<string,mixed> $options
      * @link https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=19_11
      */
@@ -23,7 +23,7 @@ interface Getcertficates
     ]): ResponseInterface;
 
     /**
-     * 获取RSA加密公钥(异步模式)
+     * 获取平台证书(异步模式)
      * @param array<string,mixed> $options
      * @link https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=19_11#async
      */

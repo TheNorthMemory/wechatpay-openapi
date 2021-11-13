@@ -27,8 +27,7 @@ interface Presign
             'downgrade_default_contract' => true,
             'identity' => [
                 'real_name' => '6TqLAZvNZ4AXLNHLMbjA1yKq2k5krHM09m3tCuR',
-                'credential_type' => [
-                ],
+                'credential_type' => 'IDENTITY_CARD',
                 'id_card_number' => '6TqLAZvNZ4AXLNHLMbjA1yKq2k5krHM09m3tCuR',
             ],
             'bank_card' => [
@@ -60,8 +59,7 @@ interface Presign
             'downgrade_default_contract' => true,
             'identity' => [
                 'real_name' => '6TqLAZvNZ4AXLNHLMbjA1yKq2k5krHM09m3tCuR',
-                'credential_type' => [
-                ],
+                'credential_type' => 'IDENTITY_CARD',
                 'id_card_number' => '6TqLAZvNZ4AXLNHLMbjA1yKq2k5krHM09m3tCuR',
             ],
             'bank_card' => [

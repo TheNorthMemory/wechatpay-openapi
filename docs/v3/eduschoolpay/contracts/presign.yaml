@@ -65,7 +65,7 @@ post:
                 description: 姓名
                 example: 6TqLAZvNZ4AXLNHLMbjA1yKq2k5krHM09m3tCuR
               credential_type:
-                type: object
+                type: string
                 description: 证件类型
                 example: IDENTITY_CARD
               id_card_number:

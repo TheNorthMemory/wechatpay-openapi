@@ -14,6 +14,7 @@ namespace WeChatPay\OpenAPI\V2;
  * @property-read Mmpaymkttransfers\Queryworkwxredpack $queryworkwxredpack
  * @property-read Mmpaymkttransfers\Send_coupon $send_coupon
  * @property-read Mmpaymkttransfers\Sendgroupredpack $sendgroupredpack
+ * @property-read Mmpaymkttransfers\Sendminiprogramhb $sendminiprogramhb
  * @property-read Mmpaymkttransfers\Sendredpack $sendredpack
  * @property-read Mmpaymkttransfers\Sendworkwxredpack $sendworkwxredpack
  */

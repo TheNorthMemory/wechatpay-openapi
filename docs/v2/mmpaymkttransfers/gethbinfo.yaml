@@ -2,6 +2,7 @@ post:
   x-api-cert-required: true
   tags:
     - 支付∙现金红包
+    - 支付∙小程序红包
     - 支付∙服务商∙现金红包
     - 支付∙银行服务商∙现金红包
   summary: 查询红包记录

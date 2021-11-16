@@ -66,6 +66,7 @@ tags:
   - name: 支付∙合单支付
   - name: 支付∙代金券或立减优惠
   - name: 支付∙现金红包
+  - name: 支付∙小程序红包
   - name: 支付∙企业付款
   - name: 支付∙酒店押金
   - name: 支付∙委托扣款
@@ -212,6 +213,8 @@ paths:
     $ref: ./v2/mmpaymkttransfers/send_coupon.yaml
   /mmpaymkttransfers/sendgroupredpack:
     $ref: ./v2/mmpaymkttransfers/sendgroupredpack.yaml
+  /mmpaymkttransfers/sendminiprogramhb:
+    $ref: ./v2/mmpaymkttransfers/sendminiprogramhb.yaml
   /mmpaymkttransfers/sendredpack:
     $ref: ./v2/mmpaymkttransfers/sendredpack.yaml
   /mmpaymkttransfers/sendworkwxredpack:

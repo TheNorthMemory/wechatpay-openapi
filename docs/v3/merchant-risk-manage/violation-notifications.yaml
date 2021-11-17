@@ -1,0 +1,97 @@
+post:
+  x-version: [2021.11.17]
+  x-role:
+    - 服务商
+    - 渠道商
+    - 从业机构
+  tags:
+    - 通用接口∙商户违规通知
+  summary: 创建商户违规通知回调地址API
+  description: 调用该接口设置商户违规通知回调地址，开启违规通知，当子商户被处罚或拦截时，微信支付会通过回调地址通知从业机构/服务商/渠道商。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_3_1.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        properties:
+          notify_url:
+            type: string
+            description: 通知地址
+            example: https://www.weixin.qq.com/wxpay/pay.php
+  responses:
+    '200':
+      schema:
+        type: object
+        properties:
+          notify_url:
+            type: string
+            description: 通知地址
+            example: https://www.weixin.qq.com/wxpay/pay.php
+get:
+  x-version: [2021.11.17]
+  x-role:
+    - 服务商
+    - 渠道商
+    - 从业机构
+  tags:
+    - 通用接口∙商户违规通知
+  summary: 查询商户违规通知回调地址API
+  description: 调用该接口查询商户违规通知回调地址，如果已设置回调地址，说明已开启违规通知，当子商户被处罚或拦截时，微信支付会通过回调地址通知从业机构/服务商/渠道商。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_3_2.shtml)
+  parameters: []
+  responses:
+    '200':
+      schema:
+        type: object
+        properties:
+          notify_url:
+            type: string
+            description: 通知地址
+            example: https://www.weixin.qq.com/wxpay/pay.php
+put:
+  x-version: [2021.11.17]
+  x-role:
+    - 服务商
+    - 渠道商
+    - 从业机构
+  tags:
+    - 通用接口∙商户违规通知
+  summary: 修改商户违规通知回调地址API
+  description: 调用该接口修改商户违规通知回调地址，开启违规通知，当子商户被处罚或拦截时，微信支付会通过回调地址通知从业机构/服务商/渠道商。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_3_3.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        properties:
+          notify_url:
+            type: string
+            description: 通知链接
+            example: https://www.weixin.qq.com/wxpay/pay.php
+  responses:
+    '200':
+      schema:
+        type: object
+        properties:
+          notify_url:
+            type: string
+            description: 通知地址
+            example: https://www.weixin.qq.com/wxpay/pay.php
+delete:
+  x-version: [2021.11.17]
+  x-role:
+    - 服务商
+    - 渠道商
+    - 从业机构
+  tags:
+    - 通用接口∙商户违规通知
+  summary: 删除商户违规通知回调地址API
+  description: 调用该接口删除商户违规通知回调地址，关闭违规通知，当子商户被处罚或拦截时，微信支付不会再通知从业机构/服务商/渠道商。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_3_4.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema: {}
+  responses:
+    '204': {}

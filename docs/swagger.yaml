@@ -55,6 +55,7 @@ tags:
   - name: 经营工具∙连锁品牌∙门店
   - name: 通用接口
   - name: 通用接口∙商业支付投诉
+  - name: 通用接口∙商户违规通知
   - name: 支付∙沙箱环境
   - name: 支付∙付款码支付
   - name: 支付∙JSAPI支付
@@ -583,6 +584,8 @@ paths:
     $ref: ./v3/marketing/paygiftactivity/activities/{activity_id}/terminate.yaml
   /v3/marketing/paygiftactivity/unique-threshold-activity:
     $ref: ./v3/marketing/paygiftactivity/unique-threshold-activity.yaml
+  /v3/merchant-risk-manage/violation-notifications:
+    $ref: ./v3/merchant-risk-manage/violation-notifications.yaml
   /v3/merchant-service/complaint-notifications:
     $ref: ./v3/merchant-service/complaint-notifications.yaml
   /v3/merchant-service/complaints-v2:

@@ -20,6 +20,7 @@ namespace WeChatPay\OpenAPI;
  * @property-read V3\Merchantfund $merchantfund
  * @property-read V3\MerchantStore $merchantStore
  * @property-read V3\MerchantService $merchantService
+ * @property-read V3\MerchantRiskManage $merchantRiskManage
  * @property-read V3\Merchant $merchant
  * @property-read V3\Marketing $marketing
  * @property-read V3\Goldplan $goldplan

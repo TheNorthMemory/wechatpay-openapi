@@ -88,10 +88,6 @@ delete:
     - 通用接口∙商户违规通知
   summary: 删除商户违规通知回调地址API
   description: 调用该接口删除商户违规通知回调地址，关闭违规通知，当子商户被处罚或拦截时，微信支付不会再通知从业机构/服务商/渠道商。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_3_4.shtml)
-  parameters:
-    - name: _
-      in: body
-      required: true
-      schema: {}
+  parameters: []
   responses:
     '204': {}

@@ -73,18 +73,12 @@ interface ViolationNotifications
      * @param array<string,mixed> $options
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_3_4.shtml
      */
-    public function delete(array $options = [
-        'json' => [
-        ],
-    ]): ResponseInterface;
+    public function delete(array $options = []): ResponseInterface;
 
     /**
      * 删除商户违规通知回调地址(异步模式)
      * @param array<string,mixed> $options
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_3_4.shtml#async
      */
-    public function deleteAsync(array $options = [
-        'json' => [
-        ],
-    ]): PromiseInterface;
+    public function deleteAsync(array $options = []): PromiseInterface;
 }

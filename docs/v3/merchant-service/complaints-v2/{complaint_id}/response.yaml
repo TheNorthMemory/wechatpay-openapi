@@ -1,5 +1,5 @@
 post:
-  x-version: [2021.04.01]
+  x-version: [2021.11.15]
   x-role:
     - 服务商
   tags:
@@ -36,6 +36,14 @@ post:
               format: MediaId
               description: 回复图片
               example: file23578_21798531.jpg
+          jump_url:
+            type: string
+            description: 跳转链接
+            example: https://www.xxx.com/notify
+          jump_url_text:
+            type: string
+            description: 跳转链接文案
+            example: 查看订单详情
   responses:
     '204':
       schema: {}

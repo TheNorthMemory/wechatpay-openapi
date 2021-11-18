@@ -21,6 +21,8 @@ interface Response
             'complainted_mchid' => '1900012181',
             'response_content' => '已与用户沟通解决',
             'response_images' => ['MediaId'],
+            'jump_url' => 'https://www.xxx.com/notify',
+            'jump_url_text' => '查看订单详情',
         ],
     ]): ResponseInterface;
 
@@ -35,6 +37,8 @@ interface Response
             'complainted_mchid' => '1900012181',
             'response_content' => '已与用户沟通解决',
             'response_images' => ['MediaId'],
+            'jump_url' => 'https://www.xxx.com/notify',
+            'jump_url_text' => '查看订单详情',
         ],
     ]): PromiseInterface;
 }

@@ -1,5 +1,5 @@
 post:
-  x-version: [2020.11.12]
+  x-version: [2021.10.24]
   x-role:
     - 直连商户
   tags:
@@ -268,6 +268,27 @@ post:
                 type: string
                 description: 券详情图片
                 example: https://qpic.cn/xxx
+              finder_info:
+                type: object
+                description: 视频号相关信息
+                required:
+                  - finder_id
+                  - finder_video_id
+                  - finder_video_cover_image_url
+                properties:
+                  finder_id:
+                    type: string
+                    description: 视频号ID
+                    example: sph6Rngt2T4RlUf
+                  finder_video_id:
+                    type: string
+                    description: 视频号视频ID
+                    example: sph6Rngt2T4RlUf
+                  finder_video_cover_image_url:
+                    type: string
+                    format: MediaUrl
+                    description: 视频号封面图
+                    example: https://wxpaylogo.qpic.cn/xxx
           coupon_code_mode:
             type: string
             description: 券code模式

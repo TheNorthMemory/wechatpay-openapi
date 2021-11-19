@@ -56,6 +56,11 @@ interface _stock_id_
                 'description' => 'xxx门店可用',
                 'background_color' => 'Color020',
                 'coupon_image_url' => 'https://qpic.cn/xxx',
+                'finder_info' => [
+                    'finder_id' => 'sph6Rngt2T4RlUf',
+                    'finder_video_id' => 'sph6Rngt2T4RlUf',
+                    'finder_video_cover_image_url' => 'https://wxpaylogo.qpic.cn/xxx',
+                ],
             ],
             'coupon_use_rule' => [
                 'use_method' => 'OFF_LINE',
@@ -98,6 +103,11 @@ interface _stock_id_
                 'description' => 'xxx门店可用',
                 'background_color' => 'Color020',
                 'coupon_image_url' => 'https://qpic.cn/xxx',
+                'finder_info' => [
+                    'finder_id' => 'sph6Rngt2T4RlUf',
+                    'finder_video_id' => 'sph6Rngt2T4RlUf',
+                    'finder_video_cover_image_url' => 'https://wxpaylogo.qpic.cn/xxx',
+                ],
             ],
             'coupon_use_rule' => [
                 'use_method' => 'OFF_LINE',

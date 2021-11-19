@@ -1,5 +1,5 @@
 get:
-  x-version: [2020.07.24]
+  x-version: [2021.10.27]
   x-role:
     - 直连商户
   tags:
@@ -82,14 +82,14 @@ get:
             type: array
             items:
               allOf:
-                - $ref: '../../../../../definitions/BusiFavorCouponStock.yaml#CouponBase'
+                - $ref: '../../../../../definitions/BusiFavorCouponStock.yaml#/CouponBase'
                 - type: object
                   properties:
                     coupon_code:
                       type: string
                       description: 券code
                     coupon_state:
-                      $ref: '../../../../../definitions/Enumerations.yaml#CouponState'
+                      $ref: '../../../../../definitions/Enumerations.yaml#/CouponState'
                     stock_id:
                       type: string
                       description: 批次号

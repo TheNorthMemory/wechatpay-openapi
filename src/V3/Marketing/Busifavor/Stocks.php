@@ -85,6 +85,11 @@ interface Stocks
                 'merchant_name' => '微信支付',
                 'background_color' => 'Color020',
                 'coupon_image_url' => 'https://qpic.cn/xxx',
+                'finder_info' => [
+                    'finder_id' => 'sph6Rngt2T4RlUf',
+                    'finder_video_id' => 'sph6Rngt2T4RlUf',
+                    'finder_video_cover_image_url' => 'https://wxpaylogo.qpic.cn/xxx',
+                ],
             ],
             'coupon_code_mode' => 'WECHATPAY_MODE',
             'notify_config' => [
@@ -168,6 +173,11 @@ interface Stocks
                 'merchant_name' => '微信支付',
                 'background_color' => 'Color020',
                 'coupon_image_url' => 'https://qpic.cn/xxx',
+                'finder_info' => [
+                    'finder_id' => 'sph6Rngt2T4RlUf',
+                    'finder_video_id' => 'sph6Rngt2T4RlUf',
+                    'finder_video_cover_image_url' => 'https://wxpaylogo.qpic.cn/xxx',
+                ],
             ],
             'coupon_code_mode' => 'WECHATPAY_MODE',
             'notify_config' => [

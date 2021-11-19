@@ -17,11 +17,11 @@
 
 ## IDE提示
 
-![vscode screenshot](./docs/how-it-works-screenshot-1.png)
+![vscode screenshot](./.github/how-it-works-screenshot-1.png)
 
-![vscode screenshot](./docs/how-it-works-screenshot-2.png)
+![vscode screenshot](./.github/how-it-works-screenshot-2.png)
 
-![vscode screenshot](./docs/how-it-works-screenshot-3.png)
+![vscode screenshot](./.github/how-it-works-screenshot-3.png)
 
 [工作原理及介绍见这里](https://developers.weixin.qq.com/community/develop/article/doc/000a0ce867842092f8cc65e5356013)
 

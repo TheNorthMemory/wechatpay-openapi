@@ -79,12 +79,12 @@ post:
           action_time:
             type: string
             maxLength: 64
-            example: 2018-06-08T10:34:56+08:00
+            example: '2018-06-08T10:34:56+08:00'
             description: 状态发生变化的时间，格式为rfc3339格式，如2018-06-08T10:34:56+08:00 代表北京时间2018年06月08日10时34分56秒
           pay_time:
             type: string
             maxLength: 64
-            example: 2018-06-08T10:34:56+08:00
+            example: '2018-06-08T10:34:56+08:00'
             description: 支付时间，格式为rfc3339格式，如2018-06-08T10:34:56+08:00 代表北京时间2018年06月08日10时34分56秒（status为PAY_SUCCESS时必填）
           transaction_id:
             type: string

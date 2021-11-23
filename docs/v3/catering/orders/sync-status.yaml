@@ -1,4 +1,9 @@
 post:
+  x-version: [2019.07.01]
+  x-role:
+    - 渠道服务商
+  tags:
+    - 经营工具∙微信点餐
   summary: 点餐订单信息同步（渠道商）
   description: 当点餐订单状态发生变化时，都上传全量的订单明细。1、用户在扫码点餐小程序/h5页面中下单时，上报用户的下单信息，此时status为CREATE_DEAL;2、确定支付成功后上报用户的支付信息，此时status为PAY_SUCCESS[官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/catering_sl.php?chapter=26_3&index=1)
   parameters:

@@ -53,6 +53,7 @@ tags:
   - name: 经营工具∙点金计划
   - name: 经营工具∙连锁品牌∙分账
   - name: 经营工具∙连锁品牌∙门店
+  - name: 经营工具∙微信点餐
   - name: 通用接口
   - name: 通用接口∙商业支付投诉
   - name: 通用接口∙商户违规通知
@@ -380,6 +381,8 @@ paths:
     $ref: ./v3/businesscircle/points/notify.yaml
   /v3/businesscircle/user-authorizations/{openid}:
     $ref: ./v3/businesscircle/user-authorizations/{openid}.yaml
+  /v3/catering/orders/sync-status:
+    $ref: ./v3/catering/orders/sync-status.yaml
   /v3/certificates:
     $ref: ./v3/certificates.yaml
   /v3/combine-transactions/app:

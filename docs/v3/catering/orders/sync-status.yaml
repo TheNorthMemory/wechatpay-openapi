@@ -1,0 +1,196 @@
+post:
+  summary: 点餐订单信息同步（渠道商）
+  description: 当点餐订单状态发生变化时，都上传全量的订单明细。1、用户在扫码点餐小程序/h5页面中下单时，上报用户的下单信息，此时status为CREATE_DEAL;2、确定支付成功后上报用户的支付信息，此时status为PAY_SUCCESS[官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/catering_sl.php?chapter=26_3&index=1)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - channel_id
+          - sub_mchid
+          - sub_appid
+          - out_shop_no
+          - sub_openid
+          - login_token
+          - order_entry
+          - total_amount
+          - discount_amount
+          - user_amount
+          - status
+          - action_time
+          - out_order_no
+          - dish_list
+        properties:
+          channel_id:
+            type: string
+            maxLength: 32
+            example: 1900000109
+            description: 微信支付分配的渠道商商户号
+          sub_mchid:
+            type: string
+            maxLength: 32
+            example: 1900000100
+            description: 微信支付分配子商户商户号
+          sub_appid:
+            type: string
+            maxLength: 32
+            example: wx8888888888888888
+            description: 子商户在微信公众平台申请服务号对应的APPID
+          out_shop_no:
+            type: string
+            maxLength: 32
+            example: 6895
+            description: 商户旗下门店的唯一编号
+          sub_openid:
+            type: string
+            maxLength: 32
+            example: oYobu0Dmn6TdodZnFWKOEkqoRbI8
+            description: 用户子标识，用户在子商户appid下的openid
+          login_token:
+            type: string
+            maxLength: 25
+            example:  071oYFSN19sCH31AyNSN15QDSN1oYFSA
+            description: 微信用户登录接口返回的登录票据。公众号，填写页面授权access_token，详细参考；小程序，填写session_key，详细参考。
+          order_entry:
+            type: string
+            maxLength: 25
+            example:  http://www.example.com
+            description: 点餐入口，公众号：点餐页面完整URL；小程序：点餐页面path路径
+          total_amount:
+            type: integer
+            example: 1000
+            description: 总价，单位为分
+          discount_amount:
+            type: integer
+            example: 100
+            description: 优惠金额，单位为分
+          user_amount:
+            type: integer
+            example: 900
+            description: 实际支付金额，单位为分
+          status:
+            type: string
+            maxLength: 32
+            example: CREATE_DEAL
+            description: 订单状态，取值如下：CREATE_DEAL—用户下单；PAY_SUCCESS—支付完成，结账成功；
+            enum: [CREATE_DEAL, PAY_SUCCESS]
+          action_time:
+            type: string
+            maxLength: 64
+            example: 2018-06-08T10:34:56+08:00
+            description: 状态发生变化的时间，格式为rfc3339格式，如2018-06-08T10:34:56+08:00 代表北京时间2018年06月08日10时34分56秒
+          pay_time:
+            type: string
+            maxLength: 64
+            example: 2018-06-08T10:34:56+08:00
+            description: 支付时间，格式为rfc3339格式，如2018-06-08T10:34:56+08:00 代表北京时间2018年06月08日10时34分56秒（status为PAY_SUCCESS时必填）
+          transaction_id:
+            type: string
+            maxLength: 64
+            example: '1009660380201506130728806387'
+            description: 支付订单号（status为PAY_SUCCESS时必填）
+          out_trade_no:
+            type: string
+            maxLength: 64
+            example: '20150806125346'
+            description: 渠道商系统内部支付订单号（status为PAY_SUCCESS时必填）
+          out_order_no:
+            type: string
+            maxLength: 64
+            example: '20150806125346'
+            description: 渠道商系统内部订单号
+          out_table_no:
+            type: string
+            maxLength: 16
+            example: '1'
+            description: 桌位号
+          people_count:
+            type: integer
+            description: 消费人数
+            example: 2
+          dish_list:
+            type: array
+            items:
+              type: object
+              required:
+                - out_dish_no
+                - name
+                - price
+                - unit
+                - count
+              properties:
+                out_dish_no:
+                  type: string
+                  maxLength: 48
+                  example: '1'
+                  description: 商户菜品ID
+                name:
+                  type: string
+                  maxLength: 128
+                  example: 清汤锅底
+                  description: 菜品名称
+                price:
+                  type: integer
+                  example: 1
+                  description: 菜品单价，单位为分
+                unit:
+                  type: string
+                  maxLength: 16
+                  example: BY_SHARE
+                  description: 菜品单位，BY_SHARE-按份 BY_WEIGHT-按重量
+                  enum: [BY_SHARE, BY_WEIGHT]
+                count:
+                  type: number
+                  format: float
+                  example: 1.5
+                  description: 菜品数量，保留小数点后2位有效数字
+                discount:
+                  type: integer
+                  example: 100
+                  description: 菜品折扣，百分值，8折填80
+                type:
+                  type: string
+                  maxLength: 32
+                  example: FAST_FOOD
+                  description: 菜品分类，如等。详见参数规定《菜品类型列表》
+                priority:
+                  type: integer
+                  example: 1
+                  description: 当前菜品在服务商平台的顺序，值越小越靠前，取值（1~100）
+                properties:
+                  type: object
+                  required:
+                    - taste
+                    - cuisine
+                    - main_material
+                    - ingredients
+                  properties:
+                    taste:
+                      type: string
+                      description: 口味
+                      maxLength: 128
+                      example: 辣
+                    cuisine:
+                      type: string
+                      description: 做法
+                      maxLength: 128
+                      example: 炒
+                    main_material:
+                      type: string
+                      description: 主料
+                      maxLength: 128
+                      example: 猪肝
+                    ingredients:
+                      type: string
+                      description: 配料
+                      maxLength: 128
+                      example: 青椒 | 辣椒 | 葱 | 八角
+                    others:
+                      type: string
+                      description: 其他
+                      maxLength: 128
+                      example: 有机 | 农家
+  responses:
+    '204': {}

@@ -11,6 +11,7 @@ namespace WeChatPay\OpenAPI;
  * @property-read V2\Payitil $payitil
  * @property-read V2\Pay $pay
  * @property-read V2\Papay $papay
+ * @property-read V2\Mmpaysptrans $mmpaysptrans
  * @property-read V2\Mmpaymkttransfers $mmpaymkttransfers
  * @property-read V2\Mchrisk $mchrisk
  * @property-read V2\Fund $fund

@@ -195,8 +195,6 @@ paths:
     $ref: ./v2/mmpaymkttransfers/gethbinfo.yaml
   /mmpaymkttransfers/gettransferinfo:
     $ref: ./v2/mmpaymkttransfers/gettransferinfo.yaml
-  /mmpaymkttransfers/pay_bank:
-    $ref: ./v2/mmpaymkttransfers/pay_bank.yaml
   /mmpaymkttransfers/promotion/paywwsptrans2pocket:
     $ref: ./v2/mmpaymkttransfers/promotion/paywwsptrans2pocket.yaml
   /mmpaymkttransfers/promotion/querywwsptrans2pocket:
@@ -221,6 +219,8 @@ paths:
     $ref: ./v2/mmpaymkttransfers/sendredpack.yaml
   /mmpaymkttransfers/sendworkwxredpack:
     $ref: ./v2/mmpaymkttransfers/sendworkwxredpack.yaml
+  /mmpaysptrans/pay_bank:
+    $ref: ./v2/mmpaysptrans/pay_bank.yaml
   /papay/deletecontract:
     $ref: ./v2/papay/deletecontract.yaml
   /papay/entrustweb:

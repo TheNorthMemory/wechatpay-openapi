@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);/* Generated file. DO NOT EDIT! */
 
-namespace WeChatPay\OpenAPI\V2\Mmpaymkttransfers;
+namespace WeChatPay\OpenAPI\V2\Mmpaysptrans;
 
 use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Promise\PromiseInterface;

@@ -353,12 +353,12 @@ paths:
     $ref: ./v3/apply4subject/applyment/{business_code}/cancel.yaml
   /v3/apply4subject/applyment/merchants/{sub_mchid}/state:
     $ref: ./v3/apply4subject/applyment/merchants/{sub_mchid}/state.yaml
+  /v3/applyment4sub/applyment/:
+    $ref: ./v3/applyment4sub/applyment/{empty}.yaml
   /v3/applyment4sub/applyment/applyment_id/{applyment_id}:
     $ref: ./v3/applyment4sub/applyment/applyment_id/{applyment_id}.yaml
   /v3/applyment4sub/applyment/business_code/{business_code}:
     $ref: ./v3/applyment4sub/applyment/business_code/{business_code}.yaml
-  /v3/applyment4sub/applyment/:
-    $ref: ./v3/applyment4sub/applyment/stub.yaml
   /v3/bill/fundflowbill:
     $ref: ./v3/bill/fundflowbill.yaml
   /v3/bill/sub-merchant-fundflowbill:
@@ -409,10 +409,10 @@ paths:
     $ref: ./v3/discount-card/orders/out-trade-no/{out_trade_no}.yaml
   /v3/ecommerce/applyments/{applyment_id}:
     $ref: ./v3/ecommerce/applyments/{applyment_id}.yaml
+  /v3/ecommerce/applyments/:
+    $ref: ./v3/ecommerce/applyments/{empty}.yaml
   /v3/ecommerce/applyments/out-request-no/{out_request_no}:
     $ref: ./v3/ecommerce/applyments/out-request-no/{out_request_no}.yaml
-  /v3/ecommerce/applyments/:
-    $ref: ./v3/ecommerce/applyments/stub.yaml
   /v3/ecommerce/bill/fundflowbill:
     $ref: ./v3/ecommerce/bill/fundflowbill.yaml
   /v3/ecommerce/fund/balance/{sub_mchid}:

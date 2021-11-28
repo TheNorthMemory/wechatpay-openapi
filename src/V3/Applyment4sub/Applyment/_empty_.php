@@ -8,7 +8,7 @@ use GuzzleHttp\Promise\PromiseInterface;
 /**
  * 这是一个纯接口描述文件，由程序自动生成，旨在为IDE提供结构提示，无他用。
  */
-interface _stub_
+interface _empty_
 {
     /**
      * 提交申请单(同步模式)
@@ -16,7 +16,6 @@ interface _stub_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/applyment4sub/chapter3_1.shtml
      */
     public function post(array $options = [
-        'stub' => '', // 固定参数(构造末尾SLASH需要)
         'json' => [
             'business_code' => '',
             'contact_info' => [
@@ -154,7 +153,6 @@ interface _stub_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/applyment4sub/chapter3_1.shtml#async
      */
     public function postAsync(array $options = [
-        'stub' => '', // 固定参数(构造末尾SLASH需要)
         'json' => [
             'business_code' => '',
             'contact_info' => [

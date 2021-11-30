@@ -4,7 +4,7 @@ post:
   x-role:
     - 服务商
   tags:
-    - 通用接口
+    - 营销工具∙收款有礼
   summary: 导入定向用户协议号API
   consumes:
     - multipart/form-data
@@ -100,7 +100,7 @@ get:
   x-role:
     - 服务商
   tags:
-    - 通用接口
+    - 营销工具∙收款有礼
   summary: 查询上传任务列表API
   description: 查询号码包中符合条件的上传任务 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter9_8_2.shtml)
   parameters:

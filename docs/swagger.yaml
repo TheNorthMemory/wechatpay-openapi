@@ -4,7 +4,7 @@ basePath: ''
 info:
   title: 微信支付OpenAPI文档
   description: "整理自[官方文档中心](https://pay.weixin.qq.com/wiki/doc/apiv3/index.shtml) 本[项目/工具地址](https://github.com/TheNorthMemory/wechatpay-openapi)，WEB展示依赖适配XML CDATA版的[swagger-ui-dist](https://www.npmjs.com/package/@thenorthmemory/swagger-ui-dist)"
-  version: 0.8.1
+  version: 0.11.1
 schemes:
   - https
 consumes:
@@ -54,6 +54,7 @@ tags:
   - name: 经营工具∙连锁品牌∙分账
   - name: 经营工具∙连锁品牌∙门店
   - name: 经营工具∙微信点餐
+  - name: 营销工具∙收款有礼
   - name: 通用接口
   - name: 通用接口∙商业支付投诉
   - name: 通用接口∙商户违规通知

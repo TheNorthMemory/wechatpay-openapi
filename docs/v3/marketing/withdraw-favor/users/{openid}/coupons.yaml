@@ -1,0 +1,146 @@
+post:
+  x-version: [2021.10.28]
+  tags:
+    - 营销工具∙收款有礼
+  x-role:
+    - 服务商
+  summary: 为用户发银行提现免费券API
+  description: 为用户发银行提现免费券 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter3_2_1.shtml)
+  parameters:
+    - name: openid
+      in: path
+      required: true
+      type: string
+      description: 用户标识
+      example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - mchid
+          - stock_id
+          - appid
+          - send_request_no
+        properties:
+          mchid:
+            type: string
+            description: 银行提现免费券批次创建方商户号
+            example: '1230000109'
+          stock_id:
+            type: string
+            description: 银行提现免费券批次ID
+            example: '1304490000000059'
+          appid:
+            type: string
+            description: 应用ID
+            example: wxd678efh567hg6787
+          send_request_no:
+            type: string
+            description: 商户单据号
+            example: '89560002019101000121'
+  responses:
+    '200':
+      schema:
+        type: object
+        properties:
+          coupon_id:
+            type: string
+            description: 银行提现免费券ID
+            example: C688134DB8D27165DCD630B319A870679F29B3720EF89F4F8EAE01429641F8C2-17-1505164059
+          expire_time:
+            type: string
+            description: 银行提现免费券过期时间
+            example: '2021-05-20T13:29:35.120+08:00'
+get:
+  x-version: [2021.10.28]
+  x-role:
+    - 服务商
+  tags:
+    - 营销工具∙收款有礼
+  summary: 查询批次下用户银行提现免费券列表API
+  description: 查询批次下用户银行提现免费券列表 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter3_2_2.shtml)
+  parameters:
+    - name: openid
+      in: path
+      required: true
+      type: string
+      description: 用户标识
+      example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+    - name: mchid
+      in: query
+      required: true
+      type: string
+      description: 银行提现免费券批次创建方商户号
+      example: '1230000109'
+    - name: stock_id
+      in: query
+      required: true
+      type: string
+      description: 银行提现免费券批次ID
+      example: '1304490000000059'
+    - name: appid
+      in: query
+      required: true
+      type: string
+      description: 应用ID
+      example: wxd678efh567hg6787
+    - name: offset
+      in: query
+      type: integer
+      description: 分页页码
+      example: 1
+    - name: limit
+      in: query
+      type: integer
+      description: 分页大小
+      example: 10
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - data
+          - offset
+          - limit
+          - total_count
+        properties:
+          data:
+            type: array
+            description: 银行提现免费券列表
+            items:
+              type: object
+              properties:
+                send_time:
+                  type: string
+                  description: 发放时间
+                  example: '2021-05-20T13:29:35.120+08:00'
+                send_quota:
+                  type: integer
+                  description: 发放额度
+                  example: 1000
+                coupon_id:
+                  type: string
+                  description: 银行提现免费券的券ID
+                  example: C688134DB8D27165DCD630B319A870679F29B3720EF89F4F8EAE01429641F8C2-17-1505164059
+                use_quota:
+                  type: integer
+                  description: 使用额度
+                  example: 500
+                coupon_state:
+                  type: string
+                  description: 银行提现免费券券状态
+                  example: VALID
+          offset:
+            type: integer
+            description: 分页页码
+            example: 1
+          limit:
+            type: integer
+            description: 分页大小
+            example: 10
+          total_count:
+            type: integer
+            description: 查询结果总数
+            example: 100

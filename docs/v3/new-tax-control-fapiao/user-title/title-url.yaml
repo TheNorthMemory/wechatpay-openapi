@@ -1,0 +1,84 @@
+get:
+  x-version: [2021.11.22]
+  x-role:
+    - 直连商户
+    - 服务商
+    - 渠道商
+  tags:
+    - 经营工具∙电子发票
+  summary: 获取抬头填写链接
+  description: 非微信支付场景中，商户需先调用本接口获取抬头填写链接，供用户填写发票抬头。当用户提交抬头信息后，微信支付会根据商户配置的回调地址进行回调通知。 注意：获取到的抬头填写链接有30分钟的有效期，若在用户填写发票抬头之前链接过期，商户需要重新获取（此时无需更换发票申请单号） [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/new-tax-control-fapiao/chapter3_5.shtml)
+  parameters:
+    - name: sub_mchid
+      in: query
+      type: string
+      description: 子商户号
+      example: '1900000109'
+    - name: fapiao_apply_id
+      in: query
+      type: string
+      required: true
+      description: 发票申请单号
+      example: fapiao_20200701_123456
+    - name: source
+      in: query
+      type: string
+      required: true
+      description: 开票来源
+      example: WEB
+    - name: appid
+      in: query
+      type: string
+      required: true
+      description: 商户AppID
+      example: wxb1170446a4c0a5a2
+    - name: openid
+      in: query
+      type: string
+      required: true
+      description: 用户OpenID
+      example: plN5twRbHym_j-QcqCzstl0HmwEs
+    - name: total_amount
+      in: query
+      type: integer
+      required: true
+      description: 总金额
+      example: 382895
+    - name: seller_name
+      in: query
+      type: string
+      description: 销售方名称
+      example: 深圳市南山区测试商户
+    - name: show_phone_cell
+      in: query
+      type: boolean
+      description: 是否需要展示手机号填写栏
+    - name: must_input_phone
+      in: query
+      type: boolean
+      description: 用户是否必须填写手机号
+    - name: show_email_cell
+      in: query
+      type: boolean
+      description: 是否需要展示邮箱地址填写栏
+    - name: must_input_email
+      in: query
+      type: boolean
+      description: 用户是否必须填写邮箱地址
+  responses:
+    '200':
+      schema:
+        type: object
+        properties:
+          title_url:
+            type: string
+            description: 抬头填写链接
+            example: https://payapp.weixin.qq.com
+          miniprogram_appid:
+            type: string
+            description: 抬头填写小程序AppID
+            example: wxb1170446a4c0a5a2
+          miniprogram_path:
+            type: string
+            description: 抬头填写小程序页面路径
+            example: pages/xxxPage

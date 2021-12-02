@@ -1,0 +1,56 @@
+post:
+  x-version: [2021.11.22]
+  x-role:
+    - 直连商户
+    - 服务商
+    - 渠道商
+  tags:
+    - 经营工具∙电子发票
+  summary: 上传电子发票文件
+  consumes:
+    - multipart/form-data
+  description: 调用【将电子发票插入微信用户卡包】接口之前，需要先调用本接口上传电子发票文件，获取文件ID。上传的发票文件会在三天后过期，因此上传后请尽快调用【将电子发票插入微信用户卡包】接口执行插入微信用户卡包的操作。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/new-tax-control-fapiao/chapter3_10.shtml)
+  parameters:
+    - name: file
+      in: formData
+      type: file
+      description: 电子发票文件二进制数据流，只支持PDF和OFD格式，文件大小不能超过2M。
+      required: true
+    - name: meta
+      in: formData
+      required: true
+      type: string
+      format: json
+      description: 媒体文件元信息
+      schema:
+        type: object
+        required:
+          - file_type
+          - digest_algorithm
+          - digest
+        properties:
+          sub_mchid:
+            type: string
+            description: 微信支付分配的子商户号，服务商模式下必传
+          file_type:
+            type: string
+            description: 发票文件的类型为PDF
+            example: PDF
+          digest_algorithm:
+            type: string
+            description: 文件摘要算法
+            example: SM3
+          digest:
+            type: string
+            description: 文件摘要
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - fapiao_media_id
+        properties:
+          fapiao_media_id:
+            type: string
+            description: 电子发票文件ID
+            example: ASNFZ4mrze/+3LqYdlQyEA==

@@ -1,0 +1,75 @@
+get:
+  x-version: [2021.11.22]
+  x-role:
+    - 直连商户
+    - 服务商
+    - 渠道商
+  tags:
+    - 经营工具∙电子发票
+  summary: 获取商户开票基础信息
+  description: 查询商户在微信支付商户平台中配置的电子发票开票基础信息。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/new-tax-control-fapiao/chapter3_3.shtml)
+  parameters:
+    - name: sub_mchid
+      in: query
+      required: true
+      type: string
+      description: 子商户号
+      example: '1900000109'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - seller_information
+          - extra_information
+        properties:
+          seller_information:
+            type: object
+            description: 销售方信息
+            required:
+              - name
+              - taxpayer_id
+              - address
+            properties:
+              name:
+                type: string
+                description: 名称
+                example: 深圳市南山区测试公司
+              taxpayer_id:
+                type: string
+                description: 纳税人识别号
+                example: '202003261233701778'
+              address:
+                type: string
+                description: 地址
+                example: 深圳市南山区深南大道10000号
+              telephone:
+                type: string
+                description: 电话
+                example: '075512345678'
+              bank_name:
+                type: string
+                description: 开户银行
+                example: 测试银行
+              bank_account:
+                type: string
+                description: 银行账号
+                example: '62001234567890'
+          extra_information:
+            type: object
+            description: 附加信息
+            required:
+              - drawer
+            properties:
+              payee:
+                type: string
+                description: 收款人
+                example: 张三
+              reviewer:
+                type: string
+                description: 复核人
+                example: 李四
+              drawer:
+                type: string
+                description: 开票人
+                example: 王五

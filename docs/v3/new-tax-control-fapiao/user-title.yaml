@@ -1,0 +1,72 @@
+get:
+  x-version: [2021.11.22]
+  x-role:
+    - 直连商户
+    - 服务商
+    - 渠道商
+  tags:
+    - 经营工具∙电子发票
+  summary: 获取用户填写的抬头
+  description: 商户调用本接口，检查用户是否已完成抬头填写，并获取用户填写的抬头信息。在微信支付场景下，若该笔订单在下单时指定在支付凭证上展示开票入口，则也可以调用本接口查询用户填写的抬头。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/new-tax-control-fapiao/chapter3_6.shtml)
+  parameters:
+    - name: sub_mchid
+      type: string
+      in: query
+      description: 子商户号
+      example: '1900000109'
+    - name: scene
+      type: string
+      in: query
+      required: true
+      description: 开票场景
+      example: WITH_WECHATPAY
+    - name: fapiao_apply_id
+      type: string
+      in: query
+      required: true
+      description: 发票申请单号
+      example: '4200000444201910177461284488'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - type
+          - name
+        properties:
+          type:
+            type: string
+            description: 购买方类型
+            example: ORGANIZATION
+          name:
+            type: string
+            description: 名称
+            example: 深圳市南山区测试企业
+          taxpayer_id:
+            type: string
+            description: 纳税人识别号
+            example: '202003261233701778'
+          address:
+            type: string
+            description: 地址
+            example: 深圳市南山区深南大道10000号
+          telephone:
+            type: string
+            description: 电话
+            example: '075512345678'
+          bank_name:
+            type: string
+            description: 开户银行
+            example: 测试银行
+          bank_account:
+            type: string
+            description: 银行账号
+            example: '62001234567890'
+          phone:
+            type: string
+            description: 手机号
+            example: pVd1HJ6zyvPedzGaV+X3qtmrq9bb9tPttdY+aQ6za
+          email:
+            type: string
+            description: 邮箱地址
+            example: pVd1HJ6zyvPedzGaV+X3qtmrq9bb9tPttdY+aQ6za

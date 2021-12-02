@@ -1,0 +1,18 @@
+post:
+  x-version: [2021.11.22]
+  x-role:
+    - 服务商
+    - 渠道商
+  tags:
+    - 经营工具∙电子发票
+  summary: 检查子商户开票功能状态
+  description: 服务商检查子商户的电子发票功能状态是否正常，若商户已经开通API开票功能并已对服务商授权，则返回成功。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/new-tax-control-fapiao/chapter3_1.shtml)
+  parameters:
+    - name: sub_mchid
+      in: path
+      required: true
+      type: string
+      description: 子商户号
+      example: '1900000109'
+  responses:
+    '204': {}

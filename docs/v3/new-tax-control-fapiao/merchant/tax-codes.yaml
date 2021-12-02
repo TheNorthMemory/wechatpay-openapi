@@ -1,0 +1,92 @@
+get:
+  x-version: [2021.11.22]
+  x-role:
+    - 直连商户
+    - 服务商
+    - 渠道商
+  tags:
+    - 经营工具∙电子发票
+  summary: 获取商品和服务税收分类对照表
+  description: 查询商户在微信支付商户平台中配置的电子发票税收分类编码对照表。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/new-tax-control-fapiao/chapter3_2.shtml)
+  parameters:
+    - name: sub_mchid
+      in: query
+      type: string
+      description: 子商户号
+      example: '1900000109'
+    - name: offset
+      in: query
+      required: true
+      type: integer
+      description: 本次查询的起始位置
+      example: 0
+    - name: limit
+      in: query
+      required: true
+      type: integer
+      description: 本次查询的最大数量
+      example: 5
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - offset
+          - limit
+          - data
+          - total_count
+        properties:
+          offset:
+            type: integer
+            description: 本次查询的起始位置
+          limit:
+            type: integer
+            description: 本次查询的最大数量
+            example: 5
+          links:
+            type: object
+            description: 相关链接
+            properties:
+              next:
+                type: string
+                description: 下一页链接
+                example: /v3/new-tax-control-fapiao/xxx?offset=2&limit=5
+              prev:
+                type: string
+                description: 上一页链接
+                example: /v3/new-tax-control-fapiao/xxx?offset=0&limit=5
+              self:
+                type: string
+                description: 当前链接
+                example: /v3/new-tax-control-fapiao/xxx?offset=1&limit=5
+          data:
+            type: array
+            description: 本次查询到的数据
+            items:
+              type: object
+              required:
+                - tax_code
+                - goods_name
+                - tax_rate
+                - tax_prefer_mark
+              properties:
+                tax_code:
+                  type: string
+                  description: 货物或应税劳务、服务编码
+                  example: '3010101020203000000'
+                goods_name:
+                  type: string
+                  description: 货物或应税劳务、服务名称
+                  example: 出租汽车客运服务
+                tax_rate:
+                  type: integer
+                  description: 税率
+                  example: 1300
+                tax_prefer_mark:
+                  type: string
+                  description: 税收优惠政策标识
+                  example: NO_FAVORABLE
+          total_count:
+            type: integer
+            description: 总记录数
+            example: 20

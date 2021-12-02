@@ -1,0 +1,253 @@
+post:
+  x-version: [2021.11.22]
+  x-role:
+    - 直连商户
+    - 服务商
+    - 渠道商
+  tags:
+    - 经营工具∙电子发票
+  summary: 将电子发票插入微信用户卡包
+  description: 商户自行开具电子发票后，可调用本接口将电子发票插入微信用户的卡包。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/new-tax-control-fapiao/chapter3_11.shtml)
+  parameters:
+    - $ref: '../../definitions/Parameters.yaml#/WECHATPAY_CERTIFICATE_SERIAL'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - fapiao_apply_id
+          - scene
+          - buyer_information
+          - fapiao_card_information
+        properties:
+          fapiao_apply_id:
+            type: string
+            description: 发票申请单号
+            example: '4200000444201910177461284488'
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1900000109'
+          scene:
+            type: string
+            description: 插卡场景
+            example: WITH_WECHATPAY
+          buyer_information:
+            type: object
+            description: 购买方信息
+            required:
+              - type
+              - name
+            properties:
+              type:
+                type: string
+                description: 购买方类型
+                example: ORGANIZATION
+              name:
+                type: string
+                description: 名称
+                example: 深圳市南山区测试企业
+              taxpayer_id:
+                type: string
+                description: 纳税人识别号
+                example: '202003261233701778'
+              address:
+                type: string
+                description: 地址
+                example: 深圳市南山区深南大道10000号
+              telephone:
+                type: string
+                description: 电话
+                example: '075512345678'
+              bank_name:
+                type: string
+                description: 开户银行
+                example: 测试银行
+              bank_account:
+                type: string
+                description: 银行账号
+                example: '62001234567890'
+              phone:
+                type: string
+                description: 手机号
+                example: '18507550000'
+              email:
+                type: string
+                description: 邮箱地址
+                example: 123110@qq.com
+          fapiao_card_information:
+            type: array
+            description: 电子发票卡券信息列表
+            items:
+              type: object
+              required:
+                - fapiao_media_id
+                - fapiao_number
+                - fapiao_code
+                - fapiao_time
+                - check_code
+                - password
+                - total_amount
+                - tax_amount
+                - amount
+                - seller_information
+                - extra_information
+                - items
+              properties:
+                fapiao_media_id:
+                  type: string
+                  description: 电子发票文件ID
+                  example: ASNFZ4mrze/+3LqYdlQyEA==
+                fapiao_number:
+                  type: string
+                  description: 发票号码
+                  example: '12897794'
+                fapiao_code:
+                  type: string
+                  description: 发票代码
+                  example: '044001911211'
+                fapiao_time:
+                  type: string
+                  description: 开票时间
+                  example: '2020-07-01T12:00:00+08:00'
+                check_code:
+                  type: string
+                  description: 校验码
+                  example: '69001808340631374774'
+                password:
+                  type: string
+                  description: 密码
+                  example: 006>299-375/326>2+7/*0-+<351059<80<4*/5>+<11631+*3030/5*37+/-243159658+013>3409*044>4-/1+/9->*>69501*6++1997--21
+                total_amount:
+                  type: integer
+                  description: 总价税合计
+                  example: 382895
+                tax_amount:
+                  type: integer
+                  description: 总税额
+                  example: 44050
+                amount:
+                  type: integer
+                  description: 总金额
+                  example: 338845
+                seller_information:
+                  type: object
+                  description: 销售方信息
+                  required:
+                    - name
+                    - taxpayer_id
+                    - address
+                  properties:
+                    name:
+                      type: string
+                      description: 名称
+                      example: 深圳市南山区测试公司
+                    taxpayer_id:
+                      type: string
+                      description: 纳税人识别号
+                      example: '202003261233701778'
+                    address:
+                      type: string
+                      description: 地址
+                      example: 深圳市南山区深南大道10000号
+                    telephone:
+                      type: string
+                      description: 电话
+                      example: '075512345678'
+                    bank_name:
+                      type: string
+                      description: 开户银行
+                      example: 测试银行
+                    bank_account:
+                      type: string
+                      description: 银行账号
+                      example: '62001234567890'
+                extra_information:
+                  type: object
+                  description: 附加信息
+                  required:
+                    - drawer
+                  properties:
+                    payee:
+                      type: string
+                      description: 收款人
+                      example: 张三
+                    reviewer:
+                      type: string
+                      description: 复核人
+                      example: 李四
+                    drawer:
+                      type: string
+                      description: 开票人
+                      example: 王五
+                items:
+                  type: array
+                  description: 发票行信息
+                  items:
+                    type: object
+                    required:
+                      - tax_code
+                      - goods_name
+                      - quantity
+                      - unit_price
+                      - amount
+                      - tax_amount
+                      - total_amount
+                      - tax_rate
+                      - tax_prefer_mark
+                      - discount
+                    properties:
+                      tax_code:
+                        type: string
+                        description: 货物或应税劳务、服务编码
+                        example: '3010101020203000000'
+                      goods_name:
+                        type: string
+                        description: 货物或应税劳务、服务名称
+                        example: 出租汽车客运服务
+                      specification:
+                        type: string
+                        description: 规格型号
+                        example: A4
+                      unit:
+                        type: string
+                        description: 单位
+                        example: 次
+                      quantity:
+                        type: integer
+                        description: 数量
+                        example: 100000000
+                      unit_price:
+                        type: integer
+                        description: 单价
+                        example: 380442000000
+                      amount:
+                        type: integer
+                        description: 单行金额
+                        example: 380442
+                      tax_amount:
+                        type: integer
+                        description: 单行税额
+                        example: 49458
+                      total_amount:
+                        type: integer
+                        description: 单行金额合计
+                        example: 429900
+                      tax_rate:
+                        type: integer
+                        description: 税率
+                        example: 1300
+                      tax_prefer_mark:
+                        type: string
+                        description: 税收优惠政策标识
+                        example: NO_FAVORABLE
+                      discount:
+                        type: boolean
+                        description: 是否折扣行
+                remark:
+                  type: string
+                  description: 备注信息
+                  example: 备注
+  responses:
+    '202': {}

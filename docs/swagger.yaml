@@ -54,6 +54,7 @@ tags:
   - name: 经营工具∙连锁品牌∙分账
   - name: 经营工具∙连锁品牌∙门店
   - name: 经营工具∙微信点餐
+  - name: 经营工具∙电子发票
   - name: 营销工具∙收款有礼
   - name: 通用接口
   - name: 通用接口∙商业支付投诉
@@ -640,6 +641,24 @@ paths:
     $ref: ./v3/merchantfund/merchant/income-records.yaml
   /v3/merchantfund/partner/income-records:
     $ref: ./v3/merchantfund/partner/income-records.yaml
+  /v3/new-tax-control-fapiao/card-template:
+    $ref: ./v3/new-tax-control-fapiao/card-template.yaml
+  /v3/new-tax-control-fapiao/fapiao-applications:
+    $ref: ./v3/new-tax-control-fapiao/fapiao-applications.yaml
+  /v3/new-tax-control-fapiao/fapiao-applications/{fapiao_apply_id}/reverse:
+    $ref: ./v3/new-tax-control-fapiao/fapiao-applications/{fapiao_apply_id}/reverse.yaml
+  /v3/new-tax-control-fapiao/fapiao-applications/upload-fapiao-file:
+    $ref: ./v3/new-tax-control-fapiao/fapiao-applications/upload-fapiao-file.yaml
+  /v3/new-tax-control-fapiao/merchant/{sub_mchid}/check:
+    $ref: ./v3/new-tax-control-fapiao/merchant/{sub_mchid}/check.yaml
+  /v3/new-tax-control-fapiao/merchant/base-information:
+    $ref: ./v3/new-tax-control-fapiao/merchant/base-information.yaml
+  /v3/new-tax-control-fapiao/merchant/tax-codes:
+    $ref: ./v3/new-tax-control-fapiao/merchant/tax-codes.yaml
+  /v3/new-tax-control-fapiao/user-title:
+    $ref: ./v3/new-tax-control-fapiao/user-title.yaml
+  /v3/new-tax-control-fapiao/user-title/title-url:
+    $ref: ./v3/new-tax-control-fapiao/user-title/title-url.yaml
   /v3/partner-transfer/batches:
     $ref: ./v3/partner-transfer/batches.yaml
   /v3/partner-transfer/batches/batch-id/{batch_id}:

@@ -1,0 +1,85 @@
+post:
+  x-version: [2021.11.22]
+  x-role:
+    - 直连商户
+    - 服务商
+    - 渠道商
+  tags:
+    - 经营工具∙电子发票
+  summary: 创建电子发票卡券模板
+  description: 为商户创建电子发票的卡券模板，该卡券模板在开具的电子发票插入微信用户卡包时使用。调用该接口将覆盖商户之前配置的电子发票卡券模板。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/new-tax-control-fapiao/chapter3_4.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - card_appid
+          - card_template_information
+        properties:
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1900000109'
+          card_appid:
+            type: string
+            description: 插卡公众号AppID
+            example: wxb1170446a4c0a5a2
+          card_template_information:
+            type: object
+            description: 卡券模板信息
+            required:
+              - logo_url
+            properties:
+              payee_name:
+                type: string
+                description: 收款方名称
+                example: 某公司
+              logo_url:
+                type: string
+                description: 卡券logo地址
+                example: http://mmbiz.qpic.cn/mmbiz/iaL1LJM1mF9aRKPZJkmG8xXhiaHqkKSVMMWeN3hLut7X7hicFNjakmxibMLGWpXrEXB33367o7zHN0CwngnQY7zb7g/0
+              custom_cell:
+                type: object
+                description: 卡券自定义cell位配置
+                required:
+                  - words
+                  - description
+                properties:
+                  words:
+                    type: string
+                    description: cell位文字
+                    example: 电子发票
+                  description:
+                    type: string
+                    description: cell位描述
+                    example: 查看发票
+                  jump_url:
+                    type: string
+                    description: 点击cell位跳转的地址
+                    example: http://www.qq.com
+                  miniprogram_user_name:
+                    type: string
+                    description: 点击cell位跳转的小程序的用户名
+                    example: gh_86a091e50ad4@app
+                  miniprogram_path:
+                    type: string
+                    description: 点击cell位跳转的小程序的页面路径
+                    example: pages/xxxPage
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - card_appid
+          - card_id
+        properties:
+          card_appid:
+            type: string
+            description: 插卡公众号AppID
+            example: wxb1170446a4c0a5a2
+          card_id:
+            type: string
+            description: 卡券模板id
+            example: p4gLgvn_cxVCQez17kaBJnZHPcXs

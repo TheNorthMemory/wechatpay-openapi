@@ -17,6 +17,7 @@ namespace WeChatPay\OpenAPI;
  * @property-read V3\Payscore $payscore
  * @property-read V3\Pay $pay
  * @property-read V3\PartnerTransfer $partnerTransfer
+ * @property-read V3\NewTaxControlFapiao $newTaxControlFapiao
  * @property-read V3\Merchants $merchants
  * @property-read V3\Merchantfund $merchantfund
  * @property-read V3\MerchantStore $merchantStore

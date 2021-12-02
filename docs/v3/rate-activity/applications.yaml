@@ -1,0 +1,89 @@
+post:
+  x-version: [2020.07.29]
+  x-role:
+    - 从业机构
+  tags:
+    - 通用接口
+  summary: 报名费率优惠活动API
+  description: 从业机构可调用该接口帮助已完成开户意愿确认的特约商户报名微信支付优惠费率活动。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/rateactivity/chapter3_1.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - acquiring_bank_id
+          - channel_id
+          - sub_mchid
+          - activity_detail
+        properties:
+          acquiring_bank_id:
+            type: string
+            description: 从业机构号
+            example: '1356485'
+          channel_id:
+            type: string
+            description: 渠道商户号
+            example: '20001111'
+          sub_mchid:
+            type: string
+            description: 从业机构特约商户号
+            example: '1346578'
+          activity_detail:
+            type: object
+            description: 活动报名信息
+            required:
+              - activity_id
+            properties:
+              activity_id:
+                type: string
+                description: 活动ID
+                example: schoolcanteen_001
+              activity_rate:
+                type: string
+                description: 活动费率
+                example: '0.6'
+              activity_apply_information:
+                type: array
+                description: 活动报名材料
+                items:
+                  type: object
+                  properties:
+                    apply_material_id:
+                      type: string
+                      description: 材料ID
+                      example: SCHOOL_QUALIFICATION_PROVEMENT
+                    apply_material_information:
+                      type: array
+                      items:
+                        type: string
+                        format: MediaId
+                        description: 材料内容
+                        example: 0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMAjmVtCz7ScmhEIThCaV-4BBgVwtNkCHO_XXqK5dE5YdOmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo
+          additional_information:
+            type: object
+            description: 补充信息
+            properties:
+              additional_message:
+                type: string
+                description: 补充说明
+                example: 特殊情况，说明原因
+              additional_material:
+                type: array
+                items:
+                  type: string
+                  format: MediaId
+                  description: 补充材料
+                  example: 0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMAjmVtCz7ScmhEIThCaV-4BBgVwtNkCHO_XXqK5dE5YdOmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - application_id
+        properties:
+          application_id:
+            type: string
+            description: 申请单编号
+            example: '20000000011111'

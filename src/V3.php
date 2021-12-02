@@ -12,6 +12,7 @@ namespace WeChatPay\OpenAPI;
  * @property-read V3\Settle $settle
  * @property-read V3\Refunds $refunds
  * @property-read V3\Refund $refund
+ * @property-read V3\RateActivity $rateActivity
  * @property-read V3\Profitsharing $profitsharing
  * @property-read V3\Payscore $payscore
  * @property-read V3\Pay $pay

@@ -588,6 +588,8 @@ paths:
     $ref: ./v3/marketing/paygiftactivity/activities/{activity_id}/terminate.yaml
   /v3/marketing/paygiftactivity/unique-threshold-activity:
     $ref: ./v3/marketing/paygiftactivity/unique-threshold-activity.yaml
+  /v3/marketing/withdraw-favor/users/{openid}/coupons:
+    $ref: ./v3/marketing/withdraw-favor/users/{openid}/coupons.yaml
   /v3/merchant-risk-manage/violation-notifications:
     $ref: ./v3/merchant-risk-manage/violation-notifications.yaml
   /v3/merchant-service/complaint-notifications:
@@ -726,6 +728,10 @@ paths:
     $ref: ./v3/profitsharing/return-orders/{out_return_no}.yaml
   /v3/profitsharing/transactions/{transaction_id}/amounts:
     $ref: ./v3/profitsharing/transactions/{transaction_id}/amounts.yaml
+  /v3/rate-activity/applications:
+    $ref: ./v3/rate-activity/applications.yaml
+  /v3/rate-activity/applications/id/{application_id}:
+    $ref: ./v3/rate-activity/applications/id/{application_id}.yaml
   /v3/refund/domestic/refunds:
     $ref: ./v3/refund/domestic/refunds.yaml
   /v3/refund/domestic/refunds/{out_refund_no}:

@@ -1,0 +1,115 @@
+get:
+  x-version: [2020.07.29]
+  x-role:
+    - 从业机构
+  tags:
+    - 通用接口
+  summary: 根据申请单ID查询申请单结果API
+  description: 从业机构可调用该接口查询优惠费率活动的报名结果。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/rateactivity/chapter3_2.shtml)
+  parameters:
+    - name: application_id
+      required: true
+      in: path
+      type: string
+      description: 申请单编号
+      example: '20000011111'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - application_state
+          - sub_mchid
+        properties:
+          application_state:
+            type: string
+            description: 申请单状态
+            example: APPLICATION_STATE_PASSED
+          sub_mchid:
+            type: string
+            description: 从业机构特约商户号
+            example: '1346578'
+          reject_parameter:
+            type: string
+            description: 驳回参数
+            example: merchant_name
+          reject_reason:
+            type: string
+            description: 驳回原因
+            example: 公司名称与工商局登记不一致
+          pass_time:
+            type: string
+            description: 活动审核通过时间
+            example: '2015-05-20T13:29:35+08:00'
+patch:
+  x-version: [2020.07.29]
+  x-role:
+    - 从业机构
+  tags:
+    - 通用接口
+  summary: 修改单据信息API
+  description: 该接口只适用于修改已经审核失败的单据。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/rateactivity/chapter3_3.shtml)
+  parameters:
+    - name: application_id
+      required: true
+      in: path
+      type: string
+      description: 申请单编号
+      example: '20000011111'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        properties:
+          activity_detail_modification:
+            type: object
+            description: 活动报名修改信息
+            properties:
+              activity_rate:
+                type: string
+                description: 活动费率
+                example: '0.6'
+              activity_apply_information:
+                type: array
+                description: 活动报名材料
+                items:
+                  type: object
+                  properties:
+                    apply_material_id:
+                      type: string
+                      description: 材料ID
+                      example: SCHOOL_QUALIFICATION_PROOF
+                    apply_material_information:
+                      type: array
+                      items:
+                        type: string
+                        format: MediaId
+                        description: 材料内容
+                        example: 0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMAjmVtCz7ScmhEIThCaV-4BBgVwtNkCHO_XXqK5dE5YdOmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo
+          additional_information:
+            type: object
+            description: 补充信息
+            properties:
+              additional_message:
+                type: string
+                description: 补充说明
+                example: 特殊情况，说明原因
+              additional_material:
+                type: array
+                items:
+                  type: string
+                  format: MediaId
+                  description: 补充材料
+                  example: 0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMAjmVtCz7ScmhEIThCaV-4BBgVwtNkCHO_XXqK5dE5YdOmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - application_id
+        properties:
+          application_id:
+            type: string
+            description: 申请单编号
+            example: '20000000011111'

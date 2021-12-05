@@ -1,0 +1,85 @@
+get:
+  x-version: [2021.07.21]
+  x-role:
+    - 服务商
+  tags:
+    - 运营工具∙用工卡
+  summary: 获取核身结果API
+  description: 按商户拉起核身时预下单的单号获取该次微工卡核身的结果 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_4.shtml)
+  parameters:
+    - name: sub_mchid
+      in: query
+      type: string
+      required: true
+      description: 子商户号
+      example: '1111111'
+    - name: authenticate_number
+      in: path
+      type: string
+      required: true
+      description: 商家核身单号
+      example: mcdhehfgisdhfjghed39384564i83
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - mchid
+          - sub_mchid
+          - openid
+          - authenticate_scene
+          - authenticate_source
+          - project_name
+          - employer_name
+          - authenticate_state
+          - authenticate_time
+          - authenticate_number
+        properties:
+          mchid:
+            type: string
+            description: 商户号
+            example: '1111111'
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '111111'
+          openid:
+            type: string
+            description: 用户标识
+            example: onqOjjmo8wmTOOtSKwXtGjg9Gb58
+          authenticate_scene:
+            type: string
+            description: 核身渠道
+            example: onqOjjmo8wmTOOtSKwXtGjg9Gb58
+          authenticate_source:
+            type: string
+            description: 核身渠道标识
+            example: wdiooewl7587443649000
+          project_name:
+            type: string
+            description: 项目名称
+            example: 某项目
+          employer_name:
+            type: string
+            description: 单位名称
+            example: 某单位名称
+          authenticate_state:
+            type: string
+            description: 核身状态
+            example: AUTHENTICATE_PROCESSING
+            enum:
+              - AUTHENTICATE_PROCESSING
+              - AUTHENTICATE_SUCCESS
+              - AUTHENTICATE_FAILED
+          authenticate_time:
+            type: string
+            description: 核身时间
+            example: '2015-05-20T13:29:35+08:00'
+          authenticate_number:
+            type: string
+            description: 商家核身单号
+            example: mcdhehfgisdhfjghed39384564i83
+          authenticate_failed_reason:
+            type: string
+            description: 核身失败原因
+            example: 人脸验证未通过

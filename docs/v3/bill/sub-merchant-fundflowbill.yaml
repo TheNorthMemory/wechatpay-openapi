@@ -1,14 +1,15 @@
 get:
   x-version:
-    - 2021.08.20
+    - 2021.10.11
   x-role:
     - 服务商
     - 电商平台
   tags:
     - 基础支付∙账单
     - 电商收付通∙账单
+    - 运营工具∙用工卡
   summary: 申请单个子商户资金账单API
-  description: 微信支付按天提供微信支付账户的资金流水账单文件，服务商可以通过该接口获取子商户账单文件的下载地址。文件内包含子商户资金操作相关的业务单号、收支金额、记账时间等信息，供商户进行核对。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter4_1_12.shtml)
+  description: 微信支付按天提供微信支付账户的资金流水账单文件，服务商可以通过该接口获取子商户账单文件的下载地址。文件内包含子商户资金操作相关的业务单号、收支金额、记账时间等信息，供商户进行核对。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_25.shtml) [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter4_1_12.shtml)
   parameters:
     - name: sub_mchid
       in: query

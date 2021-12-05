@@ -1,12 +1,13 @@
 get:
   x-version:
-    - 2020.11.02
+    - 2021.07.21
   x-role:
     - 服务商
   tags:
     - 资金应用∙批量转账到零钱
+    - 运营工具∙用工卡
   summary: 微信支付明细单号查询明细单API
-  description: 服务商可以通过该接口查询单笔转账明细单。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer_partner/chapter3_3.shtml)
+  description: 服务商可以通过该接口查询单笔转账明细单。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_8.shtml) [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer_partner/chapter3_3.shtml)
   parameters:
     - name: batch_id
       in: path
@@ -94,3 +95,15 @@ get:
             type: string
             description: 明细更新时间
             example: '2015-05-20T13:29:35.120+08:00'
+          account_type:
+            type: string
+            description: 收款账户类型
+            example: BANK_ACCOUNT
+          bank_name:
+            type: string
+            description: 银行名称
+            example: 招商银行
+          bank_card_number_tail:
+            type: string
+            description: 银行卡尾号
+            example: '1234'

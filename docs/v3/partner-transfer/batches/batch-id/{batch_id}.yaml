@@ -1,12 +1,13 @@
 get:
   x-version:
-    - 2020.11.02
+    - 2021.07.21
   x-role:
     - 服务商
   tags:
     - 资金应用∙批量转账到零钱
+    - 运营工具∙用工卡
   summary: 微信支付批次单号查询批次单API
-  description: 服务商可以通过该接口查询转账批次单以及指定状态的转账明细单。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer_partner/chapter3_2.shtml)
+  description: 服务商可以通过该接口查询转账批次单以及指定状态的转账明细单。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_7.shtml) [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer_partner/chapter3_2.shtml)
   parameters:
     - name: batch_id
       in: path
@@ -161,3 +162,17 @@ get:
             type: string
             description: 批量转账用途
             example: COMMISSION
+            enum:
+              - GOODSPAYMENT
+              - COMMISSION
+              - REFUND
+              - REIMBURSEMENT
+              - FREIGHT
+              - OTHERS
+          transfer_scene:
+            type: string
+            description: 转账场景
+            example: ORDINARY_TRANSFER
+            enum:
+              - ORDINARY_TRANSFER
+              - PAYROLL_CARD_TRANSFER

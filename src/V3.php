@@ -5,6 +5,7 @@ namespace WeChatPay\OpenAPI;
 /**
  * 这是一个纯接口描述文件，由程序自动生成，旨在为IDE提供结构提示，无他用。
  * @property-read V3\Vehicle $vehicle
+ * @property-read V3\Transferdownload $transferdownload
  * @property-read V3\TransferDetail $transferDetail
  * @property-read V3\Transfer $transfer
  * @property-read V3\Transactions $transactions
@@ -15,6 +16,7 @@ namespace WeChatPay\OpenAPI;
  * @property-read V3\RateActivity $rateActivity
  * @property-read V3\Profitsharing $profitsharing
  * @property-read V3\Payscore $payscore
+ * @property-read V3\PayrollCard $payrollCard
  * @property-read V3\Pay $pay
  * @property-read V3\PartnerTransfer $partnerTransfer
  * @property-read V3\NewTaxControlFapiao $newTaxControlFapiao

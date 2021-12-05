@@ -1,12 +1,13 @@
 post:
   x-version:
-    - 2020.12.08
+    - 2021.10.25
   x-role:
     - 服务商
   tags:
     - 资金应用∙批量转账到零钱
+    - 运营工具∙用工卡
   summary: 发起批量转账API
-  description: 服务商可以通过该接口，批量向用户零钱进行转账操作。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer_partner/chapter3_1.shtml)
+  description: 服务商可以通过该接口，批量向用户零钱进行转账操作。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_6.shtml) [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer_partner/chapter3_1.shtml)
   parameters:
     - $ref: '../../definitions/Parameters.yaml#WECHATPAY_CERTIFICATE_SERIAL'
     - name: _
@@ -111,6 +112,13 @@ post:
               - REIMBURSEMENT
               - FREIGHT
               - OTHERS
+          transfer_scene:
+            type: string
+            description: 转账场景
+            example: ORDINARY_TRANSFER
+            enum:
+              - ORDINARY_TRANSFER
+              - PAYROLL_CARD_TRANSFER
   responses:
     '200':
       schema:

@@ -1,10 +1,14 @@
 get:
-  x-version: [2020.09.28]
-  x-role: [电商平台]
+  x-version:
+    - 2020.11.30
+  x-role:
+    - 电商平台
+    - 服务商
   tags:
     - 电商收付通∙提现
+    - 运营工具∙用工卡
   summary: 商户提现单号查询
-  description: 电商平台通过查询提现状态API查询二级商户提现单的提现结果。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/fund/chapter3_3.shtml)
+  description: 电商平台通过查询提现状态API查询二级商户提现单的提现结果。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_23.shtml) [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/fund/chapter3_3.shtml)
   parameters:
     - name: out_request_no
       in: path
@@ -71,3 +75,23 @@ get:
             type: string
             description: 银行备注
             example: 微信提现
+          account_type:
+            type: string
+            description: 出款账户类型
+            example: BASIC
+            enum:
+              - BASIC
+              - OPERATION
+              - FEES
+          account_number:
+            type: string
+            description: 入账银行账号后四位
+            example: '1178'
+          account_bank:
+            type: string
+            description: 入账银行
+            example: 招商银行
+          bank_name:
+            type: string
+            description: 入账银行全称（含支行）
+            example: 中国工商银行股份有限公司深圳软件园支行

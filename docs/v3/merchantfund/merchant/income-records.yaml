@@ -5,8 +5,9 @@ get:
     - 服务商
   tags:
     - 资金应用∙批量转账到零钱
+    - 运营工具∙用工卡
   summary: 服务商银行来账查询API
-  description: 服务商通过本接口查询指定日期内本商户银行来账记录列表。列表内包含本商户银行来账相关的业务单号、金额、完成时间等信息，用于查询和核对。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer_partner/chapter3_7.shtml)
+  description: 服务商通过本接口查询指定日期内本商户银行来账记录列表。列表内包含本商户银行来账相关的业务单号、金额、完成时间等信息，用于查询和核对。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_28.shtml) [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer_partner/chapter3_7.shtml)
   parameters:
     - name: account_type
       type: string
@@ -17,7 +18,7 @@ get:
     - name: date
       required: true
       type: string
-      in: queryng
+      in: query
       description: 日期
       example: '2019-06-11'
     - name: offset

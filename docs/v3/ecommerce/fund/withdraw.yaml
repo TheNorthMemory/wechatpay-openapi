@@ -1,10 +1,14 @@
 post:
-  x-version: [2020.09.28]
-  x-role: [电商平台]
+  x-version:
+    - 2020.11.30
+  x-role:
+    - 电商平台
+    - 服务商
   tags:
     - 电商收付通∙提现
+    - 运营工具∙用工卡
   summary: 账户余额提现API
-  description: 电商平台通过余额提现API帮助二级商户发起账户余额提现申请，完成账户余额提现。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/fund/chapter3_2.shtml)
+  description: 电商平台通过余额提现API帮助二级商户发起账户余额提现申请，完成账户余额提现。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_22.shtml) [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/fund/chapter3_2.shtml)
   parameters:
     - name: _
       in: body
@@ -18,7 +22,7 @@ post:
         properties:
           sub_mchid:
             type: string
-            description: 二级商户号
+            description: 特约商户号
             example: '1900000109'
           out_request_no:
             type: string
@@ -30,14 +34,22 @@ post:
             example: 100
           remark:
             type: string
-            description: 备注
+            description: 提现备注
             example: 交易提现
           bank_memo:
             type: string
             description: 银行附言
             example: 微信支付提现
+          account_type:
+            type: string
+            description: 出款账户类型
+            example: BASIC
+            enum:
+              - BASIC
+              - OPERATION
+              - FEES
   responses:
-    200:
+    '200':
       schema:
         type: object
         required:
@@ -47,7 +59,7 @@ post:
         properties:
           sub_mchid:
             type: string
-            description: 二级商户号
+            description: 特约商户号
             example: '1900000109'
           withdraw_id:
             type: string
@@ -57,3 +69,11 @@ post:
             type: string
             description: 商户提现单号
             example: '20190611222222222200000000012122'
+          account_type:
+            type: string
+            description: 出款账户类型
+            example: BASIC
+            enum:
+              - BASIC
+              - OPERATION
+              - FEES

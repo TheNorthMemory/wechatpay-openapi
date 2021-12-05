@@ -4,7 +4,7 @@ basePath: ''
 info:
   title: 微信支付OpenAPI文档
   description: "整理自[官方文档中心](https://pay.weixin.qq.com/wiki/doc/apiv3/index.shtml) 本[项目/工具地址](https://github.com/TheNorthMemory/wechatpay-openapi)，WEB展示依赖适配XML CDATA版的[swagger-ui-dist](https://www.npmjs.com/package/@thenorthmemory/swagger-ui-dist)"
-  version: 0.11.1
+  version: 0.12.0
 schemes:
   - https
 consumes:
@@ -47,6 +47,7 @@ tags:
   - name: 运营工具∙委托营销
   - name: 运营工具∙支付有礼
   - name: 运营工具∙消费卡
+  - name: 运营工具∙用工卡
   - name: 运营工具∙通用接口
   - name: 经营工具∙智慧商圈
   - name: 经营工具∙支付即服务
@@ -697,6 +698,18 @@ paths:
     $ref: ./v3/pay/transactions/out-trade-no/{out_trade_no}.yaml
   /v3/pay/transactions/out-trade-no/{out_trade_no}/close:
     $ref: ./v3/pay/transactions/out-trade-no/{out_trade_no}/close.yaml
+  /v3/payroll-card/authentications:
+    $ref: ./v3/payroll-card/authentications.yaml
+  /v3/payroll-card/authentications/{authenticate_number}:
+    $ref: ./v3/payroll-card/authentications/{authenticate_number}.yaml
+  /v3/payroll-card/authentications/pre-order-with-auth:
+    $ref: ./v3/payroll-card/authentications/pre-order-with-auth.yaml
+  /v3/payroll-card/authentications/pre-order:
+    $ref: ./v3/payroll-card/authentications/pre-order.yaml
+  /v3/payroll-card/relations/{openid}:
+    $ref: ./v3/payroll-card/relations/{openid}.yaml
+  /v3/payroll-card/tokens:
+    $ref: ./v3/payroll-card/tokens.yaml
   /v3/payscore/merchant-bill:
     $ref: ./v3/payscore/merchant-bill.yaml
   /v3/payscore/permissions:
@@ -777,6 +790,8 @@ paths:
     $ref: ./v3/transfer/bill-receipt.yaml
   /v3/transfer/bill-receipt/{out_batch_no}:
     $ref: ./v3/transfer/bill-receipt/{out_batch_no}.yaml
+  /v3/transferdownload/signfile:
+    $ref: ./v3/transferdownload/signfile.yaml
   /v3/vehicle/parking/parkings:
     $ref: ./v3/vehicle/parking/parkings.yaml
   /v3/vehicle/parking/services/find:

@@ -1,0 +1,85 @@
+post:
+  x-version: [2021.08.24]
+  x-role:
+    - 服务商
+  tags:
+    - 运营工具∙用工卡
+  summary: 生成授权token API
+  description: 生成授权token信息 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_1.shtml)
+  parameters:
+    - $ref: '../../definitions/Parameters.yaml#/WECHATPAY_CERTIFICATE_SERIAL'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - openid
+          - sub_mchid
+          - user_name
+          - id_card_number
+          - employment_type
+        properties:
+          openid:
+            type: string
+            description: 用户标识
+            example: 9x111111
+          appid:
+            type: string
+            description: 应用ID
+            example: wxa1111111
+          sub_appid:
+            type: string
+            description: 子商户应用ID
+            example: wxa1111111
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1111111'
+          user_name:
+            type: string
+            description: 用户实名
+            example: LP7bT4hQXUsOZCEvK2YrSiqFsnP0oRMfeoLN0vBg
+          id_card_number:
+            type: string
+            description: 用户证件号
+            example: 7FzH5XksJG3a8HLLsaaUV6K54y1OnPMY5
+          employment_type:
+            type: string
+            description: 用工类型
+            example: LONG_TERM_EMPLOYMENT
+            enum:
+              - LONG_TERM_EMPLOYMENT
+              - SHORT_TERM_EMPLOYMENT
+              - COOPERATION_EMPLOYMENT
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - openid
+          - mchid
+          - sub_mchid
+          - token
+          - expires_in
+        properties:
+          openid:
+            type: string
+            description: 用户标识
+            example: 9x111111
+          mchid:
+            type: string
+            description: 服务商商户号
+            example: '1111111'
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1111111'
+          token:
+            type: string
+            description: 授权token
+            example: abcdefghijklmn
+          expires_in:
+            type: integer
+            description: token有效时间
+            example: 1800

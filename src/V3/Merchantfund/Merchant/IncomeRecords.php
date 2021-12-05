@@ -18,6 +18,7 @@ interface IncomeRecords
     public function get(array $options = [
         'query' => [
             'account_type' => 'BASIC',
+            'date' => '2019-06-11',
             'offset' => 0,
             'limit' => 100,
         ],
@@ -31,6 +32,7 @@ interface IncomeRecords
     public function getAsync(array $options = [
         'query' => [
             'account_type' => 'BASIC',
+            'date' => '2019-06-11',
             'offset' => 0,
             'limit' => 100,
         ],

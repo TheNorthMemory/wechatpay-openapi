@@ -1,0 +1,105 @@
+post:
+  x-version: [2021.11.11]
+  x-role:
+    - 服务商
+  tags:
+    - 运营工具∙用工卡
+  summary: 微工卡核身预下单（流程中完成授权）
+  description: 本接口适用于用户需同步完成服务开通、授权及身份核验的场景。在拉起微工卡前端服务为用户核身前，需调用本接口预下单，下单成功后才能进行核身。如此时用户未开通微工卡服务或未完成对商户的授权，则先完成开通、授权，同步完成身份核验，并提供可信的核验结果。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_29.shtml)
+  parameters:
+    - $ref: '../../../definitions/Parameters.yaml#/WECHATPAY_CERTIFICATE_SERIAL'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - openid
+          - sub_mchid
+          - authenticate_number
+          - project_name
+          - employer_name
+          - user_name
+          - id_card_number
+          - employment_type
+        properties:
+          openid:
+            type: string
+            description: 用户标识
+            example: onqOjjmo8wmTOOtSKwXtGjg9Gb58
+          appid:
+            type: string
+            description: 应用ID
+            example: wxa1111111
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1111111'
+          sub_appid:
+            type: string
+            description: 子商户应用ID
+            example: wxa1111111
+          authenticate_number:
+            type: string
+            description: 商家核身单号
+            example: mcdhehfgisdhfjghed39384564i83
+          project_name:
+            type: string
+            description: 项目名称
+            example: 某项目
+          employer_name:
+            type: string
+            description: 用工单位名称
+            example: 某用工企业
+          user_name:
+            type: string
+            description: 用户实名
+            example: LP7bT4hQXUsOZCEvK2YrSiqFsnP0oRMfeoLN0vBg
+          id_card_number:
+            type: string
+            description: 用户证件号
+            example: 7FzH5XksJG3a8HLLsaaUV6K54y1OnPMY5
+          employment_type:
+            type: string
+            description: 用工类型
+            example: LONG_TERM_EMPLOYMENT
+            enum:
+              - LONG_TERM_EMPLOYMENT
+              - SHORT_TERM_EMPLOYMENT
+              - COOPERATION_EMPLOYMENT
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - authenticate_number
+          - openid
+          - mchid
+          - sub_mchid
+          - token
+          - expires_in
+        properties:
+          authenticate_number:
+            type: string
+            description: 商家核身单号
+            example: mcdhehfgisdhfjghed39384564i83
+          openid:
+            type: string
+            description: 用户标识
+            example: onqOjjmo8wmTOOtSKwXtGjg9Gb58
+          mchid:
+            type: string
+            description: 商户号
+            example: '1111111'
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1111111'
+          token:
+            type: string
+            description: token值
+            example: abcdefghijklmn
+          expires_in:
+            type: integer
+            description: token有效时间
+            example: 300

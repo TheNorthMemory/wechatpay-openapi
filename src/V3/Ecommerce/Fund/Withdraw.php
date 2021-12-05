@@ -24,6 +24,7 @@ interface Withdraw
             'amount' => 100,
             'remark' => '交易提现',
             'bank_memo' => '微信支付提现',
+            'account_type' => 'BASIC',
         ],
     ]): ResponseInterface;
 
@@ -39,6 +40,7 @@ interface Withdraw
             'amount' => 100,
             'remark' => '交易提现',
             'bank_memo' => '微信支付提现',
+            'account_type' => 'BASIC',
         ],
     ]): PromiseInterface;
 }

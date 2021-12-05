@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);/* Generated file. DO NOT EDIT! */
 
-namespace WeChatPay\OpenAPI\V3\Merchant\Fund\Dayendbalance;
+namespace WeChatPay\OpenAPI\V3\PayrollCard\Authentications;
 
 use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Promise\PromiseInterface;
@@ -8,29 +8,29 @@ use GuzzleHttp\Promise\PromiseInterface;
 /**
  * 这是一个纯接口描述文件，由程序自动生成，旨在为IDE提供结构提示，无他用。
  */
-interface _account_type_
+interface _authenticate_number_
 {
     /**
-     * 查询账户日终余额(同步模式)
+     * 获取核身结果(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/amount/chapter3_4.shtml
+     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_4.shtml
      */
     public function get(array $options = [
-        'account_type' => 'BASIC | OPERATION | FEES',
+        'authenticate_number' => 'mcdhehfgisdhfjghed39384564i83',
         'query' => [
-            'bill_date' => '2019-06-11',
+            'sub_mchid' => '1111111',
         ],
     ]): ResponseInterface;
 
     /**
-     * 查询账户日终余额(异步模式)
+     * 获取核身结果(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/amount/chapter3_4.shtml#async
+     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_4.shtml#async
      */
     public function getAsync(array $options = [
-        'account_type' => 'BASIC | OPERATION | FEES',
+        'authenticate_number' => 'mcdhehfgisdhfjghed39384564i83',
         'query' => [
-            'bill_date' => '2019-06-11',
+            'sub_mchid' => '1111111',
         ],
     ]): PromiseInterface;
 }

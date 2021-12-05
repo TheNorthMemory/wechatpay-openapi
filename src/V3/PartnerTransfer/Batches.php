@@ -37,6 +37,7 @@ interface Batches
             ],],
             'sp_appid' => 'wxf636efh567hg4388',
             'transfer_purpose' => 'COMMISSION',
+            'transfer_scene' => 'ORDINARY_TRANSFER',
         ],
         'headers' => [
             'Wechatpay-Serial' => '',
@@ -68,6 +69,7 @@ interface Batches
             ],],
             'sp_appid' => 'wxf636efh567hg4388',
             'transfer_purpose' => 'COMMISSION',
+            'transfer_scene' => 'ORDINARY_TRANSFER',
         ],
         'headers' => [
             'Wechatpay-Serial' => '',

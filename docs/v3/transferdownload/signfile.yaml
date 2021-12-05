@@ -1,0 +1,18 @@
+get:
+  x-version: [2021.08.25]
+  x-role:
+    - 服务商
+  tags:
+    - 资金应用∙批量转账到零钱
+    - 运营工具∙用工卡
+  summary: 下载电子回单API
+  description: 下载电子回单API为通用接口，商家转账等业务电子回单均可通过该接口进行下载。[官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_15.shtml)
+  produces:
+    - application/pdf
+  parameters:
+    - name: token
+      in: query
+      required: true
+      type: string
+  responses:
+    200: {}

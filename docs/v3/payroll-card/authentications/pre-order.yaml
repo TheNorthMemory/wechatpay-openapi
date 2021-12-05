@@ -1,0 +1,85 @@
+post:
+  x-version: [2021.07.21]
+  x-role:
+    - 服务商
+  tags:
+    - 运营工具∙用工卡
+  summary: 微工卡核身预下单API
+  description: 服务商在拉起微工卡前端服务给用户做微工卡核身前，需要先调用本接口预下单，下单成功后才能进行核身 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_3.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - openid
+          - sub_mchid
+          - authenticate_number
+          - project_name
+          - employer_name
+        properties:
+          openid:
+            type: string
+            description: 用户标识
+            example: onqOjjmo8wmTOOtSKwXtGjg9Gb58
+          appid:
+            type: string
+            description: 应用ID
+            example: wxa1111111
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1111111'
+          sub_appid:
+            type: string
+            description: 子商户应用ID
+            example: wxa1111111
+          authenticate_number:
+            type: string
+            description: 商家核身单号
+            example: mcdhehfgisdhfjghed39384564i83
+          project_name:
+            type: string
+            description: 项目名称
+            example: 某项目
+          employer_name:
+            type: string
+            description: 单位名称
+            example: 某单位名称
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - authenticate_number
+          - openid
+          - mchid
+          - sub_mchid
+          - token
+          - expires_in
+        properties:
+          authenticate_number:
+            type: string
+            description: 商家核身单号
+            example: mcdhehfgisdhfjghed39384564i83
+          openid:
+            type: string
+            description: 用户标识
+            example: onqOjjmo8wmTOOtSKwXtGjg9Gb58
+          mchid:
+            type: string
+            description: 商户号
+            example: '1111111'
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1111111'
+          token:
+            type: string
+            description: token值
+            example: abcdefghijklmn
+          expires_in:
+            type: integer
+            description: token有效时间
+            example: 300

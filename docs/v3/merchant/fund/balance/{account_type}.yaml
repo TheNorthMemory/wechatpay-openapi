@@ -1,10 +1,13 @@
 get:
   x-version: [2020.03.13]
-  x-role: [电商平台]
+  x-role:
+    - 电商平台
+    - 服务商
   tags:
     - 电商收付通∙余额查询
-  summary: 查询电商平台账户实时余额API
-  description: 电商平台可通过此接口可以查询本商户号的账号余额情况。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/amount/chapter3_3.shtml)
+    - 运营工具∙用工卡
+  summary: 查询账户实时余额API
+  description: 商户通过此接口可以查询本商户号的账号余额情况。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_20.shtml) [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/amount/chapter3_3.shtml)
   parameters:
     - name: account_type
       in: path
@@ -14,7 +17,7 @@ get:
       allOf:
         - $ref: '../../../../definitions/Enumerations.yaml#BillAccountType'
   responses:
-    200:
+    '200':
       schema:
         type: object
         required:

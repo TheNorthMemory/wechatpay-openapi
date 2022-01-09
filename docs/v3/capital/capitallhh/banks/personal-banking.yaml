@@ -1,0 +1,90 @@
+get:
+  x-version:
+    - 2021.05.14
+  x-role:
+    - 服务商
+  tags:
+    - 商户进件∙通用接口
+  summary: 查询支持个人业务的银行列表API
+  description: 通过本接口可以查询支持个人业务的银行列表 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter11_2_2.shtml)
+  parameters:
+    - name: offset
+      in: query
+      type: integer
+      description: 本次查询偏移量
+      example: 0
+    - name: limit
+      in: query
+      required: true
+      type: integer
+      description: 本次请求最大查询条数
+      example: 200
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - total_count
+          - count
+          - offset
+          - links
+        properties:
+          total_count:
+            type: integer
+            description: 查询数据总条数
+            example: 10
+          count:
+            type: integer
+            description: 本次查询数据条数
+            example: 10
+          data:
+            type: array
+            description: 银行列表
+            items:
+              type: object
+              required:
+                - bank_alias
+                - bank_alias_code
+                - account_bank
+                - account_bank_code
+                - need_bank_branch
+              properties:
+                bank_alias:
+                  type: string
+                  description: 银行别名
+                  example: 工商银行深圳前海微众银行
+                bank_alias_code:
+                  type: string
+                  description: 银行别名编码
+                  example: '1000006247'
+                account_bank:
+                  type: string
+                  description: 开户银行
+                  example: 招商银行其他银行
+                account_bank_code:
+                  type: integer
+                  description: 开户银行编码
+                  example: 1001
+                need_bank_branch:
+                  type: boolean
+                  description: 是否需要填写支行
+          offset:
+            type: integer
+            description: 本次查询偏移量
+            example: 0
+          links:
+            type: object
+            description: 分页链接
+            properties:
+              next:
+                type: string
+                description: 下一页链接
+                example: /v3/capital/capitallhh/banks/personal-banking?offset=10&limit=5
+              prev:
+                type: string
+                description: 上一页链接
+                example: /v3/capital/capitallhh/banks/personal-banking?offset=0&limit=5
+              self:
+                type: string
+                description: 当前链接
+                example: /v3/capital/capitallhh/banks/personal-banking?offset=5&limit=5

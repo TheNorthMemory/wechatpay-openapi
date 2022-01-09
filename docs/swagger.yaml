@@ -4,7 +4,7 @@ basePath: ''
 info:
   title: 微信支付OpenAPI文档
   description: "整理自[官方文档中心](https://pay.weixin.qq.com/wiki/doc/apiv3/index.shtml) 本[项目/工具地址](https://github.com/TheNorthMemory/wechatpay-openapi)，WEB展示依赖适配XML CDATA版的[swagger-ui-dist](https://www.npmjs.com/package/@thenorthmemory/swagger-ui-dist)"
-  version: 0.12.0
+  version: 0.13.0
 schemes:
   - https
 consumes:
@@ -384,6 +384,18 @@ paths:
     $ref: ./v3/businesscircle/points/notify.yaml
   /v3/businesscircle/user-authorizations/{openid}:
     $ref: ./v3/businesscircle/user-authorizations/{openid}.yaml
+  /v3/capital/capitallhh/areas/provinces:
+    $ref: ./v3/capital/capitallhh/areas/provinces.yaml
+  /v3/capital/capitallhh/areas/provinces/{province_code}/cities:
+    $ref: ./v3/capital/capitallhh/areas/provinces/{province_code}/cities.yaml
+  /v3/capital/capitallhh/banks/{bank_alias_code}/branches:
+    $ref: ./v3/capital/capitallhh/banks/{bank_alias_code}/branches.yaml
+  /v3/capital/capitallhh/banks/corporate-banking:
+    $ref: ./v3/capital/capitallhh/banks/corporate-banking.yaml
+  /v3/capital/capitallhh/banks/personal-banking:
+    $ref: ./v3/capital/capitallhh/banks/personal-banking.yaml
+  /v3/capital/capitallhh/banks/search-banks-by-bank-account:
+    $ref: ./v3/capital/capitallhh/banks/search-banks-by-bank-account.yaml
   /v3/catering/orders/sync-status:
     $ref: ./v3/catering/orders/sync-status.yaml
   /v3/certificates:

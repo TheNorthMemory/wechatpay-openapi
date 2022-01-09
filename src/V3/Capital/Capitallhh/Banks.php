@@ -1,0 +1,14 @@
+<?php declare(strict_types=1);/* Generated file. DO NOT EDIT! */
+
+namespace WeChatPay\OpenAPI\V3\Capital\Capitallhh;
+
+/**
+ * 这是一个纯接口描述文件，由程序自动生成，旨在为IDE提供结构提示，无他用。
+ * @property-read Banks\_bank_alias_code_ $_bank_alias_code_
+ * @property-read Banks\CorporateBanking $corporateBanking
+ * @property-read Banks\PersonalBanking $personalBanking
+ * @property-read Banks\SearchBanksByBankAccount $searchBanksByBankAccount
+ */
+interface Banks
+{
+}

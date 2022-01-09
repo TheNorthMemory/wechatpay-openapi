@@ -1,0 +1,44 @@
+get:
+  x-version:
+    - 2021.05.14
+  x-role:
+    - 服务商
+  tags:
+    - 商户进件∙通用接口
+  summary: 查询城市列表API
+  description: 通过本接口根据省份编码获取省份下的城市列表信息，不包含中国港澳台地区城市信息，可用于支行数据过滤查询 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter11_2_5.shtml)
+  parameters:
+    - name: province_code
+      in: path
+      required: true
+      type: integer
+      description: 省份编码
+      example: 10
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - total_count
+        properties:
+          data:
+            type: array
+            description: 城市列表
+            items:
+              type: object
+              required:
+                - city_name
+                - city_code
+              properties:
+                city_name:
+                  type: string
+                  description: 城市名称
+                  example: 北京市
+                city_code:
+                  type: integer
+                  description: 城市编码
+                  example: 10
+          total_count:
+            type: integer
+            description: 查询数据总条数
+            example: 10

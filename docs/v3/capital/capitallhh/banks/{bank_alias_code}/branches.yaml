@@ -1,0 +1,107 @@
+get:
+  x-version:
+    - 2021.05.14
+  x-role:
+    - 服务商
+  tags:
+    - 商户进件∙通用接口
+  summary: 查询支行列表API
+  description: 本接口可以用于根据银行别名编码（仅支持需要填写支行的银行别名编码）和城市编码过滤查询支行列表数据 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter11_2_6.shtml)
+  parameters:
+    - name: bank_alias_code
+      in: path
+      required: true
+      type: string
+      description: 银行别名编码
+      example: '1000006247'
+    - name: city_code
+      required: true
+      in: query
+      type: integer
+      description: 城市编码
+      example: 536
+    - name: offset
+      in: query
+      type: integer
+      description: 本次查询偏移量
+    - name: limit
+      in: query
+      required: true
+      type: integer
+      description: 本次请求最大查询条数
+      example: 200
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - total_count
+          - count
+          - offset
+          - links
+          - account_bank
+          - account_bank_code
+          - bank_alias
+          - bank_alias_code
+        properties:
+          total_count:
+            type: integer
+            description: 查询数据总条数
+            example: 10
+          count:
+            type: integer
+            description: 本次查询条数
+            example: 10
+          data:
+            type: array
+            description: 支行列表
+            items:
+              type: object
+              required:
+                - bank_branch_name
+                - bank_branch_id
+              properties:
+                bank_branch_name:
+                  type: string
+                  description: 开户银行支行名称
+                  example: 中国工商银行上海市周浦支行
+                bank_branch_id:
+                  type: string
+                  description: 开户银行支行联行号
+                  example: '102290072311'
+          offset:
+            type: integer
+            description: 本次查询偏移量
+            example: 0
+          links:
+            type: object
+            description: 分页链接
+            properties:
+              next:
+                type: string
+                description: 下一页链接
+                example: /v3/capital/capitallhh/banks/1001/branches?offset=10&limit=5
+              prev:
+                type: string
+                description: 上一页链接
+                example: /v3/capital/capitallhh/banks/1001/branchesoffset=0&limit=5
+              self:
+                type: string
+                description: 当前链接
+                example: /v3/capital/capitallhh/banks/1001/branches?offset=5&limit=5
+          account_bank:
+            type: string
+            description: 开户银行
+            example: 招商银行其他银行
+          account_bank_code:
+            type: integer
+            description: 开户银行编码
+            example: 1001
+          bank_alias:
+            type: string
+            description: 银行别名
+            example: 工商银行深圳前海微众银行
+          bank_alias_code:
+            type: string
+            description: 银行别名编码
+            example: '1000006247'

@@ -9,20 +9,21 @@ post:
   summary: 冲红电子发票
   description: 商户对已开具的电子发票进行冲红（开具红票），并将其从微信用户的卡包中删除。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/new-tax-control-fapiao/chapter3_9.shtml)
   parameters:
+    - name: fapiao_apply_id
+      in: path
+      type: string
+      required: true
+      description: 发票申请单号
+      example: '4200000444201910177461284488'
     - name: _
       in: body
       required: true
       schema:
         type: object
         required:
-          - fapiao_apply_id
           - reverse_reason
           - fapiao_information
         properties:
-          fapiao_apply_id:
-            type: string
-            description: 发票申请单号
-            example: '4200000444201910177461284488'
           sub_mchid:
             type: string
             description: 子商户号

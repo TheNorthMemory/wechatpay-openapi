@@ -1,0 +1,325 @@
+get:
+  x-version:
+    - 2022.01.25
+  x-role:
+    - 直连商户
+    - 服务商
+    - 渠道商
+  tags:
+    - 经营工具∙电子发票
+  summary: 查询电子发票
+  description: 商户调用【开具电子发票】接口或【冲红电子发票】接口或【将电子发票插入微信用户卡包】接口成功后，应调用本接口查询电子发票开具/冲红/插卡结果，并获取已开具/冲红/插卡的电子发票信息。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter4_8_9.shtml)
+  parameters:
+    - name: fapiao_apply_id
+      in: path
+      type: string
+      required: true
+      description: 发票申请单号
+      example: '4200000444201910177461284488'
+    - name: sub_mchid
+      in: query
+      type: string
+      description: 子商户号
+      example: '1900000109'
+    - name: fapiao_id
+      in: query
+      type: string
+      description: 商户发票单号
+      example: '20200701123456'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - total_count
+          - fapiao_information
+        properties:
+          total_count:
+            type: integer
+            description: 发票数量
+            example: 5
+          fapiao_information:
+            type: array
+            description: 发票信息
+            items:
+              type: object
+              required:
+                - fapiao_id
+                - status
+                - total_amount
+                - tax_amount
+                - amount
+                - seller_information
+                - buyer_information
+                - extra_information
+                - items
+              properties:
+                fapiao_id:
+                  type: string
+                  description: 商户发票单号
+                  example: '20200701123456'
+                status:
+                  type: string
+                  description: 发票状态
+                  example: ISSUED
+                blue_fapiao:
+                  type: object
+                  description: 蓝字发票信息
+                  required:
+                    - fapiao_code
+                    - fapiao_number
+                    - check_code
+                    - password
+                    - fapiao_time
+                  properties:
+                    fapiao_code:
+                      type: string
+                      description: 发票代码
+                      example: '044001911211'
+                    fapiao_number:
+                      type: string
+                      description: 发票号码
+                      example: '12897794'
+                    check_code:
+                      type: string
+                      description: 校验码
+                      example: '69001808340631374774'
+                    password:
+                      type: string
+                      description: 密码
+                      example: 006>299-375/326>2+7/*0-+<351059<80<4*/5>+<11631+*3030/5*37+/-243159658+013>3409*044>4-/1+/9->*>69501*6+21997--21
+                    fapiao_time:
+                      type: string
+                      description: 开票时间
+                      example: '2020-07-01T12:00:00+08:00'
+                red_fapiao:
+                  type: object
+                  description: 红字发票信息
+                  required:
+                    - fapiao_code
+                    - fapiao_number
+                    - check_code
+                    - password
+                    - fapiao_time
+                  properties:
+                    fapiao_code:
+                      type: string
+                      description: 发票代码
+                      example: '044001911211'
+                    fapiao_number:
+                      type: string
+                      description: 发票号码
+                      example: '12897794'
+                    check_code:
+                      type: string
+                      description: 校验码
+                      example: '69001808340631374774'
+                    password:
+                      type: string
+                      description: 密码
+                      example: 006>299-375/326>2+7/*0-+<351059<80<4*/5>+<11631+*3030/5*37+/-243159658+013>3409*044>4-/1+/9->*>69501*6+21997--21
+                    fapiao_time:
+                      type: string
+                      description: 开票时间
+                      example: '2020-07-01T12:00:00+08:00'
+                card_information:
+                  type: object
+                  description: 电子发票插卡信息
+                  required:
+                    - card_appid
+                    - card_openid
+                    - card_status
+                  properties:
+                    card_appid:
+                      type: string
+                      description: 插卡公众号AppID
+                      example: wxab8acb865bb1637e
+                    card_openid:
+                      type: string
+                      description: 用户在插卡公众号下的OpenID
+                      example: plN5twRbHym_j-QcqCzstl0HmwEs
+                    card_id:
+                      type: string
+                      description: 电子发票卡券模板ID
+                      example: p4gLgvlAYSEOpeXGFVJRFxgop6iY
+                    card_code:
+                      type: string
+                      description: 电子发票在卡包中的编码
+                      example: '379550244162'
+                    card_status:
+                      type: string
+                      description: 发票卡券状态
+                      example: INSERT_ACCEPTED
+                total_amount:
+                  type: integer
+                  description: 总价税合计
+                  example: 382895
+                tax_amount:
+                  type: integer
+                  description: 总税额
+                  example: 44050
+                amount:
+                  type: integer
+                  description: 总金额
+                  example: 338845
+                seller_information:
+                  type: object
+                  description: 销售方信息
+                  required:
+                    - name
+                    - taxpayer_id
+                    - address
+                  properties:
+                    name:
+                      type: string
+                      description: 名称
+                      example: 深圳市南山区测试公司
+                    taxpayer_id:
+                      type: string
+                      description: 纳税人识别号
+                      example: '202003261233701778'
+                    address:
+                      type: string
+                      description: 地址
+                      example: 深圳市南山区深南大道10000号
+                    telephone:
+                      type: string
+                      description: 电话
+                      example: '075512345678'
+                    bank_name:
+                      type: string
+                      description: 开户银行
+                      example: 测试银行
+                    bank_account:
+                      type: string
+                      description: 银行账号
+                      example: '62001234567890'
+                buyer_information:
+                  type: object
+                  description: 购买方信息
+                  required:
+                    - type
+                    - name
+                  properties:
+                    type:
+                      type: string
+                      description: 购买方类型
+                      example: ORGANIZATION
+                    name:
+                      type: string
+                      description: 名称
+                      example: 深圳市南山区测试企业
+                    taxpayer_id:
+                      type: string
+                      description: 纳税人识别号
+                      example: '202003261233701778'
+                    address:
+                      type: string
+                      description: 地址
+                      example: 深圳市南山区深南大道10000号
+                    telephone:
+                      type: string
+                      description: 电话
+                      example: '075512345678'
+                    bank_name:
+                      type: string
+                      description: 开户银行
+                      example: 测试银行
+                    bank_account:
+                      type: string
+                      description: 银行账号
+                      example: '62001234567890'
+                    phone:
+                      type: string
+                      description: 手机号
+                      example: pVd1HJ6zyvPedzGaV+X3qtmrq9bb9tPttdY+aQ6zB
+                    email:
+                      type: string
+                      description: 邮箱地址
+                      example: pVd1HJ6zyvPedzGaV+X3qtmrq9bb9tPttdY+aQ6za
+                extra_information:
+                  type: object
+                  description: 附加信息
+                  required:
+                    - drawer
+                  properties:
+                    payee:
+                      type: string
+                      description: 收款人
+                      example: 张三
+                    reviewer:
+                      type: string
+                      description: 复核人
+                      example: 李四
+                    drawer:
+                      type: string
+                      description: 开票人
+                      example: 王五
+                items:
+                  type: array
+                  description: 发票行信息
+                  items:
+                    type: object
+                    required:
+                      - tax_code
+                      - goods_name
+                      - quantity
+                      - unit_price
+                      - amount
+                      - tax_amount
+                      - total_amount
+                      - tax_rate
+                      - tax_prefer_mark
+                      - discount
+                    properties:
+                      tax_code:
+                        type: string
+                        description: 货物或应税劳务、服务编码
+                        example: '3010101020203000000'
+                      goods_name:
+                        type: string
+                        description: 货物或应税劳务、服务名称
+                        example: 出租汽车客运服务
+                      specification:
+                        type: string
+                        description: 规格型号
+                        example: A4
+                      unit:
+                        type: string
+                        description: 单位
+                        example: 次
+                      quantity:
+                        type: integer
+                        description: 数量
+                        example: 100000000
+                      unit_price:
+                        type: integer
+                        description: 单价
+                        example: 380442000000
+                      amount:
+                        type: integer
+                        description: 单行金额
+                        example: 380442
+                      tax_amount:
+                        type: integer
+                        description: 单行税额
+                        example: 49458
+                      total_amount:
+                        type: integer
+                        description: 单行金额合计
+                        example: 429900
+                      tax_rate:
+                        type: integer
+                        description: 税率
+                        example: 1300
+                      tax_prefer_mark:
+                        type: string
+                        description: 税收优惠政策标识
+                        example: NO_FAVORABLE
+                      discount:
+                        type: boolean
+                        description: 是否折扣行
+                remark:
+                  type: string
+                  description: 备注信息
+                  example: 备注

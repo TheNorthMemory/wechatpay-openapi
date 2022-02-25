@@ -1,0 +1,58 @@
+patch:
+  x-version:
+    - 2022.01.13
+  x-role:
+    - 直连商户
+    - 服务商
+    - 渠道商
+  tags:
+    - 经营工具∙电子发票
+  summary: 配置开发选项
+  description: 配置开发选项(例如回调地址等) [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter4_8_18.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - callback_url
+        properties:
+          callback_url:
+            type: string
+            description: 商户回调地址
+            example: https://pay.weixin.qq.com/callback
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - callback_url
+        properties:
+          callback_url:
+            type: string
+            description: 商户回调地址
+            example: https://pay.weixin.qq.com/callback
+get:
+  x-version:
+    - 2022.01.13
+  x-role:
+    - 直连商户
+    - 服务商
+    - 渠道商
+  tags:
+    - 经营工具∙电子发票
+  summary: 查询商户配置的开发选项
+  description: 查询商户配置的开发选项 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter4_8_19.shtml)
+  parameters: []
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - callback_url
+        properties:
+          callback_url:
+            type: string
+            description: 商户回调地址
+            example: https://pay.weixin.qq.com/callback

@@ -71,8 +71,8 @@ interface InsertCards
                 'remark' => '备注',
             ],],
         ],
-        'query' => [
-            'undefined' => undefined,
+        'headers' => [
+            'Wechatpay-Serial' => '',
         ],
     ]): ResponseInterface;
 
@@ -137,8 +137,8 @@ interface InsertCards
                 'remark' => '备注',
             ],],
         ],
-        'query' => [
-            'undefined' => undefined,
+        'headers' => [
+            'Wechatpay-Serial' => '',
         ],
     ]): PromiseInterface;
 }

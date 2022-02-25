@@ -9,7 +9,7 @@ post:
   summary: 将电子发票插入微信用户卡包
   description: 商户自行开具电子发票后，可调用本接口将电子发票插入微信用户的卡包。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/new-tax-control-fapiao/chapter3_11.shtml)
   parameters:
-    - $ref: '../../../definitions/Parameters.yaml#/WECHATPAY_CERTIFICATE_SERIAL'
+    - $ref: '../../../../definitions/Parameters.yaml#/WECHATPAY_CERTIFICATE_SERIAL'
     - name: fapiao_apply_id
       in: path
       type: string

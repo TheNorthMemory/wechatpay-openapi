@@ -16,8 +16,8 @@ interface Reverse
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/new-tax-control-fapiao/chapter3_9.shtml
      */
     public function post(array $options = [
+        'fapiao_apply_id' => '4200000444201910177461284488',
         'json' => [
-            'fapiao_apply_id' => '4200000444201910177461284488',
             'sub_mchid' => '1900000109',
             'reverse_reason' => '退款',
             'fapiao_information' => [[
@@ -34,8 +34,8 @@ interface Reverse
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/new-tax-control-fapiao/chapter3_9.shtml#async
      */
     public function postAsync(array $options = [
+        'fapiao_apply_id' => '4200000444201910177461284488',
         'json' => [
-            'fapiao_apply_id' => '4200000444201910177461284488',
             'sub_mchid' => '1900000109',
             'reverse_reason' => '退款',
             'fapiao_information' => [[

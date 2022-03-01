@@ -1,0 +1,26 @@
+post:
+  tags:
+    - 支付∙沙箱环境
+  summary: 查询订单
+  description: '[官方沙箱付款码用例文档](https://pay.weixin.qq.com/wiki/doc/api/tools/sp_coupon.php?chapter=23_1&index=2)'
+  consumes:
+    - application/xml
+  produces:
+    - application/xml
+  parameters:
+    - name: Wechatpay-Negative-Test
+      in: header
+      enum:
+        - MICROPAY_USERPAYING
+        - MICROPAY_TIMEOUT
+        - MICROPAY_PAYERROR
+    - name: _
+      in: body
+      required: true
+      schema:
+        $ref: '../../../../definitions/orderquery.yaml#/orderquery.request'
+  responses:
+    '200':
+      description: ''
+      schema:
+        $ref: '../../../../definitions/orderquery.yaml#/orderquery.response'

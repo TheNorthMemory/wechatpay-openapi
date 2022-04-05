@@ -1,5 +1,5 @@
 get:
-  x-version: [2020.03.27]
+  x-version: [2022.03.17]
   x-role:
     - 电商平台
     - 服务商
@@ -97,6 +97,14 @@ get:
                   type: string
                   description: 二级商户号
                   example: '1900000109'
+                sub_appid:
+                  type: string
+                  description: 子商户应用ID
+                  example: wxd678efh567hg6999
+                sub_openid:
+                  type: string
+                  description: 用户子标识
+                  example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
                 amount:
                   type: object
                   description: 订单金额

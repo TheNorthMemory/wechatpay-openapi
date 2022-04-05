@@ -23,6 +23,7 @@ interface Close
                 'mchid' => '1900000109',
                 'out_trade_no' => '20150806125346',
                 'sub_mchid' => '1900000109',
+                'sub_appid' => 'wxd678efh567hg6999',
             ],],
         ],
     ]): ResponseInterface;
@@ -40,6 +41,7 @@ interface Close
                 'mchid' => '1900000109',
                 'out_trade_no' => '20150806125346',
                 'sub_mchid' => '1900000109',
+                'sub_appid' => 'wxd678efh567hg6999',
             ],],
         ],
     ]): PromiseInterface;

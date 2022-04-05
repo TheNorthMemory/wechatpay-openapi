@@ -1,5 +1,5 @@
 post:
-  x-version: [2021.08.23]
+  x-version: [2022.03.17]
   x-role:
     - 电商平台
     - 服务商
@@ -112,15 +112,21 @@ post:
                       type: integer
                       description: 补差金额
                       example: 10
+                sub_appid:
+                  type: string
+                  description: 子商户应用ID
+                  example: wxd678efh567hg6999
           combine_payer_info:
             type: object
             description: 支付者
-            required:
-              - openid
             properties:
               openid:
                 type: string
                 description: 用户标识
+                example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+              sub_openid:
+                type: string
+                description: 用户子标识
                 example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
           time_start:
             type: string

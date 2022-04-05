@@ -39,9 +39,11 @@ interface Jsapi
                     'profit_sharing' => true,
                     'subsidy_amount' => 10,
                 ],
+                'sub_appid' => 'wxd678efh567hg6999',
             ],],
             'combine_payer_info' => [
                 'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
+                'sub_openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
             ],
             'time_start' => '2019-12-31T15:59:60+08:00',
             'time_expire' => '2019-12-31T15:59:60+08:00',
@@ -78,9 +80,11 @@ interface Jsapi
                     'profit_sharing' => true,
                     'subsidy_amount' => 10,
                 ],
+                'sub_appid' => 'wxd678efh567hg6999',
             ],],
             'combine_payer_info' => [
                 'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
+                'sub_openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
             ],
             'time_start' => '2019-12-31T15:59:60+08:00',
             'time_expire' => '2019-12-31T15:59:60+08:00',

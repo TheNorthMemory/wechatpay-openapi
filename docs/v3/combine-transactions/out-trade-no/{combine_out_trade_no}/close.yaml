@@ -1,5 +1,5 @@
 post:
-  x-version: [2020.03.31]
+  x-version: [2022.03.17]
   x-role:
     - 电商平台
     - 服务商
@@ -51,5 +51,9 @@ post:
                   type: string
                   description: 二级商户号
                   example: '1900000109'
+                sub_appid:
+                  type: string
+                  description: 子商户应用ID
+                  example: wxd678efh567hg6999
   responses:
     204: {}

@@ -628,6 +628,8 @@ paths:
     $ref: ./v3/merchant-service/complaints-v2/{complaint_id}/negotiation-historys.yaml
   /v3/merchant-service/complaints-v2/{complaint_id}/response:
     $ref: ./v3/merchant-service/complaints-v2/{complaint_id}/response.yaml
+  /v3/merchant-service/complaints-v2/{complaint_id}/update-refund-progress:
+    $ref: ./v3/merchant-service/complaints-v2/{complaint_id}/update-refund-progress.yaml
   /v3/merchant-service/complaints:
     $ref: ./v3/merchant-service/complaints.yaml
   /v3/merchant-service/complaints/{transaction_id}:

@@ -10,6 +10,7 @@ use GuzzleHttp\Promise\PromiseInterface;
  * @property-read _complaint_id_\Complete $complete
  * @property-read _complaint_id_\NegotiationHistorys $negotiationHistorys
  * @property-read _complaint_id_\Response $response
+ * @property-read _complaint_id_\UpdateRefundProgress $updateRefundProgress
  */
 interface _complaint_id_
 {

@@ -1,0 +1,52 @@
+post:
+  x-version: [2022.04.25]
+  x-role:
+    - 直连商户
+    - 服务商
+    - 渠道商
+    - 从业机构
+  tags:
+    - 通用接口∙商业支付投诉
+  summary: 更新退款进度API
+  description: 更新投诉单退款进度 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter10_2_19.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - complaint_id
+          - action
+        properties:
+          complaint_id:
+            type: string
+            description: 投诉单号
+            example: '200201820200101080076610000'
+          action:
+            type: string
+            description: 审批动作
+            example: APPROVE
+          launch_refund_day:
+            type: integer
+            description: 预计发起退款时间
+            example: 3
+          reject_reason:
+            type: string
+            description: 拒绝退款原因
+            example: 拒绝退款
+          reject_media_list:
+            type: array
+            description: 拒绝退款的举证图片列表
+            items:
+              type: string
+              format: MediaId
+              description: 如果有拒绝的图片举证，可以提供 最多上传4张图片, 传入调用“商户上传反馈图片”接口返回的media_id，最多上传4张图片凭证
+              example: file23578_21798531.jpg
+          remark:
+            type: string
+            description: 备注
+            example: 已处理完成
+  responses:
+    '204':
+      schema: {}

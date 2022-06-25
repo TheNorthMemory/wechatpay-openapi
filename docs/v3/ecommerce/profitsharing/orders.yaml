@@ -2,7 +2,7 @@ post:
   x-version: [2020.09.14]
   x-role: [电商平台]
   tags:
-    - 电商收付通∙分账
+    - 收付通∙分账
   summary: 请求分账API
   description: 微信订单支付成功后，由电商平台发起分账请求，将结算后的资金分给分账接收方。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/profitsharing/chapter3_1.shtml)
   parameters:
@@ -96,7 +96,7 @@ get:
   x-version: [2020.11.06]
   x-role: [电商平台]
   tags:
-    - 电商收付通∙分账
+    - 收付通∙分账
   summary: 查询分账结果API
   description: 发起分账请求后，可调用此接口查询分账结果 ;发起分账完结请求后，可调用此接口查询分账完结的结果。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/profitsharing/chapter3_2.shtml)
   parameters:

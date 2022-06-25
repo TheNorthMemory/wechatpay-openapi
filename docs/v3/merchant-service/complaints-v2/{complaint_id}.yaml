@@ -3,7 +3,7 @@ get:
   x-role:
     - 服务商
   tags:
-    - 通用接口∙商业支付投诉
+    - 通用接口∙消费者投诉
   summary: 查询投诉单详情API
   description: 商户可通过调用此接口，查询指定投诉单的用户投诉详情，包含投诉内容、投诉关联订单、投诉人联系方式等信息，方便商户处理投诉。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_2_13.shtml)
   parameters:

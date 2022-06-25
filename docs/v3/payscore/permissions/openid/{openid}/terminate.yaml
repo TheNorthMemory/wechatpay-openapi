@@ -3,7 +3,7 @@ post:
   x-role:
     - 直连商户
   tags:
-    - 微信支付分∙免确认模式∙预授权
+    - 经营工具∙支付分∙免确认模式∙预授权
   summary: 解除用户授权关系（openid）API
   description: 通过openid， 商户解除用户授权关系 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter9_6.shtml)
   parameters:

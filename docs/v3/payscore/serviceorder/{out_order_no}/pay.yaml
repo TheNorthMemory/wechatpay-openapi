@@ -2,7 +2,7 @@ post:
   x-version: [2020.03.05]
   x-role: [服务商, 直连商户]
   tags:
-    - 微信支付分
+    - 经营工具∙支付分
   summary: 商户发起催收扣款API
   description: 当微信支付分订单支付状态处于“待支付”时，商户可使用该接口向用户发起收款。**前置条件：**服务订单支付状态处于“待支付”状态 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter3_6.shtml)
   parameters:

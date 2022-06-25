@@ -3,7 +3,7 @@ get:
   x-role:
     - 直连商户
   tags:
-    - 微信支付分∙免确认模式∙预授权
+    - 经营工具∙支付分∙免确认模式∙预授权
   summary: 查询与用户授权记录（openid）API
   description: '通过openid查询用户授权信息 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter9_5.shtml)'
   parameters:

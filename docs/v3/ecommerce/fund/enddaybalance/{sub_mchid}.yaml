@@ -2,7 +2,7 @@ get:
   x-version: [2020.03.13]
   x-role: [电商平台]
   tags:
-    - 电商收付通∙余额查询
+    - 收付通∙余额
   summary: 查询二级商户账户日终余额API
   description: 电商服务商通过该接口可以查询二级商户指定日期当天24点的账户余额。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/amount/chapter3_2.shtml)
   parameters:

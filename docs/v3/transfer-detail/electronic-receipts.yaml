@@ -5,7 +5,7 @@ post:
     - 直连商户
     - 服务商
   tags:
-    - 资金应用∙批量转账到零钱
+    - 资金应用∙转账
     - 运营工具∙用工卡
   summary: 转账明细电子回单受理API
   description: 受理转账明细电子回单接口，商户通过该接口可以申请受理转账明细单电子回单服务。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_13.shtml) [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer_partner/chapter4_4.shtml)
@@ -83,7 +83,7 @@ get:
     - 直连商户
     - 服务商
   tags:
-    - 资金应用∙批量转账到零钱
+    - 资金应用∙转账
     - 运营工具∙用工卡
   summary: 查询转账明细电子回单受理结果API
   description: 查询转账明细电子回单受理结果接口，商户通过该接口可以查询电子回单受理进度信息，包括电子回单据信息，电子回单文件的hash值，电子回单文件的下载地址等。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_14.shtml) [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer_partner/chapter4_5.shtml)

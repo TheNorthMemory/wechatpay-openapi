@@ -2,7 +2,7 @@ post:
   x-version: [2020.04.23]
   x-role: [服务商, 直连商户]
   tags:
-    - 微信支付分
+    - 经营工具∙支付分
   summary: 取消支付分订单API
   description: 微信支付分订单创建之后，由于某些原因导致订单不能正常支付时，可使用此接口取消订单。前置条件：服务订单状态为已创单或进行中 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter3_3.shtml)
   parameters:

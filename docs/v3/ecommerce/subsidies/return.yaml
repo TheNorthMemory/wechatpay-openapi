@@ -2,7 +2,7 @@ post:
   x-version: [2019.09.12]
   x-role: [电商平台]
   tags:
-    - 电商收付通∙补差
+    - 收付通∙补差
   summary: 请求补差回退API
   description: 订单发送退款的时候，可以对补贴成功的补差单发起回退。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/subsidies/chapter3_2.shtml)
   parameters:

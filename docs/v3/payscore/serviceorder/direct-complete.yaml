@@ -2,7 +2,7 @@ post:
   x-version: [2020.04.23]
   x-role: [服务商, 直连商户]
   tags:
-    - 微信支付分∙免确认模式
+    - 经营工具∙支付分∙免确认模式
   summary: 创单结单合并API
   description: 该接口适用于无需微信支付分做订单风控判断的业务场景，在服务完成后，通过该接口对用户进行免密代扣。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter3_9.shtml)
   parameters:

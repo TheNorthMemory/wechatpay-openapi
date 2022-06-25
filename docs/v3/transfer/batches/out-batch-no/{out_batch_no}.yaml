@@ -4,7 +4,7 @@ get:
   x-role:
     - 直连商户
   tags:
-    - 资金应用∙批量转账到零钱
+    - 资金应用∙转账
   summary: 商家批次单号查询批次单API
   description: 商户可以通过该接口查询转账批次单以及指定状态的转账明细单。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer/chapter3_4.shtml)
   parameters:

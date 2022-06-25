@@ -4,7 +4,7 @@ get:
     - 电商平台
     - 服务商
   tags:
-    - 电商收付通∙余额查询
+    - 收付通∙余额
     - 运营工具∙用工卡
   summary: 查询二级商户账户实时余额API
   description: 服务商通过此接口可以查询特约商户账户余额信息。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_19.shtml) [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/amount/chapter3_1.shtml)

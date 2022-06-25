@@ -2,7 +2,7 @@ get:
   x-version: [2020.09.28]
   x-role: [电商平台]
   tags:
-    - 电商收付通∙提现
+    - 收付通∙提现
   summary: 电商平台(微信支付提现单号)查询提现状态API
   description: 电商平台通过该接口查询其提现结果。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/fund/chapter3_6.shtml)
   parameters:

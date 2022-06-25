@@ -5,7 +5,7 @@ get:
     - 电商平台
     - 服务商
   tags:
-    - 电商收付通∙提现
+    - 收付通∙提现
     - 运营工具∙用工卡
   summary: 商户提现单号查询
   description: 电商平台通过查询提现状态API查询二级商户提现单的提现结果。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_23.shtml) [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/fund/chapter3_3.shtml)

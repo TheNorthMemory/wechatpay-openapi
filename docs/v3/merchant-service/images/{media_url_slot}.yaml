@@ -2,7 +2,7 @@ get:
   x-version: [2021.05.11]
   x-role: [直连商户, 服务商, 渠道商]
   tags:
-    - 通用接口∙商业支付投诉
+    - 通用接口∙消费者投诉
   summary: 图片下载API
   description: 下载图片API为通用接口，消费者投诉相关图片都可以通过该接口进行下载。[官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter10_2_18.shtml)
   parameters:

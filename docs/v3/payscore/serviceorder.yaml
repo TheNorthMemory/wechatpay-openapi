@@ -2,7 +2,7 @@ post:
   x-version: [2020.03.05]
   x-role: [服务商, 直连商户]
   tags:
-    - 微信支付分
+    - 经营工具∙支付分
   summary: 创建支付分订单API
   description: 用户申请使用服务时，商户可通过此接口申请创建微信支付分订单。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter3_1.shtml)
   parameters:
@@ -49,7 +49,7 @@ get:
   x-version: [2020.05.25]
   x-role: [服务商, 直连商户]
   tags:
-    - 微信支付分
+    - 经营工具∙支付分
   summary: 查询支付分订单API
   description: 用于查询单笔微信支付分订单详细信息。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter3_2.shtml)
   parameters:

@@ -1,6 +1,6 @@
 post:
   tags:
-    - 支付∙沙箱环境
+    - 沙箱环境
   summary: 获取验签密钥API
   description: '[官方沙箱环境文档](https://pay.weixin.qq.com/wiki/doc/api/tools/sp_coupon.php?chapter=23_1&index=2)'
   consumes:

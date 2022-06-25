@@ -4,7 +4,7 @@ get:
   x-role:
     - 服务商
   tags:
-    - 资金应用∙批量转账到零钱
+    - 资金应用∙转账∙服务商模式
     - 运营工具∙用工卡
   summary: 微信支付批次单号查询批次单API
   description: 服务商可以通过该接口查询转账批次单以及指定状态的转账明细单。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_7.shtml) [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer_partner/chapter3_2.shtml)

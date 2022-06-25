@@ -4,7 +4,7 @@ get:
     - 电商平台
     - 服务商
   tags:
-    - 电商收付通∙余额查询
+    - 收付通∙余额
     - 运营工具∙用工卡
   summary: 查询账户日终余额API
   description: 通过此接口可以查询本商户号指定日期当天24点的账户余额。**注意：**• 可查询90天内的日终余额。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/amount/chapter3_4.shtml) [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_21.shtml) [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/amount/chapter3_4.shtml)

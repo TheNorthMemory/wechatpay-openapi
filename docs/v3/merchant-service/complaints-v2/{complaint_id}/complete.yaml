@@ -3,7 +3,7 @@ post:
   x-role:
     - 服务商
   tags:
-    - 通用接口∙商业支付投诉
+    - 通用接口∙消费者投诉
   summary: 反馈处理完成API
   description: 商户可通过调用此接口，反馈投诉单已处理完成。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_2_15.shtml)
   parameters:

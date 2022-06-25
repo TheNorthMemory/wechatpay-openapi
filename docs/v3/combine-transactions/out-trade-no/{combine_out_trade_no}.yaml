@@ -5,8 +5,8 @@ get:
     - 服务商
     - 直连商户
   tags:
-    - 基础支付∙合单支付
-    - 电商收付通∙合单支付
+    - 基础支付∙合单
+    - 收付通∙合单
   summary: 合单查询订单API
   description: 电商平台通过合单查询订单API查询订单状态，完成下一步的业务逻辑。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/combine/chapter3_3.shtml)
   parameters:

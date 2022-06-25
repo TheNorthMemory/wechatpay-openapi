@@ -2,7 +2,7 @@ post:
   x-version: [2020.04.30]
   x-role: [电商平台]
   tags:
-    - 电商收付通∙分账
+    - 收付通∙分账
   summary: 完结分账API
   description: 不需要进行分账的订单，可直接调用本接口将订单的金额全部解冻给二级商户。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/profitsharing/chapter3_5.shtml)
   parameters:

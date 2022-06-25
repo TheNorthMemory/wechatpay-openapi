@@ -5,7 +5,7 @@ post:
     - 电商平台
     - 服务商
   tags:
-    - 电商收付通∙提现
+    - 收付通∙提现
     - 运营工具∙用工卡
   summary: 账户余额提现API
   description: 电商平台通过余额提现API帮助二级商户发起账户余额提现申请，完成账户余额提现。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_22.shtml) [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/fund/chapter3_2.shtml)

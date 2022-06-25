@@ -4,7 +4,7 @@ get:
   x-role:
     - 服务商
   tags:
-    - 商户进件∙通用接口
+    - 服务商∙进件∙通用
   summary: 查询支行列表API
   description: 本接口可以用于根据银行别名编码（仅支持需要填写支行的银行别名编码）和城市编码过滤查询支行列表数据 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter11_2_6.shtml)
   parameters:

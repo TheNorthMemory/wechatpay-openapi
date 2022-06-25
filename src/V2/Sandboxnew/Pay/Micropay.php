@@ -13,6 +13,7 @@ interface Micropay
     /**
      * 提交付款码支付(同步模式)
      * @param array<string,mixed> $options
+     * @deprecated - since 2022.05.31
      * @link https://pay.weixin.qq.com/wiki/doc/api/micropay.php?chapter=9_10&index=1
      */
     public function post(array $options = [
@@ -46,6 +47,7 @@ interface Micropay
     /**
      * 提交付款码支付(异步模式)
      * @param array<string,mixed> $options
+     * @deprecated - since 2022.05.31
      * @link https://pay.weixin.qq.com/wiki/doc/api/micropay.php?chapter=9_10&index=1#async
      */
     public function postAsync(array $options = [

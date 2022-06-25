@@ -3,7 +3,7 @@ post:
   x-role:
     - 服务商
   tags:
-    - 微信支付分∙停车服务
+    - 经营工具∙支付分∙停车服务
   summary: 扣费受理API
   description: 商户请求扣费受理接口，会完成订单受理。微信支付进行异步扣款，支付完成后，会将订单支付结果发送给商户。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_8_3.shtml)
   parameters:

@@ -4,7 +4,7 @@ get:
   x-role:
     - 直连商户
   tags:
-    - 微信支付分
+    - 经营工具∙支付分
   summary: 商户申请获取对账单API
   description: 商户可以调用此接口获取对账单文件的下载链接，并在有效期内请求下载链接可以下载对账单文件。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter6_1_29.shtml)
   parameters:

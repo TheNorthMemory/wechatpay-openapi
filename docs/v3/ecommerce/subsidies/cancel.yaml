@@ -2,7 +2,7 @@ post:
   x-version: [2020.09.15]
   x-role: [电商平台]
   tags:
-    - 电商收付通∙补差
+    - 收付通∙补差
   summary: 取消补差API
   description: 对带有补差标识的订单，如果不需要补差，可在发起发起分账前，可调用这个接口进行取消补差。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/subsidies/chapter3_3.shtml)
   parameters:

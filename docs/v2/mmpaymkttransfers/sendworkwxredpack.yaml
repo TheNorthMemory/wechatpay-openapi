@@ -1,7 +1,7 @@
 post:
   x-api-cert-required: true
   tags:
-    - 企微∙企业红包
+    - 企微∙红包
   summary: 发放企业红包
   description: '[官方文档](https://open.work.weixin.qq.com/api/doc/90000/90135/90275)'
   consumes:

@@ -1,6 +1,6 @@
 post:
   tags:
-    - 支付∙沙箱环境
+    - 沙箱环境
   summary: 提交付款码支付
   description: '[官方沙箱付款码用例文档](https://pay.weixin.qq.com/wiki/doc/api/tools/sp_coupon.php?chapter=23_1&index=2)'
   consumes:

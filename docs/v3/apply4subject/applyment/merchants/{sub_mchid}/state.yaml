@@ -2,7 +2,7 @@ get:
   x-version: [2019.08.08]
   x-role: [从业机构, 渠道商]
   tags:
-    -  商户进件∙通用接口
+    -  服务商∙进件∙通用
   summary: 获取商户开户意愿确认状态API
   description: 当服务商需要确认微信支付子商户号是否完成确认时，如果调用此接口提到”已授权“状态，则说明该商户号已完成开户意愿确认。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/applysubject/chapter5_4.shtml)
   parameters:

@@ -5,7 +5,7 @@ post:
     - 直连商户
     - 服务商
   tags:
-    - 资金应用∙批量转账到零钱
+    - 资金应用∙转账
     - 运营工具∙用工卡
   summary: 转账电子回单申请受理API
   description: 转账电子回单申请受理接口，商户通过该接口可以申请受理电子回单服务。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_11.shtml) [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer_partner/chapter4_1.shtml)

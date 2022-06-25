@@ -5,8 +5,8 @@ post:
     - 服务商
     - 直连商户
   tags:
-    - 基础支付∙合单支付
-    - 电商收付通∙合单支付
+    - 基础支付∙合单
+    - 收付通∙合单
   summary: 合单关闭订单API
   description: 合单支付订单只能使用此合单关单api完成关单。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/combine/chapter3_4.shtml)
   parameters:

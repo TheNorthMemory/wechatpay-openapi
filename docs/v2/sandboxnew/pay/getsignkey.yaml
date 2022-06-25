@@ -1,6 +1,8 @@
 post:
+  x-version: 2022.05.31
+  deprecated: true
   tags:
-    - 支付∙沙箱环境
+    - 沙箱环境
   summary: 获取验签密钥API
   description: '仿真系统与生产环境完全独立，包括存储层。商户在仿真系统所做的所有交易（如下单、支付、查询）均为无资金流的假数据，即：用户无需真实扣款，商户也不会有资金入账。代金券同理，沙箱环境中无需商户真实制券与发券，亦不会出现真实扣券情况。[官方JSAPI文档](https://pay.weixin.qq.com/wiki/doc/api/tools/sp_coupon.php?chapter=23_1&index=2)'
   consumes:

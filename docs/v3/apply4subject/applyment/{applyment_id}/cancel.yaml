@@ -2,7 +2,7 @@ post:
   x-version: [2019.08.08]
   x-role: [从业机构, 渠道商]
   tags:
-    -  商户进件∙通用接口
+    -  服务商∙进件∙通用
   summary: 撤销商户开户意愿申请单API
   description: 服务商提交申请单后需要修改信息时，或者申请单审核结果为”已驳回“时服务商要修改申请材料时，均需要先调用撤销申请单接口。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/applysubject/chapter5_2.shtml)
   parameters:

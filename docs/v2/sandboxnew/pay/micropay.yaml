@@ -1,6 +1,8 @@
 post:
+  x-version: 2022.05.31
+  deprecated: true
   tags:
-    - 支付∙沙箱环境
+    - 沙箱环境
   summary: 提交付款码支付
   description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/api/micropay.php?chapter=9_10&index=1)'
   consumes:

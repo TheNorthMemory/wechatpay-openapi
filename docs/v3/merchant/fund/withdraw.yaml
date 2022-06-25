@@ -2,7 +2,7 @@ post:
   x-version: [2020.09.28]
   x-role: [电商平台]
   tags:
-    - 电商收付通∙提现
+    - 收付通∙提现
   summary: 电商平台提现API
   description: 电商平台通过该接口可将其平台的收入进行提现 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/fund/chapter3_5.shtml)
   parameters:

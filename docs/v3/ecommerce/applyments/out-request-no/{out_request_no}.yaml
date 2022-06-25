@@ -2,7 +2,7 @@ get:
   x-version: [2019.09.09]
   x-role: [电商平台]
   tags:
-    - 电商收付通∙商户进件
+    - 收付通∙进件
   summary: 通过业务申请编号查询申请状态
   description: 电商平台通过查询申请状态API查询二级商户入驻申请结果。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/applyments/chapter3_2.shtml)
   parameters:

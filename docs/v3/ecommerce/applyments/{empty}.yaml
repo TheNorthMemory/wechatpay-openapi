@@ -2,7 +2,7 @@ post:
   x-version: [2020.05.25]
   x-role: [电商平台]
   tags:
-    - 电商收付通∙商户进件
+    - 收付通∙进件
   summary: 二级商户进件API
   description: 电商平台通过提交二级商户资料，完成二级商户入驻，入驻成为微信支付商户。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/applyments/chapter3_1.shtml)
   parameters:

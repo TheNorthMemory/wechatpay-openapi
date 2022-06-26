@@ -2,7 +2,7 @@ get:
   x-version: [2021.01.08]
   x-role: [直连商户, 服务商, 渠道商]
   tags:
-    - 通用接口∙消费者投诉
+    - 风险合规∙消费者投诉
   deprecated: true
   summary: 查询投诉协商历史API
   description: 商户可通过调用此接口，查询指定投诉的用户商户协商历史，方便商户根据处理历史来制定后续处理方案。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/merchant-service/chapter3_7.shtml)

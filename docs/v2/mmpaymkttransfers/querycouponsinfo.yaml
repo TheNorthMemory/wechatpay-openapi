@@ -1,6 +1,6 @@
 post:
   tags:
-    - 支付∙代金券或立减优惠
+    - APIv2∙代金券
   summary: 查询代金券信息
   description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/api/tools/sp_coupon.php?chapter=12_5&index=6)'
   consumes:

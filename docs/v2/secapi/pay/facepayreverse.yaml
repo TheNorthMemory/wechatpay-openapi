@@ -1,8 +1,7 @@
 post:
   x-api-cert-required: true
   tags:
-    - 支付∙人脸支付
-    - 支付∙服务商∙人脸支付
+    - APIv2∙人脸支付
   summary: 撤销订单
   description: ' [官方人脸支付文档](https://share.weiyun.com/5dxUgCw)'
   consumes:

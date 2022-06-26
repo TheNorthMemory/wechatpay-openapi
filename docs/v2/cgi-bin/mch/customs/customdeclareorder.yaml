@@ -1,6 +1,6 @@
 post:
   tags:
-    - 支付∙自助清关
+    - APIv2∙报关
   summary: 订单附加信息提交接口
   description: 以下为财付通的海关备案信息，财付通10位海关注册编码 4403169D3W [官方文档](https://pay.weixin.qq.com/wiki/doc/api/external/declarecustom.php?chapter=18_1)
   consumes:

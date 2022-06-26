@@ -1,6 +1,6 @@
 post:
   tags:
-    - 支付∙服务商∙分账
+    - APIv2∙资金应用∙分账
   summary: 查询最大分账比例API
   description: '服务商可以查询子商户设置的允许服务商分账的最大比例。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/allocation_sp.php?chapter=25_11&index=8)'
   consumes:

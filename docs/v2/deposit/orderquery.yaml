@@ -1,6 +1,6 @@
 post:
   tags:
-    - 支付∙酒店押金
+    - APIv2∙酒店押金
   summary: 查询订单
   description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=27_2&index=3)'
   consumes:

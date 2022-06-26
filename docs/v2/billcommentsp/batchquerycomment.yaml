@@ -1,11 +1,7 @@
 post:
   x-api-cert-required: true
   tags:
-    - 支付∙JSAPI支付
-    - 支付∙Native支付
-    - 支付∙App支付
-    - 支付∙H5支付
-    - 支付∙小程序支付
+    - APIv2∙通用
   summary: 拉取订单评价数据
   description: '商户可以通过该接口拉取用户在微信支付交易记录中针对你的支付记录进行的评价内容。商户可结合商户系统逻辑对该内容数据进行存储、分析、展示、客服回访以及其他使用。如商户业务对评价内容有依赖，可主动引导用户进入微信支付交易记录进行评价。[官方JSAPI文档](https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=9_17&index=11) [官方NATIVE文档](https://pay.weixin.qq.com/wiki/doc/api/native.php?chapter=9_17&index=11) [官方APP文档](https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=9_99&index=12) [官方H5文档](https://pay.weixin.qq.com/wiki/doc/api/H5.php?chapter=9_17&index=11) [官方小程序支付文档](https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=9_17&index=11)'
   consumes:

@@ -1,6 +1,6 @@
 post:
   tags:
-    - 支付∙自助清关
+    - APIv2∙报关
   summary: 订单附加信息重推接口
   description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/api/external/declarecustom.php?chapter=18_4)'
   consumes:

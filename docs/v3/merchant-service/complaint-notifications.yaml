@@ -2,7 +2,7 @@ post:
   x-version: [2020.02.17]
   x-role: [直连商户, 服务商, 渠道商]
   tags:
-    - 通用接口∙消费者投诉
+    - 风险合规∙消费者投诉
   summary: 创建投诉通知回调API
   description: 商户通过调用此接口创建投诉通知回调URL，当用户产生新投诉且投诉状态已变更时，微信支付会通过回 调URL通知商户。对于服务商、渠道商，会收到所有子商户的投诉信息推送。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/merchant-service/chapter3_2.shtml)
   parameters:
@@ -37,7 +37,7 @@ get:
   x-version: [2020.02.17]
   x-role: [直连商户, 服务商, 渠道商]
   tags:
-    - 通用接口∙消费者投诉
+    - 风险合规∙消费者投诉
   summary: 查询投诉通知回调API
   description: 商户通过调用此接口查询投诉通知的回调URL。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/merchant-service/chapter3_3.shtml)
   parameters: []
@@ -60,7 +60,7 @@ put:
   x-version: [2020.02.17]
   x-role: [直连商户, 服务商, 渠道商]
   tags:
-    - 通用接口∙消费者投诉
+    - 风险合规∙消费者投诉
   summary: 更新投诉通知回调API
   description: 商户通过调用此接口更新投诉通知的回调URL。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/merchant-service/chapter3_4.shtml)
   parameters:
@@ -95,7 +95,7 @@ delete:
   x-version: [2020.02.17]
   x-role: [直连商户, 服务商, 渠道商]
   tags:
-    - 通用接口∙消费者投诉
+    - 风险合规∙消费者投诉
   summary: 删除投诉通知回调API
   description: 当商户不再需要推送通知时，可通过调用此接口删除投诉通知的回调URL，取消通知回调。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/merchant-service/chapter3_5.shtml)
   parameters: []

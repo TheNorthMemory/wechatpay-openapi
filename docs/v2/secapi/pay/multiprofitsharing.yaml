@@ -1,7 +1,7 @@
 post:
   x-api-cert-required: true
   tags:
-    - 支付∙服务商∙分账
+    - APIv2∙资金应用∙分账
   summary: 请求多次分账
   description: '微信订单支付成功后，服务商代子商户发起分账请求，将结算后的钱分到分账接收方。多次分账请求仅会按照传入的分账接收方进行分账，不会对剩余的金额进行任何操作。故操作成功后，在待分账金额不等于零时，订单依旧能够再次进行分账。● 多次分账，可以将本商户作为分账接收方直接传入，实现释放资金给本商户的功能。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/allocation_sl.php?chapter=25_6&index=2)'
   consumes:

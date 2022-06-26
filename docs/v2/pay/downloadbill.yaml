@@ -1,20 +1,6 @@
 post:
   tags:
-    - 支付∙付款码支付
-    - 支付∙JSAPI支付
-    - 支付∙Native支付
-    - 支付∙App支付
-    - 支付∙H5支付
-    - 支付∙小程序支付
-    - 支付∙人脸支付
-    - 支付∙委托扣款
-    - 支付∙服务商∙付款码支付
-    - 支付∙服务商∙JSAPI支付
-    - 支付∙服务商∙Native支付
-    - 支付∙服务商∙App支付
-    - 支付∙服务商∙H5支付
-    - 支付∙服务商∙小程序支付
-    - 支付∙服务商∙人脸支付
+    - APIv2∙基础支付∙账单
   summary: 下载对账单
   description: '商户可以通过该接口下载历史交易清单。比如掉单、系统错误等导致商户侧和微信侧数据不一致，通过对账单核对后可校正支付状态。[官方付款码文档](https://pay.weixin.qq.com/wiki/doc/api/micropay.php?chapter=9_6) [官方JSAPI文档](https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=9_6) [官方NATIVE文档](https://pay.weixin.qq.com/wiki/doc/api/native.php?chapter=9_6) [官方APP文档](https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=9_6&index=8) [官方H5文档](https://pay.weixin.qq.com/wiki/doc/api/H5.php?chapter=9_6&index=6) [官方小程序支付文档](https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=9_6) [官方人脸支付文档](https://share.weiyun.com/5dxUgCw)'
   consumes:

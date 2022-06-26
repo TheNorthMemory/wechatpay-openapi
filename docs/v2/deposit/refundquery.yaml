@@ -1,6 +1,6 @@
 post:
   tags:
-    - 支付∙酒店押金
+    - APIv2∙酒店押金
   summary: 查询退款（押金）
   description: '提交退款申请后，通过调用该接口查询退款状态。退款有一定延时，用零钱支付的退款20分钟内到账，银行卡支付的退款3个工作日后重新查询退款状态; [官方文档](https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=27_6&index=7)'
   consumes:

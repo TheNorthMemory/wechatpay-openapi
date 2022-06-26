@@ -1,7 +1,7 @@
 post:
   x-api-cert-required: true
   tags:
-    - 支付∙服务商∙小微商户
+    - APIv2∙小微
   summary: 查询申请状态
   description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=19_3)'
   consumes:

@@ -1,8 +1,6 @@
 post:
   tags:
-    - 支付∙付款码支付
-    - 支付∙服务商∙付款码支付
-    - 支付∙服务商∙分账
+    - APIv2∙基础支付
   summary: 提交付款码支付
   description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/api/micropay.php?chapter=9_10&index=1)'
   consumes:

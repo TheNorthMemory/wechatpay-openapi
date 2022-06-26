@@ -6,7 +6,7 @@ post:
     - 渠道商
     - 从业机构
   tags:
-    - 通用接口∙消费者投诉
+    - 风险合规∙消费者投诉
   summary: 更新退款进度API
   description: 更新投诉单退款进度 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter10_2_19.shtml)
   parameters:

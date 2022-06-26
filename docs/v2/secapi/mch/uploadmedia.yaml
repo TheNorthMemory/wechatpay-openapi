@@ -1,7 +1,7 @@
 post:
   x-api-cert-required: true
   tags:
-    - 支付∙服务商∙小微商户
+    - APIv2∙通用
   summary: 图片上传API
   description: '服务商操作员调用 API 接口，上传证件照片。支持 jpeg、jpg、bmp、png 格式，图片大小不超过2M。通过 POST 表单来调用该接口，表单媒体文件 id 为 media，需有 filename、filelength、content-type 等信息。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=19_9)'
   consumes:

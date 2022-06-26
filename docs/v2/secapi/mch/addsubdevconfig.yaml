@@ -1,8 +1,7 @@
 post:
   x-api-cert-required: true
   tags:
-    - 支付∙服务商∙小微商户
-    - 支付∙银行服务商∙特约商户配置
+    - APIv2∙通用
   summary: 服务商子商户开发配置新增支付目录/新增对应APPID关联
   description: 服务商给特约子商户配置支付目录；每个商户最多配置5个支付目录。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/mch_bank.php?chapter=9_24_2&index=2&p=901)
   consumes:

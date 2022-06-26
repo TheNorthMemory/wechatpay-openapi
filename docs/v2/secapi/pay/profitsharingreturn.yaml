@@ -1,7 +1,7 @@
 post:
   x-api-cert-required: true
   tags:
-    - 支付∙服务商∙分账
+    - APIv2∙资金应用∙分账
   summary: 分账回退
   description: '此功能需要接收方在商户平台-交易中心-分账-分账接收设置下，开启同意分账回退后，才能使用。分账回退的时限是180天。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/allocation_sp.php?chapter=25_7&index=9)'
   consumes:

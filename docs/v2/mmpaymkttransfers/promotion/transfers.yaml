@@ -1,7 +1,7 @@
 post:
   x-api-cert-required: true
   tags:
-    - 支付∙企业付款
+    - APIv2∙资金应用∙付款
   summary: 向微信用户个人付款
   description: 目前支持向指定微信用户的openid付款。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/tools/mch_pay.php?chapter=14_2)
   consumes:

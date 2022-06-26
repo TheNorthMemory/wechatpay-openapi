@@ -1,6 +1,6 @@
 post:
   tags:
-    - 支付∙银行服务商∙风控信息同步
+    - APIv2∙风控
   summary: 设置风险通知回调链接
   description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/api/mch_bank.php?chapter=9_294)'
   consumes:

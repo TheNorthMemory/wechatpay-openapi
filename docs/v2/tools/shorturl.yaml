@@ -1,7 +1,6 @@
 post:
   tags:
-    - 支付∙Native支付
-    - 支付∙服务商∙Native支付
+    - APIv2∙通用
   summary: 转换短链接
   description: '该接口主要用于Native支付模式一中的二维码链接转成短链接(weixin://wxpay/s/XXXXXX)，减小二维码数据量，提升扫描速度和精确度。 [官方NATIVE文档](https://pay.weixin.qq.com/wiki/doc/api/native.php?chapter=9_9&index=10)'
   consumes:

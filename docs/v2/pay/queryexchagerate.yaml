@@ -2,6 +2,7 @@ post:
   x-verison: [2020.05.08]
   tags:
     - 跨境
+    - APIv2∙通用
   summary: 汇率查询API
   description: 商户网站的商品以外币标价时，通过该接口可以实时查询到微信使用的转换汇率。汇率更新时间为北京时间上午10:00，一天更新一次。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/pay/In-AppPay/chapter8_10.shtml)
   consumes:

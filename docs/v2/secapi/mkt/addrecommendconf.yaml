@@ -1,8 +1,7 @@
 post:
   x-api-cert-required: true
   tags:
-    - 支付∙服务商∙小微商户
-    - 支付∙银行服务商∙特约商户配置
+    - APIv2∙通用
   summary: 服务商特约商户关注功能配置
   description: 注意：API只支持新增配置，配置后隔30天才能重新修改，所以配置前请确认appid是否正确。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/mch_bank.php?chapter=9_24_1&index=1&p=901)
   consumes:

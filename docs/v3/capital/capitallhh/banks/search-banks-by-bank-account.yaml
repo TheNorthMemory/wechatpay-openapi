@@ -4,7 +4,7 @@ get:
   x-role:
     - 服务商
   tags:
-    - 服务商∙进件∙通用
+    - 通用接口
   summary: 获取对私银行卡号开户银行API
   description: 查询对私银行卡号对应的开户银行信息（仅支持部分银行的对私银行卡） [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter11_2_1.shtml)
   parameters:

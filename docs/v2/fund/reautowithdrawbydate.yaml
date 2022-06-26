@@ -3,7 +3,7 @@ post:
   deprecated: true
   x-version: [unknown]
   tags:
-    - 支付∙服务商∙小微商户
+    - APIv2∙小微
   summary: 重新发起提现
   description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=21_3)'
   consumes:

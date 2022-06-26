@@ -1,21 +1,7 @@
 post:
   x-api-cert-required: true
   tags:
-    - 支付∙付款码支付
-    - 支付∙JSAPI支付
-    - 支付∙Native支付
-    - 支付∙App支付
-    - 支付∙H5支付
-    - 支付∙小程序支付
-    - 支付∙人脸支付
-    - 支付∙委托扣款
-    - 支付∙服务商∙付款码支付
-    - 支付∙服务商∙JSAPI支付
-    - 支付∙服务商∙Native支付
-    - 支付∙服务商∙App支付
-    - 支付∙服务商∙H5支付
-    - 支付∙服务商∙小程序支付
-    - 支付∙服务商∙人脸支付
+    - APIv2∙基础支付∙退款
   summary: 申请退款
   description: '一笔退款失败后重新提交，请不要更换退款单号，请使用原商户退款单号[官方付款码文档](https://pay.weixin.qq.com/wiki/doc/api/micropay.php?chapter=9_4) [官方JSAPI文档](https://pay.weixin.qq.com/wiki/doc/api/jsapi.php?chapter=9_4) [官方NATIVE文档](https://pay.weixin.qq.com/wiki/doc/api/native.php?chapter=9_4) [官方APP文档](https://pay.weixin.qq.com/wiki/doc/api/app/app.php?chapter=9_4&index=6) [官方H5文档](https://pay.weixin.qq.com/wiki/doc/api/H5.php?chapter=9_4&index=4) [官方小程序支付文档](https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=9_4) [官方刷脸支付文档](https://share.weiyun.com/5dxUgCw)'
   consumes:

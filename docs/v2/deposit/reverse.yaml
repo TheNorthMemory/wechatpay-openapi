@@ -1,7 +1,7 @@
 post:
   x-api-cert-required: true
   tags:
-    - 支付∙酒店押金
+    - APIv2∙酒店押金
   summary: 撤销订单
   description: '押金退回:在未押金消费的情况下，商户可调用该接口告知微信支付退回押金给用户，微信支付根据商户指令，将押金全部原路返回给用户，并下发押金退还发起通知，退款到账后，下发押金退还到账通知;调用支付接口后请勿立即调用撤销订单API，建议支付后至少15s后再调用撤销订单接口。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=27_3&index=4)'
   consumes:

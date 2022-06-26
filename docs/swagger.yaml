@@ -3,8 +3,11 @@ host: api.mch.weixin.qq.com
 basePath: ''
 info:
   title: 微信支付OpenAPI文档
-  description: "整理自[官方文档中心](https://pay.weixin.qq.com/wiki/doc/apiv3/index.shtml) 本[项目/工具地址](https://github.com/TheNorthMemory/wechatpay-openapi)，WEB展示依赖适配XML CDATA版的[swagger-ui-dist](https://www.npmjs.com/package/@thenorthmemory/swagger-ui-dist)"
-  version: 0.13.4
+  description: >
+    整理自[官方文档中心](https://pay.weixin.qq.com/wiki/doc/apiv3/index.shtml)
+    本[项目/工具地址](https://github.com/TheNorthMemory/wechatpay-openapi)
+    **访问第一次加载比较慢，请耐心等待大约1-2分钟不等(小文件下载比较多)。**
+  version: 0.13.5
 schemes:
   - https
 consumes:
@@ -31,7 +34,6 @@ tags:
   - name: 收付通∙提现
   - name: 收付通∙账单
   - name: 服务商∙进件
-  - name: 服务商∙进件∙通用
   - name: 会员卡
   - name: 会员卡∙基础功能
   - name: 会员卡∙运营投放
@@ -59,42 +61,27 @@ tags:
   - name: 经营工具∙微信点餐
   - name: 经营工具∙电子发票
   - name: 营销工具∙收款有礼
+  - name: 风险合规∙消费者投诉
+  - name: 风险合规∙商户违规通知
+  - name: 风险合规∙开户意愿确认
   - name: 通用接口
-  - name: 通用接口∙消费者投诉
-  - name: 通用接口∙商户违规通知
-  - name: 支付∙付款码支付
-  - name: 支付∙JSAPI支付
-  - name: 支付∙Native支付
-  - name: 支付∙App支付
-  - name: 支付∙H5支付
-  - name: 支付∙小程序支付
-  - name: 支付∙人脸支付
-  - name: 支付∙合单支付
-  - name: 支付∙代金券或立减优惠
-  - name: 支付∙现金红包
-  - name: 支付∙小程序红包
-  - name: 支付∙企业付款
-  - name: 支付∙酒店押金
-  - name: 支付∙委托扣款
-  - name: 支付∙自助清关
-  - name: 支付∙服务商∙付款码支付
-  - name: 支付∙服务商∙JSAPI支付
-  - name: 支付∙服务商∙Native支付
-  - name: 支付∙服务商∙App支付
-  - name: 支付∙服务商∙H5支付
-  - name: 支付∙服务商∙小程序支付
-  - name: 支付∙服务商∙人脸支付
-  - name: 支付∙服务商∙合单支付
-  - name: 支付∙服务商∙现金红包
-  - name: 支付∙服务商∙小微商户
-  - name: 支付∙服务商∙分账
-  - name: 支付∙银行服务商∙现金红包
-  - name: 支付∙银行服务商∙企业付款
-  - name: 支付∙银行服务商∙特约商户报备
-  - name: 支付∙银行服务商∙特约商户配置
-  - name: 支付∙银行服务商∙风控信息同步
-  - name: 企微∙红包
-  - name: 企微∙付款
+  - name: APIv2∙人脸支付
+  - name: APIv2∙基础支付
+  - name: APIv2∙基础支付∙合单
+  - name: APIv2∙基础支付∙账单
+  - name: APIv2∙基础支付∙退款
+  - name: APIv2∙资金应用∙分账
+  - name: APIv2∙资金应用∙红包
+  - name: APIv2∙资金应用∙付款
+  - name: APIv2∙酒店押金
+  - name: APIv2∙委托扣款
+  - name: APIv2∙代金券
+  - name: APIv2∙小微
+  - name: APIv2∙风控
+  - name: APIv2∙报关
+  - name: APIv2∙通用
+  - name: APIv2∙企微∙红包
+  - name: APIv2∙企微∙付款
   - name: 跨境
   - name: 跨境∙进件
   - name: 跨境∙报关

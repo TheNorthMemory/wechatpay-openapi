@@ -1,6 +1,7 @@
 post:
   tags:
-    - 支付∙服务商∙小微商户
+    - APIv2∙通用
+    - APIv2∙小微
   summary: 获取平台证书
   description: '调用获取平台证书V2接口之前，请前往微信支付商户平台升级API证书，升级后才可成功调用本接口。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=19_11)'
   consumes:

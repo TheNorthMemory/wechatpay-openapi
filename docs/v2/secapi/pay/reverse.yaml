@@ -1,8 +1,7 @@
 post:
   x-api-cert-required: true
   tags:
-    - 支付∙付款码支付
-    - 支付∙服务商∙付款码支付
+    - APIv2∙基础支付
   summary: 撤销订单
   description: '调用支付接口后请勿立即调用撤销订单API，建议支付后至少15s后再调用撤销订单接口。[官方付款码文档](https://pay.weixin.qq.com/wiki/doc/api/micropay.php?chapter=9_11&index=3)'
   consumes:

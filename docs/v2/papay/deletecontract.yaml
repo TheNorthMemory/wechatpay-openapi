@@ -1,6 +1,6 @@
 post:
   tags:
-    - 支付∙委托扣款
+    - APIv2∙委托扣款
   summary: 申请解约
   description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/api/pap.php?chapter=18_4&index=9)'
   consumes:

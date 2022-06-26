@@ -1,6 +1,6 @@
 post:
   tags:
-    - 支付∙酒店押金
+    - APIv2∙酒店押金
   summary: 支付押金（付款码支付）
   description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=27_1&index=2)'
   consumes:

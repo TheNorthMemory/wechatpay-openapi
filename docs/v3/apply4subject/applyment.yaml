@@ -2,7 +2,7 @@ post:
   x-version: [2020.12.17]
   x-role: [从业机构, 渠道商]
   tags:
-    -  服务商∙进件∙通用
+    -  风险合规∙开户意愿确认
   summary: 提交商户开户意愿申请单API
   description: 服务商可以通过该接口向微信支付提交商户的联系人信息、主体信息以及联系人信息。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/applysubject/chapter5_1.shtml)
   parameters:
@@ -177,7 +177,7 @@ get:
   x-version: [2019.08.08]
   x-role: [从业机构, 渠道商]
   tags:
-    -  服务商∙进件∙通用
+    -  风险合规∙开户意愿确认
   summary: 查询商户开户意愿申请单审核结果API
   description: 当服务商提交申请单后，需要定期调用此接口查询申请单的审核状态。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/applysubject/chapter5_3.shtml)
   parameters:

@@ -1,7 +1,7 @@
 post:
   x-base-uri: https://payapp.weixin.qq.com/
   tags:
-    - 支付∙人脸支付
+    - APIv2∙人脸支付
   summary: 人脸识别SDK-获取调用凭证
   description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/android/faceuser.html)'
   consumes:

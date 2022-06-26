@@ -2,7 +2,7 @@ post:
   x-version: [2021.01.08]
   x-role: [直连商户, 服务商, 渠道商]
   tags:
-    - 通用接口∙消费者投诉
+    - 风险合规∙消费者投诉
   deprecated: true
   summary: 商户反馈API
   description: 商户上传反馈处理结果的接口。 包括商户反馈类型、商户反馈内容以及图片凭证。 其中上传图片凭证需首先调用“商户上传反馈图片”接口，得到图片id，再将id填入请求。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/merchant-service/chapter3_6.shtml)

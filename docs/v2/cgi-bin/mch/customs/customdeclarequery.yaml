@@ -1,6 +1,6 @@
 post:
   tags:
-    - 支付∙自助清关
+    - APIv2∙报关
   summary: 订单附加信息查询接口
   description: 商户通过订单号查询提交的订单附加信息。如果是微信收集的实名信息，查询接口不返回实名信息内容[官方文档](https://pay.weixin.qq.com/wiki/doc/api/external/declarecustom.php?chapter=18_2)
   consumes:

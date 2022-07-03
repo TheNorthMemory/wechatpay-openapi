@@ -71,32 +71,53 @@ SubjectType:
     - SUBJECT_TYPE_GOVERNMENT
     - SUBJECT_TYPE_INSTITUTIONS_CLONED
 
+ContactType:
+  type: string
+  description: 超级管理员类型
+  enum:
+    - LEGAL #经营者/法人
+    - SUPER #经办人
+
+FinanceType:
+  type: string
+  description: 金融机构类型
+  enum:
+    - BANK_AGENT       # 银行业, 适用于商业银行、政策性银行、农村合作银行、村镇银行、开发性金融机构等
+    - PAYMENT_AGENT    # 支付机构, 适用于非银行类支付机构
+    - INSURANCE        # 保险业, 适用于保险、保险中介、保险代理、保险经纪等保险类业务
+    - TRADE_AND_SETTLE # 交易及结算类金融机构, 适用于交易所、登记结算类机构、银行卡清算机构、资金清算中心等
+    - OTHER            # 其他金融机构, 适用于财务公司、信托公司、金融资产管理公司、金融租赁公司、汽车金融公司、贷款公司、货币经纪公司、消费金融公司、证券业、金融控股公司、股票、期货、货币兑换、小额贷款公司、金融资产管理、担保公司、商业保理公司、典当行、融资租赁公司、财经咨询等其他金融业务
+
 IdType:
   type: string
   enum:
-    - IDENTIFICATION_TYPE_IDCARD
-    - IDENTIFICATION_TYPE_OVERSEA_PASSPORT
-    - IDENTIFICATION_TYPE_HONGKONG_PASSPORT
-    - IDENTIFICATION_TYPE_MACAO_PASSPORT
-    - IDENTIFICATION_TYPE_TAIWAN_PASSPORT
+    - IDENTIFICATION_TYPE_IDCARD                  #中国大陆居民-身份证
+    - IDENTIFICATION_TYPE_OVERSEA_PASSPORT        #其他国家或地区居民-护照
+    - IDENTIFICATION_TYPE_HONGKONG_PASSPORT       #中国香港居民-来往内地通行证
+    - IDENTIFICATION_TYPE_MACAO_PASSPORT          #中国澳门居民-来往内地通行证
+    - IDENTIFICATION_TYPE_TAIWAN_PASSPORT         #中国台湾居民-来往大陆通行证
+    - IDENTIFICATION_TYPE_FOREIGN_RESIDENT        #外国人居留证
+    - IDENTIFICATION_TYPE_HONGKONG_MACAO_RESIDENT #港澳居民证
+    - IDENTIFICATION_TYPE_TAIWAN_RESIDENT         #台湾居民证
 
 CertType:
   type: string
   description: 登记证书类型
   enum:
-    - CERTIFICATE_TYPE_2388
-    - CERTIFICATE_TYPE_2389
+    - CERTIFICATE_TYPE_2388 #事业单位法人证书
+    - CERTIFICATE_TYPE_2389 #统一社会信用代码证书
     - CERTIFICATE_TYPE_2390
     - CERTIFICATE_TYPE_2391
     - CERTIFICATE_TYPE_2392
     - CERTIFICATE_TYPE_2393
-    - CERTIFICATE_TYPE_2394
-    - CERTIFICATE_TYPE_2395
-    - CERTIFICATE_TYPE_2396
-    - CERTIFICATE_TYPE_2397
-    - CERTIFICATE_TYPE_2398
-    - CERTIFICATE_TYPE_2399
-    - CERTIFICATE_TYPE_2400
+    - CERTIFICATE_TYPE_2394 #社会团体法人登记证书
+    - CERTIFICATE_TYPE_2395 #民办非企业单位登记证书
+    - CERTIFICATE_TYPE_2396 #基金会法人登记证书
+    - CERTIFICATE_TYPE_2399 #宗教活动场所登记证
+    - CERTIFICATE_TYPE_2400 #政府部门下发的其他有效证明文件
+    - CERTIFICATE_TYPE_2520 #执业许可证/执业证
+    - CERTIFICATE_TYPE_2521 #基层群众性自治组织特别法人统一社会信用代码证
+    - CERTIFICATE_TYPE_2522 #农村集体经济组织登记证
 
 SalesScenesType:
   type: string

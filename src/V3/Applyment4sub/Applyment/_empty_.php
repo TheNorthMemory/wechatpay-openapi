@@ -13,14 +13,21 @@ interface _empty_
     /**
      * 提交申请单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/applyment4sub/chapter3_1.shtml
+     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter11_1_1.shtml
      */
     public function post(array $options = [
         'json' => [
             'business_code' => '',
             'contact_info' => [
+                'contact_type' => 'LEGAL | SUPER',
                 'contact_name' => '',
+                'contact_id_doc_type' => 'IDENTIFICATION_TYPE_IDCARD | IDENTIFICATION_TYPE_OVERSEA_PASSPORT | IDENTIFICATION_TYPE_HONGKONG_PASSPORT | IDENTIFICATION_TYPE_MACAO_PASSPORT',
                 'contact_id_number' => '',
+                'contact_id_doc_copy' => '',
+                'contact_id_doc_copy_back' => '',
+                'contact_period_begin' => '',
+                'contact_period_end' => '',
+                'business_authorization_letter' => '',
                 'openid' => '',
                 'mobile_phone' => '',
                 'contact_email' => '',
@@ -32,6 +39,9 @@ interface _empty_
                     'license_number' => '',
                     'merchant_name' => '',
                     'legal_person' => '',
+                    'license_address' => '',
+                    'period_begin' => '',
+                    'period_end' => '',
                 ],
                 'certificate_info' => [
                     'cert_copy' => '',
@@ -50,35 +60,44 @@ interface _empty_
                     'org_period_end' => '',
                 ],
                 'certificate_letter_copy' => '',
+                'finance_institution_info' => [
+                    'finance_type' => 'BANK_AGENT | PAYMENT_AGENT | INSURANCE | TRADE_AND_SETTLE',
+                    'finance_license_pics' => ['MediaId'],
+                ],
                 'identity_info' => [
+                    'id_holder_type' => 'LEGAL | SUPER',
                     'id_doc_type' => 'IDENTIFICATION_TYPE_IDCARD | IDENTIFICATION_TYPE_OVERSEA_PASSPORT | IDENTIFICATION_TYPE_HONGKONG_PASSPORT | IDENTIFICATION_TYPE_MACAO_PASSPORT',
+                    'authorize_letter_copy' => '',
                     'id_card_info' => [
                         'id_card_copy' => '',
                         'id_card_national' => '',
                         'id_card_name' => '',
                         'id_card_number' => '',
+                        'id_card_address' => '',
                         'card_period_begin' => '',
                         'card_period_end' => '',
                     ],
                     'id_doc_info' => [
                         'id_doc_copy' => '',
+                        'id_doc_copy_back' => '',
                         'id_doc_name' => '',
                         'id_doc_number' => '',
+                        'id_doc_address' => '',
                         'doc_period_begin' => '',
                         'doc_period_end' => '',
                     ],
                     'owner' => true,
                 ],
-                'ubo_info' => [
-                    'id_type' => 'IDENTIFICATION_TYPE_IDCARD | IDENTIFICATION_TYPE_OVERSEA_PASSPORT | IDENTIFICATION_TYPE_HONGKONG_PASSPORT | IDENTIFICATION_TYPE_MACAO_PASSPORT',
-                    'id_card_copy' => '',
-                    'id_card_national' => '',
-                    'id_doc_copy' => '',
-                    'name' => '',
-                    'id_number' => '',
-                    'id_period_begin' => '',
-                    'id_period_end' => '',
-                ],
+                'ubo_info_list' => [[
+                    'ubo_id_doc_type' => 'IDENTIFICATION_TYPE_IDCARD | IDENTIFICATION_TYPE_OVERSEA_PASSPORT | IDENTIFICATION_TYPE_HONGKONG_PASSPORT | IDENTIFICATION_TYPE_MACAO_PASSPORT',
+                    'ubo_id_doc_copy' => '',
+                    'ubo_id_doc_copy_back' => '',
+                    'ubo_id_doc_name' => '',
+                    'ubo_id_doc_number' => '',
+                    'ubo_id_doc_address' => '',
+                    'ubo_period_begin' => '',
+                    'ubo_period_end' => '',
+                ],],
             ],
             'business_info' => [
                 'merchant_shortname' => '',
@@ -150,14 +169,21 @@ interface _empty_
     /**
      * 提交申请单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/applyment4sub/chapter3_1.shtml#async
+     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter11_1_1.shtml#async
      */
     public function postAsync(array $options = [
         'json' => [
             'business_code' => '',
             'contact_info' => [
+                'contact_type' => 'LEGAL | SUPER',
                 'contact_name' => '',
+                'contact_id_doc_type' => 'IDENTIFICATION_TYPE_IDCARD | IDENTIFICATION_TYPE_OVERSEA_PASSPORT | IDENTIFICATION_TYPE_HONGKONG_PASSPORT | IDENTIFICATION_TYPE_MACAO_PASSPORT',
                 'contact_id_number' => '',
+                'contact_id_doc_copy' => '',
+                'contact_id_doc_copy_back' => '',
+                'contact_period_begin' => '',
+                'contact_period_end' => '',
+                'business_authorization_letter' => '',
                 'openid' => '',
                 'mobile_phone' => '',
                 'contact_email' => '',
@@ -169,6 +195,9 @@ interface _empty_
                     'license_number' => '',
                     'merchant_name' => '',
                     'legal_person' => '',
+                    'license_address' => '',
+                    'period_begin' => '',
+                    'period_end' => '',
                 ],
                 'certificate_info' => [
                     'cert_copy' => '',
@@ -187,35 +216,44 @@ interface _empty_
                     'org_period_end' => '',
                 ],
                 'certificate_letter_copy' => '',
+                'finance_institution_info' => [
+                    'finance_type' => 'BANK_AGENT | PAYMENT_AGENT | INSURANCE | TRADE_AND_SETTLE',
+                    'finance_license_pics' => ['MediaId'],
+                ],
                 'identity_info' => [
+                    'id_holder_type' => 'LEGAL | SUPER',
                     'id_doc_type' => 'IDENTIFICATION_TYPE_IDCARD | IDENTIFICATION_TYPE_OVERSEA_PASSPORT | IDENTIFICATION_TYPE_HONGKONG_PASSPORT | IDENTIFICATION_TYPE_MACAO_PASSPORT',
+                    'authorize_letter_copy' => '',
                     'id_card_info' => [
                         'id_card_copy' => '',
                         'id_card_national' => '',
                         'id_card_name' => '',
                         'id_card_number' => '',
+                        'id_card_address' => '',
                         'card_period_begin' => '',
                         'card_period_end' => '',
                     ],
                     'id_doc_info' => [
                         'id_doc_copy' => '',
+                        'id_doc_copy_back' => '',
                         'id_doc_name' => '',
                         'id_doc_number' => '',
+                        'id_doc_address' => '',
                         'doc_period_begin' => '',
                         'doc_period_end' => '',
                     ],
                     'owner' => true,
                 ],
-                'ubo_info' => [
-                    'id_type' => 'IDENTIFICATION_TYPE_IDCARD | IDENTIFICATION_TYPE_OVERSEA_PASSPORT | IDENTIFICATION_TYPE_HONGKONG_PASSPORT | IDENTIFICATION_TYPE_MACAO_PASSPORT',
-                    'id_card_copy' => '',
-                    'id_card_national' => '',
-                    'id_doc_copy' => '',
-                    'name' => '',
-                    'id_number' => '',
-                    'id_period_begin' => '',
-                    'id_period_end' => '',
-                ],
+                'ubo_info_list' => [[
+                    'ubo_id_doc_type' => 'IDENTIFICATION_TYPE_IDCARD | IDENTIFICATION_TYPE_OVERSEA_PASSPORT | IDENTIFICATION_TYPE_HONGKONG_PASSPORT | IDENTIFICATION_TYPE_MACAO_PASSPORT',
+                    'ubo_id_doc_copy' => '',
+                    'ubo_id_doc_copy_back' => '',
+                    'ubo_id_doc_name' => '',
+                    'ubo_id_doc_number' => '',
+                    'ubo_id_doc_address' => '',
+                    'ubo_period_begin' => '',
+                    'ubo_period_end' => '',
+                ],],
             ],
             'business_info' => [
                 'merchant_shortname' => '',

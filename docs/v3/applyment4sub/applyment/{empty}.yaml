@@ -1,10 +1,10 @@
 post:
-  x-version: [2019.04.10]
+  x-version: [2022.05.13]
   x-role: [普通服务商]
   tags:
     -  服务商∙进件
   summary: 提交申请单API
-  description: 普通服务商（银行、支付机构、电商平台不可用）使用该接口提交商家资料，帮助商家入驻成为微信支付的特约商户。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/applyment4sub/chapter3_1.shtml)
+  description: 普通服务商（银行、支付机构、电商平台不可用）使用该接口提交商家资料，帮助商家入驻成为微信支付的特约商户。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter11_1_1.shtml)
   parameters:
     - $ref: '../../../definitions/Parameters.yaml#WECHATPAY_CERTIFICATE_SERIAL'
     - in: body
@@ -17,20 +17,46 @@ post:
             type: string
           contact_info:
             type: object
-            required: [contact_name, mobile_phone, contact_email]
-            x-is-sensitive: [contact_name, contact_id_number, mobile_phone, contact_email]
+            required: [contact_type, contact_name, mobile_phone, contact_email]
+            x-is-sensitive: [contact_name, contact_id_number, openid, mobile_phone, contact_email]
             properties:
+              contact_type:
+                $ref: '../../../definitions/Enumerations.yaml#ContactType'
               contact_name:
                 type: string
+                format: base64
                 description: 超级管理员姓名
+              contact_id_doc_type:
+                $ref: '../../../definitions/Enumerations.yaml#IdType'
               contact_id_number:
                 type: string
+                format: base64
                 description: 超级管理员身份证件号码
+              contact_id_doc_copy:
+                type: string
+                format: MediaId
+                description: 超级管理员证件正面照片
+              contact_id_doc_copy_back:
+                type: string
+                format: MediaId
+                description: 超级管理员证件反面照片
+              contact_period_begin:
+                type: string
+                description: 超级管理员证件有效期开始时间
+              contact_period_end:
+                type: string
+                description: 超级管理员证件有效期结束时间
+              business_authorization_letter:
+                type: string
+                format: MediaId
+                description: 业务办理授权函
               openid:
                 type: string
+                format: base64
                 description: 超级管理员微信openid
               mobile_phone:
                 type: string
+                format: base64
                 description: 联系手机
               contact_email:
                 type: string
@@ -59,6 +85,16 @@ post:
                   legal_person:
                     type: string
                     description: 个体户经营者/法人姓名
+                  license_address:
+                    type: string
+                    description: 注册地址
+                  period_begin:
+                    type: string
+                    format: date
+                    description: 有效期限开始日期
+                  period_end:
+                    type: string
+                    description: 有效期限结束日期
               certificate_info:
                 type: object
                 required: [cert_copy, cert_type, cert_number, merchant_name, company_address, legal_person, period_begin, period_end]
@@ -110,16 +146,33 @@ post:
                 type: string
                 format: MediaId
                 description: 单位证明函照片
+              finance_institution_info:
+                type: object
+                properties:
+                  finance_type:
+                    $ref: '../../../definitions/Enumerations.yaml#FinanceType'
+                  finance_license_pics:
+                    type: array
+                    description: 金融机构许可证图片
+                    items:
+                      type: string
+                      format: MediaId
               identity_info:
                 type: object
                 required: [id_doc_type]
                 properties:
+                  id_holder_type:
+                    $ref: '../../../definitions/Enumerations.yaml#ContactType'
                   id_doc_type:
                     $ref: '../../../definitions/Enumerations.yaml#IdType'
+                  authorize_letter_copy:
+                    type: string
+                    format: MediaId
+                    description: 法定代表人说明函
                   id_card_info:
                     type: object
                     required: [id_card_copy, id_card_national, id_card_name, id_card_number, card_period_begin, card_period_end]
-                    x-is-sensitive: [id_card_name, id_card_number]
+                    x-is-sensitive: [id_card_name, id_card_number, id_card_address]
                     properties:
                       id_card_copy:
                         type: string
@@ -131,10 +184,16 @@ post:
                         description: 身份证国徽面照片
                       id_card_name:
                         type: string
+                        format: base64
                         description: 身份证姓名
                       id_card_number:
                         type: string
+                        format: base64
                         description: 身份证号码
+                      id_card_address:
+                        type: string
+                        format: base64
+                        description: 身份证居住地址
                       card_period_begin:
                         type: string
                         format: date
@@ -149,13 +208,23 @@ post:
                       id_doc_copy:
                         type: string
                         format: MediaId
-                        description: 证件照片
+                        description: 证件正面照片
+                      id_doc_copy_back:
+                        type: string
+                        format: MediaId
+                        description: 证件反面照片
                       id_doc_name:
                         type: string
+                        format: base64
                         description: 证件姓名
                       id_doc_number:
                         type: string
+                        format: base64
                         description: 证件号码
+                      id_doc_address:
+                        type: string
+                        format: base64
+                        description: 证件居住地址
                       doc_period_begin:
                         type: string
                         format: date
@@ -166,38 +235,42 @@ post:
                   owner:
                     type: boolean
                     description: 经营者/法人是否为受益人
-              ubo_info:
-                type: object
-                required: [id_type, id_card_copy, id_card_national, id_doc_copy, name, id_number, id_period_begin, id_period_end]
-                x-is-sensitive: [name, id_number]
-                properties:
-                  id_type:
-                    $ref: '../../../definitions/Enumerations.yaml#IdType'
-                  id_card_copy:
-                    type: string
-                    format: MediaId
-                    description: 身份证人像面照片
-                  id_card_national:
-                    type: string
-                    format: MediaId
-                    description: 身份证国徽面照片
-                  id_doc_copy:
-                    type: string
-                    format: MediaId
-                    description: 证件照片
-                  name:
-                    type: string
-                    description: 受益人姓名
-                  id_number:
-                    type: string
-                    description: 证件号码
-                  id_period_begin:
-                    type: string
-                    format: date
-                    description: 证件有效期开始时间
-                  id_period_end:
-                    type: string
-                    description: 证件有效期结束时间
+              ubo_info_list:
+                type: array
+                items:
+                  type: object
+                  required: [ubo_id_doc_type, ubo_id_doc_copy, ubo_id_doc_copy_back, id_doc_copy, ubo_id_doc_name, ubo_id_doc_number, ubo_id_doc_address, ubo_period_begin, ubo_period_end]
+                  x-is-sensitive: [ubo_id_doc_name, ubo_id_doc_number, ubo_id_doc_address]
+                  properties:
+                    ubo_id_doc_type:
+                      $ref: '../../../definitions/Enumerations.yaml#IdType'
+                    ubo_id_doc_copy:
+                      type: string
+                      format: MediaId
+                      description: 身份证人像面照片
+                    ubo_id_doc_copy_back:
+                      type: string
+                      format: MediaId
+                      description: 身份证国徽面照片
+                    ubo_id_doc_name:
+                      type: string
+                      format: base64
+                      description: 受益人姓名
+                    ubo_id_doc_number:
+                      type: string
+                      format: base64
+                      description: 证件号码
+                    ubo_id_doc_address:
+                      type: string
+                      format: base64
+                      description: 证件居住地址
+                    ubo_period_begin:
+                      type: string
+                      format: date
+                      description: 证件有效期开始时间
+                    ubo_period_end:
+                      type: string
+                      description: 证件有效期结束时间
           business_info:
             type: object
             required: [merchant_shortname, service_phone, sales_info]

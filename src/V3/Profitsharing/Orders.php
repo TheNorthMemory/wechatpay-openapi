@@ -33,6 +33,9 @@ interface Orders
             ],],
             'unfreeze_unsplit' => true,
         ],
+        'headers' => [
+            'Wechatpay-Serial' => '',
+        ],
     ]): ResponseInterface;
 
     /**
@@ -55,6 +58,9 @@ interface Orders
                 'description' => '分给商户A',
             ],],
             'unfreeze_unsplit' => true,
+        ],
+        'headers' => [
+            'Wechatpay-Serial' => '',
         ],
     ]): PromiseInterface;
 }

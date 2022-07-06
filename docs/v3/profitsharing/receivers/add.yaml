@@ -7,6 +7,7 @@ post:
   summary: 添加分账接收方API
   description: 服务商发起添加分账接收方请求，建立分账接收方列表。后续可通过发起分账请求，将分账方商户结算后的资金，分到该分账接收方 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_1_8.shtml)
   parameters:
+    - $ref: '../../../definitions/Parameters.yaml#/WECHATPAY_CERTIFICATE_SERIAL'
     - name: _
       in: body
       required: true
@@ -40,6 +41,7 @@ post:
             example: '86693852'
           name:
             type: string
+            format: base64
             description: 分账个人接收方姓名
             example: hu89ohu89ohu89o
           relation_type:
@@ -73,6 +75,7 @@ post:
             example: '86693852'
           name:
             type: string
+            format: base64
             description: 分账接收方全称
             example: hu89ohu89ohu89o
           relation_type:

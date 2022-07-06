@@ -1,5 +1,5 @@
 post:
-  x-version: [2021.05.11]
+  x-version: [2022.06.14]
   x-role:
     - 服务商
   tags:
@@ -7,6 +7,7 @@ post:
   summary: 请求分账API
   description: 微信订单支付成功后，服务商代特约商户发起分账请求，将结算后的资金分到分账接收方 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_1_1.shtml)
   parameters:
+    - $ref: '../../definitions/Parameters.yaml#/WECHATPAY_CERTIFICATE_SERIAL'
     - name: _
       in: body
       required: true
@@ -59,6 +60,7 @@ post:
                   example: '86693852'
                 name:
                   type: string
+                  format: base64
                   description: 分账个人接收方姓名
                   example: hu89ohu89ohu89o
                 amount:

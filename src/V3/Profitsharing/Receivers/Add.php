@@ -26,6 +26,9 @@ interface Add
             'relation_type' => 'SERVICE_PROVIDER',
             'custom_relation' => '代理商',
         ],
+        'headers' => [
+            'Wechatpay-Serial' => '',
+        ],
     ]): ResponseInterface;
 
     /**
@@ -43,6 +46,9 @@ interface Add
             'name' => 'hu89ohu89ohu89o',
             'relation_type' => 'SERVICE_PROVIDER',
             'custom_relation' => '代理商',
+        ],
+        'headers' => [
+            'Wechatpay-Serial' => '',
         ],
     ]): PromiseInterface;
 }

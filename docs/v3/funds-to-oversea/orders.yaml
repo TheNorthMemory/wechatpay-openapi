@@ -1,0 +1,188 @@
+post:
+  x-version: [2022.05.30]
+  x-role:
+    - 电商平台
+  tags:
+    - 收付通∙跨境
+  summary: 申请资金出境API
+  description: 商户发起资金出境请求，需要传微信支付单号，商户出境单号，出境金额等信息成功，接口请求成功仅代表受理，如需知晓业务执行情况请通过查询接口获取。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter7_10_2.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - out_order_id
+          - sub_mchid
+          - transaction_id
+          - amount
+          - foreign_currency
+          - seller_info
+          - express_info
+          - payee_info
+        properties:
+          out_order_id:
+            type: string
+            description: 商户出境单号
+            example: merchant_1123123
+          sub_mchid:
+            type: string
+            description: 二级商户号
+            example: '123456'
+          transaction_id:
+            type: string
+            description: 微信订单号
+            example: '420000000000000010'
+          amount:
+            type: integer
+            description: 出境金额
+            example: 10
+          foreign_currency:
+            type: string
+            description: 境外收款币种
+            example: USD
+          goods_info:
+            type: array
+            description: 商品信息
+            items:
+              type: object
+              required:
+                - goods_name
+                - goods_category
+                - goods_unit_price
+                - goods_quantity
+              properties:
+                goods_name:
+                  type: string
+                  description: 商品名称
+                  example: 橘子
+                goods_category:
+                  type: string
+                  description: 商品类目
+                  example: 家用电器
+                goods_unit_price:
+                  type: integer
+                  description: 商品单价
+                  example: 1
+                goods_quantity:
+                  type: integer
+                  description: 商品数量
+                  example: 1
+          seller_info:
+            type: object
+            description: 卖家信息
+            required:
+              - oversea_business_name
+              - oversea_shop_name
+              - seller_id
+            properties:
+              oversea_business_name:
+                type: string
+                description: 境外卖家经营主体名称
+                example: 香港xxxx公司
+              oversea_shop_name:
+                type: string
+                description: 境外卖家店铺名称
+                example: 香港xxx公司xxx店铺
+              seller_id:
+                type: string
+                description: 卖家ID
+                example: id2123123123
+          express_info:
+            type: object
+            description: 物流信息
+            required:
+              - courier_number
+              - express_company_name
+            properties:
+              courier_number:
+                type: string
+                description: 物流单号
+                example: curier_number_1231
+              express_company_name:
+                type: string
+                description: 物流商名称
+                example: 国际xxx物流
+          payee_info:
+            type: object
+            description: 收款人信息
+            required:
+              - payee_id
+            properties:
+              payee_id:
+                type: string
+                description: 收款人识别号
+                example: ID123112312
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - out_order_id
+          - sub_mchid
+          - order_id
+          - result
+          - amount
+          - foreign_currency
+        properties:
+          out_order_id:
+            type: string
+            description: 商户出境单号
+            example: merchant123123
+          sub_mchid:
+            type: string
+            description: 二级商户号
+            example: '1231231'
+          order_id:
+            type: string
+            description: 微信出境单号
+            example: '42000000000_123123'
+          result:
+            type: string
+            description: 出境结果
+            example: ACCEPT
+          fail_reason:
+            type: string
+            description: 出境失败的原因
+            example: DEPARTURE_AMOUNT_NO_ENOUGH
+          amount:
+            type: integer
+            description: 请求出境人民币金额
+            example: 21
+          foreign_amount:
+            type: integer
+            description: 真实出境外币金额
+            example: 20
+          foreign_currency:
+            type: string
+            description: 外币币种
+            example: USD
+          rate:
+            type: integer
+            description: 汇率
+            example: 650000000
+          exchange_rate_time:
+            type: string
+            description: 购汇时间
+            example: '2015-05-20T13:29:35+08:00'
+          estimate_exchange_rate_time:
+            type: string
+            description: 预计购汇时间
+            example: '2015-05-20T13:29:35+08:00'
+          departure_amount:
+            type: integer
+            description: 真实出境人民币金额
+            example: 20
+          fee:
+            type: integer
+            description: 手续费人民币金额
+            example: 1
+          charge_mchid:
+            type: string
+            description: 手续费承担商户号
+            example: '1231231'
+          charge_account_type:
+            type: string
+            description: 手续费承担账户
+            example: BASIC

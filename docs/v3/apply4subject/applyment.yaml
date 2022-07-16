@@ -1,10 +1,10 @@
 post:
-  x-version: [2020.12.17]
+  x-version: [2022.06.16]
   x-role: [从业机构, 渠道商]
   tags:
     -  风险合规∙开户意愿确认
   summary: 提交商户开户意愿申请单API
-  description: 服务商可以通过该接口向微信支付提交商户的联系人信息、主体信息以及联系人信息。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/applysubject/chapter5_1.shtml)
+  description: 服务商可以通过该接口向微信支付提交商户的联系人信息、主体信息以及联系人信息。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_1_1.shtml)
   parameters:
     - $ref: '../../definitions/Parameters.yaml#WECHATPAY_CERTIFICATE_SERIAL'
     - name: channel_id
@@ -28,22 +28,51 @@ post:
             required: [name, mobile, id_card_number]
             x-is-sensitive: [name, mobile, id_card_number]
             properties:
+              contact_type:
+                $ref: '../../definitions/Enumerations.yaml#/ContactType'
               name:
                 type: string
+                format: base64
                 description: 联系人姓名
-              mobile:
-                type: string
-                description: 联系人手机号
+              contact_id_doc_type:
+                $ref: '../../definitions/Enumerations.yaml#/IdType'
               id_card_number:
                 type: string
+                format: base64
                 description: 联系人身份证号码
+              contact_id_doc_copy:
+                type: string
+                format: MediaId
+                description: 联系人证件正面照片
+              contact_id_doc_copy_back:
+                type: string
+                format: MediaId
+                description: 联系人证件反面照片
+              contact_period_begin:
+                type: string
+                format: date
+                description: 联系人证件有效期开始时间
+              contact_period_end:
+                type: string
+                description: 联系人证件有效期结束时间
+              business_authorization_letter:
+                type: string
+                format: MediaId
+                description: 业务办理授权函
+              mobile:
+                type: string
+                format: base64
+                description: 联系人手机号
           subject_info:
             type: object
             description: 主体信息
             required: [subject_type, business_license_info]
             properties:
               subject_type:
-                $ref: '../../definitions/Enumerations.yaml#SubjectType'
+                $ref: '../../definitions/Enumerations.yaml#/SubjectType'
+              is_finance_institution:
+                type: boolean
+                description: 是否金融机构
               business_license_info:
                 type: object
                 required: [licence_number, licence_copy, merchant_name, legal_person, company_address, licence_valid_date]
@@ -74,7 +103,7 @@ post:
                 required: [cert_type, cert_number, cert_copy, merchant_name, legal_person, company_address, cert_valid_date]
                 properties:
                   cert_type:
-                    $ref: '../../definitions/Enumerations.yaml#CertType'
+                    $ref: '../../definitions/Enumerations.yaml#/CertType'
                   cert_number:
                     type: string
                     description: 证书编号
@@ -105,7 +134,7 @@ post:
                 required: [micro_biz_type, store_name, store_address, store_header_copy, store_indoor_copy]
                 properties:
                   micro_biz_type:
-                    $ref: '../../definitions/Enumerations.yaml#MicroBizType'
+                    $ref: '../../definitions/Enumerations.yaml#/MicroBizType'
                   store_name:
                     type: string
                     description: 门店名称
@@ -117,9 +146,11 @@ post:
                     description: 门店地址
                   store_header_copy:
                     type: string
+                    format: MediaId
                     description: 门店门头照片
                   store_indoor_copy:
                     type: string
+                    format: MediaId
                     description: 店内环境照片
               special_operation_info:
                 type: array
@@ -128,32 +159,55 @@ post:
                   required: [category_id]
                   properties:
                     category_id:
-                      $ref: '../../definitions/Enumerations.yaml#CategoryId'
+                      $ref: '../../definitions/Enumerations.yaml#/CategoryId'
                     store_indoor_copy:
                       type: array
                       items:
                         type: string
                         format: MediaId
                         description: 店内环境照片
+              finance_institution_info:
+                type: object
+                properties:
+                  finance_type:
+                    $ref: '../../definitions/Enumerations.yaml#/FinanceType'
+                  finance_license_pics:
+                    type: array
+                    description: 金融机构许可证图片
+                    items:
+                      type: string
+                      format: MediaId
           identification_info:
             type: object
             description: 法人身份信息
             required: [identification_type, identification_name, identification_number, identification_valid_date, identification_front_copy]
             x-is-sensitive: [identification_name, identification_number]
             properties:
+              id_holder_type:
+                $ref: '../../definitions/Enumerations.yaml#/ContactType'
               identification_type:
-                $ref: '../../definitions/Enumerations.yaml#IdType'
+                $ref: '../../definitions/Enumerations.yaml#/IdType'
+              authorize_letter_copy:
+                type: string
+                format: MediaId
+                description: 法定代表人说明函
               identification_name:
                 type: string
+                format: base64
                 description: 证件姓名
               identification_number:
                 type: string
+                format: base64
                 description: 证件号码
               identification_valid_date:
                 type: string
                 format: jsonArrayLike
                 description: 证件有效日期
                 example: '["1970-01-01","forever"]'
+              identification_address:
+                type: string
+                format: base64
+                description: 证件居住地址
               identification_front_copy:
                 type: string
                 format: MediaId
@@ -162,6 +216,53 @@ post:
                 type: string
                 format: MediaId
                 description: 证件反面照片
+              owner:
+                type: boolean
+                description: 经营者/法人是否为受益人
+          ubo_info_list:
+            type: array
+            items:
+              type: object
+              required: [ubo_id_doc_type, ubo_id_doc_copy, ubo_id_doc_copy_back, id_doc_copy, ubo_id_doc_name, ubo_id_doc_number, ubo_id_doc_address, ubo_period_begin, ubo_period_end]
+              x-is-sensitive: [ubo_id_doc_name, ubo_id_doc_number, ubo_id_doc_address]
+              properties:
+                ubo_id_doc_type:
+                  $ref: '../../definitions/Enumerations.yaml#/IdType'
+                ubo_id_doc_copy:
+                  type: string
+                  format: MediaId
+                  description: 证件正面照片
+                ubo_id_doc_copy_back:
+                  type: string
+                  format: MediaId
+                  description: 证件反面照片
+                ubo_id_doc_name:
+                  type: string
+                  format: base64
+                  description: 证件姓名
+                ubo_id_doc_number:
+                  type: string
+                  format: base64
+                  description: 证件号码
+                ubo_id_doc_address:
+                  type: string
+                  format: base64
+                  description: 证件居住地址
+                ubo_period_begin:
+                  type: string
+                  format: date
+                  description: 证件有效期开始时间
+                ubo_period_end:
+                  type: string
+                  description: 证件有效期结束时间
+          addition_info:
+            type: object
+            properties:
+              confirm_mchid_list:
+                type: array
+                description: 待确认商户号列表
+                items:
+                  type: string
   responses:
     200:
       schema:
@@ -179,7 +280,7 @@ get:
   tags:
     -  风险合规∙开户意愿确认
   summary: 查询商户开户意愿申请单审核结果API
-  description: 当服务商提交申请单后，需要定期调用此接口查询申请单的审核状态。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/applysubject/chapter5_3.shtml)
+  description: 当服务商提交申请单后，需要定期调用此接口查询申请单的审核状态。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_1_3.shtml)
   parameters:
     - name: applyment_id
       in: query

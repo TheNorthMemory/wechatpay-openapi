@@ -1,0 +1,53 @@
+post:
+  x-version:
+    - 2022.07.04
+  x-role:
+    - 直连商户
+  tags:
+    - 营销工具∙代扣切卡
+  summary: 出行券切卡组件预下单API
+  description: 商户在拉起快捷切卡小程序前，需要先调用本接口预下单，下单成功后，通过返回的token拉起小程序，本接口的调用商户需要和拉起组件传入的调用商户是同一个。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_9_1.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - open_id
+          - coupon_list
+        properties:
+          open_id:
+            type: string
+            description: 用户标识
+            example: obLatjrR8kUDlj4-nofQsPAJAAFI
+          coupon_list:
+            type: array
+            description: 出行券列表
+            items:
+              type: object
+              required:
+                - stock_id
+                - coupon_id
+              properties:
+                stock_id:
+                  type: integer
+                  description: 批次号
+                  example: 16474341
+                coupon_id:
+                  type: string
+                  description: 券ID
+                  example: '11004999626'
+  responses:
+    '200':
+      schema:
+        type: object
+        properties:
+          token:
+            type: string
+            description: 切卡组件token值
+            example: 16824f40-aec1-11e8-a69c-f7a44da04f19
+          expires_time:
+            type: string
+            description: token过期时间
+            example: '2015-05-20T13:29:35+08:00'

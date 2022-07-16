@@ -13,7 +13,7 @@ interface Fundflowbill
     /**
      * 申请资金账单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/bill/chapter3_2.shtml
+     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter7_9_2.shtml
      */
     public function get(array $options = [
         'query' => [
@@ -27,7 +27,7 @@ interface Fundflowbill
     /**
      * 申请资金账单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/bill/chapter3_2.shtml#async
+     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter7_9_2.shtml#async
      */
     public function getAsync(array $options = [
         'query' => [

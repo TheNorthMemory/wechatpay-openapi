@@ -16,18 +16,26 @@ interface Applyment
     /**
      * 提交商户开户意愿申请单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/applysubject/chapter5_1.shtml
+     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_1_1.shtml
      */
     public function post(array $options = [
         'json' => [
             'business_code' => '',
             'contact_info' => [
+                'contact_type' => 'LEGAL | SUPER',
                 'name' => '',
-                'mobile' => '',
+                'contact_id_doc_type' => 'IDENTIFICATION_TYPE_IDCARD | IDENTIFICATION_TYPE_OVERSEA_PASSPORT | IDENTIFICATION_TYPE_HONGKONG_PASSPORT | IDENTIFICATION_TYPE_MACAO_PASSPORT',
                 'id_card_number' => '',
+                'contact_id_doc_copy' => '',
+                'contact_id_doc_copy_back' => '',
+                'contact_period_begin' => '',
+                'contact_period_end' => '',
+                'business_authorization_letter' => '',
+                'mobile' => '',
             ],
             'subject_info' => [
                 'subject_type' => 'SUBJECT_TYPE_INDIVIDUAL | SUBJECT_TYPE_ENTERPRISE | SUBJECT_TYPE_INSTITUTIONS | SUBJECT_TYPE_OTHERS',
+                'is_finance_institution' => true,
                 'business_license_info' => [
                     'licence_number' => '',
                     'licence_copy' => '',
@@ -58,14 +66,35 @@ interface Applyment
                     'category_id' => 0,
                     'store_indoor_copy' => ['MediaId'],
                 ],],
+                'finance_institution_info' => [
+                    'finance_type' => 'BANK_AGENT | PAYMENT_AGENT | INSURANCE | TRADE_AND_SETTLE',
+                    'finance_license_pics' => ['MediaId'],
+                ],
             ],
             'identification_info' => [
+                'id_holder_type' => 'LEGAL | SUPER',
                 'identification_type' => 'IDENTIFICATION_TYPE_IDCARD | IDENTIFICATION_TYPE_OVERSEA_PASSPORT | IDENTIFICATION_TYPE_HONGKONG_PASSPORT | IDENTIFICATION_TYPE_MACAO_PASSPORT',
+                'authorize_letter_copy' => '',
                 'identification_name' => '',
                 'identification_number' => '',
                 'identification_valid_date' => '["1970-01-01","forever"]',
+                'identification_address' => '',
                 'identification_front_copy' => '',
                 'identification_back_copy' => '',
+                'owner' => true,
+            ],
+            'ubo_info_list' => [[
+                'ubo_id_doc_type' => 'IDENTIFICATION_TYPE_IDCARD | IDENTIFICATION_TYPE_OVERSEA_PASSPORT | IDENTIFICATION_TYPE_HONGKONG_PASSPORT | IDENTIFICATION_TYPE_MACAO_PASSPORT',
+                'ubo_id_doc_copy' => '',
+                'ubo_id_doc_copy_back' => '',
+                'ubo_id_doc_name' => '',
+                'ubo_id_doc_number' => '',
+                'ubo_id_doc_address' => '',
+                'ubo_period_begin' => '',
+                'ubo_period_end' => '',
+            ],],
+            'addition_info' => [
+                'confirm_mchid_list' => ['string'],
             ],
         ],
         'query' => [
@@ -79,18 +108,26 @@ interface Applyment
     /**
      * 提交商户开户意愿申请单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/applysubject/chapter5_1.shtml#async
+     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_1_1.shtml#async
      */
     public function postAsync(array $options = [
         'json' => [
             'business_code' => '',
             'contact_info' => [
+                'contact_type' => 'LEGAL | SUPER',
                 'name' => '',
-                'mobile' => '',
+                'contact_id_doc_type' => 'IDENTIFICATION_TYPE_IDCARD | IDENTIFICATION_TYPE_OVERSEA_PASSPORT | IDENTIFICATION_TYPE_HONGKONG_PASSPORT | IDENTIFICATION_TYPE_MACAO_PASSPORT',
                 'id_card_number' => '',
+                'contact_id_doc_copy' => '',
+                'contact_id_doc_copy_back' => '',
+                'contact_period_begin' => '',
+                'contact_period_end' => '',
+                'business_authorization_letter' => '',
+                'mobile' => '',
             ],
             'subject_info' => [
                 'subject_type' => 'SUBJECT_TYPE_INDIVIDUAL | SUBJECT_TYPE_ENTERPRISE | SUBJECT_TYPE_INSTITUTIONS | SUBJECT_TYPE_OTHERS',
+                'is_finance_institution' => true,
                 'business_license_info' => [
                     'licence_number' => '',
                     'licence_copy' => '',
@@ -121,14 +158,35 @@ interface Applyment
                     'category_id' => 0,
                     'store_indoor_copy' => ['MediaId'],
                 ],],
+                'finance_institution_info' => [
+                    'finance_type' => 'BANK_AGENT | PAYMENT_AGENT | INSURANCE | TRADE_AND_SETTLE',
+                    'finance_license_pics' => ['MediaId'],
+                ],
             ],
             'identification_info' => [
+                'id_holder_type' => 'LEGAL | SUPER',
                 'identification_type' => 'IDENTIFICATION_TYPE_IDCARD | IDENTIFICATION_TYPE_OVERSEA_PASSPORT | IDENTIFICATION_TYPE_HONGKONG_PASSPORT | IDENTIFICATION_TYPE_MACAO_PASSPORT',
+                'authorize_letter_copy' => '',
                 'identification_name' => '',
                 'identification_number' => '',
                 'identification_valid_date' => '["1970-01-01","forever"]',
+                'identification_address' => '',
                 'identification_front_copy' => '',
                 'identification_back_copy' => '',
+                'owner' => true,
+            ],
+            'ubo_info_list' => [[
+                'ubo_id_doc_type' => 'IDENTIFICATION_TYPE_IDCARD | IDENTIFICATION_TYPE_OVERSEA_PASSPORT | IDENTIFICATION_TYPE_HONGKONG_PASSPORT | IDENTIFICATION_TYPE_MACAO_PASSPORT',
+                'ubo_id_doc_copy' => '',
+                'ubo_id_doc_copy_back' => '',
+                'ubo_id_doc_name' => '',
+                'ubo_id_doc_number' => '',
+                'ubo_id_doc_address' => '',
+                'ubo_period_begin' => '',
+                'ubo_period_end' => '',
+            ],],
+            'addition_info' => [
+                'confirm_mchid_list' => ['string'],
             ],
         ],
         'query' => [
@@ -142,7 +200,7 @@ interface Applyment
     /**
      * 查询商户开户意愿申请单审核结果(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/applysubject/chapter5_3.shtml
+     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_1_3.shtml
      */
     public function get(array $options = [
         'query' => [
@@ -154,7 +212,7 @@ interface Applyment
     /**
      * 查询商户开户意愿申请单审核结果(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/applysubject/chapter5_3.shtml#async
+     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_1_3.shtml#async
      */
     public function getAsync(array $options = [
         'query' => [

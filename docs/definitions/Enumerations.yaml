@@ -63,13 +63,13 @@ SubjectType:
   type: string
   description: 主体类型
   enum:
-    - SUBJECT_TYPE_INDIVIDUAL
-    - SUBJECT_TYPE_ENTERPRISE
-    - SUBJECT_TYPE_INSTITUTIONS
-    - SUBJECT_TYPE_OTHERS
-    - SUBJECT_TYPE_MICRO
-    - SUBJECT_TYPE_GOVERNMENT
-    - SUBJECT_TYPE_INSTITUTIONS_CLONED
+    - SUBJECT_TYPE_INDIVIDUAL          #个体工商户
+    - SUBJECT_TYPE_ENTERPRISE          #企业
+    - SUBJECT_TYPE_INSTITUTIONS        #个体工商户
+    - SUBJECT_TYPE_OTHERS              #社会组织
+    - SUBJECT_TYPE_MICRO               #小微商户
+    - SUBJECT_TYPE_GOVERNMENT          #政府机关
+    - SUBJECT_TYPE_INSTITUTIONS_CLONED #事业单位
 
 ContactType:
   type: string

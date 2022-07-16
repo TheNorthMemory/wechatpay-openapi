@@ -52,12 +52,19 @@ AuditDetail:
 BankAccountBase:
   type: object
   required: [account_bank, bank_address_code]
-  x-is-sensitive: [account_number]
+  x-is-sensitive: [account_name, account_number]
   properties:
+    account_name:
+      type: string
+      format: base64
+      description: 开户名称
     account_bank:
       type: string
       description: 开户银行
       example: 工商银行
+    bank_address_code:
+      type: string
+      description: 开户银行省市编码
     bank_name:
       type: string
       description: 开户银行全称（含支行）
@@ -68,6 +75,7 @@ BankAccountBase:
       example: '402713354941'
     account_number:
       type: string
+      format: base64
       description: 银行账号
       example: ciphertext
 

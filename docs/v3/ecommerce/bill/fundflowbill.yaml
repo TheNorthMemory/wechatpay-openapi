@@ -5,34 +5,31 @@ get:
   tags:
     - 收付通∙账单
   summary: 申请二级商户资金账单API
-  description: '微信支付按天提供微信支付账户的资金流水账单文件，电商平台可以通过该接口获取二级商户账单文件的下载地址。文件内包含电商平台二级商户资金操作相关的业务单号、收支金额、记账时间等信息，供电商平台进行核对。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/bill/chapter3_5.shtml)'
+  description: '微信支付按天提供微信支付账户的资金流水账单文件，电商平台可以通过该接口获取二级商户账单文件的下载地址。文件内包含电商平台二级商户资金操作相关的业务单号、收支金额、记账时间等信息，供电商平台进行核对。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter7_9_5.shtml)'
   parameters:
-    - name: _
-      in: body
+    - name: bill_date
+      in: query
       required: true
-      schema:
-        type: object
-        required:
-          - bill_date
-          - account_type
-          - algorithm
-        properties:
-          bill_date:
-            type: string
-            description: 账单日期
-            example: '2019-06-11'
-          account_type:
-            type: string
-            description: 资金账户类型
-            example: ALL
-          tar_type:
-            type: string
-            description: 压缩类型
-            example: GZIP
-          algorithm:
-            type: string
-            description: 加密算法
-            example: AEAD_AES_256_GCM
+      type: string
+      description: 账单日期
+      example: '2019-06-11'
+    - name: account_type
+      in: query
+      required: true
+      type: string
+      description: 资金账户类型
+      example: ALL
+    - name: tar_type
+      in: query
+      type: string
+      description: 压缩类型
+      example: GZIP
+    - name: algorithm
+      in: query
+      required: true
+      type: string
+      description: 加密算法
+      example: AEAD_AES_256_GCM
   responses:
     200:
       schema:

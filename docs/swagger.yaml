@@ -7,7 +7,7 @@ info:
     整理自[官方文档中心](https://pay.weixin.qq.com/wiki/doc/apiv3/index.shtml)
     本[项目/工具地址](https://github.com/TheNorthMemory/wechatpay-openapi)
     **访问第一次加载比较慢，请耐心等待大约1-2分钟不等(小文件下载比较多)。**
-  version: 0.13.5
+  version: 0.14.0
 schemes:
   - https
 consumes:
@@ -33,6 +33,7 @@ tags:
   - name: 收付通∙余额
   - name: 收付通∙提现
   - name: 收付通∙账单
+  - name: 收付通∙跨境
   - name: 服务商∙进件
   - name: 会员卡
   - name: 会员卡∙基础功能
@@ -61,6 +62,7 @@ tags:
   - name: 经营工具∙微信点餐
   - name: 经营工具∙电子发票
   - name: 营销工具∙收款有礼
+  - name: 营销工具∙代扣切卡
   - name: 风险合规∙消费者投诉
   - name: 风险合规∙商户违规通知
   - name: 风险合规∙开户意愿确认
@@ -472,6 +474,14 @@ paths:
     $ref: ./v3/eduschoolpay/users/{openid}/contracts.yaml
   /v3/eduschoolpay/users/{openid}/debt-state:
     $ref: ./v3/eduschoolpay/users/{openid}/debt-state.yaml
+  /v3/funds-to-oversea/bill-download-url:
+    $ref: ./v3/funds-to-oversea/bill-download-url.yaml
+  /v3/funds-to-oversea/orders:
+    $ref: ./v3/funds-to-oversea/orders.yaml
+  /v3/funds-to-oversea/orders/{out_order_id}:
+    $ref: ./v3/funds-to-oversea/orders/{out_order_id}.yaml
+  /v3/funds-to-oversea/transactions/{transaction_id}/available_abroad_amounts:
+    $ref: ./v3/funds-to-oversea/transactions/{transaction_id}/available_abroad_amounts.yaml
   /v3/goldplan/merchants/changecustompagestatus:
     $ref: ./v3/goldplan/merchants/changecustompagestatus.yaml
   /v3/goldplan/merchants/changegoldplanstatus:
@@ -482,6 +492,8 @@ paths:
     $ref: ./v3/goldplan/merchants/open-advertising-show.yaml
   /v3/goldplan/merchants/set-advertising-industry-filter:
     $ref: ./v3/goldplan/merchants/set-advertising-industry-filter.yaml
+  /v3/industry-coupon/tokens:
+    $ref: ./v3/industry-coupon/tokens.yaml
   /v3/marketing/bank/packages/{package_id}/tasks:
     $ref: ./v3/marketing/bank/packages/{package_id}/tasks.yaml
   /v3/marketing/busifavor/callbacks:

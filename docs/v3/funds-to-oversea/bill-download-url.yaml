@@ -1,0 +1,41 @@
+get:
+  x-version: [2022.04.19]
+  x-role:
+    - 电商平台
+  tags:
+    - 收付通∙跨境
+  summary: 获取购付汇账单文件下载链接API
+  description: 服务商可以调用此接口获取购付汇账单文件下载链接。在有效期内请求下载链接可以下载出账日为指定日期的购付汇账单文件。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter7_10_4.shtml)
+  parameters:
+    - name: bill_date
+      in: query
+      required: true
+      type: string
+      description: 账单日期
+      example: '2021-01-01'
+    - name: sub_mchid
+      in: query
+      type: string
+      description: 子商户号
+      example: '19000000001'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - hash_type
+          - hash_value
+          - download_url
+        properties:
+          hash_type:
+            type: string
+            description: 哈希类型
+            example: SHA1
+          hash_value:
+            type: string
+            description: 哈希值
+            example: 79bb0f45fc4c42234a918000b2668d689e2bde04
+          download_url:
+            type: string
+            description: 下载地址
+            example: https://api.mch.weixin.qq.com/v3/bill/downloadurl?token=xxx

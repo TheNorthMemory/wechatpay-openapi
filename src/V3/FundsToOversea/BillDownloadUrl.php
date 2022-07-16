@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);/* Generated file. DO NOT EDIT! */
 
-namespace WeChatPay\OpenAPI\V3\Bill;
+namespace WeChatPay\OpenAPI\V3\FundsToOversea;
 
 use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Promise\PromiseInterface;
@@ -8,33 +8,29 @@ use GuzzleHttp\Promise\PromiseInterface;
 /**
  * 这是一个纯接口描述文件，由程序自动生成，旨在为IDE提供结构提示，无他用。
  */
-interface Tradebill
+interface BillDownloadUrl
 {
     /**
-     * 申请交易账单(同步模式)
+     * 获取购付汇账单文件下载链接(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter7_9_1.shtml
+     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter7_10_4.shtml
      */
     public function get(array $options = [
         'query' => [
-            'bill_date' => '2019-06-11',
+            'bill_date' => '2021-01-01',
             'sub_mchid' => '19000000001',
-            'bill_type' => 'ALL',
-            'tar_type' => 'GZIP',
         ],
     ]): ResponseInterface;
 
     /**
-     * 申请交易账单(异步模式)
+     * 获取购付汇账单文件下载链接(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter7_9_1.shtml#async
+     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter7_10_4.shtml#async
      */
     public function getAsync(array $options = [
         'query' => [
-            'bill_date' => '2019-06-11',
+            'bill_date' => '2021-01-01',
             'sub_mchid' => '19000000001',
-            'bill_type' => 'ALL',
-            'tar_type' => 'GZIP',
         ],
     ]): PromiseInterface;
 }

@@ -1,0 +1,99 @@
+get:
+  x-version: [2022.05.30]
+  x-role:
+    - 电商平台
+  tags:
+    - 收付通∙跨境
+  summary: 查询出境结果API
+  description: 根据微信支付单号+商户出境单号，查询出境结果，出境失败会返回错误码 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter7_10_3.shtml)
+  parameters:
+    - name: out_order_id
+      in: path
+      required: true
+      type: string
+      description: 商户出境单号
+      example: merchant123123
+    - name: sub_mchid
+      in: query
+      required: true
+      type: string
+      description: 二级商户号
+      example: '1231231'
+    - name: transaction_id
+      in: query
+      required: true
+      type: string
+      description: 微信支付订单号
+      example: '4200000000000'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - out_order_id
+          - sub_mchid
+          - order_id
+          - result
+          - amount
+          - foreign_currency
+        properties:
+          out_order_id:
+            type: string
+            description: 商户出境单号
+            example: merchant123123
+          sub_mchid:
+            type: string
+            description: 二级商户号
+            example: '1231231'
+          order_id:
+            type: string
+            description: 微信出境单号
+            example: '42000000000_123123'
+          result:
+            type: string
+            description: 出境结果
+            example: ACCEPT
+          fail_reason:
+            type: string
+            description: 出境失败的原因
+            example: DEPARTURE_AMOUNT_NO_ENOUGH
+          amount:
+            type: integer
+            description: 请求出境人民币金额
+            example: 21
+          foreign_amount:
+            type: integer
+            description: 真实出境外币金额
+            example: 20
+          foreign_currency:
+            type: string
+            description: 外币币种
+            example: USD
+          rate:
+            type: integer
+            description: 汇率
+            example: 650000000
+          exchange_rate_time:
+            type: string
+            description: 购汇时间
+            example: '2015-05-20T13:29:35+08:00'
+          estimate_exchange_rate_time:
+            type: string
+            description: 预计购汇时间
+            example: '2015-05-20T13:29:35+08:00'
+          departure_amount:
+            type: integer
+            description: 真实出境人民币金额
+            example: 20
+          fee:
+            type: integer
+            description: 手续费人民币金额
+            example: 1
+          charge_mchid:
+            type: string
+            description: 手续费承担商户号
+            example: '1231231'
+          charge_account_type:
+            type: string
+            description: 手续费承担账户
+            example: BASIC

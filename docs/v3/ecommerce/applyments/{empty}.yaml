@@ -1,10 +1,10 @@
 post:
-  x-version: [2020.05.25]
+  x-version: [2022.05.13]
   x-role: [电商平台]
   tags:
     - 收付通∙进件
   summary: 二级商户进件API
-  description: 电商平台通过提交二级商户资料，完成二级商户入驻，入驻成为微信支付商户。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/applyments/chapter3_1.shtml)
+  description: 电商平台通过提交二级商户资料，完成二级商户入驻，入驻成为微信支付商户。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter7_1_1.shtml)
   parameters:
     - $ref: '../../../definitions/Parameters.yaml#WECHATPAY_CERTIFICATE_SERIAL'
     - name: _
@@ -26,10 +26,23 @@ post:
           organization_type:
             type: string
             description: 主体类型
+            enum:
+              - 2401 #小微商户
+              - 2500 #个人卖家
+              - 4    #个体工商户
+              - 2    #企业
+              - 3    #事业单位
+              - 2502 #政府机关
+              - 1708 #社会组织
+          finance_institution:
+            type: boolean
+            description: 是否金融机构
           business_license_info:
             type: object
             description: 营业执照/登记证书信息
             properties:
+              cert_type:
+                $ref: '../../../definitions/Enumerations.yaml#/CertType'
               business_license_copy:
                 type: string
                 format: MediaId
@@ -56,31 +69,29 @@ post:
                 format: jsonArrayLike
                 description: 营业期限
                 example: '["2014-01-01","长期"]'
-          organization_cert_info:
+          finance_institution_info:
             type: object
-            description: 组织机构代码证信息
             properties:
-              organization_copy:
-                type: string
-                format: MediaId
-                description: 组织机构代码证照片
-                example: vByf3Gjm7KE53JXv\prrKhpVBDIUv0OF4wFNIO4kqg05InE4d2I6_H7I4
-              organization_number:
-                type: string
-                description: 组织机构代码
-                example: 12345679-A
-              organization_time:
-                type: string
-                format: jsonArrayLike
-                description: 组织机构代码有效期限
-                example: '["2014-01-01","长期"]'
+              finance_type:
+                $ref: '../../../definitions/Enumerations.yaml#/FinanceType'
+              finance_license_pics:
+                type: array
+                description: 金融机构许可证图片
+                items:
+                  type: string
+                  format: MediaId
+          id_holder_type:
+            $ref: '../../../definitions/Enumerations.yaml#/ContactType'
           id_doc_type:
+            $ref: '../../../definitions/Enumerations.yaml#/IdType'
+          authorize_letter_copy:
             type: string
-            description: 经营者/法人证件类型
+            format: MediaId
+            description: 法定代表人说明函
           id_card_info:
             type: object
             description: 经营者/法人身份证信息
-            x-is-sensitive: [id_card_name, id_card_number]
+            x-is-sensitive: [id_card_name, id_card_number, id_card_address]
             properties:
               id_card_copy:
                 type: string
@@ -94,42 +105,102 @@ post:
                 example: vByf3Gjm7KE53JXvGy9tqZm2XAUf-4KGprrKhpVBDIUv0OF4wFNIO4kqg05InE4d2I6_H7I4
               id_card_name:
                 type: string
+                format: base64
                 description: 身份证姓名
                 example: pVd1HJ6v/69bDnuC4EL5Kz4jBHLiCa8MRtelw/wDa4SzfeespQO/0kjiwfqdfg==
               id_card_number:
                 type: string
+                format: base64
                 description: 身份证号码
                 example: zV+BEmytMNQCqQ8juwEc4P4TG5xzchG/5IL9DBd+Z0zZXkw==4
+              id_card_address:
+                type: string
+                format: base64
+                description: 身份证居住地址
+              id_card_valid_time_begin:
+                type: string
+                format: date
+                description: 身份证有效期开始时间
               id_card_valid_time:
                 type: string
-                format: jsonArrayLike
-                description: 身份证有效期限
-                example: '["2026-06-06","长期"]'
+                description: 身份证有效期结束时间
           id_doc_info:
             type: object
             description: 经营者/法人其他类型证件信息
-            x-is-sensitive: [id_doc_name, id_doc_number]
+            x-is-sensitive: [id_doc_name, id_doc_number, id_doc_address]
             properties:
               id_doc_name:
                 type: string
+                format: base64
                 description: 证件姓名
                 example: jTpGmxUX3FBWVQ5NJTZvlKX_gdU4LC-ehEuo0BJqRTvDujqhThn4ReFxikqJ5YW6zFQ
               id_doc_number:
                 type: string
+                format: base64
                 description: 证件号码
                 example: jTpGmxUX3FBWVQ5NJTZvlKX_go0BJqRTvDujqhThn4ReFxikqJ5YW6zFQ
+              id_doc_address:
+                type: string
+                format: base64
+                description: 证件居住地址
               id_doc_copy:
                 type: string
                 format: MediaId
-                description: 证件照片
+                description: 证件正面照片
                 example: xi-vByf3Gjm7KE53JXvGy9tqZm2XAUf-4KGprrKhpVBDIUv0OF4wFNIO4kqg05InE4d2I6_H7I4
+              id_doc_copy_back:
+                type: string
+                format: MediaId
+                description: 证件反面照片
+                example: xi-vByf3Gjm7KE53JXvGy9tqZm2XAUf-4KGprrKhpVBDIUv0OF4wFNIO4kqg05InE4d2I6_H7I4
+              doc_period_begin:
+                type: string
+                format: date
+                description: 证件有效期开始时间
+                example: '2020-01-02'
               doc_period_end:
                 type: string
-                description: 证件结束日期
+                description: 证件有效期结束时间
                 example: '2020-01-02'
-          need_account_info:
+          owner:
             type: boolean
-            description: 是否填写结算银行账户
+            description: 经营者/法人是否为受益人
+          ubo_info_list:
+            type: array
+            items:
+              type: object
+              required: [ubo_id_doc_type, ubo_id_doc_copy, ubo_id_doc_copy_back, id_doc_copy, ubo_id_doc_name, ubo_id_doc_number, ubo_id_doc_address, ubo_period_begin, ubo_period_end]
+              x-is-sensitive: [ubo_id_doc_name, ubo_id_doc_number, ubo_id_doc_address]
+              properties:
+                ubo_id_doc_type:
+                  $ref: '../../../definitions/Enumerations.yaml#/IdType'
+                ubo_id_doc_copy:
+                  type: string
+                  format: MediaId
+                  description: 证件正面照片
+                ubo_id_doc_copy_back:
+                  type: string
+                  format: MediaId
+                  description: 证件反面照片
+                ubo_id_doc_name:
+                  type: string
+                  format: base64
+                  description: 受益人姓名
+                ubo_id_doc_number:
+                  type: string
+                  format: base64
+                  description: 证件号码
+                ubo_id_doc_address:
+                  type: string
+                  format: base64
+                  description: 证件居住地址
+                ubo_period_begin:
+                  type: string
+                  format: date
+                  description: 证件有效期开始时间
+                ubo_period_end:
+                  type: string
+                  description: 证件有效期结束时间
           account_info:
             type: object
             description: 结算银行账户
@@ -139,12 +210,16 @@ post:
                 type: string
                 description: 账户类型
                 example: '75'
+                enum:
+                  - 74 #对私账户
+                  - 75 #对公账户
               account_bank:
                 type: string
                 description: 开户银行
                 example: 工商银行
               account_name:
                 type: string
+                format: base64
                 description: 开户名称
                 example: AOZdYGISxo4yw96uY1Pk7Rq79Jtt7+I8juwEc4P4TG5xzchG/5IL9DBd+Z0zZXkw==
               bank_address_code:
@@ -161,8 +236,27 @@ post:
                 example: 施秉县农村信用合作联社城关信用社
               account_number:
                 type: string
+                format: base64
                 description: 银行帐号
                 example: d+xT+MQCvrLHUVDWv/8MR/dB7TkXLVfSrUxMPZy6jWWYzpRrEEaYQE8ZRGYoeorwC+w==
+              account_cert_info:
+                type: object
+                description: 若结算账户设置为非同名，则需填写非同名证明材料，若结算账户为同名，则无需填写。
+                properties:
+                  settlement_cert_pic:
+                    type: string
+                    format: MediaId
+                    description: 结算证明函
+                  relation_cert_pic:
+                    type: string
+                    format: MediaId
+                    description: 关系证明函
+                  other_cert_pics:
+                    type: array
+                    maxItems: 3
+                    items:
+                      type: string
+                      format: MediaId
           contact_info:
             type: object
             description: 超级管理员信息
@@ -172,20 +266,47 @@ post:
                 type: string
                 description: 超级管理员类型
                 example: '65'
+                enum:
+                  - 65 #经营者/法人
+                  - 66 #经办人
               contact_name:
                 type: string
+                format: base64
                 description: 超级管理员姓名
                 example: pVd1HJ6zyvPedzGaV+X3IdGdbDnuC4Eelw/wDa4SzfeespQO/0kjiwfqdfg==
+              contact_id_doc_type:
+                $ref: '../../../definitions/Enumerations.yaml#/IdType'
               contact_id_card_number:
                 type: string
+                format: base64
                 description: 超级管理员身份证件号码
                 example: pVd1HJ6zmty7/mYNxLMpRSvMRtelw/wDa4SzfeespQO/0kjiwfqdfg==
+              contact_id_doc_copy:
+                type: string
+                format: MediaId
+                description: 超级管理员证件正面照片
+              contact_id_doc_copy_back:
+                type: string
+                format: MediaId
+                description: 超级管理员证件反面照片
+              contact_period_begin:
+                type: string
+                description: 超级管理员证件有效期开始时间
+              contact_period_end:
+                type: string
+                description: 超级管理员证件有效期结束时间
+              business_authorization_letter:
+                type: string
+                format: MediaId
+                description: 业务办理授权函
               mobile_phone:
                 type: string
+                format: base64
                 description: 超级管理员手机
                 example: pVd1HJ6zyvPedzGaV+X3qtmrq9bb9tPROvwia4ibL+F6mfjbzQIzfb3HHLEjZ4YiNWWNeespQO/0kjiwfqdfg==
               contact_email:
                 type: string
+                format: base64
                 description: 超级管理员邮箱
                 example: pVd1HJ6zyvPedzGaV+X3qtmrq9bb9tPROvwia4ibL+FWWNUlw/wDa4SzfeespQO/0kjiwfqdfg==
           sales_scene_info:
@@ -206,6 +327,15 @@ post:
               mini_program_sub_appid:
                 type: string
                 description: 小程序AppID
+          settlement_info:
+            type: object
+            properties:
+              settlement_id:
+                type: string
+                description: 结算规则ID
+              qualification_type:
+                type: string
+                description: 所属行业
           merchant_shortname:
             type: string
             description: 商户简称

@@ -170,10 +170,27 @@ TransactionBase:
           type: string
           description: 订单优惠标记
           example: WXG
+        limit_pay:
+          type: array
+          description: 指定支付方式
+          items:
+            $ref: '#/LimitPay'
+        support_fapiao:
+          type: boolean
+          description: 电子发票入口开放标识
         detail:
           $ref: '#/Detail'
         scene_info:
           $ref: '#/SceneInfo'
+
+LimitPay:
+  type: string
+  description: 支付方式
+  enum:
+    - no_balance
+    - no_credit
+    - no_debit
+    - balance_only
 
 PayerDirection:
   type: object

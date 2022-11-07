@@ -4,7 +4,9 @@ namespace WeChatPay\OpenAPI\V3;
 
 /**
  * 这是一个纯接口描述文件，由程序自动生成，旨在为IDE提供结构提示，无他用。
+ * @property-read Businesscircle\Users $users
  * @property-read Businesscircle\UserAuthorizations $userAuthorizations
+ * @property-read Businesscircle\Parkings $parkings
  */
 interface Businesscircle
 {

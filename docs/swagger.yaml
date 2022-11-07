@@ -376,10 +376,14 @@ paths:
     $ref: ./v3/brand/profitsharing/receivers/delete.yaml
   /v3/brand/profitsharing/returnorders:
     $ref: ./v3/brand/profitsharing/returnorders.yaml
+  /v3/businesscircle/parkings:
+    $ref: ./v3/businesscircle/parkings.yaml
   /v3/businesscircle/points/notify:
     $ref: ./v3/businesscircle/points/notify.yaml
   /v3/businesscircle/user-authorizations/{openid}:
     $ref: ./v3/businesscircle/user-authorizations/{openid}.yaml
+  /v3/businesscircle/users/{openid}/points/commit_status:
+    $ref: ./v3/businesscircle/users/{openid}/points/commit_status.yaml
   /v3/capital/capitallhh/areas/provinces:
     $ref: ./v3/capital/capitallhh/areas/provinces.yaml
   /v3/capital/capitallhh/areas/provinces/{province_code}/cities:
@@ -520,6 +524,8 @@ paths:
     $ref: ./v3/marketing/busifavor/stocks/{stock_id}/couponcodes.yaml
   /v3/marketing/busifavor/subsidy/pay-receipts:
     $ref: ./v3/marketing/busifavor/subsidy/pay-receipts.yaml
+  /v3/marketing/busifavor/subsidy/pay-receipts/{subsidy_receipt_id}:
+    $ref: ./v3/marketing/busifavor/subsidy/pay-receipts/{subsidy_receipt_id}.yaml
   /v3/marketing/busifavor/users/{openid}/coupons:
     $ref: ./v3/marketing/busifavor/users/{openid}/coupons.yaml
   /v3/marketing/busifavor/users/{openid}/coupons/{coupon_code}/appids/{appid}:

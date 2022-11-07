@@ -1,0 +1,50 @@
+post:
+  x-version:
+    - 2022.08.25
+  x-role:
+    - 直连商户
+  tags:
+    - 经营工具∙智慧商圈
+  summary: 商圈会员停车状态同步
+  description: 通过此API，商圈商户/服务商可将会员的停车状态同步给微信支付，以辅助判断用户到场，用户在商圈内门店消费可自动积商圈会员积分。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter8_6_5.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - brandid
+          - appid
+          - openid
+          - plate_number
+          - state
+          - time
+        properties:
+          brandid:
+            type: integer
+            description: 品牌ID
+            example: 1000
+          appid:
+            type: string
+            description: 应用ID
+            example: wx931386123456789e
+          openid:
+            type: string
+            description: 用户标识
+            example: oUpF8uMuAJOM2pxb1Q
+          plate_number:
+            type: string
+            description: 车牌号
+            example: 粤B888888
+          state:
+            type: string
+            description: 状态
+            example: IN
+          time:
+            type: string
+            description: 时间
+            example: '2022-06-01T10:43:39+08:00'
+  responses:
+    '204':
+      schema: {}

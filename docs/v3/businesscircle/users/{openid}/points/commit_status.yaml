@@ -1,0 +1,31 @@
+get:
+  x-version:
+    - 2022.08.25
+  x-role:
+    - 直连商户
+  tags:
+    - 经营工具∙智慧商圈
+  summary: 商圈会员待积分状态查询
+  description: 通过此API，商圈商户/服务商可以自行查询已授权“商圈会员积分服务”的会员用户当日在该商圈的待积分状态。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter8_6_7.shtml)
+  parameters:
+    - name: brandid
+      type: integer
+      in: query
+      required: true
+      description: 品牌ID
+      example: 1000
+    - name: appid
+      type: string
+      in: query
+      required: true
+      description: 应用ID
+      example: wx931386123456789e
+    - name: openid
+      type: string
+      in: path
+      required: true
+      description: 顾客openid
+      example: oUpF8uMuAJOM2pxb1Q
+  responses:
+    '204':
+      schema: {}

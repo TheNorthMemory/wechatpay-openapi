@@ -11,7 +11,7 @@
 
 ## PHP
 
-推荐使用 `composer v2` 安装
+推荐使用 `composer` 安装
 
 `composer require --dev iwechatpay/openapi`
 

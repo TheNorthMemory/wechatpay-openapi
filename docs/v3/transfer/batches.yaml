@@ -1,6 +1,6 @@
 post:
   x-version:
-    - 2020.07.09
+    - 2022.04.24
   x-role:
     - 直连商户
   tags:
@@ -22,6 +22,7 @@ post:
           - total_amount
           - total_num
           - transfer_detail_list
+          - transfer_scene_id
         properties:
           appid:
             type: string
@@ -83,6 +84,10 @@ post:
                   type: string
                   description: 收款用户身份证
                   example: 8609cb22e1774a50a930e414cc71eca06121bcd266335cda230d24a7886a8d9f
+          transfer_scene_id:
+            type: string
+            description: 转账场景ID
+            example: '1001'
   responses:
     '200':
       schema:

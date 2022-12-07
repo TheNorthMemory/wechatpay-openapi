@@ -33,6 +33,7 @@ interface Batches
                 'user_name' => '757b340b45ebef5467rter35gf464344v3542sdf4t6re4tb4f54ty45t4yyry45',
                 'user_id_card' => '8609cb22e1774a50a930e414cc71eca06121bcd266335cda230d24a7886a8d9f',
             ],],
+            'transfer_scene_id' => '1001',
         ],
         'headers' => [
             'Wechatpay-Serial' => '',
@@ -60,6 +61,7 @@ interface Batches
                 'user_name' => '757b340b45ebef5467rter35gf464344v3542sdf4t6re4tb4f54ty45t4yyry45',
                 'user_id_card' => '8609cb22e1774a50a930e414cc71eca06121bcd266335cda230d24a7886a8d9f',
             ],],
+            'transfer_scene_id' => '1001',
         ],
         'headers' => [
             'Wechatpay-Serial' => '',

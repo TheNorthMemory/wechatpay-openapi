@@ -1,0 +1,33 @@
+get:
+  x-version:
+    - 2022.12.05
+  x-role:
+    - 服务商
+    - 微信平台商户
+  tags:
+    - 爱心餐
+  summary: 查询爱心餐品牌信息
+  description: 商户根据品牌ID查询爱心餐品牌的捐赠与供餐信息。
+  parameters:
+    - name: brand_id
+      in: path
+      required: true
+      type: string
+      description: 品牌ID
+      example: '2250'
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - donate_count
+          - consume_count
+        properties:
+          donate_count:
+            type: number
+            format: integer
+            description: 捐赠数量
+          consume_count:
+            type: number
+            format: integer
+            description: 供餐数量

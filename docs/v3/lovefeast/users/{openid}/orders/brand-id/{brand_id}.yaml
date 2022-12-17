@@ -1,0 +1,100 @@
+get:
+  x-version:
+    - 2022.12.05
+  x-role:
+    - 服务商
+    - 微信平台商户
+  tags:
+    - 爱心餐
+  summary: 查询用户捐赠单详情
+  description: 商户根据商户订单号与用户标识查询捐赠单详情
+  parameters:
+    - name: openid
+      in: path
+      required: true
+      type: string
+      description: 用户在商户AppID下的唯一标识
+      example: 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o'
+    - name: brand_id
+      in: path
+      required: true
+      type: string
+      description: 品牌ID
+      example: '2250'
+    - name: offset
+      in: query
+      type: integer
+      description: 请求资源起始位置
+      example: 0
+    - name: limit
+      in: query
+      type: integer
+      description: 最大资源条数
+      example: 20
+  responses:
+    200:
+      schema:
+        type: object
+        properties:
+          count:
+            type: integer
+          limit:
+            type: integer
+          offset:
+            type: integer
+          total_count:
+            type: integer
+          data:
+            type: array
+            items:
+              type: object
+              properties:
+                welfare_trade_id:
+                  type: string
+                appid:
+                  type: string
+                sub_appid:
+                  type: string
+                brand_id:
+                  type: string
+                donate_source:
+                  type: string
+                  enum:
+                    - MINIPROGRAM_PAY #一起捐小程序
+                    - ENTRUST_PAY #一块捐插件
+                merchant_order:
+                  type: string
+                institution_name:
+                  type: string
+                business_id:
+                  type: string
+                business_name:
+                  type: string
+                success_time:
+                  type: string
+                payer:
+                  type: object
+                  properties:
+                    openid:
+                      type: string
+                    sub_openid:
+                      type: string
+                    avatar:
+                      type: string
+                    nickname:
+                      type: string
+                amount:
+                  type: object
+                  properties:
+                  total:
+                    type: number
+                    format: integer
+                  payer_total:
+                    type: number
+                    format: integer
+                  currency:
+                    type: string
+                  payer_currency:
+                    type: string
+                device_id:
+                  type: string

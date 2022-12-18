@@ -11,9 +11,9 @@ use GuzzleHttp\Promise\PromiseInterface;
 interface _brand_id_
 {
     /**
-     * 查询用户捐赠单详情(同步模式)
+     * 查询用户捐赠单列表(同步模式)
      * @param array<string,mixed> $options
-     * @link 商户根据商户订单号与用户标识查询捐赠单详情
+     * @link 商户可根据品牌ID与用户标识查询捐赠单列表
      */
     public function get(array $options = [
         'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
@@ -25,9 +25,9 @@ interface _brand_id_
     ]): ResponseInterface;
 
     /**
-     * 查询用户捐赠单详情(异步模式)
+     * 查询用户捐赠单列表(异步模式)
      * @param array<string,mixed> $options
-     * @link 商户根据商户订单号与用户标识查询捐赠单详情#async
+     * @link 商户可根据品牌ID与用户标识查询捐赠单列表#async
      */
     public function getAsync(array $options = [
         'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',

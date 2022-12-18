@@ -6,8 +6,8 @@ get:
     - 微信平台商户
   tags:
     - 爱心餐
-  summary: 查询用户捐赠单详情
-  description: 商户根据商户订单号与用户标识查询捐赠单详情
+  summary: 查询用户捐赠单列表
+  description: 商户可根据品牌ID与用户标识查询捐赠单列表
   parameters:
     - name: openid
       in: path

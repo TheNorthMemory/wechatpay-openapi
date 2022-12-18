@@ -7,7 +7,7 @@ info:
     整理自[官方文档中心](https://pay.weixin.qq.com/wiki/doc/apiv3/index.shtml)
     本[项目/工具地址](https://github.com/TheNorthMemory/wechatpay-openapi)
     **访问第一次加载比较慢，请耐心等待大约1-2分钟不等(小文件下载比较多)。**
-  version: 0.14.3
+  version: 0.14.4
 schemes:
   - https
 consumes:
@@ -42,6 +42,7 @@ tags:
   - name: 会员卡∙会员有礼
   - name: 校园轻松付
   - name: 爱心餐
+  - name: 乘车服务
   - name: 运营工具∙代金券
   - name: 运营工具∙商家券
   - name: 运营工具∙委托营销
@@ -803,6 +804,12 @@ paths:
     $ref: ./v3/profitsharing/return-orders/{out_return_no}.yaml
   /v3/profitsharing/transactions/{transaction_id}/amounts:
     $ref: ./v3/profitsharing/transactions/{transaction_id}/amounts.yaml
+  /v3/qrcode/transactions:
+    $ref: ./v3/qrcode/transactions.yaml
+  /v3/qrcode/transactions/out-trade-no/{out_trade_no}:
+    $ref: ./v3/qrcode/transactions/out-trade-no/{out_trade_no}.yaml
+  /v3/qrcode/user-services/contract-id/{contract_id}:
+    $ref: ./v3/qrcode/user-services/contract-id/{contract_id}.yaml
   /v3/rate-activity/applications:
     $ref: ./v3/rate-activity/applications.yaml
   /v3/rate-activity/applications/id/{application_id}:

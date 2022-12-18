@@ -1,0 +1,48 @@
+get:
+  x-version:
+    - 2022.12.02
+  x-role:
+    - 服务商
+    - 直连商户
+  tags:
+    - 乘车服务
+  summary: 查询用户服务可用信息
+  description: 在商户生成乘车码前，商户请求查询用户服务可用信息接口，查询 用户服务可用信息，通过用户服务可用信息中的服务可用状态，来判断是否可以正常使用公共出行代扣服务
+  parameters:
+    - name: contract_id
+      in: path
+      required: true
+      type: string
+      description: 签约成功后，微信返回代扣签约ID
+      example: Wx15463511252015071056489715
+    - name: appid
+      in: query
+      type: string
+      description: 商户在微信申请公众号或移动应用成功后分配的账号ID
+      example: wxcbda96de0b165486
+    - name: sub_appid
+      in: query
+      type: string
+      description: 子公众账号ID
+      example: wxcbda96de0b165486
+    - name: sub_mchid
+      in: query
+      type: string
+      description: 微信支付分配的子商户号
+      example: '1900000109'
+  responses:
+    200:
+      schema:
+        type: object
+        properties:
+          contract_id:
+            type: string
+            description: 签约成功后，微信返回代扣签约ID
+            example: Wx15463511252015071056489715
+          user_service_state:
+            type: string
+            enum:
+              - NORMAL
+              - BLOCKED
+          block_reason:
+            type: string

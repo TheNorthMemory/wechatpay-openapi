@@ -1,0 +1,147 @@
+get:
+  x-version:
+    - 2022.12.02
+  x-role:
+    - 服务商
+    - 直连商户
+  tags:
+    - 乘车服务
+  summary: 查询订单
+  description: 商户通过商户订单号，来查询订单信息
+  parameters:
+    - name: out_trade_no
+      in: path
+      required: true
+      type: string
+      description: 商户系统内部订单号
+      example: '20150806125346'
+    - name: sub_mchid
+      in: query
+      type: string
+      description: 微信支付分配的子商户号
+      example: '1900000109'
+  responses:
+    '200':
+      schema:
+        type: object
+        properties:
+          appid:
+            type: string
+          sub_appid:
+            type: string
+          sp_mchid:
+            type: string
+          sub_mchid:
+            type: string
+          description:
+            type: string
+          create_time:
+            type: string
+            format: rfc3339
+          out_trade_no:
+            type: string
+          transaction_id:
+            type: string
+          trade_state:
+            type: string
+            enum:
+              - SUCCESS
+              - ACCEPTED
+              - PAY_FAIL
+              - REFUND
+          trade_state_description:
+            type: string
+          success_time:
+            type: string
+            format: rfc3339
+          bank_type:
+            type: string
+          user_repay_state:
+            type: string
+            enum:
+              - NOT_REPAY
+              - REPAID
+              - ALL_REFUND
+          repay_transaction_id:
+            type: string
+          repay_time:
+            type: string
+            format: rfc3339
+          attach:
+            type: string
+          contract_id:
+            type: string
+          trade_scene:
+            type: string
+          bus_info:
+            type: object
+            properties:
+              start_time:
+                type: string
+                format: rfc3339
+                description:  用户乘车时间（上车）
+              line_name:
+                type: string
+                description: 乘车路线
+              plate_number:
+                type: string
+                description: 车牌号。
+          metro_info:
+            type: object
+            properties:
+              start_time:
+                type: string
+                format: rfc3339
+                description: 用户乘车时间（上车）
+              end_time:
+                type: string
+                format: rfc3339
+                description: 用户下车时间
+              start_station:
+                type: string
+                description: 乘车起始站
+              end_station:
+                type: string
+                description: 乘车终点站
+          amount:
+            type: object
+            properties:
+            total:
+              type: number
+              format: integer
+            payer_total:
+              type: number
+              format: integer
+            currency:
+              type: string
+          promotion_detail:
+            type: array
+            items:
+              type: object
+              properties:
+                coupon_id:
+                  type: string
+                name:
+                  type: string
+                scope:
+                  type: string
+                  enum:
+                    - GLOBAL
+                    - SINGLE
+                type:
+                  type: string
+                  enum:
+                    - CASH
+                    - NOCASH
+                stock_id:
+                  type: string
+                amount:
+                  type: integer
+                wechatpay_contribute:
+                  type: integer
+                merchant_contribute:
+                  type: integer
+                other_contribute:
+                  type: integer
+                currency:
+                  type: string

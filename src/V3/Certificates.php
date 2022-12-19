@@ -15,12 +15,20 @@ interface Certificates
      * @param array<string,mixed> $options
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/applyments/chapter3_3.shtml
      */
-    public function get(array $options = []): ResponseInterface;
+    public function get(array $options = [
+        'query' => [
+            'algorithm_type' => 'SM2 | RSA | ALL',
+        ],
+    ]): ResponseInterface;
 
     /**
      * 获取平台证书列表(异步模式)
      * @param array<string,mixed> $options
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/applyments/chapter3_3.shtml#async
      */
-    public function getAsync(array $options = []): PromiseInterface;
+    public function getAsync(array $options = [
+        'query' => [
+            'algorithm_type' => 'SM2 | RSA | ALL',
+        ],
+    ]): PromiseInterface;
 }

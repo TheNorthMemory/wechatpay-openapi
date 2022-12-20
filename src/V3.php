@@ -31,6 +31,7 @@ namespace WeChatPay\OpenAPI;
  * @property-read V3\Lovefeast $lovefeast
  * @property-read V3\IndustryCoupon $industryCoupon
  * @property-read V3\Goldplan $goldplan
+ * @property-read V3\Global $global
  * @property-read V3\FundsToOversea $fundsToOversea
  * @property-read V3\Eduschoolpay $eduschoolpay
  * @property-read V3\Ecommerce $ecommerce

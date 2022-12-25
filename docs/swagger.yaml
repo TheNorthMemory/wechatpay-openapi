@@ -7,7 +7,7 @@ info:
     整理自[官方文档中心](https://pay.weixin.qq.com/wiki/doc/apiv3/index.shtml)
     本[项目/工具地址](https://github.com/TheNorthMemory/wechatpay-openapi)
     **访问第一次加载比较慢，请耐心等待大约1-2分钟不等(小文件下载比较多)。**
-  version: 0.14.5
+  version: 0.14.4
 schemes:
   - https
 consumes:
@@ -91,7 +91,6 @@ tags:
   - name: 跨境∙报关
   - name: 跨境∙支付
   - name: 跨境∙退款
-  - name: 海外∙通用接口
 paths:
   /global/v3/customs/orders:
     $ref: ./global/v3/customs/orders.yaml
@@ -489,8 +488,6 @@ paths:
     $ref: ./v3/funds-to-oversea/orders/{out_order_id}.yaml
   /v3/funds-to-oversea/transactions/{transaction_id}/available_abroad_amounts:
     $ref: ./v3/funds-to-oversea/transactions/{transaction_id}/available_abroad_amounts.yaml
-  /v3/global/certificates:
-    $ref: ./v3/global/certificates.yaml
   /v3/goldplan/merchants/changecustompagestatus:
     $ref: ./v3/goldplan/merchants/changecustompagestatus.yaml
   /v3/goldplan/merchants/changegoldplanstatus:

@@ -1,0 +1,12 @@
+post:
+  x-version:
+    - 2022.11.14
+  x-role:
+    - 服务商
+  tags:
+    - 刷脸支付
+  summary: 预签约接口
+  description: 一键绑卡不是支持所有银行卡，上线前请先测试是否支持该银行卡。[官方文档](https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/access-specifications.html)
+  parameters: []
+  responses:
+    '200':

@@ -21,6 +21,7 @@ tags:
   - name: 基础支付∙合单
   - name: 基础支付∙账单
   - name: 基础支付∙退款
+  - name: 刷脸支付
   - name: 资金应用∙分账
   - name: 资金应用∙转账
   - name: 资金应用∙转账∙服务商模式
@@ -500,6 +501,8 @@ paths:
     $ref: ./v3/goldplan/merchants/set-advertising-industry-filter.yaml
   /v3/industry-coupon/tokens:
     $ref: ./v3/industry-coupon/tokens.yaml
+  /v3/iotmanage/devices:
+    $ref: ./v3/iotmanage/devices.yaml
   /v3/lovefeast/brands/{brand_id}:
     $ref: ./v3/lovefeast/brands/{brand_id}.yaml
   /v3/lovefeast/users/{openid}/orders/brand-id/{brand_id}:
@@ -704,6 +707,16 @@ paths:
     $ref: ./v3/new-tax-control-fapiao/user-title.yaml
   /v3/new-tax-control-fapiao/user-title/title-url:
     $ref: ./v3/new-tax-control-fapiao/user-title/title-url.yaml
+  /v3/offlineface/authinfo:
+    $ref: ./v3/offlineface/authinfo.yaml
+  /v3/offlineface/contracts/presign:
+    $ref: ./v3/offlineface/contracts/presign.yaml
+  /v3/offlineface/transactions:
+    $ref: ./v3/offlineface/transactions.yaml
+  /v3/offlinefacemch/organizations/{organization_id}/users/out-user-id/{out_user_id}:
+    $ref: ./v3/offlinefacemch/organizations/{organization_id}/users/out-user-id/{out_user_id}.yaml
+  /v3/offlinefacemch/tokens:
+    $ref: ./v3/offlinefacemch/tokens.yaml
   /v3/partner-transfer/batches:
     $ref: ./v3/partner-transfer/batches.yaml
   /v3/partner-transfer/batches/batch-id/{batch_id}:

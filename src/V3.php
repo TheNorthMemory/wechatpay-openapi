@@ -20,6 +20,8 @@ namespace WeChatPay\OpenAPI;
  * @property-read V3\PayrollCard $payrollCard
  * @property-read V3\Pay $pay
  * @property-read V3\PartnerTransfer $partnerTransfer
+ * @property-read V3\Offlinefacemch $offlinefacemch
+ * @property-read V3\Offlineface $offlineface
  * @property-read V3\NewTaxControlFapiao $newTaxControlFapiao
  * @property-read V3\Merchants $merchants
  * @property-read V3\Merchantfund $merchantfund
@@ -29,6 +31,7 @@ namespace WeChatPay\OpenAPI;
  * @property-read V3\Merchant $merchant
  * @property-read V3\Marketing $marketing
  * @property-read V3\Lovefeast $lovefeast
+ * @property-read V3\Iotmanage $iotmanage
  * @property-read V3\IndustryCoupon $industryCoupon
  * @property-read V3\Goldplan $goldplan
  * @property-read V3\FundsToOversea $fundsToOversea

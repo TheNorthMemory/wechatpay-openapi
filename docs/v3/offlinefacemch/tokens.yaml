@@ -1,0 +1,12 @@
+post:
+  x-version:
+    - 2022.11.14
+  x-role:
+    - 服务商
+  tags:
+    - 刷脸支付
+  summary: 获取凭证授权接口
+  description: 指定银行卡签约，用户签约时携带的token请使用预签约接口获取，该接口不支持指定卡签约。[官方文档](https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/access-specifications.html)
+  parameters: []
+  responses:
+    '200':

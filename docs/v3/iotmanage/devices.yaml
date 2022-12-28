@@ -1,0 +1,94 @@
+get:
+  x-version:
+    - 2022.01.27
+  x-role:
+    - 服务商
+  tags:
+    - 刷脸支付
+  summary: 智能设备列表
+  description: 商户可以通过该接口分页拉取到自己拥有的设备的列表。[官方文档](https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/point/iotmanage-devices.html)
+  parameters:
+    - name: limit
+      type: integer
+      format: uint64
+      in: query
+      required: true
+      description: 最大资源条数
+      example: 5
+    - name: offset
+      type: integer
+      format: uint64
+      in: query
+      required: true
+      description: 请求资源起始位置
+      example: 10
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - data
+          - offset
+          - limit
+          - total_count
+          - links
+        properties:
+          data:
+            type: array
+            items:
+              type: object
+              properties:
+                device_sn:
+                  type: string
+                camera_sn:
+                  type: string
+                device_category_code:
+                  type: string
+                device_category:
+                  type: string
+                device_class_code:
+                  type: string
+                device_class:
+                  type: string
+                device_model:
+                  type: string
+                app_scene_code:
+                  type: string
+                app_scene:
+                  type: string
+                operating_system:
+                  type: string
+                activation_status:
+                  type: string
+                  enum:
+                    - ACTIVATED
+                    - INACTIVATED
+                activation_time:
+                  type: string
+                  format: rfc3339
+                mchid:
+                  type: string
+                merchant_shortname:
+                  type: string
+                sub_mchid:
+                  type: string
+                sub_merchant_shortname:
+                  type: string
+          offset:
+            type: integer
+            example: 10
+          limit:
+            type: integer
+            example: 5
+          total_count:
+            type: integer
+            example: 1234
+          links:
+            type: object
+            properties:
+              next:
+                type: string
+              prev:
+                type: string
+              self:
+                type: string

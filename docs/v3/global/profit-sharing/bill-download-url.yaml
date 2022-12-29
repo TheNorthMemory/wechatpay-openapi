@@ -1,0 +1,32 @@
+get:
+  x-version:
+    - 2022.08.04
+  x-role:
+    - 直连模式
+    - 机构模式
+  tags:
+    - 跨境∙分账
+  summary: 获取分账账单文件下载地址API
+  description: 微信支付按天提供分账账单文件，商户可以通过该接口获取账单文件的下载地址。文件内包含分账相关的金额、时间等信息，供商户核对到账等情况。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter4_1_9.shtml)
+  parameters:
+    - name: sub_mchid
+      in: query
+      type: string
+      description: 子商户号
+      example: '1900000109'
+    - name: bill_date
+      in: query
+      type: string
+      description: 账单日期
+      example: '2020-01-01'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - download_url
+        properties:
+          download_url:
+            type: string
+            description: 下载地址
+            example: https://apihk.mch.weixin.qq.com/v3/bill/downloadurl?token=xxx

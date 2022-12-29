@@ -1,0 +1,47 @@
+get:
+  x-version:
+    - 2022.11.08
+  x-role:
+    - 直连模式
+    - 机构模式
+  tags:
+    - 跨境∙分账
+  summary: 查询订单剩余可退款金额API
+  description: 若商户对于一笔分账支付订单发起多次分账后，可通过该API查询该笔订单的剩余未分的可退款金额和可使用垫付资金退款的金额。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter4_1_12.shtml)
+  parameters:
+    - name: sub_mchid
+      in: query
+      type: string
+      description: 子商户号
+      example: '1900000109'
+    - name: transaction_id
+      in: path
+      type: string
+      description: 微信订单号
+      example: '4208450740201411110007820472'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - transaction_id
+          - out_order_no
+          - order_id
+          - state
+        properties:
+          transaction_id:
+            type: string
+            description: 微信订单号
+            example: '4208450740201411110007820472'
+          refundable_amount:
+            type: integer
+            description: 订单剩余可退款金额
+            example: 1000
+          currency:
+            type: string
+            description: 货币类型
+            example: CNY
+          funds_refundable_amount:
+            type: integer
+            description: 订单剩余可使用垫付资金退款的金额
+            example: 1000

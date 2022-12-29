@@ -1,0 +1,152 @@
+get:
+  x-version:
+    - 2022.08.04
+  x-role:
+    - 机构模式
+  tags:
+    - 跨境∙进件
+  summary: 查询子商户（融合钱包）
+  description: 用于机构查询子商户创建是否成功，接口只提供单个子商户信息查询。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter4_2_2.shtml)
+  parameters:
+    - name: sp_appid
+      type: string
+      in: query
+      required: true
+      description: 机构appid
+      example: wx8888888888888888
+    - name: sp_mchid
+      type: string
+      in: query
+      required: true
+      description: 机构商户号
+      example: '3200000001'
+    - name: sub_mchid
+      type: string
+      in: path
+      required: true
+      description: 子商户号
+      example: '20000100'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - sub_mchid
+          - name
+          - shortname
+          - office_phone
+          - merchant_country_code
+          - business_category
+        properties:
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '20000100'
+          name:
+            type: string
+            description: 子商户全称
+            example: Merchant name
+          shortname:
+            type: string
+            description: 子商户简称
+            example: Merchant shortname
+          office_phone:
+            type: string
+            description: 公司联系方式
+            example: '075586010000'
+          merchant_country_code:
+            type: string
+            description: 册国家或区域
+            example: '344'
+          business_category:
+            type: integer
+            description: 类目
+            example: 101
+          contact:
+            type: object
+            description: 联系人信息
+            properties:
+              name:
+                type: string
+                description: 联系人名称
+                example: Bob Zhang
+              phone:
+                type: string
+                description: 联系人电话
+                example: '+8613633334444'
+              email:
+                type: string
+                description: 联系人邮箱
+                example: test@test.com
+          merchant_type:
+            type: string
+            description: 商户类型
+            example: ENTERPRISE
+          registration_certificate_number:
+            type: string
+            description: 公司注册文件编号
+            example: 5555-8888
+          registration_certificate_date:
+            type: string
+            description: 公司注册文件过期时间
+            example: '2020-10-16'
+          settlement_bank_number:
+            type: string
+            description: 子商户结算账户
+            example: '555588889999'
+          business:
+            type: object
+            description: 业务信息
+            properties:
+              business_type:
+                type: string
+                description: 业务类型
+                example: BOTH
+              app_download:
+                type: string
+                description: APP下载地址
+                example: https://download.qq.com
+              website:
+                type: string
+                description: 业务网站
+                example: https://www.qq.com
+              office_account:
+                type: string
+                description: 公众号
+                example: wx8888888888888888
+              mini_program:
+                type: string
+                description: 小程序
+                example: wx8888888888888888
+              store_address:
+                type: string
+                description: 门店地址
+                example: 10F World Finance Centre (South Office), 11 Canton Road, Tsim Sha Tsui, Hong Kong
+              mcc:
+                type: string
+                description: MCC码
+                example: '4214'
+          director:
+            type: object
+            description: 董事信息
+            properties:
+              name:
+                type: string
+                description: 董事姓名
+                example: Bob
+              number:
+                type: string
+                description: 董事证件号码
+                example: 5555-8888
+          principal:
+            type: object
+            description: 负责人信息
+            properties:
+              name:
+                type: string
+                description: 负责人姓名
+                example: Bob
+              number:
+                type: string
+                description: 负责人证件号码
+                example: 5555-8888

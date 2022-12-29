@@ -1,0 +1,30 @@
+post:
+  x-version:
+    - 2022.08.04
+  x-role:
+    - 直连模式
+    - 机构模式
+  tags:
+    - 跨境∙分账
+  summary: 分账标记API
+  description: 商户在下单之前，调用该API来标记该笔商户订单后续会使用资金分账功能，在支付完成后该笔订单款项会被冻结在商户账户中，等待商户的分账指令或解冻剩余资金指令来执行资金的分发。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter4_1_1.shtml)
+  parameters:
+    - name: _
+      in: body
+      schema:
+        type: object
+        properties:
+          sub_mchid:
+            type: string
+            description: 二级商户号
+            example: '1900000109'
+          out_trade_no:
+            type: string
+            description: 商户订单号
+            example: P20150806125346
+          currency:
+            type: string
+            description: 订单标价币种
+            example: CNY
+  responses:
+    204: {}

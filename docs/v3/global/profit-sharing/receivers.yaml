@@ -1,0 +1,175 @@
+post:
+  x-version:
+    - 2022.08.04
+  x-role:
+    - 直连模式
+    - 机构模式
+  tags:
+    - 跨境∙分账
+  summary: 添加分账接收方API
+  description: 商户发起添加分账接收方请求，建立分账接收方列表。后续可通过发起分账请求，将分账方商户结算后的资金，分给该分账接收方。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter4_1_6.shtml)
+  parameters:
+    - name: _
+      in: body
+      schema:
+        type: object
+        properties:
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1900000109'
+          appid:
+            type: string
+            description: 应用ID
+            example: wx8888888888888888
+          sub_appid:
+            type: string
+            description: 子商户应用ID
+            example: wx8888888888888889
+          type:
+            type: string
+            description: 分账接收方类型
+            example: MERCHANT_ID
+          account:
+            type: string
+            description: 分账接收方帐号
+            example: '86693852'
+          name:
+            type: string
+            format: base64
+            description: 分账个人接收方姓名
+            example: hu89ohu89ohu89o
+          authorized:
+            type: boolean
+            description: 是否已经获取用户实名信息授权
+            example: true
+          relation_type:
+            type: string
+            description: 与分账方的关系类型
+            example: SERVICE_PROVIDER
+          custom_relation:
+            type: string
+            description: 自定义的分账关系
+            example: 代理商
+          scene:
+            type: string
+            description: 分账场景详细描述
+            example: 该分账接收方是境内税费服务提供方，帮助商户向境内海关代扣代缴税费。
+          major_service:
+            type: string
+            description: 接收方商户的主营业务范围
+            example: 税务准备服务
+          expected_ratio:
+            type: integer
+            description: 分账接收方预计分账比例
+            example: 2000
+          application_file_id:
+            type: string
+            description: 增加分账接收方申请函文件ID
+            example: de851a06-5a38-9d31-a102-275a17c477de
+          partnership_file_id:
+            type: string
+            description: 分账方与接收方合作关系证明文件ID
+            example: de851a06-5a38-9d31-a102-275a17c477de
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - type
+          - account
+          - relation_type
+        properties:
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1900000109'
+          type:
+            type: string
+            description: 分账接收方类型
+            example: MERCHANT_ID
+          account:
+            type: string
+            description: 分账接收方账号
+            example: '86693852'
+          name:
+            type: string
+            format: base64
+            description: 分账接收方全称
+            example: hu89ohu89ohu89o
+          relation_type:
+            type: string
+            description: 与分账方的关系类型
+            example: SERVICE_PROVIDER
+          custom_relation:
+            type: string
+            description: 自定义的分账关系
+            example: 代理商
+          scene:
+            type: string
+            description: 分账场景详细描述
+            example: 该分账接收方是境内税费服务提供方，帮助商户向境内海关代扣代缴税费。
+          major_service:
+            type: string
+            description: 接收方商户的主营业务范围
+            example: 税务准备服务
+          expected_ratio:
+            type: integer
+            description: 分账接收方预计分账比例
+            example: 2000
+          file_id:
+            type: string
+            description: 微信文件标识ID
+            example: de851a06-5a38-9d31-a102-275a17c477de
+          state:
+            type: string
+            description: 接收方关系状态
+          fail_reason:
+            type: string
+            description: 接收关系添加失败原因
+          application_file_id:
+            type: string
+            description: 增加分账接收方申请函文件ID
+            example: de851a06-5a38-9d31-a102-275a17c477de
+          partnership_file_id:
+            type: string
+            description: 分账方与接收方合作关系证明文件ID
+            example: de851a06-5a38-9d31-a102-275a17c477de
+delete:
+  x-version:
+    - 2022.08.04
+  x-role:
+    - 直连模式
+    - 机构模式
+  tags:
+    - 跨境∙分账
+  summary: 删除分账接收方API
+  description: 商户发起删除分账接收方请求。删除后，不支持将分账方商户结算后的资金再分给该分账接收方。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter4_1_8.shtml)
+  parameters:
+    - name: _
+      in: body
+      schema:
+        type: object
+        properties:
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1900000109'
+          appid:
+            type: string
+            description: 应用ID
+            example: wx8888888888888888
+          sub_appid:
+            type: string
+            description: 子商户应用ID
+            example: wx8888888888888889
+          type:
+            type: string
+            description: 分账接收方类型
+            example: MERCHANT_ID
+          account:
+            type: string
+            description: 分账接收方帐号
+            example: '86693852'
+  responses:
+    '204': {}

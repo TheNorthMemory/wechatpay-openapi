@@ -1,0 +1,28 @@
+get:
+  x-version:
+    - 2022.09.21
+  x-role:
+    - 直连模式
+    - 机构模式
+  tags:
+    - 跨境∙分账
+  summary: 查询可供垫付退款实时余额API
+  description: 若商户想对一笔分账支付单的已经解冻出境部分发起退款，境外机构商可通过该接口获取当前【可垫付退款】额度。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter4_1_13.shtml)
+  parameters: []
+  responses:
+    '200':
+      schema:
+        type: object
+        properties:
+          sponsor_mchid:
+            type: string
+            description: 出资方商户号
+            example: '19000000001'
+          balance:
+            type: integer
+            description: 可供垫付分账退款的实时余额
+            example: 1000
+          currency:
+            type: string
+            description: 货币类型
+            example: CNY

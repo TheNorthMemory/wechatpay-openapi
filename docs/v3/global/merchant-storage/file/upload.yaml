@@ -1,0 +1,44 @@
+post:
+  x-version:
+    - 2022.08.04
+  x-role:
+    - 直连模式
+    - 机构模式
+  tags:
+    - 跨境∙分账
+  summary: 上传文件API
+  description: 部分微信支付境外业务指定商户需要上传文件资料，可使用本API来提交资料，获取其他业务API所需的FileID值。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter4_1_11.shtml)
+  consumes:
+    - multipart/form-data
+  parameters:
+    - name: file
+      in: formData
+      type: file
+      description: 图片文件
+      required: true
+    - name: meta
+      in: formData
+      required: true
+      type: string
+      format: json
+      description: 媒体文件元信息
+      schema:
+        type: object
+        properties:
+          filename:
+            type: string
+            description: 文件名称
+          sha256:
+            type: string
+            description: 文件摘要
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - file_id
+        properties:
+          file_id:
+            type: string
+            description: 文件标识ID
+            example: b6a17e2a-1dc4-4376-8630-e73d06490c0d

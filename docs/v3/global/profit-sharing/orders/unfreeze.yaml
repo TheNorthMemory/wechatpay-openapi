@@ -1,0 +1,134 @@
+post:
+  x-version:
+    - 2022.08.04
+  x-role:
+    - 直连模式
+    - 机构模式
+  tags:
+    - 跨境∙分账
+  summary: 解冻剩余资金API
+  description: 不需要进行分账的订单，可直接调用本接口将订单的金额全部解冻给订单出资方账户（原订单资金结算账户）；调用分账接口后，需要解冻剩余资金时，可调用本接口将剩余的未分账金额全部解冻给订单出资方账户。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter4_1_3.shtml)
+  parameters:
+    - name: _
+      in: body
+      schema:
+        type: object
+        required:
+          - transaction_id
+          - out_order_no
+          - description
+        properties:
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1900000109'
+          transaction_id:
+            type: string
+            description: 微信订单号
+            example: '4208450740201411110007820472'
+          out_order_no:
+            type: string
+            description: 商户分账单号
+            example: P20150806125346
+          description:
+            type: string
+            description: 分账描述
+            example: 解冻全部剩余资金
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - transaction_id
+          - out_order_no
+          - order_id
+          - state
+        properties:
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1900000109'
+          transaction_id:
+            type: string
+            description: 微信订单号
+            example: '4208450740201411110007820472'
+          out_order_no:
+            type: string
+            description: 商户分账单号
+            example: P20150806125346
+          order_id:
+            type: string
+            description: 微信分账单号
+            example: '3008450740201411110007820472'
+          state:
+            type: string
+            description: 分账单状态
+            example: FINISHED
+          receivers:
+            type: array
+            description: 分账接收方列表
+            items:
+              type: object
+              required:
+                - currency
+                - amount
+                - description
+                - type
+                - account
+                - result
+                - fail_reason
+                - create_time
+                - finish_time
+              properties:
+                currency:
+                  type: string
+                  description: 分账币种
+                  example: CNY
+                amount:
+                  type: integer
+                  description: 分账金额
+                  example: 100
+                description:
+                  type: string
+                  description: 分账描述
+                  example: 分给商户1900000110
+                type:
+                  type: string
+                  description: 分账接收方类型
+                  example: MERCHANT_ID
+                account:
+                  type: string
+                  description: 分账接收方帐号
+                  example: '1900000109'
+                result:
+                  type: string
+                  description: 分账结果
+                  example: SUCCESS
+                fail_reason:
+                  type: string
+                  description: 分账失败原因
+                  example: ACCOUNT_ABNORMAL
+                create_time:
+                  type: string
+                  description: 分账创建时间
+                  example: '2015-05-20T13:29:35.120+08:00'
+                finish_time:
+                  type: string
+                  description: 分账完成时间
+                  example: '2015-05-20T13:29:35.120+08:00'
+                detail_id:
+                  type: string
+                  description: 分账明细单号
+                  example: '36011111111111111111111'
+                detail_type:
+                  type: string
+                  description: 分账明细类型
+                settlement_currency:
+                  type: string
+                  description: 出资方结算币种
+                settlement_amount:
+                  type: integer
+                  description: 出资方结算金额
+                rate:
+                  type: integer
+                  description: 汇率值

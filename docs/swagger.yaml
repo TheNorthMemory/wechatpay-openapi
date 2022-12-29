@@ -491,6 +491,74 @@ paths:
     $ref: ./v3/funds-to-oversea/orders/{out_order_id}.yaml
   /v3/funds-to-oversea/transactions/{transaction_id}/available_abroad_amounts:
     $ref: ./v3/funds-to-oversea/transactions/{transaction_id}/available_abroad_amounts.yaml
+  /v3/global/certificates:
+    $ref: ./v3/global/certificates.yaml
+  /v3/global/customs/orders:
+    $ref: ./v3/global/customs/orders.yaml
+  /v3/global/customs/redeclare:
+    $ref: ./v3/global/customs/redeclare.yaml
+  /v3/global/customs/verify-certificate:
+    $ref: ./v3/global/customs/verify-certificate.yaml
+  /v3/global/merchant-storage/file/upload:
+    $ref: ./v3/global/merchant-storage/file/upload.yaml
+  /v3/global/merchants:
+    $ref: ./v3/global/merchants.yaml
+  /v3/global/merchants/{sub_mchid}:
+    $ref: ./v3/global/merchants/{sub_mchid}.yaml
+  /v3/global/micropay/transactions/id/{transaction_id}/reverse:
+    $ref: ./v3/global/micropay/transactions/id/{transaction_id}/reverse.yaml
+  /v3/global/micropay/transactions/out-trade-no/{out_trade_no}/reverse:
+    $ref: ./v3/global/micropay/transactions/out-trade-no/{out_trade_no}/reverse.yaml
+  /v3/global/micropay/transactions/pay:
+    $ref: ./v3/global/micropay/transactions/pay.yaml
+  /v3/global/profit-sharing/bill-download-url:
+    $ref: ./v3/global/profit-sharing/bill-download-url.yaml
+  /v3/global/profit-sharing/orders:
+    $ref: ./v3/global/profit-sharing/orders.yaml
+  /v3/global/profit-sharing/orders/{out_order_no}:
+    $ref: ./v3/global/profit-sharing/orders/{out_order_no}.yaml
+  /v3/global/profit-sharing/orders/unfreeze:
+    $ref: ./v3/global/profit-sharing/orders/unfreeze.yaml
+  /v3/global/profit-sharing/receivers:
+    $ref: ./v3/global/profit-sharing/receivers.yaml
+  /v3/global/profit-sharing/receivers/{account}:
+    $ref: ./v3/global/profit-sharing/receivers/{account}.yaml
+  /v3/global/profit-sharing/refunds/bill-download-url:
+    $ref: ./v3/global/profit-sharing/refunds/bill-download-url.yaml
+  /v3/global/profit-sharing/refunds/refundable-balance:
+    $ref: ./v3/global/profit-sharing/refunds/refundable-balance.yaml
+  /v3/global/profit-sharing/transactions/{transaction_id}/amounts:
+    $ref: ./v3/global/profit-sharing/transactions/{transaction_id}/amounts.yaml
+  /v3/global/profit-sharing/transactions/{transaction_id}/refundable-amounts:
+    $ref: ./v3/global/profit-sharing/transactions/{transaction_id}/refundable-amounts.yaml
+  /v3/global/profit-sharing/transactions/mark:
+    $ref: ./v3/global/profit-sharing/transactions/mark.yaml
+  /v3/global/refunds:
+    $ref: ./v3/global/refunds.yaml
+  /v3/global/refunds/id/{refund_id}:
+    $ref: ./v3/global/refunds/id/{refund_id}.yaml
+  /v3/global/refunds/out-refund-no/{out_refund_no}:
+    $ref: ./v3/global/refunds/out-refund-no/{out_refund_no}.yaml
+  /v3/global/settle/settlements:
+    $ref: ./v3/global/settle/settlements.yaml
+  /v3/global/statements:
+    $ref: ./v3/global/statements.yaml
+  /v3/global/transactions/app:
+    $ref: ./v3/global/transactions/app.yaml
+  /v3/global/transactions/id/{transaction_id}:
+    $ref: ./v3/global/transactions/id/{transaction_id}.yaml
+  /v3/global/transactions/id/{transaction_id}/close:
+    $ref: ./v3/global/transactions/id/{transaction_id}/close.yaml
+  /v3/global/transactions/jsapi:
+    $ref: ./v3/global/transactions/jsapi.yaml
+  /v3/global/transactions/mweb:
+    $ref: ./v3/global/transactions/mweb.yaml
+  /v3/global/transactions/native:
+    $ref: ./v3/global/transactions/native.yaml
+  /v3/global/transactions/out-trade-no/{out_trade_no}:
+    $ref: ./v3/global/transactions/out-trade-no/{out_trade_no}.yaml
+  /v3/global/transactions/out-trade-no/{out_trade_no}/close:
+    $ref: ./v3/global/transactions/out-trade-no/{out_trade_no}/close.yaml
   /v3/goldplan/merchants/changecustompagestatus:
     $ref: ./v3/goldplan/merchants/changecustompagestatus.yaml
   /v3/goldplan/merchants/changegoldplanstatus:

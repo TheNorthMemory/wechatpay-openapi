@@ -1,0 +1,43 @@
+get:
+  x-version:
+    - 2022.08.04
+  x-role:
+    - 直连模式
+    - 机构模式
+  tags:
+    - 跨境∙分账
+  summary: 查询剩余待分金额API
+  description: 可调用此接口查询微信支付订单的剩余未分账的金额。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter4_1_5.shtml)
+  parameters:
+    - name: sub_mchid
+      in: query
+      type: string
+      description: 子商户号
+      example: '1900000109'
+    - name: transaction_id
+      in: path
+      type: string
+      description: 微信订单号
+      example: '4208450740201411110007820472'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - transaction_id
+          - out_order_no
+          - order_id
+          - state
+        properties:
+          transaction_id:
+            type: string
+            description: 微信订单号
+            example: '4208450740201411110007820472'
+          unsplit_amount:
+            type: integer
+            description: 订单剩余待分金额
+            example: 1000
+          currency:
+            type: string
+            description: 货币类型
+            example: CNY

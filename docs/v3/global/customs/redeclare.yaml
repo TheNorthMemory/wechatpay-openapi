@@ -1,0 +1,102 @@
+post:
+  x-version:
+    - 2022.08.04
+  x-role:
+    - 直连模式
+    - 机构模式
+  tags:
+    - 跨境∙报关
+  summary: 报关重推API
+  description: 如果订单附加信息已请求报送海关，但电子口岸丢单，则可以使用报关重推接口重新向海关推送（订单附加信息的state必须为SUCCESS或者EXCEPT）。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter4_3_4.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - appid
+          - mchid
+          - customs
+          - merchant_customs_no
+        properties:
+          appid:
+            type: string
+            description: 机构APPID
+            example: wxd678efh567hg6787
+          mchid:
+            type: string
+            description: 商户号
+            example: '1230000109'
+          out_trade_no:
+            type: string
+            description: 商户订单号
+            example: '20150806125346'
+          transaction_id:
+            type: string
+            description: 微信订单号
+            example: '1000320306201511078440737890'
+          sub_order_no:
+            type: string
+            description: 商户子单号
+            example: '20150806125346'
+          sub_order_id:
+            type: string
+            description: 微信子单号
+            example: '1000320306201511078440737891'
+          customs:
+            type: string
+            description: 海关编码
+            example: SHANGHAI_ZS
+          merchant_customs_no:
+            type: string
+            description: 商户海关备案号
+            example: '123456'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - appid
+          - mchid
+          - state
+          - out_trade_no
+          - transaction_id
+          - modify_time
+        properties:
+          appid:
+            type: string
+            description: 机构APPID
+            example: wxd678efh567hg6787
+          mchid:
+            type: string
+            description: 商户号
+            example: '1230000109'
+          state:
+            type: string
+            description: 报关状态
+            example: PROCESSING
+          out_trade_no:
+            type: string
+            description: 商户订单号
+            example: '20150806125346'
+          transaction_id:
+            type: string
+            description: 微信订单号
+            example: '1000320306201511078440737890'
+          sub_order_no:
+            type: string
+            description: 商户子订单号
+            example: '20150806125346'
+          sub_order_id:
+            type: string
+            description: 微信子订单号
+            example: '20150806125346'
+          modify_time:
+            type: string
+            description: 最后更新时间
+            example: '2015-09-01T10:00:00+08:00'
+          explanation:
+            type: string
+            description: 申报结果说明
+            example: 支付单已存在并且为非退单状态

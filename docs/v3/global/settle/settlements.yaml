@@ -1,0 +1,138 @@
+get:
+  x-version:
+    - 2022.08.04
+  x-role:
+    - 直连模式
+    - 机构模式
+  tags:
+    - 跨境
+  summary: 查询结算资金明细API
+  description: 商户在交易完结之后，可按结算日期查询已结算资金明细（sette_state为SETTLED），也可以查询未结算资金明细（sette_state为UNSETTLE）。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter3_1_10.shtml)
+  parameters:
+    - name: sub_mchid
+      in: query
+      type: string
+      description: 子商户号
+      example: '1900000101'
+    - name: settle_state
+      in: query
+      type: string
+      required: true
+      description: 结算状态
+      example: SETTLED
+      enum: [SETTLED, UNSETTLE]
+    - name: settle_start_date
+      in: query
+      type: string
+      description: 结算开始日期
+      example: '20091225'
+    - name: settle_end_date
+      in: query
+      type: string
+      description: 结算结束日期
+      example: '20091226'
+    - name: limit
+      in: query
+      type: integer
+      required: true
+      description: 最大记录条数
+      example: 5
+    - name: offset
+      in: query
+      type: integer
+      required: true
+      description: 记录起始位置
+      example: 10
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - total_count
+          - offset
+          - limit
+        properties:
+          data:
+            type: array
+            description: 结算信息列表
+            items:
+              type: object
+              required:
+                - batch_id
+                - settlement_date
+                - trade_start_date
+                - trade_end_date
+                - amount
+              properties:
+                batch_id:
+                  type: string
+                  description: 付款批次号
+                  example: '20091225003'
+                settlement_date:
+                  type: string
+                  description: 结算日期
+                  example: '20091225'
+                trade_start_date:
+                  type: string
+                  description: 交易开始日期
+                  example: '20091225'
+                trade_end_date:
+                  type: string
+                  description: 交易结束日期
+                  example: '20091225'
+                amount:
+                  type: object
+                  description: 金额
+                  required:
+                    - settled
+                    - unsettle
+                    - currency
+                    - pay
+                    - refund
+                    - net
+                    - fee
+                  properties:
+                    settled:
+                      type: integer
+                      description: 已结算金额
+                      example: 123
+                    unsettle:
+                      type: integer
+                      description: 未结算金额
+                      example: 123
+                    currency:
+                      type: string
+                      description: 结算币种
+                      example: HKD
+                    pay:
+                      type: integer
+                      description: 支付金额
+                      example: 123
+                    refund:
+                      type: integer
+                      description: 退款金额
+                      example: 123
+                    net:
+                      type: integer
+                      description: 支付净额
+                      example: 5
+                    fee:
+                      type: integer
+                      description: 手续费金额
+                      example: 5
+                wallet_region:
+                  type: string
+                  description: 钱包主体
+                  example: CHINA_HONGKONG
+          total_count:
+            type: integer
+            description: 总记录条数
+            example: 1234
+          offset:
+            type: integer
+            description: 记录起始位置
+            example: 1
+          limit:
+            type: integer
+            description: 本次返回条数
+            example: 20

@@ -1,0 +1,389 @@
+post:
+  x-version:
+    - 2022.08.04
+  x-role:
+    - 直连模式
+    - 机构模式
+  tags:
+    - 跨境∙退款
+  summary: 申请退款
+  description: 当交易发生之后一段时间内，由于买家或者卖家的原因需要退款时，卖家可以通过退款接口将支付款退还给买家，微信支付将在收到退款请求并且验证成功之后，按照退款规则将支付款按原路退到买家账号上。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter3_1_3.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - mchid
+          - appid
+          - sp_mchid
+          - sub_mchid
+          - sp_appid
+          - out_refund_no
+        properties:
+          mchid:
+            type: string
+            description: 商户号
+            example: '1900000109'
+          appid:
+            type: string
+            description: APPID
+            example: wx8888888888888888
+          sp_mchid:
+            type: string
+            description: 机构商户号
+            example: '1900000100'
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1900000109'
+          sp_appid:
+            type: string
+            description: 机构APPID
+            example: wx8888888888888888
+          sub_appid:
+            type: string
+            description: 子商户APPID
+            example: wx8888888888888888
+          transaction_id:
+            type: string
+            description: 微信订单号
+            example: '1217752501201407033233368018'
+          out_trade_no:
+            type: string
+            description: 商户订单号
+          out_refund_no:
+            type: string
+            description: 商户退款单号
+            example: '1217752501201407033233368018'
+          reason:
+            type: string
+            description: 退款原因
+            example: 商品已售完
+          amount:
+            type: 是
+            description: 订单金额
+          notify_url:
+            type: string
+            description: 退款通知地址
+            example: https://www.weixin.qq.com/wxpay/pay.php
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - id
+          - out_refund_no
+          - create_time
+          - amount
+        properties:
+          id:
+            type: string
+            description: 微信支付退款订单号
+            example: '1217752501201407033233368018'
+          out_refund_no:
+            type: string
+            description: 商户退款单号
+            example: '1217752501201407033233368018'
+          create_time:
+            type: string
+            description: 退款创建时间
+            example: '2018-06-08T10:34:56+08:00'
+          amount:
+            type: object
+            description: 退款金额
+            required:
+              - refund
+              - currency
+              - payer_refund
+              - payer_currency
+              - exchange_rate
+            properties:
+              refund:
+                type: integer
+                description: 退款金额
+                example: 888
+              currency:
+                type: string
+                description: 退款币种
+                example: CNY
+              payer_refund:
+                type: integer
+                description: 用户退款金额
+                example: 888
+              payer_currency:
+                type: string
+                description: 支付币种
+                example: CNY
+              exchange_rate:
+                type: object
+                description: 汇率
+                properties:
+                  type:
+                    type: string
+                    description: 汇率类型
+                    example: SETTLEMENT_RATE
+                  rate:
+                    type: integer
+                    description: 汇率值
+                    example: 8000000
+          detail:
+            type: object
+            description: 优惠退款详情
+            required:
+              - promotion_id
+              - currency
+            properties:
+              promotion_id:
+                type: string
+                description: 券ID
+                example: '109519'
+              scope:
+                type: string
+                description: 优惠范围
+                example: SINGLE
+              type:
+                type: string
+                description: 优惠类型
+                example: DISCOUNT
+              amount:
+                type: integer
+                description: 优惠券面额
+                example: 5
+              refund_amount:
+                type: integer
+                description: 优惠券退款额
+                example: 5
+              currency:
+                type: string
+                description: 货币类型
+                example: CNY
+get:
+  x-version:
+    - 2022.08.04
+  x-role:
+    - 直连模式
+    - 机构模式
+  tags:
+    - 跨境∙退款
+  summary: 查询所有退款
+  description: 提交退款申请后，通过调用该接口查询退款状态。退款有一定延时，用零钱支付的退款20分钟内到账，银行卡支付的退款3个工作日后重新查询退款状态。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter3_1_5.shtml)
+  parameters:
+    - name: transaction_id
+      in: query
+      type: string
+      description: 微信支付订单号
+      example: '1217752501201407033233368018'
+    - name: out_trade_no
+      in: query
+      type: string
+      description: 商户订单号
+    - name: mchid
+      in: query
+      require: true
+      type: string
+      description: 商户号
+      example: '1900000109'
+    - name: sub_mchid
+      in: query
+      require: true
+      type: string
+      description: 子商户号
+      example: '1900000109'
+    - name: sp_mchid
+      in: query
+      require: true
+      type: string
+      description: 机构商户号
+      example: '1900000100'
+    - name: offset
+      in: query
+      require: true
+      type: integer
+      description: 记录起始位置
+      example: 0
+    - name: count
+      in: query
+      require: true
+      type: integer
+      description: 每页笔数
+      example: 10
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - id
+          - mchid
+          - sub_mchid
+          - sp_mchid
+          - out_trade_no
+          - amount
+          - data
+          - total_num
+          - current_total_num
+        properties:
+          id:
+            type: string
+            description: 微信支付交易订单号
+            example: '1217752501201407033233368018'
+          mchid:
+            type: string
+            description: 商户号
+            example: '1900000109'
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1900000109'
+          sp_mchid:
+            type: string
+            description: 机构商户号
+            example: '1900000100'
+          out_trade_no:
+            type: string
+            description: 商户原交易订单号
+            example: '1217752501201407033233368018'
+          amount:
+            type: object
+            description: 订单金额
+            required:
+              - total
+              - payer_total
+              - payer_currency
+            properties:
+              total:
+                type: integer
+                description: 订单金额
+                example: 888
+              currency:
+                type: string
+                description: 货币类型
+                example: CNY
+              payer_total:
+                type: integer
+                description: 用户支付金额
+                example: 888
+              payer_currency:
+                type: string
+                description: 支付币种
+                example: CNY
+          data:
+            type: array
+            description: 退款单列表
+            items:
+              type: object
+              required:
+                - id
+                - out_refund_no
+                - create_time
+                - status
+                - amount
+              properties:
+                id:
+                  type: string
+                  description: 微信退款单号
+                  example: '1217752501201407033233368018'
+                out_refund_no:
+                  type: string
+                  description: 商户退款单号
+                  example: '1217752501201407033233368018'
+                channel:
+                  type: string
+                  description: 退款渠道
+                  example: ORIGINAL
+                recv_account:
+                  type: string
+                  description: 退款入账账户
+                  example: 招商银行信用卡0403
+                fund_source:
+                  type: string
+                  description: 退款资金来源
+                  example: REFUND_SOURCE_UNSETTLED_FUNDS
+                success_time:
+                  type: string
+                  description: 退款成功时间
+                  example: '2018-06-08T10:34:56+08:00'
+                create_time:
+                  type: string
+                  description: 退款创建时间
+                  example: '2018-06-08T10:34:56+08:00'
+                status:
+                  type: string
+                  description: 退款状态
+                  example: SUCCESS
+                amount:
+                  type: object
+                  description: 退款金额
+                  required:
+                    - refund
+                    - payer_refund
+                    - payer_currency
+                    - exchange_rate
+                  properties:
+                    refund:
+                      type: integer
+                      description: 退款金额
+                      example: 888
+                    currency:
+                      type: string
+                      description: 货币类型
+                      example: CNY
+                    payer_refund:
+                      type: integer
+                      description: 用户退款金额
+                      example: 888
+                    payer_currency:
+                      type: string
+                      description: 支付币种
+                      example: CNY
+                    exchange_rate:
+                      type: object
+                      description: 汇率
+                      properties:
+                        type:
+                          type: string
+                          description: 汇率类型
+                          example: SETTLEMENT_RATE
+                        rate:
+                          type: integer
+                          description: 汇率值
+                          example: 8000000
+                refund_detail:
+                  type: object
+                  description: 优惠退款详情
+                  required:
+                    - promotion_id
+                    - currency
+                  properties:
+                    promotion_id:
+                      type: string
+                      description: 券ID
+                      example: '109519'
+                    scope:
+                      type: string
+                      description: 优惠范围
+                    type:
+                      type: string
+                      description: 优惠类型
+                      example: DISCOUNT
+                    amount:
+                      type: integer
+                      description: 优惠券面额
+                      example: 5
+                    refund_amount:
+                      type: integer
+                      description: 优惠券退款额
+                      example: 5
+                    currency:
+                      type: string
+                      description: 货币类型
+                      example: CNY
+          total_num:
+            type: integer
+            description: 订单总退款次数
+            example: 0
+          current_total_num:
+            type: integer
+            description: 本次返回退款单数
+            example: 10

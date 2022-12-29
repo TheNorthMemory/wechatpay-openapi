@@ -1,0 +1,50 @@
+get:
+  x-version:
+    - 2022.08.04
+  x-role:
+    - 直连模式
+    - 机构模式
+  x-baseuri: https://apihk.mch.weixin.qq.com/
+  tags:
+    - 海外∙通用接口
+  summary: 获取平台证书列表
+  description: 获取商户当前可用的平台证书列表。微信支付提供该接口，帮助商户后台系统实现平台证书的平滑更换。 [官方开发文档](https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter3_1_8.shtml)
+  parameters: []
+  responses:
+    200:
+      schema:
+        type: object
+        required: [data]
+        properties:
+          data:
+            type: array
+            items:
+              type: object
+              properties:
+                serial_no:
+                  type: string
+                  example: 5157F09EFDC096DE15EBE81A47057A7232F1B8E1
+                effective_time:
+                  type: string
+                  format: rfc3339
+                  example: '2018-06-08T10:34:56+08:00'
+                expire_time:
+                  type: string
+                  format: rfc3339
+                  example: '2018-12-08T10:34:56+08:00'
+                encrypt_certificate:
+                  type: object
+                  x-is-sensitive: ciphertext
+                  properties:
+                    algorithm:
+                      type: string
+                      example: AEAD_AES_256_GCM
+                    nonce:
+                      type: string
+                      example: 61f9c719728a
+                    associated_data:
+                      type: string
+                      example: certificate
+                    ciphertext:
+                      type: string
+                      example: sRvt...

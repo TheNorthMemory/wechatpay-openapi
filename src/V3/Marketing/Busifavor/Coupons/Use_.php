@@ -8,7 +8,7 @@ use GuzzleHttp\Promise\PromiseInterface;
 /**
  * 这是一个纯接口描述文件，由程序自动生成，旨在为IDE提供结构提示，无他用。
  */
-interface _use_
+interface Use_
 {
     /**
      * 核销用户券(同步模式)
@@ -16,7 +16,6 @@ interface _use_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_3.shtml
      */
     public function post(array $options = [
-        'use' => 'use', // 固定参数(PHP语法不允许)
         'json' => [
             'coupon_code' => 'sxxe34343434',
             'stock_id' => '100088',
@@ -33,7 +32,6 @@ interface _use_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_3.shtml#async
      */
     public function postAsync(array $options = [
-        'use' => 'use', // 固定参数(PHP语法不允许)
         'json' => [
             'coupon_code' => 'sxxe34343434',
             'stock_id' => '100088',

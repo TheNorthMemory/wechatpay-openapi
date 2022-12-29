@@ -34,14 +34,9 @@
 | `secapi/mch/queryInstitutionsub` | `{queryinstitutionsub}` [^1] | `queryInstitutionsub` |
 | `v3/applyment4sub/applyment/` | `{empty}` [^2] | |
 | `v3/ecommerce/applyments/` | `{empty}` [^2] | |
-| `v3/ecommerce/subsidies/return` | `{return}` [^3] | `return` |
-| `v3/marketing/busifavor/coupons/return` | `{return}` [^3] | `return` |
-| `v3/marketing/busifavor/coupons/use` | `{use}` [^4] | `use` |
 
 [^1]: 源URI上含有`I`大写字符，需要用模版变量构造
 [^2]: 源URI末尾以`/`结尾，需要值为用空的模版变量构造，`{empty}`为`RFC6570`Level3保留语法
-[^3]: 源URI末尾segment单词是`return`，其为PHP语法关键字，需要用模版变量构造
-[^4]: 源URI末尾segment单词是`use`，其为PHP语法关键字，需要用模版变量构造
 
 ## License
 

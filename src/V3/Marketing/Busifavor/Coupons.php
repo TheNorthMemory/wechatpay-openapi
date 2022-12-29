@@ -8,8 +8,8 @@ namespace WeChatPay\OpenAPI\V3\Marketing\Busifavor;
  * @property-read Coupons\Associate $associate
  * @property-read Coupons\Deactivate $deactivate
  * @property-read Coupons\Disassociate $disassociate
- * @property-read Coupons\_return_ $_return_
- * @property-read Coupons\_use_ $_use_
+ * @property-read Coupons\Return_ $return
+ * @property-read Coupons\Use_ $use
  */
 interface Coupons
 {

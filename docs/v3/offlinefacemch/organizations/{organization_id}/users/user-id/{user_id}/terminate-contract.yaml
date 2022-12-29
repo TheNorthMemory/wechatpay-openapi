@@ -1,0 +1,19 @@
+post:
+  x-version:
+    - 2022.11.14
+  x-role:
+    - 服务商
+  tags:
+    - 刷脸支付
+  summary: 解除刷脸用户签约关系接口
+  description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/access-specifications.html)'
+  parameters:
+    - name: organization_id
+      in: path
+      type: string
+      required: true
+    - name: use_id
+      in: path
+      type: string
+  responses:
+    '204': {}

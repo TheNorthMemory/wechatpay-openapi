@@ -1,0 +1,48 @@
+get:
+  x-version:
+    - 2022.11.14
+  x-role:
+    - 服务商
+  tags:
+    - 刷脸支付
+  summary: 查询重采请求接口
+  description: 离线刷脸业务中，偶尔会出现前期采集头像质量不高，导致算法升级后，旧的头像无法生成有效的人脸特征，影响用户使用刷脸服务。因此，需要对用户的头像进行重采。[官方文档](https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/k12-development-guidelines.html)
+  parameters:
+    - name: organization_id
+      in: query
+      type: string
+      required: true
+    - name: offset
+      in: query
+      type: integer
+    - name: limit
+      in: query
+      type: integer
+  responses:
+    '200':
+      schema:
+        type: object
+        properties:
+          face_collections:
+            type: array
+            items:
+              type: object
+              properties:
+                collection_id:
+                  type: string
+                use_id:
+                  type: string
+                organization_id:
+                  type: string
+                collection_state:
+                  type: string
+                  enum:
+                    - COLLECTION_REQUIRED #该刷脸用户需要进行重采
+                    - PHOTO_UPLOADED #照片已上传
+                    - COMPLETE #支付用户已经确认照片, 重采结束
+                register_photo_upload_time:
+                  type: string
+                  format: rfc3339
+                confirm_time:
+                  type: string
+                  format: rfc3339

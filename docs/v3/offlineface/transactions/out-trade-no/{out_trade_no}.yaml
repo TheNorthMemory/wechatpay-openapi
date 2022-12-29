@@ -1,75 +1,25 @@
-post:
+get:
   x-version:
     - 2022.11.14
   x-role:
     - 服务商
   tags:
     - 刷脸支付
-  summary: 申请扣款接口
-  description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/access-specifications.html)'
+  summary: 查单接口
+  description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/k12-development-guidelines.html)'
   parameters:
-    - name: _
-      in: body
+    - name: out_trade_no
+      in: path
       required: true
-      schema:
-        type: object
-        properties:
-          auth_code:
-            type: string
-          sp_appid:
-            type: string
-          sp_mchid:
-            type: string
-          sub_appid:
-            type: string
-          sub_mchid:
-            type: string
-          amount:
-            type: object
-            properties:
-              total:
-                type: integer
-                format: int64
-              currency:
-                type: string
-                enum:
-                  - CNY
-          scene_info:
-            type: object
-            properties:
-              device_ip:
-                type: string
-          goods_tag:
-            type: string
-          description:
-            type: string
-          attach:
-            type: string
-          settle_info:
-            type: object
-            properties:
-              profit_sharing:
-                type: boolean
-          out_trade_no:
-            type: string
-          business:
-            type: object
-            properties:
-              business_product_id:
-                type: integer
-                enum:
-                  - 2 #K12
-                  - 11 #企业团餐
-              business_scene_id:
-                type: integer
-                enum:
-                  - 3 #食堂
-                  - 4 #超市
-                  - 5 #校医院
-                  - 6 #K12测试场景
-                  - 124 #团餐测试
-                  - 125 #企业食堂
-                  - 126 #腾讯食堂
+    - name: sp_mchid
+      in: query
+      type: string
+    - name: sub_mchid
+      in: query
+      type: string
+    - name: business_product_id
+      in: query
+      type: string
   responses:
     '200':
       schema:

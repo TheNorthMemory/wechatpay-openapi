@@ -5,7 +5,7 @@ post:
     - 服务商
   tags:
     - 刷脸支付
-  summary: 获取authinfo接口
+  summary: 获取还款链接接口
   description: 建议authinfo每1小时内获取一次，否则当设备断网且恰好authinfo过期，则会导致设备不可用。[官方文档](https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/access-specifications.html)
   parameters:
     - name: _
@@ -14,15 +14,7 @@ post:
       schema:
         type: object
         properties:
-          sp_appid:
-            type: string
-          sub_appid:
-            type: string
-          sub_mchid:
-            type: string
-          device_id:
-            type: string
-          raw_data:
+          out_user_id:
             type: string
           organization_id:
             type: string
@@ -31,5 +23,8 @@ post:
       schema:
         type: object
         properties:
-          authinfo:
+          repayment_url:
             type: string
+          expire_at:
+            type: string
+            format: rfc3339

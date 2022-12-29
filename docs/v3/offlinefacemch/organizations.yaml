@@ -1,0 +1,29 @@
+get:
+  x-version:
+    - 2022.01.27
+  x-role:
+    - 服务商
+  tags:
+    - 刷脸支付
+  summary: 查询机构信息接口
+  description: 商户可以根据face_sid查询用户UnionId，调用该接口获取授权的实名信息商户需要先申请权限。[官方文档](https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/k12-development-guidelines.html)
+  parameters:
+    - name: organization_id
+      type: string
+      in: query
+      description: 机构ID
+      example: DBES323aeb
+    - name: organization_name
+      type: string
+      in: query
+      example: 南山中兴小学部
+      description: 机构名称
+  responses:
+    '200':
+      schema:
+        type: object
+        properties:
+          organization_id:
+            type: string
+          organization_name:
+            type: string

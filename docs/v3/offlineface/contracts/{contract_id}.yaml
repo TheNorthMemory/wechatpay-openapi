@@ -1,0 +1,55 @@
+get:
+  x-version:
+    - 2022.11.14
+  x-role:
+    - 服务商
+  tags:
+    - 刷脸支付
+  summary: 签约查询接口
+  description: 根据签约id查询签约信息。[官方文档](https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/k12-development-guidelines.html)
+  parameters:
+    - name: contract_id
+      in: path
+      type: string
+      required: true
+    - name: appid
+      in: query
+      type: string
+  responses:
+    '200':
+      schema:
+        type: object
+        properties:
+          contract_id:
+            type: string
+          mchid:
+            type: string
+          organization_id:
+            type: string
+          use_id:
+            type: string
+          openid:
+            type: string
+          contract_state:
+            type: string
+            enum:
+              - NOT_CONTRACTED #未签约
+              - TERMINATED #已解约
+              - CONTRACTED #已签约
+          contract_signed_time:
+            type: string
+            format: rfc3339
+          contract_terminated_time:
+            type: string
+            format: rfc3339
+          contract_mode:
+            type: string
+            enum:
+              - LIMIT_BANK_CARD #指定卡签约
+              - PRIORITY_BANK_CARD #优先卡签约
+              - LIMIT_NONE #任意卡签约
+          contract_bank_card_from:
+            type: string
+            enum:
+              - MERCHANT_LIMITED_BANK_CARD #商户指定的签约卡
+              - USER_SELECT_FREE #用户选择的签约卡

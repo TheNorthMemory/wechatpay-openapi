@@ -481,6 +481,8 @@ paths:
     $ref: ./v3/eduschoolpay/users/{openid}/contracts.yaml
   /v3/eduschoolpay/users/{openid}/debt-state:
     $ref: ./v3/eduschoolpay/users/{openid}/debt-state.yaml
+  /v3/facemch/users/{face_sid}:
+    $ref: ./v3/facemch/users/{face_sid}.yaml
   /v3/funds-to-oversea/bill-download-url:
     $ref: ./v3/funds-to-oversea/bill-download-url.yaml
   /v3/funds-to-oversea/orders:
@@ -709,12 +711,26 @@ paths:
     $ref: ./v3/new-tax-control-fapiao/user-title/title-url.yaml
   /v3/offlineface/authinfo:
     $ref: ./v3/offlineface/authinfo.yaml
+  /v3/offlineface/contracts/{contract_id}:
+    $ref: ./v3/offlineface/contracts/{contract_id}.yaml
   /v3/offlineface/contracts/presign:
     $ref: ./v3/offlineface/contracts/presign.yaml
+  /v3/offlineface/face-collections:
+    $ref: ./v3/offlineface/face-collections.yaml
+  /v3/offlineface/face-collections/{collection_id}:
+    $ref: ./v3/offlineface/face-collections/{collection_id}.yaml
+  /v3/offlineface/repayment-url:
+    $ref: ./v3/offlineface/repayment-url.yaml
   /v3/offlineface/transactions:
     $ref: ./v3/offlineface/transactions.yaml
+  /v3/offlineface/transactions/out-trade-no/{out_trade_no}:
+    $ref: ./v3/offlineface/transactions/out-trade-no/{out_trade_no}.yaml
+  /v3/offlinefacemch/organizations:
+    $ref: ./v3/offlinefacemch/organizations.yaml
   /v3/offlinefacemch/organizations/{organization_id}/users/out-user-id/{out_user_id}:
     $ref: ./v3/offlinefacemch/organizations/{organization_id}/users/out-user-id/{out_user_id}.yaml
+  /v3/offlinefacemch/organizations/{organization_id}/users/user-id/{user_id}/terminate-contract:
+    $ref: ./v3/offlinefacemch/organizations/{organization_id}/users/user-id/{user_id}/terminate-contract.yaml
   /v3/offlinefacemch/tokens:
     $ref: ./v3/offlinefacemch/tokens.yaml
   /v3/partner-transfer/batches:

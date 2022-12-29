@@ -7,6 +7,66 @@ post:
     - 刷脸支付
   summary: 预签约接口
   description: 一键绑卡不是支持所有银行卡，上线前请先测试是否支持该银行卡。[官方文档](https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/access-specifications.html)
-  parameters: []
+  parameters:
+    - name: _
+      in: body
+      schema:
+        type: object
+        properties:
+          business_name:
+            type: string
+          facepay_user:
+            type: object
+            properties:
+              out_user_id:
+                type: string
+              identification_name:
+                type: string
+              organization_id:
+                type: string
+              identification:
+                type: object
+                properties:
+                  identification_type:
+                    type: string
+                    enum:
+                      - IDCARD
+                  identification_number:
+                    type: string
+              phone:
+                type: string
+          limit_bank_card:
+            type: object
+            properties:
+              bank_card_number:
+                type: string
+              identification_name:
+                type: string
+              identification:
+                type: object
+                properties:
+                  identification_type:
+                    type: string
+                    enum:
+                      - IDCARD
+                  identification_number:
+                    type: string
+              valid_thru:
+                type: string
+              bank_type:
+                type: string
+              phone:
+                type: string
+          contract_mode:
+            type: string
+            enum:
+              - LIMIT_BANK_CARD #指定卡签约
+              - PRIORITY_BANK_CARD #优先卡签约
+              - LIMIT_NONE #任意卡签约
   responses:
     '200':
+      schema:
+        type: object
+        properties:
+          presign_token:
+            type: string

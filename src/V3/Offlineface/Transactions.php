@@ -7,6 +7,7 @@ use GuzzleHttp\Promise\PromiseInterface;
 
 /**
  * 这是一个纯接口描述文件，由程序自动生成，旨在为IDE提供结构提示，无他用。
+ * @property-read Transactions\OutTradeNo $outTradeNo
  */
 interface Transactions
 {
@@ -15,12 +16,64 @@ interface Transactions
      * @param array<string,mixed> $options
      * @link https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/access-specifications.html
      */
-    public function post(array $options = []): ResponseInterface;
+    public function post(array $options = [
+        'json' => [
+            'auth_code' => '',
+            'sp_appid' => '',
+            'sp_mchid' => '',
+            'sub_appid' => '',
+            'sub_mchid' => '',
+            'amount' => [
+                'total' => 0,
+                'currency' => 'CNY',
+            ],
+            'scene_info' => [
+                'device_ip' => '',
+            ],
+            'goods_tag' => '',
+            'description' => '',
+            'attach' => '',
+            'settle_info' => [
+                'profit_sharing' => true,
+            ],
+            'out_trade_no' => '',
+            'business' => [
+                'business_product_id' => 0,
+                'business_scene_id' => 0,
+            ],
+        ],
+    ]): ResponseInterface;
 
     /**
      * 申请扣款接口(异步模式)
      * @param array<string,mixed> $options
      * @link https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/access-specifications.html#async
      */
-    public function postAsync(array $options = []): PromiseInterface;
+    public function postAsync(array $options = [
+        'json' => [
+            'auth_code' => '',
+            'sp_appid' => '',
+            'sp_mchid' => '',
+            'sub_appid' => '',
+            'sub_mchid' => '',
+            'amount' => [
+                'total' => 0,
+                'currency' => 'CNY',
+            ],
+            'scene_info' => [
+                'device_ip' => '',
+            ],
+            'goods_tag' => '',
+            'description' => '',
+            'attach' => '',
+            'settle_info' => [
+                'profit_sharing' => true,
+            ],
+            'out_trade_no' => '',
+            'business' => [
+                'business_product_id' => 0,
+                'business_scene_id' => 0,
+            ],
+        ],
+    ]): PromiseInterface;
 }

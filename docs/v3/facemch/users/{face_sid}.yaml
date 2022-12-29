@@ -1,0 +1,82 @@
+get:
+  x-version:
+    - 2022.01.27
+  x-role:
+    - 服务商
+  tags:
+    - 刷脸支付
+  summary: 查询用户信息
+  description: 商户可以根据face_sid查询用户UnionId，调用该接口获取授权的实名信息商户需要先申请权限。[官方文档](https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/android/sid.html)
+  parameters:
+    - name: face_sid
+      type: string
+      in: path
+      required: true
+      description: 终端设备识别用户成功后返回的凭证
+      example: aabbccdd12345
+    - name: info_type
+      type: string
+      in: query
+      required: true
+      description: 标识本次请求获取的信息类型
+      example: ASK_UNIONID
+      enum:
+        - ASK_UNIONID
+        - ASK_REAL_NAME
+    - name: appid
+      type: string
+      in: query
+      required: true
+      description: 微信分配的公众账号ID
+      example: wx2b029c08a6233333
+    - name: sub_mchid
+      type: string
+      in: query
+      description: 微信支付分配的子商户号，服务商模式下必填
+      example: '123456789'
+    - name: sub_appid
+      type: string
+      in: query
+      description: 微信分配的子商户公众账号ID
+      example: wx2b029c08a6255555
+    - name: sub_serial_no
+      type: string
+      in: query
+      description: ⼦商户证书序列号，服务商模式下请求实名信息必传
+      example: wx2b029c08a6255555
+  responses:
+    '200':
+      schema:
+        type: object
+        properties:
+          union_id:
+            type: string
+          openid:
+            type: string
+          sub_openid:
+            type: string
+          real_name_info:
+            type: object
+            properties:
+              encrypted_real_name:
+                type: string
+                x-sensitive-algorithm: RSA/ECB/PKCS1Padding
+                description: 加密后的姓名信息，商户用API证书私钥解密
+              credential_type:
+                type: integer
+                enum:
+                 - 1 #身份证
+                 - 2 #护照
+                 - 3 #军官证
+                 - 4 #⼠兵证
+                 - 5 #回乡证
+                 - 6 #临时身份证
+                 - 7 #户⼝簿
+                 - 8 #警官证
+                 - 9 #台胞证
+                 - 10 #营业执照
+                 - 11 #其他证件
+              encrypted_credential_id:
+                type: string
+                x-sensitive-algorithm: RSA/ECB/PKCS1Padding
+                description: 加密后的身份证号，商户用API证书私钥解密

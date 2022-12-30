@@ -1,0 +1,77 @@
+post:
+  x-version:
+    - 2021.12.08
+  x-role:
+    - 直连模式
+    - 机构模式
+  tags:
+    - 跨境∙代扣
+  summary: APP签约API
+  description: 用户在商户的APP中发起签约，跳转到微信客户端签约小程序完成签约，签约完成后重新打开商户APP。 移动应用（APP）接入开放平台SDK后，用户即可以在 APP 中跳转至微信某一小程序的指定页面，完成服务后再跳回至商户APP 。[官方文档](https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter5_1_18.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        properties:
+          appid:
+            type: string
+            description: 机构APPID
+            example: wxd678efh567hg6787
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1230000109'
+          sp_appid:
+            type: string
+            description: 机构appid
+            example: wx8888888888888888
+          sp_mchid:
+            type: string
+            description: 机构商户号
+            example: '3200000001'
+          sub_appid:
+            type: string
+            description: 子商户应用ID
+            example: wxcbda96de0b165484
+          plan_id:
+            type: integer
+            description: 模板ID
+            example: 123
+          out_contract_code:
+            type: string
+            description: 商户侧签约协议号
+            example: '100001256'
+          user_display_name:
+            type: string
+            description: 用户账户展示名称
+            example: 张三
+          success_notify_url:
+            type: string
+            description: 签约成功通知url
+            example: https://pay.weixin.qq.com
+          openid:
+            type: string
+            description: 商户appid下的用户标识
+            example: ouFhd5X9s9WteC3eWRjXV3lea123
+          user_client_ip:
+            type: string
+            description: 用户客户端IP
+            example: 119.145.83.6
+          expired_time:
+            type: string
+            format: rfc3339
+            description: 过期时间
+            example: '2021-11-20T13:29:35+08:00'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - session_id
+        properties:
+          session_id:
+            type: string
+            description: 委托代扣签约会话id
+            example: '201710180325670965'

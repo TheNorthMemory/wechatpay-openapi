@@ -1,0 +1,45 @@
+post:
+  x-version:
+    - 2022.08.04
+  x-role:
+    - 直连模式
+    - 机构模式
+  tags:
+    - 跨境∙代扣
+  summary: 申请解约API
+  description: 商户与用户的签约关系有误或者商户主动要求与用户之前的签约协议时可调用此接口完成解约。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter5_1_4.shtml)
+  parameters:
+    - name: contract_id
+      in: path
+      required: true
+      type: string
+      description: 委托代扣协议ID
+      example: '100005698'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        properties:
+          appid:
+            type: string
+            description: 机构APPID
+            example: wxd678efh567hg6787
+          sp_appid:
+            type: string
+            description: 机构appid
+            example: wx8888888888888888
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1230000109'
+          sub_appid:
+            type: string
+            description: 子商户应用ID
+            example: wxcbda96de0b165484
+          termination_note:
+            type: string
+            description: 解约备注
+            example: 解约原因
+  responses:
+    '204': {}

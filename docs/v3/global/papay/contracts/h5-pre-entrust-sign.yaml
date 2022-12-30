@@ -1,0 +1,81 @@
+post:
+  x-version:
+    - 2021.12.08
+  x-role:
+    - 直连模式
+    - 机构模式
+  tags:
+    - 跨境∙代扣
+  summary: H5预签约API
+  description: 该方式适用于手机、平板电脑等使用H5浏览器的设备场景使用微信签约扣款。商户在网站前端通过微信支付H5纯签约接口与用户签订委托扣款协议，再通过后台接口申请扣款来完成代扣交易。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter5_1_14.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        properties:
+          appid:
+            type: string
+            description: 机构APPID
+            example: wxd678efh567hg6787
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1230000109'
+          sp_appid:
+            type: string
+            description: 机构appid
+            example: wx8888888888888888
+          sp_mchid:
+            type: string
+            description: 机构商户号
+            example: '3200000001'
+          sub_appid:
+            type: string
+            description: 子商户应用ID
+            example: wxcbda96de0b165484
+          plan_id:
+            type: integer
+            description: 模板ID
+            example: 123
+          out_contract_code:
+            type: string
+            description: 商户侧签约协议号
+            example: '100001256'
+          user_display_name:
+            type: string
+            description: 用户账户展示名称
+            example: 张三
+          success_notify_url:
+            type: string
+            description: 签约成功通知url
+            example: https://pay.weixin.qq.com
+          return_appid:
+            type: string
+            description: 回调应用AppID
+            example: wxcbda96de0b165484
+          user_client_ip:
+            type: string
+            description: 用户客户端IP
+            example: 119.145.83.6
+          expired_time:
+            type: string
+            format: rfc3339
+            description: 过期时间
+            example: '2021-11-20T13:29:35+08:00'
+          return_url:
+            type: string
+            description: 签约完成跳转URL
+            example: https://pay.weixin.qq.com
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - sign_url
+        properties:
+          sign_url:
+            type: string
+            description: 签约跳转URL
+            example: https://apihk.mch.weixin.qq.com/global/papay/contracts/login?os_session_id=2021120910391616228#wechat_redirect

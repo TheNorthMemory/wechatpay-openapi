@@ -15,7 +15,6 @@ consumes:
 produces:
   - application/json
 tags:
-  - name: 沙箱环境
   - name: 基础支付
   - name: 基础支付∙服务商模式
   - name: 基础支付∙合单
@@ -70,6 +69,14 @@ tags:
   - name: 风险合规∙商户违规通知
   - name: 风险合规∙开户意愿确认
   - name: 通用接口
+  - name: 跨境
+  - name: 跨境∙进件
+  - name: 跨境∙报关
+  - name: 跨境∙支付
+  - name: 跨境∙退款
+  - name: 跨境∙分账
+  - name: 跨境∙代扣
+  - name: 沙箱环境
   - name: APIv2∙人脸支付
   - name: APIv2∙基础支付
   - name: APIv2∙基础支付∙合单
@@ -87,11 +94,6 @@ tags:
   - name: APIv2∙通用
   - name: APIv2∙企微∙红包
   - name: APIv2∙企微∙付款
-  - name: 跨境
-  - name: 跨境∙进件
-  - name: 跨境∙报关
-  - name: 跨境∙支付
-  - name: 跨境∙退款
 paths:
   /global/v3/customs/orders:
     $ref: ./global/v3/customs/orders.yaml
@@ -511,6 +513,30 @@ paths:
     $ref: ./v3/global/micropay/transactions/out-trade-no/{out_trade_no}/reverse.yaml
   /v3/global/micropay/transactions/pay:
     $ref: ./v3/global/micropay/transactions/pay.yaml
+  /v3/global/papay/contracts/{contract_id}:
+    $ref: ./v3/global/papay/contracts/{contract_id}.yaml
+  /v3/global/papay/contracts/{contract_id}/terminate:
+    $ref: ./v3/global/papay/contracts/{contract_id}/terminate.yaml
+  /v3/global/papay/contracts/app-pre-entrust-sign:
+    $ref: ./v3/global/papay/contracts/app-pre-entrust-sign.yaml
+  /v3/global/papay/contracts/h5-pre-entrust-sign:
+    $ref: ./v3/global/papay/contracts/h5-pre-entrust-sign.yaml
+  /v3/global/papay/contracts/jsapi-pre-entrust-sign:
+    $ref: ./v3/global/papay/contracts/jsapi-pre-entrust-sign.yaml
+  /v3/global/papay/contracts/miniprogram-pre-entrust-sign:
+    $ref: ./v3/global/papay/contracts/miniprogram-pre-entrust-sign.yaml
+  /v3/global/papay/contracts/out-contract-code/{out_contract_code}:
+    $ref: ./v3/global/papay/contracts/out-contract-code/{out_contract_code}.yaml
+  /v3/global/papay/contracts/web-pre-entrust-sign:
+    $ref: ./v3/global/papay/contracts/web-pre-entrust-sign.yaml
+  /v3/global/papay/transactions:
+    $ref: ./v3/global/papay/transactions.yaml
+  /v3/global/papay/transactions/{transaction_id}:
+    $ref: ./v3/global/papay/transactions/{transaction_id}.yaml
+  /v3/global/papay/transactions/out-trade-no/{out_trade_no}:
+    $ref: ./v3/global/papay/transactions/out-trade-no/{out_trade_no}.yaml
+  /v3/global/papay/transactions/out-trade-no/{out_trade_no}/reverse:
+    $ref: ./v3/global/papay/transactions/out-trade-no/{out_trade_no}/reverse.yaml
   /v3/global/profit-sharing/bill-download-url:
     $ref: ./v3/global/profit-sharing/bill-download-url.yaml
   /v3/global/profit-sharing/orders:

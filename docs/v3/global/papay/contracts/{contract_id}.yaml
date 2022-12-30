@@ -1,0 +1,118 @@
+get:
+  x-version:
+    - 2022.08.04
+  x-role:
+    - 直连模式
+    - 机构模式
+  tags:
+    - 跨境∙代扣
+  summary: 代扣协议ID查询签约API
+  description: 查询签约关系接口提供单笔签约关系查询， 查询方式：使用微信返回的委托代扣协议contract_id进行查询。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter5_1_2.shtml)
+  parameters:
+    - name: appid
+      in: query
+      type: string
+      description: 机构APPID
+      example: wxd678efh567hg6787
+    - name: sub_mchid
+      in: query
+      type: string
+      description: 子商户号
+      example: '1230000109'
+    - name: sp_appid
+      in: query
+      type: string
+      description: 机构appid
+      example: wx8888888888888888
+    - name: sp_mchid
+      in: query
+      type: string
+      description: 机构商户号
+      example: '3200000001'
+    - name: sub_appid
+      in: query
+      type: string
+      description: 子商户应用ID
+      example: wxcbda96de0b165484
+    - name: plan_id
+      in: query
+      type: integer
+      description: 模板ID
+      example: 123
+    - name: contract_id
+      in: path
+      required: true
+      type: string
+      description: 委托代扣协议ID
+      example: '100005698'
+  responses:
+    '200':
+      schema:
+        type: object
+        properties:
+          mchid:
+            type: string
+            description: 商户号
+            example: '1230000109'
+          appid:
+            type: string
+            description: 机构APPID
+            example: wxd678efh567hg6787
+          sp_mchid:
+            type: string
+            description: 机构商户号
+            example: '3200000001'
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1230000109'
+          sp_appid:
+            type: string
+            description: 机构appid
+            example: wx8888888888888888
+          sub_appid:
+            type: string
+            description: 子商户应用ID
+            example: wxcbda96de0b165484
+          contract_id:
+            type: string
+            description: 委托代扣协议ID
+            example: '100005698'
+          plan_id:
+            type: integer
+            description: 模板ID
+            example: 123
+          out_contract_code:
+            type: string
+            description: 商户侧签约协议号
+            example: '100001256'
+          user_display_name:
+            type: string
+            description: 用户账户展示名称
+            example: 张三
+          state:
+            type: string
+            description: 协议状态
+            example: SIGNED
+          signed_time:
+            type: string
+            format: rfc3339
+            description: 协议签署时间
+            example: '2021-11-20T13:29:35+08:00'
+          terminated_time:
+            type: string
+            format: rfc3339
+            description: 协议签署时间
+            example: '2021-11-20T13:29:35+08:00'
+          termination_mode:
+            type: string
+            description: 协议解约方式
+            example: USER
+          termination_note:
+            type: string
+            description: 解约备注
+            example: 解约原因
+          openid:
+            type: string
+            description: 商户appid下的用户标识
+            example: ouFhd5X9s9WteC3eWRjXV3lea123

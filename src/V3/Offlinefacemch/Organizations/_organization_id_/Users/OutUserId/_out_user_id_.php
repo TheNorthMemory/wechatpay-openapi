@@ -11,9 +11,9 @@ use GuzzleHttp\Promise\PromiseInterface;
 interface _out_user_id_
 {
     /**
-     * 刷脸用户信息修改接口(同步模式)
+     * 刷脸用户信息查询接口(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/access-specifications.html
+     * @link https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/k12-development-guidelines.html
      */
     public function get(array $options = [
         'organization_id' => '',
@@ -21,9 +21,9 @@ interface _out_user_id_
     ]): ResponseInterface;
 
     /**
-     * 刷脸用户信息修改接口(异步模式)
+     * 刷脸用户信息查询接口(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/access-specifications.html#async
+     * @link https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/k12-development-guidelines.html#async
      */
     public function getAsync(array $options = [
         'organization_id' => '',

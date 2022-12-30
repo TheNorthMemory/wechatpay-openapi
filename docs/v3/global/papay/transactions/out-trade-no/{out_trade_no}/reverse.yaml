@@ -1,0 +1,25 @@
+post:
+  x-version:
+    - 2022.08.04
+  x-role:
+    - 直连模式
+    - 机构模式
+  tags:
+    - 跨境∙代扣
+  summary: 查询订单(商户订单号)
+  description: 商户可以通过该接口发起撤销订单。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter5_1_10.shtml)
+  parameters:
+    - name: out_trade_no
+      in: path
+      required: true
+      type: string
+      description: 商户订单号
+      example: '1217752501201407033233368018'
+    - name: sub_mchid
+      in: query
+      required: true
+      type: string
+      description: 子商户号
+      example: '1900000109'
+  responses:
+    '204': {}

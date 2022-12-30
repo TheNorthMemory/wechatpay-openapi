@@ -9,16 +9,10 @@
 [![Packagist PHP Version Support](https://img.shields.io/packagist/php-v/iwechatpay/openapi)](https://packagist.org/packages/iwechatpay/openapi)
 [![Packagist License](https://img.shields.io/packagist/l/iwechatpay/openapi)](https://packagist.org/packages/iwechatpay/openapi)
 
-## PHP
-
-推荐使用 `composer` 安装
-
-`composer require --dev iwechatpay/openapi`
-
 ## 业务标签
 
 | 名称 | 直连模式 | 服务商模式 |
-| --- | --- | --- |
+| --- | :---: | :---: |
 | 基础支付 | ✔️ | |
 | 基础支付∙服务商模式 | | ✔️ |
 | 基础支付∙合单 | | ✔️ |
@@ -45,7 +39,7 @@
 | 会员卡∙权益设置 | ✔️ | ✔️ |
 | 会员卡∙会员有礼 | ✔️ | ✔️ |
 | 校园轻松付 | | ✔️ |
-| 爱心餐 | ✔️ | |
+| 爱心餐 | ✔️ | ✔️ |
 | 乘车服务 | ✔️ | ✔️ |
 | 运营工具∙代金券 | ✔️ | ✔️ |
 | 运营工具∙商家券 | ✔️ | ✔️ |
@@ -98,6 +92,12 @@
 | APIv2∙通用 | ✔️ | ✔️ |
 | APIv2∙企微∙红包 | ✔️ | |
 | APIv2∙企微∙付款 | ✔️ | |
+
+## PHP
+
+推荐使用 `composer` 安装
+
+`composer require --dev iwechatpay/openapi`
 
 ## IDE提示
 

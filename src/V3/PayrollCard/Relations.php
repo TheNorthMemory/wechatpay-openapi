@@ -3,7 +3,6 @@
 namespace WeChatPay\OpenAPI\V3\PayrollCard;
 
 /**
- * 这是一个纯接口描述文件，由程序自动生成，旨在为IDE提供结构提示，无他用。
  * @property-read Relations\_openid_ $_openid_
  */
 interface Relations

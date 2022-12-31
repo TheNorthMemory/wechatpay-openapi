@@ -6,7 +6,6 @@ use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Promise\PromiseInterface;
 
 /**
- * 这是一个纯接口描述文件，由程序自动生成，旨在为IDE提供结构提示，无他用。
  * @property-read _code_\Activate $activate
  * @property-read _code_\Rights $rights
  * @property-read _code_\Unavailable $unavailable

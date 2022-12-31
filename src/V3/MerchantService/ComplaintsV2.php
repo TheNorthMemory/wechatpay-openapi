@@ -6,7 +6,6 @@ use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Promise\PromiseInterface;
 
 /**
- * 这是一个纯接口描述文件，由程序自动生成，旨在为IDE提供结构提示，无他用。
  * @property-read ComplaintsV2\_complaint_id_ $_complaint_id_
  */
 interface ComplaintsV2

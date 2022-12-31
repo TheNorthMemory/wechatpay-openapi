@@ -3,7 +3,6 @@
 namespace WeChatPay\OpenAPI\V3\Marketing\MembercardOpen;
 
 /**
- * 这是一个纯接口描述文件，由程序自动生成，旨在为IDE提供结构提示，无他用。
  * @property-read ActivateInformations\_activate_ticket_ $_activate_ticket_
  */
 interface ActivateInformations

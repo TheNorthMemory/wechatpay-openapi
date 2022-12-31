@@ -8,7 +8,7 @@ use GuzzleHttp\Promise\PromiseInterface;
 /**
  * 这是一个纯接口描述文件，由程序自动生成，旨在为IDE提供结构提示，无他用。
  * @property-read Merchants\Add $add
- * @property-read Merchants\Delete $Delete
+ * @property-read Merchants\Delete $delete
  */
 interface Merchants
 {

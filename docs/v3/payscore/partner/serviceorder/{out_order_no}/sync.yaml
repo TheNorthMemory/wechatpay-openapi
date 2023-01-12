@@ -1,0 +1,59 @@
+post:
+  x-version:
+    - 2020.06.29
+  x-role:
+    - 服务商
+  tags:
+    - 经营工具∙支付分∙服务商模式
+  summary: 同步订单信息API
+  description: 由于收款商户进行的某些“线下操作”会导致微信支付侧的订单状态与实际情况不符。例如，用户通过线下付款的方式已经完成支付，而微信支付侧并未支付成功，此时可能导致用户重复支付。因此商户需要通过订单同步接口将订单状态同步给微信支付，修改订单在微信支付系统中的状态。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter6_2_7.shtml)
+  parameters:
+    - name: out_order_no
+      in: path
+      required: true
+      type: string
+      description: 商户服务订单号
+      example: 1234323JKHDFE1243252
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - service_id
+          - sub_mchid
+          - type
+          - detail
+        properties:
+          service_id:
+            type: string
+            description: 服务ID
+            example: '2002000000000558128851361561536'
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1900000109'
+          type:
+            type: string
+            description: 场景类型
+            example: Order_Paid
+          detail:
+            type: object
+            description: 内容信息详情
+            required:
+              - paid_time
+            properties:
+              seq:
+                type: integer
+                description: 收款序号
+                example: 1
+              paid_time:
+                type: string
+                description: 收款成功时间
+                example: '20091225091210'
+              paid_amount:
+                type: integer
+                description: 收款金额
+                example: 1
+  responses:
+    '204': {}

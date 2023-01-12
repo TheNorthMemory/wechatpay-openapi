@@ -1,0 +1,40 @@
+post:
+  x-version:
+    - 2020.06.29
+  x-role:
+    - 服务商
+  tags:
+    - 经营工具∙支付分∙服务商模式∙免确认
+  summary: 解除用户授权关系（授权协议号）API
+  description: 通过authorization_code，商户解除用户授权关系 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter6_2_20.shtml)
+  parameters:
+    - name: authorization_code
+      in: path
+      type: string
+      description: 授权协议号
+      required: true
+      example: 1234323JKHDFE1243252
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - service_id
+          - sub_mchid
+          - reason
+        properties:
+          service_id:
+            type: string
+            description: 服务ID
+            example: '500001'
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1230000109'
+          reason:
+            type: string
+            description: 撤销原因
+            example: 撤销原因
+  responses:
+    '204': {}

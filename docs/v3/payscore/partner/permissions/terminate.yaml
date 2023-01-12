@@ -1,0 +1,50 @@
+post:
+  x-version:
+    - 2020.06.29
+  x-role:
+    - 服务商
+  tags:
+    - 经营工具∙支付分∙服务商模式∙免确认
+  summary: 解除用户授权关系（openid）API
+  description: 通过openid，服务商帮子商户解除用户授权关系 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter6_2_22.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - service_id
+          - appid
+          - sub_mchid
+          - reason
+        properties:
+          openid:
+            type: string
+            description: 服务商公众号下的用户标识
+            example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+          sub_openid:
+            type: string
+            description: 子商户公众号下openid
+          service_id:
+            type: string
+            description: 服务ID
+            example: '500001'
+          appid:
+            type: string
+            description: 服务商应用ID
+            example: wxd678efh567hg6787
+          sub_appid:
+            type: string
+            description: 子商户应用ID
+            example: wxd678efh567hg6787
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1230000109'
+          reason:
+            type: string
+            description: 撤销原因
+            example: reason
+  responses:
+    '204': {}

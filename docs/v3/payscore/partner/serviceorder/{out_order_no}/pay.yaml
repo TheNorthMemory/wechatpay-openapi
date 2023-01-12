@@ -1,0 +1,35 @@
+post:
+  x-version:
+    - 2020.06.29
+  x-role:
+    - 服务商
+  tags:
+    - 经营工具∙支付分∙服务商模式
+  summary: 商户发起催收扣款API
+  description: 当微信支付分订单支付状态处于“待支付”时，商户可使用该接口向用户发起收款。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter6_2_6.shtml)
+  parameters:
+    - name: out_order_no
+      in: path
+      required: true
+      type: string
+      description: 商户服务订单号
+      example: 1234323JKHDFE1243252
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - service_id
+          - sub_mchid
+        properties:
+          service_id:
+            type: string
+            description: 服务ID
+            example: '2002000000000558128851361561536'
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1900000109'
+  responses:
+    '204': {}

@@ -1,0 +1,157 @@
+post:
+  x-version:
+    - 2020.06.29
+  x-role:
+    - 服务商
+  tags:
+    - 经营工具∙支付分∙服务商模式
+  summary: 创单结单合并API
+  description: 该接口适用于无需微信支付分做订单风控判断的业务场景，在服务完成后，通过该接口对用户进行免密代扣。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter6_2_8.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - service_id
+          - appid
+          - sub_appid
+          - out_order_no
+          - service_introduction
+          - total_amount
+          - time_range
+          - notify_url
+        properties:
+          service_id:
+            type: string
+            description: 服务ID
+            example: '2002000000000558128851361561536'
+          appid:
+            type: string
+            description: 服务商应用ID
+            example: wxd678efh567hg6787
+          sub_appid:
+            type: string
+            description: 子商户应用ID
+            example: wxd678efh567hg6999
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1900000109'
+          out_order_no:
+            type: string
+            description: 商户服务订单号
+            example: 1234323JKHDFE1243252
+          service_introduction:
+            type: string
+            description: 服务信息
+            example: XX充电宝
+          post_payments:
+            type: array
+            description: 后付费项目
+            items:
+              type: object
+              required:
+                - name
+              properties:
+                name:
+                  type: string
+                  description: 付费名称
+                  example: 就餐费用
+                description:
+                  type: string
+                  description: 付费说明
+                  example: 就餐人均100元
+                amount:
+                  type: integer
+                  description: 付费金额
+                  example: 40000
+                count:
+                  type: integer
+                  description: 付费数量
+                  example: 4
+          post_discounts:
+            type: array
+            description: 后付费商户优惠
+            items:
+              type: object
+              required:
+                - name
+                - description
+              properties:
+                name:
+                  type: string
+                  description: 优惠名称
+                  example: 满20减1元
+                description:
+                  type: string
+                  description: 优惠说明
+                  example: 不与其他优惠叠加
+                amount:
+                  type: integer
+                  description: 优惠金额
+                  example: 100
+                count:
+                  type: integer
+                  description: 优惠数量
+                  example: 2
+          total_amount:
+            type: integer
+            description: 总金额
+            example: 50000
+          time_range:
+            type: object
+            description: 服务时间段
+            required:
+              - start_time
+            properties:
+              start_time:
+                type: string
+                description: 服务开始时间
+                example: '20091225091010'
+              start_time_remark:
+                type: string
+                description: 服务开始时间备注
+                example: 开始租借时间
+              end_time:
+                type: string
+                description: 服务结束时间
+                example: '20091225121010'
+              end_time_remark:
+                type: string
+                description: 服务结束时间备注
+                example: 租借结束时间
+          location:
+            type: object
+            description: 服务位置
+            properties:
+              start_location:
+                type: string
+                description: 服务开始地点
+                example: 嗨客时尚主题展餐厅
+              end_location:
+                type: string
+                description: 服务结束地点
+                example: 嗨客时尚主题展餐厅
+          profit_sharing:
+            type: boolean
+            description: 微信支付服务分账标记
+          goods_tag:
+            type: string
+            description: 订单优惠标记
+            example: goods_tag
+          attach:
+            type: string
+            description: 商户数据包
+            example: Easdfowealsdkjfnlaksjdlfkwqoi&wl3l2sald
+          notify_url:
+            type: string
+            description: 商户回调地址
+            example: https://api.test.com
+          openid:
+            type: string
+            description: 服务商公众号下的用户标识
+            example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+  responses:
+    '204': {}

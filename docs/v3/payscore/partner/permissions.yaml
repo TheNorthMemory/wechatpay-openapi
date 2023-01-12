@@ -1,0 +1,56 @@
+post:
+  x-version:
+    - 2020.06.29
+  x-role:
+    - 服务商
+  tags:
+    - 经营工具∙支付分∙服务商模式∙免确认
+  summary: 商户预授权API
+  description: 商户预授权 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter6_2_18.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - service_id
+          - appid
+          - sub_mchid
+          - authorization_code
+        properties:
+          service_id:
+            type: string
+            description: 服务ID
+            example: service_id
+          appid:
+            type: string
+            description: 服务商应用ID
+            example: wxd678efh567hg6787
+          sub_appid:
+            type: string
+            description: 子商户应用ID
+            example: wxd678efh567hg6787
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1230000109'
+          authorization_code:
+            type: string
+            description: 授权协议号
+            example: 1234323JKHDFE1243252
+          notify_url:
+            type: string
+            description: 商户回调地址
+            example: http://www.qq.com
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - apply_permissions_token
+        properties:
+          apply_permissions_token:
+            type: string
+            description: 预授权token
+            example: apply_permissions_token

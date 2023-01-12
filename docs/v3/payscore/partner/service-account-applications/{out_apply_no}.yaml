@@ -1,0 +1,64 @@
+get:
+  x-version:
+    - 2021.07.29
+  x-role:
+    - 服务商
+  tags:
+    - 经营工具∙支付分∙服务商模式
+  summary: 查询收付通子商户服务绑定结果
+  description: 收付通服务商查询子商户的支付分服务绑定结果 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter6_2_14.shtml)
+  parameters:
+    - name: out_order_no
+      in: path
+      required: true
+      type: string
+      description: 商户申请绑定单号
+      example: 1234323JKHDFE1243252
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - service_id
+          - mchid
+          - appid
+          - sub_mchid
+          - out_apply_no
+          - apply_state
+        properties:
+          service_id:
+            type: string
+            description: 服务ID
+            example: '2002000000000558128851361561536'
+          mchid:
+            type: string
+            description: 服务商商户号
+            example: '1900000104'
+          appid:
+            type: string
+            description: 服务商应用ID
+            example: wxd678efh567hg6787
+          sub_mchid:
+            type: string
+            description: 子商户商户号
+            example: '1900000109'
+          sub_appid:
+            type: string
+            description: 子商户应用ID
+            example: wxd678efh567hg6787
+          out_apply_no:
+            type: string
+            description: 申请单号
+            example: 1234323JKHDFE1243252
+          result_notify_url:
+            type: string
+            description: 绑定结果回调通知地址
+            example: https://api.test.com
+          apply_state:
+            type: string
+            description: 受理状态
+            example: APPROVED
+          reject_reason:
+            type: string
+            description: 拒绝原因
+            example: 账户异常，绑定失败

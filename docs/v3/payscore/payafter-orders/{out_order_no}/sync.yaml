@@ -1,0 +1,69 @@
+post:
+  x-version:
+    - 2020.03.05
+  x-role:
+    - 直连商户
+  tags:
+    - 经营工具∙支付分
+  summary: 支付分订单同步
+  description: |
+    由于收款商户进行的某些“线下操作”会导致微信支付侧的订单状态与实际情况不符，例如用户通过线下付款的方式已经完成了支付，而微信支付侧还没有支付成功，此时可能导致用户重复支付。因此商户需要通过订单同步接口将订单状态同步给微信支付，修改订单在微信支付系统中的状态。
+    注意：本接口只适用于智慧零售、先享后付、免押租借、免押速住的免押订单。
+  parameters:
+    - name: out_order_no
+      in: path
+      type: string
+      description: 商户服务订单号
+      required: true
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        properties:
+          appid:
+            type: string
+            description: 公众账号ID
+            example: wxd678efh567hg6787
+          service_id:
+            type: string
+            description: 服务ID
+            example: '500001'
+          type:
+            type: string
+            description: 场景类型
+            enum:
+              - Order_Paid #用户付款成功
+          detail:
+            type: object
+            properties:
+              paid_time:
+                type: string
+                format: yyyyMMddHHmmss
+                example: '20091225091010'
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - appid
+          - mchid
+          - out_order_no
+          - order_id
+        properties:
+          appid:
+            type: string
+            description: 公众账号ID
+            example: wxd678efh567hg6787
+          mchid:
+            type: string
+            description: 商户号
+            example: '1230000109'
+          out_order_no:
+            type: string
+            description: 商户服务订单号
+            example: '2304203423948239423'
+          order_id:
+            type: string
+            description: 微信支付服务订单号
+            example: '15646546545165651651'

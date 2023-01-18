@@ -10,12 +10,14 @@ use GuzzleHttp\Promise\PromiseInterface;
 interface SyncStatus
 {
     /**
-     * 点餐订单信息同步（渠道商）(同步模式)
+     * 点餐订单信息同步（渠道商/服务商）(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/catering_sl.php?chapter=26_3&index=1
+     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/catering.php?chapter=26_1
      */
     public function post(array $options = [
         'json' => [
+            'sp_mchid' => '1900000100',
+            'sp_appid' => 'wx8888888888888888',
             'channel_id' => '1900000109',
             'sub_mchid' => '1900000100',
             'sub_appid' => 'wx8888888888888888',
@@ -55,12 +57,14 @@ interface SyncStatus
     ]): ResponseInterface;
 
     /**
-     * 点餐订单信息同步（渠道商）(异步模式)
+     * 点餐订单信息同步（渠道商/服务商）(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/catering_sl.php?chapter=26_3&index=1#async
+     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/catering.php?chapter=26_1#async
      */
     public function postAsync(array $options = [
         'json' => [
+            'sp_mchid' => '1900000100',
+            'sp_appid' => 'wx8888888888888888',
             'channel_id' => '1900000109',
             'sub_mchid' => '1900000100',
             'sub_appid' => 'wx8888888888888888',

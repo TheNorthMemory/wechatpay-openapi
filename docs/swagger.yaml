@@ -729,6 +729,12 @@ paths:
     $ref: ./v3/marketing/paygiftactivity/unique-threshold-activity.yaml
   /v3/marketing/withdraw-favor/users/{openid}/coupons:
     $ref: ./v3/marketing/withdraw-favor/users/{openid}/coupons.yaml
+  /v3/mch_operate/risk/withdrawl-apply:
+    $ref: ./v3/mch_operate/risk/withdrawl-apply.yaml
+  /v3/mch_operate/risk/withdrawl-apply/applyment-id/{applyment_id}:
+    $ref: ./v3/mch_operate/risk/withdrawl-apply/applyment-id/{applyment_id}.yaml
+  /v3/mch_operate/risk/withdrawl-apply/out-request-no/{out_request_no}:
+    $ref: ./v3/mch_operate/risk/withdrawl-apply/out-request-no/{out_request_no}.yaml
   /v3/merchant-risk-manage/violation-notifications:
     $ref: ./v3/merchant-risk-manage/violation-notifications.yaml
   /v3/merchant-service/complaint-notifications:

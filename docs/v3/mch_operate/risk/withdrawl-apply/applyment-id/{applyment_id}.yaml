@@ -1,0 +1,51 @@
+get:
+  x-version:
+    - 2022.12.01
+  x-role:
+    - 服务商
+  tags:
+    - 收付通∙提现
+  summary: 微信支付提现申请单号查询提现申请单状态API
+  description: 微信支付提现申请单号查询提现申请单状态,电商平台发起申请后, 电商平台调用此接口查询审批和出款进度 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter7_8_8.shtml)
+  parameters:
+    - name: applyment_id
+      in: path
+      required: true
+      type: string
+      description: 微信支付提现申请单号
+      example: '20220210183333'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - withdrawl_apply
+        properties:
+          withdrawl_apply:
+            type: object
+            description: 提现申请单信息
+            required:
+              - applyment_id
+              - out_request_no
+              - state
+            properties:
+              applyment_id:
+                type: string
+                description: 微信支付提现申请单号
+                example: '20220101332222'
+              out_request_no:
+                type: string
+                description: 商户提现申请单号
+                example: '1234567'
+              state:
+                type: string
+                description: 申请单状态
+                example: SUBMITTED
+              fail_reason:
+                type: string
+                description: 失败原因
+                example: 银行卡信息有误
+              modify_time:
+                type: string
+                description: 最后更新时间
+                example: '2015-05-20T13:29:35+08:00'

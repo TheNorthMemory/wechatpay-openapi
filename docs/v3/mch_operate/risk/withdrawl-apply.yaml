@@ -8,6 +8,7 @@ post:
   summary: 提交已注销商户号可用余额提现申请单API
   description: 针对被微信支付平台不收不付管控的电商子商户，如子商户账户内还有可用余额，且无法解脱（例如.营业执照注销吊销），则服务商可为子商户申请走注销提现的流程，将可用余额进行提现操作。在商户号注销后，电商平台可发起提现申请, 审批通过后, 将会按照指定的收款方式返回给商户。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter7_8_9.shtml)
   parameters:
+    - $ref: '../../../definitions/Parameters.yaml#WECHATPAY_CERTIFICATE_SERIAL'
     - name: _
       in: body
       required: true

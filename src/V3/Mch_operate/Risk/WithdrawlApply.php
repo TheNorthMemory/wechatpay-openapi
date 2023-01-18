@@ -50,6 +50,9 @@ interface WithdrawlApply
             ],
             'remark' => '特殊理由',
         ],
+        'headers' => [
+            'Wechatpay-Serial' => '',
+        ],
     ]): ResponseInterface;
 
     /**
@@ -90,6 +93,9 @@ interface WithdrawlApply
                 'additional_media' => ['MediaId'],
             ],
             'remark' => '特殊理由',
+        ],
+        'headers' => [
+            'Wechatpay-Serial' => '',
         ],
     ]): PromiseInterface;
 }

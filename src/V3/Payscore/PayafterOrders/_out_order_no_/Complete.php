@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);/* Generated file. DO NOT EDIT! */
 
-namespace WeChatPay\OpenAPI\V3\Payscore\SmartretailOrders\_out_order_no_;
+namespace WeChatPay\OpenAPI\V3\Payscore\PayafterOrders\_out_order_no_;
 
 use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Promise\PromiseInterface;
@@ -10,9 +10,9 @@ use GuzzleHttp\Promise\PromiseInterface;
 interface Complete
 {
     /**
-     * 完结智慧零售订单(同步模式)
+     * 完结先享后付订单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/payscore.php?chapter=14_4&index=6
+     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/payscore.php?chapter=17_4&index=6
      */
     public function post(array $options = [
         'out_order_no' => '',
@@ -42,9 +42,9 @@ interface Complete
     ]): ResponseInterface;
 
     /**
-     * 完结智慧零售订单(异步模式)
+     * 完结先享后付订单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/payscore.php?chapter=14_4&index=6#async
+     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/payscore.php?chapter=17_4&index=6#async
      */
     public function postAsync(array $options = [
         'out_order_no' => '',

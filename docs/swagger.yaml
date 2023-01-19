@@ -934,6 +934,12 @@ paths:
     $ref: ./v3/payscore/partner/serviceorder/{out_order_no}/sync.yaml
   /v3/payscore/partner/serviceorder/direct-complete:
     $ref: ./v3/payscore/partner/serviceorder/direct-complete.yaml
+  /v3/payscore/payafter-orders:
+    $ref: ./v3/payscore/payafter-orders.yaml
+  /v3/payscore/payafter-orders/{out_order_no}/cancel:
+    $ref: ./v3/payscore/payafter-orders/{out_order_no}/cancel.yaml
+  /v3/payscore/payafter-orders/{out_order_no}/complete:
+    $ref: ./v3/payscore/payafter-orders/{out_order_no}/complete.yaml
   /v3/payscore/payafter-orders/{out_order_no}/sync:
     $ref: ./v3/payscore/payafter-orders/{out_order_no}/sync.yaml
   /v3/payscore/permissions:

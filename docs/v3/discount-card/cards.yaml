@@ -3,7 +3,7 @@ post:
   x-role:
     - 直连商户
   tags:
-    - 经营工具∙支付分∙先享卡
+    - 支付分∙先享卡
   summary: 预受理领卡请求API
   description: 商户在引导用户跳转先享卡领卡前，需要请求先享卡预受理领卡请求接口，再根据返回数据引导用户跳转领卡。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/discount-card/chapter3_1.shtml)
   parameters:

@@ -2,7 +2,7 @@ post:
   x-version: [2020.06.02]
   x-role: [服务商, 直连商户]
   tags:
-    - 经营工具∙支付分
+    - 支付分
   summary: 完结支付分订单API
   description: 完结微信支付分订单。用户使用服务完成后，商户可通过此接口完结订单。**前置条件：**服务订单状态为“进行中”且订单状态说明需为[USER_CONFIRM:用户确认] [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter3_5.shtml)
   parameters:

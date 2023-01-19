@@ -2,7 +2,7 @@ post:
   x-version: [2020.03.05]
   x-role: [服务商, 直连商户]
   tags:
-    - 经营工具∙支付分
+    - 支付分
   summary: 修改订单金额API
   description: 完结订单总金额与实际金额不符时，可通过该接口修改订单金额。**前置条件：**服务订单支付状态为待支付 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter3_4.shtml)
   parameters:

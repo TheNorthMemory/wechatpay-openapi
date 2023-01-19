@@ -2,7 +2,7 @@ post:
   x-version: [2020.03.05]
   x-role: [服务商, 直连商户]
   tags:
-    - 经营工具∙支付分
+    - 支付分
   summary: 同步服务订单信息API
   description: 由于收款商户进行的某些“线下操作”会导致微信支付侧的订单状态与实际情况不符。**前置条件：**同步商户渠道收款成功信息时，即场景类型=“Order_Paid”，订单的状态需为[FINISHED:商户完结订单] [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter3_6.shtml)
   parameters:

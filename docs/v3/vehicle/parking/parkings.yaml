@@ -3,7 +3,7 @@ post:
   x-role:
     - 服务商
   tags:
-    - 经营工具∙支付分∙停车服务
+    - 支付分∙停车服务
   summary: 创建停车入场API
   description: 车辆入场以后，商户调用该接口，创建停车入场信息。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_8_2.shtml)
   parameters:

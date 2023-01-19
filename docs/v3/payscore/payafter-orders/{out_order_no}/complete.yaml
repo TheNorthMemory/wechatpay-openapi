@@ -4,7 +4,7 @@ post:
   x-role:
     - 直连商户
   tags:
-    - 经营工具∙支付分∙先享后付
+    - 支付分∙先享后付
   summary: 完结先享后付订单
   description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/payscore.php?chapter=17_4&index=6)'
   parameters:

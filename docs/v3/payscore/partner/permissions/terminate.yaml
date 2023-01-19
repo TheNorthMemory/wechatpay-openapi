@@ -4,7 +4,7 @@ post:
   x-role:
     - 服务商
   tags:
-    - 经营工具∙支付分∙服务商模式∙免确认
+    - 支付分∙服务商模式∙免确认
   summary: 解除用户授权关系（openid）API
   description: 通过openid，服务商帮子商户解除用户授权关系 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter6_2_22.shtml)
   parameters:

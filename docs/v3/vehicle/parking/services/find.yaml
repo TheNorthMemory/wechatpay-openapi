@@ -3,7 +3,7 @@ get:
   x-role:
     - 服务商
   tags:
-    - 经营工具∙支付分∙停车服务
+    - 支付分∙停车服务
   summary: 查询车牌服务开通信息API
   description: 该接口仅支持停车场景，商户首先请求查询车牌服务开通信息接口，确认该车牌，是否被该用户开通车主服务。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_8_1.shtml)
   parameters:

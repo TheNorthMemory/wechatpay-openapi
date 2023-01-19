@@ -4,7 +4,7 @@ post:
   x-role:
     - 直连商户
   tags:
-    - 经营工具∙支付分∙智慧零售
+    - 支付分∙智慧零售
   summary: 创建智慧零售订单
   description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/payscore.php?chapter=14_1&index=3)'
   parameters:
@@ -112,7 +112,7 @@ get:
   x-role:
     - 直连商户
   tags:
-    - 经营工具∙支付分∙智慧零售
+    - 支付分∙智慧零售
   summary: 查询智慧零售订单
   description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/payscore.php?chapter=14_2&index=4)'
   parameters:

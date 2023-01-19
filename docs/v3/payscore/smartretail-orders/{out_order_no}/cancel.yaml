@@ -4,7 +4,7 @@ post:
   x-role:
     - 直连商户
   tags:
-    - 经营工具∙支付分∙智慧零售
+    - 支付分∙智慧零售
   summary: 撤销智慧零售订单
   description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/payscore.php?chapter=14_3&index=5)'
   parameters:

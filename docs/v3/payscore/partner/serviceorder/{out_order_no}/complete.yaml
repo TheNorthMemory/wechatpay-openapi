@@ -4,7 +4,7 @@ post:
   x-role:
     - 服务商
   tags:
-    - 经营工具∙支付分∙服务商模式
+    - 支付分∙服务商模式
   summary: 完结支付分订单API
   description: 完结微信支付分订单。用户使用服务完成后，商户可通过此接口完结订单。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter6_2_5.shtml)
   parameters:

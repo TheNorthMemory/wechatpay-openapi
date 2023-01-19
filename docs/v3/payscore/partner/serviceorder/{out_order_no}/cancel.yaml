@@ -4,7 +4,7 @@ post:
   x-role:
     - 服务商
   tags:
-    - 经营工具∙支付分∙服务商模式
+    - 支付分∙服务商模式
   summary: 取消支付分订单API
   description: 微信支付分订单创建之后，由于某些原因导致订单不能正常支付时，可使用此接口取消订单。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter6_2_3.shtml)
   parameters:

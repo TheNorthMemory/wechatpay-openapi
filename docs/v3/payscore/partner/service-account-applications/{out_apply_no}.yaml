@@ -4,7 +4,7 @@ get:
   x-role:
     - 服务商
   tags:
-    - 经营工具∙支付分∙服务商模式
+    - 支付分∙服务商模式
   summary: 查询收付通子商户服务绑定结果
   description: 收付通服务商查询子商户的支付分服务绑定结果 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter6_2_14.shtml)
   parameters:

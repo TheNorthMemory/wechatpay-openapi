@@ -4,7 +4,7 @@ get:
   x-role:
     - 服务商
   tags:
-    - 经营工具∙支付分∙服务商模式∙免确认
+    - 支付分∙服务商模式∙免确认
   summary: 查询与用户授权记录（openid）API
   description: 通过openid查询用户授权信息 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter6_2_21.shtml)
   parameters:

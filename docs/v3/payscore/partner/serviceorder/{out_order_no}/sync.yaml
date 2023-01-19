@@ -4,7 +4,7 @@ post:
   x-role:
     - 服务商
   tags:
-    - 经营工具∙支付分∙服务商模式
+    - 支付分∙服务商模式
   summary: 同步订单信息API
   description: 由于收款商户进行的某些“线下操作”会导致微信支付侧的订单状态与实际情况不符。例如，用户通过线下付款的方式已经完成支付，而微信支付侧并未支付成功，此时可能导致用户重复支付。因此商户需要通过订单同步接口将订单状态同步给微信支付，修改订单在微信支付系统中的状态。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter6_2_7.shtml)
   parameters:

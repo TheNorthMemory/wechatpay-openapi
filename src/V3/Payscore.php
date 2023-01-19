@@ -4,6 +4,7 @@ namespace WeChatPay\OpenAPI\V3;
 
 /**
  * @property-read Payscore\Users $users
+ * @property-read Payscore\SmartretailOrders $smartretailOrders
  * @property-read Payscore\Serviceorder $serviceorder
  * @property-read Payscore\Permissions $permissions
  * @property-read Payscore\PayafterOrders $payafterOrders

@@ -56,6 +56,7 @@ tags:
   - name: 经营工具∙支付分∙免确认模式∙普通授权
   - name: 经营工具∙支付分∙免确认模式∙预授权
   - name: 经营工具∙支付分∙先享卡
+  - name: 经营工具∙支付分∙智慧零售
   - name: 经营工具∙支付分∙停车服务
   - name: 经营工具∙支付分∙服务商模式
   - name: 经营工具∙支付分∙服务商模式∙免确认
@@ -958,6 +959,12 @@ paths:
     $ref: ./v3/payscore/serviceorder/{out_order_no}/sync.yaml
   /v3/payscore/serviceorder/direct-complete:
     $ref: ./v3/payscore/serviceorder/direct-complete.yaml
+  /v3/payscore/smartretail-orders:
+    $ref: ./v3/payscore/smartretail-orders.yaml
+  /v3/payscore/smartretail-orders/{out_order_no}/cancel:
+    $ref: ./v3/payscore/smartretail-orders/{out_order_no}/cancel.yaml
+  /v3/payscore/smartretail-orders/{out_order_no}/complete:
+    $ref: ./v3/payscore/smartretail-orders/{out_order_no}/complete.yaml
   /v3/payscore/user-service-state:
     $ref: ./v3/payscore/user-service-state.yaml
   /v3/payscore/users/{openid}/permissions/{service_id}/terminate:

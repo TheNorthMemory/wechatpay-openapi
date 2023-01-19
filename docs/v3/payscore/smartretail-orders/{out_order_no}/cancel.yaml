@@ -1,0 +1,68 @@
+post:
+  x-version:
+    - 2019.08.23
+  x-role:
+    - 直连商户
+  tags:
+    - 经营工具∙支付分∙智慧零售
+  summary: 撤销智慧零售订单
+  description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/payscore.php?chapter=14_3&index=5)'
+  parameters:
+    - name: out_order_no
+      in: path
+      type: string
+      description: 商户服务订单号
+      required: true
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - appid
+          - service_id
+          - reason
+        properties:
+          appid:
+            type: string
+            description: 公众账号ID
+            example: wxd678efh567hg6787
+          service_id:
+            type: string
+            description: 服务ID
+            example: '500001'
+          reason:
+            type: string
+            description: 取消原因
+            example: 用户投诉
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - appid
+          - mchid
+          - out_order_no
+          - service_id
+          - order_id
+        properties:
+          appid:
+            type: string
+            description: 公众账号ID
+            example: wxd678efh567hg6787
+          mchid:
+            type: string
+            description: 商户号
+            example: '1230000109'
+          out_order_no:
+            type: string
+            description: 商户服务订单号
+            example: '2304203423948239423'
+          service_id:
+            type: string
+            description: 服务ID
+            example: '500001'
+          order_id:
+            type: string
+            description: 微信支付服务订单号
+            example: '15646546545165651651'

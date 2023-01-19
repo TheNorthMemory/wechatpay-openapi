@@ -1,0 +1,227 @@
+post:
+  x-version:
+    - 2019.08.23
+  x-role:
+    - 直连商户
+  tags:
+    - 经营工具∙支付分∙智慧零售
+  summary: 创建智慧零售订单
+  description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/payscore.php?chapter=14_1&index=3)'
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required: [out_order_no, appid, service_id, time_range]
+        properties:
+          appid:
+            type: string
+            description: 公众账号ID
+            example: wxd678efh567hg6787
+          out_order_no:
+            type: string
+            description: 商户服务订单号
+            example: 1234323JKHDFE1243252
+          service_id:
+            type: string
+            description: 服务ID
+            example: '500001'
+          service_start_time:
+            type: string
+            pattern: /\d{8}|\d{14}|OnAccept/
+          service_end_time:
+            type: string
+            pattern: /\d{8}|\d{14}/
+          service_start_location:
+            type: string
+          service_end_location:
+            type: string
+          service_introduction:
+            type: string
+          fees:
+            type: array
+            items:
+              type: object
+              properties:
+                fee_name:
+                  type: string
+                fee_count:
+                  type: integer
+                fee_amount:
+                  type: integer
+                fee_desc:
+                  type: string
+          discounts:
+            type: array
+            items:
+              type: object
+              properties:
+                discount_name:
+                  type: string
+                  description: 优惠名称
+                  maxLength: 20
+                  example: 满20减1元
+                discount_desc:
+                  type: string
+                  description: 优惠说明
+                  example: 不与其他优惠叠加
+          risk_amount:
+            type: integer
+          attach:
+            type: string
+          need_user_confirm:
+            type: boolean
+          openid:
+            type: string
+  responses:
+    '200':
+      description: ''
+      schema:
+        type: object
+        properties:
+          appid:
+            type: string
+            description: 公众账号ID
+            example: wxd678efh567hg6787
+          mchid:
+            type: string
+          out_order_no:
+            type: string
+            description: 商户服务订单号
+            example: 1234323JKHDFE1243252
+          service_id:
+            type: string
+            description: 服务ID
+            example: '500001'
+          order_id:
+            type: string
+          miniprogram_businesstype:
+            type: string
+          miniprogram_appid:
+            type: string
+          miniprogram_path:
+            type: string
+          miniprogram_username:
+            type: string
+          package:
+            type: string
+get:
+  x-version:
+    - 2019.08.23
+  x-role:
+    - 直连商户
+  tags:
+    - 经营工具∙支付分∙智慧零售
+  summary: 查询智慧零售订单
+  description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/payscore.php?chapter=14_2&index=4)'
+  parameters:
+    - name: service_id
+      in: query
+      type: string
+    - name: out_order_no
+      in: query
+      type: string
+    - name: query_id
+      in: query
+      type: string
+    - name: appid
+      in: query
+      type: string
+  responses:
+    '200':
+      description: ''
+      schema:
+        type: object
+        properties:
+          appid:
+            type: string
+            description: 公众账号ID
+            example: wxd678efh567hg6787
+          mchid:
+            type: string
+          out_order_no:
+            type: string
+            description: 商户服务订单号
+            example: 1234323JKHDFE1243252
+          service_id:
+            type: string
+            description: 服务ID
+            example: '500001'
+          state:
+            type: string
+            enum:
+              - CREATED #商户下单已受理
+              - USER_ACCEPTED #用户成功使用服务
+              - FINISHED #商户完结订单
+              - USER_PAID #用户订单支付成功
+              - REVOKED #商户撤销订单
+              - EXPIRED #订单已失效. “商户下单已受理”状态超过1小时未变动，则订单失效
+          finish_type:
+            type: integer
+          service_start_time:
+            type: string
+            pattern: /\d{8}|\d{14}|OnAccept/
+          service_end_time:
+            type: string
+            pattern: /\d{8}|\d{14}/
+          real_service_start_time:
+            type: string
+            pattern: /\d{8}|\d{14}|OnAccept/
+          real_service_end_time:
+            type: string
+            pattern: /\d{8}|\d{14}/
+          pay_succ_time:
+            type: string
+            pattern: /\d{8}|\d{14}/
+          service_start_location:
+            type: string
+          service_end_location:
+            type: string
+          real_service_start_location:
+            type: string
+          real_service_end_location:
+            type: string
+          service_introduction:
+            type: string
+          fees:
+            type: array
+            items:
+              type: object
+              properties:
+                fee_name:
+                  type: string
+                fee_count:
+                  type: integer
+                fee_amount:
+                  type: integer
+                fee_desc:
+                  type: string
+          discounts:
+            type: array
+            items:
+              type: object
+              properties:
+                discount_name:
+                  type: string
+                  description: 优惠名称
+                  maxLength: 20
+                  example: 满20减1元
+                discount_amount:
+                  type: integer
+                discount_desc:
+                  type: string
+                  description: 优惠说明
+                  example: 不与其他优惠叠加
+          risk_amount:
+            type: integer
+          total_amount:
+            type: integer
+          attach:
+            type: string
+          finish_ticket:
+            type: string
+          finish_transaction_id:
+            type: string
+          pay_type:
+            type: string

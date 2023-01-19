@@ -1,0 +1,106 @@
+post:
+  x-version:
+    - 2019.08.23
+  x-role:
+    - 直连商户
+  tags:
+    - 经营工具∙支付分∙智慧零售
+  summary: 撤销智慧零售订单
+  description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/payscore.php?chapter=14_4&index=6)'
+  parameters:
+    - name: out_order_no
+      in: path
+      type: string
+      description: 商户服务订单号
+      required: true
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required: [out_order_no, appid, service_id, time_range]
+        properties:
+          appid:
+            type: string
+            description: 公众账号ID
+            example: wxd678efh567hg6787
+          service_id:
+            type: string
+            description: 服务ID
+            example: '500001'
+          finish_type:
+            type: integer
+          cancel_reason:
+            type: string
+          real_service_start_time:
+            type: string
+          real_service_end_time:
+            type: string
+          real_service_end_location:
+            type: string
+          fees:
+            type: array
+            items:
+              type: object
+              properties:
+                fee_name:
+                  type: string
+                fee_count:
+                  type: integer
+                fee_amount:
+                  type: integer
+                fee_desc:
+                  type: string
+          discounts:
+            type: array
+            items:
+              type: object
+              properties:
+                discount_name:
+                  type: string
+                  description: 优惠名称
+                  maxLength: 20
+                  example: 满20减1元
+                discount_amount:
+                  type: integer
+                discount_desc:
+                  type: string
+                  description: 优惠说明
+                  example: 不与其他优惠叠加
+          total_amount:
+            type: integer
+          finish_ticket:
+            type: string
+          profit_sharing:
+            type: boolean
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - appid
+          - mchid
+          - out_order_no
+          - service_id
+          - order_id
+        properties:
+          appid:
+            type: string
+            description: 公众账号ID
+            example: wxd678efh567hg6787
+          mchid:
+            type: string
+            description: 商户号
+            example: '1230000109'
+          out_order_no:
+            type: string
+            description: 商户服务订单号
+            example: '2304203423948239423'
+          service_id:
+            type: string
+            description: 服务ID
+            example: '500001'
+          order_id:
+            type: string
+            description: 微信支付服务订单号
+            example: '15646546545165651651'

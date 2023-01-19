@@ -1,0 +1,88 @@
+post:
+  x-version:
+    - 2021.10.26
+  x-role:
+    - 直连商户
+  tags:
+    - 教育续费通
+  summary: 教育通扣款受理API
+  description: 扣款受理接口，支付结果以回调为准，或者超时以后主动查单 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter5_2_7.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - appid
+          - body
+          - out_trade_no
+          - notify_url
+          - contract_id
+          - trade_scene
+          - amount
+          - device_information
+        properties:
+          appid:
+            type: string
+            description: 应用ID
+            example: wx8888888888888888
+          body:
+            type: string
+            description: 商品描述
+            example: 新东方-语文课程
+          attach:
+            type: string
+            description: 商户数据
+            example: 自定义数据
+          out_trade_no:
+            type: string
+            description: 商户订单号
+            example: '121775250124070332'
+          goods_tag:
+            type: string
+            description: 商品标记
+            example: test
+          notify_url:
+            type: string
+            description: 支付回调通知地址
+            example: https://www.weixin.qq.com/wxpay/pay
+          contract_id:
+            type: string
+            description: 签约协议号
+            example: wx998877665544wx
+          trade_scene:
+            type: string
+            description: 场景信息枚举
+            example: EDUCATION_PERIOD
+          amount:
+            type: object
+            description: 订单金额
+            required:
+              - total
+            properties:
+              total:
+                type: integer
+                description: 总金额
+                example: 888
+              currency:
+                type: string
+                description: 货币类型
+                example: CNY
+          device_information:
+            type: object
+            description: 设备信息
+            required:
+              - device_ip
+            properties:
+              device_id:
+                type: string
+                description: 设备号
+                example: '12343232'
+              device_ip:
+                type: string
+                description: 商户端设备ip
+                example: 123.12.12.123
+  responses:
+    '204':
+      schema: {}

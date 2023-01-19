@@ -1,0 +1,19 @@
+delete:
+  x-version:
+    - 2021.10.26
+  x-role:
+    - 直连商户
+  tags:
+    - 教育续费通
+  summary: 解约API
+  description: 商户通过调用该接口可主动解除与用户的签约关系，在商户查询时不会返回已解约的信息 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter5_2_4.shtml)
+  parameters:
+    - name: contract_id
+      in: path
+      required: true
+      type: string
+      description: 签约协议号
+      example: wx998877665544wx
+  responses:
+    '204':
+      schema: {}

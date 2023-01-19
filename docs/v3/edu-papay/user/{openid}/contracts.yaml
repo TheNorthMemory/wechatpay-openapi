@@ -1,0 +1,99 @@
+get:
+  x-version:
+    - 2021.10.26
+  x-role:
+    - 直连商户
+  tags:
+    - 教育续费通
+  summary: 通过用户标识查询签约API
+  description: 商户通过用户标识+签约模板号来查询用户签约信息，只返回用户在该签约模板下的有效签约（一个签约模板仅会存在一个有效签约）；若用户未与该签约模板签约，返回明确错误码 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter5_2_3.shtml)
+  parameters:
+    - name: appid
+      in: query
+      required: true
+      type: string
+      description: 应用ID
+      example: wx8888888888888888
+    - name: openid
+      in: path
+      required: true
+      type: string
+      description: 用户标识
+      example: oUpF8uMuAJOM2pxb1Q
+    - name: plan_id
+      in: query
+      required: true
+      type: string
+      description: 签约模板号
+      example: '101164396123311331'
+    - name: contract_status
+      in: query
+      type: string
+      description: 签约状态
+      example: ADD
+      enum:
+        - ADD
+        - DELETE
+    - name: offset
+      in: query
+      type: integer
+      description: 分页页码
+      example: 0
+    - name: limit
+      in: query
+      type: integer
+      description: 分页大小
+      example: 20
+  responses:
+    '200':
+      schema:
+        type: object
+        properties:
+          data:
+            type: array
+            description: 结果集
+            items:
+              type: object
+              required:
+                - appid
+                - openid
+              properties:
+                appid:
+                  type: string
+                  description: 应用ID
+                  example: wx8888888888888888
+                openid:
+                  type: string
+                  description: 用户标识
+                  example: oUpF8uMuAJOM2pxb1Q
+                plan_id:
+                  type: string
+                  description: 签约模板号
+                  example: '101164396123311331'
+                contract_information:
+                  type: object
+                  description: 签约信息
+                  properties:
+                    contract_id:
+                      type: string
+                      description: 签约协议号
+                      example: wx998877665544wx
+                    contract_status:
+                      type: string
+                      description: 签约状态
+                      example: ADD
+                    create_time:
+                      type: string
+                      description: 签约时间
+                      example: '2020-03-26T10:43:39+08:00'
+          total_count:
+            type: integer
+            description: 总数量
+            example: 30
+          offset:
+            type: integer
+            description: 分页页码
+          limit:
+            type: integer
+            description: 分页大小
+            example: 20

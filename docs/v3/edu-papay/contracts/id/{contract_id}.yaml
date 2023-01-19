@@ -1,0 +1,57 @@
+get:
+  x-version:
+    - 2021.10.26
+  x-role:
+    - 直连商户
+  tags:
+    - 教育续费通
+  summary: 通过协议号查询签约API
+  description: 商户通过签约协议号可查询签约信息，如果对应签约状态为“已签约”，返回签约信息，如果对应签约状态为“已解约”，返回明确错误码 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter5_2_2.shtml)
+  parameters:
+    - name: contract_id
+      in: path
+      required: true
+      type: string
+      description: 签约协议号
+      example: wx998877665544wx
+    - name: appid
+      in: query
+      type: string
+      description: 应用ID
+      example: wx8888888888888888
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - appid
+          - openid
+        properties:
+          appid:
+            type: string
+            description: 应用ID
+            example: wx8888888888888888
+          openid:
+            type: string
+            description: 用户标识
+            example: oUpF8uMuAJOM2pxb1Q
+          plan_id:
+            type: string
+            description: 签约模板号
+            example: '101164396123311331'
+          contract_information:
+            type: object
+            description: 签约信息
+            properties:
+              contract_id:
+                type: string
+                description: 签约协议号
+                example: wx998877665544wx
+              contract_status:
+                type: string
+                description: 签约状态
+                example: ADD
+              create_time:
+                type: string
+                description: 签约时间
+                example: '2020-03-26T10:43:39+08:00'

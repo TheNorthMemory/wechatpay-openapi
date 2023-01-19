@@ -1,0 +1,58 @@
+post:
+  x-version:
+    - 2021.10.26
+  x-role:
+    - 直连商户
+  tags:
+    - 教育续费通
+  summary: 预签约API
+  description: 商户通过调用该接口可获取预签约号（“presign_token”），预签约号对应用户一次的签约信息，之后用户可以从商户小程序跳转到微信签约小程序时使用该预签约号进行签约 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter5_2_1.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - appid
+          - openid
+          - plan_id
+          - user_id
+          - period_start_date
+          - trade_scene
+        properties:
+          appid:
+            type: string
+            description: 应用ID
+            example: wx8888888888888888
+          openid:
+            type: string
+            description: 用户标识
+            example: oUpF8uMuAJOM2pxb1Q
+          plan_id:
+            type: string
+            description: 签约模板号
+            example: '101164396123311331'
+          user_id:
+            type: string
+            description: 用户账号
+            example: 20200330tony
+          period_start_date:
+            type: string
+            description: 首次扣款日期
+            example: '2020-03-19'
+          trade_scene:
+            type: string
+            description: 场景信息枚举
+            example: EDUCATION_PERIOD
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - presign_token
+        properties:
+          presign_token:
+            type: string
+            description: 预签约号
+            example: 0044de6c799739c2e8534b

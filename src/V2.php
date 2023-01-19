@@ -4,6 +4,9 @@ namespace WeChatPay\OpenAPI;
 
 /**
  * @property-read V2\Xdc $xdc
+ * @property-read V2\Vehicle $vehicle
+ * @property-read V2\V3 $v3
+ * @property-read V2\Transit $transit
  * @property-read V2\Tools $tools
  * @property-read V2\Secapi $secapi
  * @property-read V2\Sandboxnew $sandboxnew

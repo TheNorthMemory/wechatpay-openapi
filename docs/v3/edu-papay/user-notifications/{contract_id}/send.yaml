@@ -1,0 +1,31 @@
+post:
+  x-version:
+    - 2021.10.26
+  x-role:
+    - 直连商户
+  tags:
+    - 教育续费通
+  summary: 发送扣款预通知API
+  description: 给用户发送扣款预通知 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter5_2_6.shtml)
+  parameters:
+    - name: contract_id
+      required: true
+      in: path
+      type: string
+      description: 签约协议号
+      example: wx8888888888888888
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - appid
+        properties:
+          appid:
+            type: string
+            description: 应用ID
+            example: wx8888888888888888
+  responses:
+    '204':
+      schema: {}

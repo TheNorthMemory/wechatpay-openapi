@@ -50,6 +50,7 @@ tags:
   - name: 支付分∙停车服务
   - name: 支付分∙服务商模式
   - name: 支付分∙服务商模式∙免确认
+  - name: 扣款服务
   - name: 校园轻松付
   - name: 教育续费通
   - name: 爱心餐
@@ -90,6 +91,9 @@ tags:
   - name: APIv2∙资金应用∙分账
   - name: APIv2∙资金应用∙红包
   - name: APIv2∙资金应用∙付款
+  - name: APIv2∙车主平台
+  - name: APIv2∙免押租借
+  - name: APIv2∙免押速住
   - name: APIv2∙酒店押金
   - name: APIv2∙委托扣款
   - name: APIv2∙代金券
@@ -256,8 +260,16 @@ paths:
     $ref: ./v2/pay/paporderquery.yaml
   /pay/pappayapply:
     $ref: ./v2/pay/pappayapply.yaml
+  /pay/partner/entrustweb:
+    $ref: ./v2/pay/partner/entrustweb.yaml
+  /pay/partner/h5entrustweb:
+    $ref: ./v2/pay/partner/h5entrustweb.yaml
   /pay/partner/pappayapply:
     $ref: ./v2/pay/partner/pappayapply.yaml
+  /pay/partner/preentrustweb:
+    $ref: ./v2/pay/partner/preentrustweb.yaml
+  /pay/partner/querycontract:
+    $ref: ./v2/pay/partner/querycontract.yaml
   /pay/profitsharingaddreceiver:
     $ref: ./v2/pay/profitsharingaddreceiver.yaml
   /pay/profitsharingmerchantratioquery:
@@ -342,6 +354,30 @@ paths:
     $ref: ./v2/tools/authcodetoopenid.yaml
   /tools/shorturl:
     $ref: ./v2/tools/shorturl.yaml
+  /transit/queryorder:
+    $ref: ./v2/transit/queryorder.yaml
+  /vehicle/pay/notification:
+    $ref: ./v2/vehicle/pay/notification.yaml
+  /vehicle/pay/payapply:
+    $ref: ./v2/vehicle/pay/payapply.yaml
+  /vehicle/pay/querystate:
+    $ref: ./v2/vehicle/pay/querystate.yaml
+  /wxv/cancelbill:
+    $ref: ./v2/wxv/cancelbill.yaml
+  /wxv/changerentmoney:
+    $ref: ./v2/wxv/changerentmoney.yaml
+  /wxv/createhotelbill:
+    $ref: ./v2/wxv/createhotelbill.yaml
+  /wxv/createrentbill:
+    $ref: ./v2/wxv/createrentbill.yaml
+  /wxv/finishhotelbill:
+    $ref: ./v2/wxv/finishhotelbill.yaml
+  /wxv/finishrentbill:
+    $ref: ./v2/wxv/finishrentbill.yaml
+  /wxv/queryhotelbill:
+    $ref: ./v2/wxv/queryhotelbill.yaml
+  /wxv/queryrentbill:
+    $ref: ./v2/wxv/queryrentbill.yaml
   /xdc/apiv2getsignkey/sign/getsignkey:
     $ref: ./v2/xdc/apiv2getsignkey/sign/getsignkey.yaml
   /xdc/apiv2sandbox/pay/micropay:
@@ -854,6 +890,8 @@ paths:
     $ref: ./v3/offlinefacemch/organizations/{organization_id}/users/user-id/{user_id}/terminate-contract.yaml
   /v3/offlinefacemch/tokens:
     $ref: ./v3/offlinefacemch/tokens.yaml
+  /v3/partner-papay/contracts/{contract_id}/notify:
+    $ref: ./v3/partner-papay/contracts/{contract_id}/notify.yaml
   /v3/partner-transfer/batches:
     $ref: ./v3/partner-transfer/batches.yaml
   /v3/partner-transfer/batches/batch-id/{batch_id}:

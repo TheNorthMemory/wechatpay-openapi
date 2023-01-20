@@ -1,0 +1,100 @@
+post:
+  tags:
+    - APIv2∙委托扣款
+  x-role:
+    - 服务商
+  summary: APP纯签约
+  description: 外部App拉起微信客户端发起签约前，需先后台调用预签约接口完成预签约，获取pre_entrustweb_id，再拉起微信客户端，完成签约，返回App。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter5_2.shtml)
+  consumes:
+    - application/xml
+  produces:
+    - application/xml
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - appid
+          - mch_id
+          - sub_mch_id
+          - plan_id
+          - contract_code
+          - request_serial
+          - contract_display_account
+          - notify_url
+          - version
+          - sign
+          - timestamp
+        properties:
+          appid:
+            type: string
+            description: 应用ID
+            example: wxcbda96de0b165486
+          mch_id:
+            type: string
+            description: 商户号
+            example: '1200009811'
+          sub_appid:
+            type: string
+            description: 子商户应用ID
+            example: wxcbda96de0b165489
+          sub_mch_id:
+            type: string
+            description: 子商户号
+            example: '1900000109'
+          plan_id:
+            type: string
+            description: 模板id
+            example: '12535'
+          contract_code:
+            type: string
+            description: 签约协议号
+            example: '100000'
+          request_serial:
+            type: integer
+            description: 请求序列号
+            example: 1000
+          contract_display_account:
+            type: string
+            description: 用户账户展示名称
+            example: 微信代扣
+          notify_url:
+            type: string
+            description: 回调通知url
+          version:
+            type: string
+            description: 版本号
+            example: '1.0'
+          sign_type:
+            type: string
+            description: 签名类型
+            example: MD5
+          sign:
+            type: string
+            description: 签名
+            example: C380BEC2BFD727A4B6845133519F3AD6
+          timestamp:
+            type: string
+            description: 时间戳
+            example: '1414488825'
+          return_app:
+            type: string
+            description: 返回app
+            example: 'Y'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - return_code
+        properties:
+          return_code:
+            type: string
+            description: 返回状态码
+            example: SUCCESS
+          return_msg:
+            type: string
+            description: 返回信息
+            example: 签名失败

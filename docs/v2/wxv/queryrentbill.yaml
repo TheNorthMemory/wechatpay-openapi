@@ -1,0 +1,267 @@
+post:
+  x-api-cert-required: true
+  tags:
+    - APIv2∙免押租借
+  summary: 查询租借订单
+  description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/payscore.php?chapter=18_2&index=3)'
+  consumes:
+    - application/xml
+  produces:
+    - application/xml
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        allOf:
+          - type: object
+            xml:
+              name: xml
+            required:
+              - version
+              - appid
+              - mch_id
+              - nonce_str
+              - sign
+              - sign_type
+              - out_order_no
+              - return_query_id
+              - service_id
+            properties:
+              version:
+                type: string
+                description: 接口版本号
+                example: '1.0'
+                maxLength: 32
+              appid:
+                type: string
+                description: 公众账号ID
+                example: wxd678efh567hg6787
+                maxLength: 32
+              mch_id:
+                type: string
+                description: 商户号
+                example: '1230000109'
+                maxLength: 32
+              nonce_str:
+                type: string
+                description: 随机字符串
+                example: ibuaiVcKdpRxkhJA
+                maxLength: 32
+              sign:
+                type: string
+                description: 签名
+                example: 029B52F67573D7E3BE74904BF9AEA
+                maxLength: 128
+              sign_type:
+                type: string
+                description: 签名类型
+                example: HMAC-SHA256
+                maxLength: 32
+              out_order_no:
+                type: string
+                description: 商户服务订单号
+                example: 1234323JKHDFE1243252
+                maxLength: 32
+              return_query_id:
+                type: string
+                description: 回跳查询id
+                example: 微信侧回跳到商户前端时用于查单的单据查询id.
+              service_id:
+                type: string
+                description: 服务ID
+                maxLength: 32
+  responses:
+    '200':
+      description: ''
+      schema:
+        allOf:
+          - type: object
+            xml:
+              name: xml
+            required:
+              - return_code
+            properties:
+              return_code:
+                type: string
+                description: 返回状态码
+                example: SUCCESS
+                maxLength: 16
+              return_msg:
+                type: string
+                description: 返回结果
+                example: 签名失败
+                maxLength: 128
+                nullable: true
+          - type: object
+            xml:
+              name: xml
+            required:
+              - sign
+              - nonce_str
+              - result_code
+              - appid
+              - mch_id
+              - out_order_no
+              - service_id
+            properties:
+              sign:
+                type: string
+                description: 签名
+                example: 029B52F67573D7E3BE74904BF9A
+                maxLength: 128
+              nonce_str:
+                type: string
+                description: 随机字符串
+                example: ibuaiVcKdpRxkhJA
+                maxLength: 32
+              result_code:
+                type: string
+                description: 业务结果
+                example: SUCCESS
+                maxLength: 16
+              err_code:
+                type: string
+                description: 错误代码
+                example: SYSTEMERROR
+                maxLength: 32
+                nullable: true
+              err_code_des:
+                type: string
+                description: 错误描述
+                example: 系统错误
+                maxLength: 128
+                nullable: true
+              appid:
+                type: string
+                description: 公众账号ID
+                example: wxd678efh567hg6787
+                maxLength: 32
+              mch_id:
+                type: string
+                description: 商户号
+                example: '1230000109'
+                maxLength: 32
+              out_order_no:
+                type: string
+                description: 商户服务订单号
+                example: 1234323JKHDFE1243252
+                maxLength: 32
+              service_id:
+                type: string
+                description: 服务ID
+                maxLength: 32
+          - type: object
+            xml:
+              name: xml
+            required:
+              - state
+              - goods_name
+              - returned
+              - deposit_amount
+              - rent_unit
+              - rent_unit_fee
+              - order_id
+              - finish_ticket
+            properties:
+              state:
+                type: string
+                description: 单据状态
+                example: CREATED
+                maxLength: 32
+              goods_name:
+                type: string
+                description: 商品名称
+                example: 充电宝一个
+                maxLength: 40
+              returned:
+                type: string
+                description: 是否归还
+                example: 'TRUE'
+                maxLength: 32
+              start_time:
+                type: string
+                description: 租用时间
+                example: '20091225091010'
+                maxLength: 14
+                nullable: true
+              service_location:
+                type: string
+                description: 租用地点
+                example: 嗨客时尚主题展餐厅
+                maxLength: 20
+                nullable: true
+              deposit_amount:
+                format: int32
+                type: integer
+                description: 押金总额
+                example: '50000'
+              rent_unit:
+                type: string
+                description: 租金规则 计费单位
+                example: DAY_FEN
+                maxLength: 32
+              rent_unit_fee:
+                format: int32
+                type: integer
+                description: 租金规则 计费单价费用
+                example: '8000'
+              rent_fee_desc:
+                type: string
+                description: 租金规则 计费说明
+                example: 租金前1小时免费，每日封顶10元。
+                maxLength: 30
+                nullable: true
+              real_end_time:
+                type: string
+                description: 实际归还时间
+                example: '20091225091010'
+                maxLength: 14
+                nullable: true
+              rent_fee:
+                format: int32
+                type: integer
+                description: 租金费用
+                example: '1000'
+                nullable: true
+              compensation_fee:
+                format: int32
+                type: integer
+                description: 赔偿金费用
+                example: '10000'
+                nullable: true
+              compensation_fee_desc:
+                type: string
+                description: 赔偿金说明
+                example: 充电宝有轻微损坏，赔偿30%押金
+                maxLength: 30
+                nullable: true
+              service_end_location:
+                type: string
+                description: 归还地点
+                example: 嗨客时尚主题展餐厅
+                maxLength: 30
+                nullable: true
+              order_id:
+                type: string
+                description: 微信支付服务订单号
+                maxLength: 128
+              finish_ticket:
+                type: string
+                description: 完结凭证
+                maxLength: 512
+              attach:
+                type: string
+                description: 回调数据包
+                maxLength: 200
+                nullable: true
+              finish_transaction_id:
+                type: string
+                description: 结单交易单号
+                maxLength: 200
+                nullable: true
+              pay_type:
+                type: string
+                description: 支付方式
+                example: MchChannelPayType
+                nullable: true

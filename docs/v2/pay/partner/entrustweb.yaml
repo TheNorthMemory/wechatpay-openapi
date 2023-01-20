@@ -1,0 +1,80 @@
+get:
+  tags:
+    - APIv2∙委托扣款
+  x-role:
+    - 服务商
+  summary: 公众号纯签约
+  description: 商户可以通过请求此接口唤起微信委托代扣的页面。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter5_1.shtml)
+  consumes:
+    - application/xml
+  produces:
+    - application/xml
+  parameters:
+    - name: appid
+      in: query
+      type: string
+      description: 应用ID
+      example: wxcbda96de0b165486
+    - name: mch_id
+      in: query
+      type: string
+      description: 商户号
+      example: '1200009811'
+    - name: sub_appid
+      in: query
+      type: string
+      description: 子商户应用ID
+      example: wxcbda96de0b165489
+    - name: sub_mch_id
+      in: query
+      type: string
+      description: 子商户号
+      example: '1900000109'
+    - name: plan_id
+      in: query
+      type: integer
+      description: 模板id
+      example: 12535
+    - name: contract_code
+      in: query
+      type: string
+      description: 签约协议号
+      example: '100000'
+    - name: request_serial
+      in: query
+      type: integer
+      description: 请求序列号
+      example: 1000
+    - name: contract_display_account
+      in: query
+      type: string
+      description: 用户账户展示名称
+      example: 微信代扣
+    - name: notify_url
+      in: query
+      type: string
+      description: 回调通知url
+      example: https://weixin.qq.com
+    - name: version
+      in: query
+      type: string
+      description: 版本号
+      example: '1.0'
+    - name: sign
+      in: query
+      type: string
+      description: 签名
+      example: C380BEC2BFD727A4B6845133519F3AD6
+    - name: timestamp
+      in: query
+      type: string
+      description: 时间戳
+      example: '1414488825'
+    - name: return_web
+      in: query
+      type: integer
+      description: 返回web
+      example: 1
+  responses:
+    '200':
+      schema: {}

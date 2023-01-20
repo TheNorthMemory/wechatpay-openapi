@@ -1,0 +1,63 @@
+post:
+  tags:
+    - APIv2∙委托扣款
+  x-role:
+    - 服务商
+  summary: 查询签约关系
+  description: 查询签约关系接口提供单笔签约关系查询。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter5_7.shtml)
+  consumes:
+    - application/xml
+  produces:
+    - application/xml
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - appid
+          - mch_id
+          - sub_mch_id
+          - version
+          - sign
+        properties:
+          appid:
+            type: string
+            description: 应用ID
+            example: wxcbda96de0b165486
+          mch_id:
+            type: string
+            description: 商户号
+            example: '1200009811'
+          sub_appid:
+            type: string
+            description: 子商户应用ID
+            example: wxcbda96de0b165489
+          sub_mch_id:
+            type: string
+            description: 子商户号
+            example: '1900000109'
+          contract_id:
+            type: string
+            description: 委托代扣协议id
+            example: '100005698'
+          plan_id:
+            type: string
+            description: 模板id
+            example: '123'
+          contract_code:
+            type: string
+            description: 签约协议号
+            example: '1023658866'
+          version:
+            type: string
+            description: 版本号
+            example: '1.0'
+          sign:
+            type: string
+            description: 签名
+            example: E1EE61A91C8E90F299DE6AE075D60A2D
+  responses:
+    '200':
+      schema: {}

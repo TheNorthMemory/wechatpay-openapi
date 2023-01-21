@@ -12,7 +12,7 @@ interface Orderquery
     /**
      * 查询订单(同步模式)
      * @param array<string,mixed> $options
-     * @deprecated - since Tue May 31 2022 08:00:00 GMT+0800 (China Standard Time)
+     * @deprecated - since 2022.05.31
      * @link https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=9_2
      */
     public function post(array $options = [
@@ -30,7 +30,7 @@ interface Orderquery
     /**
      * 查询订单(异步模式)
      * @param array<string,mixed> $options
-     * @deprecated - since Tue May 31 2022 08:00:00 GMT+0800 (China Standard Time)
+     * @deprecated - since 2022.05.31
      * @link https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=9_2#async
      */
     public function postAsync(array $options = [

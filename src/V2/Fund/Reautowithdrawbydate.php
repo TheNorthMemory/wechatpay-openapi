@@ -12,7 +12,7 @@ interface Reautowithdrawbydate
     /**
      * 重新发起提现(同步模式)
      * @param array<string,mixed> $options
-     * @deprecated - since undefined
+     * @deprecated - since 2020.04.13
      * @link https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=21_3
      */
     public function post(array $options = [
@@ -28,7 +28,7 @@ interface Reautowithdrawbydate
     /**
      * 重新发起提现(异步模式)
      * @param array<string,mixed> $options
-     * @deprecated - since undefined
+     * @deprecated - since 2020.04.13
      * @link https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=21_3#async
      */
     public function postAsync(array $options = [

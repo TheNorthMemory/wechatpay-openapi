@@ -1,5 +1,5 @@
 get:
-  x-last-updated-at: 2021-12-10
+  x-last-updated-at: 2021.12.10
   x-role: [电商平台, 服务商, 直连商户]
   tags:
     - 基础支付∙账单

@@ -12,7 +12,7 @@ interface Refund
     /**
      * 申请退款(同步模式)
      * @param array<string,mixed> $options
-     * @deprecated - since Tue May 31 2022 08:00:00 GMT+0800 (China Standard Time)
+     * @deprecated - since 2022.05.31
      * @link https://share.weiyun.com/5dxUgCw
      */
     public function post(array $options = [
@@ -36,7 +36,7 @@ interface Refund
     /**
      * 申请退款(异步模式)
      * @param array<string,mixed> $options
-     * @deprecated - since Tue May 31 2022 08:00:00 GMT+0800 (China Standard Time)
+     * @deprecated - since 2022.05.31
      * @link https://share.weiyun.com/5dxUgCw#async
      */
     public function postAsync(array $options = [

@@ -1,5 +1,5 @@
 get:
-  x-last-updated-at: 2020-07-29
+  x-last-updated-at: 2020.07.29
   x-role:
     - 从业机构
   tags:
@@ -42,7 +42,7 @@ get:
             description: 活动审核通过时间
             example: '2015-05-20T13:29:35+08:00'
 patch:
-  x-last-updated-at: 2020-07-29
+  x-last-updated-at: 2020.07.29
   x-role:
     - 从业机构
   tags:

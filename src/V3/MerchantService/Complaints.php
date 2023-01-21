@@ -13,7 +13,7 @@ interface Complaints
     /**
      * 查询投诉信息(同步模式)
      * @param array<string,mixed> $options
-     * @deprecated - since Fri Nov 27 2020 08:00:00 GMT+0800 (China Standard Time)
+     * @deprecated - since 2020.11.27
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/merchant-service/chapter3_1.shtml
      */
     public function get(array $options = [
@@ -29,7 +29,7 @@ interface Complaints
     /**
      * 查询投诉信息(异步模式)
      * @param array<string,mixed> $options
-     * @deprecated - since Fri Nov 27 2020 08:00:00 GMT+0800 (China Standard Time)
+     * @deprecated - since 2020.11.27
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/merchant-service/chapter3_1.shtml#async
      */
     public function getAsync(array $options = [

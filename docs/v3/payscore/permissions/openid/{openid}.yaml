@@ -1,5 +1,5 @@
 get:
-  x-last-updated-at: 2020-07-20
+  x-last-updated-at: 2020.07.20
   x-role:
     - 直连商户
   tags:

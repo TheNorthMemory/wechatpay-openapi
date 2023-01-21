@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2020-06-19
+  x-last-updated-at: 2020.06.19
   x-role:
     - 服务商
   tags:
@@ -330,7 +330,7 @@ post:
             description: 跳转微信侧数据包
             example: DJIOSQPYWDxsjdldeuwhdodwxasd_dDiodnwjh9we
 get:
-  x-last-updated-at: 2020-06-29
+  x-last-updated-at: 2020.06.29
   x-role:
     - 服务商
   tags:

@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2019-08-23
+  x-last-updated-at: 2019.08.23
   x-role:
     - 直连商户
   tags:
@@ -119,7 +119,7 @@ post:
           package:
             type: string
 get:
-  x-last-updated-at: 2019-08-23
+  x-last-updated-at: 2019.08.23
   x-role:
     - 直连商户
   tags:

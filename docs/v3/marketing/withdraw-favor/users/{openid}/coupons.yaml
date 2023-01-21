@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2021-10-28
+  x-last-updated-at: 2021.10.28
   tags:
     - 营销工具∙收款有礼
   x-role:
@@ -54,7 +54,7 @@ post:
             description: 银行提现免费券过期时间
             example: '2021-05-20T13:29:35.120+08:00'
 get:
-  x-last-updated-at: 2021-10-28
+  x-last-updated-at: 2021.10.28
   x-role:
     - 服务商
   tags:

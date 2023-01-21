@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2019-10-23
+  x-last-updated-at: 2019.10.23
   x-role: [微信支付商户]
   tags:
     - 通用接口

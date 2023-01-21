@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2019-09-27
+  x-last-updated-at: 2019.09.27
   x-role: [直连商户, 服务商, 渠道商]
   tags:
     - 运营工具∙代金券
@@ -59,7 +59,7 @@ post:
             description: 代金券id
             example: '9867041'
 get:
-  x-last-updated-at: 2019-09-29
+  x-last-updated-at: 2019.09.29
   x-role: [直连商户, 服务商, 渠道商]
   tags:
     - 运营工具∙代金券

@@ -1,5 +1,5 @@
 delete:
-  x-last-updated-at: 2021-10-26
+  x-last-updated-at: 2021.10.26
   x-role:
     - 直连商户
   tags:

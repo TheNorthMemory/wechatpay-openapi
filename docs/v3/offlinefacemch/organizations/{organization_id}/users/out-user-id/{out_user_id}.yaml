@@ -1,5 +1,5 @@
 get:
-  x-last-updated-at: 2022-11-14
+  x-last-updated-at: 2022.11.14
   x-role:
     - 服务商
   tags:
@@ -59,7 +59,7 @@ get:
           contract_id:
             type: string
 patch:
-  x-last-updated-at: 2022-11-14
+  x-last-updated-at: 2022.11.14
   x-role:
     - 服务商
   tags:

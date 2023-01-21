@@ -1,5 +1,5 @@
 get:
-  x-last-updated-at: 2022-11-16
+  x-last-updated-at: 2022.11.16
   x-role: [微信平台商户]
   tags:
     - 通用接口

@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2020-03-18
+  x-last-updated-at: 2020.03.18
   x-role:
     - 服务商
   tags:
@@ -103,7 +103,7 @@ post:
             description: 完成时间
             example: '2015-05-20T13:29:35.120+08:00'
 get:
-  x-last-updated-at: 2020-03-18
+  x-last-updated-at: 2020.03.18
   x-role:
     - 服务商
   tags:

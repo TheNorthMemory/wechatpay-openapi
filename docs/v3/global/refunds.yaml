@@ -1,6 +1,5 @@
 post:
-  x-version:
-    - 2022.08.04
+  x-last-updated-at: 2022-08-04
   x-role:
     - 直连模式
     - 机构模式
@@ -160,8 +159,7 @@ post:
                 description: 货币类型
                 example: CNY
 get:
-  x-version:
-    - 2022.08.04
+  x-last-updated-at: 2022-08-04
   x-role:
     - 直连模式
     - 机构模式

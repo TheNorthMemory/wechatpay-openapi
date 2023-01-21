@@ -1,6 +1,5 @@
 post:
-  x-version:
-    - 2020.01.08
+  x-last-updated-at: 2020-01-08
   x-role:
     - 直连模式
     - 机构模式

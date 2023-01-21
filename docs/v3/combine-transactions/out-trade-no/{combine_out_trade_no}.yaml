@@ -1,5 +1,5 @@
 get:
-  x-version: [2022.03.17]
+  x-last-updated-at: 2022-03-17
   x-role:
     - 电商平台
     - 服务商

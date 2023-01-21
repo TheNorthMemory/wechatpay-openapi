@@ -1,5 +1,5 @@
 get:
-  x-version: [2021.07.22]
+  x-last-updated-at: 2021-07-22
   x-role:
     - 直连商户
     - 电商平台

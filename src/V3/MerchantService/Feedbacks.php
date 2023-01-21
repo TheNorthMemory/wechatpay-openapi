@@ -12,7 +12,7 @@ interface Feedbacks
     /**
      * 商户反馈(同步模式)
      * @param array<string,mixed> $options
-     * @deprecated - since 2021.01.08
+     * @deprecated - since Fri Jan 08 2021 08:00:00 GMT+0800 (China Standard Time)
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/merchant-service/chapter3_6.shtml
      */
     public function post(array $options = [
@@ -29,7 +29,7 @@ interface Feedbacks
     /**
      * 商户反馈(异步模式)
      * @param array<string,mixed> $options
-     * @deprecated - since 2021.01.08
+     * @deprecated - since Fri Jan 08 2021 08:00:00 GMT+0800 (China Standard Time)
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/merchant-service/chapter3_6.shtml#async
      */
     public function postAsync(array $options = [

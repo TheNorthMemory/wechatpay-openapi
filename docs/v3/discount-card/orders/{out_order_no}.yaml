@@ -1,5 +1,5 @@
 patch:
-  x-version: [2020.03.26]
+  x-last-updated-at: 2020-03-26
   x-role:
     - 直连商户
   tags:
@@ -128,7 +128,7 @@ patch:
             description: 微信支付服务订单号
             example: '15646546545165651651'
 get:
-  x-version: [2020.03.26]
+  x-last-updated-at: 2020-03-26
   x-role:
     - 直连商户
   tags:

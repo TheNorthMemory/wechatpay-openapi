@@ -1,6 +1,5 @@
 post:
-  x-version:
-    - 2022.08.04
+  x-last-updated-at: 2022-08-04
   x-role:
     - 机构模式
   tags:
@@ -181,8 +180,7 @@ post:
             description: 验证状态描述
             example: 该子商户需要通过审核才可生效。请登录商户平台检查审核状态。
 put:
-  x-version:
-    - 2022.08.04
+  x-last-updated-at: 2022-08-04
   x-role:
     - 机构模式
   tags:

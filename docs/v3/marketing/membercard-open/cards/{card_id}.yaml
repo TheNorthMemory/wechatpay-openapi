@@ -1,5 +1,5 @@
 get:
-  x-version: [2021.01.07]
+  x-last-updated-at: 2021-01-07
   x-role:
     - 直连商户
     - 服务商
@@ -19,7 +19,7 @@ get:
       schema:
         $ref: '../../../../definitions/MemberCard.yaml#Record'
 patch:
-  x-version: [2021.01.07]
+  x-last-updated-at: 2021-01-07
   x-role:
     - 直连商户
     - 服务商
@@ -174,7 +174,7 @@ patch:
   responses:
     204: {}
 delete:
-  x-version: [2020.07.15]
+  x-last-updated-at: 2020-07-15
   x-role:
     - 直连商户
     - 服务商

@@ -1,6 +1,5 @@
 post:
-  x-version:
-    - 2020.04.03
+  x-last-updated-at: 2020-04-03
   x-role:
     - 直连模式
     - 机构模式
@@ -120,8 +119,7 @@ post:
             description: 核验机构交易流水号
             example: '2018112288340107038204310100000'
 get:
-  x-version:
-    - 2020.04.03
+  x-last-updated-at: 2020-04-03
   x-role:
     - 直连模式
     - 机构模式
@@ -281,8 +279,7 @@ get:
                   description: 最后更新时间
                   example: '2015-09-01T10:00:00+08:00'
 patch:
-  x-version:
-    - 2020.04.03
+  x-last-updated-at: 2020-04-03
   x-role:
     - 直连模式
     - 机构模式

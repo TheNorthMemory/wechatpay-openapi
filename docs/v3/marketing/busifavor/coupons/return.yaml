@@ -1,5 +1,5 @@
 post:
-  x-version: [2020.11.04]
+  x-last-updated-at: 2020-11-04
   x-role:
     - 直连商户
   tags:

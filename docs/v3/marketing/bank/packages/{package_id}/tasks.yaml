@@ -1,6 +1,5 @@
 post:
-  x-version:
-    - 2021.09.23
+  x-last-updated-at: 2021-09-23
   x-role:
     - 服务商
   tags:
@@ -95,8 +94,7 @@ post:
             description: 上传任务最近一次更新的时间
             example: '2020-05-20T13:29:35+08:00'
 get:
-  x-version:
-    - 2021.09.23
+  x-last-updated-at: 2021-09-23
   x-role:
     - 服务商
   tags:

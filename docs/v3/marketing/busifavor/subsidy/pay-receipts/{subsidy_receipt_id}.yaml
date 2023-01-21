@@ -1,6 +1,5 @@
 get:
-  x-version:
-    - 2021.04.13
+  x-last-updated-at: 2021-04-13
   x-role:
     - 直连商户
   tags:

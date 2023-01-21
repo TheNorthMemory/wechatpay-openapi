@@ -1,5 +1,5 @@
 post:
-  x-version: [2021.11.17]
+  x-last-updated-at: 2021-11-17
   x-role:
     - 服务商
     - 渠道商
@@ -29,7 +29,7 @@ post:
             description: 通知地址
             example: https://www.weixin.qq.com/wxpay/pay.php
 get:
-  x-version: [2021.11.17]
+  x-last-updated-at: 2021-11-17
   x-role:
     - 服务商
     - 渠道商
@@ -49,7 +49,7 @@ get:
             description: 通知地址
             example: https://www.weixin.qq.com/wxpay/pay.php
 put:
-  x-version: [2021.11.17]
+  x-last-updated-at: 2021-11-17
   x-role:
     - 服务商
     - 渠道商
@@ -79,7 +79,7 @@ put:
             description: 通知地址
             example: https://www.weixin.qq.com/wxpay/pay.php
 delete:
-  x-version: [2021.11.17]
+  x-last-updated-at: 2021-11-17
   x-role:
     - 服务商
     - 渠道商

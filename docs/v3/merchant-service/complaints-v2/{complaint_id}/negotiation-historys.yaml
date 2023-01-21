@@ -1,5 +1,5 @@
 get:
-  x-version: [2021.08.27]
+  x-last-updated-at: 2021-08-27
   x-role:
     - 服务商
   tags:

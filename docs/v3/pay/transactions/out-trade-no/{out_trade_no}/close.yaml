@@ -1,5 +1,5 @@
 post:
-  x-version: [2020.05.26]
+  x-last-updated-at: 2020-05-26
   x-role: [直连商户, 特约商户（直连模式）]
   tags:
     - 基础支付

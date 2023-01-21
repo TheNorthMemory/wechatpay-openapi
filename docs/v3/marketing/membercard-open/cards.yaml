@@ -1,5 +1,5 @@
 post:
-  x-version: [2021.01.07]
+  x-last-updated-at: 2021-01-07
   x-role:
     - 直连商户
     - 服务商
@@ -183,7 +183,7 @@ post:
       schema:
         $ref: '../../../definitions/MemberCard.yaml#Record'
 get:
-  x-version: [2021.01.07]
+  x-last-updated-at: 2021-01-07
   x-role:
     - 直连商户
     - 服务商

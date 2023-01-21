@@ -1,5 +1,5 @@
 post:
-  x-version: [2019.12.20]
+  x-last-updated-at: 2019-12-20
   x-role:
     - 直连商户
   tags:
@@ -44,7 +44,7 @@ post:
             description: 商户号
             example: '10000098'
 get:
-  x-version: [2019.12.20]
+  x-last-updated-at: 2019-12-20
   x-role:
     - 直连商户
   tags:

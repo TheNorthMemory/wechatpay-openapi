@@ -1,5 +1,5 @@
 get:
-  x-version: [2021.10.27]
+  x-last-updated-at: 2021-10-27
   x-role:
     - 直连商户
   tags:
@@ -354,7 +354,7 @@ get:
                 description: 单天已发放券金额
                 example: 34
 patch:
-  x-version: [2021.10.27]
+  x-last-updated-at: 2021-10-27
   x-role:
     - 直连商户
   tags:

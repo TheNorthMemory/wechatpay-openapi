@@ -1,6 +1,5 @@
 post:
-  x-version:
-    - 2021.08.25
+  x-last-updated-at: 2021-08-25
   x-role:
     - 直连商户
     - 服务商
@@ -77,8 +76,7 @@ post:
             description: 电子回单文件的下载地址
             example: https://api.mch.weixin.qq.com/v3/billdownload/file?token=xxx
 get:
-  x-version:
-    - 2021.08.25
+  x-last-updated-at: 2021-08-25
   x-role:
     - 直连商户
     - 服务商

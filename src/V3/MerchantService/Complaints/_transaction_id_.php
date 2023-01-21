@@ -13,7 +13,7 @@ interface _transaction_id_
     /**
      * 查询投诉详情(同步模式)
      * @param array<string,mixed> $options
-     * @deprecated - since 2020.11.27
+     * @deprecated - since Fri Nov 27 2020 08:00:00 GMT+0800 (China Standard Time)
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/merchant-service/chapter3_8.shtml
      */
     public function get(array $options = [
@@ -23,7 +23,7 @@ interface _transaction_id_
     /**
      * 查询投诉详情(异步模式)
      * @param array<string,mixed> $options
-     * @deprecated - since 2020.11.27
+     * @deprecated - since Fri Nov 27 2020 08:00:00 GMT+0800 (China Standard Time)
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/merchant-service/chapter3_8.shtml#async
      */
     public function getAsync(array $options = [

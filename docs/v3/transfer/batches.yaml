@@ -1,6 +1,5 @@
 post:
-  x-version:
-    - 2022.04.24
+  x-last-updated-at: 2022-04-24
   x-role:
     - 直连商户
   tags:

@@ -1,6 +1,5 @@
 patch:
-  x-version:
-    - 2022.01.13
+  x-last-updated-at: 2022-01-13
   x-role:
     - 直连商户
     - 服务商
@@ -34,8 +33,7 @@ patch:
             description: 商户回调地址
             example: https://pay.weixin.qq.com/callback
 get:
-  x-version:
-    - 2022.01.13
+  x-last-updated-at: 2022-01-13
   x-role:
     - 直连商户
     - 服务商

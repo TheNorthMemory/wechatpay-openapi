@@ -1,5 +1,5 @@
 post:
-  x-version: [2020.09.14]
+  x-last-updated-at: 2020-09-14
   x-role: [电商平台]
   tags:
     - 收付通∙分账
@@ -93,7 +93,7 @@ post:
             description: 微信分账单号
             example: '6754760740201411110007865434'
 get:
-  x-version: [2020.11.06]
+  x-last-updated-at: 2020-11-06
   x-role: [电商平台]
   tags:
     - 收付通∙分账

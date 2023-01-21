@@ -1,5 +1,5 @@
 get:
-  x-version: [2020.01.08]
+  x-last-updated-at: 2020-01-08
   x-role:
     - 机构模式
   tags:

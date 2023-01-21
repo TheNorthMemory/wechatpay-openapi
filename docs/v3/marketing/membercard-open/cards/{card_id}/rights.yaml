@@ -1,5 +1,5 @@
 patch:
-  x-version: [2020.10.22]
+  x-last-updated-at: 2020-10-22
   x-role:
     - 直连商户
     - 服务商

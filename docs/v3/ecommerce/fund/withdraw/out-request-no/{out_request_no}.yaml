@@ -1,6 +1,5 @@
 get:
-  x-version:
-    - 2020.11.30
+  x-last-updated-at: 2020-11-30
   x-role:
     - 电商平台
     - 服务商

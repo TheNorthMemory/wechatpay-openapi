@@ -12,7 +12,7 @@ interface Unifiedorder
     /**
      * 统一下单(同步模式)
      * @param array<string,mixed> $options
-     * @deprecated - since 2022.05.31
+     * @deprecated - since Tue May 31 2022 08:00:00 GMT+0800 (China Standard Time)
      * @link https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=9_1
      */
     public function post(array $options = [
@@ -46,7 +46,7 @@ interface Unifiedorder
     /**
      * 统一下单(异步模式)
      * @param array<string,mixed> $options
-     * @deprecated - since 2022.05.31
+     * @deprecated - since Tue May 31 2022 08:00:00 GMT+0800 (China Standard Time)
      * @link https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=9_1#async
      */
     public function postAsync(array $options = [

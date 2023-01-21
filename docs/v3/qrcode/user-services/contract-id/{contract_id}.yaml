@@ -1,6 +1,5 @@
 get:
-  x-version:
-    - 2022.12.02
+  x-last-updated-at: 2022-12-02
   x-role:
     - 服务商
     - 直连商户

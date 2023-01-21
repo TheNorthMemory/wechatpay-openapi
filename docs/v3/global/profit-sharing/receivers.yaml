@@ -1,6 +1,5 @@
 post:
-  x-version:
-    - 2022.08.04
+  x-last-updated-at: 2022-08-04
   x-role:
     - 直连模式
     - 机构模式
@@ -136,8 +135,7 @@ post:
             description: 分账方与接收方合作关系证明文件ID
             example: de851a06-5a38-9d31-a102-275a17c477de
 delete:
-  x-version:
-    - 2022.08.04
+  x-last-updated-at: 2022-08-04
   x-role:
     - 直连模式
     - 机构模式

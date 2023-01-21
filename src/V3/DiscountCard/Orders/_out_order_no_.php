@@ -12,7 +12,7 @@ interface _out_order_no_
     /**
      * 更新先享卡订单(同步模式)
      * @param array<string,mixed> $options
-     * @deprecated - since 2020.03.26
+     * @deprecated - since Thu Mar 26 2020 08:00:00 GMT+0800 (China Standard Time)
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter3_2.shtml
      */
     public function patch(array $options = [
@@ -43,7 +43,7 @@ interface _out_order_no_
     /**
      * 更新先享卡订单(异步模式)
      * @param array<string,mixed> $options
-     * @deprecated - since 2020.03.26
+     * @deprecated - since Thu Mar 26 2020 08:00:00 GMT+0800 (China Standard Time)
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter3_2.shtml#async
      */
     public function patchAsync(array $options = [
@@ -74,7 +74,7 @@ interface _out_order_no_
     /**
      * 通过先享卡订单号查询订单(同步模式)
      * @param array<string,mixed> $options
-     * @deprecated - since 2020.03.26
+     * @deprecated - since Thu Mar 26 2020 08:00:00 GMT+0800 (China Standard Time)
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter3_1.shtml
      */
     public function get(array $options = [
@@ -84,7 +84,7 @@ interface _out_order_no_
     /**
      * 通过先享卡订单号查询订单(异步模式)
      * @param array<string,mixed> $options
-     * @deprecated - since 2020.03.26
+     * @deprecated - since Thu Mar 26 2020 08:00:00 GMT+0800 (China Standard Time)
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter3_1.shtml#async
      */
     public function getAsync(array $options = [

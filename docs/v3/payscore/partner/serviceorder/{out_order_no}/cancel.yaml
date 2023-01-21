@@ -1,6 +1,5 @@
 post:
-  x-version:
-    - 2020.06.29
+  x-last-updated-at: 2020-06-29
   x-role:
     - 服务商
   tags:

@@ -1,5 +1,5 @@
 post:
-  x-version: [2020.07.15]
+  x-last-updated-at: 2020-07-15
   x-role:
     - 直连商户
     - 服务商

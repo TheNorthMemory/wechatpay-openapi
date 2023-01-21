@@ -1,7 +1,6 @@
 post:
   x-api-cert-required: true
   deprecated: true
-  x-version: [unknown]
   tags:
     - APIv2∙小微
   summary: 重新发起提现

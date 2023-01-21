@@ -1,5 +1,5 @@
 patch:
-  x-version: [2020.07.15]
+  x-last-updated-at: 2020-07-15
   x-role:
     - 直连商户
     - 服务商
@@ -36,7 +36,7 @@ patch:
             description: 商户号
             example: '99999105'
 get:
-  x-version: [2020.07.15]
+  x-last-updated-at: 2020-07-15
   x-role:
     - 直连商户
     - 服务商

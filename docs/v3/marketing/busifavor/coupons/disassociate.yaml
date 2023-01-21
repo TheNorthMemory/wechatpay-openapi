@@ -1,5 +1,5 @@
 post:
-  x-version: [2020.06.10]
+  x-last-updated-at: 2020-06-10
   x-role:
     - 直连商户
   tags:

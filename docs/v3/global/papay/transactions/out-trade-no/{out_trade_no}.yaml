@@ -7,7 +7,7 @@ get:
   tags:
     - 跨境∙代扣
   summary: 查询订单(商户订单号)
-  description: 该接口提供所有微信支付订单的查询，商户可以通过查询订单接口主动查询订单状态，完成下一步的业务逻辑。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter3_1_2.shtml)
+  description: 该接口提供所有微信支付订单的查询，商户可以通过查询订单接口主动查询订单状态，完成下一步的业务逻辑。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter5_1_8.shtml)
   parameters:
     - name: sub_mchid
       in: query

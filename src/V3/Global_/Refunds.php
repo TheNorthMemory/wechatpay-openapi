@@ -14,7 +14,7 @@ interface Refunds
     /**
      * 申请退款(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter3_1_3.shtml
+     * @link https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter5_1_11.shtml
      */
     public function post(array $options = [
         'base_uri' => 'https://apihk.mch.weixin.qq.com/', // 跨境(香港接入)
@@ -36,7 +36,7 @@ interface Refunds
     /**
      * 申请退款(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter3_1_3.shtml#async
+     * @link https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter5_1_11.shtml#async
      */
     public function postAsync(array $options = [
         'base_uri' => 'https://apihk.mch.weixin.qq.com/', // 跨境(香港接入)
@@ -58,7 +58,7 @@ interface Refunds
     /**
      * 查询所有退款(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter3_1_5.shtml
+     * @link https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter5_1_13.shtml
      */
     public function get(array $options = [
         'base_uri' => 'https://apihk.mch.weixin.qq.com/', // 跨境(香港接入)
@@ -76,7 +76,7 @@ interface Refunds
     /**
      * 查询所有退款(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter3_1_5.shtml#async
+     * @link https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter5_1_13.shtml#async
      */
     public function getAsync(array $options = [
         'base_uri' => 'https://apihk.mch.weixin.qq.com/', // 跨境(香港接入)

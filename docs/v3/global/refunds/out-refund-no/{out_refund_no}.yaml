@@ -7,7 +7,7 @@ get:
   tags:
     - 跨境∙退款
   summary: 查询单笔退款(商户退款订单号)
-  description: 提交退款申请后，通过调用该接口查询退款状态。退款有一定延时，用零钱支付的退款20分钟内到账，银行卡支付的退款3个工作日后重新查询退款状态。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter3_1_4.shtml)
+  description: 提交退款申请后，通过调用该接口查询退款状态。退款有一定延时，用零钱支付的退款20分钟内到账，银行卡支付的退款3个工作日后重新查询退款状态。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter5_1_12.shtml)
   parameters:
     - name: mchid
       in: query

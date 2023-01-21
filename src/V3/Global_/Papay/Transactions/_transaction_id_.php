@@ -12,7 +12,7 @@ interface _transaction_id_
     /**
      * 查询订单(微信支付订单号)(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter3_1_2.shtml
+     * @link https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter5_1_8.shtml
      */
     public function get(array $options = [
         'base_uri' => 'https://apihk.mch.weixin.qq.com/', // 跨境(香港接入)
@@ -25,7 +25,7 @@ interface _transaction_id_
     /**
      * 查询订单(微信支付订单号)(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter3_1_2.shtml#async
+     * @link https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter5_1_8.shtml#async
      */
     public function getAsync(array $options = [
         'base_uri' => 'https://apihk.mch.weixin.qq.com/', // 跨境(香港接入)

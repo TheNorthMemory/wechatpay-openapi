@@ -3,7 +3,7 @@ post:
   tags:
     - APIv2∙基础支付∙退款
   summary: 申请退款（支持单品）
-  description: '如果使用不支持单品优惠部分退款的历史接口，请看[这里](https://pay.weixin.qq.com/wiki/doc/api/jsapi_sl.php?chapter=9_4)，本接口支持单品优惠订单全额退款和单品优惠订单部分退款，推荐使用本接口，【官方文档](https://pay.weixin.qq.com/wiki/doc/api/danpin.php?chapter=9_103&index=3)'
+  description: '如果使用不支持单品优惠部分退款的历史接口，请看[这里](https://pay.weixin.qq.com/wiki/doc/api/jsapi_sl.php?chapter=9_4)，本接口支持单品优惠订单全额退款和单品优惠订单部分退款，推荐使用本接口，[官方文档](https://pay.weixin.qq.com/wiki/doc/api/danpin.php?chapter=9_103&index=3)'
   consumes:
     - application/xml
   produces:

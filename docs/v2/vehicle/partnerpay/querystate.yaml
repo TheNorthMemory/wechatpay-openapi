@@ -1,0 +1,236 @@
+post:
+  tags:
+    - APIv2∙车主平台
+  summary: 用户状态查询
+  description: 在停车场、高速、加油等场景下，商户需获取用户车主服务状态/需要关联车主服务。本接口，会查询用户是否开通、授权、有欠费或黑名单用户情况，并将对应的用户状态进行返回。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/vehicle_v2_sl.php?chapter=20_93&index=9&p=202)
+  consumes:
+    - application/xml
+  produces:
+    - application/xml
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        allOf:
+          - type: object
+            xml:
+              name: xml
+            required:
+              - appid
+              - sub_appid
+              - mch_id
+              - sub_mch_id
+              - nonce_str
+              - sign_type
+              - sign
+              - trade_scene
+              - openid
+              - sub_openid
+              - plate_number
+              - version
+            properties:
+              appid:
+                type: string
+                description: 公众账号id
+                example: wxcbda96de0b165486
+                maxLength: 32
+              sub_appid:
+                type: string
+                description: 子商户公众账号id
+                example: wxcbda96de0b165489
+                maxLength: 32
+              mch_id:
+                type: string
+                description: 商户号
+                example: '10000098'
+                maxLength: 32
+              sub_mch_id:
+                type: string
+                description: 子商户号
+                example: '1900000109'
+                maxLength: 32
+              nonce_str:
+                type: string
+                description: 随机字符串
+                example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+                maxLength: 32
+              sign_type:
+                type: string
+                description: 签名类型
+                example: HMAC-SHA256
+                maxLength: 32
+              sign:
+                type: string
+                description: 签名
+                example: EE088059BBC9141264F8D14293AD6C4BB94CEA8C08AA98FBF93E262D445F8FF5
+                maxLength: 64
+              trade_scene:
+                type: string
+                description: 交易场景
+                example: PARKING
+                maxLength: 16
+              jump_scene:
+                type: string
+                description: 跳转场景
+                example: H5
+                maxLength: 16
+                nullable: true
+              openid:
+                type: string
+                description: 用户标识
+                example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+                maxLength: 32
+              sub_openid:
+                type: oupf8umuajo_m2pxb1q9znjwes6o
+                description: 用户子标识
+                example: 用户在子商户appid下的唯一标识。
+              plate_number:
+                type: 粤b888888
+                description: 车牌号
+                example: 车牌号。仅包括省份+车牌，不包括特殊字符。
+              version:
+                type: string
+                description: 版本号
+                example: '3.0'
+                maxLength: 16
+  responses:
+    '200':
+      description: ''
+      schema:
+        allOf:
+          - type: object
+            xml:
+              name: xml
+            required:
+              - return_code
+            properties:
+              return_code:
+                type: string
+                description: 返回状态码
+                example: SUCCESS
+                maxLength: 16
+              return_msg:
+                type: string
+                description: 返回信息
+                example: 签名失败
+                maxLength: 128
+                nullable: true
+          - type: object
+            xml:
+              name: xml
+            required:
+              - appid
+              - mch_id
+              - sub_mch_id
+              - nonce_str
+              - sign
+              - result_code
+            properties:
+              appid:
+                type: string
+                description: 请求appid
+                example: wxcbda96de0b165486
+                maxLength: 32
+              sub_appid:
+                type: string
+                description: 子商户公众账号id
+                example: wxcbda96de0b165489
+                maxLength: 32
+                nullable: true
+              mch_id:
+                type: string
+                description: 商户号
+                example: '10000098'
+                maxLength: 32
+              sub_mch_id:
+                type: string
+                description: 子商户号
+                example: '1900000109'
+                maxLength: 32
+              nonce_str:
+                type: string
+                description: 随机字符串
+                example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+                maxLength: 32
+              sign:
+                type: string
+                description: 签名
+                example: EE088059BBC9141264F8D14293AD6C4BB94CEA8C08AA98FBF93E262D445F8FF5
+                maxLength: 64
+              result_code:
+                type: string
+                description: 业务结果
+                example: SUCCESS
+                maxLength: 16
+              err_code:
+                type: string
+                description: 错误代码
+                example: SYSTEMERROR
+                maxLength: 32
+                nullable: true
+              err_code_des:
+                type: string
+                description: 错误代码描述
+                example: 系统错误
+                maxLength: 128
+                nullable: true
+          - type: object
+            xml:
+              name: xml
+            required:
+              - user_state
+              - plate_number
+            properties:
+              user_state:
+                type: string
+                description: 用户状态
+                example: NORMAL
+                maxLength: 16
+              openid:
+                type: string
+                description: 用户标识
+                example: oUpF8uMuAJO_M2pxb1Q9zNjWeS69
+                maxLength: 32
+                nullable: true
+              deduct_mode:
+                type: string
+                description: 发起扣费方式
+                example: PROACTIVE
+                maxLength: 16
+                nullable: true
+              sub_openid:
+                type: string
+                description: 用户子标识
+                example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+                maxLength: 32
+                nullable: true
+              path:
+                type: string
+                description: 跳转路径
+                example: pages/route/index
+                maxLength: 1024
+                nullable: true
+              plate_number_info:
+                type: string
+                description: 车牌信息
+                example: '{"plate_number_info":[{"plate_number":"粤B888888","channel_type":"ETC"}]}'
+                maxLength: 512
+                nullable: true
+              plate_number:
+                type: string
+                description: 车牌号
+                example: 粤B888888
+                maxLength: 32
+              channel_type:
+                type: string
+                description: 车牌通道标识
+                example: ETC
+                maxLength: 32
+                nullable: true
+              common_use_flag:
+                type: string
+                description: 常用车牌标志
+                example: COMMON_USE
+                maxLength: 16
+                nullable: true

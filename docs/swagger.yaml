@@ -354,8 +354,16 @@ paths:
     $ref: ./v2/tools/authcodetoopenid.yaml
   /tools/shorturl:
     $ref: ./v2/tools/shorturl.yaml
+  /transit/partnerpay/queryorder:
+    $ref: ./v2/transit/partnerpay/queryorder.yaml
   /transit/queryorder:
     $ref: ./v2/transit/queryorder.yaml
+  /vehicle/partnerpay/notification:
+    $ref: ./v2/vehicle/partnerpay/notification.yaml
+  /vehicle/partnerpay/payapply:
+    $ref: ./v2/vehicle/partnerpay/payapply.yaml
+  /vehicle/partnerpay/querystate:
+    $ref: ./v2/vehicle/partnerpay/querystate.yaml
   /vehicle/pay/notification:
     $ref: ./v2/vehicle/pay/notification.yaml
   /vehicle/pay/payapply:

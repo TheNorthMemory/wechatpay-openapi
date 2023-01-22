@@ -1,0 +1,227 @@
+post:
+  tags:
+     - APIv2∙车主平台
+  summary: 用户入场通知api
+  description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/api/vehicle_v2_sl.php?chapter=20_992&index=1&p=202)'
+  consumes:
+    - application/xml
+  produces:
+    - application/xml
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        allOf:
+          - type: object
+            xml:
+              name: xml
+            required:
+              - appid
+              - mch_id
+              - sub_appid
+              - sub_mch_id
+              - nonce_str
+              - sign_type
+              - sign
+              - version
+              - trade_scene
+              - scene_info
+              - start_time
+              - plate_number
+              - parking_name
+              - free_time
+              - start_time
+              - free_time
+              - openid
+              - space_number
+            properties:
+              appid:
+                type: string
+                description: 公众账号id
+                example: wxcbda96de0b165486
+                maxLength: 32
+              mch_id:
+                type: string
+                description: 商户号
+                example: '10000098'
+                maxLength: 32
+              sub_appid:
+                type: string
+                description: 子商户公众账号id
+                example: wxcbda96de0b165489
+                maxLength: 32
+              sub_mch_id:
+                type: string
+                description: 子商户号
+                example: '1900000109'
+                maxLength: 32
+              nonce_str:
+                type: string
+                description: 随机字符串
+                example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+                maxLength: 32
+              sign_type:
+                type: string
+                description: 签名类型
+                example: HMAC-SHA256
+                maxLength: 32
+              sign:
+                type: string
+                description: 签名
+                example: EE088059BBC9141264F8D14293AD6C4BB94CEA8C08AA98FBF93E262D445F8FF5
+                maxLength: 64
+              version:
+                type: string
+                description: 版本号
+                example: '3.0'
+                maxLength: 16
+              trade_scene:
+                type: string
+                description: 交易场景
+                example: PARKING
+                maxLength: 16
+              scene_info:
+                xml:
+                  x-cdata: true
+                type: string
+                description: 场景信息
+                example: '{"scene_info":{"start_time":"20170926114339","plate_number":"CB1000sdfasd","free_time":"1200","car_type":"大型车","parking_name":"欢乐海岸停车场"}}'
+                maxLength: 1024
+              start_time:
+                type: string
+                description: 入场时间
+                example: '20170826104339'
+                maxLength: 16
+              plate_number:
+                type: string
+                description: 车牌号
+                example: 粤B888888
+                maxLength: 32
+              notify_url:
+                type: string
+                description: 回调通知URL
+                example: https://weixin.qq.com
+                maxLength: 256
+                nullable: true
+              car_type:
+                type: string
+                description: 车辆类型
+                example: 小型车
+                maxLength: 16
+                nullable: true
+              parking_name:
+                type: string
+                description: 停车场名称
+                example: 欢乐海岸停车场
+                maxLength: 32
+                nullable: true
+              free_time:
+                type: string
+                description: 免费时长
+                example: '1200'
+                maxLength: 16
+              openid:
+                type: string
+                description: 用户标识
+                example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+                maxLength: 32
+              sub_openid:
+                type: string
+                description: 用户子标识
+                example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+                maxLength: 32
+                nullable: true
+              space_number:
+                type: string
+                description: 车位编号
+                example: D6666
+                maxLength: 16
+  responses:
+    '200':
+      description: ''
+      schema:
+        allOf:
+          - type: object
+            xml:
+              name: xml
+            required:
+              - return_code
+              - appid
+              - mch_id
+              - sub_mch_id
+              - nonce_str
+              - sign
+              - result_code
+              - user_state
+            properties:
+              return_code:
+                type: string
+                description: 返回状态码
+                example: SUCCESS
+                maxLength: 16
+              return_msg:
+                type: string
+                description: 返回信息
+                example: 签名失败
+                maxLength: 128
+                nullable: true
+              appid:
+                type: string
+                description: 公众账号id
+                example: wxcbda96de0b165486
+                maxLength: 32
+              mch_id:
+                type: string
+                description: 商户号
+                example: '10000098'
+                maxLength: 32
+              sub_appid:
+                type: string
+                description: 子商户公众账号id
+                example: wxcbda96de0b165489
+                maxLength: 32
+                nullable: true
+              sub_mch_id:
+                type: string
+                description: 子商户号
+                example: '1900000109'
+                maxLength: 32
+              nonce_str:
+                type: string
+                description: 随机字符串
+                example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+                maxLength: 32
+              sign:
+                type: string
+                description: 签名
+                example: EE088059BBC9141264F8D14293AD6C4BB94CEA8C08AA98FBF93E262D445F8FF5
+                maxLength: 64
+              result_code:
+                type: string
+                description: 业务结果
+                example: SUCCESS
+                maxLength: 16
+              err_code:
+                type: string
+                description: 错误代码
+                example: SYSTEMERROR
+                maxLength: 32
+                nullable: true
+              err_code_des:
+                type: string
+                description: 错误代码描述
+                example: 接口返回错误
+                maxLength: 32
+                nullable: true
+              user_state:
+                type: string
+                description: 用户状态
+                example: NORMAL
+                maxLength: 16
+              deduct_mode:
+                type: string
+                description: 发起扣费方式
+                example: PROACTIVE
+                maxLength: 16
+                nullable: true

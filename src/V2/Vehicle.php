@@ -4,6 +4,7 @@ namespace WeChatPay\OpenAPI\V2;
 
 /**
  * @property-read Vehicle\Pay $pay
+ * @property-read Vehicle\Partnerpay $partnerpay
  */
 interface Vehicle
 {

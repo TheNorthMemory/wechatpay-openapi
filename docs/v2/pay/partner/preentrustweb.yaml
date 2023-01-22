@@ -14,6 +14,8 @@ post:
       in: body
       required: true
       schema:
+        xml:
+          name: xml
         type: object
         required:
           - appid
@@ -86,6 +88,8 @@ post:
   responses:
     '200':
       schema:
+        xml:
+          name: xml
         type: object
         required:
           - return_code

@@ -118,6 +118,8 @@ get:
   responses:
     '200':
       schema:
+        xml:
+          name: xml
         type: object
         required:
           - return_code

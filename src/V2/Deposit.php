@@ -10,6 +10,7 @@ namespace WeChatPay\OpenAPI\V2;
  * @property-read Deposit\Refund $refund
  * @property-read Deposit\Refundquery $refundquery
  * @property-read Deposit\Reverse $reverse
+ * @property-read Deposit\Unifiedorder $unifiedorder
  */
 interface Deposit
 {

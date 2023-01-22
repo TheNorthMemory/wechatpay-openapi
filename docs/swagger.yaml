@@ -7,7 +7,7 @@ info:
     整理自[官方文档中心](https://pay.weixin.qq.com/wiki/doc/apiv3/index.shtml)
     本[项目/工具地址](https://github.com/TheNorthMemory/wechatpay-openapi)
     **访问第一次加载比较慢，请耐心等待大约1-2分钟不等(小文件下载比较多)。**
-  version: 0.15.3
+  version: 0.15.4
 schemes:
   - https
 consumes:
@@ -182,6 +182,8 @@ paths:
     $ref: ./v2/deposit/refundquery.yaml
   /deposit/reverse:
     $ref: ./v2/deposit/reverse.yaml
+  /deposit/unifiedorder:
+    $ref: ./v2/deposit/unifiedorder.yaml
   /face/get_wxpayface_authinfo:
     $ref: ./v2/face/get_wxpayface_authinfo.yaml
   /fund/queryautowithdrawbydate:
@@ -420,10 +422,14 @@ paths:
     $ref: ./v3/bill/tradebill.yaml
   /v3/billdownload/file:
     $ref: ./v3/billdownload/file.yaml
+  /v3/brand/profitsharing/brand-configs/{brand_mchid}:
+    $ref: ./v3/brand/profitsharing/brand-configs/{brand_mchid}.yaml
   /v3/brand/profitsharing/finish-order:
     $ref: ./v3/brand/profitsharing/finish-order.yaml
   /v3/brand/profitsharing/orders:
     $ref: ./v3/brand/profitsharing/orders.yaml
+  /v3/brand/profitsharing/orders/{transaction_id}/amounts:
+    $ref: ./v3/brand/profitsharing/orders/{transaction_id}/amounts.yaml
   /v3/brand/profitsharing/receivers/add:
     $ref: ./v3/brand/profitsharing/receivers/add.yaml
   /v3/brand/profitsharing/receivers/delete:

@@ -1,0 +1,123 @@
+post:
+  x-last-updated-at: 2022.08.17
+  x-role:
+    - 服务商
+  tags:
+    - 运营工具∙用工卡
+  summary: 发起批量转账API
+  description: 服务商可以通过该接口，批量向用户选择的收款账户转账。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_6.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - sub_mchid
+          - authorization_type
+          - out_batch_no
+          - batch_name
+          - batch_remark
+          - total_amount
+          - total_num
+          - transfer_detail_list
+          - employment_type
+          - employment_scene
+        properties:
+          sub_mchid:
+            type: string
+            description: 特约商户号
+            example: '1111111'
+          sub_appid:
+            type: string
+            description: 特约商户AppID
+            example: wxf636efh567hg4356
+          authorization_type:
+            type: string
+            description: 特约商户授权类型
+            example: INFORMATION_AUTHORIZATION_TYPE
+          out_batch_no:
+            type: string
+            description: 商家批次单号
+            example: plfk2020042013
+          batch_name:
+            type: string
+            description: 批次名称
+            example: 2019年1月深圳分部报销单
+          batch_remark:
+            type: string
+            description: 批次备注
+            example: 2019年1月深圳分部报销单
+          total_amount:
+            type: integer
+            description: 转账总金额
+            example: 4000000
+          total_num:
+            type: integer
+            description: 转账总笔数
+            example: 200
+          transfer_detail_list:
+            type: array
+            description: 转账明细列表
+            items:
+              type: object
+              required:
+                - out_detail_no
+                - transfer_amount
+                - transfer_remark
+                - openid
+                - user_name
+              properties:
+                out_detail_no:
+                  type: string
+                  description: 商家明细单号
+                  example: x23zy545Bd5436
+                transfer_amount:
+                  type: integer
+                  description: 转账金额
+                  example: 200000
+                transfer_remark:
+                  type: string
+                  description: 转账备注
+                  example: 2020年4月报销
+                openid:
+                  type: string
+                  description: 收款用户OpenID
+                  example: o-MYE42l80oelYMDE34nYD456Xoy
+                user_name:
+                  type: string
+                  description: 收款用户姓名
+                  example: 757b340b45ebef5467rter35gf464344v3542sdf4t6re4tb4f54ty45t4yyry45
+          sp_appid:
+            type: string
+            description: 服务商的AppID
+            example: wxf636efh567hg4388
+          employment_type:
+            type: string
+            description: 用工类型
+            example: LONG_TERM_EMPLOYMENT
+          employment_scene:
+            type: string
+            description: 用工场景
+            example: LOGISTICS
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - out_batch_no
+          - batch_id
+          - create_time
+        properties:
+          out_batch_no:
+            type: string
+            description: 商家批次单号
+            example: plfk2020042013
+          batch_id:
+            type: string
+            description: 微信支付批次单号
+            example: '1030000071100999991182020050700019480001'
+          create_time:
+            type: string
+            description: 批次创建时间
+            example: '2015-05-20T13:29:35.120+08:00'

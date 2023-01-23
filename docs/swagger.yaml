@@ -510,6 +510,8 @@ paths:
     $ref: ./v3/ecommerce/profitsharing/receivers/delete.yaml
   /v3/ecommerce/profitsharing/returnorders:
     $ref: ./v3/ecommerce/profitsharing/returnorders.yaml
+  /v3/ecommerce/refunds/{refund_id}/return-advance:
+    $ref: ./v3/ecommerce/refunds/{refund_id}/return-advance.yaml
   /v3/ecommerce/refunds/apply:
     $ref: ./v3/ecommerce/refunds/apply.yaml
   /v3/ecommerce/refunds/id/{refund_id}:
@@ -754,6 +756,10 @@ paths:
     $ref: ./v3/marketing/membercard-open/cards/{card_id}/codes/{code}.yaml
   /v3/marketing/membercard-open/cards/{card_id}/codes/{code}/activate:
     $ref: ./v3/marketing/membercard-open/cards/{card_id}/codes/{code}/activate.yaml
+  /v3/marketing/membercard-open/cards/{card_id}/codes/{code}/bonus/commit:
+    $ref: ./v3/marketing/membercard-open/cards/{card_id}/codes/{code}/bonus/commit.yaml
+  /v3/marketing/membercard-open/cards/{card_id}/codes/{code}/bonus/prepare:
+    $ref: ./v3/marketing/membercard-open/cards/{card_id}/codes/{code}/bonus/prepare.yaml
   /v3/marketing/membercard-open/cards/{card_id}/codes/{code}/rights:
     $ref: ./v3/marketing/membercard-open/cards/{card_id}/codes/{code}/rights.yaml
   /v3/marketing/membercard-open/cards/{card_id}/codes/{code}/unavailable:
@@ -762,12 +768,18 @@ paths:
     $ref: ./v3/marketing/membercard-open/cards/{card_id}/codes/deposit.yaml
   /v3/marketing/membercard-open/cards/{card_id}/decrypt-code:
     $ref: ./v3/marketing/membercard-open/cards/{card_id}/decrypt-code.yaml
+  /v3/marketing/membercard-open/cards/{card_id}/permission-tokens:
+    $ref: ./v3/marketing/membercard-open/cards/{card_id}/permission-tokens.yaml
+  /v3/marketing/membercard-open/cards/{card_id}/phone-membercard/import:
+    $ref: ./v3/marketing/membercard-open/cards/{card_id}/phone-membercard/import.yaml
   /v3/marketing/membercard-open/cards/{card_id}/qrcode:
     $ref: ./v3/marketing/membercard-open/cards/{card_id}/qrcode.yaml
   /v3/marketing/membercard-open/cards/{card_id}/rights:
     $ref: ./v3/marketing/membercard-open/cards/{card_id}/rights.yaml
   /v3/marketing/membercard-open/cards/{card_id}/upgrade:
     $ref: ./v3/marketing/membercard-open/cards/{card_id}/upgrade.yaml
+  /v3/marketing/membercard-open/cards/{card_id}/users/import:
+    $ref: ./v3/marketing/membercard-open/cards/{card_id}/users/import.yaml
   /v3/marketing/membercard-open/phonenumber-member/import:
     $ref: ./v3/marketing/membercard-open/phonenumber-member/import.yaml
   /v3/marketing/membercard-open/phonenumber-member/search:
@@ -956,6 +968,8 @@ paths:
     $ref: ./v3/payroll-card/relations/{openid}.yaml
   /v3/payroll-card/tokens:
     $ref: ./v3/payroll-card/tokens.yaml
+  /v3/payroll-card/transfer-batches:
+    $ref: ./v3/payroll-card/transfer-batches.yaml
   /v3/payscore/merchant-bill:
     $ref: ./v3/payscore/merchant-bill.yaml
   /v3/payscore/partner/permissions:

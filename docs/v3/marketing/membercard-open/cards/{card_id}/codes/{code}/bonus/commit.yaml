@@ -1,0 +1,52 @@
+post:
+  x-last-updated-at: 2021.10.29
+  x-role:
+    - 直连商户
+    - 服务商
+  tags:
+    - 会员卡∙权益设置
+  summary: 设置支付后展示的积分到账API
+  description: 商户调此接口，若已设置支付后展示积分，且该笔订单对应的积分已到账，则可以入参积分对应的交易商户号+商户订单号将该笔支付后展示的积分状态设置为“已到账” [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter10_2.shtml)
+  parameters:
+    - name: card_id
+      in: path
+      required: true
+      type: string
+      description: 会员卡模板id
+      example: '478515832665'
+    - name: code
+      in: path
+      required: true
+      type: string
+      description: 会员卡code
+      example: '478515832665'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - out_trade_no
+          - mchid
+          - sub_mchid
+          - bonus_value
+        properties:
+          out_trade_no:
+            type: string
+            description: 商户订单号
+            example: '1217752501201407033233368018'
+          mchid:
+            type: string
+            description: 直连商户号
+            example: '1230000109'
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1900000109'
+          bonus_value:
+            type: integer
+            description: 会员积分值
+            example: 30
+  responses:
+    '204':
+      schema: {}

@@ -6,8 +6,11 @@ use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Promise\PromiseInterface;
 
 /**
+ * @property-read _card_id_\Users $users
+ * @property-read _card_id_\PhoneMembercard $phoneMembercard
  * @property-read _card_id_\Codes $codes
  * @property-read _card_id_\DecryptCode $decryptCode
+ * @property-read _card_id_\PermissionTokens $permissionTokens
  * @property-read _card_id_\Qrcode $qrcode
  * @property-read _card_id_\Rights $rights
  * @property-read _card_id_\Upgrade $upgrade

@@ -7,7 +7,7 @@ info:
     整理自[官方文档中心](https://pay.weixin.qq.com/wiki/doc/apiv3/index.shtml)
     本[项目/工具地址](https://github.com/TheNorthMemory/wechatpay-openapi)
     **访问第一次加载比较慢，请耐心等待大约1-2分钟不等(小文件下载比较多)。**
-  version: 0.15.4
+  version: 0.15.5
 schemes:
   - https
 consumes:
@@ -322,6 +322,8 @@ paths:
     $ref: ./v2/secapi/mch/addInstitutionsub.yaml
   /secapi/mch/addsubdevconfig:
     $ref: ./v2/secapi/mch/addsubdevconfig.yaml
+  /secapi/mch/channelsetting:
+    $ref: ./v2/secapi/mch/channelsetting.yaml
   /secapi/mch/modifyInstitutionsub:
     $ref: ./v2/secapi/mch/modifyInstitutionsub.yaml
   /secapi/mch/modifymchinfo:

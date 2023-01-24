@@ -1,6 +1,6 @@
 post:
   x-api-cert-required: true
-  x-verison: [2020.12.25]
+  x-last-updated-at: 2020.12.25
   tags:
     - 跨境∙进件
   summary: 修改子商户API
@@ -124,6 +124,8 @@ post:
             description: 门店地址
             example: 广东省深圳市南山区科技中一道10000号
           store_photos:
+            xml:
+              x-cdata: true
             type: string
             description: 门店照片
             example: '[Media_id1,Media_id2,Media_id3]'

@@ -212,6 +212,8 @@ post:
                 maxLength: 1024
                 nullable: true
               plate_number_info:
+                xml:
+                  x-cdata: true
                 type: string
                 description: 车牌信息
                 example: '{"plate_number_info":[{"plate_number":"粤B888888","channel_type":"ETC"}]}'

@@ -33,6 +33,8 @@ post:
             example: '1900000109'
             maxLength: 32
           long_url:
+            xml:
+              x-cdata: true
             type: string
             description: URL链接
             example: weixin：//wxpay/bizpayurl?sign=XXXXX&appid=XXXXX&mch_id=XXXXX&product_id=XXXXXX&time_stamp=XXXXXX&nonce_str=XXXXX

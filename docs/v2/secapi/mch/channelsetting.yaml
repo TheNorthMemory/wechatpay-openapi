@@ -1,0 +1,137 @@
+post:
+  x-api-cert-required: true
+  tags:
+    - APIv2∙通用
+  summary: 银行服务商特约子商户指定渠道号API
+  description: 使用对象：银行服务商 使用说明：存量未指定渠道商的特约子商户，银行调用该API可以指定渠道商；通过该API指定渠道商后不能修改。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/mch_bank.php?chapter=9_26)
+  consumes:
+    - application/xml
+  produces:
+    - application/xml
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        allOf:
+          - type: object
+            xml:
+              name: xml
+            required:
+              - appid
+              - mch_id
+              - sub_mch_id
+              - channel_id
+              - sign
+            properties:
+              appid:
+                type: string
+                description: 公众账号ID
+                example: wx931386123456789e
+                maxLength: 32
+              mch_id:
+                type: string
+                description: 商户号
+                example: '1451234567'
+                maxLength: 32
+              sub_mch_id:
+                type: string
+                description: 特约商户号
+                example: '10000101'
+                maxLength: 32
+              channel_id:
+                type: string
+                description: 渠道商商户号
+                example: '10000102'
+                maxLength: 32
+              sign:
+                type: string
+                description: 签名
+                example: C380BEC2BFD727A4B6845133519F3AD6
+                maxLength: 32
+  responses:
+    '200':
+      description: ''
+      schema:
+        allOf:
+          - type: object
+            xml:
+              name: xml
+            required:
+              - return_code
+            properties:
+              return_code:
+                type: string
+                description: 返回状态码
+                example: SUCCESS
+                maxLength: 16
+              return_msg:
+                type: string
+                description: 返回信息
+                example: 签名失败
+                maxLength: 128
+                nullable: true
+          - type: object
+            xml:
+              name: xml
+            required:
+              - result_code
+              - sign
+              - mch_id
+            properties:
+              result_code:
+                type: string
+                description: 业务结果
+                example: FAIL
+                maxLength: 32
+              sign:
+                type: string
+                description: 签名
+                example: C380BEC2BFD727A4B6845133519F3AD6
+                maxLength: 32
+              err_code:
+                type: string
+                description: 错误代码
+                example: INVALID_REQUEST
+                maxLength: 32
+                nullable: true
+              err_code_des:
+                type: string
+                description: 错误代码描述
+                example: 子商户号信息有误，请检查修改后重试
+                maxLength: 128
+                nullable: true
+              mch_id:
+                type: string
+                description: 商户号
+                example: '1451234567'
+                maxLength: 32
+          - type: object
+            xml:
+              name: xml
+            required:
+              - result_msg
+              - appid
+              - sub_mch_id
+              - channel_id
+            properties:
+              result_msg:
+                type: string
+                description: 处理信息
+                example: 处理成功
+                maxLength: 128
+              appid:
+                type: string
+                description: 公众账号ID
+                example: wx888888888
+                maxLength: 32
+              sub_mch_id:
+                type: string
+                description: 子商户商户号
+                example: '10000100'
+                maxLength: 32
+              channel_id:
+                type: string
+                description: 渠道商商户号
+                example: '10000101'
+                maxLength: 32

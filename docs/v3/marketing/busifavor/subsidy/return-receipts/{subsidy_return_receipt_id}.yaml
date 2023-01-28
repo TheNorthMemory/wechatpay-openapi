@@ -1,0 +1,92 @@
+get:
+  x-last-updated-at: 2021.06.29
+  x-role:
+    - 直连商户
+  tags:
+    - 运营工具∙商家券
+  summary: 查询商家券营销补差回退单详情
+  description: 商户查询商家券营销补差回退单详情 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_21.shtml)
+  parameters:
+    - name: subsidy_return_receipt_id
+      in: path
+      required: true
+      type: string
+      description: 补差回退单号
+      example: '2120200119165100000000000001'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - stock_id
+          - coupon_code
+          - transaction_id
+          - refund_id
+          - payer_merchant
+          - payee_merchant
+          - amount
+          - description
+          - status
+          - subsidy_receipt_id
+          - out_subsidy_return_no
+        properties:
+          subsidy_return_receipt_id:
+            type: string
+            description: 补差回退单号
+            example: '2120200119165100000000000001'
+          stock_id:
+            type: string
+            description: 商家券批次号
+            example: '128888000000001'
+          coupon_code:
+            type: string
+            description: 商家券Code
+            example: ABCD12345678
+          transaction_id:
+            type: string
+            description: 微信支付订单号
+            example: '4200000913202101152566792388'
+          refund_id:
+            type: string
+            description: 微信支付退款单号
+            example: '50100506732021010105138718375'
+          payer_merchant:
+            type: string
+            description: 原营销补差扣款商户号
+            example: '1900000001'
+          payee_merchant:
+            type: string
+            description: 原营销补差入账商户号
+            example: '1900000002'
+          amount:
+            type: integer
+            description: 补差回退金额
+            example: 100
+          description:
+            type: string
+            description: 补差回退描述
+            example: 20210115DESCRIPTION
+          status:
+            type: string
+            description: 补差回退单据状态
+            example: RETURN_RECEIPT_SUCCESS
+          fail_reason:
+            type: string
+            description: 补差回退失败原因
+            example: RETURN_RECEIPT_INSUFFICIENT_BALANCE
+          return_done_time:
+            type: string
+            description: 补差回退完成时间
+            example: '2021-06-15T19:35:11+08:00'
+          subsidy_receipt_id:
+            type: string
+            description: 补差付款单号
+            example: '1120200119165100000000000001'
+          out_subsidy_return_no:
+            type: string
+            description: 业务请求唯一单号
+            example: subsidy-abcd-12345678
+          return_create_time:
+            type: string
+            description: 补差回退发起时间
+            example: '2021-06-15T19:35:11+08:00'

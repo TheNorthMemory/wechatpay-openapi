@@ -45,4 +45,30 @@ interface PayReceipts
             'out_subsidy_no' => 'subsidy-abcd-12345678',
         ],
     ]): PromiseInterface;
+
+    /**
+     * 查询营销补差付款单列表(同步模式)
+     * @param array<string,mixed> $options
+     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_19.shtml
+     */
+    public function get(array $options = [
+        'query' => [
+            'stock_id' => '128888000000001',
+            'coupon_code' => 'ABCD12345678',
+            'out_subsidy_no' => 'subsidy-abcd-12345678',
+        ],
+    ]): ResponseInterface;
+
+    /**
+     * 查询营销补差付款单列表(异步模式)
+     * @param array<string,mixed> $options
+     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_19.shtml#async
+     */
+    public function getAsync(array $options = [
+        'query' => [
+            'stock_id' => '128888000000001',
+            'coupon_code' => 'ABCD12345678',
+            'out_subsidy_no' => 'subsidy-abcd-12345678',
+        ],
+    ]): PromiseInterface;
 }

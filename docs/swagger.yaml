@@ -7,7 +7,7 @@ info:
     整理自[官方文档中心](https://pay.weixin.qq.com/wiki/doc/apiv3/index.shtml)
     本[项目/工具地址](https://github.com/TheNorthMemory/wechatpay-openapi)
     **访问第一次加载比较慢，请耐心等待大约1-2分钟不等(小文件下载比较多)。**
-  version: 0.15.6
+  version: 0.15.7
 schemes:
   - https
 consumes:
@@ -724,6 +724,10 @@ paths:
     $ref: ./v3/marketing/busifavor/subsidy/pay-receipts.yaml
   /v3/marketing/busifavor/subsidy/pay-receipts/{subsidy_receipt_id}:
     $ref: ./v3/marketing/busifavor/subsidy/pay-receipts/{subsidy_receipt_id}.yaml
+  /v3/marketing/busifavor/subsidy/return-receipts:
+    $ref: ./v3/marketing/busifavor/subsidy/return-receipts.yaml
+  /v3/marketing/busifavor/subsidy/return-receipts/{subsidy_return_receipt_id}:
+    $ref: ./v3/marketing/busifavor/subsidy/return-receipts/{subsidy_return_receipt_id}.yaml
   /v3/marketing/busifavor/users/{openid}/coupons:
     $ref: ./v3/marketing/busifavor/users/{openid}/coupons.yaml
   /v3/marketing/busifavor/users/{openid}/coupons/{coupon_code}/appids/{appid}:

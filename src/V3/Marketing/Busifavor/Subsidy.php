@@ -3,6 +3,7 @@
 namespace WeChatPay\OpenAPI\V3\Marketing\Busifavor;
 
 /**
+ * @property-read Subsidy\ReturnReceipts $returnReceipts
  * @property-read Subsidy\PayReceipts $payReceipts
  */
 interface Subsidy

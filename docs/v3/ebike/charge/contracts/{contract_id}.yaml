@@ -1,0 +1,50 @@
+get:
+  x-last-updated-at: 2019.12.16
+  x-role:
+    - 直连商户
+    - 服务商
+  tags:
+    - 电动自行车行业代扣
+  summary: 通过签约号查询用户状态API
+  description: 通过调用该接口可查询用户的协议状态。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/vehicle/ebike/chapter3_2.shtml)
+  parameters:
+    - name: sub_mchid
+      in: query
+      type: string
+      description: 特约商户号
+      example: '1900000109'
+    - name: contract_id
+      in: path
+      required: true
+      type: string
+      description: 充电授权扣费协议号
+      example: aAfixCs13LsdKPpfZfDkk2189ssXjfx
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - mchid
+          - openid
+          - contract_state
+        properties:
+          mchid:
+            type: string
+            description: 服务商商户号
+            example: '10000098'
+          openid:
+            type: string
+            description: 用户标识
+            example: onqOjjmM1tad-3ROpncN-yUfa6ua
+          sub_mchid:
+            type: string
+            description: 特约商户号
+            example: '1900000109'
+          contract_id:
+            type: string
+            description: 充电授权扣费协议号
+            example: aAfixCs13LsdKPpfZfDkk2189ssXjfx
+          contract_state:
+            type: string
+            description: 协议状态
+            example: DELETED

@@ -1,0 +1,73 @@
+post:
+  x-last-updated-at: 2019.12.16
+  x-role:
+    - 直连商户
+    - 服务商
+  tags:
+    - 电动自行车行业代扣
+  summary: 创建用户当次充电代扣凭证API
+  description: 商户通过该接口，得到用户当次充电的代扣凭证，使用该凭证进行扣款校验操作，该接口也会触发对用户发送的确认开始充电的通知。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/vehicle/ebike/chapter3_4.shtml)
+  parameters:
+    - name: contract_id
+      in: path
+      required: true
+      type: string
+      description: 充电授权扣费协议号
+      example: aAfixCs13LsdKPpfZfDkk2189ssXjfx
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - appid
+          - charge_info
+        properties:
+          sub_mchid:
+            type: string
+            description: 特约商户号
+            example: '1900000109'
+          appid:
+            type: string
+            description: 服务商公众号ID
+            example: wx47c677487ce3ac47
+          sub_appid:
+            type: string
+            description: 特约商户公众号ID
+            example: wxcc603d9f0d54eaf0
+          charge_info:
+            type: object
+            description: 充电场景信息
+            required:
+              - start_time
+              - charging_station_name
+              - charging_gun_number
+              - device_id
+            properties:
+              start_time:
+                type: string
+                description: 开始时间
+                example: '2017-08-26T09:43:39+08:00'
+              charging_station_name:
+                type: string
+                description: 充电站名称
+                example: xxx充电站
+              charging_gun_number:
+                type: string
+                description: 充电枪编号
+                example: '6555'
+              device_id:
+                type: string
+                description: 充电位设备号
+                example: '12343232'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - charging_token
+        properties:
+          charging_token:
+            type: string
+            description: 用户充电代扣凭证
+            example: sdjf23kdsHJfdksj8dj

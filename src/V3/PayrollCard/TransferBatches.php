@@ -35,6 +35,9 @@ interface TransferBatches
             'employment_type' => 'LONG_TERM_EMPLOYMENT',
             'employment_scene' => 'LOGISTICS',
         ],
+        'headers' => [
+            'Wechatpay-Serial' => '',
+        ],
     ]): ResponseInterface;
 
     /**
@@ -62,6 +65,9 @@ interface TransferBatches
             'sp_appid' => 'wxf636efh567hg4388',
             'employment_type' => 'LONG_TERM_EMPLOYMENT',
             'employment_scene' => 'LOGISTICS',
+        ],
+        'headers' => [
+            'Wechatpay-Serial' => '',
         ],
     ]): PromiseInterface;
 }

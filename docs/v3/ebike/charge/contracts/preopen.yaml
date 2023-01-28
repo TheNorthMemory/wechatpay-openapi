@@ -1,0 +1,51 @@
+post:
+  x-last-updated-at: 2019.12.16
+  x-role:
+    - 直连商户
+    - 服务商
+  tags:
+    - 电动自行车行业代扣
+  summary: 预开通服务API
+  description: 商户通过该接口获取preopenid，跳转到签约小程序后，用preopenid进行签约开通，本接口用于开通自动扣费前上传必要的信息。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/vehicle/ebike/chapter3_3.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - appid
+          - trade_scene
+          - openid
+        properties:
+          sub_mchid:
+            type: string
+            description: 特约商户号
+            example: '1510770601'
+          appid:
+            type: string
+            description: 服务商公众号ID
+            example: wx47c677487ce3ac47
+          sub_appid:
+            type: string
+            description: 特约商户公众号ID
+            example: wxcc603d9f0d54eaf0
+          trade_scene:
+            type: string
+            description: 交易场景
+            example: CHARGE
+          openid:
+            type: string
+            description: 用户标识
+            example: ot35_4gNgXsUuh2sQY0lT9N08AU0
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - preopen_id
+        properties:
+          preopen_id:
+            type: string
+            description: 预开通ID
+            example: sdjf23kdsHJfdksj8djsK98HJio5hdI0

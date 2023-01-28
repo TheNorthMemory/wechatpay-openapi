@@ -7,6 +7,7 @@ post:
   summary: 发起批量转账API
   description: 服务商可以通过该接口，批量向用户选择的收款账户转账。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_6.shtml)
   parameters:
+    - $ref: '../../definitions/Parameters.yaml#/WECHATPAY_CERTIFICATE_SERIAL'
     - name: _
       in: body
       required: true

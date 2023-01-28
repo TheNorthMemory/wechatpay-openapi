@@ -7,7 +7,7 @@ info:
     整理自[官方文档中心](https://pay.weixin.qq.com/wiki/doc/apiv3/index.shtml)
     本[项目/工具地址](https://github.com/TheNorthMemory/wechatpay-openapi)
     **访问第一次加载比较慢，请耐心等待大约1-2分钟不等(小文件下载比较多)。**
-  version: 0.15.5
+  version: 0.15.6
 schemes:
   - https
 consumes:
@@ -55,6 +55,8 @@ tags:
   - name: 教育续费通
   - name: 爱心餐
   - name: 乘车服务
+  - name: ETC授权扣费
+  - name: 电动自行车行业代扣
   - name: 运营工具∙代金券
   - name: 运营工具∙商家券
   - name: 运营工具∙委托营销
@@ -484,6 +486,20 @@ paths:
     $ref: ./v3/discount-card/orders/{out_order_no}.yaml
   /v3/discount-card/orders/out-trade-no/{out_trade_no}:
     $ref: ./v3/discount-card/orders/out-trade-no/{out_trade_no}.yaml
+  /v3/ebike/charge/contracts/{contract_id}:
+    $ref: ./v3/ebike/charge/contracts/{contract_id}.yaml
+  /v3/ebike/charge/contracts/{contract_id}/confirm:
+    $ref: ./v3/ebike/charge/contracts/{contract_id}/confirm.yaml
+  /v3/ebike/charge/contracts/preopen:
+    $ref: ./v3/ebike/charge/contracts/preopen.yaml
+  /v3/ebike/charge/transactions:
+    $ref: ./v3/ebike/charge/transactions.yaml
+  /v3/ebike/charge/transactions/id/{transaction_id}:
+    $ref: ./v3/ebike/charge/transactions/id/{transaction_id}.yaml
+  /v3/ebike/charge/transactions/out-trade-no/{out_trade_no}:
+    $ref: ./v3/ebike/charge/transactions/out-trade-no/{out_trade_no}.yaml
+  /v3/ebike/charge/users/{openid}/contract:
+    $ref: ./v3/ebike/charge/users/{openid}/contract.yaml
   /v3/ecommerce/applyments/{applyment_id}:
     $ref: ./v3/ecommerce/applyments/{applyment_id}.yaml
   /v3/ecommerce/applyments/:
@@ -1102,6 +1118,16 @@ paths:
     $ref: ./v3/transfer/bill-receipt/{out_batch_no}.yaml
   /v3/transferdownload/signfile:
     $ref: ./v3/transferdownload/signfile.yaml
+  /v3/vehicle/etc/preopen:
+    $ref: ./v3/vehicle/etc/preopen.yaml
+  /v3/vehicle/etc/transactions/highway:
+    $ref: ./v3/vehicle/etc/transactions/highway.yaml
+  /v3/vehicle/etc/transactions/id/{transaction_id}:
+    $ref: ./v3/vehicle/etc/transactions/id/{transaction_id}.yaml
+  /v3/vehicle/etc/transactions/out-trade-no/{out_trade_no}:
+    $ref: ./v3/vehicle/etc/transactions/out-trade-no/{out_trade_no}.yaml
+  /v3/vehicle/etc/users/{openid}/contracts:
+    $ref: ./v3/vehicle/etc/users/{openid}/contracts.yaml
   /v3/vehicle/parking/parkings:
     $ref: ./v3/vehicle/parking/parkings.yaml
   /v3/vehicle/parking/services/find:

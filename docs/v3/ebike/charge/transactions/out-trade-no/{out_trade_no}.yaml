@@ -1,0 +1,181 @@
+get:
+  x-last-updated-at: 2019.12.16
+  x-role:
+    - 直连商户
+    - 服务商
+  tags:
+    - 电动自行车行业代扣
+  summary: 查询订单API
+  description: 可通过“商户订单号”和“微信订单号”两种方式查单。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/vehicle/ebike/chapter3_6.shtml)
+  parameters:
+    - name: out_trade_no
+      in: path
+      required: true
+      type: string
+      description: 商户订单号
+      example: '121775250124070332'
+    - name: sub_mchid
+      in: query
+      type: string
+      description: 特约商户号
+      example: '1900000109'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - mchid
+          - appid
+          - out_trade_no
+          - trade_type
+          - trade_state
+          - contract_id
+          - amount
+          - device_info
+        properties:
+          mchid:
+            type: string
+            description: 商户号
+            example: '1230000109'
+          sub_mchid:
+            type: string
+            description: 特约商户号
+            example: '1900000109'
+          appid:
+            type: string
+            description: 服务商公众号ID
+            example: wxd678efh567hg678
+          sub_appid:
+            type: string
+            description: 特约商户公众号ID
+            example: wxd678efh567hg6999
+          out_trade_no:
+            type: string
+            description: 商户订单号
+            example: '201407033233368018'
+          transaction_id:
+            type: string
+            description: 微信订单号
+            example: '25012014070332333018'
+          attach:
+            type: string
+            description: 商户数据
+            example: 自定义数据
+          trade_type:
+            type: string
+            description: 交易类型
+            example: PAP
+          bank_type:
+            type: string
+            description: 银行类型
+            example: CMC
+          success_time:
+            type: string
+            description: 成功时间
+            example: '2017-08-26T10:43:39+08:00'
+          trade_state:
+            type: string
+            description: 交易状态
+            example: SUCCESS
+          trade_state_des:
+            type: string
+            description: 交易状态描述
+            example: 请重新下单支付
+          contract_id:
+            type: string
+            description: 充电授权扣费协议号
+            example: '121775250124070332'
+          payer:
+            type: object
+            description: 支付者信息
+            properties:
+              openid:
+                type: string
+                description: 用户在服务商的标识
+                example: oUpF8uMuAJOM2pxb1Q
+              sub_openid:
+                type: string
+                description: 用户在特约商户的标识
+                example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+          amount:
+            type: object
+            description: 订单金额信息
+            required:
+              - total
+            properties:
+              total:
+                type: integer
+                description: 订单金额
+                example: 888
+              currency:
+                type: string
+                description: 货币类型
+                example: CNY
+              payer_total:
+                type: integer
+                description: 用户实际支付金额
+                example: null
+              discount_total:
+                type: integer
+                description: 折扣
+                example: 100
+          device_info:
+            type: object
+            description: 设备信息
+            required:
+              - device_id
+              - device_ip
+            properties:
+              device_id:
+                type: string
+                description: 充电位设备号
+                example: '12343232'
+              device_ip:
+                type: string
+                description: 商户端设备ip
+                example: 123.12.12.123
+          promotion_detail:
+            type: array
+            description: 优惠信息
+            items:
+              type: object
+              required:
+                - promotion_id
+                - amount
+              properties:
+                promotion_id:
+                  type: string
+                  description: 券ID
+                  example: '109519'
+                name:
+                  type: string
+                  description: 优惠名称
+                  example: 单品惠-6
+                scope:
+                  type: string
+                  description: 优惠范围
+                  example: SINGLE
+                type:
+                  type: string
+                  description: 优惠类型
+                  example: DISCOUNT
+                activity_id:
+                  type: string
+                  description: 活动ID
+                  example: '931386'
+                amount:
+                  type: integer
+                  description: 优惠券面额
+                  example: 5
+                wxpay_contribute:
+                  type: integer
+                  description: 微信出资
+                  example: 1
+                merchant_contribute:
+                  type: integer
+                  description: 商户出资
+                  example: 1
+                other_contribute:
+                  type: integer
+                  description: 其他出资
+                  example: 5

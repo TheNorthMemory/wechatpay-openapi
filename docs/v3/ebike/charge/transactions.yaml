@@ -1,0 +1,143 @@
+post:
+  x-last-updated-at: 2019.12.16
+  x-role:
+    - 直连商户
+    - 服务商
+  tags:
+    - 电动自行车行业代扣
+  summary: 充电自行车代扣受理扣款API
+  description: 通过调用该接口，为用户当次充电完成后发起代扣扣款，并同步返回受理结果。支付结果以回调通知为准，若返回超时，则主动查单。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/vehicle/ebike/chapter3_5.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - appid
+          - out_trade_no
+          - notify_url
+          - description
+          - charging_token
+          - amount
+          - charge_info
+          - device_info
+        properties:
+          sub_mchid:
+            type: string
+            description: 特约商户号
+            example: '1900000109'
+          appid:
+            type: string
+            description: 服务商公众号ID
+            example: wxd678efh567hg678
+          sub_appid:
+            type: string
+            description: 特约商户公众号ID
+            example: wxd678efh567hg6999
+          out_trade_no:
+            type: string
+            description: 商户订单号
+            example: '121775250124070332'
+          attach:
+            type: string
+            description: 附加字段
+            example: 自定义数据
+          goods_tag:
+            type: string
+            description: 营销信息
+            example: test
+          notify_url:
+            type: string
+            description: 通知url
+            example: http://1111:111/metro-spt-api/callback
+          description:
+            type: string
+            description: 商品描述
+            example: 商品信息
+          charging_token:
+            type: string
+            description: 用户充电代扣凭证
+            example: sdjf23kdsHJfdk
+          amount:
+            type: object
+            description: 订单金额信息
+            required:
+              - total
+            properties:
+              total:
+                type: integer
+                description: 订单总金额
+                example: 888
+              currency:
+                type: string
+                description: 货币类型
+                example: CNY
+          charge_info:
+            type: object
+            description: 充电自行车场景信息
+            required:
+              - start_time
+              - end_time
+              - charging_station_name
+              - charging_gun_number
+              - charged_capacity
+            properties:
+              start_time:
+                type: string
+                description: 开始时间
+                example: '2017-08-26T09:43:39+08:00'
+              end_time:
+                type: string
+                description: 结束时间
+                example: '2017-08-26T09:43:39+08:00'
+              charging_station_name:
+                type: string
+                description: 充电站名称
+                example: xxx充电站
+              charging_gun_number:
+                type: string
+                description: 充电枪编号
+                example: '6555'
+              charged_capacity:
+                type: integer
+                description: 已充电量
+                example: 10
+              park_duration:
+                type: integer
+                description: 车位延时占用时长
+                example: 60
+              park_fee:
+                type: integer
+                description: 车位延时占用产生的费用
+                example: 100
+          device_info:
+            type: object
+            description: 设备信息
+            required:
+              - device_id
+              - device_ip
+            properties:
+              device_id:
+                type: string
+                description: 充电位设备号
+                example: '12343232'
+              device_ip:
+                type: string
+                description: 商户端设备ip
+                example: 123.12.12.123
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - accept_state
+        properties:
+          accept_state:
+            type: string
+            description: 受理状态
+            example: SUCCESS - 受理成功
+          create_time:
+            type: string
+            description: 订单创建时间
+            example: '2017-08-26T10:43:39+08:00'

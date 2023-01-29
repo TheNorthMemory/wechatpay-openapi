@@ -53,6 +53,7 @@ tags:
   - name: 扣款服务
   - name: 校园轻松付
   - name: 教育续费通
+  - name: 学生卡身份权益
   - name: 爱心餐
   - name: 乘车服务
   - name: ETC授权扣费
@@ -558,6 +559,12 @@ paths:
     $ref: ./v3/edu-papay/user-notifications/{contract_id}/send.yaml
   /v3/edu-papay/user/{openid}/contracts:
     $ref: ./v3/edu-papay/user/{openid}/contracts.yaml
+  /v3/edu-star/orders:
+    $ref: ./v3/edu-star/orders.yaml
+  /v3/edu-star/users/openid/{wechat_openid}:
+    $ref: ./v3/edu-star/users/openid/{wechat_openid}.yaml
+  /v3/edu-star/users/qq/{qq}:
+    $ref: ./v3/edu-star/users/qq/{qq}.yaml
   /v3/eduschoolpay/contracts/{contract_id}:
     $ref: ./v3/eduschoolpay/contracts/{contract_id}.yaml
   /v3/eduschoolpay/contracts/{contract_id}/terminate:

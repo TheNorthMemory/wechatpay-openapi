@@ -39,6 +39,7 @@ namespace WeChatPay\OpenAPI;
  * @property-read V3\FundsToOversea $fundsToOversea
  * @property-read V3\Facemch $facemch
  * @property-read V3\Eduschoolpay $eduschoolpay
+ * @property-read V3\EduStar $eduStar
  * @property-read V3\EduPapay $eduPapay
  * @property-read V3\Ecommerce $ecommerce
  * @property-read V3\Ebike $ebike

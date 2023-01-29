@@ -1,0 +1,172 @@
+post:
+  x-last-updated-at: 2020.10.19
+  x-role:
+    - 直连商户
+  tags:
+    - 学生卡身份权益
+  summary: 创建核销订单API
+  description: 用户完成充值后，合作方必须调用该接口创建核销记录，并确保得到明确应答。 若调用失败，必须间隔一定时间后重试，否则会导致用户在集星光小程序中看到权益的使用状态与实际不符，进而引发用户投诉。 [官方流程图](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/assets/img/common/edu/edu-star/chapter2_3.png)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - appid
+          - right_id
+          - create_time
+        properties:
+          appid:
+            type: string
+            description: appid
+            example: wx998877665544wx
+          wechat_openid:
+            type: string
+            description: 用户在appid下的唯一标识
+            example: oUpF8uMuAJOM2pxb1Q
+          qq:
+            type: string
+            description: 用户QQ账号
+          right_id:
+            type: string
+            description: 权益ID
+            example: qw3Da21QRCNt
+          create_time:
+            type: string
+            description: 权益核销时间
+            example: '2018-05-23T12:13:50+08:00'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - appid
+          - wechat_openid
+          - right_id
+          - create_time
+          - order_state
+          - order_id
+        properties:
+          appid:
+            type: string
+            description: appid
+            example: wx998877665544wx
+          wechat_openid:
+            type: string
+            description: 用户在appid下的唯一标识
+            example: oUpF8uMuAJOM2pxb1Q
+          qq:
+            type: string
+            description: 用户QQ账号
+            example: '100000000000'
+          right_id:
+            type: string
+            description: 权益ID
+            example: qw3Da21QRCNt
+          create_time:
+            type: string
+            description: 权益核销时间
+            example: '2018-05-23T12:13:50+08:00'
+          order_state:
+            type: string
+            description: 订单状态
+            example: CONSUMED
+          order_id:
+            type: string
+            description: 订单号
+            example: cc1900ff00511f10c
+get:
+  x-last-updated-at: 2020.10.19
+  x-role:
+    - 直连商户
+  tags:
+    - 学生卡身份权益
+  summary: 通过QQ账号查询核销订单列表API
+  description: 合作方通过调用该接口可获取核销订单信息。 [官方流程图](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/assets/img/common/edu/edu-star/chapter2_3.png)
+  parameters:
+    - name: appid
+      in: query
+      required: true
+      type: string
+      description: appid
+      example: wx998877665544wx
+    - name: wechat_openid
+      in: query
+      type: string
+      description: 用户在appid下的唯一标识
+      example: oUpF8uMuAJOM2pxb1Q
+    - name: qq
+      in: query
+      type: string
+      description: 用户QQ账号
+    - name: offset
+      in: query
+      type: integer
+      description: 分页页码
+      example: 0
+    - name: limit
+      in: query
+      type: integer
+      description: 分页大小
+      example: 20
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - data
+          - total_count
+        properties:
+          data:
+            type: array
+            description: 结果集
+            items:
+              type: object
+              required:
+                - appid
+                - wechat_openid
+                - right_id
+                - create_time
+                - order_state
+                - order_id
+              properties:
+                appid:
+                  type: string
+                  description: appid
+                  example: wx998877665544wx
+                wechat_openid:
+                  type: string
+                  description: 用户在appid下的唯一标识
+                  example: oUpF8uMuAJOM2pxb1Q
+                qq:
+                  type: string
+                  description: 用户QQ账号
+                  example: '100000000000'
+                right_id:
+                  type: string
+                  description: 权益ID
+                  example: qw3Da21QRCNt
+                create_time:
+                  type: string
+                  description: 权益核销时间
+                  example: '2018-05-23T12:13:50+08:00'
+                order_state:
+                  type: string
+                  description: 订单状态
+                  example: CONSUMED
+                order_id:
+                  type: string
+                  description: 订单号
+                  example: cc1900ff00511f10c
+          total_count:
+            type: integer
+            description: 总数量
+            example: 30
+          offset:
+            type: integer
+            description: 分页页码
+          limit:
+            type: integer
+            description: 分页大小
+            example: 20

@@ -1,0 +1,49 @@
+get:
+  x-last-updated-at: 2020.10.19
+  x-role:
+    - 直连商户
+  tags:
+    - 学生卡身份权益
+  summary: 通过微信用户标识查询用户信息API
+  description: 该接口用于获取微信支付集星光用户信息。合作方可根据该用户信息判断该用户是否为学生身份。 [官方流程图](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/assets/img/common/edu/edu-star/chapter2_3.png)
+  parameters:
+    - name: appid
+      in: query
+      required: true
+      type: string
+      description: 商户appid
+      example: wx998877665544wx
+    - name: wechat_openid
+      in: path
+      required: true
+      type: string
+      description: 用户在appid下的唯一标识
+      example: oUpF8uMuAJOM2pxb1Q
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - education_star_student
+          - appid
+          - wechat_openid
+        properties:
+          education_star_student:
+            type: boolean
+            description: 是否学生
+          appid:
+            type: string
+            description: appid
+            example: wx998877665544wx
+          wechat_openid:
+            type: string
+            description: 用户在appid下的唯一标识
+            example: oUpF8uMuAJOM2pxb1Q
+          qq:
+            type: string
+            description: 用户QQ账号
+            example: '100000000000'
+          register_time:
+            type: string
+            description: 注册时间
+            example: '2018-05-23T12:13:50+08:00'

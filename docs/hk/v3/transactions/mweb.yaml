@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2020.01.08
+  x-last-updated-at: 2022.03.10
   x-role:
     - 直连模式
     - 机构模式
@@ -162,7 +162,7 @@ post:
                     type: string
                     description: 详细地址
                     example: 广东省深圳市南山区科技中一道10000号
-          promotion_detail:
+          detail:
             type: array
             description: 优惠功能
             items:

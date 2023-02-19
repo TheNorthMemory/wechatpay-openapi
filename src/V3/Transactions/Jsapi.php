@@ -53,7 +53,7 @@ interface Jsapi
                     'address' => '广东省深圳市南山区科技中一道10000号',
                 ],
             ],
-            'promotion_detail' => [[
+            'detail' => [[
                 'cost_price' => 608800,
                 'receipt_id' => 'wx123',
                 'goods_detail' => [[
@@ -111,7 +111,7 @@ interface Jsapi
                     'address' => '广东省深圳市南山区科技中一道10000号',
                 ],
             ],
-            'promotion_detail' => [[
+            'detail' => [[
                 'cost_price' => 608800,
                 'receipt_id' => 'wx123',
                 'goods_detail' => [[

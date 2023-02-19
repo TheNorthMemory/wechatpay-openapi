@@ -162,7 +162,7 @@ post:
                     type: string
                     description: 详细地址
                     example: 广东省深圳市南山区科技中一道10000号
-          promotion_detail:
+          detail:
             type: array
             description: 优惠功能
             items:

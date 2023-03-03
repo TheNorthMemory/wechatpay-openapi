@@ -1,0 +1,116 @@
+post:
+  x-last-updated-at: 2021.09.09
+  x-role:
+    - 服务商
+  tags:
+    - 资金应用∙转账∙银行模式
+  summary: 受理汇总电子回单API
+  description: 银行付款模式转账汇总电子回单申请受理接口，商户通过该接口可以申请受理电子回单服务。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_2_6.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - out_batch_no
+        properties:
+          out_batch_no:
+            type: string
+            description: 银行转账批次单号
+            example: GD2021011610162610BBdkkIwcu3
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - out_batch_no
+          - receipt_no
+        properties:
+          out_batch_no:
+            type: string
+            description: 银行转账批次单号
+            example: plfk2020042013
+          receipt_no:
+            type: string
+            description: 电子回单申请单号
+            example: '1050000010509999485212020110200058820001'
+          receipt_state:
+            type: string
+            description: 电子回单状态
+            example: ACCEPTED
+          hash_type:
+            type: string
+            description: 电子回单文件的hash方法
+            example: SHA256
+          hash_value:
+            type: string
+            description: 电子回单文件的hash值
+            example: DE731F35146A0BEFADE5DB9D1E468D96C01CA8898119C674FEE9F11F4DBE5529
+          download_url:
+            type: string
+            description: 电子回单文件的下载地址
+            example: https://api.mch.weixin.qq.com/v3/billdownload/file?token=xxx
+          create_time:
+            type: string
+            description: 创建时间
+            example: '2020-05-20T13:29:35.120+08:00'
+          update_time:
+            type: string
+            description: 更新时间
+            example: '2020-05-21T13:29:35.120+08:00'
+get:
+  x-last-updated-at: 2021.09.09
+  x-role:
+    - 服务商
+  tags:
+    - 资金应用∙转账∙银行模式
+  summary: 查询汇总电子回单受理结果API
+  description: 查询银行付款模式转账汇总电子回单接口，商户通过该接口可以查询电子回单受理进度信息，包括电子回单据信息，电子回单文件的hash值，电子回单文件的下载地址等 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_2_7.shtml)
+  parameters:
+    - name: out_batch_no
+      in: query
+      required: true
+      type: string
+      description: 银行转账批次单号
+      example: GD2021011610162610BBdkkIwcu3
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - out_batch_no
+          - receipt_no
+        properties:
+          out_batch_no:
+            type: string
+            description: 银行转账批次单号
+            example: plfk2020042013
+          receipt_no:
+            type: string
+            description: 电子回单申请单号
+            example: '1050000010509999485212020110200058820001'
+          receipt_state:
+            type: string
+            description: 电子回单状态
+            example: ACCEPTED
+          hash_type:
+            type: string
+            description: 电子回单文件的hash方法
+            example: SHA256
+          hash_value:
+            type: string
+            description: 电子回单文件的hash值
+            example: DE731F35146A0BEFADE5DB9D1E468D96C01CA8898119C674FEE9F11F4DBE5529
+          download_url:
+            type: string
+            description: 电子回单文件的下载地址
+            example: https://api.mch.weixin.qq.com/v3/billdownload/file?token=xxx
+          create_time:
+            type: string
+            description: 创建时间
+            example: '2020-05-20T13:29:35.120+08:00'
+          update_time:
+            type: string
+            description: 更新时间
+            example: '2020-05-21T13:29:35.120+08:00'

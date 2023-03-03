@@ -53,6 +53,8 @@ namespace WeChatPay\OpenAPI;
  * @property-read V3\Brand $brand
  * @property-read V3\Billdownload $billdownload
  * @property-read V3\Bill $bill
+ * @property-read V3\BankTransfer $bankTransfer
+ * @property-read V3\BankBatchTransfer $bankBatchTransfer
  * @property-read V3\Applyment4sub $applyment4sub
  * @property-read V3\Apply4subject $apply4subject
  * @property-read V3\Apply4sub $apply4sub

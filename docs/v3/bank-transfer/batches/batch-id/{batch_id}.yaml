@@ -1,0 +1,174 @@
+get:
+  x-last-updated-at: 2022.08.09
+  x-role:
+    - 服务商
+  tags:
+    - 资金应用∙转账∙银行模式
+  summary: 微信支付批次单号查询批次单API
+  description: 微信支付批次单号查单接口。转账处理后延迟一段时间（异步进行转账），服务商可以通过该接口查询转账批次单以及指定状态的转账明细单。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_2_2.shtml)
+  parameters:
+    - name: batch_id
+      in: path
+      required: true
+      type: string
+      description: 微信支付批次单号
+      example: '1130000071100999991182020050700019480001'
+    - name: need_query_detail
+      in: query
+      required: true
+      type: boolean
+      description: 是否查询转账明细单
+    - name: offset
+      in: query
+      type: integer
+      description: 请求资源起始位置
+    - name: limit
+      in: query
+      type: integer
+      description: 最大资源条数
+      example: 20
+    - name: detail_state
+      in: query
+      type: string
+      description: 明细状态
+      example: FAIL
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - bank_sp_mchid
+          - platform_mchid
+          - specialized_payment_mchid
+          - sponsor_mchid
+          - user_authorized_mchid
+          - user_authorized_appid
+          - out_batch_no
+          - batch_id
+          - transfer_scene
+          - batch_name
+          - batch_remark
+          - transfer_purpose
+          - batch_state
+          - total_amount
+          - total_count
+          - transfer_detail_list
+        properties:
+          bank_sp_mchid:
+            type: string
+            description: 银行服务商号
+            example: '1900001109'
+          platform_mchid:
+            type: string
+            description: 服务平台商户号
+            example: '1900001109'
+          specialized_payment_mchid:
+            type: string
+            description: 付款企业商户号
+            example: '1900001109'
+          sponsor_mchid:
+            type: string
+            description: 实际出资商户号
+            example: '1900001109'
+          user_authorized_mchid:
+            type: string
+            description: 用户授权商户号
+            example: '1900001109'
+          user_authorized_appid:
+            type: string
+            description: 用户授权appid
+            example: wxf636efh567hg4356
+          out_batch_no:
+            type: string
+            description: 银行批次单号
+            example: plfk2020042013
+          batch_id:
+            type: string
+            description: 微信支付批次单号
+            example: '1130000071100999991182020050700019480001'
+          transfer_scene:
+            type: string
+            description: 转账场景
+            example: ORDINARY_TRANSFER
+          batch_name:
+            type: string
+            description: 批次名称
+            example: 2019年1月深圳分部报销单
+          batch_remark:
+            type: string
+            description: 批次备注
+            example: 2019年1月深圳分部报销单
+          attach_remark:
+            type: string
+            description: 附加信息
+            example: 付款专用商户单号11111
+          transfer_purpose:
+            type: string
+            description: 批量转账用途
+            example: COMMISSION
+          batch_state:
+            type: string
+            description: 批次状态
+            example: ACCEPTED
+          close_reason:
+            type: string
+            description: 批次关闭原因
+            example: OVERDUE_CLOSE
+          total_amount:
+            type: integer
+            description: 转账总金额
+            example: 4000000
+          total_count:
+            type: integer
+            description: 转账总笔数
+            example: 200
+          create_time:
+            type: string
+            description: 批次创建时间
+            example: '2015-05-20T13:29:35+08:00'
+          update_time:
+            type: string
+            description: 批次更新时间
+            example: '2015-05-20T13:29:35+08:00'
+          success_amount:
+            type: integer
+            description: 转账成功金额
+            example: 3900000
+          success_count:
+            type: integer
+            description: 转账成功笔数
+            example: 199
+          fail_amount:
+            type: integer
+            description: 转账失败金额
+            example: 100000
+          fail_count:
+            type: integer
+            description: 转账失败笔数
+            example: 1
+          transfer_detail_list:
+            type: array
+            description: 转账明细单列表
+            items:
+              type: object
+              required:
+                - detail_id
+                - out_detail_no
+                - detail_state
+              properties:
+                detail_id:
+                  type: string
+                  description: 微信支付明细单号
+                  example: '1140000071100999991182020050700019500100'
+                out_detail_no:
+                  type: string
+                  description: 银行明细单号
+                  example: x23zy545Bd5436
+                detail_state:
+                  type: string
+                  description: 明细状态
+                  example: SUCCESS
+                fail_reason:
+                  type: string
+                  description: 明细失败原因
+                  example: ACCOUNT_FROZEN

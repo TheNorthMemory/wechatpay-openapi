@@ -7,7 +7,7 @@ info:
     整理自[官方文档中心](https://pay.weixin.qq.com/wiki/doc/apiv3/index.shtml)
     本[项目/工具地址](https://github.com/TheNorthMemory/wechatpay-openapi)
     **访问第一次加载比较慢，请耐心等待大约1-2分钟不等(小文件下载比较多)。**
-  version: 0.15.9
+  version: 0.15.10
 schemes:
   - https
 consumes:
@@ -24,6 +24,7 @@ tags:
   - name: 资金应用∙分账
   - name: 资金应用∙转账
   - name: 资金应用∙转账∙服务商模式
+  - name: 资金应用∙转账∙银行模式
   - name: 收付通∙进件
   - name: 收付通∙支付
   - name: 收付通∙合单
@@ -420,6 +421,20 @@ paths:
     $ref: ./v3/applyment4sub/applyment/applyment_id/{applyment_id}.yaml
   /v3/applyment4sub/applyment/business_code/{business_code}:
     $ref: ./v3/applyment4sub/applyment/business_code/{business_code}.yaml
+  /v3/bank-batch-transfer/receipt/detail-receipts:
+    $ref: ./v3/bank-batch-transfer/receipt/detail-receipts.yaml
+  /v3/bank-batch-transfer/receipt/summary-receipts:
+    $ref: ./v3/bank-batch-transfer/receipt/summary-receipts.yaml
+  /v3/bank-transfer/batches:
+    $ref: ./v3/bank-transfer/batches.yaml
+  /v3/bank-transfer/batches/batch-id/{batch_id}:
+    $ref: ./v3/bank-transfer/batches/batch-id/{batch_id}.yaml
+  /v3/bank-transfer/batches/batch-id/{batch_id}/details/detail-id/{detail_id}:
+    $ref: ./v3/bank-transfer/batches/batch-id/{batch_id}/details/detail-id/{detail_id}.yaml
+  /v3/bank-transfer/batches/out-batch-no/{out_batch_no}:
+    $ref: ./v3/bank-transfer/batches/out-batch-no/{out_batch_no}.yaml
+  /v3/bank-transfer/batches/out-batch-no/{out_batch_no}/details/out-detail-no/{out_detail_no}:
+    $ref: ./v3/bank-transfer/batches/out-batch-no/{out_batch_no}/details/out-detail-no/{out_detail_no}.yaml
   /v3/bill/fundflowbill:
     $ref: ./v3/bill/fundflowbill.yaml
   /v3/bill/sub-merchant-fundflowbill:

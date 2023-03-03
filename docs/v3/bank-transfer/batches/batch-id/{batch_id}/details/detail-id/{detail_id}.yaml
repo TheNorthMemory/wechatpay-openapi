@@ -1,0 +1,133 @@
+get:
+  x-last-updated-at: 2022.08.09
+  x-role:
+    - 服务商
+  tags:
+    - 资金应用∙转账∙银行模式
+  summary: 微信支付明细单号查询明细单API
+  description: 微信支付明细单号查单接口。转账处理后延迟一段时间（异步进行转账），服务商可以通过该接口查询单笔转账明细单。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_2_3.shtml)
+  parameters:
+    - name: batch_id
+      in: path
+      required: true
+      type: string
+      description: 微信支付批次单号
+      example: '1130000071100999991182020050700019480001'
+    - name: detail_id
+      in: path
+      required: true
+      type: string
+      description: 微信明细单号
+      example: '1140000071100999991182020050700019500100'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - bank_sp_mchid
+          - platform_mchid
+          - specialized_payment_mchid
+          - sponsor_mchid
+          - user_authorized_mchid
+          - user_authorized_appid
+          - out_batch_no
+          - batch_id
+          - transfer_scene
+          - out_detail_no
+          - detail_id
+          - openid
+          - username
+          - transfer_amount
+          - transfer_remark
+          - detail_state
+          - update_time
+          - account_type
+        properties:
+          bank_sp_mchid:
+            type: string
+            description: 银行服务商号
+            example: '1900001109'
+          platform_mchid:
+            type: string
+            description: 服务平台商户号
+            example: '1900001109'
+          specialized_payment_mchid:
+            type: string
+            description: 付款企业商户号
+            example: '1900001109'
+          sponsor_mchid:
+            type: string
+            description: 实际出资商户号
+            example: '1900001109'
+          user_authorized_mchid:
+            type: string
+            description: 用户授权商户号
+            example: '1900001109'
+          user_authorized_appid:
+            type: string
+            description: 用户授权appid
+            example: wxaffdakkk11112e3
+          out_batch_no:
+            type: string
+            description: 银行批次单号
+            example: plfk2020042013
+          batch_id:
+            type: string
+            description: 微信支付批次单号
+            example: '1130000071100999991182020050700019480001'
+          transfer_scene:
+            type: string
+            description: 转账场景
+            example: ORDINARY_TRANSFER
+          out_detail_no:
+            type: string
+            description: 银行明细单号
+            example: x23zy545Bd5436
+          detail_id:
+            type: string
+            description: 微信支付明细单号
+            example: '1140000071100999991182020050700019500100'
+          openid:
+            type: string
+            description: 收款用户openid
+            example: o-MYE42l80oelYMDE34nYD456Xoy
+          username:
+            type: string
+            description: 收款用户姓名
+            example: 757b340b45ebef5467rter35gf464344v3542sdf4t6re4tb4f54ty45t4yyry45
+          transfer_amount:
+            type: integer
+            description: 转账金额
+            example: 200000
+          transfer_remark:
+            type: string
+            description: 转账备注
+            example: 2020年4月报销
+          detail_state:
+            type: string
+            description: 明细状态
+            example: SUCCESS
+          fail_reason:
+            type: string
+            description: 明细失败原因
+            example: ACCOUNT_FROZEN
+          initiate_time:
+            type: string
+            description: 转账发起时间
+            example: '2015-05-20T13:29:35+08:00'
+          update_time:
+            type: string
+            description: 明细更新时间
+            example: '2015-05-20T13:29:35+08:00'
+          account_type:
+            type: string
+            description: 收款账户类型
+            example: WXPAY_ACCOUNT
+          bank_name:
+            type: string
+            description: 银行名称
+            example: 招商银行
+          bank_card_number_tail:
+            type: string
+            description: 银行卡尾号
+            example: '1234'

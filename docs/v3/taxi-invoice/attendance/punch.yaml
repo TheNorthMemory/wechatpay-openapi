@@ -1,0 +1,43 @@
+post:
+  x-last-updated-at: 2023.01.13
+  x-role:
+    - 服务商
+  tags:
+    - 出租车电子发票
+  summary: 签到签退API
+  description: 签到签退数据主要用于控制微信支付凭证是否包含开发票入口、是否创建用户行程单 [官方文档](https://pay.weixin.qq.com/docs/partner/apis/taxi-fapiao/attendance/punch-attendance.html)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - plate_number
+          - driver_license
+          - event_time
+          - event_type
+          - region_id
+        properties:
+          plate_number:
+            type: string
+            description: 车牌号
+            example: 粤B12345
+          driver_license:
+            type: string
+            description: 营运资格证号
+            example: '6298416'
+          event_time:
+            type: string
+            description: 事件发生时间
+            example: '2019-12-01T12:00:00.000+08:00'
+          event_type:
+            type: string
+            description: 事件类型
+            example: SIGN_IN
+          region_id:
+            type: integer
+            description: 行政区划ID
+            example: 510100
+  responses:
+    '204': {}

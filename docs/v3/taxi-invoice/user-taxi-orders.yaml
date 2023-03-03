@@ -1,0 +1,109 @@
+get:
+  x-last-updated-at: 2023.01.13
+  x-role:
+    - 服务商
+  tags:
+    - 出租车电子发票
+  summary: 获取乘客行程单列表API
+  description: 服务商可以凭“用户openid”查询该乘客对应的“出租车行程单”，微信支付返回该“openid”下最多最近半年内的“出租车行程单” [官方文档](https://pay.weixin.qq.com/docs/partner/products/taxi-fapiao/introduction.html)
+  parameters:
+    - name: limit
+      in: query
+      type: integer
+      description: 最大资源条数
+      example: 5
+    - name: offset
+      in: query
+      type: integer
+      description: 请求资源起始位置
+      example: 10
+    - name: openid
+      in: query
+      required: true
+      type: string
+      description: 小程序用户的微信openid
+      example: oUypO5fUvaUkyuc6ueOwgwDMjCiM
+    - name: appid
+      in: query
+      required: true
+      type: string
+      description: 小程序appid
+      example: wxb1170446a4c0a5a2
+    - name: begin_date
+      in: query
+      required: true
+      type: string
+      description: 起始日期
+      example: '20200307'
+    - name: end_date
+      in: query
+      required: true
+      type: string
+      description: 结束日期
+      example: '20200407'
+    - name: region_id
+      in: query
+      required: true
+      type: integer
+      description: 行政区划id
+      example: 510100
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - data
+          - offset
+          - limit
+          - total_count
+        properties:
+          data:
+            type: array
+            description: 乘客行程单详情
+            items:
+              type: object
+              required:
+                - plate_number
+                - driver_license
+                - up_time
+              properties:
+                plate_number:
+                  type: string
+                  description: 车牌号
+                  example: 川ADT9716
+                driver_license:
+                  type: string
+                  description: 营运资格证号
+                  example: 08512-2
+                up_time:
+                  type: string
+                  description: 上车时间
+                  example: '2020-04-07T19:47:32+08:00'
+          offset:
+            type: integer
+            description: 请求资源起始位置
+            example: 10
+          limit:
+            type: integer
+            description: 最大资源条数
+            example: 5
+          total_count:
+            type: integer
+            description: 资源总条数
+            example: 1234
+          links:
+            type: object
+            description: 相关链接
+            properties:
+              next:
+                type: string
+                description: 下一页链接
+                example: /v3/bankpoint/exchangerecords?offset=10&limit=5
+              prev:
+                type: string
+                description: 上一页链接
+                example: /v3/bankpoint/exchangerecords?offset=20&limit=5
+              self:
+                type: string
+                description: 当前链接
+                example: /v3/bankpoint/exchangerecords?offset=15&limit=5

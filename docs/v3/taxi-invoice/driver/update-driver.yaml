@@ -1,0 +1,159 @@
+post:
+  x-last-updated-at: 2023.01.13
+  x-role:
+    - 服务商
+  tags:
+    - 出租车电子发票
+  summary: 更新司机信息API
+  description: 新增、更新司机信息，司机需有实名认证的微信号，否则新增、更新失败，司机所在的公司必须已经成为服务商的特约商户，否则新增、更新失败。 [官方文档](https://pay.weixin.qq.com/docs/partner/apis/taxi-fapiao/driver/update-driver.html)
+  parameters:
+    - $ref: '../../../definitions/Parameters.yaml#/WECHATPAY_CERTIFICATE_SERIAL'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - driver_name
+          - id_card_number
+          - company_name
+          - mchid
+          - driver_license
+          - driver_category
+          - driver_status
+          - region_id
+        properties:
+          driver_name:
+            type: string
+            description: 司机姓名
+            example: OpldWegML3fJ3/U5L6av0bU6GcIOaOhi+SY04APUv4dfFrD7US5TWiL5sVnQSz/wvsvQ==
+          id_card_number:
+            type: string
+            description: 司机身份证号码
+            example: OpldWegML3fJ3/U5L6av0bU6GcIOaOhXM/t2DrNLxVUb77DCnz421UAD7US5TWiL5sVnQSz/wvsvQ==
+          company_name:
+            type: string
+            description: 公司名称
+            example: 深圳市未来有限公司
+          mchid:
+            type: string
+            description: 商户号
+            example: '1900000109'
+          driver_license:
+            type: string
+            description: 营运资格证号
+            example: '6298416'
+          driver_category:
+            type: string
+            description: 司机类别
+            example: MAIN
+          driver_status:
+            type: string
+            description: 岗位状态
+            example: ON_DUTY
+          driver_photo:
+            type: object
+            description: 司机头像
+            properties:
+              photo_type:
+                type: string
+                description: 照片类型
+                example: PHOTO_URL
+              photo_digest:
+                type: object
+                description: 司机头像摘要
+                properties:
+                  hash_type:
+                    type: string
+                    description: 哈希类型
+                    example: MD5
+                  hash_value:
+                    type: string
+                    description: 哈希值
+                    example: e10adc3949ba59abbe56e057f20f883e
+              photo_url:
+                type: string
+                description: 头像url
+                example: http://www.abc.com/driver.icon
+              photo_icon:
+                type: string
+                description: 头像icon
+                example: Pm+zC+kaOSdRmVQP7pPQ++Ky9C8FaVp8El2sLT3b/M887b3YnrknrmiiumOkNDklrUdznfitoFkPC94vlnbbESwgn7hBXge3JFHw80S0l8J2jSIZN8PnMrHIZiWPI74xwKKK35n9X3+1+hzKK+t7fZ/U9Bg8P2L2ixmBdpTaRjtivPdOt28P3THTp5rXkjCNwRnoRjB/GiisYHRPc7WHV7jWvC32m42+ctyqZQYBx3I9a6GZisqMOCZXP4+STRRXMzqiZPmv8A3jRRRUFH/9k=
+          region_id:
+            type: integer
+            description: 行政区划ID
+            example: 510100
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - driver_name
+          - id_card_number
+          - company_name
+          - mchid
+          - driver_license
+          - driver_category
+          - driver_status
+          - region_id
+        properties:
+          driver_name:
+            type: string
+            description: 司机姓名
+            example: OpldWegML3fJ3/U5L6av0bU6G21UAD7US5TWiL5sVnQSz/wvsvQ==
+          id_card_number:
+            type: string
+            description: 司机身份证号码
+            example: OpldWegML3fJ3/U5L6av0bU1wwPUXFMLxVUb77DCnz421UAD7US5TWiL5sVnQSz/wvsvQ==
+          company_name:
+            type: string
+            description: 公司名称
+            example: 深圳市未来有限公司
+          mchid:
+            type: string
+            description: 商户号
+            example: '1900000109'
+          driver_license:
+            type: string
+            description: 营运资格证号
+            example: '6298416'
+          driver_category:
+            type: string
+            description: 司机类别
+            example: MAIN
+          driver_status:
+            type: string
+            description: 岗位状态
+            example: ON_DUTY
+          driver_photo:
+            type: object
+            description: 司机头像
+            properties:
+              photo_type:
+                type: string
+                description: 照片类型
+                example: PHOTO_URL
+              photo_digest:
+                type: object
+                description: 司机头像摘要
+                properties:
+                  hash_type:
+                    type: string
+                    description: 哈希类型
+                    example: MD5
+                  hash_value:
+                    type: string
+                    description: 哈希值
+                    example: e10adc3949ba59abbe56e057f20f883e
+              photo_url:
+                type: string
+                description: 头像url
+                example: http://www.abc.com/driver.icon
+              photo_icon:
+                type: string
+                description: 头像icon
+                example: /9j/4AAQSkZJRgABAgAAAQABAAD/2wBDAAMOCZXP4+STRRXMzqiZPmv8A3jRRRUFH/9k=
+          region_id:
+            type: integer
+            description: 行政区划ID
+            example: 510100

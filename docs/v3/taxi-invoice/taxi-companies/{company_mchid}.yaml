@@ -1,0 +1,84 @@
+get:
+  x-last-updated-at: 2023.01.13
+  x-role:
+    - 服务商
+  tags:
+    - 出租车电子发票
+  summary: 获取出租车公司商户信息API
+  description: 获取出租车公司商户信息 [官方文档](hhttps://pay.weixin.qq.com/docs/partner/apis/taxi-fapiao/taxi-company/query-taxi-company.html)
+  parameters:
+    - name: company_mchid
+      in: path
+      required: true
+      type: string
+      description: 商户号
+      example: '1900000109'
+    - name: region_id
+      in: query
+      required: true
+      type: integer
+      description: 行政区划ID
+      example: 510100
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - company_mchid
+          - enterprise_type
+          - company_name
+          - short_name
+          - tax_id
+          - address
+          - legal_person
+          - invoice_mode
+          - region_id
+        properties:
+          company_mchid:
+            type: string
+            description: 商户号
+            example: '1900000109'
+          enterprise_type:
+            type: string
+            description: 企业类型
+            example: CORPORATION
+          company_name:
+            type: string
+            description: 公司名称
+            example: 深圳市未来有限公司
+          short_name:
+            type: string
+            description: 公司简称
+            example: 深圳未来
+          tax_id:
+            type: string
+            description: 税号
+            example: 12345678901234567J
+          address:
+            type: string
+            description: 公司地址
+            example: 广东省深圳市南山区高新科技园科技中一路腾讯大厦
+          phone:
+            type: string
+            description: 公司电话
+            example: 0755-86013388
+          bank_name:
+            type: string
+            description: 开户行
+            example: 中国工商银行南山支行
+          bank_account:
+            type: string
+            description: 银行账号
+            example: '12345678901234'
+          legal_person:
+            type: string
+            description: 企业法人姓名
+            example: 张三
+          invoice_mode:
+            type: string
+            description: 开票渠道
+            example: JIAOWEI
+          region_id:
+            type: integer
+            description: 行政区划代码
+            example: 510100

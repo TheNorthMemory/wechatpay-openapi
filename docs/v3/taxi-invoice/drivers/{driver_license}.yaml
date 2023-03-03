@@ -1,0 +1,90 @@
+get:
+  x-last-updated-at: 2023.01.13
+  x-role:
+    - 服务商
+  tags:
+    - 出租车电子发票
+  summary: 获取司机信息API
+  description: 获取司机信息 [官方文档](https://pay.weixin.qq.com/docs/partner/apis/taxi-fapiao/driver/query-driver.html)
+  parameters:
+    - name: driver_license
+      in: path
+      required: true
+      type: string
+      description: 营运资格证号
+      example: '6298416'
+    - name: region_id
+      in: query
+      required: true
+      type: integer
+      description: 行政区划代码
+      example: 510100
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - driver_name
+          - company_name
+          - company_mchid
+          - driver_license
+          - driver_category
+          - region_id
+          - driver_state
+        properties:
+          driver_name:
+            type: string
+            description: 司机姓名
+            example: OpldWegML3fJ3/U5L6av0bU6GcIOaOhXf2UDYKD8aZByMIav4gGrxjcPPk/7rz7HJ1MOugpoI1KMG8nANKIGtyA75ZM7qM16j16CT0VUtmZMo2nV2/3x/058hpAOORYwkl2g/tOck3MgVwTj9ZTvq6s7wrWomyi+SY04APUv4dfFrUvfbktxSi9JI37tSIP5rXD0Lq35KCZLR0aIyVlBs/MqmAhdQ1klK+kKY2VvC2/DmIY0BmpV/o745eOjWwtlS0PzG7BQ3JYUqhtmz2SawsVeHk9sm1wwPUXFM1ssRN/t2DrNLxVUb77DCnz421UAD7US5TWiL5sVnQSz/wvsvQ==
+          company_name:
+            type: string
+            description: 公司名称
+            example: 深圳市未来有限公司
+          company_mchid:
+            type: string
+            description: 商户号
+            example: '1900000109'
+          driver_license:
+            type: string
+            description: 营运资格证号
+            example: '6298416'
+          driver_category:
+            type: string
+            description: 司机类别
+            example: MAIN
+          driver_photo:
+            type: object
+            description: 司机照片
+            properties:
+              photo_type:
+                type: string
+                description: 照片类型
+                example: PHOTO_URL
+              photo_digest:
+                type: object
+                description: 司机照片摘要
+                properties:
+                  hash_type:
+                    type: string
+                    description: 哈希类型
+                    example: MD5
+                  hash_value:
+                    type: string
+                    description: 哈希值
+                    example: e10adc3949ba59abbe56e057f20f883e
+              photo_url:
+                type: string
+                description: 头像url
+                example: http://www.abc.com/driver.icon
+              photo_data:
+                type: string
+                description: 头像icon
+                example: /9j/4AAQSkZJRgABAgAAAQABAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgK35n9X3+1+hzKK+t7fZ/U9Bg8P2L2ixmBdpTaRjtivPdOt28P3THTp5rXkjCNwRnoRjB/GiisYHRPc7WHV7jWvC32m42+ctyqZQYBx3I9a6GZisqMOCZXP4+STRRXMzqiZPmv8A3jRRRUFH/9k=
+          region_id:
+            type: integer
+            description: 行政区划代码
+            example: 510100
+          driver_state:
+            type: string
+            description: 司机状态
+            example: ACTIVE

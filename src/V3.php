@@ -8,6 +8,7 @@ namespace WeChatPay\OpenAPI;
  * @property-read V3\TransferDetail $transferDetail
  * @property-read V3\Transfer $transfer
  * @property-read V3\Transactions $transactions
+ * @property-read V3\TaxiInvoice $taxiInvoice
  * @property-read V3\Smartguide $smartguide
  * @property-read V3\Settle $settle
  * @property-read V3\Refunds $refunds

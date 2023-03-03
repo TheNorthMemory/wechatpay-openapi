@@ -1,0 +1,76 @@
+get:
+  x-last-updated-at: 2023.01.13
+  x-role:
+    - 服务商
+  tags:
+    - 出租车电子发票
+  summary: 根据凭证查询乘客行程单API
+  description: 服务商可以凭“凭证”查询对应的“乘客行程单”。 [官方文档](https://pay.weixin.qq.com/docs/partner/apis/taxi-fapiao/user-taxi-order/query-user-taxi-order-by-token.html)
+  parameters:
+    - name: token
+      in: query
+      required: true
+      type: string
+      description: 获取乘客行程单详情的凭证
+      example: ESvqG19gjw0qiiy1eeRA4VusLrOmIYQOMJ8rXX2V-ztUUuQvu_YBEZg9FAht0Y15r71mft9rcaMIjn7y6x0KSg
+    - name: openid
+      in: query
+      required: true
+      type: string
+      description: 用户标识
+      example: oUypO5fUvaUkyuc6ueOwgwDMjCiM
+    - name: appid
+      in: query
+      required: true
+      type: string
+      description: 应用ID
+      example: wxb1170446a4c0a5a2
+    - name: region_id
+      in: query
+      type: integer
+      description: 行政区划代码
+      example: 310100
+    - name: auth_mode
+      in: query
+      type: string
+      description: 授权模式
+      example: ORDER_AUTH
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - plate_number
+          - driver_license
+          - up_time
+          - region_id
+          - source
+        properties:
+          plate_number:
+            type: string
+            description: 车牌号
+            example: 川ADT9716
+          driver_license:
+            type: string
+            description: 营运资格证号
+            example: 08512-2
+          up_time:
+            type: string
+            description: 上车时间
+            example: '2020-04-07T19:47:32+08:00'
+          region_id:
+            type: integer
+            description: 行政区划代码
+            example: 310100
+          source:
+            type: string
+            description: 乘客行程单来源
+            example: SOURCE_PAY
+          pay_time:
+            type: string
+            description: 面对面付款时间
+            example: '2020-04-07T19:47:32+08:00'
+          pay_amount:
+            type: integer
+            description: 面对面付款金额
+            example: 5450

@@ -1,0 +1,58 @@
+post:
+  x-last-updated-at: 2023.01.13
+  x-role:
+    - 服务商
+  tags:
+    - 出租车电子发票
+  summary: 上传出租车电子发票文件
+  description: 服务商调用插卡接口前，需调用本接口上传出租车电子发票文件来获取文件ID。文件ID有效期为3天，有效期内未成功调用插卡接口需重新调用本接口上传发票文件。 [官方文档](https://pay.weixin.qq.com/docs/partner/apis/taxi-fapiao/taxi-invoice-card/upload-taxi-invoice-card-file.html)
+  consumes:
+    - multipart/form-data
+  parameters:
+    - name: file
+      in: formData
+      required: true
+      type: file
+      description: 出租车电子发票文件
+      example: '1900000109'
+    - name: meta
+      in: formData
+      required: true
+      type: string
+      format: json
+      description: 出租车电子发票文件元信息
+      schema:
+        type: object
+        required:
+          - company_mchid
+          - digest
+          - digest_algorithm
+          - region_id
+        properties:
+          company_mchid:
+            type: string
+            description: 出租车经营主体商户号
+            example: '1900000109'
+          digest:
+            type: string
+            description: 文件摘要
+            example: addca90a6a290b9642dbaccffdf01e8c22aa348940b2e96754169ba08c19e5db
+          digest_algorithm:
+            type: string
+            description: 文件摘要算法
+            example: DIGEST_ALGORITHM_SM3
+          region_id:
+            type: integer
+            description: 行政区划代码
+            example: 310100
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - fapiao_media_id
+        properties:
+          fapiao_media_id:
+            type: string
+            description: 出租车电子发票文件ID
+            example: ASNFZ4mrze/+3LqYdlQyEA==

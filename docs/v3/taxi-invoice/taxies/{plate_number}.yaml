@@ -1,0 +1,66 @@
+get:
+  x-last-updated-at: 2023.01.13
+  x-role:
+    - 服务商
+  tags:
+    - 出租车电子发票
+  summary: 获取出租车信息API
+  description: 获取出租车信息 [官方文档](https://pay.weixin.qq.com/docs/partner/apis/taxi-fapiao/taxi/query-taxi.html)
+  parameters:
+    - name: plate_number
+      in: path
+      required: true
+      type: string
+      description: 车牌号
+      example: 粤B12345
+    - name: region_id
+      in: query
+      required: true
+      type: integer
+      description: 行政区划代码
+      example: 510100
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - plate_number
+          - company_name
+          - company_mchid
+          - main_license
+          - deputy_license
+          - region_id
+          - support_invoice
+          - taxi_state
+        properties:
+          plate_number:
+            type: string
+            description: 车牌号
+            example: 粤B12345
+          company_name:
+            type: string
+            description: 公司名称
+            example: 深圳市未来有限公司
+          company_mchid:
+            type: string
+            description: 公司商户号
+            example: '1900000109'
+          main_license:
+            type: string
+            description: 主班司机资格证号
+            example: '6298416'
+          deputy_license:
+            type: string
+            description: 副班司机资格证号
+            example: '6298416'
+          region_id:
+            type: integer
+            description: 行政区划代码
+            example: 510100
+          support_invoice:
+            type: boolean
+            description: 是否支持开票
+          taxi_state:
+            type: string
+            description: 出租车状态
+            example: IN_OPERATION

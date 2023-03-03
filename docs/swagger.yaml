@@ -7,7 +7,7 @@ info:
     整理自[官方文档中心](https://pay.weixin.qq.com/wiki/doc/apiv3/index.shtml)
     本[项目/工具地址](https://github.com/TheNorthMemory/wechatpay-openapi)
     **访问第一次加载比较慢，请耐心等待大约1-2分钟不等(小文件下载比较多)。**
-  version: 0.15.8
+  version: 0.15.9
 schemes:
   - https
 consumes:
@@ -58,6 +58,7 @@ tags:
   - name: 乘车服务
   - name: ETC授权扣费
   - name: 电动自行车行业代扣
+  - name: 出租车电子发票
   - name: 运营工具∙代金券
   - name: 运营工具∙商家券
   - name: 运营工具∙委托营销
@@ -1111,6 +1112,28 @@ paths:
     $ref: ./v3/smartguide/guides/{guide_id}.yaml
   /v3/smartguide/guides/{guide_id}/assign:
     $ref: ./v3/smartguide/guides/{guide_id}/assign.yaml
+  /v3/taxi-invoice/attendance/punch:
+    $ref: ./v3/taxi-invoice/attendance/punch.yaml
+  /v3/taxi-invoice/cards:
+    $ref: ./v3/taxi-invoice/cards.yaml
+  /v3/taxi-invoice/cards/upload-file:
+    $ref: ./v3/taxi-invoice/cards/upload-file.yaml
+  /v3/taxi-invoice/driver/update-driver:
+    $ref: ./v3/taxi-invoice/driver/update-driver.yaml
+  /v3/taxi-invoice/drivers/{driver_license}:
+    $ref: ./v3/taxi-invoice/drivers/{driver_license}.yaml
+  /v3/taxi-invoice/taxi-companies/{company_mchid}:
+    $ref: ./v3/taxi-invoice/taxi-companies/{company_mchid}.yaml
+  /v3/taxi-invoice/taxi-company/create-taxi-company:
+    $ref: ./v3/taxi-invoice/taxi-company/create-taxi-company.yaml
+  /v3/taxi-invoice/taxi/update-taxi:
+    $ref: ./v3/taxi-invoice/taxi/update-taxi.yaml
+  /v3/taxi-invoice/taxies/{plate_number}:
+    $ref: ./v3/taxi-invoice/taxies/{plate_number}.yaml
+  /v3/taxi-invoice/user-taxi-order/find-by-token:
+    $ref: ./v3/taxi-invoice/user-taxi-order/find-by-token.yaml
+  /v3/taxi-invoice/user-taxi-orders:
+    $ref: ./v3/taxi-invoice/user-taxi-orders.yaml
   /v3/transfer-detail/electronic-receipts:
     $ref: ./v3/transfer-detail/electronic-receipts.yaml
   /v3/transfer/batches:

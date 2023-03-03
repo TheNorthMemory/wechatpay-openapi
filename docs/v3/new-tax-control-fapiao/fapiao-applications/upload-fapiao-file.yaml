@@ -26,7 +26,7 @@ post:
         type: object
         required:
           - file_type
-          - digest_algorithm
+          - digest_alogrithm
           - digest
         properties:
           sub_mchid:
@@ -36,7 +36,7 @@ post:
             type: string
             description: 发票文件的类型为PDF
             example: PDF
-          digest_algorithm:
+          digest_alogrithm:
             type: string
             description: 文件摘要算法
             example: SM3

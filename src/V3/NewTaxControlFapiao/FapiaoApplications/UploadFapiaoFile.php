@@ -19,7 +19,7 @@ interface UploadFapiaoFile
      * $json  = [
      *     'sub_mchid'        => 'your_sub_mchid', //服务商模式下必传
      *     'file_type'        => 'PDF',
-     *     'digest_algorithm' => 'SM3',
+     *     'digest_alogrithm' => 'SM3',
      *     'digest'           => $digest,
      * ];
      * $media->setMeta(\json_encode($json));
@@ -44,7 +44,7 @@ interface UploadFapiaoFile
      * $json  = [
      *     'sub_mchid'        => 'your_sub_mchid', //服务商模式下必传
      *     'file_type'        => 'PDF',
-     *     'digest_algorithm' => 'SM3',
+     *     'digest_alogrithm' => 'SM3',
      *     'digest'           => $digest,
      * ];
      * $media->setMeta(\json_encode($json));

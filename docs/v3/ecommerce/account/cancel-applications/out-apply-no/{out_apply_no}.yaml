@@ -1,0 +1,51 @@
+get:
+  x-last-updated-at: 2023.02.10
+  x-role:
+    - 电商平台
+  tags:
+    - 收付通∙注销
+  summary: 查询注销单状态
+  description: 电商平台服务商发起注销申请后，通过本接口查询注销状态、进展。 [官方文档](https://pay.weixin.qq.com/docs/partner/apis/ecommerce-cancel/cancel-applications/get-cancel-application.html)
+  parameters:
+    - name: out_apply_no
+      in: path
+      type: string
+      description: 商户注销申请单号
+      example: '2019061122222222122'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - out_apply_no
+          - sub_mchid
+          - subsidy_id
+          - description
+          - amount
+          - result
+          - success_time
+        properties:
+          out_apply_no:
+            type: string
+            description: 商户注销申请单号
+            example: '2019061122222222122'
+          sub_mchid:
+            type: string
+            description: 二级商户号
+            example: '1900000109'
+          reject_reason:
+            type: string
+            description: 受理失败原因
+            example: 非电商服务商，无权调用此接口
+          cancel_state:
+            type: string
+            description: 注销状态
+            enum:
+              - REVIEWING
+              - REJECTED
+              - CANCEL_SUCCESS
+          update_time:
+            type: string
+            format: rfc3339
+            description: 最后更新时间
+            example: '2015-05-20T13:29:35.120+08:00'

@@ -7,7 +7,7 @@ info:
     整理自[官方文档中心](https://pay.weixin.qq.com/wiki/doc/apiv3/index.shtml)
     本[项目/工具地址](https://github.com/TheNorthMemory/wechatpay-openapi)
     **访问第一次加载比较慢，请耐心等待大约1-2分钟不等(小文件下载比较多)。**
-  version: 0.15.10
+  version: 0.15.11
 schemes:
   - https
 consumes:
@@ -26,6 +26,7 @@ tags:
   - name: 资金应用∙转账∙服务商模式
   - name: 资金应用∙转账∙银行模式
   - name: 收付通∙进件
+  - name: 收付通∙注销
   - name: 收付通∙支付
   - name: 收付通∙合单
   - name: 收付通∙补差
@@ -517,6 +518,12 @@ paths:
     $ref: ./v3/ebike/charge/transactions/out-trade-no/{out_trade_no}.yaml
   /v3/ebike/charge/users/{openid}/contract:
     $ref: ./v3/ebike/charge/users/{openid}/contract.yaml
+  /v3/ecommerce/account/cancel-applications:
+    $ref: ./v3/ecommerce/account/cancel-applications.yaml
+  /v3/ecommerce/account/cancel-applications/media:
+    $ref: ./v3/ecommerce/account/cancel-applications/media.yaml
+  /v3/ecommerce/account/cancel-applications/out-apply-no/{out_apply_no}:
+    $ref: ./v3/ecommerce/account/cancel-applications/out-apply-no/{out_apply_no}.yaml
   /v3/ecommerce/applyments/{applyment_id}:
     $ref: ./v3/ecommerce/applyments/{applyment_id}.yaml
   /v3/ecommerce/applyments/:

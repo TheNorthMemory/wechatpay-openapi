@@ -52,6 +52,7 @@ tags:
   - name: 支付分∙停车服务
   - name: 支付分∙服务商模式
   - name: 支付分∙服务商模式∙免确认
+  - name: 品牌小店营销
   - name: 扣款服务
   - name: 校园轻松付
   - name: 教育续费通
@@ -790,6 +791,8 @@ paths:
     $ref: ./v3/marketing/favor/users/{openid}/coupons.yaml
   /v3/marketing/favor/users/{openid}/coupons/{coupon_id}:
     $ref: ./v3/marketing/favor/users/{openid}/coupons/{coupon_id}.yaml
+  /v3/marketing/goods-subsidy-activity/retail-store-act/{activity_id}/representative:
+    $ref: ./v3/marketing/goods-subsidy-activity/retail-store-act/{activity_id}/representative.yaml
   /v3/marketing/membercard-activity/activities:
     $ref: ./v3/marketing/membercard-activity/activities.yaml
   /v3/marketing/membercard-activity/activities/{activity_id}:

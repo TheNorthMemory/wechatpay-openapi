@@ -1,0 +1,51 @@
+put:
+  x-last-updated-at: 2023.02.24
+  x-role:
+    - 服务商
+  tags:
+    - 品牌小店营销
+  summary: 添加零售小店活动业务代理
+  description: 该接口为服务商或商户给零售小店活动添加业务代理的专用接口。 使用对象：活动创建方商户号、活动归属品牌的品牌主商户号或品牌经营商户号。 [官方文档](https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-stores/add-representative.html)
+  parameters:
+    - name: activity_id
+      in: path
+      type: string
+      description: 活动ID
+      required: true
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - representative_info_list
+          - out_request_no
+        properties:
+          representative_info_list:
+            type: array
+            items:
+              type: object
+              properties:
+                openid:
+                  type: string
+          out_request_no:
+            type: string
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - activity_id
+          - failed_representative_info_list
+          - add_time
+        properties:
+          activity_id:
+            type: string
+          failed_representative_info_list:
+            type: array
+            items:
+              type: object
+              properties:
+                openid:
+                  type: string
+          add_time:

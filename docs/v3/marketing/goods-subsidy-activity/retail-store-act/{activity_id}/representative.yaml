@@ -49,3 +49,5 @@ put:
                 openid:
                   type: string
           add_time:
+            type: string
+            format: rfc3339

@@ -903,6 +903,10 @@ paths:
     $ref: ./v3/merchant-store/stores.yaml
   /v3/merchant-store/stores/{store_id}:
     $ref: ./v3/merchant-store/stores/{store_id}.yaml
+  /v3/merchant-store/stores/{store_id}/recipients/bind:
+    $ref: ./v3/merchant-store/stores/{store_id}/recipients/bind.yaml
+  /v3/merchant-store/stores/{store_id}/recipients/unbind:
+    $ref: ./v3/merchant-store/stores/{store_id}/recipients/unbind.yaml
   /v3/merchant/fund/balance/{account_type}:
     $ref: ./v3/merchant/fund/balance/{account_type}.yaml
   /v3/merchant/fund/dayendbalance/{account_type}:

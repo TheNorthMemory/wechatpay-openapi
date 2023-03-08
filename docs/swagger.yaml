@@ -7,7 +7,7 @@ info:
     整理自[官方文档中心](https://pay.weixin.qq.com/wiki/doc/apiv3/index.shtml)
     本[项目/工具地址](https://github.com/TheNorthMemory/wechatpay-openapi)
     **访问第一次加载比较慢，请耐心等待大约1-2分钟不等(小文件下载比较多)。**
-  version: 0.15.11
+  version: 0.15.12
 schemes:
   - https
 consumes:
@@ -52,6 +52,7 @@ tags:
   - name: 支付分∙停车服务
   - name: 支付分∙服务商模式
   - name: 支付分∙服务商模式∙免确认
+  - name: 支付分∙机构模式
   - name: 品牌小店营销
   - name: 扣款服务
   - name: 校园轻松付
@@ -1029,6 +1030,22 @@ paths:
     $ref: ./v3/payroll-card/tokens.yaml
   /v3/payroll-card/transfer-batches:
     $ref: ./v3/payroll-card/transfer-batches.yaml
+  /v3/payscore/acquiringbank/permissions:
+    $ref: ./v3/payscore/acquiringbank/permissions.yaml
+  /v3/payscore/acquiringbank/permissions/authorization-code/{authorization_code}:
+    $ref: ./v3/payscore/acquiringbank/permissions/authorization-code/{authorization_code}.yaml
+  /v3/payscore/acquiringbank/permissions/authorization-code/{authorization_code}/terminate:
+    $ref: ./v3/payscore/acquiringbank/permissions/authorization-code/{authorization_code}/terminate.yaml
+  /v3/payscore/acquiringbank/serviceorder:
+    $ref: ./v3/payscore/acquiringbank/serviceorder.yaml
+  /v3/payscore/acquiringbank/serviceorder/{out_order_no}/cancel:
+    $ref: ./v3/payscore/acquiringbank/serviceorder/{out_order_no}/cancel.yaml
+  /v3/payscore/acquiringbank/serviceorder/{out_order_no}/complete:
+    $ref: ./v3/payscore/acquiringbank/serviceorder/{out_order_no}/complete.yaml
+  /v3/payscore/acquiringbank/serviceorder/{out_order_no}/registerdeductinfo:
+    $ref: ./v3/payscore/acquiringbank/serviceorder/{out_order_no}/registerdeductinfo.yaml
+  /v3/payscore/acquiringbank/serviceorder/deduction:
+    $ref: ./v3/payscore/acquiringbank/serviceorder/deduction.yaml
   /v3/payscore/merchant-bill:
     $ref: ./v3/payscore/merchant-bill.yaml
   /v3/payscore/partner/permissions:

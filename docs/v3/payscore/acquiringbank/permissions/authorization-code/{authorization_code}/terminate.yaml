@@ -1,0 +1,41 @@
+post:
+  x-last-updated-at: 2022.11.09
+  x-role:
+    - 从业机构
+  tags:
+    - 支付分∙机构模式
+  summary: 从业机构解除用户授权关系（授权协议号）
+  description: '[官方文档](https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-auth/terminate-acquiring-bank-permissions-by-code.html)'
+  parameters:
+    - name: authorization_code
+      in: path
+      required: true
+      type: string
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - service_id
+          - sub_mchid
+          - reason
+        properties:
+          service_id:
+            type: string
+            description: 服务ID
+            example: '500001'
+          channel_id:
+            type: string
+            description: 渠道商商户号
+            example: '1230000109'
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1230000109'
+          reason:
+            type: string
+            description: 撤销原因
+            example: 撤销原因
+  responses:
+    '204': {}

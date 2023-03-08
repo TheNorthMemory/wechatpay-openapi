@@ -1,0 +1,55 @@
+get:
+  x-last-updated-at: 2022.11.09
+  x-role:
+    - 从业机构
+  tags:
+    - 支付分∙机构模式
+  summary: 查询扣款信息
+  description: '[官方文档](https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-order/get-acquiring-bank-deduct-info.html)'
+  parameters:
+    - name: service_id
+      in: query
+      type: string
+      description: 服务ID
+      required: true
+      example: '2002000000000558128851361561536'
+    - name: appid
+      in: query
+      type: string
+      required: true
+      description: 从业机构申请的公众号或移动应用AppID
+    - name: sub_mchid
+      in: query
+      type: string
+      description: 子商户号
+      required: true
+      example: '1900000109'
+    - name: sub_appid
+      in: query
+      type: string
+      description: 子商户申请的公众号或移动应用AppID
+    - name: channel_id
+      in: query
+      type: string
+      description: 渠道商商户号
+      required: true
+      example: '1230000109'
+    - name: out_order_no
+      in: query
+      type: string
+      description: 商户服务订单号
+      example: 1234323JKHDFE1243252
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - description
+          - out_trade_no
+        properties:
+          description:
+            type: string
+            description: 商品或支付单简要描述。
+          out_trade_no:
+            type: string
+            description: 商户扣款单号

@@ -1,0 +1,689 @@
+post:
+  x-last-updated-at: 2022.11.09
+  x-role:
+    - 从业机构
+  tags:
+    - 支付分∙机构模式
+  summary: 创建订单
+  description: '[官方文档](https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-order/create-acquiring-bank-service-order.html)'
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - service_id
+          - appid
+          - sub_mchid
+          - channel_id
+          - out_order_no
+          - service_introduction
+          - risk_fund
+          - time_range
+          - notify_url
+        properties:
+          service_id:
+            type: string
+            description: 服务ID
+            example: '2002000000000558128851361561536'
+          appid:
+            type: string
+            description: 服务商应用ID
+            example: wxd678efh567hg6787
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1900000109'
+          sub_appid:
+            type: string
+            description: 子商户应用ID
+            example: wxd678efh567hg6999
+          channel_id:
+            type: string
+            description: 渠道商商户号
+            example: '1230000109'
+          out_order_no:
+            type: string
+            description: 商户服务订单号
+            example: 1234323JKHDFE1243252
+          service_introduction:
+            type: string
+            description: 服务信息
+            example: XX充电宝
+          post_payments:
+            type: array
+            description: 后付费项目
+            items:
+              type: object
+              required:
+                - name
+              properties:
+                name:
+                  type: string
+                  description: 付费项目名称
+                  example: 就餐费用
+                description:
+                  type: string
+                  description: 付费说明
+                  example: 就餐人均100元
+                amount:
+                  type: integer
+                  description: 金额
+                  example: 40000
+                count:
+                  type: integer
+                  description: 付费数量
+                  example: 4
+          post_discounts:
+            type: array
+            description: 后付费商户优惠
+            items:
+              type: object
+              required:
+                - name
+                - description
+              properties:
+                name:
+                  type: string
+                  description: 优惠名称
+                  example: 满20减1元
+                description:
+                  type: string
+                  description: 优惠说明
+                  example: 不与其他优惠叠加
+                count:
+                  type: integer
+                  description: 优惠数量
+                  example: 2
+          risk_fund:
+            type: object
+            description: 订单风险金
+            required:
+              - name
+              - amount
+            properties:
+              name:
+                type: string
+                description: 风险金名称
+                example: DEPOSIT
+              amount:
+                type: integer
+                description: 风险金额
+                example: 10000
+              description:
+                type: string
+                description: 风险说明
+                example: 就餐的预估费用
+          time_range:
+            type: object
+            description: 服务时间段
+            required:
+              - start_time
+            properties:
+              start_time:
+                type: string
+                description: 服务开始时间
+                example: '20091225091010'
+              start_time_remark:
+                type: string
+                description: 服务开始时间备注
+                example: 开始租借时间
+              end_time:
+                type: string
+                description: 预计服务结束时间
+                example: '20091225121010'
+              end_time_remark:
+                type: string
+                description: 预计服务结束时间备注
+                example: 租借结束时间
+          location:
+            type: object
+            description: 服务位置
+            properties:
+              start_location:
+                type: string
+                description: 服务开始地点
+                example: 嗨客时尚主题展餐厅
+              end_location:
+                type: string
+                description: 预计服务结束地点
+                example: 嗨客时尚主题展餐厅
+          openid:
+            type: string
+            description: 服务商公众号下的用户标识
+            example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+          sub_openid:
+            type: string
+            description: 子商户公众号下的用户标识
+            example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+          need_user_confirm:
+            type: boolean
+            description: 是否需要用户确认
+          notify_url:
+            type: string
+            description: 商户回调地址
+            example: https://api.test.com
+          attach:
+            type: string
+            description: 商户数据包
+            example: Easdfowealsdkjfnlaksjdlfkwqoi&wl3l2sald
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - out_order_no
+          - service_id
+          - appid
+          - mchid
+          - sub_mchid
+          - channel_id
+          - service_introduction
+          - state
+          - order_id
+        properties:
+          out_order_no:
+            type: string
+            description: 商户服务订单号
+            example: 1234323JKHDFE1243252
+          service_id:
+            type: string
+            description: 服务ID
+            example: '2002000000000558128851361561536'
+          appid:
+            type: string
+            description: 服务商应用ID
+            example: wxd678efh567hg6787
+          mchid:
+            type: string
+            description: 服务商商户号
+            example: '1230000109'
+          sub_appid:
+            type: string
+            description: 子商户应用ID
+            example: wxd678efh567hg6999
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1900000109'
+          channel_id:
+            type: string
+            description: 渠道商商户号
+            example: '1230000109'
+          service_introduction:
+            type: string
+            description: 服务信息
+            example: XX充电宝
+          state:
+            type: string
+            description: 服务订单状态
+            example: CREATED
+          state_description:
+            type: string
+            description: 订单状态说明
+            example: MCH_COMPLETE
+          post_payments:
+            type: array
+            description: 后付费项目
+            items:
+              type: object
+              required:
+                - name
+              properties:
+                name:
+                  type: string
+                  description: 付费项目名称
+                  example: 就餐费用
+                description:
+                  type: string
+                  description: 付费说明
+                  example: 就餐人均100元
+                amount:
+                  type: integer
+                  description: 金额
+                  example: 40000
+                count:
+                  type: integer
+                  description: 付费数量
+                  example: 4
+          post_discounts:
+            type: array
+            description: 后付费商户优惠
+            items:
+              type: object
+              required:
+                - name
+                - description
+              properties:
+                name:
+                  type: string
+                  description: 优惠名称
+                  example: 满20减1元
+                description:
+                  type: string
+                  description: 优惠说明
+                  example: 不与其他优惠叠加
+                count:
+                  type: integer
+                  description: 优惠数量
+                  example: 2
+          risk_fund:
+            type: object
+            description: 订单风险金
+            required:
+              - name
+              - amount
+            properties:
+              name:
+                type: string
+                description: 风险金名称
+                example: DEPOSIT
+              amount:
+                type: integer
+                description: 风险金额
+                example: 10000
+              description:
+                type: string
+                description: 风险说明
+                example: 就餐的预估费用
+          time_range:
+            type: object
+            description: 服务时间段
+            required:
+              - start_time
+            properties:
+              start_time:
+                type: string
+                description: 服务开始时间
+                example: '20091225091010'
+              start_time_remark:
+                type: string
+                description: 服务开始时间备注
+                example: 开始租借时间
+              end_time:
+                type: string
+                description: 预计服务结束时间
+                example: '20091225121010'
+              end_time_remark:
+                type: string
+                description: 预计服务结束时间备注
+                example: 租借结束时间
+          location:
+            type: object
+            description: 服务位置
+            required:
+              - end_location
+            properties:
+              start_location:
+                type: string
+                description: 服务开始地点
+                example: 嗨客时尚主题展餐厅
+              end_location:
+                type: string
+                description: 预计服务结束地点
+                example: 嗨客时尚主题展餐厅
+          attach:
+            type: string
+            description: 商户数据包
+            example: Easdfowealsdkjfnlaksjdlfkwqoi&wl3l2sald
+          notify_url:
+            type: string
+            description: 商户回调地址
+            example: https://api.test.com
+          order_id:
+            type: string
+            description: 微信支付服务订单号
+            example: '0000300001201908301055157220022'
+          package:
+            type: string
+            description: 跳转微信侧数据包
+            example: DJIOSQPYWDxsjdldeuwhdodwxasd_dDiodnwjh9we
+get:
+  x-last-updated-at: 2022.11.09
+  x-role:
+    - 从业机构
+  tags:
+    - 支付分∙机构模式
+  summary: 查询订单
+  description: '[官方文档](https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-order/get-acquiring-bank-service-order.html)'
+  parameters:
+    - name: service_id
+      in: query
+      type: string
+      description: 服务ID
+      required: true
+      example: '2002000000000558128851361561536'
+    - name: sub_mchid
+      in: query
+      type: string
+      description: 子商户号
+      required: true
+      example: '1900000109'
+    - name: channel_id
+      in: query
+      type: string
+      description: 渠道商商户号
+      required: true
+      example: '1230000109'
+    - name: out_order_no
+      in: query
+      type: string
+      description: 商户服务订单号
+      example: 1234323JKHDFE1243252
+    - name: query_id
+      in: query
+      type: string
+      description: 回跳查询ID
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - out_order_no
+          - service_id
+          - appid
+          - mchid
+          - sub_mchid
+          - service_introduction
+          - state
+          - risk_fund
+          - time_range
+          - notify_url
+          - order_id
+          - channel_id
+        properties:
+          out_order_no:
+            type: string
+            description: 商户服务订单号
+            example: 1234323JKHDFE1243252
+          service_id:
+            type: string
+            description: 服务ID
+            example: '2002000000000558128851361561536'
+          appid:
+            type: string
+            description: 服务商应用ID
+            example: wxd678efh567hg6787
+          mchid:
+            type: string
+            description: 服务商商户号
+            example: '1230000109'
+          sub_appid:
+            type: string
+            description: 子商户应用ID
+            example: wxd678efh567hg6999
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1900000109'
+          service_introduction:
+            type: string
+            description: 服务信息
+            example: XX充电宝
+          state:
+            type: string
+            description: 服务订单状态
+            example: CREATED
+          state_description:
+            type: string
+            description: 订单状态说明
+            example: MCH_COMPLETE
+          post_payments:
+            type: array
+            description: 后付费项目
+            items:
+              type: object
+              required:
+                - name
+              properties:
+                name:
+                  type: string
+                  description: 付费名称
+                  example: 就餐费用
+                description:
+                  type: string
+                  description: 付费说明
+                  example: 就餐人均100元
+                amount:
+                  type: integer
+                  description: 付费金额
+                  example: 40000
+                count:
+                  type: integer
+                  description: 付费数量
+                  example: 4
+          post_discounts:
+            type: array
+            description: 后付费商户优惠
+            items:
+              type: object
+              required:
+                - name
+                - description
+              properties:
+                name:
+                  type: string
+                  description: 优惠名称
+                  example: 满20减1元
+                description:
+                  type: string
+                  description: 优惠说明
+                  example: 不与其他优惠叠加
+                amount:
+                  type: integer
+                  description: 优惠金额
+                  example: 100
+                count:
+                  type: integer
+                  description: 优惠数量
+                  example: 2
+          risk_fund:
+            type: object
+            description: 订单风险金
+            required:
+              - name
+              - amount
+            properties:
+              name:
+                type: string
+                description: 风险金名称
+                example: DEPOSIT
+              amount:
+                type: integer
+                description: 风险金额
+                example: 10000
+              description:
+                type: string
+                description: 风险说明
+                example: 就餐的预估费用
+          total_amount:
+            type: integer
+            description: 总金额
+            example: 40000
+          need_collection:
+            type: boolean
+            description: 是否需要收款
+          collection:
+            type: object
+            description: 收款信息
+            required:
+              - state
+            properties:
+              state:
+                type: string
+                description: 收款状态
+                example: USER_PAID
+              total_amount:
+                type: integer
+                description: 总收款金额
+                example: 50000
+              paying_amount:
+                type: integer
+                description: 待收金额
+                example: 40000
+              paid_amount:
+                type: integer
+                description: 已收金额
+                example: 10000
+              details:
+                type: array
+                description: 收款明细列表
+                items:
+                  type: object
+                  properties:
+                    seq:
+                      type: integer
+                      description: 收款序号
+                      example: 1
+                    amount:
+                      type: integer
+                      description: 单笔收款金额
+                      example: 10000
+                    paid_type:
+                      type: string
+                      description: 收款成功渠道
+                      example: NEWTON
+                    paid_time:
+                      type: string
+                      description: 收款成功时间
+                      example: '20091225091210'
+                    transaction_id:
+                      type: string
+                      description: 微信支付交易单号
+                      example: '15646546545165651651'
+                    promotion_detail:
+                      type: array
+                      description: 优惠功能
+                      items:
+                        type: object
+                        required:
+                          - coupon_id
+                          - amount
+                        properties:
+                          coupon_id:
+                            type: string
+                            description: 券ID
+                            example: '123456'
+                          name:
+                            type: string
+                            description: 优惠名称
+                            example: 单品优惠-6
+                          scope:
+                            type: string
+                            description: 优惠范围
+                            example: GLOBAL
+                          type:
+                            type: string
+                            description: 优惠类型
+                            example: CASH
+                          amount:
+                            type: integer
+                            description: 优惠券面额
+                            example: 100
+                          stock_id:
+                            type: string
+                            description: 活动ID
+                            example: activity_id
+                          wechatpay_contribute:
+                            type: integer
+                            description: 微信出资
+                            example: 100
+                          merchant_contribute:
+                            type: integer
+                            description: 商户出资
+                            example: 100
+                          other_contribute:
+                            type: integer
+                            description: 其他出资
+                            example: 100
+                          currency:
+                            type: string
+                            description: 优惠币种
+                            example: CNY
+                          goods_detail:
+                            type: array
+                            description: 单品列表
+                            items:
+                              type: object
+                              required:
+                                - goods_id
+                              properties:
+                                goods_id:
+                                  type: string
+                                  description: 商品编码
+                                  example: M1006
+                                quantity:
+                                  type: integer
+                                  description: 商品数量
+                                  example: 1
+                                unit_price:
+                                  type: integer
+                                  description: 商品价格
+                                  example: 1
+                                discount_amount:
+                                  type: integer
+                                  description: 商品优惠金额
+                                  example: 100
+                                goods_remark:
+                                  type: string
+                                  description: 商品备注
+                                  example: 商品备注信息
+          time_range:
+            type: object
+            description: 服务时间段
+            required:
+              - start_time
+            properties:
+              start_time:
+                type: string
+                description: 服务开始时间
+                example: '20091225091010'
+              start_time_remark:
+                type: string
+                description: 服务开始时间备注
+                example: 开始租借时间
+              end_time:
+                type: string
+                description: 服务结束时间
+                example: '20091225121010'
+              end_time_remark:
+                type: string
+                description: 服务结束时间备注
+                example: 租借结束时间
+          location:
+            type: object
+            description: 服务位置
+            properties:
+              start_location:
+                type: string
+                description: 服务开始地点
+                example: 嗨客时尚主题展餐厅
+              end_location:
+                type: string
+                description: 服务结束地点
+                example: 嗨客时尚主题展餐厅
+          attach:
+            type: string
+            description: 商户数据包
+            example: Easdfowealsdkjfnlaksjdlfkwqoi&wl3l2sald
+          notify_url:
+            type: string
+            description: 商户回调地址
+            example: https://api.test.com
+          openid:
+            type: string
+            description: 服务商公众号下的用户标识
+            example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+          sub_openid:
+            type: string
+            description: 子商户公众号下的用户标识
+            example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+          order_id:
+            type: string
+            description: 微信支付服务订单号
+            example: '0000300001201908301055157220022'
+          channel_id:
+            type: string
+            description: 渠道商商户号
+            example: '1230000109'

@@ -78,6 +78,7 @@ tags:
   - name: 经营工具∙连锁品牌∙门店
   - name: 经营工具∙微信点餐
   - name: 经营工具∙电子发票
+  - name: 经营工具∙电子小票
   - name: 营销工具∙收款有礼
   - name: 营销工具∙代扣切卡
   - name: 风险管理
@@ -872,6 +873,12 @@ paths:
     $ref: ./v3/marketing/paygiftactivity/activities/{activity_id}/terminate.yaml
   /v3/marketing/paygiftactivity/unique-threshold-activity:
     $ref: ./v3/marketing/paygiftactivity/unique-threshold-activity.yaml
+  /v3/marketing/shopping-receipt/customentrances:
+    $ref: ./v3/marketing/shopping-receipt/customentrances.yaml
+  /v3/marketing/shopping-receipt/customentrances/{brand_id}:
+    $ref: ./v3/marketing/shopping-receipt/customentrances/{brand_id}.yaml
+  /v3/marketing/shopping-receipt/shoppingreceipts:
+    $ref: ./v3/marketing/shopping-receipt/shoppingreceipts.yaml
   /v3/marketing/withdraw-favor/users/{openid}/coupons:
     $ref: ./v3/marketing/withdraw-favor/users/{openid}/coupons.yaml
   /v3/mch_operate/risk/withdrawl-apply:

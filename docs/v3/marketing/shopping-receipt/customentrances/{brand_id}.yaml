@@ -1,0 +1,209 @@
+get:
+  x-last-updated-at: 2022.09.27
+  x-role:
+    - 服务商
+  tags:
+    - 经营工具∙电子小票
+  summary: 查询自定义入口
+  description: '该接口为电子小票自定义入口查询接口，商家可以通过该接口查询品牌的自定义入口展示内容。[官方文档](https://pay.weixin.qq.com/docs/partner/apis/shopping-receipt/custom-entrances/query-custom-entrance.html)'
+  parameters:
+    - name: brand_id
+      in: path
+      required: true
+      type: string
+      description: 自定义入口的归属品牌ID。
+      example: '1014'
+  responses:
+    '200':
+      schema:
+        type: object
+        properties:
+          custom_entrance_type:
+            type: string
+            description: 自定义入口种类
+            example: MERCHANT_ACTIVITY
+            enum:
+              - MERCHANT_ACTIVITY
+              - MERCHANT_MINI_PROGRAM
+          subtitle:
+            type: string
+            description: 副标题，辅助描述商家活动或商家小程序信息
+            example: 双十一8折活动
+          goods_thumbnail_url:
+            type: string
+            description: 展示商品信息，当自定义入口种类为商家活动时，该字段必填，种类为商家小程序该字段不填
+            example: https://qpic.cn/xxx
+          custom_entrance_state:
+            type: string
+            description: 设置自定义入口的状态，ONLINE-在线对用户展示，OFFLINE-下线对用户不展示 可选取值
+            example: ONLINE
+          start_time:
+            type: string
+            format: rfc3339
+            description: 自定义入口的开始时间
+            example: '2015-05-20T13:29:35+08:00'
+          end_time:
+            type: string
+            format: rfc3339
+            description: 自定义入口的结束时间
+            example: '2019-12-31T13:29:35.120+08:00'
+          brand_id:
+            type: string
+            description: 自定义入口的归属品牌ID
+            example: '1014'
+          create_time:
+            type: string
+            format: rfc3339
+            description: 自定义入口创建的时间
+            example: '2015-05-20T13:29:35+08:00'
+          modify_time:
+            type: string
+            format: rfc3339
+            description: 自定义入口修改的时间
+            example: '2015-05-20T13:29:35+08:00'
+          out_request_no:
+            type: string
+            description: 商户创建自定义入口的凭据号（格式：商户ID+日期+流水号），商家侧需要保持唯一且递增
+            example: 100002322019090134234sfdf
+          jump_link:
+            type: object
+            description: 自定义入口跳转信息
+            properties:
+              mini_programs_appid:
+                type: string
+                description: 自定义入口的跳转小程序AppID
+                example: wxea9c30a90fs8d3fe
+              mini_programs_path:
+                type: string
+                description: 自定义入口跳转小程序的path
+                example: /pages/bonus/bonus
+patch:
+  x-last-updated-at: 2022.09.27
+  x-role:
+    - 服务商
+  tags:
+    - 经营工具∙电子小票
+  summary: 更新自定义入口
+  description: '该接口为电子小票自定义入口更新接口，商家可以通过该接口为品牌更新自定义入口展示内容。[官方文档](https://pay.weixin.qq.com/docs/partner/apis/shopping-receipt/custom-entrances/update-custom-entrance.html)'
+  parameters:
+    - name: brand_id
+      in: path
+      required: true
+      type: string
+      description: 自定义入口的归属品牌ID。
+      example: '1014'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        properties:
+          custom_entrance_type:
+            type: string
+            description: 自定义入口种类
+            example: MERCHANT_ACTIVITY
+            enum:
+              - MERCHANT_ACTIVITY
+              - MERCHANT_MINI_PROGRAM
+          subtitle:
+            type: string
+            description: 副标题，辅助描述商家活动或商家小程序信息
+            example: 双十一8折活动
+          goods_thumbnail_url:
+            type: string
+            description: 展示商品信息，当自定义入口种类为商家活动时，该字段必填，种类为商家小程序该字段不填
+            example: https://qpic.cn/xxx
+          custom_entrance_state:
+            type: string
+            description: 设置自定义入口的状态，ONLINE-在线对用户展示，OFFLINE-下线对用户不展示 可选取值
+            example: ONLINE
+          start_time:
+            type: string
+            format: rfc3339
+            description: 自定义入口的开始时间
+            example: '2015-05-20T13:29:35+08:00'
+          end_time:
+            type: string
+            format: rfc3339
+            description: 自定义入口的结束时间
+            example: '2019-12-31T13:29:35.120+08:00'
+          out_request_no:
+            type: string
+            description: 商户创建自定义入口的凭据号（格式：商户ID+日期+流水号），商家侧需要保持唯一且递增
+            example: 100002322019090134234sfdf
+          jump_link:
+            type: object
+            description: 自定义入口跳转信息
+            properties:
+              mini_programs_appid:
+                type: string
+                description: 自定义入口的跳转小程序AppID
+                example: wxea9c30a90fs8d3fe
+              mini_programs_path:
+                type: string
+                description: 自定义入口跳转小程序的path
+                example: /pages/bonus/bonus
+  responses:
+    '200':
+      schema:
+        type: object
+        properties:
+          custom_entrance_type:
+            type: string
+            description: 自定义入口种类
+            example: MERCHANT_ACTIVITY
+            enum:
+              - MERCHANT_ACTIVITY
+              - MERCHANT_MINI_PROGRAM
+          subtitle:
+            type: string
+            description: 副标题，辅助描述商家活动或商家小程序信息
+            example: 双十一8折活动
+          goods_thumbnail_url:
+            type: string
+            description: 展示商品信息，当自定义入口种类为商家活动时，该字段必填，种类为商家小程序该字段不填
+            example: https://qpic.cn/xxx
+          custom_entrance_state:
+            type: string
+            description: 设置自定义入口的状态，ONLINE-在线对用户展示，OFFLINE-下线对用户不展示 可选取值
+            example: ONLINE
+          start_time:
+            type: string
+            format: rfc3339
+            description: 自定义入口的开始时间
+            example: '2015-05-20T13:29:35+08:00'
+          end_time:
+            type: string
+            format: rfc3339
+            description: 自定义入口的结束时间
+            example: '2019-12-31T13:29:35.120+08:00'
+          brand_id:
+            type: string
+            description: 自定义入口的归属品牌ID
+            example: '1014'
+          create_time:
+            type: string
+            format: rfc3339
+            description: 自定义入口创建的时间
+            example: '2015-05-20T13:29:35+08:00'
+          modify_time:
+            type: string
+            format: rfc3339
+            description: 自定义入口修改的时间
+            example: '2015-05-20T13:29:35+08:00'
+          out_request_no:
+            type: string
+            description: 商户创建自定义入口的凭据号（格式：商户ID+日期+流水号），商家侧需要保持唯一且递增
+            example: 100002322019090134234sfdf
+          jump_link:
+            type: object
+            description: 自定义入口跳转信息
+            properties:
+              mini_programs_appid:
+                type: string
+                description: 自定义入口的跳转小程序AppID
+                example: wxea9c30a90fs8d3fe
+              mini_programs_path:
+                type: string
+                description: 自定义入口跳转小程序的path
+                example: /pages/bonus/bonus

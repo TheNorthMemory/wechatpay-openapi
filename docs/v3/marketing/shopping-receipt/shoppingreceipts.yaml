@@ -1,0 +1,129 @@
+post:
+  x-last-updated-at: 2022.09.27
+  x-role:
+    - 服务商
+  tags:
+    - 经营工具∙电子小票
+  summary: 上传电子小票
+  consumes:
+    - multipart/form-data
+  description: '商户将支付成功回传的参数填入指定字段，可以给指定微信支付订单上传电子小票。 上传成功后，用户可以在账单详情页看到商户上传的电子小票。[官方文档](https://pay.weixin.qq.com/docs/partner/apis/shopping-receipt/shopping-receipts/upload-shopping-receipt.html)'
+  parameters:
+    - $ref: '../../../definitions/Parameters.yaml#/WECHATPAY_CERTIFICATE_SERIAL'
+    - name: meta
+      in: formData
+      required: true
+      type: string
+      format: json
+      description: 电子小票上传信息
+      schema:
+        type: object
+        properties:
+          transaction_id:
+            type: string
+            description: 微信支付订单的交易单号，上传的电子小票会关联到该订单
+          transaction_mchid:
+            type: string
+            description: 微信支付订单的下单商户号
+          transaction_sub_mchid:
+            type: string
+            description: 微信支付订单的下单子商户号
+          out_trade_no:
+            type: string
+            description: 微信支付订单的商户订单号
+          openid:
+            type: string
+            description: 微信支付订单中OpenID
+          sha256:
+            type: string
+            description: 图片文件的文件摘要，即对图片文件的二进制内容进行sha256计算得到的值
+          merchant_contact_information:
+            type: object
+            description: 用户与商家的联系渠道
+            properties:
+              consultation_phone_number:
+                type: string
+                format: rsa-pubkey-encrypted
+                description: 品牌售后部门的咨询电话。
+                example: pVd1HJ6v/69bDnuC4EL5Kz4jBHLiCa8MRtelw/wDa4SzfeespQO/0kjiwfqdfg==
+          upload_time:
+            type: string
+            description: 上传时间，用于标识请求的先后顺序
+    - name: file
+      in: formData
+      required: true
+      type: file
+      description: 图片文件，电子小票图片只支持PNG、JPG格式，文件大小不能超过200KB。
+  responses:
+    '200':
+      schema:
+        type: object
+        properties:
+          receipt:
+            type: object
+            description: 电子小票上传信息
+            properties:
+              receipt_id:
+                type: string
+                description: 电子小票ID
+                example: '121630001'
+              state:
+                type: string
+                description: 电子小票图片审核状态
+                example: WAIT_REVIEW
+                enum:
+                 - WAIT_REVIEW #等待审核
+                 - NOT_PASS_REVIEW #审核不通过
+                 - PASS_REVIEW #审核通过
+              transaction_id:
+                type: string
+                description: 微信支付订单的交易单号，上传的电子小票会关联到该订单
+                example: '1217752501201407033233368018'
+              transaction_mchid:
+                type: string
+                description: 微信支付订单的商户号
+                example: '1230000109'
+              transaction_sub_mchid:
+                type: string
+                description: 微信支付订单的子商户号
+                example: '1230000109'
+              openid:
+                type: string
+                description: 微信支付订单中OpenID
+                example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+              brand_id:
+                type: int
+                description: 电子小票归属品牌的ID
+                example: '1142'
+              sha256:
+                type: string
+                description: 图片文件的文件摘要，即对图片文件的二进制内容进行sha256计算得到的值
+                example: 2969f98ef4763da62670d3aee5d456b56a8f3447c0178da21445206aa400a464
+              image_type:
+                type: string
+                description: 标识电子小票图片类型
+                example: PNG
+              create_time:
+                type: string
+                format: rfc3339
+                description: 电子小票创建的时间
+                example: '2015-05-20T13:29:35+08:00'
+              modify_time:
+                type: string
+                format: rfc3339
+                description: 电子小票最后一次修改时间
+                example: '2015-05-20T13:29:35+08:00'
+              merchant_contact_information:
+                type: object
+                description: 用户与商家的联系渠道
+                properties:
+                  consultation_phone_number:
+                    type: string
+                    format: rsa-pubkey-encrypted
+                    description: 品牌售后部门的咨询电话。
+                    example: pVd1HJ6v/69bDnuC4EL5Kz4jBHLiCa8MRtelw/wDa4SzfeespQO/0kjiwfqdfg==
+              upload_time:
+                type: string
+                format: rfc3339
+                description: 上传时间，用于标识请求的先后顺序，该笔小票上传时填写则返回，没有不返回
+                example: '2021-05-20T13:29:35.120+08:00'

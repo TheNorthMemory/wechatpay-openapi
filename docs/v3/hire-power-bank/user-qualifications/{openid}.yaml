@@ -1,0 +1,24 @@
+get:
+  x-last-updated-at: 2022.07.27
+  x-role:
+    - 普通商户
+  tags:
+    - 租用充电宝∙隔夜归还
+  summary: 查询用户保险订单领取资格
+  description: '商户通过该接口查询用户保险订单领取资格。[官方文档](https://pay.weixin.qq.com/docs/merchant/apis/hire-power-bank-insurance/insurance-orders/get-qualification-by-open-id.html)'
+  parameters:
+    - name: openid
+      in: path
+      required: true
+      type: string
+      description: 微信用户在商户对应appid下的唯一标识。
+      example: 2323dfsdf342342
+  responses:
+    '200':
+      schema:
+        type: object
+        properties:
+          qualified_user:
+            type: boolean
+            description: 用户是否具有保险订单领取资格
+            example: true

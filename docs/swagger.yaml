@@ -63,6 +63,7 @@ tags:
   - name: ETC授权扣费
   - name: 电动自行车行业代扣
   - name: 出租车电子发票
+  - name: 租用充电宝∙隔夜归还
   - name: 运营工具∙代金券
   - name: 运营工具∙商家券
   - name: 运营工具∙委托营销
@@ -719,6 +720,12 @@ paths:
     $ref: ./v3/goldplan/merchants/open-advertising-show.yaml
   /v3/goldplan/merchants/set-advertising-industry-filter:
     $ref: ./v3/goldplan/merchants/set-advertising-industry-filter.yaml
+  /v3/hire-power-bank/insurance-orders:
+    $ref: ./v3/hire-power-bank/insurance-orders.yaml
+  /v3/hire-power-bank/insurance-orders/{out_order_no}:
+    $ref: ./v3/hire-power-bank/insurance-orders/{out_order_no}.yaml
+  /v3/hire-power-bank/user-qualifications/{openid}:
+    $ref: ./v3/hire-power-bank/user-qualifications/{openid}.yaml
   /v3/industry-coupon/tokens:
     $ref: ./v3/industry-coupon/tokens.yaml
   /v3/iotmanage/devices:

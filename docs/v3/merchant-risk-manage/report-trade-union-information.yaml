@@ -1,0 +1,171 @@
+post:
+  x-last-updated-at: 2023.02.17
+  x-role:
+    - 普通商户
+    - 服务商
+    - 渠道商
+    - 从业机构
+  tags:
+    - 风险管理
+  summary: 上报订单关联信息
+  description: 从业机构/服务商/渠道商/商户可调用该接口，在商户订单下单完成后，上报订单关联信息，以便后续在支付环节进行风险管控 [官方文档](https://pay.weixin.qq.com/docs/partner/apis/risk-manage/trade-risk/report-trade-risk-information.html)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        properties:
+          sp_mchid:
+            type: string
+            description: 微信支付分配的服务商唯一标识
+            example: '1900000109'
+          acquiring_bank_id:
+            type: string
+            description: 微信支付分配的从业机构唯一标识
+            example: '1356485'
+          channel_id:
+            type: string
+            description: 微信支付分配的渠道商唯一标识
+            example: '1900000108'
+          sub_mchid:
+            type: string
+            description: 上报订单风险数据的商户号信息
+            example: '1900009231'
+          out_trade_no:
+            type: string
+            description: 商户系统内部订单号，只能是数字、大小写字母_-*且在同一个商户号下唯一
+            example: '1217752501201407033233368018'
+          openid:
+            type: string
+            description: 此参数为微信用户在商户对应appid下的唯一标识
+            example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+          phone:
+            type: string
+            description: 用户在商户侧留存的手机号，采用商户平台证书sm2公钥加密传递
+            example: ca775af5f841bdf424b2e6eb86a6e21e
+          certificates_number:
+            type: string
+            description: 身份证ID后6位，采用商户平台证书sm2公钥加密传递
+            example: ca775af5f841bdf424b2e6eb86a6e21e
+          client_ip:
+            type: string
+            description: 用户的终端IP
+            example: '123.12.12.123'
+          risk_level:
+            type: integer
+            description: 商户判定交易的风险等级
+            example: 1
+          line_type:
+            type: integer
+            description: 1：线上交易; 2：线下交易
+            example: 1
+          goods_type:
+            type: integer
+            description: 1：虚拟交易；2：实物交易
+            example: 1
+          seller_type:
+            type: integer
+            description: 物品发布类型
+            example: 1
+          is_need_deliver:
+            type: boolean
+            description: 是否需要物流发货
+          device_type:
+            type: integer
+            description: 用户设备类型
+            example: 1
+          userid:
+            type: string
+            description: 出金的用户在商户侧的账号，由商户侧定义，保证账号维度唯一即可
+            example: 华为的账号：260XXX
+          phone_from:
+            type: integer
+            description: 用户手机号的来源方式
+            example: 1
+          seller_userid:
+            type: string
+            description: 收款方在商户侧的用户标识，由商户侧定义，账号维度唯一即可
+            example: 抖音的账号：XXXXX
+          scene:
+            type: integer
+            description: 0：无明确场景；1：充值；2：生活缴费
+            example: 1
+          recharge_fields:
+            type: object
+            properties:
+              account_type:
+                type: integer
+                description: 充值场景，用户充值的账号类型
+                example: 1
+              account:
+                type: string
+                example: example_account
+          living_expenses_fields:
+            type: object
+            properties:
+              acc_no:
+                type: string
+                description: 生活缴费的呼号
+                example: '123456'
+              type:
+                type: integer
+                description: 缴费的种类
+                example: 1
+              city:
+                type: string
+                description: 用户缴费户号所属城市
+                example: 湖南衡阳
+              address:
+                type: string
+                description: 用户缴费户号所对应的地址信息
+                example: 广东省深圳市南山区海天二路33号
+              acc_name:
+                type: string
+                description: 缴费户号对应的户主名字
+                example: 詹讯
+              company_name:
+                type: string
+                description: 给哪个机构缴纳该笔费用
+                example: 深圳电力
+              amount:
+                type: integer
+                description: 缴费金额，单位为分，币种为人名币
+                example: 500
+          extra_fields1:
+            type: string
+            description: 扩展字段1，json格式
+            example: '{"key1":"value1"}'
+          extra_fields2:
+            type: string
+            description: 扩展字段2，json格式
+            example: '{"key1":"value1"}'
+          extra_fields3:
+            type: string
+            description: 扩展字段3，json格式
+            example: '{"key1":"value1"}'
+  responses:
+    '200':
+      schema:
+        type: object
+        properties:
+          sp_mchid:
+            type: string
+            description: 微信支付分配的服务商唯一标识
+            example: '1900000109'
+          acquiring_bank_id:
+            type: string
+            description: 微信支付分配的从业机构唯一标识
+            example: '1356485'
+          channel_id:
+            type: string
+            description: 微信支付分配的渠道商唯一标识
+          example: '1900000108'
+          sub_mchid:
+            type: string
+            description: 上报订单风险数据的商户号信息
+            example: '1900009231'
+          out_trade_no:
+            type: string
+            description: 商户系统内部订单号
+            example: '1217752501201407033233368018'

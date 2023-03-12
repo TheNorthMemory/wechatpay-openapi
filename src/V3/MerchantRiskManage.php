@@ -3,6 +3,7 @@
 namespace WeChatPay\OpenAPI\V3;
 
 /**
+ * @property-read MerchantRiskManage\ReportTradeUnionInformation $reportTradeUnionInformation
  * @property-read MerchantRiskManage\ViolationNotifications $violationNotifications
  */
 interface MerchantRiskManage

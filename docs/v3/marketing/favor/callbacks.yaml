@@ -56,7 +56,7 @@ post:
           switch:
             type: boolean
             description: 回调开关
-            example: 'true'
+            example: true
   responses:
     200:
       schema:

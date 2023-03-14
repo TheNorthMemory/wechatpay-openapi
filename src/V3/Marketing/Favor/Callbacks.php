@@ -10,6 +10,28 @@ use GuzzleHttp\Promise\PromiseInterface;
 interface Callbacks
 {
     /**
+     * 获取已设置的消息通知地址(同步模式)
+     * @param array<string,mixed> $options
+     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/convention/chapter3_12.shtml
+     */
+    public function get(array $options = [
+        'query' => [
+            'mchid' => '9856888',
+        ],
+    ]): ResponseInterface;
+
+    /**
+     * 获取已设置的消息通知地址(异步模式)
+     * @param array<string,mixed> $options
+     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/convention/chapter3_12.shtml#async
+     */
+    public function getAsync(array $options = [
+        'query' => [
+            'mchid' => '9856888',
+        ],
+    ]): PromiseInterface;
+
+    /**
      * 设置消息通知地址(同步模式)
      * @param array<string,mixed> $options
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/convention/chapter3_12.shtml

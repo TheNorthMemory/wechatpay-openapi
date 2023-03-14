@@ -1,3 +1,33 @@
+get:
+  x-last-updated-at: 2023.03.14
+  x-role: [直连商户, 服务商, 渠道商]
+  tags:
+    - 运营工具∙代金券
+  summary: 获取已设置的消息通知地址API
+  description: 用于查询已经设置的接收营销事件通知的URL。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/convention/chapter3_12.shtml)
+  parameters:
+    - name: mchid
+      in: query
+      type: string
+      description: 商户号
+      required: true
+      example: '9856888'
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - mchid
+          - notify_url
+        properties:
+          mchid:
+            type: string
+            description: 商户号
+            example: '9856888'
+          notify_url:
+            type: string
+            description: 通知地址
+            example: api.weixin.qq.com
 post:
   x-last-updated-at: 2019.09.27
   x-role: [直连商户, 服务商, 渠道商]

@@ -1,7 +1,9 @@
 get:
-  x-last-updated-at: 2021.08.27
+  x-last-updated-at: 2023.03.07
   x-role:
     - 服务商
+    - 渠道商
+    - 从业机构
   tags:
     - 风险合规∙消费者投诉
   summary: 查询投诉协商历史API

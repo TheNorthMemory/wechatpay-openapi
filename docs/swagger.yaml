@@ -7,7 +7,7 @@ info:
     整理自[官方文档中心](https://pay.weixin.qq.com/wiki/doc/apiv3/index.shtml)
     本[项目/工具地址](https://github.com/TheNorthMemory/wechatpay-openapi)
     **访问第一次加载比较慢，请耐心等待大约1-2分钟不等(小文件下载比较多)。**
-  version: 0.15.13
+  version: 0.15.14
 schemes:
   - https
 consumes:
@@ -79,6 +79,7 @@ tags:
   - name: 经营工具∙微信点餐
   - name: 经营工具∙电子发票
   - name: 经营工具∙电子小票
+  - name: 经营工具∙小票机
   - name: 营销工具∙收款有礼
   - name: 营销工具∙代扣切卡
   - name: 风险管理
@@ -1005,6 +1006,10 @@ paths:
     $ref: ./v3/partner-transfer/batches/out-batch-no/{out_batch_no}.yaml
   /v3/partner-transfer/batches/out-batch-no/{out_batch_no}/details/out-detail-no/{out_detail_no}:
     $ref: ./v3/partner-transfer/batches/out-batch-no/{out_batch_no}/details/out-detail-no/{out_detail_no}.yaml
+  /v3/pay-devices/printers/{device_id}/print-orders:
+    $ref: ./v3/pay-devices/printers/{device_id}/print-orders.yaml
+  /v3/pay-devices/printers/{device_id}/print-orders/{print_order_no}:
+    $ref: ./v3/pay-devices/printers/{device_id}/print-orders/{print_order_no}.yaml
   /v3/pay/partner/transactions/app:
     $ref: ./v3/pay/partner/transactions/app.yaml
   /v3/pay/partner/transactions/h5:

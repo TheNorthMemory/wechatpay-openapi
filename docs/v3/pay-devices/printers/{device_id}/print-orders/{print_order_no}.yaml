@@ -1,0 +1,77 @@
+get:
+  x-last-updated-at: 2023.03.19
+  x-role:
+    - 服务商
+    - 渠道商
+  tags:
+    - 经营工具∙小票机
+  summary: 查询订单
+  description: 服务商查询设备下的打印订单详情
+  parameters:
+    - name: device_id
+      in: path
+      type: string
+      description: 小票机设备号
+      required: true
+      example: 'WINCIE*EIXHRB'
+    - name: print_order_no
+      in: path
+      type: string
+      description: 打印单号
+      required: true
+      example: 'wx8888888888888888'
+  responses:
+    '200':
+      schema:
+        type: object
+        properties:
+          print_order_no:
+            type: string
+            description: 打印单号
+            example: 'wx8888888888888888'
+          template_id:
+            type: string
+            description: 模板ID
+            example: pt_02583429616371386640209536
+          notify_url:
+            type: string
+            description: 回调通知地址
+            example: https://payapp.weixin.qq.com/callback
+          print_state:
+            type: string
+            description: 打印状态
+            enum:
+              - PRINT_STATE_WAIT
+              - PRINT_STATE_SUCCESS
+              - PRINT_STATE_FAIL
+              - PRINT_STATE_CACHED
+          print_state_description:
+            type: string
+            description: 打印状态描述
+          variable_list:
+            type: array
+            description: 变量列表
+            items:
+              type: object
+              properties:
+                key:
+                  type: string
+                value:
+                  type: string
+          table_list:
+            type: array
+            description: 表格变量列表
+            items:
+              type: object
+              properties:
+                key:
+                  type: string
+                row_list:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      cell_list:
+                        type: array
+                        items:
+                          type: string

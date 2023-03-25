@@ -3,6 +3,7 @@
 namespace WeChatPay\OpenAPI\V3\Apply4sub\Sub_merchants;
 
 /**
+ * @property-read _sub_mchid_\Application $application
  * @property-read _sub_mchid_\ModifySettlement $modifySettlement
  * @property-read _sub_mchid_\Settlement $settlement
  */

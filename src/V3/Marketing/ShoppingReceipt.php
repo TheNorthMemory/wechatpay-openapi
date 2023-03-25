@@ -4,6 +4,7 @@ namespace WeChatPay\OpenAPI\V3\Marketing;
 
 /**
  * @property-read ShoppingReceipt\Customentrances $customentrances
+ * @property-read ShoppingReceipt\Merchantshoppingreceiptjumpinfos $merchantshoppingreceiptjumpinfos
  * @property-read ShoppingReceipt\Shoppingreceipts $shoppingreceipts
  */
 interface ShoppingReceipt

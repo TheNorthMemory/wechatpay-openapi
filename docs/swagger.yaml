@@ -410,6 +410,8 @@ paths:
     $ref: ./v2/xdc/apiv2sandbox/pay/orderquery.yaml
   /v3/-notify:
     $ref: ./v3/-notify.yaml
+  /v3/apply4sub/sub_merchants/{sub_mchid}/application/{application_no}:
+    $ref: ./v3/apply4sub/sub_merchants/{sub_mchid}/application/{application_no}.yaml
   /v3/apply4sub/sub_merchants/{sub_mchid}/modify-settlement:
     $ref: ./v3/apply4sub/sub_merchants/{sub_mchid}/modify-settlement.yaml
   /v3/apply4sub/sub_merchants/{sub_mchid}/settlement:
@@ -878,6 +880,8 @@ paths:
     $ref: ./v3/marketing/shopping-receipt/customentrances.yaml
   /v3/marketing/shopping-receipt/customentrances/{brand_id}:
     $ref: ./v3/marketing/shopping-receipt/customentrances/{brand_id}.yaml
+  /v3/marketing/shopping-receipt/merchantshoppingreceiptjumpinfos:
+    $ref: ./v3/marketing/shopping-receipt/merchantshoppingreceiptjumpinfos.yaml
   /v3/marketing/shopping-receipt/shoppingreceipts:
     $ref: ./v3/marketing/shopping-receipt/shoppingreceipts.yaml
   /v3/marketing/withdraw-favor/users/{openid}/coupons:

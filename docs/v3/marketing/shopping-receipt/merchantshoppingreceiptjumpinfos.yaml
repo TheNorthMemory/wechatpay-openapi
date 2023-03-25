@@ -1,0 +1,101 @@
+post:
+  x-last-updated-at: 2023.03.24
+  x-role:
+    - 服务商
+    - 渠道商
+  tags:
+    - 经营工具∙电子小票
+  summary: 上传商家电子小票跳转信息
+  description: '接口介绍：可通过该接口给对应的微信支付订单上传商家电子小票跳转信息。上传成功后，用户可以在账单详情页看到对应的跳转入口。[官方文档](https://pay.weixin.qq.com/docs/partner/apis/shopping-receipt/merchant-shopping-receipt-jump-infos/create-merchant-shopping-receipt-jump-info.html)'
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        properties:
+          transaction_id:
+            type: string
+            description: 微信支付订单号
+            example: '4200000008202209139188072801'
+          transaction_mchid:
+            type: string
+            description: 商户号
+            example: '1230000109'
+          transaction_sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1230000109'
+          openid:
+            type: string
+            description: 下单用户OpenID
+            example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+          merchant_upload_time:
+            type: string
+            description: 商户上传时间
+            example: '2021-05-20T13:29:35.120+08:00'
+          jump_info:
+            type: object
+            description: 跳转信息
+            properties:
+              merchant_appid:
+                type: string
+                description: 商户电子小票跳转信息小程序AppID
+                example: example_merchant_appid
+              merchant_path:
+                type: string
+                description: 商户电子小票跳转信息小程序路径
+                example: example_merchant_path
+  responses:
+    '200':
+      schema:
+        type: object
+        properties:
+          merchant_jump_info:
+            type: object
+            description: 商家电子小票跳转信息
+            properties:
+              transaction_id:
+                type: string
+                description: 微信支付订单号
+                example: '4200000008202209139188072801'
+              transaction_mchid:
+                type: string
+                description: 商户号
+                example: '1230000109'
+              transaction_sub_mchid:
+                type: string
+                description: 子商户号
+                example: '1230000109'
+              openid:
+                type: string
+                description: 下单用户OpenID
+                example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+              merchant_upload_time:
+                type: string
+                description: 商户上传时间
+                example: '2021-05-20T13:29:35.120+08:00'
+              jump_info:
+                type: object
+                description: 跳转信息
+                properties:
+                  merchant_appid:
+                    type: string
+                    description: 商户电子小票跳转信息小程序AppID
+                    example: example_merchant_appid
+                  merchant_path:
+                    type: string
+                    description: 商户电子小票跳转信息小程序路径
+                    example: example_merchant_path
+              create_time:
+                type: string
+                description: 创建时间
+                example: '2015-05-20T13:29:35+08:00'
+              modify_time:
+                type: string
+                description: 修改时间
+                example: '2015-05-20T13:29:35+08:00'
+              brand_id:
+                type: integer
+                description: 归属品牌ID
+                example: 1142

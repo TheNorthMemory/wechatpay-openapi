@@ -1,0 +1,62 @@
+get:
+  x-last-updated-at: 2023.03.24
+  x-role:
+    - 普通服务商
+    - 电商平台
+  tags:
+    - 服务商∙进件
+    - 收付通∙进件
+  summary: 查询结算账户修改申请状态
+  description: 服务商/电商平台（不包括支付机构、银行），可使用本接口，查询其进件且已签约特约商户/二级商户的结算账户的修改申请单信息和审核结果。[官方文档](https://pay.weixin.qq.com/docs/partner/apis/modify-settlement/sub-merchants/get-application.html)
+  parameters:
+    - name: sub_mchid
+      in: path
+      required: true
+      type: string
+      example: '1511101111'
+    - name: application_no
+      in: path
+      required: true
+      type: string
+      example: '102329389XXXX'
+  responses:
+    '200':
+      schema:
+        type: object
+        properties:
+          account_name:
+            type: string
+            description: 开户名称
+            example: 张*
+          account_type:
+            type: string
+            description: 账户类型
+            example: ACCOUNT_TYPE_BUSINESS
+          account_bank:
+            type: string
+            description: 开户银行
+            example: 工商银行
+          bank_name:
+            type: string
+            description: 开户银行全称（含支行）
+            example: 施秉县农村信用合作联社城关信用社
+          bank_branch_id:
+            type: string
+            description: 开户银行联行号
+            example: '402713354941'
+          account_number:
+            type: string
+            description: 银行账号
+            example: 62*************78
+          verify_result:
+            type: string
+            description: 审核状态
+            example: AUDIT_SUCCESS
+          verify_fail_reason:
+            type: string
+            description: 审核驳回原因
+            example: 银行卡户名或卡号有误
+          verify_finish_time:
+            type: string
+            description: 审核结果更新时间
+            example: '2015-05-20T13:29:35+08:00'

@@ -1,0 +1,38 @@
+post:
+  x-last-updated-at: 2021.10.26
+  x-role:
+    - 服务商
+  tags:
+    - 微信寄快递
+  summary: 用户openid转换API
+  description: 将另一个应用的用户openid转换为指定appid应用下的用户openid [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_9_1.shtml)
+  parameters:
+    - name: openid
+      in: path
+      required: true
+      type: string
+      description: 用户openid
+      example: xsd3434454567676
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - appid
+        properties:
+          appid:
+            type: string
+            description: 目标应用的appid
+            example: wxaaaa1a123b456c7d
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - openid
+        properties:
+          openid:
+            type: string
+            description: 转换后的openid
+            example: xac1234554567676

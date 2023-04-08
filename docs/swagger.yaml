@@ -53,6 +53,7 @@ tags:
   - name: 支付分∙服务商模式
   - name: 支付分∙服务商模式∙免确认
   - name: 支付分∙机构模式
+  - name: 微信寄快递
   - name: 品牌小店营销
   - name: 扣款服务
   - name: 校园轻松付
@@ -612,6 +613,8 @@ paths:
     $ref: ./v3/eduschoolpay/users/{openid}/contracts.yaml
   /v3/eduschoolpay/users/{openid}/debt-state:
     $ref: ./v3/eduschoolpay/users/{openid}/debt-state.yaml
+  /v3/express/users/{openid}/transform:
+    $ref: ./v3/express/users/{openid}/transform.yaml
   /v3/facemch/users/{face_sid}:
     $ref: ./v3/facemch/users/{face_sid}.yaml
   /v3/funds-to-oversea/bill-download-url:

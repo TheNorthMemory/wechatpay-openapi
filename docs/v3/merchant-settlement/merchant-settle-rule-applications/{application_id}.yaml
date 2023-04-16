@@ -1,0 +1,54 @@
+get:
+  x-last-updated-at: 2021.06.28
+  x-role:
+    - 从业机构
+  tags:
+    - 结算规则管理
+  summary: 根据申请单ID查询结果API
+  description: 从业机构可调用该接口查询特约商户结算规则ID修改的结果。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter3_1_2.shtml)
+  parameters:
+    - name: application_id
+      in: path
+      required: true
+      type: string
+      description: 申请单编号
+      example: '20000011111'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - application_id
+        properties:
+          application_id:
+            type: string
+            description: 申请单编号
+            example: '20000011111'
+          application_process_info:
+            type: string
+            description: 申请单处理信息
+            example: 正在处理中
+          application_state:
+            type: string
+            description: 申请单状态
+            example: PROCESSING
+          update_time:
+            type: string
+            description: 最后更新时间
+            example: '2015-05-20T13:29:35+08:00'
+          acquiring_bank_id:
+            type: string
+            description: 从业机构号
+            example: '1356485'
+          channel_id:
+            type: string
+            description: 渠道商户号
+            example: '20001111'
+          sub_mchid:
+            type: string
+            description: 从业机构特约商户号
+            example: '1346578'
+          settle_rule_id:
+            type: integer
+            description: 结算规则id
+            example: 760

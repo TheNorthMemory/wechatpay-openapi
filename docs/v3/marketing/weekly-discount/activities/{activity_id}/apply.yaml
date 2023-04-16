@@ -1,0 +1,50 @@
+post:
+  x-last-updated-at: 2021.11.22
+  x-role:
+    - 服务商
+    - 渠道商
+    - 从业机构
+  tags:
+    - 营销工具∙周周惠
+  summary: 报名周周惠活动API
+  description: 报名周周惠活动 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter6_1_1.shtml)
+  parameters:
+    - name: activity_id
+      in: path
+      required: true
+      type: string
+      description: 活动ID
+      example: '11111'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - applying_merchant_id
+          - store_id
+        properties:
+          applying_merchant_id:
+            type: integer
+            description: 报名商户号
+            example: 10000098
+          store_id:
+            type: integer
+            description: 报名商户门店号
+            example: 111111
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - activity_id
+          - success_time
+        properties:
+          activity_id:
+            type: integer
+            description: 报名成功的活动ID
+            example: 10001
+          success_time:
+            type: string
+            description: 报名成功时间
+            example: '2018-06-08T10:34:56+08:00'

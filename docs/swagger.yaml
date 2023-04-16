@@ -7,7 +7,7 @@ info:
     整理自[官方文档中心](https://pay.weixin.qq.com/wiki/doc/apiv3/index.shtml)
     本[项目/工具地址](https://github.com/TheNorthMemory/wechatpay-openapi)
     **访问第一次加载比较慢，请耐心等待大约1-2分钟不等(小文件下载比较多)。**
-  version: 0.15.14
+  version: 0.15.15
 schemes:
   - https
 consumes:
@@ -83,6 +83,8 @@ tags:
   - name: 经营工具∙小票机
   - name: 营销工具∙收款有礼
   - name: 营销工具∙代扣切卡
+  - name: 营销工具∙周周惠
+  - name: 结算规则管理
   - name: 风险管理
   - name: 风险合规∙消费者投诉
   - name: 风险合规∙商户违规通知
@@ -887,6 +889,12 @@ paths:
     $ref: ./v3/marketing/shopping-receipt/merchantshoppingreceiptjumpinfos.yaml
   /v3/marketing/shopping-receipt/shoppingreceipts:
     $ref: ./v3/marketing/shopping-receipt/shoppingreceipts.yaml
+  /v3/marketing/weekly-discount/activities:
+    $ref: ./v3/marketing/weekly-discount/activities.yaml
+  /v3/marketing/weekly-discount/activities/{activity_id}:
+    $ref: ./v3/marketing/weekly-discount/activities/{activity_id}.yaml
+  /v3/marketing/weekly-discount/activities/{activity_id}/apply:
+    $ref: ./v3/marketing/weekly-discount/activities/{activity_id}/apply.yaml
   /v3/marketing/withdraw-favor/users/{openid}/coupons:
     $ref: ./v3/marketing/withdraw-favor/users/{openid}/coupons.yaml
   /v3/mch_operate/risk/withdrawl-apply:
@@ -925,6 +933,10 @@ paths:
     $ref: ./v3/merchant-service/images/{media_url_slot}.yaml
   /v3/merchant-service/images/upload:
     $ref: ./v3/merchant-service/images/upload.yaml
+  /v3/merchant-settlement/merchant-settle-rule-applications:
+    $ref: ./v3/merchant-settlement/merchant-settle-rule-applications.yaml
+  /v3/merchant-settlement/merchant-settle-rule-applications/{application_id}:
+    $ref: ./v3/merchant-settlement/merchant-settle-rule-applications/{application_id}.yaml
   /v3/merchant-store/stores:
     $ref: ./v3/merchant-store/stores.yaml
   /v3/merchant-store/stores/{store_id}:

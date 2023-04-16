@@ -1,0 +1,94 @@
+get:
+  x-last-updated-at: 2022.01.05
+  x-role:
+    - 服务商
+    - 渠道商
+    - 从业机构
+  tags:
+    - 营销工具∙周周惠
+  summary: 查询周周惠活动详情API
+  description: 查询周周惠活动详情 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter6_1_2.shtml)
+  parameters:
+    - name: activity_id
+      in: path
+      required: true
+      type: string
+      description: 活动ID
+      example: '11111'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - activity_name
+          - activity_scene
+          - activity_area_code
+          - activity_transaction_minimum_amount
+          - activity_coupon_amount
+          - activity_available_week
+          - activity_max_amount
+          - activity_available_begin_time
+          - activity_available_end_time
+          - activity_state
+          - activity_logo
+        properties:
+          activity_id:
+            type: string
+            description: 活动ID
+            example: '111111'
+          activity_name:
+            type: string
+            description: 活动名称
+            example: xxx周周惠活动
+          activity_scene:
+            type: string
+            description: 活动投放场景
+            example: SCAN_CODE_TO_ORDER
+          activity_area_code:
+            type: array
+            description: 活动投放区域编码
+            example: '110000'
+          activity_limit_pay:
+            type: string
+            description: 活动指定付款方式
+            example: CCB_DEBIT
+          activity_transaction_minimum_amount:
+            type: integer
+            description: 活动优惠门槛
+            example: 100
+          activity_coupon_amount:
+            type: integer
+            description: 活动优惠金额
+            example: 10
+          activity_available_week:
+            type: array
+            description: 活动可使用周期
+            example: '1'
+          activity_max_amount:
+            type: integer
+            description: 活动预算
+            example: 100000
+          activity_max_amount_per_day:
+            type: integer
+            description: 活动单天预算
+            example: 100000
+          activity_available_begin_time:
+            type: string
+            description: 活动开始时间
+            example: '2018-06-08T10:34:56+08:00'
+          activity_available_end_time:
+            type: string
+            description: 活动结束时间
+            example: '2018-08-08T10:34:56+08:00'
+          activity_state:
+            type: string
+            description: 活动状态
+            example: APPLYING
+          activity_remark:
+            type: string
+            description: 活动备注
+            example: 周周惠，每周日，周一独享
+          activity_logo:
+            type: string
+            description: 活动logo
+            example: https://xxx.xxx.xxx.jpg

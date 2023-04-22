@@ -15,8 +15,8 @@
     "license": "MIT",
     "require": {
         "php": ">=7.1.2",
-        "psr/http-message": ">=1.0",
-        "guzzlehttp/promises": ">=1.0"
+        "psr/http-message": "^1.0 || ^2.0",
+        "guzzlehttp/promises": "^1.0"
     },
     "extra": {
         "branch-alias": {

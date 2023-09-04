@@ -6,6 +6,7 @@ use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Promise\PromiseInterface;
 
 /**
+ * @property-read Orders\_transaction_id_ $_transaction_id_
  */
 interface Orders
 {

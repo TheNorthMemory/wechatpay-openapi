@@ -56,7 +56,9 @@ post:
           success_codes:
             type: array
             description: 上传成功的code列表
-            example: MMAA12345
+            items:
+              type: string
+              example: MMAA12345
           success_time:
             type: string
             description: 上传成功时间

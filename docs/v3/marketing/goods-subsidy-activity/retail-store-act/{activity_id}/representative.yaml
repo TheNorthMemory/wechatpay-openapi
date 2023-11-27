@@ -1,5 +1,5 @@
 put:
-  x-last-updated-at: 2023.02.24
+  x-last-updated-at: 2023.07.28
   x-role:
     - 服务商
   tags:
@@ -51,3 +51,37 @@ put:
           add_time:
             type: string
             format: rfc3339
+delete:
+  x-last-updated-at: 2023.07.28
+  x-role:
+    - 服务商
+  tags:
+    - 品牌小店营销
+  summary: 删除零售小店活动业务代理
+  description: 该接口为服务商或商户给零售小店活动删除业务代理的专用接口。 使用对象：活动创建方商户号、活动归属品牌的品牌主商户号或品牌经营商户号。 [官方文档](https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/delete-representative.html)
+  parameters:
+    - name: activity_id
+      in: path
+      type: string
+      description: 活动ID
+      required: true
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        properties:
+          out_request_no:
+            type: string
+            example: '1002600620019090123143254436'
+          delete_time:
+            type: string
+            format: rfc3339
+            example: '2015-05-20T13:29:35+08:00'
+          representative_info_list:
+            type: array
+            items:
+              type: object
+              properties:
+                openid:
+                  type: string

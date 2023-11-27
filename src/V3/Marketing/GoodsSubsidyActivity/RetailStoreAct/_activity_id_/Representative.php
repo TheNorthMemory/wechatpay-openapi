@@ -38,4 +38,36 @@ interface Representative
             'out_request_no' => '',
         ],
     ]): PromiseInterface;
+
+    /**
+     * 删除零售小店活动业务代理(同步模式)
+     * @param array<string,mixed> $options
+     * @link https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/delete-representative.html
+     */
+    public function delete(array $options = [
+        'activity_id' => '',
+        'json' => [
+            'out_request_no' => '1002600620019090123143254436',
+            'delete_time' => '2015-05-20T13:29:35+08:00',
+            'representative_info_list' => [[
+                'openid' => '',
+            ],],
+        ],
+    ]): ResponseInterface;
+
+    /**
+     * 删除零售小店活动业务代理(异步模式)
+     * @param array<string,mixed> $options
+     * @link https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/delete-representative.html#async
+     */
+    public function deleteAsync(array $options = [
+        'activity_id' => '',
+        'json' => [
+            'out_request_no' => '1002600620019090123143254436',
+            'delete_time' => '2015-05-20T13:29:35+08:00',
+            'representative_info_list' => [[
+                'openid' => '',
+            ],],
+        ],
+    ]): PromiseInterface;
 }

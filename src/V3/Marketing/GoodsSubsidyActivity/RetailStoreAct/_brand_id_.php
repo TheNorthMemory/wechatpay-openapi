@@ -3,9 +3,9 @@
 namespace WeChatPay\OpenAPI\V3\Marketing\GoodsSubsidyActivity\RetailStoreAct;
 
 /**
- * @property-read _activity_id_\Representative $representative
- * @property-read _activity_id_\Representatives $representatives
+ * @property-read _brand_id_\Stores $stores
+ * @property-read _brand_id_\Materials $materials
  */
-interface _activity_id_
+interface _brand_id_
 {
 }

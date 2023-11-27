@@ -1,0 +1,72 @@
+post:
+  x-last-updated-at: 2023.06.07
+  x-role:
+    - 普通商户
+    - 服务商
+  tags:
+    - 风险管理
+  summary: 处置结果回传
+  description: '[官方文档](https://pay.weixin.qq.com/docs/partner/apis/risk-manage/trade-risk-result/create-trade-risk-result.html)'
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        properties:
+          sp_mchid:
+            type: string
+            description: 微信支付分配的服务商唯一标识
+            example: '1900000109'
+          acquiring_bank_id:
+            type: string
+            description: 微信支付分配的从业机构唯一标识
+            example: '1356485'
+          channel_id:
+            type: string
+            description: 微信支付分配的渠道商唯一标识
+            example: '1900000108'
+          sub_mchid:
+            type: string
+            description: 上报订单风险数据的商户号信息
+            example: '1900009231'
+          out_trade_no:
+            type: string
+            description: 商户系统内部订单号，只能是数字、大小写字母_-*且在同一个商户号下唯一
+            example: '1217752501201407033233368018'
+          risk_type:
+            type: string
+            description: 风险类型
+            enum:
+             - OTHER_RISK
+             - INDUCE_PAYMENT
+             - FRAUD
+             - GAMBLING
+             - CYBERSEX
+            example: OTHER_RISK
+          punish_type:
+            type: string
+            description: 处置手段
+            enum:
+              - OTHER_PUNISH
+              - DISABLE_PAYMENT
+              - SUSPEND_SETTLEMENT
+              - DISABLE_WITHDRAW
+              - REMOVE_MERCHANTS
+              - ADD_MERCHANTS_BLACKLIST
+              - REFUND
+              - FREEZING_FUND_BY_TRANSACTION
+              - FREEZING_FUND_BY_MERCHANTS
+              - BLOCKED_USER
+            example: OTHER_PUNISH
+          additional_punish_type:
+            type: string
+            description: 处置手段补充
+            example: 'SUSPEND_SETTLEMENT_NDAYS:10'
+          complaints_information:
+            type: string
+            description: 投诉信息
+            example: 商家说高额返利，支付很大金额之后发现并没有返利，是骗子
+  responses:
+    '200':
+      schema: {}

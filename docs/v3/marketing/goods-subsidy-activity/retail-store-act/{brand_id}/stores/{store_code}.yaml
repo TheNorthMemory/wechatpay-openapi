@@ -1,0 +1,25 @@
+get:
+  x-last-updated-at: 2023.07.28
+  x-role:
+    - 普通商户
+    - 服务商
+  tags:
+    - 品牌小店营销
+  summary: 查询小店活动门店详情
+  description: '[官方文档](https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/get-store.html)'
+  parameters:
+    - name: brand_id
+      in: path
+      required: true
+      type: string
+      description: 品牌ID
+      example: '1001'
+    - name: store_code
+      in: path
+      required: true
+      type: string
+      description: 门店编码
+      example: 'abc_001'
+  responses:
+    '200':
+      schema: {}

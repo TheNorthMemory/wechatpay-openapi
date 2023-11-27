@@ -1,0 +1,33 @@
+get:
+  x-last-updated-at: 2023.07.28
+  x-role:
+    - 普通商户
+    - 服务商
+  tags:
+    - 品牌小店营销
+  summary: 查询零售小店活动业务代理
+  description: '[官方文档](https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/list-representative.html)'
+  parameters:
+    - name: activity_id
+      in: path
+      required: true
+      type: string
+      description: 零售小店活动ID
+      example: '3118550000000004'
+    - name: offset
+      in: query
+      required: true
+      type: number
+      format: integer
+      description: 分页页码
+      example: 0
+    - name: limit
+      in: query
+      required: true
+      type: number
+      format: integer
+      description: 分页大小
+      example: 10
+  responses:
+    '200':
+      schema: {}

@@ -1,0 +1,28 @@
+get:
+  x-last-updated-at: 2023.08.16
+  x-role:
+    - 普通商户
+    - 服务商
+  tags:
+    - 经营工具∙电子发票
+  summary: 获取发票下载信息
+  description: '[官方文档](https://pay.weixin.qq.com/docs/partner/apis/fapiao/fapiao-applications/get-fapiao-file-download-info.html)'
+  parameters:
+    - name: fapiao_apply_id
+      in: path
+      required: true
+      type: string
+      example: '4200000444201910177461284488'
+    - name: sub_mchid
+      in: query
+      required: true
+      type: string
+      example: '1900000109'
+    - name: fapiao_id
+      in: query
+      required: true
+      type: string
+      example: '20200701123456'
+  responses:
+    '200':
+      schema: {}

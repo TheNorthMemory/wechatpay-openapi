@@ -7,7 +7,7 @@ info:
     整理自[官方文档中心](https://pay.weixin.qq.com/wiki/doc/apiv3/index.shtml)
     本[项目/工具地址](https://github.com/TheNorthMemory/wechatpay-openapi)
     **访问第一次加载比较慢，请耐心等待大约1-2分钟不等(小文件下载比较多)。**
-  version: 0.15.18
+  version: 0.15.19
 schemes:
   - https
 consumes:
@@ -813,6 +813,14 @@ paths:
     $ref: ./v3/marketing/favor/users/{openid}/coupons/{coupon_id}.yaml
   /v3/marketing/goods-subsidy-activity/retail-store-act/{activity_id}/representative:
     $ref: ./v3/marketing/goods-subsidy-activity/retail-store-act/{activity_id}/representative.yaml
+  /v3/marketing/goods-subsidy-activity/retail-store-act/{activity_id}/representatives:
+    $ref: ./v3/marketing/goods-subsidy-activity/retail-store-act/{activity_id}/representatives.yaml
+  /v3/marketing/goods-subsidy-activity/retail-store-act/{brand_id}/materials:
+    $ref: ./v3/marketing/goods-subsidy-activity/retail-store-act/{brand_id}/materials.yaml
+  /v3/marketing/goods-subsidy-activity/retail-store-act/{brand_id}/stores:
+    $ref: ./v3/marketing/goods-subsidy-activity/retail-store-act/{brand_id}/stores.yaml
+  /v3/marketing/goods-subsidy-activity/retail-store-act/{brand_id}/stores/{store_code}:
+    $ref: ./v3/marketing/goods-subsidy-activity/retail-store-act/{brand_id}/stores/{store_code}.yaml
   /v3/marketing/membercard-activity/activities:
     $ref: ./v3/marketing/membercard-activity/activities.yaml
   /v3/marketing/membercard-activity/activities/{activity_id}:
@@ -907,6 +915,10 @@ paths:
     $ref: ./v3/mch_operate/risk/withdrawl-apply/out-request-no/{out_request_no}.yaml
   /v3/merchant-risk-manage/report-trade-union-information:
     $ref: ./v3/merchant-risk-manage/report-trade-union-information.yaml
+  /v3/merchant-risk-manage/trade-risk-information:
+    $ref: ./v3/merchant-risk-manage/trade-risk-information.yaml
+  /v3/merchant-risk-manage/trade-risk-result:
+    $ref: ./v3/merchant-risk-manage/trade-risk-result.yaml
   /v3/merchant-risk-manage/violation-notifications:
     $ref: ./v3/merchant-risk-manage/violation-notifications.yaml
   /v3/merchant-service/complaint-notifications:
@@ -973,6 +985,8 @@ paths:
     $ref: ./v3/new-tax-control-fapiao/fapiao-applications.yaml
   /v3/new-tax-control-fapiao/fapiao-applications/{fapiao_apply_id}:
     $ref: ./v3/new-tax-control-fapiao/fapiao-applications/{fapiao_apply_id}.yaml
+  /v3/new-tax-control-fapiao/fapiao-applications/{fapiao_apply_id}/fapiao-files:
+    $ref: ./v3/new-tax-control-fapiao/fapiao-applications/{fapiao_apply_id}/fapiao-files.yaml
   /v3/new-tax-control-fapiao/fapiao-applications/{fapiao_apply_id}/insert-cards:
     $ref: ./v3/new-tax-control-fapiao/fapiao-applications/{fapiao_apply_id}/insert-cards.yaml
   /v3/new-tax-control-fapiao/fapiao-applications/{fapiao_apply_id}/reverse:

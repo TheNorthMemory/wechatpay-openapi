@@ -1,0 +1,30 @@
+post:
+  x-last-updated-at: 2023.07.28
+  x-role:
+    - 普通商户
+    - 服务商
+  tags:
+    - 品牌小店营销
+  summary: 生成小店活动物料码
+  description: '[官方文档](https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/create-materials.html)'
+  parameters:
+    - name: brand_id
+      in: path
+      required: true
+      type: string
+    - name: _
+      in: body
+      required: true
+      type: object
+      schema:
+        properties:
+          out_request_no:
+            type: string
+            example: '1002600620019090123143254436'
+          material_num:
+            type: number
+            format: integer
+            example: 100
+  responses:
+    '200':
+      schema: {}

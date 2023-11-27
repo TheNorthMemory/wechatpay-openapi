@@ -7,23 +7,23 @@ use GuzzleHttp\Promise\PromiseInterface;
 
 /**
  */
-interface _media_url_slot_
+interface _media_id_
 {
     /**
      * 图片下载(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter10_2_18.shtml
+     * @link https://pay.weixin.qq.com/docs/merchant/apis/consumer-complaint/images/query-images.html
      */
     public function get(array $options = [
-        'media_url_slot' => 'xxxxx',
+        'media_id' => 'xxxxx',
     ]): ResponseInterface;
 
     /**
      * 图片下载(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter10_2_18.shtml#async
+     * @link https://pay.weixin.qq.com/docs/merchant/apis/consumer-complaint/images/query-images.html#async
      */
     public function getAsync(array $options = [
-        'media_url_slot' => 'xxxxx',
+        'media_id' => 'xxxxx',
     ]): PromiseInterface;
 }

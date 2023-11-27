@@ -931,8 +931,8 @@ paths:
     $ref: ./v3/merchant-service/complaints/{transaction_id}/negotiation-historys.yaml
   /v3/merchant-service/feedbacks:
     $ref: ./v3/merchant-service/feedbacks.yaml
-  /v3/merchant-service/images/{media_url_slot}:
-    $ref: ./v3/merchant-service/images/{media_url_slot}.yaml
+  /v3/merchant-service/images/{media_id}:
+    $ref: ./v3/merchant-service/images/{media_id}.yaml
   /v3/merchant-service/images/upload:
     $ref: ./v3/merchant-service/images/upload.yaml
   /v3/merchant-settlement/merchant-settle-rule-applications:

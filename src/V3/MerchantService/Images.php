@@ -3,7 +3,7 @@
 namespace WeChatPay\OpenAPI\V3\MerchantService;
 
 /**
- * @property-read Images\_media_url_slot_ $_media_url_slot_
+ * @property-read Images\_media_id_ $_media_id_
  * @property-read Images\Upload $upload
  */
 interface Images

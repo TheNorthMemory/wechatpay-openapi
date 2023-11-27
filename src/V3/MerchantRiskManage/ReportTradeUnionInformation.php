@@ -52,6 +52,9 @@ interface ReportTradeUnionInformation
             'extra_fields2' => '{"key1":"value1"}',
             'extra_fields3' => '{"key1":"value1"}',
         ],
+        'headers' => [
+            'Wechatpay-Serial' => '',
+        ],
     ]): ResponseInterface;
 
     /**
@@ -96,6 +99,9 @@ interface ReportTradeUnionInformation
             'extra_fields1' => '{"key1":"value1"}',
             'extra_fields2' => '{"key1":"value1"}',
             'extra_fields3' => '{"key1":"value1"}',
+        ],
+        'headers' => [
+            'Wechatpay-Serial' => '',
         ],
     ]): PromiseInterface;
 }

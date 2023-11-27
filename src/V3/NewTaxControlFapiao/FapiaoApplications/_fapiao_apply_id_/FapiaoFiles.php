@@ -1,21 +1,18 @@
 <?php declare(strict_types=1);/* Generated file. DO NOT EDIT! */
 
-namespace WeChatPay\OpenAPI\V3\NewTaxControlFapiao\FapiaoApplications;
+namespace WeChatPay\OpenAPI\V3\NewTaxControlFapiao\FapiaoApplications\_fapiao_apply_id_;
 
 use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Promise\PromiseInterface;
 
 /**
- * @property-read _fapiao_apply_id_\FapiaoFiles $fapiaoFiles
- * @property-read _fapiao_apply_id_\InsertCards $insertCards
- * @property-read _fapiao_apply_id_\Reverse $reverse
  */
-interface _fapiao_apply_id_
+interface FapiaoFiles
 {
     /**
-     * 查询电子发票(同步模式)
+     * 获取发票下载信息(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter4_8_9.shtml
+     * @link https://pay.weixin.qq.com/docs/partner/apis/fapiao/fapiao-applications/get-fapiao-file-download-info.html
      */
     public function get(array $options = [
         'fapiao_apply_id' => '4200000444201910177461284488',
@@ -26,9 +23,9 @@ interface _fapiao_apply_id_
     ]): ResponseInterface;
 
     /**
-     * 查询电子发票(异步模式)
+     * 获取发票下载信息(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter4_8_9.shtml#async
+     * @link https://pay.weixin.qq.com/docs/partner/apis/fapiao/fapiao-applications/get-fapiao-file-download-info.html#async
      */
     public function getAsync(array $options = [
         'fapiao_apply_id' => '4200000444201910177461284488',

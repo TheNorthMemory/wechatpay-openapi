@@ -6,6 +6,7 @@ use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Promise\PromiseInterface;
 
 /**
+ * @property-read Refunds\_refund_id_ $_refund_id_
  * @property-read Refunds\_out_refund_no_ $_out_refund_no_
  */
 interface Refunds

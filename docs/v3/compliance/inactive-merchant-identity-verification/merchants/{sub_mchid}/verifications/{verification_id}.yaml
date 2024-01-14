@@ -1,0 +1,24 @@
+get:
+  x-last-updated-at: 2023.12.18
+  x-role:
+    - 服务商
+  tags:
+    - 风险合规∙不活跃商户身份核实
+  summary: 查询不活跃商户身份核实结果
+  description: 在代特约商户发起不活跃商户身份核实后，服务商可以通过该接口，查询特定特约商户下单笔核实单的核实结果。 [官方文档](https://pay.weixin.qq.com/docs/partner/apis/inactive-merchant-identity-verification/inactive-mch-identity-verification/query-inactive-merchant-identity-verification.html)
+  parameters:
+    - name: sub_mchid
+      in: path
+      type: string
+      description: 特约商户号
+      example: '1900009231'
+      required: true
+    - name: verification_id
+      in: path
+      type: string
+      description: 核实单号
+      example: '28011678863778000000123124312'
+      required: true
+  responses:
+    '200':
+      schema: {}

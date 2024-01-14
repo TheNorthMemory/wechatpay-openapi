@@ -7,7 +7,7 @@ info:
     整理自[官方文档中心](https://pay.weixin.qq.com/wiki/doc/apiv3/index.shtml)
     本[项目/工具地址](https://github.com/TheNorthMemory/wechatpay-openapi)
     **访问第一次加载比较慢，请耐心等待大约1-2分钟不等(小文件下载比较多)。**
-  version: 0.15.19
+  version: 0.15.20
 schemes:
   - https
 consumes:
@@ -89,6 +89,7 @@ tags:
   - name: 风险合规∙消费者投诉
   - name: 风险合规∙商户违规通知
   - name: 风险合规∙开户意愿确认
+  - name: 风险合规∙不活跃商户身份核实
   - name: 通用接口
   - name: 跨境
   - name: 跨境∙进件
@@ -505,6 +506,10 @@ paths:
     $ref: ./v3/combine-transactions/out-trade-no/{combine_out_trade_no}.yaml
   /v3/combine-transactions/out-trade-no/{combine_out_trade_no}/close:
     $ref: ./v3/combine-transactions/out-trade-no/{combine_out_trade_no}/close.yaml
+  /v3/compliance/inactive-merchant-identity-verification/merchants:
+    $ref: ./v3/compliance/inactive-merchant-identity-verification/merchants.yaml
+  /v3/compliance/inactive-merchant-identity-verification/merchants/{sub_mchid}/verifications/{verification_id}:
+    $ref: ./v3/compliance/inactive-merchant-identity-verification/merchants/{sub_mchid}/verifications/{verification_id}.yaml
   /v3/discount-card/cards:
     $ref: ./v3/discount-card/cards.yaml
   /v3/discount-card/cards/{out_card_code}:
@@ -1209,6 +1214,8 @@ paths:
     $ref: ./v3/refund/domestic/refunds.yaml
   /v3/refund/domestic/refunds/{out_refund_no}:
     $ref: ./v3/refund/domestic/refunds/{out_refund_no}.yaml
+  /v3/refund/domestic/refunds/{refund_id}/apply-abnormal-refund:
+    $ref: ./v3/refund/domestic/refunds/{refund_id}/apply-abnormal-refund.yaml
   /v3/smartguide/guides:
     $ref: ./v3/smartguide/guides.yaml
   /v3/smartguide/guides/{guide_id}:

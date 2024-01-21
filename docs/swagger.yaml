@@ -7,7 +7,7 @@ info:
     整理自[官方文档中心](https://pay.weixin.qq.com/wiki/doc/apiv3/index.shtml)
     本[项目/工具地址](https://github.com/TheNorthMemory/wechatpay-openapi)
     **访问第一次加载比较慢，请耐心等待大约1-2分钟不等(小文件下载比较多)。**
-  version: 0.15.20
+  version: 0.15.21
 schemes:
   - https
 consumes:
@@ -98,6 +98,7 @@ tags:
   - name: 跨境∙退款
   - name: 跨境∙分账
   - name: 跨境∙代扣
+  - name: 跨境∙H5权限
   - name: 沙箱环境
   - name: APIv2∙人脸支付
   - name: APIv2∙基础支付
@@ -644,6 +645,16 @@ paths:
     $ref: ./v3/global/customs/verify-certificate.yaml
   /v3/global/merchant-storage/file/upload:
     $ref: ./v3/global/merchant-storage/file/upload.yaml
+  /v3/global/merchant/h5/permission/{sub_mchid}:
+    $ref: ./v3/global/merchant/h5/permission/{sub_mchid}.yaml
+  /v3/global/merchant/h5/permission/applications:
+    $ref: ./v3/global/merchant/h5/permission/applications.yaml
+  /v3/global/merchant/h5/permission/applications/{applyment_id}:
+    $ref: ./v3/global/merchant/h5/permission/applications/{applyment_id}.yaml
+  /v3/global/merchant/h5/permission/domain/applications:
+    $ref: ./v3/global/merchant/h5/permission/domain/applications.yaml
+  /v3/global/merchant/h5/permission/domain/applications/{applyment_id}:
+    $ref: ./v3/global/merchant/h5/permission/domain/applications/{applyment_id}.yaml
   /v3/global/merchants:
     $ref: ./v3/global/merchants.yaml
   /v3/global/merchants/{sub_mchid}:

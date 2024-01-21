@@ -1,0 +1,232 @@
+get:
+  x-version:
+    - 2023.12.05
+  x-role:
+    - 机构模式
+  tags:
+    - 跨境∙H5权限
+  summary: 查询H5支付权限申请单详情
+  description: 商户可以通过该接口查询已经创建的H5支付申请单。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter4_4_2.shtml)
+  parameters:
+    - name: applyment_id
+      in: path
+      required: true
+      type: integer
+      description: 申请单号
+      example: 100000
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - sub_mchid
+          - domains
+          - transaction_limit_type
+          - website_state
+          - website_url
+          - applyment_id
+          - applyment_state
+          - applyment_type
+        properties:
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '2491935631'
+          domains:
+            type: array
+            items:
+              type: string
+            description: H5支付域名
+            example: ["qq.com"]
+          business_description:
+            type: string
+            description: 公司介绍和业务描述
+            example: 腾讯于1998年11月成立，是一家互联网公司，通过技术丰富互联网用户的生活，助力企业数字化升级。我们的使命是“用户为本 科技向善”
+          transaction_limit_type:
+            type: string
+            description: 限额类型
+            example: UN_LAUNCHED_WEBSITE_LIMIT
+          company_register_cert:
+            type: string
+            format: MediaId
+            description: 公司注册资质证书
+            example: 6uqyGjvHzOhsLleGFQVRF
+          website_business_page_pics:
+            type: array
+            items:
+              type: string
+              format: MediaId
+            description: 经营网址商业页面截图
+            example: ["6uqyGjvHzOhsLleGFQVRF"]
+          website_homepage_pics:
+            type: array
+            items:
+              type: string
+              format: MediaId
+            description: 经营网址首页截图
+            example: ["6uqyGjvHzOhsLleGFQVRF"]
+          website_state:
+            type: string
+            description: 子商户经营网址状态
+            example: HAS_LAUNCHED
+          website_url:
+            type: string
+            description: 子商户H5经营网址
+            example: https://qq.com
+          applyment_id:
+            type: integer
+            description: 申请单号
+            example: 100000
+          audit_reject_detail:
+            type: string
+            description: 驳回原因
+            example: 商户证书不符合要求
+          applyment_state:
+            type: string
+            description: 申请单状态
+            example: PENDING
+          applyment_type:
+            type: string
+            description: 申请单类型
+            example: APPLY_FOR_PAYMENT_AUTHORITY
+          notify_url:
+            type: string
+            description: 商户提供的审核结果回调接口
+            example: https://pay.weixin.qq.com/wxpay/pay.action
+patch:
+  x-version:
+    - 2023.12.05
+  x-role:
+    - 机构模式
+  tags:
+    - 跨境∙H5权限
+  summary: 修改H5支付权限申请单
+  description: 商户可以通过该接口修改已经被驳回H5支付申请单。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter4_4_3.shtml)
+  parameters:
+    - name: applyment_id
+      in: path
+      required: true
+      type: integer
+      description: 申请单号
+      example: 100000
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - domains
+        properties:
+          domains:
+            type: array
+            items:
+              type: string
+            description: H5支付域名
+            example: ["qq.com"]
+          business_description:
+            type: string
+            description: 公司介绍和业务描述
+            example: 腾讯于1998年11月成立，是一家互联网公司，通过技术丰富互联网用户的生活，助力企业数字化升级。我们的使命是“用户为本 科技向善”
+          company_register_cert:
+            type: string
+            format: MediaId
+            description: 公司注册资质证书
+            example: 6uqyGjvHzOhsLleGFQVRF
+          website_business_page_pics:
+            type: array
+            items:
+              type: string
+              format: MediaId
+            description: 经营网址商业页面截图
+            example: ["6uqyGjvHzOhsLleGFQVRF"]
+          website_homepage_pics:
+            type: array
+            items:
+              type: string
+              format: MediaId
+            description: 经营网址首页截图
+            example: ["6uqyGjvHzOhsLleGFQVRF"]
+          website_state:
+            type: string
+            description: 子商户经营网址状态
+            example: HAS_LAUNCHED
+          website_url:
+            type: string
+            description: 子商户H5经营网址
+            example: https://qq.com
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - sub_mchid
+          - domains
+          - transaction_limit_type
+          - website_state
+          - website_url
+          - applyment_id
+          - applyment_state
+          - applyment_type
+        properties:
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '2491935631'
+          domains:
+            type: array
+            description: H5支付域名
+            example: '["qq.com"]'
+          business_description:
+            type: string
+            description: 公司介绍和业务描述
+            example: 腾讯于1998年11月成立，是一家互联网公司，通过技术丰富互联网用户的生活，助力企业数字化升级。我们的使命是“用户为本 科技向善”
+          transaction_limit_type:
+            type: string
+            description: 限额类型
+            example: UN_LAUNCHED_WEBSITE_LIMIT
+          company_register_cert:
+            type: string
+            description: 公司注册资质证书
+            example: 6uqyGjvHzOhsLleGFQVRF
+          website_business_page_pics:
+            type: array
+            items:
+              type: string
+              format: MediaId
+            description: 经营网址商业页面截图
+            example: '["6uqyGjvHzOhsLleGFQVRF"]'
+          website_homepage_pics:
+            type: array
+            items:
+              type: string
+              format: MediaId
+            description: 经营网址首页截图
+            example: '["6uqyGjvHzOhsLleGFQVRF"]'
+          website_state:
+            type: string
+            description: 子商户经营网址状态
+            example: HAS_LAUNCHED
+          website_url:
+            type: string
+            description: 子商户H5经营网址
+            example: https://qq.com
+          applyment_id:
+            type: integer
+            description: 申请单号
+            example: 100000
+          audit_reject_detail:
+            type: string
+            description: 驳回原因
+            example: 商户证书不符合要求
+          applyment_state:
+            type: string
+            description: 申请单状态
+            example: PENDING
+          applyment_type:
+            type: string
+            description: 申请单类型
+            example: APPLY_FOR_PAYMENT_AUTHORITY
+          notify_url:
+            type: string
+            description: 商户提供的审核结果回调接口
+            example: https://pay.weixin.qq.com/wxpay/pay.action

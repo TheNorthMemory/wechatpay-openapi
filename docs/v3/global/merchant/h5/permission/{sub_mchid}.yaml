@@ -1,0 +1,32 @@
+get:
+  x-version:
+    - 2023.12.05
+  x-role:
+    - 机构模式
+  tags:
+    - 跨境∙H5权限
+  summary: 查询子商户H5支付权限状态
+  description: 商户可以通过该接口查询子商户的H5支付权限状态。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter4_4_7.shtml)
+  parameters:
+    - name: sub_mchid
+      in: path
+      required: true
+      type: string
+      description: 子商户号
+      example: '2491935631'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - sub_mchid
+          - authorization_state
+        properties:
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '2491935631'
+          authorization_state:
+            type: string
+            description: H5支付权限状态
+            example: AUTHORITY_TO_TEST

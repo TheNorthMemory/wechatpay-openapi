@@ -12,11 +12,12 @@ interface Commit_status
     /**
      * 商圈会员待积分状态查询(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter8_6_7.shtml
+     * @link https://pay.weixin.qq.com/docs/partner/apis/smart-business-circle/points/get-points-commit-status.html
      */
     public function get(array $options = [
         'openid' => 'oUpF8uMuAJOM2pxb1Q',
         'query' => [
+            'sub_mchid' => '1900000109',
             'brandid' => 1000,
             'appid' => 'wx931386123456789e',
         ],
@@ -25,11 +26,12 @@ interface Commit_status
     /**
      * 商圈会员待积分状态查询(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter8_6_7.shtml#async
+     * @link https://pay.weixin.qq.com/docs/partner/apis/smart-business-circle/points/get-points-commit-status.html#async
      */
     public function getAsync(array $options = [
         'openid' => 'oUpF8uMuAJOM2pxb1Q',
         'query' => [
+            'sub_mchid' => '1900000109',
             'brandid' => 1000,
             'appid' => 'wx931386123456789e',
         ],

@@ -12,10 +12,11 @@ interface Parkings
     /**
      * 商圈会员停车状态同步(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter8_6_5.shtml
+     * @link https://pay.weixin.qq.com/docs/partner/apis/smart-business-circle/parkings/update-parkings.html
      */
     public function post(array $options = [
         'json' => [
+            'sub_mchid' => '1900000109',
             'brandid' => 1000,
             'appid' => 'wx931386123456789e',
             'openid' => 'oUpF8uMuAJOM2pxb1Q',
@@ -28,10 +29,11 @@ interface Parkings
     /**
      * 商圈会员停车状态同步(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter8_6_5.shtml#async
+     * @link https://pay.weixin.qq.com/docs/partner/apis/smart-business-circle/parkings/update-parkings.html#async
      */
     public function postAsync(array $options = [
         'json' => [
+            'sub_mchid' => '1900000109',
             'brandid' => 1000,
             'appid' => 'wx931386123456789e',
             'openid' => 'oUpF8uMuAJOM2pxb1Q',

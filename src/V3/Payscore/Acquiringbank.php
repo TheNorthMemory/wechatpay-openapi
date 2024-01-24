@@ -5,6 +5,7 @@ namespace WeChatPay\OpenAPI\V3\Payscore;
 /**
  * @property-read Acquiringbank\Serviceorder $serviceorder
  * @property-read Acquiringbank\Permissions $permissions
+ * @property-read Acquiringbank\Servicepayondeliveryorder $servicepayondeliveryorder
  */
 interface Acquiringbank
 {

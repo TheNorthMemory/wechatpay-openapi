@@ -11,6 +11,7 @@ namespace WeChatPay\OpenAPI\V3;
  * @property-read Payscore\Partner $partner
  * @property-read Payscore\Acquiringbank $acquiringbank
  * @property-read Payscore\MerchantBill $merchantBill
+ * @property-read Payscore\Servicepayondeliveryorder $servicepayondeliveryorder
  * @property-read Payscore\UserServiceState $userServiceState
  */
 interface Payscore

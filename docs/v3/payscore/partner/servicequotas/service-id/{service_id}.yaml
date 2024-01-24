@@ -1,0 +1,39 @@
+get:
+  x-last-updated-at: 2023.08.23
+  x-role:
+    - 服务商
+  tags: []
+  summary: 查询用户分层对应建议先享金额
+  description: '[官方文档](https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/service-quota/get-partner-user-risk-level-quota.html)'
+  parameters:
+    - name: service_id
+      in: path
+      required: true
+      type: string
+      example: '2002000000000558128851361561536'
+    - name: sub_mchid
+      in: query
+      required: true
+      type: string
+      description: 子商户号
+      example: '1900000109'
+    - name: appid
+      in: query
+      required: true
+      type: string
+      description: 公众账号ID
+      example: wxd678efh567hg6787
+    - name: sub_appid
+      in: query
+      type: string
+      description: 子商户应用ID
+      example: wxd678efh567hg6999
+    - name: risk_level_version
+      in: query
+      required: true
+      type: number
+      description: 分层版本
+      example: 1
+  responses:
+    '200':
+      schema: {}

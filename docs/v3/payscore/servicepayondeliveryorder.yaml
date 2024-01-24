@@ -1,0 +1,192 @@
+post:
+  x-last-updated-at: 2023.10.18
+  x-role:
+    - 普通商户
+  tags:
+    - 支付分∙先用后付
+  summary: 创建先用后付订单
+  description: '[官方文档](https://pay.weixin.qq.com/docs/merchant/apis/weixin-pay-score/service-order/create-pay-on-delivery-service-order.html)'
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - out_order_no
+          - appid
+          - service_id
+          - service_introduction
+          - time_range
+        properties:
+          out_order_no:
+            type: string
+            description: 商户服务订单号
+            example: 1234323JKHDFE1243252
+          appid:
+            type: string
+            description: 公众账号ID
+            example: wxd678efh567hg6787
+          service_id:
+            type: string
+            description: 服务ID
+            example: '500001'
+          service_introduction:
+            type: string
+            description: 服务信息
+            example: 某某酒店
+          post_payments:
+            type: array
+            items:
+              type: object
+              description: 后付费项目
+              properties:
+                name:
+                  type: string
+                  description: 付费项目名称
+                  maxLength: 20
+                  example: 就餐费用, 服务费
+                amount:
+                  type: integer
+                  description: 金额
+                  example: 40000
+                description:
+                  type: string
+                  description: 计费说明
+                  example: 就餐人均100元，服务费：100/小时
+                count:
+                  type: integer
+                  description: 付费数量
+                  example: 4
+          post_discounts:
+            type: array
+            items:
+              type: object
+              description: 后付费商户优惠
+              properties:
+                name:
+                  type: string
+                  description: 优惠名称
+                  maxLength: 20
+                  example: 满20减1元
+                description:
+                  type: string
+                  description: 优惠说明
+                  example: 不与其他优惠叠加
+                amount:
+                  type: integer
+                  description: 优惠金额
+                  example: 100
+                count:
+                  type: integer
+                  description: 优惠数量
+                  example: 2
+          time_range:
+            type: object
+            description: 服务时间段
+            properties:
+              start_time:
+                type: string
+                pattern: /\d{8}|\d{14}|OnAccept/
+              start_time_remark:
+                type: string
+                maxLength: 20
+              end_time:
+                type: string
+                pattern: /\d{8}|\d{14}/
+              end_time_remark:
+                type: string
+                maxLength: 50
+          location:
+            type: object
+            description: 服务位置
+            properties:
+              start_location:
+                type: string
+              end_location:
+                type: string
+          risk_fund:
+            type: object
+            description: 订单风险金
+            properties:
+              name:
+                type: string
+                description: 风险金名称
+                enum:
+                  - DEPOSIT             #押金
+                  - ADVANCE             #预付款
+                  - CASH_DEPOSIT        #保证金
+                  - ESTIMATE_ORDER_COST #预估订单费用
+              amount:
+                type: integer
+                description: 风险金额
+                example: 10000
+              description:
+                type: string
+                description: 风险说明
+                maxLength: 30
+                example: 就餐的预估费用
+          attach:
+            type: string
+            description: 商户数据包
+            example: Easdfowealsdkjfnlaksjdlfkwqoi&wl3l2sald
+          notify_url:
+            type: string
+            description: 商户回调地址
+            example: https://api.test.com
+          openid:
+            type: string
+            description: 用户标识
+            example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+          need_user_confirm:
+            type: boolean
+            description: 是否需要用户确认
+          mchid:
+            type: string
+            description: 商户号
+            example: '1230000109'
+          shopping_info:
+            type: object
+            properties:
+              real_merchant_appid:
+                type: string
+                description: 实际购物商家公众号ID
+                example: wxd678efh567hg6787
+              jump_link:
+                type: object
+                properties:
+                  jump_link_type:
+                    type: string
+                    description: 跳转链接类型
+                    enum:
+                      - JUMP_LINK_MINI_PROGRAM
+                  appid:
+                    type: string
+                    description: 小程序跳转AppID
+                  path:
+                    type: string
+                    description: 小程序跳转path
+              goods:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                      description: 商品名称
+                      example: 森海塞尔 MOMENTUM 4 无线耳机大馒头4 头戴式蓝牙音乐耳机自适应降噪
+                    picture:
+                      type: string
+                      description: 商品图片链接
+                      example: http://mmbiz.qpic.cn/mmbiz_png/ldTw9dg46zkjOrzyTkbQAvQkysliaiblZhdthZWewgQMyqLZwStaNEsJrYmjwh2MlK7G4wibAFOEuISQKplSnxMWA/640?wx_fmt=png&wxfrom=200
+                    amount:
+                      type: integer
+                      description: 商品单价金额
+                      example: 40000
+                    count:
+                      type: integer
+                      description: 商品数量
+                      example: 4
+  responses:
+    '200':
+      schema: {}

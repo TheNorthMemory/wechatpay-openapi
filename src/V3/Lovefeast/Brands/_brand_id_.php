@@ -12,7 +12,7 @@ interface _brand_id_
     /**
      * 查询爱心餐品牌信息(同步模式)
      * @param array<string,mixed> $options
-     * @link 商户根据品牌ID查询爱心餐品牌的捐赠与供餐信息。
+     * @link https://pay.weixin.qq.com/docs/partner/apis/lovefeast/brands/get-brand.html
      */
     public function get(array $options = [
         'brand_id' => '2250',
@@ -21,7 +21,7 @@ interface _brand_id_
     /**
      * 查询爱心餐品牌信息(异步模式)
      * @param array<string,mixed> $options
-     * @link 商户根据品牌ID查询爱心餐品牌的捐赠与供餐信息。#async
+     * @link https://pay.weixin.qq.com/docs/partner/apis/lovefeast/brands/get-brand.html#async
      */
     public function getAsync(array $options = [
         'brand_id' => '2250',

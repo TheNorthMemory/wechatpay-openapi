@@ -7,7 +7,7 @@ info:
     整理自[官方文档中心](https://pay.weixin.qq.com/wiki/doc/apiv3/index.shtml)
     本[项目/工具地址](https://github.com/TheNorthMemory/wechatpay-openapi)
     **访问第一次加载比较慢，请耐心等待大约1-2分钟不等(小文件下载比较多)。**
-  version: 0.15.22
+  version: 0.15.23
 schemes:
   - https
 consumes:
@@ -56,7 +56,7 @@ tags:
   - name: 支付分∙机构模式
   - name: 微信寄快递
   - name: 品牌小店营销
-  - name: 扣款服务
+  - name: 委托代扣
   - name: 校园轻松付
   - name: 教育续费通
   - name: 学生卡身份权益
@@ -1046,6 +1046,8 @@ paths:
     $ref: ./v3/offlinefacemch/organizations/{organization_id}/users/user-id/{user_id}/terminate-contract.yaml
   /v3/offlinefacemch/tokens:
     $ref: ./v3/offlinefacemch/tokens.yaml
+  /v3/papay/contracts/{contract_id}/notify:
+    $ref: ./v3/papay/contracts/{contract_id}/notify.yaml
   /v3/partner-papay/contracts/{contract_id}/notify:
     $ref: ./v3/partner-papay/contracts/{contract_id}/notify.yaml
   /v3/partner-transfer/batches:

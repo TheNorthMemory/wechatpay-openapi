@@ -3,7 +3,7 @@ post:
   x-role:
     - 服务商
   tags:
-    - 扣款服务
+    - 委托代扣
   summary: 预扣费通知API
   description: 商户进行委托代扣扣费前需要在可通知时间段内调用「预扣费通知」的接口为用户发送扣费提醒，并设定预计扣费金额，经过扣费等待期后，在可扣费期内可发起扣费，扣款金额不能高于预计扣费金额，扣费失败可主动发起重试扣费（重试次数由其他规则限制），直到扣费成功，或者可扣费期结束。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter5_15.shtml)
   parameters:

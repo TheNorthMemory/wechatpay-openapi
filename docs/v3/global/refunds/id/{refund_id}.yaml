@@ -10,25 +10,25 @@ get:
   parameters:
     - name: mchid
       in: query
-      require: true
+      required: true
       type: string
       description: 商户号
       example: '1900000109'
     - name: sub_mchid
       in: query
-      require: true
+      required: true
       type: string
       description: 子商户号
       example: '1900000109'
     - name: sp_mchid
       in: query
-      require: true
+      required: true
       type: string
       description: 机构商户号
       example: '1900000100'
     - name: refund_id
       in: path
-      require: true
+      required: true
       type: string
       description: 微信支付退款订单号
   responses:

@@ -15,7 +15,7 @@ post:
       example: 1234323JKHDFE1243252
     - name: _
       in: body
-      require: true
+      required: true
       schema:
         type: object
         required:

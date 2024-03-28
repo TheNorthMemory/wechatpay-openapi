@@ -179,31 +179,31 @@ get:
       description: 商户订单号
     - name: mchid
       in: query
-      require: true
+      required: true
       type: string
       description: 商户号
       example: '1900000109'
     - name: sub_mchid
       in: query
-      require: true
+      required: true
       type: string
       description: 子商户号
       example: '1900000109'
     - name: sp_mchid
       in: query
-      require: true
+      required: true
       type: string
       description: 机构商户号
       example: '1900000100'
     - name: offset
       in: query
-      require: true
+      required: true
       type: integer
       description: 记录起始位置
       example: 0
     - name: count
       in: query
-      require: true
+      required: true
       type: integer
       description: 每页笔数
       example: 10

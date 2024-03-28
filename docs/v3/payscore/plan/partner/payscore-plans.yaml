@@ -9,7 +9,7 @@ post:
   parameters:
     - name: _
       in: body
-      require: true
+      required: true
       schema:
         type: object
         required:

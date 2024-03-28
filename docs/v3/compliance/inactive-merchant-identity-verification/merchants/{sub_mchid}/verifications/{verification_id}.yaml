@@ -21,4 +21,34 @@ get:
       required: true
   responses:
     '200':
-      schema: {}
+      schema:
+        type: object
+        required:
+          - sub_mchid
+          - verification_id
+          - state
+        properties:
+          sub_mchid:
+            type: string
+            description: 特约商户号
+            example: '1900009231'
+          verification_id:
+            type: string
+            description: 核实单号
+            example: '28011678863778000000123124312'
+          state:
+            type: string
+            description: 核实单状态
+            example: PROCESSING
+            enum: [PROCESSING, SUCCESS, FAIL]
+          fail_reason:
+            type: string
+            description: 失败原因
+            example: MATERIALS_ABNORMAL
+            enum: [MATERIALS_ABNORMAL, PROCESS_TIMEOUT]
+          create_time:
+            type: string
+            description: 创建时间
+          finish_time:
+            type: string
+            description: 完成时间

@@ -21,4 +21,12 @@ post:
             example: '1900009231'
   responses:
     '200':
-      schema: {}
+      schema:
+        type: object
+        required:
+          - verification_id
+        properties:
+          verification_id:
+            type: string
+            description: 核实单号
+            example: '28011678863778000000123124312'

@@ -1,0 +1,235 @@
+post:
+  x-last-updated-at: 2023.10.13
+  x-role:
+    - 普通商户
+  tags:
+    - 支付分∙签约计划
+  summary: 创建用户的签约计划
+  description: 商户通过此接口基于商户已创建且正常进行中的支付分计划，创建用户的签约计划以供用户签约。[官方文档](https://pay.weixin.qq.com/docs/merchant/apis/payscore-plan/user-sign-plan/create-user-sign-plan.html)
+  parameters:
+    - name: _
+      in: body
+      require: true
+      schema:
+        type: object
+        required:
+          - service_id
+          - plan_id
+          - appid
+          - openid
+          - merchant_sign_plan_no
+          - notify_url
+          - sign_plan_detail
+        properties:
+          service_id:
+            type: string
+            description: 支付分服务ID
+            example: '2002000000000558128851361561536'
+          plan_id:
+            type: string
+            description: 支付分计划ID
+            example: '01000033210000324638000000376258'
+          appid:
+            type: string
+            description: AppID
+            example: wxd678efh567hg6787
+          openid:
+            type: string
+            description: 待签约用户在商户应用下的OpenID
+            example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+          merchant_sign_plan_no:
+            type: string
+            description: 商户签约计划单号
+            example: 1234323JKHDFE1243252
+          notify_url:
+            type: string
+            description: 签约成功事件通知回调地址
+            example: https://api.test.com
+          sign_plan_detail:
+            type: array
+            description: 签约计划对应的计划详情列表的商户侧单号信息
+            items:
+              type: object
+              required:
+                - plan_detail_no
+                - merchant_plan_detail_no
+              properties:
+                plan_detail_no:
+                  type: number
+                  description: 计划明细序号
+                  example: 1
+                merchant_plan_detail_no:
+                  type: string
+                  description: 商户侧计划明细使用订单号
+                  example: 1234323JKHDFE1243252
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - sign_plan
+          - package
+        properties:
+          sign_plan:
+            type: object
+            description: 用户的签约计划
+            required:
+              - sign_plan_id
+              - service_id
+              - mchid
+              - appid
+              - merchant_sign_plan_no
+              - merchant_callback_url
+              - plan_id
+              - going_detail_no
+              - sign_state
+              - plan_name
+              - plan_over_time
+              - total_origin_price
+              - deduction_quantity
+              - total_actual_price
+            properties:
+              sign_plan_id:
+                type: string
+                description: 计划签约ID
+                example: '01010033210001424338000019876258'
+              openid:
+                type: string
+                description: 签约计划用户应用下的OpenID
+                example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+              service_id:
+                type: string
+                description: 计划所属服务
+                example: '2002000000000558128851361561536'
+              mchid:
+                type: string
+                description: 商户号
+                example: '1900000109'
+              appid:
+                type: string
+                description: AppID
+                example: wxd678efh567hg6787
+              merchant_sign_plan_no:
+                type: string
+                description: 商户侧签约计划号
+                example: 1234323JKHDFE1243252
+              merchant_callback_url:
+                type: string
+                description: 商户回调地址
+                example: https://api.test.com
+              plan_id:
+                type: string
+                description: 签约所属计划ID
+                example: '01000033210000324638000000376258'
+              going_detail_no:
+                type: number
+                description: 目前用户进行到的计划详情序号
+                example: 2
+              sign_state:
+                type: string
+                description: 计划签约状态
+                example: UNSIGNED
+              cancel_sign_time:
+                type: string
+                format: rfc3339
+                description: 签约计划取消时间
+                example: '2021-05-20T13:29:35.120+08:00'
+              cancel_sign_type:
+                type: string
+                description: 签约计划取消类型
+                example: NOT_CANCEL
+              cancel_reason:
+                type: string
+                description: 签约计划取消原因
+                example: 用户放弃课程
+              plan_name:
+                type: string
+                description: 签约计划的名称
+                example: 瑜伽晨练课10次
+              plan_over_time:
+                type: string
+                format: rfc3339
+                description: 签约计划的过期时间
+                example: '2021-05-20T13:29:35.120+08:00'
+              total_origin_price:
+                type: number
+                description: 签约计划原总金额(单位分)
+                example: 150000
+              deduction_quantity:
+                type: number
+                description: 签约计划扣费次数
+                example: 10
+              total_actual_price:
+                type: number
+                description: 签约计划实际总金额（单位分）
+                example: 120000
+              signed_detail_list:
+                type: array
+                description: 签约计划明细列表
+                items:
+                  type: object
+                  required:
+                    - plan_detail_no
+                    - original_price
+                    - actual_price
+                    - plan_detail_state
+                    - merchant_plan_detail_no
+                    - plan_detail_name
+                  properties:
+                    plan_detail_no:
+                      type: number
+                      description: 计划明细序号
+                      example: 1
+                    original_price:
+                      type: number
+                      description: 计划明细原支付金额（单位分）
+                      example: 30000
+                    plan_discount_description:
+                      type: string
+                      description: 计划明细优惠说明
+                      example: 享9折优惠
+                    actual_price:
+                      type: number
+                      description: 计划明细实际支付金额（单位分）
+                      example: 27000
+                    plan_detail_state:
+                      type: string
+                      description: 计划明细状态
+                      example: NOT_USED
+                    order_id:
+                      type: string
+                      description: 计划明细对应的支付分服务单号
+                      example: '0000300001201908301055157220022'
+                    merchant_plan_detail_no:
+                      type: string
+                      description: 商户侧计划明细使用订单号
+                      example: 1234323JKHDFE1243252
+                    plan_detail_name:
+                      type: string
+                      description: 计划详情名称
+                      example: 第一节课
+                    actual_pay_price:
+                      type: number
+                      description: 计划明细对应订单实际支付金额（单位分）
+                      example: 50000
+                    use_time:
+                      type: string
+                      description: 详情使用时间
+                      example: '2021-05-20T13:29:35.120+08:00'
+                    complete_time:
+                      type: string
+                      description: 详情完成时间
+                      example: '2021-05-20T13:29:35.120+08:00'
+                    cancel_time:
+                      type: string
+                      description: 详情取消时间
+                      example: '2021-05-20T13:29:35.120+08:00'
+              sign_time:
+                type: string
+                format: rfc3339
+                description: 签约时间
+                example: '2021-05-20T13:29:35.120+08:00'
+          package:
+            type: string
+            description: 跳转微信侧确认签约小程序的数据
+            example: Easdfowealsdkjfnlaksjdlfkwqoi&wl3l2sald

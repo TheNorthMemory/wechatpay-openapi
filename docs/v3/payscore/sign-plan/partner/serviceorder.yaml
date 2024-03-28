@@ -1,0 +1,248 @@
+post:
+  x-last-updated-at: 2023.10.13
+  x-role:
+    - 服务商
+  tags:
+    - 支付分∙签约计划
+  summary: 创建用户的签约计划详情对应的服务订单
+  description: 根据用户签约的计划和对应要服务的计划详情序号，创建服务订单。[官方文档](https://pay.weixin.qq.com/docs/partner/apis/partner-payscore-plan/partner-service-order/create-partner-service-order.html)
+  parameters:
+    - name: _
+      in: body
+      require: true
+      schema:
+        type: object
+        required:
+          - service_id
+          - sign_plan_id
+          - plan_detail_no
+          - appid
+          - sub_mchid
+          - notify_url
+          - service_introduction
+          - time_range
+          - out_trade_no
+        properties:
+          service_id:
+            type: string
+            description: 支付分服务ID
+            example: '2002000000000558128851361561536'
+          sign_plan_id:
+            type: string
+            description: 待创建服务订单对应的用户的签约计划
+            example: '01000033210000324638000000376258'
+          plan_detail_no:
+            type: number
+            description: 待创建服务订单对应的用户的签约计划详情序号
+            example: 2
+          appid:
+            type: string
+            description: 服务商的AppID
+            example: wxd678efh567hg6787
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1900000109'
+          sub_appid:
+            type: string
+            description: 子商户的AppID
+            example: wxd678efh567hg6999
+          openid:
+            type: string
+            description: 服务商公众号下的用户标识
+            example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+          sub_openid:
+            type: string
+            description: 子商户公众号下的用户标识
+            example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+          notify_url:
+            type: string
+            description: 商户扣款成功回调通知的地址
+            example: https://api.test.com
+          service_introduction:
+            type: string
+            description: 服务信息
+            example: 羽毛球课基础练习课程
+          time_range:
+            type: object
+            description: 服务时间
+            required:
+              - start_time
+            properties:
+              start_time:
+                type: string
+                description: 服务开始时间
+                example: '20091225091010'
+              end_time:
+                type: string
+                description: 服务结束时间
+                example: '20091225121010'
+              start_time_remark:
+                type: string
+                description: 服务开始时间备注
+                example: 备注1
+              end_time_remark:
+                type: string
+                description: 服务结束时间备注
+                example: 备注2
+          location:
+            type: object
+            description: 服务位置
+            required: []
+            properties:
+              start_location:
+                type: string
+                description: 服务开始地点
+                example: 嗨客时尚主题展餐厅
+              end_location:
+                type: string
+                description: 服务结束地点
+                example: 嗨客时尚主题展餐厅
+          attach:
+            type: string
+            description: 附加数据
+            example: Easdfowealsdkjfnlaksjdlfkwqoi&wl3l2sald
+          out_trade_no:
+            type: string
+            description: 商户侧订单号
+            example: 1514323JSVDFE1243252
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - out_order_no
+          - service_id
+          - appid
+          - mchid
+          - sub_mchid
+          - service_introduction
+          - state
+        properties:
+          out_order_no:
+            type: string
+            description: 商户订单号
+            example: 1234323JKHDFE1243252
+          service_id:
+            type: string
+            description: 服务ID
+            example: '2002000000000558128851361561536'
+          appid:
+            type: string
+            description: 服务商公众号ID
+            example: wxd678efh567hg6787
+          mchid:
+            type: string
+            description: 服务商商户号
+            example: '1230000109'
+          sub_appid:
+            type: string
+            description: 子商户公众号ID
+            example: wxd678efh567hg6999
+          sub_mchid:
+            type: string
+            description: 子商户商户号
+            example: '1900000109'
+          service_introduction:
+            type: string
+            description: 服务信息
+            example: 羽毛球课程基础训练
+          state:
+            type: string
+            description: 服务订单状态
+            example: CREATED
+          state_description:
+            type: string
+            description: 订单状态说明
+            example: USER_CONFIRM
+          post_payments:
+            type: array
+            description: 后付费项目
+            items:
+              type: object
+              required: []
+              properties:
+                name:
+                  type: string
+                  description: 付费名称
+                  example: 瑜伽课程20节
+                amount:
+                  type: number
+                  description: 付费金额
+                  example: 40000
+                description:
+                  type: string
+                  description: 付费说明
+                  example: 第6节课
+          post_discounts:
+            type: array
+            description: 商户优惠
+            items:
+              type: object
+              required: []
+              properties:
+                name:
+                  type: string
+                  description: 优惠名称
+                  example: 享9折优惠
+                amount:
+                  type: number
+                  description: 优惠金额
+                  example: 100
+          risk_fund:
+            type: object
+            description: 服务风险金
+            required:
+              - amount
+            properties:
+              amount:
+                type: number
+                description: 风险金额
+                example: 10000
+          time_range:
+            type: object
+            description: 服务时间
+            required:
+              - start_time
+            properties:
+              start_time:
+                type: string
+                description: 服务开始时间
+                example: '20091225091010'
+              end_time:
+                type: string
+                description: 服务结束时间
+                example: '20091225121010'
+              start_time_remark:
+                type: string
+                description: 服务开始时间备注
+                example: 备注1
+              end_time_remark:
+                type: string
+                description: 服务结束时间备注
+                example: 备注2
+          location:
+            type: object
+            description: 服务位置
+            required: []
+            properties:
+              start_location:
+                type: string
+                description: 服务开始地点
+                example: 嗨客时尚主题展餐厅
+              end_location:
+                type: string
+                description: 服务结束地点
+                example: 嗨客时尚主题展餐厅
+          attach:
+            type: string
+            description: 附加数据
+            example: Easdfowealsdkjfnlaksjdlfkwqoi&wl3l2sald
+          notify_url:
+            type: string
+            description: 商户回调地址
+            example: https://api.test.com
+          order_id:
+            type: string
+            description: 微信支付服务订单号
+            example: '0000300001201908301055157220022'

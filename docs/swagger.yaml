@@ -46,6 +46,7 @@ tags:
   - name: 支付分∙免确认模式
   - name: 支付分∙免确认模式∙普通授权
   - name: 支付分∙免确认模式∙预授权
+  - name: 支付分∙签约计划
   - name: 支付分∙先享卡
   - name: 支付分∙先用后付
   - name: 支付分∙先享后付
@@ -1180,6 +1181,18 @@ paths:
     $ref: ./v3/payscore/permissions/openid/{openid}.yaml
   /v3/payscore/permissions/openid/{openid}/terminate:
     $ref: ./v3/payscore/permissions/openid/{openid}/terminate.yaml
+  /v3/payscore/plan/partner/payscore-plans:
+    $ref: ./v3/payscore/plan/partner/payscore-plans.yaml
+  /v3/payscore/plan/partner/payscore-plans/merchant-plan-no/{merchant_plan_no}:
+    $ref: ./v3/payscore/plan/partner/payscore-plans/merchant-plan-no/{merchant_plan_no}.yaml
+  /v3/payscore/plan/partner/payscore-plans/merchant-plan-no/{merchant_plan_no}/stop:
+    $ref: ./v3/payscore/plan/partner/payscore-plans/merchant-plan-no/{merchant_plan_no}/stop.yaml
+  /v3/payscore/plan/payscore-plans:
+    $ref: ./v3/payscore/plan/payscore-plans.yaml
+  /v3/payscore/plan/payscore-plans/merchant-plan-no/{merchant_plan_no}:
+    $ref: ./v3/payscore/plan/payscore-plans/merchant-plan-no/{merchant_plan_no}.yaml
+  /v3/payscore/plan/payscore-plans/merchant-plan-no/{merchant_plan_no}/stop:
+    $ref: ./v3/payscore/plan/payscore-plans/merchant-plan-no/{merchant_plan_no}/stop.yaml
   /v3/payscore/serviceorder:
     $ref: ./v3/payscore/serviceorder.yaml
   /v3/payscore/serviceorder/{out_order_no}/cancel:
@@ -1196,6 +1209,22 @@ paths:
     $ref: ./v3/payscore/serviceorder/direct-complete.yaml
   /v3/payscore/servicepayondeliveryorder:
     $ref: ./v3/payscore/servicepayondeliveryorder.yaml
+  /v3/payscore/sign-plan/partner/serviceorder:
+    $ref: ./v3/payscore/sign-plan/partner/serviceorder.yaml
+  /v3/payscore/sign-plan/partner/user-sign-plans:
+    $ref: ./v3/payscore/sign-plan/partner/user-sign-plans.yaml
+  /v3/payscore/sign-plan/partner/user-sign-plans/merchant-sign-plan-no/{merchant_sign_plan_no}:
+    $ref: ./v3/payscore/sign-plan/partner/user-sign-plans/merchant-sign-plan-no/{merchant_sign_plan_no}.yaml
+  /v3/payscore/sign-plan/partner/user-sign-plans/merchant-sign-plan-no/{merchant_sign_plan_no}/stop:
+    $ref: ./v3/payscore/sign-plan/partner/user-sign-plans/merchant-sign-plan-no/{merchant_sign_plan_no}/stop.yaml
+  /v3/payscore/sign-plan/serviceorder:
+    $ref: ./v3/payscore/sign-plan/serviceorder.yaml
+  /v3/payscore/sign-plan/user-sign-plans:
+    $ref: ./v3/payscore/sign-plan/user-sign-plans.yaml
+  /v3/payscore/sign-plan/user-sign-plans/merchant-sign-plan-no/{merchant_sign_plan_no}:
+    $ref: ./v3/payscore/sign-plan/user-sign-plans/merchant-sign-plan-no/{merchant_sign_plan_no}.yaml
+  /v3/payscore/sign-plan/user-sign-plans/merchant-sign-plan-no/{merchant_sign_plan_no}/stop:
+    $ref: ./v3/payscore/sign-plan/user-sign-plans/merchant-sign-plan-no/{merchant_sign_plan_no}/stop.yaml
   /v3/payscore/smartretail-orders:
     $ref: ./v3/payscore/smartretail-orders.yaml
   /v3/payscore/smartretail-orders/{out_order_no}/cancel:

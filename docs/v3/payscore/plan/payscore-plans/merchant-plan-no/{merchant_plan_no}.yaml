@@ -1,0 +1,116 @@
+get:
+  x-last-updated-at: 2023.10.13
+  x-role:
+    - 普通商户
+  tags:
+    - 支付分∙签约计划
+  summary: 查询支付分计划
+  description: 商户通过此接口查询支付分计划，商户只能查询自己创建的支付分计划。[官方文档](https://pay.weixin.qq.com/docs/merchant/apis/payscore-plan/pay-score-plan/query-pay-score-plan.html)
+  parameters:
+    - name: merchant_plan_no
+      in: path
+      required: true
+      type: string
+      description: 支付分计划商户侧单号
+      example: 1234323JKHDFE1243252
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - plan_id
+          - service_id
+          - mchid
+          - appid
+          - merchant_plan_no
+          - plan_name
+          - plan_duration
+          - plan_state
+          - total_original_price
+          - deduction_quantity
+          - total_actual_price
+        properties:
+          plan_id:
+            type: string
+            description: 支付分计划ID
+            example: '01000033210000324638000000376258'
+          service_id:
+            type: string
+            description: 计划所属服务
+            example: '2002000000000558128851361561536'
+          mchid:
+            type: string
+            description: 商户号
+            example: '1900000109'
+          appid:
+            type: string
+            description: AppID
+            example: wxd678efh567hg6787
+          merchant_plan_no:
+            type: string
+            description: 商户侧计划号
+            example: 1234323JKHDFE1243252
+          plan_name:
+            type: string
+            description: 支付分计划名称
+            example: 瑜伽课20节
+          plan_duration:
+            type: number
+            description: 支付分计划有效期(单位天)
+            example: 10
+          plan_state:
+            type: string
+            description: 支付分计划状态
+            example: NORMAL
+          total_original_price:
+            type: number
+            description: 支付分计划原总金额(单位分)
+            example: 15000
+          deduction_quantity:
+            type: number
+            description: 支付分计划扣费次数
+            example: 10
+          total_actual_price:
+            type: number
+            description: 支付分计划实际扣费总金额(单位分)
+            example: 140000
+          plan_detail_list:
+            type: array
+            description: 支付分计划明细列表
+            items:
+              type: object
+              required:
+                - plan_detail_no
+                - plan_detail_name
+                - original_price
+                - actual_price
+              properties:
+                plan_detail_no:
+                  type: number
+                  description: 计划明细序号
+                  example: 1
+                plan_detail_name:
+                  type: string
+                  description: 计划明细名称
+                  example: 第8节课
+                original_price:
+                  type: number
+                  description: 计划明细原支付金额(单位分)
+                  example: 15000
+                plan_discount_description:
+                  type: string
+                  description: 计划明细优惠说明
+                  example: 享受九折优惠
+                actual_price:
+                  type: number
+                  description: 计划明细实际支付金额(单位分)
+                  example: 14000
+          stop_mchid:
+            type: string
+            description: 终止方商户号
+            example: '1900000109'
+          stop_time:
+            type: string
+            format: rfc3339
+            description: 终止时间
+            example: '2021-05-20T13:29:35.120+08:00'

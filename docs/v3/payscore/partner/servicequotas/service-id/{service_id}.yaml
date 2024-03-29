@@ -5,30 +5,31 @@ get:
   tags:
     - 支付分∙服务商模式
   summary: 查询用户分层对应建议先享金额
-  description: '[官方文档](https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/service-quota/get-partner-user-risk-level-quota.html)'
+  description: 查询用户分层对应建议先享金额API。[官方文档](https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/service-quota/get-partner-user-risk-level-quota.html)
   parameters:
     - name: service_id
       in: path
       required: true
       type: string
+      description: 服务ID
       example: '2002000000000558128851361561536'
     - name: sub_mchid
       in: query
       required: true
       type: string
-      description: 子商户号
-      example: '1900000109'
+      description: 子商户商户号
+      example: '1230000109'
     - name: appid
       in: query
       required: true
       type: string
-      description: 公众账号ID
+      description: 服务商的公众号ID
       example: wxd678efh567hg6787
     - name: sub_appid
       in: query
       type: string
-      description: 子商户应用ID
-      example: wxd678efh567hg6999
+      description: 子商户的公众号ID
+      example: wxd678efh567hg6787
     - name: risk_level_version
       in: query
       required: true
@@ -37,4 +38,54 @@ get:
       example: 1
   responses:
     '200':
-      schema: {}
+      schema:
+        type: object
+        required:
+          - service_id
+          - mchid
+          - sub_mchid
+          - appid
+          - risk_level_version
+          - quotas
+        properties:
+          service_id:
+            type: string
+            description: 服务ID
+            example: '2002000000000558128851361561536'
+          mchid:
+            type: string
+            description: 商户号
+            example: '1230000109'
+          sub_mchid:
+            type: string
+            description: 子商户商户号
+            example: '1230000109'
+          appid:
+            type: string
+            description: 公众号ID
+            example: wxd678efh567hg6787
+          sub_appid:
+            type: string
+            description: 子商户的公众号ID
+            example: wxd678efh567hg6787
+          risk_level_version:
+            type: number
+            description: 分层版本
+            example: 1
+          quotas:
+            type: array
+            description: 先享金额列表
+            items:
+              type: object
+              required:
+                - risk_level
+                - suggested_quota
+              properties:
+                risk_level:
+                  type: number
+                  description: 用户分层
+                  example: 1
+                suggested_quota:
+                  type: number
+                  description: 建议先享金额
+                  example: 1000

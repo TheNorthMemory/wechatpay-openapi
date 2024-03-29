@@ -17,9 +17,9 @@ interface _service_id_
     public function get(array $options = [
         'service_id' => '2002000000000558128851361561536',
         'query' => [
-            'sub_mchid' => '1900000109',
+            'sub_mchid' => '1230000109',
             'appid' => 'wxd678efh567hg6787',
-            'sub_appid' => 'wxd678efh567hg6999',
+            'sub_appid' => 'wxd678efh567hg6787',
             'risk_level_version' => 1,
         ],
     ]): ResponseInterface;
@@ -32,9 +32,9 @@ interface _service_id_
     public function getAsync(array $options = [
         'service_id' => '2002000000000558128851361561536',
         'query' => [
-            'sub_mchid' => '1900000109',
+            'sub_mchid' => '1230000109',
             'appid' => 'wxd678efh567hg6787',
-            'sub_appid' => 'wxd678efh567hg6999',
+            'sub_appid' => 'wxd678efh567hg6787',
             'risk_level_version' => 1,
         ],
     ]): PromiseInterface;

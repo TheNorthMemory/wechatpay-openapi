@@ -3,34 +3,44 @@ post:
   tags:
     - 通用接口
   summary: 南桥接口-微信支付平台通知商户平台协议及数据结构
-  description: "对后台通知交互时，如果微信收到应答不是成功或超时，微信认为通知失败，微信会通过一定的策略定期重新发起通知，尽可能提高通知的成功率，但微信不保证通知最终能成功。
-  微信会对发送给商户的通知进行签名，并将签名值放在通知的HTTP头Wechatpay-Signature。商户应当验证签名，以确认请求来自微信，而不是其他的第三方。
-  签名验证的算法请参考《[微信支付APIv3签名方案](https://wechatpay-api.gitbook.io/wechatpay-api-v3/ren-zheng/qian-ming-he-zheng-shu#hui-tiao-tong-zhi-qian-ming)》。
-  （通知频率为15s/15s/30s /3m/10m/20m/30m/30m/30m/60m/ 3h/3h/3h/6h/6h - 总计 24h4m）
-  使用*key*、*nonce*和*associated_data*，
-  对数据密文*resource.ciphertext*使用**resource.algorithm(AEAD_AES_256_GCM)**进行解密，得到**JSON形式的资源对象**。
-  每种**资源对象**参见以下链接：
-  [商圈支付结果通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/businesscircle/points/chapter3_1.shtml)
-  [普通支付通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transactions/chapter3_11.shtml)
-  [服务商支付通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transactions/chapter5_11.shtml)
-  [合单支付通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/combine/chapter3_7.shtml)
-  [分账动账通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/profitsharing/chapter3_6.shtml)
-  [投诉通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/merchant-service/chapter4_1.shtml)
-  [退款结果通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/refunds/chapter3_3.shtml)
-  [核销事件回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/convention/chapter4_1.shtml)
-  [领券事件回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/busifavor/chapter4_1.shtml)
-  [授权/解除授权服务回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter5_1.shtml)
-  [支付分确认订单回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter5_2.shtml)
-  [支付分支付成功回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter5_3.shtml)
-  [先享卡用户领卡通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter4_1.shtml)
-  [先享卡用户结算通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter4_2.shtml)
-  [先享卡用户领卡通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/discount-card/chapter5_1.shtml)
-  [先享卡用户守约状态变化通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/discount-card/chapter5_2.shtml)
-  [先享卡扣费状态变化通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/discount-card/chapter5_3.shtml)
-  [会员卡领卡事件通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter7_1.shtml)
-  [会员卡激活事件通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter7_2.shtml)
-  [会员卡用户管理会员卡事件通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter7_3.shtml)
-  "
+  description: |
+    对后台通知交互时，如果微信收到应答不是成功或超时，微信认为通知失败，微信会通过一定的策略定期重新发起通知，尽可能提高通知的成功率，但微信不保证通知最终能成功。
+    微信会对发送给商户的通知进行签名，并将签名值放在通知的HTTP头Wechatpay-Signature。商户应当验证签名，以确认请求来自微信，而不是其他的第三方。
+    签名验证的算法请参考《[微信支付APIv3签名方案](https://wechatpay-api.gitbook.io/wechatpay-api-v3/ren-zheng/qian-ming-he-zheng-shu#hui-tiao-tong-zhi-qian-ming)》。
+    （通知频率为15s/15s/30s /3m/10m/20m/30m/30m/30m/60m/ 3h/3h/3h/6h/6h - 总计 24h4m）
+    使用*key*、*nonce*和*associated_data*，
+    对数据密文*resource.ciphertext*使用**resource.algorithm(AEAD_AES_256_GCM)**进行解密，得到**JSON形式的资源对象**。
+    每种**资源对象**参见以下链接：
+    [商圈支付结果通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/businesscircle/points/chapter3_1.shtml)
+    [普通支付通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transactions/chapter3_11.shtml)
+    [服务商支付通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transactions/chapter5_11.shtml)
+    [合单支付通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/combine/chapter3_7.shtml)
+    [分账动账通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/profitsharing/chapter3_6.shtml)
+    [投诉通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/merchant-service/chapter4_1.shtml)
+    [退款结果通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/refunds/chapter3_3.shtml)
+    [核销事件回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/convention/chapter4_1.shtml)
+    [领券事件回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/busifavor/chapter4_1.shtml)
+    [授权/解除授权服务回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter5_1.shtml)
+    [支付分确认订单回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter5_2.shtml)
+    [支付分支付成功回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter5_3.shtml)
+    [普通商户委托代扣支付结果通知](https://pay.weixin.qq.com/docs/merchant/apis/entrusted-payment/deduct-result-notify.html)
+    [普通商户委托代扣签解约通知](https://pay.weixin.qq.com/docs/merchant/apis/entrusted-payment/contract-alter-notify.html)
+    [服务商委托代扣支付结果通知](https://pay.weixin.qq.com/docs/partner/apis/entrusted-payment/deduct-result-notify.html)
+    [服务商委托代扣签解约通知](https://pay.weixin.qq.com/docs/partner/apis/entrusted-payment/contract-alter-notify.html)
+    [先享卡用户领卡通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter4_1.shtml)
+    [先享卡用户结算通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter4_2.shtml)
+    [先享卡用户领卡通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/discount-card/chapter5_1.shtml)
+    [先享卡用户守约状态变化通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/discount-card/chapter5_2.shtml)
+    [先享卡扣费状态变化通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/discount-card/chapter5_3.shtml)
+    [会员卡领卡事件通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter7_1.shtml)
+    [会员卡激活事件通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter7_2.shtml)
+    [会员卡用户管理会员卡事件通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter7_3.shtml)
+    [直连商户委托代扣支付成功结果通知](https://pay.weixin.qq.com/docs/merchant/apis/entrusted-payment/deduct-result-notify.html)
+    [服务商委托代扣支付成功结果通知](https://pay.weixin.qq.com/docs/partner/apis/entrusted-payment/deduct-result-notify.html)
+    [保险业委托代扣支付成功结果通知](https://pay.weixin.qq.com/docs/merchant/apis/insurance-entrusted-payment/deduct-result-notify.html)
+    [直连商户委托代扣支付失败结果通知](https://pay.weixin.qq.com/docs/merchant/apis/entrusted-payment/deduct-result-notify.html)
+    [服务商委托代扣支付失败结果通知](https://pay.weixin.qq.com/docs/partner/apis/entrusted-payment/deduct-result-notify.html)
+    [保险业委托代扣支付失败结果通知](https://pay.weixin.qq.com/docs/partner/apis/insurance-entrusted-payment/deduct-result-notify.html)
   parameters:
     - name: Wechatpay-Nonce
       required: true
@@ -151,17 +161,17 @@ MerchantBusinessException:
 
 WechatpayNotificationOriginalType:
   type: string
-  description: "原始回调类型
-  [商圈支付结果通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/businesscircle/points/chapter3_1.shtml)
-  [分账动账通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/profitsharing/chapter3_6.shtml)
-  [核销事件回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/convention/chapter4_1.shtml)
-  [领券事件回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/busifavor/chapter4_1.shtml)
-  [先享卡用户领卡通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter4_1.shtml)
-  [先享卡用户结算通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter4_2.shtml)
-  [会员卡领卡事件通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter7_1.shtml)
-  [会员卡激活事件通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter7_2.shtml)
-  [会员卡用户管理会员卡事件通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter7_3.shtml)
-  "
+  description: |
+    原始回调类型
+    [商圈支付结果通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/businesscircle/points/chapter3_1.shtml)
+    [分账动账通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/profitsharing/chapter3_6.shtml)
+    [核销事件回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/convention/chapter4_1.shtml)
+    [领券事件回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/busifavor/chapter4_1.shtml)
+    [先享卡用户领卡通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter4_1.shtml)
+    [先享卡用户结算通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter4_2.shtml)
+    [会员卡领卡事件通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter7_1.shtml)
+    [会员卡激活事件通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter7_2.shtml)
+    [会员卡用户管理会员卡事件通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter7_3.shtml)
   enum:
     # @see [商圈支付结果通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/businesscircle/points/chapter3_1.shtml)
     # @see [先享卡用户领卡通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter4_1.shtml)
@@ -181,25 +191,31 @@ WechatpayNotificationOriginalType:
 
 WechatpayNotificationEventType:
   type: string
-  description: "通知类型
-  [商圈支付结果通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/businesscircle/points/chapter3_1.shtml)
-  [普通支付通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transactions/chapter3_11.shtml)
-  [服务商支付通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transactions/chapter5_11.shtml)
-  [合单支付通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/combine/chapter3_7.shtml)
-  [分账动账通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/profitsharing/chapter3_6.shtml)
-  [投诉通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/merchant-service/chapter4_1.shtml)
-  [退款结果通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/refunds/chapter3_3.shtml)
-  [核销事件回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/convention/chapter4_1.shtml)
-  [领券事件回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/busifavor/chapter4_1.shtml)
-  [授权/解除授权服务回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter5_1.shtml)
-  [支付分确认订单回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter5_2.shtml)
-  [支付分支付成功回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter5_3.shtml)
-  [先享卡用户领卡通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter4_1.shtml)
-  [先享卡用户结算通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter4_2.shtml)
-  [先享卡用户领卡通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/discount-card/chapter5_1.shtml)
-  [先享卡用户守约状态变化通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/discount-card/chapter5_2.shtml)
-  [先享卡扣费状态变化通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/discount-card/chapter5_3.shtml)
-  "
+  description: |
+    通知类型
+    [商圈支付结果通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/businesscircle/points/chapter3_1.shtml)
+    [普通支付通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transactions/chapter3_11.shtml)
+    [服务商支付通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transactions/chapter5_11.shtml)
+    [合单支付通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/combine/chapter3_7.shtml)
+    [分账动账通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/profitsharing/chapter3_6.shtml)
+    [投诉通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/merchant-service/chapter4_1.shtml)
+    [退款结果通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/refunds/chapter3_3.shtml)
+    [核销事件回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/convention/chapter4_1.shtml)
+    [领券事件回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/busifavor/chapter4_1.shtml)
+    [授权/解除授权服务回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter5_1.shtml)
+    [支付分确认订单回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter5_2.shtml)
+    [支付分支付成功回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter5_3.shtml)
+    [先享卡用户领卡通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter4_1.shtml)
+    [先享卡用户结算通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter4_2.shtml)
+    [先享卡用户领卡通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/discount-card/chapter5_1.shtml)
+    [先享卡用户守约状态变化通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/discount-card/chapter5_2.shtml)
+    [先享卡扣费状态变化通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/discount-card/chapter5_3.shtml)
+    [直连商户委托代扣支付成功结果通知](https://pay.weixin.qq.com/docs/merchant/apis/entrusted-payment/deduct-result-notify.html)
+    [服务商委托代扣支付成功结果通知](https://pay.weixin.qq.com/docs/partner/apis/entrusted-payment/deduct-result-notify.html)
+    [保险业委托代扣支付成功结果通知](https://pay.weixin.qq.com/docs/merchant/apis/insurance-entrusted-payment/deduct-result-notify.html)
+    [直连商户委托代扣支付失败结果通知](https://pay.weixin.qq.com/docs/merchant/apis/entrusted-payment/deduct-result-notify.html)
+    [服务商委托代扣支付失败结果通知](https://pay.weixin.qq.com/docs/partner/apis/entrusted-payment/deduct-result-notify.html)
+    [保险业委托代扣支付失败结果通知](https://pay.weixin.qq.com/docs/partner/apis/insurance-entrusted-payment/deduct-result-notify.html)
   enum:
     # @see                        [商圈支付结果通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/businesscircle/chapter3_1.shtml)
     - MALL_TRANSACTION.SUCCESS    #商圈支付成功通知的类型
@@ -211,6 +227,18 @@ WechatpayNotificationEventType:
     - TRANSACTION.SUCCESS         #支付成功通知的类型
     # @see                        [合单支付通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/combine/chapter3_7.shtml)
     - TRANSACTION.SUCCESS         #支付成功通知的类型
+    # @see                        [直连商户委托代扣支付成功结果通知](https://pay.weixin.qq.com/docs/merchant/apis/entrusted-payment/deduct-result-notify.html)
+    - TRANSACTION.SUCCESS         #直连商户委托代扣支付成功结果通知
+    # @see                        [服务商委托代扣支付成功结果通知](https://pay.weixin.qq.com/docs/partner/apis/entrusted-payment/deduct-result-notify.html)
+    - TRANSACTION.SUCCESS         #服务商委托代扣支付成功结果通知
+    # @see                        [保险业委托代扣支付成功结果通知](https://pay.weixin.qq.com/docs/merchant/apis/insurance-entrusted-payment/deduct-result-notify.html)
+    - TRANSACTION.SUCCESS         #保险业委托代扣支付成功结果通知
+    # @see                        [直连商户委托代扣支付失败结果通知](https://pay.weixin.qq.com/docs/merchant/apis/entrusted-payment/deduct-result-notify.html)
+    - TRANSACTION.FAIL            #直连商户委托代扣支付失败结果通知
+    # @see                        [服务商委托代扣支付失败结果通知](https://pay.weixin.qq.com/docs/partner/apis/entrusted-payment/deduct-result-notify.html)
+    - TRANSACTION.FAIL            #服务商委托代扣支付失败结果通知
+    # @see                        [保险业委托代扣支付失败结果通知](https://pay.weixin.qq.com/docs/partner/apis/insurance-entrusted-payment/deduct-result-notify.html)
+    - TRANSACTION.FAIL            #保险业委托代扣支付失败结果通知
     # @see                        [分账动账通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/profitsharing/chapter3_6.shtml)
     - PROFITSHARING               #分账
     - PROFITSHARING_RETURN        #分账回退

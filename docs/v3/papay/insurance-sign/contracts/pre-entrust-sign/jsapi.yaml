@@ -1,0 +1,168 @@
+post:
+  x-last-updated-at: 2023.12.01
+  x-role:
+    - 普通商户
+  tags:
+    - 委托代扣∙保险业
+  summary: 保险商户JSAPI预签约API
+  description: 商户可调用本接口预先指定签约及交易信息（交易信息可选填），生成预签约会话及对应的跳转URL，引导用户在微信内访问跳转URL跳转至微信支付的页面。[官方文档](https://pay.weixin.qq.com/docs/merchant/apis/insurance-entrusted-payment/insurance/jsapi-sign-and-create-transaction.html)
+  parameters:
+    - name: Wechatpay-Serial
+      in: header
+      required: true
+      type: string
+      description: 微信支付平台证书序列号
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - appid
+          - plan_id
+          - out_contract_code
+          - insured_display_name
+          - contract_notify_url
+          - policy_start_date
+          - policy_end_date
+        properties:
+          appid:
+            type: string
+            description: 应用ID
+            example: wxd678efh567hg6787
+          openid:
+            type: string
+            description: 用户在直连商户应用下的用户标示
+            example: oYobu0MVnQfWpSMOYJz2AHPG_gQw
+          plan_id:
+            type: number
+            description: 委托代扣模板ID
+            example: 12535
+          out_contract_code:
+            type: string
+            description: 商户签约协议号
+            example: wxwtdk20200910100000
+          insured_display_name:
+            type: string
+            description: 被保人的展示名称
+            example: '*明'
+          contract_notify_url:
+            type: string
+            description: 签约结果通知地址
+            example: https://yourapp.com/notify
+          policy_start_date:
+            type: string
+            description: 保险保单的开始日期
+            example: '2019-11-22'
+          policy_end_date:
+            type: string
+            description: 保险保单的结束日期
+            example: '2020-11-22'
+          policy_periods:
+            type: array
+            description: 保单的扣费周期列表
+            items:
+              type: object
+              required:
+                - policy_period_id
+                - estimated_deduct_date
+                - estimated_deduct_amount
+              properties:
+                policy_period_id:
+                  type: number
+                  description: 保险扣费周期编号
+                  example: 1
+                estimated_deduct_date:
+                  type: string
+                  description: 预计扣费的日期
+                  example: '2019-11-22'
+                estimated_deduct_amount:
+                  type: object
+                  description: 预计扣费金额
+                  required:
+                    - total
+                  properties:
+                    total:
+                      type: number
+                      description: 金额
+                      example: 1
+                    currency:
+                      type: string
+                      description: 货币类型
+                      example: CNY
+          amount:
+            type: object
+            description: 扣费金额信息
+            required:
+              - total
+            properties:
+              total:
+                type: number
+                description: 金额
+                example: 1
+              currency:
+                type: string
+                description: 货币类型
+                example: CNY
+          out_trade_no:
+            type: string
+            description: 商户订单号
+            example: '1217752501201407033233368018'
+          description:
+            type: string
+            description: 商品描述
+            example: Image形象店-深圳腾大-QQ公仔
+          transaction_notify_url:
+            type: string
+            description: 支付结果通知地址
+            example: https://www.qq.com/
+          out_user_code:
+            type: string
+            description: 商户侧用户标识
+            example: 用户昵称
+          goods_tag:
+            type: string
+            description: 订单优惠标记
+            example: DISCOUNTS
+          attach:
+            type: string
+            description: 附加数据
+            example: 自定义数据
+          can_auto_insure:
+            type: boolean
+            description: 是否自动续保
+            example: true
+          can_auto_reinsure:
+            type: boolean
+            description: 是否自动重新投保
+            example: false
+          real_identity:
+            type: object
+            description: 用户实名信息
+            required:
+              - real_name
+              - id_card_number
+            properties:
+              real_name:
+                type: string
+                description: 自然人姓名
+                example: OEimkKuua8igpd+0YDgqF2Z61leeGD7x87j3Ph==
+              id_card_number:
+                type: string
+                description: 自然人身份证号码
+                example: 1axtI9EZUr0343c89xQznxau+cRWPKP4YhVAoj==
+              identity_type:
+                type: string
+                description: 实名验证类型
+                example: ID_CARD
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - redirect_url
+        properties:
+          redirect_url:
+            type: string
+            description: 跳转签约并支付流程的URL
+            example: https://www.xxx.com?pre_entrust_id=wx12334

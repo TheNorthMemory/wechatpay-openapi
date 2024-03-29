@@ -7,7 +7,7 @@ info:
     整理自[官方文档中心](https://pay.weixin.qq.com/wiki/doc/apiv3/index.shtml)
     本[项目/工具地址](https://github.com/TheNorthMemory/wechatpay-openapi)
     **访问第一次加载比较慢，请耐心等待大约1-2分钟不等(小文件下载比较多)。**
-  version: 0.15.23
+  version: 0.15.24
 schemes:
   - https
 consumes:
@@ -58,6 +58,7 @@ tags:
   - name: 微信寄快递
   - name: 品牌小店营销
   - name: 委托代扣
+  - name: 委托代扣∙保险业
   - name: 校园轻松付
   - name: 教育续费通
   - name: 学生卡身份权益
@@ -1049,6 +1050,64 @@ paths:
     $ref: ./v3/offlinefacemch/tokens.yaml
   /v3/papay/contracts/{contract_id}/notify:
     $ref: ./v3/papay/contracts/{contract_id}/notify.yaml
+  /v3/papay/insurance-pay/policy-periods/contract-id/{contract_id}/policy-period-id/{policy_period_id}:
+    $ref: ./v3/papay/insurance-pay/policy-periods/contract-id/{contract_id}/policy-period-id/{policy_period_id}.yaml
+  /v3/papay/insurance-pay/policy-periods/contract-id/{contract_id}/policy-period-id/{policy_period_id}/schedule:
+    $ref: ./v3/papay/insurance-pay/policy-periods/contract-id/{contract_id}/policy-period-id/{policy_period_id}/schedule.yaml
+  /v3/papay/insurance-pay/transactions/apply:
+    $ref: ./v3/papay/insurance-pay/transactions/apply.yaml
+  /v3/papay/insurance-sign/contracts/plan-id/{plan_id}/contract-id/{contract_id}/renew:
+    $ref: ./v3/papay/insurance-sign/contracts/plan-id/{plan_id}/contract-id/{contract_id}/renew.yaml
+  /v3/papay/insurance-sign/contracts/plan-id/{plan_id}/out-contract-code/{out_contract_code}:
+    $ref: ./v3/papay/insurance-sign/contracts/plan-id/{plan_id}/out-contract-code/{out_contract_code}.yaml
+  /v3/papay/insurance-sign/contracts/plan-id/{plan_id}/out-contract-code/{out_contract_code}/terminate:
+    $ref: ./v3/papay/insurance-sign/contracts/plan-id/{plan_id}/out-contract-code/{out_contract_code}/terminate.yaml
+  /v3/papay/insurance-sign/contracts/pre-entrust-sign/app:
+    $ref: ./v3/papay/insurance-sign/contracts/pre-entrust-sign/app.yaml
+  /v3/papay/insurance-sign/contracts/pre-entrust-sign/h5:
+    $ref: ./v3/papay/insurance-sign/contracts/pre-entrust-sign/h5.yaml
+  /v3/papay/insurance-sign/contracts/pre-entrust-sign/jsapi:
+    $ref: ./v3/papay/insurance-sign/contracts/pre-entrust-sign/jsapi.yaml
+  /v3/papay/insurance-sign/contracts/pre-entrust-sign/mini-program:
+    $ref: ./v3/papay/insurance-sign/contracts/pre-entrust-sign/mini-program.yaml
+  /v3/papay/insurance-sign/policy_periods/plan-id/{plan_id}/out-contract-code/{out_contract_code}:
+    $ref: ./v3/papay/insurance-sign/policy_periods/plan-id/{plan_id}/out-contract-code/{out_contract_code}.yaml
+  /v3/papay/pay/partner/schedules/contract-id/{contract_id}:
+    $ref: ./v3/papay/pay/partner/schedules/contract-id/{contract_id}.yaml
+  /v3/papay/pay/partner/schedules/contract-id/{contract_id}/schedule:
+    $ref: ./v3/papay/pay/partner/schedules/contract-id/{contract_id}/schedule.yaml
+  /v3/papay/pay/partner/transactions/apply:
+    $ref: ./v3/papay/pay/partner/transactions/apply.yaml
+  /v3/papay/pay/schedules/contract-id/{contract_id}:
+    $ref: ./v3/papay/pay/schedules/contract-id/{contract_id}.yaml
+  /v3/papay/pay/schedules/contract-id/{contract_id}/schedule:
+    $ref: ./v3/papay/pay/schedules/contract-id/{contract_id}/schedule.yaml
+  /v3/papay/pay/transactions/apply:
+    $ref: ./v3/papay/pay/transactions/apply.yaml
+  /v3/papay/scheduled-deduct-sign/contracts/pre-entrust-sign/app:
+    $ref: ./v3/papay/scheduled-deduct-sign/contracts/pre-entrust-sign/app.yaml
+  /v3/papay/scheduled-deduct-sign/contracts/pre-entrust-sign/h5:
+    $ref: ./v3/papay/scheduled-deduct-sign/contracts/pre-entrust-sign/h5.yaml
+  /v3/papay/scheduled-deduct-sign/contracts/pre-entrust-sign/jsapi:
+    $ref: ./v3/papay/scheduled-deduct-sign/contracts/pre-entrust-sign/jsapi.yaml
+  /v3/papay/scheduled-deduct-sign/contracts/pre-entrust-sign/mini-program:
+    $ref: ./v3/papay/scheduled-deduct-sign/contracts/pre-entrust-sign/mini-program.yaml
+  /v3/papay/scheduled-deduct-sign/partner/contracts/pre-entrust-sign/app:
+    $ref: ./v3/papay/scheduled-deduct-sign/partner/contracts/pre-entrust-sign/app.yaml
+  /v3/papay/scheduled-deduct-sign/partner/contracts/pre-entrust-sign/h5:
+    $ref: ./v3/papay/scheduled-deduct-sign/partner/contracts/pre-entrust-sign/h5.yaml
+  /v3/papay/scheduled-deduct-sign/partner/contracts/pre-entrust-sign/jsapi:
+    $ref: ./v3/papay/scheduled-deduct-sign/partner/contracts/pre-entrust-sign/jsapi.yaml
+  /v3/papay/scheduled-deduct-sign/partner/contracts/pre-entrust-sign/mini-program:
+    $ref: ./v3/papay/scheduled-deduct-sign/partner/contracts/pre-entrust-sign/mini-program.yaml
+  /v3/papay/sign/contracts/plan-id/{plan_id}/out-contract-code/{out_contract_code}:
+    $ref: ./v3/papay/sign/contracts/plan-id/{plan_id}/out-contract-code/{out_contract_code}.yaml
+  /v3/papay/sign/contracts/plan-id/{plan_id}/out-contract-code/{out_contract_code}/terminate:
+    $ref: ./v3/papay/sign/contracts/plan-id/{plan_id}/out-contract-code/{out_contract_code}/terminate.yaml
+  /v3/papay/sign/partner/contracts/plan-id/{plan_id}/out-contract-code/{out_contract_code}:
+    $ref: ./v3/papay/sign/partner/contracts/plan-id/{plan_id}/out-contract-code/{out_contract_code}.yaml
+  /v3/papay/sign/partner/contracts/plan-id/{plan_id}/out-contract-code/{out_contract_code}/terminate:
+    $ref: ./v3/papay/sign/partner/contracts/plan-id/{plan_id}/out-contract-code/{out_contract_code}/terminate.yaml
   /v3/partner-papay/contracts/{contract_id}/notify:
     $ref: ./v3/partner-papay/contracts/{contract_id}/notify.yaml
   /v3/partner-transfer/batches:

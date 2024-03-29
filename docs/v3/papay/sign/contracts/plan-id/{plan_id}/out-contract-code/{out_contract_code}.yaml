@@ -1,0 +1,163 @@
+get:
+  x-last-updated-at: 2023.12.21
+  x-role:
+    - 普通商户
+  tags:
+    - 委托代扣
+  summary: 通过商户协议号查询委托代扣签约协议API
+  description: 直连商户可通过本接口查询已经签订的委托代扣签约协议。[官方文档](https://pay.weixin.qq.com/docs/merchant/apis/entrusted-payment/normal/normal-get-contract-by-code.html)
+  parameters:
+    - name: out_contract_code
+      in: path
+      required: true
+      type: string
+      description: 商户签约协议号
+      example: wxwtdk20200910100000
+    - name: plan_id
+      in: path
+      required: true
+      type: number
+      description: 委托代扣模板ID
+      example: 12535
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - mchid
+          - contract_id
+          - appid
+          - plan_id
+          - out_contract_code
+          - contract_display_account
+          - contract_state
+          - openid
+        properties:
+          mchid:
+            type: string
+            description: 商户号
+            example: '1900000109'
+          contract_id:
+            type: string
+            description: 委托代扣协议ID
+            example: '123124412412423431'
+          appid:
+            type: string
+            description: 商户AppID
+            example: wxd678efh567hg6787
+          plan_id:
+            type: number
+            description: 委托代扣模板ID
+            example: 12535
+          out_contract_code:
+            type: string
+            description: 商户签约协议号
+            example: wxwtdk20200910100000
+          contract_display_account:
+            type: string
+            description: 用户账户展示名称
+            example: 微信代扣用户A
+          contract_state:
+            type: string
+            description: 委托代扣协议状态
+            example: SIGNED
+          contract_signed_time:
+            type: string
+            format: rfc3339
+            description: 协议签署时间
+            example: '2020-09-10T13:29:35+08:00'
+          contract_expired_time:
+            type: string
+            format: rfc3339
+            description: 协议到期时间
+            example: '2021-09-10T13:29:35+08:00'
+          openid:
+            type: string
+            description: 用户OpenID
+            example: o-MYE42l80oelYMDE34nYD456Xoy
+          contract_terminate_info:
+            type: object
+            description: 协议解约信息
+            required:
+              - contract_termination_mode
+              - contract_terminated_time
+            properties:
+              contract_termination_mode:
+                type: string
+                description: 协议解约方式
+                example: USER_TERMINATE
+              contract_terminated_time:
+                type: string
+                format: rfc3339
+                description: 协议解约时间
+                example: '2020-10-10T13:29:35+08:00'
+              contract_termination_remark:
+                type: string
+                description: 解约备注
+                example: 用户解约
+          out_user_code:
+            type: string
+            description: 商户侧用户标识
+            example: 用户A
+          deduct_schedule:
+            type: object
+            description: 预约扣费场景的预约信息
+            required:
+              - estimated_deduct_date
+              - estimated_deduct_amount
+              - schedule_state
+            properties:
+              estimated_deduct_date:
+                type: string
+                description: 预计扣费的日期
+                example: '2019-11-22'
+              estimated_deduct_amount:
+                type: object
+                description: 预计的扣费金额
+                required:
+                  - total
+                properties:
+                  total:
+                    type: number
+                    description: 金额
+                    example: 1
+                  currency:
+                    type: string
+                    description: 货币类型
+                    example: CNY
+              schedule_state:
+                type: string
+                description: 扣费预约状态
+                example: NO_SCHEDULED
+              scheduled_amount:
+                type: object
+                description: 已预约的扣费金额信息
+                required:
+                  - total
+                properties:
+                  total:
+                    type: number
+                    description: 金额
+                    example: 1
+                  currency:
+                    type: string
+                    description: 货币类型
+                    example: CNY
+              deduct_amount:
+                type: object
+                description: 实际扣费金额
+                required:
+                  - total
+                properties:
+                  total:
+                    type: number
+                    description: 金额
+                    example: 1
+                  currency:
+                    type: string
+                    description: 货币类型
+                    example: CNY
+              deduct_date:
+                type: string
+                description: 实际扣费的日期
+                example: '2019-11-22'

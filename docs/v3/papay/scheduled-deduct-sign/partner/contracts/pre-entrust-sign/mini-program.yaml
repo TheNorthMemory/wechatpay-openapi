@@ -1,0 +1,113 @@
+post:
+  x-last-updated-at: 2023.12.21
+  x-role:
+    - 服务商
+  tags:
+    - 委托代扣
+  summary: 小程序场景预约扣费类型签约的预签约API
+  description: 商户可调用本接口预先指定签约信息，生成预签约会话及对应的预签约ID，再携带预签约ID（pre_entrustweb_id）参数，通过小程序跳转参数调用navigateToMiniProgram跳转至微信支付的页面。[官方文档](https://pay.weixin.qq.com/docs/partner/apis/entrusted-payment/partner/partner-mini-program-scheduled-deduct-pre-sign.html)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - sp_appid
+          - sub_mchid
+          - plan_id
+          - out_contract_code
+          - contract_display_account
+          - contract_notify_url
+        properties:
+          sp_appid:
+            type: string
+            description: 应用ID
+            example: wxd678efh567hg6787
+          sp_openid:
+            type: string
+            description: 用户在服务商商户应用下的用户标示
+            example: oYobu0MVnQfWpSMOYJz2AHPG_gQw
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1900000109'
+          sub_appid:
+            type: string
+            description: 子商户的AppID
+            example: wxd678efh567hg6787
+          sub_openid:
+            type: string
+            description: 子商户AppID对应的用户OpenID
+            example: wxd678efh567hg6787
+          plan_id:
+            type: number
+            description: 委托代扣模板ID
+            example: 12535
+          out_contract_code:
+            type: string
+            description: 商户签约协议号
+            example: wxwtdk20200910100000
+          contract_display_account:
+            type: string
+            description: 用户账户展示名称
+            example: 微信代扣用户A
+          contract_notify_url:
+            type: string
+            description: 签约结果通知地址
+            example: https://yourapp.com/notify
+          out_user_code:
+            type: string
+            description: 商户侧用户标识
+            example: 用户A
+          deduct_schedule:
+            type: object
+            description: 用于预约扣费的预约信息
+            required:
+              - estimated_deduct_date
+              - estimated_deduct_amount
+              - description
+            properties:
+              estimated_deduct_date:
+                type: string
+                description: 预计扣费的日期
+                example: '2019-11-22'
+              estimated_deduct_amount:
+                type: object
+                description: 预计的扣费金额
+                required:
+                  - total
+                properties:
+                  total:
+                    type: number
+                    description: 金额
+                    example: 1
+                  currency:
+                    type: string
+                    description: 货币类型
+                    example: CNY
+              description:
+                type: string
+                description: 商品描述
+                example: 小乔-碎云皮肤（微信83区沧海之耀）
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - pre_entrustweb_id
+          - redirect_appid
+          - redirect_path
+        properties:
+          pre_entrustweb_id:
+            type: string
+            description: 预签约ID
+            example: 5778aadY9nltAsZzXixCkFIGYnV2V
+          redirect_appid:
+            type: string
+            description: 跳转签约小程序的AppID
+            example: wxbd687630cd02ce1d
+          redirect_path:
+            type: string
+            description: 跳转签约小程序的路径
+            example: pages/PwdExemptContract/index

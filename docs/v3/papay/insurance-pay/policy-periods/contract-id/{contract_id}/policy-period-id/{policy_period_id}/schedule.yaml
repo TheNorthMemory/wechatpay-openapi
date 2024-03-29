@@ -1,0 +1,103 @@
+post:
+  x-last-updated-at: 2023.09.14
+  x-role:
+    - 普通商户
+  tags:
+    - 委托代扣∙保险业
+  summary: 保险商户预约保险自动续费API
+  description: 保险行业商户再进行委托代扣费前，需要提前在微信支付系统中预约保险自动续费，预约成功后方可在约定时间内扣费。[官方文档](https://pay.weixin.qq.com/docs/merchant/apis/insurance-entrusted-payment/schedule/schedule-policy-period.html)
+  parameters:
+    - name: policy_period_id
+      in: path
+      required: true
+      type: number
+      description: 保单的扣费周期编号
+      example: 1
+    - name: contract_id
+      in: path
+      required: true
+      type: string
+      description: 委托代扣协议ID
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - appid
+          - scheduled_amount
+        properties:
+          appid:
+            type: string
+            description: 应用ID
+            example: wxd678efh567hg6787
+          scheduled_amount:
+            type: object
+            description: 预约扣费金额信息
+            required:
+              - total
+            properties:
+              total:
+                type: number
+                description: 金额
+                example: 1
+              currency:
+                type: string
+                description: 货币类型
+                example: CNY
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - policy_period_id
+          - policy_period_state
+        properties:
+          policy_period_id:
+            type: number
+            description: 保单的扣费周期编号
+            example: 1
+          policy_period_state:
+            type: string
+            description: 当前扣费周期的状态
+            example: NO_SCHEDULED
+          deduct_start_date:
+            type: string
+            description: 可扣费开始日期
+            example: '2019-11-22'
+          deduct_end_date:
+            type: string
+            description: 可扣费结束日期
+            example: '2019-11-22'
+          scheduled_amount:
+            type: object
+            description: 已预约的扣费金额信息
+            required:
+              - total
+            properties:
+              total:
+                type: number
+                description: 金额
+                example: 1
+              currency:
+                type: string
+                description: 货币类型
+                example: CNY
+          deduct_amount:
+            type: object
+            description: 实际扣费金额
+            required:
+              - total
+            properties:
+              total:
+                type: number
+                description: 金额
+                example: 1
+              currency:
+                type: string
+                description: 货币类型
+                example: CNY
+          deduct_date:
+            type: string
+            description: 实际扣费的日期
+            example: '2019-11-22'

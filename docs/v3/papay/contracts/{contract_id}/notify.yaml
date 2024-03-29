@@ -11,6 +11,7 @@ post:
       in: path
       required: true
       type: string
+      description: 委托代扣协议ID
     - name: _
       in: body
       required: true
@@ -19,7 +20,6 @@ post:
         required:
           - mchid
           - appid
-          - sub_mchid
           - estimated_amount
         properties:
           mchid:
@@ -34,7 +34,7 @@ post:
             type: object
             description: 扣费持续时间
             required:
-              - amount
+              - count
             properties:
               count:
                 type: integer
@@ -53,7 +53,7 @@ post:
               - amount
             properties:
               amount:
-                type: integer
+                type: number
                 description: 预计扣费金额
                 example: 1
               currency:
@@ -61,4 +61,5 @@ post:
                 description: 预计扣费货币类型
                 example: CNY
   responses:
-    '204': {}
+    '204':
+      schema: {}

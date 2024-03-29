@@ -10,9 +10,9 @@ use GuzzleHttp\Promise\PromiseInterface;
 interface Notify
 {
     /**
-     * 预扣费通知(同步模式)
+     * 服务商商户预扣费通知(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter5_15.shtml
+     * @link https://pay.weixin.qq.com/docs/partner/apis/entrusted-payment/json/partner-deduct-notify.html
      */
     public function post(array $options = [
         'contract_id' => '123124412412423431',
@@ -21,6 +21,10 @@ interface Notify
             'sp_appid' => 'wxd678efh567hg6787',
             'sub_mchid' => '12345512',
             'sub_appid' => 'wxd678efh567hg6787',
+            'deduct_duration' => [
+                'count' => 1,
+                'unit' => 'DAY',
+            ],
             'estimated_amount' => [
                 'amount' => 1,
                 'currency' => 'CNY',
@@ -29,9 +33,9 @@ interface Notify
     ]): ResponseInterface;
 
     /**
-     * 预扣费通知(异步模式)
+     * 服务商商户预扣费通知(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter5_15.shtml#async
+     * @link https://pay.weixin.qq.com/docs/partner/apis/entrusted-payment/json/partner-deduct-notify.html#async
      */
     public function postAsync(array $options = [
         'contract_id' => '123124412412423431',
@@ -40,6 +44,10 @@ interface Notify
             'sp_appid' => 'wxd678efh567hg6787',
             'sub_mchid' => '12345512',
             'sub_appid' => 'wxd678efh567hg6787',
+            'deduct_duration' => [
+                'count' => 1,
+                'unit' => 'DAY',
+            ],
             'estimated_amount' => [
                 'amount' => 1,
                 'currency' => 'CNY',

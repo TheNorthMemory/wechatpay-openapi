@@ -3,6 +3,11 @@
 namespace WeChatPay\OpenAPI\V3;
 
 /**
+ * @property-read Papay\Sign $sign
+ * @property-read Papay\ScheduledDeductSign $scheduledDeductSign
+ * @property-read Papay\Pay $pay
+ * @property-read Papay\InsuranceSign $insuranceSign
+ * @property-read Papay\InsurancePay $insurancePay
  * @property-read Papay\Contracts $contracts
  */
 interface Papay

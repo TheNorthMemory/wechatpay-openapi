@@ -1,0 +1,93 @@
+post:
+  x-last-updated-at: 2023.10.12
+  x-role:
+    - 普通商户
+  tags:
+    - 委托代扣
+  summary: 预约扣费API
+  description: 商户在进行委托代扣费前，需要提前在微信支付系统中预约扣费，预约成功后方可在约定时间内扣费。[官方文档](https://pay.weixin.qq.com/docs/merchant/apis/entrusted-payment/normal/normal-schedule-deduction.html)
+  parameters:
+    - name: contract_id
+      in: path
+      required: true
+      type: string
+      description: 委托代扣协议ID
+      example: '123124412412423431'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - appid
+          - schedule_amount
+        properties:
+          appid:
+            type: string
+            description: 应用ID
+            example: wxd678efh567hg6787
+          schedule_amount:
+            type: object
+            description: 预约的金额信息
+            required:
+              - total
+            properties:
+              total:
+                type: number
+                description: 金额
+                example: 1
+              currency:
+                type: string
+                description: 货币类型
+                example: CNY
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - schedule_state
+        properties:
+          schedule_state:
+            type: string
+            description: 扣费预约的状态
+            example: NO_SCHEDULED
+          deduct_start_date:
+            type: string
+            description: 可扣费开始日期
+            example: '2019-11-22'
+          deduct_end_date:
+            type: string
+            description: 可扣费结束日期
+            example: '2019-11-22'
+          scheduled_amount:
+            type: object
+            description: 已预约的扣费金额信息
+            required:
+              - total
+            properties:
+              total:
+                type: number
+                description: 金额
+                example: 1
+              currency:
+                type: string
+                description: 货币类型
+                example: CNY
+          deduct_amount:
+            type: object
+            description: 实际扣费金额
+            required:
+              - total
+            properties:
+              total:
+                type: number
+                description: 金额
+                example: 1
+              currency:
+                type: string
+                description: 货币类型
+                example: CNY
+          deduct_date:
+            type: string
+            description: 实际扣费的日期
+            example: '2019-11-22'

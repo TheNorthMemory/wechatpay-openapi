@@ -7,7 +7,7 @@ info:
     整理自[官方文档中心](https://pay.weixin.qq.com/wiki/doc/apiv3/index.shtml)
     本[项目/工具地址](https://github.com/TheNorthMemory/wechatpay-openapi)
     **访问第一次加载比较慢，请耐心等待大约1-2分钟不等(小文件下载比较多)。**
-  version: 0.15.24
+  version: 0.15.25
 schemes:
   - https
 consumes:
@@ -1138,6 +1138,8 @@ paths:
     $ref: ./v3/pay/partner/transactions/out-trade-no/{out_trade_no}.yaml
   /v3/pay/partner/transactions/out-trade-no/{out_trade_no}/close:
     $ref: ./v3/pay/partner/transactions/out-trade-no/{out_trade_no}/close.yaml
+  /v3/pay/partner/transactions/scannedpos:
+    $ref: ./v3/pay/partner/transactions/scannedpos.yaml
   /v3/pay/transactions/app:
     $ref: ./v3/pay/transactions/app.yaml
   /v3/pay/transactions/h5:

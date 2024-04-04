@@ -18,6 +18,9 @@ interface Contracts
         'openid' => 'oUpF8uMuAJOM2pxb1Q',
         'query' => [
             'appid' => 'wx8888888888888888',
+            'sub_mchid' => '1900000109',
+            'sub_appid' => 'wx8888888888888888',
+            'sub_openid' => 'oUpF8uMuAJOM2pxb1Q',
             'plan_id' => '101164396123311331',
             'contract_status' => 'ADD',
             'offset' => 0,
@@ -34,6 +37,9 @@ interface Contracts
         'openid' => 'oUpF8uMuAJOM2pxb1Q',
         'query' => [
             'appid' => 'wx8888888888888888',
+            'sub_mchid' => '1900000109',
+            'sub_appid' => 'wx8888888888888888',
+            'sub_openid' => 'oUpF8uMuAJOM2pxb1Q',
             'plan_id' => '101164396123311331',
             'contract_status' => 'ADD',
             'offset' => 0,

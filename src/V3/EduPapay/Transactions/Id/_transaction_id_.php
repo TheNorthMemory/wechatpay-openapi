@@ -16,6 +16,9 @@ interface _transaction_id_
      */
     public function get(array $options = [
         'transaction_id' => '25012014070332333018',
+        'query' => [
+            'sub_mchid' => '1900000109',
+        ],
     ]): ResponseInterface;
 
     /**
@@ -25,5 +28,8 @@ interface _transaction_id_
      */
     public function getAsync(array $options = [
         'transaction_id' => '25012014070332333018',
+        'query' => [
+            'sub_mchid' => '1900000109',
+        ],
     ]): PromiseInterface;
 }

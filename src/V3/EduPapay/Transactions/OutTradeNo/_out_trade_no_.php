@@ -16,6 +16,9 @@ interface _out_trade_no_
      */
     public function get(array $options = [
         'out_trade_no' => '201407033233368018',
+        'query' => [
+            'sub_mchid' => '1900000109',
+        ],
     ]): ResponseInterface;
 
     /**
@@ -25,5 +28,8 @@ interface _out_trade_no_
      */
     public function getAsync(array $options = [
         'out_trade_no' => '201407033233368018',
+        'query' => [
+            'sub_mchid' => '1900000109',
+        ],
     ]): PromiseInterface;
 }

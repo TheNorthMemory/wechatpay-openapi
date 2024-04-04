@@ -1,7 +1,8 @@
 get:
-  x-last-updated-at: 2021.10.26
+  x-last-updated-at: 2023.07.21
   x-role:
     - 直连商户
+    - 服务商
   tags:
     - 教育续费通
   summary: 通过协议号查询签约API
@@ -15,25 +16,50 @@ get:
       example: wx998877665544wx
     - name: appid
       in: query
+      required: true
       type: string
-      description: 应用ID
+      description: 服务商APPID
+      example: wx8888888888888888
+    - name: sub_mchid
+      in: query
+      type: string
+      description: 子商户号
+      example: '1900000109'
+    - name: sub_appid
+      in: query
+      type: string
+      description: 子商户APPID
       example: wx8888888888888888
   responses:
     '200':
       schema:
         type: object
         required:
+          - sp_mchid
           - appid
-          - openid
         properties:
+          sp_mchid:
+            type: string
+            description: 服务商商户号
+            example: '1230000109'
           appid:
             type: string
-            description: 应用ID
+            description: 服务商APPID
             example: wx8888888888888888
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1900000109'
+          sub_appid:
+            type: string
+            description: 子商户APPID
           openid:
             type: string
-            description: 用户标识
+            description: 服务商APPID下的用户标识
             example: oUpF8uMuAJOM2pxb1Q
+          sub_openid:
+            type: string
+            description: 子商户APPID下的用户标识
           plan_id:
             type: string
             description: 签约模板号

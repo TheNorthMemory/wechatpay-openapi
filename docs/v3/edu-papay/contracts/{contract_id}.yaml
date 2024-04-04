@@ -1,7 +1,8 @@
 delete:
-  x-last-updated-at: 2021.10.26
+  x-last-updated-at: 2023.07.21
   x-role:
     - 直连商户
+    - 服务商
   tags:
     - 教育续费通
   summary: 解约API

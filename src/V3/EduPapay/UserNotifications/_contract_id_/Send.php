@@ -18,6 +18,8 @@ interface Send
         'contract_id' => 'wx8888888888888888',
         'json' => [
             'appid' => 'wx8888888888888888',
+            'sub_mchid' => '1900000109',
+            'sub_appid' => 'wx8888888888888888',
         ],
     ]): ResponseInterface;
 
@@ -30,6 +32,8 @@ interface Send
         'contract_id' => 'wx8888888888888888',
         'json' => [
             'appid' => 'wx8888888888888888',
+            'sub_mchid' => '1900000109',
+            'sub_appid' => 'wx8888888888888888',
         ],
     ]): PromiseInterface;
 }

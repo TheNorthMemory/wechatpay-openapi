@@ -18,6 +18,8 @@ interface _contract_id_
         'contract_id' => 'wx998877665544wx',
         'query' => [
             'appid' => 'wx8888888888888888',
+            'sub_mchid' => '1900000109',
+            'sub_appid' => 'wx8888888888888888',
         ],
     ]): ResponseInterface;
 
@@ -30,6 +32,8 @@ interface _contract_id_
         'contract_id' => 'wx998877665544wx',
         'query' => [
             'appid' => 'wx8888888888888888',
+            'sub_mchid' => '1900000109',
+            'sub_appid' => 'wx8888888888888888',
         ],
     ]): PromiseInterface;
 }

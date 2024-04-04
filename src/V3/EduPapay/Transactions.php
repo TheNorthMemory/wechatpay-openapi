@@ -19,6 +19,8 @@ interface Transactions
     public function post(array $options = [
         'json' => [
             'appid' => 'wx8888888888888888',
+            'sub_mchid' => '1900000109',
+            'sub_appid' => 'wx8888888888888888',
             'body' => '新东方-语文课程',
             'attach' => '自定义数据',
             'out_trade_no' => '121775250124070332',
@@ -45,6 +47,8 @@ interface Transactions
     public function postAsync(array $options = [
         'json' => [
             'appid' => 'wx8888888888888888',
+            'sub_mchid' => '1900000109',
+            'sub_appid' => 'wx8888888888888888',
             'body' => '新东方-语文课程',
             'attach' => '自定义数据',
             'out_trade_no' => '121775250124070332',

@@ -1,7 +1,8 @@
 get:
-  x-last-updated-at: 2021.10.26
+  x-last-updated-at: 2023.07.21
   x-role:
     - 直连商户
+    - 服务商
   tags:
     - 教育续费通
   summary: 商户订单号查单API
@@ -13,11 +14,17 @@ get:
       type: string
       description: 商户订单号
       example: '201407033233368018'
+    - name: sub_mchid
+      in: query
+      type: string
+      description: 子商户号
+      example: '1900000109'
   responses:
     '200':
       schema:
         type: object
         required:
+          - sp_mchid
           - mchid
           - appid
           - out_trade_no
@@ -25,13 +32,21 @@ get:
           - amount
           - device_information
         properties:
-          mchid:
+          sp_mchid:
             type: string
-            description: 商户号
+            description: 服务商商户号
             example: '1230000109'
           appid:
             type: string
-            description: 商户APPID
+            description: 服务商APPID
+            example: wx8888888888888888
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1900000109'
+          sub_appid:
+            type: string
+            description: 子商户APPID
             example: wx8888888888888888
           out_trade_no:
             type: string
@@ -64,12 +79,14 @@ get:
           payer:
             type: object
             description: 支付者
-            required:
-              - openid
             properties:
               openid:
                 type: string
-                description: 用户标识
+                description: 服务商APPID下的用户标识
+                example: oUpF8uMuAJOM2pxb1Q
+              sub_openid:
+                type: string
+                description: 子商户APPID下的用户标识
                 example: oUpF8uMuAJOM2pxb1Q
           amount:
             type: object

@@ -1,23 +1,39 @@
 get:
-  x-last-updated-at: 2021.10.26
+  x-last-updated-at: 2023.07.21
   x-role:
     - 直连商户
+    - 服务商
   tags:
     - 教育续费通
   summary: 通过用户标识查询签约API
   description: 商户通过用户标识+签约模板号来查询用户签约信息，只返回用户在该签约模板下的有效签约（一个签约模板仅会存在一个有效签约）；若用户未与该签约模板签约，返回明确错误码 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter5_2_3.shtml)
   parameters:
-    - name: appid
-      in: query
-      required: true
-      type: string
-      description: 应用ID
-      example: wx8888888888888888
     - name: openid
       in: path
       required: true
       type: string
-      description: 用户标识
+      description: 服务商APPID下的用户标识
+      example: oUpF8uMuAJOM2pxb1Q
+    - name: appid
+      in: query
+      required: true
+      type: string
+      description: 服务商APPID
+      example: wx8888888888888888
+    - name: sub_mchid
+      in: query
+      type: string
+      description: 子商户号
+      example: '1900000109'
+    - name: sub_appid
+      in: query
+      type: string
+      description: 子商户APPID
+      example: wx8888888888888888
+    - name: sub_openid
+      in: query
+      type: string
+      description: 子商户APPID下的用户标识
       example: oUpF8uMuAJOM2pxb1Q
     - name: plan_id
       in: query
@@ -54,16 +70,32 @@ get:
             items:
               type: object
               required:
+                - sp_mchid
                 - appid
-                - openid
               properties:
+                sp_mchid:
+                  type: string
+                  description: 服务商商户号
+                  example: '1230000109'
                 appid:
                   type: string
-                  description: 应用ID
+                  description: 服务商APPID
+                  example: wx8888888888888888
+                sub_mchid:
+                  type: string
+                  description: 子商户号
+                  example: '1900000109'
+                sub_appid:
+                  type: string
+                  description: 子商户APPID
                   example: wx8888888888888888
                 openid:
                   type: string
-                  description: 用户标识
+                  description: 服务商APPID下的用户标识
+                  example: oUpF8uMuAJOM2pxb1Q
+                sub_openid:
+                  type: string
+                  description: 子商户APPID下的用户标识
                   example: oUpF8uMuAJOM2pxb1Q
                 plan_id:
                   type: string

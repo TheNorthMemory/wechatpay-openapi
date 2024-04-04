@@ -1,7 +1,8 @@
 post:
-  x-last-updated-at: 2021.10.26
+  x-last-updated-at: 2023.07.21
   x-role:
     - 直连商户
+    - 服务商
   tags:
     - 教育续费通
   summary: 发送扣款预通知API
@@ -23,7 +24,15 @@ post:
         properties:
           appid:
             type: string
-            description: 应用ID
+            description: 服务商APPID
+            example: wx8888888888888888
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1900000109'
+          sub_appid:
+            type: string
+            description: 子商户APPID
             example: wx8888888888888888
   responses:
     '204':

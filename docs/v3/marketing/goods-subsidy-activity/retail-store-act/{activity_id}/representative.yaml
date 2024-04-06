@@ -1,6 +1,7 @@
 put:
   x-last-updated-at: 2023.07.28
   x-role:
+    - 普通商户
     - 服务商
   tags:
     - 品牌小店营销
@@ -9,9 +10,10 @@ put:
   parameters:
     - name: activity_id
       in: path
-      type: string
-      description: 活动ID
       required: true
+      type: string
+      description: 零售小店活动ID
+      example: '3118550000000004'
     - name: _
       in: body
       required: true
@@ -23,37 +25,56 @@ put:
         properties:
           representative_info_list:
             type: array
+            description: 业务代理信息列表
             items:
               type: object
+              required:
+                - openid
               properties:
                 openid:
                   type: string
+                  description: 业务代理的OpenID
+                  example: oK7fFt8zzEZ909XH-LE2#
           out_request_no:
             type: string
+            description: 请求业务单据号
+            example: '1002600620019090123143254436'
+          add_time:
+            type: string
+            description: 添加时间
+            example: '2015-05-20T13:29:35+08:00'
   responses:
     '200':
       schema:
         type: object
         required:
           - activity_id
-          - failed_representative_info_list
           - add_time
         properties:
           activity_id:
             type: string
+            description: 零售小店活动ID
+            example: '3118550000000004'
           failed_representative_info_list:
             type: array
+            description: 添加失败业务代理信息列表
             items:
               type: object
+              required:
+                - openid
               properties:
                 openid:
                   type: string
+                  description: 业务代理的OpenID
+                  example: oK7fFt8zzEZ909XH-LE2#
           add_time:
             type: string
-            format: rfc3339
+            description: 添加时间
+            example: '2015-05-20T13:29:35+08:00'
 delete:
   x-last-updated-at: 2023.07.28
   x-role:
+    - 普通商户
     - 服务商
   tags:
     - 品牌小店营销
@@ -62,26 +83,65 @@ delete:
   parameters:
     - name: activity_id
       in: path
-      type: string
-      description: 活动ID
       required: true
+      type: string
+      description: 零售小店活动ID
+      example: '3118550000000004'
     - name: _
       in: body
       required: true
       schema:
         type: object
+        required:
+          - representative_info_list
+          - out_request_no
+          - delete_time
         properties:
-          out_request_no:
-            type: string
-            example: '1002600620019090123143254436'
-          delete_time:
-            type: string
-            format: rfc3339
-            example: '2015-05-20T13:29:35+08:00'
           representative_info_list:
             type: array
+            description: 业务代理信息列表
             items:
               type: object
+              required:
+                - openid
               properties:
                 openid:
                   type: string
+                  description: 业务代理的OpenID
+                  example: oK7fFt8zzEZ909XH-LE2#
+          out_request_no:
+            type: string
+            description: 请求业务单据号
+            example: '1002600620019090123143254436'
+          delete_time:
+            type: string
+            description: 删除时间
+            example: '2015-05-20T13:29:35.120+08:00'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - activity_id
+          - delete_time
+        properties:
+          activity_id:
+            type: string
+            description: 零售小店活动ID
+            example: '3118550000000004'
+          failed_representative_info_list:
+            type: array
+            description: 删除失败业务代理信息列表
+            items:
+              type: object
+              required:
+                - openid
+              properties:
+                openid:
+                  type: string
+                  description: 业务代理的OpenID
+                  example: oK7fFt8zzEZ909XH-LE2#
+          delete_time:
+            type: string
+            description: 删除时间
+            example: '2015-05-20T13:29:35.120+08:00'

@@ -6,7 +6,7 @@ post:
   tags:
     - 品牌小店营销
   summary: 添加小店活动门店
-  description: '[官方文档](https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/add-stores.html)'
+  description: 该接口为服务商或商户给零售小店活动添加门店专用接口。 使用对象：品牌的品牌主商户号或品牌服务商。[官方文档](https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/add-stores.html)
   parameters:
     - name: brand_id
       in: path
@@ -19,28 +19,58 @@ post:
       required: true
       schema:
         type: object
+        required:
+          - out_request_no
+          - add_time
+          - stores
         properties:
           out_request_no:
             type: string
+            description: 请求业务单据
             example: '1002600620019090123143254436'
           add_time:
             type: string
             format: rfc3339
+            description: 添加时间
             example: '2015-05-20T13:29:35+08:00'
           stores:
             type: array
+            description: 待新增的小店活动门店列表
             items:
               type: object
               properties:
                 store_code:
                   type: string
+                  description: 门店编码
                   example: abc_001
                 store_name:
                   type: string
+                  description: 门店名称
                   example: 幸福小店
   responses:
     '200':
-      schema: {}
+      schema:
+        type: object
+        properties:
+          add_time:
+            type: string
+            format: rfc3339
+            description: 添加时间
+            example: '2015-05-20T13:29:35+08:00'
+          failed_stores:
+            type: array
+            description: 添加失败的小店活动门店列表
+            items:
+              type: object
+              properties:
+                store_code:
+                  type: string
+                  description: 门店编码
+                  example: abc_001
+                store_name:
+                  type: string
+                  description: 门店名称
+                  example: 幸福小店
 delete:
   x-last-updated-at: 2023.07.28
   x-role:
@@ -49,7 +79,7 @@ delete:
   tags:
     - 品牌小店营销
   summary: 删除小店活动门店
-  description: '[官方文档](https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/delete-stores.html)'
+  description: 该接口为服务商或商户给零售小店活动删除门店专用接口。 使用对象：品牌的品牌主商户号或品牌服务商。[官方文档](https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/delete-stores.html)
   parameters:
     - name: brand_id
       in: path
@@ -62,28 +92,58 @@ delete:
       required: true
       schema:
         type: object
+        required:
+          - out_request_no
+          - delete_time
+          - stores
         properties:
           out_request_no:
             type: string
+            description: 请求业务单据
             example: '1002600620019090123143254436'
           delete_time:
             type: string
             format: rfc3339
+            description: 删除时间
             example: '2015-05-20T13:29:35+08:00'
           stores:
             type: array
+            description: 待删除的小店活动门店列表
             items:
               type: object
               properties:
                 store_code:
                   type: string
+                  description: 门店编码
                   example: abc_001
                 store_name:
                   type: string
+                  description: 门店名称
                   example: 幸福小店
   responses:
     '200':
-      schema: {}
+      schema:
+        type: object
+        properties:
+          delete_time:
+            type: string
+            format: rfc3339
+            description: 删除时间
+            example: '2015-05-20T13:29:35+08:00'
+          failed_stores:
+            type: array
+            description: 删除失败的小店活动门店列表
+            items:
+              type: object
+              properties:
+                store_code:
+                  type: string
+                  description: 门店编码
+                  example: abc_001
+                store_name:
+                  type: string
+                  description: 门店名称
+                  example: 幸福小店
 get:
   x-last-updated-at: 2023.07.28
   x-role:
@@ -92,7 +152,7 @@ get:
   tags:
     - 品牌小店营销
   summary: 查询小店活动门店列表
-  description: '[官方文档](https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/list-store.html)'
+  description: 该接口为服务商或商户给零售小店活动查询门店列表专用接口。 使用对象：品牌的品牌主商户号或品牌服务商。[官方文档](https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/list-store.html)
   parameters:
     - name: brand_id
       in: path
@@ -116,4 +176,32 @@ get:
       example: 10
   responses:
     '200':
-      schema: {}
+      schema:
+        type: object
+        properties:
+          total_count:
+            type: number
+            description: 小店活动门店总数
+            example: 1000
+          data:
+            type: array
+            description: 小店活动门店集合
+            items:
+              type: object
+              properties:
+                store_code:
+                  type: string
+                  description: 门店编码
+                  example: abc_001
+                store_name:
+                  type: string
+                  description: 门店名称
+                  example: 幸福小店
+          offset:
+            type: number
+            description: 分页页码
+            example: 0
+          limit:
+            type: number
+            description: 分页大小
+            example: 10

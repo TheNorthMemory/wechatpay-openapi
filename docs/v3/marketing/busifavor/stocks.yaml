@@ -172,6 +172,10 @@ post:
               - max_coupons
               - max_coupons_per_user
             properties:
+              max_amount:
+                type: number
+                description: 批次总预算
+                example: 100000
               max_coupons:
                 type: integer
                 description: 批次最大发放个数
@@ -180,6 +184,10 @@ post:
                 type: integer
                 description: 用户最大可领个数
                 example: 5
+              max_amount_by_day:
+                type: number
+                description: 单天发放上限金额
+                example: 1000
               max_coupons_by_day:
                 type: integer
                 description: 单天发放上限个数

@@ -39,9 +39,9 @@ post:
       schema:
         type: object
         required:
-          - wechatpay_associate_time
+          - wechatpay_disassociate_time
         properties:
-          wechatpay_associate_time:
+          wechatpay_disassociate_time:
             type: string
             format: rfc3339
             description: 取消关联成功时间

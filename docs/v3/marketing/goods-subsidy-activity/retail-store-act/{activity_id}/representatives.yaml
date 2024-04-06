@@ -6,7 +6,7 @@ get:
   tags:
     - 品牌小店营销
   summary: 查询零售小店活动业务代理
-  description: '[官方文档](https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/list-representative.html)'
+  description: 该接口为服务商或商户给零售小店活动查询业务代理的专用接口。 使用对象：活动创建方商户号、活动归属品牌的品牌主商户号或品牌经营商户号。[官方文档](https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/list-representative.html)
   parameters:
     - name: activity_id
       in: path
@@ -30,4 +30,33 @@ get:
       example: 10
   responses:
     '200':
-      schema: {}
+      schema:
+        type: object
+        required:
+          - offset
+          - limit
+        properties:
+          total_count:
+            type: number
+            description: 小店活动业代总数
+            example: 1000
+          data:
+            type: array
+            description: 小店活动业代集合
+            items:
+              type: object
+              required:
+                - openid
+              properties:
+                openid:
+                  type: string
+                  description: 业务代理的OpenID
+                  example: oK7fFt8zzEZ909XH-LE2#
+          offset:
+            type: number
+            description: 分页页码
+            example: 0
+          limit:
+            type: number
+            description: 分页大小
+            example: 10

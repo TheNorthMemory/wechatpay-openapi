@@ -15,7 +15,7 @@ interface Materials
      * @link https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/create-materials.html
      */
     public function post(array $options = [
-        'brand_id' => '',
+        'brand_id' => '1001',
         'json' => [
             'out_request_no' => '1002600620019090123143254436',
             'material_num' => 100,
@@ -28,7 +28,7 @@ interface Materials
      * @link https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/create-materials.html#async
      */
     public function postAsync(array $options = [
-        'brand_id' => '',
+        'brand_id' => '1001',
         'json' => [
             'out_request_no' => '1002600620019090123143254436',
             'material_num' => 100,

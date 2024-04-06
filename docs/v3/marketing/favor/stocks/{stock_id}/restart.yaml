@@ -28,10 +28,10 @@ post:
       schema:
         type: object
         required:
-          - start_time
+          - restart_time
           - stock_id
         properties:
-          start_time:
+          restart_time:
             type: string
             format: rfc3339
             description: 生效时间

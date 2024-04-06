@@ -6,7 +6,7 @@ get:
   tags:
     - 品牌小店营销
   summary: 查询小店活动门店详情
-  description: '[官方文档](https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/get-store.html)'
+  description: 该接口为服务商或商户给零售小店活动查询门店详情专用接口。 使用对象：品牌的品牌主商户号或品牌服务商。[官方文档](https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/get-store.html)
   parameters:
     - name: brand_id
       in: path
@@ -19,7 +19,17 @@ get:
       required: true
       type: string
       description: 门店编码
-      example: 'abc_001'
+      example: abc_001
   responses:
     '200':
-      schema: {}
+      schema:
+        type: object
+        properties:
+          store_code:
+            type: string
+            description: 门店编码
+            example: abc_001
+          store_name:
+            type: string
+            description: 门店名称
+            example: 幸福小店

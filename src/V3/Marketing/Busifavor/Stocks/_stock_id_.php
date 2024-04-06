@@ -48,11 +48,14 @@ interface _stock_id_
                 'hall_id' => '233455656',
                 'code_display_mode' => 'BARCODE',
             ],
+            'stock_name' => '8月1日活动券',
             'comment' => '活动使用',
             'goods_name' => 'xxx商品使用',
             'out_request_no' => '6122352020010133287985742',
             'display_pattern_info' => [
                 'description' => 'xxx门店可用',
+                'merchant_logo_url' => 'https://xxx',
+                'merchant_name' => '微信支付',
                 'background_color' => 'Color020',
                 'coupon_image_url' => 'https://qpic.cn/xxx',
                 'finder_info' => [
@@ -73,6 +76,7 @@ interface _stock_id_
             'notify_config' => [
                 'notify_appid' => 'wx23232232323',
             ],
+            'subsidy' => true,
         ],
     ]): ResponseInterface;
 
@@ -95,11 +99,14 @@ interface _stock_id_
                 'hall_id' => '233455656',
                 'code_display_mode' => 'BARCODE',
             ],
+            'stock_name' => '8月1日活动券',
             'comment' => '活动使用',
             'goods_name' => 'xxx商品使用',
             'out_request_no' => '6122352020010133287985742',
             'display_pattern_info' => [
                 'description' => 'xxx门店可用',
+                'merchant_logo_url' => 'https://xxx',
+                'merchant_name' => '微信支付',
                 'background_color' => 'Color020',
                 'coupon_image_url' => 'https://qpic.cn/xxx',
                 'finder_info' => [
@@ -120,6 +127,7 @@ interface _stock_id_
             'notify_config' => [
                 'notify_appid' => 'wx23232232323',
             ],
+            'subsidy' => true,
         ],
     ]): PromiseInterface;
 }

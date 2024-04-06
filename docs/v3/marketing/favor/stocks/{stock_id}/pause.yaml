@@ -28,13 +28,13 @@ post:
       schema:
         type: object
         required:
-          - start_time
+          - pause_time
           - stock_id
         properties:
-          start_time:
+          pause_time:
             type: string
             format: rfc3339
-            description: 生效时间
+            description: 暂停时间
             example: '2015-05-20T13:29:35.120+08:00'
           stock_id:
             type: string

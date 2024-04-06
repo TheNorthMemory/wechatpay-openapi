@@ -57,8 +57,10 @@ interface Stocks
                 'mini_programs_path' => '/path/index/index',
             ],
             'stock_send_rule' => [
+                'max_amount' => 100000,
                 'max_coupons' => 100,
                 'max_coupons_per_user' => 5,
+                'max_amount_by_day' => 1000,
                 'max_coupons_by_day' => 100,
                 'natural_person_limit' => true,
                 'prevent_api_abuse' => true,
@@ -145,8 +147,10 @@ interface Stocks
                 'mini_programs_path' => '/path/index/index',
             ],
             'stock_send_rule' => [
+                'max_amount' => 100000,
                 'max_coupons' => 100,
                 'max_coupons_per_user' => 5,
+                'max_amount_by_day' => 1000,
                 'max_coupons_by_day' => 100,
                 'natural_person_limit' => true,
                 'prevent_api_abuse' => true,

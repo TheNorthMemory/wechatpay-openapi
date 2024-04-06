@@ -6,25 +6,47 @@ post:
   tags:
     - 品牌小店营销
   summary: 生成小店活动物料码
-  description: '[官方文档](https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/create-materials.html)'
+  description: 该接口为服务商或商户给零售小店活动申请物料码专用接口。 使用对象：品牌的品牌主商户号或品牌服务商。[官方文档](https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/create-materials.html)
   parameters:
     - name: brand_id
       in: path
       required: true
       type: string
+      description: 品牌ID
+      example: '1001'
     - name: _
       in: body
       required: true
-      type: object
       schema:
+        type: object
+        required:
+          - out_request_no
+          - material_num
         properties:
           out_request_no:
             type: string
+            description: 请求业务单据
             example: '1002600620019090123143254436'
           material_num:
             type: number
-            format: integer
+            description: 生成物料码数量
             example: 100
   responses:
     '200':
-      schema: {}
+      schema:
+        type: object
+        properties:
+          material_list:
+            type: array
+            description: 成功的物料码列表
+            items:
+              type: object
+              properties:
+                material_id:
+                  type: string
+                  description: 物料码ID
+                  example: '1001_123456'
+                material_url:
+                  type: string
+                  description: 物料码链接
+                  example: https://action.weixin.qq.com/fmcg/details?brand_id=1001&material_id=1001_123456

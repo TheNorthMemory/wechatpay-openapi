@@ -1,0 +1,131 @@
+post:
+  x-last-updated-at: 2023.07.11
+  x-role: [电商平台]
+  tags:
+    - 收付通∙分账
+  summary: 请求售后服务分账
+  description: '[官方文档](https://pay.weixin.qq.com/docs/partner/products/ecommerce/introduction.html)'
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - sub_mchid
+          - transaction_id
+          - amount
+          - type
+          - scene
+          - refund_id
+        properties:
+          sub_mchid:
+            type: string
+            description: 二级商户号
+            example: '1900000109'
+          transaction_id:
+            type: string
+            description: 微信订单号
+            example: '3008450740201411110007820472'
+          amount:
+            type: integer
+            description: 回退金额
+            example: 10
+          type:
+            type: string
+            description: 类型
+            enum:
+              - SERVICE_FEE_INCOME
+          scene:
+            type: string
+            description: 场景
+            enum:
+              - REFUND_TICKET #退票
+              - CHANGE_TICKET #改签
+              - RETURN_GOODS #退货
+          refund_id:
+            type: string
+            description: 微信退款单号
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - sub_mchid
+          - transaction_id
+          - amount
+        properties:
+          sub_mchid:
+            type: string
+            description: 二级商户号
+            example: '1900000109'
+          transaction_id:
+            type: string
+            description: 微信订单号
+            example: '3008450740201411110007820472'
+          amount:
+            type: integer
+            description: 分账金额
+            example: 10
+get:
+  x-last-updated-at: 2023.07.11
+  x-role: [电商平台]
+  tags:
+    - 收付通∙分账
+  summary: 查询售后服务分账结果
+  description: '[官方文档](https://pay.weixin.qq.com/docs/partner/products/ecommerce/introduction.html)'
+  parameters:
+    - name: sub_mchid
+      in: path
+      type: string
+      description: 二级商户号
+      required: true
+    - name: transaction_id
+      in: query
+      nullable: true
+      type: string
+      description: 微信订单号
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - sub_mchid
+          - transaction_id
+          - amount
+          - result
+          - finish_time
+        properties:
+          sub_mchid:
+            type: string
+            description: 二级商户号
+            example: '1900000109'
+          transaction_id:
+            type: string
+            description: 微信分账单号
+            example: '3008450740201411110007820472'
+          amount:
+            type: integer
+            description: 分账金额
+            example: 10
+          result:
+            type: string
+            description: 分账结果
+            example: SUCCESS
+            enum:
+              - PROCESSING
+              - SUCCESS
+              - FAILED
+          fail_reason:
+            type: string
+            description: 分账失败原因
+            example: NO_RELATION
+            enum:
+              - ACCOUNT_ABNORMAL
+              - NO_RELATION
+              - RECEIVER_HIGH_RISK
+          finish_time:
+            type: string
+            format: rfc3339
+            description: 分账完成时间
+            example: '2015-05-20T13:29:35.120+08:00'

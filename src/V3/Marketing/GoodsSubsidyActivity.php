@@ -4,6 +4,9 @@ namespace WeChatPay\OpenAPI\V3\Marketing;
 
 /**
  * @property-read GoodsSubsidyActivity\RetailStoreAct $retailStoreAct
+ * @property-read GoodsSubsidyActivity\Qualification $qualification
+ * @property-read GoodsSubsidyActivity\Activity $activity
+ * @property-read GoodsSubsidyActivity\Activities $activities
  */
 interface GoodsSubsidyActivity
 {

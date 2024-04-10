@@ -1,0 +1,127 @@
+get:
+  x-last-updated-at: 2023.07.27
+  x-role:
+    - 普通商户
+    - 服务商
+  tags:
+    - 品牌小店营销
+  summary: 按区域查询品牌加价购活动
+  description: 指定服务商可通过该接口报名加价购活动、查询某个区域内的加价购活动列表、锁定加价活动购资格以及解锁加价购活动资格。[官方文档](https://pay.weixin.qq.com/docs/merchant/products/retail-store/introduction.html)
+  parameters:
+    - name: city_id
+      in: query
+      required: true
+      type: string
+      description: 活动所属城市的ID
+    - name: offset
+      in: query
+      required: true
+      type: number
+      description: 分页页码
+    - name: limit
+      in: query
+      required: true
+      type: number
+      description: 最大返回的活动数
+  responses:
+    '200':
+      schema:
+        type: object
+        properties:
+          total_count:
+            type: number
+            description: 小店活动门店总数
+            example: 1000
+          data:
+            type: array
+            description: 小店活动门店集合
+            items:
+              type: object
+              properties:
+                activity_id:
+                  type: string
+                  description: 活动ID
+                brand_id:
+                  type: string
+                  description: 品牌ID
+                creator_merchant_id:
+                  type: string
+                  description: 活动创建方商户号
+                activity_info:
+                  type: object
+                  description: 活动信息
+                  properties:
+                    activity_name:
+                      type: string
+                      description: 活动名称
+                    apply_start_time:
+                      type: string
+                      format: rfc3339
+                      description: 活动报名开始时间
+                    apply_end_time:
+                      type: string
+                      format: rfc3339
+                      description: 活动报名结束时间
+                    activity_start_time:
+                      type: string
+                      format: rfc3339
+                      description: 活动开始时间
+                    activity_end_time:
+                      type: string
+                      format: rfc3339
+                      description: 活动结束时间
+                    activity_description:
+                      type: string
+                      description: 活动描述
+                goods_information:
+                  type: object
+                  description: 活动商品信息
+                  properties:
+                    goods_id:
+                      type: string
+                      description: 商品ID
+                    goods_name:
+                      type: string
+                      description: 商品名称
+                    goods_picture_url:
+                      type: string
+                      description: 商品图片URL
+                rule_information:
+                  type: object
+                  description: 活动规则
+                  properties:
+                    store_subsidy:
+                      type: string
+                      description: 购买单件商品，补贴给门店的金额
+                    service_provider_subsidy:
+                      type: string
+                      description: 购买单件商品，补贴给服务商的佣金
+                    store_subsidy_quota:
+                      type: string
+                      description: 活动门店补贴商品数上限
+                    user_subsidy_quota:
+                      type: string
+                      description: 单用户享受加价购优惠次数上限
+                    areas:
+                      type: array
+                      description: 活动区域列表
+                      items:
+                        type: object
+                        properties:
+                          province:
+                            type: string
+                            description: 省名称
+                          city:
+                            type: string
+                            description: 市名称
+                          district:
+                            type: string
+                            description: 区名称
+          offset:
+            type: number
+            description: 分页页码
+            example: 0
+          limit:
+            type: number
+            description: 分页大小
+            example: 10

@@ -1,0 +1,61 @@
+post:
+  x-last-updated-at: 2023.07.27
+  x-role:
+    - 普通商户
+    - 服务商
+  tags:
+    - 品牌小店营销
+  summary: 解锁品牌加价购活动资格
+  description: 指定服务商可通过该接口报名加价购活动、查询某个区域内的加价购活动列表、锁定加价活动购资格以及解锁加价购活动资格。[官方文档](https://pay.weixin.qq.com/docs/merchant/products/retail-store/introduction.html)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - order_information
+          - qualification_ids
+        properties:
+          order_information:
+            type: object
+            description: 订单信息
+            properties:
+              payer_openid:
+                type: string
+                description: 支付订单的微信用户OpenID
+              out_trade_no:
+                type: string
+                description: 商户订单号
+              total_fee:
+                type: number
+                description: 订单总金额
+              store_id:
+                type: string
+                description: 门店ID
+              store_merchant_id:
+                type: string
+                description: 门店商户号
+          qualification_ids:
+            type: array
+            description: 待锁定的加价购资格ID列表
+            items:
+              type: string
+  responses:
+    '200':
+      schema:
+        type: object
+        properties:
+          return_message:
+            type: string
+            description: 返回结果文案
+          failed_qualification_ids:
+            type: array
+            description: 锁定失败的资格ID列表
+            items:
+              type: string
+          succeed_qualification_ids:
+            type: array
+            description: 锁定成功的资格ID列表
+            items:
+              type: string

@@ -830,6 +830,14 @@ paths:
     $ref: ./v3/marketing/favor/users/{openid}/coupons.yaml
   /v3/marketing/favor/users/{openid}/coupons/{coupon_id}:
     $ref: ./v3/marketing/favor/users/{openid}/coupons/{coupon_id}.yaml
+  /v3/marketing/goods-subsidy-activity/activities:
+    $ref: ./v3/marketing/goods-subsidy-activity/activities.yaml
+  /v3/marketing/goods-subsidy-activity/activity/{activity_id}/apply:
+    $ref: ./v3/marketing/goods-subsidy-activity/activity/{activity_id}/apply.yaml
+  /v3/marketing/goods-subsidy-activity/qualification/lock:
+    $ref: ./v3/marketing/goods-subsidy-activity/qualification/lock.yaml
+  /v3/marketing/goods-subsidy-activity/qualification/unlock:
+    $ref: ./v3/marketing/goods-subsidy-activity/qualification/unlock.yaml
   /v3/marketing/goods-subsidy-activity/retail-store-act/{activity_id}/representative:
     $ref: ./v3/marketing/goods-subsidy-activity/retail-store-act/{activity_id}/representative.yaml
   /v3/marketing/goods-subsidy-activity/retail-store-act/{activity_id}/representatives:

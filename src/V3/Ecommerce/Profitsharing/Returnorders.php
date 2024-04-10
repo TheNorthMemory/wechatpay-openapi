@@ -49,8 +49,8 @@ interface Returnorders
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/profitsharing/chapter3_4.shtml
      */
     public function get(array $options = [
-        'sub_mchid' => '',
         'query' => [
+            'sub_mchid' => '',
             'order_id' => '',
             'out_order_no' => '',
             'out_return_no' => '',
@@ -63,8 +63,8 @@ interface Returnorders
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/profitsharing/chapter3_4.shtml#async
      */
     public function getAsync(array $options = [
-        'sub_mchid' => '',
         'query' => [
+            'sub_mchid' => '',
             'order_id' => '',
             'out_order_no' => '',
             'out_return_no' => '',

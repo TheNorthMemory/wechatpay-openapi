@@ -76,7 +76,7 @@ get:
   description: '[官方文档](https://pay.weixin.qq.com/docs/partner/products/ecommerce/introduction.html)'
   parameters:
     - name: sub_mchid
-      in: path
+      in: query
       type: string
       description: 二级商户号
       required: true

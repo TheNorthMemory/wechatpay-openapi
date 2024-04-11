@@ -782,6 +782,8 @@ paths:
     $ref: ./v3/marketing/busifavor/coupons/disassociate.yaml
   /v3/marketing/busifavor/coupons/return:
     $ref: ./v3/marketing/busifavor/coupons/return.yaml
+  /v3/marketing/busifavor/coupons/send:
+    $ref: ./v3/marketing/busifavor/coupons/send.yaml
   /v3/marketing/busifavor/coupons/use:
     $ref: ./v3/marketing/busifavor/coupons/use.yaml
   /v3/marketing/busifavor/stocks:
@@ -792,6 +794,8 @@ paths:
     $ref: ./v3/marketing/busifavor/stocks/{stock_id}/budget.yaml
   /v3/marketing/busifavor/stocks/{stock_id}/couponcodes:
     $ref: ./v3/marketing/busifavor/stocks/{stock_id}/couponcodes.yaml
+  /v3/marketing/busifavor/stocks/{stock_id}/couponcodes/{coupon_code}:
+    $ref: ./v3/marketing/busifavor/stocks/{stock_id}/couponcodes/{coupon_code}.yaml
   /v3/marketing/busifavor/subsidy/pay-receipts:
     $ref: ./v3/marketing/busifavor/subsidy/pay-receipts.yaml
   /v3/marketing/busifavor/subsidy/pay-receipts/{subsidy_receipt_id}:

@@ -1,0 +1,350 @@
+get:
+  x-last-updated-at: 2023.05.26
+  x-role:
+    - 直连商户
+  tags:
+    - 运营工具∙商家券
+  summary: 查询预存code详情
+  description: '[官方文档](https://pay.weixin.qq.com/docs/merchant/products/merchant-exclusive-coupon/introduction.html)'
+  parameters:
+    - name: stock_id
+      in: path
+      type: string
+      required: true
+      description: 批次号
+      example: '1212'
+    - name: coupon_code
+      in: path
+      type: string
+      required: true
+      description: 商户上传的code
+      example: '1212'
+    - name: appid
+      in: query
+      type: string
+      description: 公众账号ID
+      example: wx233544546545989
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - code_information
+          - coupon_information
+        properties:
+          code_information:
+            type: object
+            properties:
+              code:
+                type: string
+                description: 商户上传code
+              code_status:
+                type: string
+                description: 商户上传code分配状态
+              upload_time:
+                type: string
+                description: 上传时间
+                format: rfc3339
+              dispatched_time:
+                type: string
+                description: 被分配时间
+                format: rfc3339
+              openid:
+                type: string
+                description: 领券用户的OpenID
+              unionid:
+                type: string
+                description: 领券用户的UnionID
+              coupon_code:
+                type: string
+                description: 用户券code
+          coupon_information:
+            type: object
+            required:
+              - stock_name
+              - belong_merchant
+              - goods_name
+              - stock_type
+              - coupon_use_rule
+              - stock_send_rule
+              - out_request_no
+              - coupon_code_mode
+            properties:
+              stock_name:
+                type: string
+                description: 商家券批次名称
+                example: 8月1日活动券
+              belong_merchant:
+                type: string
+                description: 批次归属商户号
+                example: '10000022'
+              comment:
+                type: string
+                description: 批次备注
+                example: 活动使用
+              goods_name:
+                type: string
+                description: 适用商品范围
+                example: xxx商品使用
+              stock_type:
+                type: string
+                description: 批次类型
+                example: NORMAL
+              transferable:
+                type: boolean
+              shareable:
+                type: boolean
+              coupon_state:
+                type: string
+              coupon_use_rule:
+                type: object
+                description: 核销规则
+                required:
+                  - coupon_available_time
+                  - use_method
+                properties:
+                  coupon_available_time:
+                    type: object
+                    description: 券可核销时间
+                    required:
+                      - available_begin_time
+                      - available_end_time
+                    properties:
+                      available_begin_time:
+                        type: string
+                        description: 开始时间
+                        example: '2015-05-20T13:29:35+08:00'
+                      available_end_time:
+                        type: string
+                        description: 结束时间
+                        example: '2015-05-20T13:29:35+08:00'
+                      available_day_after_receive:
+                        type: integer
+                        description: 生效后N天内有效
+                        example: 3
+                      available_week:
+                        type: object
+                        description: 固定周期有效时间段
+                        properties:
+                          week_day:
+                            type: array
+                            description: 可用星期数
+                            example: 1, 2
+                          available_day_time:
+                            type: array
+                            description: 当天可用时间段
+                            items:
+                              type: object
+                              properties:
+                                begin_time:
+                                  type: integer
+                                  description: 当天可用开始时间
+                                  example: 3600
+                                end_time:
+                                  type: integer
+                                  description: 当天可用结束时间
+                                  example: 86399
+                      irregulary_avaliable_time:
+                        type: array
+                        description: 无规律的有效时间段
+                        items:
+                          type: object
+                          properties:
+                            begin_time:
+                              type: string
+                              description: 开始时间
+                              example: '2015-05-20T13:29:35+08:00'
+                            end_time:
+                              type: string
+                              description: 结束时间
+                              example: '2015-05-20T13:29:35+08:00'
+                      wait_days_after_receive:
+                        type: integer
+                        description: 领取后N天开始生效
+                        example: 7
+                  fixed_normal_coupon:
+                    type: object
+                    description: 固定面额满减券使用规则
+                    required:
+                      - discount_amount
+                      - transaction_minimum
+                    properties:
+                      discount_amount:
+                        type: integer
+                        description: 优惠金额
+                        example: 5
+                      transaction_minimum:
+                        type: integer
+                        description: 消费门槛
+                        example: 100
+                  discount_coupon:
+                    type: object
+                    description: 折扣券使用规则
+                    required:
+                      - discount_percent
+                      - transaction_minimum
+                    properties:
+                      discount_percent:
+                        type: integer
+                        description: 折扣比例
+                        example: 88
+                      transaction_minimum:
+                        type: integer
+                        description: 消费门槛
+                        example: 100
+                  exchange_coupon:
+                    type: object
+                    description: 换购券使用规则
+                    required:
+                      - exchange_price
+                      - transaction_minimum
+                    properties:
+                      exchange_price:
+                        type: integer
+                        description: 单品换购价
+                        example: 100
+                      transaction_minimum:
+                        type: integer
+                        description: 消费门槛
+                        example: 100
+                  use_method:
+                    type: string
+                    description: 核销方式
+                    example: OFF_LINE
+                  mini_programs_appid:
+                    type: string
+                    description: 小程序appid
+                    example: wx23232232323
+                  mini_programs_path:
+                    type: string
+                    description: 小程序path
+                    example: /path/index/index
+              custom_entrance:
+                type: object
+                description: 自定义入口
+                properties:
+                  mini_programs_info:
+                    type: object
+                    description: 小程序入口
+                    required:
+                      - mini_programs_appid
+                      - mini_programs_path
+                      - entrance_words
+                    properties:
+                      mini_programs_appid:
+                        type: string
+                        description: 商家小程序appid
+                        example: wx234545656765876
+                      mini_programs_path:
+                        type: string
+                        description: 商家小程序path
+                        example: /path/index/index
+                      entrance_words:
+                        type: string
+                        description: 入口文案
+                        example: 欢迎选购
+                      guiding_words:
+                        type: string
+                        description: 引导文案
+                        example: 获取更多优惠
+                  appid:
+                    type: string
+                    description: 商户公众号appid
+                    example: wx324345hgfhfghfg
+                  hall_id:
+                    type: string
+                    description: 营销馆id
+                    example: '233455656'
+                  store_id:
+                    type: string
+                    description: 可用门店id
+                    example: '233554655'
+                  code_display_mode:
+                    type: string
+                    description: code展示模式
+                    example: BARCODE
+              display_pattern_info:
+                type: object
+                description: 样式信息
+                properties:
+                  description:
+                    type: string
+                    description: 使用须知
+                    example: xxx门店可用
+                  merchant_logo_url:
+                    type: string
+                    description: 商户logo
+                    example: https://qpic.cn/xxx
+                  merchant_name:
+                    type: string
+                    description: 商户名称
+                    example: 微信支付
+                  background_color:
+                    type: string
+                    description: 背景颜色
+                    example: Color020
+                  coupon_image_url:
+                    type: string
+                    description: 券详情图片
+                    example: https://qpic.cn/xxx
+                  finder_info:
+                    type: object
+                    description: 视频号相关信息
+                    required:
+                      - finder_id
+                      - finder_video_id
+                      - finder_video_cover_image_url
+                    properties:
+                      finder_id:
+                        type: string
+                        description: 视频号ID
+                        example: sph6Rngt2T4RlUf
+                      finder_video_id:
+                        type: string
+                        description: 视频号视频ID
+                        example: sph6Rngt2T4RlUf
+                      finder_video_cover_image_url:
+                        type: string
+                        format: MediaUrl
+                        description: 视频号封面图
+                        example: https://wxpaylogo.qpic.cn/xxx
+delete:
+  x-last-updated-at: 2023.05.26
+  x-role:
+    - 直连商户
+  tags:
+    - 运营工具∙商家券
+  summary: 删除预存code
+  description: '[官方文档](https://pay.weixin.qq.com/docs/merchant/products/merchant-exclusive-coupon/introduction.html)'
+  parameters:
+    - name: stock_id
+      in: path
+      type: string
+      required: true
+      description: 批次号
+      example: '101156451224'
+    - name: coupon_code
+      in: path
+      type: string
+      required: true
+      description: 商户上传的code
+      example: '1212'
+    - name: delete_request_no
+      in: query
+      type: string
+      required: true
+      description: 请求业务单据号
+      example: '1212'
+  responses:
+    '200':
+      schema:
+        type: object
+        properties:
+          stock_id:
+            type: string
+            description: 批次号
+            example: '101156451224'
+          delete_time:
+            type: string
+            format: rfc3339
+            description: 删除时间

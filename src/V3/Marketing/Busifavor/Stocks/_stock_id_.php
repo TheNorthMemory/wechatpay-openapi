@@ -6,8 +6,8 @@ use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Promise\PromiseInterface;
 
 /**
- * @property-read _stock_id_\Budget $budget
  * @property-read _stock_id_\Couponcodes $couponcodes
+ * @property-read _stock_id_\Budget $budget
  */
 interface _stock_id_
 {

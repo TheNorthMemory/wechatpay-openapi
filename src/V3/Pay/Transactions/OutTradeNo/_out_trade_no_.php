@@ -7,6 +7,7 @@ use GuzzleHttp\Promise\PromiseInterface;
 
 /**
  * @property-read _out_trade_no_\Close $close
+ * @property-read _out_trade_no_\Reverse $reverse
  */
 interface _out_trade_no_
 {

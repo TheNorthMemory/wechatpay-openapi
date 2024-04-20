@@ -1,0 +1,52 @@
+post:
+  x-last-updated-at: 2024.04.15
+  x-role:
+    - 普通商户
+  tags:
+    - 基础支付
+  summary: 撤销
+  description: 支付交易返回失败或支付系统超时，调用该接口撤销交易。如果此订单用户支付失败，微信支付系统会将此订单关闭；如果用户支付成功，微信支付系统会将此订单资金退还给用户。[官方文档](https://pay.weixin.qq.com/docs/merchant/apis/code-payment-v3/direct/reverse.html)
+  parameters:
+    - name: out_trade_no
+      in: path
+      required: true
+      type: string
+      description: 商户订单号
+      example: '1217752501201407033233368018'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - appid
+          - mchid
+        properties:
+          appid:
+            type: string
+            description: 应用AppID
+            example: wxd678efh567hg6787
+          mchid:
+            type: string
+            description: 直连商户号
+            example: '1230000109'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - mchid
+          - out_trade_no
+        properties:
+          appid:
+            type: string
+            description: 应用AppID
+            example: wxd678efh567hg6787
+          mchid:
+            type: string
+            description: 直连商户号
+            example: '1230000109'
+          out_trade_no:
+            type: string
+            description: 商户订单号
+            example: '1217752501201407033233368018'

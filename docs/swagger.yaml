@@ -1140,6 +1140,8 @@ paths:
     $ref: ./v3/pay-devices/printers/{device_id}/print-orders/{print_order_no}.yaml
   /v3/pay/partner/transactions/app:
     $ref: ./v3/pay/partner/transactions/app.yaml
+  /v3/pay/partner/transactions/codepay:
+    $ref: ./v3/pay/partner/transactions/codepay.yaml
   /v3/pay/partner/transactions/h5:
     $ref: ./v3/pay/partner/transactions/h5.yaml
   /v3/pay/partner/transactions/id/{transaction_id}:
@@ -1152,10 +1154,14 @@ paths:
     $ref: ./v3/pay/partner/transactions/out-trade-no/{out_trade_no}.yaml
   /v3/pay/partner/transactions/out-trade-no/{out_trade_no}/close:
     $ref: ./v3/pay/partner/transactions/out-trade-no/{out_trade_no}/close.yaml
+  /v3/pay/partner/transactions/out-trade-no/{out_trade_no}/reverse:
+    $ref: ./v3/pay/partner/transactions/out-trade-no/{out_trade_no}/reverse.yaml
   /v3/pay/partner/transactions/scannedpos:
     $ref: ./v3/pay/partner/transactions/scannedpos.yaml
   /v3/pay/transactions/app:
     $ref: ./v3/pay/transactions/app.yaml
+  /v3/pay/transactions/codepay:
+    $ref: ./v3/pay/transactions/codepay.yaml
   /v3/pay/transactions/h5:
     $ref: ./v3/pay/transactions/h5.yaml
   /v3/pay/transactions/id/{transaction_id}:
@@ -1168,6 +1174,8 @@ paths:
     $ref: ./v3/pay/transactions/out-trade-no/{out_trade_no}.yaml
   /v3/pay/transactions/out-trade-no/{out_trade_no}/close:
     $ref: ./v3/pay/transactions/out-trade-no/{out_trade_no}/close.yaml
+  /v3/pay/transactions/out-trade-no/{out_trade_no}/reverse:
+    $ref: ./v3/pay/transactions/out-trade-no/{out_trade_no}/reverse.yaml
   /v3/payroll-card/authentications:
     $ref: ./v3/payroll-card/authentications.yaml
   /v3/payroll-card/authentications/{authenticate_number}:

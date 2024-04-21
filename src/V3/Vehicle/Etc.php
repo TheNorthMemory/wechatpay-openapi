@@ -5,6 +5,7 @@ namespace WeChatPay\OpenAPI\V3\Vehicle;
 /**
  * @property-read Etc\Users $users
  * @property-read Etc\Transactions $transactions
+ * @property-read Etc\Contracts $contracts
  * @property-read Etc\Preopen $preopen
  */
 interface Etc

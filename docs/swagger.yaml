@@ -7,7 +7,7 @@ info:
     整理自[官方文档中心](https://pay.weixin.qq.com/wiki/doc/apiv3/index.shtml)
     本[项目/工具地址](https://github.com/TheNorthMemory/wechatpay-openapi)
     **访问第一次加载比较慢，请耐心等待大约1-2分钟不等(小文件下载比较多)。**
-  version: 0.15.25
+  version: 0.15.26
 schemes:
   - https
 consumes:
@@ -1400,6 +1400,8 @@ paths:
     $ref: ./v3/transfer/bill-receipt/{out_batch_no}.yaml
   /v3/transferdownload/signfile:
     $ref: ./v3/transferdownload/signfile.yaml
+  /v3/vehicle/etc/contracts/{contract_id}:
+    $ref: ./v3/vehicle/etc/contracts/{contract_id}.yaml
   /v3/vehicle/etc/preopen:
     $ref: ./v3/vehicle/etc/preopen.yaml
   /v3/vehicle/etc/transactions/highway:

@@ -26,6 +26,7 @@ interface PreOrderWithAuth
             'user_name' => 'LP7bT4hQXUsOZCEvK2YrSiqFsnP0oRMfeoLN0vBg',
             'id_card_number' => '7FzH5XksJG3a8HLLsaaUV6K54y1OnPMY5',
             'employment_type' => 'LONG_TERM_EMPLOYMENT',
+            'authenticate_type' => 'SIGN_IN',
         ],
         'headers' => [
             'Wechatpay-Serial' => '',
@@ -49,6 +50,7 @@ interface PreOrderWithAuth
             'user_name' => 'LP7bT4hQXUsOZCEvK2YrSiqFsnP0oRMfeoLN0vBg',
             'id_card_number' => '7FzH5XksJG3a8HLLsaaUV6K54y1OnPMY5',
             'employment_type' => 'LONG_TERM_EMPLOYMENT',
+            'authenticate_type' => 'SIGN_IN',
         ],
         'headers' => [
             'Wechatpay-Serial' => '',

@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2021.07.21
+  x-last-updated-at: 2022.05.11
   x-role:
     - 服务商
   tags:
@@ -18,6 +18,7 @@ post:
           - authenticate_number
           - project_name
           - employer_name
+          - authenticate_type
         properties:
           openid:
             type: string
@@ -47,6 +48,14 @@ post:
             type: string
             description: 单位名称
             example: 某单位名称
+          authenticate_type:
+            type: string
+            description: 核身类型
+            example: SIGN_IN
+            enum:
+              - SIGN_IN
+              - INSURANCE
+              - CONTRACT
   responses:
     '200':
       schema:

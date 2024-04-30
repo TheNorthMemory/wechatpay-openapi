@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2021.11.11
+  x-last-updated-at: 2022.05.11
   x-role:
     - 服务商
   tags:
@@ -22,6 +22,7 @@ post:
           - user_name
           - id_card_number
           - employment_type
+          - authenticate_type
         properties:
           openid:
             type: string
@@ -67,6 +68,14 @@ post:
               - LONG_TERM_EMPLOYMENT
               - SHORT_TERM_EMPLOYMENT
               - COOPERATION_EMPLOYMENT
+          authenticate_type:
+            type: string
+            description: 核身类型
+            example: SIGN_IN
+            enum:
+              - SIGN_IN
+              - INSURANCE
+              - CONTRACT
   responses:
     '200':
       schema:

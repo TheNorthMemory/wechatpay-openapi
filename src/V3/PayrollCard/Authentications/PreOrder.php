@@ -23,6 +23,7 @@ interface PreOrder
             'authenticate_number' => 'mcdhehfgisdhfjghed39384564i83',
             'project_name' => '某项目',
             'employer_name' => '某单位名称',
+            'authenticate_type' => 'SIGN_IN',
         ],
     ]): ResponseInterface;
 
@@ -40,6 +41,7 @@ interface PreOrder
             'authenticate_number' => 'mcdhehfgisdhfjghed39384564i83',
             'project_name' => '某项目',
             'employer_name' => '某单位名称',
+            'authenticate_type' => 'SIGN_IN',
         ],
     ]): PromiseInterface;
 }

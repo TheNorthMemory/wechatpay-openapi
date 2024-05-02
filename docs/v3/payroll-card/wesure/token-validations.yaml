@@ -1,0 +1,74 @@
+post:
+  x-last-updated-at: 2022.05.07
+  x-role:
+    - 服务商
+  tags:
+    - 运营工具∙用工卡
+  summary: 校验核身结果API
+  description: 校验按商户拉起核身时预下单的token值对应的微工卡核身结果是否成功 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_31.shtml)
+  parameters:
+    - $ref: '../../../definitions/Parameters.yaml#/WECHATPAY_CERTIFICATE_SERIAL'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - sp_mchid
+          - sub_mchid
+          - token
+          - user_name
+          - id_card_number
+        properties:
+          sp_mchid:
+            type: string
+            description: 服务商商户号
+            example: '1900000109'
+          sub_mchid:
+            type: string
+            description: 特约商户商户号
+            example: '1900000109'
+          token:
+            type: string
+            description: token值
+            example: abcdefghijklmn
+          user_name:
+            type: string
+            description: 用户姓名
+            example: LP7bT4hQXUsOZCEvK2YrSiqFsnP0oRMfeoLN0vBg
+          id_card_number:
+            type: string
+            description: 用户身份证号
+            example: 7FzH5XksJG3a8HLLsaaUV6K54y1OnPMY5
+          authenticate_type:
+            type: string
+            description: 核身类型
+            example: NORMAL
+            enum:
+              - NORMAL
+              - SIGN_IN
+              - INSURANCE
+              - CONTRACT
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - result
+        properties:
+          result:
+            type: string
+            description: 校验结果
+            example: SUCCESS
+          authenticate_success_time:
+            type: string
+            description: 核身成功时间
+            example: '2015-05-20T13:29:35+08:00'
+          openid:
+            type: string
+            description: 用户标识
+            example: '11111111'
+          fail_reason:
+            type: string
+            description: 校验不通过原因
+            example: SP_MCH_NO_PERMISSION

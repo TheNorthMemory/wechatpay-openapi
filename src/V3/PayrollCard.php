@@ -3,6 +3,7 @@
 namespace WeChatPay\OpenAPI\V3;
 
 /**
+ * @property-read PayrollCard\Wesure $wesure
  * @property-read PayrollCard\Relations $relations
  * @property-read PayrollCard\Authentications $authentications
  * @property-read PayrollCard\Tokens $tokens

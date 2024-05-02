@@ -1,0 +1,64 @@
+post:
+  x-last-updated-at: 2022.05.05
+  x-role:
+    - 服务商
+  tags:
+    - 运营工具∙用工卡
+  summary: 生成投保结果API
+  description: 生成投保结果 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_32.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - sp_mchid
+          - wesure_order_no
+          - token
+          - insurance_company_order_no
+          - openid
+          - insure_state
+          - insure_effect_time
+          - insure_invalid_time
+          - insurance_company_name
+        properties:
+          sp_mchid:
+            type: string
+            description: 服务商商户号
+            example: '1900000109'
+          wesure_order_no:
+            type: string
+            description: 特约商户商户号
+            example: '1900000109'
+          token:
+            type: string
+            description: 微保保单号
+            example: 5fds5345dfd
+          insurance_company_order_no:
+            type: string
+            description: 保司保单号
+            example: 5fds5345dfd
+          openid:
+            type: string
+            description: 用户标识
+            example: '111111'
+          insure_state:
+            type: string
+            description: 投保状态
+            example: INSURE_SUCCESS
+          insure_effect_time:
+            type: string
+            description: 保障生效时间
+            example: '2018-06-08T10:34:56+08:00'
+          insure_invalid_time:
+            type: string
+            description: 保障失效时间
+            example: '2018-06-08T10:34:56+08:00'
+          insurance_company_name:
+            type: string
+            description: 保障的保险公司名称
+            example: 平安
+  responses:
+    '204':
+      schema: {}

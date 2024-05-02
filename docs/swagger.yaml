@@ -1190,6 +1190,10 @@ paths:
     $ref: ./v3/payroll-card/tokens.yaml
   /v3/payroll-card/transfer-batches:
     $ref: ./v3/payroll-card/transfer-batches.yaml
+  /v3/payroll-card/wesure/insurance:
+    $ref: ./v3/payroll-card/wesure/insurance.yaml
+  /v3/payroll-card/wesure/token-validations:
+    $ref: ./v3/payroll-card/wesure/token-validations.yaml
   /v3/payscore/acquiringbank/permissions:
     $ref: ./v3/payscore/acquiringbank/permissions.yaml
   /v3/payscore/acquiringbank/permissions/authorization-code/{authorization_code}:

@@ -85,15 +85,15 @@ get:
                 amount:
                   type: object
                   properties:
-                  total:
-                    type: number
-                    format: integer
-                  payer_total:
-                    type: number
-                    format: integer
-                  currency:
-                    type: string
-                  payer_currency:
-                    type: string
+                    total:
+                      type: number
+                      format: integer
+                    payer_total:
+                      type: number
+                      format: integer
+                    currency:
+                      type: string
+                    payer_currency:
+                      type: string
                 device_id:
                   type: string

@@ -1,0 +1,57 @@
+post:
+  x-last-updated-at: 2021.10.27
+  x-role:
+    - 电商平台
+    - 服务商
+  tags:
+    - 收付通∙合单代扣
+  summary: 电商合单委托代扣撤销订单API
+  description: 商户可以通过该接口发起免密的合单撤销 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter5_5_5.shtml)
+  parameters:
+    - name: combine_out_trade_no
+      in: path
+      required: true
+      type: string
+      description: 合单商户订单号
+      example: P20150806125346
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - combine_appid
+        properties:
+          combine_appid:
+            type: string
+            description: 合单商户APPID
+            example: wxd678efh567hg6787
+          sub_orders:
+            type: array
+            description: 子单信息
+            items:
+              type: object
+              required:
+                - mchid
+                - out_trade_no
+                - sub_mchid
+              properties:
+                mchid:
+                  type: string
+                  description: 子单商户号
+                  example: '1900000109'
+                out_trade_no:
+                  type: string
+                  description: 子单商户订单号
+                  example: '20150806125346'
+                sub_mchid:
+                  type: string
+                  description: 二级商户号
+                  example: '1900000109'
+                sub_appid:
+                  type: string
+                  description: 二级商户appid
+                  example: wxd678efh567hg6787
+  responses:
+    '204':
+      schema: {}

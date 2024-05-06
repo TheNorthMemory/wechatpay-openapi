@@ -49,6 +49,7 @@ post:
     [取消签约回调通知](https://pay.weixin.qq.com/docs/merchant/apis/payscore-plan/cancel-sign-plan-notice.html)
     [服务账户绑定结果通知](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter6_2_15.shtml)
     [用户欠款状态商户通知](https://pay.weixin.qq.com/docs/partner/apis/campus-easy-pay/user-debt-state/users-debt-notice.html)
+    [收付通合单代扣签约、解约结果通知](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter5_5_7.shtml)
   parameters:
     - name: Wechatpay-Nonce
       required: true
@@ -245,6 +246,7 @@ WechatpayNotificationEventType:
     [取消签约回调通知](https://pay.weixin.qq.com/docs/merchant/apis/payscore-plan/cancel-sign-plan-notice.html)
     [服务账户绑定结果通知](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter6_2_15.shtml)
     [用户欠款状态商户通知](https://pay.weixin.qq.com/docs/partner/apis/campus-easy-pay/user-debt-state/users-debt-notice.html)
+    [收付通合单代扣签约、解约结果通知](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter5_5_7.shtml)
   enum:
     # @see                        [商圈支付结果通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/businesscircle/chapter3_1.shtml)
     - MALL_TRANSACTION.SUCCESS    #商圈支付成功通知的类型
@@ -268,6 +270,9 @@ WechatpayNotificationEventType:
     - TRANSACTION.FAIL            #服务商委托代扣支付失败结果通知
     # @see                        [保险业委托代扣支付失败结果通知](https://pay.weixin.qq.com/docs/merchant/apis/insurance-entrusted-payment/deduct-result-notify.html)
     - TRANSACTION.FAIL            #保险业委托代扣支付失败结果通知
+    # @see                        [收付通合单代扣签约、解约结果通知](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter5_5_7.shtml)
+    - ECOMMERCE_ENTRUST.SIGN      #收付通合单代扣签约通知
+    - ECOMMERCE_ENTRUST.TERMINATE #收付通合单代扣解约结果通知
     # @see                        [接收签约结果通知](https://pay.weixin.qq.com/docs/partner/apis/education-fee-payment/contracts-result-notification.html)
     - ENTRUST.SIGNING             #签约成功-通知类型
     - ENTRUST.RELEASE             #解约成功-通知类型

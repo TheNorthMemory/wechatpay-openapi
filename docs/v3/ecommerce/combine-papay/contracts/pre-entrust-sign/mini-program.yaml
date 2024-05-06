@@ -1,0 +1,68 @@
+post:
+  x-last-updated-at: 2022.02.17
+  x-role:
+    - 电商平台
+    - 服务商
+  tags:
+    - 收付通∙合单代扣
+  summary: 小程序方式预签约API
+  description: 电商服务商从商户小程序拉起微信签约小程序发起签约前，需先后台调用预签约接口完成预签约，获取pre_entrustweb_id，再拉起微信签约小程序；用户完成签约授权后，再返回商户小程序。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter5_5_8.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - appid
+          - plan_id
+          - out_contract_code
+          - contract_display_account
+          - notify_url
+        properties:
+          appid:
+            type: string
+            description: 商户APPID
+            example: wxd678efh567hg6787
+          plan_id:
+            type: integer
+            description: 委托代扣协议模板ID
+            example: 12535
+          out_contract_code:
+            type: string
+            description: 商户签约协议号
+            example: wxwtdk20200910100000
+          contract_display_account:
+            type: string
+            description: 用户账户展示名称
+            example: 微信代扣用户A
+          notify_url:
+            type: string
+            description: 回调通知地址
+            example: https://yourapp.com/notify
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - pre_entrustweb_id
+          - mchid
+          - plan_id
+          - out_contract_code
+        properties:
+          pre_entrustweb_id:
+            type: string
+            description: 预签约ID
+            example: 5778aadY9nltAsZzXixCkFIGYnV2V
+          mchid:
+            type: string
+            description: 商户号
+            example: '1900000109'
+          plan_id:
+            type: integer
+            description: 委托代扣协议模板ID
+            example: 12535
+          out_contract_code:
+            type: string
+            description: 商户签约协议号
+            example: wxwtdk20200910100000

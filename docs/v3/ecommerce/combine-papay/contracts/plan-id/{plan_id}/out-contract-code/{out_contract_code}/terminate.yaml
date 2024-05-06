@@ -1,0 +1,55 @@
+post:
+  x-last-updated-at: 2020.11.17
+  x-role:
+    - 电商平台
+    - 服务商
+  tags:
+    - 收付通∙合单代扣
+  summary: 商户协议号解约协议API
+  description: 电商服务商可以通过该接口发起签约协议的解约。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter5_5_3.shtml)
+  parameters:
+    - name: plan_id
+      in: path
+      required: true
+      type: integer
+      description: 委托代扣协议模板Id
+      example: 12535
+    - name: out_contract_code
+      in: path
+      required: true
+      type: string
+      description: 商户签约协议号
+      example: wxwtdk20200910100000
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - contract_termination_remark
+        properties:
+          contract_termination_remark:
+            type: string
+            description: 解约备注
+            example: 用户解约
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - mchid
+          - plan_id
+          - out_contract_code
+        properties:
+          mchid:
+            type: string
+            description: 商户号
+            example: '1900000109'
+          plan_id:
+            type: integer
+            description: 委托代扣协议模板Id
+            example: 12535
+          out_contract_code:
+            type: string
+            description: 商户签约协议号
+            example: wxwtdk20200910100000

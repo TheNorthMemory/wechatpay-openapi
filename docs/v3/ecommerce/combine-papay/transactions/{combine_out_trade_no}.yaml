@@ -1,0 +1,123 @@
+get:
+  x-last-updated-at: 2021.10.27
+  x-role:
+    - 电商平台
+    - 服务商
+  tags:
+    - 收付通∙合单代扣
+  summary: 电商合单委托代扣查询订单API
+  description: 商户可以通过该接口发起免密的合单查询 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter5_5_6.shtml)
+  parameters:
+    - name: combine_out_trade_no
+      in: path
+      required: true
+      type: string
+      description: 合单商户订单号
+      example: P20150806125346
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - combine_appid
+          - combine_mchid
+          - combine_out_trade_no
+        properties:
+          combine_appid:
+            type: string
+            description: 合单商户APPID
+            example: wxd678efh567hg6787
+          combine_mchid:
+            type: string
+            description: 合单商户号
+            example: '1900000109'
+          combine_out_trade_no:
+            type: string
+            description: 合单商户订单号
+            example: P20150806125346
+          sub_orders:
+            type: array
+            description: 子单信息
+            items:
+              type: object
+              required:
+                - mchid
+                - trade_type
+                - trade_state
+                - transaction_id
+                - out_trade_no
+                - sub_mchid
+              properties:
+                mchid:
+                  type: string
+                  description: 子单商户号
+                  example: '1900000109'
+                trade_type:
+                  type: string
+                  description: 交易类型
+                  example: PAP
+                trade_state:
+                  type: string
+                  description: 交易状态
+                  example: SUCCESS
+                bank_type:
+                  type: string
+                  description: 付款银行
+                  example: CMC
+                attach:
+                  type: string
+                  description: 附加数据
+                  example: 深圳分店
+                success_time:
+                  type: string
+                  description: 支付完成时间
+                  example: '2015-05-20T13:29:35.120+08:00'
+                transaction_id:
+                  type: string
+                  description: 子单微信订单号
+                  example: '1009660380201506130728806387'
+                out_trade_no:
+                  type: string
+                  description: 子单商户订单号
+                  example: '20150806125346'
+                sub_mchid:
+                  type: string
+                  description: 二级商户号
+                  example: '1900000109'
+                sub_appid:
+                  type: string
+                  description: 二级商户appid
+                  example: wxd678efh567hg6787
+                amount:
+                  type: object
+                  description: 订单金额
+                  required:
+                    - total_amount
+                    - currency
+                  properties:
+                    total_amount:
+                      type: integer
+                      description: 标价金额
+                      example: 100
+                    currency:
+                      type: string
+                      description: 标价币种
+                      example: CNY
+                    payer_amount:
+                      type: integer
+                      description: 现金支付金额
+                      example: 10
+                    payer_currency:
+                      type: string
+                      description: 现金支付币种
+                      example: CNY
+          combine_payer_info:
+            type: object
+            description: 支付者
+            required:
+              - openid
+            properties:
+              openid:
+                type: string
+                description: 用户标识
+                example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o

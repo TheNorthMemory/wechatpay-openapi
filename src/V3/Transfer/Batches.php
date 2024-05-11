@@ -33,6 +33,7 @@ interface Batches
                 'user_id_card' => '8609cb22e1774a50a930e414cc71eca06121bcd266335cda230d24a7886a8d9f',
             ],],
             'transfer_scene_id' => '1001',
+            'notify_url' => 'https://www.weixin.qq.com/wxpay/pay.php',
         ],
         'headers' => [
             'Wechatpay-Serial' => '',
@@ -61,6 +62,7 @@ interface Batches
                 'user_id_card' => '8609cb22e1774a50a930e414cc71eca06121bcd266335cda230d24a7886a8d9f',
             ],],
             'transfer_scene_id' => '1001',
+            'notify_url' => 'https://www.weixin.qq.com/wxpay/pay.php',
         ],
         'headers' => [
             'Wechatpay-Serial' => '',

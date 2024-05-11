@@ -24,6 +24,7 @@ get:
       schema:
         type: object
         required:
+          - mchid
           - out_batch_no
           - batch_id
           - appid
@@ -37,6 +38,10 @@ get:
           - initiate_time
           - update_time
         properties:
+          mchid:
+            type: string
+            description: 商户号
+            example: '1900001109'
           out_batch_no:
             type: string
             description: 商家批次单号

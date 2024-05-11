@@ -122,6 +122,10 @@ get:
                 type: integer
                 description: 转账失败笔数
                 example: 1
+              transfer_scene_id:
+                type: string
+                description: 转账场景ID
+                example: '1000'
           transfer_detail_list:
             type: array
             description: 转账明细单列表

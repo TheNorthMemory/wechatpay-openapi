@@ -1,5 +1,5 @@
 patch:
-  x-last-updated-at: 2022.01.13
+  x-last-updated-at: 2023.10.12
   x-role:
     - 直连商户
     - 服务商
@@ -14,13 +14,19 @@ patch:
       required: true
       schema:
         type: object
-        required:
-          - callback_url
         properties:
           callback_url:
             type: string
             description: 商户回调地址
             example: https://pay.weixin.qq.com/callback
+          sub_mch_code:
+            type: string
+            description: 子商户号
+            example: '1900000109'
+          show_fapiao_cell:
+            type: boolean
+            description: 全部账单展示开发票入口开关
+            example: false
   responses:
     '200':
       schema:
@@ -32,8 +38,12 @@ patch:
             type: string
             description: 商户回调地址
             example: https://pay.weixin.qq.com/callback
+          show_fapiao_cell:
+            type: boolean
+            description: 全部账单展示开发票入口开关
+            example: false
 get:
-  x-last-updated-at: 2022.01.13
+  x-last-updated-at: 2023.10.12
   x-role:
     - 直连商户
     - 服务商
@@ -54,3 +64,7 @@ get:
             type: string
             description: 商户回调地址
             example: https://pay.weixin.qq.com/callback
+          show_fapiao_cell:
+            type: boolean
+            description: 全部账单展示开发票入口开关
+            example: false

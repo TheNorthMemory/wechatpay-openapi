@@ -25,4 +25,25 @@ get:
       example: '20200701123456'
   responses:
     '200':
-      schema: {}
+      schema:
+        type: object
+        properties:
+          fapiao_download_info_list:
+            type: array
+            description: 发票列表
+            items:
+              type: object
+              required: []
+              properties:
+                fapiao_id:
+                  type: string
+                  description: 商户发票单号
+                  example: '20200701123456'
+                download_url:
+                  type: string
+                  description: 发票文件下载地址
+                  example: https://pay.wechatpay.cn/invoicing/fapiao/fapiao-file
+                status:
+                  type: string
+                  description: 发票状态
+                  example: ISSUE_ACCEPTED

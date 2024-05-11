@@ -17,6 +17,8 @@ interface DevelopmentConfig
     public function patch(array $options = [
         'json' => [
             'callback_url' => 'https://pay.weixin.qq.com/callback',
+            'sub_mch_code' => '1900000109',
+            'show_fapiao_cell' => true,
         ],
     ]): ResponseInterface;
 
@@ -28,6 +30,8 @@ interface DevelopmentConfig
     public function patchAsync(array $options = [
         'json' => [
             'callback_url' => 'https://pay.weixin.qq.com/callback',
+            'sub_mch_code' => '1900000109',
+            'show_fapiao_cell' => true,
         ],
     ]): PromiseInterface;
 

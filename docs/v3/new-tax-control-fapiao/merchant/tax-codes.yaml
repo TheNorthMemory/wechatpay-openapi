@@ -1,5 +1,5 @@
 get:
-  x-last-updated-at: 2021.11.22
+  x-last-updated-at: 2023.10.12
   x-role:
     - 直连商户
     - 服务商
@@ -70,14 +70,22 @@ get:
                 - tax_rate
                 - tax_prefer_mark
               properties:
+                goods_name:
+                  type: string
+                  description: 由商户自定义的货物或应税劳务、服务名称
+                  example: example_goods_name
+                goods_id:
+                  type: number
+                  description: 企业侧维护的货物或应税劳务、服务编码
+                  example: 1
+                goods_category:
+                  type: string
+                  description: 税局侧规定的货物或应税劳务、服务分类名称
+                  example: 出租汽车客运服务
                 tax_code:
                   type: string
                   description: 货物或应税劳务、服务编码
                   example: '3010101020203000000'
-                goods_name:
-                  type: string
-                  description: 货物或应税劳务、服务名称
-                  example: 出租汽车客运服务
                 tax_rate:
                   type: integer
                   description: 税率

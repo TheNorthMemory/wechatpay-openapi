@@ -1,5 +1,5 @@
 get:
-  x-last-updated-at: 2021.11.22
+  x-last-updated-at: 2023.10.12
   x-role:
     - 直连商户
     - 服务商
@@ -82,3 +82,7 @@ get:
             type: string
             description: 抬头填写小程序页面路径
             example: pages/xxxPage
+          miniprogram_user_name:
+            type: string
+            description: 抬头填写小程序的用户名
+            example: gh_86a091e50ad4@app

@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2022.01.25
+  x-last-updated-at: 2023.10.12
   x-role:
     - 直连商户
     - 服务商
@@ -115,8 +115,20 @@ post:
                     properties:
                       tax_code:
                         type: string
-                        description: 货物或应税劳务、服务编码
+                        description: 税局侧规定的货物或应税劳务、服务税收分类编码
                         example: '3010101020203000000'
+                      goods_category:
+                        type: string
+                        description: 税局侧规定的货物或应税劳务、服务分类名称
+                        example: 运输服务
+                      goods_name:
+                        type: string
+                        description: 货物或应税劳务、服务名称
+                        example: 出租汽车客运服务
+                      goods_id:
+                        type: number
+                        description: 企业侧维护的货物或应税劳务、服务编码
+                        example: 1
                       specification:
                         type: string
                         description: 规格型号
@@ -133,6 +145,14 @@ post:
                         type: integer
                         description: 单行金额合计
                         example: 429900
+                      tax_rate:
+                        type: number
+                        description: 税率
+                        example: 1300
+                      tax_prefer_mark:
+                        type: string
+                        description: 税收优惠政策标识
+                        example: NO_FAVORABLE
                       discount:
                         type: boolean
                         description: 是否折扣行

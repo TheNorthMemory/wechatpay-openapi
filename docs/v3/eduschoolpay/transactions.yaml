@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2021.07.30
+  x-last-updated-at: 2023.05.12
   x-role:
     - 服务商
   tags:
@@ -125,4 +125,151 @@ post:
             example: SYNC
   responses:
     '200':
-      schema: {}
+      schema:
+        type: object
+        required:
+          - mchid
+          - appid
+          - out_trade_no
+          - trade_state
+          - amount
+          - device_info
+        properties:
+          mchid:
+            type: string
+            description: 商户号
+            example: '1230000109'
+          appid:
+            type: string
+            description: 商户AppID
+            example: wx8888888888888888
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1900000109'
+          sub_appid:
+            type: string
+            description: 子商户AppID
+            example: wx8888888888888888
+          out_trade_no:
+            type: string
+            description: 商户订单号
+            example: '201407033233368018'
+          transaction_id:
+            type: string
+            description: 微信支付订单号
+            example: '25012014070332333018'
+          trade_type:
+            type: string
+            description: 交易类型
+            example: MICROPAY
+          trade_state:
+            type: string
+            description: 交易状态
+            example: SUCCESS
+          trade_state_desc:
+            type: string
+            description: 交易状态描述
+            example: 支付成功
+          bank_type:
+            type: string
+            description: 付款银行
+            example: ICBC_DEBIT
+          attach:
+            type: string
+            description: 商户数据
+            example: 自定义数据
+          success_time:
+            type: string
+            description: 支付完成时间
+            example: '2020-03-26T10:43:39+08:00'
+          payer:
+            type: object
+            description: 支付者
+            properties:
+              openid:
+                type: string
+                description: 商户AppID下的用户标识
+                example: oUpF8uMuAJOM2pxb1Q
+              sub_openid:
+                type: string
+                description: 子商户AppID下的用户标识
+                example: oUpF8uMuAJOM2pxb1Q
+          amount:
+            type: object
+            description: 订单金额
+            required:
+              - total
+            properties:
+              total:
+                type: number
+                description: 订单金额
+                example: 888
+              payer_total:
+                type: number
+                description: 用户支付金额
+                example: 888
+              discount_total:
+                type: number
+                description: 折扣
+                example: 100
+              currency:
+                type: string
+                description: 货币类型
+                example: CNY
+          device_info:
+            type: object
+            description: 设备信息
+            required:
+              - device_ip
+            properties:
+              device_id:
+                type: string
+                description: 设备号
+                example: '12343232'
+              device_ip:
+                type: string
+                description: 商户端设备IP
+                example: 123.12.12.123
+          promotion_detail:
+            type: array
+            description: 优惠详情
+            items:
+              type: object
+              properties:
+                coupon_id:
+                  type: string
+                  description: 券ID
+                  example: '109519'
+                name:
+                  type: string
+                  description: 优惠名称
+                  example: 单品惠-6
+                scope:
+                  type: string
+                  description: 优惠范围
+                  example: GLOBAL
+                type:
+                  type: string
+                  description: 优惠类型
+                  example: DISCOUNT
+                amount:
+                  type: number
+                  description: 优惠券面额
+                  example: 5
+                stock_id:
+                  type: string
+                  description: 活动ID
+                  example: '931386'
+                wechatpay_contribute:
+                  type: number
+                  description: 微信出资
+                  example: 0
+                merchant_contribute:
+                  type: number
+                  description: 商户出资
+                  example: 0
+                other_contribute:
+                  type: number
+                  description: 其他出资
+                  example: 0

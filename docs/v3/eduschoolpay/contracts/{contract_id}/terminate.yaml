@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2020.08.27
+  x-last-updated-at: 2023.05.12
   x-role:
     - 服务商
   tags:
@@ -7,18 +7,12 @@ post:
   summary: 商户主动解约API
   description: 商户通过调用该接口可主动解除与用户的签约关系。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/edu/eduschoolpay/chapter3_3.shtml)
   parameters:
-    - name: _
-      in: body
+    - name: contract_id
+      in: path
       required: true
-      schema:
-        type: object
-        required:
-          - contract_id
-        properties:
-          contract_id:
-            type: string
-            description: 签约协议号
-            example: '2045011120563805041758214605'
+      type: string
+      description: 签约协议号
+      example: '2045011120563805041758214605'
   responses:
     '204':
       schema: {}

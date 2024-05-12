@@ -15,9 +15,7 @@ interface Terminate
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/edu/eduschoolpay/chapter3_3.shtml
      */
     public function post(array $options = [
-        'json' => [
-            'contract_id' => '2045011120563805041758214605',
-        ],
+        'contract_id' => '2045011120563805041758214605',
     ]): ResponseInterface;
 
     /**
@@ -26,8 +24,6 @@ interface Terminate
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/edu/eduschoolpay/chapter3_3.shtml#async
      */
     public function postAsync(array $options = [
-        'json' => [
-            'contract_id' => '2045011120563805041758214605',
-        ],
+        'contract_id' => '2045011120563805041758214605',
     ]): PromiseInterface;
 }

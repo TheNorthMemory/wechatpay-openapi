@@ -10,7 +10,7 @@ get:
   parameters:
     - name: out_refund_no
       in: path
-      type: integer
+      type: string
       required: true
       description: 商户退款单号
       example: sdk12345678920210326144648
@@ -136,6 +136,10 @@ get:
                 type: string
                 description: 退款币种
                 example: CNY
+              refund_fee:
+                type: number
+                description: 手续费退款金额
+                example: 100
           promotion_detail:
             type: array
             description: 优惠退款信息

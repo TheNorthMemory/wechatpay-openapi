@@ -32,6 +32,7 @@ interface App
                 ],
                 'out_trade_no' => '20150806125346',
                 'sub_mchid' => '1900000109',
+                'detail' => '买单费用',
                 'goods_tag' => 'WXG',
                 'description' => '腾讯充值中心-QQ会员充值',
                 'settle_info' => [
@@ -46,6 +47,15 @@ interface App
             'time_start' => '2019-12-31T15:59:60+08:00',
             'time_expire' => '2019-12-31T15:59:60+08:00',
             'notify_url' => 'https://yourapp.com/notify',
+            'limit_pay' => ['string'],
+            'contract_info' => [
+                'mchid' => '1900000109',
+                'appid' => 'wxd678efh567hg6787',
+                'out_contract_code' => 'wxwtdk20200910100000',
+                'plan_id' => 12535,
+                'contract_display_account' => '微信代扣用户A',
+                'notify_url' => 'https://yourapp.com/notify',
+            ],
         ],
     ]): ResponseInterface;
 
@@ -72,6 +82,7 @@ interface App
                 ],
                 'out_trade_no' => '20150806125346',
                 'sub_mchid' => '1900000109',
+                'detail' => '买单费用',
                 'goods_tag' => 'WXG',
                 'description' => '腾讯充值中心-QQ会员充值',
                 'settle_info' => [
@@ -86,6 +97,15 @@ interface App
             'time_start' => '2019-12-31T15:59:60+08:00',
             'time_expire' => '2019-12-31T15:59:60+08:00',
             'notify_url' => 'https://yourapp.com/notify',
+            'limit_pay' => ['string'],
+            'contract_info' => [
+                'mchid' => '1900000109',
+                'appid' => 'wxd678efh567hg6787',
+                'out_contract_code' => 'wxwtdk20200910100000',
+                'plan_id' => 12535,
+                'contract_display_account' => '微信代扣用户A',
+                'notify_url' => 'https://yourapp.com/notify',
+            ],
         ],
     ]): PromiseInterface;
 }

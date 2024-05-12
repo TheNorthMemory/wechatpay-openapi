@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2022.03.17
+  x-last-updated-at: 2023.08.23
   x-role:
     - 电商平台
     - 服务商
@@ -93,6 +93,10 @@ post:
                   type: string
                   description: 二级商户号
                   example: '1900000109'
+                detail:
+                  type: string
+                  description: 商品详情
+                  example: 买单费用
                 goods_tag:
                   type: string
                   description: 订单优惠标记
@@ -140,6 +144,15 @@ post:
             type: string
             description: 通知地址
             example: 'https://yourapp.com/notify'
+          limit_pay:
+            type: array
+            description: 指定支付方式
+            items:
+              type: string
+              enum:
+                - no_balance
+                - no_debit
+                - balance_only
   responses:
     200:
       schema:

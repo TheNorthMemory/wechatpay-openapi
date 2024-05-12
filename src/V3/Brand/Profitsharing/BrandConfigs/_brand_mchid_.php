@@ -15,9 +15,7 @@ interface _brand_mchid_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_7_10.shtml
      */
     public function get(array $options = [
-        'query' => [
-            'brand_mchid' => '1900000109',
-        ],
+        'brand_mchid' => '1900000109',
     ]): ResponseInterface;
 
     /**
@@ -26,8 +24,6 @@ interface _brand_mchid_
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_7_10.shtml#async
      */
     public function getAsync(array $options = [
-        'query' => [
-            'brand_mchid' => '1900000109',
-        ],
+        'brand_mchid' => '1900000109',
     ]): PromiseInterface;
 }

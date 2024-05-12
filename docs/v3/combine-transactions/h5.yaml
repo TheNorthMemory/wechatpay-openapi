@@ -156,6 +156,27 @@ post:
             type: string
             description: 通知地址
             example: 'https://yourapp.com/notify'
+          limit_pay:
+            type: array
+            description: 指定支付方式
+            items:
+              type: string
+              enum:
+                - no_balance
+                - no_debit
+                - balance_only
+          combine_payer_info:
+            type: object
+            description: 支付者
+            properties:
+              openid:
+                type: string
+                description: 用户标识
+                example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+              sub_openid:
+                type: string
+                description: 用户子标识
+                example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
   responses:
     200:
       schema:

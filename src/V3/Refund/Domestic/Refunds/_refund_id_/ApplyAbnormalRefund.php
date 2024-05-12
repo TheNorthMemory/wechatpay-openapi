@@ -15,6 +15,7 @@ interface ApplyAbnormalRefund
      * @link https://pay.weixin.qq.com/docs/partner/apis/refund/refunds/create-abnormal-refund.html
      */
     public function post(array $options = [
+        'refund_id' => '50000000382019052709732678859',
         'json' => [
             'sub_mchid' => '1900000109',
             'out_refund_no' => '1217752501201407033233368018',
@@ -34,6 +35,7 @@ interface ApplyAbnormalRefund
      * @link https://pay.weixin.qq.com/docs/partner/apis/refund/refunds/create-abnormal-refund.html#async
      */
     public function postAsync(array $options = [
+        'refund_id' => '50000000382019052709732678859',
         'json' => [
             'sub_mchid' => '1900000109',
             'out_refund_no' => '1217752501201407033233368018',

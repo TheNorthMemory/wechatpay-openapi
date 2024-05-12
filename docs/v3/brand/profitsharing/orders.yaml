@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2020.03.18
+  x-last-updated-at: 2023.05.23
   x-role:
     - 服务商
   tags:
@@ -7,6 +7,7 @@ post:
   summary: 请求分账API
   description: 微信订单支付成功后，由服务商发起分账请求，将结算后的资金分给分账接收方。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/brand/chapter3_1.shtml)
   parameters:
+    - $ref: '../../../definitions/Parameters.yaml#/WECHATPAY_CERTIFICATE_SERIAL'
     - name: _
       in: body
       required: true
@@ -72,6 +73,10 @@ post:
                   type: string
                   description: 分账描述
                   example: 1900000109分给商户1900000110
+                name:
+                  type: string
+                  description: 分账个人接收方姓名
+                  example: hu89ohu89ohu89o
           finish:
             type: boolean
             description: 是否分账完成
@@ -106,8 +111,58 @@ post:
             type: string
             description: 微信分账单号
             example: '6754760740201411110007865434'
+          receivers:
+            type: array
+            description: 分账接收方列表
+            items:
+              type: object
+              required:
+                - type
+                - account
+                - amount
+                - description
+                - result
+                - finish_time
+                - detail_id
+              properties:
+                type:
+                  type: string
+                  description: 接收方类型
+                  example: MERCHANT_ID
+                account:
+                  type: string
+                  description: 接收方账号
+                  example: '1900000109'
+                amount:
+                  type: number
+                  description: 分账金额
+                  example: 10
+                description:
+                  type: string
+                  description: 分账描述
+                  example: 分帐1900000110
+                result:
+                  type: string
+                  description: 分账结果
+                  example: SUCCESS
+                finish_time:
+                  type: string
+                  description: 分账完成时间
+                  example: '2015-05-20T13:29:35.120+08:00'
+                fail_reason:
+                  type: string
+                  description: 分账失败原因
+                  example: NO_RELATION
+                detail_id:
+                  type: string
+                  description: 分账明细单号
+                  example: '36011111111111111111111'
+          status:
+            type: string
+            description: 分账单状态
+            example: PROCESSING
 get:
-  x-last-updated-at: 2020.11.06
+  x-last-updated-at: 2023.05.23
   x-role:
     - 服务商
   tags:
@@ -178,6 +233,7 @@ get:
                 - description
                 - result
                 - finish_time
+                - detail_id
               properties:
                 type:
                   type: string
@@ -210,11 +266,10 @@ get:
                   description: 分账失败原因
                   enum: [ACCOUNT_ABNORMAL, NO_RELATION, RECEIVER_HIGH_RISK]
                   example: NO_RELATION
-          close_reason:
-            type: string
-            description: 关单原因
-            enum: [NO_AUTH]
-            example: NO_AUTH
+                detail_id:
+                  type: string
+                  description: 分账明细单号
+                  example: '36011111111111111111111'
           finish_amount:
             type: integer
             description: 分账完结金额

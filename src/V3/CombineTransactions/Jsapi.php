@@ -32,6 +32,7 @@ interface Jsapi
                 ],
                 'out_trade_no' => '20150806125346',
                 'sub_mchid' => '1900000109',
+                'detail' => '买单费用',
                 'goods_tag' => 'WXG',
                 'description' => '腾讯充值中心-QQ会员充值',
                 'settle_info' => [
@@ -47,6 +48,7 @@ interface Jsapi
             'time_start' => '2019-12-31T15:59:60+08:00',
             'time_expire' => '2019-12-31T15:59:60+08:00',
             'notify_url' => 'https://yourapp.com/notify',
+            'limit_pay' => ['string'],
         ],
     ]): ResponseInterface;
 
@@ -73,6 +75,7 @@ interface Jsapi
                 ],
                 'out_trade_no' => '20150806125346',
                 'sub_mchid' => '1900000109',
+                'detail' => '买单费用',
                 'goods_tag' => 'WXG',
                 'description' => '腾讯充值中心-QQ会员充值',
                 'settle_info' => [
@@ -88,6 +91,7 @@ interface Jsapi
             'time_start' => '2019-12-31T15:59:60+08:00',
             'time_expire' => '2019-12-31T15:59:60+08:00',
             'notify_url' => 'https://yourapp.com/notify',
+            'limit_pay' => ['string'],
         ],
     ]): PromiseInterface;
 }

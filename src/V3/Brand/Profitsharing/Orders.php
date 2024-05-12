@@ -28,8 +28,12 @@ interface Orders
                 'account' => '1900000109',
                 'amount' => 190,
                 'description' => '1900000109分给商户1900000110',
+                'name' => 'hu89ohu89ohu89o',
             ],],
             'finish' => true,
+        ],
+        'headers' => [
+            'Wechatpay-Serial' => '',
         ],
     ]): ResponseInterface;
 
@@ -51,8 +55,12 @@ interface Orders
                 'account' => '1900000109',
                 'amount' => 190,
                 'description' => '1900000109分给商户1900000110',
+                'name' => 'hu89ohu89ohu89o',
             ],],
             'finish' => true,
+        ],
+        'headers' => [
+            'Wechatpay-Serial' => '',
         ],
     ]): PromiseInterface;
 

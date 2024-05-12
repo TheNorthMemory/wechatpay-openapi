@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2022.03.17
+  x-last-updated-at: 2023.08.23
   x-role:
     - 电商平台
     - 服务商
@@ -92,6 +92,10 @@ post:
                   type: string
                   description: 二级商户号
                   example: '1900000109'
+                detail:
+                  type: string
+                  description: 商品详情
+                  example: 买单费用
                 goods_tag:
                   type: string
                   description: 订单优惠标记
@@ -135,6 +139,50 @@ post:
             type: string
             description: 通知地址
             example: 'https://yourapp.com/notify'
+          limit_pay:
+            type: array
+            description: 指定支付方式
+            items:
+              type: string
+              enum:
+                - no_balance
+                - no_debit
+                - balance_only
+          contract_info:
+            type: object
+            description: 预签约信息
+            required:
+              - mchid
+              - appid
+              - out_contract_code
+              - plan_id
+              - contract_display_account
+              - notify_url
+            properties:
+              mchid:
+                type: string
+                description: 签约商户号
+                example: '1900000109'
+              appid:
+                type: string
+                description: 签约商户AppID
+                example: wxd678efh567hg6787
+              out_contract_code:
+                type: string
+                description: 签约商户协议号
+                example: wxwtdk20200910100000
+              plan_id:
+                type: number
+                description: 委托代扣协议模板ID
+                example: 12535
+              contract_display_account:
+                type: string
+                description: 用户账户展示名称
+                example: 微信代扣用户A
+              notify_url:
+                type: string
+                description: 回调通知地址
+                example: https://yourapp.com/notify
   responses:
     200:
       schema:
@@ -146,3 +194,17 @@ post:
             type: string
             description: 预支付交易会话标识
             example: wx201410272009395522657a690389285100
+          contract_result:
+            type: object
+            description: 预签约结果
+            required:
+              - code
+            properties:
+              code:
+                type: string
+                description: 签约结果码
+                example: INVALID_REQUEST
+              message:
+                type: string
+                description: 签约结果描述信息
+                example: 当前签约协议号已经进行签约

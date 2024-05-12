@@ -1,5 +1,5 @@
 get:
-  x-last-updated-at: 2020.11.06
+  x-last-updated-at: 2023.05.23
   x-role:
     - 服务商
   tags:
@@ -8,7 +8,7 @@ get:
   description: 可调用此接口查询订单剩余待分金额 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_7_9.shtml)
   parameters:
     - name: transaction_id
-      in: query
+      in: path
       type: string
       required: true
       description: 微信订单号

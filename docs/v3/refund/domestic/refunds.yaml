@@ -233,6 +233,10 @@ post:
                 type: string
                 description: 退款币种
                 example: CNY
+              refund_fee:
+                type: number
+                description: 手续费退款金额
+                example: 100
           promotion_detail:
             type: array
             description: 优惠退款信息

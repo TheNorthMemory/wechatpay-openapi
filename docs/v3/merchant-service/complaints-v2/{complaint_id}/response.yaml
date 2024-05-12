@@ -7,20 +7,21 @@ post:
   summary: 提交回复API
   description: 商户可通过调用此接口，提交回复内容。其中上传图片凭证需首先调用商户上传反馈图片接口，得到图片id，再将id填入请求。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_2_14.shtml)
   parameters:
+    - name: complaint_id
+      in: path
+      required: true
+      type: string
+      description: 投诉单号
+      example: '200201820200101080076610000'
     - name: _
       in: body
       required: true
       schema:
         type: object
         required:
-          - complaint_id
           - complainted_mchid
           - response_content
         properties:
-          complaint_id:
-            type: string
-            description: 投诉单号
-            example: '200201820200101080076610000'
           complainted_mchid:
             type: string
             description: 被诉商户号

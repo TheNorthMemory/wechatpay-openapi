@@ -155,3 +155,20 @@ get:
                     type: string
                     description: 归还时间
                     example: '2015-05-20T13:29:35+08:00'
+                  return_address_info:
+                    type: object
+                    description: 归还地点信息
+                    required: []
+                    properties:
+                      return_address:
+                        type: string
+                        description: 归还地点
+                        example: 广东省深圳市南山区海天二路南山区后海腾讯滨海大厦(海天二路西)
+                      longitude:
+                        type: string
+                        description: 归还地点经度
+                        example: '113.93535488533665'
+                      latitude:
+                        type: string
+                        description: 归还地点纬度
+                        example: '22.52305518747831'

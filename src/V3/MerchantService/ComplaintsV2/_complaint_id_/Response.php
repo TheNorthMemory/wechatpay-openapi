@@ -15,8 +15,8 @@ interface Response
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_2_14.shtml
      */
     public function post(array $options = [
+        'complaint_id' => '200201820200101080076610000',
         'json' => [
-            'complaint_id' => '200201820200101080076610000',
             'complainted_mchid' => '1900012181',
             'response_content' => '已与用户沟通解决',
             'response_images' => ['MediaId'],
@@ -31,8 +31,8 @@ interface Response
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_2_14.shtml#async
      */
     public function postAsync(array $options = [
+        'complaint_id' => '200201820200101080076610000',
         'json' => [
-            'complaint_id' => '200201820200101080076610000',
             'complainted_mchid' => '1900012181',
             'response_content' => '已与用户沟通解决',
             'response_images' => ['MediaId'],

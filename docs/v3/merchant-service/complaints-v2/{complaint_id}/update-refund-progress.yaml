@@ -10,19 +10,20 @@ post:
   summary: 更新退款审批结果API
   description: 商户可通过调用此接口，更新“申请退款”单据的退款审批结果。[官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter10_2_19.shtml)
   parameters:
+    - name: complaint_id
+      in: path
+      required: true
+      type: string
+      description: 投诉单号
+      example: '200201820200101080076610000'
     - name: _
       in: body
       required: true
       schema:
         type: object
         required:
-          - complaint_id
           - action
         properties:
-          complaint_id:
-            type: string
-            description: 投诉单号
-            example: '200201820200101080076610000'
           action:
             type: string
             description: 审批动作

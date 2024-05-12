@@ -15,8 +15,8 @@ interface UpdateRefundProgress
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter10_2_19.shtml
      */
     public function post(array $options = [
+        'complaint_id' => '200201820200101080076610000',
         'json' => [
-            'complaint_id' => '200201820200101080076610000',
             'action' => 'REJECT | APPROVE',
             'launch_refund_day' => 3,
             'reject_reason' => '拒绝退款',
@@ -31,8 +31,8 @@ interface UpdateRefundProgress
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter10_2_19.shtml#async
      */
     public function postAsync(array $options = [
+        'complaint_id' => '200201820200101080076610000',
         'json' => [
-            'complaint_id' => '200201820200101080076610000',
             'action' => 'REJECT | APPROVE',
             'launch_refund_day' => 3,
             'reject_reason' => '拒绝退款',

@@ -8,6 +8,7 @@ namespace WeChatPay\OpenAPI\V3\Pay\Partner;
  * @property-read Transactions\App $app
  * @property-read Transactions\Codepay $codepay
  * @property-read Transactions\H5 $h5
+ * @property-read Transactions\JsapiWithContract $jsapiWithContract
  * @property-read Transactions\Jsapi $jsapi
  * @property-read Transactions\Native $native
  * @property-read Transactions\Scannedpos $scannedpos

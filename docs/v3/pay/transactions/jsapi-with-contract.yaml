@@ -1,0 +1,193 @@
+post:
+  x-last-updated-at: 2024.05.21
+  x-role:
+    - 普通商户
+  tags:
+    - 免密支付
+  summary: JSAPI下单并授权
+  description: 商户系统先通过预签约生成token或者用户免密签约后，再调用该接口在微信支付服务后台生成预支付交易单，返回正确的预支付交易会话标识后再按JSAPI方式调起支付。[官方文档](https://pay.weixin.qq.com/docs/merchant/apis/hide-jsapi-payment/direct-jsons/jsapi-contract-prepay.html)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - appid
+          - mchid
+          - description
+          - out_trade_no
+          - notify_url
+          - amount
+          - payer
+          - contract_info
+        properties:
+          appid:
+            type: string
+            description: 公众号ID
+            example: wxd678efh567hg6787
+          mchid:
+            type: string
+            description: 直连商户号
+            example: '1230000109'
+          description:
+            type: string
+            description: 商品描述
+            example: Image形象店-深圳腾大-QQ公仔
+          out_trade_no:
+            type: string
+            description: 商户订单号
+            example: '1217752501201407033233368018'
+          time_expire:
+            type: string
+            description: 交易结束时间
+            example: '2018-06-08T10:34:56+08:00'
+          attach:
+            type: string
+            description: 附加数据
+            example: 自定义数据说明
+          notify_url:
+            type: string
+            description: 通知地址
+            example: https://www.weixin.qq.com/wxpay/pay.php
+          goods_tag:
+            type: string
+            description: 订单优惠标记
+            example: WXG
+          support_fapiao:
+            type: boolean
+            description: 电子发票入口开放标识
+            example: false
+          amount:
+            type: object
+            description: 订单金额
+            required:
+              - total
+            properties:
+              total:
+                type: number
+                description: 总金额
+                example: 100
+              currency:
+                type: string
+                description: 货币类型
+                example: CNY
+          payer:
+            type: object
+            description: 支付者
+            required:
+              - openid
+            properties:
+              openid:
+                type: string
+                description: 用户标识
+                example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+          detail:
+            type: object
+            description: 优惠功能
+            required:
+              - goods_detail
+            properties:
+              cost_price:
+                type: number
+                description: 订单原价
+                example: 608800
+              invoice_id:
+                type: string
+                description: 商品小票ID
+                example: 微信123
+              goods_detail:
+                type: array
+                description: 单品列表
+                items:
+                  type: object
+                  required:
+                    - merchant_goods_id
+                    - quantity
+                    - unit_price
+                  properties:
+                    merchant_goods_id:
+                      type: string
+                      description: 商户侧商品编码
+                      example: '1246464644'
+                    wechatpay_goods_id:
+                      type: string
+                      description: 微信支付商品编码
+                      example: '1001'
+                    goods_name:
+                      type: string
+                      description: 商品名称
+                      example: iPhoneX 256G
+                    quantity:
+                      type: number
+                      description: 商品数量
+                      example: 1
+                    unit_price:
+                      type: number
+                      description: 商品单价
+                      example: 528800
+          scene_info:
+            type: object
+            description: 场景信息
+            required:
+              - payer_client_ip
+            properties:
+              payer_client_ip:
+                type: string
+                description: 用户终端IP
+                example: 14.23.150.211
+              device_id:
+                type: string
+                description: 商户端设备号
+                example: '013467007045764'
+              store_info:
+                type: object
+                description: 商户门店信息
+                properties:
+                  id:
+                    type: string
+                    description: 门店编号
+                    example: '0001'
+                  name:
+                    type: string
+                    description: 门店名称
+                    example: 腾讯大厦分店
+                  area_code:
+                    type: string
+                    description: 地区编码
+                    example: '440305'
+                  address:
+                    type: string
+                    description: 详细地址
+                    example: 广东省深圳市南山区科技中一道10000号
+          settle_info:
+            type: object
+            description: 结算信息
+            properties:
+              profit_sharing:
+                type: boolean
+                description: 是否指定分账
+                example: false
+          contract_info:
+            type: object
+            description: 签约授权信息
+            properties:
+              token:
+                type: string
+                description: 扣费服务预授权token
+                example: '201710180325670965'
+              password_free_contract_id:
+                type: string
+                description: 免密协议ID
+                example: '201710180325670965'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - prepay_id
+        properties:
+          prepay_id:
+            type: string
+            description: 预支付交易会话标识
+            example: wx201410272009395522657a690389285100

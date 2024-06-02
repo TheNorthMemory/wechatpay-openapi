@@ -7,7 +7,7 @@ info:
     整理自[官方文档中心](https://pay.weixin.qq.com/wiki/doc/apiv3/index.shtml)
     本[项目/工具地址](https://github.com/TheNorthMemory/wechatpay-openapi)
     **访问第一次加载比较慢，请耐心等待大约1-2分钟不等(小文件下载比较多)。**
-  version: 0.15.27
+  version: 0.15.28
 schemes:
   - https
 consumes:
@@ -21,6 +21,7 @@ tags:
   - name: 基础支付∙账单
   - name: 基础支付∙退款
   - name: 刷脸支付
+  - name: 免密支付
   - name: 资金应用∙分账
   - name: 资金应用∙转账
   - name: 资金应用∙转账∙服务商模式
@@ -1147,6 +1148,26 @@ paths:
     $ref: ./v3/partner-transfer/batches/out-batch-no/{out_batch_no}.yaml
   /v3/partner-transfer/batches/out-batch-no/{out_batch_no}/details/out-detail-no/{out_detail_no}:
     $ref: ./v3/partner-transfer/batches/out-batch-no/{out_batch_no}/details/out-detail-no/{out_detail_no}.yaml
+  /v3/password-exempt-contract/contracts/ecommerce/pre-entrust-sign/mini-program:
+    $ref: ./v3/password-exempt-contract/contracts/ecommerce/pre-entrust-sign/mini-program.yaml
+  /v3/password-exempt-contract/contracts/ecommerce/pre-entrust-sign/pay-redirect-sign:
+    $ref: ./v3/password-exempt-contract/contracts/ecommerce/pre-entrust-sign/pay-redirect-sign.yaml
+  /v3/password-exempt-contract/contracts/normal/pre-entrust-sign/mini-program:
+    $ref: ./v3/password-exempt-contract/contracts/normal/pre-entrust-sign/mini-program.yaml
+  /v3/password-exempt-contract/contracts/normal/pre-entrust-sign/pay-redirect-sign:
+    $ref: ./v3/password-exempt-contract/contracts/normal/pre-entrust-sign/pay-redirect-sign.yaml
+  /v3/password-exempt-contract/contracts/qs/pre-entrust-sign/mini-program:
+    $ref: ./v3/password-exempt-contract/contracts/qs/pre-entrust-sign/mini-program.yaml
+  /v3/password-exempt-contract/contracts/qs/pre-entrust-sign/pay-redirect-sign:
+    $ref: ./v3/password-exempt-contract/contracts/qs/pre-entrust-sign/pay-redirect-sign.yaml
+  /v3/password-exempt-contract/contracts/service-id/{service_id}/out-contract-code/{out_contract_code}:
+    $ref: ./v3/password-exempt-contract/contracts/service-id/{service_id}/out-contract-code/{out_contract_code}.yaml
+  /v3/password-exempt-contract/contracts/service-id/{service_id}/out-contract-code/{out_contract_code}/terminate:
+    $ref: ./v3/password-exempt-contract/contracts/service-id/{service_id}/out-contract-code/{out_contract_code}/terminate.yaml
+  /v3/password-exempt-contract/contracts/service-provider/pre-entrust-sign/mini-program:
+    $ref: ./v3/password-exempt-contract/contracts/service-provider/pre-entrust-sign/mini-program.yaml
+  /v3/password-exempt-contract/contracts/service-provider/pre-entrust-sign/pay-redirect-sign:
+    $ref: ./v3/password-exempt-contract/contracts/service-provider/pre-entrust-sign/pay-redirect-sign.yaml
   /v3/pay-devices/printers/{device_id}/print-orders:
     $ref: ./v3/pay-devices/printers/{device_id}/print-orders.yaml
   /v3/pay-devices/printers/{device_id}/print-orders/{print_order_no}:
@@ -1159,6 +1180,8 @@ paths:
     $ref: ./v3/pay/partner/transactions/h5.yaml
   /v3/pay/partner/transactions/id/{transaction_id}:
     $ref: ./v3/pay/partner/transactions/id/{transaction_id}.yaml
+  /v3/pay/partner/transactions/jsapi-with-contract:
+    $ref: ./v3/pay/partner/transactions/jsapi-with-contract.yaml
   /v3/pay/partner/transactions/jsapi:
     $ref: ./v3/pay/partner/transactions/jsapi.yaml
   /v3/pay/partner/transactions/native:
@@ -1179,6 +1202,8 @@ paths:
     $ref: ./v3/pay/transactions/h5.yaml
   /v3/pay/transactions/id/{transaction_id}:
     $ref: ./v3/pay/transactions/id/{transaction_id}.yaml
+  /v3/pay/transactions/jsapi-with-contract:
+    $ref: ./v3/pay/transactions/jsapi-with-contract.yaml
   /v3/pay/transactions/jsapi:
     $ref: ./v3/pay/transactions/jsapi.yaml
   /v3/pay/transactions/native:

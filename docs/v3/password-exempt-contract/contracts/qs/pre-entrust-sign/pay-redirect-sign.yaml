@@ -1,0 +1,85 @@
+post:
+  x-last-updated-at: 2024.05.29
+  x-role:
+    - 从业机构（支付机构）
+  tags:
+    - 免密支付
+  summary: 清算机构模式支付后场景预签约API
+  description: 从业机构服务商下单成功并获取`prepay_id`后，在把`prepay_id`返回给商户系统前，需先调用该预签约接口完成预签约。预签约成功后，若用户支付成功、且操作未超时（预签约会话在2小时的有效期内）、且无其他特殊原因，将提示用户可以开通免密支付签约；预签约失败时，将不会提示用户开通免密支付。 注意 用户在微信的页面中完成免密支付签约后，微信会同时将签约信息通过异步通知的方式通知给商户后台。 如果用户放弃签约或签约失败则不通知。[官方文档](https://pay.weixin.qq.com/docs/partner/apis/partner-password-free-contract/sign/qs-pay-redirect-sign-pre-entrust-sign.html)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - appid
+          - sub_appid
+          - sub_mchid
+          - service_id
+          - out_contract_code
+          - notify_url
+          - contract_display_account
+          - prepay_id
+        properties:
+          appid:
+            type: string
+            description: 商户AppID
+            example: wxd678efh567hg6787
+          sub_appid:
+            type: string
+            description: 子商户AppID
+            example: wxd678efh567hg6787
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1900000109'
+          service_id:
+            type: number
+            description: 免密支付服务ID
+            example: 12535
+          out_contract_code:
+            type: string
+            description: 商户签约协议号
+            example: wxwtdk20200910100000
+          notify_url:
+            type: string
+            description: 回调通知地址
+            example: https://yourapp.com/notify
+          contract_display_account:
+            type: string
+            description: 用户账户展示名称
+            example: 微信代扣用户A
+          prepay_id:
+            type: string
+            description: 预支付交易会话标识
+            example: wx201410272009395522657a690389285100
+          openid:
+            type: string
+            description: 用户标识
+            example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+          sub_openid:
+            type: string
+            description: 用户子标识
+            example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - mchid
+          - service_id
+          - out_contract_code
+        properties:
+          mchid:
+            type: string
+            description: 商户号
+            example: '1900000109'
+          service_id:
+            type: number
+            description: 免密支付服务ID
+            example: 12535
+          out_contract_code:
+            type: string
+            description: 商户签约协议号
+            example: wxwtdk20200910100000

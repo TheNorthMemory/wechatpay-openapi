@@ -12,7 +12,7 @@ interface Sync
     /**
      * 同步订单信息(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter6_2_7.shtml
+     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/partner-service-order/sync-partner-service-order.html
      */
     public function post(array $options = [
         'out_order_no' => '1234323JKHDFE1243252',
@@ -31,7 +31,7 @@ interface Sync
     /**
      * 同步订单信息(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter6_2_7.shtml#async
+     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/partner-service-order/sync-partner-service-order.html#async
      */
     public function postAsync(array $options = [
         'out_order_no' => '1234323JKHDFE1243252',

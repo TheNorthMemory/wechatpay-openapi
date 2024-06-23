@@ -14,38 +14,37 @@ interface Serviceorder
     /**
      * 创建支付分订单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter3_1.shtml
+     * @link https://pay.weixin.qq.com/docs/merchant/apis/weixin-pay-score/service-order/create-service-order.html
      */
     public function post(array $options = [
         'json' => [
             'out_order_no' => '1234323JKHDFE1243252',
             'appid' => 'wxd678efh567hg6787',
-            'service_id' => '500001',
+            'service_id' => '2002000000000558128851361561536',
+            'service_introduction' => '某某酒店',
             'post_payments' => [[
-                'name' => '就餐费用, 服务费',
+                'name' => '就餐费用',
                 'amount' => 40000,
-                'description' => '就餐人均100元，服务费：100/小时',
+                'description' => '就餐人均100元',
                 'count' => 4,
             ],],
             'post_discounts' => [[
                 'name' => '满20减1元',
                 'description' => '不与其他优惠叠加',
-                'amount' => 100,
                 'count' => 2,
             ],],
             'time_range' => [
-                'start_time' => '',
-                'start_time_remark' => '',
-                'end_time' => '',
-                'end_time_remark' => '',
+                'start_time' => '20091225091010',
+                'end_time' => '20091225121010',
+                'start_time_remark' => '备注1',
+                'end_time_remark' => '备注2',
             ],
             'location' => [
-                'start_location' => '',
-                'end_location' => '',
+                'start_location' => '嗨客时尚主题展餐厅',
+                'end_location' => '嗨客时尚主题展餐厅',
             ],
-            'service_introduction' => '某某酒店',
             'risk_fund' => [
-                'name' => 'UDEPOSIT | ADVANCE | CASH_DEPOSIT | ESTIMATE_ORDER_COST',
+                'name' => 'DEPOSIT',
                 'amount' => 10000,
                 'description' => '就餐的预估费用',
             ],
@@ -59,38 +58,37 @@ interface Serviceorder
     /**
      * 创建支付分订单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter3_1.shtml#async
+     * @link https://pay.weixin.qq.com/docs/merchant/apis/weixin-pay-score/service-order/create-service-order.html#async
      */
     public function postAsync(array $options = [
         'json' => [
             'out_order_no' => '1234323JKHDFE1243252',
             'appid' => 'wxd678efh567hg6787',
-            'service_id' => '500001',
+            'service_id' => '2002000000000558128851361561536',
+            'service_introduction' => '某某酒店',
             'post_payments' => [[
-                'name' => '就餐费用, 服务费',
+                'name' => '就餐费用',
                 'amount' => 40000,
-                'description' => '就餐人均100元，服务费：100/小时',
+                'description' => '就餐人均100元',
                 'count' => 4,
             ],],
             'post_discounts' => [[
                 'name' => '满20减1元',
                 'description' => '不与其他优惠叠加',
-                'amount' => 100,
                 'count' => 2,
             ],],
             'time_range' => [
-                'start_time' => '',
-                'start_time_remark' => '',
-                'end_time' => '',
-                'end_time_remark' => '',
+                'start_time' => '20091225091010',
+                'end_time' => '20091225121010',
+                'start_time_remark' => '备注1',
+                'end_time_remark' => '备注2',
             ],
             'location' => [
-                'start_location' => '',
-                'end_location' => '',
+                'start_location' => '嗨客时尚主题展餐厅',
+                'end_location' => '嗨客时尚主题展餐厅',
             ],
-            'service_introduction' => '某某酒店',
             'risk_fund' => [
-                'name' => 'UDEPOSIT | ADVANCE | CASH_DEPOSIT | ESTIMATE_ORDER_COST',
+                'name' => 'DEPOSIT',
                 'amount' => 10000,
                 'description' => '就餐的预估费用',
             ],
@@ -104,28 +102,28 @@ interface Serviceorder
     /**
      * 查询支付分订单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter3_2.shtml
+     * @link https://pay.weixin.qq.com/docs/merchant/apis/weixin-pay-score/service-order/get-service-order.html
      */
     public function get(array $options = [
         'query' => [
-            'out_order_no' => '',
+            'out_order_no' => '1234323JKHDFE1243252',
             'query_id' => '',
-            'service_id' => '',
-            'appid' => '',
+            'service_id' => '2002000000000558128851361561536',
+            'appid' => 'wxd678efh567hg6787',
         ],
     ]): ResponseInterface;
 
     /**
      * 查询支付分订单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter3_2.shtml#async
+     * @link https://pay.weixin.qq.com/docs/merchant/apis/weixin-pay-score/service-order/get-service-order.html#async
      */
     public function getAsync(array $options = [
         'query' => [
-            'out_order_no' => '',
+            'out_order_no' => '1234323JKHDFE1243252',
             'query_id' => '',
-            'service_id' => '',
-            'appid' => '',
+            'service_id' => '2002000000000558128851361561536',
+            'appid' => 'wxd678efh567hg6787',
         ],
     ]): PromiseInterface;
 }

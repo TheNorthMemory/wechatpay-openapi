@@ -1,11 +1,11 @@
 post:
-  x-last-updated-at: 2020.07.20
+  x-last-updated-at: 2023.10.18
   x-role:
     - 直连商户
   tags:
     - 支付分∙免确认模式∙预授权
   summary: 解除用户授权关系（授权协议号）API
-  description: 通过authorization_code，商户解除用户授权关系 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter9_4.shtml)
+  description: 通过authorization_code，商户解除用户授权关系 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter9_4.shtml) [官方文档](https://pay.weixin.qq.com/docs/merchant/apis/weixin-pay-score/service-auth/terminate-permissions-by-code.html)
   parameters:
     - name: authorization_code
       in: path
@@ -31,4 +31,5 @@ post:
             description: 撤销原因
             example: 撤销原因
   responses:
-    204: {}
+    '204':
+      schema: {}

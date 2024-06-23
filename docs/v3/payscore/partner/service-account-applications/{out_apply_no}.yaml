@@ -1,11 +1,11 @@
 get:
-  x-last-updated-at: 2021.07.29
+  x-last-updated-at: 2024.06.18
   x-role:
     - 服务商
   tags:
     - 支付分∙服务商模式
   summary: 查询收付通子商户服务绑定结果
-  description: 收付通服务商查询子商户的支付分服务绑定结果 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter6_2_14.shtml)
+  description: 收付通服务商查询子商户的支付分服务绑定结果 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter6_2_14.shtml) [官方文档](https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/partner-service-account/get-service-account-application.html)
   parameters:
     - name: out_order_no
       in: path

@@ -12,7 +12,7 @@ interface Cancel
     /**
      * 取消支付分订单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter3_3.shtml
+     * @link https://pay.weixin.qq.com/docs/merchant/apis/weixin-pay-score/service-order/cancel-service-order.html
      */
     public function post(array $options = [
         'out_order_no' => '',
@@ -26,7 +26,7 @@ interface Cancel
     /**
      * 取消支付分订单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter3_3.shtml#async
+     * @link https://pay.weixin.qq.com/docs/merchant/apis/weixin-pay-score/service-order/cancel-service-order.html#async
      */
     public function postAsync(array $options = [
         'out_order_no' => '',

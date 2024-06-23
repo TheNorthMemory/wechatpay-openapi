@@ -14,7 +14,7 @@ interface Serviceorder
     /**
      * 创建支付分订单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter6_2_1.shtml
+     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/partner-service-order/create-partner-service-order.html
      */
     public function post(array $options = [
         'json' => [
@@ -33,6 +33,7 @@ interface Serviceorder
             'post_discounts' => [[
                 'name' => '满20减1元',
                 'description' => '不与其他优惠叠加',
+                'amount' => 100,
                 'count' => 2,
             ],],
             'risk_fund' => [
@@ -61,7 +62,7 @@ interface Serviceorder
     /**
      * 创建支付分订单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter6_2_1.shtml#async
+     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/partner-service-order/create-partner-service-order.html#async
      */
     public function postAsync(array $options = [
         'json' => [
@@ -80,6 +81,7 @@ interface Serviceorder
             'post_discounts' => [[
                 'name' => '满20减1元',
                 'description' => '不与其他优惠叠加',
+                'amount' => 100,
                 'count' => 2,
             ],],
             'risk_fund' => [
@@ -108,7 +110,7 @@ interface Serviceorder
     /**
      * 查询支付分订单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter6_2_2.shtml
+     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/partner-service-order/get-partner-service-order.html
      */
     public function get(array $options = [
         'query' => [
@@ -122,7 +124,7 @@ interface Serviceorder
     /**
      * 查询支付分订单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter6_2_2.shtml#async
+     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/partner-service-order/get-partner-service-order.html#async
      */
     public function getAsync(array $options = [
         'query' => [

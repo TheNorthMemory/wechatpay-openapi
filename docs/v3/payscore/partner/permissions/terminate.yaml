@@ -1,11 +1,11 @@
 post:
-  x-last-updated-at: 2020.06.29
+  x-last-updated-at: 2024.06.18
   x-role:
     - 服务商
   tags:
     - 支付分∙服务商模式∙免确认
   summary: 解除用户授权关系（openid）API
-  description: 通过openid，服务商帮子商户解除用户授权关系 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter6_2_22.shtml)
+  description: 通过openid，服务商帮子商户解除用户授权关系 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter6_2_22.shtml) [官方文档](https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/partner-service-auth/terminate-partner-permissions-by-open-id.html)
   parameters:
     - name: _
       in: body
@@ -46,4 +46,5 @@ post:
             description: 撤销原因
             example: reason
   responses:
-    '204': {}
+    '204':
+      schema: {}

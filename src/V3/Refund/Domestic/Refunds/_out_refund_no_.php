@@ -12,7 +12,7 @@ interface _out_refund_no_
     /**
      * 查询单笔退款(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_5_10.shtml
+     * @link https://pay.weixin.qq.com/docs/merchant/apis/weixin-pay-score/refunds/query-by-out-refund-no.html
      */
     public function get(array $options = [
         'out_refund_no' => 'sdk12345678920210326144648',
@@ -24,7 +24,7 @@ interface _out_refund_no_
     /**
      * 查询单笔退款(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_5_10.shtml#async
+     * @link https://pay.weixin.qq.com/docs/merchant/apis/weixin-pay-score/refunds/query-by-out-refund-no.html#async
      */
     public function getAsync(array $options = [
         'out_refund_no' => 'sdk12345678920210326144648',

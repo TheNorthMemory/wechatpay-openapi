@@ -1,11 +1,11 @@
 post:
-  x-last-updated-at: 2020.07.20
+  x-last-updated-at: 2023.10.18
   x-role:
     - 直连商户
   tags:
     - 支付分∙免确认模式∙预授权
   summary: 商户预授权API
-  description: '商户预授权 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter9_2.shtml)'
+  description: 商户预授权 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter9_2.shtml) [官方文档](https://pay.weixin.qq.com/docs/merchant/apis/weixin-pay-score/service-auth/apply-permissions.html)
   parameters:
     - name: _
       in: body

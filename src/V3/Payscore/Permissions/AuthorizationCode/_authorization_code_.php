@@ -13,7 +13,7 @@ interface _authorization_code_
     /**
      * 查询与用户授权记录（授权协议号）(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter9_3.shtml
+     * @link https://pay.weixin.qq.com/docs/merchant/apis/weixin-pay-score/service-auth/get-permissions-by-authorization-code.html
      */
     public function get(array $options = [
         'authorization_code' => '1234323JKHDFE1243252',
@@ -25,7 +25,7 @@ interface _authorization_code_
     /**
      * 查询与用户授权记录（授权协议号）(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter9_3.shtml#async
+     * @link https://pay.weixin.qq.com/docs/merchant/apis/weixin-pay-score/service-auth/get-permissions-by-authorization-code.html#async
      */
     public function getAsync(array $options = [
         'authorization_code' => '1234323JKHDFE1243252',

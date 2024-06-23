@@ -1,24 +1,24 @@
 <?php declare(strict_types=1);/* Generated file. DO NOT EDIT! */
 
-namespace WeChatPay\OpenAPI\V3\Payscore\Serviceorder\_out_order_no_;
+namespace WeChatPay\OpenAPI\V3\Payscore\Partner\Serviceorder\_out_order_no_;
 
 use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Promise\PromiseInterface;
 
 /**
  */
-interface Complete
+interface SendPendingmessage
 {
     /**
-     * 完结支付分订单(同步模式)
+     * 下发服务费用待处理消息(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/weixin-pay-score/service-order/complete-service-order.html
+     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/partner-service-order/send-partner-order-pending-message.html
      */
     public function post(array $options = [
         'out_order_no' => '',
         'json' => [
-            'appid' => 'wxd678efh567hg6787',
             'service_id' => '2002000000000558128851361561536',
+            'sub_mchid' => '1900000109',
             'post_payments' => [[
                 'name' => '就餐费用',
                 'amount' => 40000,
@@ -32,30 +32,20 @@ interface Complete
                 'count' => 2,
             ],],
             'total_amount' => 50000,
-            'time_range' => [
-                'start_time' => '20091225091010',
-                'end_time' => '20091225121010',
-                'start_time_remark' => '备注1',
-                'end_time_remark' => '备注2',
-            ],
-            'location' => [
-                'end_location' => '嗨客时尚主题展餐厅',
-            ],
-            'profit_sharing' => true,
-            'goods_tag' => 'goods_tag',
+            'prepaid_time' => '20231218',
         ],
     ]): ResponseInterface;
 
     /**
-     * 完结支付分订单(异步模式)
+     * 下发服务费用待处理消息(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/weixin-pay-score/service-order/complete-service-order.html#async
+     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/partner-service-order/send-partner-order-pending-message.html#async
      */
     public function postAsync(array $options = [
         'out_order_no' => '',
         'json' => [
-            'appid' => 'wxd678efh567hg6787',
             'service_id' => '2002000000000558128851361561536',
+            'sub_mchid' => '1900000109',
             'post_payments' => [[
                 'name' => '就餐费用',
                 'amount' => 40000,
@@ -69,17 +59,7 @@ interface Complete
                 'count' => 2,
             ],],
             'total_amount' => 50000,
-            'time_range' => [
-                'start_time' => '20091225091010',
-                'end_time' => '20091225121010',
-                'start_time_remark' => '备注1',
-                'end_time_remark' => '备注2',
-            ],
-            'location' => [
-                'end_location' => '嗨客时尚主题展餐厅',
-            ],
-            'profit_sharing' => true,
-            'goods_tag' => 'goods_tag',
+            'prepaid_time' => '20231218',
         ],
     ]): PromiseInterface;
 }

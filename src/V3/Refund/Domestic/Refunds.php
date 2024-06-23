@@ -14,7 +14,7 @@ interface Refunds
     /**
      * 申请退款(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_5_9.shtml
+     * @link https://pay.weixin.qq.com/docs/merchant/apis/weixin-pay-score/refunds/create.html
      */
     public function post(array $options = [
         'json' => [
@@ -48,7 +48,7 @@ interface Refunds
     /**
      * 申请退款(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_5_9.shtml#async
+     * @link https://pay.weixin.qq.com/docs/merchant/apis/weixin-pay-score/refunds/create.html#async
      */
     public function postAsync(array $options = [
         'json' => [

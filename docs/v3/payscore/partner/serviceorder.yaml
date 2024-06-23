@@ -1,11 +1,11 @@
 post:
-  x-last-updated-at: 2020.06.19
+  x-last-updated-at: 2024.06.18
   x-role:
     - 服务商
   tags:
     - 支付分∙服务商模式
   summary: 创建支付分订单API
-  description: 用户申请使用服务时，商户可通过此接口申请创建微信支付分订单。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter6_2_1.shtml)
+  description: 用户申请使用服务时，商户可通过此接口申请创建微信支付分订单。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter6_2_1.shtml) [官方文档](https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/partner-service-order/create-partner-service-order.html)
   parameters:
     - name: _
       in: body
@@ -87,6 +87,10 @@ post:
                   type: string
                   description: 优惠说明
                   example: 不与其他优惠叠加
+                amount:
+                  type: integer
+                  description: 优惠金额
+                  example: 100
                 count:
                   type: integer
                   description: 优惠数量
@@ -112,9 +116,7 @@ post:
                 example: 就餐的预估费用
           time_range:
             type: object
-            description: 服务时间段
-            required:
-              - start_time
+            description: 服务时间
             properties:
               start_time:
                 type: string
@@ -239,7 +241,7 @@ post:
                   example: 4
           post_discounts:
             type: array
-            description: 后付费商户优惠
+            description: 商户优惠
             items:
               type: object
               required:
@@ -254,6 +256,10 @@ post:
                   type: string
                   description: 优惠说明
                   example: 不与其他优惠叠加
+                amount:
+                  type: integer
+                  description: 优惠金额
+                  example: 100
                 count:
                   type: integer
                   description: 优惠数量
@@ -330,13 +336,13 @@ post:
             description: 跳转微信侧数据包
             example: DJIOSQPYWDxsjdldeuwhdodwxasd_dDiodnwjh9we
 get:
-  x-last-updated-at: 2020.06.29
+  x-last-updated-at: 2024.06.18
   x-role:
     - 服务商
   tags:
     - 支付分∙服务商模式
   summary: 查询支付分订单API
-  description: 用于查询单笔微信支付分订单详细信息。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter6_2_2.shtml)
+  description: 用于查询单笔微信支付分订单详细信息。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter6_2_2.shtml) [官方文档](https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/partner-service-order/get-partner-service-order.html)
   parameters:
     - name: service_id
       in: query
@@ -368,13 +374,8 @@ get:
           - service_id
           - appid
           - mchid
-          - sub_mchid
           - service_introduction
           - state
-          - risk_fund
-          - time_range
-          - notify_url
-          - order_id
         properties:
           out_order_no:
             type: string
@@ -612,11 +613,13 @@ get:
                                   type: string
                                   description: 商品备注
                                   example: 商品备注信息
+              bank_type:
+                type: string
+                description: 收款银行
+                example: example_bank_type
           time_range:
             type: object
-            description: 服务时间段
-            required:
-              - start_time
+            description: 服务时间
             properties:
               start_time:
                 type: string

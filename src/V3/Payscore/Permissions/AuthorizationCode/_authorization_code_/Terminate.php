@@ -12,7 +12,7 @@ interface Terminate
     /**
      * 解除用户授权关系（授权协议号）(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter9_4.shtml
+     * @link https://pay.weixin.qq.com/docs/merchant/apis/weixin-pay-score/service-auth/terminate-permissions-by-code.html
      */
     public function post(array $options = [
         'authorization_code' => '1234323JKHDFE1243252',
@@ -25,7 +25,7 @@ interface Terminate
     /**
      * 解除用户授权关系（授权协议号）(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter9_4.shtml#async
+     * @link https://pay.weixin.qq.com/docs/merchant/apis/weixin-pay-score/service-auth/terminate-permissions-by-code.html#async
      */
     public function postAsync(array $options = [
         'authorization_code' => '1234323JKHDFE1243252',

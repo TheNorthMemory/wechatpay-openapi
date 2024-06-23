@@ -12,7 +12,7 @@ interface Terminate
     /**
      * 解除用户授权关系（openid）(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter6_2_22.shtml
+     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/partner-service-auth/terminate-partner-permissions-by-open-id.html
      */
     public function post(array $options = [
         'json' => [
@@ -29,7 +29,7 @@ interface Terminate
     /**
      * 解除用户授权关系（openid）(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter6_2_22.shtml#async
+     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/partner-service-auth/terminate-partner-permissions-by-open-id.html#async
      */
     public function postAsync(array $options = [
         'json' => [

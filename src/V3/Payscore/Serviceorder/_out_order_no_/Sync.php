@@ -12,10 +12,10 @@ interface Sync
     /**
      * 同步服务订单信息(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter3_6.shtml
+     * @link https://pay.weixin.qq.com/docs/merchant/apis/weixin-pay-score/service-order/sync-service-order.html
      */
     public function post(array $options = [
-        'out_order_no' => '',
+        'out_order_no' => '1234323JKHDFE1243252',
         'json' => [
             'appid' => 'wxd678efh567hg6787',
             'service_id' => '500001',
@@ -29,10 +29,10 @@ interface Sync
     /**
      * 同步服务订单信息(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter3_6.shtml#async
+     * @link https://pay.weixin.qq.com/docs/merchant/apis/weixin-pay-score/service-order/sync-service-order.html#async
      */
     public function postAsync(array $options = [
-        'out_order_no' => '',
+        'out_order_no' => '1234323JKHDFE1243252',
         'json' => [
             'appid' => 'wxd678efh567hg6787',
             'service_id' => '500001',

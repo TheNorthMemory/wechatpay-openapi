@@ -12,7 +12,7 @@ interface Search
     /**
      * 查询与用户授权记录（openid）(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter6_2_21.shtml
+     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/partner-service-auth/get-partner-permissions-by-open-id.html
      */
     public function get(array $options = [
         'query' => [
@@ -21,14 +21,14 @@ interface Search
             'sub_mchid' => '1230000109',
             'sub_appid' => 'wxd678efh567hg6787',
             'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
-            'sub_openid' => '',
+            'sub_openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
         ],
     ]): ResponseInterface;
 
     /**
      * 查询与用户授权记录（openid）(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter6_2_21.shtml#async
+     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/partner-service-auth/get-partner-permissions-by-open-id.html#async
      */
     public function getAsync(array $options = [
         'query' => [
@@ -37,7 +37,7 @@ interface Search
             'sub_mchid' => '1230000109',
             'sub_appid' => 'wxd678efh567hg6787',
             'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
-            'sub_openid' => '',
+            'sub_openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
         ],
     ]): PromiseInterface;
 }

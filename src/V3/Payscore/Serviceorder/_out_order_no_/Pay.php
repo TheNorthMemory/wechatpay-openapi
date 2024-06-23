@@ -12,7 +12,7 @@ interface Pay
     /**
      * 商户发起催收扣款(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter3_6.shtml
+     * @link https://pay.weixin.qq.com/docs/merchant/apis/weixin-pay-score/service-order/collect-service-order.html
      */
     public function post(array $options = [
         'out_order_no' => '',
@@ -25,7 +25,7 @@ interface Pay
     /**
      * 商户发起催收扣款(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter3_6.shtml#async
+     * @link https://pay.weixin.qq.com/docs/merchant/apis/weixin-pay-score/service-order/collect-service-order.html#async
      */
     public function postAsync(array $options = [
         'out_order_no' => '',

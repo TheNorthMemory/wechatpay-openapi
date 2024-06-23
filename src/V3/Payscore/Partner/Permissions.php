@@ -7,6 +7,7 @@ use GuzzleHttp\Promise\PromiseInterface;
 
 /**
  * @property-read Permissions\AuthorizationCode $authorizationCode
+ * @property-read Permissions\AssessUserRiskLevel $assessUserRiskLevel
  * @property-read Permissions\Search $search
  * @property-read Permissions\Terminate $terminate
  */

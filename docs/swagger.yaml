@@ -7,7 +7,7 @@ info:
     整理自[官方文档中心](https://pay.weixin.qq.com/wiki/doc/apiv3/index.shtml)
     本[项目/工具地址](https://github.com/TheNorthMemory/wechatpay-openapi)
     **访问第一次加载比较慢，请耐心等待大约1-2分钟不等(小文件下载比较多)。**
-  version: 0.15.28
+  version: 0.15.29
 schemes:
   - https
 consumes:
@@ -1258,6 +1258,8 @@ paths:
     $ref: ./v3/payscore/merchant-bill.yaml
   /v3/payscore/partner/permissions:
     $ref: ./v3/payscore/partner/permissions.yaml
+  /v3/payscore/partner/permissions/assess-user-risk-level:
+    $ref: ./v3/payscore/partner/permissions/assess-user-risk-level.yaml
   /v3/payscore/partner/permissions/authorization-code/{authorization_code}:
     $ref: ./v3/payscore/partner/permissions/authorization-code/{authorization_code}.yaml
   /v3/payscore/partner/permissions/authorization-code/{authorization_code}/terminate:
@@ -1280,6 +1282,10 @@ paths:
     $ref: ./v3/payscore/partner/serviceorder/{out_order_no}/modify.yaml
   /v3/payscore/partner/serviceorder/{out_order_no}/pay:
     $ref: ./v3/payscore/partner/serviceorder/{out_order_no}/pay.yaml
+  /v3/payscore/partner/serviceorder/{out_order_no}/send-pendingmessage:
+    $ref: ./v3/payscore/partner/serviceorder/{out_order_no}/send-pendingmessage.yaml
+  /v3/payscore/partner/serviceorder/{out_order_no}/send-prepaidmessage:
+    $ref: ./v3/payscore/partner/serviceorder/{out_order_no}/send-prepaidmessage.yaml
   /v3/payscore/partner/serviceorder/{out_order_no}/sync:
     $ref: ./v3/payscore/partner/serviceorder/{out_order_no}/sync.yaml
   /v3/payscore/partner/serviceorder/direct-complete:
@@ -1298,6 +1304,8 @@ paths:
     $ref: ./v3/payscore/payafter-orders/{out_order_no}/sync.yaml
   /v3/payscore/permissions:
     $ref: ./v3/payscore/permissions.yaml
+  /v3/payscore/permissions/assess-user-risk-level:
+    $ref: ./v3/payscore/permissions/assess-user-risk-level.yaml
   /v3/payscore/permissions/authorization-code/{authorization_code}:
     $ref: ./v3/payscore/permissions/authorization-code/{authorization_code}.yaml
   /v3/payscore/permissions/authorization-code/{authorization_code}/terminate:
@@ -1328,6 +1336,10 @@ paths:
     $ref: ./v3/payscore/serviceorder/{out_order_no}/modify.yaml
   /v3/payscore/serviceorder/{out_order_no}/pay:
     $ref: ./v3/payscore/serviceorder/{out_order_no}/pay.yaml
+  /v3/payscore/serviceorder/{out_order_no}/send-pendingmessage:
+    $ref: ./v3/payscore/serviceorder/{out_order_no}/send-pendingmessage.yaml
+  /v3/payscore/serviceorder/{out_order_no}/send-prepaidmessage:
+    $ref: ./v3/payscore/serviceorder/{out_order_no}/send-prepaidmessage.yaml
   /v3/payscore/serviceorder/{out_order_no}/sync:
     $ref: ./v3/payscore/serviceorder/{out_order_no}/sync.yaml
   /v3/payscore/serviceorder/direct-complete:

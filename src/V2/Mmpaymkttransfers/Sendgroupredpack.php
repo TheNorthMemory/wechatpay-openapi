@@ -12,6 +12,7 @@ interface Sendgroupredpack
     /**
      * 发放裂变红包(同步模式)
      * @param array<string,mixed> $options
+     * @deprecated - since 2024.06.05
      * @link https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon.php?chapter=13_5&index=4
      */
     public function post(array $options = [
@@ -36,6 +37,7 @@ interface Sendgroupredpack
     /**
      * 发放裂变红包(异步模式)
      * @param array<string,mixed> $options
+     * @deprecated - since 2024.06.05
      * @link https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon.php?chapter=13_5&index=4#async
      */
     public function postAsync(array $options = [

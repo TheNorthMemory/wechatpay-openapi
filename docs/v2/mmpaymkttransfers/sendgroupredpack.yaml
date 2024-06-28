@@ -1,5 +1,7 @@
 post:
   x-api-cert-required: true
+  x-last-updated-at: 2024.06.05
+  deprecated: true
   tags:
     - APIv2∙资金应用∙红包
   summary: 发放裂变红包

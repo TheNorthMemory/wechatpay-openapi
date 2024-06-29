@@ -35,6 +35,7 @@ namespace WeChatPay\OpenAPI;
  * @property-read V3\MerchantRiskManage $merchantRiskManage
  * @property-read V3\Merchant $merchant
  * @property-read V3\Mch_operate $mch_operate
+ * @property-read V3\MchOperationManage $mchOperationManage
  * @property-read V3\Marketing $marketing
  * @property-read V3\Lovefeast $lovefeast
  * @property-read V3\Iotmanage $iotmanage

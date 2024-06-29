@@ -1,0 +1,87 @@
+get:
+  x-last-updated-at: 2024.06.14
+  x-role:
+    - 服务商
+  tags:
+    - 风险管理
+  summary: 查询子商户管控情况
+  description: 服务商查询子商户的管控情况。[官方文档](https://pay.weixin.qq.com/docs/partner/apis/limited-functions-and-reasons/mch-limitations/query-sub-mch-limitation.html)
+  parameters:
+    - name: sub_mchid
+      in: path
+      required: true
+      type: string
+      description: 子商户号
+      example: '123000110'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - mchid
+        properties:
+          mchid:
+            type: string
+            description: 商户号
+            example: '123000110'
+          limited_functions:
+            type: array
+            description: 商户被管控能力列表
+            items:
+              type: string
+              enum:
+                - NO_PAYMENT #关闭付款
+                - NO_WITHDRAWAL #关闭提现
+                - NO_REFUND #关闭退款
+                - NO_TRANSACTION #关闭收单
+                - NO_PROFIT_SHARING #关闭分账分出
+                - NO_PAYMENT_POINT_COMPLETE_ORDER #关闭支付分服务结单
+          recovery_specifications:
+            type: array
+            description: 被管控原因及解脱路径列表
+            items:
+              type: object
+              properties:
+                limitation_reason:
+                  type: string
+                  description: 商户被管控原因描述
+                  example: 经营证照异常
+                recover_way:
+                  type: string
+                  description: 商户被该原因管控的解脱路径
+                  example: 修改主体资料
+                recover_help_url:
+                  type: string
+                  description: 商户被该原因管控的解脱帮助链接
+                  example: https://kf.qq.com
+                limitation_reason_type:
+                  type: string
+                  description: 商户被管控原因类型
+                  example: LICENSE_ABNORMAL
+                  enum:
+                    - LICENSE_ABNORMAL #经营证照异常
+                    - NO_TRADE #无交易
+                    - SETTLE_ACCOUNT_ABNORMAL #结算信息异常
+                    - RISK_ABNORMAL #风险异常
+                    - OTHER #其他
+                relate_limitations:
+                  type: array
+                  description: 商户被该原因管控的能力列表
+                  items:
+                    type: string
+                    enum:
+                      - NO_TRANSACTION_AND_RECHARGE #关闭收单和充值
+                      - NO_PAYMENT #关闭付款
+                      - NO_WITHDRAWAL #关闭提现
+                      - NO_REFUND #关闭退款
+                      - NO_TRANSACTION #关闭收单
+                      - NO_PROFIT_SHARING #关闭分账分出
+                      - NO_PAYMENT_POINT_COMPLETE_ORDER #关闭支付分服务结单
+                other_relate_limitations:
+                  type: string
+                  description: 商户被该原因管控的其他能力描述
+                  example: 关闭相册扫码支付,关闭长按识别支付
+          other_limited_functions:
+            type: string
+            description: 商户其他被管控能力描述
+            example: 关闭相册扫码支付,关闭长按识别支付

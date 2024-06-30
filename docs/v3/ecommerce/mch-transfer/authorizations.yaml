@@ -1,0 +1,74 @@
+post:
+  x-last-updated-at: 2024.06.20
+  x-role:
+    - 服务商
+  tags:
+    - 收付通∙转账
+  summary: 申请二级商户商家转账授权
+  description: 申请二级商户商家转账授权。[官方文档](https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-transfer/authorization/create-authorization.html)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - sub_mchid
+          - agreement_list
+        properties:
+          sub_mchid:
+            type: string
+            description: 二级商户号
+            example: '1900001109'
+          agreement_list:
+            type: array
+            description: 签约协议列表
+            items:
+              type: object
+              required:
+                - agreement_code
+                - agreement_version
+                - sign_organization
+                - sign_time
+              properties:
+                agreement_code:
+                  type: string
+                  description: 协议编号
+                  example: '1'
+                agreement_version:
+                  type: string
+                  description: 协议版本号
+                  example: '20230101'
+                sign_organization:
+                  type: string
+                  description: 签约主体
+                  example: 示例有限责任公司
+                sign_time:
+                  type: string
+                  description: 签约时间
+                  example: '2015-05-20T13:29:35.120+08:00'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - sub_mchid
+          - authorization_state
+          - accept_time
+        properties:
+          sub_mchid:
+            type: string
+            description: 二级商户号
+            example: '1900001109'
+          authorization_state:
+            type: string
+            description: 授权状态
+            example: AUTHORIZE_PROCESSING
+          accept_time:
+            type: string
+            description: 授权申请受理时间
+            example: '2015-05-20T13:29:35.120+08:00'
+          authorize_time:
+            type: string
+            description: 授权时间
+            example: '2015-05-20T13:29:35.120+08:00'

@@ -1,0 +1,75 @@
+get:
+  x-last-updated-at: 2024.06.20
+  x-role:
+    - 服务商
+  tags:
+    - 资金应用∙转账
+  summary: 查询商家转账明细电子回单
+  description: 查询商家转账明细电子回单接口，商户通过该接口可以查询商家转账明细电子回单受理进度信息，当电子回单文件生成结束后，将返回电子回单文件的hash值、电子回单文件的下载地址等。[官方文档](https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-transfer/receipts/receipt-query-by-detail-out-no.html)
+  parameters:
+    - name: out_batch_no
+      in: path
+      required: true
+      type: string
+      description: 商家批次单号
+      example: sjzz20230223
+    - name: out_detail_no
+      in: path
+      required: true
+      type: string
+      description: 商家明细单号
+      example: x23zy545Bd5436
+    - name: sub_mchid
+      in: query
+      required: true
+      type: string
+      description: 二级商户号
+      example: '1900000109'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - batch_id
+          - out_batch_no
+          - detail_id
+          - out_detail_no
+          - sub_mchid
+          - receipt_state
+        properties:
+          batch_id:
+            type: string
+            description: 商家转账批次单号
+            example: '131000011085109987515042023022300246500006'
+          out_batch_no:
+            type: string
+            description: 商家批次单号
+            example: sjzz20230223
+          detail_id:
+            type: string
+            description: 商家转账明细单号
+            example: '132000011085109987515042023022300246521006'
+          out_detail_no:
+            type: string
+            description: 商家明细单号
+            example: x23zy545Bd5436
+          sub_mchid:
+            type: string
+            description: 二级商户号
+            example: '1900000109'
+          receipt_state:
+            type: string
+            description: 电子回单状态
+            example: ACCEPTED
+          hash_type:
+            type: string
+            description: 电子回单文件的hash方法
+            example: SHA256
+          hash_value:
+            type: string
+            description: 电子回单文件的hash值
+            example: DE731F35146A0BEFADE5DB9D1E468D96C01CA8898119C674FEE9F11F4DBE5529
+          download_url:
+            type: string
+            description: 电子回单文件的下载地址
+            example: https://api.mch.weixin.qq.com/v3/billdownload/file?token=toekn

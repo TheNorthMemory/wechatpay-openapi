@@ -1,0 +1,59 @@
+post:
+  x-last-updated-at: 2024.06.20
+  x-role:
+    - 服务商
+  tags:
+    - 资金应用∙转账
+  summary: 申请商家转账明细电子回单
+  description: 商家转账明细电子回单申请受理接口，商户通过该接口可以申请受理商家转账明细电子回单。[官方文档](https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-transfer/receipts/receipt-apply-by-detail-out-no.html)
+  parameters:
+    - name: out_batch_no
+      in: path
+      required: true
+      type: string
+      description: 商家批次单号
+      example: sjzz20230223
+    - name: out_detail_no
+      in: path
+      required: true
+      type: string
+      description: 商家明细单号
+      example: x23zy545Bd5436
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - sub_mchid
+        properties:
+          sub_mchid:
+            type: string
+            description: 二级商户号
+            example: '1900102208'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - sub_mchid
+          - out_batch_no
+          - out_detail_no
+          - receipt_state
+        properties:
+          sub_mchid:
+            type: string
+            description: 二级商户号
+            example: '1900102208'
+          out_batch_no:
+            type: string
+            description: 商家批次单号
+            example: sjzz20230223
+          out_detail_no:
+            type: string
+            description: 商家明细单号
+            example: x23zy545Bd5436
+          receipt_state:
+            type: string
+            description: 电子回单状态
+            example: ACCEPTED

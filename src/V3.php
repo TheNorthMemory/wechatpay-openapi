@@ -16,6 +16,7 @@ namespace WeChatPay\OpenAPI;
  * @property-read V3\RateActivity $rateActivity
  * @property-read V3\Qrcode $qrcode
  * @property-read V3\Profitsharing $profitsharing
+ * @property-read V3\Platsolution $platsolution
  * @property-read V3\Payscore $payscore
  * @property-read V3\PayrollCard $payrollCard
  * @property-read V3\PayDevices $payDevices

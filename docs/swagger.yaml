@@ -33,6 +33,7 @@ tags:
   - name: 收付通∙合单代扣
   - name: 收付通∙补差
   - name: 收付通∙分账
+  - name: 收付通∙转账
   - name: 收付通∙退款
   - name: 收付通∙余额
   - name: 收付通∙提现
@@ -576,6 +577,18 @@ paths:
     $ref: ./v3/ecommerce/fund/withdraw/{withdraw_id}.yaml
   /v3/ecommerce/fund/withdraw/out-request-no/{out_request_no}:
     $ref: ./v3/ecommerce/fund/withdraw/out-request-no/{out_request_no}.yaml
+  /v3/ecommerce/mch-transfer/authorizations:
+    $ref: ./v3/ecommerce/mch-transfer/authorizations.yaml
+  /v3/ecommerce/mch-transfer/authorizations/{sub_mchid}:
+    $ref: ./v3/ecommerce/mch-transfer/authorizations/{sub_mchid}.yaml
+  /v3/ecommerce/mch-transfer/transfer-bills:
+    $ref: ./v3/ecommerce/mch-transfer/transfer-bills.yaml
+  /v3/ecommerce/mch-transfer/transfer-bills/out-bill-no/{out_bill_no}:
+    $ref: ./v3/ecommerce/mch-transfer/transfer-bills/out-bill-no/{out_bill_no}.yaml
+  /v3/ecommerce/mch-transfer/transfer-bills/out-bill-no/{out_bill_no}/cancel:
+    $ref: ./v3/ecommerce/mch-transfer/transfer-bills/out-bill-no/{out_bill_no}/cancel.yaml
+  /v3/ecommerce/mch-transfer/transfer-bills/transfer-bill-no/{transfer_bill_no}:
+    $ref: ./v3/ecommerce/mch-transfer/transfer-bills/transfer-bill-no/{transfer_bill_no}.yaml
   /v3/ecommerce/profitsharing/after-sales-orders:
     $ref: ./v3/ecommerce/profitsharing/after-sales-orders.yaml
   /v3/ecommerce/profitsharing/finish-order:
@@ -1374,6 +1387,32 @@ paths:
     $ref: ./v3/payscore/user-service-state.yaml
   /v3/payscore/users/{openid}/permissions/{service_id}/terminate:
     $ref: ./v3/payscore/users/{openid}/permissions/{service_id}/terminate.yaml
+  /v3/platsolution/mch-transfer/batches/apply:
+    $ref: ./v3/platsolution/mch-transfer/batches/apply.yaml
+  /v3/platsolution/mch-transfer/batches/batch-id/{batch_id}:
+    $ref: ./v3/platsolution/mch-transfer/batches/batch-id/{batch_id}.yaml
+  /v3/platsolution/mch-transfer/batches/batch-id/{batch_id}/details/detail-id/{detail_id}:
+    $ref: ./v3/platsolution/mch-transfer/batches/batch-id/{batch_id}/details/detail-id/{detail_id}.yaml
+  /v3/platsolution/mch-transfer/batches/detail-receipts/out-batch-no/{out_batch_no}/out-detail-no/{out_detail_no}:
+    $ref: ./v3/platsolution/mch-transfer/batches/detail-receipts/out-batch-no/{out_batch_no}/out-detail-no/{out_detail_no}.yaml
+  /v3/platsolution/mch-transfer/batches/detail-receipts/out-batch-no/{out_batch_no}/out-detail-no/{out_detail_no}/apply:
+    $ref: ./v3/platsolution/mch-transfer/batches/detail-receipts/out-batch-no/{out_batch_no}/out-detail-no/{out_detail_no}/apply.yaml
+  /v3/platsolution/mch-transfer/batches/out-batch-no/{out_batch_no}:
+    $ref: ./v3/platsolution/mch-transfer/batches/out-batch-no/{out_batch_no}.yaml
+  /v3/platsolution/mch-transfer/batches/out-batch-no/{out_batch_no}/details/out-detail-no/{out_detail_no}:
+    $ref: ./v3/platsolution/mch-transfer/batches/out-batch-no/{out_batch_no}/details/out-detail-no/{out_detail_no}.yaml
+  /v3/platsolution/mch-transfer/batches/summary-receipts/out-batch-no/{out_batch_no}:
+    $ref: ./v3/platsolution/mch-transfer/batches/summary-receipts/out-batch-no/{out_batch_no}.yaml
+  /v3/platsolution/mch-transfer/batches/summary-receipts/out-batch-no/{out_batch_no}/apply:
+    $ref: ./v3/platsolution/mch-transfer/batches/summary-receipts/out-batch-no/{out_batch_no}/apply.yaml
+  /v3/platsolution/mch-transfer/reservation/apply:
+    $ref: ./v3/platsolution/mch-transfer/reservation/apply.yaml
+  /v3/platsolution/mch-transfer/reservation/out-reservation-no/{out_reservation_no}:
+    $ref: ./v3/platsolution/mch-transfer/reservation/out-reservation-no/{out_reservation_no}.yaml
+  /v3/platsolution/mch-transfer/reservation/out-reservation-no/{out_reservation_no}/close:
+    $ref: ./v3/platsolution/mch-transfer/reservation/out-reservation-no/{out_reservation_no}/close.yaml
+  /v3/platsolution/mch-transfer/reservation/reservation-id/{reservation_id}:
+    $ref: ./v3/platsolution/mch-transfer/reservation/reservation-id/{reservation_id}.yaml
   /v3/profitsharing/bills:
     $ref: ./v3/profitsharing/bills.yaml
   /v3/profitsharing/merchant-configs/{sub_mchid}:

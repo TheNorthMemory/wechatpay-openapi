@@ -21,7 +21,7 @@ interface CancelApplications
             'sub_mchid' => '1900000109',
             'out_apply_no' => '2019061122222222122',
             'application_info' => [[
-                'application_type' => 'SP_MERCHANT_APPLICATION | SUB_MERCHANT_APPLICATION | MISSING_OFFICIAL_SEAL_LETTER',
+                'application_type' => 'SP_CANCEL_ACCOUNT_APPLICATION | SUB_CANCEL_ACCOUNT_APPLICATION',
                 'application_media_id' => '',
             ],],
         ],
@@ -37,7 +37,7 @@ interface CancelApplications
             'sub_mchid' => '1900000109',
             'out_apply_no' => '2019061122222222122',
             'application_info' => [[
-                'application_type' => 'SP_MERCHANT_APPLICATION | SUB_MERCHANT_APPLICATION | MISSING_OFFICIAL_SEAL_LETTER',
+                'application_type' => 'SP_CANCEL_ACCOUNT_APPLICATION | SUB_CANCEL_ACCOUNT_APPLICATION',
                 'application_media_id' => '',
             ],],
         ],

@@ -1,5 +1,5 @@
 get:
-  x-last-updated-at: 2022.03.17
+  x-last-updated-at: 2024.06.05
   x-role:
     - 电商平台
     - 服务商
@@ -8,7 +8,7 @@ get:
     - 基础支付∙合单
     - 收付通∙合单
   summary: 合单查询订单API
-  description: 电商平台通过合单查询订单API查询订单状态，完成下一步的业务逻辑。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/combine/chapter3_3.shtml)
+  description: 电商平台通过合单查询订单API查询订单状态，完成下一步的业务逻辑。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/combine/chapter3_3.shtml) [官方文档](https://pay.weixin.qq.com/docs/partner/apis/combine-payment/orders/query-order.html)
   parameters:
     - name: combine_out_trade_no
       in: path
@@ -128,6 +128,11 @@ get:
                       type: string
                       description: 现金支付币种
                       example: CNY
+                    settlement_rate:
+                      type: number
+                      format: integer
+                      description: 结算汇率(汇率值是汇率乘以10的8次方)
+                      example: 650000000
           combine_payer_info:
             type: object
             description: 支付者

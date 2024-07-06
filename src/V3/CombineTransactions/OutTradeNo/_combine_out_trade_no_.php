@@ -13,7 +13,7 @@ interface _combine_out_trade_no_
     /**
      * 合单查询订单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/combine/chapter3_3.shtml
+     * @link https://pay.weixin.qq.com/docs/partner/apis/combine-payment/orders/query-order.html
      */
     public function get(array $options = [
         'combine_out_trade_no' => '',
@@ -22,7 +22,7 @@ interface _combine_out_trade_no_
     /**
      * 合单查询订单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/combine/chapter3_3.shtml#async
+     * @link https://pay.weixin.qq.com/docs/partner/apis/combine-payment/orders/query-order.html#async
      */
     public function getAsync(array $options = [
         'combine_out_trade_no' => '',

@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2023.02.10
+  x-last-updated-at: 2023.07.21
   x-role:
     - 电商平台
   tags:
@@ -35,9 +35,8 @@ post:
                   type: string
                   description: 注销申请材料类型
                   enum:
-                    - SP_MERCHANT_APPLICATION
-                    - SUB_MERCHANT_APPLICATION
-                    - MISSING_OFFICIAL_SEAL_LETTER
+                    - SP_CANCEL_ACCOUNT_APPLICATION
+                    - SUB_CANCEL_ACCOUNT_APPLICATION
                 application_media_id:
                   type: string
   responses:

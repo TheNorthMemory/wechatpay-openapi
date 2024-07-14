@@ -1,5 +1,7 @@
 post:
   x-api-cert-required: true
+  x-last-updated-at: 2021.09.01
+  deprecated: true
   tags:
     - APIv2∙通用
   summary: 服务商特约商户关注功能配置

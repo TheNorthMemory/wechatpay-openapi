@@ -1,11 +1,11 @@
 get:
-  x-last-updated-at: 2020.08.10
+  x-last-updated-at: 2024.07.29
   x-role:
     - 电商平台
   tags:
     - 收付通∙账单
   summary: 申请二级商户资金账单API
-  description: '微信支付按天提供微信支付账户的资金流水账单文件，电商平台可以通过该接口获取二级商户账单文件的下载地址。文件内包含电商平台二级商户资金操作相关的业务单号、收支金额、记账时间等信息，供电商平台进行核对。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter7_9_5.shtml)'
+  description: '微信支付按天提供微信支付账户的资金流水账单文件，电商平台可以通过该接口获取二级商户账单文件的下载地址。文件内包含电商平台二级商户资金操作相关的业务单号、收支金额、记账时间等信息，供电商平台进行核对。 [官方文档](https://pay.weixin.qq.com/docs/partner/apis/bill-download/sub-merchant-fund-flow-bill/get-sub-merchant-fund-flow-bill.html) [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter7_9_5.shtml)'
   parameters:
     - name: bill_date
       in: query
@@ -29,7 +29,9 @@ get:
       required: true
       type: string
       description: 加密算法
-      example: AEAD_AES_256_GCM
+      enum:
+        - AEAD_AES_256_GCM
+        - SM4_GCM
   responses:
     200:
       schema:

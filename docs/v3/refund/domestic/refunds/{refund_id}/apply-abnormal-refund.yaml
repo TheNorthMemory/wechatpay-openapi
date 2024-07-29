@@ -22,7 +22,7 @@ post:
         type: object
         required:
           - out_refund_no
-          - amount
+          - type
         properties:
           sub_mchid:
             type: string
@@ -34,11 +34,13 @@ post:
             example: '1217752501201407033233368018'
           type:
             type: string
+            description: 异常退款处理方式
             enum:
-              - COUPON
-              - DISCOUNT
+              - USER_BANK_CARD
+              - MERCHANT_BANK_CARD
           bank_type:
             type: string
+            description: 开户银行
             enum:
               - CMB_DEBIT
               - COMM_DEBIT
@@ -58,9 +60,13 @@ post:
           bank_account:
             type: string
             format: base64
+            description: 收款银行卡号
+            example: d+xT+MQCvrLHUVDWv/8MR/dB7TkXLVfSrUxMPZy6jWWYzpRrEEaYQE8ZRGYoeorwC+w==
           real_name:
             type: string
             format: base64
+            description: 收款用户姓名
+            example: UPgQcZSdq3zOayJwZ5XLrHY2dZU1W2Cd
   responses:
     '200':
       schema:

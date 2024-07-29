@@ -18,7 +18,7 @@ interface Tradebill
         'query' => [
             'bill_date' => '2019-06-11',
             'sub_mchid' => '19000000001',
-            'bill_type' => 'ALL',
+            'bill_type' => 'ALL | SUCCESS | REFUND | RECHARGE_REFUND',
             'tar_type' => 'GZIP',
         ],
     ]): ResponseInterface;
@@ -32,7 +32,7 @@ interface Tradebill
         'query' => [
             'bill_date' => '2019-06-11',
             'sub_mchid' => '19000000001',
-            'bill_type' => 'ALL',
+            'bill_type' => 'ALL | SUCCESS | REFUND | RECHARGE_REFUND',
             'tar_type' => 'GZIP',
         ],
     ]): PromiseInterface;

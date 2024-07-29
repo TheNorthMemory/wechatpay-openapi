@@ -1,5 +1,5 @@
 get:
-  x-last-updated-at: 2021.10.11
+  x-last-updated-at: 2024.07.29
   x-role:
     - 服务商
     - 电商平台
@@ -8,7 +8,7 @@ get:
     - 收付通∙账单
     - 运营工具∙用工卡
   summary: 申请单个子商户资金账单API
-  description: 微信支付按天提供微信支付账户的资金流水账单文件，服务商可以通过该接口获取子商户账单文件的下载地址。文件内包含子商户资金操作相关的业务单号、收支金额、记账时间等信息，供商户进行核对。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_25.shtml) [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter4_1_12.shtml)
+  description: 微信支付按天提供微信支付账户的资金流水账单文件，服务商可以通过该接口获取子商户账单文件的下载地址。文件内包含子商户资金操作相关的业务单号、收支金额、记账时间等信息，供商户进行核对。 [官方文档](https://pay.weixin.qq.com/docs/partner/apis/bill-download/sub-mch-fund-flow-bill/get-sub-mch-fund-flow-bill.html) [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_25.shtml) [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter4_1_12.shtml)
   parameters:
     - name: sub_mchid
       in: query
@@ -35,24 +35,25 @@ get:
       required: true
       type: string
       description: 加密算法
-      example: AEAD_AES_256_GCM
+      enum:
+        - AEAD_AES_256_GCM
+        - SM4_GCM
     - name: account_type
       in: query
       required: true
       type: string
       description: 资金账户类型
-      example: BASIC
       enum:
         - BASIC
         - OPERATION
         - FEES
+        - DEPOSIT
   responses:
     '200':
       schema:
         type: object
         required:
           - download_bill_count
-          - download_bill_list
         properties:
           download_bill_count:
             type: integer

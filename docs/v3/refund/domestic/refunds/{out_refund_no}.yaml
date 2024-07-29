@@ -6,7 +6,7 @@ get:
   tags:
     - 基础支付∙退款
   summary: 查询单笔退款API
-  description: 提交退款申请后，通过调用该接口查询退款状态。退款有一定延时，建议在提交退款申请后1分钟发起查询退款状态，一般来说零钱支付的退款5分钟内到账，银行卡支付的退款1-3个工作日到账。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_5_10.shtml) [官方文档](https://pay.weixin.qq.com/docs/merchant/apis/weixin-pay-score/refunds/query-by-out-refund-no.html)
+  description: 提交退款申请后，通过调用该接口查询退款状态。退款有一定延时，建议在提交退款申请后1分钟发起查询退款状态，一般来说零钱支付的退款5分钟内到账，银行卡支付的退款1-3个工作日到账。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter3_5_10.shtml) [官方文档](https://pay.weixin.qq.com/docs/merchant/apis/refund/refunds/query-by-out-refund-no.html) [官方文档](https://pay.weixin.qq.com/docs/partner/apis/refund/refunds/query-by-out-refund-no.html) [官方文档](https://pay.weixin.qq.com/docs/merchant/apis/weixin-pay-score/refunds/query-by-out-refund-no.html)
   parameters:
     - name: out_refund_no
       in: path

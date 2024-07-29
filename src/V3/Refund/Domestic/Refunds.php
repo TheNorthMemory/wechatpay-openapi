@@ -20,7 +20,7 @@ interface Refunds
         'json' => [
             'sub_mchid' => '1900000109',
             'transaction_id' => '1217752501201407033233368018',
-            'out_trade_no' => '',
+            'out_trade_no' => '1217752501201407033233368018',
             'out_refund_no' => '1217752501201407033233368018',
             'reason' => '商品已售完',
             'notify_url' => 'https://weixin.qq.com',
@@ -54,7 +54,7 @@ interface Refunds
         'json' => [
             'sub_mchid' => '1900000109',
             'transaction_id' => '1217752501201407033233368018',
-            'out_trade_no' => '',
+            'out_trade_no' => '1217752501201407033233368018',
             'out_refund_no' => '1217752501201407033233368018',
             'reason' => '商品已售完',
             'notify_url' => 'https://weixin.qq.com',

@@ -1,11 +1,11 @@
 get:
-  x-last-updated-at: 2021.12.10
+  x-last-updated-at: 2024.07.29
   x-role: [电商平台, 服务商, 直连商户]
   tags:
     - 基础支付∙账单
     - 收付通∙账单
   summary: 申请资金账单API
-  description: 微信支付按天提供微信支付账户的资金流水账单文件，商户可以通过该接口获取账单文件的下载地址。文件内包含该账户资金操作相关的业务单号、收支金额、记账时间等信息，供商户进行核对。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter7_9_2.shtml)
+  description: 微信支付按天提供微信支付账户的资金流水账单文件，商户可以通过该接口获取账单文件的下载地址。文件内包含该账户资金操作相关的业务单号、收支金额、记账时间等信息，供商户进行核对。 [官方文档](https://pay.weixin.qq.com/docs/merchant/apis/bill-download/fund-bill/get-fund-bill.html) [官方文档](https://pay.weixin.qq.com/docs/partner/apis/bill-download/fund-bill/get-fund-bill.html) [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter7_9_2.shtml)
   parameters:
     - name: bill_date
       in: query
@@ -23,7 +23,6 @@ get:
       nullable: true
       type: string
       description: 资金账户类型
-      default: BASIC
       allOf:
         - $ref: '../../definitions/Enumerations.yaml#BillAccountType'
     - name: tar_type

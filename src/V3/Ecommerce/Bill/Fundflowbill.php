@@ -19,7 +19,7 @@ interface Fundflowbill
             'bill_date' => '2019-06-11',
             'account_type' => 'ALL',
             'tar_type' => 'GZIP',
-            'algorithm' => 'AEAD_AES_256_GCM',
+            'algorithm' => 'AEAD_AES_256_GCM | SM4_GCM',
         ],
     ]): ResponseInterface;
 
@@ -33,7 +33,7 @@ interface Fundflowbill
             'bill_date' => '2019-06-11',
             'account_type' => 'ALL',
             'tar_type' => 'GZIP',
-            'algorithm' => 'AEAD_AES_256_GCM',
+            'algorithm' => 'AEAD_AES_256_GCM | SM4_GCM',
         ],
     ]): PromiseInterface;
 }

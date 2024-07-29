@@ -19,10 +19,10 @@ interface ApplyAbnormalRefund
         'json' => [
             'sub_mchid' => '1900000109',
             'out_refund_no' => '1217752501201407033233368018',
-            'type' => 'COUPON | DISCOUNT',
+            'type' => 'USER_BANK_CARD | MERCHANT_BANK_CARD',
             'bank_type' => 'CMB_DEBIT | COMM_DEBIT | ABC_DEBIT | CCB_DEBIT',
-            'bank_account' => '',
-            'real_name' => '',
+            'bank_account' => 'd+xT+MQCvrLHUVDWv/8MR/dB7TkXLVfSrUxMPZy6jWWYzpRrEEaYQE8ZRGYoeorwC+w==',
+            'real_name' => 'UPgQcZSdq3zOayJwZ5XLrHY2dZU1W2Cd',
         ],
         'headers' => [
             'Wechatpay-Serial' => '',
@@ -39,10 +39,10 @@ interface ApplyAbnormalRefund
         'json' => [
             'sub_mchid' => '1900000109',
             'out_refund_no' => '1217752501201407033233368018',
-            'type' => 'COUPON | DISCOUNT',
+            'type' => 'USER_BANK_CARD | MERCHANT_BANK_CARD',
             'bank_type' => 'CMB_DEBIT | COMM_DEBIT | ABC_DEBIT | CCB_DEBIT',
-            'bank_account' => '',
-            'real_name' => '',
+            'bank_account' => 'd+xT+MQCvrLHUVDWv/8MR/dB7TkXLVfSrUxMPZy6jWWYzpRrEEaYQE8ZRGYoeorwC+w==',
+            'real_name' => 'UPgQcZSdq3zOayJwZ5XLrHY2dZU1W2Cd',
         ],
         'headers' => [
             'Wechatpay-Serial' => '',

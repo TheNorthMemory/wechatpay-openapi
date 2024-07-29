@@ -18,7 +18,7 @@ interface Fundflowbill
         'query' => [
             'bill_date' => '2019-06-11',
             'sub_mchid' => '',
-            'account_type' => 'BASIC',
+            'account_type' => 'BASIC | OPERATION | FEES',
             'tar_type' => 'GZIP',
         ],
     ]): ResponseInterface;
@@ -32,7 +32,7 @@ interface Fundflowbill
         'query' => [
             'bill_date' => '2019-06-11',
             'sub_mchid' => '',
-            'account_type' => 'BASIC',
+            'account_type' => 'BASIC | OPERATION | FEES',
             'tar_type' => 'GZIP',
         ],
     ]): PromiseInterface;

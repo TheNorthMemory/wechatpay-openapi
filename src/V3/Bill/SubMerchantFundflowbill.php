@@ -19,8 +19,8 @@ interface SubMerchantFundflowbill
             'sub_mchid' => '19000000001',
             'bill_date' => '2019-06-11',
             'tar_type' => 'GZIP',
-            'algorithm' => 'AEAD_AES_256_GCM',
-            'account_type' => 'BASIC',
+            'algorithm' => 'AEAD_AES_256_GCM | SM4_GCM',
+            'account_type' => 'BASIC | OPERATION | FEES | DEPOSIT',
         ],
     ]): ResponseInterface;
 
@@ -34,8 +34,8 @@ interface SubMerchantFundflowbill
             'sub_mchid' => '19000000001',
             'bill_date' => '2019-06-11',
             'tar_type' => 'GZIP',
-            'algorithm' => 'AEAD_AES_256_GCM',
-            'account_type' => 'BASIC',
+            'algorithm' => 'AEAD_AES_256_GCM | SM4_GCM',
+            'account_type' => 'BASIC | OPERATION | FEES | DEPOSIT',
         ],
     ]): PromiseInterface;
 }

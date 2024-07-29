@@ -1,5 +1,5 @@
 get:
-  x-last-updated-at: 2023.06.30
+  x-last-updated-at: 2024.07.25
   x-role: [电商平台]
   tags:
     - 收付通∙余额
@@ -19,6 +19,13 @@ get:
       format: date
       description: 日期
       example: '2019-08-17'
+    - name: account_type
+      in: query
+      type: string
+      description: 账户类型
+      enum:
+        - BASIC
+        - DEPOSIT
   responses:
     200:
       schema:
@@ -39,3 +46,10 @@ get:
             type: integer
             description: 不可用余额
             example: 100
+          account_type:
+            type: string
+            description: 账户类型
+            example: BASIC
+            enum:
+              - BASIC
+              - DEPOSIT

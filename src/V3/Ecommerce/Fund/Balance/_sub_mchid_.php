@@ -17,7 +17,7 @@ interface _sub_mchid_
     public function get(array $options = [
         'sub_mchid' => '1900000109',
         'query' => [
-            'account_type' => 'BASIC',
+            'account_type' => 'BASIC | OPERATION | FEES | DEPOSIT',
         ],
     ]): ResponseInterface;
 
@@ -29,7 +29,7 @@ interface _sub_mchid_
     public function getAsync(array $options = [
         'sub_mchid' => '1900000109',
         'query' => [
-            'account_type' => 'BASIC',
+            'account_type' => 'BASIC | OPERATION | FEES | DEPOSIT',
         ],
     ]): PromiseInterface;
 }

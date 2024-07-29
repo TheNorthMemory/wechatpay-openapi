@@ -12,7 +12,7 @@ interface Apply
     /**
      * 退款申请(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/refunds/chapter3_1.shtml
+     * @link https://pay.weixin.qq.com/docs/partner/apis/ecommerce-refund/refunds/create-refund.html
      */
     public function post(array $options = [
         'json' => [
@@ -25,17 +25,23 @@ interface Apply
             'reason' => '商品已售完',
             'amount' => [
                 'refund' => 888,
+                'from' => [[
+                    'account' => 'AVAILABLE | UNAVAILABLE',
+                    'amount' => 444,
+                ],],
                 'total' => 888,
                 'currency' => 'CNY',
             ],
             'notify_url' => 'https://weixin.qq.com',
+            'refund_account' => 'REFUND_SOURCE_SUB_MERCHANT | REFUND_SOURCE_PARTNER_ADVANCE',
+            'funds_account' => 'AVAILABLE',
         ],
     ]): ResponseInterface;
 
     /**
      * 退款申请(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/refunds/chapter3_1.shtml#async
+     * @link https://pay.weixin.qq.com/docs/partner/apis/ecommerce-refund/refunds/create-refund.html#async
      */
     public function postAsync(array $options = [
         'json' => [
@@ -48,10 +54,16 @@ interface Apply
             'reason' => '商品已售完',
             'amount' => [
                 'refund' => 888,
+                'from' => [[
+                    'account' => 'AVAILABLE | UNAVAILABLE',
+                    'amount' => 444,
+                ],],
                 'total' => 888,
                 'currency' => 'CNY',
             ],
             'notify_url' => 'https://weixin.qq.com',
+            'refund_account' => 'REFUND_SOURCE_SUB_MERCHANT | REFUND_SOURCE_PARTNER_ADVANCE',
+            'funds_account' => 'AVAILABLE',
         ],
     ]): PromiseInterface;
 }

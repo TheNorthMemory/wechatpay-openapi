@@ -12,7 +12,7 @@ interface _refund_id_
     /**
      * 通过微信支付退款单号查询退款(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/refunds/chapter3_2.shtml
+     * @link https://pay.weixin.qq.com/docs/partner/apis/ecommerce-refund/refunds/query-refund.html
      */
     public function get(array $options = [
         'refund_id' => '50000000382019052709732678859',
@@ -24,7 +24,7 @@ interface _refund_id_
     /**
      * 通过微信支付退款单号查询退款(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/refunds/chapter3_2.shtml#async
+     * @link https://pay.weixin.qq.com/docs/partner/apis/ecommerce-refund/refunds/query-refund.html#async
      */
     public function getAsync(array $options = [
         'refund_id' => '50000000382019052709732678859',

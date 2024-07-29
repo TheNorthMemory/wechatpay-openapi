@@ -1,10 +1,10 @@
 get:
-  x-last-updated-at: 2020.10.09
+  x-last-updated-at: 2024.07.11
   x-role: [电商平台]
   tags:
     - 收付通∙退款
   summary: 通过商户退款单号查询退款
-  description: 提交退款申请后，通过调用该接口查询退款状态。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/refunds/chapter3_2.shtml)
+  description: 提交退款申请后，通过调用该接口查询退款状态。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/refunds/chapter3_2.shtml) [官方文档](https://pay.weixin.qq.com/docs/partner/apis/ecommerce-refund/refunds/query-refund-by-out-refund-no.html)
   parameters:
     - name: out_refund_no
       in: path
@@ -74,11 +74,31 @@ get:
           amount:
             type: object
             description: 退款金额信息
+            required:
+              - refund
+              - payer_refund
             properties:
               refund:
                 type: integer
                 description: 退款金额
                 example: 888
+              from:
+                type: array
+                description: 退款出资账户及金额
+                items:
+                  type: object
+                  required:
+                    - account
+                    - amount
+                  properties:
+                    account:
+                      type: string
+                      description: 出资账户类型
+                      example: AVAILABLE
+                    amount:
+                      type: number
+                      description: 出资金额
+                      example: 444
               payer_refund:
                 type: integer
                 description: 用户退款金额
@@ -91,6 +111,10 @@ get:
                 type: string
                 description: 退款币种
                 example: CNY
+              advance:
+                type: number
+                description: 垫付金额
+                example: 888
           promotion_detail:
             type: array
             description: 营销详情
@@ -125,3 +149,11 @@ get:
                   type: integer
                   description: 优惠退款金额
                   example: 100
+          refund_account:
+            type: string
+            description: 退款出资商户
+            example: REFUND_SOURCE_SUB_MERCHANT
+          funds_account:
+            type: string
+            description: 资金账户
+            example: UNSETTLED

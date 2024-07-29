@@ -18,6 +18,7 @@ interface _sub_mchid_
         'sub_mchid' => '1222212222',
         'query' => [
             'date' => '2019-08-17',
+            'account_type' => 'BASIC | DEPOSIT',
         ],
     ]): ResponseInterface;
 
@@ -30,6 +31,7 @@ interface _sub_mchid_
         'sub_mchid' => '1222212222',
         'query' => [
             'date' => '2019-08-17',
+            'account_type' => 'BASIC | DEPOSIT',
         ],
     ]): PromiseInterface;
 }

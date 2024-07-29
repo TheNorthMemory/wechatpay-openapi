@@ -1,5 +1,5 @@
 get:
-  x-last-updated-at: 2020.12.23
+  x-last-updated-at: 2024.07.25
   x-role:
     - 电商平台
     - 服务商
@@ -7,7 +7,7 @@ get:
     - 收付通∙余额
     - 运营工具∙用工卡
   summary: 查询二级商户账户实时余额API
-  description: 服务商通过此接口可以查询特约商户账户余额信息。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_19.shtml) [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/amount/chapter3_1.shtml)
+  description: 服务商通过此接口可以查询特约商户账户余额信息。 [官方文档](https://pay.weixin.qq.com/docs/partner/apis/ecommerce-balance/accounts/query-e-commerce-balance.html) [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_19.shtml) [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/amount/chapter3_1.shtml)
   parameters:
     - name: sub_mchid
       in: path
@@ -19,9 +19,11 @@ get:
       in: query
       type: string
       description: 账户类型
-      example: BASIC
       allOf:
-        - $ref: '../../../../definitions/Enumerations.yaml#BillAccountType'
+        - $ref: '../../../../definitions/Enumerations.yaml#/BillAccountType'
+        - type: string
+          enum:
+            - DEPOSIT
   responses:
     '200':
       schema:
@@ -35,7 +37,11 @@ get:
             description: 特约商户号
             example: '1900000109'
           account_type:
-            $ref: '../../../../definitions/Enumerations.yaml#BillAccountType'
+            allOf:
+              - $ref: '../../../../definitions/Enumerations.yaml#/BillAccountType'
+              - type: string
+                enum:
+                  - DEPOSIT
           available_amount:
             type: integer
             description: 可用余额

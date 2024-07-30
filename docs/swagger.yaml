@@ -1273,6 +1273,8 @@ paths:
     $ref: ./v3/payscore/merchant-bill.yaml
   /v3/payscore/partner/permissions:
     $ref: ./v3/payscore/partner/permissions.yaml
+  /v3/payscore/partner/permissions/apply-for-scene:
+    $ref: ./v3/payscore/partner/permissions/apply-for-scene.yaml
   /v3/payscore/partner/permissions/assess-user-risk-level:
     $ref: ./v3/payscore/partner/permissions/assess-user-risk-level.yaml
   /v3/payscore/partner/permissions/authorization-code/{authorization_code}:

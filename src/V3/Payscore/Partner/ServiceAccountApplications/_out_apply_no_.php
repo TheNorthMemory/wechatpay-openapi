@@ -15,7 +15,7 @@ interface _out_apply_no_
      * @link https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/partner-service-account/get-service-account-application.html
      */
     public function get(array $options = [
-        'out_order_no' => '1234323JKHDFE1243252',
+        'out_apply_no' => '1234323JKHDFE1243252',
     ]): ResponseInterface;
 
     /**
@@ -24,6 +24,6 @@ interface _out_apply_no_
      * @link https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/partner-service-account/get-service-account-application.html#async
      */
     public function getAsync(array $options = [
-        'out_order_no' => '1234323JKHDFE1243252',
+        'out_apply_no' => '1234323JKHDFE1243252',
     ]): PromiseInterface;
 }

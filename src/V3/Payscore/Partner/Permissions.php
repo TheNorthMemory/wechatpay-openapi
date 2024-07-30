@@ -7,6 +7,7 @@ use GuzzleHttp\Promise\PromiseInterface;
 
 /**
  * @property-read Permissions\AuthorizationCode $authorizationCode
+ * @property-read Permissions\ApplyForScene $applyForScene
  * @property-read Permissions\AssessUserRiskLevel $assessUserRiskLevel
  * @property-read Permissions\Search $search
  * @property-read Permissions\Terminate $terminate
@@ -16,7 +17,7 @@ interface Permissions
     /**
      * 商户预授权(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter6_2_18.shtml
+     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/partner-service-auth/apply-partner-permissions.html
      */
     public function post(array $options = [
         'json' => [
@@ -32,7 +33,7 @@ interface Permissions
     /**
      * 商户预授权(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter6_2_18.shtml#async
+     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/partner-service-auth/apply-partner-permissions.html#async
      */
     public function postAsync(array $options = [
         'json' => [

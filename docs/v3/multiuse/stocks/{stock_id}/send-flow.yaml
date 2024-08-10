@@ -1,0 +1,26 @@
+get:
+  x-last-updated-at: 2024.08.02
+  x-role:
+    - 普通商户
+  tags:
+    - 运营工具∙消费金
+  summary: 下载批次发放明细
+  description: 可获取到某批次的退款明细数据，用于对账/数据分析。 [官方文档](https://pay.weixin.qq.com/docs/merchant/apis/multiuse-coupon/stock/send-flow.html)
+  parameters:
+    - name: stock_id
+      in: path
+      required: true
+      type: string
+      description: 批次号
+      example: '9856888'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - url
+        properties:
+          url:
+            type: string
+            description: 下载链接
+            example: https://api.mch.weixin.qq.com/v3/billdownload/file?token=ja7q-s1yy1ZbROASakz0Jx4BjW3qdnympjfcB4v4yLftXXXXXXXXXXXX

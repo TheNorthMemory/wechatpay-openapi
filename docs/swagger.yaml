@@ -7,7 +7,7 @@ info:
     整理自[官方文档中心](https://pay.weixin.qq.com/wiki/doc/apiv3/index.shtml)
     本[项目/工具地址](https://github.com/TheNorthMemory/wechatpay-openapi)
     **访问第一次加载比较慢，请耐心等待大约1-2分钟不等(小文件下载比较多)。**
-  version: 0.15.31
+  version: 0.15.32
 schemes:
   - https
 consumes:
@@ -72,6 +72,7 @@ tags:
   - name: 出租车电子发票
   - name: 租用充电宝∙隔夜归还
   - name: 运营工具∙代金券
+  - name: 运营工具∙消费金
   - name: 运营工具∙商家券
   - name: 运营工具∙委托营销
   - name: 运营工具∙支付有礼
@@ -1041,6 +1042,14 @@ paths:
     $ref: ./v3/merchantfund/merchant/income-records.yaml
   /v3/merchantfund/partner/income-records:
     $ref: ./v3/merchantfund/partner/income-records.yaml
+  /v3/multiuse/stocks/{stock_id}/refund-flow:
+    $ref: ./v3/multiuse/stocks/{stock_id}/refund-flow.yaml
+  /v3/multiuse/stocks/{stock_id}/send-flow:
+    $ref: ./v3/multiuse/stocks/{stock_id}/send-flow.yaml
+  /v3/multiuse/stocks/{stock_id}/use-flow:
+    $ref: ./v3/multiuse/stocks/{stock_id}/use-flow.yaml
+  /v3/multiuse/users/{openid}/coupons:
+    $ref: ./v3/multiuse/users/{openid}/coupons.yaml
   /v3/new-tax-control-fapiao/card-template:
     $ref: ./v3/new-tax-control-fapiao/card-template.yaml
   /v3/new-tax-control-fapiao/fapiao-applications:

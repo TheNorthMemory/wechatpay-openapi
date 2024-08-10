@@ -28,6 +28,7 @@ namespace WeChatPay\OpenAPI;
  * @property-read V3\Offlinefacemch $offlinefacemch
  * @property-read V3\Offlineface $offlineface
  * @property-read V3\NewTaxControlFapiao $newTaxControlFapiao
+ * @property-read V3\Multiuse $multiuse
  * @property-read V3\Merchants $merchants
  * @property-read V3\Merchantfund $merchantfund
  * @property-read V3\MerchantStore $merchantStore

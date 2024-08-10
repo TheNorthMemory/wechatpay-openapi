@@ -114,6 +114,14 @@ get:
       type: integer
       default: 20
       description: 分页大小
+    - name: business_type
+      in: query
+      nullable: true
+      type: string
+      description: 业务类型
+      example: MULTIUSE
+      enum:
+        - MULTIUSE
   responses:
     200:
       schema:
@@ -132,4 +140,12 @@ get:
           data:
             type: array
             items:
-              $ref: '../../../../../definitions/FavorCouponStock.yaml#CouponOwner'
+              allOf:
+                - $ref: '../../../../../definitions/FavorCouponStock.yaml#CouponOwner'
+                - type: object
+                  properties:
+                    business_type:
+                      type: string
+                      description: 业务类型
+                      enum:
+                        - MULTIUSE

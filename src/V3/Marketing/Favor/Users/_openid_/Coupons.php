@@ -60,6 +60,7 @@ interface Coupons
             'available_mchid' => '',
             'offset' => 0,
             'limit' => 20,
+            'business_type' => 'MULTIUSE',
         ],
     ]): ResponseInterface;
 
@@ -79,6 +80,7 @@ interface Coupons
             'available_mchid' => '',
             'offset' => 0,
             'limit' => 20,
+            'business_type' => 'MULTIUSE',
         ],
     ]): PromiseInterface;
 }

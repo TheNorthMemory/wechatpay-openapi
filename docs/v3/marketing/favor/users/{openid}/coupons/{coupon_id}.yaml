@@ -24,4 +24,46 @@ get:
   responses:
     200:
       schema:
-        $ref: '../../../../../../definitions/FavorCouponStock.yaml#CouponOwner'
+        allOf:
+          - $ref: '../../../../../../definitions/FavorCouponStock.yaml#CouponOwner'
+          - type: object
+            properties:
+              business_type:
+                type: string
+                description: 业务类型
+                enum:
+                  - MULTIUSE
+              available_region_list:
+                type: array
+                description: 消费金可用地域
+                items:
+                  type: object
+                  properties:
+                    type:
+                      type: string
+                      description: 类型
+                    province:
+                      type: string
+                      description: 省
+                    city:
+                      type: string
+                      description: 市
+                    district:
+                      type: string
+                      description: 区
+                    country:
+                      type: string
+                      description: 国家
+                example:
+                  - type: PROVINCE
+                    province: 广东省
+                    city: 深圳市
+                    district: 南山区
+                    country: 中国大陆
+              available_industry_list:
+                type: array
+                description: 消费金可用行业
+                items:
+                  type: string
+                example:
+                  - 餐饮

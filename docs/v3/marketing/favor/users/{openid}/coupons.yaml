@@ -1,10 +1,10 @@
 post:
-  x-last-updated-at: 2019.09.27
+  x-last-updated-at: 2024.05.28
   x-role: [直连商户, 服务商, 渠道商]
   tags:
     - 运营工具∙代金券
   summary: 发放代金券API
-  description: 商户平台/API完成制券后，可使用发放代金券接口发券。通过调用此接口可发放指定批次给指定用户，发券场景可以是小程序、H5、APP等。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/convention/chapter3_2.shtml)
+  description: 商户平台/API完成制券后，可使用发放代金券接口发券。通过调用此接口可发放指定批次给指定用户，发券场景可以是小程序、H5、APP等。 [官方文档](https://pay.weixin.qq.com/docs/merchant/apis/cash-coupons/coupon/list-coupons-by-filter.html) [官方文档](https://pay.weixin.qq.com/docs/partner/apis/cash-coupons/coupon/list-coupons-by-filter.html) [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/convention/chapter3_2.shtml)
   parameters:
     - name: openid
       in: path
@@ -144,6 +144,10 @@ get:
                 - $ref: '../../../../../definitions/FavorCouponStock.yaml#CouponOwner'
                 - type: object
                   properties:
+                    available_balance:
+                      type: number
+                      description: 剩余金额
+                      example: 10000
                     business_type:
                       type: string
                       description: 业务类型

@@ -1,10 +1,10 @@
 get:
-  x-last-updated-at: 2019.09.27
+  x-last-updated-at: 2024.05.28
   x-role: [直连商户, 服务商, 渠道商]
   tags:
     - 运营工具∙代金券
   summary: 查询批次详情API
-  description: 通过此接口可查询批次信息，包括批次的配置信息以及批次概况数据。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/convention/chapter3_5.shtml)
+  description: 通过此接口可查询批次信息，包括批次的配置信息以及批次概况数据。 [官方文档](https://pay.weixin.qq.com/docs/merchant/apis/cash-coupons/stock/query-stock.html) [官方文档](https://pay.weixin.qq.com/docs/partner/apis/cash-coupons/stock/query-stock.html) [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/convention/chapter3_5.shtml)
   parameters:
     - name: stock_id
       in: path

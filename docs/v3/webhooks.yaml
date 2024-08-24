@@ -26,6 +26,7 @@ post:
     [支付分支付成功回调通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter5_3.shtml)
     [普通商户委托代扣支付结果通知](https://pay.weixin.qq.com/docs/merchant/apis/entrusted-payment/deduct-result-notify.html)
     [普通商户委托代扣签解约通知](https://pay.weixin.qq.com/docs/merchant/apis/entrusted-payment/contract-alter-notify.html)
+    [代扣解约挽留业务-获取解约挽留信息](https://pay.weixin.qq.com/docs/merchant/apis/termination-retention/termination-retention-information.html)
     [服务商委托代扣支付结果通知](https://pay.weixin.qq.com/docs/partner/apis/entrusted-payment/deduct-result-notify.html)
     [服务商委托代扣签解约通知](https://pay.weixin.qq.com/docs/partner/apis/entrusted-payment/contract-alter-notify.html)
     [先享卡用户领卡通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter4_1.shtml)
@@ -215,6 +216,8 @@ WechatpayNotificationOriginalType:
     - membercard
     # @see [平台收付通商家充值-充值结果通知](https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-recharge/notification/recharge-notice.html)
     - recharge
+    # see [代扣解约挽留业务-获取解约挽留信息](https://pay.weixin.qq.com/docs/merchant/apis/termination-retention/termination-retention-information.html)
+    - entrust
 
 WechatpayNotificationEventType:
   type: string
@@ -239,6 +242,7 @@ WechatpayNotificationEventType:
     [先享卡用户守约状态变化通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/discount-card/chapter5_2.shtml)
     [先享卡扣费状态变化通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/discount-card/chapter5_3.shtml)
     [直连商户委托代扣支付成功结果通知](https://pay.weixin.qq.com/docs/merchant/apis/entrusted-payment/deduct-result-notify.html)
+    [代扣解约挽留业务-获取解约挽留信息](https://pay.weixin.qq.com/docs/merchant/apis/termination-retention/termination-retention-information.html)
     [服务商委托代扣支付成功结果通知](https://pay.weixin.qq.com/docs/partner/apis/entrusted-payment/deduct-result-notify.html)
     [保险业委托代扣支付成功结果通知](https://pay.weixin.qq.com/docs/merchant/apis/insurance-entrusted-payment/deduct-result-notify.html)
     [直连商户委托代扣支付失败结果通知](https://pay.weixin.qq.com/docs/merchant/apis/entrusted-payment/deduct-result-notify.html)
@@ -286,6 +290,8 @@ WechatpayNotificationEventType:
     # @see                        [接收签约结果通知](https://pay.weixin.qq.com/docs/partner/apis/education-fee-payment/contracts-result-notification.html)
     - ENTRUST.SIGNING             #签约成功-通知类型
     - ENTRUST.RELEASE             #解约成功-通知类型
+    # see                         [代扣解约挽留业务-获取解约挽留信息](https://pay.weixin.qq.com/docs/merchant/apis/termination-retention/termination-retention-information.html)
+    - ENTRUST.TERMINATE_RETENTION #解约挽留信息
     # @see                        [分账动账通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/profitsharing/chapter3_6.shtml)
     - PROFITSHARING               #分账
     - PROFITSHARING_RETURN        #分账回退

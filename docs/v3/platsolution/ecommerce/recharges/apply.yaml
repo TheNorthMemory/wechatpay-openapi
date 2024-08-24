@@ -1,0 +1,74 @@
+post:
+  x-last-updated-at: 2024.08.09
+  x-role:
+    - 服务商
+  tag:
+    - 收付通∙充值
+  summary: 申请充值
+  description: 商户系统须通过调用此接口获取充值链接，随后发起充值流程 [官方文档](https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-recharge/recharge/apply.html)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - sub_mchid
+          - out_recharge_no
+          - recharge_scene
+          - account_type
+          - recharge_amount
+        properties:
+          sub_mchid:
+            type: string
+            description: 二级商户号
+            example: '1900001109'
+          out_recharge_no:
+            type: string
+            description: 商户充值单号
+            example: cz202407181234
+          recharge_scene:
+            type: string
+            description: 充值场景
+            example: ECOMMERCE_DEPOSIT
+          account_type:
+            type: string
+            description: 充值入账账户
+            example: DEPOSIT
+          recharge_amount:
+            type: object
+            description: 充值金额
+            properties:
+              amount:
+                type: number
+                description: 总金额
+                example: 500000
+              currency:
+                type: string
+                description: 货币类型
+                example: CNY
+          notify_url:
+            type: string
+            description: 商户回调地址
+            example: https://www.weixin.qq.com/wxpay/pay.php
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - recharge_id
+          - out_recharge_no
+          - recharge_url
+        properties:
+          recharge_id:
+            type: string
+            description: 微信支付充值单号
+            example: '172207846292553701'
+          out_recharge_no:
+            type: string
+            description: 商户充值单号
+            example: cz202407181234
+          recharge_url:
+            type: string
+            description: 充值链接
+            example: https://www.payapp.qq.com/plat/recharge.html

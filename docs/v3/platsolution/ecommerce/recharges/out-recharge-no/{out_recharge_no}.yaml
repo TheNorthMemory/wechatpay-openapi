@@ -1,0 +1,131 @@
+get:
+  x-last-updated-at: 2024.08.09
+  x-role:
+    - 服务商
+  tag:
+    - 收付通∙充值
+  summary: 查询充值结果
+  description: 提交充值申请后，可调用该接口查询充值状态。充值到账存在延迟： 1、扫码充值：3分钟内到账 2、银行转账：一般可在10分钟内到账。受央行大额系统工作时间限制，周一至周四17:15-20:30，周五17:15-24:00，节假日全天会延迟到账 [官方文档](https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-recharge/recharge/get-by-out-no.html)
+  parameters:
+    - name: out_recharge_no
+      in: path
+      required: true
+      type: string
+      description: 商户充值单号
+      example: cz2020042013
+    - name: sub_mchid
+      in: query
+      required: true
+      type: string
+      description: 二级商户号
+      example: '1900001121'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - sp_mchid
+          - sub_mchid
+          - recharge_id
+          - out_recharge_no
+          - account_type
+          - recharge_state
+          - recharge_scene
+          - recharge_amount
+        properties:
+          sp_mchid:
+            type: string
+            description: 平台商户号
+            example: '1900001109'
+          sub_mchid:
+            type: string
+            description: 二级商户号
+            example: '1900001121'
+          recharge_id:
+            type: string
+            description: 微信支付充值单号
+            example: '172234484162395401'
+          out_recharge_no:
+            type: string
+            description: 商户充值单号
+            example: cz2020042013
+          recharge_channel:
+            type: string
+            description: 充值渠道
+            example: BANK_TRANSFER
+          account_type:
+            type: string
+            description: 充值入账账户
+            example: DEPOSIT
+          recharge_state:
+            type: string
+            description: 充值状态
+            example: SUCCESS
+          recharge_scene:
+            type: string
+            description: 充值场景
+            example: ECOMMERCE_DEPOSIT
+          recharge_state_desc:
+            type: string
+            description: 充值状态描述
+            example: 超过时间限制，系统自动关闭充值单
+          recharge_amount:
+            type: object
+            description: 充值金额
+            properties:
+              amount:
+                type: number
+                description: 总金额
+                example: 500000
+              currency:
+                type: string
+                description: 货币类型
+                example: CNY
+          bank_transfer_info:
+            type: object
+            description: 转账充值的付款信息
+            properties:
+              bill_no:
+                type: string
+                description: 转入的银行流水单号
+                example: '110240620400046628001252733345'
+              memo:
+                type: string
+                description: 转账充值附言
+                example: 转账充值附言
+              return_time:
+                type: string
+                description: 银行转账退回时间
+                example: '2015-05-20T13:29:35+08:00'
+              return_reason:
+                type: string
+                description: 银行转账退回原因
+                example: 银行转账充值金额与申请充值金额不一致
+              bank_name:
+                type: string
+                description: 开户银行名称
+                example: 中国银行
+              bank_card_tail:
+                type: string
+                description: 银行卡号后四位
+                example: '0722'
+          qr_recharge_info:
+            type: object
+            description: 扫码充值的付款信息
+            properties:
+              openid:
+                type: string
+                description: 用户OpenID
+                example: owYiu0WOJdGCYxoHrPabGhI39uT4
+          accept_time:
+            type: string
+            description: 受理充值时间
+            example: '2015-05-20T13:29:35+08:00'
+          success_time:
+            type: string
+            description: 充值成功时间
+            example: '2015-05-20T13:29:35+08:00'
+          close_time:
+            type: string
+            description: 关闭充值时间
+            example: '2015-05-20T13:29:35+08:00'

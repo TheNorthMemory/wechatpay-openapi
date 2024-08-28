@@ -22,6 +22,7 @@ interface Orderquery
             'mch_id' => '1230000109',
             'sub_mch_id' => '1900000100',
             'transaction_id' => '1009660380201506130728806387',
+            'out_trade_no' => '20150806125346',
             'sign_type' => 'HMAC-SHA256',
         ],
     ]): ResponseInterface;
@@ -39,6 +40,7 @@ interface Orderquery
             'mch_id' => '1230000109',
             'sub_mch_id' => '1900000100',
             'transaction_id' => '1009660380201506130728806387',
+            'out_trade_no' => '20150806125346',
             'sign_type' => 'HMAC-SHA256',
         ],
     ]): PromiseInterface;

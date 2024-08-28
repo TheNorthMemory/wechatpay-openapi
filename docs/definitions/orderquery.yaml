@@ -42,9 +42,9 @@ orderquery.request:
       example: '1009660380201506130728806387'
       maxLength: 32
     out_trade_no:
-      type: '20150806125346'
+      type: string
       description: 商户订单号
-      example: 商户系统内部订单号，要求32个字符内，只能是数字、大小写字母_-|*@ ，且在同一个商户号下唯一。 详见商户订单号
+      example: '20150806125346'
     nonce_str:
       type: string
       description: 随机字符串

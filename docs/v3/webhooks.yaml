@@ -345,3 +345,6 @@ WechatpayNotificationEventType:
     # @see             [平台收付通商家充值-充值结果通知](https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-recharge/notification/recharge-notice.html)
     - RECHARGE.SUCCESS #充值成功
     - RECHARGE.CLOSED  #关闭充值
+    - APPLYMENT_STATE.APPROVED #审核通过通知
+    - PAPAY.SIGN      #签约成功通知
+    - PAPAY.TERMINATE #解约成功通知

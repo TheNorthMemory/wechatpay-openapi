@@ -7,7 +7,7 @@ info:
     整理自[官方文档中心](https://pay.weixin.qq.com/wiki/doc/apiv3/index.shtml)
     本[项目/工具地址](https://github.com/TheNorthMemory/wechatpay-openapi)
     **访问第一次加载比较慢，请耐心等待大约1-2分钟不等(小文件下载比较多)。**
-  version: 0.15.33
+  version: 0.15.34
 schemes:
   - https
 consumes:
@@ -38,6 +38,7 @@ tags:
   - name: 收付通∙充值
   - name: 收付通∙余额
   - name: 收付通∙提现
+  - name: 收付通∙赔付
   - name: 收付通∙账单
   - name: 收付通∙跨境
   - name: 服务商∙进件
@@ -1399,6 +1400,10 @@ paths:
     $ref: ./v3/payscore/user-service-state.yaml
   /v3/payscore/users/{openid}/permissions/{service_id}/terminate:
     $ref: ./v3/payscore/users/{openid}/permissions/{service_id}/terminate.yaml
+  /v3/platsolution/ecommerce/insurance-compensation-contracts:
+    $ref: ./v3/platsolution/ecommerce/insurance-compensation-contracts.yaml
+  /v3/platsolution/ecommerce/insurance-compensation-contracts/sub-mchid/{sub_mchid}/check-opened:
+    $ref: ./v3/platsolution/ecommerce/insurance-compensation-contracts/sub-mchid/{sub_mchid}/check-opened.yaml
   /v3/platsolution/ecommerce/recharges/apply:
     $ref: ./v3/platsolution/ecommerce/recharges/apply.yaml
   /v3/platsolution/ecommerce/recharges/out-recharge-no/{out_recharge_no}:

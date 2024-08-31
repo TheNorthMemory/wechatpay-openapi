@@ -1,0 +1,74 @@
+post:
+  x-last-updated-at: 2024.08.30
+  x-role:
+    - 服务商
+  tag:
+    - 收付通∙赔付
+  summary: 开通保险理赔功能
+  description: 平台服务商可通过该接口为保险公司开通保险理赔功能。 [官方文档](https://pay.weixin.qq.com/docs/partner/apis/plat-compensation/plat-compensation/open-insurance-compensation.html)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - out_apply_no
+          - sub_mchid
+          - agreement_list
+        properties:
+          out_apply_no:
+            type: string
+            description: 商户申请单号
+            example: No123456
+          sub_mchid:
+            type: string
+            description: 二级商户号
+            example: '1900000109'
+          agreement_list:
+            type: array
+            description: 签约协议列表
+            items:
+              type: object
+              required:
+                - agreement_code
+                - agreement_version
+                - sign_organization
+                - sign_time
+              properties:
+                agreement_code:
+                  type: string
+                  description: 协议编号
+                  example: 微信支付运营功能服务协议（平台二级商户）
+                agreement_version:
+                  type: string
+                  description: 协议版本号
+                  example: '20240815'
+                sign_organization:
+                  type: string
+                  description: 签约主体
+                  example: 温州名优贸易
+                sign_time:
+                  type: string
+                  description: 签约时间
+                  example: '2024-08-08T10:34:56+08:00'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - sub_mchid
+          - opened
+        properties:
+          sub_mchid:
+            type: string
+            description: 二级商户号
+            example: '1900000109'
+          opened:
+            type: boolean
+            description: 是否开通成功
+            example: true
+          success_time:
+            type: string
+            description: 成功时间
+            example: '2024-08-09T13:29:35.120+08:00'

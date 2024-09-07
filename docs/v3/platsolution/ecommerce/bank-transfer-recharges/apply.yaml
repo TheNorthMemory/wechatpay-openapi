@@ -1,11 +1,11 @@
 post:
   x-last-updated-at: 2024.09.04
   x-role:
-    - 服务商
+    - 平台商户
   tag:
     - 收付通∙充值
-  summary: 申请二级商户充值
-  description: 商户系统须通过调用此接口获取充值链接，随后发起充值流程 [官方文档](https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-recharge/recharge/apply.html)
+  summary: 申请银行转账充值
+  description: 商户系统须通过调用此接口获取银行转账账号，随后发起充值流程 [官方文档](https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-recharge/bank-recharge/bank-transfer-recharge-apply.html)
   parameters:
     - name: _
       in: body
@@ -13,16 +13,11 @@ post:
       schema:
         type: object
         required:
-          - sub_mchid
           - out_recharge_no
           - recharge_scene
           - account_type
           - recharge_amount
         properties:
-          sub_mchid:
-            type: string
-            description: 二级商户号
-            example: '1900001109'
           out_recharge_no:
             type: string
             description: 商户充值单号
@@ -30,13 +25,12 @@ post:
           recharge_scene:
             type: string
             description: 充值场景
-            example: ECOMMERCE_DEPOSIT
+            example: ECOMMERCE_BANK_TRANSFER
           account_type:
             type: string
             description: 充值入账账户
-            example: DEPOSIT
+            example: BASIC
             enum:
-              - DEPOSIT
               - BASIC
               - OPERATION
               - FEES
@@ -52,10 +46,6 @@ post:
                 type: string
                 description: 货币类型
                 example: CNY
-          notify_url:
-            type: string
-            description: 商户回调地址
-            example: https://www.weixin.qq.com/wxpay/pay.php
   responses:
     '200':
       schema:
@@ -63,7 +53,7 @@ post:
         required:
           - recharge_id
           - out_recharge_no
-          - recharge_url
+          - transfer_in_account
         properties:
           recharge_id:
             type: string
@@ -73,7 +63,27 @@ post:
             type: string
             description: 商户充值单号
             example: cz202407181234
-          recharge_url:
-            type: string
-            description: 充值链接
-            example: https://www.payapp.qq.com/plat/recharge.html
+          transfer_in_account:
+            type: object
+            description: 银行账户
+            properties:
+              bank_name:
+                type: string
+                description: 开户银行名称
+                example: 财付通-备付金账户
+              bank_address_code:
+                type: string
+                description: 开户银行省市编码
+                example: '440300'
+              bank_code:
+                type: string
+                description: 开户银行行号
+                example: '991584000049'
+              bank_account_name:
+                type: string
+                description: 银行账户名称
+                example: 某某某有限公司
+              bank_account_no:
+                type: string
+                description: 银行账号
+                example: '686000172489957748585801'

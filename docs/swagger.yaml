@@ -1400,6 +1400,10 @@ paths:
     $ref: ./v3/payscore/user-service-state.yaml
   /v3/payscore/users/{openid}/permissions/{service_id}/terminate:
     $ref: ./v3/payscore/users/{openid}/permissions/{service_id}/terminate.yaml
+  /v3/platsolution/ecommerce/bank-transfer-recharges/apply:
+    $ref: ./v3/platsolution/ecommerce/bank-transfer-recharges/apply.yaml
+  /v3/platsolution/ecommerce/bank-transfer-recharges/out-recharge-no/{out_recharge_no}:
+    $ref: ./v3/platsolution/ecommerce/bank-transfer-recharges/out-recharge-no/{out_recharge_no}.yaml
   /v3/platsolution/ecommerce/insurance-compensation-contracts:
     $ref: ./v3/platsolution/ecommerce/insurance-compensation-contracts.yaml
   /v3/platsolution/ecommerce/insurance-compensation-contracts/sub-mchid/{sub_mchid}/check-opened:

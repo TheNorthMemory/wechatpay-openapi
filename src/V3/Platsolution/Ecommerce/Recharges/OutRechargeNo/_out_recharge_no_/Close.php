@@ -10,7 +10,7 @@ use GuzzleHttp\Promise\PromiseInterface;
 interface Close
 {
     /**
-     * 关闭充值(同步模式)
+     * 关闭二级商户充值(同步模式)
      * @param array<string,mixed> $options
      * @link https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-recharge/recharge/close.html
      */
@@ -22,7 +22,7 @@ interface Close
     ]): ResponseInterface;
 
     /**
-     * 关闭充值(异步模式)
+     * 关闭二级商户充值(异步模式)
      * @param array<string,mixed> $options
      * @link https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-recharge/recharge/close.html#async
      */

@@ -11,7 +11,7 @@ use GuzzleHttp\Promise\PromiseInterface;
 interface _out_recharge_no_
 {
     /**
-     * 查询充值结果(同步模式)
+     * 查询二级商户充值结果(同步模式)
      * @param array<string,mixed> $options
      * @link https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-recharge/recharge/get-by-out-no.html
      */
@@ -23,7 +23,7 @@ interface _out_recharge_no_
     ]): ResponseInterface;
 
     /**
-     * 查询充值结果(异步模式)
+     * 查询二级商户充值结果(异步模式)
      * @param array<string,mixed> $options
      * @link https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-recharge/recharge/get-by-out-no.html#async
      */

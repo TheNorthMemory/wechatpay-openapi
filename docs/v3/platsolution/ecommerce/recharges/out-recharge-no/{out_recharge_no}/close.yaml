@@ -1,10 +1,10 @@
 post:
-  x-last-updated-at: 2024.08.09
+  x-last-updated-at: 2024.09.04
   x-role:
     - 服务商
   tag:
     - 收付通∙充值
-  summary: 关闭充值
+  summary: 关闭二级商户充值
   description: 以下情况可调用关单接口：1、商家操作超出规定时间限制，为防止重复处理。2、系统主动终止服务不再接受新的请求 [官方文档](https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-recharge/recharge/close.html)
   parameters:
     - name: out_recharge_no
@@ -53,18 +53,33 @@ post:
             type: string
             description: 充值渠道
             example: BANK_TRANSFER
+            enum:
+              - BANK_TRANSFER
+              - QR_RECHARGE
           account_type:
             type: string
             description: 充值入账账户
             example: DEPOSIT
+            enum:
+              - DEPOSIT
+              - BASIC
+              - OPERATION
+              - FEES
           recharge_state:
             type: string
             description: 充值状态
             example: SUCCESS
+            enum:
+              - SUCCESS
+              - RECHARGING
+              - CLOSED
           recharge_scene:
             type: string
             description: 充值场景
             example: ECOMMERCE_DEPOSIT
+            enum:
+              - ECOMMERCE_DEPOSIT
+              - ECOMMERCE_BANK_TRANSFER
           recharge_state_desc:
             type: string
             description: 充值状态描述

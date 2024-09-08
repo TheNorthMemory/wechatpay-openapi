@@ -1,6 +1,6 @@
 post:
   x-api-cert-required: true
-  x-last-updated-at: 2021.04.01
+  x-last-updated-at: 2024.03.07
   tags:
     - 跨境∙进件
   summary: 进件子商户
@@ -171,6 +171,26 @@ post:
             type: string
             description: 子商户结算银行账户
             example: '555588889999'
+          apply_h5_payment:
+            type: string
+            nullable: true
+            description: 是否申请H5支付权限
+            example: YES
+            enum:
+              - YES
+              - NO
+          h5_website_url:
+            type: string
+            nullable: true
+            description: H5经营网址
+            example: https://qq.com
+          h5_domains:
+            xml:
+              x-cdata: true
+            type: string
+            nullable: true
+            description: H5支付域名
+            example: '["www.qq.com","www.weixin.com"]'
   responses:
     '200':
       description: ''
@@ -231,3 +251,15 @@ post:
                 description: 验证状态描述
                 example: 该子商户需要通过审核才可生效。请登录商户平台检查审核状态。
                 nullable: true
+              h5_authorization_state:
+                type: string
+                description: H5支付权限状态
+                example: APPROVED
+                nullable: true
+                enum:
+                  - APPROVED
+                  - UNAUTHORIZED
+                  - UNDER_REVIEW
+                  - REJECTED
+                  - UNDER_PUNISHMENT
+                  - APPLICATION_FAILED

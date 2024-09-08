@@ -1,6 +1,6 @@
 post:
   x-api-cert-required: true
-  x-last-updated-at: 2020.06.08
+  x-last-updated-at: 2024.03.27
   tags:
     - 跨境∙进件
   summary: 查询子商户
@@ -214,3 +214,37 @@ post:
                 description: 渠道编号
                 example: '101'
                 nullable: true
+              h5_authorization_state:
+                type: string
+                description: H5支付权限状态
+                example: APPROVED
+                nullable: true
+                enum:
+                  - APPROVED
+                  - UNAUTHORIZED
+                  - UNDER_REVIEW
+                  - REJECTED
+                  - UNDER_PUNISHMENT
+                  - APPLICATION_FAILED
+              h5_audit_reject_detail:
+                type: string
+                description: H5驳回详情
+                nullable: true
+                example: 商户证书无效
+              sub_mch_status:
+                type: string
+                description: 子商户状态
+                nullable: true
+                example: OPERATING
+              application_status:
+                type: string
+                description: 子商户入驻状态
+                nullable: true
+                example: UNDER_REVIEW
+              application_reject_detail:
+                xml:
+                  x-cdata: true
+                type: string
+                description: 子商户入驻驳回详情
+                nullable: true
+                example: '[{"field":"contact_name","reason":"contact name is invalid."},{"field":"contact_phone","reason":"contact phone is invalid."}]'

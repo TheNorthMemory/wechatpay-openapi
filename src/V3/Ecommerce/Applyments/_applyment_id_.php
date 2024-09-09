@@ -12,7 +12,7 @@ interface _applyment_id_
     /**
      * 通过申请单ID查询申请状态(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/applyments/chapter3_2.shtml
+     * @link https://pay.weixin.qq.com/docs/partner/apis/ecommerce-merchant-application/applyment/get-applyment-state.html
      */
     public function get(array $options = [
         'applyment_id' => '2000002124775691',
@@ -21,7 +21,7 @@ interface _applyment_id_
     /**
      * 通过申请单ID查询申请状态(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/applyments/chapter3_2.shtml#async
+     * @link https://pay.weixin.qq.com/docs/partner/apis/ecommerce-merchant-application/applyment/get-applyment-state.html#async
      */
     public function getAsync(array $options = [
         'applyment_id' => '2000002124775691',

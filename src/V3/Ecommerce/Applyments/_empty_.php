@@ -12,7 +12,7 @@ interface _empty_
     /**
      * 二级商户进件(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter7_1_1.shtml
+     * @link https://pay.weixin.qq.com/docs/partner/apis/ecommerce-merchant-application/applyment/submit-applyment.html
      */
     public function post(array $options = [
         'json' => [
@@ -40,14 +40,12 @@ interface _empty_
                 'id_card_national' => 'vByf3Gjm7KE53JXvGy9tqZm2XAUf-4KGprrKhpVBDIUv0OF4wFNIO4kqg05InE4d2I6_H7I4',
                 'id_card_name' => 'pVd1HJ6v/69bDnuC4EL5Kz4jBHLiCa8MRtelw/wDa4SzfeespQO/0kjiwfqdfg==',
                 'id_card_number' => 'zV+BEmytMNQCqQ8juwEc4P4TG5xzchG/5IL9DBd+Z0zZXkw==4',
-                'id_card_address' => '',
                 'id_card_valid_time_begin' => '',
                 'id_card_valid_time' => '',
             ],
             'id_doc_info' => [
                 'id_doc_name' => 'jTpGmxUX3FBWVQ5NJTZvlKX_gdU4LC-ehEuo0BJqRTvDujqhThn4ReFxikqJ5YW6zFQ',
                 'id_doc_number' => 'jTpGmxUX3FBWVQ5NJTZvlKX_go0BJqRTvDujqhThn4ReFxikqJ5YW6zFQ',
-                'id_doc_address' => '',
                 'id_doc_copy' => 'xi-vByf3Gjm7KE53JXvGy9tqZm2XAUf-4KGprrKhpVBDIUv0OF4wFNIO4kqg05InE4d2I6_H7I4',
                 'id_doc_copy_back' => 'xi-vByf3Gjm7KE53JXvGy9tqZm2XAUf-4KGprrKhpVBDIUv0OF4wFNIO4kqg05InE4d2I6_H7I4',
                 'doc_period_begin' => '2020-01-02',
@@ -72,11 +70,6 @@ interface _empty_
                 'bank_branch_id' => '402713354941',
                 'bank_name' => '施秉县农村信用合作联社城关信用社',
                 'account_number' => 'd+xT+MQCvrLHUVDWv/8MR/dB7TkXLVfSrUxMPZy6jWWYzpRrEEaYQE8ZRGYoeorwC+w==',
-                'account_cert_info' => [
-                    'settlement_cert_pic' => '',
-                    'relation_cert_pic' => '',
-                    'other_cert_pics' => ['MediaId'],
-                ],
             ],
             'contact_info' => [
                 'contact_type' => '65',
@@ -89,7 +82,6 @@ interface _empty_
                 'contact_period_end' => '',
                 'business_authorization_letter' => '',
                 'mobile_phone' => 'pVd1HJ6zyvPedzGaV+X3qtmrq9bb9tPROvwia4ibL+F6mfjbzQIzfb3HHLEjZ4YiNWWNeespQO/0kjiwfqdfg==',
-                'contact_email' => 'pVd1HJ6zyvPedzGaV+X3qtmrq9bb9tPROvwia4ibL+FWWNUlw/wDa4SzfeespQO/0kjiwfqdfg==',
             ],
             'sales_scene_info' => [
                 'store_name' => '爱烧烤',
@@ -114,7 +106,7 @@ interface _empty_
     /**
      * 二级商户进件(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter7_1_1.shtml#async
+     * @link https://pay.weixin.qq.com/docs/partner/apis/ecommerce-merchant-application/applyment/submit-applyment.html#async
      */
     public function postAsync(array $options = [
         'json' => [
@@ -142,14 +134,12 @@ interface _empty_
                 'id_card_national' => 'vByf3Gjm7KE53JXvGy9tqZm2XAUf-4KGprrKhpVBDIUv0OF4wFNIO4kqg05InE4d2I6_H7I4',
                 'id_card_name' => 'pVd1HJ6v/69bDnuC4EL5Kz4jBHLiCa8MRtelw/wDa4SzfeespQO/0kjiwfqdfg==',
                 'id_card_number' => 'zV+BEmytMNQCqQ8juwEc4P4TG5xzchG/5IL9DBd+Z0zZXkw==4',
-                'id_card_address' => '',
                 'id_card_valid_time_begin' => '',
                 'id_card_valid_time' => '',
             ],
             'id_doc_info' => [
                 'id_doc_name' => 'jTpGmxUX3FBWVQ5NJTZvlKX_gdU4LC-ehEuo0BJqRTvDujqhThn4ReFxikqJ5YW6zFQ',
                 'id_doc_number' => 'jTpGmxUX3FBWVQ5NJTZvlKX_go0BJqRTvDujqhThn4ReFxikqJ5YW6zFQ',
-                'id_doc_address' => '',
                 'id_doc_copy' => 'xi-vByf3Gjm7KE53JXvGy9tqZm2XAUf-4KGprrKhpVBDIUv0OF4wFNIO4kqg05InE4d2I6_H7I4',
                 'id_doc_copy_back' => 'xi-vByf3Gjm7KE53JXvGy9tqZm2XAUf-4KGprrKhpVBDIUv0OF4wFNIO4kqg05InE4d2I6_H7I4',
                 'doc_period_begin' => '2020-01-02',
@@ -174,11 +164,6 @@ interface _empty_
                 'bank_branch_id' => '402713354941',
                 'bank_name' => '施秉县农村信用合作联社城关信用社',
                 'account_number' => 'd+xT+MQCvrLHUVDWv/8MR/dB7TkXLVfSrUxMPZy6jWWYzpRrEEaYQE8ZRGYoeorwC+w==',
-                'account_cert_info' => [
-                    'settlement_cert_pic' => '',
-                    'relation_cert_pic' => '',
-                    'other_cert_pics' => ['MediaId'],
-                ],
             ],
             'contact_info' => [
                 'contact_type' => '65',
@@ -191,7 +176,6 @@ interface _empty_
                 'contact_period_end' => '',
                 'business_authorization_letter' => '',
                 'mobile_phone' => 'pVd1HJ6zyvPedzGaV+X3qtmrq9bb9tPROvwia4ibL+F6mfjbzQIzfb3HHLEjZ4YiNWWNeespQO/0kjiwfqdfg==',
-                'contact_email' => 'pVd1HJ6zyvPedzGaV+X3qtmrq9bb9tPROvwia4ibL+FWWNUlw/wDa4SzfeespQO/0kjiwfqdfg==',
             ],
             'sales_scene_info' => [
                 'store_name' => '爱烧烤',

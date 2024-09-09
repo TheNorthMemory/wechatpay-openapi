@@ -12,18 +12,18 @@ interface Settlement
     /**
      * 查询结算账户(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/applyment4sub/chapter3_4.shtml
+     * @link https://pay.weixin.qq.com/docs/partner/apis/ecommerce-merchant-application/get-settlement.html
      */
     public function get(array $options = [
-        'sub_mchid' => '',
+        'sub_mchid' => '1900006491',
     ]): ResponseInterface;
 
     /**
      * 查询结算账户(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/applyment4sub/chapter3_4.shtml#async
+     * @link https://pay.weixin.qq.com/docs/partner/apis/ecommerce-merchant-application/get-settlement.html#async
      */
     public function getAsync(array $options = [
-        'sub_mchid' => '',
+        'sub_mchid' => '1900006491',
     ]): PromiseInterface;
 }

@@ -1,27 +1,53 @@
 get:
-  x-last-updated-at: 2019.09.09
+  x-last-updated-at: 2023.08.16
   x-role: [普通服务商]
   tags:
     - 服务商∙进件
     - 收付通∙进件
   summary: 查询结算账户API
-  description: 普通服务商（支付机构、银行不可用），可使用本接口查询其进件、已签约的特约商户-结算账户信息（敏感信息掩码）。 该接口可用于核实是否成功修改结算账户信息、及查询系统汇款验证结果。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/applyment4sub/chapter3_4.shtml)
+  description: 普通服务商（支付机构、银行不可用），可使用本接口查询其进件、已签约的特约商户-结算账户信息（敏感信息掩码）。 该接口可用于核实是否成功修改结算账户信息、及查询系统汇款验证结果。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/applyment4sub/chapter3_4.shtml) [官方文档](https://pay.weixin.qq.com/docs/partner/apis/ecommerce-merchant-application/get-settlement.html)
   parameters:
     - name: sub_mchid
       in: path
       type: string
-      description: 业务申请编号
+      description: 特约商户/二级商户号
       required: true
+      example: '1900006491'
   responses:
-    200:
+    '200':
       schema:
-        allOf:
-          - $ref: '../../../../definitions/Applyment.yaml#BankAccountInfo'
-          - required: [account_number, bank_branch_id, bank_name]
-          - type: object
-            required: [verify_result]
-            properties:
-              account_type:
-                $ref: '../../../../definitions/Enumerations.yaml#AccountType'
-              verify_result:
-                $ref: '../../../../definitions/Enumerations.yaml#VerifyResult'
+        type: object
+        required:
+          - account_type
+          - account_bank
+          - account_number
+          - verify_result
+        properties:
+          account_type:
+            type: string
+            description: 账户类型
+            example: ACCOUNT_TYPE_BUSINESS
+          account_bank:
+            type: string
+            description: 开户银行
+            example: 工商银行
+          bank_name:
+            type: string
+            description: 开户银行全称（含支行）
+            example: 施秉县农村信用合作联社城关信用社
+          bank_branch_id:
+            type: string
+            description: 开户银行联行号
+            example: '402713354941'
+          account_number:
+            type: string
+            description: 银行账号
+            example: 62*************78
+          verify_result:
+            type: string
+            description: 验证结果
+            example: VERIFY_SUCCESS
+          verify_fail_reason:
+            type: string
+            description: 验证失败原因
+            example: 用户姓名/证件/手机不匹配，请核对后重试

@@ -12,7 +12,7 @@ interface _out_request_no_
     /**
      * 通过业务申请编号查询申请状态(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/applyments/chapter3_2.shtml
+     * @link https://pay.weixin.qq.com/docs/partner/apis/ecommerce-merchant-application/applyment/get-state-by-out-request-no.html
      */
     public function get(array $options = [
         'out_request_no' => 'APPLYMENT_00000000001',
@@ -21,7 +21,7 @@ interface _out_request_no_
     /**
      * 通过业务申请编号查询申请状态(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/applyments/chapter3_2.shtml#async
+     * @link https://pay.weixin.qq.com/docs/partner/apis/ecommerce-merchant-application/applyment/get-state-by-out-request-no.html#async
      */
     public function getAsync(array $options = [
         'out_request_no' => 'APPLYMENT_00000000001',

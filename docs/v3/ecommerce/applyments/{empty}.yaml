@@ -1,10 +1,10 @@
 post:
-  x-last-updated-at: 2022.05.13
+  x-last-updated-at: 2024.08.30
   x-role: [电商平台]
   tags:
     - 收付通∙进件
   summary: 二级商户进件API
-  description: 电商平台通过提交二级商户资料，完成二级商户入驻，入驻成为微信支付商户。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter7_1_1.shtml)
+  description: 电商平台通过提交二级商户资料，完成二级商户入驻，入驻成为微信支付商户。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter7_1_1.shtml) [官方文档](https://pay.weixin.qq.com/docs/partner/apis/ecommerce-merchant-application/applyment/submit-applyment.html)
   parameters:
     - $ref: '../../../definitions/Parameters.yaml#WECHATPAY_CERTIFICATE_SERIAL'
     - name: _
@@ -15,7 +15,7 @@ post:
         required:
           - out_request_no
           - organization_type
-          - need_account_info
+          - account_info
           - contact_info
           - sales_scene_info
           - merchant_shortname
@@ -113,10 +113,6 @@ post:
                 format: base64
                 description: 身份证号码
                 example: zV+BEmytMNQCqQ8juwEc4P4TG5xzchG/5IL9DBd+Z0zZXkw==4
-              id_card_address:
-                type: string
-                format: base64
-                description: 身份证居住地址
               id_card_valid_time_begin:
                 type: string
                 format: date
@@ -139,10 +135,6 @@ post:
                 format: base64
                 description: 证件号码
                 example: jTpGmxUX3FBWVQ5NJTZvlKX_go0BJqRTvDujqhThn4ReFxikqJ5YW6zFQ
-              id_doc_address:
-                type: string
-                format: base64
-                description: 证件居住地址
               id_doc_copy:
                 type: string
                 format: MediaId
@@ -239,28 +231,10 @@ post:
                 format: base64
                 description: 银行帐号
                 example: d+xT+MQCvrLHUVDWv/8MR/dB7TkXLVfSrUxMPZy6jWWYzpRrEEaYQE8ZRGYoeorwC+w==
-              account_cert_info:
-                type: object
-                description: 若结算账户设置为非同名，则需填写非同名证明材料，若结算账户为同名，则无需填写。
-                properties:
-                  settlement_cert_pic:
-                    type: string
-                    format: MediaId
-                    description: 结算证明函
-                  relation_cert_pic:
-                    type: string
-                    format: MediaId
-                    description: 关系证明函
-                  other_cert_pics:
-                    type: array
-                    maxItems: 3
-                    items:
-                      type: string
-                      format: MediaId
           contact_info:
             type: object
             description: 超级管理员信息
-            x-is-sensitive: [contact_name, contact_id_card_number, mobile_phone, contact_email]
+            x-is-sensitive: [contact_name, contact_id_card_number, mobile_phone]
             properties:
               contact_type:
                 type: string
@@ -304,11 +278,6 @@ post:
                 format: base64
                 description: 超级管理员手机
                 example: pVd1HJ6zyvPedzGaV+X3qtmrq9bb9tPROvwia4ibL+F6mfjbzQIzfb3HHLEjZ4YiNWWNeespQO/0kjiwfqdfg==
-              contact_email:
-                type: string
-                format: base64
-                description: 超级管理员邮箱
-                example: pVd1HJ6zyvPedzGaV+X3qtmrq9bb9tPROvwia4ibL+FWWNUlw/wDa4SzfeespQO/0kjiwfqdfg==
           sales_scene_info:
             type: object
             description: 店铺信息

@@ -1,11 +1,11 @@
 post:
-  x-last-updated-at: 2023.03.24
+  x-last-updated-at: 2023.08.16
   x-role: [普通服务商]
   tags:
     - 服务商∙进件
     - 收付通∙进件
   summary: 修改结算帐号API
-  description: 修改结算帐号API [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/applyment4sub/chapter3_3.shtml)
+  description: 修改结算帐号API [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/applyment4sub/chapter3_3.shtml) [官方文档](https://pay.weixin.qq.com/docs/partner/apis/ecommerce-merchant-application/modify-settlement.html)
   parameters:
     - $ref: '../../../../definitions/Parameters.yaml#/WECHATPAY_CERTIFICATE_SERIAL'
     - name: sub_mchid
@@ -15,22 +15,56 @@ post:
       description: 特约商户号
       required: true
       minLength: 8
+      example: '1900006491'
     - name: _
       in: body
       required: true
       schema:
-        allOf:
-          - $ref: '../../../../definitions/Applyment.yaml#/BankAccountInfo'
-          - type: object
-            properties:
-              bank_address_code:
-                type: string
-                description: 开户银行省市编码
-                example: '110000'
+        type: object
+        required:
+          - account_type
+          - account_bank
+          - bank_address_code
+          - account_number
+        properties:
+          modify_mode:
+            type: string
+            description: 修改模式
+            example: MODIFY_MODE_ASYNC
+          account_type:
+            type: string
+            description: 账户类型
+            example: ACCOUNT_TYPE_BUSINESS
+          account_bank:
+            type: string
+            description: 开户银行
+            example: 工商银行
+          bank_address_code:
+            type: string
+            description: 开户银行省市编码
+            example: '110000'
+          bank_name:
+            type: string
+            description: 开户银行全称（含支行）
+            example: 中国工商银行股份有限公司北京市分行营业部
+          bank_branch_id:
+            type: string
+            description: 开户银行联行号
+            example: '402713354941'
+          account_number:
+            type: string
+            description: 银行账号
+            example: ciphertext
+          account_name:
+            type: string
+            description: 开户名称
+            example: ciphertext
   responses:
-    200:
+    '200':
       schema:
         type: object
+        required:
+          - application_no
         properties:
           application_no:
             type: string

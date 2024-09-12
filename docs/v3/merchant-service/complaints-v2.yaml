@@ -1,5 +1,5 @@
 get:
-  x-last-updated-at: 2023.03.07
+  x-last-updated-at: 2024.09.11
   x-role:
     - 服务商
     - 渠道商
@@ -7,7 +7,7 @@ get:
   tags:
     - 风险合规∙消费者投诉
   summary: 查询投诉单列表API
-  description: 商户可通过调用此接口，查询指定时间段的所有用户投诉信息，以分页输出查询结果。对于服务商、渠道商，可通过调用此接口，查询指定特约商户号下的投诉信息，若不指定，则查询的是名下所有特约商户投诉信息。[官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_2_11.shtml)
+  description: 商户可通过调用此接口，查询指定时间段的所有用户投诉信息，以分页输出查询结果。对于服务商、渠道商，可通过调用此接口，查询指定特约商户号下的投诉信息，若不指定，则查询的是名下所有特约商户投诉信息。[官方文档](https://pay.weixin.qq.com/docs/partner/apis/consumer-complaint/complaints/list-complaints-v2.html) [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_2_11.shtml)
   parameters:
     - name: limit
       in: query
@@ -54,8 +54,7 @@ get:
                 - complaint_time
                 - complaint_detail
                 - complaint_state
-                - payer_phone
-                - complaint_media_list
+                - complainted_mchid
                 - complaint_full_refunded
                 - incoming_user_response
                 - problem_description
@@ -196,6 +195,18 @@ get:
                               type: string
                               description: 归还地点纬度
                               example: '22.52305518747831'
+                        is_returned_to_same_machine:
+                          type: boolean
+                          description: 是否归还同一柜机
+                          example: false
+                in_platform_service:
+                  type: boolean
+                  description: 是否在平台协助中
+                  example: true
+                need_immediate_service:
+                  type: boolean
+                  description: 是否需即时服务用户
+                  example: true
           limit:
             type: integer
             description: 分页大小

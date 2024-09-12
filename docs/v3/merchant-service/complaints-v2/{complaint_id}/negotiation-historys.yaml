@@ -1,5 +1,5 @@
 get:
-  x-last-updated-at: 2023.03.07
+  x-last-updated-at: 2024.09.11
   x-role:
     - 服务商
     - 渠道商
@@ -7,7 +7,7 @@ get:
   tags:
     - 风险合规∙消费者投诉
   summary: 查询投诉协商历史API
-  description: 商户可通过调用此接口，查询指定投诉的用户商户协商历史，以分页输出查询结果，方便商户根据处理历史来制定后续处理方案。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_2_12.shtml)
+  description: 商户可通过调用此接口，查询指定投诉的用户商户协商历史，以分页输出查询结果，方便商户根据处理历史来制定后续处理方案。[官方文档](https://pay.weixin.qq.com/docs/partner/apis/consumer-complaint/complaints/query-negotiation-history-v2.html) [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_2_12.shtml)
   parameters:
     - name: complaint_id
       type: string
@@ -89,6 +89,14 @@ get:
                     format: url
                     description: 图片凭证
                     example: https://qpic.cn/xxx
+                user_appy_platform_service_reason:
+                  type: string
+                  description: 用户申请平台协助原因
+                  example: 商家响应不及时
+                user_appy_platform_service_reason_description:
+                  type: string
+                  description: 用户申请平台协助原因描述
+                  example: 一周前就提交咨询了，到现在商家还没理我
           limit:
             type: integer
             description: 分页大小

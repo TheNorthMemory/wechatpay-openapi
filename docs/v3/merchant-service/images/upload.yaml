@@ -1,12 +1,12 @@
 post:
-  x-last-updated-at: 2020.09.02
+  x-last-updated-at: 2024.09.11
   x-role: [直连商户, 服务商, 渠道商]
   tags:
     - 风险合规∙消费者投诉
   consumes:
     - multipart/form-data
   summary: 商户上传反馈图片API
-  description: 商户上传反馈图片的接口。 将媒体图片进行二进制转换，得到的媒体图片二进制内容，在请求body中上传此二进制内容。 媒体图片只支持jpg、png、bmp格式，文件大小不能超过2M。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/merchant-service/chapter5_1.shtml)
+  description: 商户上传反馈图片的接口。 将媒体图片进行二进制转换，得到的媒体图片二进制内容，在请求body中上传此二进制内容。 媒体图片只支持jpg、png、bmp格式，文件大小不能超过2M。[官方文档](https://pay.weixin.qq.com/docs/partner/apis/consumer-complaint/images/create-images.html) [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/merchant-service/chapter5_1.shtml)
   parameters:
     - name: file
       in: formData

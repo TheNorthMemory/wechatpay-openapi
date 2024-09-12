@@ -22,6 +22,11 @@ interface Response
             'response_images' => ['MediaId'],
             'jump_url' => 'https://www.xxx.com/notify',
             'jump_url_text' => '查看订单详情',
+            'mini_program_jump_info' => [
+                'appid' => 'example_appid',
+                'path' => 'example_path',
+                'text' => 'example_text',
+            ],
         ],
     ]): ResponseInterface;
 
@@ -38,6 +43,11 @@ interface Response
             'response_images' => ['MediaId'],
             'jump_url' => 'https://www.xxx.com/notify',
             'jump_url_text' => '查看订单详情',
+            'mini_program_jump_info' => [
+                'appid' => 'example_appid',
+                'path' => 'example_path',
+                'text' => 'example_text',
+            ],
         ],
     ]): PromiseInterface;
 }

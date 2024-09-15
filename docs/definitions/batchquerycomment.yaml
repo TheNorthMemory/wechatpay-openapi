@@ -48,12 +48,14 @@ batchquerycomment.request:
       example: '20170725000000'
       maxLength: 19
     offset:
-      type: uint
+      type: number
+      format: uint
       description: 位移
       example: '0'
       maxLength: 64
     limit:
-      type: uint
+      type: number
+      format: uint
       description: 条数
       example: '100'
       maxLength: 32

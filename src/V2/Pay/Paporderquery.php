@@ -19,6 +19,7 @@ interface Paporderquery
             'appid' => 'wxcbda96de0b165486',
             'mch_id' => '10000098',
             'transaction_id' => '1009660380201506130728806387',
+            'out_trade_no' => '20150806125346',
         ],
     ]): ResponseInterface;
 
@@ -32,6 +33,7 @@ interface Paporderquery
             'appid' => 'wxcbda96de0b165486',
             'mch_id' => '10000098',
             'transaction_id' => '1009660380201506130728806387',
+            'out_trade_no' => '20150806125346',
         ],
     ]): PromiseInterface;
 }

@@ -22,6 +22,9 @@ interface Refundqueryv2
             'sub_mch_id' => '1900000109',
             'sign_type' => 'HMAC-SHA256',
             'transaction_id' => '1217752501201407033233368018',
+            'out_trade_no' => '1217752501201407033233368018',
+            'out_refund_no' => '1217752501201407033233368018',
+            'refund_id' => '1217752501201407033233368018',
             'offset' => '15',
         ],
     ]): ResponseInterface;
@@ -39,6 +42,9 @@ interface Refundqueryv2
             'sub_mch_id' => '1900000109',
             'sign_type' => 'HMAC-SHA256',
             'transaction_id' => '1217752501201407033233368018',
+            'out_trade_no' => '1217752501201407033233368018',
+            'out_refund_no' => '1217752501201407033233368018',
+            'refund_id' => '1217752501201407033233368018',
             'offset' => '15',
         ],
     ]): PromiseInterface;

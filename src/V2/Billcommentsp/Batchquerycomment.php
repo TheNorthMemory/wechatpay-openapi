@@ -21,6 +21,8 @@ interface Batchquerycomment
             'sign_type' => 'HMAC-SHA256',
             'begin_time' => '20170724000000',
             'end_time' => '20170725000000',
+            'offset' => '0',
+            'limit' => '100',
         ],
         'security' => true,
     ]): ResponseInterface;
@@ -37,6 +39,8 @@ interface Batchquerycomment
             'sign_type' => 'HMAC-SHA256',
             'begin_time' => '20170724000000',
             'end_time' => '20170725000000',
+            'offset' => '0',
+            'limit' => '100',
         ],
         'security' => true,
     ]): PromiseInterface;

@@ -32,9 +32,9 @@ submchmanage.request:
           example: 商户名称
           maxLength: 50
         sub_mch_id:
-          type: '11111111'
+          type: string
           description: 商户识别码
-          example: 微信支付分配的商户识别码
+          example: '1230000109'
         page_index:
           type: string
           description: 页码

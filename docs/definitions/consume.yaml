@@ -42,9 +42,9 @@ consume.request:
       example: '013467007045764'
       maxLength: 32
     out_trade_no:
-      type: '1217752501201407033233368018'
+      type: string
       description: 商户订单号
-      example: '商户系统内部的订单号,transaction_id、out_trade_no二选一，如果同时存在优先级：transaction_id> out_trade_no'
+      example: '1217752501201407033233368018'
     total_fee:
       format: int32
       type: integer

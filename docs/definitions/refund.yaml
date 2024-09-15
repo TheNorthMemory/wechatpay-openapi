@@ -56,9 +56,9 @@ refund.request:
       example: '1217752501201407033233368018'
       maxLength: 32
     out_trade_no:
-      type: '1217752501201407033233368018'
+      type: string
       description: 商户订单号
-      example: 商户系统内部订单号，要求32个字符内，只能是数字、大小写字母_-|*@ ，且在同一个商户号下唯一。
+      example: '1217752501201407033233368018'
     out_refund_no:
       type: string
       description: 商户退款单号

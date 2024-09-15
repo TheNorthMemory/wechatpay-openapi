@@ -55,17 +55,17 @@ refundquery.request:
       example: '1217752501201407033233368018'
       maxLength: 32
     out_trade_no:
-      type: '1217752501201407033233368018'
+      type: string
       description: 商户订单号
-      example: 商户系统内部订单号，要求32个字符内，只能是数字、大小写字母_-|*@ ，且在同一个商户号下唯一。
+      example: '1217752501201407033233368018'
     out_refund_no:
-      type: '1217752501201407033233368018'
+      type: string
       description: 商户退款单号
-      example: 商户系统内部的退款单号，商户系统内部唯一，只能是数字、大小写字母_-|*@ ，同一退款单号多次请求只退一笔。
+      example: '1217752501201407033233368018'
     refund_id:
-      type: '1217752501201407033233368018'
+      type: string
       description: 微信退款单号
-      example: 微信生成的退款单号，在申请退款接口有返回
+      example: '1217752501201407033233368018'
     offset:
       format: int32
       type: integer

@@ -27,9 +27,9 @@ paporderquery.request:
           example: '1009660380201506130728806387'
           maxLength: 32
         out_trade_no:
-          type: '20150806125346'
+          type: string
           description: 商户订单号
-          example: 商户系统内部的订单号，当没提供transaction_id时需要传这个。
+          example: '20150806125346'
         nonce_str:
           type: string
           description: 随机字符串

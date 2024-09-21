@@ -4,8 +4,8 @@ post:
   deprecated: true
   tags:
     - APIv2∙小微
-  summary: 申请入驻
-  description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=19_2)'
+  summary: 签约报备
+  description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=19_4)'
   consumes:
     - application/xml
   produces:
@@ -15,9 +15,9 @@ post:
       in: body
       required: true
       schema:
-        $ref: '../../../definitions/micro.submit.yaml#/micro.submit.request'
+        type: object
   responses:
     '200':
       description: ''
       schema:
-        $ref: '../../../definitions/micro.submit.yaml#/micro.submit.response'
+        type: object

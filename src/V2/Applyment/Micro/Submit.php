@@ -12,6 +12,7 @@ interface Submit
     /**
      * 申请入驻(同步模式)
      * @param array<string,mixed> $options
+     * @deprecated - since 2023.05.23
      * @link https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=19_2
      */
     public function post(array $options = [
@@ -55,6 +56,7 @@ interface Submit
     /**
      * 申请入驻(异步模式)
      * @param array<string,mixed> $options
+     * @deprecated - since 2023.05.23
      * @link https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=19_2#async
      */
     public function postAsync(array $options = [

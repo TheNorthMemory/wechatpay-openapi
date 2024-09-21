@@ -7,6 +7,7 @@ namespace WeChatPay\OpenAPI\V2\Applyment;
  * @property-read Micro\Getupgradestate $getupgradestate
  * @property-read Micro\Modifyarchives $modifyarchives
  * @property-read Micro\Modifycontactinfo $modifycontactinfo
+ * @property-read Micro\Signcontract $signcontract
  * @property-read Micro\Submit $submit
  * @property-read Micro\Submitupgrade $submitupgrade
  */

@@ -12,6 +12,7 @@ interface Getstate
     /**
      * 查询申请状态(同步模式)
      * @param array<string,mixed> $options
+     * @deprecated - since 2023.05.23
      * @link https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=19_3
      */
     public function post(array $options = [
@@ -28,6 +29,7 @@ interface Getstate
     /**
      * 查询申请状态(异步模式)
      * @param array<string,mixed> $options
+     * @deprecated - since 2023.05.23
      * @link https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=19_3#async
      */
     public function postAsync(array $options = [

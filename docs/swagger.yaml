@@ -7,7 +7,7 @@ info:
     整理自[官方文档中心](https://pay.weixin.qq.com/wiki/doc/apiv3/index.shtml)
     本[项目/工具地址](https://github.com/TheNorthMemory/wechatpay-openapi)
     **访问第一次加载比较慢，请耐心等待大约1-2分钟不等(小文件下载比较多)。**
-  version: 0.15.35
+  version: 0.15.36
 schemes:
   - https
 consumes:
@@ -93,6 +93,7 @@ tags:
   - name: 营销工具∙收款有礼
   - name: 营销工具∙代扣切卡
   - name: 营销工具∙周周惠
+  - name: 商家充值
   - name: 结算规则管理
   - name: 风险管理
   - name: 风险合规∙消费者投诉
@@ -182,6 +183,8 @@ paths:
     $ref: ./v2/applyment/micro/modifyarchives.yaml
   /applyment/micro/modifycontactinfo:
     $ref: ./v2/applyment/micro/modifycontactinfo.yaml
+  /applyment/micro/signcontract:
+    $ref: ./v2/applyment/micro/signcontract.yaml
   /applyment/micro/submit:
     $ref: ./v2/applyment/micro/submit.yaml
   /applyment/micro/submitupgrade:
@@ -978,6 +981,14 @@ paths:
     $ref: ./v3/mch_operate/risk/withdrawl-apply/out-request-no/{out_request_no}.yaml
   /v3/mch-operation-manage/merchant-limitations/sub-mchid/{sub_mchid}:
     $ref: ./v3/mch-operation-manage/merchant-limitations/sub-mchid/{sub_mchid}.yaml
+  /v3/mchalterapply/mchsubjectalterapplyment:
+    $ref: ./v3/mchalterapply/mchsubjectalterapplyment.yaml
+  /v3/mchalterapply/mchsubjectalterapplyment/{apply_id}:
+    $ref: ./v3/mchalterapply/mchsubjectalterapplyment/{apply_id}.yaml
+  /v3/mchalterapply/mchsubjectalterapplyment/{apply_id}/revoke:
+    $ref: ./v3/mchalterapply/mchsubjectalterapplyment/{apply_id}/revoke.yaml
+  /v3/mchalterapply/mchsubjectalterapplyment/merchant/{merchant_code}/out-request-no/{out_request_no}:
+    $ref: ./v3/mchalterapply/mchsubjectalterapplyment/merchant/{merchant_code}/out-request-no/{out_request_no}.yaml
   /v3/merchant-risk-manage/report-trade-union-information:
     $ref: ./v3/merchant-risk-manage/report-trade-union-information.yaml
   /v3/merchant-risk-manage/trade-risk-information:
@@ -1102,6 +1113,8 @@ paths:
     $ref: ./v3/offlinefacemch/organizations/{organization_id}/users/user-id/{user_id}/terminate-contract.yaml
   /v3/offlinefacemch/tokens:
     $ref: ./v3/offlinefacemch/tokens.yaml
+  /v3/papay/contracts/{contract_id}/fail-notify:
+    $ref: ./v3/papay/contracts/{contract_id}/fail-notify.yaml
   /v3/papay/contracts/{contract_id}/notify:
     $ref: ./v3/papay/contracts/{contract_id}/notify.yaml
   /v3/papay/insurance-pay/policy-periods/contract-id/{contract_id}/policy-period-id/{policy_period_id}:
@@ -1162,6 +1175,8 @@ paths:
     $ref: ./v3/papay/sign/partner/contracts/plan-id/{plan_id}/out-contract-code/{out_contract_code}.yaml
   /v3/papay/sign/partner/contracts/plan-id/{plan_id}/out-contract-code/{out_contract_code}/terminate:
     $ref: ./v3/papay/sign/partner/contracts/plan-id/{plan_id}/out-contract-code/{out_contract_code}/terminate.yaml
+  /v3/partner-papay/contracts/{contract_id}/fail-notify:
+    $ref: ./v3/partner-papay/contracts/{contract_id}/fail-notify.yaml
   /v3/partner-papay/contracts/{contract_id}/notify:
     $ref: ./v3/partner-papay/contracts/{contract_id}/notify.yaml
   /v3/partner-transfer/batches:
@@ -1470,6 +1485,10 @@ paths:
     $ref: ./v3/rate-activity/applications.yaml
   /v3/rate-activity/applications/id/{application_id}:
     $ref: ./v3/rate-activity/applications/id/{application_id}.yaml
+  /v3/recharge/bank-transfer-recharges/apply:
+    $ref: ./v3/recharge/bank-transfer-recharges/apply.yaml
+  /v3/recharge/bank-transfer-recharges/out-recharge-no/{out_recharge_no}:
+    $ref: ./v3/recharge/bank-transfer-recharges/out-recharge-no/{out_recharge_no}.yaml
   /v3/refund/domestic/refunds:
     $ref: ./v3/refund/domestic/refunds.yaml
   /v3/refund/domestic/refunds/{out_refund_no}:

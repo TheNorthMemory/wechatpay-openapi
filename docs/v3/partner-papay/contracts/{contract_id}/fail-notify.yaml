@@ -1,0 +1,44 @@
+post:
+  x-last-updated-at: 2020.04.30
+  x-role:
+    - 服务商
+  tags:
+    - 委托代扣
+  summary: 服务商商户重试扣费通知API
+  description: 若在可扣费期内扣费失败，商户在可通知时间段可以选择性调用「重试扣费通知」接口，提醒用户补足余额待下次扣费。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter5_16.shtml)
+  parameters:
+    - name: contract_id
+      in: path
+      required: true
+      type: string
+      description: 委托代扣协议id
+      example: '123124412412423431'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - sp_mchid
+          - sp_appid
+          - sub_mchid
+        properties:
+          sp_mchid:
+            type: string
+            description: 服务商商户号
+            example: '1230000109'
+          sp_appid:
+            type: string
+            description: 服务商应用ID
+            example: wxd678efh567hg6787
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '12345512'
+          sub_appid:
+            type: string
+            description: 子商户应用D
+            example: wxd678efh567hg6787
+  responses:
+    '204':
+      schema: {}

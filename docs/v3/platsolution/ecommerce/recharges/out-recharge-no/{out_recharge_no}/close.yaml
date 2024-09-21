@@ -4,6 +4,7 @@ post:
     - 服务商
   tag:
     - 收付通∙充值
+    - 商家充值
   summary: 关闭二级商户充值
   description: 以下情况可调用关单接口：1、商家操作超出规定时间限制，为防止重复处理。2、系统主动终止服务不再接受新的请求 [官方文档](https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-recharge/recharge/close.html)
   parameters:

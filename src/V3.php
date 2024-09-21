@@ -13,6 +13,7 @@ namespace WeChatPay\OpenAPI;
  * @property-read V3\Settle $settle
  * @property-read V3\Refunds $refunds
  * @property-read V3\Refund $refund
+ * @property-read V3\Recharge $recharge
  * @property-read V3\RateActivity $rateActivity
  * @property-read V3\Qrcode $qrcode
  * @property-read V3\Profitsharing $profitsharing
@@ -36,6 +37,7 @@ namespace WeChatPay\OpenAPI;
  * @property-read V3\MerchantService $merchantService
  * @property-read V3\MerchantRiskManage $merchantRiskManage
  * @property-read V3\Merchant $merchant
+ * @property-read V3\Mchalterapply $mchalterapply
  * @property-read V3\Mch_operate $mch_operate
  * @property-read V3\MchOperationManage $mchOperationManage
  * @property-read V3\Marketing $marketing

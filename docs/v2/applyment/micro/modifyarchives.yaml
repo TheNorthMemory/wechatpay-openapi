@@ -1,5 +1,7 @@
 post:
   x-api-cert-required: true
+  x-last-updated-at: 2023.03.13
+  deprecated: true
   tags:
     - APIv2∙小微
   summary: 修改结算银行卡

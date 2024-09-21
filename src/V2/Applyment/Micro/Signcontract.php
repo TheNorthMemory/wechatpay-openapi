@@ -7,36 +7,28 @@ use GuzzleHttp\Promise\PromiseInterface;
 
 /**
  */
-interface Getupgradestate
+interface Signcontract
 {
     /**
-     * 查询升级申请单状态(同步模式)
+     * 签约报备(同步模式)
      * @param array<string,mixed> $options
      * @deprecated - since 2023.05.23
-     * @link https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=28_3&index=3
+     * @link https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=19_4
      */
     public function post(array $options = [
         'xml' => [
-            'version' => '1.0',
-            'mch_id' => '1230000109',
-            'sign_type' => 'HMAC-SHA256',
-            'sub_mch_id' => '1230000109',
         ],
         'security' => true,
     ]): ResponseInterface;
 
     /**
-     * 查询升级申请单状态(异步模式)
+     * 签约报备(异步模式)
      * @param array<string,mixed> $options
      * @deprecated - since 2023.05.23
-     * @link https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=28_3&index=3#async
+     * @link https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=19_4#async
      */
     public function postAsync(array $options = [
         'xml' => [
-            'version' => '1.0',
-            'mch_id' => '1230000109',
-            'sign_type' => 'HMAC-SHA256',
-            'sub_mch_id' => '1230000109',
         ],
         'security' => true,
     ]): PromiseInterface;

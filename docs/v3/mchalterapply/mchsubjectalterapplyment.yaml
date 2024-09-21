@@ -1,0 +1,279 @@
+post:
+  x-last-updated-at: 2023.04.17
+  x-role:
+    - 电商平台
+    - 服务商
+  tags:
+    - 收付通∙进件
+    - 服务商∙进件
+  summary: 提交资料变更申请单
+  description: 服务商使用该接口提交商家主体资料变更申请，帮助商家修改主体资料。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter11_3_1.shtml)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - merchant_code
+          - out_request_no
+          - organization_type
+          - finance_institution
+          - legal_person_info
+        properties:
+          merchant_code:
+            type: string
+            description: 商户号
+            example: '2492185251'
+          out_request_no:
+            type: string
+            description: 业务申请编号
+            example: '1900013511_10000'
+          organization_type:
+            type: string
+            description: 主体类型
+            example: SUBJECT_TYPE_ENTERPRISE
+          finance_institution:
+            type: boolean
+            description: 是否金融机构
+          business_license_info:
+            type: object
+            description: 营业执照信息
+            required:
+              - license_number
+              - license_copy
+              - merchant_name
+              - legal_person
+            properties:
+              license_number:
+                type: string
+                description: 营业执照注册号
+                example: '123456789012345678'
+              license_copy:
+                type: string
+                description: 营业执照照片
+                example: 0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMAjmVtCz7ScmhEIThCaV-4BBgVwtNkCHO_XXqK5dE5YdOmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo
+              merchant_name:
+                type: string
+                description: 商户名称
+                example: 李四网络有限公司
+              legal_person:
+                type: string
+                description: 法人姓名
+                example: 李四
+              company_address:
+                type: string
+                description: 注册地址
+                example: 广东省深圳市南山区xx路xx号
+              license_period_begin:
+                type: string
+                description: 有效期开始时间
+                example: '2019-06-06'
+              license_period_end:
+                type: string
+                description: 有效期结束时间
+                example: '2026-06-06'
+          certificate_info:
+            type: object
+            description: 登记证书信息
+            required:
+              - cert_type
+              - cert_number
+              - cert_copy
+              - merchant_name
+              - legal_person
+              - company_address
+              - cert_period_begin
+              - cert_period_end
+            properties:
+              cert_type:
+                type: string
+                description: 证书类型
+                example: CERTIFICATE_TYPE_2388
+              cert_number:
+                type: string
+                description: 证书编号
+                example: '111111111111'
+              cert_copy:
+                type: string
+                description: 证书照片
+                example: 0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMAjmVtCz7ScmhEIThCaV-4BBgVwtNkCHO_XXqK5dE5YdOmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo
+              merchant_name:
+                type: string
+                description: 商户名称
+                example: xx公益团体
+              legal_person:
+                type: string
+                description: 法人姓名
+                example: 李四
+              company_address:
+                type: string
+                description: 注册地址
+                example: 广东省深圳市南山区xx路xx号
+              cert_period_begin:
+                type: string
+                description: 有效期开始时间
+                example: '2019-06-06'
+              cert_period_end:
+                type: string
+                description: 有效期结束时间
+                example: '2026-06-06'
+          finance_institution_info:
+            type: object
+            description: 金融机构许可证
+            required:
+              - finance_type
+              - finance_license_pics
+            properties:
+              finance_type:
+                type: string
+                description: 金融机构类型
+                example: FINANCE_TYPE_BANK_AGENT
+              finance_license_pics:
+                type: array
+                description: 金融机构许可证图片
+                items:
+                  type: string
+                  format: MediaId
+                example:
+                  - 0P3ng6KTIW4-Q_l2FjmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo
+          legal_person_info:
+            type: object
+            description: 法人身份信息
+            required:
+              - id_holder_type
+            properties:
+              id_holder_type:
+                type: string
+                description: 证件持有人类型
+                example: LEGAL
+              id_doc_type:
+                type: string
+                description: 证件类型
+                example: IDENTIFICATION_TYPE_IDCARD
+              authorize_letter_copy:
+                type: string
+                description: 法定代表人说明函
+                example: 47ZC6GC-vnrbEny_Ie_An5-tCpqxucuxi-vByf3Gjm7KEIUv0OF4wFNIO4kqg05InE4d2I6_H7I4
+              card_front:
+                type: string
+                description: 证件正面照片
+                example: 0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMAjmVtCz7ScmhEIThCaV-4BBgVwtNkCHO_XXqK5dE5YdOmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo
+              card_back:
+                type: string
+                description: 证件反面照片
+                example: 0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMAjmVtCz7ScmhEIThCaV-4BBgVwtNkCHO_XXqK5dE5YdOmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo
+              card_name:
+                type: string
+                description: 证件姓名
+                example: MZnwEx6zotwIz6ctW2/iQL5z94odwP9sKiF74RPCPztcJOScaXsaGs82HJNU3K+46ndk7pMrENiPDw==
+              card_number:
+                type: string
+                description: 证件号码
+                example: MZnwEx6zotwIz6ctW2/iQL5z94odwP9sKiF74RPCPztcJOScaXsaGs82HJNU3K+46ndk7pMrENiPDw==
+              card_address:
+                type: string
+                description: 证件居住地址
+                example: pVd1HJ6zyvPedzGaV+X3qtmrq9bb9tPROvwia4ibL+F6mfjbzQIzfb3HHLEjZ4YiR/cJiCrZxnAqi+pjeKIEdkwzXRAI7FUhrfPK3SNjaBTEu9GmsugMIA9r3x887Q+ODuC8HH2nzAn7NGpE/e3yiHgWhk0ps5k5DP/2qIdGdONoDzZelrxCl/NWWNUyB93K9F+jC1JX2IMttdY+aQ6zBlw0xnOiNW6Hzy7UtC+xriudjD5APomty7/mYNxLMpRSvWKIjOv/69bDnuC4EL5Kz4jBHLiCyOb+tI0m2qhZ9evAM+Jv1z0NVa8MRtelw/wDa4SzfeespQO/0kjiwfqdfg==
+              card_period_begin:
+                type: string
+                description: 证件有效期开始时间
+                example: '2019-06-06'
+              card_period_end:
+                type: string
+                description: 证件有效期结束时间
+                example: '2026-06-06'
+              as_ubo:
+                type: boolean
+                description: 经营者/法人是否为受益人
+          ubo_info_list:
+            type: array
+            description: 最终受益人信息列表
+            items:
+              type: object
+              required:
+                - id_doc_type
+                - card_front
+                - card_name
+                - card_number
+                - card_address
+                - card_period_begin
+                - card_period_end
+              properties:
+                id_doc_type:
+                  type: string
+                  description: 证件类型
+                  example: IDENTIFICATION_TYPE_IDCARD
+                card_front:
+                  type: string
+                  description: 证件正面照片
+                  example: 0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMAjmVtCz7ScmhEIThCaV-4BBgVwtNkCHO_XXqK5dE5YdOmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo
+                card_back:
+                  type: string
+                  description: 证件反面照片
+                  example: 0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMAjmVtCz7ScmhEIThCaV-4BBgVwtNkCHO_XXqK5dE5YdOmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo
+                card_name:
+                  type: string
+                  description: 证件姓名
+                  example: MZnwEx6zotwIz6ctW2/iQL5z94odwP9sKiF74RPCPztcJOScaXsaGs82HJNU3K+46ndk7pMrENiPDw==
+                card_number:
+                  type: string
+                  description: 证件号码
+                  example: MZnwEx6zotwIz6ctW2/iQL5z94odwP9sKiF74RPCPztcJOScaXsaGs82HJNU3K+46ndk7pMrENiPDw==
+                card_address:
+                  type: string
+                  description: 证件居住地址
+                  example: pVd1HJ6zyvPedzGaV+X3qtmrq9bb9tPROvwia4ibL+F6mfjbzQIzfb3HHLEjZ4YiR/cJiCrZxnAqi+==
+                card_period_begin:
+                  type: string
+                  description: 证件有效期开始时间
+                  example: '2019-06-06'
+                card_period_end:
+                  type: string
+                  description: 证件有效期结束时间
+                  example: '2026-06-06'
+          addition:
+            type: object
+            description: 补充材料列表
+            properties:
+              bank_openaccount_license:
+                type: array
+                description: 银行开户许可证
+                items:
+                  type: string
+                  format: MediaId
+                example:
+                  - 0P3ng6KTIW4-Q_l2FjmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo
+              openaccount_approval:
+                type: array
+                description: 开户核准通知书
+                items:
+                  type: string
+                  format: MediaId
+                example:
+                  - 0P3ng6KTIW4-Q_l2FjmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo
+              legal_other_prove:
+                type: array
+                description: 法人身份辅助证明
+                items:
+                  type: string
+                  format: MediaId
+                example:
+                  - 0P3ng6KTIW4-Q_l2FjmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo
+              agency_prove:
+                type: array
+                description: 发证机关证明
+                items:
+                  type: string
+                  format: MediaId
+                example:
+                  - 0P3ng6KTIW4-Q_l2FjmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo
+  responses:
+    '200':
+      schema:
+        type: object
+        properties:
+          apply_id:
+            type: string
+            description: 申请单号
+            example: '20220617143306000013906025001'

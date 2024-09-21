@@ -1,5 +1,7 @@
 post:
   x-api-cert-required: true
+  x-last-updated-at: 2023.05.23
+  deprecated: true
   tags:
     - APIv2∙小微
   summary: 查询升级申请单状态

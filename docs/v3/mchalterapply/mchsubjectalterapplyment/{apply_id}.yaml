@@ -1,0 +1,61 @@
+get:
+  x-last-updated-at: 2022.07.19
+  x-role:
+    - 电商平台
+    - 服务商
+  tags:
+    - 收付通∙进件
+    - 服务商∙进件
+  summary: 查询资料变更申请单状态-使用申请单号
+  description: 使用申请单号查询申请单状态 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter11_3_2.shtml)
+  parameters:
+    - name: apply_id
+      in: path
+      required: true
+      type: string
+      description: 微信支付申请单号
+      example: '20220617143306000013906025001'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - merchant_code
+          - apply_id
+          - out_request_no
+          - state
+        properties:
+          merchant_code:
+            type: string
+            description: 微信支付商户号
+            example: '1900006491'
+          apply_id:
+            type: string
+            description: 申请单号
+            example: '20220617143306000013906025001'
+          out_request_no:
+            type: string
+            description: 业务申请编号
+            example: '1900013511_10000'
+          state:
+            type: string
+            description: 申请单状态
+            example: APPLYMENT_STATE_EDITTING
+          audit_reject_reason:
+            type: string
+            description: 总体驳回原因
+            example: 身份证背面识别失败，请上传更清晰的身份证图片。
+          audit_reject_detail:
+            type: array
+            description: 驳回原因详情
+            items:
+              type: object
+              properties:
+                param_name:
+                  type: string
+                  description: 参数名称
+                  example: ubo_info_list.card_number_0
+                reject_reason:
+                  type: string
+                  description: 驳回原因
+                  example: 身份证背面识别失败，请上传更清晰的身份证图片。

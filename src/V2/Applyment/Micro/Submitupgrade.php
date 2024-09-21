@@ -12,6 +12,7 @@ interface Submitupgrade
     /**
      * 提交升级申请单(同步模式)
      * @param array<string,mixed> $options
+     * @deprecated - since 2023.05.23
      * @link https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=28_2&index=2
      */
     public function post(array $options = [
@@ -51,6 +52,7 @@ interface Submitupgrade
     /**
      * 提交升级申请单(异步模式)
      * @param array<string,mixed> $options
+     * @deprecated - since 2023.05.23
      * @link https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=28_2&index=2#async
      */
     public function postAsync(array $options = [

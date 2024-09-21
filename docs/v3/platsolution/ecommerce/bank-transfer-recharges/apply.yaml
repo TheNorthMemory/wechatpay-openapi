@@ -1,9 +1,10 @@
 post:
-  x-last-updated-at: 2024.09.04
+  x-last-updated-at: 2024.09.19
   x-role:
     - 平台商户
   tag:
     - 收付通∙充值
+    - 商家充值
   summary: 申请银行转账充值
   description: 商户系统须通过调用此接口获取银行转账账号，随后发起充值流程 [官方文档](https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-recharge/bank-recharge/bank-transfer-recharge-apply.html)
   parameters:

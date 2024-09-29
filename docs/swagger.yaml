@@ -609,6 +609,8 @@ paths:
     $ref: ./v3/ecommerce/profitsharing/receivers/delete.yaml
   /v3/ecommerce/profitsharing/returnorders:
     $ref: ./v3/ecommerce/profitsharing/returnorders.yaml
+  /v3/ecommerce/refunds/{refund_id}/apply-abnormal-refund:
+    $ref: ./v3/ecommerce/refunds/{refund_id}/apply-abnormal-refund.yaml
   /v3/ecommerce/refunds/{refund_id}/return-advance:
     $ref: ./v3/ecommerce/refunds/{refund_id}/return-advance.yaml
   /v3/ecommerce/refunds/apply:

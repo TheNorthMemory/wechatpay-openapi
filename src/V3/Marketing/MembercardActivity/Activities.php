@@ -13,7 +13,7 @@ interface Activities
     /**
      * 创建活动(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter8_1.shtml
+     * @link https://pay.weixin.qq.com/docs/merchant/apis/membership-card/member-gift/create-activity.html
      */
     public function post(array $options = [
         'json' => [
@@ -65,13 +65,21 @@ interface Activities
                     'goods_tags' => ['string'],
                 ],
             ],
+            'miniprogram_activity_setting' => [
+                'outer_str' => ['string'],
+                'award_jump_deploy' => [
+                    'mini_program_appid' => 'wxc0b84a53ed8e8d29',
+                    'mini_program_path' => 'mall/pages/List',
+                    'button_text' => '点击',
+                ],
+            ],
         ],
     ]): ResponseInterface;
 
     /**
      * 创建活动(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter8_1.shtml#async
+     * @link https://pay.weixin.qq.com/docs/merchant/apis/membership-card/member-gift/create-activity.html#async
      */
     public function postAsync(array $options = [
         'json' => [
@@ -123,13 +131,21 @@ interface Activities
                     'goods_tags' => ['string'],
                 ],
             ],
+            'miniprogram_activity_setting' => [
+                'outer_str' => ['string'],
+                'award_jump_deploy' => [
+                    'mini_program_appid' => 'wxc0b84a53ed8e8d29',
+                    'mini_program_path' => 'mall/pages/List',
+                    'button_text' => '点击',
+                ],
+            ],
         ],
     ]): PromiseInterface;
 
     /**
      * 查询活动列表(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter8_3.shtml
+     * @link https://pay.weixin.qq.com/docs/merchant/apis/membership-card/member-gift/query-activity-list.html
      */
     public function get(array $options = [
         'query' => [
@@ -144,7 +160,7 @@ interface Activities
     /**
      * 查询活动列表(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter8_3.shtml#async
+     * @link https://pay.weixin.qq.com/docs/merchant/apis/membership-card/member-gift/query-activity-list.html#async
      */
     public function getAsync(array $options = [
         'query' => [

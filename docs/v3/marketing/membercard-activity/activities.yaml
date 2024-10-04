@@ -1,12 +1,12 @@
 post:
-  x-last-updated-at: 2020.11.16
+  x-last-updated-at: 2024.09.29
   x-role:
     - 直连商户
     - 服务商
   tags:
     - 会员卡∙会员有礼
   summary: 创建活动API
-  description: 创建会员活动，可以创建支付后开卡有礼&老会员有礼、以及小程序开卡有礼&老会员有礼，共四种类型的活动。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter8_1.shtml)
+  description: 创建会员活动，可以创建支付后开卡有礼&老会员有礼、以及小程序开卡有礼&老会员有礼，共四种类型的活动。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter8_1.shtml) [官方文档](https://pay.weixin.qq.com/docs/merchant/apis/membership-card/member-gift/create-activity.html)
   parameters:
     - name: _
       in: body
@@ -33,6 +33,11 @@ post:
             type: string
             description: 活动类型
             example: NON_MEMBER_AFTERPAY
+            enum:
+              - NON_MEMBER_AFTERPAY
+              - MEMBER_AFTERPAY
+              - NON_MEMBER_MINIPROGRAM
+              - MEMBER_MINIPROGRAM
           begin_time:
             type: string
             description: 活动开始时间
@@ -206,6 +211,32 @@ post:
                     items:
                       type: string
                     example: [xxx, yyy]
+          miniprogram_activity_setting:
+            type: object
+            description: 支付前会员活动设置
+            properties:
+              outer_str:
+                type: array
+                description: 指定领取渠道
+                items:
+                  type: string
+                example: [领取渠道1, 领取渠道2]
+              award_jump_deploy:
+                type: object
+                description: 领奖页面跳转配置
+                properties:
+                  mini_program_appid:
+                    type: string
+                    description: 小程序AppID
+                    example: wxc0b84a53ed8e8d29
+                  mini_program_path:
+                    type: string
+                    description: 小程序path
+                    example: mall/pages/List
+                  button_text:
+                    type: string
+                    description: 跳转按钮文案
+                    example: 点击
   responses:
     200:
       schema:
@@ -410,15 +441,41 @@ post:
                     type: array
                     description: 订单优惠标记
                     example: 'xxx,yyy'
+          miniprogram_activity_setting:
+            type: object
+            description: 支付前会员活动设置
+            properties:
+              outer_str:
+                type: array
+                description: 指定领取渠道
+                items:
+                  type: string
+                example: [领取渠道1, 领取渠道2]
+              award_jump_deploy:
+                type: object
+                description: 领奖页面跳转配置
+                properties:
+                  mini_program_appid:
+                    type: string
+                    description: 小程序AppID
+                    example: wxc0b84a53ed8e8d29
+                  mini_program_path:
+                    type: string
+                    description: 小程序path
+                    example: mall/pages/List
+                  button_text:
+                    type: string
+                    description: 跳转按钮文案
+                    example: 点击
 get:
-  x-last-updated-at: 2020.11.17
+  x-last-updated-at: 2024.09.29
   x-role:
     - 直连商户
     - 服务商
   tags:
     - 会员卡∙会员有礼
   summary: 查询活动列表API
-  description: 查询符合条件的多个活动 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter8_3.shtml)
+  description: 查询符合条件的多个活动 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter8_3.shtml) [官方文档](https://pay.weixin.qq.com/docs/merchant/apis/membership-card/member-gift/query-activity-list.html)
   parameters:
     - name: limit
       in: query
@@ -436,6 +493,11 @@ get:
       type: string
       description: 活动类型
       example: NON_MEMBER_AFTERPAY
+      enum:
+        - NON_MEMBER_AFTERPAY
+        - MEMBER_AFTERPAY
+        - NON_MEMBER_MINIPROGRAM
+        - MEMBER_MINIPROGRAM
     - name: card_id
       in: query
       type: string
@@ -446,6 +508,11 @@ get:
       type: string
       description: 活动的当前状态
       example: ONGOING
+      enum:
+        - CREATED
+        - ONGOING
+        - TERMINATED
+        - OVER_TIME
   responses:
     200:
       schema:
@@ -656,6 +723,32 @@ get:
                           type: array
                           description: 订单优惠标记
                           example: 'xxx,yyy'
+                miniprogram_activity_setting:
+                  type: object
+                  description: 支付前会员活动设置
+                  properties:
+                    outer_str:
+                      type: array
+                      description: 指定领取渠道
+                      items:
+                        type: string
+                      example: [领取渠道1, 领取渠道2]
+                    award_jump_deploy:
+                      type: object
+                      description: 领奖页面跳转配置
+                      properties:
+                        mini_program_appid:
+                          type: string
+                          description: 小程序AppID
+                          example: wxc0b84a53ed8e8d29
+                        mini_program_path:
+                          type: string
+                          description: 小程序path
+                          example: mall/pages/List
+                        button_text:
+                          type: string
+                          description: 跳转按钮文案
+                          example: 点击
           offset:
             type: integer
             description: 请求资源起始位置

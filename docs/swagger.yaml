@@ -7,7 +7,7 @@ info:
     整理自[官方文档中心](https://pay.weixin.qq.com/wiki/doc/apiv3/index.shtml)
     本[项目/工具地址](https://github.com/TheNorthMemory/wechatpay-openapi)
     **访问第一次加载比较慢，请耐心等待大约1-2分钟不等(小文件下载比较多)。**
-  version: 0.15.36
+  version: 0.15.37
 schemes:
   - https
 consumes:
@@ -24,6 +24,7 @@ tags:
   - name: 免密支付
   - name: 资金应用∙分账
   - name: 资金应用∙转账
+  - name: 资金应用∙转账∙用户确认模式
   - name: 资金应用∙转账∙服务商模式
   - name: 资金应用∙转账∙银行模式
   - name: 收付通∙进件
@@ -667,6 +668,22 @@ paths:
     $ref: ./v3/express/users/{openid}/transform.yaml
   /v3/facemch/users/{face_sid}:
     $ref: ./v3/facemch/users/{face_sid}.yaml
+  /v3/fund-app/mch-transfer/elecsign/out-bill-no:
+    $ref: ./v3/fund-app/mch-transfer/elecsign/out-bill-no.yaml
+  /v3/fund-app/mch-transfer/elecsign/out-bill-no/{out_bill_no}:
+    $ref: ./v3/fund-app/mch-transfer/elecsign/out-bill-no/{out_bill_no}.yaml
+  /v3/fund-app/mch-transfer/elecsign/transfer-bill-no:
+    $ref: ./v3/fund-app/mch-transfer/elecsign/transfer-bill-no.yaml
+  /v3/fund-app/mch-transfer/elecsign/transfer-bill-no/{transfer_bill_no}:
+    $ref: ./v3/fund-app/mch-transfer/elecsign/transfer-bill-no/{transfer_bill_no}.yaml
+  /v3/fund-app/mch-transfer/transfer-bills:
+    $ref: ./v3/fund-app/mch-transfer/transfer-bills.yaml
+  /v3/fund-app/mch-transfer/transfer-bills/out-bill-no/{out_bill_no}:
+    $ref: ./v3/fund-app/mch-transfer/transfer-bills/out-bill-no/{out_bill_no}.yaml
+  /v3/fund-app/mch-transfer/transfer-bills/out-bill-no/{out_bill_no}/cancel:
+    $ref: ./v3/fund-app/mch-transfer/transfer-bills/out-bill-no/{out_bill_no}/cancel.yaml
+  /v3/fund-app/mch-transfer/transfer-bills/transfer-bill-no/{transfer_bill_no}:
+    $ref: ./v3/fund-app/mch-transfer/transfer-bills/transfer-bill-no/{transfer_bill_no}.yaml
   /v3/funds-to-oversea/bill-download-url:
     $ref: ./v3/funds-to-oversea/bill-download-url.yaml
   /v3/funds-to-oversea/orders:

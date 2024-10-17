@@ -48,6 +48,7 @@ namespace WeChatPay\OpenAPI;
  * @property-read V3\Goldplan $goldplan
  * @property-read V3\Global_ $global
  * @property-read V3\FundsToOversea $fundsToOversea
+ * @property-read V3\FundApp $fundApp
  * @property-read V3\Facemch $facemch
  * @property-read V3\Express $express
  * @property-read V3\Eduschoolpay $eduschoolpay

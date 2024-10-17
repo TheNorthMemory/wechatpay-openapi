@@ -1,0 +1,37 @@
+post:
+  x-last-updated-at: 2024.10.14
+  x-role:
+    - 普通商户
+  tags:
+    - 资金应用∙转账∙用户确认模式
+  summary: 商户单号申请电子回单
+  description: 商户可以 指定商户转账单号通过该接口申请 商家转账用户确认模式转账单据 对应的电子回单。微信支付会在校验满足回单申请条件后受理回单的申请，商户后续可以通过电子回单查询接口查询回单处理进度。[官方文档](https://pay.weixin.qq.com/docs/merchant/apis/mch-trans/elecsign/accept-elecsign-by-out-no.html)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - out_bill_no
+        properties:
+          out_bill_no:
+            type: string
+            description: 商户转账单号
+            example: plfk2020042013
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - state
+          - create_time
+        properties:
+          state:
+            type: string
+            description: 申请单状态
+            example: GENERATING
+          create_time:
+            type: string
+            description: 申请单创建时间
+            example: '2015-05-20T13:29:35.120+08:00'

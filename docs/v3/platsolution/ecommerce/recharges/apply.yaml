@@ -32,6 +32,10 @@ post:
             type: string
             description: 充值场景
             example: ECOMMERCE_DEPOSIT
+            enum:
+              - ECOMMERCE_DEPOSIT
+              - ECOMMERCE_BANK_TRANSFER
+              - NORMAL_BANK_TRANSFER
           account_type:
             type: string
             description: 充值入账账户

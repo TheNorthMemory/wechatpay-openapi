@@ -81,6 +81,7 @@ get:
             enum:
               - ECOMMERCE_DEPOSIT
               - ECOMMERCE_BANK_TRANSFER
+              - NORMAL_BANK_TRANSFER
           recharge_state_desc:
             type: string
             description: 充值状态描述
@@ -133,6 +134,13 @@ get:
                 type: string
                 description: 用户OpenID
                 example: owYiu0WOJdGCYxoHrPabGhI39uT4
+              employee_type:
+                type: string
+                description: 员工类型
+                example: ADMIN
+                enum:
+                  - ADMIN
+                  - STAFF
           accept_time:
             type: string
             description: 受理充值时间

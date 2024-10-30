@@ -9,7 +9,7 @@ get:
     - name: media_id
       in: path
       type: string
-      description: 子商户号
+      description: 媒体文件ID
       example: 'xxxxx'
   responses:
     '200': {}

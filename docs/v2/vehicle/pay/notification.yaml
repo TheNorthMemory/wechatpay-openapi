@@ -2,7 +2,7 @@ post:
   tags:
     - APIv2∙车主平台
   summary: 用户入场通知api
-  description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/api/vehicle_v2.php?chapter=20_992&index=1)'
+  description: 在停车场场景下，商户调用本接口，会注册接收用户场中状态变化通知，并返回用户车主服务是否可用的状态。调用该接口，微信侧不会向用户下发入场通知消息，消息由商户下发。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/vehicle_v2.php?chapter=20_992&index=1)
   consumes:
     - application/xml
   produces:

@@ -263,7 +263,8 @@ contractorder.response:
           example: '123'
           nullable: true
         request_serial:
-          type: uint64
+          format: uint64
+          type: string
           description: 请求序列号
           example: '1695'
           nullable: true

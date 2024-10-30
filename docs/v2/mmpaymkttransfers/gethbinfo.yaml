@@ -187,22 +187,29 @@ post:
             maxLength: 32
             nullable: true
           hblist:
-            type: ''
-            description: 裂变红包领取列表
-            example: 内容如下表
-            nullable: true
-          openid:
-            type: string
-            description: 领取红包的Openid
-            example: ohO4GtzOAAYMp2yapORH3dQB3W18
-            maxLength: 32
-          amount:
-            format: int32
-            type: integer
-            description: 金额
-            example: '100'
-          rcv_time:
-            type: string
-            description: 接收时间
-            example: '2015-04-21 20:00:00'
-            maxLength: 32
+            type: object
+            description: 红包领取记录
+            properties:
+              hbinfo:
+                type: array
+                description: 裂变红包领取列表
+                example: 内容如下表
+                nullable: true
+                items:
+                  type: object
+                  properties:
+                    openid:
+                      type: string
+                      description: 领取红包的Openid
+                      example: ohO4GtzOAAYMp2yapORH3dQB3W18
+                      maxLength: 32
+                    amount:
+                      format: int32
+                      type: integer
+                      description: 金额
+                      example: '100'
+                    rcv_time:
+                      type: string
+                      description: 接收时间
+                      example: '2015-04-21 20:00:00'
+                      maxLength: 32

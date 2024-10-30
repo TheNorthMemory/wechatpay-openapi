@@ -136,6 +136,12 @@ get:
                         type: string
                         description: 媒体文件业务类型
                         example: USER_COMPLAINT_IMAGE
+                      media_url:
+                        type: array
+                        description: 媒体文列表
+                        items:
+                          type: string
+                          example: https://api.mch.weixin.qq.com/v3/merchant-service/images/xxxxx
                 complaint_full_refunded:
                   type: boolean
                   description: 投诉单是否已全额退款

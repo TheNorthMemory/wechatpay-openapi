@@ -19,31 +19,40 @@ get:
             type: array
             items:
               type: object
+              description: 平台证书列表
               properties:
                 serial_no:
                   type: string
                   example: 5157F09EFDC096DE15EBE81A47057A7232F1B8E1
+                  description: 证书序列号
                 effective_time:
                   type: string
                   format: rfc3339
                   example: '2018-06-08T10:34:56+08:00'
+                  description: 证书启用时间
                 expire_time:
                   type: string
                   format: rfc3339
                   example: '2018-12-08T10:34:56+08:00'
+                  description: 证书弃用时间
                 encrypt_certificate:
                   type: object
                   x-is-sensitive: ciphertext
+                  description: 证书信息
                   properties:
                     algorithm:
                       type: string
                       example: AEAD_AES_256_GCM
+                      description: 加密证书的算法
                     nonce:
                       type: string
                       example: 61f9c719728a
+                      description: 加密证书的随机串
                     associated_data:
                       type: string
                       example: certificate
+                      description: 加密证书的附加数据
                     ciphertext:
                       type: string
                       example: sRvt...
+                      description: 加密后的证书内容

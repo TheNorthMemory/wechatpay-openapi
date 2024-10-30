@@ -12,7 +12,7 @@ interface Contractorder
     /**
      * 支付中签约(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/pap.php?chapter=18_13&index=5
+     * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter3_5.shtml
      */
     public function post(array $options = [
         'xml' => [
@@ -45,7 +45,7 @@ interface Contractorder
     /**
      * 支付中签约(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/pap.php?chapter=18_13&index=5#async
+     * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter3_5.shtml#async
      */
     public function postAsync(array $options = [
         'xml' => [

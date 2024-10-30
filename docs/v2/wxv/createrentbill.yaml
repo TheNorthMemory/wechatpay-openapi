@@ -3,7 +3,7 @@ post:
   tags:
     - APIv2∙免押租借
   summary: 创建租借订单
-  description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/payscore.php?chapter=18_1&index=2)'
+  description: 创建订单后如果超过一小时用户没有进行确认订单操作,订单将失效,无法被用户确认。[官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/payscore.php?chapter=18_1&index=2)
   consumes:
     - application/xml
   produces:

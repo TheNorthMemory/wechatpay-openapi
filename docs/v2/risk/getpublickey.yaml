@@ -4,7 +4,7 @@ post:
   tags:
     - APIv2∙资金应用∙付款
   summary: 获取RSA加密公钥API
-  description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/api/tools/mch_pay_yhk.php?chapter=24_7&index=4)'
+  description: 调用获取RSA公钥API获取RSA公钥，用于加密付款到银行业务接口中的用户敏感信息。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api/tools/mch_pay_yhk.php?chapter=24_7&index=4)
   consumes:
     - application/xml
   produces:

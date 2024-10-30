@@ -2,7 +2,7 @@ post:
   tags:
     - APIv2∙车主平台
   summary: 申请扣款
-  description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/api/vehicle_v2.php?chapter=20_982&index=1)'
+  description: 委托代扣可应用于定期扣款或需事后扣款以期提高效率的场景。例如高速，停车场等通过用户授权给商户，进行委托扣款的场景。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/vehicle_v2.php?chapter=20_982&index=1)
   consumes:
     - application/xml
   produces:

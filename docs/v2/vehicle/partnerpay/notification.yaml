@@ -2,7 +2,7 @@ post:
   tags:
      - APIv2∙车主平台
   summary: 用户入场通知api
-  description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/api/vehicle_v2_sl.php?chapter=20_992&index=1&p=202)'
+  description: 在停车场场景下，如用户已加入车主平台，则进行入场通知；如用户已经欠费，会发送用户欠费入场通知。本接口，会查询用户是否有欠费或黑名单用户情况，并将对应的用户状态进行返回。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/vehicle_v2_sl.php?chapter=20_992&index=1&p=202)
   consumes:
     - application/xml
   produces:

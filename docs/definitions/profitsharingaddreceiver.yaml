@@ -52,6 +52,7 @@ profitsharingaddreceiver.request:
           type: string
           description: +分账接收方;分账接收方对象，json格式
           maxLength: 2048
+          example: '{"type": "MERCHANT_ID","account": "190001001","name": "示例商户全称","relation_type": "STORE_OWNER"}'
 profitsharingaddreceiver.response:
   allOf:
     - $ref: './wxpay.service.yaml#/serviceprovider.subs'

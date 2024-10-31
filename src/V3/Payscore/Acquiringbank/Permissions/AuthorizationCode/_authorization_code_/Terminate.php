@@ -15,7 +15,7 @@ interface Terminate
      * @link https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-auth/terminate-acquiring-bank-permissions-by-code.html
      */
     public function post(array $options = [
-        'authorization_code' => '',
+        'authorization_code' => '1275342195190894594',
         'json' => [
             'service_id' => '500001',
             'channel_id' => '1230000109',
@@ -30,7 +30,7 @@ interface Terminate
      * @link https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-auth/terminate-acquiring-bank-permissions-by-code.html#async
      */
     public function postAsync(array $options = [
-        'authorization_code' => '',
+        'authorization_code' => '1275342195190894594',
         'json' => [
             'service_id' => '500001',
             'channel_id' => '1230000109',

@@ -31,7 +31,7 @@ interface Preopen
             'bank_card_no' => 'K/TErW6DqEM8JFHX4iL3Rlj2vqaEqktvw1KVjgmQ==',
         ],
         'headers' => [
-            'Wechatpay-Serial' => '',
+            'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',
         ],
     ]): ResponseInterface;
 
@@ -57,7 +57,7 @@ interface Preopen
             'bank_card_no' => 'K/TErW6DqEM8JFHX4iL3Rlj2vqaEqktvw1KVjgmQ==',
         ],
         'headers' => [
-            'Wechatpay-Serial' => '',
+            'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',
         ],
     ]): PromiseInterface;
 }

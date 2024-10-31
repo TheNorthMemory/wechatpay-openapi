@@ -26,7 +26,7 @@ interface Import
             'outer_str' => 'my_card_CARD',
         ],
         'headers' => [
-            'Wechatpay-Serial' => '',
+            'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',
         ],
     ]): ResponseInterface;
 
@@ -47,7 +47,7 @@ interface Import
             'outer_str' => 'my_card_CARD',
         ],
         'headers' => [
-            'Wechatpay-Serial' => '',
+            'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',
         ],
     ]): PromiseInterface;
 }

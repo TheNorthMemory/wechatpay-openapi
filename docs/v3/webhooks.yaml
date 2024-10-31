@@ -64,7 +64,7 @@ post:
       required: true
       in: header
       type: string
-      description: 证书序列号
+      description: 平台公钥ID/平台公钥证书序列号
     - name: Wechatpay-Signature
       required: true
       in: header
@@ -267,21 +267,14 @@ WechatpayNotificationEventType:
     # @see                        [商圈退款成功通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/businesscircle/chapter3_3.shtml)
     - MALL_REFUND.SUCCESS         #商圈退款通知的类型
     # @see                        [普通支付通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transactions/chapter3_11.shtml)
-    - TRANSACTION.SUCCESS         #支付成功通知的类型
     # @see                        [服务商支付通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transactions/chapter5_11.shtml)
-    - TRANSACTION.SUCCESS         #支付成功通知的类型
     # @see                        [合单支付通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/combine/chapter3_7.shtml)
-    - TRANSACTION.SUCCESS         #支付成功通知的类型
     # @see                        [直连商户委托代扣支付成功结果通知](https://pay.weixin.qq.com/docs/merchant/apis/entrusted-payment/deduct-result-notify.html)
-    - TRANSACTION.SUCCESS         #直连商户委托代扣支付成功结果通知
     # @see                        [服务商委托代扣支付成功结果通知](https://pay.weixin.qq.com/docs/partner/apis/entrusted-payment/deduct-result-notify.html)
-    - TRANSACTION.SUCCESS         #服务商委托代扣支付成功结果通知
     # @see                        [保险业委托代扣支付成功结果通知](https://pay.weixin.qq.com/docs/merchant/apis/insurance-entrusted-payment/deduct-result-notify.html)
     - TRANSACTION.SUCCESS         #保险业委托代扣支付成功结果通知
     # @see                        [直连商户委托代扣支付失败结果通知](https://pay.weixin.qq.com/docs/merchant/apis/entrusted-payment/deduct-result-notify.html)
-    - TRANSACTION.FAIL            #直连商户委托代扣支付失败结果通知
     # @see                        [服务商委托代扣支付失败结果通知](https://pay.weixin.qq.com/docs/partner/apis/entrusted-payment/deduct-result-notify.html)
-    - TRANSACTION.FAIL            #服务商委托代扣支付失败结果通知
     # @see                        [保险业委托代扣支付失败结果通知](https://pay.weixin.qq.com/docs/merchant/apis/insurance-entrusted-payment/deduct-result-notify.html)
     - TRANSACTION.FAIL            #保险业委托代扣支付失败结果通知
     # @see                        [收付通合单代扣签约、解约结果通知](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter5_5_7.shtml)

@@ -53,7 +53,7 @@ interface ReportTradeUnionInformation
             'extra_fields3' => '{"key1":"value1"}',
         ],
         'headers' => [
-            'Wechatpay-Serial' => '',
+            'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',
         ],
     ]): ResponseInterface;
 
@@ -101,7 +101,7 @@ interface ReportTradeUnionInformation
             'extra_fields3' => '{"key1":"value1"}',
         ],
         'headers' => [
-            'Wechatpay-Serial' => '',
+            'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',
         ],
     ]): PromiseInterface;
 }

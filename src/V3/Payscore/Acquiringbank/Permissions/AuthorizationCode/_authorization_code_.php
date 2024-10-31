@@ -16,7 +16,7 @@ interface _authorization_code_
      * @link https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-auth/get-acquiring-bank-permissions-by-code.html
      */
     public function get(array $options = [
-        'authorization_code' => '',
+        'authorization_code' => '1275342195190894594',
         'query' => [
             'service_id' => '500001',
             'channel_id' => '1230000109',
@@ -30,7 +30,7 @@ interface _authorization_code_
      * @link https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-auth/get-acquiring-bank-permissions-by-code.html#async
      */
     public function getAsync(array $options = [
-        'authorization_code' => '',
+        'authorization_code' => '1275342195190894594',
         'query' => [
             'service_id' => '500001',
             'channel_id' => '1230000109',

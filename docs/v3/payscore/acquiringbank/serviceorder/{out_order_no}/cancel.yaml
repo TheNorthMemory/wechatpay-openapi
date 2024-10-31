@@ -11,6 +11,8 @@ post:
       in: path
       required: true
       type: string
+      description: 商户服务订单号
+      example: 1234323JKHDFE1243252
     - name: _
       in: body
       required: true

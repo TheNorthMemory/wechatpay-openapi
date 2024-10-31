@@ -15,7 +15,7 @@ interface Complete
      * @link https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-order/complete-acquiring-bank-service-order.html
      */
     public function post(array $options = [
-        'out_order_no' => '',
+        'out_order_no' => '1234323JKHDFE1243252',
         'json' => [
             'service_id' => '2002000000000558128851361561536',
             'channel_id' => '1230000109',
@@ -55,7 +55,7 @@ interface Complete
      * @link https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-order/complete-acquiring-bank-service-order.html#async
      */
     public function postAsync(array $options = [
-        'out_order_no' => '',
+        'out_order_no' => '1234323JKHDFE1243252',
         'json' => [
             'service_id' => '2002000000000558128851361561536',
             'channel_id' => '1230000109',

@@ -26,7 +26,7 @@ interface ApplyAbnormalRefund
             'real_name' => 'UPgQcZSdq3zOayJwZ5XLrHY2dZU1W2Cd',
         ],
         'headers' => [
-            'Wechatpay-Serial' => '',
+            'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',
         ],
     ]): ResponseInterface;
 
@@ -47,7 +47,7 @@ interface ApplyAbnormalRefund
             'real_name' => 'UPgQcZSdq3zOayJwZ5XLrHY2dZU1W2Cd',
         ],
         'headers' => [
-            'Wechatpay-Serial' => '',
+            'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',
         ],
     ]): PromiseInterface;
 }

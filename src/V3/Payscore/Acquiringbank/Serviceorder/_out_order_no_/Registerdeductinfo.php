@@ -15,7 +15,7 @@ interface Registerdeductinfo
      * @link https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-order/register-deduct-info.html
      */
     public function post(array $options = [
-        'out_order_no' => '',
+        'out_order_no' => '1234323JKHDFE1243252',
         'json' => [
             'service_id' => '2002000000000558128851361561536',
             'appid' => 'wxd678efh567hg6787',
@@ -31,7 +31,7 @@ interface Registerdeductinfo
      * @link https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-order/register-deduct-info.html#async
      */
     public function postAsync(array $options = [
-        'out_order_no' => '',
+        'out_order_no' => '1234323JKHDFE1243252',
         'json' => [
             'service_id' => '2002000000000558128851361561536',
             'appid' => 'wxd678efh567hg6787',

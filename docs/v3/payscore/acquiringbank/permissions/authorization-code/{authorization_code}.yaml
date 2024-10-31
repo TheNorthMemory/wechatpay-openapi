@@ -11,6 +11,8 @@ get:
       in: path
       required: true
       type: string
+      description: 授权协议号
+      example: '1275342195190894594'
     - name: service_id
       in: query
       type: string

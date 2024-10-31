@@ -3,7 +3,7 @@ post:
   tags:
     - APIv2∙企微∙红包
   summary: 发放企业红包
-  description: '[官方文档](https://open.work.weixin.qq.com/api/doc/90000/90135/90275)'
+  description: 红包金额大于200或者小于1元时，请求参数scene_id必传，参数说明见下文。根据监管要求，新申请商户号使用现金红包需要满足两个条件：1、入驻时间超过90天 2、连续正常交易30天。移动应用的appid无法使用红包接口。[官方文档](https://open.work.weixin.qq.com/api/doc/90000/90135/90275)
   consumes:
     - application/xml
   produces:

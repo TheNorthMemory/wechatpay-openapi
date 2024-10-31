@@ -57,7 +57,7 @@ interface Merchants
         ],
         'headers' => [
             'Idempotency-Key' => 'GzPCeo963zXKcO2hDVD8AjXIpgrj',
-            'Wechatpay-Serial' => '',
+            'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',
         ],
     ]): ResponseInterface;
 
@@ -108,7 +108,7 @@ interface Merchants
         ],
         'headers' => [
             'Idempotency-Key' => 'GzPCeo963zXKcO2hDVD8AjXIpgrj',
-            'Wechatpay-Serial' => '',
+            'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',
         ],
     ]): PromiseInterface;
 
@@ -159,7 +159,7 @@ interface Merchants
             ],
         ],
         'headers' => [
-            'Wechatpay-Serial' => '',
+            'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',
         ],
     ]): ResponseInterface;
 
@@ -210,7 +210,7 @@ interface Merchants
             ],
         ],
         'headers' => [
-            'Wechatpay-Serial' => '',
+            'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',
         ],
     ]): PromiseInterface;
 }

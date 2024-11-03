@@ -5,7 +5,7 @@ post:
     - 机构模式
   tags:
     - 跨境∙代扣
-  summary: 查询订单(商户订单号)
+  summary: 撤销订单(商户订单号)
   description: 商户可以通过该接口发起撤销订单。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter5_1_10.shtml)
   parameters:
     - name: out_trade_no

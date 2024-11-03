@@ -10,7 +10,7 @@ use GuzzleHttp\Promise\PromiseInterface;
 interface Reverse
 {
     /**
-     * 查询订单(商户订单号)(同步模式)
+     * 撤销订单(商户订单号)(同步模式)
      * @param array<string,mixed> $options
      * @link https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter5_1_10.shtml
      */
@@ -23,7 +23,7 @@ interface Reverse
     ]): ResponseInterface;
 
     /**
-     * 查询订单(商户订单号)(异步模式)
+     * 撤销订单(商户订单号)(异步模式)
      * @param array<string,mixed> $options
      * @link https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter5_1_10.shtml#async
      */

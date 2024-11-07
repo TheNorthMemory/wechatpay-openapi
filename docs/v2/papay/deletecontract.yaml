@@ -2,7 +2,7 @@ post:
   tags:
     - APIv2∙委托扣款
   summary: 申请解约
-  description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/api/pap.php?chapter=18_4&index=9)'
+  description: 商户与用户的签约关系有误或者商户主动要求与用户解除之前的签约协议时可调用此接口完成解约。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter3_9.shtml)
   consumes:
     - application/xml
   produces:

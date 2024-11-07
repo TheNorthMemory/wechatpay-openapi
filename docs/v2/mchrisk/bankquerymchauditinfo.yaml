@@ -3,7 +3,7 @@ post:
   tags:
     - APIv2∙风控
   summary: 间联模式查询商户审核状态开放接口
-  description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/api/mch_bank.php?chapter=9_291)'
+  description: 为了提升特约商户录入质量，发现并及时中止特约商户风险交易行为，现面向银行服务商开放风险商户数据，支持银行在录入商户前提前核查商户风险、了解风险交易、并且将风险处理结果同步微信支付.用于服务商/银行准入商户时，根据身份证，银行卡号，营业执照等信息查询商户是否有风险。说明：该接口需要提供以下信息至少一种，提供的信息越多，查询结果越准确。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/mch_bank.php?chapter=9_291)
   consumes:
     - application/xml
   produces:

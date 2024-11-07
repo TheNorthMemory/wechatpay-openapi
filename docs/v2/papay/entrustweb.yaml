@@ -2,7 +2,7 @@ get:
   tags:
     - APIv2∙委托扣款
   summary: 公众号纯签约
-  description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/api/pap.php?chapter=18_1&index=1)'
+  description: 商户可以通过请求此接口唤起微信委托代扣的页面。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter3_1.shtml)
   consumes:
     - application/xml
   produces:

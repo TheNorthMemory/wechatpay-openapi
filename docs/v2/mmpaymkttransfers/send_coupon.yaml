@@ -1,5 +1,7 @@
 post:
   x-api-cert-required: true
+  x-last-updated-at: 2020.MM.dd
+  deprecated: true
   tags:
     - APIv2∙代金券
   summary: 发放代金券

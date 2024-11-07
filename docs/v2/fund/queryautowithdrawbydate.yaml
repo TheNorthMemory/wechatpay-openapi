@@ -5,7 +5,7 @@ post:
   tags:
     - APIv2∙小微
   summary: 查询提现状态
-  description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=21_1)'
+  description: 小微商户模式下，与微信支付对接的是服务商，小微商户可能并不感知微信支付，小微商户的日常维护，是登录服务商自建的APP或者公众号，来查询提现状态等等。本API即提供自动提现查询能力给到服务商。说明：1、反映的是小微商户历史自动提现单据的相关信息；2、资金账单中涉及金额的字段单位为“分”。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=21_1)
   consumes:
     - application/xml
   produces:

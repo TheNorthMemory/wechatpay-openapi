@@ -2,7 +2,7 @@ post:
   tags:
     - APIv2∙酒店押金
   summary: 查询订单
-  description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=27_2&index=3)'
+  description: 该接口提供所有微信支付订单的查询，商户可以通过该接口主动查询订单状态，完成下一步的业务逻辑。押金消费时，押金金额解冻，部分金额退还给用户，部分金额结算给商户。通过该接口可以查询押金消费的目前的具体押金消费单状态：包含退款和结算状态信息。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=27_2&index=3)
   consumes:
     - application/xml
   produces:

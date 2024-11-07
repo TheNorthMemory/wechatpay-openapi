@@ -12,7 +12,7 @@ interface Deletecontract
     /**
      * 申请解约(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/pap.php?chapter=18_4&index=9
+     * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter3_9.shtml
      */
     public function post(array $options = [
         'xml' => [
@@ -30,7 +30,7 @@ interface Deletecontract
     /**
      * 申请解约(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/pap.php?chapter=18_4&index=9#async
+     * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter3_9.shtml#async
      */
     public function postAsync(array $options = [
         'xml' => [

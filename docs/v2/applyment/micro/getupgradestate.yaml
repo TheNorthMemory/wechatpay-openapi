@@ -5,7 +5,7 @@ post:
   tags:
     - APIv2∙小微
   summary: 查询升级申请单状态
-  description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=28_3&index=3)'
+  description: 使用“提交升级申请单”接口后，可不定期调用此接口查询申请单状态（建议提交申请后1分钟查询），直至申请单为“完成”状态。1)若申请状态为待账户验证，请按接口中的指引完成账户验证；2)若申请状态为审核中，微信支付会在2个工作日内完成资料审核；3)若申请状态为待签约，接口会返回签约二维码。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=28_3&index=3)
   consumes:
     - application/xml
   produces:

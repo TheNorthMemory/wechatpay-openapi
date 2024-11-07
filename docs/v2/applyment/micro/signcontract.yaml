@@ -5,7 +5,7 @@ post:
   tags:
     - APIv2∙小微
   summary: 签约报备
-  description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=19_4)'
+  description: 若查询申请状态为待签约，接口会一并返回签约二维码，服务商需引导商户使用本人微信扫码完成协议签署。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=19_4)
   consumes:
     - application/xml
   produces:

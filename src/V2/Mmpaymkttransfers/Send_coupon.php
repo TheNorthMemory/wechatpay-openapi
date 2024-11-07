@@ -12,6 +12,7 @@ interface Send_coupon
     /**
      * 发放代金券(同步模式)
      * @param array<string,mixed> $options
+     * @deprecated - since 2020.MM.dd
      * @link https://pay.weixin.qq.com/wiki/doc/api/tools/sp_coupon.php?chapter=12_3&index=4
      */
     public function post(array $options = [
@@ -33,6 +34,7 @@ interface Send_coupon
     /**
      * 发放代金券(异步模式)
      * @param array<string,mixed> $options
+     * @deprecated - since 2020.MM.dd
      * @link https://pay.weixin.qq.com/wiki/doc/api/tools/sp_coupon.php?chapter=12_3&index=4#async
      */
     public function postAsync(array $options = [

@@ -12,7 +12,7 @@ interface Pappayapply
     /**
      * 申请扣款(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/pap.php?chapter=18_3&index=9
+     * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter3_8.shtml
      */
     public function post(array $options = [
         'xml' => [
@@ -36,7 +36,7 @@ interface Pappayapply
     /**
      * 申请扣款(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/pap.php?chapter=18_3&index=9#async
+     * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter3_8.shtml#async
      */
     public function postAsync(array $options = [
         'xml' => [

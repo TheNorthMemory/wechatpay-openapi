@@ -2,7 +2,7 @@ post:
   tags:
     - APIv2∙风控
   summary: 设置风险通知回调链接
-  description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/api/mch_bank.php?chapter=9_294)'
+  description: 设置通知回调链接，当支付风险能力平台有事件通知时，通过该链接通知银行或者渠道服务商。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/mch_bank.php?chapter=9_294)
   consumes:
     - application/xml
   produces:

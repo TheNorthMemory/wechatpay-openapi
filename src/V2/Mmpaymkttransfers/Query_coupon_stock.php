@@ -12,6 +12,7 @@ interface Query_coupon_stock
     /**
      * 查询代金券批次(同步模式)
      * @param array<string,mixed> $options
+     * @deprecated - since 2020.MM.dd
      * @link https://pay.weixin.qq.com/wiki/doc/api/tools/sp_coupon.php?chapter=12_4&index=5
      */
     public function post(array $options = [
@@ -29,6 +30,7 @@ interface Query_coupon_stock
     /**
      * 查询代金券批次(异步模式)
      * @param array<string,mixed> $options
+     * @deprecated - since 2020.MM.dd
      * @link https://pay.weixin.qq.com/wiki/doc/api/tools/sp_coupon.php?chapter=12_4&index=5#async
      */
     public function postAsync(array $options = [

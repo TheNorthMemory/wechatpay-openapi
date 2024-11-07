@@ -5,7 +5,7 @@ post:
   tags:
     - APIv2∙小微
   summary: 修改结算银行卡
-  description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=21_2)'
+  description: 通过此接口可以修改小微商户的入驻资料，例如银行卡号、入驻人姓名等。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=21_2)
   consumes:
     - application/xml
   produces:

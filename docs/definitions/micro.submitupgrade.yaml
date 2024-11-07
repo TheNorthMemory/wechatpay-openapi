@@ -132,7 +132,7 @@ micro.submitupgrade.request:
           nullable: true
         bank_name:
           type: string
-          description: "开户银行全称 \n\t\t\t\t  （含支行）"
+          description: 开户银行全称(含支行)17家直连银行无需填写，其他银行请务必填写
           example: 深圳农村商业银行xxx支行
           maxLength: 256
           nullable: true

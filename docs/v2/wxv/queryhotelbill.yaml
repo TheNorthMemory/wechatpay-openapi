@@ -3,7 +3,7 @@ post:
   tags:
     - APIv2∙免押速住
   summary: 查询速住订单
-  description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/payscore.php?chapter=19_2&index=3)'
+  description: '前置条件：商户下单待受理后。[官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/payscore.php?chapter=19_2&index=3)'
   consumes:
     - application/xml
   produces:

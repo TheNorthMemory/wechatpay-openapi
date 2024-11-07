@@ -2,7 +2,7 @@ post:
   tags:
     - APIv2∙酒店押金
   summary: 支付押金（人脸支付）
-  description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=27_0&index=1)'
+  description: 商户通过支付押金（人脸）接口发起押金支付请求；用户使用微信支付完成押金支付，支付完成后扣除相应金额，并生成押金交易记录，下发押金支付凭证；支付成功后，为用户下发押金支付凭证；注意：当押金超过一个月未进行处理，会自动执行退款。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=27_0&index=1)
   consumes:
     - application/xml
   produces:

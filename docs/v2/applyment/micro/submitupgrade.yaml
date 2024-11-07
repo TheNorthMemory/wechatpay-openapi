@@ -5,7 +5,7 @@ post:
   tags:
     - APIv2∙小微
   summary: 提交升级申请单
-  description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=28_2&index=2)'
+  description: 使用“提交升级申请单”接口为小微商户发起升级流程，根据商户实际情况可升级为个体户、企业、其他组织。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=28_2&index=2)
   consumes:
     - application/xml
   produces:

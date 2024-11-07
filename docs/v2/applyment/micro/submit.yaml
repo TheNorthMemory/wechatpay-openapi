@@ -5,7 +5,7 @@ post:
   tags:
     - APIv2∙小微
   summary: 申请入驻
-  description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=19_2)'
+  description: 使用申请入驻接口提交你的小微商户资料，申请后一般5分钟左右可以查询到具体的申请结果。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=19_2)
   consumes:
     - application/xml
   produces:

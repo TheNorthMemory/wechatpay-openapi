@@ -3,7 +3,7 @@ post:
   tags:
     - APIv2∙免押租借
   summary: 修改租借订单
-  description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/payscore.php?chapter=18_5&index=6)'
+  description: 前置条件：商户完结订单后，用户支付成功前。用户支付成功后不可使用该接口。[官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/payscore.php?chapter=18_5&index=6)
   consumes:
     - application/xml
   produces:

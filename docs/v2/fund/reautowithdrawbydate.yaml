@@ -5,7 +5,7 @@ post:
   tags:
     - APIv2∙小微
   summary: 重新发起提现
-  description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=21_3)'
+  description: 微信支付已完成小微商户提现功能的升级，小微商户可在「微信支付商家助手小程序 - 资金管理 - 基本账户」发起手动提现，自动提现的金额调整为 “前一日基本账户日终余额的可用余额部分”。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=21_3)
   consumes:
     - application/xml
   produces:

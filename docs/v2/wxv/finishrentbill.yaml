@@ -3,7 +3,7 @@ post:
   tags:
     - APIv2∙免押租借
   summary: 完结租借订单
-  description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/payscore.php?chapter=18_4&index=5)'
+  description: '前置条件：用户确认使用业务后。[官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/payscore.php?chapter=18_4&index=5)'
   consumes:
     - application/xml
   produces:

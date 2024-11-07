@@ -12,7 +12,7 @@ interface Querycontract
     /**
      * 查询签约关系(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/pap.php?chapter=18_2&index=7
+     * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter3_7.shtml
      */
     public function post(array $options = [
         'xml' => [
@@ -29,7 +29,7 @@ interface Querycontract
     /**
      * 查询签约关系(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/pap.php?chapter=18_2&index=7#async
+     * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter3_7.shtml#async
      */
     public function postAsync(array $options = [
         'xml' => [

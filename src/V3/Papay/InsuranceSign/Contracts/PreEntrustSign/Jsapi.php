@@ -49,6 +49,7 @@ interface Jsapi
                 'id_card_number' => '1axtI9EZUr0343c89xQznxau+cRWPKP4YhVAoj==',
                 'identity_type' => 'ID_CARD',
             ],
+            'combined_deduct_period_count' => 1,
         ],
         'headers' => [
             'Wechatpay-Serial' => '',
@@ -95,6 +96,7 @@ interface Jsapi
                 'id_card_number' => '1axtI9EZUr0343c89xQznxau+cRWPKP4YhVAoj==',
                 'identity_type' => 'ID_CARD',
             ],
+            'combined_deduct_period_count' => 1,
         ],
         'headers' => [
             'Wechatpay-Serial' => '',

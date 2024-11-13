@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2023.12.01
+  x-last-updated-at: 2024.11.12
   x-role:
     - 普通商户
   tags:
@@ -25,6 +25,7 @@ post:
           - contract_notify_url
           - policy_start_date
           - policy_end_date
+          - policy_periods
         properties:
           appid:
             type: string
@@ -158,12 +159,15 @@ post:
           jump_control:
             type: object
             description: 跳转控制信息
-            required: []
             properties:
               jump_appid:
                 type: string
                 description: 跳转的应用AppID
                 example: wxd678efh567hg6787
+          combined_deduct_period_count:
+            type: number
+            description: 合并扣费期数
+            example: 1
   responses:
     '200':
       schema:

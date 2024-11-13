@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2023.12.01
+  x-last-updated-at: 2024.11.12
   x-role:
     - 普通商户
   tags:
@@ -24,6 +24,7 @@ post:
         type: object
         required:
           - appid
+          - policy_periods
         properties:
           appid:
             type: string

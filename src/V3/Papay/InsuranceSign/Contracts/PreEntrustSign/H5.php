@@ -52,6 +52,7 @@ interface H5
             'jump_control' => [
                 'jump_appid' => 'wxd678efh567hg6787',
             ],
+            'combined_deduct_period_count' => 1,
         ],
         'headers' => [
             'Wechatpay-Serial' => '',
@@ -101,6 +102,7 @@ interface H5
             'jump_control' => [
                 'jump_appid' => 'wxd678efh567hg6787',
             ],
+            'combined_deduct_period_count' => 1,
         ],
         'headers' => [
             'Wechatpay-Serial' => '',

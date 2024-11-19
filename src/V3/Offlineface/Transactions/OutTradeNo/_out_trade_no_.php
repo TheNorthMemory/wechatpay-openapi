@@ -15,11 +15,11 @@ interface _out_trade_no_
      * @link https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/k12-development-guidelines.html
      */
     public function get(array $options = [
-        'out_trade_no' => '',
+        'out_trade_no' => '1217752501201407033233368018',
         'query' => [
-            'sp_mchid' => '',
-            'sub_mchid' => '',
-            'business_product_id' => '',
+            'sp_mchid' => '198798777',
+            'sub_mchid' => '3233122121',
+            'business_product_id' => '2',
         ],
     ]): ResponseInterface;
 
@@ -29,11 +29,11 @@ interface _out_trade_no_
      * @link https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/k12-development-guidelines.html#async
      */
     public function getAsync(array $options = [
-        'out_trade_no' => '',
+        'out_trade_no' => '1217752501201407033233368018',
         'query' => [
-            'sp_mchid' => '',
-            'sub_mchid' => '',
-            'business_product_id' => '',
+            'sp_mchid' => '198798777',
+            'sub_mchid' => '3233122121',
+            'business_product_id' => '2',
         ],
     ]): PromiseInterface;
 }

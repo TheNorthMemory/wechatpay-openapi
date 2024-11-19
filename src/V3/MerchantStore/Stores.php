@@ -13,6 +13,7 @@ interface Stores
     /**
      * 创建门店(同步模式)
      * @param array<string,mixed> $options
+     * @link https://kf.qq.com/faq/2009096ZF7Jf200909UVbY73.html
      */
     public function post(array $options = [
         'json' => [
@@ -44,6 +45,7 @@ interface Stores
     /**
      * 创建门店(异步模式)
      * @param array<string,mixed> $options
+     * @link https://kf.qq.com/faq/2009096ZF7Jf200909UVbY73.html#async
      */
     public function postAsync(array $options = [
         'json' => [

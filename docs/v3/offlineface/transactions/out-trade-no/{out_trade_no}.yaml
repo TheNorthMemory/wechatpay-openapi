@@ -10,6 +10,7 @@ get:
     - name: out_trade_no
       in: path
       required: true
+      type: string
       description: 商户订单号
       example: '1217752501201407033233368018'
     - name: sp_mchid

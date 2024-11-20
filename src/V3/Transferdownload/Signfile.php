@@ -16,7 +16,7 @@ interface Signfile
      */
     public function get(array $options = [
         'query' => [
-            'token' => '',
+            'token' => 'X8Uk3sD4a4eZVPTBvqNDoUqcYMlZ9uuD',
         ],
     ]): ResponseInterface;
 
@@ -27,7 +27,7 @@ interface Signfile
      */
     public function getAsync(array $options = [
         'query' => [
-            'token' => '',
+            'token' => 'X8Uk3sD4a4eZVPTBvqNDoUqcYMlZ9uuD',
         ],
     ]): PromiseInterface;
 }

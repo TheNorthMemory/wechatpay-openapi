@@ -121,10 +121,10 @@ interface Cards
      */
     public function get(array $options = [
         'query' => [
-            'brand_id' => '',
-            'appid' => '',
+            'brand_id' => '1001622624',
+            'appid' => 'wxea9c30890f48d5ae',
             'offset' => 0,
-            'limit' => 0,
+            'limit' => 20,
         ],
     ]): ResponseInterface;
 
@@ -135,10 +135,10 @@ interface Cards
      */
     public function getAsync(array $options = [
         'query' => [
-            'brand_id' => '',
-            'appid' => '',
+            'brand_id' => '1001622624',
+            'appid' => 'wxea9c30890f48d5ae',
             'offset' => 0,
-            'limit' => 0,
+            'limit' => 20,
         ],
     ]): PromiseInterface;
 }

@@ -1,12 +1,13 @@
 get:
-  x-last-updated-at: 2021.08.25
+  x-last-updated-at: 2023.12.04
   x-role:
     - 服务商
+    - 普通商户
   tags:
     - 资金应用∙转账
     - 运营工具∙用工卡
   summary: 下载电子回单API
-  description: 下载电子回单API为通用接口，商家转账等业务电子回单均可通过该接口进行下载。[官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_15.shtml)
+  description: 下载电子回单API为通用接口，商家转账等业务电子回单均可通过该接口进行下载。[下载电子回单](https://pay.weixin.qq.com/docs/partner/apis/bank-mode-batch-transfer-accounts/download-electron-receipt.html) [下载电子回单](https://pay.weixin.qq.com/docs/partner/apis/batch-transfer-accounts-money/transfer/download-electron-receipt.html) [下载电子回单](https://pay.weixin.qq.com/docs/merchant/apis/batch-transfer-to-balance/download-receipt.html) [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_15.shtml)
   produces:
     - application/pdf
   parameters:
@@ -14,5 +15,7 @@ get:
       in: query
       required: true
       type: string
+      description: 前序download_url的查询参数
+      example: X8Uk3sD4a4eZVPTBvqNDoUqcYMlZ9uuD
   responses:
     200: {}

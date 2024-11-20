@@ -161,7 +161,7 @@ Record:
                 type: array
                 items:
                   type: string
-                description: 字段值
+                  description: 字段值
                 example:
                   - 篮球
                   - 足球

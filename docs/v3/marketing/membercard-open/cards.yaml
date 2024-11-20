@@ -183,23 +183,25 @@ post:
       schema:
         $ref: '../../../definitions/MemberCard.yaml#Record'
 get:
-  x-last-updated-at: 2021.01.07
+  x-last-updated-at: 2023.11.28
   x-role:
     - 直连商户
     - 服务商
   tags:
     - 会员卡∙基础功能
   summary: 查询会员卡模板列表API
-  description: 通过此接口可查询指定某品牌的所有会员卡模板列表 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_3.shtml)
+  description: 通过此接口可查询指定某品牌的所有会员卡模板列表 [官方文档](https://pay.weixin.qq.com/docs/merchant/apis/membership-card/member-card-base/list-member-card.html) [官方文档](https://pay.weixin.qq.com/docs/partner/apis/membership-card/member-card-base/list-member-card.html) [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_3.shtml)
   parameters:
     - name: brand_id
       in: query
       type: string
       description: 品牌id
+      example: '1001622624'
     - name: appid
       in: query
       type: string
       description: 商户AppId
+      example: wxea9c30890f48d5ae
     - name: offset
       in: query
       required: true
@@ -211,6 +213,7 @@ get:
       required: true
       type: integer
       description: 分页大小
+      example: 20
   responses:
     200:
       schema:
@@ -232,5 +235,6 @@ get:
             default: 0
           data:
             type: array
+            description: 会员卡列表
             items:
               $ref: '../../../definitions/MemberCard.yaml#Record'

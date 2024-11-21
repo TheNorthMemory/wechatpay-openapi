@@ -3,7 +3,7 @@ post:
   tags:
     - APIv2∙人脸支付
   summary: 人脸识别SDK-获取调用凭证
-  description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/android/faceuser.html)'
+  description: '人脸识别通过识别用户人脸，获取用户信息（openid）。此功能常用于商户会员、商品推荐等场景， 此流程无法用于支付。FACEID-ONCE为直接启动人脸识别流程。[官方文档](https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/android/faceuser.html)'
   consumes:
     - application/xml
   produces:
@@ -78,11 +78,11 @@ post:
             example: 1239878956
           version:
             type: string
-            maxLength:   版本号。固定为1
+            description: 版本号。固定为1
             example: '1'
           sign_type:
             type: string
-            maxLength:   签名类型，目前支持HMAC-SHA256和MD5，默认为MD5
+            description: 签名类型
             example: MD5
             enum:
               - MD5
@@ -123,6 +123,11 @@ post:
               name: xml
             required:
               - authinfo
+              - nonce_str
+              - sign
+              - appid
+              - mch_id
+              - sub_mch_id
             properties:
               authinfo:
                 type: string

@@ -1,11 +1,11 @@
 post:
-  x-last-updated-at: 2022.12.01
+  x-last-updated-at: 2023.08.21
   x-role:
     - 服务商
   tags:
     - 收付通∙提现
   summary: 提交已注销商户号可用余额提现申请单API
-  description: 针对被微信支付平台不收不付管控的电商子商户，如子商户账户内还有可用余额，且无法解脱（例如.营业执照注销吊销），则服务商可为子商户申请走注销提现的流程，将可用余额进行提现操作。在商户号注销后，电商平台可发起提现申请, 审批通过后, 将会按照指定的收款方式返回给商户。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter7_8_9.shtml)
+  description: 针对被微信支付平台不收不付管控的电商子商户，如子商户账户内还有可用余额，且无法解脱（例如.营业执照注销吊销），则服务商可为子商户申请走注销提现的流程，将可用余额进行提现操作。在商户号注销后，电商平台可发起提现申请, 审批通过后, 将会按照指定的收款方式返回给商户。[官方文档](https://pay.weixin.qq.com/docs/partner/apis/withdrawal-apply/withdrawal-apply/submit-apply.html) [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter7_8_9.shtml)
   parameters:
     - $ref: '../../../definitions/Parameters.yaml#WECHATPAY_CERTIFICATE_SERIAL'
     - name: _
@@ -67,7 +67,7 @@ post:
                     type: string
                     format: base64
                     description: 开户名称
-                    example: AOZdYGISxo4y44/UgZ69bdu9X+tfMUJ9dl+LetjM45/zMbrYu+wWZ8gn4CTdo+D/m9MrPg+V4sm73oxqdQu/hj7aWyDl4GQtPXVdaztB9jVbVZh3QFzV+BEmytMNQp9dt1uWJktlfdDdLR3AMWyMB377xd+m9bSr/ioDTzagEcGe+vLYiKrzcroQv3OR0p3ppFYoQ3IfYeU/04S4t9rNFL+kyblK2FCCqQ11NdbbHoCrJc7NV4oASq6ZFonjTtgjjgKsadIKHXtb3JZKGZjduGdtkRJJp0/0eow96uY1Pk7Rq79Jtt7+I8juwEc4P4TG5xzchG/5IL9DBd+Z0zZXkw==
+                    example: AOZdYGISxo4y44/UgZ69b0zZXkw==
                   account_bank:
                     type: string
                     description: 开户银行
@@ -84,7 +84,7 @@ post:
                     type: string
                     format: base64
                     description: 银行账号
-                    example: d+xT+MQCvrLHUVDWv/8MR/dB7TkXM2YYZlokmXzFsWs35NXUot7C0NcxIrUF5FnxqCJHkNgKtxa6RxEYyba1+VBRLnqKG2fSy/Y5qDN08Ej9zHCwJjq52Wg1VG8MRugli9YMI1fI83KGBxhuXyemgS/hqFKsfYGiOkJqjTUpgY5VqjtL2N4l4z11T0ECB/aSyVXUysOFGLVfSrUxMPZy6jWWYGvT1+4P633f+R+ki1gT4WF/2KxZOYmli385ZgVhcR30mr4/G3HBcxi13zp7FnEeOsLlvBmI1PHN4C7Rsu3WL8sPndjXTd75kPkyjqnoMRrEEaYQE8ZRGYoeorwC+w==
+                    example: d+xT+MQCvrLHeorwC+w==
               identity_info:
                 type: object
                 description: 收款人账号对应的证件信息
@@ -100,12 +100,12 @@ post:
                     type: string
                     format: base64
                     description: 证件姓名
-                    example: pVd1HJ6zyvPedzGaV+X3qtmrq9bb9tPROvwia4ibL+F6mfjbzQIzfb3HHLEjZ4YiR/cJiCrZxnAqi+pjeKIEdkwzXRAI7FUhrfPK3SNjaBTEu9GmsugMIA9r3x887Q+ODuC8HH2nzAn7NGpE/e3yiHgWhk0ps5k5DP/2qIdGdONoDzZelrxCl/NWWNUyB93K9F+jC1JX2IMttdY+aQ6zBlw0xnOiNW6Hzy7UtC+xriudjD5APomty7/mYNxLMpRSvWKIjOv/69bDnuC4EL5Kz4jBHLiCyOb+tI0m2qhZ9evAM+Jv1z0NVa8MRtelw/wDa4SzfeespQO/0kjiwfqdfg==
+                    example: pVd1HJ6zyvPedzfg==
                   identification_no:
                     type: string
                     format: base64
                     description: 证件号码
-                    example: AOZdYGISxo4y44/UgZ69bdu9X+tfMUJ9dl+LetjM45/zMbrYu+wWZ8gn4CTdo+D/m9MrPg+V4sm73oxqdQu/hj7aWyDl4GQtPXVdaztB9jVbVZh3QFzV+BEmytMNQp9dt1uWJktlfdDdLR3AMWyMB377xd+m9bSr/ioDTzagEcGe+vLYiKrzcroQv3OR0p3ppFYoQ3IfYeU/04S4t9rNFL+kyblK2FCCqQ11NdbbHoCrJc7NV4oASq6ZFonjTtgjjgKsadIKHXtb3JZKGZjduGdtkRJJp0/0eow96uY1Pk7Rq79Jtt7+I8juwEc4P4TG5xzchG/5IL9DBd+Z0zZXkw==
+                    example: AOZdYGISxo4y44/UgZ69bkw==
           proof_media_list:
             type: object
             description: 付款申请证明材料
@@ -127,18 +127,19 @@ post:
                       type: string
                       format: MediaId
                       description: 证明材料照片
-                      example: jTpGmxUX3FBWVQ5NJTZvlKX_gdU4cRz7z5NxpnFuAxhBTEO_PvWkfSCJ3zVIn001D8daLC-ehEuo0BJqRTvDujqhThn4ReFxikqJ5YW6zFQ
+                      example: jTpGmxUX3FBWVQ5NJTZvlKXQ
           additional_materials:
             type: object
             description: 补充材料
             properties:
               additional_media:
                 type: array
-                description: 补充材料照片
+                description: 补充材料照片列表，最多10张
                 items:
                   type: string
+                  description: 照片MediaID
                   format: MediaId
-                  example: jTpGmxUX3FBWVQ5NJTZvlKX_gdU4cRz7z5NxpnFuAxhBTEO_PvWkfSCJ3zVIn001D8daLC-ehEuo0BJqRTvDujqhThn4ReFxikqJ5YW6zFQ
+                  example: jTpGmxUX3FBWVQ5NFQ
           remark:
             type: string
             description: 备注

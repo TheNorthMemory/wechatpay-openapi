@@ -46,6 +46,7 @@ get:
               properties:
                 complaint_media_list:
                   type: object
+                  description: 操作资料列表
                   properties:
                     media_type:
                       type: string

@@ -111,8 +111,10 @@ get:
             default: 0
           data:
             type: array
+            description: 服务人员信息列表
             items:
               type: object
+              description: 服务人员信息
               x-is-sensitive: [name, mobile]
               properties:
                 guide_id:

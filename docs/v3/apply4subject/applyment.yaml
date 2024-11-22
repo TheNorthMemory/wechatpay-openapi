@@ -75,6 +75,7 @@ post:
                 description: 是否金融机构
               business_license_info:
                 type: object
+                description: 营业执照
                 required: [licence_number, licence_copy, merchant_name, legal_person, company_address, licence_valid_date]
                 properties:
                   licence_number:
@@ -100,6 +101,7 @@ post:
                     example: '["1970-01-01","forever"]'
               certificate_info:
                 type: object
+                description: 登记证书
                 required: [cert_type, cert_number, cert_copy, merchant_name, legal_person, company_address, cert_valid_date]
                 properties:
                   cert_type:
@@ -131,6 +133,7 @@ post:
                 description: 单位证明函照片
               assist_prove_info:
                 type: object
+                description: 辅助证明材料信息
                 required: [micro_biz_type, store_name, store_address, store_header_copy, store_indoor_copy]
                 properties:
                   micro_biz_type:
@@ -154,8 +157,10 @@ post:
                     description: 店内环境照片
               special_operation_info:
                 type: array
+                description: 经营许可证列表信息
                 items:
                   type: object
+                  description: 经营许可证信息
                   required: [category_id]
                   properties:
                     category_id:
@@ -168,6 +173,7 @@ post:
                         description: 店内环境照片
               finance_institution_info:
                 type: object
+                description: 金融机构许可证信息
                 properties:
                   finance_type:
                     $ref: '../../definitions/Enumerations.yaml#/FinanceType'
@@ -177,6 +183,7 @@ post:
                     items:
                       type: string
                       format: MediaId
+                      description: 图片MediaID
           identification_info:
             type: object
             description: 法人身份信息
@@ -221,6 +228,7 @@ post:
                 description: 经营者/法人是否为受益人
           ubo_info_list:
             type: array
+            description: 最终受益人信息列表
             items:
               type: object
               required: [ubo_id_doc_type, ubo_id_doc_copy, ubo_id_doc_copy_back, id_doc_copy, ubo_id_doc_name, ubo_id_doc_number, ubo_id_doc_address, ubo_period_begin, ubo_period_end]
@@ -257,12 +265,14 @@ post:
                   description: 证件有效期结束时间
           addition_info:
             type: object
+            description: 补充材料
             properties:
               confirm_mchid_list:
                 type: array
                 description: 待确认商户号列表
                 items:
                   type: string
+                  description: 待确认商户号
   responses:
     200:
       schema:

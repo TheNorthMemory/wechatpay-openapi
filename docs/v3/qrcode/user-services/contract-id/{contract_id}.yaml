@@ -45,3 +45,4 @@ get:
               - BLOCKED
           block_reason:
             type: string
+            description: 原因

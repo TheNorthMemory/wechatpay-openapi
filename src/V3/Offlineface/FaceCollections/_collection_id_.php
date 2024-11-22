@@ -15,10 +15,7 @@ interface _collection_id_
      * @link https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/k12-development-guidelines.html
      */
     public function get(array $options = [
-        'collection_id' => '',
-        'query' => [
-            'appid' => '',
-        ],
+        'collection_id' => 'FC2353ZJIHOJKHOIIOIJ',
     ]): ResponseInterface;
 
     /**
@@ -27,9 +24,6 @@ interface _collection_id_
      * @link https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/k12-development-guidelines.html#async
      */
     public function getAsync(array $options = [
-        'collection_id' => '',
-        'query' => [
-            'appid' => '',
-        ],
+        'collection_id' => 'FC2353ZJIHOJKHOIIOIJ',
     ]): PromiseInterface;
 }

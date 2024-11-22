@@ -40,6 +40,9 @@ interface Presign
             ],
             'contract_mode' => 'LIMIT_BANK_CARD | PRIORITY_BANK_CARD | LIMIT_NONE',
         ],
+        'headers' => [
+            'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',
+        ],
     ]): ResponseInterface;
 
     /**
@@ -72,6 +75,9 @@ interface Presign
                 'phone' => '',
             ],
             'contract_mode' => 'LIMIT_BANK_CARD | PRIORITY_BANK_CARD | LIMIT_NONE',
+        ],
+        'headers' => [
+            'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',
         ],
     ]): PromiseInterface;
 }

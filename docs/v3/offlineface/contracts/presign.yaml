@@ -7,57 +7,96 @@ post:
   summary: 预签约接口
   description: 一键绑卡不是支持所有银行卡，上线前请先测试是否支持该银行卡。[官方文档](https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/access-specifications.html)
   parameters:
+    - $ref: '../../../definitions/Parameters.yaml#/WECHATPAY_CERTIFICATE_SERIAL'
     - name: _
       in: body
       schema:
         type: object
+        required:
+          - business_name
+          - facepay_user
         properties:
           business_name:
             type: string
+            description: 业务类型
           facepay_user:
             type: object
+            description: 刷脸用户信息
+            required:
+              - out_user_id
+              - organization_id
             properties:
               out_user_id:
                 type: string
+                description: 商户用户ID
               identification_name:
                 type: string
+                description: 刷脸用户名
               organization_id:
                 type: string
+                description: 机构ID
               identification:
                 type: object
+                description: 证件信息
+                required:
+                  - identification_type
+                  - identification_number
                 properties:
                   identification_type:
                     type: string
+                    description: 证件类型
                     enum:
                       - IDCARD
                   identification_number:
                     type: string
+                    format: base64
+                    description: 证件ID
               phone:
                 type: string
+                format: base64
+                description: 手机号码
           limit_bank_card:
             type: object
+            description: 签约指定银行卡
             properties:
               bank_card_number:
                 type: string
+                format: base64
+                description: 银行卡号
               identification_name:
                 type: string
+                format: base64
+                description: 开卡人姓名
               identification:
                 type: object
+                description: 开卡人证件
+                required:
+                  - identification_type
+                  - identification_number
                 properties:
                   identification_type:
                     type: string
+                    description: 证件类型
                     enum:
                       - IDCARD
                   identification_number:
                     type: string
+                    format: base64
+                    description: 证件ID
               valid_thru:
                 type: string
+                format: mm/yy
+                description: 银行卡有效期
               bank_type:
                 type: string
+                description: 银行类型
               phone:
                 type: string
+                format: base64
+                description: 开卡预留手机号
           contract_mode:
             type: string
+            description: 签约模式
             enum:
               - LIMIT_BANK_CARD #指定卡签约
               - PRIORITY_BANK_CARD #优先卡签约
@@ -66,6 +105,9 @@ post:
     '200':
       schema:
         type: object
+        required:
+          - presign_token
         properties:
           presign_token:
             type: string
+            description: 会话ID

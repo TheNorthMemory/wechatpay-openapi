@@ -17,9 +17,9 @@ interface FaceCollections
      */
     public function get(array $options = [
         'query' => [
-            'organization_id' => '',
-            'offset' => 0,
-            'limit' => 0,
+            'organization_id' => 'Ofewewfwefweewf',
+            'offset' => 30,
+            'limit' => 20,
         ],
     ]): ResponseInterface;
 
@@ -30,9 +30,9 @@ interface FaceCollections
      */
     public function getAsync(array $options = [
         'query' => [
-            'organization_id' => '',
-            'offset' => 0,
-            'limit' => 0,
+            'organization_id' => 'Ofewewfwefweewf',
+            'offset' => 30,
+            'limit' => 20,
         ],
     ]): PromiseInterface;
 }

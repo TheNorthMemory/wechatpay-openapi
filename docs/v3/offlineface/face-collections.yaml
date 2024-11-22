@@ -11,30 +11,49 @@ get:
       in: query
       type: string
       required: true
+      description: 机构ID
+      example: Ofewewfwefweewf
     - name: offset
       in: query
       type: integer
+      description: 列表偏移
+      example: 30
     - name: limit
       in: query
       type: integer
+      description: 资源个数
+      example: 20
   responses:
     '200':
       schema:
         type: object
+        required:
+          - face_collections
         properties:
           face_collections:
             type: array
+            description: 重采列表
             items:
               type: object
+              description: 重采对象
+              required:
+                - collection_id
+                - use_id
+                - organization_id
+                - collection_state
               properties:
                 collection_id:
                   type: string
+                  description: 重采ID
                 use_id:
                   type: string
+                  description: 用户ID
                 organization_id:
                   type: string
+                  description: 机构ID
                 collection_state:
                   type: string
+                  description: 重采状态
                   enum:
                     - COLLECTION_REQUIRED #该刷脸用户需要进行重采
                     - PHOTO_UPLOADED #照片已上传
@@ -42,6 +61,8 @@ get:
                 register_photo_upload_time:
                   type: string
                   format: rfc3339
+                  description: 注册照上传时间
                 confirm_time:
                   type: string
                   format: rfc3339
+                  description: 支付用户确认时间

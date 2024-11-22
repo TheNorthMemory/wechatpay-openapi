@@ -54,6 +54,7 @@ post:
     [收付通合单代扣签约、解约结果通知](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter5_5_7.shtml)
     [隔夜归还保险订单状态变化通知](https://pay.weixin.qq.com/docs/merchant/apis/hire-power-bank-insurance/insurance-orders/status-change-notice.html)
     [平台收付通商家充值-充值结果通知](https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-recharge/notification/recharge-notice.html)
+    [离线刷脸签约状态变更回调通知](https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/offline-brushing.html)
   parameters:
     - name: Wechatpay-Nonce
       required: true
@@ -198,6 +199,7 @@ WechatpayNotificationOriginalType:
     [会员卡领卡事件通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter7_1.shtml)
     [会员卡激活事件通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter7_2.shtml)
     [会员卡用户管理会员卡事件通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter7_3.shtml)
+    [离线刷脸签约状态变更回调通知](https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/offline-brushing.html)
   enum:
     # @see [商圈支付结果通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/businesscircle/points/chapter3_1.shtml)
     # @see [先享卡用户领卡通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter4_1.shtml)
@@ -216,8 +218,10 @@ WechatpayNotificationOriginalType:
     - membercard
     # @see [平台收付通商家充值-充值结果通知](https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-recharge/notification/recharge-notice.html)
     - recharge
-    # see [代扣解约挽留业务-获取解约挽留信息](https://pay.weixin.qq.com/docs/merchant/apis/termination-retention/termination-retention-information.html)
+    # @see [代扣解约挽留业务-获取解约挽留信息](https://pay.weixin.qq.com/docs/merchant/apis/termination-retention/termination-retention-information.html)
     - entrust
+    # @see [离线刷脸签约状态变更回调通知](https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/offline-brushing.html)
+    - facepay
 
 WechatpayNotificationEventType:
   type: string
@@ -259,6 +263,7 @@ WechatpayNotificationEventType:
     [收付通合单代扣签约、解约结果通知](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter5_5_7.shtml)
     [隔夜归还保险订单状态变化通知](https://pay.weixin.qq.com/docs/merchant/apis/hire-power-bank-insurance/insurance-orders/status-change-notice.html)
     [平台收付通商家充值-充值结果通知](https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-recharge/notification/recharge-notice.html)
+    [离线刷脸签约状态变更回调通知](https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/offline-brushing.html)
   enum:
     # @see                        [会员积分服务授权通知](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter8_6_6.shtml)
     - MALL_AUTH.ACTIVATE_CARD     #会员积分服务授权通知
@@ -343,3 +348,5 @@ WechatpayNotificationEventType:
     # @see                      [签约/解约成功通知](https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter5_1_5.shtml)
     - PAPAY.SIGN      #签约成功通知
     - PAPAY.TERMINATE #解约成功通知
+    # @see [离线刷脸签约状态变更回调通知](https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/offline-brushing.html)
+    - FACEPAY.USER_STATE_CHANGE

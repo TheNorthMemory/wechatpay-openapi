@@ -12,23 +12,38 @@ post:
       required: true
       schema:
         type: object
+        required:
+          - sp_appid
+          - sub_mchid
+          - device_id
+          - raw_data
+          - organization_id
         properties:
           sp_appid:
             type: string
+            description: 服务商公众号appid
           sub_appid:
             type: string
+            description: 子商户公众号appid
           sub_mchid:
             type: string
+            description: 子商户商户号
           device_id:
             type: string
+            description: 设备id
           raw_data:
             type: string
+            description: 原始数据
           organization_id:
             type: string
+            description: 机构id
   responses:
     '200':
       schema:
         type: object
+        required:
+          - authinfo
         properties:
           authinfo:
             type: string
+            description: 授权信息

@@ -12,18 +12,28 @@ post:
       required: true
       schema:
         type: object
+        required:
+          - out_user_id
+          - organization_id
         properties:
           out_user_id:
             type: string
+            description: 商户用户ID
           organization_id:
             type: string
+            description: 机构id
   responses:
     '200':
       schema:
         type: object
+        required:
+          - repayment_url
+          - expire_at
         properties:
           repayment_url:
             type: string
+            description: 还款链接
           expire_at:
             type: string
             format: rfc3339
+            description: 链接过期时间

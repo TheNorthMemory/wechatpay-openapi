@@ -15,9 +15,9 @@ interface _contract_id_
      * @link https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/k12-development-guidelines.html
      */
     public function get(array $options = [
-        'contract_id' => '',
+        'contract_id' => 'CI8CD208Z7e9906f89',
         'query' => [
-            'appid' => '',
+            'appid' => 'wx8888888888',
         ],
     ]): ResponseInterface;
 
@@ -27,9 +27,9 @@ interface _contract_id_
      * @link https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/k12-development-guidelines.html#async
      */
     public function getAsync(array $options = [
-        'contract_id' => '',
+        'contract_id' => 'CI8CD208Z7e9906f89',
         'query' => [
-            'appid' => '',
+            'appid' => 'wx8888888888',
         ],
     ]): PromiseInterface;
 }

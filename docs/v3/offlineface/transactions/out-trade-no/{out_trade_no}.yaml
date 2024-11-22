@@ -38,46 +38,70 @@ get:
     '200':
       schema:
         type: object
+        required:
+          - sp_appid
+          - sp_mchid
+          - sub_mchid
+          - trade_state
         properties:
           sp_appid:
             type: string
+            description: 服务商公众号appid
           sp_mchid:
             type: string
+            description: 服务商商户号
           sub_appid:
             type: string
+            description: 子商户公众号appid
           sub_mchid:
             type: string
+            description: 子商户商户号
           payer:
             type: object
+            description: 支付用户信息
             properties:
               sp_openid:
                 type: string
+                description: 公众下的openid
               sub_openid:
                 type: string
+                description: 子公众下的openid
           amount:
             type: object
+            description: 金额信息
+            required:
+              - total
+              - currency
             properties:
               total:
                 type: integer
                 format: int64
+                description: 总金额
               currency:
                 type: string
+                description: 货币类型
                 enum:
                   - CNY
           promotion_detail:
             type: array
+            description: 优惠信息列表
             items:
               type: object
+              description: 优惠信息
               properties:
           scene_info:
             type: object
+            description: 支付场景信息
             properties:
               device_ip:
                 type: string
+                description: 设备IP
           bank_type:
             type: string
+            description: 付款银行
           trade_type:
             type: string
+            description: 交易类型
             enum:
               - NATIVE
               - JSAPI
@@ -86,22 +110,32 @@ get:
               - AUTH #行业代扣
           trade_state:
             type: string
+            description: 交易状态
           trade_state_description:
             type: string
+            description: 交易描述
           debt_state:
             type: string
+            description: 欠款状态
           description:
             type: string
+            description: 商品信息
           attach:
             type: string
+            description: 商户附加信息
           success_time:
             type: string
             format: rfc3339
+            description: 支付成功时间
           transaction_id:
             type: string
+            description: 微信订单号
           repayment_transaction_id:
             type: string
+            description: 还款微信订单号
           out_trade_no:
             type: string
+            description: 商户订单号
           error_type:
             type: string
+            description: 错误分类

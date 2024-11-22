@@ -11,26 +11,50 @@ get:
       in: path
       type: string
       required: true
+      description: 签约ID
+      example: CI8CD208Z7e9906f89
     - name: appid
       in: query
       type: string
+      description: 商户签约小程序APPID
+      example: wx8888888888
   responses:
     '200':
       schema:
         type: object
+        required:
+          - contract_id
+          - mchid
+          - organization_id
+          - user_id
+          - contract_state
+          - contract_signed_time
+          - contract_mode
+          - contract_bank_card_from
         properties:
           contract_id:
             type: string
+            description: 签约ID
+            example: CI8CD208Z7e9906f89
           mchid:
             type: string
+            description: 商户号
+            example: '2480278041'
           organization_id:
             type: string
+            description: 机构ID
+            example: OAABBCCDDeeff
           use_id:
             type: string
+            description: 用户ID
+            example: FU40F305Z4e2bb7d
           openid:
             type: string
+            description: 签约用户openid
+            example: AFDSJfhdf8744
           contract_state:
             type: string
+            description: 签约状态
             enum:
               - NOT_CONTRACTED #未签约
               - TERMINATED #已解约
@@ -38,17 +62,23 @@ get:
           contract_signed_time:
             type: string
             format: rfc3339
+            description: 签约时间
+            example: '2018-06-08T10:34:56+08:00'
           contract_terminated_time:
             type: string
             format: rfc3339
+            description: 解约时间
+            example: '2018-06-08T10:34:56+08:00'
           contract_mode:
             type: string
+            description: 签约模式
             enum:
               - LIMIT_BANK_CARD #指定卡签约
               - PRIORITY_BANK_CARD #优先卡签约
               - LIMIT_NONE #任意卡签约
           contract_bank_card_from:
             type: string
+            description: 签约卡来源
             enum:
               - MERCHANT_LIMITED_BANK_CARD #商户指定的签约卡
               - USER_SELECT_FREE #用户选择的签约卡

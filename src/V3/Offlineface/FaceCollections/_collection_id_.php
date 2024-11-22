@@ -10,7 +10,7 @@ use GuzzleHttp\Promise\PromiseInterface;
 interface _collection_id_
 {
     /**
-     * 查询重采请求接口(同步模式)
+     * 查询重采请求详情(同步模式)
      * @param array<string,mixed> $options
      * @link https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/k12-development-guidelines.html
      */
@@ -19,7 +19,7 @@ interface _collection_id_
     ]): ResponseInterface;
 
     /**
-     * 查询重采请求接口(异步模式)
+     * 查询重采请求详情(异步模式)
      * @param array<string,mixed> $options
      * @link https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/k12-development-guidelines.html#async
      */

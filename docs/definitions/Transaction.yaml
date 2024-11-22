@@ -132,9 +132,11 @@ TransactionOwner:
       example: '1217752501201407033233368018'
     trade_type:
       type: string
+      description: 交易类型
       $ref: './Enumerations.yaml#/TransactionTradeType'
     trade_state:
       type: string
+      description: 交易状态
       $ref: './Enumerations.yaml#/TransactionTradeState'
     trade_state_desc:
       type: string

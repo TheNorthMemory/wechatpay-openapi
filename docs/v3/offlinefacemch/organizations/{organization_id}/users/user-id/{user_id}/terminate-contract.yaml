@@ -11,8 +11,10 @@ post:
       in: path
       type: string
       required: true
+      description: 机构ID
     - name: use_id
       in: path
       type: string
+      description: 刷脸用户ID
   responses:
     '204': {}

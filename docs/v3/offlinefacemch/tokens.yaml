@@ -18,6 +18,7 @@ post:
             example: WEBSESSION
           web_init_data:
             type: object
+            description: 小程序/h5鉴权场景初始化数据
             properties:
               out_user_id:
                 type: string
@@ -32,3 +33,4 @@ post:
         properties:
           token:
             type: string
+            description: 授权凭证

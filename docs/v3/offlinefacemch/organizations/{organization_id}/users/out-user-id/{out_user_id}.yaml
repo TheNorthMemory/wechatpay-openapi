@@ -11,10 +11,12 @@ get:
       in: path
       type: string
       required: true
+      description: 机构ID
     - name: out_user_id
       in: path
       type: string
       required: true
+      description: 商户刷脸用户ID
   responses:
     '200':
       schema:
@@ -22,42 +24,55 @@ get:
         properties:
           use_id:
             type: string
+            description: 刷脸用户ID
           out_user_id:
             type: string
+            description: 商户刷脸用户ID
           organization_id:
             type: string
+            description: 机构ID
           user_name:
             type: string
+            description: 姓名
           user_type:
             type: string
+            description: 用户类型
             enum:
               - STUDENT
               - STUFF
           student_info:
             type: object
+            description: 学生信息
             properties:
               class_name:
                 type: string
+                description: 班级名
           staff_info:
             type: object
+            description: 职工信息
             properties:
               occupation:
                 type: string
+                description: 职业
           status:
             type: string
+            description: 用户状态
             enum:
               - NORMAL
               - DISABLED
           contract_state:
             type: string
+            description: 签约状态
             enum:
               - NOT_CONTRACTED #未签约
               - TERMINATED #已解约
               - CONTRACTED #已签约
           face_image_ok:
             type: boolean
+            description: 人脸图片上传状态
           contract_id:
             type: string
+            description: 签约ID
 patch:
   x-last-updated-at: 2022.11.14
   x-role:
@@ -67,14 +82,17 @@ patch:
   summary: 刷脸用户信息修改接口
   description: 若修改了学生姓名、班级、手机号时，需调用接口同步给微信侧，否则可能导致小助手上记录欠款的学生姓名、班级与实际不符合以及学生刷脸验证手机号时无法通过。[官方文档](https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/access-specifications.html)
   parameters:
+    - $ref: '../../../../../../definitions/Parameters.yaml#/WECHATPAY_CERTIFICATE_SERIAL'
     - name: organization_id
       in: path
       type: string
       required: true
+      description: 机构ID
     - name: out_user_id
       in: path
       type: string
       required: true
+      description: 商户刷脸用户ID
     - name: _
       in: body
       required: true
@@ -83,21 +101,28 @@ patch:
         properties:
           user_name:
             type: string
+            format: base64
+            description: 姓名
           user_type:
             type: string
+            description: 用户类型
             enum:
               - STUDENT
               - STUFF
           student_info:
             type: object
+            description: 学生信息
             properties:
               class_name:
                 type: string
+                description: 班级名
           staff_info:
             type: object
+            description: 职工信息
             properties:
               occupation:
                 type: string
+                description: 职业
           status:
             type: string
             description: 状态
@@ -106,7 +131,7 @@ patch:
               - DISABLED
           phone:
             type: string
-            x-sensitive-algorithm: RSA/ECB/PKCS1Padding
+            format: base64
             description: 手机号
   responses:
     '204': {}

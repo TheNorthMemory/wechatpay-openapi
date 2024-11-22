@@ -4,7 +4,7 @@ get:
     - 服务商
   tags:
     - 刷脸支付
-  summary: 查询重采请求接口
+  summary: 查询重采用户列表
   description: 离线刷脸业务中，偶尔会出现前期采集头像质量不高，导致算法升级后，旧的头像无法生成有效的人脸特征，影响用户使用刷脸服务。因此，需要对用户的头像进行重采。[官方文档](https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/k12-development-guidelines.html)
   parameters:
     - name: organization_id

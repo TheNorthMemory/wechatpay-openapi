@@ -71,6 +71,7 @@ post:
                 example: '["2014-01-01","长期"]'
           finance_institution_info:
             type: object
+            description: 金融机构许可证信息
             properties:
               finance_type:
                 $ref: '../../../definitions/Enumerations.yaml#/FinanceType'
@@ -80,6 +81,7 @@ post:
                 items:
                   type: string
                   format: MediaId
+                  description: 图片MediaID
           id_holder_type:
             $ref: '../../../definitions/Enumerations.yaml#/ContactType'
           id_doc_type:
@@ -159,6 +161,7 @@ post:
             description: 经营者/法人是否为受益人
           ubo_info_list:
             type: array
+            description: 最终受益人信息列表
             items:
               type: object
               required: [ubo_id_doc_type, ubo_id_doc_copy, ubo_id_doc_copy_back, id_doc_copy, ubo_id_doc_name, ubo_id_doc_number, ubo_id_doc_address, ubo_period_begin, ubo_period_end]
@@ -298,6 +301,7 @@ post:
                 description: 小程序AppID
           settlement_info:
             type: object
+            description: 结算规则
             properties:
               settlement_id:
                 type: string

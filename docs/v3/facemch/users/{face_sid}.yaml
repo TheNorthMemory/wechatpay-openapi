@@ -50,16 +50,20 @@ get:
         properties:
           union_id:
             type: string
+            description: UnionID
           openid:
             type: string
+            description: 用户在商户appid下的唯⼀标识
           sub_openid:
             type: string
+            description: 用户在⼦商户appid下的唯⼀标识
           real_name_info:
             type: object
+            description: 姓名信息
             properties:
               encrypted_real_name:
                 type: string
-                x-sensitive-algorithm: RSA/ECB/PKCS1Padding
+                format: base64
                 description: 加密后的姓名信息，商户用API证书私钥解密
               credential_type:
                 type: integer
@@ -77,5 +81,5 @@ get:
                  - 11 #其他证件
               encrypted_credential_id:
                 type: string
-                x-sensitive-algorithm: RSA/ECB/PKCS1Padding
+                format: base64
                 description: 加密后的身份证号，商户用API证书私钥解密

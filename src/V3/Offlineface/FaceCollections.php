@@ -11,7 +11,7 @@ use GuzzleHttp\Promise\PromiseInterface;
 interface FaceCollections
 {
     /**
-     * 查询重采请求接口(同步模式)
+     * 查询重采用户列表(同步模式)
      * @param array<string,mixed> $options
      * @link https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/k12-development-guidelines.html
      */
@@ -24,7 +24,7 @@ interface FaceCollections
     ]): ResponseInterface;
 
     /**
-     * 查询重采请求接口(异步模式)
+     * 查询重采用户列表(异步模式)
      * @param array<string,mixed> $options
      * @link https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/k12-development-guidelines.html#async
      */

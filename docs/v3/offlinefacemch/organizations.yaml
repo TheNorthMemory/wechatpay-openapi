@@ -24,5 +24,7 @@ get:
         properties:
           organization_id:
             type: string
+            description: 机构ID
           organization_name:
             type: string
+            description: 机构名称

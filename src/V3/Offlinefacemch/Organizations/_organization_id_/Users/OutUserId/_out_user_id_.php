@@ -49,6 +49,9 @@ interface _out_user_id_
             'status' => 'NORMAL | DISABLED',
             'phone' => '',
         ],
+        'headers' => [
+            'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',
+        ],
     ]): ResponseInterface;
 
     /**
@@ -70,6 +73,9 @@ interface _out_user_id_
             ],
             'status' => 'NORMAL | DISABLED',
             'phone' => '',
+        ],
+        'headers' => [
+            'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',
         ],
     ]): PromiseInterface;
 }

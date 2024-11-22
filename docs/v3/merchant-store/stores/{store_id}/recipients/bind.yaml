@@ -31,6 +31,7 @@ post:
             description: 门店收款信息
             items:
               type: object
+              description: 收款门店信息
               required:
                 - mchid
               properties:
@@ -51,6 +52,7 @@ post:
             type: array
             items:
               type: object
+              description: 收款门店信息
               properties:
                 mchid:
                   type: string

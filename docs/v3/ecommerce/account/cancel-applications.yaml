@@ -39,6 +39,8 @@ post:
                     - SUB_CANCEL_ACCOUNT_APPLICATION
                 application_media_id:
                   type: string
+                  format: MediaId
+                  description: 图片MediaID
   responses:
     '200':
       schema:

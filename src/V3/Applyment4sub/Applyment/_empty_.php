@@ -140,10 +140,12 @@ interface _empty_
             'settlement_info' => [
                 'settlement_id' => '',
                 'qualification_type' => '',
-                'qualifications' => ['string'],
+                'qualifications' => ['MediaId'],
                 'activities_id' => '',
                 'activities_rate' => '',
-                'activities_additions' => ['string'],
+                'debit_activities_rate' => '',
+                'credit_activities_rate' => '',
+                'activities_additions' => ['MediaId'],
             ],
             'bank_account_info' => [
                 'bank_account_type' => 'BANK_ACCOUNT_TYPE_CORPORATE | BANK_ACCOUNT_TYPE_PERSONAL',
@@ -297,10 +299,12 @@ interface _empty_
             'settlement_info' => [
                 'settlement_id' => '',
                 'qualification_type' => '',
-                'qualifications' => ['string'],
+                'qualifications' => ['MediaId'],
                 'activities_id' => '',
                 'activities_rate' => '',
-                'activities_additions' => ['string'],
+                'debit_activities_rate' => '',
+                'credit_activities_rate' => '',
+                'activities_additions' => ['MediaId'],
             ],
             'bank_account_info' => [
                 'bank_account_type' => 'BANK_ACCOUNT_TYPE_CORPORATE | BANK_ACCOUNT_TYPE_PERSONAL',

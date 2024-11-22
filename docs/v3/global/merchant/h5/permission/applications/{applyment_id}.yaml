@@ -36,6 +36,7 @@ get:
             type: array
             items:
               type: string
+              description: 域名
             description: H5支付域名
             example: ["qq.com"]
           business_description:
@@ -56,6 +57,7 @@ get:
             items:
               type: string
               format: MediaId
+              description: 图片MediaID
             description: 经营网址商业页面截图
             example: ["6uqyGjvHzOhsLleGFQVRF"]
           website_homepage_pics:
@@ -63,6 +65,7 @@ get:
             items:
               type: string
               format: MediaId
+              description: 图片MediaID
             description: 经营网址首页截图
             example: ["6uqyGjvHzOhsLleGFQVRF"]
           website_state:
@@ -121,6 +124,7 @@ patch:
             type: array
             items:
               type: string
+              description: 域名
             description: H5支付域名
             example: ["qq.com"]
           business_description:
@@ -137,6 +141,7 @@ patch:
             items:
               type: string
               format: MediaId
+              description: 图片MediaID
             description: 经营网址商业页面截图
             example: ["6uqyGjvHzOhsLleGFQVRF"]
           website_homepage_pics:
@@ -144,6 +149,7 @@ patch:
             items:
               type: string
               format: MediaId
+              description: 图片MediaID
             description: 经营网址首页截图
             example: ["6uqyGjvHzOhsLleGFQVRF"]
           website_state:
@@ -193,6 +199,7 @@ patch:
             items:
               type: string
               format: MediaId
+              description: 图片MediaID
             description: 经营网址商业页面截图
             example: '["6uqyGjvHzOhsLleGFQVRF"]'
           website_homepage_pics:
@@ -200,6 +207,7 @@ patch:
             items:
               type: string
               format: MediaId
+              description: 图片MediaID
             description: 经营网址首页截图
             example: '["6uqyGjvHzOhsLleGFQVRF"]'
           website_state:

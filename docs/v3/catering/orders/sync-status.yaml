@@ -128,8 +128,10 @@ post:
             example: 2
           dish_list:
             type: array
+            description: 商户菜品信息列表
             items:
               type: object
+              description: 商户菜品信息
               required:
                 - out_dish_no
                 - name
@@ -177,6 +179,7 @@ post:
                   description: 当前菜品在服务商平台的顺序，值越小越靠前，取值（1~100）
                 properties:
                   type: object
+                  description: 菜品属性
                   required:
                     - taste
                     - cuisine

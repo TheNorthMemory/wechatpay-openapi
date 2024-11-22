@@ -31,6 +31,7 @@ post:
             description: H5支付域名
             items:
               type: string
+              description: 域名
             example: ["qq.com"]
           company_register_cert:
             type: string
@@ -51,6 +52,7 @@ post:
             items:
               type: string
               format: MediaId
+              description: 图片MediaID
             example: ["6uqyGjvHzOhsLleGFQVRF"]
           website_homepage_pics:
             type: array
@@ -58,6 +60,7 @@ post:
             items:
               type: string
               format: MediaId
+              description: 图片MediaID
             example: ["6uqyGjvHzOhsLleGFQVRF"]
           website_state:
             type: string
@@ -101,6 +104,9 @@ post:
             example: '2491935631'
           domains:
             type: array
+            items:
+              type: string
+              description: 域名
             description: H5支付域名
             example: '["qq.com"]'
           business_description:
@@ -126,6 +132,7 @@ post:
             items:
               type: string
               format: MediaId
+              description: 图片MediaID
             example: ["6uqyGjvHzOhsLleGFQVRF"]
           website_homepage_pics:
             type: array
@@ -133,6 +140,7 @@ post:
             items:
               type: string
               format: MediaId
+              description: 图片MediaID
             example: ["6uqyGjvHzOhsLleGFQVRF"]
           website_state:
             type: string

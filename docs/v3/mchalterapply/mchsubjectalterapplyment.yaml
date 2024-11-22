@@ -135,6 +135,7 @@ post:
                 items:
                   type: string
                   format: MediaId
+                  description: 图片MediaID
                 example:
                   - 0P3ng6KTIW4-Q_l2FjmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo
           legal_person_info:
@@ -242,6 +243,7 @@ post:
                 items:
                   type: string
                   format: MediaId
+                  description: 图片MediaID
                 example:
                   - 0P3ng6KTIW4-Q_l2FjmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo
               openaccount_approval:
@@ -250,6 +252,7 @@ post:
                 items:
                   type: string
                   format: MediaId
+                  description: 图片MediaID
                 example:
                   - 0P3ng6KTIW4-Q_l2FjmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo
               legal_other_prove:
@@ -258,6 +261,7 @@ post:
                 items:
                   type: string
                   format: MediaId
+                  description: 图片MediaID
                 example:
                   - 0P3ng6KTIW4-Q_l2FjmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo
               agency_prove:
@@ -266,6 +270,7 @@ post:
                 items:
                   type: string
                   format: MediaId
+                  description: 图片MediaID
                 example:
                   - 0P3ng6KTIW4-Q_l2FjmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo
   responses:

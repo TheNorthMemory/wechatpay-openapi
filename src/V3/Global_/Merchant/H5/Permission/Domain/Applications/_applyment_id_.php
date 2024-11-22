@@ -38,7 +38,7 @@ interface _applyment_id_
         'base_uri' => 'https://apihk.mch.weixin.qq.com/', // 跨境(香港接入)
         'applyment_id' => '100000',
         'json' => [
-            'domains' => [["qq.com"]],
+            'domains' => ['string'],
             'website_state' => 'HAS_LAUNCHED',
             'website_url' => 'https://qq.com',
             'website_business_page_pics' => ['MediaId'],
@@ -55,7 +55,7 @@ interface _applyment_id_
         'base_uri' => 'https://apihk.mch.weixin.qq.com/', // 跨境(香港接入)
         'applyment_id' => '100000',
         'json' => [
-            'domains' => [["qq.com"]],
+            'domains' => ['string'],
             'website_state' => 'HAS_LAUNCHED',
             'website_url' => 'https://qq.com',
             'website_business_page_pics' => ['MediaId'],

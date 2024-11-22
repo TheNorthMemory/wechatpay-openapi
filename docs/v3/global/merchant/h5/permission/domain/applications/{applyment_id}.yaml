@@ -38,6 +38,7 @@ get:
             type: array
             items:
               type: string
+              description: 域名
             description: H5支付域名
             example: ["qq.com"]
           webiste_url:
@@ -49,6 +50,7 @@ get:
             items:
               type: string
               format: MediaId
+              description: 图片MediaID
             description: 经营网址商业页面截图
             example: ["6uqyGjvHzOhsLleGFQVRF"]
           website_homepage_pics:
@@ -56,6 +58,7 @@ get:
             items:
               type: string
               format: MediaId
+              description: 图片MediaID
             description: 经营网址首页截图
             example: ["6uqyGjvHzOhsLleGFQVRF"]
           applyment_id:
@@ -104,6 +107,9 @@ patch:
         properties:
           domains:
             type: array
+            items:
+              type: string
+              description: 域名
             description: H5支付域名
             example: '["qq.com"]'
           website_state:
@@ -119,6 +125,7 @@ patch:
             items:
               type: string
               format: MediaId
+              description: 图片MediaID
             description: 经营网址商业页面截图
             example: ["6uqyGjvHzOhsLleGFQVRF"]
           website_homepage_pics:
@@ -126,6 +133,7 @@ patch:
             items:
               type: string
               format: MediaId
+              description: 图片MediaID
             description: 经营网址首页截图
             example: ["6uqyGjvHzOhsLleGFQVRF"]
   responses:
@@ -152,6 +160,7 @@ patch:
             type: array
             items:
               type: string
+              description: 域名
             description: H5支付域名
             example: ["qq.com"]
           webiste_url:
@@ -163,6 +172,7 @@ patch:
             items:
               type: string
               format: MediaId
+              description: 图片MediaID
             description: 经营网址商业页面截图
             example: ["6uqyGjvHzOhsLleGFQVRF"]
           website_homepage_pics:
@@ -170,6 +180,7 @@ patch:
             items:
               type: string
               format: MediaId
+              description: 图片MediaID
             description: 经营网址首页截图
             example: ["6uqyGjvHzOhsLleGFQVRF"]
           applyment_id:

@@ -34,60 +34,85 @@ get:
         properties:
           data:
             type: array
+            description: 设备列表
             items:
               type: object
+              description: 设备信息
               properties:
                 device_sn:
                   type: string
+                  description: 设备序列号
                 camera_sn:
                   type: string
+                  description: 摄像头序列号
                 device_category_code:
                   type: string
+                  description: 设备品类代码
                 device_category:
                   type: string
+                  description: 设备品类
                 device_class_code:
                   type: string
+                  description: 设备类型代码
                 device_class:
                   type: string
+                  description: 设备类型
                 device_model:
                   type: string
+                  description: 设备型号
                 app_scene_code:
                   type: string
+                  description: 刷脸应用软件模式代码
                 app_scene:
                   type: string
+                  description: 刷脸应用软件模式
                 operating_system:
                   type: string
+                  description: 刷脸应用操作系统
                 activation_status:
                   type: string
+                  description: 激活状态
                   enum:
                     - ACTIVATED
                     - INACTIVATED
                 activation_time:
                   type: string
                   format: rfc3339
+                  description: 激活时间
                 mchid:
                   type: string
+                  description: 商户号
                 merchant_shortname:
                   type: string
+                  description: 商户简称
                 sub_mchid:
                   type: string
+                  description: 子商户号
                 sub_merchant_shortname:
                   type: string
+                  description: 子商户简称
           offset:
             type: integer
             example: 10
+            description: 请求资源起始位置
           limit:
             type: integer
             example: 5
+            description: 最大资源条数
           total_count:
             type: integer
             example: 1234
+            description: 资源总条数
           links:
             type: object
+            description: 相关链接
             properties:
               next:
                 type: string
+                description: 下一页链接
               prev:
                 type: string
+                description: 上一页链接
               self:
                 type: string
+                description: 当前链接

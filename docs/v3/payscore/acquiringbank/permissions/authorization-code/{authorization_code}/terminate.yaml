@@ -5,7 +5,7 @@ post:
   tags:
     - 支付分∙机构模式
   summary: 从业机构解除用户授权关系（授权协议号）
-  description: '[官方文档](https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-auth/terminate-acquiring-bank-permissions-by-code.html)'
+  description: '从业机构通过调用该接口，使用authorization_code解除用户授权关系 [官方文档](https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-auth/terminate-acquiring-bank-permissions-by-code.html)'
   parameters:
     - name: authorization_code
       in: path

@@ -4,8 +4,8 @@ post:
     - 从业机构
   tags:
     - 支付分∙机构模式
-  summary: 取消订单
-  description: '[官方文档](https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-order/cancel-acquiring-bank-service-order.html)'
+  summary: 从业机构取消微信支付分订单
+  description: '前置条件：服务订单状态为“已创建”或“进行中” [官方文档](https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-order/cancel-acquiring-bank-service-order.html)'
   parameters:
     - name: out_order_no
       in: path

@@ -10,7 +10,7 @@ use GuzzleHttp\Promise\PromiseInterface;
 interface Registerdeductinfo
 {
     /**
-     * 登记扣款信息(同步模式)
+     * 从业机构登记微信支付分扣款信息(同步模式)
      * @param array<string,mixed> $options
      * @link https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-order/register-deduct-info.html
      */
@@ -26,7 +26,7 @@ interface Registerdeductinfo
     ]): ResponseInterface;
 
     /**
-     * 登记扣款信息(异步模式)
+     * 从业机构登记微信支付分扣款信息(异步模式)
      * @param array<string,mixed> $options
      * @link https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-order/register-deduct-info.html#async
      */

@@ -10,7 +10,7 @@ use GuzzleHttp\Promise\PromiseInterface;
 interface Deduction
 {
     /**
-     * 查询扣款信息(同步模式)
+     * 从业机构查询微信支付分扣款信息(同步模式)
      * @param array<string,mixed> $options
      * @link https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-order/get-acquiring-bank-deduct-info.html
      */
@@ -26,7 +26,7 @@ interface Deduction
     ]): ResponseInterface;
 
     /**
-     * 查询扣款信息(异步模式)
+     * 从业机构查询微信支付分扣款信息(异步模式)
      * @param array<string,mixed> $options
      * @link https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-order/get-acquiring-bank-deduct-info.html#async
      */

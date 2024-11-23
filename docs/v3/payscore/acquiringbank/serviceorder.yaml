@@ -4,8 +4,8 @@ post:
     - 从业机构
   tags:
     - 支付分∙机构模式
-  summary: 创建订单
-  description: '[官方文档](https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-order/create-acquiring-bank-service-order.html)'
+  summary: 从业机构创建微信支付分订单
+  description: '用户申请使用服务时，从业机构可通过此接口申请创建微信支付分订单。[官方文档](https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-order/create-acquiring-bank-service-order.html)'
   parameters:
     - name: _
       in: body
@@ -345,8 +345,8 @@ get:
     - 从业机构
   tags:
     - 支付分∙机构模式
-  summary: 查询订单
-  description: '[官方文档](https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-order/get-acquiring-bank-service-order.html)'
+  summary: 从业机构查询微信支付分订单
+  description: '前置条件：商户已创建支付分服务订单 [官方文档](https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-order/get-acquiring-bank-service-order.html)'
   parameters:
     - name: service_id
       in: query

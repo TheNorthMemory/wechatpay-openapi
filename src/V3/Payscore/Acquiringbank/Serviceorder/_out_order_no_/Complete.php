@@ -10,7 +10,7 @@ use GuzzleHttp\Promise\PromiseInterface;
 interface Complete
 {
     /**
-     * 完结订单(同步模式)
+     * 从业机构完结微信支付分订单(同步模式)
      * @param array<string,mixed> $options
      * @link https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-order/complete-acquiring-bank-service-order.html
      */
@@ -50,7 +50,7 @@ interface Complete
     ]): ResponseInterface;
 
     /**
-     * 完结订单(异步模式)
+     * 从业机构完结微信支付分订单(异步模式)
      * @param array<string,mixed> $options
      * @link https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-order/complete-acquiring-bank-service-order.html#async
      */

@@ -10,7 +10,7 @@ use GuzzleHttp\Promise\PromiseInterface;
 interface Sync
 {
     /**
-     * 同步订单信息(同步模式)
+     * 从业机构同步微信支付分订单信息(同步模式)
      * @param array<string,mixed> $options
      * @link https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-order/sync-acquiring-bank-service-order.html
      */
@@ -28,7 +28,7 @@ interface Sync
     ]): ResponseInterface;
 
     /**
-     * 同步订单信息(异步模式)
+     * 从业机构同步微信支付分订单信息(异步模式)
      * @param array<string,mixed> $options
      * @link https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-order/sync-acquiring-bank-service-order.html#async
      */

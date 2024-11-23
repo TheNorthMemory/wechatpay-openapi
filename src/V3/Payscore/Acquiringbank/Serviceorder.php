@@ -12,7 +12,7 @@ use GuzzleHttp\Promise\PromiseInterface;
 interface Serviceorder
 {
     /**
-     * 创建订单(同步模式)
+     * 从业机构创建微信支付分订单(同步模式)
      * @param array<string,mixed> $options
      * @link https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-order/create-acquiring-bank-service-order.html
      */
@@ -60,7 +60,7 @@ interface Serviceorder
     ]): ResponseInterface;
 
     /**
-     * 创建订单(异步模式)
+     * 从业机构创建微信支付分订单(异步模式)
      * @param array<string,mixed> $options
      * @link https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-order/create-acquiring-bank-service-order.html#async
      */
@@ -108,7 +108,7 @@ interface Serviceorder
     ]): PromiseInterface;
 
     /**
-     * 查询订单(同步模式)
+     * 从业机构查询微信支付分订单(同步模式)
      * @param array<string,mixed> $options
      * @link https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-order/get-acquiring-bank-service-order.html
      */
@@ -123,7 +123,7 @@ interface Serviceorder
     ]): ResponseInterface;
 
     /**
-     * 查询订单(异步模式)
+     * 从业机构查询微信支付分订单(异步模式)
      * @param array<string,mixed> $options
      * @link https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-order/get-acquiring-bank-service-order.html#async
      */

@@ -10,7 +10,7 @@ use GuzzleHttp\Promise\PromiseInterface;
 interface Cancel
 {
     /**
-     * 取消订单(同步模式)
+     * 从业机构取消微信支付分订单(同步模式)
      * @param array<string,mixed> $options
      * @link https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-order/cancel-acquiring-bank-service-order.html
      */
@@ -25,7 +25,7 @@ interface Cancel
     ]): ResponseInterface;
 
     /**
-     * 取消订单(异步模式)
+     * 从业机构取消微信支付分订单(异步模式)
      * @param array<string,mixed> $options
      * @link https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-order/cancel-acquiring-bank-service-order.html#async
      */

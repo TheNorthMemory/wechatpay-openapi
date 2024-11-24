@@ -39,6 +39,8 @@ bankquerymchauditinfo.request:
         sign_type:
           type: string
           description: 签名类型
+          enum:
+            - HMAC-SHA256
           example: HMAC-SHA256
           maxLength: 32
 bankquerymchauditinfo.response:
@@ -136,3 +138,5 @@ bankquerymchauditinfo.response:
           example: HMAC-SHA256
           maxLength: 32
           nullable: true
+          enum:
+            - HMAC-SHA256

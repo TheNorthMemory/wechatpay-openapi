@@ -95,6 +95,8 @@ querymchrisk.request:
           description: 签名类型
           example: HMAC-SHA256
           maxLength: 32
+          enum:
+            - HMAC-SHA256
 querymchrisk.response:
   allOf:
     - type: object

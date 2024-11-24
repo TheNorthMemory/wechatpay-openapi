@@ -25,6 +25,11 @@ addsubdevconfig.request:
           description: 子商户号
           example: '1900000100'
           maxLength: 32
+        sub_appid:
+          type: string
+          description: 关联APPID
+          example: 'wx931386123456789e'
+          maxLength: 32
         jsapi_path:
           type: string
           description: 授权目录

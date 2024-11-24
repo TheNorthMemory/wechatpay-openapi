@@ -41,6 +41,8 @@ channelquerymchauditinfo.request:
           description: 签名类型
           example: HMAC-SHA256
           maxLength: 32
+          enum:
+            - HMAC-SHA256
 channelquerymchauditinfo.response:
   allOf:
     - type: object
@@ -55,6 +57,9 @@ channelquerymchauditinfo.response:
           description: 返回状态码
           example: SUCCESS
           maxLength: 16
+          enum:
+            - SUCCESS
+            - FAIL
         return_msg:
           type: string
           description: 返回结果
@@ -71,6 +76,9 @@ channelquerymchauditinfo.response:
           description: 业务结果
           example: SUCCESS
           maxLength: 16
+          enum:
+            - SUCCESS
+            - FAIL
         err_code:
           type: string
           description: 错误代码
@@ -136,3 +144,5 @@ channelquerymchauditinfo.response:
           example: HMAC-SHA256
           maxLength: 32
           nullable: true
+          enum:
+            - HMAC-SHA256

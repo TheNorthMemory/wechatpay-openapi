@@ -3,7 +3,7 @@ post:
   tags:
     - APIv2∙风控
   summary: 银行特约商户违规信息查询
-  description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/api/mch_bank.php?chapter=9_28&index=1&p=902)'
+  description: '方便银行服务商查询特约商户违规记录 [官方文档](https://pay.weixin.qq.com/wiki/doc/api/mch_bank.php?chapter=9_28&index=1&p=902)'
   consumes:
     - application/xml
   produces:

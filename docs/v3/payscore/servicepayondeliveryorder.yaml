@@ -98,23 +98,35 @@ post:
               start_time:
                 type: string
                 pattern: /\d{8}|\d{14}|OnAccept/
+                description: 服务开始时间
+                example: '20091225091010'
               start_time_remark:
                 type: string
                 maxLength: 20
+                description: 服务开始时间备注
+                example: 备注1
               end_time:
                 type: string
                 pattern: /\d{8}|\d{14}/
+                description: 服务结束时间
+                example: '20091225121010'
               end_time_remark:
                 type: string
                 maxLength: 50
+                description: 服务结束时间备注
+                example: 备注2
           location:
             type: object
             description: 服务位置
             properties:
               start_location:
                 type: string
+                description: 服务开始地点
+                example: 嗨客时尚主题展餐厅
               end_location:
                 type: string
+                description: 服务结束地点
+                example: 嗨客时尚主题展餐厅
           risk_fund:
             type: object
             description: 订单风险金
@@ -160,6 +172,7 @@ post:
             example: '1230000109'
           shopping_info:
             type: object
+            description: 先用后付购物详情
             required:
               - jump_link
               - goods
@@ -170,6 +183,7 @@ post:
                 example: wxd678efh567hg6787
               jump_link:
                 type: object
+                description: 单详跳转链接
                 properties:
                   jump_link_type:
                     type: string
@@ -184,6 +198,7 @@ post:
                     description: 小程序跳转path
               goods:
                 type: array
+                description: 商品列表
                 items:
                   type: object
                   required:

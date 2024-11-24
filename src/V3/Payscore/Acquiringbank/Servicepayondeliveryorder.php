@@ -36,14 +36,14 @@ interface Servicepayondeliveryorder
                 'count' => 2,
             ],],
             'time_range' => [
-                'start_time' => '',
-                'start_time_remark' => '',
-                'end_time' => '',
-                'end_time_remark' => '',
+                'start_time' => '20091225091010',
+                'start_time_remark' => '备注1',
+                'end_time' => '20091225121010',
+                'end_time_remark' => '备注2',
             ],
             'location' => [
-                'start_location' => '',
-                'end_location' => '',
+                'start_location' => '嗨客时尚主题展餐厅',
+                'end_location' => '嗨客时尚主题展餐厅',
             ],
             'risk_fund' => [
                 'name' => 'DEPOSIT | ADVANCE | CASH_DEPOSIT | ESTIMATE_ORDER_COST',
@@ -100,14 +100,14 @@ interface Servicepayondeliveryorder
                 'count' => 2,
             ],],
             'time_range' => [
-                'start_time' => '',
-                'start_time_remark' => '',
-                'end_time' => '',
-                'end_time_remark' => '',
+                'start_time' => '20091225091010',
+                'start_time_remark' => '备注1',
+                'end_time' => '20091225121010',
+                'end_time_remark' => '备注2',
             ],
             'location' => [
-                'start_location' => '',
-                'end_location' => '',
+                'start_location' => '嗨客时尚主题展餐厅',
+                'end_location' => '嗨客时尚主题展餐厅',
             ],
             'risk_fund' => [
                 'name' => 'DEPOSIT | ADVANCE | CASH_DEPOSIT | ESTIMATE_ORDER_COST',

@@ -100,23 +100,35 @@ post:
               start_time:
                 type: string
                 pattern: /\d{8}|\d{14}|OnAccept/
+                description: 服务开始时间
+                example: '20091225091010'
               start_time_remark:
                 type: string
                 maxLength: 20
+                description: 服务开始时间备注
+                example: 备注1
               end_time:
                 type: string
                 pattern: /\d{8}|\d{14}/
+                description: 服务结束时间
+                example: '20091225121010'
               end_time_remark:
                 type: string
                 maxLength: 50
+                description: 服务结束时间备注
+                example: 备注2
           location:
             type: object
             description: 服务位置
             properties:
               start_location:
                 type: string
+                description: 服务开始地点
+                example: 嗨客时尚主题展餐厅
               end_location:
                 type: string
+                description: 服务结束地点
+                example: 嗨客时尚主题展餐厅
           risk_fund:
             type: object
             description: 订单风险金
@@ -163,6 +175,7 @@ post:
             example: '1230000109'
           shopping_info:
             type: object
+            description: 先用后付购物详情
             properties:
               real_merchant_appid:
                 type: string
@@ -170,6 +183,7 @@ post:
                 example: wxd678efh567hg6787
               jump_link:
                 type: object
+                description: 单详跳转链接
                 properties:
                   jump_link_type:
                     type: string
@@ -184,6 +198,7 @@ post:
                     description: 小程序跳转path
               goods:
                 type: array
+                description: 商品列表
                 items:
                   type: object
                   properties:
@@ -205,4 +220,222 @@ post:
                       example: 4
   responses:
     '200':
-      schema: {}
+      schema:
+        type: object
+        required:
+          - out_order_no
+          - service_id
+          - appid
+          - mchid
+          - sub_mchid
+          - service_introduction
+          - state
+        properties:
+          out_order_no:
+            type: string
+            description: 商户订单号
+            example: 1234323JKHDFE1243252
+          service_id:
+            type: string
+            description: 服务ID
+            example: '2002000000000558128851361561536'
+          appid:
+            type: string
+            description: 服务商公众号ID
+            example: wxd678efh567hg6787
+          mchid:
+            type: string
+            description: 服务商商户号
+            example: '1230000109'
+          sub_appid:
+            type: string
+            description: 子商户公众号ID
+            example: wxd678efh567hg6999
+          sub_mchid:
+            type: string
+            description: 子商户商户号
+            example: '1900000109'
+          service_introduction:
+            type: string
+            description: 服务信息
+            example: XX充电宝
+          state:
+            type: string
+            description: 服务订单状态
+            example: CREATED
+          state_description:
+            type: string
+            description: 订单状态说明
+            example: MCH_COMPLETE
+          post_payments:
+            type: array
+            description: 后付费项目
+            items:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 付费名称
+                  example: 就餐费用
+                amount:
+                  type: number
+                  description: 付费金额
+                  example: 40000
+                description:
+                  type: string
+                  description: 付费说明
+                  example: 就餐人均100元
+                count:
+                  type: number
+                  description: 付费数量
+                  example: 4
+          post_discounts:
+            type: array
+            description: 商户优惠
+            items:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: 优惠名称
+                  example: 满20减1元
+                description:
+                  type: string
+                  description: 优惠说明
+                  example: 不与其他优惠叠加
+                amount:
+                  type: number
+                  description: 优惠金额
+                  example: 100
+                count:
+                  type: number
+                  description: 优惠数量
+                  example: 2
+          risk_fund:
+            type: object
+            description: 服务风险金
+            required:
+              - name
+              - amount
+            properties:
+              name:
+                type: string
+                description: 风险名称
+                example: DEPOSIT
+              amount:
+                type: number
+                description: 风险金额
+                example: 10000
+              description:
+                type: string
+                description: 风险说明
+                example: 就餐的预估费用
+          time_range:
+            type: object
+            description: 服务时间
+            properties:
+              start_time:
+                type: string
+                description: 服务开始时间
+                example: '20091225091010'
+              end_time:
+                type: string
+                description: 服务结束时间
+                example: '20091225121010'
+              start_time_remark:
+                type: string
+                description: 服务开始时间备注
+                example: 备注1
+              end_time_remark:
+                type: string
+                description: 服务结束时间备注
+                example: 备注2
+          location:
+            type: object
+            description: 服务位置
+            properties:
+              start_location:
+                type: string
+                description: 服务开始地点
+                example: 嗨客时尚主题展餐厅
+              end_location:
+                type: string
+                description: 服务结束地点
+                example: 嗨客时尚主题展餐厅
+          attach:
+            type: string
+            description: 附加数据
+            example: Easdfowealsdkjfnlaksjdlfkwqoi&wl3l2sald
+          notify_url:
+            type: string
+            description: 商户回调地址
+            example: https://api.test.com
+          order_id:
+            type: string
+            description: 微信支付服务订单号
+            example: '0000300001201908301055157220022'
+          package:
+            type: string
+            description: 跳转微信侧数据包
+            example: DJIOSQPYWDxsjdldeuwhdodwxasd_dDiodnwjh9we
+          shopping_info:
+            type: object
+            description: 先用后付购物详情
+            required:
+              - jump_link
+              - goods
+            properties:
+              real_merchant_appid:
+                type: string
+                description: 实际购物商家公众号ID
+                example: wxd678efh567hg6787
+              jump_link:
+                type: object
+                description: 单详跳转链接
+                required:
+                  - jump_link_type
+                properties:
+                  jump_link_type:
+                    type: string
+                    description: 跳转链接类型
+                    example: JUMP_LINK_MINI_PROGRAM
+                  appid:
+                    type: string
+                    description: 小程序跳转AppID
+                    example: wxd678efh567hg6787
+                  path:
+                    type: string
+                    description: 小程序跳转path
+                    example: /page/order/orderid=PO213412451223
+              goods:
+                type: array
+                description: 商品列表
+                items:
+                  type: object
+                  required:
+                    - name
+                    - picture
+                    - amount
+                    - count
+                  properties:
+                    name:
+                      type: string
+                      description: 商品名称
+                      example: 森海塞尔 MOMENTUM 4 无线耳机大馒头4 头戴式蓝牙音乐耳机自适应降噪
+                    picture:
+                      type: string
+                      description: 商品图片链接
+                      example: http://mmbiz.qpic.cn/mmbiz_png/ldTw9dg46zkjOrzyTkbQAvQkysliaiblZhdthZWewgQMyqLZwStaNEsJrYmjwh2MlK7G4wibAFOEuISQKplSnxMWA/640?wx_fmt=png&wxfrom=200
+                    amount:
+                      type: number
+                      description: 商品单价金额
+                      example: 550
+                    count:
+                      type: number
+                      description: 商品数量
+                      example: 1
+                    category_id:
+                      type: array
+                      description: 商品品类ID
+                      items:
+                        type: string

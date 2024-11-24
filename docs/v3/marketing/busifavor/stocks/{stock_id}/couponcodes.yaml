@@ -26,6 +26,7 @@ post:
             description: 券code列表
             items:
               type: string
+              description: 券code
             example: [ABC9588200, ABC9588201]
           upload_request_no:
             type: string
@@ -58,6 +59,7 @@ post:
             description: 上传成功的code列表
             items:
               type: string
+              description: 券code
               example: MMAA12345
           success_time:
             type: string
@@ -91,15 +93,17 @@ post:
                   example: 长度超过最大值32位
           exist_codes:
             type: array
+            description: 已存在的code列表
             items:
               type: string
-              description: 已存在的code列表
+              description: 券Code
               example: ABCD2345
           duplicate_codes:
             type: array
+            description: 本次请求中重复的code列表
             items:
               type: string
-              description: 本次请求中重复的code列表
+              description: 券Code
               example: AACC2345
 get:
   x-last-updated-at: 2023.05.26
@@ -171,8 +175,10 @@ get:
             example: 1
           data:
             type: array
+            description: 券code列表
             items:
               type: object
+              description: 券code信息
               properties:
                 code:
                   type: string

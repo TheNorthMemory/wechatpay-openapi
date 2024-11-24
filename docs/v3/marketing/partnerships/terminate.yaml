@@ -21,21 +21,34 @@ post:
           partner:
             type: object
             required: [type]
+            description: 合作方信息
             properties:
               type:
                 type: string
+                description: 合作方类别
+                enum:
+                  - APPID
+                  - MERCHANT
               appid:
                 type: string
+                description: 合作方APPID
               merchant_id:
                 type: string
+                description: 合作方商户ID
           authorized_data:
             type: object
             required: [business_type]
+            description: 被授权数据
             properties:
               business_type:
                 type: string
+                description: 授权业务类别
+                enum:
+                  - FAVOR_STOCK
+                  - BUSIFAVOR_STOCK
               stock_id:
                 type: string
+                description: 授权批次ID
   responses:
     200:
       schema:

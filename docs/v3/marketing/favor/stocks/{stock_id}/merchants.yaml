@@ -45,6 +45,7 @@ get:
             description: 可用商户列表
             items:
               type: string
+              description: 商户号
               example: '1232001'
           offset:
             type: integer

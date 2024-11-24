@@ -68,5 +68,6 @@ get:
                 description: 消费金可用行业
                 items:
                   type: string
+                  description: 可用行业
                 example:
                   - 餐饮

@@ -17,12 +17,12 @@ interface Build
     public function post(array $options = [
         'json' => [
             'partner' => [
-                'type' => '',
+                'type' => 'APPID | MERCHANT',
                 'appid' => '',
                 'merchant_id' => '',
             ],
             'authorized_data' => [
-                'business_type' => '',
+                'business_type' => 'FAVOR_STOCK | BUSIFAVOR_STOCK',
                 'stock_id' => '',
             ],
         ],
@@ -39,12 +39,12 @@ interface Build
     public function postAsync(array $options = [
         'json' => [
             'partner' => [
-                'type' => '',
+                'type' => 'APPID | MERCHANT',
                 'appid' => '',
                 'merchant_id' => '',
             ],
             'authorized_data' => [
-                'business_type' => '',
+                'business_type' => 'FAVOR_STOCK | BUSIFAVOR_STOCK',
                 'stock_id' => '',
             ],
         ],

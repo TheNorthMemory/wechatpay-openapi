@@ -34,6 +34,7 @@ get:
         properties:
           code_information:
             type: object
+            description: 券code信息
             properties:
               code:
                 type: string
@@ -60,6 +61,7 @@ get:
                 description: 用户券code
           coupon_information:
             type: object
+            description: 券码信息
             required:
               - stock_name
               - belong_merchant
@@ -92,10 +94,13 @@ get:
                 example: NORMAL
               transferable:
                 type: boolean
+                description: 是否允许转赠
               shareable:
                 type: boolean
+                description: 是否允许分享领券链接
               coupon_state:
                 type: string
+                description: 券状态
               coupon_use_rule:
                 type: object
                 description: 核销规则

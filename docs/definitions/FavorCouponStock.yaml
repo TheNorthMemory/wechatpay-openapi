@@ -298,6 +298,7 @@ LimitCard:
       maxItems: 10
       items:
         type: string
+        description: 卡BIN
         minLength: 6
         maxLength: 9
         example: '62123456'
@@ -399,9 +400,17 @@ CouponConsumeGoodsDetail:
   properties:
     goods_id:
       type: string
+      description: 商品编码
+      example: '12345'
     quantity:
       type: integer
+      description: 商品数量
+      example: 1
     price:
       type: integer
+      description: 商品价格
+      example: 528800
     discount_amount:
       type: integer
+      description: 商品优惠金额
+      example: 100

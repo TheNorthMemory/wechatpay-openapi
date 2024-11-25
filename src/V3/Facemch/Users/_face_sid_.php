@@ -10,7 +10,7 @@ use GuzzleHttp\Promise\PromiseInterface;
 interface _face_sid_
 {
     /**
-     * 查询用户信息(同步模式)
+     * 查询用户授权的实名信息(同步模式)
      * @param array<string,mixed> $options
      * @link https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/android/sid.html
      */
@@ -26,7 +26,7 @@ interface _face_sid_
     ]): ResponseInterface;
 
     /**
-     * 查询用户信息(异步模式)
+     * 查询用户授权的实名信息(异步模式)
      * @param array<string,mixed> $options
      * @link https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/android/sid.html#async
      */

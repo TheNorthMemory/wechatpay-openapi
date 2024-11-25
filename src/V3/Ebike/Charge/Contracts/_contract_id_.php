@@ -13,6 +13,7 @@ interface _contract_id_
     /**
      * 通过签约号查询用户状态(同步模式)
      * @param array<string,mixed> $options
+     * @deprecated - since 2019.12.16
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/vehicle/ebike/chapter3_2.shtml
      */
     public function get(array $options = [
@@ -25,6 +26,7 @@ interface _contract_id_
     /**
      * 通过签约号查询用户状态(异步模式)
      * @param array<string,mixed> $options
+     * @deprecated - since 2019.12.16
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/vehicle/ebike/chapter3_2.shtml#async
      */
     public function getAsync(array $options = [

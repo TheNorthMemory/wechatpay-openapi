@@ -1,5 +1,6 @@
 post:
   x-last-updated-at: 2019.12.16
+  deprecated: true
   x-role:
     - 直连商户
     - 服务商

@@ -12,6 +12,7 @@ interface Confirm
     /**
      * 创建用户当次充电代扣凭证(同步模式)
      * @param array<string,mixed> $options
+     * @deprecated - since 2019.12.16
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/vehicle/ebike/chapter3_4.shtml
      */
     public function post(array $options = [
@@ -32,6 +33,7 @@ interface Confirm
     /**
      * 创建用户当次充电代扣凭证(异步模式)
      * @param array<string,mixed> $options
+     * @deprecated - since 2019.12.16
      * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/vehicle/ebike/chapter3_4.shtml#async
      */
     public function postAsync(array $options = [

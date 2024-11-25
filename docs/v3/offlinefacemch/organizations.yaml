@@ -5,7 +5,7 @@ get:
   tags:
     - 刷脸支付
   summary: 查询机构信息接口
-  description: 商户可以根据face_sid查询用户UnionId，调用该接口获取授权的实名信息商户需要先申请权限。[官方文档](https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/k12-development-guidelines.html)
+  description: 根据机构ID或者机构名称，查询入驻的机构信息 [官方文档](https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/k12-development-guidelines.html)
   parameters:
     - name: organization_id
       type: string

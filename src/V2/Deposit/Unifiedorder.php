@@ -23,7 +23,7 @@ interface Unifiedorder
             'device_info' => '013467007045764',
             'sign_type' => 'HMAC-SHA256',
             'body' => '腾讯充值中心-QQ会员充值',
-            'detail' => 'Ipadmini16G白色',
+            'detail' => '{"goods_detail":[]}',
             'attach' => '说明',
             'out_trade_no' => '1217752501201407033233368018',
             'fee_type' => 'CNY',
@@ -39,10 +39,6 @@ interface Unifiedorder
             'sub_openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
             'receipt' => 'Y',
             'scene_info' => '{"store_info":{"id":"SZTX001","name":"腾大餐厅","area_code":"440305","address":"科技园中一路腾讯大厦"}}',
-            'id' => 'SZTX001',
-            'name' => '腾讯大厦腾大餐厅',
-            'area_code' => '440305',
-            'address' => '科技园中一路腾讯大厦',
         ],
     ]): ResponseInterface;
 
@@ -60,7 +56,7 @@ interface Unifiedorder
             'device_info' => '013467007045764',
             'sign_type' => 'HMAC-SHA256',
             'body' => '腾讯充值中心-QQ会员充值',
-            'detail' => 'Ipadmini16G白色',
+            'detail' => '{"goods_detail":[]}',
             'attach' => '说明',
             'out_trade_no' => '1217752501201407033233368018',
             'fee_type' => 'CNY',
@@ -76,10 +72,6 @@ interface Unifiedorder
             'sub_openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
             'receipt' => 'Y',
             'scene_info' => '{"store_info":{"id":"SZTX001","name":"腾大餐厅","area_code":"440305","address":"科技园中一路腾讯大厦"}}',
-            'id' => 'SZTX001',
-            'name' => '腾讯大厦腾大餐厅',
-            'area_code' => '440305',
-            'address' => '科技园中一路腾讯大厦',
         ],
     ]): PromiseInterface;
 }

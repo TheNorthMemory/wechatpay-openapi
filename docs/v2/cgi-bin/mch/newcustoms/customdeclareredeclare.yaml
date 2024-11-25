@@ -31,6 +31,8 @@ post:
                 example: MD5
                 maxLength: 32
                 nullable: true
+                enum:
+                  - MD5
               sign:
                 type: string
                 description: 签名

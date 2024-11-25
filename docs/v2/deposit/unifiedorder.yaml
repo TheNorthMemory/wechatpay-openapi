@@ -30,7 +30,6 @@ post:
               - spbill_create_ip
               - notify_url
               - trade_type
-              - id
             properties:
               appid:
                 type: string
@@ -74,17 +73,65 @@ post:
                 description: 签名类型
                 example: HMAC-SHA256
                 maxLength: 32
+                enum:
+                  - MD5
+                  - HMAC-SHA256
               body:
                 type: string
                 description: 商品描述
                 example: 腾讯充值中心-QQ会员充值
                 maxLength: 127
               detail:
+                xml:
+                  x-cdata: true
                 type: string
-                description: 商品详情
-                example: Ipadmini16G白色
+                description: 单品优惠活动该字段必传，`JSON`格式字符串
+                example: '{"goods_detail":[]}'
                 maxLength: 6000
                 nullable: true
+                x-json:
+                  type: object
+                  description: 单品优惠活动信息
+                  required:
+                    - goods_detail
+                  properties:
+                    cost_price:
+                      type: number
+                      description: 订单原价
+                      example: 1
+                    receipt_id:
+                      type: string
+                      description: 商品小票ID
+                      example: wx123
+                    goods_detail:
+                      type: array
+                      description: 单品列表
+                      items:
+                        type: object
+                        required:
+                          - quantity
+                          - price
+                        properties:
+                          goods_id:
+                            type: string
+                            description: 商品编码
+                            example: 商品编码
+                          wxpay_goods_id:
+                            type: string
+                            description: 微信支付商品编码
+                            example: '1001'
+                          goods_name:
+                            type: string
+                            description: 商品名称
+                            example: iPhone6s 16G
+                          quantity:
+                            type: number
+                            description: 商品数量
+                            example: 1
+                          price:
+                            type: number
+                            description: 商品单价
+                            example: 528800
               attach:
                 type: string
                 description: 附加数据
@@ -133,6 +180,9 @@ post:
                 description: 交易类型
                 example: JSAPI
                 maxLength: 16
+                enum:
+                  - JSAPI
+                  - APP
               product_id:
                 type: string
                 description: 商品ID
@@ -163,37 +213,44 @@ post:
                 example: 'Y'
                 maxLength: 8
                 nullable: true
+                enum:
+                  - Y
+                  - N
               scene_info:
                 xml:
                   x-cdata: true
                 type: string
-                description: 场景信息
+                description: 场景信息`JSON`格式字符串
                 example: '{"store_info":{"id":"SZTX001","name":"腾大餐厅","area_code":"440305","address":"科技园中一路腾讯大厦"}}'
                 maxLength: 256
                 nullable: true
-              id:
-                type: string
-                description: 门店id
-                example: SZTX001
-                maxLength: 32
-              name:
-                type: string
-                description: 门店名称
-                example: 腾讯大厦腾大餐厅
-                maxLength: 64
-                nullable: true
-              area_code:
-                type: string
-                description: 门店行政区划码
-                example: '440305'
-                maxLength: 6
-                nullable: true
-              address:
-                type: string
-                description: 门店详细地址
-                example: 科技园中一路腾讯大厦
-                maxLength: 128
-                nullable: true
+                x-json:
+                  type: object
+                  required:
+                    - store_info
+                  properties:
+                    store_info:
+                      type: object
+                      description: 实际门店信息
+                      required:
+                        - id
+                      properties:
+                        id:
+                          type: string
+                          description: 门店id
+                          example: SZTX001
+                        name:
+                          type: string
+                          description: 门店名称
+                          example: 腾大餐厅
+                        area_code:
+                          type: string
+                          description: 门店行政区划码
+                          example: '440305'
+                        address:
+                          type: string
+                          description: 门店详细地址
+                          example: 科技园中一路腾讯大厦
   responses:
     '200':
       description: ''

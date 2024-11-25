@@ -60,6 +60,8 @@ post:
                 description: 签名类型
                 example: HMAC-SHA256
                 maxLength: 32
+                enum:
+                  - HMAC-SHA256
               out_order_no:
                 type: string
                 description: 商户服务订单号

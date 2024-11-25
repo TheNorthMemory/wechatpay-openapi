@@ -130,6 +130,13 @@ post:
             description: 门店照片
             example: '[Media_id1,Media_id2,Media_id3]'
             nullable: true
+            x-json:
+              type: array
+              x-key: media_id
+              description: 门店照片列表
+              items:
+                type: string
+                format: MediaId
           director_name:
             type: string
             description: 董事姓名
@@ -191,6 +198,12 @@ post:
             nullable: true
             description: H5支付域名
             example: '["www.qq.com","www.weixin.com"]'
+            x-json:
+              type: array
+              x-key: domain
+              description: 域名列表
+              items:
+                type: string
   responses:
     '200':
       description: ''

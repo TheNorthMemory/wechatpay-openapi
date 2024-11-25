@@ -248,3 +248,16 @@ post:
                 description: 子商户入驻驳回详情
                 nullable: true
                 example: '[{"field":"contact_name","reason":"contact name is invalid."},{"field":"contact_phone","reason":"contact phone is invalid."}]'
+                x-json:
+                  type: array
+                  x-key: reason
+                  description: 驳回原因列表
+                  items:
+                    type: object
+                    properties:
+                      field:
+                        type: string
+                        description: 字段
+                      reason:
+                        type: string
+                        description: 原因

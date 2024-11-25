@@ -43,13 +43,16 @@ refund.request:
       type: string
       description: 签名
       example: C380BEC2BFD727A4B6845133519F3AD6
-      maxLength: 32
+      maxLength: 64
     sign_type:
       type: string
       description: 签名类型
       example: HMAC-SHA256
       maxLength: 32
       nullable: true
+      enum:
+        - MD5
+        - HMAC-SHA256
     transaction_id:
       type: string
       description: 微信订单号

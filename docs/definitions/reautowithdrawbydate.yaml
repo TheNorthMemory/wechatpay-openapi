@@ -41,6 +41,8 @@ reautowithdrawbydate.request:
           description: 签名类型
           example: HMAC-SHA256
           maxLength: 32
+          enum:
+            - HMAC-SHA256
 reautowithdrawbydate.response:
   allOf:
     - type: object

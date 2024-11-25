@@ -33,6 +33,8 @@ micro.modifyarchives.request:
           description: 签名类型
           example: HMAC-SHA256
           maxLength: 128
+          enum:
+            - HMAC-SHA256
         sign:
           type: string
           description: 签名

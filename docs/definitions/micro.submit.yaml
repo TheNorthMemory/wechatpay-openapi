@@ -57,6 +57,8 @@ micro.submit.request:
           description: 签名类型
           example: HMAC-SHA256
           maxLength: 128
+          enum:
+            - HMAC-SHA256
         sign:
           type: string
           description: 签名
@@ -86,9 +88,18 @@ micro.submit.request:
           maxLength: 18
         id_card_valid_time:
           type: string
-          description: 身份证有效期限
+          description: 身份证有效期限`JSON`格式字符串
           example: '["1970-01-01","长期"]'
           maxLength: 50
+          x-json:
+            type: array
+            x-key: period
+            description: 有效期限
+            example:
+              - 1970-01-01
+              - 长期
+            items:
+              type: string
         account_name:
           type: string
           description: 开户名称
@@ -179,6 +190,15 @@ micro.submit.request:
           example: '["123","456"]'
           maxLength: 50
           nullable: true
+          x-json:
+            type: array
+            x-key: media_id
+            description: 图片列表
+            example:
+              - 9UYfXi-WMUhgWXvJtEw4_gBle_EfrD_pIL0bS8GAsK8
+            items:
+              type: string
+              format: MediaId
         contact:
           type: string
           description: 超级管理员姓名

@@ -17,11 +17,55 @@ post:
           - type: object
             properties:
               detail:
-                x-cdata: true
+                xml:
+                  x-cdata: true
                 type: string
-                description: 退款包含的商品列表信息，全额退款可不传，必须按照规范上传，JSON格式
+                description: 退款包含的商品列表信息，全额退款可不传`JSON`格式字符串
                 maxLength: 6000
                 example: '{"goods_detail":[{"goods_id":"商品编码","wxpay_goods_id":"1001","goods_name":"iPhone6s 16G","refund_amount":528800,"refund_quantity":1,"price":528800},{"goods_id":"商品编码","wxpay_goods_id":"1001","goods_name":"iPhone6s 16G","refund_amount":528800,"refund_quantity":1,"price":608800}]}'
+                x-json:
+                  type: object
+                  description: 单品优惠活动信息
+                  required:
+                    - goods_detail
+                  properties:
+                    cost_price:
+                      type: number
+                      description: 订单原价
+                      example: 1
+                    receipt_id:
+                      type: string
+                      description: 商品小票ID
+                      example: wx123
+                    goods_detail:
+                      type: array
+                      description: 单品列表
+                      items:
+                        type: object
+                        required:
+                          - quantity
+                          - price
+                        properties:
+                          goods_id:
+                            type: string
+                            description: 商品编码
+                            example: 商品编码
+                          wxpay_goods_id:
+                            type: string
+                            description: 微信支付商品编码
+                            example: '1001'
+                          goods_name:
+                            type: string
+                            description: 商品名称
+                            example: iPhone6s 16G
+                          quantity:
+                            type: number
+                            description: 商品数量
+                            example: 1
+                          price:
+                            type: number
+                            description: 商品单价
+                            example: 528800
           - $ref: '../../../definitions/refund.yaml#/refund.request'
   responses:
     '200':
@@ -32,8 +76,80 @@ post:
           - type: object
             properties:
               promotion_detail:
-                x-cdata: true
+                xml:
+                  x-cdata: true
                 type: string
-                description: 营销详情列表
+                description: 营销详情`JSON`格式字符串
                 maxLength: 6000
                 example: '{"promotion_detail":[{"promotion_id":"109519","scope":"SINGLE","type":"DISCOUNT","refund_amout":5,"goods_detail":[{"goods_id":"a_goods1","refund_quantity":7,"price":1,"refund_amount":4},{"goods_id":"a_goods2","refund_quantity":1,"price":2,"refund_amount":1}]}]}'
+                x-json:
+                  type: object
+                  description: 营销详情`JSON`表达式
+                  required:
+                    - promotion_id
+                    - amount
+                    - activity_id
+                    - goods_detail
+                  properties:
+                    promotion_id:
+                      type: string
+                      description: 券ID
+                    name:
+                      type: string
+                      description: 优惠名称
+                    scope:
+                      type: string
+                      description: 优惠范围
+                      enum:
+                      - GLOBAL
+                      - SINGLE
+                    type:
+                      type: string
+                      description: 优惠类型
+                      enum:
+                        - COUPON
+                        - DISCOUNT
+                    amount:
+                      type: string
+                      description: 优惠券面额
+                    activity_id:
+                      type: string
+                      description: 活动ID
+                    wxpay_contribute:
+                      type: string
+                      description: 微信出资
+                    merchant_contribute:
+                      type: string
+                      description: 商户出资
+                    other_contribute:
+                      type: string
+                      description: 其他出资
+                    goods_detail:
+                      type: array
+                      description: 单品列表
+                      items:
+                        type: object
+                        required:
+                          - quantity
+                          - price
+                        properties:
+                          goods_id:
+                            type: string
+                            description: 商品编码
+                            example: 商品编码
+                          wxpay_goods_id:
+                            type: string
+                            description: 微信支付商品编码
+                            example: '1001'
+                          goods_name:
+                            type: string
+                            description: 商品名称
+                            example: iPhone6s 16G
+                          quantity:
+                            type: number
+                            description: 商品数量
+                            example: 1
+                          price:
+                            type: number
+                            description: 商品单价
+                            example: 528800

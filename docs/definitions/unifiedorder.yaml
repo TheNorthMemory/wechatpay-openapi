@@ -57,6 +57,9 @@ unifiedorder.request:
       example: MD5
       maxLength: 32
       nullable: true
+      enum:
+        - MD5
+        - HMAC-SHA256
     body:
       type: string
       description: 商品描述
@@ -66,10 +69,53 @@ unifiedorder.request:
       xml:
         x-cdata: true
       type: string
-      description: 单品优惠活动该字段必传，且必须按照规范上传，JSON格式
+      description: 单品优惠活动该字段必传，`JSON`格式字符串
       maxLength: 6000
       nullable: true
       example: '{"cost_price":1,"receipt_id":"wx123","goods_detail":[{"goods_id":"商品编码","wxpay_goods_id":"1001","goods_name":"iPhone6s 16G","quantity":1,"price":1},{"goods_id":"商品编码","wxpay_goods_id":"1002","goods_name":"iPhone6s 32G","quantity":1,"price":1}]}'
+      x-json:
+        type: object
+        description: 单品优惠活动信息
+        required:
+          - goods_detail
+        properties:
+          cost_price:
+            type: number
+            description: 订单原价
+            example: 1
+          receipt_id:
+            type: string
+            description: 商品小票ID
+            example: wx123
+          goods_detail:
+            type: array
+            description: 单品列表
+            items:
+              type: object
+              required:
+                - quantity
+                - price
+              properties:
+                goods_id:
+                  type: string
+                  description: 商品编码
+                  example: 商品编码
+                wxpay_goods_id:
+                  type: string
+                  description: 微信支付商品编码
+                  example: '1001'
+                goods_name:
+                  type: string
+                  description: 商品名称
+                  example: iPhone6s 16G
+                quantity:
+                  type: number
+                  description: 商品数量
+                  example: 1
+                price:
+                  type: number
+                  description: 商品单价
+                  example: 528800
     attach:
       type: string
       description: 附加数据
@@ -153,10 +199,37 @@ unifiedorder.request:
       xml:
         x-cdata: true
       type: string
-      description: +场景信息
+      description: 场景信息`JSON`格式字符串
       example: '{"store_info" : {"id": "SZTX001","name": "腾大餐厅","area_code": "440305","address": "科技园中一路腾讯大厦" }}'
       maxLength: 256
       nullable: true
+      x-json:
+        type: object
+        required:
+          - store_info
+        properties:
+          store_info:
+            type: object
+            description: 实际门店信息
+            required:
+              - id
+            properties:
+              id:
+                type: string
+                description: 门店id
+                example: SZTX001
+              name:
+                type: string
+                description: 门店名称
+                example: 腾大餐厅
+              area_code:
+                type: string
+                description: 门店行政区划码
+                example: '440305'
+              address:
+                type: string
+                description: 门店详细地址
+                example: 科技园中一路腾讯大厦
 unifiedorder.response:
   allOf:
     - type: object
@@ -265,6 +338,77 @@ unifiedorder.response:
           xml:
             x-cdata: true
           type: string
-          description: 营销详情
+          description: 营销详情`JSON`格式字符串
           maxLength: 6000
           example: '{"promotion_detail":[{"promotion_id":"109519","name":"单品惠-6","scope":"SINGLE","type":"DISCOUNT","amount":5,"activity_id":"931386","wxpay_contribute":0,"merchant_contribute":0,"other_contribute":5,"goods_detail":[{"goods_id":"a_goods1","goods_remark":"商品备注","quantity":7,"price":1,"discount_amount":4},{"goods_id":"a_goods2","goods_remark":"商品备注","quantity":1,"price":2,"discount_amount":1}]}]}'
+          x-json:
+            type: object
+            description: 营销详情`JSON`表达式
+            required:
+              - promotion_id
+              - amount
+              - activity_id
+              - goods_detail
+            properties:
+              promotion_id:
+                type: string
+                description: 券ID
+              name:
+                type: string
+                description: 优惠名称
+              scope:
+                type: string
+                description: 优惠范围
+                enum:
+                 - GLOBAL
+                 - SINGLE
+              type:
+                type: string
+                description: 优惠类型
+                enum:
+                  - COUPON
+                  - DISCOUNT
+              amount:
+                type: string
+                description: 优惠券面额
+              activity_id:
+                type: string
+                description: 活动ID
+              wxpay_contribute:
+                type: string
+                description: 微信出资
+              merchant_contribute:
+                type: string
+                description: 商户出资
+              other_contribute:
+                type: string
+                description: 其他出资
+              goods_detail:
+                type: array
+                description: 单品列表
+                items:
+                  type: object
+                  required:
+                    - quantity
+                    - price
+                  properties:
+                    goods_id:
+                      type: string
+                      description: 商品编码
+                      example: 商品编码
+                    wxpay_goods_id:
+                      type: string
+                      description: 微信支付商品编码
+                      example: '1001'
+                    goods_name:
+                      type: string
+                      description: 商品名称
+                      example: iPhone6s 16G
+                    quantity:
+                      type: number
+                      description: 商品数量
+                      example: 1
+                    price:
+                      type: number
+                      description: 商品单价
+                      example: 528800

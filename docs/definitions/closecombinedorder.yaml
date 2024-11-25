@@ -37,6 +37,8 @@ closecombinedorder.request:
           description: 签名类型
           example: HMAC-SHA256
           maxLength: 64
+          enum:
+            - HMAC-SHA256
         combine_out_trade_no:
           type: string
           description: 合单商户订单号
@@ -46,9 +48,25 @@ closecombinedorder.request:
           xml:
             x-cdata: true
           type: string
-          description: +子单信息
-          example: '{"order_list": [{"appid": "wxdace645e0bc2c424","mch_id": "1900009001","out_trade_no": "OD201708030001","sub_appid": "wxdace645e0bc2c423","sub_mch_id": 1900009002}],"order_num": 3}'
+          description: 子单信息`JSON`格式字符串
+          example: '[{"mch_id": "1900009001","out_trade_no": "OD201708030001"}]'
           maxLength: 10240
+          x-json:
+            type: array
+            x-key: order
+            items:
+              type: object
+              description: 子单信息
+              required:
+                - mchid
+                - out_trade_no
+              properties:
+                mchid:
+                  type: string
+                  description: 子单商户号
+                out_trade_no:
+                  type: string
+                  description: 子单商户订单号
 closecombinedorder.response:
   allOf:
     - type: object

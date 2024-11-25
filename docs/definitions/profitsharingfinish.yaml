@@ -9,6 +9,7 @@ profitsharingfinish.request:
         - appid
         - nonce_str
         - sign
+        - sign_type
         - transaction_id
         - out_order_no
         - description
@@ -43,7 +44,8 @@ profitsharingfinish.request:
           description: 签名类型
           example: HMAC-SHA256
           maxLength: 32
-          nullable: true
+          enum:
+            - HMAC-SHA256
         transaction_id:
           type: string
           description: 微信订单号

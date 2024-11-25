@@ -60,6 +60,8 @@ post:
                 description: 签名类型
                 example: HMAC-SHA256
                 maxLength: 32
+                enum:
+                  - HMAC-SHA256
               sign:
                 type: string
                 description: 签名
@@ -219,20 +221,29 @@ post:
                 example: '{"plate_number_info":[{"plate_number":"粤B888888","channel_type":"ETC"}]}'
                 maxLength: 512
                 nullable: true
-              plate_number:
-                type: string
-                description: 车牌号
-                example: 粤B888888
-                maxLength: 32
-              channel_type:
-                type: string
-                description: 车牌通道标识
-                example: ETC
-                maxLength: 32
-                nullable: true
-              common_use_flag:
-                type: string
-                description: 常用车牌标志
-                example: COMMON_USE
-                maxLength: 16
-                nullable: true
+                x-json:
+                  type: object
+                  properties:
+                    plate_number_info:
+                      type: array
+                      description: 车牌信息列表
+                      items:
+                        type: object
+                        properties:
+                          plate_number:
+                            type: string
+                            description: 车牌号
+                            example: 粤B888888
+                            maxLength: 32
+                          channel_type:
+                            type: string
+                            description: 车牌通道标识
+                            example: ETC
+                            maxLength: 32
+                            nullable: true
+                          common_use_flag:
+                            type: string
+                            description: 常用车牌标志
+                            example: COMMON_USE
+                            maxLength: 16
+                            nullable: true

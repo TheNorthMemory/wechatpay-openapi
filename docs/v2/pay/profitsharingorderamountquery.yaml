@@ -22,6 +22,7 @@ post:
           - out_order_no
           - nonce_str
           - sign
+          - sign_type
         properties:
           mch_id:
             type: string
@@ -48,6 +49,8 @@ post:
             description: 签名类型
             example: HMAC-SHA256
             maxLength: 32
+            enum:
+              - HMAC-SHA256
   responses:
     '200':
       description: ''

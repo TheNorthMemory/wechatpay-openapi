@@ -24,7 +24,7 @@ interface Profitsharing
             'sign_type' => 'HMAC-SHA256',
             'transaction_id' => '4208450740201411110007820472',
             'out_order_no' => 'P20150806125346',
-            'receivers' => '[{"type": "MERCHANT_ID","account": "190001001","amount": 100,"description": "分到商户""detail_id": "36011111111111111111111""finish_time": "20180608170132""receiver_mchid": "1900000110""result": "SUCCESS"}, {"type": "PERSONAL_OPENID","account": "86693952","amount": 888,"description": "分到个人""detail_id": "36011111111111111111111""finish_time": "20180608170132""receiver_mchid": "1900000110""result": "SUCCESS"}]',
+            'receivers' => '[{"type": "MERCHANT_ID","account": "190001001","amount": 100,"description": "分到商户"}, {"type": "PERSONAL_OPENID","account": "86693952","amount": 888,"description": "分到个人"}]',
         ],
         'security' => true,
     ]): ResponseInterface;
@@ -44,7 +44,7 @@ interface Profitsharing
             'sign_type' => 'HMAC-SHA256',
             'transaction_id' => '4208450740201411110007820472',
             'out_order_no' => 'P20150806125346',
-            'receivers' => '[{"type": "MERCHANT_ID","account": "190001001","amount": 100,"description": "分到商户""detail_id": "36011111111111111111111""finish_time": "20180608170132""receiver_mchid": "1900000110""result": "SUCCESS"}, {"type": "PERSONAL_OPENID","account": "86693952","amount": 888,"description": "分到个人""detail_id": "36011111111111111111111""finish_time": "20180608170132""receiver_mchid": "1900000110""result": "SUCCESS"}]',
+            'receivers' => '[{"type": "MERCHANT_ID","account": "190001001","amount": 100,"description": "分到商户"}, {"type": "PERSONAL_OPENID","account": "86693952","amount": 888,"description": "分到个人"}]',
         ],
         'security' => true,
     ]): PromiseInterface;

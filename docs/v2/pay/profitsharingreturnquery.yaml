@@ -22,6 +22,7 @@ post:
             - appid
             - nonce_str
             - sign
+            - sign_type
             - out_return_no
             - return_account_type
             - return_account
@@ -64,7 +65,8 @@ post:
               description: 签名类型
               example: HMAC-SHA256
               maxLength: 32
-              nullable: true
+              enum:
+                - HMAC-SHA256
             order_id:
               type: string
               description: 微信分账单号

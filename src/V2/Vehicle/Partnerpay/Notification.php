@@ -24,15 +24,6 @@ interface Notification
             'version' => '3.0',
             'trade_scene' => 'PARKING',
             'scene_info' => '{"scene_info":{"start_time":"20170926114339","plate_number":"CB1000sdfasd","free_time":"1200","car_type":"大型车","parking_name":"欢乐海岸停车场"}}',
-            'start_time' => '20170826104339',
-            'plate_number' => '粤B888888',
-            'notify_url' => 'https://weixin.qq.com',
-            'car_type' => '小型车',
-            'parking_name' => '欢乐海岸停车场',
-            'free_time' => '1200',
-            'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
-            'sub_openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
-            'space_number' => 'D6666',
         ],
     ]): ResponseInterface;
 
@@ -51,15 +42,6 @@ interface Notification
             'version' => '3.0',
             'trade_scene' => 'PARKING',
             'scene_info' => '{"scene_info":{"start_time":"20170926114339","plate_number":"CB1000sdfasd","free_time":"1200","car_type":"大型车","parking_name":"欢乐海岸停车场"}}',
-            'start_time' => '20170826104339',
-            'plate_number' => '粤B888888',
-            'notify_url' => 'https://weixin.qq.com',
-            'car_type' => '小型车',
-            'parking_name' => '欢乐海岸停车场',
-            'free_time' => '1200',
-            'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
-            'sub_openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
-            'space_number' => 'D6666',
         ],
     ]): PromiseInterface;
 }

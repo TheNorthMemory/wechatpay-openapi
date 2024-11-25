@@ -9,6 +9,7 @@ profitsharingaddreceiver.request:
         - appid
         - nonce_str
         - sign
+        - sign_type
         - receiver
       properties:
         mch_id:
@@ -47,12 +48,42 @@ profitsharingaddreceiver.request:
           description: 签名类型
           example: HMAC-SHA256
           maxLength: 32
-          nullable: true
+          enum:
+            - HMAC-SHA256
         receiver:
           type: string
-          description: +分账接收方;分账接收方对象，json格式
+          description: 分账接收方`JSON`格式字符串
+          xml:
+            x-cdata: true
           maxLength: 2048
           example: '{"type": "MERCHANT_ID","account": "190001001","name": "示例商户全称","relation_type": "STORE_OWNER"}'
+          x-json:
+            type: object
+            required:
+              - type
+              - account
+              - amount
+              - description
+            properties:
+              type:
+                type: string
+                description: 分账接收方类型
+                enum:
+                  - MERCHANT_ID
+                  - PERSONAL_OPENID
+                  - PERSONAL_SUB_OPENID
+              account:
+                type: string
+                description: 分账接收方账号
+              amount:
+                type: number
+                description: 分账金额
+              description:
+                type: string
+                description: 分账描述
+              name:
+                type: string
+                description: 分账个人接收方姓名
 profitsharingaddreceiver.response:
   allOf:
     - $ref: './wxpay.service.yaml#/serviceprovider.subs'
@@ -69,3 +100,21 @@ profitsharingaddreceiver.response:
           description: 分账接收方
           example: '{"type":"MERCHANT_ID","account":"190001001"}'
           maxLength: 128
+          xml:
+            x-cdata: true
+          x-json:
+            type: object
+            required:
+              - type
+              - account
+            properties:
+              type:
+                type: string
+                description: 分账接收方类型
+                enum:
+                  - MERCHANT_ID
+                  - PERSONAL_OPENID
+                  - PERSONAL_SUB_OPENID
+              account:
+                type: string
+                description: 分账接收方账号

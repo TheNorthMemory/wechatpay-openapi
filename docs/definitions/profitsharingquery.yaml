@@ -10,6 +10,7 @@ profitsharingquery.request:
         - out_order_no
         - nonce_str
         - sign
+        - sign_type
       properties:
         mch_id:
           type: string
@@ -46,7 +47,8 @@ profitsharingquery.request:
           description: 签名类型
           example: HMAC-SHA256
           maxLength: 32
-          nullable: true
+          enum:
+            - HMAC-SHA256
 profitsharingquery.response:
   allOf:
     - $ref: './wxpay.service.yaml#/serviceprovider.subs'
@@ -98,15 +100,51 @@ profitsharingquery.response:
           nullable: true
         receivers:
           type: string
-          description: +分账接收方列表;分账接收方列表，json对象详细说明见下文，仅当查询分账请求结果时，存在本字段
-          maxLength: 10240
-        amount:
-          format: int32
-          type: integer
-          description: 分账金额
-          example: '888'
-        description:
-          type: string
-          description: 分账描述
-          example: 分账订单
-          maxLength: 80
+          description: 分账接收方列表`JSON`格式字符串
+          xml:
+            x-cdata: true
+          example: '[{"type": "MERCHANT_ID","account": "190001001","amount": 100,"description": "分到商户""detail_id": "36011111111111111111111""finish_time": "20180608170132""receiver_mchid": "1900000110""result": "SUCCESS"}, {"type": "PERSONAL_OPENID","account": "86693952","amount": 888,"description": "分到个人""detail_id": "36011111111111111111111""finish_time": "20180608170132""receiver_mchid": "1900000110""result": "SUCCESS"}]'
+          x-json:
+            type: array
+            x-key: receiver
+            description: 分账接收方列表`JSON`表达式
+            items:
+              type: object
+              required:
+                - type
+                - account
+                - amount
+                - description
+                - detail_id
+                - finish_time
+                - receiver_mchid
+                - result
+              properties:
+                type:
+                  type: string
+                  description: 分账接收方类型
+                  enum:
+                    - MERCHANT_ID
+                    - PERSONAL_OPENID
+                    - PERSONAL_SUB_OPENID
+                account:
+                  type: string
+                  description: 分账接收方账号
+                amount:
+                  type: number
+                  description: 分账金额
+                description:
+                  type: string
+                  description: 分账描述
+                detail_id:
+                  type: string
+                  description: 分账明细单号
+                finish_time:
+                  type: string
+                  description: 分账完成时间
+                receiver_mchid:
+                  type: string
+                  description: 分账接收商户号
+                result:
+                  type: string
+                  description: 分账结果

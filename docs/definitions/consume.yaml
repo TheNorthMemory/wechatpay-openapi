@@ -75,6 +75,8 @@ consume.request:
       description: 签名类型
       example: HMAC-SHA256
       maxLength: 32
+      enum:
+        - HMAC-SHA256
 consume.response:
   allOf:
     - type: object

@@ -66,6 +66,8 @@ post:
                 description: 签名类型
                 example: HMAC-SHA256
                 maxLength: 32
+                enum:
+                  - HMAC-SHA256
               sign:
                 type: string
                 description: 签名
@@ -81,62 +83,110 @@ post:
                 description: 交易场景
                 example: PARKING
                 maxLength: 16
+                enum:
+                  - PARKING
+                  - PARKING SPACE
               scene_info:
                 xml:
                   x-cdata: true
                 type: string
-                description: 场景信息
+                description: 场景信息`JSON`格式字符串
                 example: '{"scene_info":{"start_time":"20170926114339","plate_number":"CB1000sdfasd","free_time":"1200","car_type":"大型车","parking_name":"欢乐海岸停车场"}}'
                 maxLength: 1024
-              start_time:
-                type: string
-                description: 入场时间
-                example: '20170826104339'
-                maxLength: 16
-              plate_number:
-                type: string
-                description: 车牌号
-                example: 粤B888888
-                maxLength: 32
-              notify_url:
-                type: string
-                description: 回调通知URL
-                example: https://weixin.qq.com
-                maxLength: 256
-                nullable: true
-              car_type:
-                type: string
-                description: 车辆类型
-                example: 小型车
-                maxLength: 16
-                nullable: true
-              parking_name:
-                type: string
-                description: 停车场名称
-                example: 欢乐海岸停车场
-                maxLength: 32
-                nullable: true
-              free_time:
-                type: string
-                description: 免费时长
-                example: '1200'
-                maxLength: 16
-              openid:
-                type: string
-                description: 用户标识
-                example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
-                maxLength: 32
-              sub_openid:
-                type: string
-                description: 用户子标识
-                example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
-                maxLength: 32
-                nullable: true
-              space_number:
-                type: string
-                description: 车位编号
-                example: D6666
-                maxLength: 16
+                x-json:
+                  type: object
+                  description: 场景信息`JSON`表达式
+                  x-prop-one-of: true
+                  required:
+                    - scene_info
+                  properties:
+                    scene_info:
+                      oneOf:
+                        - type: object
+                          description: 场景`PARKING`信息
+                          required:
+                            - start_time
+                            - plate_number
+                            - parking_name
+                            - free_time
+                          properties:
+                            start_time:
+                              type: string
+                              description: 入场时间
+                              example: '20170826104339'
+                              maxLength: 16
+                            notify_url:
+                              type: string
+                              description: 回调通知URL
+                              example: https://weixin.qq.com
+                              maxLength: 256
+                              nullable: true
+                            plate_number:
+                              type: string
+                              description: 车牌号
+                              example: 粤B888888
+                              maxLength: 32
+                            car_type:
+                              type: string
+                              description: 车辆类型
+                              example: 小型车
+                              maxLength: 16
+                              nullable: true
+                            parking_name:
+                              type: string
+                              description: 停车场名称
+                              example: 欢乐海岸停车场
+                              maxLength: 32
+                              nullable: true
+                            free_time:
+                              type: string
+                              description: 免费时长
+                              example: '1200'
+                              maxLength: 16
+                        - type: object
+                          description: 场景`PARKING SPACE`信息
+                          required:
+                            - start_time
+                            - free_time
+                            - space_number
+                          properties:
+                            start_time:
+                              type: string
+                              description: 入场时间
+                              example: '20170826104339'
+                              maxLength: 16
+                            car_type:
+                              type: string
+                              description: 车辆类型
+                              example: 小型车
+                              maxLength: 16
+                              nullable: true
+                            parking_name:
+                              type: string
+                              description: 停车场名称
+                              example: 欢乐海岸停车场
+                              maxLength: 32
+                              nullable: true
+                            free_time:
+                              type: string
+                              description: 免费时长
+                              example: '1200'
+                              maxLength: 16
+                            openid:
+                              type: string
+                              description: 用户标识
+                              example: wxd930ea5d5a258f4f
+                              maxLength: 32
+                            sub_openid:
+                              type: string
+                              description: 用户子标识
+                              example: wxd930ea5d5a258f4f
+                              maxLength: 32
+                            space_number:
+                              type: string
+                              description: 车位编号
+                              example: D6666
+                              maxLength: 16
   responses:
     '200':
       description: ''
@@ -219,9 +269,15 @@ post:
                 description: 用户状态
                 example: NORMAL
                 maxLength: 16
+                enum:
+                  - NORMAL
+                  - BLOCK
               deduct_mode:
                 type: string
                 description: 发起扣费方式
                 example: PROACTIVE
                 maxLength: 16
                 nullable: true
+                enum:
+                  - PROACTIVE
+                  - AUTOPAY

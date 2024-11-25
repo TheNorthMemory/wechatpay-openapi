@@ -20,7 +20,7 @@ interface Closecombinedorder
             'combine_mch_id' => '1900000109',
             'sign_type' => 'HMAC-SHA256',
             'combine_out_trade_no' => '1217752501201407033233368018',
-            'sub_order_list' => '{"order_list": [{"appid": "wxdace645e0bc2c424","mch_id": "1900009001","out_trade_no": "OD201708030001","sub_appid": "wxdace645e0bc2c423","sub_mch_id": 1900009002}],"order_num": 3}',
+            'sub_order_list' => '[{"mch_id": "1900009001","out_trade_no": "OD201708030001"}]',
         ],
     ]): ResponseInterface;
 
@@ -35,7 +35,7 @@ interface Closecombinedorder
             'combine_mch_id' => '1900000109',
             'sign_type' => 'HMAC-SHA256',
             'combine_out_trade_no' => '1217752501201407033233368018',
-            'sub_order_list' => '{"order_list": [{"appid": "wxdace645e0bc2c424","mch_id": "1900009001","out_trade_no": "OD201708030001","sub_appid": "wxdace645e0bc2c423","sub_mch_id": 1900009002}],"order_num": 3}',
+            'sub_order_list' => '[{"mch_id": "1900009001","out_trade_no": "OD201708030001"}]',
         ],
     ]): PromiseInterface;
 }

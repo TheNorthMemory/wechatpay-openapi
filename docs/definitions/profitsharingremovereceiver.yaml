@@ -9,6 +9,7 @@ profitsharingremovereceiver.request:
         - appid
         - nonce_str
         - sign
+        - sign_type
         - receiver
         - type
         - account
@@ -49,12 +50,29 @@ profitsharingremovereceiver.request:
           description: 签名类型
           example: HMAC-SHA256
           maxLength: 32
-          nullable: true
+          enum:
+            - HMAC-SHA256
         receiver:
           type: string
-          description: +分账接收方
+          description: 分账接收方`JSON`格式字符串
           maxLength: 2048
-          example: '{"type": "MERCHANT_ID","account": "190001001","name": "示例商户全称"}'
+          example: '{"type": "MERCHANT_ID","account": "190001001"}'
+          x-json:
+            type: object
+            required:
+              - type
+              - account
+            properties:
+              type:
+                type: string
+                description: 分账接收方类型
+                enum:
+                  - MERCHANT_ID
+                  - PERSONAL_OPENID
+                  - PERSONAL_SUB_OPENID
+              account:
+                type: string
+                description: 分账接收方账号
 profitsharingremovereceiver.response:
   allOf:
     - $ref: './wxpay.service.yaml#/serviceprovider.subs'
@@ -68,6 +86,24 @@ profitsharingremovereceiver.response:
       properties:
         receiver:
           type: string
-          description: 分账接收方
+          description: 分账接收方`JSON`格式字符串
           example: '{"type":"MERCHANT_ID","account":"190001001"}'
           maxLength: 128
+          xml:
+            x-cdata: true
+          x-json:
+            type: object
+            required:
+              - type
+              - account
+            properties:
+              type:
+                type: string
+                description: 分账接收方类型
+                enum:
+                  - MERCHANT_ID
+                  - PERSONAL_OPENID
+                  - PERSONAL_SUB_OPENID
+              account:
+                type: string
+                description: 分账接收方账号

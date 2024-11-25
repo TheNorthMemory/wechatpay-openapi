@@ -31,33 +31,6 @@ post:
               - version
               - trade_scene
               - scene_info
-              - start_time
-              - charging_time
-              - plate_number
-              - parking_name
-              - deduct_mode
-              - support_deduct_mode
-              - start_time
-              - charging_time
-              - space_number
-              - start_time
-              - plate_number
-              - gas_station
-              - gas_label_name
-              - gas_type
-              - gas_standard
-              - gas_amount
-              - gas_gun_no
-              - start_time
-              - end_time
-              - plate_number
-              - car_type
-              - entrance_name
-              - exit_name
-              - channel_type
-              - start_time
-              - plate_number
-              - exit_name
             properties:
               appid:
                 type: string
@@ -79,6 +52,8 @@ post:
                 description: 签名类型
                 example: HMAC-SHA256
                 maxLength: 32
+                enum:
+                  - HMAC-SHA256
               sign:
                 type: string
                 description: 签名
@@ -148,6 +123,12 @@ post:
                 description: 交易场景
                 example: PARKING
                 maxLength: 16
+                enum:
+                  - PARKING
+                  - PARKING SPACE
+                  - GAS
+                  - HIGHWAY
+                  - BRIDGE
               openid:
                 type: string
                 description: 用户标识
@@ -164,113 +145,268 @@ post:
                 xml:
                   x-cdata: true
                 type: string
-                description: 场景信息
+                description: 场景信息`JSON`格式字符串
                 example: '{"scene_info":{"start_time":"20170926114339","end_time":"20170826114339","charging_time":"12312312312","plate_number":"CB1000sdfasd","free_time":"1200","car_type":"大型车","parking_name":"欢乐海岸停车场"}}'
                 maxLength: 1024
-              start_time:
-                type: string
-                description: 交易时间
-                example: '20170826104339'
-                maxLength: 16
-              end_time:
-                type: string
-                description: 结束时间
-                example: '20170826114339'
-                maxLength: 16
-              charging_time:
-                type: string
-                description: 计费时长
-                example: '3600'
-                maxLength: 16
-              plate_number:
-                type: string
-                description: 车牌号
-                example: 粤B888888
-                maxLength: 32
-              car_type:
-                type: string
-                description: 车辆类型
-                example: 小型车
-                maxLength: 16
-                nullable: true
-              parking_name:
-                type: string
-                description: 停车场名称
-                example: 欢乐海岸停车场
-                maxLength: 32
-                nullable: true
-              deduct_mode:
-                type: string
-                description: 发起扣费方式
-                example: PROACTIVE
-                maxLength: 16
-              support_deduct_mode:
-                type: string
-                description: 支持的扣费方式
-                example: DEDUCT_PROACTIVE_ONLY
-                maxLength: 16
-              space_number:
-                type: string
-                description: 车位编号
-                example: D6666
-                maxLength: 16
-              gas_station:
-                type: string
-                description: 加油站名称
-                example: 中国石油加油站
-                maxLength: 32
-              gas_label_name:
-                type: string
-                description: 油品标号名
-                example: '98'
-                maxLength: 8
-              gas_type:
-                type: string
-                description: 油品类型名称
-                example: 汽油
-                maxLength: 32
-              gas_standard:
-                type: string
-                description: 油品标准
-                example: 国V
-                maxLength: 32
-              gas_amount:
-                type: string
-                description: 油量
-                example: '50120'
-                maxLength: 16
-              gas_gun_no:
-                type: string
-                description: 油枪号
-                example: '10'
-                maxLength: 32
-              entrance_name:
-                type: string
-                description: 入口站名称
-                example: 沿江深圳-大铲湾
-                maxLength: 60
-              exit_name:
-                type: string
-                description: 出口名称
-                example: 虎门大桥
-                maxLength: 64
-              carrying_capacity:
-                type: string
-                description: 核载人数
-                example: '10'
-                maxLength: 8
-                nullable: true
-              carrying_range:
-                type: string
-                description: 核载区间
-                example: 6-12
-                maxLength: 32
-                nullable: true
-              channel_type:
-                type: string
-                description: 通道类型
-                example: ETC
-                maxLength: 32
+                x-json:
+                  type: object
+                  description: 场景信息`JSON`表达式
+                  x-prop-one-of: true
+                  required:
+                    - scene_info
+                  properties:
+                    scene_info:
+                      oneOf:
+                        - type: object
+                          description: 场景`PARKING`信息
+                          required:
+                            - start_time
+                            - charging_time
+                            - plate_number
+                            - parking_name
+                            - deduct_mode
+                            - support_deduct_mode
+                          properties:
+                            start_time:
+                              type: string
+                              description: 交易时间
+                              example: '20170826104339'
+                              maxLength: 16
+                            end_time:
+                              type: string
+                              description: 结束时间
+                              example: '20170826114339'
+                              maxLength: 16
+                            charging_time:
+                              type: string
+                              description: 计费时长
+                              example: '3600'
+                              maxLength: 16
+                            plate_number:
+                              type: string
+                              description: 车牌号
+                              example: 粤B888888
+                              maxLength: 32
+                            car_type:
+                              type: string
+                              description: 车辆类型
+                              example: 小型车
+                              maxLength: 16
+                              nullable: true
+                            parking_name:
+                              type: string
+                              description: 停车场名称
+                              example: 欢乐海岸停车场
+                              maxLength: 32
+                              nullable: true
+                            free_time:
+                              type: string
+                              description: 免费时长(秒)
+                              example: '1200'
+                            deduct_mode:
+                              type: string
+                              description: 发起扣费方式
+                              example: PROACTIVE
+                              maxLength: 16
+                              enum:
+                                - PROACTIVE
+                                - AUTOPAY
+                            support_deduct_mode:
+                              type: string
+                              description: 支持的扣费方式
+                              example: DEDUCT_PROACTIVE_ONLY
+                              maxLength: 16
+                              enum:
+                                - DEDUCT_PROACTIVE_ONLY
+                                - DEDUCT_AUTOPAY_ONLY
+                                - DEDUCT_ALL
+                        - type: object
+                          description: 场景`PARKING SPACE`信息
+                          required:
+                            - start_time
+                            - charging_time
+                            - space_number
+                          properties:
+                            start_time:
+                              type: string
+                              description: 交易时间
+                              example: '20170826104339'
+                              maxLength: 16
+                            end_time:
+                              type: string
+                              description: 结束时间
+                              example: '20170826114339'
+                              maxLength: 16
+                            charging_time:
+                              type: string
+                              description: 计费时长
+                              example: '3600'
+                              maxLength: 16
+                            car_type:
+                              type: string
+                              description: 车辆类型
+                              example: 小型车
+                              maxLength: 16
+                              nullable: true
+                            parking_name:
+                              type: string
+                              description: 停车场名称
+                              example: 欢乐海岸停车场
+                              maxLength: 32
+                              nullable: true
+                            space_number:
+                              type: string
+                              description: 车位编号
+                              example: D6666
+                              maxLength: 16
+                        - type: object
+                          description: 场景`GAS`信息
+                          required:
+                            - start_time
+                            - plate_number
+                            - gas_station
+                            - gas_label_name
+                            - gas_type
+                            - gas_standard
+                            - gas_amount
+                            - gas_gun_no
+                          properties:
+                            start_time:
+                              type: string
+                              description: 交易时间
+                              example: '20170826104339'
+                              maxLength: 16
+                            plate_number:
+                              type: string
+                              description: 车牌号
+                              example: 粤B888888
+                              maxLength: 32
+                            car_type:
+                              type: string
+                              description: 车辆类型
+                              example: 小型车
+                              maxLength: 16
+                              nullable: true
+                            gas_station:
+                              type: string
+                              description: 加油站名称
+                              example: 中国石油加油站
+                              maxLength: 32
+                            gas_label_name:
+                              type: string
+                              description: 油品标号名
+                              example: '98'
+                              maxLength: 8
+                            gas_type:
+                              type: string
+                              description: 油品类型名称
+                              example: 汽油
+                              maxLength: 32
+                            gas_standard:
+                              type: string
+                              description: 油品标准
+                              example: 国V
+                              maxLength: 32
+                            gas_amount:
+                              type: string
+                              description: 油量
+                              example: '50120'
+                              maxLength: 16
+                            gas_gun_no:
+                              type: string
+                              description: 油枪号
+                              example: '10'
+                              maxLength: 32
+                        - type: object
+                          description: 场景`HIGHWAY`信息
+                          required:
+                            - start_time
+                            - end_time
+                            - plate_number
+                            - car_type
+                            - entrance_name
+                            - exit_name
+                            - channel_type
+                          properties:
+                            start_time:
+                              type: string
+                              description: 交易时间
+                              example: '20170826104339'
+                              maxLength: 16
+                            end_time:
+                              type: string
+                              description: 结束时间
+                              example: '20170826114339'
+                              maxLength: 16
+                            plate_number:
+                              type: string
+                              description: 车牌号
+                              example: 粤B888888
+                              maxLength: 32
+                            car_type:
+                              type: string
+                              description: 车辆类型
+                              example: 小型车
+                              maxLength: 16
+                              nullable: true
+                            entrance_name:
+                              type: string
+                              description: 入口站名称
+                              example: 沿江深圳-大铲湾
+                              maxLength: 60
+                            exit_name:
+                              type: string
+                              description: 出口名称
+                              example: 虎门大桥
+                              maxLength: 64
+                            carrying_capacity:
+                              type: string
+                              description: 核载人数
+                              example: '10'
+                              maxLength: 8
+                              nullable: true
+                            carrying_range:
+                              type: string
+                              description: 核载区间
+                              example: 6-12
+                              maxLength: 32
+                              nullable: true
+                            channel_type:
+                              type: string
+                              description: 通道类型
+                              example: ETC
+                              maxLength: 32
+                              enum:
+                                - ETC
+                                - MTC
+                        - type: object
+                          description: 场景`BRIDGE`信息
+                          required:
+                            - start_time
+                            - plate_number
+                            - exit_name
+                          properties:
+                            start_time:
+                              type: string
+                              description: 交易时间
+                              example: '20170826104339'
+                              maxLength: 16
+                            plate_number:
+                              type: string
+                              description: 车牌号
+                              example: 粤B888888
+                              maxLength: 32
+                            car_type:
+                              type: string
+                              description: 车辆类型
+                              example: 小型车
+                              maxLength: 16
+                              nullable: true
+                            exit_name:
+                              type: string
+                              description: 出口名称
+                              example: 虎门大桥
+                              maxLength: 64
   responses:
     '200':
       description: ''

@@ -57,6 +57,9 @@ reverse.request:
       example: HMAC-SHA256
       maxLength: 32
       nullable: true
+      enum:
+        - MD5
+        - HMAC-SHA256
 reverse.response:
   allOf:
     - type: object

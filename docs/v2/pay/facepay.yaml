@@ -2,7 +2,7 @@ post:
   tags:
     - APIv2∙人脸支付
   summary: 提交刷脸支付
-  description: '[官方人脸支付文档](https://share.weiyun.com/5dxUgCw)'
+  description: '发起订单支付 [官方人脸支付文档](https://share.weiyun.com/5dxUgCw)'
   consumes:
     - application/xml
   produces:

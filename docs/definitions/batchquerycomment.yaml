@@ -7,6 +7,7 @@ batchquerycomment.request:
     - mch_id
     - nonce_str
     - sign
+    - sign_type
     - begin_time
     - end_time
     - offset
@@ -36,7 +37,8 @@ batchquerycomment.request:
       description: 签名类型
       example: HMAC-SHA256
       maxLength: 32
-      nullable: true
+      enum:
+        - HMAC-SHA256
     begin_time:
       type: string
       description: 开始时间
@@ -74,6 +76,9 @@ batchquerycomment.response:
           description: 返回状态码
           example: SUCCESS
           maxLength: 16
+          enum:
+            - SUCCESS
+            - FAIL
         return_msg:
           type: string
           description: 返回信息
@@ -91,6 +96,8 @@ batchquerycomment.response:
           description: 业务结果
           example: FAIL
           maxLength: 16
+          enum:
+            - FAIL
         err_code:
           type: string
           description: 错误代码

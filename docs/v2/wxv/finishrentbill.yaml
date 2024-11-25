@@ -39,6 +39,8 @@ post:
                 description: 接口版本号
                 example: '1.0'
                 maxLength: 32
+                enum:
+                  - '1.0'
               appid:
                 type: string
                 description: 公众账号ID
@@ -120,6 +122,9 @@ post:
                 description: 分账标识
                 example: 'Y'
                 maxLength: 16
+                enum:
+                  - Y
+                  - N
   responses:
     '200':
       description: ''
@@ -136,6 +141,9 @@ post:
                 description: 返回状态码
                 example: SUCCESS
                 maxLength: 16
+                enum:
+                  - SUCCESS
+                  - FAIL
               return_msg:
                 type: string
                 description: 返回结果
@@ -169,6 +177,9 @@ post:
                 description: 业务结果
                 example: SUCCESS
                 maxLength: 16
+                enum:
+                  - SUCCESS
+                  - FAIL
               err_code:
                 type: string
                 description: 错误代码

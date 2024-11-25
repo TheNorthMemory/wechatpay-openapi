@@ -125,16 +125,23 @@ post:
                 description: 交易类型
                 example: PAP
                 maxLength: 16
+                enum:
+                  - PAP
               version:
                 type: string
                 description: 版本号
                 example: '3.0'
                 maxLength: 16
+                enum:
+                  - '3.0'
               trade_scene:
                 type: string
                 description: 交易场景
                 example: PARKING
                 maxLength: 16
+                enum:
+                  - PARKING
+                  - PARKING SPACE
               openid:
                 type: string
                 description: 用户标识
@@ -147,6 +154,9 @@ post:
                 example: 'Y'
                 maxLength: 16
                 nullable: true
+                enum:
+                  - Y
+                  - N
               scene_info:
                 xml:
                   x-cdata: true
@@ -430,6 +440,9 @@ post:
                 description: 返回状态码
                 example: SUCCESS
                 maxLength: 16
+                enum:
+                  - SUCCESS
+                  - FAIL
               return_msg:
                 type: string
                 description: 返回信息
@@ -488,6 +501,9 @@ post:
                 description: 业务结果
                 example: SUCCESS
                 maxLength: 16
+                enum:
+                  - SUCCESS
+                  - FAIL
               err_code:
                 type: string
                 description: 错误代码

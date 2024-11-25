@@ -69,6 +69,8 @@ post:
             description: 校验用户姓名选项
             example: FORCE_CHECK
             maxLength: 16
+            enum:
+              - FORCE_CHECK
           re_user_name:
             type: string
             description: 收款用户姓名
@@ -102,6 +104,9 @@ post:
             description: 付款消息类型
             example: NORMAL_MSG
             maxLength: 32
+            enum:
+              - NORMAL_MSG
+              - APPROVAL_MSG
           approval_number:
             type: string
             required: true
@@ -112,13 +117,15 @@ post:
             format: integer
             description: 审批类型
             example: '1'
+            enum:
+              - 1
           act_name:
             type: string
             required: true
             description: 项目名称
             example: 产品部门报销
           agentid:
-            type: number
+            type: string
             format: integer
             description: 付款的应用id
             example: '1'
@@ -141,6 +148,9 @@ post:
             description: 返回状态码
             example: SUCCESS
             maxLength: 16
+            enum:
+              - SUCCESS
+              - FAIL
           return_msg:
             type: string
             description: 返回信息
@@ -173,6 +183,9 @@ post:
             description: 业务结果
             example: SUCCESS
             maxLength: 16
+            enum:
+              - SUCCESS
+              - FAIL
           err_code:
             type: string
             description: 错误代码

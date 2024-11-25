@@ -74,6 +74,9 @@ post:
             description: 返回状态码
             example: SUCCESS
             maxLength: 16
+            enum:
+              - SUCCESS
+              - FAIL
           return_msg:
             type: string
             description: 返回信息
@@ -85,6 +88,9 @@ post:
             description: 业务结果
             example: SUCCESS
             maxLength: 16
+            enum:
+              - SUCCESS
+              - FAIL
           err_code:
             type: string
             description: 错误代码
@@ -122,6 +128,10 @@ post:
             description: 转账状态
             example: SUCCESS
             maxLength: 16
+            enum:
+              - SUCCESS
+              - FAILED
+              - PROCESSING
           reason:
             type: string
             description: 失败原因

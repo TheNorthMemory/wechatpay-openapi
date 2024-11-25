@@ -10,7 +10,6 @@ addrecommendconf.request:
         - subscribe_appid
         - nonce_str
         - sign
-        - sign_type
       properties:
         mch_id:
           type: string
@@ -42,11 +41,6 @@ addrecommendconf.request:
           description: 签名
           example: C380BEC2BFD727A4B6845133519F3AD6
           maxLength: 32
-        sign_type:
-          type: string
-          description: 签名类型
-          example: HMAC-SHA256
-          maxLength: 32
 addrecommendconf.response:
   allOf:
     - type: object
@@ -61,6 +55,9 @@ addrecommendconf.response:
           description: 返回状态码
           example: SUCCESS
           maxLength: 16
+          enum:
+            - SUCCESS
+            - FAIL
         return_msg:
           type: string
           description: 返回信息
@@ -95,6 +92,9 @@ addrecommendconf.response:
           description: 业务结果
           example: SUCCESS
           maxLength: 32
+          enum:
+            - SUCCESS
+            - FAIL
         sign:
           type: string
           description: 签名

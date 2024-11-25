@@ -77,6 +77,9 @@ post:
                 description: 返回状态码
                 example: SUCCESS
                 maxLength: 16
+                enum:
+                  - SUCCESS
+                  - FAIL
               return_msg:
                 type: string
                 description: 返回信息
@@ -118,6 +121,9 @@ post:
                 description: 业务结果
                 example: SUCCESS
                 maxLength: 16
+                enum:
+                  - SUCCESS
+                  - FAIL
               err_code:
                 type: string
                 description: 错误代码
@@ -161,6 +167,9 @@ post:
                 example: 'Y'
                 maxLength: 1
                 nullable: true
+                enum:
+                  - Y
+                  - N
               trade_type:
                 type: string
                 description: 交易类型
@@ -171,6 +180,15 @@ post:
                 description: 交易状态
                 example: SUCCESS
                 maxLength: 32
+                enum:
+                  - SUCCESS
+                  - REFUND
+                  - NOTPAY
+                  - CLOSED
+                  - REVOKED
+                  - USERPAYING
+                  - PAYERROR
+                  - ACCEPT
               bank_type:
                 type: string
                 description: 付款银行

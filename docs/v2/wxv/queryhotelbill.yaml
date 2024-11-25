@@ -33,6 +33,8 @@ post:
                 description: 接口版本号
                 example: '1.0'
                 maxLength: 32
+                enum:
+                  - '1.0'
               appid:
                 type: string
                 description: 公众账号ID
@@ -89,6 +91,9 @@ post:
                 description: 返回状态码
                 example: SUCCESS
                 maxLength: 16
+                enum:
+                  - SUCCESS
+                  - FAIL
               return_msg:
                 type: string
                 description: 返回结果
@@ -122,6 +127,9 @@ post:
                 description: 业务结果
                 example: SUCCESS
                 maxLength: 16
+                enum:
+                  - SUCCESS
+                  - FAIL
               err_code:
                 type: string
                 description: 错误代码
@@ -173,6 +181,13 @@ post:
                 description: 单据状态
                 example: CREATED
                 maxLength: 32
+                enum:
+                  - CREATED
+                  - USER_ACCEPTED
+                  - FINISHED
+                  - USER_PAID
+                  - REVOKED
+                  - EXPIRED
               room:
                 type: string
                 description: 房间
@@ -289,3 +304,5 @@ post:
                 description: 支付方式
                 example: MchChannelPayType
                 nullable: true
+                enum:
+                  - MchChannelPayType

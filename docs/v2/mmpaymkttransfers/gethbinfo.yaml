@@ -82,6 +82,9 @@ post:
             description: 返回状态码
             example: SUCCESS
             maxLength: 16
+            enum:
+              - SUCCESS
+              - FAIL
           return_msg:
             type: string
             description: 返回信息
@@ -93,6 +96,9 @@ post:
             description: 业务结果
             example: SUCCESS
             maxLength: 16
+            enum:
+              - SUCCESS
+              - FAIL
           err_code:
             type: string
             description: 错误代码
@@ -125,16 +131,30 @@ post:
             description: 红包状态
             example: RECEIVED
             maxLength: 16
+            enum:
+              - SENDING #发放中
+              - SENT #已发放待领取
+              - FAILED #发放失败
+              - RECEIVED #已领取
+              - RFUND_ING #退款中
+              - REFUND #已退款
           send_type:
             type: string
             description: 发放类型
             example: API
             maxLength: 32
+            enum:
+              - API
+              - UPLOAD
+              - ACTIVITY
           hb_type:
             type: string
             description: 红包类型
-            example: GROUP
+            example: NORMAL
             maxLength: 32
+            enum:
+              - NORMAL
+              - GROUP
           total_num:
             format: int32
             type: integer
@@ -154,12 +174,12 @@ post:
           send_time:
             type: string
             description: 红包发送时间
-            example: '2015-04-21    20:00:00'
+            example: '2015-04-21 20:00:00'
             maxLength: 32
           refund_time:
             type: string
             description: 红包退款时间
-            example: '2015-04-21    23:03:00'
+            example: '2015-04-21 23:03:00'
             maxLength: 32
             nullable: true
           refund_amount:

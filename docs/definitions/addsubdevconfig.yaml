@@ -54,6 +54,9 @@ addsubdevconfig.response:
           description: 返回状态码
           example: SUCCESS
           maxLength: 16
+          enum:
+            - SUCCESS
+            - FAIL
         return_msg:
           type: string
           description: 返回信息
@@ -88,6 +91,9 @@ addsubdevconfig.response:
           description: 业务结果
           example: SUCCESS
           maxLength: 32
+          enum:
+            - SUCCESS
+            - FAIL
         sign:
           type: string
           description: 签名

@@ -72,12 +72,21 @@ post:
                 description: 交易场景
                 example: PARKING
                 maxLength: 16
+                enum:
+                  - PARKING
+                  - PARKING SPACE
+                  - GAS
+                  - HIGHWAY
+                  - BRIDGE
               jump_scene:
                 type: string
                 description: 跳转场景
                 example: H5
                 maxLength: 16
                 nullable: true
+                enum:
+                  - APP
+                  - H5
               openid:
                 type: string
                 description: 用户标识
@@ -96,6 +105,8 @@ post:
                 description: 版本号
                 example: '3.0'
                 maxLength: 16
+                enum:
+                  - '3.0'
   responses:
     '200':
       description: ''
@@ -112,6 +123,9 @@ post:
                 description: 返回状态码
                 example: SUCCESS
                 maxLength: 16
+                enum:
+                  - SUCCESS
+                  - FAIL
               return_msg:
                 type: string
                 description: 返回信息
@@ -165,6 +179,9 @@ post:
                 description: 业务结果
                 example: SUCCESS
                 maxLength: 16
+                enum:
+                  - SUCCESS
+                  - FAIL
               err_code:
                 type: string
                 description: 错误代码
@@ -189,6 +206,11 @@ post:
                 description: 用户状态
                 example: NORMAL
                 maxLength: 16
+                enum:
+                  - NORMAL
+                  - PAUSED
+                  - OVERDUE
+                  - UNAUTHORIZED
               openid:
                 type: string
                 description: 用户标识
@@ -201,6 +223,9 @@ post:
                 example: PROACTIVE
                 maxLength: 16
                 nullable: true
+                enum:
+                  - PROACTIVE
+                  - AUTOPAY
               sub_openid:
                 type: string
                 description: 用户子标识

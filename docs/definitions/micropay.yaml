@@ -243,6 +243,9 @@ micropay.response:
           description: 返回状态码
           example: SUCCESS
           maxLength: 16
+          enum:
+            - SUCCESS
+            - FAIL
         return_msg:
           type: string
           description: 返回信息
@@ -299,6 +302,9 @@ micropay.response:
           description: 业务结果
           example: SUCCESS
           maxLength: 16
+          enum:
+            - SUCCESS
+            - FAIL
         err_code:
           type: string
           description: 错误代码
@@ -335,6 +341,9 @@ micropay.response:
           description: 是否关注公众账号
           example: 'Y'
           maxLength: 1
+          enum:
+            - Y
+            - N
         trade_type:
           type: string
           description: 交易类型

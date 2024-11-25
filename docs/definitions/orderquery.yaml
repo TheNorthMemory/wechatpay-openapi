@@ -78,6 +78,9 @@ orderquery.response:
           description: 返回状态码
           example: SUCCESS
           maxLength: 16
+          enum:
+            - SUCCESS
+            - FAIL
         return_msg:
           type: string
           description: 返回信息
@@ -129,6 +132,9 @@ orderquery.response:
           description: 业务结果
           example: SUCCESS
           maxLength: 16
+          enum:
+            - SUCCESS
+            - FAIL
         err_code:
           type: string
           description: 错误代码
@@ -171,6 +177,9 @@ orderquery.response:
           description: 是否关注公众账号
           example: 'Y'
           maxLength: 1
+          enum:
+            - Y
+            - N
         sub_openid:
           type: string
           description: 用户子标识
@@ -182,6 +191,9 @@ orderquery.response:
           description: 是否关注子公众账号
           example: 'Y'
           maxLength: 1
+          enum:
+            - Y
+            - N
         trade_type:
           type: string
           description: 交易类型
@@ -192,6 +204,15 @@ orderquery.response:
           description: 交易状态
           example: SUCCESS
           maxLength: 32
+          enum:
+            - SUCCESS
+            - REFUND
+            - NOTPAY
+            - CLOSED
+            - REVOKED
+            - USERPAYING
+            - PAYERROR
+            - ACCEPT
         bank_type:
           type: string
           description: 付款银行

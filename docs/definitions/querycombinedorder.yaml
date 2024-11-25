@@ -56,6 +56,9 @@ querycombinedorder.response:
           description: 返回状态码
           example: SUCCESS
           maxLength: 16
+          enum:
+            - SUCCESS
+            - FAIL
         return_msg:
           type: string
           description: 返回信息
@@ -116,11 +119,33 @@ querycombinedorder.response:
           description: 业务结果
           example: SUCCESS
           maxLength: 16
+          enum:
+            - SUCCESS
+            - FAIL
         result_msg:
           type: string
           description: 业务结果描述
           example: OK
           maxLength: 32
+        trade_state:
+          type: string
+          description: 交易状态
+          example: SUCCESS
+          maxLength: 32
+          enum:
+            - SUCCESS
+            - REFUND
+            - NOTPAY
+            - CLOSED
+            - REVOKED
+            - USERPAYING
+            - PAYERROR
+            - ACCEPT
+        trade_state_desc:
+          type: string
+          description: 交易状态描述
+          example: 支付失败，请重新下单支付
+          maxLength: 256
         err_code:
           type: string
           description: 错误代码

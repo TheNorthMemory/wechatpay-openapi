@@ -40,11 +40,18 @@ downloadbill.request:
       example: ALL
       maxLength: 8
       nullable: true
+      enum:
+        - ALL
+        - SUCCESS
+        - REFUND
+        - RECHARGE_REFUND
     tar_type:
       type: string
       description: 压缩账单
       example: GZIP
       nullable: true
+      enum:
+        - GZIP
 downloadbill.response:
   allOf:
     - type: object
@@ -58,6 +65,8 @@ downloadbill.response:
           description: 返回状态码
           example: FAIL
           maxLength: 16
+          enum:
+            - FAIL
         return_msg:
           type: string
           description: 错误码描述

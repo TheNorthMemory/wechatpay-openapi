@@ -222,6 +222,9 @@ post:
                 type: string
                 description: 返回状态码
                 example: SUCCESS
+                enum:
+                  - SUCCESS
+                  - FAIL
               return_msg:
                 type: string
                 description: 返回信息
@@ -239,6 +242,9 @@ post:
                 type: string
                 description: 业务返回码
                 example: SUCCESS
+                enum:
+                  - SUCCESS
+                  - FAIL
               err_code:
                 type: string
                 description: 错误编码

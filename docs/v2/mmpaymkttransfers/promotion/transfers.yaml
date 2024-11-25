@@ -92,7 +92,7 @@ post:
             maxLength: 32
           scene:
             type: string
-            description: 付款场景，BRAND_REDPACKET：品牌红包，其他值或不传则默认为普通付款到零钱
+            description: 付款场景，`BRAND_REDPACKET`：品牌红包，其他值或不传则默认为普通付款到零钱
             example: BRAND_REDPACKET
             maxLength: 64
           brand_id:
@@ -124,6 +124,9 @@ post:
             description: 返回状态码
             example: SUCCESS
             maxLength: 16
+            enum:
+              - SUCCESS
+              - FAIL
           return_msg:
             type: string
             description: 返回信息
@@ -156,6 +159,9 @@ post:
             description: 业务结果
             example: SUCCESS
             maxLength: 16
+            enum:
+              - SUCCESS
+              - FAIL
           err_code:
             type: string
             description: 错误代码
@@ -181,5 +187,5 @@ post:
           payment_time:
             type: string
             description: 付款成功时间
-            example: 2015-05-19 15：26：59
+            example: '2015-05-19 15:26:59'
             maxLength: 32

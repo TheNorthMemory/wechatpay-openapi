@@ -54,8 +54,11 @@ reautowithdrawbydate.response:
         return_code:
           type: string
           description: 返回状态码
-          example: FAIL/SUCCESS
+          example: SUCCESS
           maxLength: 16
+          enum:
+            - SUCCESS
+            - FAIL
         return_msg:
           type: string
           description: 返回信息
@@ -74,6 +77,9 @@ reautowithdrawbydate.response:
           description: 业务结果
           example: FAIL
           maxLength: 16
+          enum:
+            - SUCCESS
+            - FAIL
         err_code:
           type: string
           description: 错误代码

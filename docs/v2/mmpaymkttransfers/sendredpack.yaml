@@ -102,6 +102,15 @@ post:
             example: PRODUCT_8
             maxLength: 32
             nullable: true
+            enum:
+              - PRODUCT_1 #商品促销
+              - PRODUCT_2 #抽奖
+              - PRODUCT_3 #虚拟物品兑奖
+              - PRODUCT_4 #企业内部福利
+              - PRODUCT_5 #渠道分润
+              - PRODUCT_6 #保险回馈
+              - PRODUCT_7 #彩票派奖
+              - PRODUCT_8 #税务刮奖
           risk_info:
             type: string
             description: 活动信息
@@ -130,6 +139,9 @@ post:
             description: 返回状态码
             example: SUCCESS
             maxLength: 16
+            enum:
+              - SUCCESS
+              - FAIL
           return_msg:
             type: string
             description: 返回信息
@@ -141,6 +153,9 @@ post:
             description: 业务结果
             example: SUCCESS
             maxLength: 16
+            enum:
+              - SUCCESS
+              - FAIL
           err_code:
             type: string
             description: 错误代码

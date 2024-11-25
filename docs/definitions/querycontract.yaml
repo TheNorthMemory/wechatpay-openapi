@@ -72,6 +72,9 @@ querycontract.response:
           type: string
           description: 返回状态码
           example: SUCCESS
+          enum:
+            - SUCCESS
+            - FAIL
         return_msg:
           type: string
           description: 返回信息
@@ -80,6 +83,9 @@ querycontract.response:
           type: string
           description: 业务结果
           example: SUCCESS
+          enum:
+            - SUCCESS
+            - FAIL
         mch_id:
           format: int32
           type: integer

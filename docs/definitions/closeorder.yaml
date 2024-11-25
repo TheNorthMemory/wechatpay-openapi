@@ -33,13 +33,16 @@ closeorder.request:
       type: string
       description: 签名
       example: C380BEC2BFD727A4B6845133519F3AD6
-      maxLength: 32
+      maxLength: 64
     sign_type:
       type: string
       description: 签名类型
       example: HMAC-SHA256
       maxLength: 32
       nullable: true
+      enum:
+        - MD5
+        - HMAC-SHA256
 closeorder.response:
   allOf:
     - type: object
@@ -54,6 +57,9 @@ closeorder.response:
           description: 返回状态码
           example: SUCCESS
           maxLength: 16
+          enum:
+            - SUCCESS
+            - FAIL
         return_msg:
           type: string
           description: 返回信息
@@ -89,12 +95,15 @@ closeorder.response:
           type: string
           description: 签名
           example: C380BEC2BFD727A4B6845133519F3AD6
-          maxLength: 32
+          maxLength: 64
         result_code:
           type: string
           description: 业务结果
           example: SUCCESS
           maxLength: 16
+          enum:
+            - SUCCESS
+            - FAIL
         result_msg:
           type: string
           description: 业务结果描述

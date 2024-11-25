@@ -46,12 +46,18 @@ downloadfundflow.request:
       description: 资金账户类型
       example: Basic
       maxLength: 8
+      enum:
+        - Basic
+        - Operation
+        - Fees
     tar_type:
       type: string
       description: 压缩账单
       example: GZIP
       maxLength: 8
       nullable: true
+      enum:
+        - GZIP
 downloadfundflow.response:
   allOf:
     - type: object
@@ -66,6 +72,9 @@ downloadfundflow.response:
           description: 返回状态码
           example: SUCCESS
           maxLength: 16
+          enum:
+            - SUCCESS
+            - FAIL
         return_msg:
           type: string
           description: 返回信息
@@ -83,6 +92,8 @@ downloadfundflow.response:
           description: 业务结果
           example: FAIL
           maxLength: 16
+          enum:
+            - FAIL
         err_code:
           type: string
           description: 错误代码

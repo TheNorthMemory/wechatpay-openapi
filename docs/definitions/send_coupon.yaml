@@ -95,8 +95,11 @@ send_coupon.response:
     return_code:
       type: string
       description: 返回状态码
-      example: SUCCESS或者FAIL
+      example: SUCCESS
       maxLength: 16
+      enum:
+        - SUCCESS
+        - FAIL
     return_msg:
       type: string
       description: 返回信息
@@ -132,8 +135,11 @@ send_coupon.response:
     result_code:
       type: string
       description: 业务结果
-      example: SUCCESS或者FAIL
+      example: SUCCESS
       maxLength: 16
+      enum:
+        - SUCCESS
+        - FAIL
     err_code:
       type: string
       description: 错误代码

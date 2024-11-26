@@ -12,7 +12,7 @@ interface Profitsharingmerchantratioquery
     /**
      * 查询最大分账比例(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/allocation_sp.php?chapter=25_11&index=8
+     * @link https://pay.weixin.qq.com/wiki/doc/api/allocation_sl.php?chapter=25_11&index=8
      */
     public function post(array $options = [
         'xml' => [
@@ -26,7 +26,7 @@ interface Profitsharingmerchantratioquery
     /**
      * 查询最大分账比例(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/allocation_sp.php?chapter=25_11&index=8#async
+     * @link https://pay.weixin.qq.com/wiki/doc/api/allocation_sl.php?chapter=25_11&index=8#async
      */
     public function postAsync(array $options = [
         'xml' => [

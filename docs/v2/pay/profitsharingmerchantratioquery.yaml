@@ -2,7 +2,7 @@ post:
   tags:
     - APIv2∙资金应用∙分账
   summary: 查询最大分账比例API
-  description: '服务商可以查询子商户设置的允许服务商分账的最大比例。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/allocation_sp.php?chapter=25_11&index=8)'
+  description: '服务商可以查询子商户设置的允许服务商分账的最大比例。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/allocation_sl.php?chapter=25_11&index=8)'
   consumes:
     - application/xml
   produces:
@@ -83,11 +83,6 @@ post:
                 description: 品牌主商户号
                 example: '1900000108'
                 nullable: true
-                maxLength: 32
-              transaction_id:
-                type: string
-                description: 微信订单号
-                example: '4208450740201411110007820472'
                 maxLength: 32
               max_ratio:
                 type: integer

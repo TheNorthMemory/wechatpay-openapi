@@ -54,6 +54,8 @@ post:
             description: 订单类型
             example: MCHT
             maxLength: 32
+            enum:
+              - MCHT
   responses:
     '200':
       description: ''

@@ -130,11 +130,20 @@ post:
             description: 红包状态
             example: RECEIVED
             maxLength: 16
+            enum:
+              - SENDING #发放
+              - SENT #已发放待领取
+              - FAILED #发放失败
+              - RECEIVED #已领取
+              - RFUND_ING #退款中
+              - REFUND #已退款
           send_type:
             type: string
             description: 发放类型
             example: API
             maxLength: 32
+            enum:
+              - API
           total_amount:
             format: int32
             type: integer

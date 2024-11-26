@@ -80,6 +80,8 @@ post:
             type: string
             description: 版本号。固定为1
             example: '1'
+            enum:
+              - 1
           sign_type:
             type: string
             description: 签名类型

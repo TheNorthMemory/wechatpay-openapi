@@ -74,6 +74,16 @@ post:
                 description: 海关
                 example: SHANGHAI
                 maxLength: 32
+                enum:
+                  - GUANGZHOU_ZS #广州（总署版）
+                  - HANGZHOU_ZS #杭州（总署版）
+                  - NINGBO #宁波
+                  - ZHENGZHOU_BS #郑州（保税物流中心）
+                  - CHONGQING #重庆
+                  - SHANGHAI_ZS #上海（总署版）
+                  - SHENZHEN #深圳
+                  - ZHENGZHOU_ZH_ZS #郑州综保（总署版）
+                  - TIANJIN #天津
   responses:
     '200':
       description: ''
@@ -189,6 +199,16 @@ post:
                 description: 海关
                 example: SHANGHAI
                 maxLength: 2
+                enum:
+                  - GUANGZHOU_ZS #广州（总署版）
+                  - HANGZHOU_ZS #杭州（总署版）
+                  - NINGBO #宁波
+                  - ZHENGZHOU_BS #郑州（保税物流中心）
+                  - CHONGQING #重庆
+                  - SHANGHAI_ZS #上海（总署版）
+                  - SHENZHEN #深圳
+                  - ZHENGZHOU_ZH_ZS #郑州综保（总署版）
+                  - TIANJIN #天津
               fee_type_$n:
                 type: string
                 description: 币种
@@ -224,6 +244,13 @@ post:
                 description: 状态码
                 example: UNDECLARED
                 maxLength: 2
+                enum:
+                  - NDECLARED #未申报
+                  - SUBMITTED #申报已提交（订单已经送海关，商户重新申报，并且海关还有修改接口，那么记录的状态会是这个）
+                  - PROCESSING #申报中
+                  - SUCCESS #申报成功
+                  - FAIL #申报失败
+                  - EXCEPT #海关接口异常
               explanation_$n:
                 type: string
                 description: 申报结果说明
@@ -240,11 +267,19 @@ post:
                 description: 订购人和支付人身份信息校验结果
                 example: UNCHECKED
                 maxLength: 256
+                enum:
+                  - UNCHECKED #商户未上传订购人身份信息
+                  - SAME #商户上传的订购人身份信息与支付人身份信息一致
+                  - DIFFERENT #商户上传的订购人身份信息与支付人身份信息不一致
               verify_department:
                 type: string
-                description: 验核机构
+                description: 验核机构**注：商户需将该字段取值`UNIONPAY`/`NETSUNION`/`OTHERS`映射至海关verDept字段的`1`/`2`/`3`**
                 example: UNIONPAY
                 maxLength: 16
+                enum:
+                  - UNIONPAY #银联
+                  - NETSUNION #网联
+                  - OTHERS #其他(如余额支付，零钱通支付等)
               verify_department_trade_id:
                 type: string
                 description: 验核机构交易流水号

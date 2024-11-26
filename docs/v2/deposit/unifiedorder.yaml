@@ -356,6 +356,9 @@ post:
                 description: 交易类型
                 example: JSAPI
                 maxLength: 16
+                enum:
+                  - JSAPI
+                  - APP
               prepay_id:
                 type: string
                 description: 预支付交易会话标识

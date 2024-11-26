@@ -75,6 +75,16 @@ post:
                 description: 海关
                 example: SHANGHAI
                 maxLength: 32
+                enum:
+                  - GUANGZHOU_ZS #广州（总署版）
+                  - HANGZHOU_ZS #杭州（总署版）
+                  - NINGBO #宁波
+                  - ZHENGZHOU_BS #郑州（保税物流中心）
+                  - CHONGQING #重庆
+                  - SHANGHAI_ZS #上海（总署版）
+                  - SHENZHEN #深圳
+                  - ZHENGZHOU_ZH_ZS #郑州综保（总署版）
+                  - TIANJIN #天津
               mch_customs_no:
                 type: string
                 description: 商户海关备案号
@@ -120,6 +130,8 @@ post:
                 description: 签名类型
                 example: MD5
                 maxLength: 32
+                enum:
+                  - MD5
               sign:
                 type: string
                 description: 签名
@@ -169,6 +181,13 @@ post:
                 description: 状态码
                 example: UNDECLARED
                 maxLength: 32
+                enum:
+                  - UNDECLARED #未申报
+                  - SUBMITTED #申报已提交（订单已经送海关，商户重新申报，并且海关还有修改接口，那么记录的状态会是这个）
+                  - PROCESSING #申报中
+                  - SUCCESS #申报成功
+                  - FAIL #申报失败
+                  - EXCEPT #海关接口异常
               transaction_id:
                 type: string
                 description: 微信支付订单号

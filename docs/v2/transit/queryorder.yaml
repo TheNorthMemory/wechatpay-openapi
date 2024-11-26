@@ -175,6 +175,8 @@ post:
                 description: 交易类型
                 example: PAP
                 maxLength: 16
+                enum:
+                  - PAP
               trade_state:
                 type: string
                 description: 交易状态

@@ -28,6 +28,8 @@ micro.submitupgrade.request:
           description: 接口版本号
           example: '1.0'
           maxLength: 32
+          enum:
+            - '1.0'
         mch_id:
           type: string
           description: 商户号

@@ -5,7 +5,6 @@ profitsharingfinish.request:
         name: xml
       required:
         - mch_id
-        - sub_mch_id
         - appid
         - nonce_str
         - sign

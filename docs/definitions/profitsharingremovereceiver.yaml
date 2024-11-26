@@ -5,14 +5,11 @@ profitsharingremovereceiver.request:
         name: xml
       required:
         - mch_id
-        - sub_mch_id
         - appid
         - nonce_str
         - sign
         - sign_type
         - receiver
-        - type
-        - account
       properties:
         mch_id:
           type: string

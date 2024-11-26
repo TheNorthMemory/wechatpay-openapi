@@ -37,6 +37,8 @@ micro.submit.request:
           description: 接口版本号
           example: '3.0'
           maxLength: 32
+          enum:
+            - '3.0'
         cert_sn:
           type: string
           description: 平台证书序列号

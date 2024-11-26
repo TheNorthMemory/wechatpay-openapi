@@ -9,7 +9,6 @@ micro.modifycontactinfo.request:
         - nonce_str
         - sign_type
         - sign
-        - sub_mch_id
         - cert_sn
       properties:
         version:
@@ -17,6 +16,8 @@ micro.modifycontactinfo.request:
           description: 接口版本号
           example: '1.0'
           maxLength: 32
+          enum:
+            - '1.0'
         mch_id:
           type: string
           description: 商户号
@@ -130,9 +131,6 @@ micro.modifycontactinfo.response:
     - type: object
       xml:
         name: xml
-      required:
-        - mch_id
-        - sub_mch_id
       properties:
         mch_id:
           type: string

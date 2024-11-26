@@ -132,7 +132,6 @@ post:
               - sign
               - appid
               - mch_id
-              - sub_mch_id
             properties:
               authinfo:
                 type: string

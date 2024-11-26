@@ -20,7 +20,6 @@ post:
         required:
           - appid
           - mch_id
-          - sub_mch_id
           - plan_id
           - contract_code
           - request_serial
@@ -69,6 +68,8 @@ post:
             type: string
             description: 版本号
             example: '1.0'
+            enum:
+              - '1.0'
           sign_type:
             type: string
             description: 签名类型

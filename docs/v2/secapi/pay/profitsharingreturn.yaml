@@ -3,7 +3,7 @@ post:
   tags:
     - APIv2∙资金应用∙分账
   summary: 分账回退
-  description: '此功能需要接收方在商户平台-交易中心-分账-分账接收设置下，开启同意分账回退后，才能使用。分账回退的时限是180天。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/allocation_sp.php?chapter=25_7&index=9)'
+  description: '此功能需要接收方在商户平台-交易中心-分账-分账接收设置下，开启同意分账回退后，才能使用。分账回退的时限是180天。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/allocation.php?chapter=27_7&index=8) [官方文档](https://pay.weixin.qq.com/wiki/doc/api/allocation_sp.php?chapter=25_7&index=9)'
   consumes:
     - application/xml
   produces:
@@ -19,7 +19,6 @@ post:
             name: xml
           required:
             - mch_id
-            - sub_mch_id
             - appid
             - nonce_str
             - sign
@@ -88,6 +87,8 @@ post:
               description: 回退方类型
               example: 'MERCHANT_ID'
               maxLength: 32
+              enum:
+                - MERCHANT_ID
             return_account:
               type: string
               description: 回退方账号
@@ -114,7 +115,6 @@ post:
               name: xml
             required:
               - mch_id
-              - sub_mch_id
               - appid
               - nonce_str
               - sign
@@ -161,6 +161,8 @@ post:
                 example: HMAC-SHA256
                 maxLength: 32
                 nullable: true
+                enum:
+                  - HMAC-SHA256
               order_id:
                 type: string
                 description: 微信分账单号
@@ -186,6 +188,8 @@ post:
                 description: 回退方类型
                 example: 'MERCHANT_ID'
                 maxLength: 32
+                enum:
+                  - MERCHANT_ID
               return_account:
                 type: string
                 description: 回退方账号
@@ -217,6 +221,8 @@ post:
                 enum:
                   - ACCOUNT_ABNORMAL
                   - TIME_OUT_CLOSED
+                  - PAYER_ACCOUNT_ABNORMAL
+                  - INVALID_REQUEST
               finish_time:
                 type: string
                 description: 完成时间

@@ -50,12 +50,16 @@ query_coupon_stock.request:
       example: '1.0'
       maxLength: 32
       nullable: true
+      enum:
+        - '1.0'
     type:
       type: string
       description: 协议类型
       example: XML
       maxLength: 32
       nullable: true
+      enum:
+        - XML
 query_coupon_stock.response:
   type: object
   xml:

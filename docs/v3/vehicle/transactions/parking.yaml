@@ -62,6 +62,9 @@ post:
             type: string
             description: 分账标识
             example: 'Y'
+            enum:
+              - Y
+              - N
           amount:
             type: object
             description: 订单金额

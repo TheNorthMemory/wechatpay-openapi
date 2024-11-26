@@ -41,6 +41,8 @@ querycontract.request:
           type: string
           description: 版本号
           example: '1.0'
+          enum:
+            - '1.0'
         sign:
           type: string
           description: 签名

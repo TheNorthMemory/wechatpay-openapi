@@ -5,7 +5,6 @@ profitsharingquery.request:
         name: xml
       required:
         - mch_id
-        - sub_mch_id
         - transaction_id
         - out_order_no
         - nonce_str
@@ -90,14 +89,11 @@ profitsharingquery.response:
         status:
           type: string
           description: 分账单状态
-          example: SUCCESS
+          example: FINISHED
           maxLength: 16
-        close_reason:
-          type: string
-          description: 关单原因
-          example: NO_AUTH
-          maxLength: 32
-          nullable: true
+          enum:
+            - PROCESSING
+            - FINISHED
         receivers:
           type: string
           description: 分账接收方列表`JSON`格式字符串
@@ -148,3 +144,7 @@ profitsharingquery.response:
                 result:
                   type: string
                   description: 分账结果
+                  enum:
+                    - PENDING #待分账
+                    - SUCCESS #分账成功
+                    - CLOSED #分账失败已关闭

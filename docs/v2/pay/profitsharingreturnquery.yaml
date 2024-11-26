@@ -2,7 +2,7 @@ post:
   tags:
     - APIv2∙资金应用∙分账
   summary: 回退结果查询
-  description: 商户需要核实回退结果，可调用此接口查询回退结果。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/allocation_sp.php?chapter=25_8&index=10)
+  description: 商户需要核实回退结果，可调用此接口查询回退结果。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/allocation.php?chapter=27_8&index=9) [官方文档](https://pay.weixin.qq.com/wiki/doc/api/allocation_sp.php?chapter=25_8&index=10)
   consumes:
     - application/xml
   produces:
@@ -18,7 +18,6 @@ post:
             name: xml
           required:
             - mch_id
-            - sub_mch_id
             - appid
             - nonce_str
             - sign
@@ -94,7 +93,6 @@ post:
               name: xml
             required:
               - mch_id
-              - sub_mch_id
               - appid
               - nonce_str
               - sign
@@ -160,6 +158,8 @@ post:
                 description: 回退方类型
                 example: 'MERCHANT_ID'
                 maxLength: 32
+                enum:
+                  - MERCHANT_ID
               return_account:
                 type: string
                 description: 回退方账号
@@ -191,6 +191,8 @@ post:
                 enum:
                   - ACCOUNT_ABNORMAL
                   - TIME_OUT_CLOSED
+                  - PAYER_ACCOUNT_ABNORMAL
+                  - INVALID_REQUEST
               finish_time:
                 type: string
                 description: 完成时间

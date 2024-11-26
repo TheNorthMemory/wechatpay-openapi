@@ -19,6 +19,8 @@ unifiedorder.request:
       description: 接口版本号
       example: '1.0'
       maxLength: 32
+      enum:
+        - '1.0'
     profit_sharing:
       type: string
       description: 是否指定服务商分账;Y-是，需要分账;N-否，不分账;字母要求大写，不传默认不分账
@@ -195,6 +197,9 @@ unifiedorder.request:
       example: 'Y'
       maxLength: 8
       nullable: true
+      enum:
+        - Y
+        - N
     scene_info:
       xml:
         x-cdata: true

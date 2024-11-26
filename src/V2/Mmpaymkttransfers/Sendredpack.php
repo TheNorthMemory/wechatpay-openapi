@@ -18,6 +18,8 @@ interface Sendredpack
         'xml' => [
             'mch_billno' => '10000098201411111234567890',
             'mch_id' => '10000098',
+            'sub_mch_id' => '10000090',
+            'msgappid' => 'wx8888888888888888',
             'wxappid' => 'wx8888888888888888',
             'send_name' => '天虹百货',
             're_openid' => 'oxTWIuGaIt6gTKsQRLau2M0yL16E',
@@ -42,6 +44,8 @@ interface Sendredpack
         'xml' => [
             'mch_billno' => '10000098201411111234567890',
             'mch_id' => '10000098',
+            'sub_mch_id' => '10000090',
+            'msgappid' => 'wx8888888888888888',
             'wxappid' => 'wx8888888888888888',
             'send_name' => '天虹百货',
             're_openid' => 'oxTWIuGaIt6gTKsQRLau2M0yL16E',

@@ -2,7 +2,7 @@ post:
   tags:
     - APIv2∙资金应用∙分账
   summary: 删除分账接收方
-  description: '服务商代子商户发起删除分账接收方请求，删除后不支持将结算后的钱分到该分账接收方。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/allocation_sl.php?chapter=25_4&index=5)'
+  description: '服务商代子商户发起删除分账接收方请求，删除后不支持将结算后的钱分到该分账接收方。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/allocation.php?chapter=27_4&index=5) [官方文档](https://pay.weixin.qq.com/wiki/doc/api/allocation_sl.php?chapter=25_4&index=5)'
   consumes:
     - application/xml
   produces:

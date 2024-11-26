@@ -17,7 +17,7 @@ interface Paywwsptrans2pocket
     public function post(array $options = [
         'xml' => [
             'appid' => 'wx8888888888888888',
-            'mchid' => '1900000109',
+            'mch_id' => '1900000109',
             'device_info' => '013467007045764',
             'partner_trade_no' => '10000098201411111234567890',
             'openid' => 'oxTWIuGaIt6gTKsQRLau2M0yL16E',
@@ -44,7 +44,7 @@ interface Paywwsptrans2pocket
     public function postAsync(array $options = [
         'xml' => [
             'appid' => 'wx8888888888888888',
-            'mchid' => '1900000109',
+            'mch_id' => '1900000109',
             'device_info' => '013467007045764',
             'partner_trade_no' => '10000098201411111234567890',
             'openid' => 'oxTWIuGaIt6gTKsQRLau2M0yL16E',

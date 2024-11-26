@@ -18,7 +18,7 @@ post:
           name: xml
         required:
           - appid
-          - mchid
+          - mch_id
           - nonce_str
           - sign
           - partner_trade_no
@@ -33,7 +33,7 @@ post:
             description: 公众账号appid
             example: wx8888888888888888
             maxLength: 128
-          mchid:
+          mch_id:
             type: string
             description: 商户号
             example: '1900000109'
@@ -95,7 +95,7 @@ post:
           workwx_sign:
             type: string
             required: true
-            description: 活动信息
+            description: 企业微信签名
             example: C380BEC2BFD727A4B6845133519F3AD6
             maxLength: 32
           ww_msg_type:
@@ -110,7 +110,7 @@ post:
           approval_number:
             type: string
             required: true
-            description: 付款消息类型
+            description: 审批单号
             example: '201705160008'
           approval_type:
             type: number
@@ -162,7 +162,7 @@ post:
             description: 公众账号appid
             example: wx8888888888888888
             maxLength: 128
-          mchid:
+          mch_id:
             type: string
             description: 商户号
             example: '1900000109'

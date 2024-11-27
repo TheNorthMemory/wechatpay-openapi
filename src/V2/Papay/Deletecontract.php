@@ -23,6 +23,8 @@ interface Deletecontract
             'contract_id' => 'Wx15463511252015071056489715',
             'contract_termination_remark' => '解约原因',
             'version' => '1.0',
+            'sub_appid' => '',
+            'sub_mch_id' => '',
         ],
         'nonceless' => true,
     ]): ResponseInterface;
@@ -41,6 +43,8 @@ interface Deletecontract
             'contract_id' => 'Wx15463511252015071056489715',
             'contract_termination_remark' => '解约原因',
             'version' => '1.0',
+            'sub_appid' => '',
+            'sub_mch_id' => '',
         ],
         'nonceless' => true,
     ]): PromiseInterface;

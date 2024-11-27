@@ -7,7 +7,7 @@ info:
     整理自[官方文档中心](https://pay.weixin.qq.com/wiki/doc/apiv3/index.shtml)
     本[项目/工具地址](https://github.com/TheNorthMemory/wechatpay-openapi)
     **访问第一次加载比较慢，请耐心等待大约1-2分钟不等(小文件下载比较多)。**
-  version: 0.15.37
+  version: 0.15.38
 schemes:
   - https
 consumes:
@@ -266,6 +266,10 @@ paths:
     $ref: ./v2/papay/entrustweb.yaml
   /papay/h5entrustweb:
     $ref: ./v2/papay/h5entrustweb.yaml
+  /papay/partner/querycontract:
+    $ref: ./v2/papay/partner/querycontract.yaml
+  /papay/preentrustweb:
+    $ref: ./v2/papay/preentrustweb.yaml
   /papay/querycontract:
     $ref: ./v2/papay/querycontract.yaml
   /pay/closecombinedorder:
@@ -300,8 +304,6 @@ paths:
     $ref: ./v2/pay/partner/pappayapply.yaml
   /pay/partner/preentrustweb:
     $ref: ./v2/pay/partner/preentrustweb.yaml
-  /pay/partner/querycontract:
-    $ref: ./v2/pay/partner/querycontract.yaml
   /pay/profitsharingaddreceiver:
     $ref: ./v2/pay/profitsharingaddreceiver.yaml
   /pay/profitsharingmerchantratioquery:

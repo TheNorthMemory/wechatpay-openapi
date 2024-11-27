@@ -65,6 +65,16 @@ get:
       type: string
       description: 签名
       example: C380BEC2BFD727A4B6845133519F3AD6
+    - name: sign_type
+      in: query
+      type: string
+      description: 签名类型
+      nullable: true
+      example: HMAC-SHA256
+      default: HMAC-SHA256
+      enum:
+        - HMAC-SHA256
+        - MD5
     - name: timestamp
       in: query
       type: string

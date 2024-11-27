@@ -74,7 +74,6 @@ post:
             type: string
             description: 签名类型
             example: MD5
-            nullable: true
             default: MD5
             enum:
               - MD5

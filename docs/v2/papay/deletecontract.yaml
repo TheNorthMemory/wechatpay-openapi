@@ -12,9 +12,13 @@ post:
       in: body
       required: true
       schema:
-        $ref: '../../definitions/deletecontract.yaml#/deletecontract.request'
+        allOf:
+          - $ref: '../../definitions/deletecontract.yaml#/deletecontract.request'
+          - $ref: '../../definitions/wxpay.service.yaml#/serviceprovider.subs'
   responses:
     '200':
       description: ''
       schema:
-        $ref: '../../definitions/deletecontract.yaml#/deletecontract.response'
+        allOf:
+          - $ref: '../../definitions/deletecontract.yaml#/deletecontract.response'
+          - $ref: '../../definitions/wxpay.service.yaml#/serviceprovider.subs'

@@ -3,9 +3,11 @@
 namespace WeChatPay\OpenAPI\V2;
 
 /**
+ * @property-read Papay\Partner $partner
  * @property-read Papay\Deletecontract $deletecontract
  * @property-read Papay\Entrustweb $entrustweb
  * @property-read Papay\H5entrustweb $h5entrustweb
+ * @property-read Papay\Preentrustweb $preentrustweb
  * @property-read Papay\Querycontract $querycontract
  */
 interface Papay

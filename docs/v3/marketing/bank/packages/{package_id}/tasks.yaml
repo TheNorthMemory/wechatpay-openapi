@@ -23,8 +23,8 @@ post:
     - name: meta
       in: formData
       type: string
-      format: json
-      description: 文件元信息
+      format: jsonObjectLike
+      description: 文件元信息`JSON`格式字符串
       schema:
         type: object
         required:

@@ -97,8 +97,17 @@ post:
                   licence_valid_date:
                     type: string
                     format: jsonArrayLike
-                    description: 营业执照有效日期
+                    description: 营业执照有效日期`JSON`格式字符串
                     example: '["1970-01-01","forever"]'
+                    x-json:
+                      type: array
+                      x-key: period
+                      description: 岂止日期
+                      example:
+                        - 1970-01-01
+                        - forever
+                      items:
+                        type: string
               certificate_info:
                 type: object
                 description: 登记证书
@@ -125,8 +134,17 @@ post:
                   cert_valid_date:
                     type: string
                     format: jsonArrayLike
-                    description: 营业执照有效日期
+                    description: 营业执照有效日期`JSON`格式字符串
                     example: '["1970-01-01","forever"]'
+                    x-json:
+                      type: array
+                      x-key: period
+                      description: 岂止日期
+                      example:
+                        - 1970-01-01
+                        - forever
+                      items:
+                        type: string
               company_prove_copy:
                 type: string
                 format: MediaId
@@ -209,8 +227,17 @@ post:
               identification_valid_date:
                 type: string
                 format: jsonArrayLike
-                description: 证件有效日期
+                description: 证件有效日期`JSON`格式字符串
                 example: '["1970-01-01","forever"]'
+                x-json:
+                  type: array
+                  x-key: period
+                  description: 岂止日期
+                  example:
+                    - 1970-01-01
+                    - forever
+                  items:
+                    type: string
               identification_address:
                 type: string
                 format: base64

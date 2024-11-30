@@ -67,8 +67,17 @@ post:
               business_time:
                 type: string
                 format: jsonArrayLike
-                description: 营业期限
+                description: 营业期限`JSON`格式字符串
                 example: '["2014-01-01","长期"]'
+                x-json:
+                  type: array
+                  x-key: period
+                  description: 岂止日期
+                  example:
+                    - 2014-01-01
+                    - 长期
+                  items:
+                    type: string
           finance_institution_info:
             type: object
             description: 金融机构许可证信息

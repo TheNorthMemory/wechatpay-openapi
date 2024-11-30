@@ -14,8 +14,8 @@ post:
       in: formData
       required: true
       type: string
-      format: json
-      description: 电子小票上传信息
+      format: jsonObjectLike
+      description: 电子小票上传信息`JSON`格式字符串
       schema:
         type: object
         properties:

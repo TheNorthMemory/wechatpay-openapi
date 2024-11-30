@@ -9,15 +9,46 @@ get:
     - name: partner
       in: query
       type: string
-      format: json
-      description: 合作方信息
+      format: jsonObjectLike
+      description: 合作方信息`JSON`格式字符串
       default: '{"type":"APPID","appid":"wx4e1916a585d1f4e9"}'
+      x-json:
+        type: object
+        required: [type]
+        description: 合作方信息
+        properties:
+          type:
+            type: string
+            description: 合作方类别
+            enum:
+              - APPID
+              - MERCHANT
+          appid:
+            type: string
+            description: 合作方APPID
+          merchant_id:
+            type: string
+            description: 合作方商户ID
     - name: authorized_data
       in: query
       type: string
-      format: json
-      description: 被授权数据
+      format: jsonObjectLike
+      description: 被授权数据`JSON`格式字符串
       default: '{"business_type":"FAVOR_STOCK","stock_id":"2433405"}'
+      x-json:
+        type: object
+        required: [type]
+        description: 被授权数据
+        properties:
+          business_type:
+            type: string
+            description: 授权业务类别
+            enum:
+              - FAVOR_STOCK
+              - BUSIFAVOR_STOCK
+          stock_id:
+            type: string
+            description: 授权批次ID
     - name: limit
       in: query
       type: integer

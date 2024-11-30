@@ -19,8 +19,8 @@ post:
       in: formData
       required: true
       type: string
-      format: json
-      description: 媒体文件元信息
+      format: jsonObjectLike
+      description: 媒体文件元信息`JSON`格式字符串
       schema:
         type: object
         properties:

@@ -130,8 +130,16 @@ post:
                 example: 10F World Finance Centre (South Office), 11 Canton Road, Tsim Sha Tsui, Hong Kong
               store_photos:
                 type: string
-                description: 门店照片
-                example: '[Media_id1, Media_id2, Media_id3]'
+                format: jsonArrayLike
+                description: 门店照片`JSON`格式字符串
+                example: '["Media_id1","Media_id2","Media_id3"]'
+                x-json:
+                  type: array
+                  x-key: media_id
+                  description: 媒体文件MediaId列表
+                  items:
+                    type: string
+                    format: MediaId
               mcc:
                 type: string
                 description: MCC码
@@ -314,8 +322,16 @@ put:
                 example: 10F World Finance Centre (South Office), 11 Canton Road, Tsim Sha Tsui, Hong Kong
               store_photos:
                 type: string
-                description: 门店照片
-                example: '[Media_id1, Media_id2, Media_id3]'
+                format: jsonArrayLike
+                description: 门店照片`JSON`格式字符串
+                example: '["Media_id1","Media_id2","Media_id3"]'
+                x-json:
+                  type: array
+                  x-key: media_id
+                  description: 媒体文件MediaId列表
+                  items:
+                    type: string
+                    format: MediaId
               mcc:
                 type: string
                 description: MCC码

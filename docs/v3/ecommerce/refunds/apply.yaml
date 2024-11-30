@@ -1,11 +1,12 @@
 post:
-  x-last-updated-at: 2024.07.11
+  x-last-updated-at: 2024.09.29
   x-role:
     - 电商平台
   tags:
     - 收付通∙退款
+    - 收付通∙个人收款
   summary: 退款申请API
-  description: 当交易发生之后一段时间内，由于买家或者卖家的原因需要退款时，卖家可以通过退款接口将支付款退还给买家，微信支付将在收到退款请求并且验证成功之后，按照退款规则将支付款按原路退到买家帐号上。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/refunds/chapter3_1.shtml) [官方文档](https://pay.weixin.qq.com/docs/partner/apis/ecommerce-refund/refunds/create-refund.html)
+  description: 当交易发生之后一段时间内，由于买家或者卖家的原因需要退款时，卖家可以通过退款接口将支付款退还给买家，微信支付将在收到退款请求并且验证成功之后，按照退款规则将支付款按原路退到买家帐号上。[官方文档](https://pay.weixin.qq.com/docs/merchant/apis/personal-collections/create-refund.html) [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/refunds/chapter3_1.shtml) [官方文档](https://pay.weixin.qq.com/docs/partner/apis/ecommerce-refund/refunds/create-refund.html)
   parameters:
     - name: _
       in: body
@@ -13,11 +14,17 @@ post:
       schema:
         type: object
         required:
-          - sub_mchid
           - sp_appid
           - out_refund_no
+          - combine_transaction_id
+          - transaction_id
           - amount
+          - funds_account
         properties:
+          individual_auth_id:
+            type: string
+            description: 商品单个人收款方受理授权ID
+            example: '1900000109'
           sub_mchid:
             type: string
             description: 二级商户号
@@ -30,6 +37,10 @@ post:
             type: string
             description: 二级商户APPID
             example: wx8888888888888888
+          combine_transaction_id:
+            type: string
+            description: 交易单微信支付订单号
+            example: '1217752501201407033233368018'
           transaction_id:
             type: string
             description: 微信订单号
@@ -98,6 +109,9 @@ post:
             type: string
             description: 资金账户
             example: AVAILABLE
+            enum:
+              - AVAILABLE
+              - UNSETTLED
   responses:
     200:
       schema:
@@ -202,3 +216,6 @@ post:
             type: string
             description: 退款出资商户
             example: REFUND_SOURCE_SUB_MERCHANT
+            enum:
+              - REFUND_SOURCE_SUB_MERCHANT
+              - REFUND_SOURCE_PARTNER_ADVANCE

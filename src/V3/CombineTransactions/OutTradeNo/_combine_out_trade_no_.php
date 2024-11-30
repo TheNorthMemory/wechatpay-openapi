@@ -16,7 +16,7 @@ interface _combine_out_trade_no_
      * @link https://pay.weixin.qq.com/docs/partner/apis/combine-payment/orders/query-order.html
      */
     public function get(array $options = [
-        'combine_out_trade_no' => '',
+        'combine_out_trade_no' => 'P20150806125346',
     ]): ResponseInterface;
 
     /**
@@ -25,6 +25,6 @@ interface _combine_out_trade_no_
      * @link https://pay.weixin.qq.com/docs/partner/apis/combine-payment/orders/query-order.html#async
      */
     public function getAsync(array $options = [
-        'combine_out_trade_no' => '',
+        'combine_out_trade_no' => 'P20150806125346',
     ]): PromiseInterface;
 }

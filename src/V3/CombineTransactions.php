@@ -4,9 +4,11 @@ namespace WeChatPay\OpenAPI\V3;
 
 /**
  * @property-read CombineTransactions\OutTradeNo $outTradeNo
+ * @property-read CombineTransactions\Id $id
  * @property-read CombineTransactions\App $app
  * @property-read CombineTransactions\H5 $h5
  * @property-read CombineTransactions\Jsapi $jsapi
+ * @property-read CombineTransactions\Miniprogram $miniprogram
  * @property-read CombineTransactions\Native $native
  */
 interface CombineTransactions

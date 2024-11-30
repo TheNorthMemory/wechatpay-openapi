@@ -5,7 +5,7 @@ post:
   tags:
     - 刷脸支付
   summary: 获取还款链接接口
-  description: 建议authinfo每1小时内获取一次，否则当设备断网且恰好authinfo过期，则会导致设备不可用。[官方文档](https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/access-specifications.html)
+  description: 服务商后台获取垫资的还款链接、线下向用户核实后，人工转发给还款的微信号；然后通过后台接口进行解约，让用户使用其他微信号重新签约。[官方文档](https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/k12-development-guidelines.html#_1-3-%E8%A7%A3%E7%BA%A6)
   parameters:
     - name: _
       in: body

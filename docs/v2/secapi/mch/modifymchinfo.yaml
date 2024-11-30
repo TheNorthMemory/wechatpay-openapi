@@ -3,7 +3,7 @@ post:
   tags:
     - APIv2∙风控
   summary: 银行特约商户信息修改
-  description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/api/mch_bank.php?chapter=9_27&index=2&p=9)'
+  description: '1.目前支持修改简称和客服电话，子商户修改资料成功后，需要隔30天后才能修改。2.商户简称是用户支付界面显示的商户名，必须是能清楚标识某个商户，不能乱传。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/mch_bank.php?chapter=9_27&index=2&p=9)'
   consumes:
     - application/xml
   produces:

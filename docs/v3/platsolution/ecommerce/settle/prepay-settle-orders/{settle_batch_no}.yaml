@@ -1,0 +1,54 @@
+get:
+  x-last-updated-at: 2024.11.19
+  x-role:
+    - 电商平台
+  summary: 个人收款-查询批量结算信息
+  description: '查询个人收款批量结算信息 [官方文档](https://pay.weixin.qq.com/docs/merchant/apis/personal-collections/get-prepay-settle-orders.html)'
+  parameters:
+    - name: settle_batch_no
+      in: path
+      required: true
+      type: string
+      description: 微信支付结算批次单号
+      example: '123685544886666'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - out_settle_batch_no
+          - settle_batch_no
+          - individual_auth_id
+          - description
+          - state
+          - trade_scenario
+          - create_time
+        properties:
+          out_settle_batch_no:
+            type: string
+            description: 商户结算批次单号
+          settle_batch_no:
+            type: string
+            description: 微信支付结算批次单号
+          individual_auth_id:
+            type: string
+            description: 商品单个人收款方受理授权ID
+          description:
+            type: string
+            description: 收款方描述
+          state:
+            type: string
+            description: 批次状态
+          trade_scenario:
+            type: string
+            description: 交易场景
+            enum:
+              - RECOMMERCE
+          create_time:
+            type: string
+            format: rfc3339
+            description: 批次创建时间
+          finish_time:
+            type: string
+            format: rfc3339
+            description: 批次完成时间

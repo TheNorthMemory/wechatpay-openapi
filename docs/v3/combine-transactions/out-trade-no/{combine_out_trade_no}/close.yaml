@@ -1,14 +1,14 @@
 post:
-  x-last-updated-at: 2022.03.17
+  x-last-updated-at: 2024.10.22
   x-role:
     - 电商平台
     - 服务商
-    - 直连商户
   tags:
     - 基础支付∙合单
     - 收付通∙合单
+    - 收付通∙个人收款
   summary: 合单关闭订单API
-  description: 合单支付订单只能使用此合单关单api完成关单。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/combine/chapter3_4.shtml)
+  description: 合单支付订单只能使用此合单关单api完成关单。[官方文档](https://pay.weixin.qq.com/docs/merchant/apis/personal-collections/close-order.html) [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/combine/chapter3_4.shtml)
   parameters:
     - name: combine_out_trade_no
       in: path
@@ -22,7 +22,6 @@ post:
         type: object
         required:
           - combine_appid
-          - sub_orders
         properties:
           combine_appid:
             type: string
@@ -37,7 +36,6 @@ post:
               required:
                 - mchid
                 - out_trade_no
-                - sub_mchid
               properties:
                 mchid:
                   type: string
@@ -47,6 +45,10 @@ post:
                   type: string
                   description: 子单商户订单号
                   example: '20150806125346'
+                individual_auth_id:
+                  type: string
+                  description: 商品单个人收款方受理授权ID
+                  example: '1900000109'
                 sub_mchid:
                   type: string
                   description: 二级商户号

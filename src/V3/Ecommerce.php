@@ -7,6 +7,7 @@ namespace WeChatPay\OpenAPI\V3;
  * @property-read Ecommerce\Refunds $refunds
  * @property-read Ecommerce\Profitsharing $profitsharing
  * @property-read Ecommerce\MchTransfer $mchTransfer
+ * @property-read Ecommerce\IndividualContracts $individualContracts
  * @property-read Ecommerce\Fund $fund
  * @property-read Ecommerce\CombinePapay $combinePapay
  * @property-read Ecommerce\Bill $bill

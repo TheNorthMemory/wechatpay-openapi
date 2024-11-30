@@ -1,10 +1,11 @@
 get:
-  x-last-updated-at: 2024.07.11
+  x-last-updated-at: 2024.09.29
   x-role: [电商平台]
   tags:
     - 收付通∙退款
+    - 收付通∙个人收款
   summary: 通过微信支付退款单号查询退款
-  description: 提交退款申请后，通过调用该接口查询退款状态。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/refunds/chapter3_2.shtml) [官方文档](https://pay.weixin.qq.com/docs/partner/apis/ecommerce-refund/refunds/query-refund.html)
+  description: 提交退款申请后，通过调用该接口查询退款状态。[官方文档](https://pay.weixin.qq.com/docs/merchant/apis/personal-collections/query-refund.html) [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/refunds/chapter3_2.shtml) [官方文档](https://pay.weixin.qq.com/docs/partner/apis/ecommerce-refund/refunds/query-refund.html)
   parameters:
     - name: refund_id
       in: path
@@ -12,9 +13,13 @@ get:
       description: 微信退款单号
       required: true
       example: '50000000382019052709732678859'
+    - name: individual_auth_id
+      in: query
+      type: string
+      description: 商品单个人收款方受理授权ID
+      example: '1900000109'
     - name: sub_mchid
       in: query
-      required: true
       type: string
       description: 二级商户号
       example: '1900000109'
@@ -153,7 +158,13 @@ get:
             type: string
             description: 退款出资商户
             example: REFUND_SOURCE_SUB_MERCHANT
+            enum:
+              - REFUND_SOURCE_SUB_MERCHANT
+              - REFUND_SOURCE_PARTNER_ADVANCE
           funds_account:
             type: string
             description: 资金账户
             example: UNSETTLED
+            enum:
+              - AVAILABLE
+              - UNSETTLED

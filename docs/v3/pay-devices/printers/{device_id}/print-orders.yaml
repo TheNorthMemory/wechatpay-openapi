@@ -40,8 +40,10 @@ post:
               properties:
                 key:
                   type: string
+                  description: Key字段
                 value:
                   type: string
+                  description: Value值字段
           table_list:
             type: array
             description: 表格变量列表
@@ -50,13 +52,16 @@ post:
               properties:
                 key:
                   type: string
+                  description: Key字段
                 row_list:
                   type: array
+                  description: Value值列表
                   items:
                     type: object
                     properties:
                       cell_list:
                         type: array
+                        description: 值列表
                         items:
                           type: string
   responses:

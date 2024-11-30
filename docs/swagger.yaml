@@ -7,7 +7,7 @@ info:
     整理自[官方文档中心](https://pay.weixin.qq.com/wiki/doc/apiv3/index.shtml)
     本[项目/工具地址](https://github.com/TheNorthMemory/wechatpay-openapi)
     **访问第一次加载比较慢，请耐心等待大约1-2分钟不等(小文件下载比较多)。**
-  version: 0.15.38
+  version: 0.15.39
 schemes:
   - https
 consumes:
@@ -32,6 +32,7 @@ tags:
   - name: 收付通∙支付
   - name: 收付通∙合单
   - name: 收付通∙合单代扣
+  - name: 收付通∙个人收款
   - name: 收付通∙补差
   - name: 收付通∙分账
   - name: 收付通∙转账
@@ -266,6 +267,8 @@ paths:
     $ref: ./v2/papay/entrustweb.yaml
   /papay/h5entrustweb:
     $ref: ./v2/papay/h5entrustweb.yaml
+  /papay/partner/paporderquery:
+    $ref: ./v2/papay/partner/paporderquery.yaml
   /papay/partner/querycontract:
     $ref: ./v2/papay/partner/querycontract.yaml
   /papay/preentrustweb:
@@ -512,8 +515,12 @@ paths:
     $ref: ./v3/combine-transactions/app.yaml
   /v3/combine-transactions/h5:
     $ref: ./v3/combine-transactions/h5.yaml
+  /v3/combine-transactions/id/{combine_transaction_id}:
+    $ref: ./v3/combine-transactions/id/{combine_transaction_id}.yaml
   /v3/combine-transactions/jsapi:
     $ref: ./v3/combine-transactions/jsapi.yaml
+  /v3/combine-transactions/miniprogram:
+    $ref: ./v3/combine-transactions/miniprogram.yaml
   /v3/combine-transactions/native:
     $ref: ./v3/combine-transactions/native.yaml
   /v3/combine-transactions/out-trade-no/{combine_out_trade_no}:
@@ -586,6 +593,8 @@ paths:
     $ref: ./v3/ecommerce/fund/withdraw/{withdraw_id}.yaml
   /v3/ecommerce/fund/withdraw/out-request-no/{out_request_no}:
     $ref: ./v3/ecommerce/fund/withdraw/out-request-no/{out_request_no}.yaml
+  /v3/ecommerce/individual-contracts/{openid}:
+    $ref: ./v3/ecommerce/individual-contracts/{openid}.yaml
   /v3/ecommerce/mch-transfer/authorizations:
     $ref: ./v3/ecommerce/mch-transfer/authorizations.yaml
   /v3/ecommerce/mch-transfer/authorizations/{sub_mchid}:
@@ -1450,6 +1459,10 @@ paths:
     $ref: ./v3/platsolution/ecommerce/recharges/out-recharge-no/{out_recharge_no}.yaml
   /v3/platsolution/ecommerce/recharges/out-recharge-no/{out_recharge_no}/close:
     $ref: ./v3/platsolution/ecommerce/recharges/out-recharge-no/{out_recharge_no}/close.yaml
+  /v3/platsolution/ecommerce/settle/prepay-settle-orders:
+    $ref: ./v3/platsolution/ecommerce/settle/prepay-settle-orders.yaml
+  /v3/platsolution/ecommerce/settle/prepay-settle-orders/{settle_batch_no}:
+    $ref: ./v3/platsolution/ecommerce/settle/prepay-settle-orders/{settle_batch_no}.yaml
   /v3/platsolution/mch-transfer/batches/apply:
     $ref: ./v3/platsolution/mch-transfer/batches/apply.yaml
   /v3/platsolution/mch-transfer/batches/batch-id/{batch_id}:

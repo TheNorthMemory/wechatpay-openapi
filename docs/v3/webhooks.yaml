@@ -55,6 +55,9 @@ post:
     [隔夜归还保险订单状态变化通知](https://pay.weixin.qq.com/docs/merchant/apis/hire-power-bank-insurance/insurance-orders/status-change-notice.html)
     [平台收付通商家充值-充值结果通知](https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-recharge/notification/recharge-notice.html)
     [离线刷脸签约状态变更回调通知](https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/offline-brushing.html)
+    [个人收款-交易支付通知](https://pay.weixin.qq.com/docs/merchant/apis/personal-collections/payment-notice.html)
+    [个人收款-退款结果通知](https://pay.weixin.qq.com/docs/merchant/apis/personal-collections/refund-result.html)
+    [个人收款-结算回调通知](https://pay.weixin.qq.com/docs/merchant/apis/personal-collections/settlement-notice.html)
   parameters:
     - name: Wechatpay-Nonce
       required: true
@@ -264,6 +267,9 @@ WechatpayNotificationEventType:
     [隔夜归还保险订单状态变化通知](https://pay.weixin.qq.com/docs/merchant/apis/hire-power-bank-insurance/insurance-orders/status-change-notice.html)
     [平台收付通商家充值-充值结果通知](https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-recharge/notification/recharge-notice.html)
     [离线刷脸签约状态变更回调通知](https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/offline-brushing.html)
+    [个人收款-交易支付通知](https://pay.weixin.qq.com/docs/merchant/apis/personal-collections/payment-notice.html)
+    [个人收款-退款结果通知](https://pay.weixin.qq.com/docs/merchant/apis/personal-collections/refund-result.html)
+    [个人收款-结算回调通知](https://pay.weixin.qq.com/docs/merchant/apis/personal-collections/settlement-notice.html)
   enum:
     # @see                        [会员积分服务授权通知](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter8_6_6.shtml)
     - MALL_AUTH.ACTIVATE_CARD     #会员积分服务授权通知
@@ -277,6 +283,7 @@ WechatpayNotificationEventType:
     # @see                        [直连商户委托代扣支付成功结果通知](https://pay.weixin.qq.com/docs/merchant/apis/entrusted-payment/deduct-result-notify.html)
     # @see                        [服务商委托代扣支付成功结果通知](https://pay.weixin.qq.com/docs/partner/apis/entrusted-payment/deduct-result-notify.html)
     # @see                        [保险业委托代扣支付成功结果通知](https://pay.weixin.qq.com/docs/merchant/apis/insurance-entrusted-payment/deduct-result-notify.html)
+    # @see                        [个人收款-交易支付通知](https://pay.weixin.qq.com/docs/merchant/apis/personal-collections/payment-notice.html)
     - TRANSACTION.SUCCESS         #保险业委托代扣支付成功结果通知
     # @see                        [直连商户委托代扣支付失败结果通知](https://pay.weixin.qq.com/docs/merchant/apis/entrusted-payment/deduct-result-notify.html)
     # @see                        [服务商委托代扣支付失败结果通知](https://pay.weixin.qq.com/docs/partner/apis/entrusted-payment/deduct-result-notify.html)
@@ -297,6 +304,7 @@ WechatpayNotificationEventType:
     - COMPLAINT.CREATE            #产生新投诉
     - COMPLAINT.STATE_CHANGE      #投诉状态变化
     # @see                        [退款结果通知](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/refunds/chapter3_3.shtml)
+    # @see                        [个人收款-退款结果通知](https://pay.weixin.qq.com/docs/merchant/apis/personal-collections/refund-result.html)
     - REFUND.SUCCESS              #退款成功通知
     - REFUND.ABNORMAL             #退款异常通知
     - REFUND.CLOSED               #退款关闭通知
@@ -350,3 +358,5 @@ WechatpayNotificationEventType:
     - PAPAY.TERMINATE #解约成功通知
     # @see [离线刷脸签约状态变更回调通知](https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/offline-brushing.html)
     - FACEPAY.USER_STATE_CHANGE
+    # @see [个人收款-结算回调通知](https://pay.weixin.qq.com/docs/merchant/apis/personal-collections/settlement-notice.html)
+    - SETTLEMENT.SUCCESS

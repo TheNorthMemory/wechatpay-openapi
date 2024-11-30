@@ -3,6 +3,7 @@
 namespace WeChatPay\OpenAPI\V2\Papay;
 
 /**
+ * @property-read Partner\Paporderquery $paporderquery
  * @property-read Partner\Querycontract $querycontract
  */
 interface Partner

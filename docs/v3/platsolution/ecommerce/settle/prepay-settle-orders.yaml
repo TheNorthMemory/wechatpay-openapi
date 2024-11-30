@@ -1,0 +1,148 @@
+post:
+  x-last-updated-at: 2024.11.19
+  x-role:
+    - 电商平台
+  tags:
+    - 收付通∙个人收款
+  summary: 个人收款-申请批量结算
+  description: '申请个人收款批量结算 [官方文档](https://pay.weixin.qq.com/docs/merchant/apis/personal-collections/apply-prepay-settle-orders.html)'
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - appid
+          - out_settle_batch_no
+          - individual_auth_id
+          - notify_url
+          - description
+          - trade_scenario
+          - settle_info_list
+        properties:
+          appid:
+            type: string
+            description: 发起方AppID
+            example: WXA12368855126622
+          out_settle_batch_no:
+            type: string
+            description: 商户结算批次单号
+            example: '1236698745558870'
+          individual_auth_id:
+            type: string
+            description: 商品单个人收款方受理授权ID
+            example: '256322110225'
+          notify_url:
+            type: string
+            description: 通知地址
+            example: https://www.weixin.qq.com/wxpay/pay.php
+          description:
+            type: string
+            description: 收款方描述
+            example: 共计2笔订单，订单金额xxx元，平台服务费xxx元，合计收款xxx元
+          trade_scenario:
+            type: string
+            description: 交易场景
+            example: RECOMMERCE
+            enum:
+              - RECOMMERCE
+          settle_info_list:
+            type: array
+            description: 结算信息列表
+            items:
+              type: object
+              required:
+                - out_settle_no
+                - transaction_id
+                - settle_detail_info_list
+              properties:
+                out_settle_no:
+                  type: string
+                  description: 商户结算单号
+                  example: '12369666555136622'
+                transaction_id:
+                  type: string
+                  description: 微信支付订单号
+                  example: '4207752501201407033233368018'
+                settle_detail_info_list:
+                  type: array
+                  description: 结算明细单列表
+                  items:
+                    type: object
+                    required:
+                      - out_settle_detail_no
+                      - settle_type
+                      - receiver_type
+                      - receiver_account
+                      - amount
+                    properties:
+                      out_settle_detail_no:
+                        type: string
+                        description: 商户结算明细单号
+                        example: '123688556699666554'
+                      settle_type:
+                        type: string
+                        description: 结算类型
+                        example: RECEIVE
+                      receiver_type:
+                        type: string
+                        description: 接收方类型
+                        example: MERCHANT
+                      receiver_account:
+                        type: string
+                        description: 接收方账号
+                        example: '1234567890'
+                      amount:
+                        type: object
+                        description: 金额
+                        required:
+                          - amount
+                        properties:
+                          amount:
+                            type: number
+                            description: 金额
+                            example: 11000
+                          currency:
+                            type: string
+                            description: 币种
+                            example: CNY
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - out_settle_batch_no
+          - settle_batch_no
+          - individual_auth_id
+          - description
+          - state
+          - trade_scenario
+          - create_time
+        properties:
+          out_settle_batch_no:
+            type: string
+            description: 商户结算批次单号
+          settle_batch_no:
+            type: string
+            description: 微信支付结算批次单号
+          individual_auth_id:
+            type: string
+            description: 商品单个人收款方受理授权ID
+          description:
+            type: string
+            description: 收款方描述
+          state:
+            type: string
+            description: 批次状态
+          trade_scenario:
+            type: string
+            description: 交易场景
+          create_time:
+            type: string
+            format: rfc3339
+            description: 批次创建时间
+          finish_time:
+            type: string
+            format: rfc3339
+            description: 批次完成时间

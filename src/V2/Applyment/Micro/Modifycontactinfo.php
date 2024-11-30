@@ -12,6 +12,7 @@ interface Modifycontactinfo
     /**
      * 修改联系信息(同步模式)
      * @param array<string,mixed> $options
+     * @deprecated - since 2020.04.13
      * @link https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=21_4
      */
     public function post(array $options = [
@@ -31,6 +32,7 @@ interface Modifycontactinfo
     /**
      * 修改联系信息(异步模式)
      * @param array<string,mixed> $options
+     * @deprecated - since 2020.04.13
      * @link https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=21_4#async
      */
     public function postAsync(array $options = [

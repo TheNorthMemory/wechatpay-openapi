@@ -17,6 +17,7 @@ interface _refund_id_
     public function get(array $options = [
         'refund_id' => '50000000382019052709732678859',
         'query' => [
+            'individual_auth_id' => '1900000109',
             'sub_mchid' => '1900000109',
         ],
     ]): ResponseInterface;
@@ -29,6 +30,7 @@ interface _refund_id_
     public function getAsync(array $options = [
         'refund_id' => '50000000382019052709732678859',
         'query' => [
+            'individual_auth_id' => '1900000109',
             'sub_mchid' => '1900000109',
         ],
     ]): PromiseInterface;

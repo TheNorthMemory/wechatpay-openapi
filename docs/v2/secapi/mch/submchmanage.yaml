@@ -3,7 +3,7 @@ post:
   tags:
     - APIv2∙风控
   summary: 银行特约商户录入/银行特约商户资料查询
-  description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/api/mch_bank.php?chapter=9_22&index=3&p=9)'
+  description: '银行服务商接入微信支付前需要将下属特约商户基本资料信息报备给微信，在微信支付侧生成特约商户识别码后方可提交微信支付。特约商户识别码是区分子商户交易、结算和清分的标志。提供给银行服务商报备后的商户查询。通过MCHID（识别码），返回商户全部资料信息。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/mch_bank.php?chapter=9_21&index=3&p=9) [官方文档](https://pay.weixin.qq.com/wiki/doc/api/mch_bank.php?chapter=9_22&index=3&p=9)'
   consumes:
     - application/xml
   produces:

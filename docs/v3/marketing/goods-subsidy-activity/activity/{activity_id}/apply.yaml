@@ -33,6 +33,7 @@ post:
               properties:
                 store_info:
                   type: object
+                  description: 门店信息
                   properties:
                     store_id:
                       type: string
@@ -62,6 +63,7 @@ post:
               properties:
                 store_info:
                   type: object
+                  description: 门店信息
                   properties:
                     store_id:
                       type: string
@@ -83,6 +85,7 @@ post:
               properties:
                 store_info:
                   type: object
+                  description: 门店信息
                   properties:
                     store_id:
                       type: string

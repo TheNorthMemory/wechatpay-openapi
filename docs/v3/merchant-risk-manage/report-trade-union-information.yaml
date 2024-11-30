@@ -94,6 +94,7 @@ post:
             example: 1
           recharge_fields:
             type: object
+            description: 充值业务场景独有字段
             properties:
               account_type:
                 type: integer
@@ -101,9 +102,11 @@ post:
                 example: 1
               account:
                 type: string
+                description: 充值账号
                 example: example_account
           living_expenses_fields:
             type: object
+            description: 生活缴费场景独有字段
             properties:
               acc_no:
                 type: string

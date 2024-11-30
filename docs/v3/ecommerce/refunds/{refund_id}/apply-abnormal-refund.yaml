@@ -1,9 +1,10 @@
 post:
-  x-last-updated-at: 2024.09.27
+  x-last-updated-at: 2024.10.15
   x-role:
     - 电商平台
   tags:
     - 收付通∙退款
+    - 收付通∙个人收款
   summary: 发起异常退款
   description: 提交退款申请后，查询退款确认状态为退款异常，可调用此接口发起异常退款处理。支持退款至用户、退款至交易商户银行账户两种处理方式。 [官方文档](https://pay.weixin.qq.com/docs/partner/apis/ecommerce-refund/refunds/create-abnormal-refund.html)
   parameters:
@@ -80,8 +81,6 @@ post:
           - out_refund_no
           - transaction_id
           - out_trade_no
-          - channel
-          - user_received_account
           - create_time
           - status
           - amount
@@ -122,10 +121,14 @@ post:
             type: string
             description: 退款状态
             example: SUCCESS
+            $ref: '../../../../definitions/Enumerations.yaml#RefundStatus'
           funds_account:
             type: string
             description: 资金账户
             example: UNSETTLED
+            enum:
+              - AVAILABLE
+              - UNSETTLED
           amount:
             type: object
             description: 金额信息

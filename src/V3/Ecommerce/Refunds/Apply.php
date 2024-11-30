@@ -16,9 +16,11 @@ interface Apply
      */
     public function post(array $options = [
         'json' => [
+            'individual_auth_id' => '1900000109',
             'sub_mchid' => '1900000109',
             'sp_appid' => 'wx8888888888888888',
             'sub_appid' => 'wx8888888888888888',
+            'combine_transaction_id' => '1217752501201407033233368018',
             'transaction_id' => '1217752501201407033233368018',
             'out_trade_no' => '1217752501201407033233368018',
             'out_refund_no' => '1217752501201407033233368018',
@@ -45,9 +47,11 @@ interface Apply
      */
     public function postAsync(array $options = [
         'json' => [
+            'individual_auth_id' => '1900000109',
             'sub_mchid' => '1900000109',
             'sp_appid' => 'wx8888888888888888',
             'sub_appid' => 'wx8888888888888888',
+            'combine_transaction_id' => '1217752501201407033233368018',
             'transaction_id' => '1217752501201407033233368018',
             'out_trade_no' => '1217752501201407033233368018',
             'out_refund_no' => '1217752501201407033233368018',

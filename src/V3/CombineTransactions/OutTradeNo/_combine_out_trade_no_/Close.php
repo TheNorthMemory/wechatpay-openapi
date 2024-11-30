@@ -21,6 +21,7 @@ interface Close
             'sub_orders' => [[
                 'mchid' => '1900000109',
                 'out_trade_no' => '20150806125346',
+                'individual_auth_id' => '1900000109',
                 'sub_mchid' => '1900000109',
                 'sub_appid' => 'wxd678efh567hg6999',
             ],],
@@ -39,6 +40,7 @@ interface Close
             'sub_orders' => [[
                 'mchid' => '1900000109',
                 'out_trade_no' => '20150806125346',
+                'individual_auth_id' => '1900000109',
                 'sub_mchid' => '1900000109',
                 'sub_appid' => 'wxd678efh567hg6999',
             ],],

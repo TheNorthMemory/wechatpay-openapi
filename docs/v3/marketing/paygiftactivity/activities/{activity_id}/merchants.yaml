@@ -14,9 +14,13 @@ get:
     - name: offset
       in: query
       type: integer
+      description: 分页页码
+      example: 0
     - name: limit
       in: query
       type: integer
+      description: 分页大小
+      example: 20
   responses:
     200:
       schema:
@@ -24,24 +28,35 @@ get:
         properties:
           offset:
             type: integer
+            description: 分页页码
+            example: 0
           limit:
             type: integer
+            description: 分页大小
+            example: 20
           total_count:
             type: integer
+            description: 总数
           activity_id:
             type: string
+            description: 活动id
           data:
             type: array
+            description: 结果集
             items:
               type: object
               properties:
                 mchid:
                   type: string
+                  description: 商户号
                 merchant_name:
                   type: string
+                  description: 商户名称
                 create_time:
                   type: string
                   format: rfc3339
+                  description: 创建时间
                 update_time:
                   type: string
                   format: rfc3339
+                  description: 更新时间

@@ -29,29 +29,43 @@ post:
             example: '500001'
           finish_type:
             type: integer
+            description: 标识用户订单使用情况
+            enum:
+              - 1
+              - 2
           cancel_reason:
             type: string
+            description: 取消订单的原因
           real_service_start_time:
             type: string
+            description: 实际服务开始时间
           real_service_end_time:
             type: string
+            description: 服务结束时间
           real_service_end_location:
             type: string
+            description: 实际结束使用服务的地点
           fees:
             type: array
+            description: 后付费，描述付费项目列表
             items:
               type: object
               properties:
                 fee_name:
                   type: string
+                  description: 付费项目名称
                 fee_count:
                   type: integer
+                  description: 付费项目数量
                 fee_amount:
                   type: integer
+                  description: 付费项目总金额
                 fee_desc:
                   type: string
+                  description: 描述计费规则
           discounts:
             type: array
+            description: 商户优惠，最多包含5条商户优惠
             items:
               type: object
               properties:
@@ -62,16 +76,20 @@ post:
                   example: 满20减1元
                 discount_amount:
                   type: integer
+                  description: 商品优惠金额
                 discount_desc:
                   type: string
                   description: 优惠说明
                   example: 不与其他优惠叠加
           total_amount:
             type: integer
+            description: 总金额(大于等于0的数字，单位为分)
           finish_ticket:
             type: string
+            description: 完结凭证
           profit_sharing:
             type: boolean
+            description: 是否指定商户分账
   responses:
     200:
       schema:

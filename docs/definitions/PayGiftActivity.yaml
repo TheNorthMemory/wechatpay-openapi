@@ -4,22 +4,28 @@ ActivityBase:
   properties:
     activity_base_info:
       type: object
+      description: 活动基本信息
       required: [activity_name, activity_second_title, merchant_logo_url, out_request_no, delivery_purpose]
       properties:
         activity_name:
           type: string
+          description: 活动名称
         activity_second_title:
           type: string
+          description: 活动副标题
         merchant_logo_url:
           type: string
+          description: 商户logo
         background_color:
           $ref: './Enumerations.yaml#BackgroundColor'
         begin_time:
           type: string
           format: rfc3339
+          description: 活动开始时间
         end_time:
           type: string
           format: rfc3339
+          description: 活动结束时间
         available_periods:
           $ref: '#AvailablePeriods'
         out_request_no:
@@ -30,31 +36,44 @@ ActivityBase:
           $ref: './Enumerations.yaml#DeliveryPurpose'
         mini_programs_appid:
           type: string
+          description: 商家小程序appid
         mini_programs_path:
           type: string
+          description: 商家小程序path
     advanced_setting:
       type: object
+      description: 活动高级设置
       properties:
         delivery_user_category:
           $ref: './Enumerations.yaml#AwardType'
         merchant_member_appid:
           type: string
-        payment_mode:  #未明晰参数
+          description: 商家会员appid
+        payment_mode:
           type: object
+          description: 支付模式
           properties:
             payment_scene_list:
               type: array
+              description: 支付场景列表
               items:
                 $ref: './Enumerations.yaml#PaymentScene'
             payment_method_information:
               type: object
+              description: 支付方式信息
               properties:
                 payment_method:
                   type: string
+                  description: 支付方式
+                  enum:
+                    - CFT
+                    - SPECIFIC_BANK_CARD
                 bank_abbreviation:
                   type: string
+                  description: 银行简称
         goods_tags:
           type: array
+          description: 订单优惠标记
           items:
             type: string
 StepSendRuleBase:
@@ -69,31 +88,38 @@ FullSendRuleBase:
   allOf:
     - $ref: '#StepSendRuleBase'
     - type: object
+      description: 满送活动奖品发放规则
       required: [transaction_amount_minimum, send_content]
       properties:
         transaction_amount_minimum:
           type: integer
+          description: 消费金额门槛
         send_content:
           $ref: './Enumerations.yaml#SendContent'
         award_list:
           type: array
+          description: 奖品基本信息列表
           items:
             type: object
             properties:
               stock_id:
                 type: string
+                description: 代金券批次Id
               original_image_url:
                 type: string
                 format: MediaUrl
+                description: 奖品原始图（大图）
               thumbnail_url:
                 type: string
                 format: MediaUrl
+                description: 奖品缩略图（小图）
 AvailablePeriods:
   type: object
   description: 可用时间段
   properties:
     available_time:
       type: array
+      description: 可用时间
       items:
         type: object
         properties:
@@ -107,6 +133,7 @@ AvailablePeriods:
             description: 可用结束时间
     available_day_time:
       type: array
+      description: 每日可用时间
       items:
         type: object
         properties:

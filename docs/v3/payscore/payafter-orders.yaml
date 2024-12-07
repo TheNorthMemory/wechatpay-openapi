@@ -30,30 +30,41 @@ post:
           service_start_time:
             type: string
             pattern: /\d{8}|\d{14}|OnAccept/
+            description: 用户下单时确认的服务开始时间
           service_end_time:
             type: string
             pattern: /\d{8}|\d{14}/
+            description: 用户下单时确定的预计服务结束时间
           service_start_location:
             type: string
+            description: 开始使用服务的地点
           service_end_location:
             type: string
+            description: 预计服务结束的地点
           service_introduction:
             type: string
+            description: 服务信息，用于介绍本订单所提供的服务
           fees:
             type: array
+            description: 后付费，描述付费项目列表
             items:
               type: object
               properties:
                 fee_name:
                   type: string
+                  description: 付费项目名称
                 fee_count:
                   type: integer
+                  description: 付费项目数量
                 fee_amount:
                   type: integer
+                  description: 付费项目总金额
                 fee_desc:
                   type: string
+                  description: 描述计费规则
           discounts:
             type: array
+            description: 商户优惠，最多包含5条商户优惠
             items:
               type: object
               properties:
@@ -68,24 +79,33 @@ post:
                   example: 不与其他优惠叠加
           risk_amount:
             type: integer
+            description: 订单风险金额
           attach:
             type: string
+            description: 商户自定义说明,可存放本订单所需信息
           need_user_confirm:
             type: boolean
+            default: true
+            description: 使用需用户确认订单类型
           openid:
             type: string
+            description: 微信用户在商户对应appid下的唯一标识
           name:
             type: string
             format: base64
+            description: 用户姓名
           phone:
             type: string
             format: base64
+            description: 用户手机号
           userid:
             type: string
             format: base64
+            description: 用户身份证ID
           address:
             type: string
             format: base64
+            description: 用户收货地址
   responses:
     '200':
       description: ''
@@ -98,6 +118,7 @@ post:
             example: wxd678efh567hg6787
           mchid:
             type: string
+            description: 商户号
           out_order_no:
             type: string
             description: 商户服务订单号
@@ -108,16 +129,23 @@ post:
             example: '500001'
           order_id:
             type: string
+            description: 微信支付服务订单号
           miniprogram_businesstype:
             type: string
+            description: 小程序跳转businessType
+            example: wxpayScoreUse
           miniprogram_appid:
             type: string
+            description: 小程序跳转appid，在商户小程序跳转到微信侧小程序流程需要用到
           miniprogram_path:
             type: string
+            description: 小程序跳转路径
           miniprogram_username:
             type: string
+            description: 小程序跳转username，在商户APP跳转微信侧小程序流程需要用到
           package:
             type: string
+            description: 用于跳转到微信侧小程序订单数据,跳转到微信侧小程序传入
 get:
   x-last-updated-at: 2019.08.23
   x-role:
@@ -130,15 +158,19 @@ get:
     - name: service_id
       in: query
       type: string
+      description: 服务ID
     - name: out_order_no
       in: query
       type: string
+      description: 商户服务订单号
     - name: query_id
       in: query
       type: string
+      description: 回跳查询ID
     - name: appid
       in: query
       type: string
+      description: 公众账号ID
   responses:
     '200':
       description: ''
@@ -151,6 +183,7 @@ get:
             example: wxd678efh567hg6787
           mchid:
             type: string
+            description: 商户号
           out_order_no:
             type: string
             description: 商户服务订单号
@@ -170,46 +203,66 @@ get:
               - EXPIRED #订单已失效. “商户下单已受理”状态超过1小时未变动，则订单失效
           finish_type:
             type: integer
+            description: 标识用户订单使用情况
+            enum:
+              - 1
+              - 2
           service_start_time:
             type: string
             pattern: /\d{8}|\d{14}|OnAccept/
+            description: 服务开始时间
           service_end_time:
             type: string
             pattern: /\d{8}|\d{14}/
+            description: 服务结束时间
           real_service_start_time:
             type: string
             pattern: /\d{8}|\d{14}|OnAccept/
+            description: 实际服务开始时间
           real_service_end_time:
             type: string
             pattern: /\d{8}|\d{14}/
+            description: 实际服务结束时间
           pay_succ_time:
             type: string
             pattern: /\d{8}|\d{14}/
+            description: 支付完成时间
           service_start_location:
             type: string
+            description: 开始使用服务的地点
           service_end_location:
             type: string
+            description: 预计服务结束的地点
           real_service_start_location:
             type: string
+            description: 开始使用服务的地点
           real_service_end_location:
             type: string
+            description: 预计服务结束的地点
           service_introduction:
             type: string
+            description: 服务信息，用于介绍本订单所提供的服务
           fees:
             type: array
+            description: 后付费，描述付费项目列表
             items:
               type: object
               properties:
                 fee_name:
                   type: string
+                  description: 付费项目名称
                 fee_count:
                   type: integer
+                  description: 付费项目数量
                 fee_amount:
                   type: integer
+                  description: 付费项目总金额
                 fee_desc:
                   type: string
+                  description: 描述计费规则
           discounts:
             type: array
+            description: 商户优惠，最多包含5条商户优惠
             items:
               type: object
               properties:
@@ -220,19 +273,28 @@ get:
                   example: 满20减1元
                 discount_amount:
                   type: integer
+                  description: 商品优惠金额
                 discount_desc:
                   type: string
                   description: 优惠说明
                   example: 不与其他优惠叠加
           risk_amount:
             type: integer
+            description: 订单风险金额
           total_amount:
             type: integer
+            description: 总金额(大于等于0的数字，单位为分)
           attach:
             type: string
+            description: 商户自定义说明,可存放本订单所需信息
           finish_ticket:
             type: string
+            description: 用于完结订单时传入,确保订单完结时数据完整
           finish_transaction_id:
             type: string
+            description: 结单交易单号
           pay_type:
             type: string
+            description: 支付方式
+            enum:
+              - MchChannelPayType

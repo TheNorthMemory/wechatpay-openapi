@@ -16,10 +16,12 @@ Order:
       example: '500001'
     post_payments:
       type: array
+      description: 后付费项目
       items:
         $ref: '#PostPayment'
     post_discounts:
       type: array
+      description: 后付费商户优惠
       items:
         $ref: '#PostDiscount'
     time_range:
@@ -29,23 +31,35 @@ Order:
         start_time:
           type: string
           pattern: /\d{8}|\d{14}|OnAccept/
+          description: 服务开始时间
+          example: '20091225091010'
         start_time_remark:
           type: string
           maxLength: 20
+          description: 服务开始时间备注
+          example: 开始租借时间
         end_time:
           type: string
           pattern: /\d{8}|\d{14}/
+          description: 服务结束时间
+          example: '20091225121010'
         end_time_remark:
           type: string
           maxLength: 50
+          description: 服务结束时间备注
+          example: 租借结束时间
     location:
       type: object
       description: 服务位置
       properties:
         start_location:
           type: string
+          description: 服务开始地点
+          example: 嗨客时尚主题展餐厅
         end_location:
           type: string
+          description: 服务结束地点
+          example: 嗨客时尚主题展餐厅
 
 ServiceOrder:
   allOf:

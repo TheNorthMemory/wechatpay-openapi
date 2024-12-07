@@ -10,22 +10,32 @@ get:
     - name: limit
       in: query
       type: integer
+      description: 分页大小
+      example: 5
     - name: offset
       in: query
       type: integer
+      description: 分页开始位置
+      example: 10
     - name: begin_date
       in: query
       type: string
       format: date
+      description: 开始日期
       required: true
+      example: '2019-01-01'
     - name: end_date
       in: query
       type: string
       format: date
+      description: 结束日期
       required: true
+      example: '2019-01-01'
     - name: sub_mchid
       in: query
       type: string
+      description: 特约商户号
+      example: '1900012181'
   responses:
     200:
       schema:
@@ -34,33 +44,55 @@ get:
         properties:
           offset:
             type: integer
+            description: 分页开始位置
+            example: 10
           limit:
             type: integer
+            description: 分页大小
+            example: 5
           total_count:
             type: integer
+            description: 投诉总条数
+            example: 1000
           data:
             type: array
             items:
               type: object
+              description: 用户投诉信息详情
               required: [out_trade_no, complaint_time, amount, complaint_detail, complaint_state, transaction_id]
               x-is-sensitive: [payer_phone]
               properties:
                 out_trade_no:
                   type: string
+                  description: 商户订单号
+                  example: '20190906154617947762231'
                 complaint_time:
                   type: string
                   format: rfc3339
+                  description: 投诉时间
+                  example: '2015-05-20T13:29:35.120+08:00'
                 amount:
                   type: integer
+                  description: 订单金额
+                  example: 3
                 payer_phone:
                   type: string
+                  format: base64
+                  description: 投诉人联系方式
+                  example: Qe41VhP/sGdNeTHMQGlxCWiUyHu6XNO9GCYln2Luv4HhwJzZBfcL12sB+PgZcS5NhePBog30NgJ1xRaK+gbGDKwpg==
                 complaint_detail:
                   type: string
+                  description: 投诉详情
+                  example: 反馈一个重复扣费的问题
                 complaint_state:
                   $ref: '../../definitions/Enumerations.yaml#ComplaintState'
                 transaction_id:
                   type: string
+                  description: 微信订单号
+                  example: '4200000404201909069117582536'
                 frozen_end_time:
                   type: string
+                  description: 冻结结束时间
                 sub_mchid:
                   type: string
+                  description: 特约商户号

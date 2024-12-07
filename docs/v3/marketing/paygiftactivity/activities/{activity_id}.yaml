@@ -19,35 +19,41 @@ get:
             properties:
               activity_id:
                 type: string
+                description: 活动id
               activity_type:
                 $ref: '../../../../definitions/Enumerations.yaml#ActivityType'
               activity_status:
                 $ref: '../../../../definitions/Enumerations.yaml#ActivityStatus'
               creator_merchant_id:
                 type: string
+                description: 创建商户号
               belong_merchant_id:
                 type: string
+                description: 所属商户号
               pause_time:
                 type: string
                 format: rfc3339
                 example: '2018-06-08T10:34:56+08:00'
+                description: 活动暂停时间
               recovery_time:
                 type: string
                 format: rfc3339
                 example: '2018-12-08T10:34:56+08:00'
+                description: 活动恢复时间
               create_time:
                 type: string
                 format: rfc3339
+                description: 活动创建时间
               update_time:
                 type: string
                 format: rfc3339
+                description: 活动更新时间
           - $ref: '../../../../definitions/PayGiftActivity.yaml#ActivityBase'
           - type: object
             properties:
               award_send_rule:
                 type: object
+                description: 活动奖品发放规则
                 properties:
                   full_send_rule:
                       $ref: '../../../../definitions/PayGiftActivity.yaml#FullSendRuleBase'
-                  step_send_rule:
-                      $ref: '../../../../definitions/PayGiftActivity.yaml#StepSendRuleBase'

@@ -18,6 +18,8 @@ post:
         properties:
           activity_id:
             type: string
+            description: 活动id
           terminate_time:
             type: string
             format: rfc3339
+            description: 生效时间

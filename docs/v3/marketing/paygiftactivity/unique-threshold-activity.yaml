@@ -18,9 +18,11 @@ post:
                 allOf:
                   - $ref: '../../../definitions/PayGiftActivity.yaml#FullSendRuleBase'
                   - type: object
+                    description: 活动奖品发放规则
                     properties:
                       merchant_id_list:
                         type: array
+                        description: 发券商户号列表
                         items:
                           type: string
   responses:
@@ -31,6 +33,8 @@ post:
         properties:
           activity_id:
             type: string
+            description: 活动id
           create_time:
             type: string
             format: rfc3339
+            description: 创建时间

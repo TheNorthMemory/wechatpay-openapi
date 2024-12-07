@@ -19,10 +19,12 @@ post:
         properties:
           merchant_id_list:
             type: array
+            description: 发券商户号
             items:
               type: string
           add_request_no:
             type: string
+            description: 请求业务单据号
   responses:
     200:
       schema:
@@ -30,15 +32,20 @@ post:
         properties:
           activity_id:
             type: string
+            description: 活动id
           add_time:
             type: string
             format: rfc3339
+            description: 添加时间
           invalid_merchant_id_list:
             type: array
+            description: 未通过规则校验的发券商户号列表
             items:
               type: object
               properties:
                 mchid:
                   type: string
+                  description: 商户号
                 invalid_reason:
                   type: string
+                  description: 无效原因

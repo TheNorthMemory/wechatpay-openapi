@@ -37,63 +37,90 @@ get:
         properties:
           count:
             type: integer
+            description: 该次请求返回的记录条数
           limit:
             type: integer
+            default: 10
+            description: 最大记录条数
           offset:
             type: integer
+            description: 起始位置
           total_count:
             type: integer
+            description: 全部记录数量
           data:
             type: array
+            description: 结果集
             items:
               type: object
               properties:
                 welfare_trade_id:
                   type: string
+                  description: 捐赠订单号
                 appid:
                   type: string
+                  description: 应用ID
                 sub_appid:
                   type: string
+                  description: 子商户应用ID
                 brand_id:
                   type: string
+                  description: 品牌ID
                 donate_source:
                   type: string
+                  description: 捐赠来源
                   enum:
                     - MINIPROGRAM_PAY #一起捐小程序
                     - ENTRUST_PAY #一块捐插件
                 merchant_order:
                   type: string
+                  description: 商户订单
                 institution_name:
                   type: string
+                  description: 捐赠机构名称
                 business_id:
                   type: string
+                  description: 捐赠项目编号
                 business_name:
                   type: string
+                  description: 捐赠活动名称
                 success_time:
                   type: string
+                  description: 支付完成时间
                 payer:
                   type: object
+                  description: 支付者
                   properties:
                     openid:
                       type: string
+                      description: 用户标识
                     sub_openid:
                       type: string
+                      description: 用户子标识
                     avatar:
                       type: string
+                      description: 用户头像URL
                     nickname:
                       type: string
+                      description: 用户昵称
                 amount:
                   type: object
+                  description: 订单金额
                   properties:
                     total:
                       type: number
                       format: integer
+                      description: 总金额
                     payer_total:
                       type: number
                       format: integer
+                      description: 用户支付金额
                     currency:
                       type: string
+                      description: 货币类型
                     payer_currency:
                       type: string
+                      description: 用户支付币种
                 device_id:
                   type: string
+                  description: 设备编号

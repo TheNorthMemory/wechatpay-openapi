@@ -33,11 +33,13 @@ post:
               - Order_Paid #用户付款成功
           detail:
             type: object
+            description: 内容信息详情
             properties:
               paid_time:
                 type: string
                 format: yyyyMMddHHmmss
                 example: '20091225091010'
+                description: 用户通过其他方式付款成功的实际时间
   responses:
     200:
       schema:

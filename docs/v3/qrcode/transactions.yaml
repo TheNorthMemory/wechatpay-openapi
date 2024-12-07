@@ -63,6 +63,7 @@ post:
             example: https://pay.weixin.qq.com/wxpay.html
           amount:
             type: object
+            description: 订单金额信息
             properties:
               total:
                 type: integer
@@ -74,6 +75,7 @@ post:
                 example: CNY
           bus_info:
             type: object
+            description: 公交场景信息
             properties:
               start_time:
                 type: string
@@ -90,6 +92,7 @@ post:
                 example: 粤B888888
           metro_info:
             type: object
+            description: 地铁场景信息
             properties:
               start_time:
                 type: string
@@ -116,23 +119,32 @@ post:
         properties:
           appid:
             type: string
+            description: 公众账号ID
           sub_appid:
             type: string
+            description: 子商户公众账号ID
           sp_mchid:
             type: string
+            description: 商户号
           sub_mchid:
             type: string
+            description: 子商户号
           description:
             type: string
+            description: 服务描述
           create_time:
             type: string
             format: rfc3339
+            description: 订单创建时间
           out_trade_no:
             type: string
+            description: 商户订单号
           transaction_id:
             type: string
+            description: 微信支付订单号
           trade_state:
             type: string
+            description: 交易状态
             enum:
               - SUCCESS
               - ACCEPTED
@@ -140,30 +152,43 @@ post:
               - REFUND
           trade_state_description:
             type: string
+            description: 交易状态描述
           success_time:
             type: string
             format: rfc3339
+            description: 支付完成时间
           bank_type:
             type: string
+            description: 付款银行
           user_repay_state:
             type: string
+            description: 用户还款状态
             enum:
               - NOT_REPAY
               - REPAID
               - ALL_REFUND
           repay_transaction_id:
             type: string
+            description: 还款微信支付订单号
           repay_time:
             type: string
             format: rfc3339
+            description: 垫资还款时间
           attach:
             type: string
+            description: 附加数据
           contract_id:
             type: string
+            description: 代扣签约ID
           trade_scene:
             type: string
+            description: 交易场景
+            enum:
+              - BUS
+              - METRO
           bus_info:
             type: object
+            description: 公交场景信息
             properties:
               start_time:
                 type: string
@@ -177,6 +202,7 @@ post:
                 description: 车牌号。
           metro_info:
             type: object
+            description: 地铁场景信息
             properties:
               start_time:
                 type: string
@@ -194,43 +220,58 @@ post:
                 description: 乘车终点站
           amount:
             type: object
+            description: 订单金额信息
             properties:
             total:
               type: number
               format: integer
+              description: 订单金额
             payer_total:
               type: number
               format: integer
+              description: 用户实际支付金额
             currency:
               type: string
+              description: 货币类型
           promotion_detail:
             type: array
             items:
               type: object
+              description: 优惠信息
               properties:
                 coupon_id:
                   type: string
+                  description: 券ID
                 name:
                   type: string
+                  description: 优惠名称
                 scope:
                   type: string
+                  description: 优惠范围
                   enum:
                     - GLOBAL
                     - SINGLE
                 type:
                   type: string
+                  description: 优惠类型
                   enum:
                     - CASH
                     - NOCASH
                 stock_id:
                   type: string
+                  description: 活动ID
                 amount:
                   type: integer
+                  description: 优惠券面额
                 wechatpay_contribute:
                   type: integer
+                  description: 微信出资
                 merchant_contribute:
                   type: integer
+                  description: 商户出资
                 other_contribute:
                   type: integer
+                  description: 其他出资
                 currency:
                   type: string
+                  description: 优惠币种

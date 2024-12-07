@@ -42,29 +42,37 @@ get:
         properties:
           offset:
             type: integer
+            description: 分页页码
           limit:
             type: integer
+            description: 分页大小
           total_count:
             type: integer
-          activity_id:
-            type: string
+            description: 总数
           data:
             type: array
+            description: 结果集
             items:
               allOf:
                 - $ref: '../../../definitions/PayGiftActivity.yaml#ActivityBase'
                 - type: object
                   properties:
+                    activity_id:
+                      type: string
+                      description: 活动id
                     award_send_rule:
                       type: object
+                      description: 活动奖品发放规则
                       properties:
                         full_send_rule:
                           allOf:
                             - $ref: '../../../definitions/PayGiftActivity.yaml#FullSendRuleBase'
                             - type: object
+                              description: 满送活动奖品发放规则
                               properties:
                                 merchant_id_list:
                                   type: array
+                                  description: 发券商户号列表
                                   items:
                                     type: string
                         step_send_rule:

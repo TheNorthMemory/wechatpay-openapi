@@ -1,0 +1,340 @@
+post:
+  tags:
+    - APIv2∙乘车码代扣
+  summary: 申请扣款
+  description: '委托代扣可应用于定期扣款或需事后扣款以期提高效率的场景。例如公交，地铁等通过用户授权给商户，进行委托扣款的场景。注：扣费请求首先按签约协议中记录的优先支付方式扣费，否则从可用扣款方式中依次选择扣款。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/pap_sl_jt_v2.php?chapter=19_99&index=5)'
+  consumes:
+    - application/xml
+  produces:
+    - application/xml
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        allOf:
+          - type: object
+            xml:
+              name: xml
+            required:
+              - appid
+              - mch_id
+              - sub_mch_id
+              - nonce_str
+              - sign_type
+              - sign
+              - body
+              - out_trade_no
+              - total_fee
+              - spbill_create_ip
+              - notify_url
+              - trade_type
+              - version
+              - trade_scene
+              - scene_info
+            properties:
+              appid:
+                type: string
+                description: 公众账号id
+                example: wxcbda96de0b165486
+                maxLength: 32
+              sub_appid:
+                type: string
+                description: 子商户公众账号id
+                example: wxcbda96de0b165489
+                maxLength: 32
+              mch_id:
+                type: string
+                description: 商户号
+                example: '10000098'
+                maxLength: 32
+              sub_mch_id:
+                type: string
+                description: 子商户号
+                example: '1900000109'
+                maxLength: 32
+              nonce_str:
+                type: string
+                description: 随机字符串
+                example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+                maxLength: 32
+              sign_type:
+                type: string
+                description: 签名类型
+                example: HMAC-SHA256
+                maxLength: 32
+                enum:
+                  - HMAC-SHA256
+              sign:
+                type: string
+                description: 签名
+                example: EE088059BBC9141264F8D14293AD6C4BB94CEA8C08AA98FBF93E262D445F8FF5
+                maxLength: 64
+              body:
+                type: string
+                description: 商品描述
+                example: 公交代扣
+                maxLength: 128
+              detail:
+                type: string
+                description: 商品详情
+                example: 公交代扣：A 公交代扣：B 公交代扣：C
+                maxLength: 6000
+                nullable: true
+              attach:
+                type: string
+                description: 附加数据
+                example: 自定义参数
+                maxLength: 127
+                nullable: true
+              out_trade_no:
+                type: string
+                description: 商户订单号
+                example: '1217752501201407033233368018'
+                maxLength: 32
+              total_fee:
+                format: int32
+                type: integer
+                description: 总金额
+                example: '888'
+              fee_type:
+                type: string
+                description: 货币类型
+                example: CNY
+                maxLength: 16
+                nullable: true
+              spbill_create_ip:
+                type: string
+                description: 终端IP
+                example: 8.8.8.8
+                maxLength: 16
+              goods_tag:
+                type: string
+                description: 商品标记
+                example: WXG
+                maxLength: 32
+                nullable: true
+              notify_url:
+                type: string
+                description: 回调通知url
+                example: http://yoursite.com/wxpay.html
+                maxLength: 256
+              trade_type:
+                type: string
+                description: 交易类型
+                example: PAP
+                maxLength: 16
+                enum:
+                  - PAP
+              contract_id:
+                type: string
+                description: 委托代扣协议id
+                example: Wx15463511252015071056489715
+                maxLength: 32
+              trade_scene:
+                type: string
+                description: 交易场景
+                example: METRO
+                maxLength: 16
+                enum:
+                  - METRO
+                  - BUS
+              scene_info:
+                xml:
+                  x-cdata: true
+                type: string
+                description: 场景信息`JSON`格式字符串
+                example: '{"scene_info":{"start_time":"20170826114339","end_time":"20170826114339","qrcode_hash":"a437d98bbf07bdde2942c99f6a2ab88a72b60aa747fce54b093c6","start_station":"西单","end_station":"天安门西"}}'
+                maxLength: 1024
+                x-json:
+                  type: object
+                  description: 场景信息`JSON`表达式
+                  x-prop-one-of: true
+                  required:
+                    - scene_info
+                  properties:
+                    scene_info:
+                      oneOf:
+                        - type: object
+                          description: 场景`METRO`信息
+                          required:
+                            - start_time
+                          properties:
+                            start_time:
+                              type: string
+                              description: 乘车时间
+                              example: '20170826104339'
+                              maxLength: 32
+                            end_time:
+                              type: string
+                              description: 结束时间
+                              example: '20170826114339'
+                              maxLength: 32
+                            qrcode_hash:
+                              type: string
+                              description: 乘车码SHA256
+                              example: 'a756836e7432437d98bbf07bdde2942c99f6a2ab88a72b60aa747fce54b093c6'
+                              maxLength: 64
+                            start_station:
+                              type: string
+                              description: 起始站
+                              example: 西单
+                              maxLength: 32
+                            end_station:
+                              type: string
+                              description: 终点站
+                              example: 天安门西
+                              maxLength: 32
+                        - type: object
+                          description: 场景`BUS`信息
+                          required:
+                            - start_time
+                            - charging_time
+                            - space_number
+                          properties:
+                            start_time:
+                              type: string
+                              description: 乘车时间
+                              example: '20170826104339'
+                              maxLength: 32
+                            line_name:
+                              type: string
+                              description: 乘车路线
+                              example: '1路公车'
+                              maxLength: 32
+                            qrcode_hash:
+                              type: string
+                              description: 乘车码SHA256
+                              example: 'a756836e7432437d98bbf07bdde2942c99f6a2ab88a72b60aa747fce54b093c6'
+                              maxLength: 64
+                            plate_number:
+                              type: string
+                              description: 车牌号
+                              example: 粤B888888
+                              maxLength: 32
+              clientip:
+                type: string
+                description: 客户端 IP
+                example: 119.145.83.6
+              deviceid:
+                type: string
+                description: 设备ID
+                example: baf04e6bbbd06f7b1a197d18ed53b7f1
+              mobile:
+                type: string
+                description: 手机号
+                example: '18933432355'
+              email:
+                type: string
+                description: 邮箱地址
+                example: aobama@whitehouse.com
+              qq:
+                type: string
+                description: QQ号
+                example: '100243'
+              openid:
+                type: string
+                description: 微信openID
+                example: baf04e6bbbd06f7b1a197d18ed53b7f1
+              creid:
+                type: string
+                description: 身份证号
+                example: '110102199701011000'
+              outerid:
+                type: string
+                description: 商户侧用户标识
+                example: user123
+              version:
+                type: string
+                description: 版本号 此字段仅针对有垫资权限的商户有效。
+                example: '2.0'
+                maxLength: 16
+                enum:
+                  - '2.0'
+  responses:
+    '200':
+      description: ''
+      schema:
+        allOf:
+          - type: object
+            xml:
+              name: xml
+            required:
+              - return_code
+              - return_msg
+            properties:
+              return_code:
+                type: string
+                description: 返回状态码
+                enum:
+                  - SUCCESS
+                  - FAIL
+              return_msg:
+                type: string
+                description: 返回信息
+          - type: object
+            xml:
+              name: xml
+            required:
+              - appid
+              - mch_id
+              - sub_mch_id
+              - nonce_str
+              - sign
+              - result_code
+            properties:
+              appid:
+                type: string
+                description: 公众账号id
+                example: wxcbda96de0b165486
+                maxLength: 32
+              sub_appid:
+                type: string
+                example: wxcbda96de0b165489
+                description: 子商户公众账号id
+                nullable: true
+              mch_id:
+                type: string
+                description: 商户号
+                example: '10000098'
+                maxLength: 32
+              sub_mch_id:
+                type: string
+                example: '1900000109'
+                description: 子商户号
+              device_info:
+                type: string
+                description: 设备号
+                example: '013467007045764'
+                maxLength: 32
+                nullable: true
+              nonce_str:
+                type: string
+                description: 随机字符串
+                example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+                maxLength: 32
+              sign:
+                type: string
+                description: 签名
+                example: C380BEC2BFD727A4B6845133519F3AD6
+                maxLength: 64
+              result_code:
+                type: string
+                description: 业务结果
+                example: SUCCESS
+                maxLength: 16
+                enum:
+                  - SUCCESS
+                  - FAIL
+              err_code:
+                type: string
+                description: 错误代码
+                example: SIGN_ERROR
+                maxLength: 32
+                nullable: true
+              err_code_des:
+                type: string
+                description: 错误代码描述
+                example: 签名错误
+                maxLength: 32
+                nullable: true

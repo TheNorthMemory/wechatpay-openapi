@@ -1,0 +1,163 @@
+post:
+  tags:
+    - APIv2∙乘车码代扣
+  summary: 查询用户状态接口
+  description: '用于查询用户是否有欠费或黑名单用户情况，确定能否符合微信侧开通乘车卡免密支付要求。如已经开通乘车卡，则需传签约号，可确定是否符合继续使用乘车卡的要求。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/pap_jt_v2.php?chapter=19_96&index=12)'
+  consumes:
+    - application/xml
+  produces:
+    - application/xml
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        xml:
+          name: xml
+        required:
+          - appid
+          - mch_id
+          - nonce_str
+          - contract_id
+          - sign_type
+          - sign
+          - openid
+        properties:
+          appid:
+            type: string
+            example: wxcbda96de0b165486
+            description: 公众账号id
+          mch_id:
+            type: string
+            example: '10000098'
+            description: 商户号
+          nonce_str:
+            type: string
+            example: 5k8264iltkch16cq2502si8znmtm67vs
+            description: 随机字符串
+          contract_id:
+            type: string
+            example: wx15463511252015071056489715
+            description: 委托代扣协议id
+          sign_type:
+            type: string
+            example: HMAC-SHA256
+            description: 签名类型
+            enum:
+              - HMAC-SHA256
+          sign:
+            type: ee088059bbc9141264f8d14293ad6c4bb94cea8c08aa98fbf93e262d445f8ff5
+            description: 签名
+          openid:
+            type: oyobu0dmn6tdodznfwkoekqorbi8
+            description: 微信openID
+  responses:
+    '200':
+      description: ''
+      schema:
+        allOf:
+          - type: object
+            xml:
+              name: xml
+            required:
+              - return_code
+            properties:
+              return_code:
+                type: string
+                description: 返回状态码
+                example: SUCCESS
+                maxLength: 16
+                enum:
+                  - SUCCESS
+                  - FAIL
+              return_msg:
+                type: string
+                description: 返回信息
+                example: 签名失败
+                maxLength: 128
+                nullable: true
+          - type: object
+            xml:
+              name: xml
+            required:
+              - appid
+              - mch_id
+              - nonce_str
+              - sign
+              - result_code
+            properties:
+              appid:
+                type: string
+                description: 请求appid
+                example: wxcbda96de0b165486
+                maxLength: 32
+              mch_id:
+                type: string
+                description: 商户号
+                example: '10000098'
+                maxLength: 32
+              nonce_str:
+                type: string
+                description: 随机字符串
+                example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+                maxLength: 32
+              sign:
+                type: string
+                description: 签名
+                example: EE088059BBC9141264F8D14293AD6C4BB94CEA8C08AA98FBF93E262D445F8FF5
+                maxLength: 64
+              result_code:
+                type: string
+                description: 业务结果
+                example: SUCCESS
+                maxLength: 16
+                enum:
+                  - SUCCESS
+                  - FAIL
+              err_code:
+                type: string
+                description: 错误代码
+                example: SYSTEMERROR
+                maxLength: 32
+                nullable: true
+              err_code_des:
+                type: string
+                description: 错误代码描述
+                example: 系统错误
+                maxLength: 128
+                nullable: true
+          - type: object
+            xml:
+              name: xml
+            required:
+              - user_state
+            properties:
+              user_state:
+                type: string
+                description: 用户状态
+                example: NORMAL
+                maxLength: 16
+                enum:
+                  - NORMAL
+                  - BLOCKED
+                  - OVERDUE
+              contract_id:
+                type: string
+                example: wx15463511252015071056489715
+                description: 委托代扣协议id
+              plan_id:
+                type: string
+                description: 签约模板id
+                example: '123'
+              contract_code:
+                type: string
+                description: 签约协议号
+                example: '1023658866'
+              contract_state:
+                type: string
+                description: 协议状态
+                example: '1'
+                enum:
+                  - '0' #签约中
+                  - '1' #解约

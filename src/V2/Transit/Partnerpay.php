@@ -3,7 +3,9 @@
 namespace WeChatPay\OpenAPI\V2\Transit;
 
 /**
+ * @property-read Partnerpay\Payapply $payapply
  * @property-read Partnerpay\Queryorder $queryorder
+ * @property-read Partnerpay\Querystate $querystate
  */
 interface Partnerpay
 {

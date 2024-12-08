@@ -3,6 +3,7 @@
 namespace WeChatPay\OpenAPI\V2;
 
 /**
+ * @property-read Transit\Pay $pay
  * @property-read Transit\Partnerpay $partnerpay
  * @property-read Transit\Queryorder $queryorder
  */

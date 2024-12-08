@@ -1,0 +1,141 @@
+post:
+  x-last-updated-at: 2024.11.21
+  x-role:
+    - 普通商户
+  tags:
+    - 委托代扣
+  summary: 代扣预签约
+  description: 商户可调用本接口预先指定签约信息，生成预签约跳转参数，然后跳转至微信支付的页面。[官方文档](https://pay.weixin.qq.com/doc/v3/merchant/4012978414)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - sign_scene
+          - appid
+          - plan_id
+          - out_contract_code
+          - contract_display_account
+          - contract_notify_url
+          - out_user_code
+          - device_info
+        properties:
+          sign_scene:
+            type: string
+            description: 签约场景
+            example: SIGN_SCENE_APP
+            enum:
+              - SIGN_SCENE_APP
+              - SIGN_SCENE_QRCODE
+          appid:
+            type: string
+            description: 应用ID
+            example: wxd678efh567hg6787
+          openid:
+            type: string
+            description: 用户在直连商户应用下的用户标示
+            example: oYobu0MVnQfWpSMOYJz2AHPG_gQw
+          plan_id:
+            type: number
+            description: 委托代扣模板ID
+            example: 12535
+          out_contract_code:
+            type: string
+            description: 商户签约协议号
+            example: wxwtdk20200910100000
+          contract_display_account:
+            type: string
+            description: 用户账户展示名称
+            example: 微信代扣用户A
+          contract_notify_url:
+            type: string
+            description: 签约结果通知地址
+            example: https://yourapp.com/notify
+          out_user_code:
+            type: string
+            description: 商户侧用户标识
+            example: 用户A
+          return_url:
+            type: string
+            description: 回跳地址的url
+            example: https://yourapp.com/notify
+          device_info:
+            type: object
+            description: 发起预签约的用户，其设备信息
+            required:
+              - device_type
+              - device_os
+              - device_id
+              - device_running_as_root
+              - device_ip
+              - weixin_installed
+              - weixin_version
+              - days_since_first_login
+            properties:
+              device_type:
+                type: string
+                description: 设备类型
+                enum:
+                  - DEVICE_TYPE_UNKNOW #设备类型未知
+                  - DEVICE_TYPE_PHONE #手机
+                  - DEVICE_TYPE_PAD #平板
+                  - DEVICE_TYPE_TV #电视
+                  - DEVICE_TYPE_WATCH #手表
+              device_os:
+                type: string
+                description: 设备的OS版本
+                example: example_device_os
+              device_id:
+                type: string
+                description: 设备ID
+                example: example_device_id
+              device_running_as_root:
+                type: boolean
+                description: 设备是否以root身份运行
+              device_ip:
+                type: string
+                description: 设备的IP
+                example: example_device_ip
+              weixin_installed:
+                type: boolean
+                description: 设备上是否安装微信
+              weixin_version:
+                type: string
+                description: 设备上微信的版本
+                example: example_weixin_version
+              days_since_first_login:
+                type: string
+                description: 发起预签约的用户首次登录该设备的时间
+                enum:
+                  - DAYS_SINCE_FIRST_LOGIN_UNKNOW #距离现在的天数未知
+                  - DAYS_SINCE_FIRST_LOGIN_WITHIN_1_DAY #距离现在(0,1]天
+                  - DAYS_SINCE_FIRST_LOGIN_WITHIN_7_DAYS #距离现在(1,7]天
+                  - DAYS_SINCE_FIRST_LOGIN_WITHIN_30_DAYS #距离现在(7,30]天
+                  - DAYS_SINCE_FIRST_LOGIN_WITHIN_90_DAYS #距离现在(30,90]天
+                  - DAYS_SINCE_FIRST_LOGIN_WITHIN_180_DAYS #距离现在(90,180]天
+                  - DAYS_SINCE_FIRST_LOGIN_MORE_THEN_180_DAYS #距离现在大于180天
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - pre_entrustweb_id
+        properties:
+          pre_entrustweb_id:
+            type: string
+            description: 预签约ID
+            example: 5778aadY9nltAsZzXixCkFIGYnV2V
+          mini_program_username:
+            type: string
+            description: 跳转签约小程序的username
+            example: example_mini_program_username
+          mini_program_path:
+            type: string
+            description: 跳转签约小程序的path
+            example: example_mini_program_path
+          redirect_url:
+            type: string
+            description: 展示扫码签约的二维码的URL
+            example: example_redirect_url

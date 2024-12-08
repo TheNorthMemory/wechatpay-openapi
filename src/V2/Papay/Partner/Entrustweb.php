@@ -1,21 +1,21 @@
 <?php declare(strict_types=1);/* Generated file. DO NOT EDIT! */
 
-namespace WeChatPay\OpenAPI\V2\Pay\Partner;
+namespace WeChatPay\OpenAPI\V2\Papay\Partner;
 
 use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Promise\PromiseInterface;
 
 /**
  */
-interface Preentrustweb
+interface Entrustweb
 {
     /**
-     * APP纯签约(同步模式)
+     * 公众号纯签约(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter5_2.shtml
+     * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter5_1.shtml
      */
-    public function post(array $options = [
-        'xml' => [
+    public function get(array $options = [
+        'query' => [
             'appid' => 'wxcbda96de0b165486',
             'mch_id' => '1200009811',
             'sub_appid' => 'wxcbda96de0b165489',
@@ -24,22 +24,21 @@ interface Preentrustweb
             'contract_code' => '100000',
             'request_serial' => '1000',
             'contract_display_account' => '微信代扣',
-            'notify_url' => '',
+            'notify_url' => 'https://weixin.qq.com',
             'version' => '1.0',
-            'sign_type' => 'MD5',
+            'sign' => 'C380BEC2BFD727A4B6845133519F3AD6',
             'timestamp' => '1414488825',
-            'return_app' => 'Y',
+            'return_web' => '1',
         ],
-        'nonceless' => true,
     ]): ResponseInterface;
 
     /**
-     * APP纯签约(异步模式)
+     * 公众号纯签约(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter5_2.shtml#async
+     * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter5_1.shtml#async
      */
-    public function postAsync(array $options = [
-        'xml' => [
+    public function getAsync(array $options = [
+        'query' => [
             'appid' => 'wxcbda96de0b165486',
             'mch_id' => '1200009811',
             'sub_appid' => 'wxcbda96de0b165489',
@@ -48,12 +47,11 @@ interface Preentrustweb
             'contract_code' => '100000',
             'request_serial' => '1000',
             'contract_display_account' => '微信代扣',
-            'notify_url' => '',
+            'notify_url' => 'https://weixin.qq.com',
             'version' => '1.0',
-            'sign_type' => 'MD5',
+            'sign' => 'C380BEC2BFD727A4B6845133519F3AD6',
             'timestamp' => '1414488825',
-            'return_app' => 'Y',
+            'return_web' => '1',
         ],
-        'nonceless' => true,
     ]): PromiseInterface;
 }

@@ -12,7 +12,7 @@ interface _contract_id_
     /**
      * 解约(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter5_2_4.shtml
+     * @link https://wechatpay.im/openapi/v3/edu-papay/contracts/%7Bcontract_id%7D
      */
     public function delete(array $options = [
         'contract_id' => 'wx998877665544wx',
@@ -21,7 +21,7 @@ interface _contract_id_
     /**
      * 解约(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter5_2_4.shtml#async
+     * @link https://wechatpay.im/openapi/v3/edu-papay/contracts/%7Bcontract_id%7D
      */
     public function deleteAsync(array $options = [
         'contract_id' => 'wx998877665544wx',

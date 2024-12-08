@@ -12,7 +12,7 @@ interface Send
     /**
      * 向用户发券(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/products/merchant-exclusive-coupon/introduction.html
+     * @link https://wechatpay.im/openapi/v3/marketing/busifavor/coupons/send
      */
     public function post(array $options = [
         'json' => [
@@ -27,7 +27,7 @@ interface Send
     /**
      * 向用户发券(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/products/merchant-exclusive-coupon/introduction.html#async
+     * @link https://wechatpay.im/openapi/v3/marketing/busifavor/coupons/send
      */
     public function postAsync(array $options = [
         'json' => [

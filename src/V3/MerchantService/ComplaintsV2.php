@@ -13,7 +13,7 @@ interface ComplaintsV2
     /**
      * 查询投诉单列表(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_2_11.shtml
+     * @link https://wechatpay.im/openapi/v3/merchant-service/complaints-v2
      */
     public function get(array $options = [
         'query' => [
@@ -28,7 +28,7 @@ interface ComplaintsV2
     /**
      * 查询投诉单列表(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_2_11.shtml#async
+     * @link https://wechatpay.im/openapi/v3/merchant-service/complaints-v2
      */
     public function getAsync(array $options = [
         'query' => [

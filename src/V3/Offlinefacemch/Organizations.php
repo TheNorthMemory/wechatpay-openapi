@@ -13,7 +13,7 @@ interface Organizations
     /**
      * 查询机构信息接口(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/k12-development-guidelines.html
+     * @link https://wechatpay.im/openapi/v3/offlinefacemch/organizations
      */
     public function get(array $options = [
         'query' => [
@@ -25,7 +25,7 @@ interface Organizations
     /**
      * 查询机构信息接口(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/k12-development-guidelines.html#async
+     * @link https://wechatpay.im/openapi/v3/offlinefacemch/organizations
      */
     public function getAsync(array $options = [
         'query' => [

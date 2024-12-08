@@ -12,7 +12,7 @@ interface FindByToken
     /**
      * 根据凭证查询乘客行程单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/taxi-fapiao/user-taxi-order/query-user-taxi-order-by-token.html
+     * @link https://wechatpay.im/openapi/v3/taxi-invoice/user-taxi-order/find-by-token
      */
     public function get(array $options = [
         'query' => [
@@ -27,7 +27,7 @@ interface FindByToken
     /**
      * 根据凭证查询乘客行程单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/taxi-fapiao/user-taxi-order/query-user-taxi-order-by-token.html#async
+     * @link https://wechatpay.im/openapi/v3/taxi-invoice/user-taxi-order/find-by-token
      */
     public function getAsync(array $options = [
         'query' => [

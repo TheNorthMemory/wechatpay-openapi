@@ -12,7 +12,7 @@ interface Commit_status
     /**
      * 商圈会员待积分状态查询(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/smart-business-circle/points/get-points-commit-status.html
+     * @link https://wechatpay.im/openapi/v3/businesscircle/users/%7Bopenid%7D/points/commit_status
      */
     public function get(array $options = [
         'openid' => 'oUpF8uMuAJOM2pxb1Q',
@@ -26,7 +26,7 @@ interface Commit_status
     /**
      * 商圈会员待积分状态查询(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/smart-business-circle/points/get-points-commit-status.html#async
+     * @link https://wechatpay.im/openapi/v3/businesscircle/users/%7Bopenid%7D/points/commit_status
      */
     public function getAsync(array $options = [
         'openid' => 'oUpF8uMuAJOM2pxb1Q',

@@ -12,7 +12,7 @@ interface Response
     /**
      * 提交回复(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_2_14.shtml
+     * @link https://wechatpay.im/openapi/v3/merchant-service/complaints-v2/%7Bcomplaint_id%7D/response
      */
     public function post(array $options = [
         'complaint_id' => '200201820200101080076610000',
@@ -33,7 +33,7 @@ interface Response
     /**
      * 提交回复(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_2_14.shtml#async
+     * @link https://wechatpay.im/openapi/v3/merchant-service/complaints-v2/%7Bcomplaint_id%7D/response
      */
     public function postAsync(array $options = [
         'complaint_id' => '200201820200101080076610000',

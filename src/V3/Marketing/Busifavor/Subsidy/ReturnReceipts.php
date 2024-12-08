@@ -13,7 +13,7 @@ interface ReturnReceipts
     /**
      * 营销补差回退(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_17.shtml
+     * @link https://wechatpay.im/openapi/v3/marketing/busifavor/subsidy/return-receipts
      */
     public function post(array $options = [
         'json' => [
@@ -32,7 +32,7 @@ interface ReturnReceipts
     /**
      * 营销补差回退(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_17.shtml#async
+     * @link https://wechatpay.im/openapi/v3/marketing/busifavor/subsidy/return-receipts
      */
     public function postAsync(array $options = [
         'json' => [

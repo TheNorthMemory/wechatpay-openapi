@@ -12,7 +12,7 @@ interface Createhotelbill
     /**
      * 创建速住订单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/payscore.php?chapter=19_1&index=2
+     * @link https://wechatpay.im/openapi/v2/wxv/createhotelbill
      */
     public function post(array $options = [
         'xml' => [
@@ -45,7 +45,7 @@ interface Createhotelbill
     /**
      * 创建速住订单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/payscore.php?chapter=19_1&index=2#async
+     * @link https://wechatpay.im/openapi/v2/wxv/createhotelbill
      */
     public function postAsync(array $options = [
         'xml' => [

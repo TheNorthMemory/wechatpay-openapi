@@ -13,7 +13,7 @@ interface Couponcodes
     /**
      * 上传预存code (同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_6.shtml
+     * @link https://wechatpay.im/openapi/v3/marketing/busifavor/stocks/%7Bstock_id%7D/couponcodes
      */
     public function post(array $options = [
         'stock_id' => '98065001',
@@ -26,7 +26,7 @@ interface Couponcodes
     /**
      * 上传预存code (异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_6.shtml#async
+     * @link https://wechatpay.im/openapi/v3/marketing/busifavor/stocks/%7Bstock_id%7D/couponcodes
      */
     public function postAsync(array $options = [
         'stock_id' => '98065001',
@@ -39,7 +39,7 @@ interface Couponcodes
     /**
      * 查询预存code列表(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/products/merchant-exclusive-coupon/introduction.html
+     * @link https://wechatpay.im/openapi/v3/marketing/busifavor/stocks/%7Bstock_id%7D/couponcodes#get
      */
     public function get(array $options = [
         'stock_id' => '98065001',
@@ -54,7 +54,7 @@ interface Couponcodes
     /**
      * 查询预存code列表(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/products/merchant-exclusive-coupon/introduction.html#async
+     * @link https://wechatpay.im/openapi/v3/marketing/busifavor/stocks/%7Bstock_id%7D/couponcodes#get
      */
     public function getAsync(array $options = [
         'stock_id' => '98065001',

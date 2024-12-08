@@ -15,7 +15,7 @@ interface Applyment
     /**
      * 提交商户开户意愿申请单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_1_1.shtml
+     * @link https://wechatpay.im/openapi/v3/apply4subject/applyment
      */
     public function post(array $options = [
         'json' => [
@@ -107,7 +107,7 @@ interface Applyment
     /**
      * 提交商户开户意愿申请单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_1_1.shtml#async
+     * @link https://wechatpay.im/openapi/v3/apply4subject/applyment
      */
     public function postAsync(array $options = [
         'json' => [
@@ -199,7 +199,7 @@ interface Applyment
     /**
      * 查询商户开户意愿申请单审核结果(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_1_3.shtml
+     * @link https://wechatpay.im/openapi/v3/apply4subject/applyment#get
      */
     public function get(array $options = [
         'query' => [
@@ -211,7 +211,7 @@ interface Applyment
     /**
      * 查询商户开户意愿申请单审核结果(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_1_3.shtml#async
+     * @link https://wechatpay.im/openapi/v3/apply4subject/applyment#get
      */
     public function getAsync(array $options = [
         'query' => [

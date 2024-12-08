@@ -12,7 +12,7 @@ interface Budget
     /**
      * 修改批次预算(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_11.shtml
+     * @link https://wechatpay.im/openapi/v3/marketing/busifavor/stocks/%7Bstock_id%7D/budget
      */
     public function patch(array $options = [
         'stock_id' => '98065001',
@@ -28,7 +28,7 @@ interface Budget
     /**
      * 修改批次预算(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_11.shtml#async
+     * @link https://wechatpay.im/openapi/v3/marketing/busifavor/stocks/%7Bstock_id%7D/budget
      */
     public function patchAsync(array $options = [
         'stock_id' => '98065001',

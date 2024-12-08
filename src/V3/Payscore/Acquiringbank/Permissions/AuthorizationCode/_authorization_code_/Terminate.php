@@ -12,7 +12,7 @@ interface Terminate
     /**
      * 从业机构解除用户授权关系（授权协议号）(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-auth/terminate-acquiring-bank-permissions-by-code.html
+     * @link https://wechatpay.im/openapi/v3/payscore/acquiringbank/permissions/authorization-code/%7Bauthorization_code%7D/terminate
      */
     public function post(array $options = [
         'authorization_code' => '1275342195190894594',
@@ -27,7 +27,7 @@ interface Terminate
     /**
      * 从业机构解除用户授权关系（授权协议号）(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-auth/terminate-acquiring-bank-permissions-by-code.html#async
+     * @link https://wechatpay.im/openapi/v3/payscore/acquiringbank/permissions/authorization-code/%7Bauthorization_code%7D/terminate
      */
     public function postAsync(array $options = [
         'authorization_code' => '1275342195190894594',

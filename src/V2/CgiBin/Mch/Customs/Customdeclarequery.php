@@ -12,7 +12,7 @@ interface Customdeclarequery
     /**
      * 订单附加信息查询接口(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/external/declarecustom.php?chapter=18_2
+     * @link https://wechatpay.im/openapi/v2/cgi-bin/mch/customs/customdeclarequery
      */
     public function post(array $options = [
         'xml' => [
@@ -31,7 +31,7 @@ interface Customdeclarequery
     /**
      * 订单附加信息查询接口(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/external/declarecustom.php?chapter=18_2#async
+     * @link https://wechatpay.im/openapi/v2/cgi-bin/mch/customs/customdeclarequery
      */
     public function postAsync(array $options = [
         'xml' => [

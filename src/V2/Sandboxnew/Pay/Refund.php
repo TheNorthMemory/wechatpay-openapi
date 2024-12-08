@@ -13,7 +13,7 @@ interface Refund
      * 申请退款(同步模式)
      * @param array<string,mixed> $options
      * @deprecated - since 2022.05.31
-     * @link https://share.weiyun.com/5dxUgCw
+     * @link https://wechatpay.im/openapi/v2/sandboxnew/pay/refund
      */
     public function post(array $options = [
         'xml' => [
@@ -38,7 +38,7 @@ interface Refund
      * 申请退款(异步模式)
      * @param array<string,mixed> $options
      * @deprecated - since 2022.05.31
-     * @link https://share.weiyun.com/5dxUgCw#async
+     * @link https://wechatpay.im/openapi/v2/sandboxnew/pay/refund
      */
     public function postAsync(array $options = [
         'xml' => [

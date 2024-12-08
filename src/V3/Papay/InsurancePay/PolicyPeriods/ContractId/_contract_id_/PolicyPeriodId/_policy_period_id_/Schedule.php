@@ -12,7 +12,7 @@ interface Schedule
     /**
      * 保险商户预约保险自动续费(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/insurance-entrusted-payment/schedule/schedule-policy-period.html
+     * @link https://wechatpay.im/openapi/v3/papay/insurance-pay/policy-periods/contract-id/%7Bcontract_id%7D/policy-period-id/%7Bpolicy_period_id%7D/schedule
      */
     public function post(array $options = [
         'policy_period_id' => '1',
@@ -29,7 +29,7 @@ interface Schedule
     /**
      * 保险商户预约保险自动续费(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/insurance-entrusted-payment/schedule/schedule-policy-period.html#async
+     * @link https://wechatpay.im/openapi/v3/papay/insurance-pay/policy-periods/contract-id/%7Bcontract_id%7D/policy-period-id/%7Bpolicy_period_id%7D/schedule
      */
     public function postAsync(array $options = [
         'policy_period_id' => '1',

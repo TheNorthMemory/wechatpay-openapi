@@ -14,7 +14,7 @@ interface Mchsubjectalterapplyment
     /**
      * 提交资料变更申请单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter11_3_1.shtml
+     * @link https://wechatpay.im/openapi/v3/mchalterapply/mchsubjectalterapplyment
      */
     public function post(array $options = [
         'json' => [
@@ -80,7 +80,7 @@ interface Mchsubjectalterapplyment
     /**
      * 提交资料变更申请单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter11_3_1.shtml#async
+     * @link https://wechatpay.im/openapi/v3/mchalterapply/mchsubjectalterapplyment
      */
     public function postAsync(array $options = [
         'json' => [

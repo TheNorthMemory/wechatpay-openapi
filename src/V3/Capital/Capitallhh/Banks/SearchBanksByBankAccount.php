@@ -12,7 +12,7 @@ interface SearchBanksByBankAccount
     /**
      * 获取对私银行卡号开户银行(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter11_2_1.shtml
+     * @link https://wechatpay.im/openapi/v3/capital/capitallhh/banks/search-banks-by-bank-account
      */
     public function get(array $options = [
         'query' => [
@@ -26,7 +26,7 @@ interface SearchBanksByBankAccount
     /**
      * 获取对私银行卡号开户银行(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter11_2_1.shtml#async
+     * @link https://wechatpay.im/openapi/v3/capital/capitallhh/banks/search-banks-by-bank-account
      */
     public function getAsync(array $options = [
         'query' => [

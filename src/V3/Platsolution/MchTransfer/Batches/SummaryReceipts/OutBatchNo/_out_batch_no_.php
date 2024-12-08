@@ -13,7 +13,7 @@ interface _out_batch_no_
     /**
      * 查询商家转账批次电子回单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-transfer/receipts/receipts-query-by-batch-out-no.html
+     * @link https://wechatpay.im/openapi/v3/platsolution/mch-transfer/batches/summary-receipts/out-batch-no/%7Bout_batch_no%7D
      */
     public function get(array $options = [
         'out_batch_no' => 'sjzz20230223',
@@ -25,7 +25,7 @@ interface _out_batch_no_
     /**
      * 查询商家转账批次电子回单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-transfer/receipts/receipts-query-by-batch-out-no.html#async
+     * @link https://wechatpay.im/openapi/v3/platsolution/mch-transfer/batches/summary-receipts/out-batch-no/%7Bout_batch_no%7D
      */
     public function getAsync(array $options = [
         'out_batch_no' => 'sjzz20230223',

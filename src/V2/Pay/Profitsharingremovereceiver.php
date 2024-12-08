@@ -12,7 +12,7 @@ interface Profitsharingremovereceiver
     /**
      * 删除分账接收方(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/allocation_sl.php?chapter=25_4&index=5
+     * @link https://wechatpay.im/openapi/v2/pay/profitsharingremovereceiver
      */
     public function post(array $options = [
         'xml' => [
@@ -28,7 +28,7 @@ interface Profitsharingremovereceiver
     /**
      * 删除分账接收方(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/allocation_sl.php?chapter=25_4&index=5#async
+     * @link https://wechatpay.im/openapi/v2/pay/profitsharingremovereceiver
      */
     public function postAsync(array $options = [
         'xml' => [

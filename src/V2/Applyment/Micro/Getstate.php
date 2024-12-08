@@ -13,7 +13,7 @@ interface Getstate
      * 查询申请状态(同步模式)
      * @param array<string,mixed> $options
      * @deprecated - since 2023.05.23
-     * @link https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=19_3
+     * @link https://wechatpay.im/openapi/v2/applyment/micro/getstate
      */
     public function post(array $options = [
         'xml' => [
@@ -30,7 +30,7 @@ interface Getstate
      * 查询申请状态(异步模式)
      * @param array<string,mixed> $options
      * @deprecated - since 2023.05.23
-     * @link https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=19_3#async
+     * @link https://wechatpay.im/openapi/v2/applyment/micro/getstate
      */
     public function postAsync(array $options = [
         'xml' => [

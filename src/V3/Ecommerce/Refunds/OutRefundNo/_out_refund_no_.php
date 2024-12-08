@@ -12,7 +12,7 @@ interface _out_refund_no_
     /**
      * 通过商户退款单号查询退款(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/ecommerce-refund/refunds/query-refund-by-out-refund-no.html
+     * @link https://wechatpay.im/openapi/v3/ecommerce/refunds/out-refund-no/%7Bout_refund_no%7D
      */
     public function get(array $options = [
         'out_refund_no' => '1217752501201407033233368018',
@@ -25,7 +25,7 @@ interface _out_refund_no_
     /**
      * 通过商户退款单号查询退款(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/ecommerce-refund/refunds/query-refund-by-out-refund-no.html#async
+     * @link https://wechatpay.im/openapi/v3/ecommerce/refunds/out-refund-no/%7Bout_refund_no%7D
      */
     public function getAsync(array $options = [
         'out_refund_no' => '1217752501201407033233368018',

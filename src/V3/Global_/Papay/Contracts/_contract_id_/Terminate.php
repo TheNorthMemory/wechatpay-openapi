@@ -12,7 +12,7 @@ interface Terminate
     /**
      * 申请解约(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter5_1_4.shtml
+     * @link https://wechatpay.im/openapi/v3/global/papay/contracts/%7Bcontract_id%7D/terminate
      */
     public function post(array $options = [
         'base_uri' => 'https://apihk.mch.weixin.qq.com/', // 跨境(香港接入)
@@ -29,7 +29,7 @@ interface Terminate
     /**
      * 申请解约(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter5_1_4.shtml#async
+     * @link https://wechatpay.im/openapi/v3/global/papay/contracts/%7Bcontract_id%7D/terminate
      */
     public function postAsync(array $options = [
         'base_uri' => 'https://apihk.mch.weixin.qq.com/', // 跨境(香港接入)

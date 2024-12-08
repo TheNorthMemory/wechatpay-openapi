@@ -13,7 +13,7 @@ interface _openid_
     /**
      * 查询与用户授权记录（openid）(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/weixin-pay-score/service-auth/get-permissions-by-open-id.html
+     * @link https://wechatpay.im/openapi/v3/payscore/permissions/openid/%7Bopenid%7D
      */
     public function get(array $options = [
         'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
@@ -26,7 +26,7 @@ interface _openid_
     /**
      * 查询与用户授权记录（openid）(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/weixin-pay-score/service-auth/get-permissions-by-open-id.html#async
+     * @link https://wechatpay.im/openapi/v3/payscore/permissions/openid/%7Bopenid%7D
      */
     public function getAsync(array $options = [
         'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',

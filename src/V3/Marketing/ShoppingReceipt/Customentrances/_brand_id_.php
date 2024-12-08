@@ -12,7 +12,7 @@ interface _brand_id_
     /**
      * 查询自定义入口(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/shopping-receipt/custom-entrances/query-custom-entrance.html
+     * @link https://wechatpay.im/openapi/v3/marketing/shopping-receipt/customentrances/%7Bbrand_id%7D
      */
     public function get(array $options = [
         'brand_id' => '1014',
@@ -21,7 +21,7 @@ interface _brand_id_
     /**
      * 查询自定义入口(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/shopping-receipt/custom-entrances/query-custom-entrance.html#async
+     * @link https://wechatpay.im/openapi/v3/marketing/shopping-receipt/customentrances/%7Bbrand_id%7D
      */
     public function getAsync(array $options = [
         'brand_id' => '1014',
@@ -30,7 +30,7 @@ interface _brand_id_
     /**
      * 更新自定义入口(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/shopping-receipt/custom-entrances/update-custom-entrance.html
+     * @link https://wechatpay.im/openapi/v3/marketing/shopping-receipt/customentrances/%7Bbrand_id%7D#patch
      */
     public function patch(array $options = [
         'brand_id' => '1014',
@@ -52,7 +52,7 @@ interface _brand_id_
     /**
      * 更新自定义入口(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/shopping-receipt/custom-entrances/update-custom-entrance.html#async
+     * @link https://wechatpay.im/openapi/v3/marketing/shopping-receipt/customentrances/%7Bbrand_id%7D#patch
      */
     public function patchAsync(array $options = [
         'brand_id' => '1014',

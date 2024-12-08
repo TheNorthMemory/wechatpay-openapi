@@ -12,7 +12,7 @@ interface ReturnAdvance
     /**
      * 垫付退款回补(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/ecommerce-refund/refunds/create-return-advance.html
+     * @link https://wechatpay.im/openapi/v3/ecommerce/refunds/%7Brefund_id%7D/return-advance
      */
     public function post(array $options = [
         'refund_id' => '50000000382019052709732678859',
@@ -24,7 +24,7 @@ interface ReturnAdvance
     /**
      * 垫付退款回补(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/ecommerce-refund/refunds/create-return-advance.html#async
+     * @link https://wechatpay.im/openapi/v3/ecommerce/refunds/%7Brefund_id%7D/return-advance
      */
     public function postAsync(array $options = [
         'refund_id' => '50000000382019052709732678859',
@@ -36,7 +36,7 @@ interface ReturnAdvance
     /**
      * 查询垫付回补结果(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/ecommerce-refund/refunds/query-return-advance.html
+     * @link https://wechatpay.im/openapi/v3/ecommerce/refunds/%7Brefund_id%7D/return-advance#get
      */
     public function get(array $options = [
         'refund_id' => '50000000382019052709732678859',
@@ -48,7 +48,7 @@ interface ReturnAdvance
     /**
      * 查询垫付回补结果(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/ecommerce-refund/refunds/query-return-advance.html#async
+     * @link https://wechatpay.im/openapi/v3/ecommerce/refunds/%7Brefund_id%7D/return-advance#get
      */
     public function getAsync(array $options = [
         'refund_id' => '50000000382019052709732678859',

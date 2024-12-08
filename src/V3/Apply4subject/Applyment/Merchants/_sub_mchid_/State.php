@@ -12,7 +12,7 @@ interface State
     /**
      * 获取商户开户意愿确认状态(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/applysubject/chapter5_4.shtml
+     * @link https://wechatpay.im/openapi/v3/apply4subject/applyment/merchants/%7Bsub_mchid%7D/state
      */
     public function get(array $options = [
         'sub_mchid' => '',
@@ -21,7 +21,7 @@ interface State
     /**
      * 获取商户开户意愿确认状态(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/applysubject/chapter5_4.shtml#async
+     * @link https://wechatpay.im/openapi/v3/apply4subject/applyment/merchants/%7Bsub_mchid%7D/state
      */
     public function getAsync(array $options = [
         'sub_mchid' => '',

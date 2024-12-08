@@ -12,7 +12,7 @@ interface TaxCodes
     /**
      * 获取商品和服务税收分类对照表(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/new-tax-control-fapiao/chapter3_2.shtml
+     * @link https://wechatpay.im/openapi/v3/new-tax-control-fapiao/merchant/tax-codes
      */
     public function get(array $options = [
         'query' => [
@@ -25,7 +25,7 @@ interface TaxCodes
     /**
      * 获取商品和服务税收分类对照表(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/new-tax-control-fapiao/chapter3_2.shtml#async
+     * @link https://wechatpay.im/openapi/v3/new-tax-control-fapiao/merchant/tax-codes
      */
     public function getAsync(array $options = [
         'query' => [

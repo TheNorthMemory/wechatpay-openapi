@@ -14,7 +14,7 @@ interface WithdrawlApply
     /**
      * 提交已注销商户号可用余额提现申请单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter7_8_9.shtml
+     * @link https://wechatpay.im/openapi/v3/mch_operate/risk/withdrawl-apply
      */
     public function post(array $options = [
         'json' => [
@@ -58,7 +58,7 @@ interface WithdrawlApply
     /**
      * 提交已注销商户号可用余额提现申请单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter7_8_9.shtml#async
+     * @link https://wechatpay.im/openapi/v3/mch_operate/risk/withdrawl-apply
      */
     public function postAsync(array $options = [
         'json' => [

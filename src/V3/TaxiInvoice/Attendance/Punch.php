@@ -12,7 +12,7 @@ interface Punch
     /**
      * 签到签退(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/taxi-fapiao/attendance/punch-attendance.html
+     * @link https://wechatpay.im/openapi/v3/taxi-invoice/attendance/punch
      */
     public function post(array $options = [
         'json' => [
@@ -27,7 +27,7 @@ interface Punch
     /**
      * 签到签退(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/taxi-fapiao/attendance/punch-attendance.html#async
+     * @link https://wechatpay.im/openapi/v3/taxi-invoice/attendance/punch
      */
     public function postAsync(array $options = [
         'json' => [

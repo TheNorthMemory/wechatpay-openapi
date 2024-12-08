@@ -13,7 +13,7 @@ interface UserSignPlans
     /**
      * 创建用户的签约计划(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-payscore-plan/partner-user-sign-plan/create-partner-user-sign-plan.html
+     * @link https://wechatpay.im/openapi/v3/payscore/sign-plan/partner/user-sign-plans
      */
     public function post(array $options = [
         'json' => [
@@ -36,7 +36,7 @@ interface UserSignPlans
     /**
      * 创建用户的签约计划(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-payscore-plan/partner-user-sign-plan/create-partner-user-sign-plan.html#async
+     * @link https://wechatpay.im/openapi/v3/payscore/sign-plan/partner/user-sign-plans
      */
     public function postAsync(array $options = [
         'json' => [

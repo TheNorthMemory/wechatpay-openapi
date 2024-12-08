@@ -13,7 +13,7 @@ interface Feedbacks
      * 商户反馈(同步模式)
      * @param array<string,mixed> $options
      * @deprecated - since 2021.01.08
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/merchant-service/chapter3_6.shtml
+     * @link https://wechatpay.im/openapi/v3/merchant-service/feedbacks
      */
     public function post(array $options = [
         'json' => [
@@ -30,7 +30,7 @@ interface Feedbacks
      * 商户反馈(异步模式)
      * @param array<string,mixed> $options
      * @deprecated - since 2021.01.08
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/merchant-service/chapter3_6.shtml#async
+     * @link https://wechatpay.im/openapi/v3/merchant-service/feedbacks
      */
     public function postAsync(array $options = [
         'json' => [

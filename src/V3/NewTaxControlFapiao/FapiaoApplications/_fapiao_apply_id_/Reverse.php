@@ -12,7 +12,7 @@ interface Reverse
     /**
      * 冲红电子发票(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/new-tax-control-fapiao/chapter3_9.shtml
+     * @link https://wechatpay.im/openapi/v3/new-tax-control-fapiao/fapiao-applications/%7Bfapiao_apply_id%7D/reverse
      */
     public function post(array $options = [
         'fapiao_apply_id' => '4200000444201910177461284488',
@@ -30,7 +30,7 @@ interface Reverse
     /**
      * 冲红电子发票(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/new-tax-control-fapiao/chapter3_9.shtml#async
+     * @link https://wechatpay.im/openapi/v3/new-tax-control-fapiao/fapiao-applications/%7Bfapiao_apply_id%7D/reverse
      */
     public function postAsync(array $options = [
         'fapiao_apply_id' => '4200000444201910177461284488',

@@ -12,7 +12,7 @@ interface Apply
     /**
      * 申请商家转账批次电子回单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-transfer/receipts/receipts-apply-by-batch-out-no.html
+     * @link https://wechatpay.im/openapi/v3/platsolution/mch-transfer/batches/summary-receipts/out-batch-no/%7Bout_batch_no%7D/apply
      */
     public function post(array $options = [
         'out_batch_no' => 'sjzz20230223',
@@ -24,7 +24,7 @@ interface Apply
     /**
      * 申请商家转账批次电子回单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-transfer/receipts/receipts-apply-by-batch-out-no.html#async
+     * @link https://wechatpay.im/openapi/v3/platsolution/mch-transfer/batches/summary-receipts/out-batch-no/%7Bout_batch_no%7D/apply
      */
     public function postAsync(array $options = [
         'out_batch_no' => 'sjzz20230223',

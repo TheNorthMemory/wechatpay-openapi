@@ -12,7 +12,7 @@ interface Combinedorder
     /**
      * 合单下单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/combine.php?chapter=24_1&index=2
+     * @link https://wechatpay.im/openapi/v2/pay/combinedorder
      */
     public function post(array $options = [
         'xml' => [
@@ -36,7 +36,7 @@ interface Combinedorder
     /**
      * 合单下单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/combine.php?chapter=24_1&index=2#async
+     * @link https://wechatpay.im/openapi/v2/pay/combinedorder
      */
     public function postAsync(array $options = [
         'xml' => [

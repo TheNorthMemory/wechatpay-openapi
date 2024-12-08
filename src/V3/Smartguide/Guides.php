@@ -13,7 +13,7 @@ interface Guides
     /**
      * 服务人员注册(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/smartguide/chapter3_1.shtml
+     * @link https://wechatpay.im/openapi/v3/smartguide/guides
      */
     public function post(array $options = [
         'json' => [
@@ -34,7 +34,7 @@ interface Guides
     /**
      * 服务人员注册(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/smartguide/chapter3_1.shtml#async
+     * @link https://wechatpay.im/openapi/v3/smartguide/guides
      */
     public function postAsync(array $options = [
         'json' => [
@@ -55,7 +55,7 @@ interface Guides
     /**
      * 服务人员查询(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/smartguide/chapter3_3.shtml
+     * @link https://wechatpay.im/openapi/v3/smartguide/guides#get
      */
     public function get(array $options = [
         'query' => [
@@ -75,7 +75,7 @@ interface Guides
     /**
      * 服务人员查询(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/smartguide/chapter3_3.shtml#async
+     * @link https://wechatpay.im/openapi/v3/smartguide/guides#get
      */
     public function getAsync(array $options = [
         'query' => [

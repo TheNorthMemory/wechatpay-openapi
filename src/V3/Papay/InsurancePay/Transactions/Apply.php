@@ -12,7 +12,7 @@ interface Apply
     /**
      * 保险商户受理保险自动续费扣款(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/insurance-entrusted-payment/deduct/create-transaction.html
+     * @link https://wechatpay.im/openapi/v3/papay/insurance-pay/transactions/apply
      */
     public function post(array $options = [
         'json' => [
@@ -34,7 +34,7 @@ interface Apply
     /**
      * 保险商户受理保险自动续费扣款(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/insurance-entrusted-payment/deduct/create-transaction.html#async
+     * @link https://wechatpay.im/openapi/v3/papay/insurance-pay/transactions/apply
      */
     public function postAsync(array $options = [
         'json' => [

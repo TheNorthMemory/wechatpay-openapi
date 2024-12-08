@@ -12,7 +12,7 @@ interface _application_id_
     /**
      * 根据申请单ID查询结果(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter3_1_2.shtml
+     * @link https://wechatpay.im/openapi/v3/merchant-settlement/merchant-settle-rule-applications/%7Bapplication_id%7D
      */
     public function get(array $options = [
         'application_id' => '20000011111',
@@ -21,7 +21,7 @@ interface _application_id_
     /**
      * 根据申请单ID查询结果(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter3_1_2.shtml#async
+     * @link https://wechatpay.im/openapi/v3/merchant-settlement/merchant-settle-rule-applications/%7Bapplication_id%7D
      */
     public function getAsync(array $options = [
         'application_id' => '20000011111',

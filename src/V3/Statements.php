@@ -12,7 +12,7 @@ interface Statements
     /**
      * 下载对账单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/fusion_wallet_ch/QuickPay/chapter8_5.shtml
+     * @link https://wechatpay.im/openapi/v3/statements
      */
     public function get(array $options = [
         'base_uri' => 'https://api.mch.weixin.qq.com/hk/', // 跨境(国内接入)
@@ -28,7 +28,7 @@ interface Statements
     /**
      * 下载对账单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/fusion_wallet_ch/QuickPay/chapter8_5.shtml#async
+     * @link https://wechatpay.im/openapi/v3/statements
      */
     public function getAsync(array $options = [
         'base_uri' => 'https://api.mch.weixin.qq.com/hk/', // 跨境(国内接入)

@@ -12,7 +12,7 @@ interface Complete
     /**
      * 完结支付分订单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/weixin-pay-score/service-order/complete-service-order.html
+     * @link https://wechatpay.im/openapi/v3/payscore/serviceorder/%7Bout_order_no%7D/complete
      */
     public function post(array $options = [
         'out_order_no' => '',
@@ -49,7 +49,7 @@ interface Complete
     /**
      * 完结支付分订单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/weixin-pay-score/service-order/complete-service-order.html#async
+     * @link https://wechatpay.im/openapi/v3/payscore/serviceorder/%7Bout_order_no%7D/complete
      */
     public function postAsync(array $options = [
         'out_order_no' => '',

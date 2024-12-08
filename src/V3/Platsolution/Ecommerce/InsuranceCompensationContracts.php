@@ -13,7 +13,7 @@ interface InsuranceCompensationContracts
     /**
      * 开通保险理赔功能(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/plat-compensation/plat-compensation/open-insurance-compensation.html
+     * @link https://wechatpay.im/openapi/v3/platsolution/ecommerce/insurance-compensation-contracts
      */
     public function post(array $options = [
         'json' => [
@@ -31,7 +31,7 @@ interface InsuranceCompensationContracts
     /**
      * 开通保险理赔功能(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/plat-compensation/plat-compensation/open-insurance-compensation.html#async
+     * @link https://wechatpay.im/openapi/v3/platsolution/ecommerce/insurance-compensation-contracts
      */
     public function postAsync(array $options = [
         'json' => [

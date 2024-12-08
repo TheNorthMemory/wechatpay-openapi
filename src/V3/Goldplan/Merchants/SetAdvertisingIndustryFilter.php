@@ -12,7 +12,7 @@ interface SetAdvertisingIndustryFilter
     /**
      * 同业过滤标签管理(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/goldplan/chapter3_3.shtml
+     * @link https://wechatpay.im/openapi/v3/goldplan/merchants/set-advertising-industry-filter
      */
     public function post(array $options = [
         'json' => [
@@ -24,7 +24,7 @@ interface SetAdvertisingIndustryFilter
     /**
      * 同业过滤标签管理(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/goldplan/chapter3_3.shtml#async
+     * @link https://wechatpay.im/openapi/v3/goldplan/merchants/set-advertising-industry-filter
      */
     public function postAsync(array $options = [
         'json' => [

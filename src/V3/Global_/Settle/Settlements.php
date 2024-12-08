@@ -12,7 +12,7 @@ interface Settlements
     /**
      * 查询结算资金明细(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter3_1_10.shtml
+     * @link https://wechatpay.im/openapi/v3/global/settle/settlements
      */
     public function get(array $options = [
         'base_uri' => 'https://apihk.mch.weixin.qq.com/', // 跨境(香港接入)
@@ -29,7 +29,7 @@ interface Settlements
     /**
      * 查询结算资金明细(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter3_1_10.shtml#async
+     * @link https://wechatpay.im/openapi/v3/global/settle/settlements
      */
     public function getAsync(array $options = [
         'base_uri' => 'https://apihk.mch.weixin.qq.com/', // 跨境(香港接入)

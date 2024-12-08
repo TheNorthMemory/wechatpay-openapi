@@ -12,7 +12,7 @@ interface Refundv2
     /**
      * 申请退款（支持单品）(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/danpin.php?chapter=9_103&index=3
+     * @link https://wechatpay.im/openapi/v2/secapi/pay/refundv2
      */
     public function post(array $options = [
         'xml' => [
@@ -38,7 +38,7 @@ interface Refundv2
     /**
      * 申请退款（支持单品）(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/danpin.php?chapter=9_103&index=3#async
+     * @link https://wechatpay.im/openapi/v2/secapi/pay/refundv2
      */
     public function postAsync(array $options = [
         'xml' => [

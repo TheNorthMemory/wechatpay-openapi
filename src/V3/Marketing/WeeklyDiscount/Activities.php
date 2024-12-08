@@ -13,7 +13,7 @@ interface Activities
     /**
      * 查询周周惠活动列表(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter6_1_3.shtml
+     * @link https://wechatpay.im/openapi/v3/marketing/weekly-discount/activities
      */
     public function get(array $options = [
         'query' => [
@@ -29,7 +29,7 @@ interface Activities
     /**
      * 查询周周惠活动列表(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter6_1_3.shtml#async
+     * @link https://wechatpay.im/openapi/v3/marketing/weekly-discount/activities
      */
     public function getAsync(array $options = [
         'query' => [

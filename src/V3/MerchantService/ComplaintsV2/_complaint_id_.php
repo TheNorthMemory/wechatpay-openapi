@@ -16,7 +16,7 @@ interface _complaint_id_
     /**
      * 查询投诉单详情(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_2_13.shtml
+     * @link https://wechatpay.im/openapi/v3/merchant-service/complaints-v2/%7Bcomplaint_id%7D
      */
     public function get(array $options = [
         'complaint_id' => '200201820200101080076610000',
@@ -25,7 +25,7 @@ interface _complaint_id_
     /**
      * 查询投诉单详情(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_2_13.shtml#async
+     * @link https://wechatpay.im/openapi/v3/merchant-service/complaints-v2/%7Bcomplaint_id%7D
      */
     public function getAsync(array $options = [
         'complaint_id' => '200201820200101080076610000',

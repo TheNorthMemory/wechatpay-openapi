@@ -12,7 +12,7 @@ interface Certificates
     /**
      * 获取平台证书列表(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/applyments/chapter3_3.shtml
+     * @link https://wechatpay.im/openapi/v3/certificates
      */
     public function get(array $options = [
         'query' => [
@@ -23,7 +23,7 @@ interface Certificates
     /**
      * 获取平台证书列表(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/applyments/chapter3_3.shtml#async
+     * @link https://wechatpay.im/openapi/v3/certificates
      */
     public function getAsync(array $options = [
         'query' => [

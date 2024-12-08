@@ -12,7 +12,7 @@ interface Channelsetting
     /**
      * 银行服务商特约子商户指定渠道号(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/mch_bank.php?chapter=9_26
+     * @link https://wechatpay.im/openapi/v2/secapi/mch/channelsetting
      */
     public function post(array $options = [
         'xml' => [
@@ -28,7 +28,7 @@ interface Channelsetting
     /**
      * 银行服务商特约子商户指定渠道号(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/mch_bank.php?chapter=9_26#async
+     * @link https://wechatpay.im/openapi/v2/secapi/mch/channelsetting
      */
     public function postAsync(array $options = [
         'xml' => [

@@ -12,7 +12,7 @@ interface Native
     /**
      * 扫码支付下单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/fusion_wallet_ch/NativePay/chapter4_3.shtml
+     * @link https://wechatpay.im/openapi/v3/transactions/native
      */
     public function post(array $options = [
         'base_uri' => 'https://api.mch.weixin.qq.com/hk/', // 跨境(国内接入)
@@ -70,7 +70,7 @@ interface Native
     /**
      * 扫码支付下单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/fusion_wallet_ch/NativePay/chapter4_3.shtml#async
+     * @link https://wechatpay.im/openapi/v3/transactions/native
      */
     public function postAsync(array $options = [
         'base_uri' => 'https://api.mch.weixin.qq.com/hk/', // 跨境(国内接入)

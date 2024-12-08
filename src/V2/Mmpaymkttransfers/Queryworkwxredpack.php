@@ -12,7 +12,7 @@ interface Queryworkwxredpack
     /**
      * 查询红包记录(同步模式)
      * @param array<string,mixed> $options
-     * @link https://open.work.weixin.qq.com/api/doc/90000/90135/90276
+     * @link https://wechatpay.im/openapi/v2/mmpaymkttransfers/queryworkwxredpack
      */
     public function post(array $options = [
         'xml' => [
@@ -26,7 +26,7 @@ interface Queryworkwxredpack
     /**
      * 查询红包记录(异步模式)
      * @param array<string,mixed> $options
-     * @link https://open.work.weixin.qq.com/api/doc/90000/90135/90276#async
+     * @link https://wechatpay.im/openapi/v2/mmpaymkttransfers/queryworkwxredpack
      */
     public function postAsync(array $options = [
         'xml' => [

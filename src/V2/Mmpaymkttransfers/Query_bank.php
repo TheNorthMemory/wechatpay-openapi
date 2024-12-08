@@ -12,7 +12,7 @@ interface Query_bank
     /**
      * 查询企业付款银行卡(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/tools/mch_pay.php?chapter=24_3
+     * @link https://wechatpay.im/openapi/v2/mmpaymkttransfers/query_bank
      */
     public function post(array $options = [
         'xml' => [
@@ -25,7 +25,7 @@ interface Query_bank
     /**
      * 查询企业付款银行卡(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/tools/mch_pay.php?chapter=24_3#async
+     * @link https://wechatpay.im/openapi/v2/mmpaymkttransfers/query_bank
      */
     public function postAsync(array $options = [
         'xml' => [

@@ -15,7 +15,7 @@ interface Transactions
      * 充电自行车代扣受理扣款(同步模式)
      * @param array<string,mixed> $options
      * @deprecated - since 2019.12.16
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/vehicle/ebike/chapter3_5.shtml
+     * @link https://wechatpay.im/openapi/v3/ebike/charge/transactions
      */
     public function post(array $options = [
         'json' => [
@@ -52,7 +52,7 @@ interface Transactions
      * 充电自行车代扣受理扣款(异步模式)
      * @param array<string,mixed> $options
      * @deprecated - since 2019.12.16
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/vehicle/ebike/chapter3_5.shtml#async
+     * @link https://wechatpay.im/openapi/v3/ebike/charge/transactions
      */
     public function postAsync(array $options = [
         'json' => [

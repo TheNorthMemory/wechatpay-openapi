@@ -12,7 +12,7 @@ interface _openid_
     /**
      * 查询个人收款方授权结果(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/personal-collections/query-contracts.html
+     * @link https://wechatpay.im/openapi/v3/ecommerce/individual-contracts/%7Bopenid%7D
      */
     public function get(array $options = [
         'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
@@ -25,7 +25,7 @@ interface _openid_
     /**
      * 查询个人收款方授权结果(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/personal-collections/query-contracts.html#async
+     * @link https://wechatpay.im/openapi/v3/ecommerce/individual-contracts/%7Bopenid%7D
      */
     public function getAsync(array $options = [
         'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',

@@ -12,7 +12,7 @@ interface Tradebill
     /**
      * 申请交易账单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter7_9_1.shtml
+     * @link https://wechatpay.im/openapi/v3/bill/tradebill
      */
     public function get(array $options = [
         'query' => [
@@ -26,7 +26,7 @@ interface Tradebill
     /**
      * 申请交易账单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter7_9_1.shtml#async
+     * @link https://wechatpay.im/openapi/v3/bill/tradebill
      */
     public function getAsync(array $options = [
         'query' => [

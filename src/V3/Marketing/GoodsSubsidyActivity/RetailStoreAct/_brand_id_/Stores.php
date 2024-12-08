@@ -13,7 +13,7 @@ interface Stores
     /**
      * 添加小店活动门店(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/add-stores.html
+     * @link https://wechatpay.im/openapi/v3/marketing/goods-subsidy-activity/retail-store-act/%7Bbrand_id%7D/stores
      */
     public function post(array $options = [
         'brand_id' => '1001',
@@ -30,7 +30,7 @@ interface Stores
     /**
      * 添加小店活动门店(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/add-stores.html#async
+     * @link https://wechatpay.im/openapi/v3/marketing/goods-subsidy-activity/retail-store-act/%7Bbrand_id%7D/stores
      */
     public function postAsync(array $options = [
         'brand_id' => '1001',
@@ -47,7 +47,7 @@ interface Stores
     /**
      * 删除小店活动门店(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/delete-stores.html
+     * @link https://wechatpay.im/openapi/v3/marketing/goods-subsidy-activity/retail-store-act/%7Bbrand_id%7D/stores#delete
      */
     public function delete(array $options = [
         'brand_id' => '1001',
@@ -64,7 +64,7 @@ interface Stores
     /**
      * 删除小店活动门店(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/delete-stores.html#async
+     * @link https://wechatpay.im/openapi/v3/marketing/goods-subsidy-activity/retail-store-act/%7Bbrand_id%7D/stores#delete
      */
     public function deleteAsync(array $options = [
         'brand_id' => '1001',
@@ -81,7 +81,7 @@ interface Stores
     /**
      * 查询小店活动门店列表(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/list-store.html
+     * @link https://wechatpay.im/openapi/v3/marketing/goods-subsidy-activity/retail-store-act/%7Bbrand_id%7D/stores#get
      */
     public function get(array $options = [
         'brand_id' => '1001',
@@ -94,7 +94,7 @@ interface Stores
     /**
      * 查询小店活动门店列表(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/list-store.html#async
+     * @link https://wechatpay.im/openapi/v3/marketing/goods-subsidy-activity/retail-store-act/%7Bbrand_id%7D/stores#get
      */
     public function getAsync(array $options = [
         'brand_id' => '1001',

@@ -15,7 +15,7 @@ interface _fapiao_apply_id_
     /**
      * 查询电子发票(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter4_8_9.shtml
+     * @link https://wechatpay.im/openapi/v3/new-tax-control-fapiao/fapiao-applications/%7Bfapiao_apply_id%7D
      */
     public function get(array $options = [
         'fapiao_apply_id' => '4200000444201910177461284488',
@@ -28,7 +28,7 @@ interface _fapiao_apply_id_
     /**
      * 查询电子发票(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter4_8_9.shtml#async
+     * @link https://wechatpay.im/openapi/v3/new-tax-control-fapiao/fapiao-applications/%7Bfapiao_apply_id%7D
      */
     public function getAsync(array $options = [
         'fapiao_apply_id' => '4200000444201910177461284488',

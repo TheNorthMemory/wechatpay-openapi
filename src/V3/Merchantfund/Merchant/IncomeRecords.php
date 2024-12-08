@@ -12,7 +12,7 @@ interface IncomeRecords
     /**
      * 服务商银行来账查询(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer_partner/chapter3_7.shtml
+     * @link https://wechatpay.im/openapi/v3/merchantfund/merchant/income-records
      */
     public function get(array $options = [
         'query' => [
@@ -26,7 +26,7 @@ interface IncomeRecords
     /**
      * 服务商银行来账查询(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer_partner/chapter3_7.shtml#async
+     * @link https://wechatpay.im/openapi/v3/merchantfund/merchant/income-records
      */
     public function getAsync(array $options = [
         'query' => [

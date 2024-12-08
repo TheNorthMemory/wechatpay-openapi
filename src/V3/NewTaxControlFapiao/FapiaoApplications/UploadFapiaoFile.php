@@ -30,7 +30,7 @@ interface UploadFapiaoFile
      * ```
      *
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/new-tax-control-fapiao/chapter3_10.shtml
+     * @link https://wechatpay.im/openapi/v3/new-tax-control-fapiao/fapiao-applications/upload-fapiao-file
      */
     public function post(array $options = []): ResponseInterface;
 
@@ -55,7 +55,7 @@ interface UploadFapiaoFile
      * ```
      *
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/new-tax-control-fapiao/chapter3_10.shtml#async
+     * @link https://wechatpay.im/openapi/v3/new-tax-control-fapiao/fapiao-applications/upload-fapiao-file
      */
     public function postAsync(array $options = []): PromiseInterface;
 }

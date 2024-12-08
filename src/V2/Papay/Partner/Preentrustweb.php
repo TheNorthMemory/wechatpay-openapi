@@ -12,7 +12,7 @@ interface Preentrustweb
     /**
      * APP纯签约(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter5_2.shtml
+     * @link https://wechatpay.im/openapi/v2/papay/partner/preentrustweb
      */
     public function post(array $options = [
         'xml' => [
@@ -36,7 +36,7 @@ interface Preentrustweb
     /**
      * APP纯签约(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter5_2.shtml#async
+     * @link https://wechatpay.im/openapi/v2/papay/partner/preentrustweb
      */
     public function postAsync(array $options = [
         'xml' => [

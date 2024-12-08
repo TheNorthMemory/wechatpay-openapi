@@ -12,7 +12,7 @@ interface BaseInformation
     /**
      * 获取商户开票基础信息(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/new-tax-control-fapiao/chapter3_3.shtml
+     * @link https://wechatpay.im/openapi/v3/new-tax-control-fapiao/merchant/base-information
      */
     public function get(array $options = [
         'query' => [
@@ -23,7 +23,7 @@ interface BaseInformation
     /**
      * 获取商户开票基础信息(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/new-tax-control-fapiao/chapter3_3.shtml#async
+     * @link https://wechatpay.im/openapi/v3/new-tax-control-fapiao/merchant/base-information
      */
     public function getAsync(array $options = [
         'query' => [

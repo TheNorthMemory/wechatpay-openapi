@@ -12,7 +12,7 @@ interface _out_trade_no_
     /**
      * 商户订单号查单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/edu/eduschoolpay/chapter4_3.shtml
+     * @link https://wechatpay.im/openapi/v3/eduschoolpay/transactions/out-trade-no/%7Bout_trade_no%7D
      */
     public function get(array $options = [
         'out_trade_no' => '201407033233368018',
@@ -24,7 +24,7 @@ interface _out_trade_no_
     /**
      * 商户订单号查单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/edu/eduschoolpay/chapter4_3.shtml#async
+     * @link https://wechatpay.im/openapi/v3/eduschoolpay/transactions/out-trade-no/%7Bout_trade_no%7D
      */
     public function getAsync(array $options = [
         'out_trade_no' => '201407033233368018',

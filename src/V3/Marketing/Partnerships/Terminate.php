@@ -12,7 +12,7 @@ interface Terminate
     /**
      * 终止合作关系(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/partnerships/chapter3_2.shtml
+     * @link https://wechatpay.im/openapi/v3/marketing/partnerships/terminate
      */
     public function post(array $options = [
         'json' => [
@@ -34,7 +34,7 @@ interface Terminate
     /**
      * 终止合作关系(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/partnerships/chapter3_2.shtml#async
+     * @link https://wechatpay.im/openapi/v3/marketing/partnerships/terminate
      */
     public function postAsync(array $options = [
         'json' => [

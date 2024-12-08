@@ -13,7 +13,7 @@ interface Cards
     /**
      * 将出租车电子发票插入微信用户卡包(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/taxi-fapiao/taxi-invoice-card/create-taxi-invoice-card.html
+     * @link https://wechatpay.im/openapi/v3/taxi-invoice/cards
      */
     public function post(array $options = [
         'json' => [
@@ -78,7 +78,7 @@ interface Cards
     /**
      * 将出租车电子发票插入微信用户卡包(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/taxi-fapiao/taxi-invoice-card/create-taxi-invoice-card.html#async
+     * @link https://wechatpay.im/openapi/v3/taxi-invoice/cards
      */
     public function postAsync(array $options = [
         'json' => [

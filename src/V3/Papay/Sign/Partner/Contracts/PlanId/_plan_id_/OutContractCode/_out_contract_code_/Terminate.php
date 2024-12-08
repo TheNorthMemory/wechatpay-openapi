@@ -12,7 +12,7 @@ interface Terminate
     /**
      * 通过商户协议号解除委托代扣签约协议(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/entrusted-payment/partner/partner-terminate-contract-by-code.html
+     * @link https://wechatpay.im/openapi/v3/papay/sign/partner/contracts/plan-id/%7Bplan_id%7D/out-contract-code/%7Bout_contract_code%7D/terminate
      */
     public function post(array $options = [
         'plan_id' => '12535',
@@ -26,7 +26,7 @@ interface Terminate
     /**
      * 通过商户协议号解除委托代扣签约协议(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/entrusted-payment/partner/partner-terminate-contract-by-code.html#async
+     * @link https://wechatpay.im/openapi/v3/papay/sign/partner/contracts/plan-id/%7Bplan_id%7D/out-contract-code/%7Bout_contract_code%7D/terminate
      */
     public function postAsync(array $options = [
         'plan_id' => '12535',

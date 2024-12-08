@@ -12,7 +12,7 @@ interface File
     /**
      * 下载账单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/bill/chapter3_3.shtml
+     * @link https://wechatpay.im/openapi/v3/billdownload/file
      */
     public function get(array $options = [
         'query' => [
@@ -24,7 +24,7 @@ interface File
     /**
      * 下载账单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/bill/chapter3_3.shtml#async
+     * @link https://wechatpay.im/openapi/v3/billdownload/file
      */
     public function getAsync(array $options = [
         'query' => [

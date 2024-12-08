@@ -12,7 +12,7 @@ interface _service_id_
     /**
      * 查询用户分层对应建议先享金额(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/service-quota/get-partner-user-risk-level-quota.html
+     * @link https://wechatpay.im/openapi/v3/payscore/partner/servicequotas/service-id/%7Bservice_id%7D
      */
     public function get(array $options = [
         'service_id' => '2002000000000558128851361561536',
@@ -27,7 +27,7 @@ interface _service_id_
     /**
      * 查询用户分层对应建议先享金额(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/service-quota/get-partner-user-risk-level-quota.html#async
+     * @link https://wechatpay.im/openapi/v3/payscore/partner/servicequotas/service-id/%7Bservice_id%7D
      */
     public function getAsync(array $options = [
         'service_id' => '2002000000000558128851361561536',

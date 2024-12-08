@@ -12,7 +12,7 @@ interface ComplaintNotifications
     /**
      * 创建投诉通知回调(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/merchant-service/chapter3_2.shtml
+     * @link https://wechatpay.im/openapi/v3/merchant-service/complaint-notifications
      */
     public function post(array $options = [
         'json' => [
@@ -23,7 +23,7 @@ interface ComplaintNotifications
     /**
      * 创建投诉通知回调(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/merchant-service/chapter3_2.shtml#async
+     * @link https://wechatpay.im/openapi/v3/merchant-service/complaint-notifications
      */
     public function postAsync(array $options = [
         'json' => [
@@ -34,21 +34,21 @@ interface ComplaintNotifications
     /**
      * 查询投诉通知回调(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/merchant-service/chapter3_3.shtml
+     * @link https://wechatpay.im/openapi/v3/merchant-service/complaint-notifications#get
      */
     public function get(array $options = []): ResponseInterface;
 
     /**
      * 查询投诉通知回调(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/merchant-service/chapter3_3.shtml#async
+     * @link https://wechatpay.im/openapi/v3/merchant-service/complaint-notifications#get
      */
     public function getAsync(array $options = []): PromiseInterface;
 
     /**
      * 更新投诉通知回调(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/merchant-service/chapter3_4.shtml
+     * @link https://wechatpay.im/openapi/v3/merchant-service/complaint-notifications#put
      */
     public function put(array $options = [
         'json' => [
@@ -59,7 +59,7 @@ interface ComplaintNotifications
     /**
      * 更新投诉通知回调(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/merchant-service/chapter3_4.shtml#async
+     * @link https://wechatpay.im/openapi/v3/merchant-service/complaint-notifications#put
      */
     public function putAsync(array $options = [
         'json' => [
@@ -70,14 +70,14 @@ interface ComplaintNotifications
     /**
      * 删除投诉通知回调(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/merchant-service/chapter3_5.shtml
+     * @link https://wechatpay.im/openapi/v3/merchant-service/complaint-notifications#delete
      */
     public function delete(array $options = []): ResponseInterface;
 
     /**
      * 删除投诉通知回调(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/merchant-service/chapter3_5.shtml#async
+     * @link https://wechatpay.im/openapi/v3/merchant-service/complaint-notifications#delete
      */
     public function deleteAsync(array $options = []): PromiseInterface;
 }

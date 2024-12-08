@@ -12,7 +12,7 @@ interface Tokens
     /**
      * 出行券切卡组件预下单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_9_1.shtml
+     * @link https://wechatpay.im/openapi/v3/industry-coupon/tokens
      */
     public function post(array $options = [
         'json' => [
@@ -27,7 +27,7 @@ interface Tokens
     /**
      * 出行券切卡组件预下单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_9_1.shtml#async
+     * @link https://wechatpay.im/openapi/v3/industry-coupon/tokens
      */
     public function postAsync(array $options = [
         'json' => [

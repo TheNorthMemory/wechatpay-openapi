@@ -13,7 +13,7 @@ interface PrintOrders
     /**
      * 小票机打印(同步模式)
      * @param array<string,mixed> $options
-     * @link 服务商控制小票机进行打印。
+     * @link https://wechatpay.im/openapi/v3/pay-devices/printers/%7Bdevice_id%7D/print-orders
      */
     public function post(array $options = [
         'device_id' => 'WINCIE*EIXHRB',
@@ -37,7 +37,7 @@ interface PrintOrders
     /**
      * 小票机打印(异步模式)
      * @param array<string,mixed> $options
-     * @link 服务商控制小票机进行打印。#async
+     * @link https://wechatpay.im/openapi/v3/pay-devices/printers/%7Bdevice_id%7D/print-orders
      */
     public function postAsync(array $options = [
         'device_id' => 'WINCIE*EIXHRB',

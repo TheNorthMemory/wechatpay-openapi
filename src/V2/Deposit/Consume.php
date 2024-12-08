@@ -12,7 +12,7 @@ interface Consume
     /**
      * 消费押金(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=27_4&index=5
+     * @link https://wechatpay.im/openapi/v2/deposit/consume
      */
     public function post(array $options = [
         'xml' => [
@@ -33,7 +33,7 @@ interface Consume
     /**
      * 消费押金(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=27_4&index=5#async
+     * @link https://wechatpay.im/openapi/v2/deposit/consume
      */
     public function postAsync(array $options = [
         'xml' => [

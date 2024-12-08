@@ -12,7 +12,7 @@ interface MerchantBill
     /**
      * 商户申请获取对账单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter6_1_29.shtml
+     * @link https://wechatpay.im/openapi/v3/payscore/merchant-bill
      */
     public function get(array $options = [
         'query' => [
@@ -26,7 +26,7 @@ interface MerchantBill
     /**
      * 商户申请获取对账单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter6_1_29.shtml#async
+     * @link https://wechatpay.im/openapi/v3/payscore/merchant-bill
      */
     public function getAsync(array $options = [
         'query' => [

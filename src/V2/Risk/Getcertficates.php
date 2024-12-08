@@ -12,7 +12,7 @@ interface Getcertficates
     /**
      * 获取平台证书(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=19_11
+     * @link https://wechatpay.im/openapi/v2/risk/getcertficates
      */
     public function post(array $options = [
         'xml' => [
@@ -24,7 +24,7 @@ interface Getcertficates
     /**
      * 获取平台证书(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=19_11#async
+     * @link https://wechatpay.im/openapi/v2/risk/getcertficates
      */
     public function postAsync(array $options = [
         'xml' => [

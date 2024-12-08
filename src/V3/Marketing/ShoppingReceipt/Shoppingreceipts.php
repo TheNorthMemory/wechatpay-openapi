@@ -35,7 +35,7 @@ interface Shoppingreceipts
      * ```
      *
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/shopping-receipt/shopping-receipts/upload-shopping-receipt.html
+     * @link https://wechatpay.im/openapi/v3/marketing/shopping-receipt/shoppingreceipts
      */
     public function post(array $options = []): ResponseInterface;
 
@@ -65,7 +65,7 @@ interface Shoppingreceipts
      * ```
      *
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/shopping-receipt/shopping-receipts/upload-shopping-receipt.html#async
+     * @link https://wechatpay.im/openapi/v3/marketing/shopping-receipt/shoppingreceipts
      */
     public function postAsync(array $options = []): PromiseInterface;
 }

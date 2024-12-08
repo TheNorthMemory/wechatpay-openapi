@@ -12,7 +12,7 @@ interface TerminateContract
     /**
      * 解除刷脸用户签约关系接口(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/access-specifications.html
+     * @link https://wechatpay.im/openapi/v3/offlinefacemch/organizations/%7Borganization_id%7D/users/user-id/%7Buser_id%7D/terminate-contract
      */
     public function post(array $options = [
         'organization_id' => '',
@@ -22,7 +22,7 @@ interface TerminateContract
     /**
      * 解除刷脸用户签约关系接口(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/access-specifications.html#async
+     * @link https://wechatpay.im/openapi/v3/offlinefacemch/organizations/%7Borganization_id%7D/users/user-id/%7Buser_id%7D/terminate-contract
      */
     public function postAsync(array $options = [
         'organization_id' => '',

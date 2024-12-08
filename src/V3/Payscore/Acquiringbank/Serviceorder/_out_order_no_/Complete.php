@@ -12,7 +12,7 @@ interface Complete
     /**
      * 从业机构完结微信支付分订单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-order/complete-acquiring-bank-service-order.html
+     * @link https://wechatpay.im/openapi/v3/payscore/acquiringbank/serviceorder/%7Bout_order_no%7D/complete
      */
     public function post(array $options = [
         'out_order_no' => '1234323JKHDFE1243252',
@@ -52,7 +52,7 @@ interface Complete
     /**
      * 从业机构完结微信支付分订单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-order/complete-acquiring-bank-service-order.html#async
+     * @link https://wechatpay.im/openapi/v3/payscore/acquiringbank/serviceorder/%7Bout_order_no%7D/complete
      */
     public function postAsync(array $options = [
         'out_order_no' => '1234323JKHDFE1243252',

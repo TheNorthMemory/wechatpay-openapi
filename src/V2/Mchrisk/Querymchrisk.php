@@ -12,7 +12,7 @@ interface Querymchrisk
     /**
      * 事前-风险商户核查接口(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/mch_bank.php?chapter=9_291
+     * @link https://wechatpay.im/openapi/v2/mchrisk/querymchrisk
      */
     public function post(array $options = [
         'xml' => [
@@ -36,7 +36,7 @@ interface Querymchrisk
     /**
      * 事前-风险商户核查接口(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/mch_bank.php?chapter=9_291#async
+     * @link https://wechatpay.im/openapi/v2/mchrisk/querymchrisk
      */
     public function postAsync(array $options = [
         'xml' => [

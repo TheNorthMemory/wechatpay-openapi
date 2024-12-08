@@ -13,7 +13,7 @@ interface _out_contract_code_
     /**
      * 通过商户协议号查询委托代扣签约协议(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/entrusted-payment/normal/normal-get-contract-by-code.html
+     * @link https://wechatpay.im/openapi/v3/papay/sign/contracts/plan-id/%7Bplan_id%7D/out-contract-code/%7Bout_contract_code%7D
      */
     public function get(array $options = [
         'out_contract_code' => 'wxwtdk20200910100000',
@@ -23,7 +23,7 @@ interface _out_contract_code_
     /**
      * 通过商户协议号查询委托代扣签约协议(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/entrusted-payment/normal/normal-get-contract-by-code.html#async
+     * @link https://wechatpay.im/openapi/v3/papay/sign/contracts/plan-id/%7Bplan_id%7D/out-contract-code/%7Bout_contract_code%7D
      */
     public function getAsync(array $options = [
         'out_contract_code' => 'wxwtdk20200910100000',

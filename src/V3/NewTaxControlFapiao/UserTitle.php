@@ -13,7 +13,7 @@ interface UserTitle
     /**
      * 获取用户填写的抬头(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/new-tax-control-fapiao/chapter3_6.shtml
+     * @link https://wechatpay.im/openapi/v3/new-tax-control-fapiao/user-title
      */
     public function get(array $options = [
         'query' => [
@@ -26,7 +26,7 @@ interface UserTitle
     /**
      * 获取用户填写的抬头(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/new-tax-control-fapiao/chapter3_6.shtml#async
+     * @link https://wechatpay.im/openapi/v3/new-tax-control-fapiao/user-title
      */
     public function getAsync(array $options = [
         'query' => [

@@ -12,7 +12,7 @@ interface Representative
     /**
      * 添加零售小店活动业务代理(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-stores/add-representative.html
+     * @link https://wechatpay.im/openapi/v3/marketing/goods-subsidy-activity/retail-store-act/%7Bactivity_id%7D/representative
      */
     public function put(array $options = [
         'activity_id' => '3118550000000004',
@@ -28,7 +28,7 @@ interface Representative
     /**
      * 添加零售小店活动业务代理(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-stores/add-representative.html#async
+     * @link https://wechatpay.im/openapi/v3/marketing/goods-subsidy-activity/retail-store-act/%7Bactivity_id%7D/representative
      */
     public function putAsync(array $options = [
         'activity_id' => '3118550000000004',
@@ -44,7 +44,7 @@ interface Representative
     /**
      * 删除零售小店活动业务代理(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/delete-representative.html
+     * @link https://wechatpay.im/openapi/v3/marketing/goods-subsidy-activity/retail-store-act/%7Bactivity_id%7D/representative#delete
      */
     public function delete(array $options = [
         'activity_id' => '3118550000000004',
@@ -60,7 +60,7 @@ interface Representative
     /**
      * 删除零售小店活动业务代理(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/delete-representative.html#async
+     * @link https://wechatpay.im/openapi/v3/marketing/goods-subsidy-activity/retail-store-act/%7Bactivity_id%7D/representative#delete
      */
     public function deleteAsync(array $options = [
         'activity_id' => '3118550000000004',

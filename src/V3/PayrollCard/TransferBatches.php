@@ -12,7 +12,7 @@ interface TransferBatches
     /**
      * 发起批量转账(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_6.shtml
+     * @link https://wechatpay.im/openapi/v3/payroll-card/transfer-batches
      */
     public function post(array $options = [
         'json' => [
@@ -43,7 +43,7 @@ interface TransferBatches
     /**
      * 发起批量转账(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_6.shtml#async
+     * @link https://wechatpay.im/openapi/v3/payroll-card/transfer-batches
      */
     public function postAsync(array $options = [
         'json' => [

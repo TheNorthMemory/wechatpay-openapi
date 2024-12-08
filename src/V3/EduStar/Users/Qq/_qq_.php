@@ -12,7 +12,7 @@ interface _qq_
     /**
      * 通过QQ账号查询用户信息(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/assets/img/common/edu/edu-star/chapter2_3.png
+     * @link https://wechatpay.im/openapi/v3/edu-star/users/qq/%7Bqq%7D
      */
     public function get(array $options = [
         'qq' => '100000000000',
@@ -24,7 +24,7 @@ interface _qq_
     /**
      * 通过QQ账号查询用户信息(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/assets/img/common/edu/edu-star/chapter2_3.png#async
+     * @link https://wechatpay.im/openapi/v3/edu-star/users/qq/%7Bqq%7D
      */
     public function getAsync(array $options = [
         'qq' => '100000000000',

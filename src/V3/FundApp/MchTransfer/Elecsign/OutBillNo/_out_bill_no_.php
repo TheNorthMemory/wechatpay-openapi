@@ -12,7 +12,7 @@ interface _out_bill_no_
     /**
      * 商户单号查询电子回单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/mch-trans/elecsign/query-elecsign-by-out-no.html
+     * @link https://wechatpay.im/openapi/v3/fund-app/mch-transfer/elecsign/out-bill-no/%7Bout_bill_no%7D
      */
     public function get(array $options = [
         'out_bill_no' => 'plfk2020042013',
@@ -21,7 +21,7 @@ interface _out_bill_no_
     /**
      * 商户单号查询电子回单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/mch-trans/elecsign/query-elecsign-by-out-no.html#async
+     * @link https://wechatpay.im/openapi/v3/fund-app/mch-transfer/elecsign/out-bill-no/%7Bout_bill_no%7D
      */
     public function getAsync(array $options = [
         'out_bill_no' => 'plfk2020042013',

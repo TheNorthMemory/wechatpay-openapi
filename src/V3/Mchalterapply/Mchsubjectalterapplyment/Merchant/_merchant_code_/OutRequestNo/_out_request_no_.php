@@ -12,7 +12,7 @@ interface _out_request_no_
     /**
      * 查询申请单状态-使用业务单号(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter11_3_3.shtml
+     * @link https://wechatpay.im/openapi/v3/mchalterapply/mchsubjectalterapplyment/merchant/%7Bmerchant_code%7D/out-request-no/%7Bout_request_no%7D
      */
     public function get(array $options = [
         'out_request_no' => '1900013511_10000',
@@ -24,7 +24,7 @@ interface _out_request_no_
     /**
      * 查询申请单状态-使用业务单号(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter11_3_3.shtml#async
+     * @link https://wechatpay.im/openapi/v3/mchalterapply/mchsubjectalterapplyment/merchant/%7Bmerchant_code%7D/out-request-no/%7Bout_request_no%7D
      */
     public function getAsync(array $options = [
         'out_request_no' => '1900013511_10000',

@@ -12,7 +12,7 @@ interface Servicepayondeliveryorder
     /**
      * 从业机构创建先用后付订单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-order/create-acquiring-bank-pay-on-delivery-service-order.html
+     * @link https://wechatpay.im/openapi/v3/payscore/acquiringbank/servicepayondeliveryorder
      */
     public function post(array $options = [
         'json' => [
@@ -76,7 +76,7 @@ interface Servicepayondeliveryorder
     /**
      * 从业机构创建先用后付订单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-order/create-acquiring-bank-pay-on-delivery-service-order.html#async
+     * @link https://wechatpay.im/openapi/v3/payscore/acquiringbank/servicepayondeliveryorder
      */
     public function postAsync(array $options = [
         'json' => [

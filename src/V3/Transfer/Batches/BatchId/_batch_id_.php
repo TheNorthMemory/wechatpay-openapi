@@ -13,7 +13,7 @@ interface _batch_id_
     /**
      * 微信批次单号查询批次单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer/chapter3_2.shtml
+     * @link https://wechatpay.im/openapi/v3/transfer/batches/batch-id/%7Bbatch_id%7D
      */
     public function get(array $options = [
         'batch_id' => '1030000071100999991182020050700019480001',
@@ -28,7 +28,7 @@ interface _batch_id_
     /**
      * 微信批次单号查询批次单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer/chapter3_2.shtml#async
+     * @link https://wechatpay.im/openapi/v3/transfer/batches/batch-id/%7Bbatch_id%7D
      */
     public function getAsync(array $options = [
         'batch_id' => '1030000071100999991182020050700019480001',

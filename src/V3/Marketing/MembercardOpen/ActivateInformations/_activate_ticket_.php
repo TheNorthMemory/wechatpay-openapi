@@ -12,7 +12,7 @@ interface _activate_ticket_
     /**
      * 获取用户信息（跳转型激活）(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter4_5.shtml
+     * @link https://wechatpay.im/openapi/v3/marketing/membercard-open/activate-informations/%7Bactivate_ticket%7D
      */
     public function get(array $options = [
         'activate_ticket' => 'abcdefg',
@@ -21,7 +21,7 @@ interface _activate_ticket_
     /**
      * 获取用户信息（跳转型激活）(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter4_5.shtml#async
+     * @link https://wechatpay.im/openapi/v3/marketing/membercard-open/activate-informations/%7Bactivate_ticket%7D
      */
     public function getAsync(array $options = [
         'activate_ticket' => 'abcdefg',

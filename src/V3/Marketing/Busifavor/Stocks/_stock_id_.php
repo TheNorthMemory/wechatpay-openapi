@@ -14,7 +14,7 @@ interface _stock_id_
     /**
      * 查询商家券详情(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_2.shtml
+     * @link https://wechatpay.im/openapi/v3/marketing/busifavor/stocks/%7Bstock_id%7D
      */
     public function get(array $options = [
         'stock_id' => '1212',
@@ -23,7 +23,7 @@ interface _stock_id_
     /**
      * 查询商家券详情(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_2.shtml#async
+     * @link https://wechatpay.im/openapi/v3/marketing/busifavor/stocks/%7Bstock_id%7D
      */
     public function getAsync(array $options = [
         'stock_id' => '1212',
@@ -32,7 +32,7 @@ interface _stock_id_
     /**
      * 修改商家券基本信息(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_12.shtml
+     * @link https://wechatpay.im/openapi/v3/marketing/busifavor/stocks/%7Bstock_id%7D#patch
      */
     public function patch(array $options = [
         'stock_id' => '101156451224',
@@ -83,7 +83,7 @@ interface _stock_id_
     /**
      * 修改商家券基本信息(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_12.shtml#async
+     * @link https://wechatpay.im/openapi/v3/marketing/busifavor/stocks/%7Bstock_id%7D#patch
      */
     public function patchAsync(array $options = [
         'stock_id' => '101156451224',

@@ -12,7 +12,7 @@ interface Report
     /**
      * 交易保障(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=9_8&index=9
+     * @link https://wechatpay.im/openapi/v2/payitil/report
      */
     public function post(array $options = [
         'xml' => [
@@ -28,7 +28,7 @@ interface Report
     /**
      * 交易保障(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=9_8&index=9#async
+     * @link https://wechatpay.im/openapi/v2/payitil/report
      */
     public function postAsync(array $options = [
         'xml' => [

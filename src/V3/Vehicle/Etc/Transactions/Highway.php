@@ -12,7 +12,7 @@ interface Highway
     /**
      * 高速场景商户扣款(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_4_3.shtml
+     * @link https://wechatpay.im/openapi/v3/vehicle/etc/transactions/highway
      */
     public function post(array $options = [
         'json' => [
@@ -49,7 +49,7 @@ interface Highway
     /**
      * 高速场景商户扣款(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_4_3.shtml#async
+     * @link https://wechatpay.im/openapi/v3/vehicle/etc/transactions/highway
      */
     public function postAsync(array $options = [
         'json' => [

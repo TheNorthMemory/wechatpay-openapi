@@ -12,7 +12,7 @@ interface DebtState
     /**
      * 商户查询用户欠款状态(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/edu/eduschoolpay/chapter4_4.shtml
+     * @link https://wechatpay.im/openapi/v3/eduschoolpay/users/%7Bopenid%7D/debt-state
      */
     public function get(array $options = [
         'openid' => 'oUpF8uMuAJOM2pxb1Q',
@@ -21,7 +21,7 @@ interface DebtState
     /**
      * 商户查询用户欠款状态(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/edu/eduschoolpay/chapter4_4.shtml#async
+     * @link https://wechatpay.im/openapi/v3/eduschoolpay/users/%7Bopenid%7D/debt-state
      */
     public function getAsync(array $options = [
         'openid' => 'oUpF8uMuAJOM2pxb1Q',

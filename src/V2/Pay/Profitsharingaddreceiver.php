@@ -12,7 +12,7 @@ interface Profitsharingaddreceiver
     /**
      * 添加分账接收方(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/allocation_sl.php?chapter=25_3&index=4
+     * @link https://wechatpay.im/openapi/v2/pay/profitsharingaddreceiver
      */
     public function post(array $options = [
         'xml' => [
@@ -28,7 +28,7 @@ interface Profitsharingaddreceiver
     /**
      * 添加分账接收方(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/allocation_sl.php?chapter=25_3&index=4#async
+     * @link https://wechatpay.im/openapi/v2/pay/profitsharingaddreceiver
      */
     public function postAsync(array $options = [
         'xml' => [

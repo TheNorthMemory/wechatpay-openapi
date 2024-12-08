@@ -13,7 +13,7 @@ interface _apply_id_
     /**
      * 查询资料变更申请单状态-使用申请单号(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter11_3_2.shtml
+     * @link https://wechatpay.im/openapi/v3/mchalterapply/mchsubjectalterapplyment/%7Bapply_id%7D
      */
     public function get(array $options = [
         'apply_id' => '20220617143306000013906025001',
@@ -22,7 +22,7 @@ interface _apply_id_
     /**
      * 查询资料变更申请单状态-使用申请单号(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter11_3_2.shtml#async
+     * @link https://wechatpay.im/openapi/v3/mchalterapply/mchsubjectalterapplyment/%7Bapply_id%7D
      */
     public function getAsync(array $options = [
         'apply_id' => '20220617143306000013906025001',

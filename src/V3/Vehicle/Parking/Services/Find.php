@@ -12,7 +12,7 @@ interface Find
     /**
      * 查询车牌服务开通信息(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_8_1.shtml
+     * @link https://wechatpay.im/openapi/v3/vehicle/parking/services/find
      */
     public function get(array $options = [
         'query' => [
@@ -27,7 +27,7 @@ interface Find
     /**
      * 查询车牌服务开通信息(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_8_1.shtml#async
+     * @link https://wechatpay.im/openapi/v3/vehicle/parking/services/find
      */
     public function getAsync(array $options = [
         'query' => [

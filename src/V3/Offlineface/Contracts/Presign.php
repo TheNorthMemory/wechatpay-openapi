@@ -12,7 +12,7 @@ interface Presign
     /**
      * 预签约接口(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/access-specifications.html
+     * @link https://wechatpay.im/openapi/v3/offlineface/contracts/presign
      */
     public function post(array $options = [
         'json' => [
@@ -48,7 +48,7 @@ interface Presign
     /**
      * 预签约接口(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/access-specifications.html#async
+     * @link https://wechatpay.im/openapi/v3/offlineface/contracts/presign
      */
     public function postAsync(array $options = [
         'json' => [

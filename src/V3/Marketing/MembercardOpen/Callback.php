@@ -12,7 +12,7 @@ interface Callback
     /**
      * 设置回调地址(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter6_1.shtml
+     * @link https://wechatpay.im/openapi/v3/marketing/membercard-open/callback
      */
     public function patch(array $options = [
         'json' => [
@@ -23,7 +23,7 @@ interface Callback
     /**
      * 设置回调地址(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter6_1.shtml#async
+     * @link https://wechatpay.im/openapi/v3/marketing/membercard-open/callback
      */
     public function patchAsync(array $options = [
         'json' => [
@@ -34,14 +34,14 @@ interface Callback
     /**
      * 查询回调地址(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter6_2.shtml
+     * @link https://wechatpay.im/openapi/v3/marketing/membercard-open/callback#get
      */
     public function get(array $options = []): ResponseInterface;
 
     /**
      * 查询回调地址(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter6_2.shtml#async
+     * @link https://wechatpay.im/openapi/v3/marketing/membercard-open/callback#get
      */
     public function getAsync(array $options = []): PromiseInterface;
 }

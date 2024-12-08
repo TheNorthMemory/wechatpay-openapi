@@ -12,7 +12,7 @@ interface Pay_bank
     /**
      * 企业付款到银行卡(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/tools/mch_pay.php?chapter=24_2
+     * @link https://wechatpay.im/openapi/v2/mmpaysptrans/pay_bank
      */
     public function post(array $options = [
         'xml' => [
@@ -30,7 +30,7 @@ interface Pay_bank
     /**
      * 企业付款到银行卡(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/tools/mch_pay.php?chapter=24_2#async
+     * @link https://wechatpay.im/openapi/v2/mmpaysptrans/pay_bank
      */
     public function postAsync(array $options = [
         'xml' => [

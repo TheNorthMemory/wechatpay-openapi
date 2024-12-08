@@ -12,7 +12,7 @@ interface Lock
     /**
      * 锁定品牌加价购活动资格(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/products/retail-store/introduction.html
+     * @link https://wechatpay.im/openapi/v3/marketing/goods-subsidy-activity/qualification/lock
      */
     public function post(array $options = [
         'json' => [
@@ -30,7 +30,7 @@ interface Lock
     /**
      * 锁定品牌加价购活动资格(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/products/retail-store/introduction.html#async
+     * @link https://wechatpay.im/openapi/v3/marketing/goods-subsidy-activity/qualification/lock
      */
     public function postAsync(array $options = [
         'json' => [

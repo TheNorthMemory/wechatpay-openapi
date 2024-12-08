@@ -12,7 +12,7 @@ interface Contracts
     /**
      * 查询ETC签约状态(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_4_5.shtml
+     * @link https://wechatpay.im/openapi/v3/vehicle/etc/users/%7Bopenid%7D/contracts
      */
     public function get(array $options = [
         'openid' => 'onqOjjmM1tad-3ROpncN-yUfa6ua',
@@ -26,7 +26,7 @@ interface Contracts
     /**
      * 查询ETC签约状态(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_4_5.shtml#async
+     * @link https://wechatpay.im/openapi/v3/vehicle/etc/users/%7Bopenid%7D/contracts
      */
     public function getAsync(array $options = [
         'openid' => 'onqOjjmM1tad-3ROpncN-yUfa6ua',

@@ -12,7 +12,7 @@ interface Bankquerymchauditinfo
     /**
      * 间联模式查询商户审核状态开放接口(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/mch_bank.php?chapter=9_295
+     * @link https://wechatpay.im/openapi/v2/mchrisk/bankquerymchauditinfo
      */
     public function post(array $options = [
         'xml' => [
@@ -26,7 +26,7 @@ interface Bankquerymchauditinfo
     /**
      * 间联模式查询商户审核状态开放接口(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/mch_bank.php?chapter=9_295#async
+     * @link https://wechatpay.im/openapi/v2/mchrisk/bankquerymchauditinfo
      */
     public function postAsync(array $options = [
         'xml' => [

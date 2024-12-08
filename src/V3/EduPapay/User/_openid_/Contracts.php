@@ -12,7 +12,7 @@ interface Contracts
     /**
      * 通过用户标识查询签约(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter5_2_3.shtml
+     * @link https://wechatpay.im/openapi/v3/edu-papay/user/%7Bopenid%7D/contracts
      */
     public function get(array $options = [
         'openid' => 'oUpF8uMuAJOM2pxb1Q',
@@ -31,7 +31,7 @@ interface Contracts
     /**
      * 通过用户标识查询签约(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter5_2_3.shtml#async
+     * @link https://wechatpay.im/openapi/v3/edu-papay/user/%7Bopenid%7D/contracts
      */
     public function getAsync(array $options = [
         'openid' => 'oUpF8uMuAJOM2pxb1Q',

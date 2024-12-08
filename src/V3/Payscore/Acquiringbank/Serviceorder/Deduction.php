@@ -12,7 +12,7 @@ interface Deduction
     /**
      * 从业机构查询微信支付分扣款信息(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-order/get-acquiring-bank-deduct-info.html
+     * @link https://wechatpay.im/openapi/v3/payscore/acquiringbank/serviceorder/deduction
      */
     public function get(array $options = [
         'query' => [
@@ -28,7 +28,7 @@ interface Deduction
     /**
      * 从业机构查询微信支付分扣款信息(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-order/get-acquiring-bank-deduct-info.html#async
+     * @link https://wechatpay.im/openapi/v3/payscore/acquiringbank/serviceorder/deduction
      */
     public function getAsync(array $options = [
         'query' => [

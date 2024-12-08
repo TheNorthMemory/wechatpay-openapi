@@ -12,7 +12,7 @@ interface Delete
     /**
      * 删除分账接收方(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/brand/chapter3_8.shtml
+     * @link https://wechatpay.im/openapi/v3/brand/profitsharing/receivers/delete
      */
     public function post(array $options = [
         'json' => [
@@ -27,7 +27,7 @@ interface Delete
     /**
      * 删除分账接收方(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/brand/chapter3_8.shtml#async
+     * @link https://wechatpay.im/openapi/v3/brand/profitsharing/receivers/delete
      */
     public function postAsync(array $options = [
         'json' => [

@@ -13,7 +13,7 @@ interface _activity_id_
     /**
      * 查询活动详情(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/membership-card/member-gift/query-activity-detail.html
+     * @link https://wechatpay.im/openapi/v3/marketing/membercard-activity/activities/%7Bactivity_id%7D
      */
     public function get(array $options = [
         'activity_id' => '371067',
@@ -22,7 +22,7 @@ interface _activity_id_
     /**
      * 查询活动详情(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/membership-card/member-gift/query-activity-detail.html#async
+     * @link https://wechatpay.im/openapi/v3/marketing/membercard-activity/activities/%7Bactivity_id%7D
      */
     public function getAsync(array $options = [
         'activity_id' => '371067',

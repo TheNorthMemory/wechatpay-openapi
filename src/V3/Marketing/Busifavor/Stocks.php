@@ -13,7 +13,7 @@ interface Stocks
     /**
      * 创建商家券(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_1.shtml
+     * @link https://wechatpay.im/openapi/v3/marketing/busifavor/stocks
      */
     public function post(array $options = [
         'json' => [
@@ -103,7 +103,7 @@ interface Stocks
     /**
      * 创建商家券(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_1.shtml#async
+     * @link https://wechatpay.im/openapi/v3/marketing/busifavor/stocks
      */
     public function postAsync(array $options = [
         'json' => [

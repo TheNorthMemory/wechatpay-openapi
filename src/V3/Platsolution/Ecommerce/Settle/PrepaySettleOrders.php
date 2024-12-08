@@ -13,7 +13,7 @@ interface PrepaySettleOrders
     /**
      * 个人收款-申请批量结算(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/personal-collections/apply-prepay-settle-orders.html
+     * @link https://wechatpay.im/openapi/v3/platsolution/ecommerce/settle/prepay-settle-orders
      */
     public function post(array $options = [
         'json' => [
@@ -43,7 +43,7 @@ interface PrepaySettleOrders
     /**
      * 个人收款-申请批量结算(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/personal-collections/apply-prepay-settle-orders.html#async
+     * @link https://wechatpay.im/openapi/v3/platsolution/ecommerce/settle/prepay-settle-orders
      */
     public function postAsync(array $options = [
         'json' => [

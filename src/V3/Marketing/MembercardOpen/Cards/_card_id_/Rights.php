@@ -12,7 +12,7 @@ interface Rights
     /**
      * 设置会员卡模板权益项(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter5_1.shtml
+     * @link https://wechatpay.im/openapi/v3/marketing/membercard-open/cards/%7Bcard_id%7D/rights
      */
     public function patch(array $options = [
         'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',
@@ -42,7 +42,7 @@ interface Rights
     /**
      * 设置会员卡模板权益项(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter5_1.shtml#async
+     * @link https://wechatpay.im/openapi/v3/marketing/membercard-open/cards/%7Bcard_id%7D/rights
      */
     public function patchAsync(array $options = [
         'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',

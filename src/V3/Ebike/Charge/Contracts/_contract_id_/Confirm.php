@@ -13,7 +13,7 @@ interface Confirm
      * 创建用户当次充电代扣凭证(同步模式)
      * @param array<string,mixed> $options
      * @deprecated - since 2019.12.16
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/vehicle/ebike/chapter3_4.shtml
+     * @link https://wechatpay.im/openapi/v3/ebike/charge/contracts/%7Bcontract_id%7D/confirm
      */
     public function post(array $options = [
         'contract_id' => 'aAfixCs13LsdKPpfZfDkk2189ssXjfx',
@@ -34,7 +34,7 @@ interface Confirm
      * 创建用户当次充电代扣凭证(异步模式)
      * @param array<string,mixed> $options
      * @deprecated - since 2019.12.16
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/vehicle/ebike/chapter3_4.shtml#async
+     * @link https://wechatpay.im/openapi/v3/ebike/charge/contracts/%7Bcontract_id%7D/confirm
      */
     public function postAsync(array $options = [
         'contract_id' => 'aAfixCs13LsdKPpfZfDkk2189ssXjfx',

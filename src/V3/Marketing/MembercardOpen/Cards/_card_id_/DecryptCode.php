@@ -12,7 +12,7 @@ interface DecryptCode
     /**
      * 加密code解码（跳转型激活）(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter4_4.shtml
+     * @link https://wechatpay.im/openapi/v3/marketing/membercard-open/cards/%7Bcard_id%7D/decrypt-code
      */
     public function get(array $options = [
         'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',
@@ -24,7 +24,7 @@ interface DecryptCode
     /**
      * 加密code解码（跳转型激活）(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter4_4.shtml#async
+     * @link https://wechatpay.im/openapi/v3/marketing/membercard-open/cards/%7Bcard_id%7D/decrypt-code
      */
     public function getAsync(array $options = [
         'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',

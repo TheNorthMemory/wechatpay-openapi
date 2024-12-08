@@ -12,7 +12,7 @@ interface Merchants
     /**
      * 查询代金券可用商户(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/convention/chapter3_7.shtml
+     * @link https://wechatpay.im/openapi/v3/marketing/favor/stocks/%7Bstock_id%7D/merchants
      */
     public function get(array $options = [
         'stock_id' => '',
@@ -26,7 +26,7 @@ interface Merchants
     /**
      * 查询代金券可用商户(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/convention/chapter3_7.shtml#async
+     * @link https://wechatpay.im/openapi/v3/marketing/favor/stocks/%7Bstock_id%7D/merchants
      */
     public function getAsync(array $options = [
         'stock_id' => '',

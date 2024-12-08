@@ -12,7 +12,7 @@ interface Orders
     /**
      * 创建核销订单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/assets/img/common/edu/edu-star/chapter2_3.png
+     * @link https://wechatpay.im/openapi/v3/edu-star/orders
      */
     public function post(array $options = [
         'json' => [
@@ -27,7 +27,7 @@ interface Orders
     /**
      * 创建核销订单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/assets/img/common/edu/edu-star/chapter2_3.png#async
+     * @link https://wechatpay.im/openapi/v3/edu-star/orders
      */
     public function postAsync(array $options = [
         'json' => [
@@ -42,7 +42,7 @@ interface Orders
     /**
      * 通过QQ账号查询核销订单列表(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/assets/img/common/edu/edu-star/chapter2_3.png
+     * @link https://wechatpay.im/openapi/v3/edu-star/orders#get
      */
     public function get(array $options = [
         'query' => [
@@ -57,7 +57,7 @@ interface Orders
     /**
      * 通过QQ账号查询核销订单列表(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/assets/img/common/edu/edu-star/chapter2_3.png#async
+     * @link https://wechatpay.im/openapi/v3/edu-star/orders#get
      */
     public function getAsync(array $options = [
         'query' => [

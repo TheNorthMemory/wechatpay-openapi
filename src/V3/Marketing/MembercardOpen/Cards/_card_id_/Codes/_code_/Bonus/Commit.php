@@ -12,7 +12,7 @@ interface Commit
     /**
      * 设置支付后展示的积分到账(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter10_2.shtml
+     * @link https://wechatpay.im/openapi/v3/marketing/membercard-open/cards/%7Bcard_id%7D/codes/%7Bcode%7D/bonus/commit
      */
     public function post(array $options = [
         'card_id' => '478515832665',
@@ -28,7 +28,7 @@ interface Commit
     /**
      * 设置支付后展示的积分到账(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter10_2.shtml#async
+     * @link https://wechatpay.im/openapi/v3/marketing/membercard-open/cards/%7Bcard_id%7D/codes/%7Bcode%7D/bonus/commit
      */
     public function postAsync(array $options = [
         'card_id' => '478515832665',

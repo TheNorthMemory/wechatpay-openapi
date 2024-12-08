@@ -12,7 +12,7 @@ interface Settlement
     /**
      * 查询结算账户(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/ecommerce-merchant-application/get-settlement.html
+     * @link https://wechatpay.im/openapi/v3/apply4sub/sub_merchants/%7Bsub_mchid%7D/settlement
      */
     public function get(array $options = [
         'sub_mchid' => '1900006491',
@@ -21,7 +21,7 @@ interface Settlement
     /**
      * 查询结算账户(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/ecommerce-merchant-application/get-settlement.html#async
+     * @link https://wechatpay.im/openapi/v3/apply4sub/sub_merchants/%7Bsub_mchid%7D/settlement
      */
     public function getAsync(array $options = [
         'sub_mchid' => '1900006491',

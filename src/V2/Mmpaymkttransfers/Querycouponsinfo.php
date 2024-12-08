@@ -13,7 +13,7 @@ interface Querycouponsinfo
      * 查询代金券信息(同步模式)
      * @param array<string,mixed> $options
      * @deprecated - since 2020.MM.dd
-     * @link https://pay.weixin.qq.com/wiki/doc/api/tools/sp_coupon.php?chapter=12_5&index=6
+     * @link https://wechatpay.im/openapi/v2/mmpaymkttransfers/querycouponsinfo
      */
     public function post(array $options = [
         'xml' => [
@@ -31,7 +31,7 @@ interface Querycouponsinfo
      * 查询代金券信息(异步模式)
      * @param array<string,mixed> $options
      * @deprecated - since 2020.MM.dd
-     * @link https://pay.weixin.qq.com/wiki/doc/api/tools/sp_coupon.php?chapter=12_5&index=6#async
+     * @link https://wechatpay.im/openapi/v2/mmpaymkttransfers/querycouponsinfo
      */
     public function postAsync(array $options = [
         'xml' => [

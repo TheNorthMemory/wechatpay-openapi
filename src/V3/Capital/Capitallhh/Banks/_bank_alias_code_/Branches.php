@@ -12,7 +12,7 @@ interface Branches
     /**
      * 查询支行列表(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter11_2_6.shtml
+     * @link https://wechatpay.im/openapi/v3/capital/capitallhh/banks/%7Bbank_alias_code%7D/branches
      */
     public function get(array $options = [
         'bank_alias_code' => '1000006247',
@@ -26,7 +26,7 @@ interface Branches
     /**
      * 查询支行列表(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter11_2_6.shtml#async
+     * @link https://wechatpay.im/openapi/v3/capital/capitallhh/banks/%7Bbank_alias_code%7D/branches
      */
     public function getAsync(array $options = [
         'bank_alias_code' => '1000006247',

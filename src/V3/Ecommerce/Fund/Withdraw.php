@@ -14,7 +14,7 @@ interface Withdraw
     /**
      * 账户余额提现(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/fund/chapter3_2.shtml
+     * @link https://wechatpay.im/openapi/v3/ecommerce/fund/withdraw
      */
     public function post(array $options = [
         'json' => [
@@ -30,7 +30,7 @@ interface Withdraw
     /**
      * 账户余额提现(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/fund/chapter3_2.shtml#async
+     * @link https://wechatpay.im/openapi/v3/ecommerce/fund/withdraw
      */
     public function postAsync(array $options = [
         'json' => [

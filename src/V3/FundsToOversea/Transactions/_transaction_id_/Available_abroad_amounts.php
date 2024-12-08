@@ -12,7 +12,7 @@ interface Available_abroad_amounts
     /**
      * 查询订单剩余可出境余额(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter7_10_1.shtml
+     * @link https://wechatpay.im/openapi/v3/funds-to-oversea/transactions/%7Btransaction_id%7D/available_abroad_amounts
      */
     public function get(array $options = [
         'transaction_id' => '4208450740201411110007820472',
@@ -24,7 +24,7 @@ interface Available_abroad_amounts
     /**
      * 查询订单剩余可出境余额(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter7_10_1.shtml#async
+     * @link https://wechatpay.im/openapi/v3/funds-to-oversea/transactions/%7Btransaction_id%7D/available_abroad_amounts
      */
     public function getAsync(array $options = [
         'transaction_id' => '4208450740201411110007820472',

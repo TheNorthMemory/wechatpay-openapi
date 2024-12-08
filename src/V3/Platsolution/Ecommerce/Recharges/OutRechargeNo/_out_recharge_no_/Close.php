@@ -12,7 +12,7 @@ interface Close
     /**
      * 关闭二级商户充值(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-recharge/recharge/close.html
+     * @link https://wechatpay.im/openapi/v3/platsolution/ecommerce/recharges/out-recharge-no/%7Bout_recharge_no%7D/close
      */
     public function post(array $options = [
         'out_recharge_no' => 'cz2020042013',
@@ -24,7 +24,7 @@ interface Close
     /**
      * 关闭二级商户充值(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-recharge/recharge/close.html#async
+     * @link https://wechatpay.im/openapi/v3/platsolution/ecommerce/recharges/out-recharge-no/%7Bout_recharge_no%7D/close
      */
     public function postAsync(array $options = [
         'out_recharge_no' => 'cz2020042013',

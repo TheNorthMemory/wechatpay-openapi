@@ -12,7 +12,7 @@ interface Returnorders
     /**
      * 请求分账回退(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/profitsharing/chapter3_3.shtml
+     * @link https://wechatpay.im/openapi/v3/ecommerce/profitsharing/returnorders
      */
     public function post(array $options = [
         'json' => [
@@ -29,7 +29,7 @@ interface Returnorders
     /**
      * 请求分账回退(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/profitsharing/chapter3_3.shtml#async
+     * @link https://wechatpay.im/openapi/v3/ecommerce/profitsharing/returnorders
      */
     public function postAsync(array $options = [
         'json' => [
@@ -46,7 +46,7 @@ interface Returnorders
     /**
      * 查询分账回退结果(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/profitsharing/chapter3_4.shtml
+     * @link https://wechatpay.im/openapi/v3/ecommerce/profitsharing/returnorders#get
      */
     public function get(array $options = [
         'query' => [
@@ -60,7 +60,7 @@ interface Returnorders
     /**
      * 查询分账回退结果(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/profitsharing/chapter3_4.shtml#async
+     * @link https://wechatpay.im/openapi/v3/ecommerce/profitsharing/returnorders#get
      */
     public function getAsync(array $options = [
         'query' => [

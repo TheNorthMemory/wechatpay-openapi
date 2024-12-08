@@ -12,7 +12,7 @@ interface Payapply
     /**
      * 申请扣款(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/vehicle_v2_sl.php?chapter=20_982&index=2&p=202
+     * @link https://wechatpay.im/openapi/v2/vehicle/partnerpay/payapply
      */
     public function post(array $options = [
         'xml' => [
@@ -42,7 +42,7 @@ interface Payapply
     /**
      * 申请扣款(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/vehicle_v2_sl.php?chapter=20_982&index=2&p=202#async
+     * @link https://wechatpay.im/openapi/v2/vehicle/partnerpay/payapply
      */
     public function postAsync(array $options = [
         'xml' => [

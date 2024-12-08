@@ -12,7 +12,7 @@ interface UpdateRefundProgress
     /**
      * 更新退款审批结果(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter10_2_19.shtml
+     * @link https://wechatpay.im/openapi/v3/merchant-service/complaints-v2/%7Bcomplaint_id%7D/update-refund-progress
      */
     public function post(array $options = [
         'complaint_id' => '200201820200101080076610000',
@@ -28,7 +28,7 @@ interface UpdateRefundProgress
     /**
      * 更新退款审批结果(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter10_2_19.shtml#async
+     * @link https://wechatpay.im/openapi/v3/merchant-service/complaints-v2/%7Bcomplaint_id%7D/update-refund-progress
      */
     public function postAsync(array $options = [
         'complaint_id' => '200201820200101080076610000',

@@ -12,7 +12,7 @@ interface Add
     /**
      * 新增活动发券商户号(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/paygiftactivity/chapter3_8.shtml
+     * @link https://wechatpay.im/openapi/v3/marketing/paygiftactivity/activities/%7Bactivity_id%7D/merchants/add
      */
     public function post(array $options = [
         'activity_id' => '',
@@ -25,7 +25,7 @@ interface Add
     /**
      * 新增活动发券商户号(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/paygiftactivity/chapter3_8.shtml#async
+     * @link https://wechatpay.im/openapi/v3/marketing/paygiftactivity/activities/%7Bactivity_id%7D/merchants/add
      */
     public function postAsync(array $options = [
         'activity_id' => '',

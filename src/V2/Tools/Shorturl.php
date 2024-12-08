@@ -12,7 +12,7 @@ interface Shorturl
     /**
      * 转换短链接(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/native.php?chapter=9_9&index=10
+     * @link https://wechatpay.im/openapi/v2/tools/shorturl
      */
     public function post(array $options = [
         'xml' => [
@@ -26,7 +26,7 @@ interface Shorturl
     /**
      * 转换短链接(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/native.php?chapter=9_9&index=10#async
+     * @link https://wechatpay.im/openapi/v2/tools/shorturl
      */
     public function postAsync(array $options = [
         'xml' => [

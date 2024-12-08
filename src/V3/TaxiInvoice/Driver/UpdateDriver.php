@@ -12,7 +12,7 @@ interface UpdateDriver
     /**
      * 更新司机信息(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/taxi-fapiao/driver/update-driver.html
+     * @link https://wechatpay.im/openapi/v3/taxi-invoice/driver/update-driver
      */
     public function post(array $options = [
         'json' => [
@@ -42,7 +42,7 @@ interface UpdateDriver
     /**
      * 更新司机信息(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/taxi-fapiao/driver/update-driver.html#async
+     * @link https://wechatpay.im/openapi/v3/taxi-invoice/driver/update-driver
      */
     public function postAsync(array $options = [
         'json' => [

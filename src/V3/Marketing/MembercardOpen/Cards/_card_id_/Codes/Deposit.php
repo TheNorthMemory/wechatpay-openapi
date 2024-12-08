@@ -12,7 +12,7 @@ interface Deposit
     /**
      * 导入会员Code (同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_7.shtml
+     * @link https://wechatpay.im/openapi/v3/marketing/membercard-open/cards/%7Bcard_id%7D/codes/deposit
      */
     public function post(array $options = [
         'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',
@@ -24,7 +24,7 @@ interface Deposit
     /**
      * 导入会员Code (异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_7.shtml#async
+     * @link https://wechatpay.im/openapi/v3/marketing/membercard-open/cards/%7Bcard_id%7D/codes/deposit
      */
     public function postAsync(array $options = [
         'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',

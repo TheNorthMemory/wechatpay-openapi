@@ -12,7 +12,7 @@ interface TokenValidations
     /**
      * 校验核身结果(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_31.shtml
+     * @link https://wechatpay.im/openapi/v3/payroll-card/wesure/token-validations
      */
     public function post(array $options = [
         'json' => [
@@ -31,7 +31,7 @@ interface TokenValidations
     /**
      * 校验核身结果(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_31.shtml#async
+     * @link https://wechatpay.im/openapi/v3/payroll-card/wesure/token-validations
      */
     public function postAsync(array $options = [
         'json' => [

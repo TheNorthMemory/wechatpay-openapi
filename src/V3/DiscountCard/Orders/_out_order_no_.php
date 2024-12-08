@@ -13,7 +13,7 @@ interface _out_order_no_
      * 更新先享卡订单(同步模式)
      * @param array<string,mixed> $options
      * @deprecated - since 2020.03.26
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter3_2.shtml
+     * @link https://wechatpay.im/openapi/v3/discount-card/orders/%7Bout_order_no%7D
      */
     public function patch(array $options = [
         'out_order_no' => '233bcbf407e87789b8e471f251774f95',
@@ -44,7 +44,7 @@ interface _out_order_no_
      * 更新先享卡订单(异步模式)
      * @param array<string,mixed> $options
      * @deprecated - since 2020.03.26
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter3_2.shtml#async
+     * @link https://wechatpay.im/openapi/v3/discount-card/orders/%7Bout_order_no%7D
      */
     public function patchAsync(array $options = [
         'out_order_no' => '233bcbf407e87789b8e471f251774f95',
@@ -75,7 +75,7 @@ interface _out_order_no_
      * 通过先享卡订单号查询订单(同步模式)
      * @param array<string,mixed> $options
      * @deprecated - since 2020.03.26
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter3_1.shtml
+     * @link https://wechatpay.im/openapi/v3/discount-card/orders/%7Bout_order_no%7D#get
      */
     public function get(array $options = [
         'out_order_no' => '233bcbf407e87789b8e471f251774f95',
@@ -85,7 +85,7 @@ interface _out_order_no_
      * 通过先享卡订单号查询订单(异步模式)
      * @param array<string,mixed> $options
      * @deprecated - since 2020.03.26
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/discount-card/chapter3_1.shtml#async
+     * @link https://wechatpay.im/openapi/v3/discount-card/orders/%7Bout_order_no%7D#get
      */
     public function getAsync(array $options = [
         'out_order_no' => '233bcbf407e87789b8e471f251774f95',

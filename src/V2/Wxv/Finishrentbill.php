@@ -12,7 +12,7 @@ interface Finishrentbill
     /**
      * 完结租借订单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/payscore.php?chapter=18_4&index=5
+     * @link https://wechatpay.im/openapi/v2/wxv/finishrentbill
      */
     public function post(array $options = [
         'xml' => [
@@ -38,7 +38,7 @@ interface Finishrentbill
     /**
      * 完结租借订单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/payscore.php?chapter=18_4&index=5#async
+     * @link https://wechatpay.im/openapi/v2/wxv/finishrentbill
      */
     public function postAsync(array $options = [
         'xml' => [

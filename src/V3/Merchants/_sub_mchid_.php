@@ -12,7 +12,7 @@ interface _sub_mchid_
     /**
      * 查询子商户（融合钱包）(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/Onborading_Sub_Merchant/chapter3_2.shtml
+     * @link https://wechatpay.im/openapi/v3/merchants/%7Bsub_mchid%7D
      */
     public function get(array $options = [
         'base_uri' => 'https://api.mch.weixin.qq.com/hk/', // 跨境(国内接入)
@@ -26,7 +26,7 @@ interface _sub_mchid_
     /**
      * 查询子商户（融合钱包）(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/Onborading_Sub_Merchant/chapter3_2.shtml#async
+     * @link https://wechatpay.im/openapi/v3/merchants/%7Bsub_mchid%7D
      */
     public function getAsync(array $options = [
         'base_uri' => 'https://api.mch.weixin.qq.com/hk/', // 跨境(国内接入)

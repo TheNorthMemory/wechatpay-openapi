@@ -13,7 +13,7 @@ interface Customentrances
     /**
      * 创建自定义入口(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/shopping-receipt/custom-entrances/create-custom-entrance.html
+     * @link https://wechatpay.im/openapi/v3/marketing/shopping-receipt/customentrances
      */
     public function post(array $options = [
         'json' => [
@@ -35,7 +35,7 @@ interface Customentrances
     /**
      * 创建自定义入口(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/shopping-receipt/custom-entrances/create-custom-entrance.html#async
+     * @link https://wechatpay.im/openapi/v3/marketing/shopping-receipt/customentrances
      */
     public function postAsync(array $options = [
         'json' => [

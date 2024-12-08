@@ -12,7 +12,7 @@ interface Batchquerycomment
     /**
      * 拉取订单评价数据(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=9_17&index=11
+     * @link https://wechatpay.im/openapi/v2/billcommentsp/batchquerycomment
      */
     public function post(array $options = [
         'xml' => [
@@ -30,7 +30,7 @@ interface Batchquerycomment
     /**
      * 拉取订单评价数据(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=9_17&index=11#async
+     * @link https://wechatpay.im/openapi/v2/billcommentsp/batchquerycomment
      */
     public function postAsync(array $options = [
         'xml' => [

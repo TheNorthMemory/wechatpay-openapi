@@ -12,7 +12,7 @@ interface AssessUserRiskLevel
     /**
      * 服务商评估用户分层(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/partner-service-auth/assess-partner-user-risk-level.html
+     * @link https://wechatpay.im/openapi/v3/payscore/partner/permissions/assess-user-risk-level
      */
     public function post(array $options = [
         'json' => [
@@ -40,7 +40,7 @@ interface AssessUserRiskLevel
     /**
      * 服务商评估用户分层(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/partner-service-auth/assess-partner-user-risk-level.html#async
+     * @link https://wechatpay.im/openapi/v3/payscore/partner/permissions/assess-user-risk-level
      */
     public function postAsync(array $options = [
         'json' => [

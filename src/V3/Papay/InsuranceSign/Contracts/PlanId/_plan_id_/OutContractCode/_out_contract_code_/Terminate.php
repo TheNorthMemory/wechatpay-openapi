@@ -12,7 +12,7 @@ interface Terminate
     /**
      * 保险商户通过商户协议号解除保险自动续费协议(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/insurance-entrusted-payment/operate-contract/terminate-contract-by-code.html
+     * @link https://wechatpay.im/openapi/v3/papay/insurance-sign/contracts/plan-id/%7Bplan_id%7D/out-contract-code/%7Bout_contract_code%7D/terminate
      */
     public function post(array $options = [
         'plan_id' => '12535',
@@ -25,7 +25,7 @@ interface Terminate
     /**
      * 保险商户通过商户协议号解除保险自动续费协议(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/insurance-entrusted-payment/operate-contract/terminate-contract-by-code.html#async
+     * @link https://wechatpay.im/openapi/v3/papay/insurance-sign/contracts/plan-id/%7Bplan_id%7D/out-contract-code/%7Bout_contract_code%7D/terminate
      */
     public function postAsync(array $options = [
         'plan_id' => '12535',

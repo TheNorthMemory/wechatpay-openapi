@@ -12,7 +12,7 @@ interface SummaryReceipts
     /**
      * 受理汇总电子回单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_2_6.shtml
+     * @link https://wechatpay.im/openapi/v3/bank-batch-transfer/receipt/summary-receipts
      */
     public function post(array $options = [
         'json' => [
@@ -23,7 +23,7 @@ interface SummaryReceipts
     /**
      * 受理汇总电子回单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_2_6.shtml#async
+     * @link https://wechatpay.im/openapi/v3/bank-batch-transfer/receipt/summary-receipts
      */
     public function postAsync(array $options = [
         'json' => [
@@ -34,7 +34,7 @@ interface SummaryReceipts
     /**
      * 查询汇总电子回单受理结果(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_2_7.shtml
+     * @link https://wechatpay.im/openapi/v3/bank-batch-transfer/receipt/summary-receipts#get
      */
     public function get(array $options = [
         'query' => [
@@ -45,7 +45,7 @@ interface SummaryReceipts
     /**
      * 查询汇总电子回单受理结果(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_2_7.shtml#async
+     * @link https://wechatpay.im/openapi/v3/bank-batch-transfer/receipt/summary-receipts#get
      */
     public function getAsync(array $options = [
         'query' => [

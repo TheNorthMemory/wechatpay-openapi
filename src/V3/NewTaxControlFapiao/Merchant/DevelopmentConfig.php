@@ -12,7 +12,7 @@ interface DevelopmentConfig
     /**
      * 配置开发选项(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter4_8_18.shtml
+     * @link https://wechatpay.im/openapi/v3/new-tax-control-fapiao/merchant/development-config
      */
     public function patch(array $options = [
         'json' => [
@@ -25,7 +25,7 @@ interface DevelopmentConfig
     /**
      * 配置开发选项(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter4_8_18.shtml#async
+     * @link https://wechatpay.im/openapi/v3/new-tax-control-fapiao/merchant/development-config
      */
     public function patchAsync(array $options = [
         'json' => [
@@ -38,14 +38,14 @@ interface DevelopmentConfig
     /**
      * 查询商户配置的开发选项(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter4_8_19.shtml
+     * @link https://wechatpay.im/openapi/v3/new-tax-control-fapiao/merchant/development-config#get
      */
     public function get(array $options = []): ResponseInterface;
 
     /**
      * 查询商户配置的开发选项(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter4_8_19.shtml#async
+     * @link https://wechatpay.im/openapi/v3/new-tax-control-fapiao/merchant/development-config#get
      */
     public function getAsync(array $options = []): PromiseInterface;
 }

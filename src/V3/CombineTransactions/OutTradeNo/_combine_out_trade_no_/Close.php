@@ -12,7 +12,7 @@ interface Close
     /**
      * 合单关闭订单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/combine/chapter3_4.shtml
+     * @link https://wechatpay.im/openapi/v3/combine-transactions/out-trade-no/%7Bcombine_out_trade_no%7D/close
      */
     public function post(array $options = [
         'combine_out_trade_no' => '',
@@ -31,7 +31,7 @@ interface Close
     /**
      * 合单关闭订单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/combine/chapter3_4.shtml#async
+     * @link https://wechatpay.im/openapi/v3/combine-transactions/out-trade-no/%7Bcombine_out_trade_no%7D/close
      */
     public function postAsync(array $options = [
         'combine_out_trade_no' => '',

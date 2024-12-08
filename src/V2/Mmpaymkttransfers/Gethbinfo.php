@@ -12,7 +12,7 @@ interface Gethbinfo
     /**
      * 查询红包记录(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon.php?chapter=13_6&index=5
+     * @link https://wechatpay.im/openapi/v2/mmpaymkttransfers/gethbinfo
      */
     public function post(array $options = [
         'xml' => [
@@ -27,7 +27,7 @@ interface Gethbinfo
     /**
      * 查询红包记录(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon.php?chapter=13_6&index=5#async
+     * @link https://wechatpay.im/openapi/v2/mmpaymkttransfers/gethbinfo
      */
     public function postAsync(array $options = [
         'xml' => [

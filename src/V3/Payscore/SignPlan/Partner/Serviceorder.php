@@ -12,7 +12,7 @@ interface Serviceorder
     /**
      * 创建用户的签约计划详情对应的服务订单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-payscore-plan/partner-service-order/create-partner-service-order.html
+     * @link https://wechatpay.im/openapi/v3/payscore/sign-plan/partner/serviceorder
      */
     public function post(array $options = [
         'json' => [
@@ -44,7 +44,7 @@ interface Serviceorder
     /**
      * 创建用户的签约计划详情对应的服务订单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-payscore-plan/partner-service-order/create-partner-service-order.html#async
+     * @link https://wechatpay.im/openapi/v3/payscore/sign-plan/partner/serviceorder
      */
     public function postAsync(array $options = [
         'json' => [

@@ -12,7 +12,7 @@ interface Preopen
     /**
      * 预开通用户ETC指定卡扣费(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_4_1.shtml
+     * @link https://wechatpay.im/openapi/v3/vehicle/etc/preopen
      */
     public function post(array $options = [
         'json' => [
@@ -38,7 +38,7 @@ interface Preopen
     /**
      * 预开通用户ETC指定卡扣费(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_4_1.shtml#async
+     * @link https://wechatpay.im/openapi/v3/vehicle/etc/preopen
      */
     public function postAsync(array $options = [
         'json' => [

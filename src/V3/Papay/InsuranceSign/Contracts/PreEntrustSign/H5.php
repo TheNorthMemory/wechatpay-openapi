@@ -12,7 +12,7 @@ interface H5
     /**
      * 保险商户H5预签约(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/insurance-entrusted-payment/insurance/h5-sign-and-create-transaction.html
+     * @link https://wechatpay.im/openapi/v3/papay/insurance-sign/contracts/pre-entrust-sign/h5
      */
     public function post(array $options = [
         'json' => [
@@ -62,7 +62,7 @@ interface H5
     /**
      * 保险商户H5预签约(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/insurance-entrusted-payment/insurance/h5-sign-and-create-transaction.html#async
+     * @link https://wechatpay.im/openapi/v3/papay/insurance-sign/contracts/pre-entrust-sign/h5
      */
     public function postAsync(array $options = [
         'json' => [

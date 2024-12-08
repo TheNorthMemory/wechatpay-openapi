@@ -12,7 +12,7 @@ interface _settle_batch_no_
     /**
      * 个人收款-查询批量结算信息(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/personal-collections/get-prepay-settle-orders.html
+     * @link https://wechatpay.im/openapi/v3/platsolution/ecommerce/settle/prepay-settle-orders/%7Bsettle_batch_no%7D
      */
     public function get(array $options = [
         'settle_batch_no' => '123685544886666',
@@ -21,7 +21,7 @@ interface _settle_batch_no_
     /**
      * 个人收款-查询批量结算信息(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/personal-collections/get-prepay-settle-orders.html#async
+     * @link https://wechatpay.im/openapi/v3/platsolution/ecommerce/settle/prepay-settle-orders/%7Bsettle_batch_no%7D
      */
     public function getAsync(array $options = [
         'settle_batch_no' => '123685544886666',

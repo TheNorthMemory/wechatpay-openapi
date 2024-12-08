@@ -12,7 +12,7 @@ interface _out_order_no_
     /**
      * 查询分账结果(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_1_2.shtml
+     * @link https://wechatpay.im/openapi/v3/profitsharing/orders/%7Bout_order_no%7D
      */
     public function get(array $options = [
         'out_order_no' => 'P20150806125346',
@@ -25,7 +25,7 @@ interface _out_order_no_
     /**
      * 查询分账结果(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_1_2.shtml#async
+     * @link https://wechatpay.im/openapi/v3/profitsharing/orders/%7Bout_order_no%7D
      */
     public function getAsync(array $options = [
         'out_order_no' => 'P20150806125346',

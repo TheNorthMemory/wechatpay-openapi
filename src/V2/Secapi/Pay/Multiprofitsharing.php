@@ -12,7 +12,7 @@ interface Multiprofitsharing
     /**
      * 请求多次分账(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/allocation_sl.php?chapter=25_6&index=2
+     * @link https://wechatpay.im/openapi/v2/secapi/pay/multiprofitsharing
      */
     public function post(array $options = [
         'xml' => [
@@ -31,7 +31,7 @@ interface Multiprofitsharing
     /**
      * 请求多次分账(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/allocation_sl.php?chapter=25_6&index=2#async
+     * @link https://wechatpay.im/openapi/v2/secapi/pay/multiprofitsharing
      */
     public function postAsync(array $options = [
         'xml' => [

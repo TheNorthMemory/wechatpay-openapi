@@ -12,7 +12,7 @@ interface Profitsharing
     /**
      * 请求单次分账(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/allocation_sl.php?chapter=25_1&index=1
+     * @link https://wechatpay.im/openapi/v2/secapi/pay/profitsharing
      */
     public function post(array $options = [
         'xml' => [
@@ -32,7 +32,7 @@ interface Profitsharing
     /**
      * 请求单次分账(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/allocation_sl.php?chapter=25_1&index=1#async
+     * @link https://wechatpay.im/openapi/v2/secapi/pay/profitsharing
      */
     public function postAsync(array $options = [
         'xml' => [

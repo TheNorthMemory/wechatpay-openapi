@@ -13,7 +13,7 @@ interface _guide_id_
     /**
      * 服务人员信息更新(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/smartguide/chapter3_4.shtml
+     * @link https://wechatpay.im/openapi/v3/smartguide/guides/%7Bguide_id%7D
      */
     public function patch(array $options = [
         'guide_id' => 'LLA3WJ6DSZUfiaZDS79FH5Wm5m4X69TBic',
@@ -32,7 +32,7 @@ interface _guide_id_
     /**
      * 服务人员信息更新(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/smartguide/chapter3_4.shtml#async
+     * @link https://wechatpay.im/openapi/v3/smartguide/guides/%7Bguide_id%7D
      */
     public function patchAsync(array $options = [
         'guide_id' => 'LLA3WJ6DSZUfiaZDS79FH5Wm5m4X69TBic',

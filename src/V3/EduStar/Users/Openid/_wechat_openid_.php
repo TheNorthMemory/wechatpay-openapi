@@ -12,7 +12,7 @@ interface _wechat_openid_
     /**
      * 通过微信用户标识查询用户信息(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/assets/img/common/edu/edu-star/chapter2_3.png
+     * @link https://wechatpay.im/openapi/v3/edu-star/users/openid/%7Bwechat_openid%7D
      */
     public function get(array $options = [
         'wechat_openid' => 'oUpF8uMuAJOM2pxb1Q',
@@ -24,7 +24,7 @@ interface _wechat_openid_
     /**
      * 通过微信用户标识查询用户信息(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/assets/img/common/edu/edu-star/chapter2_3.png#async
+     * @link https://wechatpay.im/openapi/v3/edu-star/users/openid/%7Bwechat_openid%7D
      */
     public function getAsync(array $options = [
         'wechat_openid' => 'oUpF8uMuAJOM2pxb1Q',

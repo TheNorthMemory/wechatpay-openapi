@@ -12,7 +12,7 @@ interface MiniProgram
     /**
      * 小程序场景预约扣费类型签约的预签约(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/entrusted-payment/partner/partner-mini-program-scheduled-deduct-pre-sign.html
+     * @link https://wechatpay.im/openapi/v3/papay/scheduled-deduct-sign/partner/contracts/pre-entrust-sign/mini-program
      */
     public function post(array $options = [
         'json' => [
@@ -40,7 +40,7 @@ interface MiniProgram
     /**
      * 小程序场景预约扣费类型签约的预签约(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/entrusted-payment/partner/partner-mini-program-scheduled-deduct-pre-sign.html#async
+     * @link https://wechatpay.im/openapi/v3/papay/scheduled-deduct-sign/partner/contracts/pre-entrust-sign/mini-program
      */
     public function postAsync(array $options = [
         'json' => [

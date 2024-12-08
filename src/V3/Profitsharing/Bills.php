@@ -12,7 +12,7 @@ interface Bills
     /**
      * 申请分账账单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_1_11.shtml
+     * @link https://wechatpay.im/openapi/v3/profitsharing/bills
      */
     public function get(array $options = [
         'query' => [
@@ -25,7 +25,7 @@ interface Bills
     /**
      * 申请分账账单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_1_11.shtml#async
+     * @link https://wechatpay.im/openapi/v3/profitsharing/bills
      */
     public function getAsync(array $options = [
         'query' => [

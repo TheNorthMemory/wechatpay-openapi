@@ -13,7 +13,7 @@ interface FaceCollections
     /**
      * 查询重采用户列表(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/k12-development-guidelines.html
+     * @link https://wechatpay.im/openapi/v3/offlineface/face-collections
      */
     public function get(array $options = [
         'query' => [
@@ -26,7 +26,7 @@ interface FaceCollections
     /**
      * 查询重采用户列表(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/k12-development-guidelines.html#async
+     * @link https://wechatpay.im/openapi/v3/offlineface/face-collections
      */
     public function getAsync(array $options = [
         'query' => [

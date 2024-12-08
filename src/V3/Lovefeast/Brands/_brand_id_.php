@@ -12,7 +12,7 @@ interface _brand_id_
     /**
      * 查询爱心餐品牌信息(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/lovefeast/brands/get-brand.html
+     * @link https://wechatpay.im/openapi/v3/lovefeast/brands/%7Bbrand_id%7D
      */
     public function get(array $options = [
         'brand_id' => '2250',
@@ -21,7 +21,7 @@ interface _brand_id_
     /**
      * 查询爱心餐品牌信息(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/lovefeast/brands/get-brand.html#async
+     * @link https://wechatpay.im/openapi/v3/lovefeast/brands/%7Bbrand_id%7D
      */
     public function getAsync(array $options = [
         'brand_id' => '2250',

@@ -12,7 +12,7 @@ interface Disassociate
     /**
      * 取消关联订单信息(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_10.shtml
+     * @link https://wechatpay.im/openapi/v3/marketing/busifavor/coupons/disassociate
      */
     public function post(array $options = [
         'json' => [
@@ -26,7 +26,7 @@ interface Disassociate
     /**
      * 取消关联订单信息(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_10.shtml#async
+     * @link https://wechatpay.im/openapi/v3/marketing/busifavor/coupons/disassociate
      */
     public function postAsync(array $options = [
         'json' => [

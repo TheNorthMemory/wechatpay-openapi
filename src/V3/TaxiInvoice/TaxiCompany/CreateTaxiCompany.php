@@ -12,7 +12,7 @@ interface CreateTaxiCompany
     /**
      * 新增出租车公司(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/taxi-fapiao/taxi-company/create-taxi-company.html
+     * @link https://wechatpay.im/openapi/v3/taxi-invoice/taxi-company/create-taxi-company
      */
     public function post(array $options = [
         'json' => [
@@ -33,7 +33,7 @@ interface CreateTaxiCompany
     /**
      * 新增出租车公司(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/taxi-fapiao/taxi-company/create-taxi-company.html#async
+     * @link https://wechatpay.im/openapi/v3/taxi-invoice/taxi-company/create-taxi-company
      */
     public function postAsync(array $options = [
         'json' => [

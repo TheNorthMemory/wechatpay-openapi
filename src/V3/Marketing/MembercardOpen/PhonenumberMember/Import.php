@@ -12,7 +12,7 @@ interface Import
     /**
      * 导入加密手机号提醒会员领卡(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter4_1.shtml
+     * @link https://wechatpay.im/openapi/v3/marketing/membercard-open/phonenumber-member/import
      */
     public function post(array $options = [
         'json' => [
@@ -33,7 +33,7 @@ interface Import
     /**
      * 导入加密手机号提醒会员领卡(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter4_1.shtml#async
+     * @link https://wechatpay.im/openapi/v3/marketing/membercard-open/phonenumber-member/import
      */
     public function postAsync(array $options = [
         'json' => [

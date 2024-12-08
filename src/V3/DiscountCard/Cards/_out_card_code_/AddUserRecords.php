@@ -12,7 +12,7 @@ interface AddUserRecords
     /**
      * 增加用户记录(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/discount-card/chapter3_2.shtml
+     * @link https://wechatpay.im/openapi/v3/discount-card/cards/%7Bout_card_code%7D/add-user-records
      */
     public function post(array $options = [
         'out_card_code' => '6e8369071cd942c0476613f9d1ce9ca3',
@@ -43,7 +43,7 @@ interface AddUserRecords
     /**
      * 增加用户记录(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/discount-card/chapter3_2.shtml#async
+     * @link https://wechatpay.im/openapi/v3/discount-card/cards/%7Bout_card_code%7D/add-user-records
      */
     public function postAsync(array $options = [
         'out_card_code' => '6e8369071cd942c0476613f9d1ce9ca3',

@@ -12,7 +12,7 @@ interface _business_code_
     /**
      * 通过业务申请编号查询申请状态(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/applyment4sub/chapter3_2.shtml
+     * @link https://wechatpay.im/openapi/v3/applyment4sub/applyment/business_code/%7Bbusiness_code%7D
      */
     public function get(array $options = [
         'business_code' => '',
@@ -21,7 +21,7 @@ interface _business_code_
     /**
      * 通过业务申请编号查询申请状态(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/applyment4sub/chapter3_2.shtml#async
+     * @link https://wechatpay.im/openapi/v3/applyment4sub/applyment/business_code/%7Bbusiness_code%7D
      */
     public function getAsync(array $options = [
         'business_code' => '',

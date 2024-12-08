@@ -12,7 +12,7 @@ interface ReportTradeUnionInformation
     /**
      * 上报订单关联信息(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/risk-manage/trade-risk/report-trade-risk-information.html
+     * @link https://wechatpay.im/openapi/v3/merchant-risk-manage/report-trade-union-information
      */
     public function post(array $options = [
         'json' => [
@@ -60,7 +60,7 @@ interface ReportTradeUnionInformation
     /**
      * 上报订单关联信息(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/risk-manage/trade-risk/report-trade-risk-information.html#async
+     * @link https://wechatpay.im/openapi/v3/merchant-risk-manage/report-trade-union-information
      */
     public function postAsync(array $options = [
         'json' => [

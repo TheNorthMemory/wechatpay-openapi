@@ -12,7 +12,7 @@ interface SyncStatus
     /**
      * 点餐订单信息同步（渠道商/服务商）(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/catering.php?chapter=26_1
+     * @link https://wechatpay.im/openapi/v3/catering/orders/sync-status
      */
     public function post(array $options = [
         'json' => [
@@ -59,7 +59,7 @@ interface SyncStatus
     /**
      * 点餐订单信息同步（渠道商/服务商）(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/catering.php?chapter=26_1#async
+     * @link https://wechatpay.im/openapi/v3/catering/orders/sync-status
      */
     public function postAsync(array $options = [
         'json' => [

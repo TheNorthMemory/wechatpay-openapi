@@ -12,7 +12,7 @@ interface _sub_mchid_
     /**
      * 查询最大分账比例(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_1_7.shtml
+     * @link https://wechatpay.im/openapi/v3/profitsharing/merchant-configs/%7Bsub_mchid%7D
      */
     public function get(array $options = [
         'sub_mchid' => '1900000109',
@@ -21,7 +21,7 @@ interface _sub_mchid_
     /**
      * 查询最大分账比例(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_1_7.shtml#async
+     * @link https://wechatpay.im/openapi/v3/profitsharing/merchant-configs/%7Bsub_mchid%7D
      */
     public function getAsync(array $options = [
         'sub_mchid' => '1900000109',

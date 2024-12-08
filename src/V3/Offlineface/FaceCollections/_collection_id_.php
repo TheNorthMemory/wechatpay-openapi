@@ -12,7 +12,7 @@ interface _collection_id_
     /**
      * 查询重采请求详情(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/k12-development-guidelines.html
+     * @link https://wechatpay.im/openapi/v3/offlineface/face-collections/%7Bcollection_id%7D
      */
     public function get(array $options = [
         'collection_id' => 'FC2353ZJIHOJKHOIIOIJ',
@@ -21,7 +21,7 @@ interface _collection_id_
     /**
      * 查询重采请求详情(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/k12-development-guidelines.html#async
+     * @link https://wechatpay.im/openapi/v3/offlineface/face-collections/%7Bcollection_id%7D
      */
     public function getAsync(array $options = [
         'collection_id' => 'FC2353ZJIHOJKHOIIOIJ',

@@ -12,7 +12,7 @@ interface Servicepayondeliveryorder
     /**
      * 创建先用后付订单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/weixin-pay-score/service-order/create-pay-on-delivery-service-order.html
+     * @link https://wechatpay.im/openapi/v3/payscore/servicepayondeliveryorder
      */
     public function post(array $options = [
         'json' => [
@@ -73,7 +73,7 @@ interface Servicepayondeliveryorder
     /**
      * 创建先用后付订单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/weixin-pay-score/service-order/create-pay-on-delivery-service-order.html#async
+     * @link https://wechatpay.im/openapi/v3/payscore/servicepayondeliveryorder
      */
     public function postAsync(array $options = [
         'json' => [

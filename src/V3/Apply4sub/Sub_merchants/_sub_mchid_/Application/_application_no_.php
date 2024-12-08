@@ -12,7 +12,7 @@ interface _application_no_
     /**
      * 查询结算账户修改申请状态(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/modify-settlement/sub-merchants/get-application.html
+     * @link https://wechatpay.im/openapi/v3/apply4sub/sub_merchants/%7Bsub_mchid%7D/application/%7Bapplication_no%7D
      */
     public function get(array $options = [
         'sub_mchid' => '1511101111',
@@ -22,7 +22,7 @@ interface _application_no_
     /**
      * 查询结算账户修改申请状态(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/modify-settlement/sub-merchants/get-application.html#async
+     * @link https://wechatpay.im/openapi/v3/apply4sub/sub_merchants/%7Bsub_mchid%7D/application/%7Bapplication_no%7D
      */
     public function getAsync(array $options = [
         'sub_mchid' => '1511101111',

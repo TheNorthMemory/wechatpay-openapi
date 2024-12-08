@@ -12,7 +12,7 @@ interface DirectComplete
     /**
      * 创单结单合并(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter3_9.shtml
+     * @link https://wechatpay.im/openapi/v3/payscore/serviceorder/direct-complete
      */
     public function post(array $options = [
         'json' => [
@@ -54,7 +54,7 @@ interface DirectComplete
     /**
      * 创单结单合并(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter3_9.shtml#async
+     * @link https://wechatpay.im/openapi/v3/payscore/serviceorder/direct-complete
      */
     public function postAsync(array $options = [
         'json' => [

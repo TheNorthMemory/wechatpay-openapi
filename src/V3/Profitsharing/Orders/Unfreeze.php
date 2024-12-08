@@ -12,7 +12,7 @@ interface Unfreeze
     /**
      * 解冻剩余资金(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_1_5.shtml
+     * @link https://wechatpay.im/openapi/v3/profitsharing/orders/unfreeze
      */
     public function post(array $options = [
         'json' => [
@@ -26,7 +26,7 @@ interface Unfreeze
     /**
      * 解冻剩余资金(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_1_5.shtml#async
+     * @link https://wechatpay.im/openapi/v3/profitsharing/orders/unfreeze
      */
     public function postAsync(array $options = [
         'json' => [

@@ -18,7 +18,7 @@ interface ImageUpload
      * ```
      *
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/chapter3_1.shtml
+     * @link https://wechatpay.im/openapi/v3/marketing/favor/media/image-upload
      */
     public function post(array $options = []): ResponseInterface;
 
@@ -31,7 +31,7 @@ interface ImageUpload
      * ```
      *
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/chapter3_1.shtml#async
+     * @link https://wechatpay.im/openapi/v3/marketing/favor/media/image-upload
      */
     public function postAsync(array $options = []): PromiseInterface;
 }

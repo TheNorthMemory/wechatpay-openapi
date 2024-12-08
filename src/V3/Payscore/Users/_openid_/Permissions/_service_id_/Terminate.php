@@ -12,7 +12,7 @@ interface Terminate
     /**
      * 商户解除用户授权关系(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter9_1.shtml
+     * @link https://wechatpay.im/openapi/v3/payscore/users/%7Bopenid%7D/permissions/%7Bservice_id%7D/terminate
      */
     public function post(array $options = [
         'json' => [
@@ -28,7 +28,7 @@ interface Terminate
     /**
      * 商户解除用户授权关系(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter9_1.shtml#async
+     * @link https://wechatpay.im/openapi/v3/payscore/users/%7Bopenid%7D/permissions/%7Bservice_id%7D/terminate
      */
     public function postAsync(array $options = [
         'json' => [

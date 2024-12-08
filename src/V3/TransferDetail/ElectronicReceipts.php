@@ -12,7 +12,7 @@ interface ElectronicReceipts
     /**
      * 转账明细电子回单受理(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer_partner/chapter4_4.shtml
+     * @link https://wechatpay.im/openapi/v3/transfer-detail/electronic-receipts
      */
     public function post(array $options = [
         'json' => [
@@ -25,7 +25,7 @@ interface ElectronicReceipts
     /**
      * 转账明细电子回单受理(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer_partner/chapter4_4.shtml#async
+     * @link https://wechatpay.im/openapi/v3/transfer-detail/electronic-receipts
      */
     public function postAsync(array $options = [
         'json' => [
@@ -38,7 +38,7 @@ interface ElectronicReceipts
     /**
      * 查询转账明细电子回单受理结果(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer_partner/chapter4_5.shtml
+     * @link https://wechatpay.im/openapi/v3/transfer-detail/electronic-receipts#get
      */
     public function get(array $options = [
         'query' => [
@@ -51,7 +51,7 @@ interface ElectronicReceipts
     /**
      * 查询转账明细电子回单受理结果(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer_partner/chapter4_5.shtml#async
+     * @link https://wechatpay.im/openapi/v3/transfer-detail/electronic-receipts#get
      */
     public function getAsync(array $options = [
         'query' => [

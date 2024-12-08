@@ -12,7 +12,7 @@ interface FailNotify
     /**
      * 重试扣费通知(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter3_11.shtml
+     * @link https://wechatpay.im/openapi/v3/papay/contracts/%7Bcontract_id%7D/fail-notify
      */
     public function post(array $options = [
         'contract_id' => '123124412412423431',
@@ -25,7 +25,7 @@ interface FailNotify
     /**
      * 重试扣费通知(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter3_11.shtml#async
+     * @link https://wechatpay.im/openapi/v3/papay/contracts/%7Bcontract_id%7D/fail-notify
      */
     public function postAsync(array $options = [
         'contract_id' => '123124412412423431',

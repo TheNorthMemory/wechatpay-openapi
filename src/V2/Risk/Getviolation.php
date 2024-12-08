@@ -12,7 +12,7 @@ interface Getviolation
     /**
      * 银行特约商户违规信息查询(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/mch_bank.php?chapter=9_28&index=1&p=902
+     * @link https://wechatpay.im/openapi/v2/risk/getviolation
      */
     public function post(array $options = [
         'xml' => [
@@ -30,7 +30,7 @@ interface Getviolation
     /**
      * 银行特约商户违规信息查询(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/mch_bank.php?chapter=9_28&index=1&p=902#async
+     * @link https://wechatpay.im/openapi/v2/risk/getviolation
      */
     public function postAsync(array $options = [
         'xml' => [

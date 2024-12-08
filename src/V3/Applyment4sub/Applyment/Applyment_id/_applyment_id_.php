@@ -12,7 +12,7 @@ interface _applyment_id_
     /**
      * 通过申请单号查询申请状态(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/applyment4sub/chapter3_2.shtml
+     * @link https://wechatpay.im/openapi/v3/applyment4sub/applyment/applyment_id/%7Bapplyment_id%7D
      */
     public function get(array $options = [
         'applyment_id' => '',
@@ -21,7 +21,7 @@ interface _applyment_id_
     /**
      * 通过申请单号查询申请状态(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/applyment4sub/chapter3_2.shtml#async
+     * @link https://wechatpay.im/openapi/v3/applyment4sub/applyment/applyment_id/%7Bapplyment_id%7D
      */
     public function getAsync(array $options = [
         'applyment_id' => '',

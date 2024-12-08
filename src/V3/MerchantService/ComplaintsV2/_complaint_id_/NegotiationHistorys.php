@@ -12,7 +12,7 @@ interface NegotiationHistorys
     /**
      * 查询投诉协商历史(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_2_12.shtml
+     * @link https://wechatpay.im/openapi/v3/merchant-service/complaints-v2/%7Bcomplaint_id%7D/negotiation-historys
      */
     public function get(array $options = [
         'complaint_id' => '200201820200101080076610000',
@@ -25,7 +25,7 @@ interface NegotiationHistorys
     /**
      * 查询投诉协商历史(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_2_12.shtml#async
+     * @link https://wechatpay.im/openapi/v3/merchant-service/complaints-v2/%7Bcomplaint_id%7D/negotiation-historys
      */
     public function getAsync(array $options = [
         'complaint_id' => '200201820200101080076610000',

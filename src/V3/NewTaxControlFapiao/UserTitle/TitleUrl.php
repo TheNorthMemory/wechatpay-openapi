@@ -12,7 +12,7 @@ interface TitleUrl
     /**
      * 获取抬头填写链接(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/new-tax-control-fapiao/chapter3_5.shtml
+     * @link https://wechatpay.im/openapi/v3/new-tax-control-fapiao/user-title/title-url
      */
     public function get(array $options = [
         'query' => [
@@ -33,7 +33,7 @@ interface TitleUrl
     /**
      * 获取抬头填写链接(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/new-tax-control-fapiao/chapter3_5.shtml#async
+     * @link https://wechatpay.im/openapi/v3/new-tax-control-fapiao/user-title/title-url
      */
     public function getAsync(array $options = [
         'query' => [

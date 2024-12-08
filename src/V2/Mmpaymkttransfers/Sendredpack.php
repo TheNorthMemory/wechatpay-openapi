@@ -12,7 +12,7 @@ interface Sendredpack
     /**
      * 发放普通红包(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon.php?chapter=13_4&index=3
+     * @link https://wechatpay.im/openapi/v2/mmpaymkttransfers/sendredpack
      */
     public function post(array $options = [
         'xml' => [
@@ -38,7 +38,7 @@ interface Sendredpack
     /**
      * 发放普通红包(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon.php?chapter=13_4&index=3#async
+     * @link https://wechatpay.im/openapi/v2/mmpaymkttransfers/sendredpack
      */
     public function postAsync(array $options = [
         'xml' => [

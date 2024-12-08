@@ -12,7 +12,7 @@ interface PersonalBanking
     /**
      * 查询支持个人业务的银行列表(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter11_2_2.shtml
+     * @link https://wechatpay.im/openapi/v3/capital/capitallhh/banks/personal-banking
      */
     public function get(array $options = [
         'query' => [
@@ -24,7 +24,7 @@ interface PersonalBanking
     /**
      * 查询支持个人业务的银行列表(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter11_2_2.shtml#async
+     * @link https://wechatpay.im/openapi/v3/capital/capitallhh/banks/personal-banking
      */
     public function getAsync(array $options = [
         'query' => [

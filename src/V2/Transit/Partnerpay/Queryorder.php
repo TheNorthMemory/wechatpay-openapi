@@ -12,7 +12,7 @@ interface Queryorder
     /**
      * 查询订单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/vehicle_v2_sl.php?chapter=20_96&index=7&p=202
+     * @link https://wechatpay.im/openapi/v2/transit/partnerpay/queryorder
      */
     public function post(array $options = [
         'xml' => [
@@ -28,7 +28,7 @@ interface Queryorder
     /**
      * 查询订单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/vehicle_v2_sl.php?chapter=20_96&index=7&p=202#async
+     * @link https://wechatpay.im/openapi/v2/transit/partnerpay/queryorder
      */
     public function postAsync(array $options = [
         'xml' => [

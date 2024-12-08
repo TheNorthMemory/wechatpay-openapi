@@ -12,7 +12,7 @@ interface Cards
     /**
      * 查询用户在品牌下所有会员卡(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_5.shtml
+     * @link https://wechatpay.im/openapi/v3/marketing/membercard-open/user/cards
      */
     public function get(array $options = [
         'query' => [
@@ -26,7 +26,7 @@ interface Cards
     /**
      * 查询用户在品牌下所有会员卡(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_5.shtml#async
+     * @link https://wechatpay.im/openapi/v3/marketing/membercard-open/user/cards
      */
     public function getAsync(array $options = [
         'query' => [

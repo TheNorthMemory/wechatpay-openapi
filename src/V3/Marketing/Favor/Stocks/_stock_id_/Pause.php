@@ -12,7 +12,7 @@ interface Pause
     /**
      * 暂停代金券批次(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/convention/chapter3_13.shtml
+     * @link https://wechatpay.im/openapi/v3/marketing/favor/stocks/%7Bstock_id%7D/pause
      */
     public function post(array $options = [
         'stock_id' => '',
@@ -24,7 +24,7 @@ interface Pause
     /**
      * 暂停代金券批次(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/convention/chapter3_13.shtml#async
+     * @link https://wechatpay.im/openapi/v3/marketing/favor/stocks/%7Bstock_id%7D/pause
      */
     public function postAsync(array $options = [
         'stock_id' => '',

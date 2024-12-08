@@ -12,7 +12,7 @@ interface Search
     /**
      * 通过加密手机号查询会员领卡状态(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter4_2.shtml
+     * @link https://wechatpay.im/openapi/v3/marketing/membercard-open/phonenumber-member/search
      */
     public function get(array $options = [
         'query' => [
@@ -27,7 +27,7 @@ interface Search
     /**
      * 通过加密手机号查询会员领卡状态(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter4_2.shtml#async
+     * @link https://wechatpay.im/openapi/v3/marketing/membercard-open/phonenumber-member/search
      */
     public function getAsync(array $options = [
         'query' => [

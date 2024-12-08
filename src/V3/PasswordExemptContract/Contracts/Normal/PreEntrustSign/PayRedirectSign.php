@@ -12,7 +12,7 @@ interface PayRedirectSign
     /**
      * 直连商户模式支付后场景预签约(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/password-free-contract/sign/normal-pay-redirect-sign-pre-entrust-sign.html
+     * @link https://wechatpay.im/openapi/v3/password-exempt-contract/contracts/normal/pre-entrust-sign/pay-redirect-sign
      */
     public function post(array $options = [
         'json' => [
@@ -29,7 +29,7 @@ interface PayRedirectSign
     /**
      * 直连商户模式支付后场景预签约(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/password-free-contract/sign/normal-pay-redirect-sign-pre-entrust-sign.html#async
+     * @link https://wechatpay.im/openapi/v3/password-exempt-contract/contracts/normal/pre-entrust-sign/pay-redirect-sign
      */
     public function postAsync(array $options = [
         'json' => [

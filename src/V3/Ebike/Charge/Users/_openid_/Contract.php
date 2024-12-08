@@ -13,7 +13,7 @@ interface Contract
      * 通过用户标识查询用户状态(同步模式)
      * @param array<string,mixed> $options
      * @deprecated - since 2019.12.16
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/vehicle/ebike/chapter3_1.shtml
+     * @link https://wechatpay.im/openapi/v3/ebike/charge/users/%7Bopenid%7D/contract
      */
     public function get(array $options = [
         'openid' => 'onqOjjmM1tad-3ROpncN-yUfa6ua',
@@ -27,7 +27,7 @@ interface Contract
      * 通过用户标识查询用户状态(异步模式)
      * @param array<string,mixed> $options
      * @deprecated - since 2019.12.16
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/vehicle/ebike/chapter3_1.shtml#async
+     * @link https://wechatpay.im/openapi/v3/ebike/charge/users/%7Bopenid%7D/contract
      */
     public function getAsync(array $options = [
         'openid' => 'onqOjjmM1tad-3ROpncN-yUfa6ua',

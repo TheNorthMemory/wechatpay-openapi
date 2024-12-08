@@ -12,7 +12,7 @@ interface _contract_id_
     /**
      * 查询用户服务可用信息(同步模式)
      * @param array<string,mixed> $options
-     * @link 在商户生成乘车码前，商户请求查询用户服务可用信息接口，查询 用户服务可用信息，通过用户服务可用信息中的服务可用状态，来判断是否可以正常使用公共出行代扣服务
+     * @link https://wechatpay.im/openapi/v3/qrcode/user-services/contract-id/%7Bcontract_id%7D
      */
     public function get(array $options = [
         'contract_id' => 'Wx15463511252015071056489715',
@@ -26,7 +26,7 @@ interface _contract_id_
     /**
      * 查询用户服务可用信息(异步模式)
      * @param array<string,mixed> $options
-     * @link 在商户生成乘车码前，商户请求查询用户服务可用信息接口，查询 用户服务可用信息，通过用户服务可用信息中的服务可用状态，来判断是否可以正常使用公共出行代扣服务#async
+     * @link https://wechatpay.im/openapi/v3/qrcode/user-services/contract-id/%7Bcontract_id%7D
      */
     public function getAsync(array $options = [
         'contract_id' => 'Wx15463511252015071056489715',

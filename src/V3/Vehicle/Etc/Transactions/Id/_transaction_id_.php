@@ -12,7 +12,7 @@ interface _transaction_id_
     /**
      * 查询订单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_4_8.shtml
+     * @link https://wechatpay.im/openapi/v3/vehicle/etc/transactions/id/%7Btransaction_id%7D
      */
     public function get(array $options = [
         'transaction_id' => '25012014070332333018',
@@ -24,7 +24,7 @@ interface _transaction_id_
     /**
      * 查询订单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_4_8.shtml#async
+     * @link https://wechatpay.im/openapi/v3/vehicle/etc/transactions/id/%7Btransaction_id%7D
      */
     public function getAsync(array $options = [
         'transaction_id' => '25012014070332333018',

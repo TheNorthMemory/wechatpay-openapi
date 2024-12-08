@@ -12,7 +12,7 @@ interface InsertCards
     /**
      * 将电子发票插入微信用户卡包(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/new-tax-control-fapiao/chapter3_11.shtml
+     * @link https://wechatpay.im/openapi/v3/new-tax-control-fapiao/fapiao-applications/%7Bfapiao_apply_id%7D/insert-cards
      */
     public function post(array $options = [
         'fapiao_apply_id' => '4200000444201910177461284488',
@@ -78,7 +78,7 @@ interface InsertCards
     /**
      * 将电子发票插入微信用户卡包(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/new-tax-control-fapiao/chapter3_11.shtml#async
+     * @link https://wechatpay.im/openapi/v3/new-tax-control-fapiao/fapiao-applications/%7Bfapiao_apply_id%7D/insert-cards
      */
     public function postAsync(array $options = [
         'fapiao_apply_id' => '4200000444201910177461284488',

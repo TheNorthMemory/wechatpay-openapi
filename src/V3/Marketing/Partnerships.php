@@ -14,7 +14,7 @@ interface Partnerships
     /**
      * 查询合作关系列表(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_5_3.shtml
+     * @link https://wechatpay.im/openapi/v3/marketing/partnerships
      */
     public function get(array $options = [
         'query' => [
@@ -28,7 +28,7 @@ interface Partnerships
     /**
      * 查询合作关系列表(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_5_3.shtml#async
+     * @link https://wechatpay.im/openapi/v3/marketing/partnerships
      */
     public function getAsync(array $options = [
         'query' => [

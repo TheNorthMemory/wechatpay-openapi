@@ -12,7 +12,7 @@ interface Querycombinedorder
     /**
      * 合单查单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/combine.php?chapter=24_3&index=4
+     * @link https://wechatpay.im/openapi/v2/pay/querycombinedorder
      */
     public function post(array $options = [
         'xml' => [
@@ -26,7 +26,7 @@ interface Querycombinedorder
     /**
      * 合单查单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/combine.php?chapter=24_3&index=4#async
+     * @link https://wechatpay.im/openapi/v2/pay/querycombinedorder
      */
     public function postAsync(array $options = [
         'xml' => [

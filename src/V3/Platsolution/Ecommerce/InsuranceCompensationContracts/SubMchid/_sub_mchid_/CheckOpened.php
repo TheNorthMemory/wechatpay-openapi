@@ -12,7 +12,7 @@ interface CheckOpened
     /**
      * 查询保险理赔功能开通状态(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/plat-compensation/plat-compensation/check-insurance-compensation-opened.html
+     * @link https://wechatpay.im/openapi/v3/platsolution/ecommerce/insurance-compensation-contracts/sub-mchid/%7Bsub_mchid%7D/check-opened
      */
     public function post(array $options = [
         'sub_mchid' => '1900000109',
@@ -21,7 +21,7 @@ interface CheckOpened
     /**
      * 查询保险理赔功能开通状态(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/plat-compensation/plat-compensation/check-insurance-compensation-opened.html#async
+     * @link https://wechatpay.im/openapi/v3/platsolution/ecommerce/insurance-compensation-contracts/sub-mchid/%7Bsub_mchid%7D/check-opened
      */
     public function postAsync(array $options = [
         'sub_mchid' => '1900000109',

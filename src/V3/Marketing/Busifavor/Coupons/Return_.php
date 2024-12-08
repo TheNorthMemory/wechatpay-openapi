@@ -12,7 +12,7 @@ interface Return_
     /**
      * 申请退券(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_13.shtml
+     * @link https://wechatpay.im/openapi/v3/marketing/busifavor/coupons/return
      */
     public function post(array $options = [
         'json' => [
@@ -25,7 +25,7 @@ interface Return_
     /**
      * 申请退券(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_13.shtml#async
+     * @link https://wechatpay.im/openapi/v3/marketing/busifavor/coupons/return
      */
     public function postAsync(array $options = [
         'json' => [

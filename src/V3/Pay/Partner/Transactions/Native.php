@@ -12,7 +12,7 @@ interface Native
     /**
      * Native下单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transactions/chapter5_3.shtml
+     * @link https://wechatpay.im/openapi/v3/pay/partner/transactions/native
      */
     public function post(array $options = [
         'json' => [
@@ -63,7 +63,7 @@ interface Native
     /**
      * Native下单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transactions/chapter5_3.shtml#async
+     * @link https://wechatpay.im/openapi/v3/pay/partner/transactions/native
      */
     public function postAsync(array $options = [
         'json' => [

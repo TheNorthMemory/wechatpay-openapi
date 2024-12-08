@@ -13,7 +13,7 @@ interface Getsignkey
      * 获取验签密钥(同步模式)
      * @param array<string,mixed> $options
      * @deprecated - since 2022.05.31
-     * @link https://pay.weixin.qq.com/wiki/doc/api/tools/sp_coupon.php?chapter=23_1&index=2
+     * @link https://wechatpay.im/openapi/v2/sandboxnew/pay/getsignkey
      */
     public function post(array $options = [
         'xml' => [
@@ -25,7 +25,7 @@ interface Getsignkey
      * 获取验签密钥(异步模式)
      * @param array<string,mixed> $options
      * @deprecated - since 2022.05.31
-     * @link https://pay.weixin.qq.com/wiki/doc/api/tools/sp_coupon.php?chapter=23_1&index=2#async
+     * @link https://wechatpay.im/openapi/v2/sandboxnew/pay/getsignkey
      */
     public function postAsync(array $options = [
         'xml' => [

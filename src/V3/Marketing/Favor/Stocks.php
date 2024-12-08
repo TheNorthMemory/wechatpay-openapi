@@ -13,7 +13,7 @@ interface Stocks
     /**
      * 条件查询批次列表(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/convention/chapter3_4.shtml
+     * @link https://wechatpay.im/openapi/v3/marketing/favor/stocks
      */
     public function get(array $options = [
         'query' => [
@@ -29,7 +29,7 @@ interface Stocks
     /**
      * 条件查询批次列表(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/convention/chapter3_4.shtml#async
+     * @link https://wechatpay.im/openapi/v3/marketing/favor/stocks
      */
     public function getAsync(array $options = [
         'query' => [

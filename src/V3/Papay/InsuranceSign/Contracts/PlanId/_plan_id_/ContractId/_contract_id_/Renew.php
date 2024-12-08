@@ -12,7 +12,7 @@ interface Renew
     /**
      * 保险商户受理续期自动续费协议(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/insurance-entrusted-payment/insurance/apply-renew-contract.html
+     * @link https://wechatpay.im/openapi/v3/papay/insurance-sign/contracts/plan-id/%7Bplan_id%7D/contract-id/%7Bcontract_id%7D/renew
      */
     public function post(array $options = [
         'plan_id' => '',
@@ -33,7 +33,7 @@ interface Renew
     /**
      * 保险商户受理续期自动续费协议(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/insurance-entrusted-payment/insurance/apply-renew-contract.html#async
+     * @link https://wechatpay.im/openapi/v3/papay/insurance-sign/contracts/plan-id/%7Bplan_id%7D/contract-id/%7Bcontract_id%7D/renew
      */
     public function postAsync(array $options = [
         'plan_id' => '',

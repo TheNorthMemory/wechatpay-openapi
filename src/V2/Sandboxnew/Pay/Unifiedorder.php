@@ -13,7 +13,7 @@ interface Unifiedorder
      * 统一下单(同步模式)
      * @param array<string,mixed> $options
      * @deprecated - since 2022.05.31
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=9_1
+     * @link https://wechatpay.im/openapi/v2/sandboxnew/pay/unifiedorder
      */
     public function post(array $options = [
         'xml' => [
@@ -47,7 +47,7 @@ interface Unifiedorder
      * 统一下单(异步模式)
      * @param array<string,mixed> $options
      * @deprecated - since 2022.05.31
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=9_1#async
+     * @link https://wechatpay.im/openapi/v2/sandboxnew/pay/unifiedorder
      */
     public function postAsync(array $options = [
         'xml' => [

@@ -13,7 +13,7 @@ interface Receivers
     /**
      * 添加分账接收方(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter4_1_6.shtml
+     * @link https://wechatpay.im/openapi/v3/global/profit-sharing/receivers
      */
     public function post(array $options = [
         'base_uri' => 'https://apihk.mch.weixin.qq.com/', // 跨境(香港接入)
@@ -38,7 +38,7 @@ interface Receivers
     /**
      * 添加分账接收方(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter4_1_6.shtml#async
+     * @link https://wechatpay.im/openapi/v3/global/profit-sharing/receivers
      */
     public function postAsync(array $options = [
         'base_uri' => 'https://apihk.mch.weixin.qq.com/', // 跨境(香港接入)
@@ -63,7 +63,7 @@ interface Receivers
     /**
      * 删除分账接收方(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter4_1_8.shtml
+     * @link https://wechatpay.im/openapi/v3/global/profit-sharing/receivers#delete
      */
     public function delete(array $options = [
         'base_uri' => 'https://apihk.mch.weixin.qq.com/', // 跨境(香港接入)
@@ -79,7 +79,7 @@ interface Receivers
     /**
      * 删除分账接收方(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter4_1_8.shtml#async
+     * @link https://wechatpay.im/openapi/v3/global/profit-sharing/receivers#delete
      */
     public function deleteAsync(array $options = [
         'base_uri' => 'https://apihk.mch.weixin.qq.com/', // 跨境(香港接入)

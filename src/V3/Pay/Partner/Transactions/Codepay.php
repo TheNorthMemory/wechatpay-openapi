@@ -12,7 +12,7 @@ interface Codepay
     /**
      * 付款码支付(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-code-payment-v3/partner/partner-code-pay.html
+     * @link https://wechatpay.im/openapi/v3/pay/partner/transactions/codepay
      */
     public function post(array $options = [
         'json' => [
@@ -60,7 +60,7 @@ interface Codepay
     /**
      * 付款码支付(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-code-payment-v3/partner/partner-code-pay.html#async
+     * @link https://wechatpay.im/openapi/v3/pay/partner/transactions/codepay
      */
     public function postAsync(array $options = [
         'json' => [

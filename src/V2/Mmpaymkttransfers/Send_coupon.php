@@ -13,7 +13,7 @@ interface Send_coupon
      * 发放代金券(同步模式)
      * @param array<string,mixed> $options
      * @deprecated - since 2020.MM.dd
-     * @link https://pay.weixin.qq.com/wiki/doc/api/tools/sp_coupon.php?chapter=12_3&index=4
+     * @link https://wechatpay.im/openapi/v2/mmpaymkttransfers/send_coupon
      */
     public function post(array $options = [
         'xml' => [
@@ -35,7 +35,7 @@ interface Send_coupon
      * 发放代金券(异步模式)
      * @param array<string,mixed> $options
      * @deprecated - since 2020.MM.dd
-     * @link https://pay.weixin.qq.com/wiki/doc/api/tools/sp_coupon.php?chapter=12_3&index=4#async
+     * @link https://wechatpay.im/openapi/v2/mmpaymkttransfers/send_coupon
      */
     public function postAsync(array $options = [
         'xml' => [

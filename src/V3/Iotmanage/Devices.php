@@ -12,7 +12,7 @@ interface Devices
     /**
      * 智能设备列表(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/point/iotmanage-devices.html
+     * @link https://wechatpay.im/openapi/v3/iotmanage/devices
      */
     public function get(array $options = [
         'query' => [
@@ -24,7 +24,7 @@ interface Devices
     /**
      * 智能设备列表(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/point/iotmanage-devices.html#async
+     * @link https://wechatpay.im/openapi/v3/iotmanage/devices
      */
     public function getAsync(array $options = [
         'query' => [

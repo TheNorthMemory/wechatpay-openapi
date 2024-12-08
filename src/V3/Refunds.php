@@ -14,7 +14,7 @@ interface Refunds
     /**
      * 申请退款(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/fusion_wallet_ch/QuickPay/chapter8_2.shtml
+     * @link https://wechatpay.im/openapi/v3/refunds
      */
     public function post(array $options = [
         'base_uri' => 'https://api.mch.weixin.qq.com/hk/', // 跨境(国内接入)
@@ -36,7 +36,7 @@ interface Refunds
     /**
      * 申请退款(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/fusion_wallet_ch/QuickPay/chapter8_2.shtml#async
+     * @link https://wechatpay.im/openapi/v3/refunds
      */
     public function postAsync(array $options = [
         'base_uri' => 'https://api.mch.weixin.qq.com/hk/', // 跨境(国内接入)
@@ -58,7 +58,7 @@ interface Refunds
     /**
      * 查询所有退款(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/fusion_wallet_ch/QuickPay/chapter8_4.shtml
+     * @link https://wechatpay.im/openapi/v3/refunds#get
      */
     public function get(array $options = [
         'base_uri' => 'https://api.mch.weixin.qq.com/hk/', // 跨境(国内接入)
@@ -76,7 +76,7 @@ interface Refunds
     /**
      * 查询所有退款(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/fusion_wallet_ch/QuickPay/chapter8_4.shtml#async
+     * @link https://wechatpay.im/openapi/v3/refunds#get
      */
     public function getAsync(array $options = [
         'base_uri' => 'https://api.mch.weixin.qq.com/hk/', // 跨境(国内接入)

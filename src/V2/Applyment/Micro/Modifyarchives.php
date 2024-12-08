@@ -13,7 +13,7 @@ interface Modifyarchives
      * 修改结算银行卡(同步模式)
      * @param array<string,mixed> $options
      * @deprecated - since 2023.03.13
-     * @link https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=21_2
+     * @link https://wechatpay.im/openapi/v2/applyment/micro/modifyarchives
      */
     public function post(array $options = [
         'xml' => [
@@ -34,7 +34,7 @@ interface Modifyarchives
      * 修改结算银行卡(异步模式)
      * @param array<string,mixed> $options
      * @deprecated - since 2023.03.13
-     * @link https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=21_2#async
+     * @link https://wechatpay.im/openapi/v2/applyment/micro/modifyarchives
      */
     public function postAsync(array $options = [
         'xml' => [

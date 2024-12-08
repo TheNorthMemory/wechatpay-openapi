@@ -12,7 +12,7 @@ interface _applyment_id_
     /**
      * 查询H5支付权限申请单详情(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter4_4_2.shtml
+     * @link https://wechatpay.im/openapi/v3/global/merchant/h5/permission/applications/%7Bapplyment_id%7D
      */
     public function get(array $options = [
         'base_uri' => 'https://apihk.mch.weixin.qq.com/', // 跨境(香港接入)
@@ -22,7 +22,7 @@ interface _applyment_id_
     /**
      * 查询H5支付权限申请单详情(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter4_4_2.shtml#async
+     * @link https://wechatpay.im/openapi/v3/global/merchant/h5/permission/applications/%7Bapplyment_id%7D
      */
     public function getAsync(array $options = [
         'base_uri' => 'https://apihk.mch.weixin.qq.com/', // 跨境(香港接入)
@@ -32,7 +32,7 @@ interface _applyment_id_
     /**
      * 修改H5支付权限申请单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter4_4_3.shtml
+     * @link https://wechatpay.im/openapi/v3/global/merchant/h5/permission/applications/%7Bapplyment_id%7D#patch
      */
     public function patch(array $options = [
         'base_uri' => 'https://apihk.mch.weixin.qq.com/', // 跨境(香港接入)
@@ -51,7 +51,7 @@ interface _applyment_id_
     /**
      * 修改H5支付权限申请单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter4_4_3.shtml#async
+     * @link https://wechatpay.im/openapi/v3/global/merchant/h5/permission/applications/%7Bapplyment_id%7D#patch
      */
     public function patchAsync(array $options = [
         'base_uri' => 'https://apihk.mch.weixin.qq.com/', // 跨境(香港接入)

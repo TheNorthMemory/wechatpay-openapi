@@ -12,7 +12,7 @@ interface Terminate
     /**
      * 终止活动(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/paygiftactivity/chapter3_7.shtml
+     * @link https://wechatpay.im/openapi/v3/marketing/paygiftactivity/activities/%7Bactivity_id%7D/terminate
      */
     public function post(array $options = [
         'activity_id' => '',
@@ -21,7 +21,7 @@ interface Terminate
     /**
      * 终止活动(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/paygiftactivity/chapter3_7.shtml#async
+     * @link https://wechatpay.im/openapi/v3/marketing/paygiftactivity/activities/%7Bactivity_id%7D/terminate
      */
     public function postAsync(array $options = [
         'activity_id' => '',

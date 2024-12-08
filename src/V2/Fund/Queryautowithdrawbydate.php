@@ -13,7 +13,7 @@ interface Queryautowithdrawbydate
      * 查询提现状态(同步模式)
      * @param array<string,mixed> $options
      * @deprecated - since 2023.03.13
-     * @link https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=21_1
+     * @link https://wechatpay.im/openapi/v2/fund/queryautowithdrawbydate
      */
     public function post(array $options = [
         'xml' => [
@@ -29,7 +29,7 @@ interface Queryautowithdrawbydate
      * 查询提现状态(异步模式)
      * @param array<string,mixed> $options
      * @deprecated - since 2023.03.13
-     * @link https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=21_1#async
+     * @link https://wechatpay.im/openapi/v2/fund/queryautowithdrawbydate
      */
     public function postAsync(array $options = [
         'xml' => [

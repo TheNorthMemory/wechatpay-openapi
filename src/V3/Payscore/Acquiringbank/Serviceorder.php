@@ -14,7 +14,7 @@ interface Serviceorder
     /**
      * 从业机构创建微信支付分订单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-order/create-acquiring-bank-service-order.html
+     * @link https://wechatpay.im/openapi/v3/payscore/acquiringbank/serviceorder
      */
     public function post(array $options = [
         'json' => [
@@ -62,7 +62,7 @@ interface Serviceorder
     /**
      * 从业机构创建微信支付分订单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-order/create-acquiring-bank-service-order.html#async
+     * @link https://wechatpay.im/openapi/v3/payscore/acquiringbank/serviceorder
      */
     public function postAsync(array $options = [
         'json' => [
@@ -110,7 +110,7 @@ interface Serviceorder
     /**
      * 从业机构查询微信支付分订单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-order/get-acquiring-bank-service-order.html
+     * @link https://wechatpay.im/openapi/v3/payscore/acquiringbank/serviceorder#get
      */
     public function get(array $options = [
         'query' => [
@@ -125,7 +125,7 @@ interface Serviceorder
     /**
      * 从业机构查询微信支付分订单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-order/get-acquiring-bank-service-order.html#async
+     * @link https://wechatpay.im/openapi/v3/payscore/acquiringbank/serviceorder#get
      */
     public function getAsync(array $options = [
         'query' => [

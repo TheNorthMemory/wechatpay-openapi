@@ -14,7 +14,7 @@ interface Batches
     /**
      * 发起批量转账(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer/chapter3_1.shtml
+     * @link https://wechatpay.im/openapi/v3/transfer/batches
      */
     public function post(array $options = [
         'json' => [
@@ -43,7 +43,7 @@ interface Batches
     /**
      * 发起批量转账(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer/chapter3_1.shtml#async
+     * @link https://wechatpay.im/openapi/v3/transfer/batches
      */
     public function postAsync(array $options = [
         'json' => [

@@ -12,7 +12,7 @@ interface _sub_mchid_
     /**
      * 查询子商户管控情况(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/limited-functions-and-reasons/mch-limitations/query-sub-mch-limitation.html
+     * @link https://wechatpay.im/openapi/v3/mch-operation-manage/merchant-limitations/sub-mchid/%7Bsub_mchid%7D
      */
     public function get(array $options = [
         'sub_mchid' => '123000110',
@@ -21,7 +21,7 @@ interface _sub_mchid_
     /**
      * 查询子商户管控情况(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/limited-functions-and-reasons/mch-limitations/query-sub-mch-limitation.html#async
+     * @link https://wechatpay.im/openapi/v3/mch-operation-manage/merchant-limitations/sub-mchid/%7Bsub_mchid%7D
      */
     public function getAsync(array $options = [
         'sub_mchid' => '123000110',

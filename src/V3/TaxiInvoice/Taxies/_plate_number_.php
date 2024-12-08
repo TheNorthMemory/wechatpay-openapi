@@ -12,7 +12,7 @@ interface _plate_number_
     /**
      * 获取出租车信息(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/taxi-fapiao/taxi/query-taxi.html
+     * @link https://wechatpay.im/openapi/v3/taxi-invoice/taxies/%7Bplate_number%7D
      */
     public function get(array $options = [
         'plate_number' => '粤B12345',
@@ -24,7 +24,7 @@ interface _plate_number_
     /**
      * 获取出租车信息(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/taxi-fapiao/taxi/query-taxi.html#async
+     * @link https://wechatpay.im/openapi/v3/taxi-invoice/taxies/%7Bplate_number%7D
      */
     public function getAsync(array $options = [
         'plate_number' => '粤B12345',

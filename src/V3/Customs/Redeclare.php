@@ -12,7 +12,7 @@ interface Redeclare
     /**
      * 报关重推(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/declarecustom_ch/chapter3_4.shtml
+     * @link https://wechatpay.im/openapi/v3/customs/redeclare
      */
     public function post(array $options = [
         'base_uri' => 'https://apihk.mch.weixin.qq.com/global/', // 跨境(香港接入)
@@ -31,7 +31,7 @@ interface Redeclare
     /**
      * 报关重推(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/declarecustom_ch/chapter3_4.shtml#async
+     * @link https://wechatpay.im/openapi/v3/customs/redeclare
      */
     public function postAsync(array $options = [
         'base_uri' => 'https://apihk.mch.weixin.qq.com/global/', // 跨境(香港接入)

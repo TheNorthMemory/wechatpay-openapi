@@ -12,7 +12,7 @@ interface TradeRiskInformation
     /**
      * 查询风险信息(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/risk-manage/trade-risk/query-trade-risk-information.html
+     * @link https://wechatpay.im/openapi/v3/merchant-risk-manage/trade-risk-information
      */
     public function get(array $options = [
         'query' => [
@@ -28,7 +28,7 @@ interface TradeRiskInformation
     /**
      * 查询风险信息(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/risk-manage/trade-risk/query-trade-risk-information.html#async
+     * @link https://wechatpay.im/openapi/v3/merchant-risk-manage/trade-risk-information
      */
     public function getAsync(array $options = [
         'query' => [

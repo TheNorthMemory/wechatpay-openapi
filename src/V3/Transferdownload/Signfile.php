@@ -12,7 +12,7 @@ interface Signfile
     /**
      * 下载电子回单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_15.shtml
+     * @link https://wechatpay.im/openapi/v3/transferdownload/signfile
      */
     public function get(array $options = [
         'query' => [
@@ -23,7 +23,7 @@ interface Signfile
     /**
      * 下载电子回单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_15.shtml#async
+     * @link https://wechatpay.im/openapi/v3/transferdownload/signfile
      */
     public function getAsync(array $options = [
         'query' => [

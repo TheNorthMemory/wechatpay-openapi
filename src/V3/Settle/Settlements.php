@@ -12,7 +12,7 @@ interface Settlements
     /**
      * 查询结算资金明细(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/fusion_wallet_ch/QuickPay/chapter8_10.shtml
+     * @link https://wechatpay.im/openapi/v3/settle/settlements
      */
     public function get(array $options = [
         'base_uri' => 'https://api.mch.weixin.qq.com/hk/', // 跨境(国内接入)
@@ -29,7 +29,7 @@ interface Settlements
     /**
      * 查询结算资金明细(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/fusion_wallet_ch/QuickPay/chapter8_10.shtml#async
+     * @link https://wechatpay.im/openapi/v3/settle/settlements
      */
     public function getAsync(array $options = [
         'base_uri' => 'https://api.mch.weixin.qq.com/hk/', // 跨境(国内接入)

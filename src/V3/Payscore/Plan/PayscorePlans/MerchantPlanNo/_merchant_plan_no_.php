@@ -13,7 +13,7 @@ interface _merchant_plan_no_
     /**
      * 查询支付分计划(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/payscore-plan/pay-score-plan/query-pay-score-plan.html
+     * @link https://wechatpay.im/openapi/v3/payscore/plan/payscore-plans/merchant-plan-no/%7Bmerchant_plan_no%7D
      */
     public function get(array $options = [
         'merchant_plan_no' => '1234323JKHDFE1243252',
@@ -22,7 +22,7 @@ interface _merchant_plan_no_
     /**
      * 查询支付分计划(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/payscore-plan/pay-score-plan/query-pay-score-plan.html#async
+     * @link https://wechatpay.im/openapi/v3/payscore/plan/payscore-plans/merchant-plan-no/%7Bmerchant_plan_no%7D
      */
     public function getAsync(array $options = [
         'merchant_plan_no' => '1234323JKHDFE1243252',

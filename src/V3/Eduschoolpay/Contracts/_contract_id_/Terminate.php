@@ -12,7 +12,7 @@ interface Terminate
     /**
      * 商户主动解约(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/edu/eduschoolpay/chapter3_3.shtml
+     * @link https://wechatpay.im/openapi/v3/eduschoolpay/contracts/%7Bcontract_id%7D/terminate
      */
     public function post(array $options = [
         'contract_id' => '2045011120563805041758214605',
@@ -21,7 +21,7 @@ interface Terminate
     /**
      * 商户主动解约(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/edu/eduschoolpay/chapter3_3.shtml#async
+     * @link https://wechatpay.im/openapi/v3/eduschoolpay/contracts/%7Bcontract_id%7D/terminate
      */
     public function postAsync(array $options = [
         'contract_id' => '2045011120563805041758214605',

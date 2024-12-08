@@ -12,7 +12,7 @@ interface _bill_type_
     /**
      * 按日下载提现异常文件(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/fund/chapter3_4.shtml
+     * @link https://wechatpay.im/openapi/v3/merchant/fund/withdraw/bill-type/%7Bbill_type%7D
      */
     public function get(array $options = [
         'query' => [
@@ -25,7 +25,7 @@ interface _bill_type_
     /**
      * 按日下载提现异常文件(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/fund/chapter3_4.shtml#async
+     * @link https://wechatpay.im/openapi/v3/merchant/fund/withdraw/bill-type/%7Bbill_type%7D
      */
     public function getAsync(array $options = [
         'query' => [

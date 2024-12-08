@@ -12,7 +12,7 @@ interface Create
     /**
      * 请求补差(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/subsidies/chapter3_1.shtml
+     * @link https://wechatpay.im/openapi/v3/ecommerce/subsidies/create
      */
     public function post(array $options = [
         'json' => [
@@ -27,7 +27,7 @@ interface Create
     /**
      * 请求补差(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/subsidies/chapter3_1.shtml#async
+     * @link https://wechatpay.im/openapi/v3/ecommerce/subsidies/create
      */
     public function postAsync(array $options = [
         'json' => [

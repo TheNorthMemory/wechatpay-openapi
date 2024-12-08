@@ -12,7 +12,7 @@ interface Syncmchriskresult
     /**
      * 事后-风险商户处理结果同步接口(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/mch_bank.php?chapter=9_293
+     * @link https://wechatpay.im/openapi/v2/mchrisk/syncmchriskresult
      */
     public function post(array $options = [
         'xml' => [
@@ -39,7 +39,7 @@ interface Syncmchriskresult
     /**
      * 事后-风险商户处理结果同步接口(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/mch_bank.php?chapter=9_293#async
+     * @link https://wechatpay.im/openapi/v2/mchrisk/syncmchriskresult
      */
     public function postAsync(array $options = [
         'xml' => [

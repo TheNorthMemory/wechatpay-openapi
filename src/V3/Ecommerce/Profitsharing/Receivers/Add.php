@@ -12,7 +12,7 @@ interface Add
     /**
      * 添加分账接收方(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/profitsharing/chapter3_7.shtml
+     * @link https://wechatpay.im/openapi/v3/ecommerce/profitsharing/receivers/add
      */
     public function post(array $options = [
         'json' => [
@@ -31,7 +31,7 @@ interface Add
     /**
      * 添加分账接收方(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/profitsharing/chapter3_7.shtml#async
+     * @link https://wechatpay.im/openapi/v3/ecommerce/profitsharing/receivers/add
      */
     public function postAsync(array $options = [
         'json' => [

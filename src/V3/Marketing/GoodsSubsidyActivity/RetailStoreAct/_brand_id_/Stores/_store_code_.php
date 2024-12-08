@@ -12,7 +12,7 @@ interface _store_code_
     /**
      * 查询小店活动门店详情(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/get-store.html
+     * @link https://wechatpay.im/openapi/v3/marketing/goods-subsidy-activity/retail-store-act/%7Bbrand_id%7D/stores/%7Bstore_code%7D
      */
     public function get(array $options = [
         'brand_id' => '1001',
@@ -22,7 +22,7 @@ interface _store_code_
     /**
      * 查询小店活动门店详情(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/get-store.html#async
+     * @link https://wechatpay.im/openapi/v3/marketing/goods-subsidy-activity/retail-store-act/%7Bbrand_id%7D/stores/%7Bstore_code%7D
      */
     public function getAsync(array $options = [
         'brand_id' => '1001',

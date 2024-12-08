@@ -12,7 +12,7 @@ interface Queryrentbill
     /**
      * 查询租借订单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/payscore.php?chapter=18_2&index=3
+     * @link https://wechatpay.im/openapi/v2/wxv/queryrentbill
      */
     public function post(array $options = [
         'xml' => [
@@ -30,7 +30,7 @@ interface Queryrentbill
     /**
      * 查询租借订单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/payscore.php?chapter=18_2&index=3#async
+     * @link https://wechatpay.im/openapi/v2/wxv/queryrentbill
      */
     public function postAsync(array $options = [
         'xml' => [

@@ -12,7 +12,7 @@ interface SubMerchantFundflowbill
     /**
      * 申请单个子商户资金账单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter4_1_12.shtml
+     * @link https://wechatpay.im/openapi/v3/bill/sub-merchant-fundflowbill
      */
     public function get(array $options = [
         'query' => [
@@ -27,7 +27,7 @@ interface SubMerchantFundflowbill
     /**
      * 申请单个子商户资金账单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter4_1_12.shtml#async
+     * @link https://wechatpay.im/openapi/v3/bill/sub-merchant-fundflowbill
      */
     public function getAsync(array $options = [
         'query' => [

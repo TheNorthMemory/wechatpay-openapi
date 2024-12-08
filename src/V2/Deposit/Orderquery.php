@@ -12,7 +12,7 @@ interface Orderquery
     /**
      * 查询订单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=27_2&index=3
+     * @link https://wechatpay.im/openapi/v2/deposit/orderquery
      */
     public function post(array $options = [
         'xml' => [
@@ -30,7 +30,7 @@ interface Orderquery
     /**
      * 查询订单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=27_2&index=3#async
+     * @link https://wechatpay.im/openapi/v2/deposit/orderquery
      */
     public function postAsync(array $options = [
         'xml' => [

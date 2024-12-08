@@ -12,7 +12,7 @@ interface Cities
     /**
      * 查询城市列表(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter11_2_5.shtml
+     * @link https://wechatpay.im/openapi/v3/capital/capitallhh/areas/provinces/%7Bprovince_code%7D/cities
      */
     public function get(array $options = [
         'province_code' => '10',
@@ -21,7 +21,7 @@ interface Cities
     /**
      * 查询城市列表(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter11_2_5.shtml#async
+     * @link https://wechatpay.im/openapi/v3/capital/capitallhh/areas/provinces/%7Bprovince_code%7D/cities
      */
     public function getAsync(array $options = [
         'province_code' => '10',

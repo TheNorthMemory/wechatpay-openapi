@@ -12,7 +12,7 @@ interface _contract_id_
     /**
      * 签约查询接口(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/k12-development-guidelines.html
+     * @link https://wechatpay.im/openapi/v3/offlineface/contracts/%7Bcontract_id%7D
      */
     public function get(array $options = [
         'contract_id' => 'CI8CD208Z7e9906f89',
@@ -24,7 +24,7 @@ interface _contract_id_
     /**
      * 签约查询接口(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/k12-development-guidelines.html#async
+     * @link https://wechatpay.im/openapi/v3/offlineface/contracts/%7Bcontract_id%7D
      */
     public function getAsync(array $options = [
         'contract_id' => 'CI8CD208Z7e9906f89',

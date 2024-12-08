@@ -13,7 +13,7 @@ interface Preopen
      * 预开通服务(同步模式)
      * @param array<string,mixed> $options
      * @deprecated - since 2019.12.16
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/vehicle/ebike/chapter3_3.shtml
+     * @link https://wechatpay.im/openapi/v3/ebike/charge/contracts/preopen
      */
     public function post(array $options = [
         'json' => [
@@ -29,7 +29,7 @@ interface Preopen
      * 预开通服务(异步模式)
      * @param array<string,mixed> $options
      * @deprecated - since 2019.12.16
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/vehicle/ebike/chapter3_3.shtml#async
+     * @link https://wechatpay.im/openapi/v3/ebike/charge/contracts/preopen
      */
     public function postAsync(array $options = [
         'json' => [

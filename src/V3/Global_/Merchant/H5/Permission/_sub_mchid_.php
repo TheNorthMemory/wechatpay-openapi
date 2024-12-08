@@ -12,7 +12,7 @@ interface _sub_mchid_
     /**
      * 查询子商户H5支付权限状态(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter4_4_7.shtml
+     * @link https://wechatpay.im/openapi/v3/global/merchant/h5/permission/%7Bsub_mchid%7D
      */
     public function get(array $options = [
         'base_uri' => 'https://apihk.mch.weixin.qq.com/', // 跨境(香港接入)
@@ -22,7 +22,7 @@ interface _sub_mchid_
     /**
      * 查询子商户H5支付权限状态(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter4_4_7.shtml#async
+     * @link https://wechatpay.im/openapi/v3/global/merchant/h5/permission/%7Bsub_mchid%7D
      */
     public function getAsync(array $options = [
         'base_uri' => 'https://apihk.mch.weixin.qq.com/', // 跨境(香港接入)

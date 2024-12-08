@@ -12,7 +12,7 @@ interface _addinstitutionsub_
     /**
      * 进件子商户(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/sub_merchant_entry/chapter3_1.shtml
+     * @link https://wechatpay.im/openapi/v2/secapi/mch/addInstitutionsub
      */
     public function post(array $options = [
         'addinstitutionsub' => 'addInstitutionsub', // 固定参数(URI上有大写字符)
@@ -57,7 +57,7 @@ interface _addinstitutionsub_
     /**
      * 进件子商户(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/sub_merchant_entry/chapter3_1.shtml#async
+     * @link https://wechatpay.im/openapi/v2/secapi/mch/addInstitutionsub
      */
     public function postAsync(array $options = [
         'addinstitutionsub' => 'addInstitutionsub', // 固定参数(URI上有大写字符)

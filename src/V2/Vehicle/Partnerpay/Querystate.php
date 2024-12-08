@@ -12,7 +12,7 @@ interface Querystate
     /**
      * 用户状态查询(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/vehicle_v2_sl.php?chapter=20_93&index=9&p=202
+     * @link https://wechatpay.im/openapi/v2/vehicle/partnerpay/querystate
      */
     public function post(array $options = [
         'xml' => [
@@ -31,7 +31,7 @@ interface Querystate
     /**
      * 用户状态查询(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/vehicle_v2_sl.php?chapter=20_93&index=9&p=202#async
+     * @link https://wechatpay.im/openapi/v2/vehicle/partnerpay/querystate
      */
     public function postAsync(array $options = [
         'xml' => [

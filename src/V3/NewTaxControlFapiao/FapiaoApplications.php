@@ -14,7 +14,7 @@ interface FapiaoApplications
     /**
      * 开具电子发票(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter4_8_8.shtml
+     * @link https://wechatpay.im/openapi/v3/new-tax-control-fapiao/fapiao-applications
      */
     public function post(array $options = [
         'json' => [
@@ -60,7 +60,7 @@ interface FapiaoApplications
     /**
      * 开具电子发票(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter4_8_8.shtml#async
+     * @link https://wechatpay.im/openapi/v3/new-tax-control-fapiao/fapiao-applications
      */
     public function postAsync(array $options = [
         'json' => [

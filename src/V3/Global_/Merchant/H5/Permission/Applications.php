@@ -13,7 +13,7 @@ interface Applications
     /**
      * 创建H5支付权限申请单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter4_4_1.shtml
+     * @link https://wechatpay.im/openapi/v3/global/merchant/h5/permission/applications
      */
     public function post(array $options = [
         'base_uri' => 'https://apihk.mch.weixin.qq.com/', // 跨境(香港接入)
@@ -35,7 +35,7 @@ interface Applications
     /**
      * 创建H5支付权限申请单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter4_4_1.shtml#async
+     * @link https://wechatpay.im/openapi/v3/global/merchant/h5/permission/applications
      */
     public function postAsync(array $options = [
         'base_uri' => 'https://apihk.mch.weixin.qq.com/', // 跨境(香港接入)

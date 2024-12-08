@@ -12,7 +12,7 @@ interface Reverse
     /**
      * 电商合单委托代扣撤销订单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter5_5_5.shtml
+     * @link https://wechatpay.im/openapi/v3/ecommerce/combine-papay/transactions/%7Bcombine_out_trade_no%7D/reverse
      */
     public function post(array $options = [
         'combine_out_trade_no' => 'P20150806125346',
@@ -30,7 +30,7 @@ interface Reverse
     /**
      * 电商合单委托代扣撤销订单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter5_5_5.shtml#async
+     * @link https://wechatpay.im/openapi/v3/ecommerce/combine-papay/transactions/%7Bcombine_out_trade_no%7D/reverse
      */
     public function postAsync(array $options = [
         'combine_out_trade_no' => 'P20150806125346',

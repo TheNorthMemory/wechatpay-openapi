@@ -13,7 +13,7 @@ interface Merchants
     /**
      * 发起不活跃商户身份核实(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/inactive-merchant-identity-verification/inactive-mch-identity-verification/create-inactive-merchant-identity-verification.html
+     * @link https://wechatpay.im/openapi/v3/compliance/inactive-merchant-identity-verification/merchants
      */
     public function post(array $options = [
         'json' => [
@@ -24,7 +24,7 @@ interface Merchants
     /**
      * 发起不活跃商户身份核实(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/inactive-merchant-identity-verification/inactive-mch-identity-verification/create-inactive-merchant-identity-verification.html#async
+     * @link https://wechatpay.im/openapi/v3/compliance/inactive-merchant-identity-verification/merchants
      */
     public function postAsync(array $options = [
         'json' => [

@@ -12,7 +12,7 @@ interface Close
     /**
      * 关闭预约商家转账记录(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-transfer/transfer-reservation/transfer-reservation-close.html
+     * @link https://wechatpay.im/openapi/v3/platsolution/mch-transfer/reservation/out-reservation-no/%7Bout_reservation_no%7D/close
      */
     public function post(array $options = [
         'out_reservation_no' => 'plfk2020042013',
@@ -24,7 +24,7 @@ interface Close
     /**
      * 关闭预约商家转账记录(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-transfer/transfer-reservation/transfer-reservation-close.html#async
+     * @link https://wechatpay.im/openapi/v3/platsolution/mch-transfer/reservation/out-reservation-no/%7Bout_reservation_no%7D/close
      */
     public function postAsync(array $options = [
         'out_reservation_no' => 'plfk2020042013',

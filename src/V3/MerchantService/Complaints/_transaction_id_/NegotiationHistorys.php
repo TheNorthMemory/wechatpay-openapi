@@ -13,7 +13,7 @@ interface NegotiationHistorys
      * 查询投诉协商历史(同步模式)
      * @param array<string,mixed> $options
      * @deprecated - since 2021.01.08
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/merchant-service/chapter3_7.shtml
+     * @link https://wechatpay.im/openapi/v3/merchant-service/complaints/%7Btransaction_id%7D/negotiation-historys
      */
     public function get(array $options = [
         'transaction_id' => '4200000404201909069117582536',
@@ -23,7 +23,7 @@ interface NegotiationHistorys
      * 查询投诉协商历史(异步模式)
      * @param array<string,mixed> $options
      * @deprecated - since 2021.01.08
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/merchant-service/chapter3_7.shtml#async
+     * @link https://wechatpay.im/openapi/v3/merchant-service/complaints/%7Btransaction_id%7D/negotiation-historys
      */
     public function getAsync(array $options = [
         'transaction_id' => '4200000404201909069117582536',

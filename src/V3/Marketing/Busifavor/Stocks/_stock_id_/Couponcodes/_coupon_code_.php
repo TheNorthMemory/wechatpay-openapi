@@ -12,7 +12,7 @@ interface _coupon_code_
     /**
      * 查询预存code详情(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/products/merchant-exclusive-coupon/introduction.html
+     * @link https://wechatpay.im/openapi/v3/marketing/busifavor/stocks/%7Bstock_id%7D/couponcodes/%7Bcoupon_code%7D
      */
     public function get(array $options = [
         'stock_id' => '1212',
@@ -25,7 +25,7 @@ interface _coupon_code_
     /**
      * 查询预存code详情(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/products/merchant-exclusive-coupon/introduction.html#async
+     * @link https://wechatpay.im/openapi/v3/marketing/busifavor/stocks/%7Bstock_id%7D/couponcodes/%7Bcoupon_code%7D
      */
     public function getAsync(array $options = [
         'stock_id' => '1212',
@@ -38,7 +38,7 @@ interface _coupon_code_
     /**
      * 删除预存code(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/products/merchant-exclusive-coupon/introduction.html
+     * @link https://wechatpay.im/openapi/v3/marketing/busifavor/stocks/%7Bstock_id%7D/couponcodes/%7Bcoupon_code%7D#delete
      */
     public function delete(array $options = [
         'stock_id' => '101156451224',
@@ -51,7 +51,7 @@ interface _coupon_code_
     /**
      * 删除预存code(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/products/merchant-exclusive-coupon/introduction.html#async
+     * @link https://wechatpay.im/openapi/v3/marketing/busifavor/stocks/%7Bstock_id%7D/couponcodes/%7Bcoupon_code%7D#delete
      */
     public function deleteAsync(array $options = [
         'stock_id' => '101156451224',

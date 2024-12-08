@@ -12,7 +12,7 @@ interface Getpublickey
     /**
      * 获取RSA加密公钥(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/tools/mch_pay_yhk.php?chapter=24_7&index=4
+     * @link https://wechatpay.im/openapi/v2/risk/getpublickey
      */
     public function post(array $options = [
         'xml' => [
@@ -26,7 +26,7 @@ interface Getpublickey
     /**
      * 获取RSA加密公钥(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/tools/mch_pay_yhk.php?chapter=24_7&index=4#async
+     * @link https://wechatpay.im/openapi/v2/risk/getpublickey
      */
     public function postAsync(array $options = [
         'xml' => [

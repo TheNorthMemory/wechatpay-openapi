@@ -13,7 +13,7 @@ interface PayscorePlans
     /**
      * 创建支付分计划(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-payscore-plan/partner-pay-score-plan/create-partner-pay-score-plan.html
+     * @link https://wechatpay.im/openapi/v3/payscore/plan/partner/payscore-plans
      */
     public function post(array $options = [
         'json' => [
@@ -39,7 +39,7 @@ interface PayscorePlans
     /**
      * 创建支付分计划(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-payscore-plan/partner-pay-score-plan/create-partner-pay-score-plan.html#async
+     * @link https://wechatpay.im/openapi/v3/payscore/plan/partner/payscore-plans
      */
     public function postAsync(array $options = [
         'json' => [

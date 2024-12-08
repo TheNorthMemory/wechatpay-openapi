@@ -14,7 +14,7 @@ interface Complaints
      * 查询投诉信息(同步模式)
      * @param array<string,mixed> $options
      * @deprecated - since 2020.11.27
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/merchant-service/chapter3_1.shtml
+     * @link https://wechatpay.im/openapi/v3/merchant-service/complaints
      */
     public function get(array $options = [
         'query' => [
@@ -30,7 +30,7 @@ interface Complaints
      * 查询投诉信息(异步模式)
      * @param array<string,mixed> $options
      * @deprecated - since 2020.11.27
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/merchant-service/chapter3_1.shtml#async
+     * @link https://wechatpay.im/openapi/v3/merchant-service/complaints
      */
     public function getAsync(array $options = [
         'query' => [

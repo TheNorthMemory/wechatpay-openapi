@@ -12,7 +12,7 @@ interface Apply
     /**
      * 受理商家转账(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-transfer/transfer-batch/transfer-batch-apply.html
+     * @link https://wechatpay.im/openapi/v3/platsolution/mch-transfer/batches/apply
      */
     public function post(array $options = [
         'json' => [
@@ -39,7 +39,7 @@ interface Apply
     /**
      * 受理商家转账(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-transfer/transfer-batch/transfer-batch-apply.html#async
+     * @link https://wechatpay.im/openapi/v3/platsolution/mch-transfer/batches/apply
      */
     public function postAsync(array $options = [
         'json' => [

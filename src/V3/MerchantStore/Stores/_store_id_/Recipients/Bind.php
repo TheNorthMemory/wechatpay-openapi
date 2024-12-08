@@ -12,7 +12,7 @@ interface Bind
     /**
      * 绑定门店收款信息(同步模式)
      * @param array<string,mixed> $options
-     * @link 该API接口可用于给一个特定的门店添加收款商户号。添加绑定成功后，商户号可为门店收款。一个门店目前最多只能添加绑定三个收款商户号，且添加绑定收款主体必须与品牌主主体或已有收款商户主体保持一致。
+     * @link https://wechatpay.im/openapi/v3/merchant-store/stores/%7Bstore_id%7D/recipients/bind
      */
     public function post(array $options = [
         'store_id' => '20488000',
@@ -28,7 +28,7 @@ interface Bind
     /**
      * 绑定门店收款信息(异步模式)
      * @param array<string,mixed> $options
-     * @link 该API接口可用于给一个特定的门店添加收款商户号。添加绑定成功后，商户号可为门店收款。一个门店目前最多只能添加绑定三个收款商户号，且添加绑定收款主体必须与品牌主主体或已有收款商户主体保持一致。#async
+     * @link https://wechatpay.im/openapi/v3/merchant-store/stores/%7Bstore_id%7D/recipients/bind
      */
     public function postAsync(array $options = [
         'store_id' => '20488000',

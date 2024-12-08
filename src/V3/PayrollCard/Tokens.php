@@ -12,7 +12,7 @@ interface Tokens
     /**
      * 生成授权token (同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_1.shtml
+     * @link https://wechatpay.im/openapi/v3/payroll-card/tokens
      */
     public function post(array $options = [
         'json' => [
@@ -32,7 +32,7 @@ interface Tokens
     /**
      * 生成授权token (异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_1.shtml#async
+     * @link https://wechatpay.im/openapi/v3/payroll-card/tokens
      */
     public function postAsync(array $options = [
         'json' => [

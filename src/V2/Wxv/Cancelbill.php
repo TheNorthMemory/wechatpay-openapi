@@ -12,7 +12,7 @@ interface Cancelbill
     /**
      * 撤销租借订单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/payscore.php?chapter=18_3&index=4
+     * @link https://wechatpay.im/openapi/v2/wxv/cancelbill
      */
     public function post(array $options = [
         'xml' => [
@@ -30,7 +30,7 @@ interface Cancelbill
     /**
      * 撤销租借订单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/payscore.php?chapter=18_3&index=4#async
+     * @link https://wechatpay.im/openapi/v2/wxv/cancelbill
      */
     public function postAsync(array $options = [
         'xml' => [

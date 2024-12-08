@@ -12,7 +12,7 @@ interface Notify
     /**
      * 商圈会员积分同步(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/smart-business-circle/points/notify-points.html
+     * @link https://wechatpay.im/openapi/v3/businesscircle/points/notify
      */
     public function post(array $options = [
         'json' => [
@@ -31,7 +31,7 @@ interface Notify
     /**
      * 商圈会员积分同步(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/smart-business-circle/points/notify-points.html#async
+     * @link https://wechatpay.im/openapi/v3/businesscircle/points/notify
      */
     public function postAsync(array $options = [
         'json' => [

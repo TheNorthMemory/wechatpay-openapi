@@ -12,7 +12,7 @@ interface Pay
     /**
      * 提交付款码支付(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter3_1_1.shtml
+     * @link https://wechatpay.im/openapi/v3/global/micropay/transactions/pay
      */
     public function post(array $options = [
         'base_uri' => 'https://apihk.mch.weixin.qq.com/', // 跨境(香港接入)
@@ -65,7 +65,7 @@ interface Pay
     /**
      * 提交付款码支付(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter3_1_1.shtml#async
+     * @link https://wechatpay.im/openapi/v3/global/micropay/transactions/pay
      */
     public function postAsync(array $options = [
         'base_uri' => 'https://apihk.mch.weixin.qq.com/', // 跨境(香港接入)

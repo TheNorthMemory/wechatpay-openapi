@@ -12,7 +12,7 @@ interface FinishOrder
     /**
      * 完结分账(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/profitsharing/chapter3_5.shtml
+     * @link https://wechatpay.im/openapi/v3/ecommerce/profitsharing/finish-order
      */
     public function post(array $options = [
         'json' => [
@@ -26,7 +26,7 @@ interface FinishOrder
     /**
      * 完结分账(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/profitsharing/chapter3_5.shtml#async
+     * @link https://wechatpay.im/openapi/v3/ecommerce/profitsharing/finish-order
      */
     public function postAsync(array $options = [
         'json' => [

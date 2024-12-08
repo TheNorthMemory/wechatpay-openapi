@@ -12,7 +12,7 @@ interface TradeRiskResult
     /**
      * 处置结果回传(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/risk-manage/trade-risk-result/create-trade-risk-result.html
+     * @link https://wechatpay.im/openapi/v3/merchant-risk-manage/trade-risk-result
      */
     public function post(array $options = [
         'json' => [
@@ -31,7 +31,7 @@ interface TradeRiskResult
     /**
      * 处置结果回传(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/risk-manage/trade-risk-result/create-trade-risk-result.html#async
+     * @link https://wechatpay.im/openapi/v3/merchant-risk-manage/trade-risk-result
      */
     public function postAsync(array $options = [
         'json' => [

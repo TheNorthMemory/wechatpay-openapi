@@ -12,7 +12,7 @@ interface _authenticate_number_
     /**
      * 获取核身结果(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_4.shtml
+     * @link https://wechatpay.im/openapi/v3/payroll-card/authentications/%7Bauthenticate_number%7D
      */
     public function get(array $options = [
         'authenticate_number' => 'mcdhehfgisdhfjghed39384564i83',
@@ -24,7 +24,7 @@ interface _authenticate_number_
     /**
      * 获取核身结果(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_4.shtml#async
+     * @link https://wechatpay.im/openapi/v3/payroll-card/authentications/%7Bauthenticate_number%7D
      */
     public function getAsync(array $options = [
         'authenticate_number' => 'mcdhehfgisdhfjghed39384564i83',

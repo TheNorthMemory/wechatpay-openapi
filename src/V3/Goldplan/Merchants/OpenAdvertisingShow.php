@@ -12,7 +12,7 @@ interface OpenAdvertisingShow
     /**
      * 开通广告展示(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_5_4.shtml
+     * @link https://wechatpay.im/openapi/v3/goldplan/merchants/open-advertising-show
      */
     public function patch(array $options = [
         'json' => [
@@ -24,7 +24,7 @@ interface OpenAdvertisingShow
     /**
      * 开通广告展示(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_5_4.shtml#async
+     * @link https://wechatpay.im/openapi/v3/goldplan/merchants/open-advertising-show
      */
     public function patchAsync(array $options = [
         'json' => [

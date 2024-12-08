@@ -12,7 +12,7 @@ interface Notify
     /**
      * 服务商商户预扣费通知(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/entrusted-payment/json/partner-deduct-notify.html
+     * @link https://wechatpay.im/openapi/v3/partner-papay/contracts/%7Bcontract_id%7D/notify
      */
     public function post(array $options = [
         'contract_id' => '123124412412423431',
@@ -35,7 +35,7 @@ interface Notify
     /**
      * 服务商商户预扣费通知(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/entrusted-payment/json/partner-deduct-notify.html#async
+     * @link https://wechatpay.im/openapi/v3/partner-papay/contracts/%7Bcontract_id%7D/notify
      */
     public function postAsync(array $options = [
         'contract_id' => '123124412412423431',

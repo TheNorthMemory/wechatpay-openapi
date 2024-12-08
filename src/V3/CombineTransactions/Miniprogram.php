@@ -12,7 +12,7 @@ interface Miniprogram
     /**
      * 个人收款交易下单-小程序(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/personal-collections/mini-program-prepay.html
+     * @link https://wechatpay.im/openapi/v3/combine-transactions/miniprogram
      */
     public function post(array $options = [
         'json' => [
@@ -47,7 +47,7 @@ interface Miniprogram
     /**
      * 个人收款交易下单-小程序(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/personal-collections/mini-program-prepay.html#async
+     * @link https://wechatpay.im/openapi/v3/combine-transactions/miniprogram
      */
     public function postAsync(array $options = [
         'json' => [

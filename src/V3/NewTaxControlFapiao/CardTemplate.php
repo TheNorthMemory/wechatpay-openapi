@@ -12,7 +12,7 @@ interface CardTemplate
     /**
      * 创建电子发票卡券模板(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/new-tax-control-fapiao/chapter3_4.shtml
+     * @link https://wechatpay.im/openapi/v3/new-tax-control-fapiao/card-template
      */
     public function post(array $options = [
         'json' => [
@@ -35,7 +35,7 @@ interface CardTemplate
     /**
      * 创建电子发票卡券模板(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/new-tax-control-fapiao/chapter3_4.shtml#async
+     * @link https://wechatpay.im/openapi/v3/new-tax-control-fapiao/card-template
      */
     public function postAsync(array $options = [
         'json' => [

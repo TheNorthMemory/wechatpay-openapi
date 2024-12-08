@@ -12,7 +12,7 @@ interface PreEntrustSign
     /**
      * 代扣预签约(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/doc/v3/merchant/4012978414
+     * @link https://wechatpay.im/openapi/v3/papay/entrust-sign/contracts/pre-entrust-sign
      */
     public function post(array $options = [
         'json' => [
@@ -41,7 +41,7 @@ interface PreEntrustSign
     /**
      * 代扣预签约(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/doc/v3/merchant/4012978414#async
+     * @link https://wechatpay.im/openapi/v3/papay/entrust-sign/contracts/pre-entrust-sign
      */
     public function postAsync(array $options = [
         'json' => [

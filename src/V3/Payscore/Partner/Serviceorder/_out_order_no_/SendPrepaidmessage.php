@@ -12,7 +12,7 @@ interface SendPrepaidmessage
     /**
      * 下发服务预扣费消息(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/partner-service-order/send-partner-order-prepaid-message.html
+     * @link https://wechatpay.im/openapi/v3/payscore/partner/serviceorder/%7Bout_order_no%7D/send-prepaidmessage
      */
     public function post(array $options = [
         'out_order_no' => '',
@@ -39,7 +39,7 @@ interface SendPrepaidmessage
     /**
      * 下发服务预扣费消息(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/partner-service-order/send-partner-order-prepaid-message.html#async
+     * @link https://wechatpay.im/openapi/v3/payscore/partner/serviceorder/%7Bout_order_no%7D/send-prepaidmessage
      */
     public function postAsync(array $options = [
         'out_order_no' => '',

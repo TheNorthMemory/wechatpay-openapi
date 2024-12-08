@@ -13,7 +13,7 @@ interface InsuranceOrders
     /**
      * 创建保险订单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/hire-power-bank-insurance/insurance-orders/create-insurance-order.html
+     * @link https://wechatpay.im/openapi/v3/hire-power-bank/insurance-orders
      */
     public function post(array $options = [
         'json' => [
@@ -27,7 +27,7 @@ interface InsuranceOrders
     /**
      * 创建保险订单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/hire-power-bank-insurance/insurance-orders/create-insurance-order.html#async
+     * @link https://wechatpay.im/openapi/v3/hire-power-bank/insurance-orders
      */
     public function postAsync(array $options = [
         'json' => [

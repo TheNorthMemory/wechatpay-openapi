@@ -15,7 +15,7 @@ interface Permissions
     /**
      * 商户预授权(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/weixin-pay-score/service-auth/apply-permissions.html
+     * @link https://wechatpay.im/openapi/v3/payscore/permissions
      */
     public function post(array $options = [
         'json' => [
@@ -29,7 +29,7 @@ interface Permissions
     /**
      * 商户预授权(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/weixin-pay-score/service-auth/apply-permissions.html#async
+     * @link https://wechatpay.im/openapi/v3/payscore/permissions
      */
     public function postAsync(array $options = [
         'json' => [

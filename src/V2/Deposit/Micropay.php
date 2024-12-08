@@ -12,7 +12,7 @@ interface Micropay
     /**
      * 支付押金（付款码支付）(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=27_1&index=2
+     * @link https://wechatpay.im/openapi/v2/deposit/micropay
      */
     public function post(array $options = [
         'xml' => [
@@ -45,7 +45,7 @@ interface Micropay
     /**
      * 支付押金（付款码支付）(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=27_1&index=2#async
+     * @link https://wechatpay.im/openapi/v2/deposit/micropay
      */
     public function postAsync(array $options = [
         'xml' => [

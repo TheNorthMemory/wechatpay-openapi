@@ -14,7 +14,7 @@ interface _out_trade_no_
     /**
      * 查询订单(商户订单号)(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/fusion_wallet_ch/QuickPay/chapter8_1.shtml
+     * @link https://wechatpay.im/openapi/v3/transactions/out-trade-no/%7Bout_trade_no%7D
      */
     public function get(array $options = [
         'base_uri' => 'https://api.mch.weixin.qq.com/hk/', // 跨境(国内接入)
@@ -29,7 +29,7 @@ interface _out_trade_no_
     /**
      * 查询订单(商户订单号)(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/fusion_wallet_ch/QuickPay/chapter8_1.shtml#async
+     * @link https://wechatpay.im/openapi/v3/transactions/out-trade-no/%7Bout_trade_no%7D
      */
     public function getAsync(array $options = [
         'base_uri' => 'https://api.mch.weixin.qq.com/hk/', // 跨境(国内接入)

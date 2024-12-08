@@ -12,7 +12,7 @@ interface _withdraw_id_
     /**
      * 电商平台(微信支付提现单号)查询提现状态(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/fund/chapter3_6.shtml
+     * @link https://wechatpay.im/openapi/v3/merchant/fund/withdraw/withdraw-id/%7Bwithdraw_id%7D
      */
     public function get(array $options = [
         'withdraw_id' => '12321937198237912739132791732123',
@@ -21,7 +21,7 @@ interface _withdraw_id_
     /**
      * 电商平台(微信支付提现单号)查询提现状态(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/fund/chapter3_6.shtml#async
+     * @link https://wechatpay.im/openapi/v3/merchant/fund/withdraw/withdraw-id/%7Bwithdraw_id%7D
      */
     public function getAsync(array $options = [
         'withdraw_id' => '12321937198237912739132791732123',

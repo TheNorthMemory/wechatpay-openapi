@@ -12,7 +12,7 @@ interface Parkings
     /**
      * 商圈会员停车状态同步(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/smart-business-circle/parkings/update-parkings.html
+     * @link https://wechatpay.im/openapi/v3/businesscircle/parkings
      */
     public function post(array $options = [
         'json' => [
@@ -29,7 +29,7 @@ interface Parkings
     /**
      * 商圈会员停车状态同步(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/smart-business-circle/parkings/update-parkings.html#async
+     * @link https://wechatpay.im/openapi/v3/businesscircle/parkings
      */
     public function postAsync(array $options = [
         'json' => [

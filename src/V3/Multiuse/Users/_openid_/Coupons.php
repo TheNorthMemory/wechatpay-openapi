@@ -12,7 +12,7 @@ interface Coupons
     /**
      * 发放指定批次的消费金(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/multiuse-coupon/multiuse-coupon/send-multiuse-coupon.html
+     * @link https://wechatpay.im/openapi/v3/multiuse/users/%7Bopenid%7D/coupons
      */
     public function post(array $options = [
         'openid' => '',
@@ -33,7 +33,7 @@ interface Coupons
     /**
      * 发放指定批次的消费金(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/multiuse-coupon/multiuse-coupon/send-multiuse-coupon.html#async
+     * @link https://wechatpay.im/openapi/v3/multiuse/users/%7Bopenid%7D/coupons
      */
     public function postAsync(array $options = [
         'openid' => '',

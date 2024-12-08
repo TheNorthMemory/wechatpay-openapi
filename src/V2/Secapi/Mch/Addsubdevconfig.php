@@ -12,7 +12,7 @@ interface Addsubdevconfig
     /**
      * 服务商子商户开发配置新增支付目录/新增对应APPID关联(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/mch_bank.php?chapter=9_24_2&index=2&p=901
+     * @link https://wechatpay.im/openapi/v2/secapi/mch/addsubdevconfig
      */
     public function post(array $options = [
         'xml' => [
@@ -29,7 +29,7 @@ interface Addsubdevconfig
     /**
      * 服务商子商户开发配置新增支付目录/新增对应APPID关联(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/mch_bank.php?chapter=9_24_2&index=2&p=901#async
+     * @link https://wechatpay.im/openapi/v2/secapi/mch/addsubdevconfig
      */
     public function postAsync(array $options = [
         'xml' => [

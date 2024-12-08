@@ -20,7 +20,7 @@ interface _card_id_
     /**
      * 查询会员卡模板信息(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_2.shtml
+     * @link https://wechatpay.im/openapi/v3/marketing/membercard-open/cards/%7Bcard_id%7D
      */
     public function get(array $options = [
         'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',
@@ -29,7 +29,7 @@ interface _card_id_
     /**
      * 查询会员卡模板信息(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_2.shtml#async
+     * @link https://wechatpay.im/openapi/v3/marketing/membercard-open/cards/%7Bcard_id%7D
      */
     public function getAsync(array $options = [
         'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',
@@ -38,7 +38,7 @@ interface _card_id_
     /**
      * 修改会员卡模板信息(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_9.shtml
+     * @link https://wechatpay.im/openapi/v3/marketing/membercard-open/cards/%7Bcard_id%7D#patch
      */
     public function patch(array $options = [
         'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',
@@ -85,7 +85,7 @@ interface _card_id_
     /**
      * 修改会员卡模板信息(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_9.shtml#async
+     * @link https://wechatpay.im/openapi/v3/marketing/membercard-open/cards/%7Bcard_id%7D#patch
      */
     public function patchAsync(array $options = [
         'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',
@@ -132,7 +132,7 @@ interface _card_id_
     /**
      * 删除会员卡模板(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_11.shtml
+     * @link https://wechatpay.im/openapi/v3/marketing/membercard-open/cards/%7Bcard_id%7D#delete
      */
     public function delete(array $options = [
         'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',
@@ -141,7 +141,7 @@ interface _card_id_
     /**
      * 删除会员卡模板(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_11.shtml#async
+     * @link https://wechatpay.im/openapi/v3/marketing/membercard-open/cards/%7Bcard_id%7D#delete
      */
     public function deleteAsync(array $options = [
         'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',

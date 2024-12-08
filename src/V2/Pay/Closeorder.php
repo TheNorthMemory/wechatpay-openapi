@@ -12,7 +12,7 @@ interface Closeorder
     /**
      * 关闭订单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=9_3
+     * @link https://wechatpay.im/openapi/v2/pay/closeorder
      */
     public function post(array $options = [
         'xml' => [
@@ -26,7 +26,7 @@ interface Closeorder
     /**
      * 关闭订单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=9_3#async
+     * @link https://wechatpay.im/openapi/v2/pay/closeorder
      */
     public function postAsync(array $options = [
         'xml' => [

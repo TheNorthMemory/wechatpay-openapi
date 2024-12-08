@@ -12,7 +12,7 @@ interface _out_detail_no_
     /**
      * 商家明细单号查询明细单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer_partner/chapter3_5.shtml
+     * @link https://wechatpay.im/openapi/v3/partner-transfer/batches/out-batch-no/%7Bout_batch_no%7D/details/out-detail-no/%7Bout_detail_no%7D
      */
     public function get(array $options = [
         'out_batch_no' => 'plfk2020042013',
@@ -22,7 +22,7 @@ interface _out_detail_no_
     /**
      * 商家明细单号查询明细单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer_partner/chapter3_5.shtml#async
+     * @link https://wechatpay.im/openapi/v3/partner-transfer/batches/out-batch-no/%7Bout_batch_no%7D/details/out-detail-no/%7Bout_detail_no%7D
      */
     public function getAsync(array $options = [
         'out_batch_no' => 'plfk2020042013',

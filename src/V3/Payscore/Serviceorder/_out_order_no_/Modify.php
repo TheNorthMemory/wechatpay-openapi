@@ -12,7 +12,7 @@ interface Modify
     /**
      * 修改订单金额(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/weixin-pay-score/service-order/modify-service-order.html
+     * @link https://wechatpay.im/openapi/v3/payscore/serviceorder/%7Bout_order_no%7D/modify
      */
     public function post(array $options = [
         'out_order_no' => '1234323JKHDFE1243252',
@@ -39,7 +39,7 @@ interface Modify
     /**
      * 修改订单金额(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/weixin-pay-score/service-order/modify-service-order.html#async
+     * @link https://wechatpay.im/openapi/v3/payscore/serviceorder/%7Bout_order_no%7D/modify
      */
     public function postAsync(array $options = [
         'out_order_no' => '1234323JKHDFE1243252',

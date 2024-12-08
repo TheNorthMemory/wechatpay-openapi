@@ -12,7 +12,7 @@ interface Schedule
     /**
      * 预约扣费(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/entrusted-payment/normal/normal-schedule-deduction.html
+     * @link https://wechatpay.im/openapi/v3/papay/pay/schedules/contract-id/%7Bcontract_id%7D/schedule
      */
     public function post(array $options = [
         'contract_id' => '123124412412423431',
@@ -28,7 +28,7 @@ interface Schedule
     /**
      * 预约扣费(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/entrusted-payment/normal/normal-schedule-deduction.html#async
+     * @link https://wechatpay.im/openapi/v3/papay/pay/schedules/contract-id/%7Bcontract_id%7D/schedule
      */
     public function postAsync(array $options = [
         'contract_id' => '123124412412423431',

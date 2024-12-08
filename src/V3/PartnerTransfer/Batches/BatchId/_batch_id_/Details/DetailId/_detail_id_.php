@@ -12,7 +12,7 @@ interface _detail_id_
     /**
      * 微信支付明细单号查询明细单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer_partner/chapter3_3.shtml
+     * @link https://wechatpay.im/openapi/v3/partner-transfer/batches/batch-id/%7Bbatch_id%7D/details/detail-id/%7Bdetail_id%7D
      */
     public function get(array $options = [
         'batch_id' => '1030000071100999991182020050700019480001',
@@ -22,7 +22,7 @@ interface _detail_id_
     /**
      * 微信支付明细单号查询明细单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer_partner/chapter3_3.shtml#async
+     * @link https://wechatpay.im/openapi/v3/partner-transfer/batches/batch-id/%7Bbatch_id%7D/details/detail-id/%7Bdetail_id%7D
      */
     public function getAsync(array $options = [
         'batch_id' => '1030000071100999991182020050700019480001',

@@ -12,7 +12,7 @@ interface UpdateTaxi
     /**
      * 更新出租车信息(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/taxi-fapiao/taxi/update-taxi.html
+     * @link https://wechatpay.im/openapi/v3/taxi-invoice/taxi/update-taxi
      */
     public function post(array $options = [
         'json' => [
@@ -29,7 +29,7 @@ interface UpdateTaxi
     /**
      * 更新出租车信息(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/taxi-fapiao/taxi/update-taxi.html#async
+     * @link https://wechatpay.im/openapi/v3/taxi-invoice/taxi/update-taxi
      */
     public function postAsync(array $options = [
         'json' => [

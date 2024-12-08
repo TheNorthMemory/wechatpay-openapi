@@ -12,7 +12,7 @@ interface Querywwsptrans2pocket
     /**
      * 查询付款记录(同步模式)
      * @param array<string,mixed> $options
-     * @link https://open.work.weixin.qq.com/api/doc/90000/90135/90279
+     * @link https://wechatpay.im/openapi/v2/mmpaymkttransfers/promotion/querywwsptrans2pocket
      */
     public function post(array $options = [
         'xml' => [
@@ -26,7 +26,7 @@ interface Querywwsptrans2pocket
     /**
      * 查询付款记录(异步模式)
      * @param array<string,mixed> $options
-     * @link https://open.work.weixin.qq.com/api/doc/90000/90135/90279#async
+     * @link https://wechatpay.im/openapi/v2/mmpaymkttransfers/promotion/querywwsptrans2pocket
      */
     public function postAsync(array $options = [
         'xml' => [

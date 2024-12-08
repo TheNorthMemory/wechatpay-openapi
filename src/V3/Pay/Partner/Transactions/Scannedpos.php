@@ -12,7 +12,7 @@ interface Scannedpos
     /**
      * 扫码支付下单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-scannedpos-payment/partner-ap-iv3/parner-scanned-pos-prepay.html
+     * @link https://wechatpay.im/openapi/v3/pay/partner/transactions/scannedpos
      */
     public function post(array $options = [
         'json' => [
@@ -63,7 +63,7 @@ interface Scannedpos
     /**
      * 扫码支付下单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-scannedpos-payment/partner-ap-iv3/parner-scanned-pos-prepay.html#async
+     * @link https://wechatpay.im/openapi/v3/pay/partner/transactions/scannedpos
      */
     public function postAsync(array $options = [
         'json' => [

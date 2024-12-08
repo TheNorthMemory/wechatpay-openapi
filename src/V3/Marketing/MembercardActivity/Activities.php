@@ -13,7 +13,7 @@ interface Activities
     /**
      * 创建活动(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/membership-card/member-gift/create-activity.html
+     * @link https://wechatpay.im/openapi/v3/marketing/membercard-activity/activities
      */
     public function post(array $options = [
         'json' => [
@@ -79,7 +79,7 @@ interface Activities
     /**
      * 创建活动(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/membership-card/member-gift/create-activity.html#async
+     * @link https://wechatpay.im/openapi/v3/marketing/membercard-activity/activities
      */
     public function postAsync(array $options = [
         'json' => [
@@ -145,7 +145,7 @@ interface Activities
     /**
      * 查询活动列表(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/membership-card/member-gift/query-activity-list.html
+     * @link https://wechatpay.im/openapi/v3/marketing/membercard-activity/activities#get
      */
     public function get(array $options = [
         'query' => [
@@ -160,7 +160,7 @@ interface Activities
     /**
      * 查询活动列表(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/membership-card/member-gift/query-activity-list.html#async
+     * @link https://wechatpay.im/openapi/v3/marketing/membercard-activity/activities#get
      */
     public function getAsync(array $options = [
         'query' => [

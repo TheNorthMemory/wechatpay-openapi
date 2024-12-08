@@ -12,7 +12,7 @@ interface _combine_transaction_id_
     /**
      * 个人收款交易通过微信支付订单号查单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/personal-collections/query-by-wx-trade-no.html
+     * @link https://wechatpay.im/openapi/v3/combine-transactions/id/%7Bcombine_transaction_id%7D
      */
     public function get(array $options = [
         'combine_transaction_id' => '1217752501201407033233368018',
@@ -21,7 +21,7 @@ interface _combine_transaction_id_
     /**
      * 个人收款交易通过微信支付订单号查单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/personal-collections/query-by-wx-trade-no.html#async
+     * @link https://wechatpay.im/openapi/v3/combine-transactions/id/%7Bcombine_transaction_id%7D
      */
     public function getAsync(array $options = [
         'combine_transaction_id' => '1217752501201407033233368018',

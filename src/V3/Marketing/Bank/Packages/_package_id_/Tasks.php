@@ -26,7 +26,7 @@ interface Tasks
      * ```
      *
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_8_1.shtml
+     * @link https://wechatpay.im/openapi/v3/marketing/bank/packages/%7Bpackage_id%7D/tasks
      */
     public function post(array $options = []): ResponseInterface;
 
@@ -47,14 +47,14 @@ interface Tasks
      * ```
      *
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_8_1.shtml#async
+     * @link https://wechatpay.im/openapi/v3/marketing/bank/packages/%7Bpackage_id%7D/tasks
      */
     public function postAsync(array $options = []): PromiseInterface;
 
     /**
      * 查询上传任务列表(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter9_8_2.shtml
+     * @link https://wechatpay.im/openapi/v3/marketing/bank/packages/%7Bpackage_id%7D/tasks#get
      */
     public function get(array $options = [
         'package_id' => '8473295',
@@ -69,7 +69,7 @@ interface Tasks
     /**
      * 查询上传任务列表(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter9_8_2.shtml#async
+     * @link https://wechatpay.im/openapi/v3/marketing/bank/packages/%7Bpackage_id%7D/tasks#get
      */
     public function getAsync(array $options = [
         'package_id' => '8473295',

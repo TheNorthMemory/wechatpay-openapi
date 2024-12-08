@@ -12,7 +12,7 @@ interface Transform
     /**
      * 用户openid转换(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_9_1.shtml
+     * @link https://wechatpay.im/openapi/v3/express/users/%7Bopenid%7D/transform
      */
     public function post(array $options = [
         'openid' => 'xsd3434454567676',
@@ -24,7 +24,7 @@ interface Transform
     /**
      * 用户openid转换(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_9_1.shtml#async
+     * @link https://wechatpay.im/openapi/v3/express/users/%7Bopenid%7D/transform
      */
     public function postAsync(array $options = [
         'openid' => 'xsd3434454567676',

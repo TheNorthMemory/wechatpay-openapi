@@ -13,7 +13,7 @@ interface Orderquery
      * 查询订单(同步模式)
      * @param array<string,mixed> $options
      * @deprecated - since 2022.05.31
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=9_2
+     * @link https://wechatpay.im/openapi/v2/sandboxnew/pay/orderquery
      */
     public function post(array $options = [
         'xml' => [
@@ -32,7 +32,7 @@ interface Orderquery
      * 查询订单(异步模式)
      * @param array<string,mixed> $options
      * @deprecated - since 2022.05.31
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=9_2#async
+     * @link https://wechatpay.im/openapi/v2/sandboxnew/pay/orderquery
      */
     public function postAsync(array $options = [
         'xml' => [

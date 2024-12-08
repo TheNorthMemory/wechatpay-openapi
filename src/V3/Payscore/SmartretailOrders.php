@@ -13,7 +13,7 @@ interface SmartretailOrders
     /**
      * 创建智慧零售订单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/payscore.php?chapter=14_1&index=3
+     * @link https://wechatpay.im/openapi/v3/payscore/smartretail-orders
      */
     public function post(array $options = [
         'json' => [
@@ -45,7 +45,7 @@ interface SmartretailOrders
     /**
      * 创建智慧零售订单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/payscore.php?chapter=14_1&index=3#async
+     * @link https://wechatpay.im/openapi/v3/payscore/smartretail-orders
      */
     public function postAsync(array $options = [
         'json' => [
@@ -77,7 +77,7 @@ interface SmartretailOrders
     /**
      * 查询智慧零售订单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/payscore.php?chapter=14_2&index=4
+     * @link https://wechatpay.im/openapi/v3/payscore/smartretail-orders#get
      */
     public function get(array $options = [
         'query' => [
@@ -91,7 +91,7 @@ interface SmartretailOrders
     /**
      * 查询智慧零售订单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/payscore.php?chapter=14_2&index=4#async
+     * @link https://wechatpay.im/openapi/v3/payscore/smartretail-orders#get
      */
     public function getAsync(array $options = [
         'query' => [

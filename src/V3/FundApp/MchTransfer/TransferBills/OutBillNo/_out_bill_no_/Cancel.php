@@ -12,7 +12,7 @@ interface Cancel
     /**
      * 撤销转账(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/mch-trans/transfer-bill/cancel-transfer.html
+     * @link https://wechatpay.im/openapi/v3/fund-app/mch-transfer/transfer-bills/out-bill-no/%7Bout_bill_no%7D/cancel
      */
     public function post(array $options = [
         'out_bill_no' => 'plfk2020042013',
@@ -21,7 +21,7 @@ interface Cancel
     /**
      * 撤销转账(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/mch-trans/transfer-bill/cancel-transfer.html#async
+     * @link https://wechatpay.im/openapi/v3/fund-app/mch-transfer/transfer-bills/out-bill-no/%7Bout_bill_no%7D/cancel
      */
     public function postAsync(array $options = [
         'out_bill_no' => 'plfk2020042013',

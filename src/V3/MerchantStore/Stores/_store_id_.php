@@ -13,6 +13,7 @@ interface _store_id_
     /**
      * 查询门店(同步模式)
      * @param array<string,mixed> $options
+     * @link https://wechatpay.im/openapi/v3/merchant-store/stores/%7Bstore_id%7D
      */
     public function get(array $options = [
         'store_id' => '20488000',
@@ -24,6 +25,7 @@ interface _store_id_
     /**
      * 查询门店(异步模式)
      * @param array<string,mixed> $options
+     * @link https://wechatpay.im/openapi/v3/merchant-store/stores/%7Bstore_id%7D
      */
     public function getAsync(array $options = [
         'store_id' => '20488000',
@@ -35,6 +37,7 @@ interface _store_id_
     /**
      * 修改门店(同步模式)
      * @param array<string,mixed> $options
+     * @link https://wechatpay.im/openapi/v3/merchant-store/stores/%7Bstore_id%7D#patch
      */
     public function patch(array $options = [
         'store_id' => '20488000',
@@ -63,6 +66,7 @@ interface _store_id_
     /**
      * 修改门店(异步模式)
      * @param array<string,mixed> $options
+     * @link https://wechatpay.im/openapi/v3/merchant-store/stores/%7Bstore_id%7D#patch
      */
     public function patchAsync(array $options = [
         'store_id' => '20488000',

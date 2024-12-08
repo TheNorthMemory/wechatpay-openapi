@@ -12,7 +12,7 @@ interface Refund
     /**
      * 申请退款(同步模式)
      * @param array<string,mixed> $options
-     * @link https://share.weiyun.com/5dxUgCw
+     * @link https://wechatpay.im/openapi/v2/secapi/pay/refund
      */
     public function post(array $options = [
         'xml' => [
@@ -37,7 +37,7 @@ interface Refund
     /**
      * 申请退款(异步模式)
      * @param array<string,mixed> $options
-     * @link https://share.weiyun.com/5dxUgCw#async
+     * @link https://wechatpay.im/openapi/v2/secapi/pay/refund
      */
     public function postAsync(array $options = [
         'xml' => [

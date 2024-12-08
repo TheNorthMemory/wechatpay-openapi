@@ -14,7 +14,7 @@ interface Serviceorder
     /**
      * 创建支付分订单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/weixin-pay-score/service-order/create-service-order.html
+     * @link https://wechatpay.im/openapi/v3/payscore/serviceorder
      */
     public function post(array $options = [
         'json' => [
@@ -58,7 +58,7 @@ interface Serviceorder
     /**
      * 创建支付分订单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/weixin-pay-score/service-order/create-service-order.html#async
+     * @link https://wechatpay.im/openapi/v3/payscore/serviceorder
      */
     public function postAsync(array $options = [
         'json' => [
@@ -102,7 +102,7 @@ interface Serviceorder
     /**
      * 查询支付分订单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/weixin-pay-score/service-order/get-service-order.html
+     * @link https://wechatpay.im/openapi/v3/payscore/serviceorder#get
      */
     public function get(array $options = [
         'query' => [
@@ -116,7 +116,7 @@ interface Serviceorder
     /**
      * 查询支付分订单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/weixin-pay-score/service-order/get-service-order.html#async
+     * @link https://wechatpay.im/openapi/v3/payscore/serviceorder#get
      */
     public function getAsync(array $options = [
         'query' => [

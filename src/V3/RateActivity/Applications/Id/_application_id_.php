@@ -12,7 +12,7 @@ interface _application_id_
     /**
      * 根据申请单ID查询申请单结果(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/rateactivity/chapter3_2.shtml
+     * @link https://wechatpay.im/openapi/v3/rate-activity/applications/id/%7Bapplication_id%7D
      */
     public function get(array $options = [
         'application_id' => '20000011111',
@@ -21,7 +21,7 @@ interface _application_id_
     /**
      * 根据申请单ID查询申请单结果(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/rateactivity/chapter3_2.shtml#async
+     * @link https://wechatpay.im/openapi/v3/rate-activity/applications/id/%7Bapplication_id%7D
      */
     public function getAsync(array $options = [
         'application_id' => '20000011111',
@@ -30,7 +30,7 @@ interface _application_id_
     /**
      * 修改单据信息(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/rateactivity/chapter3_3.shtml
+     * @link https://wechatpay.im/openapi/v3/rate-activity/applications/id/%7Bapplication_id%7D#patch
      */
     public function patch(array $options = [
         'application_id' => '20000011111',
@@ -52,7 +52,7 @@ interface _application_id_
     /**
      * 修改单据信息(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/rateactivity/chapter3_3.shtml#async
+     * @link https://wechatpay.im/openapi/v3/rate-activity/applications/id/%7Bapplication_id%7D#patch
      */
     public function patchAsync(array $options = [
         'application_id' => '20000011111',

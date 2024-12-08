@@ -12,7 +12,7 @@ interface Changerentmoney
     /**
      * 修改租借订单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/payscore.php?chapter=18_5&index=6
+     * @link https://wechatpay.im/openapi/v2/wxv/changerentmoney
      */
     public function post(array $options = [
         'xml' => [
@@ -34,7 +34,7 @@ interface Changerentmoney
     /**
      * 修改租借订单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/payscore.php?chapter=18_5&index=6#async
+     * @link https://wechatpay.im/openapi/v2/wxv/changerentmoney
      */
     public function postAsync(array $options = [
         'xml' => [

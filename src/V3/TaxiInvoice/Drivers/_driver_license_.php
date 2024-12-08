@@ -12,7 +12,7 @@ interface _driver_license_
     /**
      * 获取司机信息(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/taxi-fapiao/driver/query-driver.html
+     * @link https://wechatpay.im/openapi/v3/taxi-invoice/drivers/%7Bdriver_license%7D
      */
     public function get(array $options = [
         'driver_license' => '6298416',
@@ -24,7 +24,7 @@ interface _driver_license_
     /**
      * 获取司机信息(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/taxi-fapiao/driver/query-driver.html#async
+     * @link https://wechatpay.im/openapi/v3/taxi-invoice/drivers/%7Bdriver_license%7D
      */
     public function getAsync(array $options = [
         'driver_license' => '6298416',

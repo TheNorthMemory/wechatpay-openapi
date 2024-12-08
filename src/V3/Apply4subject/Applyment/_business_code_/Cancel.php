@@ -12,7 +12,7 @@ interface Cancel
     /**
      * 撤销商户开户意愿申请单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/applysubject/chapter5_2.shtml
+     * @link https://wechatpay.im/openapi/v3/apply4subject/applyment/%7Bbusiness_code%7D/cancel
      */
     public function post(array $options = [
         'business_code' => '',
@@ -21,7 +21,7 @@ interface Cancel
     /**
      * 撤销商户开户意愿申请单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/applysubject/chapter5_2.shtml#async
+     * @link https://wechatpay.im/openapi/v3/apply4subject/applyment/%7Bbusiness_code%7D/cancel
      */
     public function postAsync(array $options = [
         'business_code' => '',

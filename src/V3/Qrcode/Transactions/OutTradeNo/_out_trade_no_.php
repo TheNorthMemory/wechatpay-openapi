@@ -12,7 +12,7 @@ interface _out_trade_no_
     /**
      * 查询订单(同步模式)
      * @param array<string,mixed> $options
-     * @link 商户通过商户订单号，来查询订单信息
+     * @link https://wechatpay.im/openapi/v3/qrcode/transactions/out-trade-no/%7Bout_trade_no%7D
      */
     public function get(array $options = [
         'out_trade_no' => '20150806125346',
@@ -24,7 +24,7 @@ interface _out_trade_no_
     /**
      * 查询订单(异步模式)
      * @param array<string,mixed> $options
-     * @link 商户通过商户订单号，来查询订单信息#async
+     * @link https://wechatpay.im/openapi/v3/qrcode/transactions/out-trade-no/%7Bout_trade_no%7D
      */
     public function getAsync(array $options = [
         'out_trade_no' => '20150806125346',

@@ -12,7 +12,7 @@ interface Tokens
     /**
      * 获取凭证授权接口(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/access-specifications.html
+     * @link https://wechatpay.im/openapi/v3/offlinefacemch/tokens
      */
     public function post(array $options = [
         'json' => [
@@ -27,7 +27,7 @@ interface Tokens
     /**
      * 获取凭证授权接口(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/access-specifications.html#async
+     * @link https://wechatpay.im/openapi/v3/offlinefacemch/tokens
      */
     public function postAsync(array $options = [
         'json' => [

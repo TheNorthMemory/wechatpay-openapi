@@ -13,7 +13,7 @@ interface _out_batch_no_
     /**
      * 银行批次单号查询批次单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_2_4.shtml
+     * @link https://wechatpay.im/openapi/v3/bank-transfer/batches/out-batch-no/%7Bout_batch_no%7D
      */
     public function get(array $options = [
         'query' => [
@@ -28,7 +28,7 @@ interface _out_batch_no_
     /**
      * 银行批次单号查询批次单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_2_4.shtml#async
+     * @link https://wechatpay.im/openapi/v3/bank-transfer/batches/out-batch-no/%7Bout_batch_no%7D
      */
     public function getAsync(array $options = [
         'query' => [

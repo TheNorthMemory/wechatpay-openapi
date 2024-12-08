@@ -13,7 +13,7 @@ interface Authorizations
     /**
      * 申请二级商户商家转账授权(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-transfer/authorization/create-authorization.html
+     * @link https://wechatpay.im/openapi/v3/ecommerce/mch-transfer/authorizations
      */
     public function post(array $options = [
         'json' => [
@@ -30,7 +30,7 @@ interface Authorizations
     /**
      * 申请二级商户商家转账授权(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-transfer/authorization/create-authorization.html#async
+     * @link https://wechatpay.im/openapi/v3/ecommerce/mch-transfer/authorizations
      */
     public function postAsync(array $options = [
         'json' => [

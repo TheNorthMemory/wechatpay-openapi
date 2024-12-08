@@ -12,7 +12,7 @@ interface UserServiceState
     /**
      * 查询用户授权状态(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter3_8.shtml
+     * @link https://wechatpay.im/openapi/v3/payscore/user-service-state
      */
     public function get(array $options = [
         'query' => [
@@ -25,7 +25,7 @@ interface UserServiceState
     /**
      * 查询用户授权状态(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter3_8.shtml#async
+     * @link https://wechatpay.im/openapi/v3/payscore/user-service-state
      */
     public function getAsync(array $options = [
         'query' => [

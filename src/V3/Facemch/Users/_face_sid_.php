@@ -12,7 +12,7 @@ interface _face_sid_
     /**
      * 查询用户授权的实名信息(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/android/sid.html
+     * @link https://wechatpay.im/openapi/v3/facemch/users/%7Bface_sid%7D
      */
     public function get(array $options = [
         'face_sid' => 'aabbccdd12345',
@@ -28,7 +28,7 @@ interface _face_sid_
     /**
      * 查询用户授权的实名信息(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/android/sid.html#async
+     * @link https://wechatpay.im/openapi/v3/facemch/users/%7Bface_sid%7D
      */
     public function getAsync(array $options = [
         'face_sid' => 'aabbccdd12345',

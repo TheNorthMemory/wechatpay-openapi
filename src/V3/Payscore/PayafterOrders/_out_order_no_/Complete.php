@@ -12,7 +12,7 @@ interface Complete
     /**
      * 完结先享后付订单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/payscore.php?chapter=17_4&index=6
+     * @link https://wechatpay.im/openapi/v3/payscore/payafter-orders/%7Bout_order_no%7D/complete
      */
     public function post(array $options = [
         'out_order_no' => '',
@@ -44,7 +44,7 @@ interface Complete
     /**
      * 完结先享后付订单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/payscore.php?chapter=17_4&index=6#async
+     * @link https://wechatpay.im/openapi/v3/payscore/payafter-orders/%7Bout_order_no%7D/complete
      */
     public function postAsync(array $options = [
         'out_order_no' => '',

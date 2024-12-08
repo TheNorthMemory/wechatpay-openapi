@@ -12,7 +12,7 @@ interface MiniProgram
     /**
      * 直连商户模式小程序场景预签约(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/password-free-contract/sign/normal-mini-program-pre-entrust-sign.html
+     * @link https://wechatpay.im/openapi/v3/password-exempt-contract/contracts/normal/pre-entrust-sign/mini-program
      */
     public function post(array $options = [
         'json' => [
@@ -28,7 +28,7 @@ interface MiniProgram
     /**
      * 直连商户模式小程序场景预签约(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/password-free-contract/sign/normal-mini-program-pre-entrust-sign.html#async
+     * @link https://wechatpay.im/openapi/v3/password-exempt-contract/contracts/normal/pre-entrust-sign/mini-program
      */
     public function postAsync(array $options = [
         'json' => [

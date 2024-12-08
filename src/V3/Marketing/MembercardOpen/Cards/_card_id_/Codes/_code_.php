@@ -16,7 +16,7 @@ interface _code_
     /**
      * 查询用户会员卡信息(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_4.shtml
+     * @link https://wechatpay.im/openapi/v3/marketing/membercard-open/cards/%7Bcard_id%7D/codes/%7Bcode%7D
      */
     public function get(array $options = [
         'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',
@@ -26,7 +26,7 @@ interface _code_
     /**
      * 查询用户会员卡信息(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_4.shtml#async
+     * @link https://wechatpay.im/openapi/v3/marketing/membercard-open/cards/%7Bcard_id%7D/codes/%7Bcode%7D
      */
     public function getAsync(array $options = [
         'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',
@@ -36,7 +36,7 @@ interface _code_
     /**
      * 修改用户会员卡信息(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_8.shtml
+     * @link https://wechatpay.im/openapi/v3/marketing/membercard-open/cards/%7Bcard_id%7D/codes/%7Bcode%7D#patch
      */
     public function patch(array $options = [
         'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',
@@ -58,7 +58,7 @@ interface _code_
     /**
      * 修改用户会员卡信息(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_8.shtml#async
+     * @link https://wechatpay.im/openapi/v3/marketing/membercard-open/cards/%7Bcard_id%7D/codes/%7Bcode%7D#patch
      */
     public function patchAsync(array $options = [
         'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',

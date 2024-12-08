@@ -12,7 +12,7 @@ interface _out_return_no_
     /**
      * 查询分账回退结果(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_1_4.shtml
+     * @link https://wechatpay.im/openapi/v3/profitsharing/return-orders/%7Bout_return_no%7D
      */
     public function get(array $options = [
         'out_return_no' => 'R20190516001',
@@ -25,7 +25,7 @@ interface _out_return_no_
     /**
      * 查询分账回退结果(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_1_4.shtml#async
+     * @link https://wechatpay.im/openapi/v3/profitsharing/return-orders/%7Bout_return_no%7D
      */
     public function getAsync(array $options = [
         'out_return_no' => 'R20190516001',

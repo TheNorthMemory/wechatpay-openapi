@@ -13,7 +13,7 @@ interface Transactions
     /**
      * 申请扣款接口(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/access-specifications.html
+     * @link https://wechatpay.im/openapi/v3/offlineface/transactions
      */
     public function post(array $options = [
         'json' => [
@@ -46,7 +46,7 @@ interface Transactions
     /**
      * 申请扣款接口(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/access-specifications.html#async
+     * @link https://wechatpay.im/openapi/v3/offlineface/transactions
      */
     public function postAsync(array $options = [
         'json' => [

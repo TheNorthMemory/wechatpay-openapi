@@ -12,7 +12,7 @@ interface _company_mchid_
     /**
      * 获取出租车公司商户信息(同步模式)
      * @param array<string,mixed> $options
-     * @link 获取出租车公司商户信息 [官方文档](hhttps://pay.weixin.qq.com/docs/partner/apis/taxi-fapiao/taxi-company/query-taxi-company.html)
+     * @link https://wechatpay.im/openapi/v3/taxi-invoice/taxi-companies/%7Bcompany_mchid%7D
      */
     public function get(array $options = [
         'company_mchid' => '1900000109',
@@ -24,7 +24,7 @@ interface _company_mchid_
     /**
      * 获取出租车公司商户信息(异步模式)
      * @param array<string,mixed> $options
-     * @link 获取出租车公司商户信息 [官方文档](hhttps://pay.weixin.qq.com/docs/partner/apis/taxi-fapiao/taxi-company/query-taxi-company.html)#async
+     * @link https://wechatpay.im/openapi/v3/taxi-invoice/taxi-companies/%7Bcompany_mchid%7D
      */
     public function getAsync(array $options = [
         'company_mchid' => '1900000109',

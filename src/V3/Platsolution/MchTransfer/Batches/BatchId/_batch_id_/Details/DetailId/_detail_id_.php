@@ -12,7 +12,7 @@ interface _detail_id_
     /**
      * 微信支付转账明细单号查询明细单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-transfer/transfer-batch/get-transfer-detail-by-no.html
+     * @link https://wechatpay.im/openapi/v3/platsolution/mch-transfer/batches/batch-id/%7Bbatch_id%7D/details/detail-id/%7Bdetail_id%7D
      */
     public function get(array $options = [
         'batch_id' => '131000011085109987515042023022300246500006',
@@ -25,7 +25,7 @@ interface _detail_id_
     /**
      * 微信支付转账明细单号查询明细单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-transfer/transfer-batch/get-transfer-detail-by-no.html#async
+     * @link https://wechatpay.im/openapi/v3/platsolution/mch-transfer/batches/batch-id/%7Bbatch_id%7D/details/detail-id/%7Bdetail_id%7D
      */
     public function getAsync(array $options = [
         'batch_id' => '131000011085109987515042023022300246500006',

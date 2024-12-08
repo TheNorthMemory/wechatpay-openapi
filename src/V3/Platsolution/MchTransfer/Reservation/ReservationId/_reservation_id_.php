@@ -12,7 +12,7 @@ interface _reservation_id_
     /**
      * 微信支付预约单号查询预约商家转账记录(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-transfer/transfer-reservation/transfer-reservation-get-by-id.html
+     * @link https://wechatpay.im/openapi/v3/platsolution/mch-transfer/reservation/reservation-id/%7Breservation_id%7D
      */
     public function get(array $options = [
         'reservation_id' => '1330000071100999991182020050700019480001',
@@ -24,7 +24,7 @@ interface _reservation_id_
     /**
      * 微信支付预约单号查询预约商家转账记录(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-transfer/transfer-reservation/transfer-reservation-get-by-id.html#async
+     * @link https://wechatpay.im/openapi/v3/platsolution/mch-transfer/reservation/reservation-id/%7Breservation_id%7D
      */
     public function getAsync(array $options = [
         'reservation_id' => '1330000071100999991182020050700019480001',

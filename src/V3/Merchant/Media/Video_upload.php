@@ -18,7 +18,7 @@ interface Video_upload
      * ```
      *
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/chapter3_2.shtml
+     * @link https://wechatpay.im/openapi/v3/merchant/media/video_upload
      */
     public function post(array $options = []): ResponseInterface;
 
@@ -31,7 +31,7 @@ interface Video_upload
      * ```
      *
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/chapter3_2.shtml#async
+     * @link https://wechatpay.im/openapi/v3/merchant/media/video_upload
      */
     public function postAsync(array $options = []): PromiseInterface;
 }

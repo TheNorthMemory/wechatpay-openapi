@@ -12,7 +12,7 @@ interface Prepare
     /**
      * 支付结果页展示会员积分(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter10_3.shtml
+     * @link https://wechatpay.im/openapi/v3/marketing/membercard-open/cards/%7Bcard_id%7D/codes/%7Bcode%7D/bonus/prepare
      */
     public function post(array $options = [
         'card_id' => '478515832665',
@@ -28,7 +28,7 @@ interface Prepare
     /**
      * 支付结果页展示会员积分(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter10_3.shtml#async
+     * @link https://wechatpay.im/openapi/v3/marketing/membercard-open/cards/%7Bcard_id%7D/codes/%7Bcode%7D/bonus/prepare
      */
     public function postAsync(array $options = [
         'card_id' => '478515832665',

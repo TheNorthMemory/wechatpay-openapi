@@ -13,7 +13,7 @@ interface Cards
     /**
      * 预受理领卡请求(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/discount-card/chapter3_1.shtml
+     * @link https://wechatpay.im/openapi/v3/discount-card/cards
      */
     public function post(array $options = [
         'json' => [
@@ -27,7 +27,7 @@ interface Cards
     /**
      * 预受理领卡请求(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/discount-card/chapter3_1.shtml#async
+     * @link https://wechatpay.im/openapi/v3/discount-card/cards
      */
     public function postAsync(array $options = [
         'json' => [

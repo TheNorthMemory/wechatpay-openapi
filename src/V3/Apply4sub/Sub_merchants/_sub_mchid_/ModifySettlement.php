@@ -12,7 +12,7 @@ interface ModifySettlement
     /**
      * 修改结算帐号(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/ecommerce-merchant-application/modify-settlement.html
+     * @link https://wechatpay.im/openapi/v3/apply4sub/sub_merchants/%7Bsub_mchid%7D/modify-settlement
      */
     public function post(array $options = [
         'sub_mchid' => '1900006491',
@@ -34,7 +34,7 @@ interface ModifySettlement
     /**
      * 修改结算帐号(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/ecommerce-merchant-application/modify-settlement.html#async
+     * @link https://wechatpay.im/openapi/v3/apply4sub/sub_merchants/%7Bsub_mchid%7D/modify-settlement
      */
     public function postAsync(array $options = [
         'sub_mchid' => '1900006491',

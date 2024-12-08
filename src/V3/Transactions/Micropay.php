@@ -12,7 +12,7 @@ interface Micropay
     /**
      * 提交付款码支付(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/fusion_wallet_ch/QuickPay/chapter3_3.shtml
+     * @link https://wechatpay.im/openapi/v3/transactions/micropay
      */
     public function post(array $options = [
         'base_uri' => 'https://api.mch.weixin.qq.com/hk/', // 跨境(国内接入)
@@ -65,7 +65,7 @@ interface Micropay
     /**
      * 提交付款码支付(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/fusion_wallet_ch/QuickPay/chapter3_3.shtml#async
+     * @link https://wechatpay.im/openapi/v3/transactions/micropay
      */
     public function postAsync(array $options = [
         'base_uri' => 'https://api.mch.weixin.qq.com/hk/', // 跨境(国内接入)

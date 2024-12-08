@@ -12,7 +12,7 @@ interface Transfers
     /**
      * 向微信用户个人付款(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/tools/mch_pay.php?chapter=14_2
+     * @link https://wechatpay.im/openapi/v2/mmpaymkttransfers/promotion/transfers
      */
     public function post(array $options = [
         'xml' => [
@@ -36,7 +36,7 @@ interface Transfers
     /**
      * 向微信用户个人付款(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/tools/mch_pay.php?chapter=14_2#async
+     * @link https://wechatpay.im/openapi/v2/mmpaymkttransfers/promotion/transfers
      */
     public function postAsync(array $options = [
         'xml' => [

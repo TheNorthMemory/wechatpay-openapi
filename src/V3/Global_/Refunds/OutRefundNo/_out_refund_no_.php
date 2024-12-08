@@ -12,7 +12,7 @@ interface _out_refund_no_
     /**
      * 查询单笔退款(商户退款订单号)(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter5_1_12.shtml
+     * @link https://wechatpay.im/openapi/v3/global/refunds/out-refund-no/%7Bout_refund_no%7D
      */
     public function get(array $options = [
         'base_uri' => 'https://apihk.mch.weixin.qq.com/', // 跨境(香港接入)
@@ -27,7 +27,7 @@ interface _out_refund_no_
     /**
      * 查询单笔退款(商户退款订单号)(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter5_1_12.shtml#async
+     * @link https://wechatpay.im/openapi/v3/global/refunds/out-refund-no/%7Bout_refund_no%7D
      */
     public function getAsync(array $options = [
         'base_uri' => 'https://apihk.mch.weixin.qq.com/', // 跨境(香港接入)

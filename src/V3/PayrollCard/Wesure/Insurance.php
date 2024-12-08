@@ -12,7 +12,7 @@ interface Insurance
     /**
      * 生成投保结果(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_32.shtml
+     * @link https://wechatpay.im/openapi/v3/payroll-card/wesure/insurance
      */
     public function post(array $options = [
         'json' => [
@@ -31,7 +31,7 @@ interface Insurance
     /**
      * 生成投保结果(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_32.shtml#async
+     * @link https://wechatpay.im/openapi/v3/payroll-card/wesure/insurance
      */
     public function postAsync(array $options = [
         'json' => [

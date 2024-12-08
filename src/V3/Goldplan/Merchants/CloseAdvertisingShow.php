@@ -12,7 +12,7 @@ interface CloseAdvertisingShow
     /**
      * 关闭广告展示(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_5_5.shtml
+     * @link https://wechatpay.im/openapi/v3/goldplan/merchants/close-advertising-show
      */
     public function post(array $options = [
         'json' => [
@@ -23,7 +23,7 @@ interface CloseAdvertisingShow
     /**
      * 关闭广告展示(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_5_5.shtml#async
+     * @link https://wechatpay.im/openapi/v3/goldplan/merchants/close-advertising-show
      */
     public function postAsync(array $options = [
         'json' => [

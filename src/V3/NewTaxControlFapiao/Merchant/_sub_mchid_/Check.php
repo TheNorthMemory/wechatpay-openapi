@@ -12,7 +12,7 @@ interface Check
     /**
      * 检查子商户开票功能状态(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/new-tax-control-fapiao/chapter3_1.shtml
+     * @link https://wechatpay.im/openapi/v3/new-tax-control-fapiao/merchant/%7Bsub_mchid%7D/check
      */
     public function post(array $options = [
         'sub_mchid' => '1900000109',
@@ -21,7 +21,7 @@ interface Check
     /**
      * 检查子商户开票功能状态(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/new-tax-control-fapiao/chapter3_1.shtml#async
+     * @link https://wechatpay.im/openapi/v3/new-tax-control-fapiao/merchant/%7Bsub_mchid%7D/check
      */
     public function postAsync(array $options = [
         'sub_mchid' => '1900000109',

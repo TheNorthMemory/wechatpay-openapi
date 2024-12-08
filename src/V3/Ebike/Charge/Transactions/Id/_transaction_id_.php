@@ -13,7 +13,7 @@ interface _transaction_id_
      * 查询订单(同步模式)
      * @param array<string,mixed> $options
      * @deprecated - since 2019.12.16
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/vehicle/ebike/chapter3_6.shtml
+     * @link https://wechatpay.im/openapi/v3/ebike/charge/transactions/id/%7Btransaction_id%7D
      */
     public function get(array $options = [
         'transaction_id' => '25012014070332333018',
@@ -26,7 +26,7 @@ interface _transaction_id_
      * 查询订单(异步模式)
      * @param array<string,mixed> $options
      * @deprecated - since 2019.12.16
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/vehicle/ebike/chapter3_6.shtml#async
+     * @link https://wechatpay.im/openapi/v3/ebike/charge/transactions/id/%7Btransaction_id%7D
      */
     public function getAsync(array $options = [
         'transaction_id' => '25012014070332333018',

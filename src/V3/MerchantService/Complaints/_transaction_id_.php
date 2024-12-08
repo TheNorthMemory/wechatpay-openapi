@@ -14,7 +14,7 @@ interface _transaction_id_
      * 查询投诉详情(同步模式)
      * @param array<string,mixed> $options
      * @deprecated - since 2020.11.27
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/merchant-service/chapter3_8.shtml
+     * @link https://wechatpay.im/openapi/v3/merchant-service/complaints/%7Btransaction_id%7D
      */
     public function get(array $options = [
         'transaction_id' => '4200000404201909069117582536',
@@ -24,7 +24,7 @@ interface _transaction_id_
      * 查询投诉详情(异步模式)
      * @param array<string,mixed> $options
      * @deprecated - since 2020.11.27
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/merchant-service/chapter3_8.shtml#async
+     * @link https://wechatpay.im/openapi/v3/merchant-service/complaints/%7Btransaction_id%7D
      */
     public function getAsync(array $options = [
         'transaction_id' => '4200000404201909069117582536',

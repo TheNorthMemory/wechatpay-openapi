@@ -13,7 +13,7 @@ interface PayafterOrders
     /**
      * 创建先享后付订单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/payscore.php?chapter=17_1&index=3
+     * @link https://wechatpay.im/openapi/v3/payscore/payafter-orders
      */
     public function post(array $options = [
         'json' => [
@@ -52,7 +52,7 @@ interface PayafterOrders
     /**
      * 创建先享后付订单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/payscore.php?chapter=17_1&index=3#async
+     * @link https://wechatpay.im/openapi/v3/payscore/payafter-orders
      */
     public function postAsync(array $options = [
         'json' => [
@@ -91,7 +91,7 @@ interface PayafterOrders
     /**
      * 查询先享后付订单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/payscore.php?chapter=17_2&index=4
+     * @link https://wechatpay.im/openapi/v3/payscore/payafter-orders#get
      */
     public function get(array $options = [
         'query' => [
@@ -105,7 +105,7 @@ interface PayafterOrders
     /**
      * 查询先享后付订单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/payscore.php?chapter=17_2&index=4#async
+     * @link https://wechatpay.im/openapi/v3/payscore/payafter-orders#get
      */
     public function getAsync(array $options = [
         'query' => [

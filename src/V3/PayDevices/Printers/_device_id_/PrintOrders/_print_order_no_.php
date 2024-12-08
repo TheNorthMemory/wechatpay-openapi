@@ -12,7 +12,7 @@ interface _print_order_no_
     /**
      * 查询订单(同步模式)
      * @param array<string,mixed> $options
-     * @link 服务商查询设备下的打印订单详情
+     * @link https://wechatpay.im/openapi/v3/pay-devices/printers/%7Bdevice_id%7D/print-orders/%7Bprint_order_no%7D
      */
     public function get(array $options = [
         'device_id' => 'WINCIE*EIXHRB',
@@ -22,7 +22,7 @@ interface _print_order_no_
     /**
      * 查询订单(异步模式)
      * @param array<string,mixed> $options
-     * @link 服务商查询设备下的打印订单详情#async
+     * @link https://wechatpay.im/openapi/v3/pay-devices/printers/%7Bdevice_id%7D/print-orders/%7Bprint_order_no%7D
      */
     public function getAsync(array $options = [
         'device_id' => 'WINCIE*EIXHRB',

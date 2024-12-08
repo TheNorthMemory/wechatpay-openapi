@@ -13,7 +13,7 @@ interface BillReceipt
     /**
      * 转账电子回单申请受理(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer_partner/chapter4_1.shtml
+     * @link https://wechatpay.im/openapi/v3/transfer/bill-receipt
      */
     public function post(array $options = [
         'json' => [
@@ -24,7 +24,7 @@ interface BillReceipt
     /**
      * 转账电子回单申请受理(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer_partner/chapter4_1.shtml#async
+     * @link https://wechatpay.im/openapi/v3/transfer/bill-receipt
      */
     public function postAsync(array $options = [
         'json' => [

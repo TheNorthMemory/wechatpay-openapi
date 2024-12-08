@@ -12,7 +12,7 @@ interface _sub_mchid_
     /**
      * 查询二级商户账户日终余额(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/ecommerce-balance/accounts/query-e-commerce-day-end-balance.html
+     * @link https://wechatpay.im/openapi/v3/ecommerce/fund/enddaybalance/%7Bsub_mchid%7D
      */
     public function get(array $options = [
         'sub_mchid' => '1222212222',
@@ -25,7 +25,7 @@ interface _sub_mchid_
     /**
      * 查询二级商户账户日终余额(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/ecommerce-balance/accounts/query-e-commerce-day-end-balance.html#async
+     * @link https://wechatpay.im/openapi/v3/ecommerce/fund/enddaybalance/%7Bsub_mchid%7D
      */
     public function getAsync(array $options = [
         'sub_mchid' => '1222212222',

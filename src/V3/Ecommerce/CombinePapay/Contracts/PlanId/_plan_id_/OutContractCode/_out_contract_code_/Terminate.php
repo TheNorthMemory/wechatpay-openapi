@@ -12,7 +12,7 @@ interface Terminate
     /**
      * 商户协议号解约协议(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter5_5_3.shtml
+     * @link https://wechatpay.im/openapi/v3/ecommerce/combine-papay/contracts/plan-id/%7Bplan_id%7D/out-contract-code/%7Bout_contract_code%7D/terminate
      */
     public function post(array $options = [
         'plan_id' => '12535',
@@ -25,7 +25,7 @@ interface Terminate
     /**
      * 商户协议号解约协议(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter5_5_3.shtml#async
+     * @link https://wechatpay.im/openapi/v3/ecommerce/combine-papay/contracts/plan-id/%7Bplan_id%7D/out-contract-code/%7Bout_contract_code%7D/terminate
      */
     public function postAsync(array $options = [
         'plan_id' => '12535',

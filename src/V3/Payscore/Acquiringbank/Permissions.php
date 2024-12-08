@@ -13,7 +13,7 @@ interface Permissions
     /**
      * 从业机构预授权(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-auth/apply-acquiring-bank-permissions.html
+     * @link https://wechatpay.im/openapi/v3/payscore/acquiringbank/permissions
      */
     public function post(array $options = [
         'json' => [
@@ -30,7 +30,7 @@ interface Permissions
     /**
      * 从业机构预授权(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-auth/apply-acquiring-bank-permissions.html#async
+     * @link https://wechatpay.im/openapi/v3/payscore/acquiringbank/permissions
      */
     public function postAsync(array $options = [
         'json' => [

@@ -12,7 +12,7 @@ interface Get_wxpayface_authinfo
     /**
      * 人脸识别SDK-获取调用凭证(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/android/faceuser.html
+     * @link https://wechatpay.im/openapi/v2/face/get_wxpayface_authinfo
      */
     public function post(array $options = [
         'xml' => [
@@ -35,7 +35,7 @@ interface Get_wxpayface_authinfo
     /**
      * 人脸识别SDK-获取调用凭证(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/android/faceuser.html#async
+     * @link https://wechatpay.im/openapi/v2/face/get_wxpayface_authinfo
      */
     public function postAsync(array $options = [
         'xml' => [

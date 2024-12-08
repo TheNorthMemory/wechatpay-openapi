@@ -13,7 +13,7 @@ interface Getupgradestate
      * 查询升级申请单状态(同步模式)
      * @param array<string,mixed> $options
      * @deprecated - since 2023.05.23
-     * @link https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=28_3&index=3
+     * @link https://wechatpay.im/openapi/v2/applyment/micro/getupgradestate
      */
     public function post(array $options = [
         'xml' => [
@@ -29,7 +29,7 @@ interface Getupgradestate
      * 查询升级申请单状态(异步模式)
      * @param array<string,mixed> $options
      * @deprecated - since 2023.05.23
-     * @link https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=28_3&index=3#async
+     * @link https://wechatpay.im/openapi/v2/applyment/micro/getupgradestate
      */
     public function postAsync(array $options = [
         'xml' => [

@@ -13,7 +13,7 @@ interface _out_contract_code_
     /**
      * 商户通过商户协议号查询协议(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/password-free-contract/contracts/get-by-code.html
+     * @link https://wechatpay.im/openapi/v3/password-exempt-contract/contracts/service-id/%7Bservice_id%7D/out-contract-code/%7Bout_contract_code%7D
      */
     public function get(array $options = [
         'out_contract_code' => 'wxwtdk20200910100000',
@@ -23,7 +23,7 @@ interface _out_contract_code_
     /**
      * 商户通过商户协议号查询协议(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/password-free-contract/contracts/get-by-code.html#async
+     * @link https://wechatpay.im/openapi/v3/password-exempt-contract/contracts/service-id/%7Bservice_id%7D/out-contract-code/%7Bout_contract_code%7D
      */
     public function getAsync(array $options = [
         'out_contract_code' => 'wxwtdk20200910100000',

@@ -12,7 +12,7 @@ interface Refundqueryv2
     /**
      * 查询退款（支持单品）(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/danpin.php?chapter=9_104&index=4
+     * @link https://wechatpay.im/openapi/v2/pay/refundqueryv2
      */
     public function post(array $options = [
         'xml' => [
@@ -32,7 +32,7 @@ interface Refundqueryv2
     /**
      * 查询退款（支持单品）(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/danpin.php?chapter=9_104&index=4#async
+     * @link https://wechatpay.im/openapi/v2/pay/refundqueryv2
      */
     public function postAsync(array $options = [
         'xml' => [

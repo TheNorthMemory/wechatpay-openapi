@@ -12,14 +12,14 @@ interface Entrustweb
     /**
      * 公众号纯签约(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter3_1.shtml
+     * @link https://wechatpay.im/openapi/v2/papay/entrustweb
      */
     public function get(array $options = []): ResponseInterface;
 
     /**
      * 公众号纯签约(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter3_1.shtml#async
+     * @link https://wechatpay.im/openapi/v2/papay/entrustweb
      */
     public function getAsync(array $options = []): PromiseInterface;
 }

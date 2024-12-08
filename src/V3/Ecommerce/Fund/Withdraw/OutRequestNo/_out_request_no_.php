@@ -12,7 +12,7 @@ interface _out_request_no_
     /**
      * 商户提现单号查询(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/fund/chapter3_3.shtml
+     * @link https://wechatpay.im/openapi/v3/ecommerce/fund/withdraw/out-request-no/%7Bout_request_no%7D
      */
     public function get(array $options = [
         'out_request_no' => '20190611222222222200000000012122',
@@ -24,7 +24,7 @@ interface _out_request_no_
     /**
      * 商户提现单号查询(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/fund/chapter3_3.shtml#async
+     * @link https://wechatpay.im/openapi/v3/ecommerce/fund/withdraw/out-request-no/%7Bout_request_no%7D
      */
     public function getAsync(array $options = [
         'out_request_no' => '20190611222222222200000000012122',

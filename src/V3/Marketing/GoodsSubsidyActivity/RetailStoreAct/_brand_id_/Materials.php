@@ -12,7 +12,7 @@ interface Materials
     /**
      * 生成小店活动物料码(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/create-materials.html
+     * @link https://wechatpay.im/openapi/v3/marketing/goods-subsidy-activity/retail-store-act/%7Bbrand_id%7D/materials
      */
     public function post(array $options = [
         'brand_id' => '1001',
@@ -25,7 +25,7 @@ interface Materials
     /**
      * 生成小店活动物料码(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/retail-store/retail-store-act/create-materials.html#async
+     * @link https://wechatpay.im/openapi/v3/marketing/goods-subsidy-activity/retail-store-act/%7Bbrand_id%7D/materials
      */
     public function postAsync(array $options = [
         'brand_id' => '1001',

@@ -12,7 +12,7 @@ interface Downloadfundflow
     /**
      * 下载资金账单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=9_18&index=7
+     * @link https://wechatpay.im/openapi/v2/pay/downloadfundflow
      */
     public function post(array $options = [
         'xml' => [
@@ -29,7 +29,7 @@ interface Downloadfundflow
     /**
      * 下载资金账单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxa/wxa_api.php?chapter=9_18&index=7#async
+     * @link https://wechatpay.im/openapi/v2/pay/downloadfundflow
      */
     public function postAsync(array $options = [
         'xml' => [

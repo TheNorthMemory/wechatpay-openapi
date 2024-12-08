@@ -28,13 +28,13 @@ interface Uploadmedia
      *             $signType, "mch_id=$mchid&media_hash=$mediaMd5Digest&sign_type=$signType", $apiv2Key
      *         )],
      *     ]),
-     *     'ssl_key' => 'file:///path/to/apiclient_key.pem',
+     *     'security' => 'file:///path/to/apiclient_key.pem',
      *     'cert' => 'file:///path/to/apiclient_cert.pem',
      * ];
      * ```
      *
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=19_9
+     * @link https://wechatpay.im/openapi/v2/secapi/mch/uploadmedia
      */
     public function post(array $options = []): ResponseInterface;
 
@@ -57,13 +57,13 @@ interface Uploadmedia
      *             $signType, "mch_id=$mchid&media_hash=$mediaMd5Digest&sign_type=$signType", $apiv2Key
      *         )],
      *     ]),
-     *     'ssl_key' => 'file:///path/to/apiclient_key.pem',
+     *     'security' => 'file:///path/to/apiclient_key.pem',
      *     'cert' => 'file:///path/to/apiclient_cert.pem',
      * ];
      * ```
      *
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=19_9#async
+     * @link https://wechatpay.im/openapi/v2/secapi/mch/uploadmedia
      */
     public function postAsync(array $options = []): PromiseInterface;
 }

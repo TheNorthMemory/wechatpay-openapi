@@ -12,7 +12,7 @@ interface RepaymentUrl
     /**
      * 获取还款链接接口(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/k12-development-guidelines.html#_1-3-%E8%A7%A3%E7%BA%A6
+     * @link https://wechatpay.im/openapi/v3/offlineface/repayment-url
      */
     public function post(array $options = [
         'json' => [
@@ -24,7 +24,7 @@ interface RepaymentUrl
     /**
      * 获取还款链接接口(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/k12-development-guidelines.html#_1-3-%E8%A7%A3%E7%BA%A6#async
+     * @link https://wechatpay.im/openapi/v3/offlineface/repayment-url
      */
     public function postAsync(array $options = [
         'json' => [

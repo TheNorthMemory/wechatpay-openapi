@@ -13,7 +13,7 @@ interface _out_reservation_no_
     /**
      * 商户预约单号查询预约商家转账记录(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-transfer/transfer-reservation/transfer-reservation-get-by-out-no.html
+     * @link https://wechatpay.im/openapi/v3/platsolution/mch-transfer/reservation/out-reservation-no/%7Bout_reservation_no%7D
      */
     public function get(array $options = [
         'out_reservation_no' => 'plfk2020042013',
@@ -25,7 +25,7 @@ interface _out_reservation_no_
     /**
      * 商户预约单号查询预约商家转账记录(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-transfer/transfer-reservation/transfer-reservation-get-by-out-no.html#async
+     * @link https://wechatpay.im/openapi/v3/platsolution/mch-transfer/reservation/out-reservation-no/%7Bout_reservation_no%7D
      */
     public function getAsync(array $options = [
         'out_reservation_no' => 'plfk2020042013',

@@ -12,7 +12,7 @@ interface Settlementquery
     /**
      * 查询结算资金(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/pay/In-AppPay/chapter8_9.shtml
+     * @link https://wechatpay.im/openapi/v2/pay/settlementquery
      */
     public function post(array $options = [
         'xml' => [
@@ -30,7 +30,7 @@ interface Settlementquery
     /**
      * 查询结算资金(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/pay/In-AppPay/chapter8_9.shtml#async
+     * @link https://wechatpay.im/openapi/v2/pay/settlementquery
      */
     public function postAsync(array $options = [
         'xml' => [

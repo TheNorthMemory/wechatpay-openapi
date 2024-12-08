@@ -12,7 +12,7 @@ interface _out_contract_code_
     /**
      * 保险商户查询保险扣费周期列表(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/insurance-entrusted-payment/insurance/query-policy-periods-by-code.html
+     * @link https://wechatpay.im/openapi/v3/papay/insurance-sign/policy_periods/plan-id/%7Bplan_id%7D/out-contract-code/%7Bout_contract_code%7D
      */
     public function get(array $options = [
         'out_contract_code' => 'wxwtdk20200910100000',
@@ -26,7 +26,7 @@ interface _out_contract_code_
     /**
      * 保险商户查询保险扣费周期列表(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/insurance-entrusted-payment/insurance/query-policy-periods-by-code.html#async
+     * @link https://wechatpay.im/openapi/v3/papay/insurance-sign/policy_periods/plan-id/%7Bplan_id%7D/out-contract-code/%7Bout_contract_code%7D
      */
     public function getAsync(array $options = [
         'out_contract_code' => 'wxwtdk20200910100000',

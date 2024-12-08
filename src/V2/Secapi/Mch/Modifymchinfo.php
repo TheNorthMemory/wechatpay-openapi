@@ -12,7 +12,7 @@ interface Modifymchinfo
     /**
      * 银行特约商户信息修改(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/mch_bank.php?chapter=9_27&index=2&p=9
+     * @link https://wechatpay.im/openapi/v2/secapi/mch/modifymchinfo
      */
     public function post(array $options = [
         'xml' => [
@@ -28,7 +28,7 @@ interface Modifymchinfo
     /**
      * 银行特约商户信息修改(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/mch_bank.php?chapter=9_27&index=2&p=9#async
+     * @link https://wechatpay.im/openapi/v2/secapi/mch/modifymchinfo
      */
     public function postAsync(array $options = [
         'xml' => [

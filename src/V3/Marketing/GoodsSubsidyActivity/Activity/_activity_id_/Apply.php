@@ -12,7 +12,7 @@ interface Apply
     /**
      * 门店报名品牌加价购活动(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/products/retail-store/introduction.html
+     * @link https://wechatpay.im/openapi/v3/marketing/goods-subsidy-activity/activity/%7Bactivity_id%7D/apply
      */
     public function post(array $options = [
         'activity_id' => '',
@@ -32,7 +32,7 @@ interface Apply
     /**
      * 门店报名品牌加价购活动(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/products/retail-store/introduction.html#async
+     * @link https://wechatpay.im/openapi/v3/marketing/goods-subsidy-activity/activity/%7Bactivity_id%7D/apply
      */
     public function postAsync(array $options = [
         'activity_id' => '',

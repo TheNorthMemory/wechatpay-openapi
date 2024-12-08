@@ -12,7 +12,7 @@ interface _out_order_id_
     /**
      * 查询出境结果(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter7_10_3.shtml
+     * @link https://wechatpay.im/openapi/v3/funds-to-oversea/orders/%7Bout_order_id%7D
      */
     public function get(array $options = [
         'out_order_id' => 'merchant123123',
@@ -25,7 +25,7 @@ interface _out_order_id_
     /**
      * 查询出境结果(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter7_10_3.shtml#async
+     * @link https://wechatpay.im/openapi/v3/funds-to-oversea/orders/%7Bout_order_id%7D
      */
     public function getAsync(array $options = [
         'out_order_id' => 'merchant123123',

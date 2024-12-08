@@ -13,7 +13,7 @@ interface Coupons
     /**
      * 根据过滤条件查询用户券(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_4.shtml
+     * @link https://wechatpay.im/openapi/v3/marketing/busifavor/users/%7Bopenid%7D/coupons
      */
     public function get(array $options = [
         'openid' => '2323dfsdf342342',
@@ -32,7 +32,7 @@ interface Coupons
     /**
      * 根据过滤条件查询用户券(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_4.shtml#async
+     * @link https://wechatpay.im/openapi/v3/marketing/busifavor/users/%7Bopenid%7D/coupons
      */
     public function getAsync(array $options = [
         'openid' => '2323dfsdf342342',

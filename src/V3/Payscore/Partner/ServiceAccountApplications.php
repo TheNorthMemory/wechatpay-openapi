@@ -13,7 +13,7 @@ interface ServiceAccountApplications
     /**
      * 收付通子商户申请绑定支付分服务(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/partner-service-account/create-service-account-application.html
+     * @link https://wechatpay.im/openapi/v3/payscore/partner/service-account-applications
      */
     public function post(array $options = [
         'json' => [
@@ -29,7 +29,7 @@ interface ServiceAccountApplications
     /**
      * 收付通子商户申请绑定支付分服务(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/partner-service-account/create-service-account-application.html#async
+     * @link https://wechatpay.im/openapi/v3/payscore/partner/service-account-applications
      */
     public function postAsync(array $options = [
         'json' => [

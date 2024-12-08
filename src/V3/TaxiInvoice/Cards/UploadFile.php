@@ -30,7 +30,7 @@ interface UploadFile
      * ```
      *
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/taxi-fapiao/taxi-invoice-card/upload-taxi-invoice-card-file.html
+     * @link https://wechatpay.im/openapi/v3/taxi-invoice/cards/upload-file
      */
     public function post(array $options = []): ResponseInterface;
 
@@ -55,7 +55,7 @@ interface UploadFile
      * ```
      *
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/taxi-fapiao/taxi-invoice-card/upload-taxi-invoice-card-file.html#async
+     * @link https://wechatpay.im/openapi/v3/taxi-invoice/cards/upload-file
      */
     public function postAsync(array $options = []): PromiseInterface;
 }

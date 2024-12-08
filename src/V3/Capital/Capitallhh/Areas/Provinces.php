@@ -13,14 +13,14 @@ interface Provinces
     /**
      * 查询省份列表(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter11_2_4.shtml
+     * @link https://wechatpay.im/openapi/v3/capital/capitallhh/areas/provinces
      */
     public function get(array $options = []): ResponseInterface;
 
     /**
      * 查询省份列表(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter11_2_4.shtml#async
+     * @link https://wechatpay.im/openapi/v3/capital/capitallhh/areas/provinces
      */
     public function getAsync(array $options = []): PromiseInterface;
 }

@@ -12,7 +12,7 @@ interface Merchantshoppingreceiptjumpinfos
     /**
      * 上传商家电子小票跳转信息(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/shopping-receipt/merchant-shopping-receipt-jump-infos/create-merchant-shopping-receipt-jump-info.html
+     * @link https://wechatpay.im/openapi/v3/marketing/shopping-receipt/merchantshoppingreceiptjumpinfos
      */
     public function post(array $options = [
         'json' => [
@@ -31,7 +31,7 @@ interface Merchantshoppingreceiptjumpinfos
     /**
      * 上传商家电子小票跳转信息(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/shopping-receipt/merchant-shopping-receipt-jump-infos/create-merchant-shopping-receipt-jump-info.html#async
+     * @link https://wechatpay.im/openapi/v3/marketing/shopping-receipt/merchantshoppingreceiptjumpinfos
      */
     public function postAsync(array $options = [
         'json' => [

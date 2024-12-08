@@ -13,7 +13,7 @@ interface Coupons
     /**
      * 发放代金券(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/convention/chapter3_2.shtml
+     * @link https://wechatpay.im/openapi/v3/marketing/favor/users/%7Bopenid%7D/coupons
      */
     public function post(array $options = [
         'openid' => '',
@@ -30,7 +30,7 @@ interface Coupons
     /**
      * 发放代金券(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/convention/chapter3_2.shtml#async
+     * @link https://wechatpay.im/openapi/v3/marketing/favor/users/%7Bopenid%7D/coupons
      */
     public function postAsync(array $options = [
         'openid' => '',
@@ -47,7 +47,7 @@ interface Coupons
     /**
      * 根据商户号查用户的券(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/convention/chapter3_9.shtml
+     * @link https://wechatpay.im/openapi/v3/marketing/favor/users/%7Bopenid%7D/coupons#get
      */
     public function get(array $options = [
         'openid' => '',
@@ -67,7 +67,7 @@ interface Coupons
     /**
      * 根据商户号查用户的券(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/convention/chapter3_9.shtml#async
+     * @link https://wechatpay.im/openapi/v3/marketing/favor/users/%7Bopenid%7D/coupons#get
      */
     public function getAsync(array $options = [
         'openid' => '',

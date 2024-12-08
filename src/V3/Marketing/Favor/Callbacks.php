@@ -12,7 +12,7 @@ interface Callbacks
     /**
      * 获取已设置的消息通知地址(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/convention/chapter3_12.shtml
+     * @link https://wechatpay.im/openapi/v3/marketing/favor/callbacks
      */
     public function get(array $options = [
         'query' => [
@@ -23,7 +23,7 @@ interface Callbacks
     /**
      * 获取已设置的消息通知地址(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/convention/chapter3_12.shtml#async
+     * @link https://wechatpay.im/openapi/v3/marketing/favor/callbacks
      */
     public function getAsync(array $options = [
         'query' => [
@@ -34,7 +34,7 @@ interface Callbacks
     /**
      * 设置消息通知地址(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/convention/chapter3_12.shtml
+     * @link https://wechatpay.im/openapi/v3/marketing/favor/callbacks#post
      */
     public function post(array $options = [
         'json' => [
@@ -47,7 +47,7 @@ interface Callbacks
     /**
      * 设置消息通知地址(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/convention/chapter3_12.shtml#async
+     * @link https://wechatpay.im/openapi/v3/marketing/favor/callbacks#post
      */
     public function postAsync(array $options = [
         'json' => [

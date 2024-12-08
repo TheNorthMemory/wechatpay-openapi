@@ -12,7 +12,7 @@ interface ViolationNotifications
     /**
      * 创建商户违规通知回调地址(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_3_1.shtml
+     * @link https://wechatpay.im/openapi/v3/merchant-risk-manage/violation-notifications
      */
     public function post(array $options = [
         'json' => [
@@ -23,7 +23,7 @@ interface ViolationNotifications
     /**
      * 创建商户违规通知回调地址(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_3_1.shtml#async
+     * @link https://wechatpay.im/openapi/v3/merchant-risk-manage/violation-notifications
      */
     public function postAsync(array $options = [
         'json' => [
@@ -34,21 +34,21 @@ interface ViolationNotifications
     /**
      * 查询商户违规通知回调地址(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_3_2.shtml
+     * @link https://wechatpay.im/openapi/v3/merchant-risk-manage/violation-notifications#get
      */
     public function get(array $options = []): ResponseInterface;
 
     /**
      * 查询商户违规通知回调地址(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_3_2.shtml#async
+     * @link https://wechatpay.im/openapi/v3/merchant-risk-manage/violation-notifications#get
      */
     public function getAsync(array $options = []): PromiseInterface;
 
     /**
      * 修改商户违规通知回调地址(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_3_3.shtml
+     * @link https://wechatpay.im/openapi/v3/merchant-risk-manage/violation-notifications#put
      */
     public function put(array $options = [
         'json' => [
@@ -59,7 +59,7 @@ interface ViolationNotifications
     /**
      * 修改商户违规通知回调地址(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_3_3.shtml#async
+     * @link https://wechatpay.im/openapi/v3/merchant-risk-manage/violation-notifications#put
      */
     public function putAsync(array $options = [
         'json' => [
@@ -70,14 +70,14 @@ interface ViolationNotifications
     /**
      * 删除商户违规通知回调地址(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_3_4.shtml
+     * @link https://wechatpay.im/openapi/v3/merchant-risk-manage/violation-notifications#delete
      */
     public function delete(array $options = []): ResponseInterface;
 
     /**
      * 删除商户违规通知回调地址(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_3_4.shtml#async
+     * @link https://wechatpay.im/openapi/v3/merchant-risk-manage/violation-notifications#delete
      */
     public function deleteAsync(array $options = []): PromiseInterface;
 }

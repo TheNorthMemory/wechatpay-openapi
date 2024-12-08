@@ -12,7 +12,7 @@ interface Querysubdevconfig
     /**
      * 配置查询(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/mch_bank.php?chapter=9_25&index=4&p=901
+     * @link https://wechatpay.im/openapi/v2/secapi/mch/querysubdevconfig
      */
     public function post(array $options = [
         'xml' => [
@@ -27,7 +27,7 @@ interface Querysubdevconfig
     /**
      * 配置查询(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/mch_bank.php?chapter=9_25&index=4&p=901#async
+     * @link https://wechatpay.im/openapi/v2/secapi/mch/querysubdevconfig
      */
     public function postAsync(array $options = [
         'xml' => [

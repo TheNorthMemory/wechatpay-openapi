@@ -12,7 +12,7 @@ interface Submchmanage
     /**
      * 银行特约商户录入/银行特约商户资料查询(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/mch_bank.php?chapter=9_22&index=3&p=9
+     * @link https://wechatpay.im/openapi/v2/secapi/mch/submchmanage
      */
     public function post(array $options = [
         'security' => true,
@@ -33,7 +33,7 @@ interface Submchmanage
     /**
      * 银行特约商户录入/银行特约商户资料查询(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/mch_bank.php?chapter=9_22&index=3&p=9#async
+     * @link https://wechatpay.im/openapi/v2/secapi/mch/submchmanage
      */
     public function postAsync(array $options = [
         'security' => true,

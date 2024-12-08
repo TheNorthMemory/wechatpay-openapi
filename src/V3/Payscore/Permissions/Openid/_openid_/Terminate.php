@@ -12,7 +12,7 @@ interface Terminate
     /**
      * 解除用户授权关系（openid）(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/weixin-pay-score/service-auth/terminate-permissions-by-open-id.html
+     * @link https://wechatpay.im/openapi/v3/payscore/permissions/openid/%7Bopenid%7D/terminate
      */
     public function post(array $options = [
         'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
@@ -26,7 +26,7 @@ interface Terminate
     /**
      * 解除用户授权关系（openid）(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/weixin-pay-score/service-auth/terminate-permissions-by-open-id.html#async
+     * @link https://wechatpay.im/openapi/v3/payscore/permissions/openid/%7Bopenid%7D/terminate
      */
     public function postAsync(array $options = [
         'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',

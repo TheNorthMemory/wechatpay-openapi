@@ -12,7 +12,7 @@ interface Registerdeductinfo
     /**
      * 从业机构登记微信支付分扣款信息(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-order/register-deduct-info.html
+     * @link https://wechatpay.im/openapi/v3/payscore/acquiringbank/serviceorder/%7Bout_order_no%7D/registerdeductinfo
      */
     public function post(array $options = [
         'out_order_no' => '1234323JKHDFE1243252',
@@ -28,7 +28,7 @@ interface Registerdeductinfo
     /**
      * 从业机构登记微信支付分扣款信息(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-institution-weixin-pay-score/acquiring-bank-service-order/register-deduct-info.html#async
+     * @link https://wechatpay.im/openapi/v3/payscore/acquiringbank/serviceorder/%7Bout_order_no%7D/registerdeductinfo
      */
     public function postAsync(array $options = [
         'out_order_no' => '1234323JKHDFE1243252',

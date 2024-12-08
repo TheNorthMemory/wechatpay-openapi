@@ -12,7 +12,7 @@ interface JsapiWithContract
     /**
      * JSAPI下单并授权(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/hide-jsapi-payment/direct-jsons/jsapi-contract-prepay.html
+     * @link https://wechatpay.im/openapi/v3/pay/transactions/jsapi-with-contract
      */
     public function post(array $options = [
         'json' => [
@@ -66,7 +66,7 @@ interface JsapiWithContract
     /**
      * JSAPI下单并授权(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/hide-jsapi-payment/direct-jsons/jsapi-contract-prepay.html#async
+     * @link https://wechatpay.im/openapi/v3/pay/transactions/jsapi-with-contract
      */
     public function postAsync(array $options = [
         'json' => [

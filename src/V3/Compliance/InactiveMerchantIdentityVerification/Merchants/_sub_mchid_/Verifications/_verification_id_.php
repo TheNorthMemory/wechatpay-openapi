@@ -12,7 +12,7 @@ interface _verification_id_
     /**
      * 查询不活跃商户身份核实结果(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/inactive-merchant-identity-verification/inactive-mch-identity-verification/query-inactive-merchant-identity-verification.html
+     * @link https://wechatpay.im/openapi/v3/compliance/inactive-merchant-identity-verification/merchants/%7Bsub_mchid%7D/verifications/%7Bverification_id%7D
      */
     public function get(array $options = [
         'sub_mchid' => '1900009231',
@@ -22,7 +22,7 @@ interface _verification_id_
     /**
      * 查询不活跃商户身份核实结果(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/inactive-merchant-identity-verification/inactive-mch-identity-verification/query-inactive-merchant-identity-verification.html#async
+     * @link https://wechatpay.im/openapi/v3/compliance/inactive-merchant-identity-verification/merchants/%7Bsub_mchid%7D/verifications/%7Bverification_id%7D
      */
     public function getAsync(array $options = [
         'sub_mchid' => '1900009231',

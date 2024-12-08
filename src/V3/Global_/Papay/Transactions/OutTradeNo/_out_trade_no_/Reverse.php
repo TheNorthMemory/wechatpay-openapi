@@ -12,7 +12,7 @@ interface Reverse
     /**
      * 撤销订单(商户订单号)(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter5_1_10.shtml
+     * @link https://wechatpay.im/openapi/v3/global/papay/transactions/out-trade-no/%7Bout_trade_no%7D/reverse
      */
     public function post(array $options = [
         'base_uri' => 'https://apihk.mch.weixin.qq.com/', // 跨境(香港接入)
@@ -25,7 +25,7 @@ interface Reverse
     /**
      * 撤销订单(商户订单号)(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter5_1_10.shtml#async
+     * @link https://wechatpay.im/openapi/v3/global/papay/transactions/out-trade-no/%7Bout_trade_no%7D/reverse
      */
     public function postAsync(array $options = [
         'base_uri' => 'https://apihk.mch.weixin.qq.com/', // 跨境(香港接入)

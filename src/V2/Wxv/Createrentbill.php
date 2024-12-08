@@ -12,7 +12,7 @@ interface Createrentbill
     /**
      * 创建租借订单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/payscore.php?chapter=18_1&index=2
+     * @link https://wechatpay.im/openapi/v2/wxv/createrentbill
      */
     public function post(array $options = [
         'xml' => [
@@ -44,7 +44,7 @@ interface Createrentbill
     /**
      * 创建租借订单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/payscore.php?chapter=18_1&index=2#async
+     * @link https://wechatpay.im/openapi/v2/wxv/createrentbill
      */
     public function postAsync(array $options = [
         'xml' => [

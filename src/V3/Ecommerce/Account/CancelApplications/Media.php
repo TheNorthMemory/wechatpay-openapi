@@ -27,7 +27,7 @@ interface Media
      * ```
      *
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/ecommerce-cancel/media/upload-media.html
+     * @link https://wechatpay.im/openapi/v3/ecommerce/account/cancel-applications/media
      */
     public function post(array $options = []): ResponseInterface;
 
@@ -49,7 +49,7 @@ interface Media
      * ```
      *
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/ecommerce-cancel/media/upload-media.html#async
+     * @link https://wechatpay.im/openapi/v3/ecommerce/account/cancel-applications/media
      */
     public function postAsync(array $options = []): PromiseInterface;
 }

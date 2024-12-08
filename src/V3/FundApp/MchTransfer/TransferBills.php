@@ -14,7 +14,7 @@ interface TransferBills
     /**
      * 发起转账(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/mch-trans/transfer-bill/transfer-to-user.html
+     * @link https://wechatpay.im/openapi/v3/fund-app/mch-transfer/transfer-bills
      */
     public function post(array $options = [
         'json' => [
@@ -40,7 +40,7 @@ interface TransferBills
     /**
      * 发起转账(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/mch-trans/transfer-bill/transfer-to-user.html#async
+     * @link https://wechatpay.im/openapi/v3/fund-app/mch-transfer/transfer-bills
      */
     public function postAsync(array $options = [
         'json' => [

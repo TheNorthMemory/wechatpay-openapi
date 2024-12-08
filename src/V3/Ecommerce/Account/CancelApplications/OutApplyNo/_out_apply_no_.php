@@ -12,7 +12,7 @@ interface _out_apply_no_
     /**
      * 查询注销单状态(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/ecommerce-cancel/cancel-applications/get-cancel-application.html
+     * @link https://wechatpay.im/openapi/v3/ecommerce/account/cancel-applications/out-apply-no/%7Bout_apply_no%7D
      */
     public function get(array $options = [
         'out_apply_no' => '2019061122222222122',
@@ -21,7 +21,7 @@ interface _out_apply_no_
     /**
      * 查询注销单状态(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/ecommerce-cancel/cancel-applications/get-cancel-application.html#async
+     * @link https://wechatpay.im/openapi/v3/ecommerce/account/cancel-applications/out-apply-no/%7Bout_apply_no%7D
      */
     public function getAsync(array $options = [
         'out_apply_no' => '2019061122222222122',

@@ -12,7 +12,7 @@ interface AfterSalesOrders
     /**
      * 请求售后服务分账(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/products/ecommerce/introduction.html
+     * @link https://wechatpay.im/openapi/v3/ecommerce/profitsharing/after-sales-orders
      */
     public function post(array $options = [
         'json' => [
@@ -28,7 +28,7 @@ interface AfterSalesOrders
     /**
      * 请求售后服务分账(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/products/ecommerce/introduction.html#async
+     * @link https://wechatpay.im/openapi/v3/ecommerce/profitsharing/after-sales-orders
      */
     public function postAsync(array $options = [
         'json' => [
@@ -44,7 +44,7 @@ interface AfterSalesOrders
     /**
      * 查询售后服务分账结果(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/products/ecommerce/introduction.html
+     * @link https://wechatpay.im/openapi/v3/ecommerce/profitsharing/after-sales-orders#get
      */
     public function get(array $options = [
         'query' => [
@@ -56,7 +56,7 @@ interface AfterSalesOrders
     /**
      * 查询售后服务分账结果(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/products/ecommerce/introduction.html#async
+     * @link https://wechatpay.im/openapi/v3/ecommerce/profitsharing/after-sales-orders#get
      */
     public function getAsync(array $options = [
         'query' => [

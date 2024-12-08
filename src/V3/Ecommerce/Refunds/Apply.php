@@ -12,7 +12,7 @@ interface Apply
     /**
      * 退款申请(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/ecommerce-refund/refunds/create-refund.html
+     * @link https://wechatpay.im/openapi/v3/ecommerce/refunds/apply
      */
     public function post(array $options = [
         'json' => [
@@ -43,7 +43,7 @@ interface Apply
     /**
      * 退款申请(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/ecommerce-refund/refunds/create-refund.html#async
+     * @link https://wechatpay.im/openapi/v3/ecommerce/refunds/apply
      */
     public function postAsync(array $options = [
         'json' => [

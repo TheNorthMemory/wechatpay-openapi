@@ -12,7 +12,7 @@ interface H5
     /**
      * 合单下单-H5支付(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/combine/chapter3_9.shtml
+     * @link https://wechatpay.im/openapi/v3/combine-transactions/h5
      */
     public function post(array $options = [
         'json' => [
@@ -61,7 +61,7 @@ interface H5
     /**
      * 合单下单-H5支付(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/combine/chapter3_9.shtml#async
+     * @link https://wechatpay.im/openapi/v3/combine-transactions/h5
      */
     public function postAsync(array $options = [
         'json' => [

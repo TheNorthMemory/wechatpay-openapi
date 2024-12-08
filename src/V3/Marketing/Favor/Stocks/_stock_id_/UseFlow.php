@@ -12,7 +12,7 @@ interface UseFlow
     /**
      * 下载批次核销明细(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/convention/chapter3_10.shtml
+     * @link https://wechatpay.im/openapi/v3/marketing/favor/stocks/%7Bstock_id%7D/use-flow
      */
     public function get(array $options = [
         'stock_id' => '',
@@ -21,7 +21,7 @@ interface UseFlow
     /**
      * 下载批次核销明细(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/convention/chapter3_10.shtml#async
+     * @link https://wechatpay.im/openapi/v3/marketing/favor/stocks/%7Bstock_id%7D/use-flow
      */
     public function getAsync(array $options = [
         'stock_id' => '',

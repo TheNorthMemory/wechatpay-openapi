@@ -12,7 +12,7 @@ interface _media_id_
     /**
      * 图片下载(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/consumer-complaint/images/query-images.html
+     * @link https://wechatpay.im/openapi/v3/merchant-service/images/%7Bmedia_id%7D
      */
     public function get(array $options = [
         'media_id' => 'xxxxx',
@@ -21,7 +21,7 @@ interface _media_id_
     /**
      * 图片下载(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/consumer-complaint/images/query-images.html#async
+     * @link https://wechatpay.im/openapi/v3/merchant-service/images/%7Bmedia_id%7D
      */
     public function getAsync(array $options = [
         'media_id' => 'xxxxx',

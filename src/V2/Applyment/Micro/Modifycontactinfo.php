@@ -13,7 +13,7 @@ interface Modifycontactinfo
      * 修改联系信息(同步模式)
      * @param array<string,mixed> $options
      * @deprecated - since 2020.04.13
-     * @link https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=21_4
+     * @link https://wechatpay.im/openapi/v2/applyment/micro/modifycontactinfo
      */
     public function post(array $options = [
         'xml' => [
@@ -33,7 +33,7 @@ interface Modifycontactinfo
      * 修改联系信息(异步模式)
      * @param array<string,mixed> $options
      * @deprecated - since 2020.04.13
-     * @link https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=21_4#async
+     * @link https://wechatpay.im/openapi/v2/applyment/micro/modifycontactinfo
      */
     public function postAsync(array $options = [
         'xml' => [

@@ -13,7 +13,7 @@ interface _contract_id_
     /**
      * 代扣协议ID查询签约(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter5_1_2.shtml
+     * @link https://wechatpay.im/openapi/v3/global/papay/contracts/%7Bcontract_id%7D
      */
     public function get(array $options = [
         'base_uri' => 'https://apihk.mch.weixin.qq.com/', // 跨境(香港接入)
@@ -31,7 +31,7 @@ interface _contract_id_
     /**
      * 代扣协议ID查询签约(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter5_1_2.shtml#async
+     * @link https://wechatpay.im/openapi/v3/global/papay/contracts/%7Bcontract_id%7D
      */
     public function getAsync(array $options = [
         'base_uri' => 'https://apihk.mch.weixin.qq.com/', // 跨境(香港接入)

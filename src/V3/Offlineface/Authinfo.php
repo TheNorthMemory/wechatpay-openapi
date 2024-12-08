@@ -12,7 +12,7 @@ interface Authinfo
     /**
      * 获取authinfo接口(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/access-specifications.html
+     * @link https://wechatpay.im/openapi/v3/offlineface/authinfo
      */
     public function post(array $options = [
         'json' => [
@@ -28,7 +28,7 @@ interface Authinfo
     /**
      * 获取authinfo接口(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/access-specifications.html#async
+     * @link https://wechatpay.im/openapi/v3/offlineface/authinfo
      */
     public function postAsync(array $options = [
         'json' => [

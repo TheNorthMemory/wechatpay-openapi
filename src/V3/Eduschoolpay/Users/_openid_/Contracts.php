@@ -12,7 +12,7 @@ interface Contracts
     /**
      * 查询用户签约列表(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/edu/eduschoolpay/chapter3_4.shtml
+     * @link https://wechatpay.im/openapi/v3/eduschoolpay/users/%7Bopenid%7D/contracts
      */
     public function get(array $options = [
         'openid' => 'oUpF8uMuAJOM2pxb1Q',
@@ -27,7 +27,7 @@ interface Contracts
     /**
      * 查询用户签约列表(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/edu/eduschoolpay/chapter3_4.shtml#async
+     * @link https://wechatpay.im/openapi/v3/eduschoolpay/users/%7Bopenid%7D/contracts
      */
     public function getAsync(array $options = [
         'openid' => 'oUpF8uMuAJOM2pxb1Q',

@@ -13,7 +13,7 @@ interface Merchants
     /**
      * 子商户进件（融合钱包）(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/Onborading_Sub_Merchant/chapter3_1.shtml
+     * @link https://wechatpay.im/openapi/v3/merchants
      */
     public function post(array $options = [
         'base_uri' => 'https://api.mch.weixin.qq.com/hk/', // 跨境(国内接入)
@@ -64,7 +64,7 @@ interface Merchants
     /**
      * 子商户进件（融合钱包）(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/Onborading_Sub_Merchant/chapter3_1.shtml#async
+     * @link https://wechatpay.im/openapi/v3/merchants
      */
     public function postAsync(array $options = [
         'base_uri' => 'https://api.mch.weixin.qq.com/hk/', // 跨境(国内接入)
@@ -115,7 +115,7 @@ interface Merchants
     /**
      * 修改子商户（融合钱包）(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/Onborading_Sub_Merchant/chapter3_3.shtml
+     * @link https://wechatpay.im/openapi/v3/merchants#put
      */
     public function put(array $options = [
         'base_uri' => 'https://api.mch.weixin.qq.com/hk/', // 跨境(国内接入)
@@ -166,7 +166,7 @@ interface Merchants
     /**
      * 修改子商户（融合钱包）(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/Onborading_Sub_Merchant/chapter3_3.shtml#async
+     * @link https://wechatpay.im/openapi/v3/merchants#put
      */
     public function putAsync(array $options = [
         'base_uri' => 'https://api.mch.weixin.qq.com/hk/', // 跨境(国内接入)

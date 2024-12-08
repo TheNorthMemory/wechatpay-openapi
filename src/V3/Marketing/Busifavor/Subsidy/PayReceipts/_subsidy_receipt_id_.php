@@ -12,7 +12,7 @@ interface _subsidy_receipt_id_
     /**
      * 查询营销补差付款单详情(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_18.shtml
+     * @link https://wechatpay.im/openapi/v3/marketing/busifavor/subsidy/pay-receipts/%7Bsubsidy_receipt_id%7D
      */
     public function get(array $options = [
         'subsidy_receipt_id' => '1120200119165100000000000001',
@@ -21,7 +21,7 @@ interface _subsidy_receipt_id_
     /**
      * 查询营销补差付款单详情(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter9_2_18.shtml#async
+     * @link https://wechatpay.im/openapi/v3/marketing/busifavor/subsidy/pay-receipts/%7Bsubsidy_receipt_id%7D
      */
     public function getAsync(array $options = [
         'subsidy_receipt_id' => '1120200119165100000000000001',

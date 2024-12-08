@@ -12,7 +12,7 @@ interface Queryhotelbill
     /**
      * 查询速住订单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/payscore.php?chapter=19_2&index=3
+     * @link https://wechatpay.im/openapi/v2/wxv/queryhotelbill
      */
     public function post(array $options = [
         'xml' => [
@@ -30,7 +30,7 @@ interface Queryhotelbill
     /**
      * 查询速住订单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/payscore.php?chapter=19_2&index=3#async
+     * @link https://wechatpay.im/openapi/v2/wxv/queryhotelbill
      */
     public function postAsync(array $options = [
         'xml' => [

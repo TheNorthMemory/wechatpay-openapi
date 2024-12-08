@@ -12,7 +12,7 @@ interface Reverse
     /**
      * 撤销(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-code-payment-v3/partner/partner-reverse.html
+     * @link https://wechatpay.im/openapi/v3/pay/partner/transactions/out-trade-no/%7Bout_trade_no%7D/reverse
      */
     public function post(array $options = [
         'out_trade_no' => '1217752501201407033233368018',
@@ -27,7 +27,7 @@ interface Reverse
     /**
      * 撤销(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-code-payment-v3/partner/partner-reverse.html#async
+     * @link https://wechatpay.im/openapi/v3/pay/partner/transactions/out-trade-no/%7Bout_trade_no%7D/reverse
      */
     public function postAsync(array $options = [
         'out_trade_no' => '1217752501201407033233368018',

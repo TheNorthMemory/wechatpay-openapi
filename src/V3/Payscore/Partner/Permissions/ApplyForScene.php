@@ -12,7 +12,7 @@ interface ApplyForScene
     /**
      * 服务商场景中预授权(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/partner-service-auth/scene-apply-partner-permissions.html
+     * @link https://wechatpay.im/openapi/v3/payscore/partner/permissions/apply-for-scene
      */
     public function post(array $options = [
         'json' => [
@@ -33,7 +33,7 @@ interface ApplyForScene
     /**
      * 服务商场景中预授权(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/partner-service-auth/scene-apply-partner-permissions.html#async
+     * @link https://wechatpay.im/openapi/v3/payscore/partner/permissions/apply-for-scene
      */
     public function postAsync(array $options = [
         'json' => [

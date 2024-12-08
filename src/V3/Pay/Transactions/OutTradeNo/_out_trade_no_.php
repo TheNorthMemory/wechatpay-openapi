@@ -14,7 +14,7 @@ interface _out_trade_no_
     /**
      * 商户订单号查询(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transactions/chapter3_5.shtml
+     * @link https://wechatpay.im/openapi/v3/pay/transactions/out-trade-no/%7Bout_trade_no%7D
      */
     public function get(array $options = [
         'out_trade_no' => '',
@@ -26,7 +26,7 @@ interface _out_trade_no_
     /**
      * 商户订单号查询(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transactions/chapter3_5.shtml#async
+     * @link https://wechatpay.im/openapi/v3/pay/transactions/out-trade-no/%7Bout_trade_no%7D
      */
     public function getAsync(array $options = [
         'out_trade_no' => '',

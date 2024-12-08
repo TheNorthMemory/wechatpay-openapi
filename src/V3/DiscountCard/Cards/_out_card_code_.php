@@ -13,7 +13,7 @@ interface _out_card_code_
     /**
      * 查询先享卡订单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/discount-card/chapter3_3.shtml
+     * @link https://wechatpay.im/openapi/v3/discount-card/cards/%7Bout_card_code%7D
      */
     public function get(array $options = [
         'out_card_code' => '6e8369071cd942c0476613f9d1ce9ca3',
@@ -22,7 +22,7 @@ interface _out_card_code_
     /**
      * 查询先享卡订单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/discount-card/chapter3_3.shtml#async
+     * @link https://wechatpay.im/openapi/v3/discount-card/cards/%7Bout_card_code%7D
      */
     public function getAsync(array $options = [
         'out_card_code' => '6e8369071cd942c0476613f9d1ce9ca3',

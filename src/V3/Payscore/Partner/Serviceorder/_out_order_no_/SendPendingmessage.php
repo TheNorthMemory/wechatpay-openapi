@@ -12,7 +12,7 @@ interface SendPendingmessage
     /**
      * 下发服务费用待处理消息(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/partner-service-order/send-partner-order-pending-message.html
+     * @link https://wechatpay.im/openapi/v3/payscore/partner/serviceorder/%7Bout_order_no%7D/send-pendingmessage
      */
     public function post(array $options = [
         'out_order_no' => '',
@@ -39,7 +39,7 @@ interface SendPendingmessage
     /**
      * 下发服务费用待处理消息(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/partner-service-order/send-partner-order-pending-message.html#async
+     * @link https://wechatpay.im/openapi/v3/payscore/partner/serviceorder/%7Bout_order_no%7D/send-pendingmessage
      */
     public function postAsync(array $options = [
         'out_order_no' => '',

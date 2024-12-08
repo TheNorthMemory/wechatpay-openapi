@@ -12,7 +12,7 @@ interface Search
     /**
      * 查询与用户授权记录（openid）(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/partner-service-auth/get-partner-permissions-by-open-id.html
+     * @link https://wechatpay.im/openapi/v3/payscore/partner/permissions/search
      */
     public function get(array $options = [
         'query' => [
@@ -28,7 +28,7 @@ interface Search
     /**
      * 查询与用户授权记录（openid）(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/partner-service-auth/get-partner-permissions-by-open-id.html#async
+     * @link https://wechatpay.im/openapi/v3/payscore/partner/permissions/search
      */
     public function getAsync(array $options = [
         'query' => [

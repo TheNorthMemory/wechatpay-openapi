@@ -12,7 +12,7 @@ interface Close
     /**
      * 关单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transactions/chapter5_6.shtml
+     * @link https://wechatpay.im/openapi/v3/pay/partner/transactions/out-trade-no/%7Bout_trade_no%7D/close
      */
     public function post(array $options = [
         'out_trade_no' => '',
@@ -25,7 +25,7 @@ interface Close
     /**
      * 关单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transactions/chapter5_6.shtml#async
+     * @link https://wechatpay.im/openapi/v3/pay/partner/transactions/out-trade-no/%7Bout_trade_no%7D/close
      */
     public function postAsync(array $options = [
         'out_trade_no' => '',

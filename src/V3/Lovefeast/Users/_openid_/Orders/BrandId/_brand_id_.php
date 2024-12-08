@@ -12,7 +12,7 @@ interface _brand_id_
     /**
      * 查询用户捐赠单列表(同步模式)
      * @param array<string,mixed> $options
-     * @link 商户可根据品牌ID与用户标识查询捐赠单列表
+     * @link https://wechatpay.im/openapi/v3/lovefeast/users/%7Bopenid%7D/orders/brand-id/%7Bbrand_id%7D
      */
     public function get(array $options = [
         'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
@@ -26,7 +26,7 @@ interface _brand_id_
     /**
      * 查询用户捐赠单列表(异步模式)
      * @param array<string,mixed> $options
-     * @link 商户可根据品牌ID与用户标识查询捐赠单列表#async
+     * @link https://wechatpay.im/openapi/v3/lovefeast/users/%7Bopenid%7D/orders/brand-id/%7Bbrand_id%7D
      */
     public function getAsync(array $options = [
         'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',

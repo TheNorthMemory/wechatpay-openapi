@@ -12,7 +12,7 @@ interface Queryexchagerate
     /**
      * 汇率查询(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/pay/In-AppPay/chapter8_10.shtml
+     * @link https://wechatpay.im/openapi/v2/pay/queryexchagerate
      */
     public function post(array $options = [
         'xml' => [
@@ -27,7 +27,7 @@ interface Queryexchagerate
     /**
      * 汇率查询(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/pay/In-AppPay/chapter8_10.shtml#async
+     * @link https://wechatpay.im/openapi/v2/pay/queryexchagerate
      */
     public function postAsync(array $options = [
         'xml' => [

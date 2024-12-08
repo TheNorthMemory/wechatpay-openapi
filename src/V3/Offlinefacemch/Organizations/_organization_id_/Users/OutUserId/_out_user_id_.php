@@ -12,7 +12,7 @@ interface _out_user_id_
     /**
      * 刷脸用户信息查询接口(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/k12-development-guidelines.html
+     * @link https://wechatpay.im/openapi/v3/offlinefacemch/organizations/%7Borganization_id%7D/users/out-user-id/%7Bout_user_id%7D
      */
     public function get(array $options = [
         'organization_id' => '',
@@ -22,7 +22,7 @@ interface _out_user_id_
     /**
      * 刷脸用户信息查询接口(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/k12-development-guidelines.html#async
+     * @link https://wechatpay.im/openapi/v3/offlinefacemch/organizations/%7Borganization_id%7D/users/out-user-id/%7Bout_user_id%7D
      */
     public function getAsync(array $options = [
         'organization_id' => '',
@@ -32,7 +32,7 @@ interface _out_user_id_
     /**
      * 刷脸用户信息修改接口(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/access-specifications.html
+     * @link https://wechatpay.im/openapi/v3/offlinefacemch/organizations/%7Borganization_id%7D/users/out-user-id/%7Bout_user_id%7D#patch
      */
     public function patch(array $options = [
         'organization_id' => '',
@@ -57,7 +57,7 @@ interface _out_user_id_
     /**
      * 刷脸用户信息修改接口(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/access-specifications.html#async
+     * @link https://wechatpay.im/openapi/v3/offlinefacemch/organizations/%7Borganization_id%7D/users/out-user-id/%7Bout_user_id%7D#patch
      */
     public function patchAsync(array $options = [
         'organization_id' => '',

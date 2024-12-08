@@ -12,7 +12,7 @@ interface Apply
     /**
      * 申请银行转账充值(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/mch-recharge/bank-recharge/bank-transfer-recharge-apply.html
+     * @link https://wechatpay.im/openapi/v3/recharge/bank-transfer-recharges/apply
      */
     public function post(array $options = [
         'json' => [
@@ -29,7 +29,7 @@ interface Apply
     /**
      * 申请银行转账充值(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/mch-recharge/bank-recharge/bank-transfer-recharge-apply.html#async
+     * @link https://wechatpay.im/openapi/v3/recharge/bank-transfer-recharges/apply
      */
     public function postAsync(array $options = [
         'json' => [

@@ -13,7 +13,7 @@ interface MerchantSettleRuleApplications
     /**
      * 申请修改特约商户结算规则(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter3_1_1.shtml
+     * @link https://wechatpay.im/openapi/v3/merchant-settlement/merchant-settle-rule-applications
      */
     public function post(array $options = [
         'json' => [
@@ -27,7 +27,7 @@ interface MerchantSettleRuleApplications
     /**
      * 申请修改特约商户结算规则(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter3_1_1.shtml#async
+     * @link https://wechatpay.im/openapi/v3/merchant-settlement/merchant-settle-rule-applications
      */
     public function postAsync(array $options = [
         'json' => [

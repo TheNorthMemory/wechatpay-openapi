@@ -12,7 +12,7 @@ interface Stop
     /**
      * 停止支付分计划(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-payscore-plan/partner-pay-score-plan/stop-partner-pay-score-plan.html
+     * @link https://wechatpay.im/openapi/v3/payscore/plan/partner/payscore-plans/merchant-plan-no/%7Bmerchant_plan_no%7D/stop
      */
     public function post(array $options = [
         'merchant_plan_no' => '1234323JKHDFE1243252',
@@ -24,7 +24,7 @@ interface Stop
     /**
      * 停止支付分计划(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/partner-payscore-plan/partner-pay-score-plan/stop-partner-pay-score-plan.html#async
+     * @link https://wechatpay.im/openapi/v3/payscore/plan/partner/payscore-plans/merchant-plan-no/%7Bmerchant_plan_no%7D/stop
      */
     public function postAsync(array $options = [
         'merchant_plan_no' => '1234323JKHDFE1243252',

@@ -13,7 +13,7 @@ interface OutBillNo
     /**
      * 商户单号申请电子回单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/mch-trans/elecsign/accept-elecsign-by-out-no.html
+     * @link https://wechatpay.im/openapi/v3/fund-app/mch-transfer/elecsign/out-bill-no
      */
     public function post(array $options = [
         'json' => [
@@ -24,7 +24,7 @@ interface OutBillNo
     /**
      * 商户单号申请电子回单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/mch-trans/elecsign/accept-elecsign-by-out-no.html#async
+     * @link https://wechatpay.im/openapi/v3/fund-app/mch-transfer/elecsign/out-bill-no
      */
     public function postAsync(array $options = [
         'json' => [

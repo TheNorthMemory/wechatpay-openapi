@@ -12,7 +12,7 @@ interface Reverse
     /**
      * 撤销订单(微信支付订单号)(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/fusion_wallet_ch/QuickPay/chapter3_4.shtml
+     * @link https://wechatpay.im/openapi/v3/transactions/id/%7Btransaction_id%7D/reverse
      */
     public function post(array $options = [
         'base_uri' => 'https://api.mch.weixin.qq.com/hk/', // 跨境(国内接入)
@@ -27,7 +27,7 @@ interface Reverse
     /**
      * 撤销订单(微信支付订单号)(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/fusion_wallet_ch/QuickPay/chapter3_4.shtml#async
+     * @link https://wechatpay.im/openapi/v3/transactions/id/%7Btransaction_id%7D/reverse
      */
     public function postAsync(array $options = [
         'base_uri' => 'https://api.mch.weixin.qq.com/hk/', // 跨境(国内接入)

@@ -12,7 +12,7 @@ interface _appid_
     /**
      * 查询用户单张券详情(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/busifavor/chapter3_5.shtml
+     * @link https://wechatpay.im/openapi/v3/marketing/busifavor/users/%7Bopenid%7D/coupons/%7Bcoupon_code%7D/appids/%7Bappid%7D
      */
     public function get(array $options = [
         'coupon_code' => '',
@@ -23,7 +23,7 @@ interface _appid_
     /**
      * 查询用户单张券详情(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/busifavor/chapter3_5.shtml#async
+     * @link https://wechatpay.im/openapi/v3/marketing/busifavor/users/%7Bopenid%7D/coupons/%7Bcoupon_code%7D/appids/%7Bappid%7D
      */
     public function getAsync(array $options = [
         'coupon_code' => '',

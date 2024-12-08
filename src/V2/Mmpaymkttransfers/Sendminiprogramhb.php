@@ -12,7 +12,7 @@ interface Sendminiprogramhb
     /**
      * 发放小程序红包接口(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon_xcx.php?chapter=18_2&index=3
+     * @link https://wechatpay.im/openapi/v2/mmpaymkttransfers/sendminiprogramhb
      */
     public function post(array $options = [
         'xml' => [
@@ -35,7 +35,7 @@ interface Sendminiprogramhb
     /**
      * 发放小程序红包接口(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/tools/cash_coupon_xcx.php?chapter=18_2&index=3#async
+     * @link https://wechatpay.im/openapi/v2/mmpaymkttransfers/sendminiprogramhb
      */
     public function postAsync(array $options = [
         'xml' => [

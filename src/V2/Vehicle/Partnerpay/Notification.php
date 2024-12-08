@@ -12,7 +12,7 @@ interface Notification
     /**
      * 用户入场通知api(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/vehicle_v2_sl.php?chapter=20_992&index=1&p=202
+     * @link https://wechatpay.im/openapi/v2/vehicle/partnerpay/notification
      */
     public function post(array $options = [
         'xml' => [
@@ -30,7 +30,7 @@ interface Notification
     /**
      * 用户入场通知api(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/vehicle_v2_sl.php?chapter=20_992&index=1&p=202#async
+     * @link https://wechatpay.im/openapi/v2/vehicle/partnerpay/notification
      */
     public function postAsync(array $options = [
         'xml' => [

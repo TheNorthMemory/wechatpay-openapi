@@ -12,7 +12,7 @@ interface Orders
     /**
      * 报关(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter4_3_1.shtml
+     * @link https://wechatpay.im/openapi/v3/global/customs/orders
      */
     public function post(array $options = [
         'base_uri' => 'https://apihk.mch.weixin.qq.com/', // 跨境(香港接入)
@@ -35,7 +35,7 @@ interface Orders
     /**
      * 报关(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter4_3_1.shtml#async
+     * @link https://wechatpay.im/openapi/v3/global/customs/orders
      */
     public function postAsync(array $options = [
         'base_uri' => 'https://apihk.mch.weixin.qq.com/', // 跨境(香港接入)
@@ -58,7 +58,7 @@ interface Orders
     /**
      * 报关查询(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter4_3_3.shtml
+     * @link https://wechatpay.im/openapi/v3/global/customs/orders#get
      */
     public function get(array $options = [
         'base_uri' => 'https://apihk.mch.weixin.qq.com/', // 跨境(香港接入)
@@ -76,7 +76,7 @@ interface Orders
     /**
      * 报关查询(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter4_3_3.shtml#async
+     * @link https://wechatpay.im/openapi/v3/global/customs/orders#get
      */
     public function getAsync(array $options = [
         'base_uri' => 'https://apihk.mch.weixin.qq.com/', // 跨境(香港接入)
@@ -94,7 +94,7 @@ interface Orders
     /**
      * 报关信息修改(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter4_3_5.shtml
+     * @link https://wechatpay.im/openapi/v3/global/customs/orders#patch
      */
     public function patch(array $options = [
         'base_uri' => 'https://apihk.mch.weixin.qq.com/', // 跨境(香港接入)
@@ -116,7 +116,7 @@ interface Orders
     /**
      * 报关信息修改(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter4_3_5.shtml#async
+     * @link https://wechatpay.im/openapi/v3/global/customs/orders#patch
      */
     public function patchAsync(array $options = [
         'base_uri' => 'https://apihk.mch.weixin.qq.com/', // 跨境(香港接入)

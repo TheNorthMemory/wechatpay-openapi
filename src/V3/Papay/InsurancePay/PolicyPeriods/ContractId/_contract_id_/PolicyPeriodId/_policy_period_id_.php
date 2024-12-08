@@ -13,7 +13,7 @@ interface _policy_period_id_
     /**
      * 保险商户查询保险自动续费预约(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/insurance-entrusted-payment/schedule/query-policy-period.html
+     * @link https://wechatpay.im/openapi/v3/papay/insurance-pay/policy-periods/contract-id/%7Bcontract_id%7D/policy-period-id/%7Bpolicy_period_id%7D
      */
     public function get(array $options = [
         'contract_id' => '',
@@ -23,7 +23,7 @@ interface _policy_period_id_
     /**
      * 保险商户查询保险自动续费预约(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/merchant/apis/insurance-entrusted-payment/schedule/query-policy-period.html#async
+     * @link https://wechatpay.im/openapi/v3/papay/insurance-pay/policy-periods/contract-id/%7Bcontract_id%7D/policy-period-id/%7Bpolicy_period_id%7D
      */
     public function getAsync(array $options = [
         'contract_id' => '',

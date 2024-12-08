@@ -12,7 +12,7 @@ interface _out_batch_no_
     /**
      * 查询转账电子回单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer_partner/chapter4_2.shtml
+     * @link https://wechatpay.im/openapi/v3/transfer/bill-receipt/%7Bout_batch_no%7D
      */
     public function get(array $options = [
         'out_batch_no' => 'plfk2020042013',
@@ -21,7 +21,7 @@ interface _out_batch_no_
     /**
      * 查询转账电子回单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer_partner/chapter4_2.shtml#async
+     * @link https://wechatpay.im/openapi/v3/transfer/bill-receipt/%7Bout_batch_no%7D
      */
     public function getAsync(array $options = [
         'out_batch_no' => 'plfk2020042013',

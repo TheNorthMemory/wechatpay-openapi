@@ -12,7 +12,7 @@ interface PreOrderWithAuth
     /**
      * 微工卡核身预下单（流程中完成授权）(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_29.shtml
+     * @link https://wechatpay.im/openapi/v3/payroll-card/authentications/pre-order-with-auth
      */
     public function post(array $options = [
         'json' => [
@@ -36,7 +36,7 @@ interface PreOrderWithAuth
     /**
      * 微工卡核身预下单（流程中完成授权）(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_29.shtml#async
+     * @link https://wechatpay.im/openapi/v3/payroll-card/authentications/pre-order-with-auth
      */
     public function postAsync(array $options = [
         'json' => [

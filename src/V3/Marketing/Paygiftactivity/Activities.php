@@ -13,7 +13,7 @@ interface Activities
     /**
      * 获取支付有礼活动列表(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/paygiftactivity/chapter3_9.shtml
+     * @link https://wechatpay.im/openapi/v3/marketing/paygiftactivity/activities
      */
     public function get(array $options = [
         'query' => [
@@ -28,7 +28,7 @@ interface Activities
     /**
      * 获取支付有礼活动列表(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/paygiftactivity/chapter3_9.shtml#async
+     * @link https://wechatpay.im/openapi/v3/marketing/paygiftactivity/activities
      */
     public function getAsync(array $options = [
         'query' => [

@@ -13,7 +13,7 @@ interface _out_bill_no_
     /**
      * 商户单号查询转账单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-transfer/transfer-bill/get-transfer-bill-by-out-no.html
+     * @link https://wechatpay.im/openapi/v3/ecommerce/mch-transfer/transfer-bills/out-bill-no/%7Bout_bill_no%7D
      */
     public function get(array $options = [
         'out_bill_no' => 'plfk2020042013',
@@ -25,7 +25,7 @@ interface _out_bill_no_
     /**
      * 商户单号查询转账单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-transfer/transfer-bill/get-transfer-bill-by-out-no.html#async
+     * @link https://wechatpay.im/openapi/v3/ecommerce/mch-transfer/transfer-bills/out-bill-no/%7Bout_bill_no%7D
      */
     public function getAsync(array $options = [
         'out_bill_no' => 'plfk2020042013',

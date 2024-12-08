@@ -12,7 +12,7 @@ interface Reverse
     /**
      * 撤销订单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=27_3&index=4
+     * @link https://wechatpay.im/openapi/v2/deposit/reverse
      */
     public function post(array $options = [
         'xml' => [
@@ -30,7 +30,7 @@ interface Reverse
     /**
      * 撤销订单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/deposit_sl.php?chapter=27_3&index=4#async
+     * @link https://wechatpay.im/openapi/v2/deposit/reverse
      */
     public function postAsync(array $options = [
         'xml' => [

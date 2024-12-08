@@ -12,7 +12,7 @@ interface UserTaxiOrders
     /**
      * 获取乘客行程单列表(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/products/taxi-fapiao/introduction.html
+     * @link https://wechatpay.im/openapi/v3/taxi-invoice/user-taxi-orders
      */
     public function get(array $options = [
         'query' => [
@@ -29,7 +29,7 @@ interface UserTaxiOrders
     /**
      * 获取乘客行程单列表(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/products/taxi-fapiao/introduction.html#async
+     * @link https://wechatpay.im/openapi/v3/taxi-invoice/user-taxi-orders
      */
     public function getAsync(array $options = [
         'query' => [

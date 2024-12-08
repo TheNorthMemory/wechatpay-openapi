@@ -12,7 +12,7 @@ interface Querystate
     /**
      * 查询用户状态接口(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/pap_jt_v2.php?chapter=19_96&index=12
+     * @link https://wechatpay.im/openapi/v2/transit/pay/querystate
      */
     public function post(array $options = [
         'xml' => [
@@ -26,7 +26,7 @@ interface Querystate
     /**
      * 查询用户状态接口(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/pap_jt_v2.php?chapter=19_96&index=12#async
+     * @link https://wechatpay.im/openapi/v2/transit/pay/querystate
      */
     public function postAsync(array $options = [
         'xml' => [

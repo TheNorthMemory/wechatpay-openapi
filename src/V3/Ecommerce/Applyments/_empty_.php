@@ -12,7 +12,7 @@ interface _empty_
     /**
      * 二级商户进件(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/ecommerce-merchant-application/applyment/submit-applyment.html
+     * @link https://wechatpay.im/openapi/v3/ecommerce/applyments/
      */
     public function post(array $options = [
         'json' => [
@@ -106,7 +106,7 @@ interface _empty_
     /**
      * 二级商户进件(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/ecommerce-merchant-application/applyment/submit-applyment.html#async
+     * @link https://wechatpay.im/openapi/v3/ecommerce/applyments/
      */
     public function postAsync(array $options = [
         'json' => [

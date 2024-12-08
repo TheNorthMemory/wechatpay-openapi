@@ -13,7 +13,7 @@ interface _out_recharge_no_
     /**
      * 查询二级商户充值结果(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-recharge/recharge/get-by-out-no.html
+     * @link https://wechatpay.im/openapi/v3/platsolution/ecommerce/recharges/out-recharge-no/%7Bout_recharge_no%7D
      */
     public function get(array $options = [
         'out_recharge_no' => 'cz2020042013',
@@ -25,7 +25,7 @@ interface _out_recharge_no_
     /**
      * 查询二级商户充值结果(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-recharge/recharge/get-by-out-no.html#async
+     * @link https://wechatpay.im/openapi/v3/platsolution/ecommerce/recharges/out-recharge-no/%7Bout_recharge_no%7D
      */
     public function getAsync(array $options = [
         'out_recharge_no' => 'cz2020042013',

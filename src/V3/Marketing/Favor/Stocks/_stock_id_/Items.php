@@ -12,7 +12,7 @@ interface Items
     /**
      * 查询代金券可用单品(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/convention/chapter3_8.shtml
+     * @link https://wechatpay.im/openapi/v3/marketing/favor/stocks/%7Bstock_id%7D/items
      */
     public function get(array $options = [
         'stock_id' => '',
@@ -26,7 +26,7 @@ interface Items
     /**
      * 查询代金券可用单品(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/convention/chapter3_8.shtml#async
+     * @link https://wechatpay.im/openapi/v3/marketing/favor/stocks/%7Bstock_id%7D/items
      */
     public function getAsync(array $options = [
         'stock_id' => '',

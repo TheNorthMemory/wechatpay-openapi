@@ -13,7 +13,7 @@ interface Stores
     /**
      * 创建门店(同步模式)
      * @param array<string,mixed> $options
-     * @link https://kf.qq.com/faq/2009096ZF7Jf200909UVbY73.html
+     * @link https://wechatpay.im/openapi/v3/merchant-store/stores
      */
     public function post(array $options = [
         'json' => [
@@ -45,7 +45,7 @@ interface Stores
     /**
      * 创建门店(异步模式)
      * @param array<string,mixed> $options
-     * @link https://kf.qq.com/faq/2009096ZF7Jf200909UVbY73.html#async
+     * @link https://wechatpay.im/openapi/v3/merchant-store/stores
      */
     public function postAsync(array $options = [
         'json' => [

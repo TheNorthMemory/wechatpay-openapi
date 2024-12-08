@@ -12,7 +12,7 @@ interface Channelquerymchauditinfo
     /**
      * 渠道商查询商户审核信息(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/mch_bank.php?chapter=9_296
+     * @link https://wechatpay.im/openapi/v2/mchrisk/channelquerymchauditinfo
      */
     public function post(array $options = [
         'xml' => [
@@ -26,7 +26,7 @@ interface Channelquerymchauditinfo
     /**
      * 渠道商查询商户审核信息(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/api/mch_bank.php?chapter=9_296#async
+     * @link https://wechatpay.im/openapi/v2/mchrisk/channelquerymchauditinfo
      */
     public function postAsync(array $options = [
         'xml' => [

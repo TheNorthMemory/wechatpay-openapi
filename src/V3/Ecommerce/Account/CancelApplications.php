@@ -14,7 +14,7 @@ interface CancelApplications
     /**
      * 提交注销申请单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/ecommerce-cancel/cancel-applications/create-cancel-application.html
+     * @link https://wechatpay.im/openapi/v3/ecommerce/account/cancel-applications
      */
     public function post(array $options = [
         'json' => [
@@ -30,7 +30,7 @@ interface CancelApplications
     /**
      * 提交注销申请单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/ecommerce-cancel/cancel-applications/create-cancel-application.html#async
+     * @link https://wechatpay.im/openapi/v3/ecommerce/account/cancel-applications
      */
     public function postAsync(array $options = [
         'json' => [

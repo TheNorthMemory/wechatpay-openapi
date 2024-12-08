@@ -12,7 +12,7 @@ interface _openid_
     /**
      * 查询微工卡授权关系(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_2.shtml
+     * @link https://wechatpay.im/openapi/v3/payroll-card/relations/%7Bopenid%7D
      */
     public function get(array $options = [
         'openid' => '9x111111',
@@ -26,7 +26,7 @@ interface _openid_
     /**
      * 查询微工卡授权关系(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_2.shtml#async
+     * @link https://wechatpay.im/openapi/v3/payroll-card/relations/%7Bopenid%7D
      */
     public function getAsync(array $options = [
         'openid' => '9x111111',

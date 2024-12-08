@@ -13,7 +13,7 @@ interface Submit
      * 申请入驻(同步模式)
      * @param array<string,mixed> $options
      * @deprecated - since 2023.05.23
-     * @link https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=19_2
+     * @link https://wechatpay.im/openapi/v2/applyment/micro/submit
      */
     public function post(array $options = [
         'xml' => [
@@ -57,7 +57,7 @@ interface Submit
      * 申请入驻(异步模式)
      * @param array<string,mixed> $options
      * @deprecated - since 2023.05.23
-     * @link https://pay.weixin.qq.com/wiki/doc/api/xiaowei.php?chapter=19_2#async
+     * @link https://wechatpay.im/openapi/v2/applyment/micro/submit
      */
     public function postAsync(array $options = [
         'xml' => [

@@ -13,7 +13,7 @@ interface _out_contract_code_
     /**
      * 通过商户协议号查询协议(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter5_5_2.shtml
+     * @link https://wechatpay.im/openapi/v3/ecommerce/combine-papay/contracts/plan-id/%7Bplan_id%7D/out-contract-code/%7Bout_contract_code%7D
      */
     public function get(array $options = [
         'plan_id' => '12535',
@@ -23,7 +23,7 @@ interface _out_contract_code_
     /**
      * 通过商户协议号查询协议(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter5_5_2.shtml#async
+     * @link https://wechatpay.im/openapi/v3/ecommerce/combine-papay/contracts/plan-id/%7Bplan_id%7D/out-contract-code/%7Bout_contract_code%7D
      */
     public function getAsync(array $options = [
         'plan_id' => '12535',

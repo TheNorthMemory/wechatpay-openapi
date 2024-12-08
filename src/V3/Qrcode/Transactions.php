@@ -13,7 +13,7 @@ interface Transactions
     /**
      * 扣费受理(同步模式)
      * @param array<string,mixed> $options
-     * @link 商户请求扣费受理接口，会完成订单受理。微信支付进行异步扣款，支付完成后，会将订单支付结果发送给商户。
+     * @link https://wechatpay.im/openapi/v3/qrcode/transactions
      */
     public function post(array $options = [
         'json' => [
@@ -48,7 +48,7 @@ interface Transactions
     /**
      * 扣费受理(异步模式)
      * @param array<string,mixed> $options
-     * @link 商户请求扣费受理接口，会完成订单受理。微信支付进行异步扣款，支付完成后，会将订单支付结果发送给商户。#async
+     * @link https://wechatpay.im/openapi/v3/qrcode/transactions
      */
     public function postAsync(array $options = [
         'json' => [

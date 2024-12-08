@@ -12,7 +12,7 @@ interface Apply
     /**
      * 申请二级商户充值(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-recharge/recharge/apply.html
+     * @link https://wechatpay.im/openapi/v3/platsolution/ecommerce/recharges/apply
      */
     public function post(array $options = [
         'json' => [
@@ -31,7 +31,7 @@ interface Apply
     /**
      * 申请二级商户充值(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-recharge/recharge/apply.html#async
+     * @link https://wechatpay.im/openapi/v3/platsolution/ecommerce/recharges/apply
      */
     public function postAsync(array $options = [
         'json' => [

@@ -12,7 +12,7 @@ interface Parkings
     /**
      * 创建停车入场(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_8_2.shtml
+     * @link https://wechatpay.im/openapi/v3/vehicle/parking/parkings
      */
     public function post(array $options = [
         'json' => [
@@ -33,7 +33,7 @@ interface Parkings
     /**
      * 创建停车入场(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_8_2.shtml#async
+     * @link https://wechatpay.im/openapi/v3/vehicle/parking/parkings
      */
     public function postAsync(array $options = [
         'json' => [

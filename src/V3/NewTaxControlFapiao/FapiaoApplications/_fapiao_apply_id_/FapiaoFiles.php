@@ -12,7 +12,7 @@ interface FapiaoFiles
     /**
      * 获取发票下载信息(同步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/fapiao/fapiao-applications/get-fapiao-file-download-info.html
+     * @link https://wechatpay.im/openapi/v3/new-tax-control-fapiao/fapiao-applications/%7Bfapiao_apply_id%7D/fapiao-files
      */
     public function get(array $options = [
         'fapiao_apply_id' => '4200000444201910177461284488',
@@ -25,7 +25,7 @@ interface FapiaoFiles
     /**
      * 获取发票下载信息(异步模式)
      * @param array<string,mixed> $options
-     * @link https://pay.weixin.qq.com/docs/partner/apis/fapiao/fapiao-applications/get-fapiao-file-download-info.html#async
+     * @link https://wechatpay.im/openapi/v3/new-tax-control-fapiao/fapiao-applications/%7Bfapiao_apply_id%7D/fapiao-files
      */
     public function getAsync(array $options = [
         'fapiao_apply_id' => '4200000444201910177461284488',

@@ -18,11 +18,11 @@ interface Complaints
      */
     public function get(array $options = [
         'query' => [
-            'limit' => 0,
-            'offset' => 0,
-            'begin_date' => '',
-            'end_date' => '',
-            'sub_mchid' => '',
+            'limit' => 5,
+            'offset' => 10,
+            'begin_date' => '2019-01-01',
+            'end_date' => '2019-01-01',
+            'sub_mchid' => '1900012181',
         ],
     ]): ResponseInterface;
 
@@ -34,11 +34,11 @@ interface Complaints
      */
     public function getAsync(array $options = [
         'query' => [
-            'limit' => 0,
-            'offset' => 0,
-            'begin_date' => '',
-            'end_date' => '',
-            'sub_mchid' => '',
+            'limit' => 5,
+            'offset' => 10,
+            'begin_date' => '2019-01-01',
+            'end_date' => '2019-01-01',
+            'sub_mchid' => '1900012181',
         ],
     ]): PromiseInterface;
 }

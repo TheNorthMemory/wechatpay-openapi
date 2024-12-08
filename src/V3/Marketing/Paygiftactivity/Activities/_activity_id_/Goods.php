@@ -17,8 +17,8 @@ interface Goods
     public function get(array $options = [
         'activity_id' => '',
         'query' => [
-            'offset' => 0,
-            'limit' => 0,
+            'offset' => 1,
+            'limit' => 20,
         ],
     ]): ResponseInterface;
 
@@ -30,8 +30,8 @@ interface Goods
     public function getAsync(array $options = [
         'activity_id' => '',
         'query' => [
-            'offset' => 0,
-            'limit' => 0,
+            'offset' => 1,
+            'limit' => 20,
         ],
     ]): PromiseInterface;
 }

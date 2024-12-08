@@ -20,7 +20,7 @@ interface Merchants
         'activity_id' => '',
         'query' => [
             'offset' => 0,
-            'limit' => 0,
+            'limit' => 20,
         ],
     ]): ResponseInterface;
 
@@ -33,7 +33,7 @@ interface Merchants
         'activity_id' => '',
         'query' => [
             'offset' => 0,
-            'limit' => 0,
+            'limit' => 20,
         ],
     ]): PromiseInterface;
 }

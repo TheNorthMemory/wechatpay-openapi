@@ -128,7 +128,7 @@ post:
               x-cdata: true
             type: string
             description: 门店照片
-            example: '[Media_id1,Media_id2,Media_id3]'
+            example: '["Media_id1","Media_id2","Media_id3"]'
             nullable: true
             x-json:
               type: array

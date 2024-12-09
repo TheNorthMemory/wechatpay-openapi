@@ -71,7 +71,7 @@ interface _sub_mchid_
                 'office_account' => 'wx8888888888888888',
                 'mini_program' => 'wx8888888888888888',
                 'store_address' => '10F World Finance Centre (South Office), 11 Canton Road, Tsim Sha Tsui, Hong Kong',
-                'store_photos' => '[Media_id1, Media_id2, Media_id3]',
+                'store_photos' => '["Media_id1", "Media_id2", "Media_id3"]',
                 'mcc' => '4214',
             ],
             'director' => [
@@ -124,7 +124,7 @@ interface _sub_mchid_
                 'office_account' => 'wx8888888888888888',
                 'mini_program' => 'wx8888888888888888',
                 'store_address' => '10F World Finance Centre (South Office), 11 Canton Road, Tsim Sha Tsui, Hong Kong',
-                'store_photos' => '[Media_id1, Media_id2, Media_id3]',
+                'store_photos' => '["Media_id1", "Media_id2", "Media_id3"]',
                 'mcc' => '4214',
             ],
             'director' => [

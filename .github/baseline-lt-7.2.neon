@@ -1,3 +1,2 @@
 parameters:
-	ignoreErrors:
-		- '#Constant expression contains invalid operations#'
+	level: 6

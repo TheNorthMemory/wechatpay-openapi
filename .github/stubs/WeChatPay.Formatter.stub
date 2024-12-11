@@ -1,0 +1,15 @@
+<?php declare(strict_types=1);
+
+namespace WeChatPay;
+
+class Formatter {
+    /**
+     * Like `queryString` does but without the `sign` and `empty value` entities.
+     *
+     * @param array<string, string|int|null> $thing - The input array.
+     *
+     * @return string - The `key=value` pair string whose joined by `&` char.
+     */
+    public static function queryStringLike(array $thing = []): string
+    {}
+}

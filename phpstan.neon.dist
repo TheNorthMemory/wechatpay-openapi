@@ -1,4 +1,6 @@
 parameters:
+	scanFiles:
+		- .github/stubs/WeChatPay.Formatter.stub
 	level: max
 	paths:
 		- src

@@ -1,5 +1,3 @@
-includes:
-	- .github/ignore-by-php-version.neon.php
 parameters:
 	scanFiles:
 		- .github/stubs/WeChatPay.Formatter.stub

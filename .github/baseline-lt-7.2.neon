@@ -1,7 +1,0 @@
-parameters:
-	level: max
-	excludePaths:
-		- src/V2/Secapi/Mch/_addinstitutionsub_.php
-		- src/V2/Mmpaymkttransfers/Sendgroupredpack.php
-		- src/V2/Secapi/Pay/Refundv2.php
-		- src/V2/Applyment/Micro/Submit.php

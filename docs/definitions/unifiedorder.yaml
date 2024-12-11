@@ -71,6 +71,7 @@ unifiedorder.request:
       xml:
         x-cdata: true
       type: string
+      format: jsonObjectLike
       description: 单品优惠活动该字段必传，`JSON`格式字符串
       maxLength: 6000
       nullable: true
@@ -204,6 +205,7 @@ unifiedorder.request:
       xml:
         x-cdata: true
       type: string
+      format: jsonObjectLike
       description: 场景信息`JSON`格式字符串
       example: '{"store_info" : {"id": "SZTX001","name": "腾大餐厅","area_code": "440305","address": "科技园中一路腾讯大厦" }}'
       maxLength: 256
@@ -349,6 +351,7 @@ unifiedorder.response:
           xml:
             x-cdata: true
           type: string
+          format: jsonObjectLike
           description: 营销详情`JSON`格式字符串
           maxLength: 6000
           example: '{"promotion_detail":[{"promotion_id":"109519","name":"单品惠-6","scope":"SINGLE","type":"DISCOUNT","amount":5,"activity_id":"931386","wxpay_contribute":0,"merchant_contribute":0,"other_contribute":5,"goods_detail":[{"goods_id":"a_goods1","goods_remark":"商品备注","quantity":7,"price":1,"discount_amount":4},{"goods_id":"a_goods2","goods_remark":"商品备注","quantity":1,"price":2,"discount_amount":1}]}]}'

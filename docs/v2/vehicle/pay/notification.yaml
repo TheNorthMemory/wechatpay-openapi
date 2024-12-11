@@ -78,6 +78,7 @@ post:
                 xml:
                   x-cdata: true
                 type: string
+                format: jsonObjectLike
                 description: 场景信息`JSON`格式字符串
                 example: '{"scene_info":{"start_time":"20170926114339","plate_number":"CB1000sdfasd","free_time":"1200","car_type":"大型车","parking_name":"欢乐海岸停车场"}}'
                 maxLength: 1024

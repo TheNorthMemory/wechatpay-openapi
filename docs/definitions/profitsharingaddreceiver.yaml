@@ -51,6 +51,7 @@ profitsharingaddreceiver.request:
             - HMAC-SHA256
         receiver:
           type: string
+          format: jsonObjectLike
           description: 分账接收方`JSON`格式字符串
           xml:
             x-cdata: true
@@ -61,7 +62,6 @@ profitsharingaddreceiver.request:
             required:
               - type
               - account
-              - amount
               - description
             properties:
               type:
@@ -74,15 +74,32 @@ profitsharingaddreceiver.request:
               account:
                 type: string
                 description: 分账接收方账号
-              amount:
-                type: number
-                description: 分账金额
-              description:
-                type: string
-                description: 分账描述
+                example: '190001001'
               name:
                 type: string
                 description: 分账个人接收方姓名
+                example: 示例商户全称
+              relation_type:
+                type: string
+                description: 与分账方的关系类型
+                enum:
+                  - SERVICE_PROVIDER #服务商
+                  - STORE #门店
+                  - STAFF #员工
+                  - STORE_OWNER #店主
+                  - PARTNER #合作伙伴
+                  - HEADQUARTER #总部
+                  - BRAND #品牌方
+                  - DISTRIBUTOR #分销商
+                  - USER #用户
+                  - SUPPLIER #供应商
+                  - CUSTOM #自定义
+                  - PLATFORM #平台
+                  - OTHERS #其他
+              custom_relation:
+                type: string
+                description: 自定义的分账关系
+                example: 代理商
 profitsharingaddreceiver.response:
   allOf:
     - $ref: './wxpay.service.yaml#/serviceprovider.subs'
@@ -96,6 +113,7 @@ profitsharingaddreceiver.response:
       properties:
         receiver:
           type: string
+          format: jsonObjectLike
           description: 分账接收方
           example: '{"type":"MERCHANT_ID","account":"190001001"}'
           maxLength: 128

@@ -96,6 +96,7 @@ combinedorder.request:
           xml:
             x-cdata: true
           type: string
+          format: jsonObjectLike
           description: 场景信息`JSON`格式字符串
           example: '{"h5_info": {"type":"IOS","app_name": "王者荣耀","bundle_id": "com.tencent.wzryIOS"}}'
           maxLength: 256
@@ -107,9 +108,11 @@ combinedorder.request:
               device_id:
                 type: string
                 description: 商户端设备号
+                example: 'POS1:1'
               payer_client_ip:
                 type: string
                 description: 用户终端IP
+                example: 14.17.22.32
               h5_info:
                 type: object
                 description: H5场景信息
@@ -126,12 +129,14 @@ combinedorder.request:
                   app_name:
                     type: string
                     description: 应用名称
+                    example: 王者荣耀
                   app_url:
                     type: string
                     description: 网站URL
                   bundle_id:
                     type: string
                     description: iOS平台BundleID
+                    example: com.tencent.wzryIOS
                   package_name:
                     type: string
                     description: Android平台PackageName
@@ -139,6 +144,7 @@ combinedorder.request:
           xml:
             x-cdata: true
           type: string
+          format: jsonObjectLike
           description: 子单信息`JSON`格式字符串
           example: '{"order_list": [{"appid": "wxdace645e0bc2c424","attach": "深圳分店","body": "子订单1","fee_type": "CNY","mch_id": "1900009001","out_trade_no": "OD201708030001","total_fee": 1234}],"order_num": 3}'
           maxLength: 10240
@@ -151,55 +157,62 @@ combinedorder.request:
               order_num:
                 type: number
                 description: 子订单数
+                example: 2
               order_list:
                 type: array
                 description: 子订单信息
                 items:
                   type: object
                   required:
-                    - mchid
+                    - appid
+                    - mch_id
+                    - body
                     - attach
-                    - amount
                     - out_trade_no
-                    - description
+                    - fee_type
+                    - total_fee
                   properties:
-                    mchid:
+                    appid:
+                      type: string
+                      description: 子单商户appid
+                      example: wxdace645e0bc2c424
+                    mch_id:
                       type: string
                       description: 子单商户号
+                      example: '1900009001'
+                    body:
+                      type: string
+                      description: 商品描述
+                      example: 子订单1
+                    detail:
+                      type: string
+                      description: 商品详情
+                      example: 商品详细描述
                     attach:
                       type: string
                       description: 附加数据
-                    amount:
-                      type: object
-                      description: 订单金额
-                      required:
-                        - total_amount
-                      properties:
-                        total_amount:
-                          type: number
-                          description: 标价金额
-                        currency:
-                          type: string
-                          description: 标价币种
+                      example: 深圳分店
                     out_trade_no:
                       type: string
                       description: 子单商户订单号
-                    goods_tag:
+                      example: OD201708030001
+                    fee_type:
                       type: string
-                      description: 订单优惠标记
-                    description:
+                      description: 标价币种
+                      example: CNY
+                    total_fee:
+                      type: integer
+                      format: unit32
+                      description: 子单金额，单位为分
+                      example: 88
+                    sub_appid:
                       type: string
-                      description: 商品描述
-                    settle_info:
-                      type: object
-                      description: 结算信息
-                      properties:
-                        profit_sharing:
-                          type: boolean
-                          description: 是否指定分账
-                        subsidy_amount:
-                          type: number
-                          description: 补差金额
+                      description: 服务商模式下，特约商户的appid
+                      example: wxd678efh567hg6787
+                    sub_mch_id:
+                      type: string
+                      description: 特约商户商户号，服务商模式必传
+                      example: '1256324589'
 combinedorder.response:
   allOf:
     - type: object

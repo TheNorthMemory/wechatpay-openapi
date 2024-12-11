@@ -251,6 +251,7 @@ post:
                 xml:
                   x-cdata: true
                 type: string
+                format: jsonArrayLike
                 description: 子商户入驻驳回详情
                 nullable: true
                 example: '[{"field":"contact_name","reason":"contact name is invalid."},{"field":"contact_phone","reason":"contact phone is invalid."}]'

@@ -35,7 +35,19 @@ interface Payapply
             'trade_scene' => 'PARKING',
             'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
             'profit_sharing' => 'Y',
-            'scene_info' => '{"scene_info":{"start_time":"20170926114339","end_time":"20170826114339","charging_time":"12312312312","plate_number":"CB1000sdfasd","free_time":"1200","car_type":"大型车","parking_name":"欢乐海岸停车场"}}',
+            'scene_info' => \json_encode([
+                'scene_info' => [
+                    'start_time' => '20170826104339',
+                    'end_time' => '20170826114339',
+                    'charging_time' => '3600',
+                    'plate_number' => '粤B888888',
+                    'car_type' => '小型车',
+                    'parking_name' => '欢乐海岸停车场',
+                    'free_time' => '1200',
+                    'deduct_mode' => 'PROACTIVE',
+                    'support_deduct_mode' => 'DEDUCT_PROACTIVE_ONLY',
+                ],
+            ]),
         ],
     ]): ResponseInterface;
 
@@ -65,7 +77,19 @@ interface Payapply
             'trade_scene' => 'PARKING',
             'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
             'profit_sharing' => 'Y',
-            'scene_info' => '{"scene_info":{"start_time":"20170926114339","end_time":"20170826114339","charging_time":"12312312312","plate_number":"CB1000sdfasd","free_time":"1200","car_type":"大型车","parking_name":"欢乐海岸停车场"}}',
+            'scene_info' => \json_encode([
+                'scene_info' => [
+                    'start_time' => '20170826104339',
+                    'end_time' => '20170826114339',
+                    'charging_time' => '3600',
+                    'plate_number' => '粤B888888',
+                    'car_type' => '小型车',
+                    'parking_name' => '欢乐海岸停车场',
+                    'free_time' => '1200',
+                    'deduct_mode' => 'PROACTIVE',
+                    'support_deduct_mode' => 'DEDUCT_PROACTIVE_ONLY',
+                ],
+            ]),
         ],
     ]): PromiseInterface;
 }

@@ -123,6 +123,7 @@ getviolation.response:
           xml:
             x-cdata: true
           type: string
+          format: jsonObjectLike
           description: 违规记录数据`JSON`格式字符串
           example: '{"total_size":1,"violation_records":[{"company_name":"ABC公司","handle_method":"刷单欺诈,整改 限期 2天","handle_state":"超时未处理","illegal_type":"其他","punish_time":"2018-07-24 20:12:25","sub_mch_id":"1900012891"}]}'
           maxLength: 1024
@@ -153,18 +154,24 @@ getviolation.response:
                     company_name:
                       type: string
                       description: 公司名称
+                      example: ABC公司
                     handle_method:
                       type: string
                       description: 处理方式
+                      example: '刷单欺诈,整改 限期 2天'
                     handle_state:
                       type: string
                       description: 处理状态
+                      example: 超时未处理
                     punish_time:
                       type: string
                       description: 处罚时间
+                      example: 其他
                     sub_mch_id:
                       type: string
                       description: 违规子商户号
+                      example: '1900012891'
                     deadline:
                       type: string
                       description: 最后处理时间
+                      example: '2018-07-24 20:12:25'

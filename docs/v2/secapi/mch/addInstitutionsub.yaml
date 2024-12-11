@@ -136,6 +136,7 @@ post:
             xml:
               x-cdata: true
             type: string
+            format: jsonArrayLike
             description: 门店照片
             example: '["ySdrxMVb92Rmf9p2n7aJ4nAkJsqjYAt8uWQxBQ_p2Jgs","ySdVr5RR9cPRAq5FS0BKJxc78190x27psCzAwNzi6VdEI","yS2xjJ9lhuVwUyQbq0AYmP80p50vVuhdSjsKM"]'
             x-json:
@@ -198,6 +199,7 @@ post:
             xml:
               x-cdata: true
             type: string
+            format: jsonArrayLike
             nullable: true
             description: H5支付域名
             example: '["www.qq.com","www.weixin.com"]'

@@ -51,6 +51,7 @@ profitsharingremovereceiver.request:
             - HMAC-SHA256
         receiver:
           type: string
+          format: jsonObjectLike
           description: 分账接收方`JSON`格式字符串
           maxLength: 2048
           example: '{"type": "MERCHANT_ID","account": "190001001"}'
@@ -70,6 +71,7 @@ profitsharingremovereceiver.request:
               account:
                 type: string
                 description: 分账接收方账号
+                example: '190001001'
 profitsharingremovereceiver.response:
   allOf:
     - $ref: './wxpay.service.yaml#/serviceprovider.subs'
@@ -83,6 +85,7 @@ profitsharingremovereceiver.response:
       properties:
         receiver:
           type: string
+          format: jsonObjectLike
           description: 分账接收方`JSON`格式字符串
           example: '{"type":"MERCHANT_ID","account":"190001001"}'
           maxLength: 128
@@ -104,3 +107,4 @@ profitsharingremovereceiver.response:
               account:
                 type: string
                 description: 分账接收方账号
+                example: '190001001'

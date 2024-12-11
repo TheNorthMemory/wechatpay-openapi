@@ -26,9 +26,11 @@ get:
           appid:
             type: string
             description: 合作方APPID
+            example: wx4e1916a585d1f4e9
           merchant_id:
             type: string
             description: 合作方商户ID
+            example: '2480029552'
     - name: authorized_data
       in: query
       type: string
@@ -49,6 +51,7 @@ get:
           stock_id:
             type: string
             description: 授权批次ID
+            example: '2433405'
     - name: limit
       in: query
       type: integer

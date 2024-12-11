@@ -48,6 +48,7 @@ closecombinedorder.request:
           xml:
             x-cdata: true
           type: string
+          format: jsonArrayLike
           description: 子单信息`JSON`格式字符串
           example: '[{"mch_id": "1900009001","out_trade_no": "OD201708030001"}]'
           maxLength: 10240
@@ -64,9 +65,11 @@ closecombinedorder.request:
                 mchid:
                   type: string
                   description: 子单商户号
+                  example: '1900009001'
                 out_trade_no:
                   type: string
                   description: 子单商户订单号
+                  example: 'OD201708030001'
 closecombinedorder.response:
   allOf:
     - type: object

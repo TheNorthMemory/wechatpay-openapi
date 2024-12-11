@@ -74,7 +74,7 @@ post:
                   x-key: period
                   description: 岂止日期
                   example:
-                    - 2014-01-01
+                    - '2014-01-01'
                     - 长期
                   items:
                     type: string

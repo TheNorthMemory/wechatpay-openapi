@@ -25,6 +25,7 @@ post:
                 xml:
                   x-cdata: true
                 type: string
+                format: jsonObjectLike
                 description: 营销详情`JSON`格式字符串
                 maxLength: 6000
                 example: '{"promotion_detail":[{"promotion_id":"109519","scope":"SINGLE","type":"DISCOUNT","refund_amout":5,"goods_detail":[{"goods_id":"a_goods1","refund_quantity":7,"price":1,"refund_amount":4},{"goods_id":"a_goods2","refund_quantity":1,"price":2,"refund_amount":1}]}]}'

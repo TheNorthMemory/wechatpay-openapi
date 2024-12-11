@@ -164,24 +164,11 @@ querycombinedorder.response:
       required:
         - sub_order_list
       properties:
-        scene_info:
-          xml:
-            x-cdata: true
-          type: string
-          description: 场景信息`JSON`格式字符串
-          maxLength: 256
-          x-json:
-            type: object
-            required:
-              - payer_client_ip
-            properties:
-              device_id:
-                type: string
-                description: 商户端设备号
         sub_order_list:
           xml:
             x-cdata: true
           type: string
+          format: jsonObjectLike
           description: 子单信息`JSON`格式字符串
           example: '{"order_list": [{"appid": "wxdace645e0bc2c424","attach": "深圳分店","body": "子订单1","fee_type": "CNY","mch_id": "1900009001","out_trade_no": "OD201708030001","total_fee": 1234}],"order_num": 3}'
           maxLength: 10240

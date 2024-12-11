@@ -41,7 +41,10 @@ interface Applyment
                     'merchant_name' => '',
                     'legal_person' => '',
                     'company_address' => '',
-                    'licence_valid_date' => '["1970-01-01","forever"]',
+                    'licence_valid_date' => \json_encode([
+                        '1970-01-01',
+                        'forever',
+                    ]),
                 ],
                 'certificate_info' => [
                     'cert_type' => 'CERTIFICATE_TYPE_2388 | CERTIFICATE_TYPE_2389 | CERTIFICATE_TYPE_2390 | CERTIFICATE_TYPE_2391',
@@ -50,7 +53,10 @@ interface Applyment
                     'merchant_name' => '',
                     'legal_person' => '',
                     'company_address' => '',
-                    'cert_valid_date' => '["1970-01-01","forever"]',
+                    'cert_valid_date' => \json_encode([
+                        '1970-01-01',
+                        'forever',
+                    ]),
                 ],
                 'company_prove_copy' => '',
                 'assist_prove_info' => [
@@ -76,7 +82,10 @@ interface Applyment
                 'authorize_letter_copy' => '',
                 'identification_name' => '',
                 'identification_number' => '',
-                'identification_valid_date' => '["1970-01-01","forever"]',
+                'identification_valid_date' => \json_encode([
+                    '1970-01-01',
+                    'forever',
+                ]),
                 'identification_address' => '',
                 'identification_front_copy' => '',
                 'identification_back_copy' => '',
@@ -133,7 +142,10 @@ interface Applyment
                     'merchant_name' => '',
                     'legal_person' => '',
                     'company_address' => '',
-                    'licence_valid_date' => '["1970-01-01","forever"]',
+                    'licence_valid_date' => \json_encode([
+                        '1970-01-01',
+                        'forever',
+                    ]),
                 ],
                 'certificate_info' => [
                     'cert_type' => 'CERTIFICATE_TYPE_2388 | CERTIFICATE_TYPE_2389 | CERTIFICATE_TYPE_2390 | CERTIFICATE_TYPE_2391',
@@ -142,7 +154,10 @@ interface Applyment
                     'merchant_name' => '',
                     'legal_person' => '',
                     'company_address' => '',
-                    'cert_valid_date' => '["1970-01-01","forever"]',
+                    'cert_valid_date' => \json_encode([
+                        '1970-01-01',
+                        'forever',
+                    ]),
                 ],
                 'company_prove_copy' => '',
                 'assist_prove_info' => [
@@ -168,7 +183,10 @@ interface Applyment
                 'authorize_letter_copy' => '',
                 'identification_name' => '',
                 'identification_number' => '',
-                'identification_valid_date' => '["1970-01-01","forever"]',
+                'identification_valid_date' => \json_encode([
+                    '1970-01-01',
+                    'forever',
+                ]),
                 'identification_address' => '',
                 'identification_front_copy' => '',
                 'identification_back_copy' => '',

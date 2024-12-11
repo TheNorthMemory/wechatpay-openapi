@@ -21,7 +21,13 @@ interface Profitsharingaddreceiver
             'appid' => 'wx8888888888888888',
             'sub_appid' => 'wx8888888888888888',
             'sign_type' => 'HMAC-SHA256',
-            'receiver' => '{"type": "MERCHANT_ID","account": "190001001","name": "示例商户全称","relation_type": "STORE_OWNER"}',
+            'receiver' => \json_encode([
+                'type' => 'MERCHANT_ID | PERSONAL_OPENID | PERSONAL_SUB_OPENID',
+                'account' => '190001001',
+                'name' => '示例商户全称',
+                'relation_type' => 'SERVICE_PROVIDER | STORE | STAFF | STORE_OWNER',
+                'custom_relation' => '代理商',
+            ]),
         ],
     ]): ResponseInterface;
 
@@ -37,7 +43,13 @@ interface Profitsharingaddreceiver
             'appid' => 'wx8888888888888888',
             'sub_appid' => 'wx8888888888888888',
             'sign_type' => 'HMAC-SHA256',
-            'receiver' => '{"type": "MERCHANT_ID","account": "190001001","name": "示例商户全称","relation_type": "STORE_OWNER"}',
+            'receiver' => \json_encode([
+                'type' => 'MERCHANT_ID | PERSONAL_OPENID | PERSONAL_SUB_OPENID',
+                'account' => '190001001',
+                'name' => '示例商户全称',
+                'relation_type' => 'SERVICE_PROVIDER | STORE | STAFF | STORE_OWNER',
+                'custom_relation' => '代理商',
+            ]),
         ],
     ]): PromiseInterface;
 }

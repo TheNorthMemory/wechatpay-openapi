@@ -127,6 +127,7 @@ post:
             xml:
               x-cdata: true
             type: string
+            format: jsonArrayLike
             description: 门店照片
             example: '["Media_id1","Media_id2","Media_id3"]'
             nullable: true
@@ -195,6 +196,7 @@ post:
             xml:
               x-cdata: true
             type: string
+            format: jsonArrayLike
             nullable: true
             description: H5支付域名
             example: '["www.qq.com","www.weixin.com"]'

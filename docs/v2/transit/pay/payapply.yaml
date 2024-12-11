@@ -132,6 +132,7 @@ post:
                 xml:
                   x-cdata: true
                 type: string
+                format: jsonObjectLike
                 description: 场景信息`JSON`格式字符串
                 example: '{"scene_info":{"start_time":"20170826114339","end_time":"20170826114339","qrcode_hash":"a437d98bbf07bdde2942c99f6a2ab88a72b60aa747fce54b093c6","start_station":"西单","end_station":"天安门西"}}'
                 maxLength: 1024

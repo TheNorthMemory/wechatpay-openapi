@@ -47,6 +47,13 @@ post:
             type: string
             description: 与品牌主商户的的关系类型
             example: SUPPLIER
+            enum:
+              - SUPPLIER #供应商
+              - DISTRIBUTOR #分销商
+              - SERVICE_PROVIDER #服务商
+              - PLATFORM #平台
+              - STAFF #员工
+              - OTHERS #其他
   responses:
     200:
       schema:

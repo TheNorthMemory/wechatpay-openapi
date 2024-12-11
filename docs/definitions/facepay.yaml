@@ -69,9 +69,11 @@ facepay.request:
       xml:
         x-cdata: true
       type: string
+      format: jsonObjectLike
       description: 商品详情`JSON`格式字符串
       maxLength: 6000
       nullable: true
+      example: '{"cost_price":1,"receipt_id":"wx123","goods_detail":[{"goods_id":"商品编码","wxpay_goods_id":"1001","goods_name":"iPhone6s 16G","quantity":1,"price":1},{"goods_id":"商品编码","wxpay_goods_id":"1002","goods_name":"iPhone6s 32G","quantity":1,"price":1}]}'
       x-json:
         type: object
         description: 商品详情信息
@@ -384,6 +386,7 @@ facepay.response:
           xml:
             x-cdata: true
           type: string
+          format: jsonObjectLike
           description: 营销详情`JSON`格式字符串
           maxLength: 6000
           example: '{"promotion_detail":[{"promotion_id":"109519","name":"单品惠-6","scope":"SINGLE","type":"DISCOUNT","amount":5,"activity_id":"931386","wxpay_contribute":0,"merchant_contribute":0,"other_contribute":5,"goods_detail":[{"goods_id":"a_goods1","goods_remark":"商品备注","quantity":7,"price":1,"discount_amount":4},{"goods_id":"a_goods2","goods_remark":"商品备注","quantity":1,"price":2,"discount_amount":1}]}]}'

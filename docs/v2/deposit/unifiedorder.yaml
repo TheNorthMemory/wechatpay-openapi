@@ -85,6 +85,7 @@ post:
                 xml:
                   x-cdata: true
                 type: string
+                format: jsonObjectLike
                 description: 单品优惠活动该字段必传，`JSON`格式字符串
                 example: '{"goods_detail":[]}'
                 maxLength: 6000
@@ -220,6 +221,7 @@ post:
                 xml:
                   x-cdata: true
                 type: string
+                format: jsonObjectLike
                 description: 场景信息`JSON`格式字符串
                 example: '{"store_info":{"id":"SZTX001","name":"腾大餐厅","area_code":"440305","address":"科技园中一路腾讯大厦"}}'
                 maxLength: 256

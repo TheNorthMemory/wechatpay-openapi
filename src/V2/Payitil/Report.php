@@ -21,7 +21,13 @@ interface Report
             'device_info' => '013467007045764',
             'interface_url' => 'https://api.mch.weixin.qq.com/pay/batchreport/micropay/total',
             'user_ip' => '8.8.8.8',
-            'trades' => '',
+            'trades' => \json_encode([[
+                'out_trade_no' => 'out_trade_no_test_1',
+                'begin_time' => '20160602203256',
+                'end_time' => '20160602203257',
+                'state' => 'OK',
+                'err_msg' => '',
+            ],]),
         ],
     ]): ResponseInterface;
 
@@ -37,7 +43,13 @@ interface Report
             'device_info' => '013467007045764',
             'interface_url' => 'https://api.mch.weixin.qq.com/pay/batchreport/micropay/total',
             'user_ip' => '8.8.8.8',
-            'trades' => '',
+            'trades' => \json_encode([[
+                'out_trade_no' => 'out_trade_no_test_1',
+                'begin_time' => '20160602203256',
+                'end_time' => '20160602203257',
+                'state' => 'OK',
+                'err_msg' => '',
+            ],]),
         ],
     ]): PromiseInterface;
 }

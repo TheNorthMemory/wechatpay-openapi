@@ -104,7 +104,7 @@ post:
                       x-key: period
                       description: 岂止日期
                       example:
-                        - 1970-01-01
+                        - '1970-01-01'
                         - forever
                       items:
                         type: string
@@ -141,7 +141,7 @@ post:
                       x-key: period
                       description: 岂止日期
                       example:
-                        - 1970-01-01
+                        - '1970-01-01'
                         - forever
                       items:
                         type: string
@@ -234,7 +234,7 @@ post:
                   x-key: period
                   description: 岂止日期
                   example:
-                    - 1970-01-01
+                    - '1970-01-01'
                     - forever
                   items:
                     type: string

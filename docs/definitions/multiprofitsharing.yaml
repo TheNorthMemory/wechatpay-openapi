@@ -63,6 +63,7 @@ multiprofitsharing.request:
           maxLength: 64
         receivers:
           type: string
+          format: jsonArrayLike
           description: 分账接收方列表`JSON`格式字符串
           maxLength: 10240
           example: '[{"type": "MERCHANT_ID","account": "190001001","amount": 100,"description": "分到商户"}, {"type": "PERSONAL_OPENID","account": "86693952","amount": 888,"description": "分到个人"}]'
@@ -90,15 +91,19 @@ multiprofitsharing.request:
                 account:
                   type: string
                   description: 分账接收方账号
+                  example: '190001001'
                 amount:
                   type: number
                   description: 分账金额
+                  example: 100
                 description:
                   type: string
                   description: 分账描述
+                  example: 分到商户
                 name:
                   type: string
                   description: 分账个人接收方姓名
+                  example: 分到个人
 multiprofitsharing.response:
   allOf:
     - $ref: './wxpay.service.yaml#/serviceprovider.subs'
@@ -129,11 +134,12 @@ multiprofitsharing.response:
           maxLength: 64
         receivers:
           type: string
+          format: jsonArrayLike
           description: 分账接收方列表`JSON`格式字符串
           maxLength: 10240
           xml:
             x-cdata: true
-          example: '[{"type": "MERCHANT_ID","account": "190001001","amount": 100,"description": "分到商户""detail_id": "36011111111111111111111""finish_time": "20180608170132""receiver_mchid": "1900000110""result": "SUCCESS"}, {"type": "PERSONAL_OPENID","account": "86693952","amount": 888,"description": "分到个人""detail_id": "36011111111111111111111""finish_time": "20180608170132""receiver_mchid": "1900000110""result": "SUCCESS"}]'
+          example: '[{"type": "MERCHANT_ID","account": "190001001","amount": 100,"description": "分到商户","detail_id": "36011111111111111111111","finish_time": "20180608170132","receiver_mchid": "1900000110""result": "SUCCESS"}, {"type": "PERSONAL_OPENID","account": "86693952","amount": 888,"description": "分到个人","detail_id": "36011111111111111111111","finish_time": "20180608170132","receiver_mchid": "1900000110","result": "SUCCESS"}]'
           x-json:
             type: array
             x-key: receiver
@@ -160,21 +166,27 @@ multiprofitsharing.response:
                 account:
                   type: string
                   description: 分账接收方账号
+                  example: '190001001'
                 amount:
                   type: number
                   description: 分账金额
+                  example: 100
                 description:
                   type: string
                   description: 分账描述
+                  example: 分到商户
                 detail_id:
                   type: string
                   description: 分账明细单号
+                  example: '36011111111111111111111'
                 finish_time:
                   type: string
                   description: 分账完成时间
+                  example: '20180608170132'
                 receiver_mchid:
                   type: string
                   description: 分账接收商户号
+                  example: '1900000110'
                 result:
                   type: string
                   description: 分账结果

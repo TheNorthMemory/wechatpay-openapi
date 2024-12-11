@@ -18,8 +18,15 @@ interface Partnerships
      */
     public function get(array $options = [
         'query' => [
-            'partner' => '{"type":"APPID","appid":"wx4e1916a585d1f4e9"}',
-            'authorized_data' => '{"business_type":"FAVOR_STOCK","stock_id":"2433405"}',
+            'partner' => \json_encode([
+                'type' => 'APPID | MERCHANT',
+                'appid' => 'wx4e1916a585d1f4e9',
+                'merchant_id' => '2480029552',
+            ]),
+            'authorized_data' => \json_encode([
+                'business_type' => 'FAVOR_STOCK | BUSIFAVOR_STOCK',
+                'stock_id' => '2433405',
+            ]),
             'limit' => 50,
             'offset' => 0,
         ],
@@ -32,8 +39,15 @@ interface Partnerships
      */
     public function getAsync(array $options = [
         'query' => [
-            'partner' => '{"type":"APPID","appid":"wx4e1916a585d1f4e9"}',
-            'authorized_data' => '{"business_type":"FAVOR_STOCK","stock_id":"2433405"}',
+            'partner' => \json_encode([
+                'type' => 'APPID | MERCHANT',
+                'appid' => 'wx4e1916a585d1f4e9',
+                'merchant_id' => '2480029552',
+            ]),
+            'authorized_data' => \json_encode([
+                'business_type' => 'FAVOR_STOCK | BUSIFAVOR_STOCK',
+                'stock_id' => '2433405',
+            ]),
             'limit' => 50,
             'offset' => 0,
         ],

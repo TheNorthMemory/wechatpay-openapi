@@ -16,7 +16,17 @@ interface Refundv2
      */
     public function post(array $options = [
         'xml' => [
-            'detail' => '{"goods_detail":[{"goods_id":"商品编码","wxpay_goods_id":"1001","goods_name":"iPhone6s 16G","refund_amount":528800,"refund_quantity":1,"price":528800},{"goods_id":"商品编码","wxpay_goods_id":"1001","goods_name":"iPhone6s 16G","refund_amount":528800,"refund_quantity":1,"price":608800}]}',
+            'detail' => \json_encode([
+                'cost_price' => 1,
+                'receipt_id' => 'wx123',
+                'goods_detail' => [[
+                    'goods_id' => '商品编码',
+                    'wxpay_goods_id' => '1001',
+                    'goods_name' => 'iPhone6s 16G',
+                    'quantity' => 1,
+                    'price' => 528800,
+                ],],
+            ]),
             'appid' => 'wx8888888888888888',
             'sub_appid' => 'wx8888888888888888',
             'mch_id' => '1900000109',
@@ -42,7 +52,17 @@ interface Refundv2
      */
     public function postAsync(array $options = [
         'xml' => [
-            'detail' => '{"goods_detail":[{"goods_id":"商品编码","wxpay_goods_id":"1001","goods_name":"iPhone6s 16G","refund_amount":528800,"refund_quantity":1,"price":528800},{"goods_id":"商品编码","wxpay_goods_id":"1001","goods_name":"iPhone6s 16G","refund_amount":528800,"refund_quantity":1,"price":608800}]}',
+            'detail' => \json_encode([
+                'cost_price' => 1,
+                'receipt_id' => 'wx123',
+                'goods_detail' => [[
+                    'goods_id' => '商品编码',
+                    'wxpay_goods_id' => '1001',
+                    'goods_name' => 'iPhone6s 16G',
+                    'quantity' => 1,
+                    'price' => 528800,
+                ],],
+            ]),
             'appid' => 'wx8888888888888888',
             'sub_appid' => 'wx8888888888888888',
             'mch_id' => '1900000109',

@@ -49,8 +49,10 @@ report.request:
       maxLength: 16
     trades:
       type: string
+      format: jsonArrayLike
       description: 上报数据包`JSON`格式字符串
       maxLength: 1024
+      example: '[{"out_trade_no":"out_trade_no_test_1","begin_time": "20160602203256","end_time": "20160602203257","state": "OK","err_msg": ""}]'
       x-json:
         type: array
         x-key: transaction
@@ -66,15 +68,19 @@ report.request:
             out_trade_no:
               type: string
               description: 商户订单号
+              example: out_trade_no_test_1
             begin_time:
               type: string
               description: 交易开始时间（扫码时间）
+              example: '20160602203256'
             end_time:
               type: string
               description: 交易完成时间
+              example: '20160602203257'
             state:
               type: string
               description: 交易结果
+              example: OK
               enum:
                 - OK
                 - FAIL
@@ -82,6 +88,7 @@ report.request:
             err_msg:
               type: string
               description: 自定义的错误描述信息
+              example: ''
 report.response:
   allOf:
     - type: object

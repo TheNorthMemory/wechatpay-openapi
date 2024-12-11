@@ -204,6 +204,7 @@ post:
                 xml:
                   x-cdata: true
                 type: string
+                format: jsonObjectLike
                 description: 车牌信息
                 example: '{"plate_number_info":[{"plate_number":"粤B888888","channel_type":"ETC"}]}'
                 maxLength: 512

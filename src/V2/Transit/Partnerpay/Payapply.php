@@ -33,7 +33,15 @@ interface Payapply
             'trade_type' => 'PAP',
             'contract_id' => 'Wx15463511252015071056489715',
             'trade_scene' => 'METRO',
-            'scene_info' => '{"scene_info":{"start_time":"20170826114339","end_time":"20170826114339","qrcode_hash":"a437d98bbf07bdde2942c99f6a2ab88a72b60aa747fce54b093c6","start_station":"西单","end_station":"天安门西"}}',
+            'scene_info' => \json_encode([
+                'scene_info' => [
+                    'start_time' => '20170826104339',
+                    'end_time' => '20170826114339',
+                    'qrcode_hash' => 'a756836e7432437d98bbf07bdde2942c99f6a2ab88a72b60aa747fce54b093c6',
+                    'start_station' => '西单',
+                    'end_station' => '天安门西',
+                ],
+            ]),
             'clientip' => '119.145.83.6',
             'deviceid' => 'baf04e6bbbd06f7b1a197d18ed53b7f1',
             'mobile' => '18933432355',
@@ -70,7 +78,15 @@ interface Payapply
             'trade_type' => 'PAP',
             'contract_id' => 'Wx15463511252015071056489715',
             'trade_scene' => 'METRO',
-            'scene_info' => '{"scene_info":{"start_time":"20170826114339","end_time":"20170826114339","qrcode_hash":"a437d98bbf07bdde2942c99f6a2ab88a72b60aa747fce54b093c6","start_station":"西单","end_station":"天安门西"}}',
+            'scene_info' => \json_encode([
+                'scene_info' => [
+                    'start_time' => '20170826104339',
+                    'end_time' => '20170826114339',
+                    'qrcode_hash' => 'a756836e7432437d98bbf07bdde2942c99f6a2ab88a72b60aa747fce54b093c6',
+                    'start_station' => '西单',
+                    'end_station' => '天安门西',
+                ],
+            ]),
             'clientip' => '119.145.83.6',
             'deviceid' => 'baf04e6bbbd06f7b1a197d18ed53b7f1',
             'mobile' => '18933432355',

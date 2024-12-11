@@ -21,7 +21,10 @@ interface Profitsharingremovereceiver
             'appid' => 'wx8888888888888888',
             'sub_appid' => 'wx8888888888888888',
             'sign_type' => 'HMAC-SHA256',
-            'receiver' => '{"type": "MERCHANT_ID","account": "190001001"}',
+            'receiver' => \json_encode([
+                'type' => 'MERCHANT_ID | PERSONAL_OPENID | PERSONAL_SUB_OPENID',
+                'account' => '190001001',
+            ]),
         ],
     ]): ResponseInterface;
 
@@ -37,7 +40,10 @@ interface Profitsharingremovereceiver
             'appid' => 'wx8888888888888888',
             'sub_appid' => 'wx8888888888888888',
             'sign_type' => 'HMAC-SHA256',
-            'receiver' => '{"type": "MERCHANT_ID","account": "190001001"}',
+            'receiver' => \json_encode([
+                'type' => 'MERCHANT_ID | PERSONAL_OPENID | PERSONAL_SUB_OPENID',
+                'account' => '190001001',
+            ]),
         ],
     ]): PromiseInterface;
 }

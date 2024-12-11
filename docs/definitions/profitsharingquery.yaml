@@ -96,6 +96,7 @@ profitsharingquery.response:
             - FINISHED
         receivers:
           type: string
+          format: jsonArrayLike
           description: 分账接收方列表`JSON`格式字符串
           xml:
             x-cdata: true

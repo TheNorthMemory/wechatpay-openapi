@@ -28,8 +28,32 @@ interface Combinedorder
             'trade_type' => 'JSAPI',
             'product_id' => '1234567890',
             'combine_openid' => '120061098828009406',
-            'scene_info' => '{"h5_info": {"type":"IOS","app_name": "王者荣耀","bundle_id": "com.tencent.wzryIOS"}}',
-            'sub_order_list' => '{"order_list": [{"appid": "wxdace645e0bc2c424","attach": "深圳分店","body": "子订单1","fee_type": "CNY","mch_id": "1900009001","out_trade_no": "OD201708030001","total_fee": 1234}],"order_num": 3}',
+            'scene_info' => \json_encode([
+                'device_id' => 'POS1:1',
+                'payer_client_ip' => '14.17.22.32',
+                'h5_info' => [
+                    'type' => 'iOS | Android | Wap',
+                    'app_name' => '王者荣耀',
+                    'app_url' => '',
+                    'bundle_id' => 'com.tencent.wzryIOS',
+                    'package_name' => '',
+                ],
+            ]),
+            'sub_order_list' => \json_encode([
+                'order_num' => 2,
+                'order_list' => [[
+                    'appid' => 'wxdace645e0bc2c424',
+                    'mch_id' => '1900009001',
+                    'body' => '子订单1',
+                    'detail' => '商品详细描述',
+                    'attach' => '深圳分店',
+                    'out_trade_no' => 'OD201708030001',
+                    'fee_type' => 'CNY',
+                    'total_fee' => 88,
+                    'sub_appid' => 'wxd678efh567hg6787',
+                    'sub_mch_id' => '1256324589',
+                ],],
+            ]),
         ],
     ]): ResponseInterface;
 
@@ -52,8 +76,32 @@ interface Combinedorder
             'trade_type' => 'JSAPI',
             'product_id' => '1234567890',
             'combine_openid' => '120061098828009406',
-            'scene_info' => '{"h5_info": {"type":"IOS","app_name": "王者荣耀","bundle_id": "com.tencent.wzryIOS"}}',
-            'sub_order_list' => '{"order_list": [{"appid": "wxdace645e0bc2c424","attach": "深圳分店","body": "子订单1","fee_type": "CNY","mch_id": "1900009001","out_trade_no": "OD201708030001","total_fee": 1234}],"order_num": 3}',
+            'scene_info' => \json_encode([
+                'device_id' => 'POS1:1',
+                'payer_client_ip' => '14.17.22.32',
+                'h5_info' => [
+                    'type' => 'iOS | Android | Wap',
+                    'app_name' => '王者荣耀',
+                    'app_url' => '',
+                    'bundle_id' => 'com.tencent.wzryIOS',
+                    'package_name' => '',
+                ],
+            ]),
+            'sub_order_list' => \json_encode([
+                'order_num' => 2,
+                'order_list' => [[
+                    'appid' => 'wxdace645e0bc2c424',
+                    'mch_id' => '1900009001',
+                    'body' => '子订单1',
+                    'detail' => '商品详细描述',
+                    'attach' => '深圳分店',
+                    'out_trade_no' => 'OD201708030001',
+                    'fee_type' => 'CNY',
+                    'total_fee' => 88,
+                    'sub_appid' => 'wxd678efh567hg6787',
+                    'sub_mch_id' => '1256324589',
+                ],],
+            ]),
         ],
     ]): PromiseInterface;
 }

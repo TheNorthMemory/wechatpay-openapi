@@ -90,6 +90,7 @@ micro.submit.request:
           maxLength: 18
         id_card_valid_time:
           type: string
+          format: jsonArrayLike
           description: 身份证有效期限`JSON`格式字符串
           example: '["1970-01-01","长期"]'
           maxLength: 50
@@ -98,7 +99,7 @@ micro.submit.request:
             x-key: period
             description: 有效期限
             example:
-              - 1970-01-01
+              - '1970-01-01'
               - 长期
             items:
               type: string
@@ -188,6 +189,7 @@ micro.submit.request:
           nullable: true
         business_addition_pics:
           type: string
+          format: jsonArrayLike
           description: 补充材料
           example: '["123","456"]'
           maxLength: 50

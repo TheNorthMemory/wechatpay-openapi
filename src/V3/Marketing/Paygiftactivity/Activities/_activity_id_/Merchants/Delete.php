@@ -17,7 +17,7 @@ interface Delete
     public function post(array $options = [
         'activity_id' => '',
         'json' => [
-            'merchant_id_list' => ['string'],
+            'merchant_id_list' => ['100123456'],
             'delete_request_no' => '100002322019090134234sfdf',
         ],
     ]): ResponseInterface;
@@ -30,7 +30,7 @@ interface Delete
     public function postAsync(array $options = [
         'activity_id' => '',
         'json' => [
-            'merchant_id_list' => ['string'],
+            'merchant_id_list' => ['100123456'],
             'delete_request_no' => '100002322019090134234sfdf',
         ],
     ]): PromiseInterface;

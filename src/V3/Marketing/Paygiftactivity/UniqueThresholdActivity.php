@@ -42,7 +42,7 @@ interface UniqueThresholdActivity
                 'delivery_user_category' => 'BUSIFAVOR',
                 'merchant_member_appid' => '',
                 'payment_mode' => [
-                    'payment_scene_list' => ['string'],
+                    'payment_scene_list' => ['APP_SCENE'],
                     'payment_method_information' => [
                         'payment_method' => 'CFT | SPECIFIC_BANK_CARD',
                         'bank_abbreviation' => '',
@@ -98,7 +98,7 @@ interface UniqueThresholdActivity
                 'delivery_user_category' => 'BUSIFAVOR',
                 'merchant_member_appid' => '',
                 'payment_mode' => [
-                    'payment_scene_list' => ['string'],
+                    'payment_scene_list' => ['APP_SCENE'],
                     'payment_method_information' => [
                         'payment_method' => 'CFT | SPECIFIC_BANK_CARD',
                         'bank_abbreviation' => '',

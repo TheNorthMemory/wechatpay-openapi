@@ -47,7 +47,7 @@ interface App
             'time_start' => '2019-12-31T15:59:60+08:00',
             'time_expire' => '2019-12-31T15:59:60+08:00',
             'notify_url' => 'https://yourapp.com/notify',
-            'limit_pay' => ['string'],
+            'limit_pay' => ['no_balance'],
             'contract_info' => [
                 'mchid' => '1900000109',
                 'appid' => 'wxd678efh567hg6787',
@@ -97,7 +97,7 @@ interface App
             'time_start' => '2019-12-31T15:59:60+08:00',
             'time_expire' => '2019-12-31T15:59:60+08:00',
             'notify_url' => 'https://yourapp.com/notify',
-            'limit_pay' => ['string'],
+            'limit_pay' => ['no_balance'],
             'contract_info' => [
                 'mchid' => '1900000109',
                 'appid' => 'wxd678efh567hg6787',

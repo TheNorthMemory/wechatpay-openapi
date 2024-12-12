@@ -43,7 +43,7 @@ interface Native
             'time_start' => '2019-12-31T15:59:60+08:00',
             'time_expire' => '2019-12-31T15:59:60+08:00',
             'notify_url' => 'https://yourapp.com/notify',
-            'limit_pay' => ['string'],
+            'limit_pay' => ['no_balance'],
             'combine_payer_info' => [
                 'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
                 'sub_openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
@@ -85,7 +85,7 @@ interface Native
             'time_start' => '2019-12-31T15:59:60+08:00',
             'time_expire' => '2019-12-31T15:59:60+08:00',
             'notify_url' => 'https://yourapp.com/notify',
-            'limit_pay' => ['string'],
+            'limit_pay' => ['no_balance'],
             'combine_payer_info' => [
                 'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
                 'sub_openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',

@@ -39,12 +39,12 @@ interface _application_id_
                 'activity_rate' => '0.6',
                 'activity_apply_information' => [[
                     'apply_material_id' => 'SCHOOL_QUALIFICATION_PROOF',
-                    'apply_material_information' => ['MediaId'],
+                    'apply_material_information' => ['0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMAjm'],
                 ],],
             ],
             'additional_information' => [
                 'additional_message' => '特殊情况，说明原因',
-                'additional_material' => ['MediaId'],
+                'additional_material' => ['0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMAjm'],
             ],
         ],
     ]): ResponseInterface;
@@ -61,12 +61,12 @@ interface _application_id_
                 'activity_rate' => '0.6',
                 'activity_apply_information' => [[
                     'apply_material_id' => 'SCHOOL_QUALIFICATION_PROOF',
-                    'apply_material_information' => ['MediaId'],
+                    'apply_material_information' => ['0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMAjm'],
                 ],],
             ],
             'additional_information' => [
                 'additional_message' => '特殊情况，说明原因',
-                'additional_material' => ['MediaId'],
+                'additional_material' => ['0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMAjm'],
             ],
         ],
     ]): PromiseInterface;

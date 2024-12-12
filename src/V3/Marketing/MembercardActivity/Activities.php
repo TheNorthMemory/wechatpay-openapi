@@ -59,7 +59,7 @@ interface Activities
                 ],
                 'payment_setting' => [
                     'payment_mode' => [
-                        'payment_scene_list' => ['string'],
+                        'payment_scene_list' => ['APP'],
                     ],
                     'limit_bank' => 'CFT',
                     'goods_tags' => ['string'],
@@ -125,7 +125,7 @@ interface Activities
                 ],
                 'payment_setting' => [
                     'payment_mode' => [
-                        'payment_scene_list' => ['string'],
+                        'payment_scene_list' => ['APP'],
                     ],
                     'limit_bank' => 'CFT',
                     'goods_tags' => ['string'],

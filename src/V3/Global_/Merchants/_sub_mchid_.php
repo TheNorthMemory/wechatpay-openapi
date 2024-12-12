@@ -85,7 +85,7 @@ interface _sub_mchid_
             'apply_h5_payment' => true,
             'h5_payment_apply_info' => [
                 'website_url' => 'https://qq.com',
-                'domains' => ['string'],
+                'domains' => ['www.qq.com'],
             ],
         ],
     ]): ResponseInterface;
@@ -138,7 +138,7 @@ interface _sub_mchid_
             'apply_h5_payment' => true,
             'h5_payment_apply_info' => [
                 'website_url' => 'https://qq.com',
-                'domains' => ['string'],
+                'domains' => ['www.qq.com'],
             ],
         ],
     ]): PromiseInterface;

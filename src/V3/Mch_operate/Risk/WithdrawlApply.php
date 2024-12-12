@@ -46,7 +46,7 @@ interface WithdrawlApply
                 ],],
             ],
             'additional_materials' => [
-                'additional_media' => ['MediaId'],
+                'additional_media' => ['jTpGmxUX3FBWVQ5NFQ'],
             ],
             'remark' => '特殊理由',
         ],
@@ -90,7 +90,7 @@ interface WithdrawlApply
                 ],],
             ],
             'additional_materials' => [
-                'additional_media' => ['MediaId'],
+                'additional_media' => ['jTpGmxUX3FBWVQ5NFQ'],
             ],
             'remark' => '特殊理由',
         ],

@@ -20,7 +20,7 @@ interface UpdateRefundProgress
             'action' => 'REJECT | APPROVE',
             'launch_refund_day' => 3,
             'reject_reason' => '拒绝退款',
-            'reject_media_list' => ['MediaId'],
+            'reject_media_list' => ['file23578_21798531.jpg'],
             'remark' => '已处理完成',
         ],
     ]): ResponseInterface;
@@ -36,7 +36,7 @@ interface UpdateRefundProgress
             'action' => 'REJECT | APPROVE',
             'launch_refund_day' => 3,
             'reject_reason' => '拒绝退款',
-            'reject_media_list' => ['MediaId'],
+            'reject_media_list' => ['file23578_21798531.jpg'],
             'remark' => '已处理完成',
         ],
     ]): PromiseInterface;

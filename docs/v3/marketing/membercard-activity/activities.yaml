@@ -200,7 +200,7 @@ post:
                         description: 支付场景列表
                         items:
                           type: string
-                        example: APP
+                          example: APP
                   limit_bank:
                     type: string
                     description: 指定银行的简称

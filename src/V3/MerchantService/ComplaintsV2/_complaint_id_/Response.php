@@ -19,7 +19,7 @@ interface Response
         'json' => [
             'complainted_mchid' => '1900012181',
             'response_content' => '已与用户沟通解决',
-            'response_images' => ['MediaId'],
+            'response_images' => ['file23578_21798531.jpg'],
             'jump_url' => 'https://www.xxx.com/notify',
             'jump_url_text' => '查看订单详情',
             'mini_program_jump_info' => [
@@ -40,7 +40,7 @@ interface Response
         'json' => [
             'complainted_mchid' => '1900012181',
             'response_content' => '已与用户沟通解决',
-            'response_images' => ['MediaId'],
+            'response_images' => ['file23578_21798531.jpg'],
             'jump_url' => 'https://www.xxx.com/notify',
             'jump_url_text' => '查看订单详情',
             'mini_program_jump_info' => [

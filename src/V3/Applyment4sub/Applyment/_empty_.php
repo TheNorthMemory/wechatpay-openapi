@@ -102,7 +102,7 @@ interface _empty_
                 'merchant_shortname' => '',
                 'service_phone' => '',
                 'sales_info' => [
-                    'sales_scenes_type' => ['string'],
+                    'sales_scenes_type' => ['SALES_SCENES_STORE'],
                     'biz_store_info' => [
                         'biz_store_name' => '',
                         'biz_address_code' => '',
@@ -261,7 +261,7 @@ interface _empty_
                 'merchant_shortname' => '',
                 'service_phone' => '',
                 'sales_info' => [
-                    'sales_scenes_type' => ['string'],
+                    'sales_scenes_type' => ['SALES_SCENES_STORE'],
                     'biz_store_info' => [
                         'biz_store_name' => '',
                         'biz_address_code' => '',

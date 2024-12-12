@@ -46,7 +46,7 @@ interface Cards
                 'balance_url' => 'https://xxx.com',
             ],
             'user_information_form' => [
-                'common_field_list' => ['string'],
+                'common_field_list' => ['USER_FORM_FLAG_MOBILE'],
                 'custom_field_list' => [[
                     'type' => 'TEXT | SELECT | RADIO | CHECK_BOX',
                     'name' => '喜欢的运动',
@@ -98,7 +98,7 @@ interface Cards
                 'balance_url' => 'https://xxx.com',
             ],
             'user_information_form' => [
-                'common_field_list' => ['string'],
+                'common_field_list' => ['USER_FORM_FLAG_MOBILE'],
                 'custom_field_list' => [[
                     'type' => 'TEXT | SELECT | RADIO | CHECK_BOX',
                     'name' => '喜欢的运动',

@@ -28,7 +28,7 @@ interface App
             'time_expire' => '2018-06-08T10:34:56+08:00',
             'notify_url' => 'https://www.weixin.qq.com/wxpay/pay.php',
             'goods_tag' => 'WXG',
-            'limit_pay' => ['string'],
+            'limit_pay' => ['no_balance'],
             'support_fapiao' => true,
             'detail' => [
                 'cost_price' => 608800,
@@ -73,7 +73,7 @@ interface App
             'time_expire' => '2018-06-08T10:34:56+08:00',
             'notify_url' => 'https://www.weixin.qq.com/wxpay/pay.php',
             'goods_tag' => 'WXG',
-            'limit_pay' => ['string'],
+            'limit_pay' => ['no_balance'],
             'support_fapiao' => true,
             'detail' => [
                 'cost_price' => 608800,

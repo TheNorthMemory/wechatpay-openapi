@@ -48,7 +48,7 @@ interface Jsapi
             'time_start' => '2019-12-31T15:59:60+08:00',
             'time_expire' => '2019-12-31T15:59:60+08:00',
             'notify_url' => 'https://yourapp.com/notify',
-            'limit_pay' => ['string'],
+            'limit_pay' => ['no_balance'],
         ],
     ]): ResponseInterface;
 
@@ -91,7 +91,7 @@ interface Jsapi
             'time_start' => '2019-12-31T15:59:60+08:00',
             'time_expire' => '2019-12-31T15:59:60+08:00',
             'notify_url' => 'https://yourapp.com/notify',
-            'limit_pay' => ['string'],
+            'limit_pay' => ['no_balance'],
         ],
     ]): PromiseInterface;
 }

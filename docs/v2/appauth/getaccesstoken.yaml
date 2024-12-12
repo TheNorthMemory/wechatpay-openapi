@@ -1,0 +1,107 @@
+get:
+  x-last-updated-at: 2021.11.10
+  tags:
+    - APIv2∙实名校验
+  summary: 通过code换取accesstoken
+  description: 获取微信用户的授权, 需要使用微信支付提供的 OAuth2.0 服务.用授权小程序得到的授权码调用OAuth2.0接口access_token. [官方文档](https://pay.weixin.qq.com/wiki/doc/api/realnameauth.php?chapter=60_2&index=3)
+  consumes:
+    - application/xml
+  produces:
+    - application/json
+  parameters:
+    - name: mch_id
+      in: query
+      type: string
+      required: true
+      description: 商户号
+      example: '1200009811'
+    - name: appid
+      in: query
+      type: string
+      required: true
+      description: 应用ID
+      example: wxcbda96de0b165486
+    - name: openid
+      in: query
+      type: string
+      required: true
+      description: 微信openID
+      example: baf04e6bbbd06f7b1a197d18ed53b7f1
+    - name: code
+      in: query
+      type: string
+      required: true
+      description: 第一步返回的auth_code
+      example: wxcbda96de0b165489
+    - name: grant_type
+      in: query
+      type: string
+      required: true
+      description: 固定值`authorization_code`
+      example: 'authorization_code'
+      enum:
+        - authorization_code
+    - name: scope
+      in: query
+      type: string
+      required: true
+      description: 应用授权作用域
+      example: 'pay_identity'
+      enum:
+        - pay_identity
+    - name: sign_type
+      in: query
+      type: string
+      required: true
+      description: 签名类型
+      example: HMAC-SHA256
+      enum:
+        - HMAC-SHA256
+    - name: sign
+      in: query
+      required: true
+      type: string
+      description: 签名
+      example: C380BEC2BFD727A4B6845133519F3AD6
+  responses:
+    '200':
+      schema:
+        allOf:
+          - type: object
+            required:
+              - retcode
+              - retmsg
+            properties:
+              retcode:
+                type: number
+                description: 返回状态码
+                example: 0
+                enum:
+                  - 0
+                  - -1
+              retmsg:
+                type: string
+                description: 处理成功，返回ok
+                example: OK
+          - type: object
+            required:
+              - access_token
+              - access_token_expire_in
+              - refresh_token
+              - refresh_token_expire_in
+              - retmsg
+            properties:
+              access_token:
+                type: string
+                description: 接口调用凭证
+              access_token_expire_in:
+                type: integer
+                format: int32
+                description: 请求返回的access_token过期时间，以秒为单位，有效期较短
+              refresh_token:
+                type: string
+                description: refresh令牌
+              refresh_token_expire_in:
+                type: number
+                format: int32
+                description: refresh_token过期时间，以秒为单位，有效期较长

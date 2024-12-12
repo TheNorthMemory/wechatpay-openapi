@@ -360,3 +360,5 @@ WechatpayNotificationEventType:
     - FACEPAY.USER_STATE_CHANGE
     # @see [个人收款-结算回调通知](https://pay.weixin.qq.com/docs/merchant/apis/personal-collections/settlement-notice.html)
     - SETTLEMENT.SUCCESS
+    # https://pay.weixin.qq.com/doc/v3/partner/4013049135
+    - MCHWITHDRAW.CHANGE

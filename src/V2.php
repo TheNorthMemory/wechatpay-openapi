@@ -8,6 +8,7 @@ namespace WeChatPay\OpenAPI;
  * @property-read V2\Vehicle $vehicle
  * @property-read V2\Transit $transit
  * @property-read V2\Tools $tools
+ * @property-read V2\Secsvc $secsvc
  * @property-read V2\Secapi $secapi
  * @property-read V2\Sandboxnew $sandboxnew
  * @property-read V2\Risk $risk
@@ -23,6 +24,7 @@ namespace WeChatPay\OpenAPI;
  * @property-read V2\CgiBin $cgiBin
  * @property-read V2\Billcommentsp $billcommentsp
  * @property-read V2\Applyment $applyment
+ * @property-read V2\Appauth $appauth
  */
 interface V2
 {

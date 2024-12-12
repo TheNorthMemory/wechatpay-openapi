@@ -7,7 +7,7 @@ info:
     整理自[官方文档中心](https://pay.weixin.qq.com/wiki/doc/apiv3/index.shtml)
     本[项目/工具地址](https://github.com/TheNorthMemory/wechatpay-openapi)
     **访问第一次加载比较慢，请耐心等待大约1-2分钟不等(小文件下载比较多)。**
-  version: 0.15.39
+  version: 1.1.1
 schemes:
   - https
 consumes:
@@ -177,6 +177,10 @@ paths:
     $ref: ./hk/v3/transactions/out-trade-no/{out_trade_no}/close.yaml
   /hk/v3/transactions/out-trade-no/{out_trade_no}/reverse:
     $ref: ./hk/v3/transactions/out-trade-no/{out_trade_no}/reverse.yaml
+  /appauth/authindex:
+    $ref: ./v2/appauth/authindex.yaml
+  /appauth/getaccesstoken:
+    $ref: ./v2/appauth/getaccesstoken.yaml
   /applyment/micro/getstate:
     $ref: ./v2/applyment/micro/getstate.yaml
   /applyment/micro/getupgradestate:
@@ -267,8 +271,14 @@ paths:
     $ref: ./v2/papay/entrustweb.yaml
   /papay/h5entrustweb:
     $ref: ./v2/papay/h5entrustweb.yaml
+  /papay/partner/entrustweb:
+    $ref: ./v2/papay/partner/entrustweb.yaml
+  /papay/partner/h5entrustweb:
+    $ref: ./v2/papay/partner/h5entrustweb.yaml
   /papay/partner/paporderquery:
     $ref: ./v2/papay/partner/paporderquery.yaml
+  /papay/partner/preentrustweb:
+    $ref: ./v2/papay/partner/preentrustweb.yaml
   /papay/partner/querycontract:
     $ref: ./v2/papay/partner/querycontract.yaml
   /papay/preentrustweb:
@@ -299,14 +309,8 @@ paths:
     $ref: ./v2/pay/paporderquery.yaml
   /pay/pappayapply:
     $ref: ./v2/pay/pappayapply.yaml
-  /pay/partner/entrustweb:
-    $ref: ./v2/pay/partner/entrustweb.yaml
-  /pay/partner/h5entrustweb:
-    $ref: ./v2/pay/partner/h5entrustweb.yaml
   /pay/partner/pappayapply:
     $ref: ./v2/pay/partner/pappayapply.yaml
-  /pay/partner/preentrustweb:
-    $ref: ./v2/pay/partner/preentrustweb.yaml
   /pay/profitsharingaddreceiver:
     $ref: ./v2/pay/profitsharingaddreceiver.yaml
   /pay/profitsharingmerchantratioquery:
@@ -389,12 +393,24 @@ paths:
     $ref: ./v2/secapi/pay/refundv2.yaml
   /secapi/pay/reverse:
     $ref: ./v2/secapi/pay/reverse.yaml
+  /secsvc/getrealnameinfo:
+    $ref: ./v2/secsvc/getrealnameinfo.yaml
+  /secsvc/realnameauth:
+    $ref: ./v2/secsvc/realnameauth.yaml
   /tools/authcodetoopenid:
     $ref: ./v2/tools/authcodetoopenid.yaml
   /tools/shorturl:
     $ref: ./v2/tools/shorturl.yaml
+  /transit/partnerpay/payapply:
+    $ref: ./v2/transit/partnerpay/payapply.yaml
   /transit/partnerpay/queryorder:
     $ref: ./v2/transit/partnerpay/queryorder.yaml
+  /transit/partnerpay/querystate:
+    $ref: ./v2/transit/partnerpay/querystate.yaml
+  /transit/pay/payapply:
+    $ref: ./v2/transit/pay/payapply.yaml
+  /transit/pay/querystate:
+    $ref: ./v2/transit/pay/querystate.yaml
   /transit/queryorder:
     $ref: ./v2/transit/queryorder.yaml
   /vehicle/partnerpay/notification:
@@ -1147,6 +1163,8 @@ paths:
     $ref: ./v3/papay/contracts/{contract_id}/fail-notify.yaml
   /v3/papay/contracts/{contract_id}/notify:
     $ref: ./v3/papay/contracts/{contract_id}/notify.yaml
+  /v3/papay/entrust-sign/contracts/pre-entrust-sign:
+    $ref: ./v3/papay/entrust-sign/contracts/pre-entrust-sign.yaml
   /v3/papay/insurance-pay/policy-periods/contract-id/{contract_id}/policy-period-id/{policy_period_id}:
     $ref: ./v3/papay/insurance-pay/policy-periods/contract-id/{contract_id}/policy-period-id/{policy_period_id}.yaml
   /v3/papay/insurance-pay/policy-periods/contract-id/{contract_id}/policy-period-id/{policy_period_id}/schedule:

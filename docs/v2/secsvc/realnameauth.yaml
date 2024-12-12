@@ -1,0 +1,210 @@
+post:
+  x-base-uri: https://fraud.mch.weixin.qq.com/
+  x-last-updated-at: 2021.11.10
+  tags:
+    - APIv2∙实名校验
+  summary: 微信支付实名验证
+  description: 取得token后调用本接口验证微信用户的姓名和身份证信息是否匹配 [官方文档](https://pay.weixin.qq.com/wiki/doc/api/realnameauth.php?chapter=60_2&index=3)
+  consumes:
+    - application/xml
+  produces:
+    - application/xml
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        xml:
+          name: xml
+        required:
+          - version
+          - mch_id
+          - appid
+          - openid
+          - real_name
+          - cred_type
+          - cred_id
+          - nonce_str
+          - access_token
+          - sign
+          - sign_type
+        properties:
+          version:
+            type: string
+            description: 接口版本号
+            example: '1.0'
+            maxLength: 32
+            enum:
+              - '1.0'
+              - '1.1'
+          mch_id:
+            type: string
+            description: 商户号
+            example: '1900000109'
+            maxLength: 32
+          appid:
+            type: string
+            description: 公众账号ID
+            example: wx2421b1c4370ec43b
+            maxLength: 32
+          openid:
+            type: string
+            description: 用户标识
+            example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+            maxLength: 128
+          real_name:
+            type: string
+            description: 真实姓名
+            example: 刘某某
+            maxLength: 64
+          cred_type:
+            type: number
+            description: 证件类型
+            example: 1
+            enum:
+              - 1
+              - 2
+              - 5
+              - 9
+              - 12
+              - 17
+              - 18
+          cred_id:
+            type: string
+            description: 证件号码
+            example: '440000000000000000'
+            maxLength: 32
+          nonce_str:
+            type: string
+            description: 随机字符串
+            example: 5K8264ILTKCH16CQ2502SI8ZNMTM67Vs
+            maxLength: 32
+          access_token:
+            type: string
+            description: 步骤2或步骤3获取到的access_token
+            example: 81_...
+            maxLength: 128
+          sign:
+            type: string
+            description: 签名
+            example: C380BEC2BFD727A4B6845133519F3AD6
+            maxLength: 128
+          sign_type:
+            type: string
+            description: 签名类型
+            example: 'HMAC-SHA256'
+            maxLength: 32
+            enum:
+              - HMAC-SHA256
+              - MD5
+  responses:
+    '200':
+      description: ''
+      schema:
+        allOf:
+          - type: object
+            xml:
+              name: xml
+            required:
+              - return_code
+            properties:
+              return_code:
+                type: string
+                description: 返回状态码
+                example: SUCCESS
+                maxLength: 16
+                enum:
+                  - SUCCESS
+                  - FAIL
+              return_msg:
+                type: string
+                description: 错误码描述
+                example: 签名失败
+                maxLength: 128
+                nullable: true
+              error_code:
+                type: string
+                description: 错误码
+                example: '20002'
+                maxLength: 32
+                nullable: true
+              error_code_des:
+                type: string
+                description: 错误代码描述
+                example: 商户号信息有误，请检查修改后重试
+                maxLength: 128
+                nullable: true
+          - type: object
+            xml:
+              name: xml
+            required:
+              - result_code
+            properties:
+              sign:
+                type: string
+                description: 签名
+                example: C380BEC2BFD727A4B6845133519F3AD6
+                maxLength: 64
+              result_code:
+                type: string
+                description: 业务结果
+                example: SUCCESS
+                maxLength: 16
+                enum:
+                  - SUCCESS
+                  - FAIL
+              appid:
+                type: string
+                description: 公众账号ID
+                example: wx2421b1c4370ec43b
+                maxLength: 32
+              mch_id:
+                type: string
+                description: 商户号
+                example: '1900000109'
+                maxLength: 32
+              nonce_str:
+                type: string
+                description: 随机字符串
+                example: 5K8264ILTKCH16CQ2502SI8ZNMTM67Vs
+                maxLength: 32
+              openid:
+                type: string
+                description: 用户标识
+                example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+                maxLength: 128
+              access_token:
+                type: string
+                description: 步骤2或步骤3获取到的access_token
+                example: 81_...
+                maxLength: 128
+              verify_openid:
+                type: string
+                description: 有多个结果时用分号”;”连接
+                example: V_OP_NM_MA
+                maxLength: 32
+                nullable: true
+                enum:
+                  - V_OP_NA
+                  - V_OP_NM_MA
+                  - V_OP_NM_UM
+              verify_real_name:
+                type: string
+                description: 当verify_openid为V_OP_NM_MA时返回
+                example: V_NM_ID_MA
+                maxLength: 32
+                nullable: true
+                enum:
+                  - V_NM_ID_MA
+                  - V_NM_ID_UM
+                  - V_NM_ID_TYPE_UM
+              bind_bankcard:
+                type: string
+                description: 当verify_real_name为V_NM_ID_MA时返回
+                example: V_NM_ID_MA
+                maxLength: 32
+                nullable: true
+                enum:
+                  - YES
+                  - NO

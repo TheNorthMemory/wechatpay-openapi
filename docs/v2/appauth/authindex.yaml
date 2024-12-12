@@ -1,0 +1,56 @@
+get:
+  x-base-uri: https://payapp.mch.weixin.qq.com/
+  x-last-updated-at: 2021.11.10
+  tags:
+    - APIv2∙实名校验
+  summary: 通过code换取accesstoken
+  description: 使用标准OAuth2.0协议接入微信支付，在用户授权的条件下，将可以做到访问用户资源，使用接口调用用户功能（如获取用户实名信息等 [官方文档](https://pay.weixin.qq.com/wiki/doc/api/realnameauth.php?chapter=60_1&index=2)
+  consumes:
+    - application/xml
+  produces:
+    - application/xml
+  parameters:
+    - name: mch_id
+      in: query
+      type: string
+      required: true
+      description: 商户号
+      example: '1230000109'
+    - name: appid
+      in: query
+      type: string
+      required: true
+      description: 应用ID
+      example: wxd678efh567hg6787
+    - name: redirect_uri
+      in: query
+      type: string
+      required: true
+      description: 重定向地址，需要urlencode，需在支付安全域下(商户平台上配置“支付授权目录”)。
+      example: https://weixin.qq.com/i-am-a-fake-uri
+    - name: response_type
+      in: query
+      type: string
+      required: true
+      description: 固定填`code`
+      example: code
+      enum:
+        - code
+    - name: scope
+      in: query
+      type: string
+      required: true
+      description: 应用授权作用域
+      example: pay_identity
+      enum:
+        - pay_identity
+        - pay_realname
+    - name: state
+      in: query
+      type: string
+      required: true
+      description: 随机字符串，回调时将带上该参数
+      example: STATE
+  responses:
+    '302':
+      schema: {}

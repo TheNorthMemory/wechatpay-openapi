@@ -25,8 +25,8 @@ interface VerifyCertificate
             'customs' => 'SHANGHAI_ZS',
             'merchant_customs_no' => '123456',
             'certificate_type' => 'IDCARD',
-            'certificate_id' => 'Rsa::encrypt(0101211X, WechatpayPlatformCertificateInstance, OPENSSL_PKCS1_PADDING)',
-            'certificate_name' => 'Rsa::encrypt(张三, WechatpayPlatformCertificateInstance, OPENSSL_PKCS1_PADDING)',
+            'certificate_id' => '330821198809085211',
+            'certificate_name' => '张三',
         ],
         'headers' => [
             'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',
@@ -49,8 +49,8 @@ interface VerifyCertificate
             'customs' => 'SHANGHAI_ZS',
             'merchant_customs_no' => '123456',
             'certificate_type' => 'IDCARD',
-            'certificate_id' => 'Rsa::encrypt(0101211X, WechatpayPlatformCertificateInstance, OPENSSL_PKCS1_PADDING)',
-            'certificate_name' => 'Rsa::encrypt(张三, WechatpayPlatformCertificateInstance, OPENSSL_PKCS1_PADDING)',
+            'certificate_id' => '330821198809085211',
+            'certificate_name' => '张三',
         ],
         'headers' => [
             'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',

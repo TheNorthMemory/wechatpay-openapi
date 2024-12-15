@@ -150,11 +150,18 @@ post:
                 description: 业务类型
                 example: BOTH
                 nullable: true
+                enum:
+                  - ONLINE
+                  - OFFLINE
+                  - BOTH
               merchant_type:
                 type: string
                 description: 商户类型
                 example: ENTERPRISE
                 nullable: true
+                enum:
+                  - ENTERPRISE
+                  - INDIVIDUAL
               registration_certificate_number:
                 type: string
                 description: 公司注册文件编号
@@ -242,11 +249,20 @@ post:
                 description: 子商户状态
                 nullable: true
                 example: OPERATING
+                enum:
+                  - OPERATING #正常
+                  - PENDING #待处理
+                  - DEACTIVATED #已停用
+                  - CLOSED #已关闭
+                  - INCOMPLETE_APPLICATION #未完成入驻
               application_status:
                 type: string
                 description: 子商户入驻状态
                 nullable: true
                 example: UNDER_REVIEW
+                enum:
+                  - UNDER_REVIEW #审核中
+                  - REJECTED #已驳回
               application_reject_detail:
                 xml:
                   x-cdata: true

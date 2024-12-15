@@ -306,6 +306,8 @@ post:
                     type: string
                     description: 汇率类型
                     example: SETTLEMENT_RATE
+                    enum:
+                      - SETTLEMENT_RATE
                   rate:
                     type: integer
                     description: 汇率值
@@ -331,10 +333,16 @@ post:
                   type: string
                   description: 优惠范围
                   example: SINGLE
+                  enum:
+                    - GLOBAL
+                    - SINGLE
                 type:
                   type: string
                   description: 优惠类型
                   example: DISCOUNT
+                  enum:
+                    - COUPON
+                    - DISCOUNT
                 amount:
                   type: integer
                   description: 优惠券面额

@@ -78,8 +78,11 @@ post:
             type: string
             description: 商户类型
             example: ENTERPRISE
+            enum:
+              - ENTERPRISE
+              - INDIVIDUAL
           business_category:
-            type: string（3）
+            type: string
             description: 业务类目
             example: '343'
           mcc:
@@ -103,6 +106,10 @@ post:
             type: string
             description: 业务类型
             example: BOTH
+            enum:
+              - ONLINE
+              - OFFLINE
+              - BOTH
           app_download:
             type: string
             description: APP下载链接
@@ -265,8 +272,11 @@ post:
               verification_status:
                 type: string
                 description: 验证状态
-                example: UnderReview
+                example: Under review
                 nullable: true
+                enum:
+                  - Under review
+                  - Approved
               h5_authorization_state:
                 type: string
                 description: H5支付权限状态

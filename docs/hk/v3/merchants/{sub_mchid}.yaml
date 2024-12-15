@@ -81,6 +81,9 @@ get:
             type: string
             description: 商户类型
             example: ENTERPRISE
+            enum:
+              - ENTERPRISE
+              - INDIVIDUAL
           registration_certificate_number:
             type: string
             description: 公司注册文件编号
@@ -101,6 +104,10 @@ get:
                 type: string
                 description: 业务类型
                 example: BOTH
+                enum:
+                  - ONLINE
+                  - OFFLINE
+                  - BOTH
               app_download:
                 type: string
                 description: APP下载地址

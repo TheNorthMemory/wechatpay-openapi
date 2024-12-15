@@ -49,6 +49,16 @@ post:
             type: string
             description: 海关
             example: SHANGHAI_ZS
+            enum:
+              - GUANGZHOU_ZS #广州（总署版）
+              - HANGZHOU_ZS #杭州（总署版）
+              - NINGBO #宁波
+              - ZHENGZHOU_BS #郑州（保税物流中心）
+              - CHONGQING #重庆
+              - SHANGHAI_ZS #上海（总署版）
+              - SHENZHEN #深圳
+              - ZHENGZHOU_ZH_ZS #郑州综保（总署版）
+              - TIANJIN #天津
           merchant_customs_no:
             type: string
             description: 商户海关备案号
@@ -57,14 +67,16 @@ post:
             type: string
             description: 证件类型
             example: IDCARD
+            enum:
+              - IDCARD
           certificate_id:
             type: string
             description: 证件号
-            example: 'Rsa::encrypt(0101211X, WechatpayPlatformCertificateInstance, OPENSSL_PKCS1_PADDING)'
+            example: '330821198809085211'
           certificate_name:
             type: string
             description: 证件姓名
-            example: 'Rsa::encrypt(张三, WechatpayPlatformCertificateInstance, OPENSSL_PKCS1_PADDING)'
+            example: '张三'
   responses:
     '200':
       schema:
@@ -96,3 +108,6 @@ post:
             type: string
             description: 身份核验结果
             example: SAME
+            enum:
+              - SAME
+              - DIFFERENT

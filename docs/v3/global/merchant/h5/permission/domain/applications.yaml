@@ -53,6 +53,9 @@ post:
             type: string
             description: 子商户经营网址状态
             example: HAS_LAUNCHED
+            enum:
+              - HAS_LAUNCHED
+              - UN_LAUNCHED
           notify_url:
             type: string
             description: 商户提供的审核结果回调接口
@@ -81,6 +84,9 @@ post:
             type: string
             description: 子商户经营网址状态
             example: HAS_LAUNCHED
+            enum:
+              - HAS_LAUNCHED
+              - UN_LAUNCHED
           domains:
             type: array
             items:
@@ -120,6 +126,11 @@ post:
             type: string
             description: 申请单状态
             example: PENDING
+            enum:
+              - PENDING
+              - UNDER_REVIEW
+              - APPROVED
+              - REJECTED
           notify_url:
             type: string
             description: 商户提供的审核结果回调接口

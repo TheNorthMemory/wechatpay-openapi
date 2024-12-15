@@ -29,6 +29,11 @@ interface Refunds
             'out_trade_no' => '',
             'out_refund_no' => '1217752501201407033233368018',
             'reason' => '商品已售完',
+            'amount' => [
+                'refund' => 888,
+                'total' => 888,
+                'currency' => 'CNY',
+            ],
             'notify_url' => 'https://www.weixin.qq.com/wxpay/pay.php',
         ],
     ]): ResponseInterface;
@@ -51,6 +56,11 @@ interface Refunds
             'out_trade_no' => '',
             'out_refund_no' => '1217752501201407033233368018',
             'reason' => '商品已售完',
+            'amount' => [
+                'refund' => 888,
+                'total' => 888,
+                'currency' => 'CNY',
+            ],
             'notify_url' => 'https://www.weixin.qq.com/wxpay/pay.php',
         ],
     ]): PromiseInterface;

@@ -95,6 +95,10 @@ post:
                   type: string
                   description: 分账接收方类型
                   example: MERCHANT_ID
+                  enum:
+                    - MERCHANT_ID
+                    - PERSONAL_OPENID
+                    - PERSONAL_SUB_OPENID
                 account:
                   type: string
                   description: 分账接收方帐号

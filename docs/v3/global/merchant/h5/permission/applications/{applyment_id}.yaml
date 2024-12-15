@@ -47,6 +47,10 @@ get:
             type: string
             description: 限额类型
             example: UN_LAUNCHED_WEBSITE_LIMIT
+            enum:
+              - UN_LAUNCHED_WEBSITE_LIMIT
+              - NORMAL_LIMIT
+              - NO_LIMIT
           company_register_cert:
             type: string
             format: MediaId
@@ -72,6 +76,9 @@ get:
             type: string
             description: 子商户经营网址状态
             example: HAS_LAUNCHED
+            enum:
+              - HAS_LAUNCHED
+              - UN_LAUNCHED
           website_url:
             type: string
             description: 子商户H5经营网址
@@ -88,10 +95,18 @@ get:
             type: string
             description: 申请单状态
             example: PENDING
+            enum:
+              - PENDING
+              - UNDER_REVIEW
+              - APPROVED
+              - REJECTED
           applyment_type:
             type: string
             description: 申请单类型
             example: APPLY_FOR_PAYMENT_AUTHORITY
+            enum:
+              - APPLY_FOR_PAYMENT_AUTHORITY
+              - APPLY_FOR_RELIEVE_LIMITED
           notify_url:
             type: string
             description: 商户提供的审核结果回调接口
@@ -156,6 +171,9 @@ patch:
             type: string
             description: 子商户经营网址状态
             example: HAS_LAUNCHED
+            enum:
+              - HAS_LAUNCHED
+              - UN_LAUNCHED
           website_url:
             type: string
             description: 子商户H5经营网址
@@ -181,7 +199,7 @@ patch:
           domains:
             type: array
             description: H5支付域名
-            example: '["qq.com"]'
+            example: ["qq.com"]
           business_description:
             type: string
             description: 公司介绍和业务描述
@@ -190,6 +208,10 @@ patch:
             type: string
             description: 限额类型
             example: UN_LAUNCHED_WEBSITE_LIMIT
+            enum:
+              - UN_LAUNCHED_WEBSITE_LIMIT
+              - NORMAL_LIMIT
+              - NO_LIMIT
           company_register_cert:
             type: string
             description: 公司注册资质证书
@@ -201,7 +223,7 @@ patch:
               format: MediaId
               description: 图片MediaID
             description: 经营网址商业页面截图
-            example: '["6uqyGjvHzOhsLleGFQVRF"]'
+            example: ["6uqyGjvHzOhsLleGFQVRF"]
           website_homepage_pics:
             type: array
             items:
@@ -209,11 +231,14 @@ patch:
               format: MediaId
               description: 图片MediaID
             description: 经营网址首页截图
-            example: '["6uqyGjvHzOhsLleGFQVRF"]'
+            example: ["6uqyGjvHzOhsLleGFQVRF"]
           website_state:
             type: string
             description: 子商户经营网址状态
             example: HAS_LAUNCHED
+            enum:
+              - HAS_LAUNCHED
+              - UN_LAUNCHED
           website_url:
             type: string
             description: 子商户H5经营网址
@@ -230,10 +255,18 @@ patch:
             type: string
             description: 申请单状态
             example: PENDING
+            enum:
+              - PENDING
+              - UNDER_REVIEW
+              - APPROVED
+              - REJECTED
           applyment_type:
             type: string
             description: 申请单类型
             example: APPLY_FOR_PAYMENT_AUTHORITY
+            enum:
+              - APPLY_FOR_PAYMENT_AUTHORITY
+              - APPLY_FOR_RELIEVE_LIMITED
           notify_url:
             type: string
             description: 商户提供的审核结果回调接口

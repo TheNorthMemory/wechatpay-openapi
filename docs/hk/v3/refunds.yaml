@@ -20,6 +20,7 @@ post:
           - sub_mchid
           - sp_appid
           - out_refund_no
+          - amount
         properties:
           mchid:
             type: string
@@ -61,8 +62,25 @@ post:
             description: 退款原因
             example: 商品已售完
           amount:
-            type: 是
+            type: object
             description: 订单金额
+            required:
+              - refund
+              - total
+              - currency
+            properties:
+              refund:
+                type: integer
+                description: 退款金额
+                example: 888
+              total:
+                type: integer
+                description: 原订单金额
+                example: 888
+              currency:
+                type: string
+                description: 退款币种
+                example: CNY
           notify_url:
             type: string
             description: 退款通知地址
@@ -123,6 +141,8 @@ post:
                     type: string
                     description: 汇率类型
                     example: SETTLEMENT_RATE
+                    enum:
+                      - SETTLEMENT_RATE
                   rate:
                     type: integer
                     description: 汇率值
@@ -142,10 +162,16 @@ post:
                 type: string
                 description: 优惠范围
                 example: SINGLE
+                enum:
+                  - GLOBAL
+                  - SINGLE
               type:
                 type: string
                 description: 优惠类型
                 example: DISCOUNT
+                enum:
+                  - COUPON
+                  - DISCOUNT
               amount:
                 type: integer
                 description: 优惠券面额
@@ -290,6 +316,11 @@ get:
                   type: string
                   description: 退款渠道
                   example: ORIGINAL
+                  enum:
+                    - ORIGINAL
+                    - BALANCE
+                    - OTHER_BALANCE
+                    - OTHER_BANKCARD
                 recv_account:
                   type: string
                   description: 退款入账账户
@@ -298,6 +329,9 @@ get:
                   type: string
                   description: 退款资金来源
                   example: REFUND_SOURCE_UNSETTLED_FUNDS
+                  enum:
+                    - REFUND_SOURCE_UNSETTLED_FUNDS
+                    - REFUND_SOURCE_REchARGE_FUNDS
                 success_time:
                   type: string
                   description: 退款成功时间
@@ -310,6 +344,11 @@ get:
                   type: string
                   description: 退款状态
                   example: SUCCESS
+                  enum:
+                    - SUCCESS
+                    - REFUNDCLOSE
+                    - PROCESSING
+                    - ABNORMAL
                 amount:
                   type: object
                   description: 退款金额
@@ -343,6 +382,8 @@ get:
                           type: string
                           description: 汇率类型
                           example: SETTLEMENT_RATE
+                          enum:
+                            - SETTLEMENT_RATE
                         rate:
                           type: integer
                           description: 汇率值
@@ -361,10 +402,16 @@ get:
                     scope:
                       type: string
                       description: 优惠范围
+                      enum:
+                        - GLOBAL
+                        - SINGLE
                     type:
                       type: string
                       description: 优惠类型
                       example: DISCOUNT
+                      enum:
+                        - COUPON
+                        - DISCOUNT
                     amount:
                       type: integer
                       description: 优惠券面额

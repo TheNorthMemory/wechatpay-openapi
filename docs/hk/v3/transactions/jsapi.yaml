@@ -72,7 +72,7 @@ post:
           trade_type:
             type: string
             description: 交易类型
-            example: APP
+            example: JSAPI
           limit_pay:
             type: string
             description: 指定支付方式

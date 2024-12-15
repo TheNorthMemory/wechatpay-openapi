@@ -108,7 +108,7 @@ post:
               type: string
               description: 域名
             description: H5支付域名
-            example: '["qq.com"]'
+            example: ["qq.com"]
           business_description:
             type: string
             description: 公司介绍和业务描述
@@ -146,6 +146,9 @@ post:
             type: string
             description: 子商户经营网址状态
             example: HAS_LAUNCHED
+            enum:
+              - HAS_LAUNCHED
+              - UN_LAUNCHED
           website_url:
             type: string
             description: 子商户H5经营网址
@@ -162,10 +165,18 @@ post:
             type: string
             description: 申请单状态
             example: PENDING
+            enum:
+              - PENDING
+              - UNDER_REVIEW
+              - APPROVED
+              - REJECTED
           applyment_type:
             type: string
             description: 申请单类型
             example: APPLY_FOR_PAYMENT_AUTHORITY
+            enum:
+              - APPLY_FOR_PAYMENT_AUTHORITY
+              - APPLY_FOR_RELIEVE_LIMITED
           notify_url:
             type: string
             description: 商户提供的审核结果回调接口

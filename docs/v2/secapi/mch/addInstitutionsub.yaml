@@ -112,6 +112,10 @@ post:
             type: string
             description: 业务类型
             example: BOTH
+            enum:
+              - ONLINE
+              - OFFLINE
+              - BOTH
           app_download:
             type: string
             description: APP下载链接
@@ -268,8 +272,11 @@ post:
               verification_status:
                 type: string
                 description: 验证状态
-                example: UnderReview
+                example: Under review
                 nullable: true
+                enum:
+                  - Under review
+                  - Approved
               description:
                 type: string
                 description: 验证状态描述

@@ -30,3 +30,10 @@ get:
             type: string
             description: H5支付权限状态
             example: AUTHORITY_TO_TEST
+            enum:
+              - AUTHORITY_TO_TEST
+              - FORMAL_AUTHORITY
+              - AUTHORIZED
+              - UNDER_PUNISHMENT
+              - UNDER_PUNISHMENT
+              - UNAUTHORIZED

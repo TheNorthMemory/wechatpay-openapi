@@ -92,6 +92,12 @@ get:
             type: string
             description: 交易类型
             example: APP
+            enum:
+              - JSAPI
+              - NATIVE
+              - APP
+              - MWEB
+              - MICROPAY
           bank_type:
             type: string
             description: 付款银行
@@ -157,6 +163,8 @@ get:
                     type: string
                     description: 汇率类型
                     example: SETTLEMENT_RATE
+                    enum:
+                      - SETTLEMENT_RATE
                   rate:
                     type: integer
                     description: 汇率值
@@ -187,6 +195,9 @@ get:
                   type: string
                   description: 优惠类型
                   example: DISCOUNT
+                  enum:
+                    - COUPON
+                    - DISCOUNT
                 amount:
                   type: integer
                   description: 优惠券面额

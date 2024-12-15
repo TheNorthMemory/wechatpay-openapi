@@ -123,6 +123,9 @@ get:
                   type: string
                   description: 钱包主体
                   example: CHINA_HONGKONG
+                  enum:
+                    - CHINA_MAINLAND
+                    - CHINA_HONGKONG
           total_count:
             type: integer
             description: 总记录条数

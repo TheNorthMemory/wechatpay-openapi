@@ -47,6 +47,16 @@ post:
             type: string
             description: 海关编码
             example: SHANGHAI_ZS
+            enum:
+              - GUANGZHOU_ZS #广州（总署版）
+              - HANGZHOU_ZS #杭州（总署版）
+              - NINGBO #宁波
+              - ZHENGZHOU_BS #郑州（保税物流中心）
+              - CHONGQING #重庆
+              - SHANGHAI_ZS #上海（总署版）
+              - SHENZHEN #深圳
+              - ZHENGZHOU_ZH_ZS #郑州综保（总署版）
+              - TIANJIN #天津
           merchant_customs_no:
             type: string
             description: 商户海关备案号
@@ -75,6 +85,13 @@ post:
             type: string
             description: 报关状态
             example: PROCESSING
+            enum:
+              - PROCESSING #申报中
+              - UNDECLARED #未申报
+              - SUBMITTED #已修改未申报
+              - SUCCESS #申报成功
+              - FAIL #申报失败
+              - EXCEPT #海关接口异常
           out_trade_no:
             type: string
             description: 商户订单号

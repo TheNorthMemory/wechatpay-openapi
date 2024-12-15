@@ -41,6 +41,16 @@ post:
             type: string
             description: 海关
             example: SHANGHAI_ZS
+            enum:
+              - GUANGZHOU_ZS #广州（总署版）
+              - HANGZHOU_ZS #杭州（总署版）
+              - NINGBO #宁波
+              - ZHENGZHOU_BS #郑州（保税物流中心）
+              - CHONGQING #重庆
+              - SHANGHAI_ZS #上海（总署版）
+              - SHENZHEN #深圳
+              - ZHENGZHOU_ZH_ZS #郑州综保（总署版）
+              - TIANJIN #天津
           merchant_customs_no:
             type: string
             description: 商户海关备案号
@@ -94,6 +104,13 @@ post:
             type: string
             description: 报关状态
             example: PROCESSING
+            enum:
+              - PROCESSING #申报中
+              - UNDECLARED #未申报
+              - SUBMITTED #已修改未申报
+              - SUCCESS #申报成功
+              - FAIL #申报失败
+              - EXCEPT #海关接口异常
           out_trade_no:
             type: string
             description: 商户订单号
@@ -114,6 +131,10 @@ post:
             type: string
             description: 核验机构
             example: UNIONPAY
+            enum:
+              - UNIONPAY #银联
+              - NETSUNION #网联
+              - OTHERS #其他
           verify_department_trade_id:
             type: string
             description: 核验机构交易流水号
@@ -163,6 +184,16 @@ get:
       required: true
       description: 海关
       example: SHANGHAI_ZS
+      enum:
+        - GUANGZHOU_ZS #广州（总署版）
+        - HANGZHOU_ZS #杭州（总署版）
+        - NINGBO #宁波
+        - ZHENGZHOU_BS #郑州（保税物流中心）
+        - CHONGQING #重庆
+        - SHANGHAI_ZS #上海（总署版）
+        - SHENZHEN #深圳
+        - ZHENGZHOU_ZH_ZS #郑州综保（总署版）
+        - TIANJIN #天津
     - name: offset
       in: query
       type: integer
@@ -204,6 +235,10 @@ get:
             type: string
             description: 核验机构
             example: UNIONPAY
+            enum:
+              - UNIONPAY #银联
+              - NETSUNION #网联
+              - OTHERS #其他
           verify_department_trade_id:
             type: string
             description: 核验机构流水号
@@ -246,6 +281,16 @@ get:
                   type: string
                   description: 海关代码
                   example: SHANGHAI_ZS
+                  enum:
+                    - GUANGZHOU_ZS #广州（总署版）
+                    - HANGZHOU_ZS #杭州（总署版）
+                    - NINGBO #宁波
+                    - ZHENGZHOU_BS #郑州（保税物流中心）
+                    - CHONGQING #重庆
+                    - SHANGHAI_ZS #上海（总署版）
+                    - SHENZHEN #深圳
+                    - ZHENGZHOU_ZH_ZS #郑州综保（总署版）
+                    - TIANJIN #天津
                 fee_type:
                   type: string
                   description: 币种
@@ -270,6 +315,13 @@ get:
                   type: string
                   description: 报关状态
                   example: PROCESSING
+                  enum:
+                    - PROCESSING #申报中
+                    - UNDECLARED #未申报
+                    - SUBMITTED #已修改未申报
+                    - SUCCESS #申报成功
+                    - FAIL #申报失败
+                    - EXCEPT #海关接口异常
                 explanation:
                   type: string
                   description: 报关结果说明
@@ -325,6 +377,16 @@ patch:
             type: string
             description: 海关编码
             example: SHANGHAI_ZS
+            enum:
+              - GUANGZHOU_ZS #广州（总署版）
+              - HANGZHOU_ZS #杭州（总署版）
+              - NINGBO #宁波
+              - ZHENGZHOU_BS #郑州（保税物流中心）
+              - CHONGQING #重庆
+              - SHANGHAI_ZS #上海（总署版）
+              - SHENZHEN #深圳
+              - ZHENGZHOU_ZH_ZS #郑州综保（总署版）
+              - TIANJIN #天津
           merchant_customs_no:
             type: string
             description: 商户海关备案号
@@ -371,6 +433,13 @@ patch:
             type: string
             description: 报关状态
             example: SUBMITTED
+            enum:
+              - PROCESSING #申报中
+              - UNDECLARED #未申报
+              - SUBMITTED #已修改未申报
+              - SUCCESS #申报成功
+              - FAIL #申报失败
+              - EXCEPT #海关接口异常
           out_trade_no:
             type: string
             description: 商户订单号
@@ -395,6 +464,10 @@ patch:
             type: string
             description: 核验机构
             example: UNIONPAY
+            enum:
+              - UNIONPAY #银联
+              - NETSUNION #网联
+              - OTHERS #其他
           verify_department_trade_id:
             type: string
             description: 核验机构流水号

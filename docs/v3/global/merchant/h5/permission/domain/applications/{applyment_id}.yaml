@@ -34,6 +34,9 @@ get:
             type: string
             description: 子商户经营网址状态
             example: HAS_LAUNCHED
+            enum:
+              - HAS_LAUNCHED
+              - UN_LAUNCHED
           domains:
             type: array
             items:
@@ -73,6 +76,11 @@ get:
             type: string
             description: 申请单状态
             example: PENDING
+            enum:
+              - PENDING
+              - UNDER_REVIEW
+              - APPROVED
+              - REJECTED
           notify_url:
             type: string
             description: 商户提供的审核结果回调接口
@@ -111,11 +119,14 @@ patch:
               type: string
               description: 域名
             description: H5支付域名
-            example: '["qq.com"]'
+            example: ["qq.com"]
           website_state:
             type: string
             description: 子商户经营网址状态
             example: HAS_LAUNCHED
+            enum:
+              - HAS_LAUNCHED
+              - UN_LAUNCHED
           website_url:
             type: string
             description: 商户H5经营网址
@@ -156,6 +167,9 @@ patch:
             type: string
             description: 子商户经营网址状态
             example: HAS_LAUNCHED
+            enum:
+              - HAS_LAUNCHED
+              - UN_LAUNCHED
           domains:
             type: array
             items:
@@ -195,6 +209,11 @@ patch:
             type: string
             description: 申请单状态
             example: PENDING
+            enum:
+              - PENDING
+              - UNDER_REVIEW
+              - APPROVED
+              - REJECTED
           notify_url:
             type: string
             description: 商户提供的审核结果回调接口

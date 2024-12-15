@@ -29,6 +29,10 @@ post:
             type: string
             description: 分账接收方类型
             example: MERCHANT_ID
+            enum:
+              - MERCHANT_ID
+              - PERSONAL_OPENID
+              - PERSONAL_SUB_OPENID
           account:
             type: string
             description: 分账接收方帐号
@@ -46,6 +50,12 @@ post:
             type: string
             description: 与分账方的关系类型
             example: SERVICE_PROVIDER
+            enum:
+              - SUPPLIER
+              - DISTRIBUTOR
+              - TAX_SERVICE_PROVIDER
+              - IT_SERVICE_PROVIDER
+              - CUSTOM
           custom_relation:
             type: string
             description: 自定义的分账关系
@@ -87,6 +97,10 @@ post:
             type: string
             description: 分账接收方类型
             example: MERCHANT_ID
+            enum:
+              - MERCHANT_ID
+              - PERSONAL_OPENID
+              - PERSONAL_SUB_OPENID
           account:
             type: string
             description: 分账接收方账号
@@ -100,6 +114,12 @@ post:
             type: string
             description: 与分账方的关系类型
             example: SERVICE_PROVIDER
+            enum:
+              - SUPPLIER
+              - DISTRIBUTOR
+              - TAX_SERVICE_PROVIDER
+              - IT_SERVICE_PROVIDER
+              - CUSTOM
           custom_relation:
             type: string
             description: 自定义的分账关系
@@ -165,6 +185,10 @@ delete:
             type: string
             description: 分账接收方类型
             example: MERCHANT_ID
+            enum:
+              - MERCHANT_ID
+              - PERSONAL_OPENID
+              - PERSONAL_SUB_OPENID
           account:
             type: string
             description: 分账接收方帐号

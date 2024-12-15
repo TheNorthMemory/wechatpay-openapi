@@ -65,6 +65,11 @@ get:
             type: string
             description: 退款渠道
             example: ORIGINAL
+            enum:
+              - ORIGINAL
+              - BALANCE
+              - OTHER_BALANCE
+              - OTHER_BANKCARD
           recv_account:
             type: string
             description: 退款入账账户
@@ -73,6 +78,9 @@ get:
             type: string
             description: 退款资金来源
             example: REFUND_SOURCE_UNSETTLED_FUNDS
+            enum:
+              - REFUND_SOURCE_UNSETTLED_FUNDS
+              - REFUND_SOURCE_REchARGE_FUNDS
           success_time:
             type: string
             description: 退款成功时间
@@ -85,6 +93,11 @@ get:
             type: string
             description: 退款状态
             example: SUCCESS
+            enum:
+              - SUCCESS
+              - REFUNDCLOSE
+              - PROCESSING
+              - ABNORMAL
           amount:
             type: object
             description: 退款金额
@@ -118,6 +131,8 @@ get:
                     type: string
                     description: 汇率类型
                     example: SETTLEMENT_RATE
+                    enum:
+                      - SETTLEMENT_RATE
                   rate:
                     type: integer
                     description: 汇率值
@@ -137,10 +152,16 @@ get:
                 type: string
                 description: 优惠范围
                 example: SINGLE
+                enum:
+                  - GLOBAL
+                  - SINGLE
               type:
                 type: string
                 description: 优惠类型
                 example: DISCOUNT
+                enum:
+                  - COUPON
+                  - DISCOUNT
               amount:
                 type: integer
                 description: 优惠券面额

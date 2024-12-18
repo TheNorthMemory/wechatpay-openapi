@@ -12,7 +12,6 @@ interface Querycouponsinfo
     /**
      * 查询代金券信息(同步模式)
      * @param array<string,mixed> $options
-     * @deprecated - since 2020.MM.dd
      * @link https://wechatpay.im/openapi/v2/mmpaymkttransfers/querycouponsinfo
      */
     public function post(array $options = [
@@ -30,7 +29,6 @@ interface Querycouponsinfo
     /**
      * 查询代金券信息(异步模式)
      * @param array<string,mixed> $options
-     * @deprecated - since 2020.MM.dd
      * @link https://wechatpay.im/openapi/v2/mmpaymkttransfers/querycouponsinfo
      */
     public function postAsync(array $options = [

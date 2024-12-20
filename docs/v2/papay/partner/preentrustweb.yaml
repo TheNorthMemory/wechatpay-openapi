@@ -102,6 +102,13 @@ post:
         type: object
         required:
           - return_code
+          - result_code
+          - appid
+          - mch_id
+          - sub_mch_id
+          - nonce_str
+          - sign
+          - pre_entrustweb_id
         properties:
           return_code:
             type: string
@@ -114,3 +121,56 @@ post:
             type: string
             description: 返回信息
             example: 签名失败
+          result_code:
+            type: string
+            description: 业务结果
+            example: SUCCESS
+            maxLength: 16
+            enum:
+              - SUCCESS
+              - FAIL
+          err_code:
+            type: string
+            description: 错误代码
+            example: SYSTEMERROR
+            maxLength: 32
+            nullable: true
+          err_code_des:
+            type: string
+            description: 错误代码描述
+            example: 系统错误
+            maxLength: 128
+            nullable: true
+          appid:
+            type: string
+            description: 请求appid
+            example: wxcbda96de0b165486
+            maxLength: 32
+          mch_id:
+            type: string
+            description: 商户号
+            example: '10000098'
+            maxLength: 32
+          sub_appid:
+            type: string
+            description: 子商户应用ID
+            example: wxcbda96de0b165489
+          sub_mch_id:
+            type: string
+            description: 子商户号
+            example: '1900000109'
+          nonce_str:
+            type: string
+            description: 随机字符串
+            example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+            maxLength: 32
+          sign:
+            type: string
+            description: 签名
+            example: C380BEC2BFD727A4B6845133519F3AD6
+            maxLength: 32
+          pre_entrustweb_id:
+            type: string
+            description: 预签约id
+            example: 5778aadY9nltAsZzXixCkFIGYnV2V
+            maxLength: 128

@@ -116,6 +116,11 @@ query_coupon_stock.response:
       description: 随机字符串
       example: '1417574675'
       maxLength: 32
+    sign:
+      type: string
+      description: 签名
+      example: 841B3002FE2220C87A2D08ABD8A8F791
+      maxLength: 64
     result_code:
       type: string
       description: 业务结果

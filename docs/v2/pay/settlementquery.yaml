@@ -133,6 +133,10 @@ post:
                 description: 错误代码描述
                 example: 系统错误
                 nullable: true
+              sign:
+                type: string
+                description: 签名
+                example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
               record_num:
                 type: string
                 description: 返回数据行数

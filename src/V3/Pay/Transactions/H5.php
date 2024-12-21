@@ -58,6 +58,9 @@ interface H5
                     'package_name' => 'com.tencent.tmgp.sgame',
                 ],
             ],
+            'settle_info' => [
+                'profit_sharing' => true,
+            ],
         ],
     ]): ResponseInterface;
 
@@ -109,6 +112,9 @@ interface H5
                     'bundle_id' => 'com.tencent.wzryiOS',
                     'package_name' => 'com.tencent.tmgp.sgame',
                 ],
+            ],
+            'settle_info' => [
+                'profit_sharing' => true,
             ],
         ],
     ]): PromiseInterface;

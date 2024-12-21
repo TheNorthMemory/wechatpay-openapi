@@ -51,6 +51,9 @@ interface App
                     'address' => '广东省深圳市南山区科技中一道10000号',
                 ],
             ],
+            'settle_info' => [
+                'profit_sharing' => true,
+            ],
         ],
     ]): ResponseInterface;
 
@@ -95,6 +98,9 @@ interface App
                     'area_code' => '440305',
                     'address' => '广东省深圳市南山区科技中一道10000号',
                 ],
+            ],
+            'settle_info' => [
+                'profit_sharing' => true,
             ],
         ],
     ]): PromiseInterface;

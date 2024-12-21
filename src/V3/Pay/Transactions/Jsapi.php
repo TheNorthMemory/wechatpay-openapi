@@ -54,6 +54,9 @@ interface Jsapi
             'payer' => [
                 'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
             ],
+            'settle_info' => [
+                'profit_sharing' => true,
+            ],
         ],
     ]): ResponseInterface;
 
@@ -101,6 +104,9 @@ interface Jsapi
             ],
             'payer' => [
                 'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
+            ],
+            'settle_info' => [
+                'profit_sharing' => true,
             ],
         ],
     ]): PromiseInterface;

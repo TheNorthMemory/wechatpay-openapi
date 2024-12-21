@@ -13,6 +13,16 @@ post:
         allOf:
           - $ref: '../../../definitions/Transaction.yaml#TransactionDirection'
           - $ref: '../../../definitions/Transaction.yaml#TransactionBase'
+          - type: object
+            properties:
+              settle_info:
+                type: object
+                description: 结算信息
+                properties:
+                  profit_sharing:
+                    type: boolean
+                    description: 是否指定分账
+                    example: false
   responses:
     200:
       schema:

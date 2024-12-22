@@ -25,9 +25,6 @@ interface Parkings
             'parking_name' => '欢乐海岸停车场',
             'free_duration' => 3600,
         ],
-        'headers' => [
-            'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',
-        ],
     ]): ResponseInterface;
 
     /**
@@ -45,9 +42,6 @@ interface Parkings
             'start_time' => '2017-08-26T10:43:39+08:00',
             'parking_name' => '欢乐海岸停车场',
             'free_duration' => 3600,
-        ],
-        'headers' => [
-            'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',
         ],
     ]): PromiseInterface;
 }

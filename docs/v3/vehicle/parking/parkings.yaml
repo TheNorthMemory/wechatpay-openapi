@@ -7,7 +7,6 @@ post:
   summary: 创建停车入场API
   description: 车辆入场以后，商户调用该接口，创建停车入场信息。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_8_2.shtml)
   parameters:
-    - $ref: '../../../definitions/Parameters.yaml#/WECHATPAY_CERTIFICATE_SERIAL'
     - name: _
       in: body
       required: true
@@ -97,7 +96,15 @@ post:
             type: string
             description: 停车入场状态
             example: NORMAL
+            enum:
+              - NORMAL
+              - BLOCKED
           block_reason:
             type: string
             description: 不可用状态描述
             example: PAUSE
+            enum:
+              - PAUSE
+              - OVERDUE
+              - OUT_SERVICE
+              - EVALUATION_FAILED

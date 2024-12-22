@@ -67,3 +67,7 @@ get:
             type: string
             description: 车牌服务开通状态
             example: PAUSE
+            enum:
+              - NORMAL
+              - PAUSE
+              - OUT_SERVICE

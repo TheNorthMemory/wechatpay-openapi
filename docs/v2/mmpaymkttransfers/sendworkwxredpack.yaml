@@ -57,8 +57,8 @@ post:
             example: wx8888888888888888
             maxLength: 32
           agentid:
-            format: int32
-            type: integer
+            format: integer
+            type: string
             description: 发送红包的应用id
             example: '1'
           sender_name:
@@ -114,7 +114,7 @@ post:
           workwx_sign:
             type: string
             required: true
-            description: 活动信息
+            description: 企业微信签名
             example: C380BEC2BFD727A4B6845133519F3AD6
             maxLength: 32
   responses:

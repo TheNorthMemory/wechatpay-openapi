@@ -16,7 +16,7 @@ get:
       required: true
       allOf:
         - $ref: '../../../../definitions/Enumerations.yaml#BillAccountType'
-    - name: bill_date
+    - name: date
       in: query
       required: true
       type: string

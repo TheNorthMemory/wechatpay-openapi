@@ -1,5 +1,5 @@
 post:
-  x-verison: [2020.05.08]
+  x-verison: [2022.06.08]
   tags:
     - 跨境
   summary: 查询结算资金
@@ -44,7 +44,10 @@ post:
             format: int32
             type: integer
             description: 结算状态
-            example: '1'
+            example: 1
+            enum:
+              - 1
+              - 2
           nonce_str:
             type: string
             description: 随机字符串
@@ -67,6 +70,11 @@ post:
             type: string
             description: 结束日期
             example: '20150807'
+          query_split:
+            type: boolean
+            description: 是否查询分账结算信息
+            nullable: true
+            example: true
           sign:
             type: string
             description: 签名

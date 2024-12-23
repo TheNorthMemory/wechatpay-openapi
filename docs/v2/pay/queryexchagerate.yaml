@@ -94,7 +94,7 @@ post:
               fee_type:
                 type: string
                 description: 币种
-                example: SUCCESS
+                example: USD
               rate_time:
                 type: string
                 description: 汇率时间

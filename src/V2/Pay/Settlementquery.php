@@ -24,6 +24,7 @@ interface Settlementquery
             'limit' => '10',
             'date_start' => '20150807',
             'date_end' => '20150807',
+            'query_split' => 'true',
         ],
     ]): ResponseInterface;
 
@@ -42,6 +43,7 @@ interface Settlementquery
             'limit' => '10',
             'date_start' => '20150807',
             'date_end' => '20150807',
+            'query_split' => 'true',
         ],
     ]): PromiseInterface;
 }

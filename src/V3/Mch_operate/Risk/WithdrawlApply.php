@@ -41,7 +41,7 @@ interface WithdrawlApply
             ],
             'proof_media_list' => [
                 'proof_payee_media' => [[
-                    'proof_media_type' => 'WECHAT_PAY_WITHDRAWAL_APPLICATION_TYPE_1',
+                    'proof_media_type' => 'BASIC_TRANSACTION_INFORMATION',
                     'proof_media' => 'jTpGmxUX3FBWVQ5NJTZvlKXQ',
                 ],],
             ],
@@ -85,7 +85,7 @@ interface WithdrawlApply
             ],
             'proof_media_list' => [
                 'proof_payee_media' => [[
-                    'proof_media_type' => 'WECHAT_PAY_WITHDRAWAL_APPLICATION_TYPE_1',
+                    'proof_media_type' => 'BASIC_TRANSACTION_INFORMATION',
                     'proof_media' => 'jTpGmxUX3FBWVQ5NJTZvlKXQ',
                 ],],
             ],

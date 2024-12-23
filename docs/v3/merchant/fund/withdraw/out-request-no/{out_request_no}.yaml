@@ -33,6 +33,13 @@ get:
             type: string
             description: 提现单状态
             example: CREATE_SUCCESS
+            enum:
+              - CREATE_SUCCESS #受理成功
+              - SUCCESS #提现成功
+              - FAIL #提现失败
+              - REFUND #提现退票
+              - CLOSE #关单
+              - INIT #业务单已创建
           withdraw_id:
             type: string
             description: 微信支付提现单号
@@ -69,6 +76,10 @@ get:
             type: string
             description: 出款账户类型
             example: BASIC
+            enum:
+              - BASIC
+              - OPERATION
+              - FEES
           solution:
             type: string
             description: 提现失败解决方案

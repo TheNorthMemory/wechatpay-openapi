@@ -31,10 +31,15 @@ post:
             type: string
             description: 修改模式
             example: MODIFY_MODE_ASYNC
+            enum:
+              - MODIFY_MODE_ASYNC
           account_type:
             type: string
             description: 账户类型
             example: ACCOUNT_TYPE_BUSINESS
+            enum:
+              - ACCOUNT_TYPE_BUSINESS
+              - ACCOUNT_TYPE_PRIVATE
           account_bank:
             type: string
             description: 开户银行
@@ -53,10 +58,12 @@ post:
             example: '402713354941'
           account_number:
             type: string
+            format: base64
             description: 银行账号
             example: ciphertext
           account_name:
             type: string
+            format: base64
             description: 开户名称
             example: ciphertext
   responses:

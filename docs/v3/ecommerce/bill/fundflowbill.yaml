@@ -19,11 +19,15 @@ get:
       type: string
       description: 资金账户类型
       example: ALL
+      enum:
+        - ALL
     - name: tar_type
       in: query
       type: string
       description: 压缩类型
       example: GZIP
+      enum:
+        - GZIP
     - name: algorithm
       in: query
       required: true
@@ -64,6 +68,8 @@ get:
                   type: string
                   description: 哈希类型
                   example: SHA1
+                  enum:
+                    - SHA1
                 hash_value:
                   type: string
                   description: 哈希值
@@ -75,7 +81,7 @@ get:
                 encrypt_key:
                   type: string
                   description: 加密密钥
-                  example: YpkbxSne+mDwyXq//xYPmtr9eQ5LsH7zLMZSs+GSEcY4wjhlsfioS4n9X6q1ZBL0wM1v5qd7KhWuj0rFJ4N1FidP7Q8KDy25QDTt46wiKnsPKSCAXWRFNw1D2JmJBqZsc9y5g0DupONWKYB2GfRigRDEBVszj67uOIILPdxOKX1w3N4jvu0U9IFanJa7ldm70KVvYrMWVgQFDPbgjh1gVDbuTAjmPN88AobLdkiegnBUS2woDZW+PfhPo13kweOiR3h1gXIKRlnKnN3Jkkwpna/AFFijXrFphO3voSuiV0CfptfzTtcae4X3DYG3RSroKqmpa+5tuy2aU2VJUSIuFQ==
+                  example: YpkbxSne+mDwyXq//xYPmtr9euFQ==
                 nonce:
                   type: string
                   description: 随机字符串

@@ -14,6 +14,10 @@ get:
       in: query
       description: 账户类型
       example: BASIC
+      enum:
+        - BASIC
+        - OPERATION
+        - FEES
     - name: date
       required: true
       type: string
@@ -78,10 +82,17 @@ get:
                   type: string
                   description: 账户类型
                   example: BASIC
+                  enum:
+                    - BASIC
+                    - OPERATION
+                    - FEES
                 income_record_type:
                   type: string
                   description: 银行来账类型
                   example: OFFLINERECHARGE
+                  enum:
+                    - OFFLINERECHARGE
+                    - ENTERPRISEDIRECTREVENUE
                 income_record_id:
                   type: string
                   description: 银行来账微信单号

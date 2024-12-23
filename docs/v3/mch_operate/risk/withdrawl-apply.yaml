@@ -29,6 +29,10 @@ post:
             type: string
             description: 二级商户号的出款子账户类型
             example: BASIC_ACCOUNT
+            enum:
+              - BASIC_ACCOUNT
+              - OPERATE_ACCOUNT
+              - MARGIN_ACCOUNT
           amount:
             type: integer
             description: 提现金额
@@ -41,6 +45,11 @@ post:
             type: string
             description: 收款对象类型
             example: OTHER_MERCHANT
+            enum:
+              - CONTRIBUTION_MERCHANT
+              - SERVICE_PROVIDER_MERCHANT
+              - OTHER_MERCHANT
+              - INDIVIDUAL
           payee_mchid:
             type: string
             description: 收款对象对应的商户号
@@ -55,6 +64,9 @@ post:
                 type: string
                 description: 账户类型
                 example: ACCOUNT_TYPE_CORPORATE
+                enum:
+                  - ACCOUNT_TYPE_CORPORATE
+                  - ACCOUNT_TYPE_PERSONAL
               bank_account_info:
                 type: object
                 description: 银行账户
@@ -96,6 +108,15 @@ post:
                     type: string
                     description: 证件类型
                     example: IDENTIFICATION_TYPE_IDCARD
+                    enum:
+                      - IDENTIFICATION_TYPE_IDCARD #中国大陆居民-身份证
+                      - IDENTIFICATION_TYPE_OVERSEA_PASSPORT #其他国家或地区居民-护照
+                      - IDENTIFICATION_TYPE_HONGKONG_PASSPORT #中国香港居民-来往内地通行证
+                      - IDENTIFICATION_TYPE_MACAO_PASSPORT #中国澳门居民-来往内地通行证
+                      - IDENTIFICATION_TYPE_TAIWAN_PASSPORT #中国台湾居民-来往大陆通行证
+                      - IDENTIFICATION_TYPE_FOREIGN_RESIDENT #外国人居留证
+                      - IDENTIFICATION_TYPE_HONGKONG_MACAO_RESIDENT #港澳居民证
+                      - IDENTIFICATION_TYPE_TAIWAN_RESIDENT #台湾居民证
                   identification_name:
                     type: string
                     format: base64
@@ -122,7 +143,16 @@ post:
                     proof_media_type:
                       type: string
                       description: 申请证明材料类型
-                      example: WECHAT_PAY_WITHDRAWAL_APPLICATION_TYPE_1
+                      example: BASIC_TRANSACTION_INFORMATION
+                      enum:
+                        - BASIC_TRANSACTION_INFORMATION #分账接收方与子商户的合作背景证明材料 (如合作协议)
+                        - LEGAL_ID_CARD #法人身份证（或其他证件）正反面照片
+                        - ID_CARD #经营负责人身份证（或其他证件）正反面照片
+                        - BUSINESS_LICENSE_PHOTO #营业执照照片
+                        - PAYEE_ID_CARD #收款人身份证正反面照片
+                        - WECHAT_PAY_WITHDRAWAL_APPLICATION_TYPE_6
+                        - WECHAT_PAY_WITHDRAWAL_APPLICATION_TYPE_7
+                        - WECHAT_PAY_WITHDRAWAL_APPLICATION_TYPE_8
                     proof_media:
                       type: string
                       format: MediaId

@@ -15,6 +15,8 @@ get:
       type: string
       description: 账单类型
       default: NO_SUCC
+      enum:
+        - NO_SUCC
     - name: bill_date
       in: query
       required: true
@@ -42,6 +44,8 @@ get:
             type: string
             description: 哈希类型
             example: SHA1
+            enum:
+              - SHA1
           hash_value:
             type: string
             description: 哈希值

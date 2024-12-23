@@ -32,6 +32,10 @@ get:
       type: string
       description: 明细状态
       example: FAIL
+      enum:
+        - ALL
+        - SUCCESS
+        - FAIL
   responses:
     '200':
       schema:
@@ -90,6 +94,9 @@ get:
             type: string
             description: 转账场景
             example: ORDINARY_TRANSFER
+            enum:
+              - ORDINARY_TRANSFER
+              - PAYROLL_CARD_TRANSFER
           batch_name:
             type: string
             description: 批次名称
@@ -106,14 +113,29 @@ get:
             type: string
             description: 批量转账用途
             example: COMMISSION
+            enum:
+              - GOODSPAYMENT #货款
+              - COMMISSION #佣金
+              - REFUND #退款
+              - REIMBURSEMENT #报销
+              - FREIGHT #运费
+              - OTHERS #其他
           batch_state:
             type: string
             description: 批次状态
             example: ACCEPTED
+            enum:
+              - ACCEPTED
+              - PROCESSING
+              - FINISHED
+              - CLOSED
           close_reason:
             type: string
             description: 批次关闭原因
             example: OVERDUE_CLOSE
+            enum:
+              - MERCHANT_REVOCATION
+              - OVERDUE_CLOSE
           total_amount:
             type: integer
             description: 转账总金额
@@ -168,7 +190,40 @@ get:
                   type: string
                   description: 明细状态
                   example: SUCCESS
+                  enum:
+                    - PROCESSING
+                    - SUCCESS
+                    - REFUND
                 fail_reason:
                   type: string
                   description: 明细失败原因
                   example: ACCOUNT_FROZEN
+                  enum:
+                    - ACCOUNT_FROZEN
+                    - REAL_NAME_CHECK_FAIL
+                    - NAME_NOT_CORRECT
+                    - OPENID_INVALID
+                    - TRANSFER_QUOTA_EXCEED
+                    - DAY_RECEIVED_QUOTA_EXCEED
+                    - MONTH_RECEIVED_QUOTA_EXCEED
+                    - DAY_RECEIVED_COUNT_EXCEED
+                    - PRODUCT_AUTH_CHECK_FAIL
+                    - OVERDUE_CLOSE
+                    - ID_CARD_NOT_CORRECT
+                    - ACCOUNT_NOT_EXIST
+                    - TRANSFER_RISK
+                    - PAYROLL_CARD_ALREADY_LOGOUT
+                    - PAYROLL_CARD_ALREADY_FROZEN
+                    - PAYROLL_CARD_UNAUTHORIZED
+                    - PAYROLL_CARD_USER_NOT_OPEN
+                    - PAYROLL_CARD_NAME_CARD_NOT_MATCH
+                    - PAYROLL_CARD_ID_CARD_NOT_MATCH
+                    - PAYROLL_CARD_BANKCARD_UNBUNDLING
+                    - BANK_CARD_COLLECTIONS_ABOVE_QUOTA
+                    - BANK_CARD_ACCOUNT_ABNORMAL
+                    - BANK_CARD_STATUS_ABNORMAL
+                    - BANK_CARD_BANK_INFO_WRONG
+                    - BANK_CARD_CARD_INFO_WRONG
+                    - OTHER_FAIL_REASON_TYPE
+                    - REALNAME_ACCOUNT_RECEIVED_QUOTA_EXCEED
+                    - TRANSFER_REMARK_SET_FAIL

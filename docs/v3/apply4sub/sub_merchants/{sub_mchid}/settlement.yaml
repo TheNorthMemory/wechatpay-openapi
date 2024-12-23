@@ -27,6 +27,9 @@ get:
             type: string
             description: 账户类型
             example: ACCOUNT_TYPE_BUSINESS
+            enum:
+              - ACCOUNT_TYPE_BUSINESS
+              - ACCOUNT_TYPE_PRIVATE
           account_bank:
             type: string
             description: 开户银行
@@ -47,6 +50,10 @@ get:
             type: string
             description: 验证结果
             example: VERIFY_SUCCESS
+            enum:
+              - VERIFY_SUCCESS
+              - VERIFY_FAIL
+              - VERIFYING
           verify_fail_reason:
             type: string
             description: 验证失败原因

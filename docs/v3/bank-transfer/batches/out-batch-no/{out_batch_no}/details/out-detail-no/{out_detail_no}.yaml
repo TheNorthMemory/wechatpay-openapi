@@ -79,6 +79,9 @@ get:
             type: string
             description: 转账场景
             example: ORDINARY_TRANSFER
+            enum:
+              - ORDINARY_TRANSFER
+              - PAYROLL_CARD_TRANSFER
           out_detail_no:
             type: string
             description: 银行明细单号
@@ -107,10 +110,44 @@ get:
             type: string
             description: 明细状态
             example: SUCCESS
+            enum:
+              - PROCESSING
+              - SUCCESS
+              - FAIL
+              - REFUND
           fail_reason:
             type: string
             description: 明细失败原因
             example: ACCOUNT_FROZEN
+            enum:
+              - ACCOUNT_FROZEN
+              - REAL_NAME_CHECK_FAIL
+              - NAME_NOT_CORRECT
+              - OPENID_INVALID
+              - TRANSFER_QUOTA_EXCEED
+              - DAY_RECEIVED_QUOTA_EXCEED
+              - MONTH_RECEIVED_QUOTA_EXCEED
+              - DAY_RECEIVED_COUNT_EXCEED
+              - PRODUCT_AUTH_CHECK_FAIL
+              - OVERDUE_CLOSE
+              - ID_CARD_NOT_CORRECT
+              - ACCOUNT_NOT_EXIST
+              - TRANSFER_RISK
+              - PAYROLL_CARD_ALREADY_LOGOUT
+              - PAYROLL_CARD_ALREADY_FROZEN
+              - PAYROLL_CARD_UNAUTHORIZED
+              - PAYROLL_CARD_USER_NOT_OPEN
+              - PAYROLL_CARD_NAME_CARD_NOT_MATCH
+              - PAYROLL_CARD_ID_CARD_NOT_MATCH
+              - PAYROLL_CARD_BANKCARD_UNBUNDLING
+              - BANK_CARD_COLLECTIONS_ABOVE_QUOTA
+              - BANK_CARD_ACCOUNT_ABNORMAL
+              - BANK_CARD_STATUS_ABNORMAL
+              - BANK_CARD_BANK_INFO_WRONG
+              - BANK_CARD_CARD_INFO_WRONG
+              - OTHER_FAIL_REASON_TYPE
+              - REALNAME_ACCOUNT_RECEIVED_QUOTA_EXCEED
+              - TRANSFER_REMARK_SET_FAIL
           initiate_time:
             type: string
             description: 转账发起时间
@@ -122,7 +159,10 @@ get:
           account_type:
             type: string
             description: 收款账户类型
-            example: WXPAY_ACCOUNT
+            example: WECHATPAY_ACCOUNT
+            enum:
+              - WECHATPAY_ACCOUNT
+              - BANK_ACCOUNT
           bank_name:
             type: string
             description: 银行名称

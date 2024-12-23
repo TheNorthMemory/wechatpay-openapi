@@ -40,6 +40,9 @@ get:
             type: string
             description: 账户类型
             example: ACCOUNT_TYPE_BUSINESS
+            enum:
+              - ACCOUNT_TYPE_BUSINESS
+              - ACCOUNT_TYPE_PRIVATE
           account_bank:
             type: string
             description: 开户银行
@@ -60,6 +63,10 @@ get:
             type: string
             description: 审核状态
             example: AUDIT_SUCCESS
+            enum:
+              - AUDIT_SUCCESS
+              - AUDITING
+              - AUDIT_FAIL
           verify_fail_reason:
             type: string
             description: 审核驳回原因

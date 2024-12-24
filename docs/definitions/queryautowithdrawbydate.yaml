@@ -97,6 +97,8 @@ queryautowithdrawbydate.response:
           example: HMAC-SHA256
           maxLength: 32
           nullable: true
+          enum:
+            - HMAC-SHA256
         sign:
           type: string
           description: 签名

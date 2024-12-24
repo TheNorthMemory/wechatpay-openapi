@@ -48,13 +48,17 @@ post:
             type: string
             description: 签名
             example: C380BEC2BFD727A4B6845133519F3AD6
-            maxLength: 32
+            maxLength: 64
           sign_type:
             type: string
             description: 签名类型
             example: HMAC-SHA256
             maxLength: 32
             nullable: true
+            default: MD5
+            enum:
+              - MD5
+              - HMAC-SHA256
   responses:
     '200':
       description: ''

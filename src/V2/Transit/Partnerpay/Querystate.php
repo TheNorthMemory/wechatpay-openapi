@@ -21,7 +21,7 @@ interface Querystate
             'mch_id' => '10000098',
             'sub_mch_id' => '1900000109',
             'contract_id' => 'wx15463511252015071056489715',
-            'sign_type' => 'hmac-sha256',
+            'sign_type' => 'HMAC-SHA256',
             'openid' => 'oyobu0dmn6tdodznfwkoekqorbi8',
         ],
     ]): ResponseInterface;
@@ -38,7 +38,7 @@ interface Querystate
             'mch_id' => '10000098',
             'sub_mch_id' => '1900000109',
             'contract_id' => 'wx15463511252015071056489715',
-            'sign_type' => 'hmac-sha256',
+            'sign_type' => 'HMAC-SHA256',
             'openid' => 'oyobu0dmn6tdodznfwkoekqorbi8',
         ],
     ]): PromiseInterface;

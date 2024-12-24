@@ -52,8 +52,11 @@ post:
             description: 委托代扣协议id
           sign_type:
             type: string
-            example: hmac-sha256
+            example: HMAC-SHA256
             description: 签名类型
+            default: HMAC-SHA256
+            enum:
+              - HMAC-SHA256
           sign:
             type: string
             example: ee088059bbc9141264f8d14293ad6c4bb94cea8c08aa98fbf93e262d445f8ff5

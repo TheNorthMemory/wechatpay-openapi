@@ -44,6 +44,7 @@ post:
             type: string
             example: HMAC-SHA256
             description: 签名类型
+            default: HMAC-SHA256
             enum:
               - HMAC-SHA256
           sign:

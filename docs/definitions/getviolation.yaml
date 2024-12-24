@@ -24,6 +24,8 @@ getviolation.request:
           type: string
           maxLength: 32
           example: HMAC-SHA256
+          enum:
+            - HMAC-SHA256
         begin_time:
           description: 开始时间
           type: string

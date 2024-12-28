@@ -69,7 +69,6 @@ get:
             example: '86693852'
           name:
             type: string
-            format: base64
             description: 分账接收方全称
             example: hu89ohu89ohu89o
           relation_type:

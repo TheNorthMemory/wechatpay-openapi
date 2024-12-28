@@ -7,7 +7,7 @@ post:
   summary: 微工卡核身预下单（流程中完成授权）
   description: 本接口适用于用户需同步完成服务开通、授权及身份核验的场景。在拉起微工卡前端服务为用户核身前，需调用本接口预下单，下单成功后才能进行核身。如此时用户未开通微工卡服务或未完成对商户的授权，则先完成开通、授权，同步完成身份核验，并提供可信的核验结果。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_29.shtml)
   parameters:
-    - $ref: '../../../definitions/Parameters.yaml#/WECHATPAY_CERTIFICATE_SERIAL'
+    - $ref: '../../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
     - name: _
       in: body
       required: true
@@ -54,10 +54,12 @@ post:
             example: 某用工企业
           user_name:
             type: string
+            format: base64
             description: 用户实名
             example: LP7bT4hQXUsOZCEvK2YrSiqFsnP0oRMfeoLN0vBg
           id_card_number:
             type: string
+            format: base64
             description: 用户证件号
             example: 7FzH5XksJG3a8HLLsaaUV6K54y1OnPMY5
           employment_type:

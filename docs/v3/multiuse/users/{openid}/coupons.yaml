@@ -7,7 +7,7 @@ post:
   summary: 发放指定批次的消费金
   description: 商户平台/API完成制券/消费金后，可使用发放代金券接口发券/消费金。通过调用此接口可发放指定批次给指定用户。 [官方文档](https://pay.weixin.qq.com/docs/merchant/apis/multiuse-coupon/multiuse-coupon/send-multiuse-coupon.html)
   parameters:
-    - $ref: '../../../../definitions/Parameters.yaml#/WECHATPAY_CERTIFICATE_SERIAL'
+    - $ref: '../../../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
     - name: openid
       in: path
       required: true
@@ -36,10 +36,12 @@ post:
             example: '8956000202407191254642'
           user_name:
             type: string
+            format: base64
             description: 用户姓名
             example: 757b340b45ebef5467rter35gf464344v3542sdf4t6re4tb4f54ty45t4yyry45
           id_card_number:
             type: string
+            format: base64
             description: 身份证号码
             example: 757b340b45ebef5467rter35gf464344v3542sdf4t6re4tb4f54ty45t4yyry45
           amount:
@@ -54,6 +56,8 @@ post:
             type: string
             description: 证件类型
             example: ID_CARD
+            enum:
+              - ID_CARD
   responses:
     '200':
       schema:

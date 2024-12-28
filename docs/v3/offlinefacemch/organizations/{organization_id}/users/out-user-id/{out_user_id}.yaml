@@ -82,7 +82,7 @@ patch:
   summary: 刷脸用户信息修改接口
   description: 若修改了学生姓名、班级、手机号时，需调用接口同步给微信侧，否则可能导致小助手上记录欠款的学生姓名、班级与实际不符合以及学生刷脸验证手机号时无法通过。[官方文档](https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/access-specifications.html)
   parameters:
-    - $ref: '../../../../../../definitions/Parameters.yaml#/WECHATPAY_CERTIFICATE_SERIAL'
+    - $ref: '../../../../../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
     - name: organization_id
       in: path
       type: string

@@ -7,7 +7,7 @@ post:
   summary: 预签约API
   description: 商户调用该接口可获取预签约码（presign_token），预签约码对应用户一次的签约信息，之后用户可以从商户小程序跳转到微信签约小程序时使用该预签约码进行签约。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/edu/eduschoolpay/chapter3_1.shtml)
   parameters:
-    - $ref: '../../../definitions/Parameters.yaml#WECHATPAY_CERTIFICATE_SERIAL'
+    - $ref: '../../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
     - name: _
       in: body
       required: true
@@ -61,14 +61,17 @@ post:
             properties:
               real_name:
                 type: string
+                format: base64
                 description: 姓名
                 example: 6TqLAZvNZ4AXLNHLMbjA1yKq2k5krHM09m3tCuR
               credential_type:
                 type: string
+                format: base64
                 description: 证件类型
                 example: IDENTITY_CARD
               id_card_number:
                 type: string
+                format: base64
                 description: 身份证号
                 example: 6TqLAZvNZ4AXLNHLMbjA1yKq2k5krHM09m3tCuR
           bank_card:
@@ -79,6 +82,7 @@ post:
             properties:
               bank_card_no:
                 type: string
+                format: base64
                 description: 签约银行卡号
                 example: 6TqLAZvNZ4AXLNHLMbjA1yKq2k5krHM09m3tCuR
               valid_thru:
@@ -87,6 +91,7 @@ post:
                 example: 08/21
               phone:
                 type: string
+                format: base64
                 description: 银行卡开卡预留手机号
                 example: j6PlFRRJ4nvGSbtDZzXbXScACvDSnIny67zk3BgT5uIbK4VfGmcjPBEk2mt5ASZ6UUHB4Gy0IZpbuanF9
               bank_type:

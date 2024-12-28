@@ -8,7 +8,7 @@ post:
   summary: 发起批量转账API
   description: 服务商可以通过该接口，批量向用户零钱进行转账操作。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_6.shtml) [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transfer_partner/chapter3_1.shtml)
   parameters:
-    - $ref: '../../definitions/Parameters.yaml#WECHATPAY_CERTIFICATE_SERIAL'
+    - $ref: '../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
     - name: _
       in: body
       required: true
@@ -90,10 +90,12 @@ post:
                   example: o-MYE42l80oelYMDE34nYD456Xoy
                 user_name:
                   type: string
+                  format: base64
                   description: 收款用户姓名
                   example: 757b340b45ebef5467rter35gf464344v3542sdf4t6re4tb4f54ty45t4yyry45
                 user_id_card:
                   type: string
+                  format: base64
                   description: 收款用户身份证
                   example: 8609cb22e1774a50a930e414cc71eca06121bcd266335cda230d24a7886a8d9f
           sp_appid:

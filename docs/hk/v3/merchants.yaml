@@ -7,8 +7,8 @@ post:
   summary: 子商户进件（融合钱包）
   description: 机构提交子商户资料，微信支付系统会为每个子商户创建子商户号。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/Onborading_Sub_Merchant/chapter3_1.shtml)
   parameters:
-    - $ref: '../../definitions/Parameters.yaml#HTTP_IDEMPOTENCY_KEY'
-    - $ref: '../../definitions/Parameters.yaml#WECHATPAY_CERTIFICATE_SERIAL'
+    - $ref: '../../definitions/Parameters.yaml#/HTTP_IDEMPOTENCY_KEY'
+    - $ref: '../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
     - name: _
       in: body
       required: true
@@ -56,14 +56,17 @@ post:
             properties:
               name:
                 type: string
+                format: base64
                 description: 联系人名称
                 example: 李先生
               phone:
                 type: string
+                format: base64
                 description: 联系人电话
                 example: '075586010000'
               email:
                 type: string
+                format: base64
                 description: 联系人邮箱
                 example: test@test.com
           business_category:
@@ -206,7 +209,7 @@ put:
   summary: 修改子商户（融合钱包）
   description: 用于机构子商户创建成功后，接口提供子商户信息修改 [官方文档](https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/Onborading_Sub_Merchant/chapter3_3.shtml)
   parameters:
-    - $ref: '../../definitions/Parameters.yaml#WECHATPAY_CERTIFICATE_SERIAL'
+    - $ref: '../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
     - name: _
       in: body
       required: true
@@ -258,14 +261,17 @@ put:
             properties:
               name:
                 type: string
+                format: base64
                 description: 联系人名称
                 example: 李先生
               phone:
                 type: string
+                format: base64
                 description: 联系人电话
                 example: '075586010000'
               email:
                 type: string
+                format: base64
                 description: 联系人邮箱
                 example: test@test.com
           business_category:

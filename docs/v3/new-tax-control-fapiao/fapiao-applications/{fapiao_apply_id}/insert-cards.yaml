@@ -9,7 +9,7 @@ post:
   summary: 将电子发票插入微信用户卡包
   description: 商户自行开具电子发票后，可调用本接口将电子发票插入微信用户的卡包。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/new-tax-control-fapiao/chapter3_11.shtml)
   parameters:
-    - $ref: '../../../../definitions/Parameters.yaml#/WECHATPAY_CERTIFICATE_SERIAL'
+    - $ref: '../../../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
     - name: fapiao_apply_id
       in: path
       type: string
@@ -71,10 +71,12 @@ post:
                 example: '62001234567890'
               phone:
                 type: string
+                format: base64
                 description: 手机号
                 example: '18507550000'
               email:
                 type: string
+                format: base64
                 description: 邮箱地址
                 example: 123110@qq.com
           fapiao_card_information:
@@ -119,7 +121,7 @@ post:
                 password:
                   type: string
                   description: 密码
-                  example: 006>299-375/326>2+7/*0-+<351059<80<4*/5>+<11631+*3030/5*37+/-243159658+013>3409*044>4-/1+/9->*>69501*6++1997--21
+                  example: 006>299-375/326>2+7/*0-+<3510
                 total_amount:
                   type: integer
                   description: 总价税合计

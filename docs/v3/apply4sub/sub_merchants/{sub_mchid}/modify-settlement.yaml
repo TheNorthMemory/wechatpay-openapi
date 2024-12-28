@@ -7,7 +7,7 @@ post:
   summary: 修改结算帐号API
   description: 修改结算帐号API [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/tool/applyment4sub/chapter3_3.shtml) [官方文档](https://pay.weixin.qq.com/docs/partner/apis/ecommerce-merchant-application/modify-settlement.html)
   parameters:
-    - $ref: '../../../../definitions/Parameters.yaml#/WECHATPAY_CERTIFICATE_SERIAL'
+    - $ref: '../../../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
     - name: sub_mchid
       in: path
       type: string

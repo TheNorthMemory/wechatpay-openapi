@@ -7,7 +7,7 @@ post:
   summary: 发起转账
   description: 商户可通过此接口申请创建商家转账订单。[官方文档](https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-transfer/transfer-bill/transfer-to-user.html)
   parameters:
-    - $ref: ../../../definitions/Parameters.yaml#/WECHATPAY_CERTIFICATE_SERIAL
+    - $ref: ../../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL
     - name: _
       in: body
       required: true

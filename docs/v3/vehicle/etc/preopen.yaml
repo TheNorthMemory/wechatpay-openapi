@@ -7,7 +7,7 @@ post:
   summary: 预开通用户ETC指定卡扣费API
   description: 该接口用于在开通ETC自动扣费前上传一些必要的信息。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_4_1.shtml)
   parameters:
-    - $ref: '../../../definitions/Parameters.yaml#/WECHATPAY_CERTIFICATE_SERIAL'
+    - $ref: '../../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
     - name: _
       in: body
       required: true
@@ -58,10 +58,12 @@ post:
             properties:
               encrypted_real_name:
                 type: string
+                format: base64
                 description: 姓名
                 example: LOX6jBeRlK/TErW6DqEM8JFHX4iL3Rlj2vqaEqktvw1KVjgmQ==
               encrypted_credential_id:
                 type: string
+                format: base64
                 description: 证件号码
                 example: t85SAX3GxVYqGQm2Q8cfeFd1dWy40j4s7XpIds8Glw83HG3vN9Q==
               credential_type:
@@ -70,6 +72,7 @@ post:
                 example: ID_CARD
           bank_card_no:
             type: string
+            format: base64
             description: 用户开通ETC时绑定的银行卡
             example: K/TErW6DqEM8JFHX4iL3Rlj2vqaEqktvw1KVjgmQ==
   responses:

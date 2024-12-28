@@ -8,7 +8,7 @@ post:
   summary: 导入加密手机号提醒会员领卡API
   description: 如商户有存量注册会员未领取会员卡，可导入最近一年在品牌内有微信支付交易的活跃会员手机号（需加密后才能导入），导入后微信将通过卡包提醒用户将会员卡领取到卡包。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter4_1.shtml)
   parameters:
-    - $ref: '../../../../definitions/Parameters.yaml#WECHATPAY_CERTIFICATE_SERIAL'
+    - $ref: '../../../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
     - name: _
       in: body
       required: true
@@ -45,6 +45,7 @@ post:
                 example: '2015-05-20T13:29:35.120+08:00'
           encrypted_phone_number:
             type: string
+            format: base64
             description: 加密手机号
             example: vvysDQeEaH3I+wRh14St0abIkvQyFgh/fbWYSs2bLtG9tj+bdJn4WSCPzqSyXnFbzaaKSE2j4mAFON3kzNexb/SYkHZNJAuCittaW4wpGj7U+h9A==
           outer_str:

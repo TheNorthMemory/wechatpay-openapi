@@ -7,7 +7,7 @@ post:
   summary: 受理单次预约商家转账
   description: 商户可调用接口预先指定转账的单次计划，预创建预约记录并获取微信预约记录单号和跳转信息（package_info），再携带该（package_info）参数，通过微信SDK拉起微信支付客户端的用户确认页面。[官方文档](https://pay.weixin.qq.com/docs/partner/apis/platsolution-mch-transfer/transfer-reservation/transfer-reservation-apply.html)
   parameters:
-    - $ref: ../../../../definitions/Parameters.yaml#/WECHATPAY_CERTIFICATE_SERIAL
+    - $ref: ../../../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL
     - name: _
       in: body
       required: true

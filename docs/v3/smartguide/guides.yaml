@@ -6,7 +6,7 @@ post:
   summary: 服务人员注册API
   description: 用于服务商/商户开发者为商户注册服务人员使用。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/smartguide/chapter3_1.shtml)
   parameters:
-    - $ref: '../../definitions/Parameters.yaml#WECHATPAY_CERTIFICATE_SERIAL'
+    - $ref: '../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
     - name: _
       in: body
       required: true
@@ -29,9 +29,11 @@ post:
             description: 企业微信的员工ID
           name:
             type: string
+            format: base64
             description: 企业微信的员工姓名
           mobile:
             type: string
+            format: base64
             description: 手机号码
           qr_code:
             type: string
@@ -60,7 +62,7 @@ get:
   description: 用于服务商/商户开发者查询已注册的服务人员ID等信息。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/smartguide/chapter3_3.shtml)
   x-is-sensitive: [mobile]
   parameters:
-    - $ref: '../../definitions/Parameters.yaml#WECHATPAY_CERTIFICATE_SERIAL'
+    - $ref: '../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
     - name: sub_mchid
       in: query
       type: string
@@ -77,6 +79,7 @@ get:
     - name: mobile
       in: query
       type: string
+      format: base64
       description: 手机号码
     - name: work_id
       in: query
@@ -127,10 +130,12 @@ get:
                   example: 12345678
                 name:
                   type: string
+                  format: base64
                   description: 企业微信的员工姓名
                   example: pVd1HJ6v/69bDnuC4EL5Kz4jBHLiCa8MRtelw/wDa4SzfeespQO/0kjiwfqdfg==
                 mobile:
                   type: string
+                  format: base64
                   description: 手机号码
                   example: pVd1HJ6v/69bDnuC4EL5Kz4jBHLiCa8MRtelw/wDa4SzfeespQO/0kjiwfqdfg==
                 userid:

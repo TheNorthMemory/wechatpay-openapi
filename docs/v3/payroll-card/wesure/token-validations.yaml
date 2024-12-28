@@ -7,7 +7,7 @@ post:
   summary: 校验核身结果API
   description: 校验按商户拉起核身时预下单的token值对应的微工卡核身结果是否成功 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_31.shtml)
   parameters:
-    - $ref: '../../../definitions/Parameters.yaml#/WECHATPAY_CERTIFICATE_SERIAL'
+    - $ref: '../../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
     - name: _
       in: body
       required: true
@@ -34,10 +34,12 @@ post:
             example: abcdefghijklmn
           user_name:
             type: string
+            format: base64
             description: 用户姓名
             example: LP7bT4hQXUsOZCEvK2YrSiqFsnP0oRMfeoLN0vBg
           id_card_number:
             type: string
+            format: base64
             description: 用户身份证号
             example: 7FzH5XksJG3a8HLLsaaUV6K54y1OnPMY5
           authenticate_type:

@@ -48,14 +48,16 @@ post:
             maxLength: 32
           enc_bank_no:
             type: string
+            format: base64
             description: 收款方银行卡号
             example: 8609cb22e1774a50a930e414cc71eca06121bcd266335cda230d24a7886a8d9f
-            maxLength: 64
+            maxLength: 384
           enc_true_name:
             type: string
+            format: base64
             description: 收款方用户名
             example: ca775af5f841bdf424b2e6eb86a6e21e
-            maxLength: 64
+            maxLength: 384
           bank_code:
             type: string
             description: 收款方开户行

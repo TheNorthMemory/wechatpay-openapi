@@ -7,7 +7,7 @@ post:
   summary: 预签约接口
   description: 一键绑卡不是支持所有银行卡，上线前请先测试是否支持该银行卡。[官方文档](https://pay.weixin.qq.com/wiki/doc/wxfacepay/develop/access-specifications.html)
   parameters:
-    - $ref: '../../../definitions/Parameters.yaml#/WECHATPAY_CERTIFICATE_SERIAL'
+    - $ref: '../../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
     - name: _
       in: body
       schema:

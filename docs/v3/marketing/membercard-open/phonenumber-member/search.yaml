@@ -9,7 +9,7 @@ get:
   description: 商户可查询导入成功的加密手机号是否已被用户领取。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter4_2.shtml)
   x-is-sensitive: [encrypted_phone_number]
   parameters:
-    - $ref: '../../../../definitions/Parameters.yaml#WECHATPAY_CERTIFICATE_SERIAL'
+    - $ref: '../../../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
     - name: card_id
       in: query
       type: string
@@ -19,6 +19,7 @@ get:
     - name: encrypted_phone_number
       in: query
       type: string
+      format: base64
       required: true
       description: 加密手机号
       example: vvysDQeEaH3I+wRh14St0abIkvQyFgh/fbWYSs2bLtG9tj+bdJn4WSCPzLyXnFbzaaKSE2j4mAFON3kzNexb/SYkHZNJAuCittaW4wpGj7U+h9A==

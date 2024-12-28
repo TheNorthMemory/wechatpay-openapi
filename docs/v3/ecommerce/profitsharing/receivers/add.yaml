@@ -6,7 +6,7 @@ post:
   summary: 添加分账接收方API
   description: 电商平台可通过此接口添加分账接收方，建立分账接收方列表。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/profitsharing/chapter3_7.shtml)
   parameters:
-    - $ref: '../../../../definitions/Parameters.yaml#WECHATPAY_CERTIFICATE_SERIAL'
+    - $ref: '../../../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
     - name: _
       in: body
       required: true
@@ -38,6 +38,7 @@ post:
             example: 张三网络公司
           encrypted_name:
             type: string
+            format: base64
             description: 接收方名称的密文
             example: hu89ohu89ohu89o
           relation_type:

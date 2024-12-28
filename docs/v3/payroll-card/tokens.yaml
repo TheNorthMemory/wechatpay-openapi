@@ -7,7 +7,7 @@ post:
   summary: 生成授权token API
   description: 生成授权token信息 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter4_1_1.shtml)
   parameters:
-    - $ref: '../../definitions/Parameters.yaml#/WECHATPAY_CERTIFICATE_SERIAL'
+    - $ref: '../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
     - name: _
       in: body
       required: true
@@ -38,10 +38,12 @@ post:
             example: '1111111'
           user_name:
             type: string
+            format: base64
             description: 用户实名
             example: LP7bT4hQXUsOZCEvK2YrSiqFsnP0oRMfeoLN0vBg
           id_card_number:
             type: string
+            format: base64
             description: 用户证件号
             example: 7FzH5XksJG3a8HLLsaaUV6K54y1OnPMY5
           employment_type:

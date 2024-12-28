@@ -7,7 +7,7 @@ post:
   summary: 发起转账
   description: 商家转账用户确认模式下，用户申请收款时，商户可通过此接口申请创建转账单 [官方文档](https://pay.weixin.qq.com/docs/merchant/apis/mch-trans/transfer-bill/transfer-to-user.html)
   parameters:
-    - $ref: '../../../definitions/Parameters.yaml#/WECHATPAY_CERTIFICATE_SERIAL'
+    - $ref: '../../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
     - name: _
       in: body
       required: true
@@ -39,6 +39,7 @@ post:
             example: o-MYE42l80oelYMDE34nYD456Xoy
           user_name:
             type: string
+            format: base64
             description: 收款用户姓名
             example: 757b340b45ebef5467rter35gf464344v3542sdf4t6re4tb4f54ty45t4yyry45
           transfer_amount:

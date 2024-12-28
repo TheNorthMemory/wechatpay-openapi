@@ -67,14 +67,17 @@ get:
             properties:
               name:
                 type: string
+                format: base64
                 description: 联系人名称
                 example: Bob Zhang
               phone:
                 type: string
+                format: base64
                 description: 联系人电话
                 example: '+8613633334444'
               email:
                 type: string
+                format: base64
                 description: 联系人邮箱
                 example: test@test.com
           merchant_type:

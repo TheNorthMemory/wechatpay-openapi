@@ -9,7 +9,7 @@ post:
     - multipart/form-data
   description: '商户将支付成功回传的参数填入指定字段，可以给指定微信支付订单上传电子小票。 上传成功后，用户可以在账单详情页看到商户上传的电子小票。[官方文档](https://pay.weixin.qq.com/docs/partner/apis/shopping-receipt/shopping-receipts/upload-shopping-receipt.html)'
   parameters:
-    - $ref: '../../../definitions/Parameters.yaml#/WECHATPAY_CERTIFICATE_SERIAL'
+    - $ref: '../../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
     - name: meta
       in: formData
       required: true

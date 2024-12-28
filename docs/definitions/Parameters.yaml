@@ -1,9 +1,9 @@
 # 对于上行有敏感信息的请求，需要设置此头参数
-WECHATPAY_CERTIFICATE_SERIAL:
+HTTP_WECHATPAY_SERIAL:
   in: header
   required: true
   name: Wechatpay-Serial
-  description: 平台公钥ID/平台公钥证书序列号
+  description: 微信支付公钥ID/平台证书序列号
   example: PUB_KEY_ID_0114232134912410000000000000
 HTTP_ACCEPT_ENCODING:
   in: header

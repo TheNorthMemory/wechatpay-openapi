@@ -52,6 +52,7 @@ get:
             example: '1900012181'
           payer_phone:
             type: string
+            format: base64
             description: 投诉人联系方式
             example: sGdNeTHMQGlxCWiUyHu6XNO9GCYln2Luv4HhwJzZBfcL12sB
           payer_openid:

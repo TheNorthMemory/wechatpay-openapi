@@ -67,14 +67,17 @@ get:
             properties:
               name:
                 type: string
+                format: base64
                 description: 联系人名称
                 example: Bob Zhang
               phone:
                 type: string
+                format: base64
                 description: 联系人电话
                 example: '+8613633334444'
               email:
                 type: string
+                format: base64
                 description: 联系人邮箱
                 example: test@test.com
           merchant_type:
@@ -166,6 +169,7 @@ patch:
   summary: 修改子商户（融合钱包）
   description: 用于机构子商户创建成功后，接口提供子商户信息修改 [官方文档](https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter4_2_3.shtml)
   parameters:
+    - $ref: '../../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
     - name: _
       in: body
       required: true
@@ -220,14 +224,17 @@ patch:
             properties:
               name:
                 type: string
+                format: base64
                 description: 联系人名称
                 example: 李先生
               phone:
                 type: string
+                format: base64
                 description: 联系人电话
                 example: '075586010000'
               email:
                 type: string
+                format: base64
                 description: 联系人邮箱
                 example: test@test.com
           business_category:

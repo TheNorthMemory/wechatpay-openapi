@@ -7,11 +7,7 @@ post:
   summary: 保险商户小程序预签约API
   description: 商户可调用本接口预先指定签约及交易信息（交易信息可选填），生成预签约会话及对应的预签约ID，再携带预签约ID（pre_entrustweb_id）参数，通过小程序跳转参数调用navigateToMiniProgram跳转至微信支付的页面。[官方文档](https://pay.weixin.qq.com/docs/merchant/apis/insurance-entrusted-payment/insurance/mimi-program-sign-and-create-transaction.html)
   parameters:
-    - name: Wechatpay-Serial
-      in: header
-      required: true
-      type: string
-      description: 微信支付平台证书序列号
+    - $ref: '../../../../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
     - name: _
       in: body
       required: true
@@ -146,16 +142,20 @@ post:
             properties:
               real_name:
                 type: string
+                format: base64
                 description: 自然人姓名
                 example: OEimkKuua8igpd+0YDgqF2Z61leeGD7x87j3Ph==
               id_card_number:
                 type: string
+                format: base64
                 description: 自然人身份证号码
                 example: 1axtI9EZUr0343c89xQznxau+cRWPKP4YhVAoj==
               identity_type:
                 type: string
                 description: 实名验证类型
                 example: ID_CARD
+                enum:
+                  - ID_CARD
           combined_deduct_period_count:
             type: number
             description: 合并扣费期数

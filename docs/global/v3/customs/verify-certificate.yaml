@@ -8,7 +8,7 @@ post:
   summary: 身份信息校验API
   description: 该接口用于商户上传用户身份信息，微信支付会重新校验返回订购人和支付人身份信息校验结果，用于商户纠正报关订单里的信息。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/declarecustom_ch/chapter3_2.shtml)
   parameters:
-    - $ref: '../../../definitions/Parameters.yaml#WECHATPAY_CERTIFICATE_SERIAL'
+    - $ref: '../../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
     - name: _
       in: body
       required: true
@@ -71,10 +71,12 @@ post:
               - IDCARD
           certificate_id:
             type: string
+            format: base64
             description: 证件号
             example: '330821198809085211'
           certificate_name:
             type: string
+            format: base64
             description: 证件姓名
             example: '张三'
   responses:

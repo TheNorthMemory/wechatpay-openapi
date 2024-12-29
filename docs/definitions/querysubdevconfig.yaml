@@ -94,13 +94,40 @@ querysubdevconfig.response:
           xml:
             x-cdata: true
           type: string
+          format: jsonObjectLike
           description: 授权目录
           example: '{"jsapi_path_list":["http://www.qq.com/abcd/","http://www.qq.com/abcdedfg/"]}'
           maxLength: 2048
+          x-json:
+            type: object
+            properties:
+              jsapi_path_list:
+                type: array
+                description: 支付目录URI数组
+                items:
+                  type: string
+                  description: 支付目录URI
         appid_config_list:
           xml:
             x-cdata: true
           type: string
-          description: 关联APPID与关注
+          format: jsonObjectLike
+          description: 关联APPID与关注特约商户公众号的APPID
           example: '{"appid_config_list":[{"subscribe_appid":"wxa9d9651ae82ec4b9","sub_appid":"null"},{"subscribe_appid":"wxa9d9651ae82ec4b9","sub_appid":"wxa9d9651ae82ec4b9"}]}'
           maxLength: 1024
+          x-json:
+            type: object
+            properties:
+              appid_config_list:
+                type: array
+                description: 关联与关注APPID数组
+                items:
+                  type: object
+                  description: APPID数组
+                  properties:
+                    subscribe_appid:
+                      type: string
+                      description: 关注特约商户公众号的APPID
+                    sub_appid:
+                      type: string
+                      description: 绑定好的商户公众号、小程序、APP支付等APPID

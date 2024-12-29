@@ -22,24 +22,28 @@ querymchrisk.request:
           nullable: true
         certificates_number:
           type: string
+          format: base64
           description: 身份证号（需加密）
           example: 8609cb22e1774a50a930e414cc71eca06121bcd266335cda230d24a7886a8d9f
           maxLength: 344
           nullable: true
         certificates_name:
           type: string
+          format: base64
           description: 身份证所有人姓名（需加密）
           example: ca775af5f841bdf424b2e6eb86a6e21e
           maxLength: 344
           nullable: true
         settlement_card_no:
           type: string
+          format: base64
           description: 结算账号（需加密）
           example: 8609cb22e1774a50a930e414cc71eca06121bcd266335cda230d24a7886a8d9f
           maxLength: 344
           nullable: true
         settlement_card_name:
           type: string
+          format: base64
           description: 结算户名（需加密）
           example: ca775af5f841bdf424b2e6eb86a6e21e
           maxLength: 344
@@ -52,6 +56,7 @@ querymchrisk.request:
           nullable: true
         business_license_number:
           type: string
+          format: base64
           description: 营业执照编号（需加密）
           example: ca775af5f841bdf424b2e6eb86a6e21e
           maxLength: 344

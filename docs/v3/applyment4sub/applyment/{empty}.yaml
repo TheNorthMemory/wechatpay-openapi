@@ -61,7 +61,6 @@ post:
                 description: 业务办理授权函
               openid:
                 type: string
-                format: base64
                 description: 超级管理员微信openid
               mobile_phone:
                 type: string
@@ -69,7 +68,7 @@ post:
                 description: 联系手机
               contact_email:
                 type: string
-                format: email
+                format: base64
                 description: 联系邮箱
           subject_info:
             type: object

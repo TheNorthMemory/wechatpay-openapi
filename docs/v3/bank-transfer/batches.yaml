@@ -109,10 +109,12 @@ post:
                   example: o-MYE42l80oelYMDE34nYD456Xoy
                 user_name:
                   type: string
+                  format: base64
                   description: 收款用户姓名
                   example: 757b340b45ebef5467rter35gf464344v3542sdf4t6re4tb4f54ty45t4yyry45
                 user_id_card:
                   type: string
+                  format: base64
                   description: 收款用户身份证
                   example: 8609cb22e1774a50a930e414cc71eca06121bcd266335cda230d24a7886a8d9f
   responses:

@@ -43,7 +43,7 @@ post:
             properties:
               consultation_phone_number:
                 type: string
-                format: rsa-pubkey-encrypted
+                format: base64
                 description: 品牌售后部门的咨询电话。
                 example: pVd1HJ6v/69bDnuC4EL5Kz4jBHLiCa8MRtelw/wDa4SzfeespQO/0kjiwfqdfg==
           upload_time:

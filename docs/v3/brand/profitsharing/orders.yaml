@@ -75,6 +75,7 @@ post:
                   example: 1900000109分给商户1900000110
                 name:
                   type: string
+                  format: base64
                   description: 分账个人接收方姓名
                   example: hu89ohu89ohu89o
           finish:

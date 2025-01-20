@@ -4,6 +4,7 @@ namespace WeChatPay\OpenAPI\V3\Papay;
 
 /**
  * @property-read InsuranceSign\Policy_periods $policy_periods
+ * @property-read InsuranceSign\PolicyPeriods $policyPeriods
  * @property-read InsuranceSign\Contracts $contracts
  */
 interface InsuranceSign

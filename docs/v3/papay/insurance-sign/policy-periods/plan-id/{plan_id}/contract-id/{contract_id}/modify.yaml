@@ -1,0 +1,109 @@
+post:
+  x-last-updated-at: 2025.01.17
+  x-role:
+    - 普通商户
+  tags:
+    - 委托代扣∙保险业
+  summary: 保险商户修改保险扣费周期列表
+  description: 商户可通过本接口修改已经签订的保险自动续费协议对应的扣费周期列表。注意：当前仅支持减小状态为“NO_SCHEDULED”和“SCHEDULED”的扣费周期的预计扣费金额，暂不支持增加预计扣费金额 或 修改扣费周内的其他信息（包括总期数、每一期的扣费周期编号、预计扣费日期等）。即除了状态为“NO_SCHEDULED”和“SCHEDULED”的扣费周期传入新的预计扣费金额以外（注意一次请求内不允许有多个新的扣费金额），其余传入的扣费周期信息均需和签约时传入的保持一致。请求本接口前，请先通过查询保险扣费周期列表API确认计划修改金额的协议下所有扣费周期的最新状态。若请求本接口未获得明确结果时，也可通过查询保险扣费周期列表API确认修改的最终结果。[官方文档](https://pay.weixin.qq.com/doc/v3/merchant/4012987596)
+  parameters:
+    - name: plan_id
+      in: path
+      required: true
+      type: number
+      description: 委托代扣模板ID
+      example: 12535
+    - name: contract_id
+      in: path
+      required: true
+      type: string
+      description: 委托代扣协议ID
+      example: '2015071056489715'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - appid
+          - policy_periods
+        properties:
+          appid:
+            type: string
+            description: 应用ID
+            example: wxd678efh567hg6787
+          policy_periods:
+            type: array
+            description: 续期的扣费周期列表
+            items:
+              type: object
+              required:
+                - policy_period_id
+                - estimated_deduct_date
+                - estimated_deduct_amount
+              properties:
+                policy_period_id:
+                  type: number
+                  description: 保险扣费周期编号
+                  example: 1
+                estimated_deduct_date:
+                  type: string
+                  description: 预计扣费的日期
+                  example: '2019-11-22'
+                estimated_deduct_amount:
+                  type: object
+                  description: 预计扣费金额
+                  required:
+                    - total
+                  properties:
+                    total:
+                      type: number
+                      description: 金额
+                      example: 1
+                    currency:
+                      type: string
+                      description: 货币类型
+                      example: CNY
+          allow_cancel_scheduled:
+            type: boolean
+            description: 是否允许取消预约
+  responses:
+    '200':
+      schema:
+        type: object
+        properties:
+          policy_periods:
+            type: array
+            description: 最新的扣费周期列表
+            items:
+              type: object
+              required:
+                - policy_period_id
+                - estimated_deduct_date
+                - estimated_deduct_amount
+              properties:
+                policy_period_id:
+                  type: number
+                  description: 保险扣费周期编号
+                  example: 1
+                estimated_deduct_date:
+                  type: string
+                  description: 预计扣费的日期
+                  example: '2019-11-22'
+                estimated_deduct_amount:
+                  type: object
+                  description: 预计扣费金额
+                  required:
+                    - total
+                  properties:
+                    total:
+                      type: number
+                      description: 金额
+                      example: 1
+                    currency:
+                      type: string
+                      description: 货币类型
+                      example: CNY
+          cancel_scheduled_policy_period_id:
+            type: integer
+            description: 发生了取消预约的扣费计划项编号

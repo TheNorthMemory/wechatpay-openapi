@@ -1473,6 +1473,26 @@ paths:
     $ref: ./v3/platsolution/ecommerce/insurance-compensation-contracts.yaml
   /v3/platsolution/ecommerce/insurance-compensation-contracts/sub-mchid/{sub_mchid}/check-opened:
     $ref: ./v3/platsolution/ecommerce/insurance-compensation-contracts/sub-mchid/{sub_mchid}/check-opened.yaml
+  /v3/platsolution/ecommerce/mch-transfer/compensate-bills:
+    $ref: ./v3/platsolution/ecommerce/mch-transfer/compensate-bills.yaml
+  /v3/platsolution/ecommerce/mch-transfer/compensate-bills/bill-id/{bill_id}:
+    $ref: ./v3/platsolution/ecommerce/mch-transfer/compensate-bills/bill-id/{bill_id}.yaml
+  /v3/platsolution/ecommerce/mch-transfer/compensate-bills/out-bill-no/{out_bill_no}:
+    $ref: ./v3/platsolution/ecommerce/mch-transfer/compensate-bills/out-bill-no/{out_bill_no}.yaml
+  /v3/platsolution/ecommerce/mch-transfer/compensate-bills/out-bill-no/{out_bill_no}/cancel:
+    $ref: ./v3/platsolution/ecommerce/mch-transfer/compensate-bills/out-bill-no/{out_bill_no}/cancel.yaml
+  /v3/platsolution/ecommerce/mch-transfer/compensate-bills/pre-transfer:
+    $ref: ./v3/platsolution/ecommerce/mch-transfer/compensate-bills/pre-transfer.yaml
+  /v3/platsolution/ecommerce/mch-transfer/insurance-claim-bills:
+    $ref: ./v3/platsolution/ecommerce/mch-transfer/insurance-claim-bills.yaml
+  /v3/platsolution/ecommerce/mch-transfer/insurance-claim-bills/bill-id/{bill_id}:
+    $ref: ./v3/platsolution/ecommerce/mch-transfer/insurance-claim-bills/bill-id/{bill_id}.yaml
+  /v3/platsolution/ecommerce/mch-transfer/insurance-claim-bills/out-bill-no/{out_bill_no}:
+    $ref: ./v3/platsolution/ecommerce/mch-transfer/insurance-claim-bills/out-bill-no/{out_bill_no}.yaml
+  /v3/platsolution/ecommerce/mch-transfer/insurance-claim-bills/out-bill-no/{out_bill_no}/cancel:
+    $ref: ./v3/platsolution/ecommerce/mch-transfer/insurance-claim-bills/out-bill-no/{out_bill_no}/cancel.yaml
+  /v3/platsolution/ecommerce/mch-transfer/insurance-claim-bills/pre-transfer:
+    $ref: ./v3/platsolution/ecommerce/mch-transfer/insurance-claim-bills/pre-transfer.yaml
   /v3/platsolution/ecommerce/recharges/apply:
     $ref: ./v3/platsolution/ecommerce/recharges/apply.yaml
   /v3/platsolution/ecommerce/recharges/out-recharge-no/{out_recharge_no}:

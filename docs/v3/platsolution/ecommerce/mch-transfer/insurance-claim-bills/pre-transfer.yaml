@@ -1,0 +1,91 @@
+post:
+  x-last-updated-at: 2025.01.21
+  x-role:
+    - 服务商
+  tag:
+    - 收付通∙保险理赔
+  summary: 请求保险理赔预下单
+  description: 商户可调用该接口进行赔付预下单，并锁定商户资金。若赔付订单状态已经为终态（成功或关闭），接口将返回错误码。在预下单成功后，商户需携带接口返回的跳转参数，引导用户至微信内进行确认，用户确认后执行赔付。若预下单后超过24小时没有赔付成功，系统将自动关闭订单。订单赔付成功或者关闭时，系统将通过接口指定的商户回调地址通知赔付结果。[官方文档](https://pay.weixin.qq.com/doc/v3/partner/4013504185)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - receiver
+          - out_bill_no
+          - transfer_remark
+        properties:
+          sub_mchid:
+            type: string
+            description: 二级商户号
+            example: '1900001109'
+          receiver:
+            type: object
+            description: 收款方信息
+            properties:
+              type:
+                type: string
+                description: 转账接收方类型
+                example: MERCHANT
+                enum:
+                  - MERCHANT
+                  - TRANSACTION_USER
+              transaction_info:
+                type: object
+                description: 转账接收方订单信息
+                required:
+                  - transaction_id
+                properties:
+                  transaction_id:
+                    type: string
+                    description: 交易订单号
+                    example: '1217752501201407033233368018'
+          out_bill_no:
+            type: string
+            description: 商户单号
+            example: plfk2020042013
+          amount:
+            type: number
+            description: 赔付金额
+            example: 10000
+          transfer_remark:
+            type: string
+            description: 赔付原因
+            example: 直播违规扣罚
+          notify_url:
+            type: string
+            description: 商户回调地址
+            example: https://www.weixin.qq.com/wxpay/pay.php
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - out_bill_no
+          - bill_id
+          - accept_time
+          - package_info
+        properties:
+          sub_mchid:
+            type: string
+            description: 二级商户号
+            example: '1900001109'
+          out_bill_no:
+            type: string
+            description: 商户单号
+            example: plfk2020042013
+          bill_id:
+            type: string
+            description: 微信支付转账单号
+            example: '1330000071100999991182020050700019480001'
+          accept_time:
+            type: string
+            description: 受理时间
+            format: rfc3339
+            example: '2015-05-20T13:29:35+08:00'
+          package_info:
+            type: string
+            description: 跳转领取页面的package信息
+            example: 'affffddafdfafddffda=='

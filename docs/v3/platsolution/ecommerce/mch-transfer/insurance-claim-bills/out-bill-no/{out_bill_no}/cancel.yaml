@@ -1,0 +1,63 @@
+post:
+  x-last-updated-at: 2025.01.21
+  x-role:
+    - 服务商
+  tag:
+    - 收付通∙保险理赔
+  summary: 请求撤销保险理赔
+  description: 商户可通过该接口撤销赔付，在用户确认收款之前可以通过该接口撤销赔付。该接口返回成功仅表示撤销请求已受理，系统会异步处理退款等操作，以最终查询单据返回状态为准。[官方文档](https://pay.weixin.qq.com/doc/v3/partner/4013504186)
+  parameters:
+    - name: out_bill_no
+      in: path
+      required: true
+      type: string
+      description: 商户单号
+      example: plfk2020042013
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        properties:
+          sub_mchid:
+            type: string
+            description: 二级商户号
+            example: '1900001109'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - out_bill_no
+          - bill_id
+          - state
+          - cancel_accept_time
+        properties:
+          sub_mchid:
+            type: string
+            description: 二级商户号
+            example: '1900001109'
+          out_bill_no:
+            type: string
+            description: 商户单号
+            example: plfk2020042013
+          bill_id:
+            type: string
+            description: 微信支付转账单号
+            example: '1330000071100999991182020050700019480001'
+          state:
+            type: string
+            description: 赔付状态
+            example: ACCEPTED
+            enum:
+              - ACCEPTED #已受理
+              - SUCCESS #已成功
+              - CLOSED #系统关闭（余额不足、转账失败等原因）。
+              - WAIT_USER_CONFIRM #预下单成功，等待用户确认
+              - CANCELING #商户撤销请求受理成功，该笔付款正在撤销中
+              - CANCELLED #付款撤销完成
+          cancel_accept_time:
+            type: string
+            description: 撤销受理时间
+            format: rfc3339
+            example: '2015-05-20T13:29:35+08:00'

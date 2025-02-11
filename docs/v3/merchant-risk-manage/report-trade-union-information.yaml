@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2023.02.17
+  x-last-updated-at: 2025.01.09
   x-role:
     - 普通商户
     - 服务商
@@ -63,14 +63,23 @@ post:
             type: number
             description: 线上线下标识
             example: 1
+            enum:
+              - 1
+              - 2
           goods_type:
             type: number
             description: 虚拟实物标识
             example: 1
+            enum:
+              - 1
+              - 2
           seller_type:
             type: number
             description: 物品发布类型
             example: 1
+            enum:
+              - 1
+              - 2
           is_need_deliver:
             type: boolean
             description: 是否需要物流发货
@@ -79,6 +88,10 @@ post:
             type: number
             description: 用户设备类型
             example: 1
+            enum:
+              - 1
+              - 2
+              - 3
           userid:
             type: string
             description: 付款方用户标识
@@ -95,6 +108,10 @@ post:
             type: number
             description: 业务场景
             example: 1
+            enum:
+              - 0
+              - 1
+              - 2
           recharge_fields:
             type: object
             description: 充值业务场景独有字段
@@ -151,6 +168,168 @@ post:
             type: string
             description: 扩展字段3，json格式
             example: '{"key1":"value1"}'
+          high_risk_goods:
+            type: number
+            description: 高风险商品标签
+            example: 1
+          same_deviced:
+            type: boolean
+            description: 用户下单设备与支付设备是否一致
+          reliable_device:
+            type: boolean
+            description: 用户下单设备是否是常用设备
+          delivery_province:
+            type: string
+            description: 收货省份
+            example: example_delivery_province
+          delivery_city:
+            type: string
+            description: 收货城市
+            example: example_delivery_city
+          new_address:
+            type: boolean
+            description: 收货人地址是否新增
+          last_pay_openid:
+            type: string
+            description: 上一笔支付openid
+            example: example_last_pay_openid
+          risky_goods:
+            type: number
+            description: 高风险类目
+            example: 1
+            enum:
+              - 1
+              - 2
+              - 3
+              - 4
+              - 5
+              - 6
+          offline_delivery_label:
+            type: number
+            description: 订单识别标识：小时购/自提等枚举值
+            example: 1
+            enum:
+              - 1
+              - 2
+          proxy_payment:
+            type: boolean
+            description: 是否为代付订单
+          order_phone_number:
+            type: string
+            description: 下单人手机号：手机号前3后4
+            example: example_order_phone_number
+          user_risk_level:
+            type: number
+            description: 下单人风险等级
+            example: 1
+            enum:
+              - 1
+              - 2
+              - 3
+              - 4
+              - 5
+              - 6
+              - 7
+          sp_risk_level:
+            type: number
+            description: 商户风险等级
+            example: 1
+            enum:
+              - 1
+              - 2
+              - 3
+              - 4
+              - 5
+              - 6
+              - 7
+          phone_number_location:
+            type: string
+            description: 手机号所属地
+            example: example_phone_number_location
+          goods_category:
+            type: string
+            description: 商品类目
+            example: example_goods_category
+          pre_opening_behavior:
+            type: string
+            description: 前置打开行为异常
+            example: example_pre_opening_behavior
+          new_store:
+            type: boolean
+            description: 卖家是否是新账号
+          store_identifier:
+            type: string
+            description: 店铺标识
+            example: example_store_identifier
+          goods_listing_time:
+            type: string
+            description: 商品上架时间
+            example: example_goods_listing_time
+          combine_out_trade_no:
+            type: string
+            description: 合单商户订单号
+            example: example_combine_out_trade_no
+          combine_mchid:
+            type: string
+            description: 合单商户号
+            example: example_combine_mchid
+          sub_orders:
+            type: array
+            description: 子单列表
+            items:
+              type: object
+              properties:
+                out_trade_no:
+                  type: string
+                  description: 子单商户订单号
+                  example: example_out_trade_no
+                mch_id:
+                  type: string
+                  description: 子单发起方商户号
+                  example: example_mch_id
+                delivery_province:
+                  type: string
+                  description: 收货省份
+                  example: example_delivery_province
+                delivery_city:
+                  type: string
+                  description: 收货城市
+                  example: example_delivery_city
+                risky_goods:
+                  type: number
+                  description: 高风险类目
+                  example: 1
+                  enum:
+                    - 1
+                    - 2
+                    - 3
+                    - 4
+                    - 5
+                    - 6
+                user_risk_level:
+                  type: number
+                  description: 下单人风险等级
+                  example: 1
+                  enum:
+                    - 1
+                    - 2
+                    - 3
+                    - 4
+                    - 5
+                    - 6
+                    - 7
+                sp_risk_level:
+                  type: number
+                  description: 商户风险等级
+                  example: 1
+                  enum:
+                    - 1
+                    - 2
+                    - 3
+                    - 4
+                    - 5
+                    - 6
+                    - 7
   responses:
     '200':
       schema:

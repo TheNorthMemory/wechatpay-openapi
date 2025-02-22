@@ -1,0 +1,52 @@
+post:
+  x-last-updated-at: 2025.01.23
+  x-role:
+    - 服务商
+  tag:
+    - 收付通∙充值
+  summary: 删除二级商户可扫码充值员工
+  description: 收付通平台可以调用此接口删除二级子商户的可扫码充值员工。 [官方文档](https://pay.weixin.qq.com/doc/v3/partner/4013521753)
+  parameters:
+    - name: sub_mchid
+      in: path
+      required: true
+      type: string
+      description: 二级商户号
+      example: '1900000109'
+    - name: sp_openid
+      in: path
+      required: true
+      type: string
+      description: 员工OpenID
+      example: oLTPCuCsfN3ABBz50VUZBNlHDbUU
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - sub_mchid
+          - opened
+        properties:
+          sub_mchid:
+            type: string
+            description: 二级商户号
+            example: '1900000109'
+          sp_openid:
+            type: string
+            description: 员工OpenID
+            example: oLTPCuCsfN3ABBz50VUZBNlHDbUU
+          state:
+            type: string
+            description: 员工状态
+            enum:
+              - DELETED
+          create_time:
+            type: string
+            format: rfc3339
+            description: 添加员工时间
+            example: '2015-05-20T13:29:35.120+08:00'
+          update_time:
+            type: string
+            format: rfc3339
+            description: 最后更新时间
+            example: '2015-05-20T13:29:35.120+08:00'

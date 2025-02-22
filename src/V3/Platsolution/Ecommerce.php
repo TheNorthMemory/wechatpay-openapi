@@ -5,6 +5,7 @@ namespace WeChatPay\OpenAPI\V3\Platsolution;
 /**
  * @property-read Ecommerce\Settle $settle
  * @property-read Ecommerce\Recharges $recharges
+ * @property-read Ecommerce\RechargeEmployees $rechargeEmployees
  * @property-read Ecommerce\MchTransfer $mchTransfer
  * @property-read Ecommerce\InsuranceCompensationContracts $insuranceCompensationContracts
  * @property-read Ecommerce\BankTransferRecharges $bankTransferRecharges

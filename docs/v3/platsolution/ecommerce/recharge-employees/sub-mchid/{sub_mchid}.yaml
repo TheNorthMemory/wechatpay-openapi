@@ -1,0 +1,52 @@
+get:
+  x-last-updated-at: 2025.01.23
+  x-role:
+    - 服务商
+  tag:
+    - 收付通∙充值
+  summary: 查询二级商户可扫码充值员工列表
+  description: 收付通平台可以调用此接口查询二级子商户的最新的可扫码充值员工列表。 [官方文档](https://pay.weixin.qq.com/doc/v3/partner/4013521757)
+  parameters:
+    - name: sub_mchid
+      in: path
+      required: true
+      type: string
+      description: 二级商户号
+      example: '1900000109'
+  responses:
+    '200':
+      schema:
+        type: object
+        properties:
+          employees:
+            type: array
+            description: 员工列表
+            items:
+              type: object
+              required:
+                - sub_mchid
+                - opened
+              properties:
+                sub_mchid:
+                  type: string
+                  description: 二级商户号
+                  example: '1900000109'
+                sp_openid:
+                  type: string
+                  description: 员工OpenID
+                  example: oLTPCuCsfN3ABBz50VUZBNlHDbUU
+                state:
+                  type: string
+                  description: 员工状态
+                  enum:
+                    - EFFECTIVE
+                create_time:
+                  type: string
+                  format: rfc3339
+                  description: 添加员工时间
+                  example: '2015-05-20T13:29:35.120+08:00'
+                update_time:
+                  type: string
+                  format: rfc3339
+                  description: 最后更新时间
+                  example: '2015-05-20T13:29:35.120+08:00'

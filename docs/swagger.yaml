@@ -1493,6 +1493,12 @@ paths:
     $ref: ./v3/platsolution/ecommerce/mch-transfer/insurance-claim-bills/out-bill-no/{out_bill_no}/cancel.yaml
   /v3/platsolution/ecommerce/mch-transfer/insurance-claim-bills/pre-transfer:
     $ref: ./v3/platsolution/ecommerce/mch-transfer/insurance-claim-bills/pre-transfer.yaml
+  /v3/platsolution/ecommerce/recharge-employees:
+    $ref: ./v3/platsolution/ecommerce/recharge-employees.yaml
+  /v3/platsolution/ecommerce/recharge-employees/sub-mchid/{sub_mchid}:
+    $ref: ./v3/platsolution/ecommerce/recharge-employees/sub-mchid/{sub_mchid}.yaml
+  /v3/platsolution/ecommerce/recharge-employees/sub-mchid/{sub_mchid}/sp-openid/{sp_openid}/delete:
+    $ref: ./v3/platsolution/ecommerce/recharge-employees/sub-mchid/{sub_mchid}/sp-openid/{sp_openid}/delete.yaml
   /v3/platsolution/ecommerce/recharges/apply:
     $ref: ./v3/platsolution/ecommerce/recharges/apply.yaml
   /v3/platsolution/ecommerce/recharges/out-recharge-no/{out_recharge_no}:

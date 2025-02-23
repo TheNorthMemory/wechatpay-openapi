@@ -1,0 +1,177 @@
+post:
+  x-last-updated-at: 2025.01.21
+  x-role:
+    - 服务商
+  tag:
+    - 平台保证金∙赔付用户
+  summary: 请求保证金售后赔付
+  description: 商户可调用该接口从保证金账户赔付给用户。注：接口频率限制为100次/s [官方文档](https://pay.weixin.qq.com/doc/v3/partner/4013504194)
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - receiver
+          - out_bill_no
+          - transfer_remark
+        properties:
+          sub_mchid:
+            type: string
+            description: 二级商户号
+            example: '1900000109'
+          sp_appid:
+            type: string
+            description: 公众账号ID
+            example: wx8888888888888888
+          receiver:
+            type: object
+            description: 收款方信息
+            properties:
+              type:
+                type: string
+                description: 转账接收方类型
+                example: MERCHANT
+                enum:
+                  - MERCHANT
+                  - TRANSACTION_USER
+              transaction_info:
+                type: object
+                description: 转账接收方订单信息
+                required:
+                  - transaction_id
+                properties:
+                  transaction_id:
+                    type: string
+                    description: 交易订单号
+                    example: '1217752501201407033233368018'
+                  type:
+                    type: string
+                    description: 转账接收方订单类型
+                    example: WXPAY
+                    enum:
+                      - WXPAY
+                      - WXVALUE
+          out_bill_no:
+            type: string
+            description: 商户单号
+            example: plfk2020042013
+          amount:
+            type: number
+            description: 赔付金额
+            example: 10000
+          transfer_remark:
+            type: string
+            description: 赔付原因
+            example: 直播违规扣罚
+          transfer_scene_id:
+            type: string
+            description: 转账场景ID
+            example: '1001'
+          user_recv_perception:
+            type: string
+            description: 用户收款感知
+            example: 退货运费补偿
+          sub_appid:
+            type: string
+            description: 二级商户AppID
+            example: wx8888888888888888
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - sp_mchid
+          - receiver_detail
+          - out_bill_no
+          - transfer_remark
+          - bill_id
+          - state
+          - accept_time
+        properties:
+          sp_mchid:
+            type: string
+            description: 服务商商户号
+            example: '1900001108'
+          sub_mchid:
+            type: string
+            description: 二级商户号
+            example: '1900000109'
+          receiver_detail:
+            type: object
+            description: 转账接收方信息
+            properties:
+              receiver:
+                type: object
+                description: 转账接收者信息
+                properties:
+                  type:
+                    type: string
+                    description: 转账接收方类型
+                    example: MERCHANT
+                    enum:
+                      - MERCHANT
+                      - TRANSACTION_USER
+                  transaction_info:
+                    type: object
+                    description: 转账接收方订单信息
+                    required:
+                      - transaction_id
+                    properties:
+                      transaction_id:
+                        type: string
+                        description: 交易订单号
+                        example: '1217752501201407033233368018'
+                      type:
+                        type: string
+                        description: 转账接收方订单类型
+                        example: WXPAY
+                        enum:
+                          - WXPAY
+                          - WXVALUE
+          out_bill_no:
+            type: string
+            description: 商户单号
+            example: plfk2020042013
+          amount:
+            type: number
+            description: 赔付金额
+            example: 10000
+          transfer_remark:
+            type: string
+            description: 赔付原因
+            example: 直播违规扣罚
+          bill_id:
+            type: string
+            description: 微信支付转账单号
+            example: '1330000071100999991182020050700019480001'
+          state:
+            type: string
+            description: 赔付状态
+            example: ACCEPTED
+            enum:
+              - ACCEPTED #已受理
+              - SUCCESS #已成功
+              - CLOSED #系统关闭（余额不足、转账失败等原因）。
+              - WAIT_USER_CONFIRM #预下单成功，等待用户确认
+              - CANCELING #商户撤销请求受理成功，该笔付款正在撤销中
+              - CANCELLED #付款撤销完成
+          accept_time:
+            type: string
+            description: 受理时间
+            format: rfc3339
+            example: '2015-05-20T13:29:35+08:00'
+          success_time:
+            type: string
+            description: 成功时间
+            format: rfc3339
+            example: '2015-05-20T13:29:35+08:00'
+          sponsor_mchid:
+            type: string
+            description: 出资商户号
+            example: '1900001109'
+          sub_appid:
+            type: string
+            description: 二级商户AppID
+            example: wx8888888888888888

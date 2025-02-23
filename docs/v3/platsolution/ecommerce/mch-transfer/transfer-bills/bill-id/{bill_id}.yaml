@@ -3,16 +3,26 @@ get:
   x-role:
     - 服务商
   tag:
-    - 收付通∙售后赔付
-  summary: 查询赔付结果（按商户赔付单号）
-  description: 商户单号查询赔付记录。[官方文档](https://pay.weixin.qq.com/doc/v3/partner/4013504178)
+    - 平台保证金∙赔付商户
+  summary: 查询保证金赔付结果（按微信支付赔付单号）
+  description: 微信支付单号查询商户付款记录。 注：接口频率限制为100次/s [官方文档](https://pay.weixin.qq.com/doc/v3/partner/4013504200)
   parameters:
-    - name: out_bill_no
+    - name: bill_id
       in: path
       required: true
       type: string
-      description: 商户单号
-      example: plfk2020042013
+      description: 微信支付单号
+      example: '1330000071100999991182020050700019480001'
+    - name: business_type
+      in: query
+      type: string
+      description: 业务类型
+      example: DEPOSIT_COMPENSATION
+      enum:
+        - DEPOSIT_COMPENSATION
+        - PLATFORM_AFTER_SALES_COMPENSATION
+        - INSURANCE_CLAIM
+        - DEPOSIT_AFTER_SALES_COMPENSATION
   responses:
     '200':
       schema:
@@ -29,6 +39,15 @@ get:
             type: string
             description: 服务商商户号
             example: '1900001108'
+          business_type:
+            type: string
+            description: 业务类型
+            example: DEPOSIT_COMPENSATION
+            enum:
+              - DEPOSIT_COMPENSATION
+              - PLATFORM_AFTER_SALES_COMPENSATION
+              - INSURANCE_CLAIM
+              - DEPOSIT_AFTER_SALES_COMPENSATION
           receiver_detail:
             type: object
             description: 转账接收方信息
@@ -44,16 +63,14 @@ get:
                     enum:
                       - MERCHANT
                       - TRANSACTION_USER
-                  transaction_info:
+                  mch_info:
                     type: object
-                    description: 转账接收方订单信息
-                    required:
-                      - transaction_id
+                    description: 转账接收方商户信息
                     properties:
-                      transaction_id:
+                      mch_id:
                         type: string
-                        description: 交易订单号
-                        example: '1217752501201407033233368018'
+                        description: 商户号
+                        example: '1900001108'
           out_bill_no:
             type: string
             description: 商户单号
@@ -66,6 +83,10 @@ get:
             type: string
             description: 赔付原因
             example: 直播违规扣罚
+          receiver_remark:
+            type: string
+            description: 收款方备注
+            example: 小店XXXX直播违规扣罚
           bill_id:
             type: string
             description: 微信支付转账单号

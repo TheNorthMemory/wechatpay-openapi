@@ -95,7 +95,7 @@ get:
             type: object
             description: 关单信息
             properties:
-              accept_time:
+              close_time:
                 type: string
                 description: 关单时间
                 format: rfc3339

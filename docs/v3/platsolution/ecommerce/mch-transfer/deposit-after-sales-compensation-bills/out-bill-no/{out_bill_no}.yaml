@@ -3,9 +3,9 @@ get:
   x-role:
     - 服务商
   tag:
-    - 收付通∙售后赔付
-  summary: 查询赔付结果（按商户赔付单号）
-  description: 商户单号查询赔付记录。[官方文档](https://pay.weixin.qq.com/doc/v3/partner/4013504178)
+    - 平台保证金∙赔付用户
+  summary: 查询保证金售后赔付结果（按商户赔付单号）
+  description: 商户单号查保证金售后赔付结果。注：接口频率限制为100次/s [官方文档](https://pay.weixin.qq.com/doc/v3/partner/4013504195)
   parameters:
     - name: out_bill_no
       in: path
@@ -13,6 +13,11 @@ get:
       type: string
       description: 商户单号
       example: plfk2020042013
+    - name: sub_mchid
+      in: query
+      type: string
+      description: 二级商户号
+      example: '1900001109'
   responses:
     '200':
       schema:
@@ -29,6 +34,10 @@ get:
             type: string
             description: 服务商商户号
             example: '1900001108'
+          sub_mchid:
+            type: string
+            description: 二级商户号
+            example: '1900000109'
           receiver_detail:
             type: object
             description: 转账接收方信息
@@ -54,6 +63,13 @@ get:
                         type: string
                         description: 交易订单号
                         example: '1217752501201407033233368018'
+                      type:
+                        type: string
+                        description: 转账接收方订单类型
+                        example: WXPAY
+                        enum:
+                          - WXPAY
+                          - WXVALUE
           out_bill_no:
             type: string
             description: 商户单号
@@ -108,3 +124,7 @@ get:
             type: string
             description: 出资商户号
             example: '1900001109'
+          sub_appid:
+            type: string
+            description: 二级商户AppID
+            example: wx8888888888888888

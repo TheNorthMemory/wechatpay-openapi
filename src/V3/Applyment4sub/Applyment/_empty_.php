@@ -33,6 +33,31 @@ interface _empty_
             ],
             'subject_info' => [
                 'subject_type' => 'SUBJECT_TYPE_INDIVIDUAL | SUBJECT_TYPE_ENTERPRISE | SUBJECT_TYPE_INSTITUTIONS | SUBJECT_TYPE_OTHERS',
+                'finance_institution' => true,
+                'micro_store_info' => [
+                    'micro_biz_type' => 'MICRO_TYPE_STORE | MICRO_TYPE_MOBILE | MICRO_TYPE_ONLINE',
+                    'micro_store_info' => [
+                        'micro_name' => '',
+                        'micro_address_code' => '',
+                        'micro_address' => '',
+                        'store_entrance_pic' => '',
+                        'micro_indoor_copy' => '',
+                        'store_longitude' => '',
+                        'store_latitude' => '',
+                    ],
+                    'micro_mobile_info' => [
+                        'micro_mobile_name' => '',
+                        'micro_mobile_city' => '',
+                        'micro_mobile_address' => '',
+                        'micro_mobile_pics' => ['MediaId'],
+                    ],
+                    'micro_online_info' => [
+                        'micro_online_store' => '',
+                        'micro_ec_name' => '',
+                        'micro_qrcode' => '',
+                        'micro_link' => '',
+                    ],
+                ],
                 'business_license_info' => [
                     'license_copy' => '',
                     'license_number' => '',
@@ -192,6 +217,31 @@ interface _empty_
             ],
             'subject_info' => [
                 'subject_type' => 'SUBJECT_TYPE_INDIVIDUAL | SUBJECT_TYPE_ENTERPRISE | SUBJECT_TYPE_INSTITUTIONS | SUBJECT_TYPE_OTHERS',
+                'finance_institution' => true,
+                'micro_store_info' => [
+                    'micro_biz_type' => 'MICRO_TYPE_STORE | MICRO_TYPE_MOBILE | MICRO_TYPE_ONLINE',
+                    'micro_store_info' => [
+                        'micro_name' => '',
+                        'micro_address_code' => '',
+                        'micro_address' => '',
+                        'store_entrance_pic' => '',
+                        'micro_indoor_copy' => '',
+                        'store_longitude' => '',
+                        'store_latitude' => '',
+                    ],
+                    'micro_mobile_info' => [
+                        'micro_mobile_name' => '',
+                        'micro_mobile_city' => '',
+                        'micro_mobile_address' => '',
+                        'micro_mobile_pics' => ['MediaId'],
+                    ],
+                    'micro_online_info' => [
+                        'micro_online_store' => '',
+                        'micro_ec_name' => '',
+                        'micro_qrcode' => '',
+                        'micro_link' => '',
+                    ],
+                ],
                 'business_license_info' => [
                     'license_copy' => '',
                     'license_number' => '',

@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2022.03.17
+  x-last-updated-at: 2025.01.16
   x-role:
     - 电商平台
     - 服务商
@@ -8,8 +8,9 @@ post:
     - 基础支付∙合单
     - 收付通∙合单
   summary: 合单下单-H5支付API
-  description: 使用合单支付接口，用户只输入一次密码，即可完成多个订单的支付。目前最多一次可支持50笔订单进行合单支付。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/combine/chapter3_9.shtml)
+  description: 使用合单支付接口，用户只输入一次密码，即可完成多个订单的支付。目前最多一次可支持50笔订单进行合单支付。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/combine/chapter3_9.shtml) [官方文档](https://pay.weixin.qq.com/doc/v3/merchant/4012556961) [官方文档](https://pay.weixin.qq.com/doc/v3/partner/4012758208) [官方文档](https://pay.weixin.qq.com/doc/v3/partner/4012760626) [官方文档](https://pay.weixin.qq.com/doc/v3/merchant/4012545879) [官方文档](https://pay.weixin.qq.com/doc/v3/partner/4012707565)
   parameters:
+    - $ref: '../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
     - name: _
       in: body
       required: true
@@ -177,6 +178,29 @@ post:
                 type: string
                 description: 用户子标识
                 example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+              identity:
+                type: object
+                description: 实名支付(需单独申请权限)
+                required:
+                  - type
+                  - number
+                  - name
+                properties:
+                  type:
+                    type: string
+                    description: 证件类型
+                    enum:
+                      - IDCARD
+                  number:
+                    type: string
+                    format: base64
+                    description: 加密后的证件号
+                    example: 6B46824C852FA29AAC3DCE6BFD852E27
+                  name:
+                    type: string
+                    format: base64
+                    description: 加密后的姓名
+                    example: 6B46824C852FA29AAC3DCE6BFD852E27
   responses:
     200:
       schema:

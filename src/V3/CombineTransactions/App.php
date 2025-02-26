@@ -43,6 +43,11 @@ interface App
             ],],
             'combine_payer_info' => [
                 'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
+                'identity' => [
+                    'type' => 'IDCARD',
+                    'number' => '6B46824C852FA29AAC3DCE6BFD852E27',
+                    'name' => '6B46824C852FA29AAC3DCE6BFD852E27',
+                ],
             ],
             'time_start' => '2019-12-31T15:59:60+08:00',
             'time_expire' => '2019-12-31T15:59:60+08:00',
@@ -56,6 +61,9 @@ interface App
                 'contract_display_account' => '微信代扣用户A',
                 'notify_url' => 'https://yourapp.com/notify',
             ],
+        ],
+        'headers' => [
+            'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',
         ],
     ]): ResponseInterface;
 
@@ -93,6 +101,11 @@ interface App
             ],],
             'combine_payer_info' => [
                 'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
+                'identity' => [
+                    'type' => 'IDCARD',
+                    'number' => '6B46824C852FA29AAC3DCE6BFD852E27',
+                    'name' => '6B46824C852FA29AAC3DCE6BFD852E27',
+                ],
             ],
             'time_start' => '2019-12-31T15:59:60+08:00',
             'time_expire' => '2019-12-31T15:59:60+08:00',
@@ -106,6 +119,9 @@ interface App
                 'contract_display_account' => '微信代扣用户A',
                 'notify_url' => 'https://yourapp.com/notify',
             ],
+        ],
+        'headers' => [
+            'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',
         ],
     ]): PromiseInterface;
 }

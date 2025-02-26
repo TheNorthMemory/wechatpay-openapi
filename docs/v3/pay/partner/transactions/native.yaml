@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2020.11.12
+  x-last-updated-at: 2024.12.05
   x-role:
     - 服务商
     - 电商平台
@@ -7,8 +7,9 @@ post:
     - 基础支付∙服务商模式
     - 收付通∙支付
   summary: Native下单API
-  description: 除付款码支付场景以外，商户系统先调用该接口在微信支付服务后台生成预支付交易单，返回正确的预支付交易会话标识后再按Native、JSAPI、APP等不同场景生成交易串调起支付。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transactions/chapter5_3.shtml)
+  description: 除付款码支付场景以外，商户系统先调用该接口在微信支付服务后台生成预支付交易单，返回正确的预支付交易会话标识后再按Native、JSAPI、APP等不同场景生成交易串调起支付。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transactions/chapter5_3.shtml) [官方文档](https://pay.weixin.qq.com/doc/v3/partner/4012523551)
   parameters:
+    - $ref: '../../../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
     - name: _
       in: body
       required: true
@@ -16,6 +17,40 @@ post:
         allOf:
           - $ref: '../../../../definitions/Transaction.yaml#TransactionServiceProvider'
           - $ref: '../../../../definitions/Transaction.yaml#TransactionBase'
+          - type: object
+            properties:
+              payer:
+                type: object
+                description: 支付者
+                properties:
+                  identity:
+                    type: object
+                    description: 实名支付(需单独申请权限)
+                    required:
+                      - type
+                      - number
+                      - name
+                    properties:
+                      type:
+                        type: string
+                        description: 证件类型
+                        enum:
+                          - IDCARD
+                          - HONGKONG_MACAO
+                          - HONGKONG_MACAO_RESIDENT
+                          - TAIWAN_RESIDENT
+                          - FOREIGN_RESIDENT
+                          - OVERSEA_PASSPORT
+                      number:
+                        type: string
+                        format: base64
+                        description: 加密后的证件号
+                        example: 6B46824C852FA29AAC3DCE6BFD852E27
+                      name:
+                        type: string
+                        format: base64
+                        description: 加密后的姓名
+                        example: 6B46824C852FA29AAC3DCE6BFD852E27
   responses:
     200:
       schema:

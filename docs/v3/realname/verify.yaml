@@ -1,0 +1,62 @@
+get:
+  x-last-updated-at: 2025.02.25
+  x-role:
+    - 服务商
+  tags:
+    - 实名校验
+  summary: 实名信息校验
+  description: 电商订单实名校验。[官方文档](https://pay.weixin.qq.com/doc/v3/partner/4013735179)
+  parameters:
+    - $ref: '../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
+    - name: credential_type
+      in: query
+      required: true
+      type: number
+      description: 下单用户账户的证件类型
+      example: 1
+      enum:
+        - 1
+        - 2
+        - 5
+        - 9
+        - 12
+        - 17
+        - 19
+    - name: encrypted_credential_id
+      in: query
+      required: true
+      type: string
+      format: base64
+      description: 加密后的下单用户证件号
+      example: InhziTSUwVqxfKp9M5nGCSjF395VL
+    - name: encrypted_name
+      in: query
+      required: true
+      type: string
+      format: base64
+      description: 加密后的下单用户姓名
+      example: InhziTSUwVqxfKp9M5nGCSjF395VL
+    - name: wxp_trade_no
+      in: query
+      required: true
+      type: string
+      description: 微信支付交易单号
+      example: '442100010320250122523549415021'
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - verify_result
+        properties:
+          verify_result:
+            type: number
+            description: 实名比对结果
+            example: 0
+            enum:
+              - 0
+              - 1
+          err_message:
+            type: string
+            description: 错误信息
+            example: realname verify succ

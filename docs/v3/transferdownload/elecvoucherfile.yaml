@@ -1,0 +1,27 @@
+get:
+  x-last-updated-at: 2023.12.04
+  x-role:
+    - 服务商
+    - 普通商户
+  tags:
+    - 资金应用∙转账
+    - 运营工具∙用工卡
+  summary: 下载电子回单API
+  description: 下载电子回单API为通用接口，商家转账等业务电子回单均可通过该接口进行下载。[官方文档](https://pay.weixin.qq.com/doc/v3/merchant/4012716436) [官方文档](https://pay.weixin.qq.com/doc/v3/merchant/4012716455)
+  produces:
+    - application/pdf
+  parameters:
+    - name: token
+      in: query
+      required: true
+      type: string
+      description: 前序download_url的查询参数
+      example: X8Uk3sD4a4eZVPTBvqNDoUqcYMlZ9uuD
+    - name: source
+      in: query
+      required: true
+      type: string
+      description: 前序download_url的查询参数
+      example: elecsign
+  responses:
+    200: {}

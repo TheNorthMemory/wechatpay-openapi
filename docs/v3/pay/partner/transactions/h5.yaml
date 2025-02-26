@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2020.11.12
+  x-last-updated-at: 2024.12.05
   x-role:
     - 服务商
     - 电商平台
@@ -7,8 +7,9 @@ post:
     - 基础支付∙服务商模式
     - 收付通∙支付
   summary: H5下单API
-  description: H5支付是指商户在微信客户端外的移动端网页展示商品或服务，用户在前述页面确认使用微信支付时，商户发起本服务呼起微信客户端进行支付。主要用于触屏版的手机浏览器请求微信支付的场景，可以方便的从外部浏览器唤起微信支付。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transactions/chapter5_4.shtml)
+  description: H5支付是指商户在微信客户端外的移动端网页展示商品或服务，用户在前述页面确认使用微信支付时，商户发起本服务呼起微信客户端进行支付。主要用于触屏版的手机浏览器请求微信支付的场景，可以方便的从外部浏览器唤起微信支付。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transactions/chapter5_4.shtml) [官方文档](https://pay.weixin.qq.com/doc/v3/partner/4012523544)
   parameters:
+    - $ref: '../../../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
     - name: _
       in: body
       required: true
@@ -16,6 +17,40 @@ post:
         allOf:
           - $ref: '../../../../definitions/Transaction.yaml#TransactionServiceProvider'
           - $ref: '../../../../definitions/Transaction.yaml#TransactionBase'
+          - type: object
+            properties:
+              payer:
+                type: object
+                description: 支付者
+                properties:
+                  identity:
+                    type: object
+                    description: 实名支付(需单独申请权限)
+                    required:
+                      - type
+                      - number
+                      - name
+                    properties:
+                      type:
+                        type: string
+                        description: 证件类型
+                        enum:
+                          - IDCARD
+                          - HONGKONG_MACAO
+                          - HONGKONG_MACAO_RESIDENT
+                          - TAIWAN_RESIDENT
+                          - FOREIGN_RESIDENT
+                          - OVERSEA_PASSPORT
+                      number:
+                        type: string
+                        format: base64
+                        description: 加密后的证件号
+                        example: 6B46824C852FA29AAC3DCE6BFD852E27
+                      name:
+                        type: string
+                        format: base64
+                        description: 加密后的姓名
+                        example: 6B46824C852FA29AAC3DCE6BFD852E27
           - type: object
             required:
               - scene_info

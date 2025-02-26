@@ -3,6 +3,7 @@
 namespace WeChatPay\OpenAPI\V3;
 
 /**
+ * @property-read Transferdownload\Elecvoucherfile $elecvoucherfile
  * @property-read Transferdownload\Signfile $signfile
  */
 interface Transferdownload

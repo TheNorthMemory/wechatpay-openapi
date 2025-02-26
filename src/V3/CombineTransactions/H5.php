@@ -54,7 +54,15 @@ interface H5
             'combine_payer_info' => [
                 'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
                 'sub_openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
+                'identity' => [
+                    'type' => 'IDCARD',
+                    'number' => '6B46824C852FA29AAC3DCE6BFD852E27',
+                    'name' => '6B46824C852FA29AAC3DCE6BFD852E27',
+                ],
             ],
+        ],
+        'headers' => [
+            'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',
         ],
     ]): ResponseInterface;
 
@@ -103,7 +111,15 @@ interface H5
             'combine_payer_info' => [
                 'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
                 'sub_openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
+                'identity' => [
+                    'type' => 'IDCARD',
+                    'number' => '6B46824C852FA29AAC3DCE6BFD852E27',
+                    'name' => '6B46824C852FA29AAC3DCE6BFD852E27',
+                ],
             ],
+        ],
+        'headers' => [
+            'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',
         ],
     ]): PromiseInterface;
 }

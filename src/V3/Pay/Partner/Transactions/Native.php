@@ -57,6 +57,16 @@ interface Native
                     'address' => '广东省深圳市南山区科技中一道10000号',
                 ],
             ],
+            'payer' => [
+                'identity' => [
+                    'type' => 'IDCARD | HONGKONG_MACAO | HONGKONG_MACAO_RESIDENT | TAIWAN_RESIDENT',
+                    'number' => '6B46824C852FA29AAC3DCE6BFD852E27',
+                    'name' => '6B46824C852FA29AAC3DCE6BFD852E27',
+                ],
+            ],
+        ],
+        'headers' => [
+            'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',
         ],
     ]): ResponseInterface;
 
@@ -108,6 +118,16 @@ interface Native
                     'address' => '广东省深圳市南山区科技中一道10000号',
                 ],
             ],
+            'payer' => [
+                'identity' => [
+                    'type' => 'IDCARD | HONGKONG_MACAO | HONGKONG_MACAO_RESIDENT | TAIWAN_RESIDENT',
+                    'number' => '6B46824C852FA29AAC3DCE6BFD852E27',
+                    'name' => '6B46824C852FA29AAC3DCE6BFD852E27',
+                ],
+            ],
+        ],
+        'headers' => [
+            'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',
         ],
     ]): PromiseInterface;
 }

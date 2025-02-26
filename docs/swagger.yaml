@@ -7,7 +7,7 @@ info:
     整理自[官方文档中心](https://pay.weixin.qq.com/wiki/doc/apiv3/index.shtml)
     本[项目/工具地址](https://github.com/TheNorthMemory/wechatpay-openapi)
     **访问第一次加载比较慢，请耐心等待大约1-2分钟不等(小文件下载比较多)。**
-  version: 1.1.3
+  version: 1.1.4
 schemes:
   - https
 consumes:
@@ -720,6 +720,10 @@ paths:
     $ref: ./v3/funds-to-oversea/orders.yaml
   /v3/funds-to-oversea/orders/{out_order_id}:
     $ref: ./v3/funds-to-oversea/orders/{out_order_id}.yaml
+  /v3/funds-to-oversea/return/return-orders:
+    $ref: ./v3/funds-to-oversea/return/return-orders.yaml
+  /v3/funds-to-oversea/return/return-orders/out-return-no/{out_return_no}:
+    $ref: ./v3/funds-to-oversea/return/return-orders/out-return-no/{out_return_no}.yaml
   /v3/funds-to-oversea/transactions/{transaction_id}/available_abroad_amounts:
     $ref: ./v3/funds-to-oversea/transactions/{transaction_id}/available_abroad_amounts.yaml
   /v3/global/certificates:
@@ -1584,6 +1588,8 @@ paths:
     $ref: ./v3/rate-activity/applications.yaml
   /v3/rate-activity/applications/id/{application_id}:
     $ref: ./v3/rate-activity/applications/id/{application_id}.yaml
+  /v3/realname/verify:
+    $ref: ./v3/realname/verify.yaml
   /v3/recharge/bank-transfer-recharges/apply:
     $ref: ./v3/recharge/bank-transfer-recharges/apply.yaml
   /v3/recharge/bank-transfer-recharges/out-recharge-no/{out_recharge_no}:
@@ -1638,6 +1644,8 @@ paths:
     $ref: ./v3/transfer/bill-receipt.yaml
   /v3/transfer/bill-receipt/{out_batch_no}:
     $ref: ./v3/transfer/bill-receipt/{out_batch_no}.yaml
+  /v3/transferdownload/elecvoucherfile:
+    $ref: ./v3/transferdownload/elecvoucherfile.yaml
   /v3/transferdownload/signfile:
     $ref: ./v3/transferdownload/signfile.yaml
   /v3/vehicle/etc/contracts/{contract_id}:

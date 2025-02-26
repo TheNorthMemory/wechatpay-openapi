@@ -1,11 +1,11 @@
 get:
-  x-last-updated-at: 2024.10.14
+  x-last-updated-at: 2024.12.05
   x-role:
     - 普通商户
   tags:
     - 资金应用∙转账∙用户确认模式
   summary: 微信单号查询电子回单
-  description: 商户可以通过该接口查看回单申请进度；请务必对比下载的回单文件的摘要值与查询接口返回的摘要值的一致性，确保得到的回单文件的真实性和完整性。下载地址的有效期为10分钟，超过10分钟后需要重新通过该接口获取下载地址（不需要重新申请）。[官方文档](https://pay.weixin.qq.com/docs/merchant/apis/mch-trans/elecsign/query-elecsign-by-no.html)
+  description: 商户可以通过该接口查看回单申请进度；请务必对比下载的回单文件的摘要值与查询接口返回的摘要值的一致性，确保得到的回单文件的真实性和完整性。下载地址的有效期为10分钟，超过10分钟后需要重新通过该接口获取下载地址（不需要重新申请）。[官方文档](https://pay.weixin.qq.com/docs/merchant/apis/mch-trans/elecsign/query-elecsign-by-no.html) [官方文档](https://pay.weixin.qq.com/doc/v3/merchant/4012716455)
   parameters:
     - name: transfer_bill_no
       in: path
@@ -26,6 +26,10 @@ get:
             type: string
             description: 申请单状态
             example: GENERATING
+            enum:
+              - GENERATING
+              - FINISHED
+              - FAILED
           create_time:
             type: string
             description: 申请单创建时间
@@ -38,6 +42,9 @@ get:
             type: string
             description: 回单文件摘要类型
             example: SHA256
+            enum:
+              - SHA256
+              - SM3
           hash_value:
             type: string
             description: 回单文件摘要值
@@ -45,7 +52,7 @@ get:
           download_url:
             type: string
             description: 回单文件下载地址
-            example: https://api.mch.weixin.qq.com/v3/transferbilldownload/file?token=xxx
+            example: https://api.mch.weixin.qq.com/v3/transferbilldownload/elecvoucherfile?source=elecsign&token=xxx
           fail_reason:
             type: string
             description: 失败原因

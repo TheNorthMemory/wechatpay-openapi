@@ -81,7 +81,7 @@ post:
                 type: boolean
                 description: 是否是金融机构
                 default: false
-              micro_store_info:
+              micro_biz_info:
                 type: object
                 description: 小微辅助证明材料
                 required:

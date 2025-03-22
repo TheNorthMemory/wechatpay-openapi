@@ -1,11 +1,11 @@
 post:
-  x-last-updated-at: 2024.10.14
+  x-last-updated-at: 2025.03.21
   x-role:
     - 普通商户
   tags:
     - 资金应用∙转账∙用户确认模式
   summary: 发起转账
-  description: 商家转账用户确认模式下，用户申请收款时，商户可通过此接口申请创建转账单 [官方文档](https://pay.weixin.qq.com/docs/merchant/apis/mch-trans/transfer-bill/transfer-to-user.html)
+  description: 商家转账用户确认模式下，用户申请收款时，商户可通过此接口申请创建转账单 [官方文档](https://pay.weixin.qq.com/doc/v3/merchant/4012716434) [官方文档](https://pay.weixin.qq.com/docs/merchant/apis/mch-trans/transfer-bill/transfer-to-user.html)
   parameters:
     - $ref: '../../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
     - name: _
@@ -17,6 +17,7 @@ post:
           - appid
           - out_bill_no
           - transfer_scene_id
+          - transfer_scene_report_infos
           - openid
           - transfer_amount
           - transfer_remark
@@ -29,10 +30,6 @@ post:
             type: string
             description: 商户单号
             example: plfk2020042013
-          transfer_scene_id:
-            type: string
-            description: 转账场景ID
-            example: '1000'
           openid:
             type: string
             description: 收款用户OpenID
@@ -58,6 +55,19 @@ post:
             type: string
             description: 用户收款感知
             example: 现金奖励
+          transfer_scene_id:
+            type: string
+            description: 转账场景ID
+            example: '1000'
+            enum:
+              - '1000'
+              - '1002'
+              - '1004'
+              - '1005'
+              - '1009'
+              - '1010'
+              - '1011'
+              - '1013'
           transfer_scene_report_infos:
             type: array
             description: 转账场景报备信息
@@ -98,6 +108,15 @@ post:
             type: string
             description: 单据状态
             example: ACCEPTED
+            enum:
+              - ACCEPTED #转账已受理
+              - PROCESSING #转账处理中，转账结果尚未明确，如一直处于此状态，建议检查账户余额是否足够
+              - WAIT_USER_CONFIRM #待收款用户确认，可拉起微信收款确认页面进行收款确认
+              - TRANSFERING #转账结果尚未明确，可拉起微信收款确认页面再次重试确认收款
+              - SUCCESS #转账成功
+              - FAIL #转账失败
+              - CANCELING #商户撤销请求受理成功，该笔转账正在撤销中
+              - CANCELLED #转账撤销完成
           fail_reason:
             type: string
             description: 失败原因

@@ -56,6 +56,11 @@ interface Serviceorder
             'need_user_confirm' => true,
             'notify_url' => 'https://api.test.com',
             'attach' => 'Easdfowealsdkjfnlaksjdlfkwqoi&wl3l2sald',
+            'device' => [
+                'start_device_id' => 'HG123456',
+                'end_device_id' => 'HG123456',
+                'materiel_no' => 'example_materiel_no',
+            ],
         ],
     ]): ResponseInterface;
 
@@ -104,6 +109,11 @@ interface Serviceorder
             'need_user_confirm' => true,
             'notify_url' => 'https://api.test.com',
             'attach' => 'Easdfowealsdkjfnlaksjdlfkwqoi&wl3l2sald',
+            'device' => [
+                'start_device_id' => 'HG123456',
+                'end_device_id' => 'HG123456',
+                'materiel_no' => 'example_materiel_no',
+            ],
         ],
     ]): PromiseInterface;
 

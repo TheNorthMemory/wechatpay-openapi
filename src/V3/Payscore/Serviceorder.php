@@ -52,6 +52,11 @@ interface Serviceorder
             'notify_url' => 'https://api.test.com',
             'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
             'need_user_confirm' => true,
+            'device' => [
+                'start_device_id' => 'HG123456',
+                'end_device_id' => 'HG123456',
+                'materiel_no' => 'example_materiel_no',
+            ],
         ],
     ]): ResponseInterface;
 
@@ -96,6 +101,11 @@ interface Serviceorder
             'notify_url' => 'https://api.test.com',
             'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
             'need_user_confirm' => true,
+            'device' => [
+                'start_device_id' => 'HG123456',
+                'end_device_id' => 'HG123456',
+                'materiel_no' => 'example_materiel_no',
+            ],
         ],
     ]): PromiseInterface;
 

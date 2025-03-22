@@ -1,11 +1,11 @@
 post:
-  x-last-updated-at: 2024.06.18
+  x-last-updated-at: 2025.03.06
   x-role:
     - 服务商
   tags:
     - 支付分∙服务商模式
   summary: 创建支付分订单API
-  description: 用户申请使用服务时，商户可通过此接口申请创建微信支付分订单。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter6_2_1.shtml) [官方文档](https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/partner-service-order/create-partner-service-order.html)
+  description: 用户申请使用服务时，商户可通过此接口申请创建微信支付分订单。 [官方文档](https://pay.weixin.qq.com/doc/v3/partner/4012692136) [官方文档](https://pay.weixin.qq.com/doc/v3/partner/4013138534) [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter6_2_1.shtml) [官方文档](https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/partner-service-order/create-partner-service-order.html)
   parameters:
     - name: _
       in: body
@@ -165,6 +165,22 @@ post:
             type: string
             description: 商户数据包
             example: Easdfowealsdkjfnlaksjdlfkwqoi&wl3l2sald
+          device:
+            type: object
+            description: 设备信息
+            properties:
+              start_device_id:
+                type: string
+                description: 服务开始的设备ID
+                example: HG123456
+              end_device_id:
+                type: string
+                description: 服务结束的设备ID
+                example: HG123456
+              materiel_no:
+                type: string
+                description: 物料编码
+                example: example_materiel_no
   responses:
     '200':
       schema:
@@ -211,10 +227,19 @@ post:
             type: string
             description: 服务订单状态
             example: CREATED
+            enum:
+              - CREATED #商户已创建服务订单
+              - DOING #服务订单进行中
+              - DONE #服务订单完成(终态)
+              - REVOKED #商户取消服务订单(终态)
+              - EXPIRED #服务订单已失效
           state_description:
             type: string
             description: 订单状态说明
             example: MCH_COMPLETE
+            enum:
+              - USER_CONFIRM
+              - MCH_COMPLETE
           post_payments:
             type: array
             description: 后付费项目
@@ -275,6 +300,11 @@ post:
                 type: string
                 description: 风险金名称
                 example: DEPOSIT
+                enum:
+                  - DEPOSIT
+                  - ADVANCE
+                  - CASH_DEPOSIT
+                  - ESTIMATE_ORDER_COST
               amount:
                 type: integer
                 description: 风险金额
@@ -409,10 +439,19 @@ get:
             type: string
             description: 服务订单状态
             example: CREATED
+            enum:
+              - CREATED #商户已创建服务订单
+              - DOING #服务订单进行中
+              - DONE #服务订单完成(终态)
+              - REVOKED #商户取消服务订单(终态)
+              - EXPIRED #服务订单已失效
           state_description:
             type: string
             description: 订单状态说明
             example: MCH_COMPLETE
+            enum:
+              - USER_CONFIRM
+              - MCH_COMPLETE
           post_payments:
             type: array
             description: 后付费项目
@@ -498,6 +537,9 @@ get:
                 type: string
                 description: 收款状态
                 example: USER_PAID
+                enum:
+                  - USER_PAYING
+                  - USER_PAID
               total_amount:
                 type: integer
                 description: 总收款金额
@@ -528,6 +570,9 @@ get:
                       type: string
                       description: 收款成功渠道
                       example: NEWTON
+                      enum:
+                        - NEWTON
+                        - MCH
                     paid_time:
                       type: string
                       description: 收款成功时间
@@ -557,10 +602,16 @@ get:
                             type: string
                             description: 优惠范围
                             example: GLOBAL
+                            enum:
+                              - SINGLE
+                              - GLOBAL
                           type:
                             type: string
                             description: 优惠类型
                             example: CASH
+                            enum:
+                              - CASH
+                              - NOCASH
                           amount:
                             type: integer
                             description: 优惠券面额

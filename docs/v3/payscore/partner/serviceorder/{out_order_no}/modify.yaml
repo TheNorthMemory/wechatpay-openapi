@@ -1,11 +1,11 @@
 post:
-  x-last-updated-at: 2024.06.18
+  x-last-updated-at: 2025.03.06
   x-role:
     - 服务商
   tags:
     - 支付分∙服务商模式
   summary: 修改订单金额API
-  description: 完结订单总金额与实际金额不符时，且当服务订单收款状态处于“待支付（USER_PAYING）”时，商户可通过该接口修改订单金额。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter6_2_4.shtml) [官方文档](https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/partner-service-order/modify-partner-service-order.html)
+  description: 完结订单总金额与实际金额不符时，且当服务订单收款状态处于“待支付（USER_PAYING）”时，商户可通过该接口修改订单金额。[官方文档](https://pay.weixin.qq.com/doc/v3/partner/4012692360) [官方文档](https://pay.weixin.qq.com/doc/v3/partner/4013138819) [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter6_2_4.shtml) [官方文档](https://pay.weixin.qq.com/docs/partner/apis/partner-weixin-pay-score/partner-service-order/modify-partner-service-order.html)
   parameters:
     - name: out_order_no
       in: path
@@ -89,6 +89,22 @@ post:
             type: string
             description: 修改原因
             example: 用户投诉
+          device:
+            type: object
+            description: 设备信息
+            properties:
+              start_device_id:
+                type: string
+                description: 服务开始的设备ID
+                example: HG123456
+              end_device_id:
+                type: string
+                description: 服务结束的设备ID
+                example: HG123456
+              materiel_no:
+                type: string
+                description: 物料编码
+                example: example_materiel_no
   responses:
     '204':
       schema: {}

@@ -1,11 +1,11 @@
 post:
-  x-last-updated-at: 2021.08.06
+  x-last-updated-at: 2025.03.11
   x-role:
     - 服务商
   tags:
     - 支付分∙停车服务
   summary: 扣费受理API
-  description: 商户请求扣费受理接口，会完成订单受理。微信支付进行异步扣款，支付完成后，会将订单支付结果发送给商户。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_8_3.shtml)
+  description: 商户请求扣费受理接口，会完成订单受理。微信支付进行异步扣款，支付完成后，会将订单支付结果发送给商户。 [官方文档](https://pay.weixin.qq.com/doc/v3/merchant/4012534352) [官方文档](https://pay.weixin.qq.com/doc/v3/partner/4012534427) [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_8_3.shtml)
   parameters:
     - name: _
       in: body
@@ -70,7 +70,6 @@ post:
             description: 订单金额
             required:
               - total
-              - currency
             properties:
               total:
                 type: integer
@@ -80,6 +79,8 @@ post:
                 type: string
                 description: 货币类型
                 example: CNY
+                enum:
+                  - CNY
           parking_info:
             type: object
             description: 停车场景信息
@@ -270,6 +271,7 @@ post:
             description: 订单金额信息
             required:
               - total
+              - currency
             properties:
               total:
                 type: integer
@@ -279,6 +281,8 @@ post:
                 type: string
                 description: 货币类型
                 example: CNY
+                enum:
+                  - CNY
               payer_total:
                 type: integer
                 description: 用户实际支付金额
@@ -308,10 +312,16 @@ post:
                   type: string
                   description: 优惠范围
                   example: SINGLE
+                  enum:
+                    - SINGLE
+                    - GLOBAL
                 type:
                   type: string
                   description: 优惠类型
                   example: CASH
+                  enum:
+                    - CASH
+                    - NOCASH
                 stock_id:
                   type: string
                   description: 活动ID
@@ -336,3 +346,5 @@ post:
                   type: string
                   description: 优惠币种
                   example: CNY
+                  enum:
+                    - CNY

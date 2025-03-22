@@ -1,11 +1,11 @@
 post:
-  x-last-updated-at: 2024.06.18
+  x-last-updated-at: 2025.03.06
   x-role:
     - 普通商户
   tags:
     - 支付分
   summary: 修改订单金额API
-  description: 完结订单总金额与实际金额不符时，可通过该接口修改订单金额。**前置条件：**服务订单支付状态为待支付 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter3_4.shtml) [官方文档](https://pay.weixin.qq.com/docs/merchant/apis/weixin-pay-score/service-order/modify-service-order.html)
+  description: 完结订单总金额与实际金额不符时，可通过该接口修改订单金额。**前置条件：** 服务订单支付状态为待支付 [官方文档](https://pay.weixin.qq.com/doc/v3/merchant/4012587957) [官方文档](https://pay.weixin.qq.com/doc/v3/merchant/4012647427) [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/payscore/chapter3_4.shtml) [官方文档](https://pay.weixin.qq.com/docs/merchant/apis/weixin-pay-score/service-order/modify-service-order.html)
   parameters:
     - name: out_order_no
       in: path
@@ -87,6 +87,22 @@ post:
             type: string
             description: 修改原因
             example: 用户投诉
+          device:
+            type: object
+            description: 设备信息
+            properties:
+              start_device_id:
+                type: string
+                description: 服务开始的设备ID
+                example: HG123456
+              end_device_id:
+                type: string
+                description: 服务结束的设备ID
+                example: HG123456
+              materiel_no:
+                type: string
+                description: 物料编码
+                example: example_materiel_no
   responses:
     '200':
       schema:
@@ -124,10 +140,19 @@ post:
             type: string
             description: 服务订单状态
             example: CREATED
+            enum:
+              - CREATED #商户已创建服务订单
+              - DOING #服务订单进行中
+              - DONE #服务订单完成(终态)
+              - REVOKED #商户取消服务订单(终态)
+              - EXPIRED #服务订单已失效
           state_description:
             type: string
             description: 订单状态说明
             example: MCH_COMPLETE
+            enum:
+              - USER_CONFIRM
+              - MCH_COMPLETE
           post_payments:
             type: array
             description: 后付费项目
@@ -185,6 +210,11 @@ post:
                 type: string
                 description: 风险名称
                 example: DEPOSIT
+                enum:
+                  - DEPOSIT
+                  - ADVANCE
+                  - CASH_DEPOSIT
+                  - ESTIMATE_ORDER_COST
               amount:
                 type: number
                 description: 风险金额
@@ -211,6 +241,9 @@ post:
                 type: string
                 description: 收款状态
                 example: USER_PAID
+                enum:
+                  - USER_PAYING
+                  - USER_PAID
               total_amount:
                 type: number
                 description: 总收款金额
@@ -241,6 +274,9 @@ post:
                       type: string
                       description: 收款成功渠道
                       example: NEWTON
+                      enum:
+                        - NEWTON
+                        - MCH
                     paid_time:
                       type: string
                       description: 收款成功时间

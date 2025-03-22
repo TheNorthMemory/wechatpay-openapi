@@ -45,6 +45,11 @@ interface Complete
             'profit_sharing' => true,
             'complete_time' => '2019-11-11T16:24:05+08:00',
             'goods_tag' => 'goods_tag',
+            'device' => [
+                'start_device_id' => 'HG123456',
+                'end_device_id' => 'HG123456',
+                'materiel_no' => 'example_materiel_no',
+            ],
         ],
     ]): ResponseInterface;
 
@@ -84,6 +89,11 @@ interface Complete
             'profit_sharing' => true,
             'complete_time' => '2019-11-11T16:24:05+08:00',
             'goods_tag' => 'goods_tag',
+            'device' => [
+                'start_device_id' => 'HG123456',
+                'end_device_id' => 'HG123456',
+                'materiel_no' => 'example_materiel_no',
+            ],
         ],
     ]): PromiseInterface;
 }

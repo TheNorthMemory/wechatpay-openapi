@@ -43,6 +43,11 @@ interface Complete
             ],
             'profit_sharing' => true,
             'goods_tag' => 'goods_tag',
+            'device' => [
+                'start_device_id' => 'HG123456',
+                'end_device_id' => 'HG123456',
+                'materiel_no' => 'example_materiel_no',
+            ],
         ],
     ]): ResponseInterface;
 
@@ -80,6 +85,11 @@ interface Complete
             ],
             'profit_sharing' => true,
             'goods_tag' => 'goods_tag',
+            'device' => [
+                'start_device_id' => 'HG123456',
+                'end_device_id' => 'HG123456',
+                'materiel_no' => 'example_materiel_no',
+            ],
         ],
     ]): PromiseInterface;
 }

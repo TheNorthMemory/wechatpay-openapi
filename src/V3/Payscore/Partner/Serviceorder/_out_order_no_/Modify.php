@@ -33,6 +33,11 @@ interface Modify
             ],],
             'total_amount' => 50000,
             'reason' => '用户投诉',
+            'device' => [
+                'start_device_id' => 'HG123456',
+                'end_device_id' => 'HG123456',
+                'materiel_no' => 'example_materiel_no',
+            ],
         ],
     ]): ResponseInterface;
 
@@ -60,6 +65,11 @@ interface Modify
             ],],
             'total_amount' => 50000,
             'reason' => '用户投诉',
+            'device' => [
+                'start_device_id' => 'HG123456',
+                'end_device_id' => 'HG123456',
+                'materiel_no' => 'example_materiel_no',
+            ],
         ],
     ]): PromiseInterface;
 }

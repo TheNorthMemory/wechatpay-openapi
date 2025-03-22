@@ -1,11 +1,11 @@
 post:
-  x-last-updated-at: 2021.03.01
+  x-last-updated-at: 2025.03.18
   x-role:
     - 服务商
   tags:
     - 经营工具∙连锁品牌∙门店
   summary: 解除门店收款信息绑定
-  description: 该API接口可用于给一个特定的门店解除收款商户号。解除成功后，商户号不能再为门店收款。目前只支持解除此前收款方拒绝的收款商户号。
+  description: 该API接口可用于给一个特定的门店解除收款商户号。解除成功后，商户号不能再为门店收款。目前只支持解除此前收款方拒绝的收款商户号。 [官方文档](https://pay.weixin.qq.com/doc/v3/partner/4013948580)
   parameters:
     - name: store_id
       in: path
@@ -18,9 +18,6 @@ post:
       required: true
       schema:
         type: object
-        required:
-          - sub_mchid
-          - store_recipient
         properties:
           sub_mchid:
             type: string
@@ -38,15 +35,15 @@ post:
                 mchid:
                   type: string
                   description: 门店收款商户号
+                  example: '1230000109'
                 company_name:
                   type: string
                   description: 门店收款主体
+                  example: 腾讯科技（深圳）有限公司
   responses:
     200:
       schema:
         type: object
-        required:
-          - store_id
         properties:
           failed_store_recipient:
             type: array
@@ -57,6 +54,8 @@ post:
                 mchid:
                   type: string
                   description: 门店收款商户号
+                  example: '1230000109'
                 failed_reason:
                   type: string
                   description: 绑定当前收款信息失败的原因
+                  example: 收款商户号与收款主体不一致

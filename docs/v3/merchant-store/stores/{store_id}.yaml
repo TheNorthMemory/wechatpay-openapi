@@ -1,11 +1,12 @@
 get:
-  x-last-updated-at: 2020.04.30
+  x-last-updated-at: 2025.03.18
   x-role:
     - 直连商户
     - 服务商
   tags:
     - 经营工具∙连锁品牌∙门店
   summary: 查询门店API
+  description: 查询品牌门店 [官方文档](https://pay.weixin.qq.com/doc/v3/partner/4013948577)
   parameters:
     - name: store_id
       in: path
@@ -22,34 +23,38 @@ get:
     200:
       schema:
         type: object
-        required:
-          - store_address
-          - store_business
-          - store_recipient
         properties:
           store_basics:
             type: object
             description: 门店基础信息
             required:
-              - brand_name
               - store_name
             properties:
               store_reference_id:
                 type: string
                 description: 商家门店编号
+                example: MDL001
               brand_name:
                 type: string
                 description: 品牌名称
+                example: 麦当劳
               store_name:
                 type: string
                 description: 门店名称
+                example: 麦当劳
               branch_name:
                 type: string
                 description: 分店名称
+                example: 海岸城店
+              brand_id:
+                type: number
+                description: 品牌ID
+                example: 1001
           store_address:
             type: object
             description: 门店地址信息
             required:
+              - address_code
               - address_detail
             properties:
               address_code:
@@ -59,15 +64,19 @@ get:
               address_detail:
                 type: string
                 description: 门店地址
+                example: 深南大道10000号腾讯大厦1楼
               address_complements:
                 type: string
                 description: 门店地址辅助描述
+                example: 地铁A口右侧100米
               longitude:
                 type: string
                 description: 门店经度
+                example: '112.63484'
               latitude:
                 type: string
                 description: 门店纬度
+                example: '37.75464'
           store_business:
             type: object
             description: 门店经营信息
@@ -91,16 +100,34 @@ get:
                 mchid:
                   type: string
                   description: 门店收款商户号
+                  example: '1230000109'
                 company_name:
                   type: string
                   description: 门店收款主体
+                  example: 腾讯科技（深圳）有限公司
+          store_state:
+            type: object
+            description: 门店状态
+            properties:
+              store_state_message:
+                type: string
+                description: 门店状态描述
+                example: 地址核实失败
+              address_failed_reason:
+                type: string
+                description: 地址核实失败原因
+                example: 感谢亲的反馈，通过核实您提交的电话错误，请核实手机号码或座机号码是否正确
+              store_state_value:
+                type: string
+                description: STORE_STATE_VALID
 patch:
-  x-last-updated-at: 2020.04.30
+  x-last-updated-at: 2025.03.18
   x-role:
     - 服务商
   tags:
     - 经营工具∙连锁品牌∙门店
   summary: 修改门店API
+  description: 更新品牌门店信息 [官方文档](https://pay.weixin.qq.com/doc/v3/partner/4013948551)
   parameters:
     - name: store_id
       in: path
@@ -113,11 +140,6 @@ patch:
       required: true
       schema:
         type: object
-        required:
-          - sub_mchid
-          - store_address
-          - store_business
-          - store_recipient
         properties:
           sub_mchid:
             type: string
@@ -127,25 +149,33 @@ patch:
             type: object
             description: 门店基础信息
             required:
-              - brand_name
               - store_name
             properties:
               store_reference_id:
                 type: string
                 description: 商家门店编号
+                example: MDL001
               brand_name:
                 type: string
                 description: 品牌名称
+                example: 麦当劳
               store_name:
                 type: string
                 description: 门店名称
-              store_business:
+                example: 麦当劳
+              branch_name:
                 type: string
                 description: 分店名称
+                example: 海岸城店
+              brand_id:
+                type: number
+                description: 品牌ID
+                example: 1001
           store_address:
             type: object
             description: 门店地址信息
             required:
+              - address_code
               - address_detail
             properties:
               address_code:
@@ -155,15 +185,19 @@ patch:
               address_detail:
                 type: string
                 description: 门店地址
+                example: 深南大道10000号腾讯大厦1楼
               address_complements:
                 type: string
                 description: 门店地址辅助描述
+                example: 地铁A口右侧100米
               longitude:
                 type: string
                 description: 门店经度
+                example: '112.63484'
               latitude:
                 type: string
                 description: 门店纬度
+                example: '37.75464'
           store_business:
             type: object
             description: 门店经营信息

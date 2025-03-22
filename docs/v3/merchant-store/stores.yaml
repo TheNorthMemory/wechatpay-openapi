@@ -1,23 +1,17 @@
 post:
-  x-last-updated-at: 2020.08.11
+  x-last-updated-at: 2025.03.18
   x-role:
     - 服务商
   tags:
     - 经营工具∙连锁品牌∙门店
   summary: 创建门店API
-  description: 连锁品牌方案，是微信支付为「连锁经营品牌商家」定制的行业解决方案。方案基于“品牌-门店”的商业关系，向连锁经营品牌商家提供进件、交易场景配置、流量开放、资金管理、数据管理、营销管理等场景的专项解决方案。服务商/品牌方在门店在创建时，需要经过门店方授权确认，确认后方可建立“品牌-门店”关系。[官方文档](https://kf.qq.com/faq/2009096ZF7Jf200909UVbY73.html)
+  description: 连锁品牌方案，是微信支付为「连锁经营品牌商家」定制的行业解决方案。方案基于“品牌-门店”的商业关系，向连锁经营品牌商家提供进件、交易场景配置、流量开放、资金管理、数据管理、营销管理等场景的专项解决方案。服务商/品牌方在门店在创建时，需要经过门店方授权确认，确认后方可建立“品牌-门店”关系。[官方文档](https://pay.weixin.qq.com/doc/v3/partner/4013948546) [官方文档](https://kf.qq.com/faq/2009096ZF7Jf200909UVbY73.html)
   parameters:
     - name: _
       in: body
       required: true
       schema:
         type: object
-        required:
-          - sub_mchid
-          - store_basics
-          - store_address
-          - store_business
-          - store_recipient
         properties:
           sub_mchid:
             type: string
@@ -27,25 +21,33 @@ post:
             type: object
             description: 门店基础信息
             required:
-              - brand_name
               - store_name
             properties:
               store_reference_id:
                 type: string
                 description: 商家门店编号
+                example: MDL001
               brand_name:
                 type: string
                 description: 品牌名称
+                example: 麦当劳
               store_name:
                 type: string
                 description: 门店名称
+                example: 麦当劳
               branch_name:
                 type: string
                 description: 分店名称
+                example: 海岸城店
+              brand_id:
+                type: number
+                description: 品牌ID
+                example: 1001
           store_address:
             type: object
             description: 门店地址信息
             required:
+              - address_code
               - address_detail
             properties:
               address_code:
@@ -55,15 +57,19 @@ post:
               address_detail:
                 type: string
                 description: 门店地址
+                example: 深南大道10000号腾讯大厦1楼
               address_complements:
                 type: string
                 description: 门店地址辅助描述
+                example: 地铁A口右侧100米
               longitude:
                 type: string
                 description: 门店经度
+                example: '112.63484'
               latitude:
                 type: string
                 description: 门店纬度
+                example: '37.75464'
           store_business:
             type: object
             description: 门店经营信息
@@ -87,9 +93,11 @@ post:
                 mchid:
                   type: string
                   description: 门店收款商户号
+                  example: '1230000109'
                 company_name:
                   type: string
                   description: 门店收款主体
+                  example: 腾讯科技（深圳）有限公司
   responses:
     200:
       schema:

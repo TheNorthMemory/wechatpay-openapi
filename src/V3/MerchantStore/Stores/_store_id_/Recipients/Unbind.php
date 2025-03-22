@@ -19,8 +19,8 @@ interface Unbind
         'json' => [
             'sub_mchid' => '1900000109',
             'store_recipient' => [[
-                'mchid' => '',
-                'company_name' => '',
+                'mchid' => '1230000109',
+                'company_name' => '腾讯科技（深圳）有限公司',
             ],],
         ],
     ]): ResponseInterface;
@@ -35,8 +35,8 @@ interface Unbind
         'json' => [
             'sub_mchid' => '1900000109',
             'store_recipient' => [[
-                'mchid' => '',
-                'company_name' => '',
+                'mchid' => '1230000109',
+                'company_name' => '腾讯科技（深圳）有限公司',
             ],],
         ],
     ]): PromiseInterface;

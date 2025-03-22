@@ -19,25 +19,26 @@ interface Stores
         'json' => [
             'sub_mchid' => '1900000109',
             'store_basics' => [
-                'store_reference_id' => '',
-                'brand_name' => '',
-                'store_name' => '',
-                'branch_name' => '',
+                'store_reference_id' => 'MDL001',
+                'brand_name' => '麦当劳',
+                'store_name' => '麦当劳',
+                'branch_name' => '海岸城店',
+                'brand_id' => 1001,
             ],
             'store_address' => [
                 'address_code' => '440305',
-                'address_detail' => '',
-                'address_complements' => '',
-                'longitude' => '',
-                'latitude' => '',
+                'address_detail' => '深南大道10000号腾讯大厦1楼',
+                'address_complements' => '地铁A口右侧100米',
+                'longitude' => '112.63484',
+                'latitude' => '37.75464',
             ],
             'store_business' => [
                 'service_phone' => '0755-86013388',
                 'business_hours' => '周一至周五 09:00-20:00|周六至周日 10:00-22:00',
             ],
             'store_recipient' => [[
-                'mchid' => '',
-                'company_name' => '',
+                'mchid' => '1230000109',
+                'company_name' => '腾讯科技（深圳）有限公司',
             ],],
         ],
     ]): ResponseInterface;
@@ -51,25 +52,26 @@ interface Stores
         'json' => [
             'sub_mchid' => '1900000109',
             'store_basics' => [
-                'store_reference_id' => '',
-                'brand_name' => '',
-                'store_name' => '',
-                'branch_name' => '',
+                'store_reference_id' => 'MDL001',
+                'brand_name' => '麦当劳',
+                'store_name' => '麦当劳',
+                'branch_name' => '海岸城店',
+                'brand_id' => 1001,
             ],
             'store_address' => [
                 'address_code' => '440305',
-                'address_detail' => '',
-                'address_complements' => '',
-                'longitude' => '',
-                'latitude' => '',
+                'address_detail' => '深南大道10000号腾讯大厦1楼',
+                'address_complements' => '地铁A口右侧100米',
+                'longitude' => '112.63484',
+                'latitude' => '37.75464',
             ],
             'store_business' => [
                 'service_phone' => '0755-86013388',
                 'business_hours' => '周一至周五 09:00-20:00|周六至周日 10:00-22:00',
             ],
             'store_recipient' => [[
-                'mchid' => '',
-                'company_name' => '',
+                'mchid' => '1230000109',
+                'company_name' => '腾讯科技（深圳）有限公司',
             ],],
         ],
     ]): PromiseInterface;

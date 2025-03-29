@@ -1,0 +1,25 @@
+get:
+  x-last-updated-at: 2025.01.02
+  x-role:
+    - 直连模式
+  tags:
+    - 跨境
+  summary: 商家充值退款余额查询
+  description: 商户可通过调用此接口查询自身的充值退款外币账户实时余额和对应外币币种。[官方文档](https://pay.weixin.qq.com/doc/global/v3/zh/4013068934)
+  parameters: []
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - remaining_amount
+          - currency
+        properties:
+          remaining_amount:
+            type: integer
+            description: 账户可用余额
+            example: 888
+          currency:
+            type: string
+            description: 货币类型
+            example: KHD

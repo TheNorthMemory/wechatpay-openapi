@@ -802,6 +802,10 @@ paths:
     $ref: ./v3/global/profit-sharing/transactions/{transaction_id}/refundable-amounts.yaml
   /v3/global/profit-sharing/transactions/mark:
     $ref: ./v3/global/profit-sharing/transactions/mark.yaml
+  /v3/global/refund/partner/recharge-balance/sub-mchid/{sub_mchid}:
+    $ref: ./v3/global/refund/partner/recharge-balance/sub-mchid/{sub_mchid}.yaml
+  /v3/global/refund/recharge-balance:
+    $ref: ./v3/global/refund/recharge-balance.yaml
   /v3/global/refunds:
     $ref: ./v3/global/refunds.yaml
   /v3/global/refunds/id/{refund_id}:

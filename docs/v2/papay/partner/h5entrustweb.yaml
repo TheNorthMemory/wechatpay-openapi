@@ -1,10 +1,11 @@
 get:
+  x-last-updated-at: 2024.11.14
   tags:
     - APIv2∙委托扣款
   x-role:
     - 服务商
   summary: H5纯签约
-  description: 该方式适用于手机、平板电脑等使用H5浏览器的设备场景使用微信签约扣款。商户在网站前端通过微信支付H5纯签约接口与用户签订委托扣款协议，再通过后台接口申请扣款来完成代扣交易。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter5_4.shtml)
+  description: 该方式适用于手机、平板电脑等使用H5浏览器的设备场景使用微信签约扣款。商户在网站前端通过微信支付H5纯签约接口与用户签订委托扣款协议，再通过后台接口申请扣款来完成代扣交易。 [官方文档](https://pay.weixin.qq.com/doc/v2/partner/4011988368)
   consumes:
     - application/xml
   produces:
@@ -145,3 +146,18 @@ get:
             type: string
             description: 返回信息
             example: 签名失败
+          result_code:
+            type: string
+            description: 业务结果
+            example: SUCCESS
+            enum:
+              - SUCCESS
+              - FAIL
+          result_msg:
+            type: string
+            description: 业务结果描述
+            example: SIGN_ERROR
+          redirect_url:
+            type: string
+            description: 跳转URL
+            example: https://payapp.weixin.qq.com

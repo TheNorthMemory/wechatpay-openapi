@@ -1,13 +1,116 @@
 get:
+  x-last-updated-at: 2024.11.14
   tags:
     - APIv2∙委托扣款
   summary: H5纯签约
-  description: 该方式适用于手机、平板电脑等使用H5浏览器的设备场景使用微信签约扣款。商户在网站前端通过微信支付H5纯签约接口与用户签订委托扣款协议，再通过后台接口申请扣款来完成代扣交易。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter3_4.shtml)
+  description: 该方式适用于手机、平板电脑等使用H5浏览器的设备场景使用微信签约扣款。商户在网站前端通过微信支付H5纯签约接口与用户签订委托扣款协议，再通过后台接口申请扣款来完成代扣交易。[官方文档](https://pay.weixin.qq.com/doc/v2/merchant/4011987295)
   consumes:
     - application/xml
   produces:
     - application/xml
-  parameters: []
+  parameters:
+    - name: appid
+      in: query
+      type: string
+      description: 应用ID
+      example: wxcbda96de0b165486
+    - name: mch_id
+      in: query
+      type: string
+      description: 商户号
+      example: '1200009811'
+    - name: plan_id
+      in: query
+      type: string
+      description: 模板id
+      example: '12535'
+    - name: contract_code
+      in: query
+      type: string
+      description: 签约协议号
+      example: '100000'
+    - name: request_serial
+      in: query
+      type: integer
+      description: 请求序列号
+      example: 1000
+    - name: contract_display_account
+      in: query
+      type: string
+      description: 用户账户展示名称
+      example: 微信代扣
+    - name: notify_url
+      in: query
+      type: string
+      description: 回调通知url
+      example: https://weixin.qq.com
+    - name: version
+      in: query
+      type: string
+      description: 版本号
+      example: '1.0'
+    - name: sign
+      in: query
+      type: string
+      description: 签名
+      example: C380BEC2BFD727A4B6845133519F3AD6
+    - name: sign_type
+      in: query
+      type: string
+      description: 签名类型
+      nullable: true
+      example: HMAC-SHA256
+      default: HMAC-SHA256
+      enum:
+        - HMAC-SHA256
+        - MD5
+    - name: timestamp
+      in: query
+      type: string
+      description: 时间戳
+      example: '1414488825'
+    - name: clientip
+      in: query
+      type: string
+      description: 客户端 IP
+      example: 119.145.83.6
+    - name: return_appid
+      in: query
+      type: string
+      description: 回调应用appid
+      example: wxcbda96de0b165486
   responses:
     '200':
-      description: ''
+      schema:
+        xml:
+          name: xml
+        type: object
+        required:
+          - return_code
+        properties:
+          return_code:
+            type: string
+            description: 返回状态码
+            example: SUCCESS
+            enum:
+              - SUCCESS
+              - FAIL
+          return_msg:
+            type: string
+            description: 返回信息
+            example: 签名失败
+          result_code:
+            type: string
+            description: 业务结果
+            example: SUCCESS
+            enum:
+              - SUCCESS
+              - FAIL
+          result_msg:
+            type: string
+            description: 业务结果描述
+            example: SIGN_ERROR
+          redirect_url:
+            type: string
+            description: 跳转URL
+            example: https://payapp.weixin.qq.com

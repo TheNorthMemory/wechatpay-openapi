@@ -61,7 +61,7 @@ post:
                 type: string
                 format: MediaId
                 description: 营业执照照片
-                example: 0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMAjmVtCz7ScmhEIThCaV-4BBgVwtNkCHO_XXqK5dE5YdOmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo
+                example: 0P3ng6KTIW4-Q_l2FjKLZuhHjFwczhJehHhAZN6BKXQPcs-VvdSo
               merchant_name:
                 type: string
                 description: 商户名称
@@ -102,7 +102,6 @@ post:
                 enum:
                  - CERTIFICATE_TYPE_2388 #事业单位法人证书
                  - CERTIFICATE_TYPE_2389 #统一社会信用代码证书
-                 - CERTIFICATE_TYPE_2389 #统一社会信用代码证书
                  - CERTIFICATE_TYPE_2394 #社会团体法人登记证书
                  - CERTIFICATE_TYPE_2395 #民办非企业单位登记证书
                  - CERTIFICATE_TYPE_2396 #基金会法人登记证书
@@ -119,7 +118,7 @@ post:
                 type: string
                 format: MediaId
                 description: 证书照片
-                example: 0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMAjmVtCz7ScmhEIThCaV-4BBgVwtNkCHO_XXqK5dE5YdOmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo
+                example: 0P3ng6KTIW4-Q_l2FjKLZuhHjFwczhJehHhAZN6BKXQPcs-VvdSo
               merchant_name:
                 type: string
                 description: 商户名称
@@ -196,32 +195,32 @@ post:
                 type: string
                 format: MediaId
                 description: 法定代表人说明函
-                example: 47ZC6GC-vnrbEny_Ie_An5-tCpqxucuxi-vByf3Gjm7KEIUv0OF4wFNIO4kqg05InE4d2I6_H7I4
+                example: 47ZC6GC-vnrbEny_Ie_AUv0OF4wFNIO4kqg05InE4d2I6_H7I4
               card_front:
                 type: string
                 format: MediaId
                 description: 证件正面照片
-                example: 0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMAjmVtCz7ScmhEIThCaV-4BBgVwtNkCHO_XXqK5dE5YdOmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo
+                example: 0P3ng6KTIW4-Q_l2FjKLZuhHjFwczhJehHhAZN6BKXQPcs-VvdSo
               card_back:
                 type: string
                 format: MediaId
                 description: 证件反面照片
-                example: 0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMAjmVtCz7ScmhEIThCaV-4BBgVwtNkCHO_XXqK5dE5YdOmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo
+                example: 0P3ng6KTIW4-Q_l2FjKLZuhHjFwczhJehHhAZN6BKXQPcs-VvdSo
               card_name:
                 type: string
                 format: base64
                 description: 证件姓名
-                example: MZnwEx6zotwIz6ctW2/iQL5z94odwP9sKiF74RPCPztcJOScaXsaGs82HJNU3K+46ndk7pMrENiPDw==
+                example: MZnwEx6zotwIz6ctW2/iQL5zaGs82HJNU3K+46ndk7pMrENiPDw==
               card_number:
                 type: string
                 format: base64
                 description: 证件号码
-                example: MZnwEx6zotwIz6ctW2/iQL5z94odwP9sKiF74RPCPztcJOScaXsaGs82HJNU3K+46ndk7pMrENiPDw==
+                example: MZnwEx6zotwIz6ctW2/iQL5zaGs82HJNU3K+46ndk7pMrENiPDw==
               card_address:
                 type: string
                 format: base64
                 description: 证件居住地址
-                example: pVd1HJ6zyvPedzGaV+X3qtmrq9bb9tPROvwia4ibL+F6mfjbzQIzfb3HHLEjZ4YiR/cJiCrZxnAqi+pjeKIEdkwzXRAI7FUhrfPK3SNjaBTEu9GmsugMIA9r3x887Q+ODuC8HH2nzAn7NGpE/e3yiHgWhk0ps5k5DP/2qIdGdONoDzZelrxCl/NWWNUyB93K9F+jC1JX2IMttdY+aQ6zBlw0xnOiNW6Hzy7UtC+xriudjD5APomty7/mYNxLMpRSvWKIjOv/69bDnuC4EL5Kz4jBHLiCyOb+tI0m2qhZ9evAM+Jv1z0NVa8MRtelw/wDa4SzfeespQO/0kjiwfqdfg==
+                example: pVd1HJ6zyvPedzGaV+X3qtmrq9bb9tPROspQO/0kjiwfqdfg==
               card_period_begin:
                 type: string
                 description: 证件有效期开始时间
@@ -264,27 +263,27 @@ post:
                   type: string
                   format: MediaId
                   description: 证件正面照片
-                  example: 0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMAjmVtCz7ScmhEIThCaV-4BBgVwtNkCHO_XXqK5dE5YdOmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo
+                  example: 0P3ng6KTIW4-Q_l2FjKLZuhHjFwczhJehHhAZN6BKXQPcs-VvdSo
                 card_back:
                   type: string
                   format: MediaId
                   description: 证件反面照片
-                  example: 0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMAjmVtCz7ScmhEIThCaV-4BBgVwtNkCHO_XXqK5dE5YdOmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo
+                  example: 0P3ng6KTIW4-Q_l2FjKLZuhHjFwczhJehHhAZN6BKXQPcs-VvdSo
                 card_name:
                   type: string
                   format: base64
                   description: 证件姓名
-                  example: MZnwEx6zotwIz6ctW2/iQL5z94odwP9sKiF74RPCPztcJOScaXsaGs82HJNU3K+46ndk7pMrENiPDw==
+                  example: MZnwEx6zotwIz6ctW2/iQL5zaGs82HJNU3K+46ndk7pMrENiPDw==
                 card_number:
                   type: string
                   format: base64
                   description: 证件号码
-                  example: MZnwEx6zotwIz6ctW2/iQL5z94odwP9sKiF74RPCPztcJOScaXsaGs82HJNU3K+46ndk7pMrENiPDw==
+                  example: MZnwEx6zotwIz6ctW2/iQL5zaGs82HJNU3K+46ndk7pMrENiPDw==
                 card_address:
                   type: string
                   format: base64
                   description: 证件居住地址
-                  example: pVd1HJ6zyvPedzGaV+X3qtmrq9bb9tPROvwia4ibL+F6mfjbzQIzfb3HHLEjZ4YiR/cJiCrZxnAqi+==
+                  example: pVd1HJ6zyvPedzGaV+bzQIzfb3HHLEjZ4YiR/cJiCrZxnAqi+==
                 card_period_begin:
                   type: string
                   description: 证件有效期开始时间

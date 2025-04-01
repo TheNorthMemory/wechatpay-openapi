@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2023.04.17
+  x-last-updated-at: 2025.03.31
   x-role:
     - 电商平台
     - 服务商
@@ -7,8 +7,9 @@ post:
     - 收付通∙进件
     - 服务商∙进件
   summary: 提交资料变更申请单
-  description: 服务商使用该接口提交商家主体资料变更申请，帮助商家修改主体资料。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter11_3_1.shtml)
+  description: 服务商使用该接口提交商家主体资料变更申请，帮助商家修改主体资料。 [官方文档](https://pay.weixin.qq.com/doc/v3/partner/4014090649)
   parameters:
+    - $ref: '../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
     - name: _
       in: body
       required: true
@@ -33,6 +34,13 @@ post:
             type: string
             description: 主体类型
             example: SUBJECT_TYPE_ENTERPRISE
+            enum:
+              - SUBJECT_TYPE_ENTERPRISE
+              - SUBJECT_TYPE_INSTITUTIONS_CLONED
+              - SUBJECT_TYPE_INDIVIDUAL
+              - SUBJECT_TYPE_OTHERS
+              - SUBJECT_TYPE_GOVERNMENT
+              - SUBJECT_TYPE_MICRO
           finance_institution:
             type: boolean
             description: 是否金融机构
@@ -51,6 +59,7 @@ post:
                 example: '123456789012345678'
               license_copy:
                 type: string
+                format: MediaId
                 description: 营业执照照片
                 example: 0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMAjmVtCz7ScmhEIThCaV-4BBgVwtNkCHO_XXqK5dE5YdOmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo
               merchant_name:
@@ -90,12 +99,25 @@ post:
                 type: string
                 description: 证书类型
                 example: CERTIFICATE_TYPE_2388
+                enum:
+                 - CERTIFICATE_TYPE_2388 #事业单位法人证书
+                 - CERTIFICATE_TYPE_2389 #统一社会信用代码证书
+                 - CERTIFICATE_TYPE_2389 #统一社会信用代码证书
+                 - CERTIFICATE_TYPE_2394 #社会团体法人登记证书
+                 - CERTIFICATE_TYPE_2395 #民办非企业单位登记证书
+                 - CERTIFICATE_TYPE_2396 #基金会法人登记证书
+                 - CERTIFICATE_TYPE_2520 #执业许可证/执业证
+                 - CERTIFICATE_TYPE_2521 #基层群众性自治组织特别法人统一社会信用代码证
+                 - CERTIFICATE_TYPE_2522 #农村集体经济组织登记证
+                 - CERTIFICATE_TYPE_2399 #宗教活动场所登记证
+                 - CERTIFICATE_TYPE_2400 #政府部门下发的其他有效证明文件
               cert_number:
                 type: string
                 description: 证书编号
                 example: '111111111111'
               cert_copy:
                 type: string
+                format: MediaId
                 description: 证书照片
                 example: 0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMAjmVtCz7ScmhEIThCaV-4BBgVwtNkCHO_XXqK5dE5YdOmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo
               merchant_name:
@@ -129,6 +151,12 @@ post:
                 type: string
                 description: 金融机构类型
                 example: FINANCE_TYPE_BANK_AGENT
+                enum:
+                  - FINANCE_TYPE_BANK_AGENT #银行业
+                  - FINANCE_TYPE_PAYMENT_AGENT #支付机构
+                  - FINANCE_TYPE_INSURANCE #保险业
+                  - FINANCE_TYPE_TRADE_AND_SETTLE #交易及结算类金融机构
+                  - FINANCE_TYPE_OTHER #其他金融机构
               finance_license_pics:
                 type: array
                 description: 金融机构许可证图片
@@ -148,32 +176,50 @@ post:
                 type: string
                 description: 证件持有人类型
                 example: LEGAL
+                enum:
+                  - LEGAL
+                  - SUPER
               id_doc_type:
                 type: string
                 description: 证件类型
                 example: IDENTIFICATION_TYPE_IDCARD
+                enum:
+                  - IDENTIFICATION_TYPE_IDCARD #中国大陆居民-身份证
+                  - IDENTIFICATION_TYPE_OVERSEA_PASSPORT #其他国家或地区居民-护照
+                  - IDENTIFICATION_TYPE_HONGKONG_PASSPORT #中国香港居民-来往内地通行证
+                  - IDENTIFICATION_TYPE_MACAO_PASSPORT #中国澳门居民-来往内地通行证
+                  - IDENTIFICATION_TYPE_TAIWAN_PASSPORT #中国台湾居民-来往大陆通行证
+                  - IDENTIFICATION_TYPE_FOREIGN_RESIDENT #外国人居留证
+                  - IDENTIFICATION_TYPE_HONGKONG_MACAO_RESIDENT #港澳居民证
+                  - IDENTIFICATION_TYPE_TAIWAN_RESIDENT #台湾居民证
               authorize_letter_copy:
                 type: string
+                format: MediaId
                 description: 法定代表人说明函
                 example: 47ZC6GC-vnrbEny_Ie_An5-tCpqxucuxi-vByf3Gjm7KEIUv0OF4wFNIO4kqg05InE4d2I6_H7I4
               card_front:
                 type: string
+                format: MediaId
                 description: 证件正面照片
                 example: 0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMAjmVtCz7ScmhEIThCaV-4BBgVwtNkCHO_XXqK5dE5YdOmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo
               card_back:
                 type: string
+                format: MediaId
                 description: 证件反面照片
                 example: 0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMAjmVtCz7ScmhEIThCaV-4BBgVwtNkCHO_XXqK5dE5YdOmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo
               card_name:
                 type: string
+                format: base64
                 description: 证件姓名
                 example: MZnwEx6zotwIz6ctW2/iQL5z94odwP9sKiF74RPCPztcJOScaXsaGs82HJNU3K+46ndk7pMrENiPDw==
               card_number:
                 type: string
+                format: base64
                 description: 证件号码
                 example: MZnwEx6zotwIz6ctW2/iQL5z94odwP9sKiF74RPCPztcJOScaXsaGs82HJNU3K+46ndk7pMrENiPDw==
               card_address:
                 type: string
+                format: base64
                 description: 证件居住地址
                 example: pVd1HJ6zyvPedzGaV+X3qtmrq9bb9tPROvwia4ibL+F6mfjbzQIzfb3HHLEjZ4YiR/cJiCrZxnAqi+pjeKIEdkwzXRAI7FUhrfPK3SNjaBTEu9GmsugMIA9r3x887Q+ODuC8HH2nzAn7NGpE/e3yiHgWhk0ps5k5DP/2qIdGdONoDzZelrxCl/NWWNUyB93K9F+jC1JX2IMttdY+aQ6zBlw0xnOiNW6Hzy7UtC+xriudjD5APomty7/mYNxLMpRSvWKIjOv/69bDnuC4EL5Kz4jBHLiCyOb+tI0m2qhZ9evAM+Jv1z0NVa8MRtelw/wDa4SzfeespQO/0kjiwfqdfg==
               card_period_begin:
@@ -205,24 +251,38 @@ post:
                   type: string
                   description: 证件类型
                   example: IDENTIFICATION_TYPE_IDCARD
+                  enum:
+                    - IDENTIFICATION_TYPE_IDCARD #中国大陆居民-身份证
+                    - IDENTIFICATION_TYPE_OVERSEA_PASSPORT #其他国家或地区居民-护照
+                    - IDENTIFICATION_TYPE_HONGKONG_PASSPORT #中国香港居民-来往内地通行证
+                    - IDENTIFICATION_TYPE_MACAO_PASSPORT #中国澳门居民-来往内地通行证
+                    - IDENTIFICATION_TYPE_TAIWAN_PASSPORT #中国台湾居民-来往大陆通行证
+                    - IDENTIFICATION_TYPE_FOREIGN_RESIDENT #外国人居留证
+                    - IDENTIFICATION_TYPE_HONGKONG_MACAO_RESIDENT #港澳居民证
+                    - IDENTIFICATION_TYPE_TAIWAN_RESIDENT #台湾居民证
                 card_front:
                   type: string
+                  format: MediaId
                   description: 证件正面照片
                   example: 0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMAjmVtCz7ScmhEIThCaV-4BBgVwtNkCHO_XXqK5dE5YdOmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo
                 card_back:
                   type: string
+                  format: MediaId
                   description: 证件反面照片
                   example: 0P3ng6KTIW4-Q_l2FjKLZuhHjBWoMAjmVtCz7ScmhEIThCaV-4BBgVwtNkCHO_XXqK5dE5YdOmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo
                 card_name:
                   type: string
+                  format: base64
                   description: 证件姓名
                   example: MZnwEx6zotwIz6ctW2/iQL5z94odwP9sKiF74RPCPztcJOScaXsaGs82HJNU3K+46ndk7pMrENiPDw==
                 card_number:
                   type: string
+                  format: base64
                   description: 证件号码
                   example: MZnwEx6zotwIz6ctW2/iQL5z94odwP9sKiF74RPCPztcJOScaXsaGs82HJNU3K+46ndk7pMrENiPDw==
                 card_address:
                   type: string
+                  format: base64
                   description: 证件居住地址
                   example: pVd1HJ6zyvPedzGaV+X3qtmrq9bb9tPROvwia4ibL+F6mfjbzQIzfb3HHLEjZ4YiR/cJiCrZxnAqi+==
                 card_period_begin:

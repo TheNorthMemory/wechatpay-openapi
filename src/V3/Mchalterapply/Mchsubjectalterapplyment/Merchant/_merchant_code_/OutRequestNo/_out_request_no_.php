@@ -15,10 +15,8 @@ interface _out_request_no_
      * @link https://wechatpay.im/openapi/v3/mchalterapply/mchsubjectalterapplyment/merchant/%7Bmerchant_code%7D/out-request-no/%7Bout_request_no%7D
      */
     public function get(array $options = [
+        'merchant_code' => '1900006491',
         'out_request_no' => '1900013511_10000',
-        'json' => [
-            'merchant_code' => '1900006491',
-        ],
     ]): ResponseInterface;
 
     /**
@@ -27,9 +25,7 @@ interface _out_request_no_
      * @link https://wechatpay.im/openapi/v3/mchalterapply/mchsubjectalterapplyment/merchant/%7Bmerchant_code%7D/out-request-no/%7Bout_request_no%7D
      */
     public function getAsync(array $options = [
+        'merchant_code' => '1900006491',
         'out_request_no' => '1900013511_10000',
-        'json' => [
-            'merchant_code' => '1900006491',
-        ],
     ]): PromiseInterface;
 }

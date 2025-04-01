@@ -1,5 +1,5 @@
 get:
-  x-last-updated-at: 2022.07.19
+  x-last-updated-at: 2025.03.31
   x-role:
     - 电商平台
     - 服务商
@@ -7,26 +7,20 @@ get:
     - 收付通∙进件
     - 服务商∙进件
   summary: 查询申请单状态-使用业务单号
-  description: 使用业务单号查询申请单状态 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter11_3_3.shtml)
+  description: 使用业务单号查询申请单状态 [官方文档](https://pay.weixin.qq.com/doc/v3/partner/4014090667)
   parameters:
+    - name: merchant_code
+      in: path
+      required: true
+      type: string
+      description: 微信支付商户号
+      example: '1900006491'
     - name: out_request_no
       in: path
       required: true
       type: string
       description: 业务申请编号
       example: '1900013511_10000'
-    - name: _
-      in: body
-      required: true
-      schema:
-        type: object
-        required:
-          - merchant_code
-        properties:
-          merchant_code:
-            type: string
-            description: 微信支付商户号
-            example: '1900006491'
   responses:
     '200':
       schema:
@@ -53,6 +47,13 @@ get:
             type: string
             description: 申请单状态
             example: APPLYMENT_STATE_EDITTING
+            enum:
+              - APPLYMENT_STATE_AUDITING #审核中
+              - APPLYMENT_STATE_REJECTED #已驳回
+              - APPLYMENT_STATE_MODIFING #资料修改中
+              - APPLYMENT_STATE_FINISHED #已完成
+              - APPLYMENT_STATE_CANCELED #已作废
+              - APPLYMENT_STATE_EDITTING #编辑中
           audit_reject_reason:
             type: string
             description: 总体驳回原因

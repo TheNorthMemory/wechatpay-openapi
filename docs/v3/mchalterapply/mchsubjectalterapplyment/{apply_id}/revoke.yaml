@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2022.07.19
+  x-last-updated-at: 2025.03.31
   x-role:
     - 电商平台
     - 服务商
@@ -7,7 +7,7 @@ post:
     - 收付通∙进件
     - 服务商∙进件
   summary: 撤销资料变更申请单
-  description: 当申请单状态为编辑中/审核中/已驳回时，才支持撤销 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/Offline/apis/chapter11_3_4.shtml)
+  description: 当申请单状态为编辑中/审核中/已驳回时，才支持撤销 [官方文档](https://pay.weixin.qq.com/doc/v3/partner/4014090672)
   parameters:
     - name: apply_id
       in: path
@@ -26,3 +26,6 @@ post:
             type: string
             description: 撤销状态
             example: SUCCESS
+            enum:
+              - SUCCESS
+              - FAIL

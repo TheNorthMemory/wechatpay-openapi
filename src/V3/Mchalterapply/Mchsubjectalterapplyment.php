@@ -75,6 +75,9 @@ interface Mchsubjectalterapplyment
                 'agency_prove' => ['MediaId'],
             ],
         ],
+        'headers' => [
+            'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',
+        ],
     ]): ResponseInterface;
 
     /**
@@ -140,6 +143,9 @@ interface Mchsubjectalterapplyment
                 'legal_other_prove' => ['MediaId'],
                 'agency_prove' => ['MediaId'],
             ],
+        ],
+        'headers' => [
+            'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',
         ],
     ]): PromiseInterface;
 }

@@ -18,7 +18,6 @@ interface Complete
         'out_order_no' => '1234323JKHDFE1243252',
         'json' => [
             'service_id' => '2002000000000558128851361561536',
-            'channel_id' => '1230000109',
             'sub_mchid' => '1900000109',
             'post_payments' => [[
                 'name' => '就餐费用',
@@ -59,7 +58,6 @@ interface Complete
         'out_order_no' => '1234323JKHDFE1243252',
         'json' => [
             'service_id' => '2002000000000558128851361561536',
-            'channel_id' => '1230000109',
             'sub_mchid' => '1900000109',
             'post_payments' => [[
                 'name' => '就餐费用',

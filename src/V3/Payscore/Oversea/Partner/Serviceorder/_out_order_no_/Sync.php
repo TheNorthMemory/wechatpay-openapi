@@ -19,7 +19,6 @@ interface Sync
         'json' => [
             'service_id' => '2002000000000558128851361561536',
             'sub_mchid' => '1900000109',
-            'channel_id' => '1230000109',
             'type' => 'Order_Paid',
             'detail' => [
                 'seq' => 1,
@@ -39,7 +38,6 @@ interface Sync
         'json' => [
             'service_id' => '2002000000000558128851361561536',
             'sub_mchid' => '1900000109',
-            'channel_id' => '1230000109',
             'type' => 'Order_Paid',
             'detail' => [
                 'seq' => 1,

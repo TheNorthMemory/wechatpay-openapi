@@ -237,6 +237,31 @@ unifiedorder.request:
                 type: string
                 description: 门店详细地址
                 example: 科技园中一路腾讯大厦
+    user_type:
+      type: string
+      description: 证件类型(指定身份支付)
+      maxLength: 32
+      example: IDCARD
+      nullable: true
+      enum:
+        - IDCARD #身份证
+        - HONGKONG_MACAO #港澳回乡证
+        - HONGKONG_MACAO_RESIDENT #港澳居住证
+        - TAIWAN_RESIDENT #台湾居住证
+        - FOREIGN_RESIDENT #外国人永居证
+        - OVERSEA_PASSPORT #护照
+    user_creid:
+      type: string
+      description: 证件号(指定身份支付)
+      maxLength: 32
+      example: 43102119910910512X
+      nullable: true
+    user_truename:
+      type: string
+      description: 姓名(指定身份支付)
+      maxLength: 64
+      example: 周星星
+      nullable: true
 unifiedorder.response:
   allOf:
     - type: object

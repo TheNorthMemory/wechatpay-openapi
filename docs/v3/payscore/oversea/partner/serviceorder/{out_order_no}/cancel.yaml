@@ -1,0 +1,39 @@
+post:
+  x-last-updated-at: 2025.04.01
+  x-role:
+    - 从业机构
+  tags:
+    - 支付分∙海外从业机构模式
+  summary: 取消支付分订单
+  description: 微信支付分订单创建之后，由于某些原因导致订单不能正常支付时，可使用此接口取消订单。
+  parameters:
+    - name: out_order_no
+      in: path
+      required: true
+      type: string
+      description: 商户服务订单号
+      example: 1234323JKHDFE1243252
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - service_id
+          - sub_mchid
+          - reason
+        properties:
+          service_id:
+            type: string
+            description: 服务ID
+            example: '2002000000000558128851361561536'
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1900000109'
+          reason:
+            type: string
+            description: 撤销原因
+            example: 用户投诉
+  responses:
+    '204': {}

@@ -15,6 +15,7 @@ interface Sync
      * @link https://wechatpay.im/openapi/v3/payscore/oversea/partner/serviceorder/%7Bout_order_no%7D/sync
      */
     public function post(array $options = [
+        'base_uri' => 'https://apihk.mch.weixin.qq.com/', // 跨境(香港接入)
         'out_order_no' => '1234323JKHDFE1243252',
         'json' => [
             'service_id' => '2002000000000558128851361561536',
@@ -34,6 +35,7 @@ interface Sync
      * @link https://wechatpay.im/openapi/v3/payscore/oversea/partner/serviceorder/%7Bout_order_no%7D/sync
      */
     public function postAsync(array $options = [
+        'base_uri' => 'https://apihk.mch.weixin.qq.com/', // 跨境(香港接入)
         'out_order_no' => '1234323JKHDFE1243252',
         'json' => [
             'service_id' => '2002000000000558128851361561536',

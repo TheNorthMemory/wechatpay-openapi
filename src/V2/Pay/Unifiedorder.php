@@ -56,6 +56,9 @@ interface Unifiedorder
                     'address' => '科技园中一路腾讯大厦',
                 ],
             ]),
+            'user_type' => 'IDCARD',
+            'user_creid' => '43102119910910512X',
+            'user_truename' => '周星星',
         ],
     ]): ResponseInterface;
 
@@ -106,6 +109,9 @@ interface Unifiedorder
                     'address' => '科技园中一路腾讯大厦',
                 ],
             ]),
+            'user_type' => 'IDCARD',
+            'user_creid' => '43102119910910512X',
+            'user_truename' => '周星星',
         ],
     ]): PromiseInterface;
 }

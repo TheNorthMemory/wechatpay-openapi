@@ -16,6 +16,7 @@ interface Serviceorder
      * @link https://wechatpay.im/openapi/v3/payscore/oversea/partner/serviceorder
      */
     public function post(array $options = [
+        'base_uri' => 'https://apihk.mch.weixin.qq.com/', // 跨境(香港接入)
         'json' => [
             'service_id' => '2002000000000558128851361561536',
             'appid' => 'wxd678efh567hg6787',
@@ -65,6 +66,7 @@ interface Serviceorder
      * @link https://wechatpay.im/openapi/v3/payscore/oversea/partner/serviceorder
      */
     public function postAsync(array $options = [
+        'base_uri' => 'https://apihk.mch.weixin.qq.com/', // 跨境(香港接入)
         'json' => [
             'service_id' => '2002000000000558128851361561536',
             'appid' => 'wxd678efh567hg6787',
@@ -114,6 +116,7 @@ interface Serviceorder
      * @link https://wechatpay.im/openapi/v3/payscore/oversea/partner/serviceorder#get
      */
     public function get(array $options = [
+        'base_uri' => 'https://apihk.mch.weixin.qq.com/', // 跨境(香港接入)
         'query' => [
             'service_id' => '2002000000000558128851361561536',
             'sub_mchid' => '1900000109',
@@ -128,6 +131,7 @@ interface Serviceorder
      * @link https://wechatpay.im/openapi/v3/payscore/oversea/partner/serviceorder#get
      */
     public function getAsync(array $options = [
+        'base_uri' => 'https://apihk.mch.weixin.qq.com/', // 跨境(香港接入)
         'query' => [
             'service_id' => '2002000000000558128851361561536',
             'sub_mchid' => '1900000109',

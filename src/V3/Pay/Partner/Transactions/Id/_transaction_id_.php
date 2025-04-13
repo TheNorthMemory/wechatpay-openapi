@@ -15,10 +15,10 @@ interface _transaction_id_
      * @link https://wechatpay.im/openapi/v3/pay/partner/transactions/id/%7Btransaction_id%7D
      */
     public function get(array $options = [
-        'transaction_id' => '',
+        'transaction_id' => '1217752501201407033233368018',
         'query' => [
-            'sp_mchid' => '',
-            'sub_mchid' => '',
+            'sp_mchid' => '1230000109',
+            'sub_mchid' => '1900000109',
         ],
     ]): ResponseInterface;
 
@@ -28,10 +28,10 @@ interface _transaction_id_
      * @link https://wechatpay.im/openapi/v3/pay/partner/transactions/id/%7Btransaction_id%7D
      */
     public function getAsync(array $options = [
-        'transaction_id' => '',
+        'transaction_id' => '1217752501201407033233368018',
         'query' => [
-            'sp_mchid' => '',
-            'sub_mchid' => '',
+            'sp_mchid' => '1230000109',
+            'sub_mchid' => '1900000109',
         ],
     ]): PromiseInterface;
 }

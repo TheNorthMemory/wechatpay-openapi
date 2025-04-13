@@ -7,23 +7,26 @@ get:
     - 基础支付∙服务商模式
     - 收付通∙支付
   summary: 商户订单号查询
-  description: 商户可以通过查询订单接口主动查询订单状态，完成下一步的业务逻辑。查询订单状态可通过微信支付订单号或商户订单号两种方式查询 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/pay/transactions/chapter5_5.shtml)
+  description: 商户可以通过查询订单接口主动查询订单状态，完成下一步的业务逻辑。查询订单状态可通过微信支付订单号或商户订单号两种方式查询
   parameters:
     - name: out_trade_no
       in: path
       type: string
       required: true
       description: 商户订单号
+      example: '1217752501201407033233368018'
     - name: sp_mchid
       in: query
       type: string
       required: true
       description: 服务商户号
+      example: '1230000109'
     - name: sub_mchid
       in: query
       type: string
       required: true
       description: 子商户号
+      example: '1900000109'
   responses:
     200:
       schema:

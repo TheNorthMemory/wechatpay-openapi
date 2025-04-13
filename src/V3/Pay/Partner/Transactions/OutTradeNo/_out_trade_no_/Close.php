@@ -15,7 +15,7 @@ interface Close
      * @link https://wechatpay.im/openapi/v3/pay/partner/transactions/out-trade-no/%7Bout_trade_no%7D/close
      */
     public function post(array $options = [
-        'out_trade_no' => '',
+        'out_trade_no' => '1217752501201407033233368018',
         'json' => [
             'sp_mchid' => '1230000109',
             'sub_mchid' => '1900000109',
@@ -28,7 +28,7 @@ interface Close
      * @link https://wechatpay.im/openapi/v3/pay/partner/transactions/out-trade-no/%7Bout_trade_no%7D/close
      */
     public function postAsync(array $options = [
-        'out_trade_no' => '',
+        'out_trade_no' => '1217752501201407033233368018',
         'json' => [
             'sp_mchid' => '1230000109',
             'sub_mchid' => '1900000109',

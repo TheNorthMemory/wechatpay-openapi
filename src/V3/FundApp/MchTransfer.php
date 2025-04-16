@@ -3,6 +3,7 @@
 namespace WeChatPay\OpenAPI\V3\FundApp;
 
 /**
+ * @property-read MchTransfer\TransferToQqWalletBills $transferToQqWalletBills
  * @property-read MchTransfer\TransferBills $transferBills
  * @property-read MchTransfer\Elecsign $elecsign
  */

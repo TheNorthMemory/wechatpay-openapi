@@ -1,12 +1,12 @@
 get:
-  x-last-updated-at: 2022.08.04
+  x-last-updated-at: 2025.03.27
   x-role:
     - 直连模式
     - 机构模式
   tags:
     - 跨境∙退款
   summary: 查询单笔退款(微信支付退款订单号)
-  description: 提交退款申请后，通过调用该接口查询退款状态。退款有一定延时，用零钱支付的退款20分钟内到账，银行卡支付的退款3个工作日后重新查询退款状态。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter5_1_12.shtml)
+  description: 提交退款申请后，通过调用该接口查询退款状态。退款有一定延时，用零钱支付的退款20分钟内到账，银行卡支付的退款3个工作日后重新查询退款状态。
   parameters:
     - name: mchid
       in: query
@@ -131,6 +131,7 @@ get:
                     description: 汇率类型
                     example: SETTLEMENT_RATE
                     enum:
+                      - USERPAYMENT_RATE
                       - SETTLEMENT_RATE
                   rate:
                     type: integer

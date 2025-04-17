@@ -1,12 +1,12 @@
 post:
-  x-last-updated-at: 2021.12.08
+  x-last-updated-at: 2025.04.01
   x-role:
     - 直连模式
     - 机构模式
   tags:
     - 跨境∙代扣
   summary: WEB预签约API
-  description: 该方式适用于PC等使用浏览器的设备场景使用微信签约扣款。商户在网站后端通过微信支付WEB签约接口获取到签约链接，在网站前端将签约链接生成二维码，引导用户扫码识别该链接，用户访问该链接进入代扣签约页面；用户签约完成后留在微信。WEB 端等待签约回调通知，或者定时轮询查询用户签约状态，更新页面内容。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter5_1_16.shtml)
+  description: 该方式适用于PC等使用浏览器的设备场景使用微信签约扣款。商户在网站后端通过微信支付WEB签约接口获取到签约链接，在网站前端将签约链接生成二维码，引导用户扫码识别该链接，用户访问该链接进入代扣签约页面；用户签约完成后留在微信。WEB 端等待签约回调通知，或者定时轮询查询用户签约状态，更新页面内容。
   parameters:
     - name: _
       in: body
@@ -55,14 +55,18 @@ post:
             format: rfc3339
             description: 过期时间
             example: '2021-11-20T13:29:35+08:00'
+          return_url:
+            type: string
+            description: 签约完成跳转URL
+            example: https://pay.weixin.qq.com
   responses:
     '200':
       schema:
         type: object
         required:
-          - sign_url
+          - show_code_url
         properties:
-          sign_url:
+          show_code_url:
             type: string
-            description: 签约跳转URL
-            example: https://apihk.mch.weixin.qq.com/global/papay/contracts/login?os_session_id=2021120910391616228#wechat_redirect
+            description: 展码页面URL
+            example: https://osapp.pay.weixin.qq.com/global/papay/contracts/sessions/show_code?os_session_id=2025032811X0100X5371319501

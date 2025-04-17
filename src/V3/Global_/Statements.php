@@ -19,9 +19,8 @@ interface Statements
         'query' => [
             'date' => '20180130',
             'mchid' => '1900000109',
-        ],
-        'headers' => [
-            'Accept-Encoding' => 'gzip',
+            'sp_mchid' => '1900000100',
+            'sub_mchid' => '1900000109',
         ],
     ]): ResponseInterface;
 
@@ -35,9 +34,8 @@ interface Statements
         'query' => [
             'date' => '20180130',
             'mchid' => '1900000109',
-        ],
-        'headers' => [
-            'Accept-Encoding' => 'gzip',
+            'sp_mchid' => '1900000100',
+            'sub_mchid' => '1900000109',
         ],
     ]): PromiseInterface;
 }

@@ -1,12 +1,12 @@
 get:
-  x-last-updated-at: 2022.08.04
+  x-last-updated-at: 2025.01.07
   x-role:
     - 直连模式
     - 机构模式
   tags:
     - 跨境
   summary: 下载对账单
-  description: 商户可以通过该接口下载历史交易清单。比如掉单、系统错误等导致商户侧和微信侧数据不一致，通过对账单核对后可校正支付状态。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter3_1_6.shtml)
+  description: 商户可以通过该接口下载历史交易清单。比如掉单、系统错误等导致商户侧和微信侧数据不一致，通过对账单核对后可校正支付状态。
   parameters:
     - name: date
       in: query
@@ -19,7 +19,16 @@ get:
       type: string
       description: 商户号
       example: '1900000109'
-    - $ref: '../../definitions/Parameters.yaml#/HTTP_ACCEPT_ENCODING'
+    - name: sp_mchid
+      in: query
+      type: string
+      description: 机构商户号
+      example: '1900000100'
+    - name: sub_mchid
+      in: query
+      type: string
+      description: 子商户号
+      example: '1900000109'
   responses:
     '200':
       headers:

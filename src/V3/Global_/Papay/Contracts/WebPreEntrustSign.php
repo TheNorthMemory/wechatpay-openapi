@@ -27,6 +27,7 @@ interface WebPreEntrustSign
             'user_display_name' => '张三',
             'success_notify_url' => 'https://pay.weixin.qq.com',
             'expired_time' => '2021-11-20T13:29:35+08:00',
+            'return_url' => 'https://pay.weixin.qq.com',
         ],
     ]): ResponseInterface;
 
@@ -48,6 +49,7 @@ interface WebPreEntrustSign
             'user_display_name' => '张三',
             'success_notify_url' => 'https://pay.weixin.qq.com',
             'expired_time' => '2021-11-20T13:29:35+08:00',
+            'return_url' => 'https://pay.weixin.qq.com',
         ],
     ]): PromiseInterface;
 }

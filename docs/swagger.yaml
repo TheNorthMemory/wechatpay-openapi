@@ -716,6 +716,12 @@ paths:
     $ref: ./v3/fund-app/mch-transfer/transfer-bills/out-bill-no/{out_bill_no}/cancel.yaml
   /v3/fund-app/mch-transfer/transfer-bills/transfer-bill-no/{transfer_bill_no}:
     $ref: ./v3/fund-app/mch-transfer/transfer-bills/transfer-bill-no/{transfer_bill_no}.yaml
+  /v3/fund-app/mch-transfer/transfer-to-qq-wallet-bills:
+    $ref: ./v3/fund-app/mch-transfer/transfer-to-qq-wallet-bills.yaml
+  /v3/fund-app/mch-transfer/transfer-to-qq-wallet-bills/{out_bill_no}:
+    $ref: ./v3/fund-app/mch-transfer/transfer-to-qq-wallet-bills/{out_bill_no}.yaml
+  /v3/fund-app/mch-transfer/transfer-to-qq-wallet-bills/{out_bill_no}/cancel:
+    $ref: ./v3/fund-app/mch-transfer/transfer-to-qq-wallet-bills/{out_bill_no}/cancel.yaml
   /v3/funds-to-oversea/bill-download-url:
     $ref: ./v3/funds-to-oversea/bill-download-url.yaml
   /v3/funds-to-oversea/orders:

@@ -4,6 +4,7 @@ namespace WeChatPay\OpenAPI\V3;
 
 /**
  * @property-read FundApp\MchTransfer $mchTransfer
+ * @property-read FundApp\BrandRedpacket $brandRedpacket
  */
 interface FundApp
 {

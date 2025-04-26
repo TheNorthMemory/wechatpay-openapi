@@ -1,5 +1,5 @@
 post:
-  x-verison: [2022.06.08]
+  x-last-updated-at: 2025.02.20
   tags:
     - 跨境
   summary: 查询结算资金
@@ -214,4 +214,12 @@ post:
                 format: int32
                 type: integer
                 description: 手续费金额
+                example: '1'
+              split_settlement_fee:
+                type: integer
+                description: 分账划账金额
+                example: '1'
+              split_unsettlement_fee:
+                type: integer
+                description: 分账未划账金额
                 example: '1'

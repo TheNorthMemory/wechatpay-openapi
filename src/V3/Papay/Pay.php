@@ -6,6 +6,7 @@ namespace WeChatPay\OpenAPI\V3\Papay;
  * @property-read Pay\Transactions $transactions
  * @property-read Pay\Schedules $schedules
  * @property-read Pay\Partner $partner
+ * @property-read Pay\Harmony $harmony
  */
 interface Pay
 {

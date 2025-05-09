@@ -1,22 +1,18 @@
 <?php declare(strict_types=1);/* Generated file. DO NOT EDIT! */
 
-namespace WeChatPay\OpenAPI\V3\FundApp\MchTransfer;
+namespace WeChatPay\OpenAPI\V3\FundApp\MchTransfer\TransferBills;
 
 use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Promise\PromiseInterface;
 
 /**
- * @property-read TransferBills\TransferBillNo $transferBillNo
- * @property-read TransferBills\OutBillNo $outBillNo
- * @property-read TransferBills\PreTransferWithAuthorization $preTransferWithAuthorization
- * @property-read TransferBills\Transfer $transfer
  */
-interface TransferBills
+interface Transfer
 {
     /**
-     * 发起转账(同步模式)
+     * 转账（用户自动收款）(同步模式)
      * @param array<string,mixed> $options
-     * @link https://wechatpay.im/openapi/v3/fund-app/mch-transfer/transfer-bills
+     * @link https://wechatpay.im/openapi/v3/fund-app/mch-transfer/transfer-bills/transfer
      */
     public function post(array $options = [
         'json' => [
@@ -33,6 +29,8 @@ interface TransferBills
                 'info_type' => '活动名称',
                 'info_content' => '注册会员有礼',
             ],],
+            'authorization_id' => '201202504101000123456789012',
+            'sponsor_mchid' => '1900001109',
         ],
         'headers' => [
             'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',
@@ -40,9 +38,9 @@ interface TransferBills
     ]): ResponseInterface;
 
     /**
-     * 发起转账(异步模式)
+     * 转账（用户自动收款）(异步模式)
      * @param array<string,mixed> $options
-     * @link https://wechatpay.im/openapi/v3/fund-app/mch-transfer/transfer-bills
+     * @link https://wechatpay.im/openapi/v3/fund-app/mch-transfer/transfer-bills/transfer
      */
     public function postAsync(array $options = [
         'json' => [
@@ -59,6 +57,8 @@ interface TransferBills
                 'info_type' => '活动名称',
                 'info_content' => '注册会员有礼',
             ],],
+            'authorization_id' => '201202504101000123456789012',
+            'sponsor_mchid' => '1900001109',
         ],
         'headers' => [
             'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',

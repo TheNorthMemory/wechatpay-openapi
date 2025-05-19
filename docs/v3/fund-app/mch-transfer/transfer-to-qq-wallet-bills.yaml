@@ -66,6 +66,9 @@ post:
             description: 转账场景报备信息
             items:
               type: object
+              required:
+                - info_type
+                - info_content
               properties:
                 info_type:
                   type: string

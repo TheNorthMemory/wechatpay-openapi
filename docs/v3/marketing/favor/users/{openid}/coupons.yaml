@@ -59,7 +59,7 @@ post:
             description: 代金券id
             example: '9867041'
 get:
-  x-last-updated-at: 2019.09.29
+  x-last-updated-at: 2024.09.19
   x-role: [直连商户, 服务商, 渠道商]
   tags:
     - 运营工具∙代金券
@@ -85,8 +85,10 @@ get:
       in: query
       type: string
       nullable: true
-      allOf:
-        - $ref: '../../../../../definitions/Enumerations.yaml#FavorCouponStatus'
+      description: 券或消费金状态
+      enum:
+        - SENDED
+        - USED
     - name: creator_mchid
       in: query
       nullable: true

@@ -454,6 +454,7 @@ FavorCouponStatus:
     - SENDED  #可用
     - USED    #已实扣
     - EXPIRED #已过期
+    - RECOVER #已回收
 
 BillType:
   type: string

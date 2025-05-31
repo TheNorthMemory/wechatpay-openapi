@@ -25,6 +25,8 @@ interface App
             ],
             'sub_orders' => [[
                 'mchid' => '1900000109',
+                'individual_auth_id' => '1900000109',
+                'individual_name' => '哈哈哈小店',
                 'attach' => '深圳分店',
                 'amount' => [
                     'total_amount' => 100,
@@ -83,6 +85,8 @@ interface App
             ],
             'sub_orders' => [[
                 'mchid' => '1900000109',
+                'individual_auth_id' => '1900000109',
+                'individual_name' => '哈哈哈小店',
                 'attach' => '深圳分店',
                 'amount' => [
                     'total_amount' => 100,

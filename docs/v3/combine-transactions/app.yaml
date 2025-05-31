@@ -59,13 +59,20 @@ post:
                 - attach
                 - amount
                 - out_trade_no
-                - sub_mchid
                 - description
               properties:
                 mchid:
                   type: string
                   description: 子单商户号
                   example: '1900000109'
+                individual_auth_id:
+                  type: string
+                  description: 商品单个人收款方受理授权ID
+                  example: '1900000109'
+                individual_name:
+                  type: string
+                  description: 商品单个人收款方平台昵称
+                  example: 哈哈哈小店
                 attach:
                   type: string
                   description: 附加数据

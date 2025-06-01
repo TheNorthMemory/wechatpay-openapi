@@ -1,0 +1,167 @@
+get:
+  x-last-updated-at: 2025.03.11
+  x-role:
+    - 服务商
+  tags:
+    - 资金应用∙转账
+  summary: 微信支付转账明细单号查询明细单
+  description: 微信商家转账明细单号查单接口。商户可以通过该接口查询单笔转账明细单。返回消息中包含微信明细单号、明细状态、转账金额、失败原因、收款用户姓名、收款用户OpenID等信息。
+  parameters:
+    - name: batch_id
+      in: path
+      required: true
+      type: string
+      description: 商家转账批次单号
+      example: '131000011085109987515042023022300246500006'
+    - name: detail_id
+      in: path
+      required: true
+      type: string
+      description: 商家转账明细单号
+      example: '132000011085109987515042023022300246521006'
+    - name: sub_mchid
+      in: query
+      required: true
+      type: string
+      description: 二级商户号
+      example: '1900000109'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - out_batch_no
+          - batch_id
+          - out_detail_no
+          - detail_id
+          - sp_appid
+          - sub_mchid
+          - create_time
+          - detail_state
+          - transfer_amount
+          - transfer_remark
+        properties:
+          out_batch_no:
+            type: string
+            description: 商家批次单号
+            example: sjzz20230223
+          batch_id:
+            type: string
+            description: 商家转账批次单号
+            example: '131000011085109987515042023022300246500006'
+          out_detail_no:
+            type: string
+            description: 商家明细单号
+            example: x23zy545Bd5436
+          detail_id:
+            type: string
+            description: 商家转账明细单号
+            example: '132000011085109987515042023022300246521006'
+          sp_appid:
+            type: string
+            description: 服务商应用ID
+            example: wxf636efh567hg4356
+          sub_mchid:
+            type: string
+            description: 二级商户号
+            example: '1900000109'
+          sub_appid:
+            type: string
+            description: 二级商户应用ID
+            example: wxf636efh567hg4356
+          create_time:
+            type: string
+            format: rfc3339
+            description: 转账发起时间
+            example: '2023-02-23T13:29:35+08:00'
+          detail_state:
+            type: string
+            description: 明细状态
+            example: INIT
+            enum:
+              - INIT #系统转账校验中
+              - ALL #全部
+              - WAIT_PAY #待确认
+              - SUCCESS #转账成功
+              - FAIL #转账失败
+              - BANK_REFUND #银行返回转账成功后，拒绝入账，资金会返回商户账户
+          transfer_amount:
+            type: number
+            description: 转账金额
+            example: 20000
+          transfer_remark:
+            type: string
+            description: 转账备注
+            example: 2023年2月报销
+          fail_reason:
+            type: string
+            description: 明细失败原因
+            example: ACCOUNT_FROZEN
+            enum:
+              - ACCOUNT_FROZEN #该用户账户被冻结
+              - REAL_NAME_CHECK_FAIL #收款人未实名认证，需要用户完成微信实名认证
+              - NAME_NOT_CORRECT #收款人姓名校验不通过，请核实信息
+              - OPENID_INVALID #OpenID格式错误或者不属于商家公众账号
+              - TRANSFER_QUOTA_EXCEED #超过用户单笔收款额度，核实产品设置是否准确
+              - DAY_RECEIVED_QUOTA_EXCEED #超过用户单日收款额度，核实产品设置是否准确
+              - MONTH_RECEIVED_QUOTA_EXCEED #超过用户单月收款额度，核实产品设置是否准确
+              - DAY_RECEIVED_COUNT_EXCEED #超过用户单日收款次数，核实产品设置是否准确
+              - PRODUCT_AUTH_CHECK_FAIL #未开通该权限或权限被冻结，请核实产品权限状态
+              - OVERDUE_CLOSE #超过系统重试期，系统自动关闭
+              - ID_CARD_NOT_CORRECT #收款人身份证校验不通过，请核实信息
+              - ACCOUNT_NOT_EXIST #该用户账户不存在
+              - TRANSFER_RISK #该笔转账可能存在风险，已被微信拦截
+              - PAYROLL_CARD_ALREADY_LOGOUT #该用户的务工卡已经注销
+              - PAYROLL_CARD_ALREADY_FROZEN #该用户的务工卡已经被冻结
+              - PAYROLL_CARD_UNAUTHORIZED #该用户的务工卡未授权该商户
+              - PAYROLL_CARD_USER_NOT_OPEN #该用户没有开通务工卡
+              - PAYROLL_CARD_NAME_CARD_NOT_MATCH #务工卡实名和用户实名不一致
+              - PAYROLL_CARD_ID_CARD_NOT_MATCH #务工卡身份证和用户身份证不一致
+              - PAYROLL_CARD_BANKCARD_UNBUNDLING #务工卡所选银行卡已解绑
+              - BANK_CARD_COLLECTIONS_ABOVE_QUOTA #银行卡属二/三类卡，达到收款限额无法入账
+              - BANK_CARD_ACCOUNT_ABNORMAL #银行卡已被销户、冻结、作废、挂失等致无法入账
+              - BANK_CARD_STATUS_ABNORMAL #银行卡状态异常，无法入账
+              - BANK_CARD_BANK_INFO_WRONG #登记的银行名称或分支行信息有误
+              - BANK_CARD_CARD_INFO_WRONG #银行卡户名或卡号有误
+              - OTHER_FAIL_REASON_TYPE #其它失败原因
+              - REALNAME_ACCOUNT_RECEIVED_QUOTA_EXCEED #请引导用户在微信支付查看详情
+              - RECEIVE_ACCOUNT_NOT_PERMMIT #请在产品设置中调整，添加该用户为收款人
+              - PAYEE_ACCOUNT_ABNORMAL #请联系用户完善其在微信支付的身份信息以继续收款
+              - PAYER_ACCOUNT_ABNORMAL #可前往商户平台获取解除功能限制指引
+              - TRANSFER_REMARK_SET_FAIL #转账备注设置失败，请调整后重新再试
+              - TRANSFER_SCENE_INVALID #该转账场景暂不可用，请确认转账场景ID是否正确
+              - TRANSFER_SCENE_UNAVAILABLE #你尚未获取该转账场景，请确认转账场景ID是否正确
+              - RECEIVE_ACCOUNT_NOT_CONFIGURE #请前往商户平台-商家转账到零钱-前往功能-转账场景中添加
+              - BLOCK_B2C_USERLIMITAMOUNT_BSRULE_MONTH #超出用户单月转账收款20w限额，本月不支持继续向该用户付款
+              - BLOCK_B2C_USERLIMITAMOUNT_MONTH #用户账户存在风险收款受限，本月不支持继续向该用户付款
+              - MERCHANT_REJECT #商户员工（转账验密人）已驳回转账
+              - MERCHANT_NOT_CONFIRM #商户员工（转账验密人）超时未验密
+              - BANK_CARD_PARAM_ERROR #用户收款卡错误，请核实信息
+              - BANK_CARD_TYPE_NOT_SUPPORTED #用户收款卡类型非储值卡，不支持转账
+              - RESERVATION_STATE_INVALID #预约转账单状态异常，请检查
+              - EXCEEDED_ESTIMATED_AMOUNT #转账金额超过预约金额范围，请检查
+              - RESERVATION_INFO_NOT_MATCH #转账信息，如用户OpenID等参数，与预约时传入的信息不一致，请检查
+              - RESERVATION_SCENE_NOT_MATCH #该预约单的转账场景与发起转账时传入的不同，请检查
+          openid:
+            type: string
+            description: 收款用户OpenID
+            example: o-MYE42l80oelYMDE34nYD456Xoy
+          bank_type:
+            type: string
+            description: 收款银行类型
+            example: ICBC_DEBIT
+          user_name:
+            type: string
+            format: base64
+            description: 收款用户姓名
+            example: 757b340b45ebef5467rter35gf464344v3542sdf4t6re4tb4f54ty45t4yyry45
+          transfer_finish_time:
+            type: string
+            format: rfc3339
+            description: 转账完成时间
+            example: '2023-02-23T13:29:35+08:00'
+          bank_refund_time:
+            type: string
+            format: rfc3339
+            description: 银行退票时间
+            example: '2023-02-23T13:29:35+08:00'

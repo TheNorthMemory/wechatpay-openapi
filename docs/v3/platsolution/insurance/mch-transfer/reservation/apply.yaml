@@ -1,0 +1,146 @@
+post:
+  x-last-updated-at: 2025.01.21
+  x-role:
+    - 服务商
+  tags:
+    - 资金应用∙转账
+  summary: 受理单次预约商家转账
+  description: 商户可调用接口预先指定转账的单次计划，预创建预约记录并获取微信预约记录单号和跳转信息（package_info），再携带该（package_info）参数，通过微信SDK拉起微信支付客户端的用户确认页面。注意：预创建的预约记录在24小时内有效，如用户没有及时确认，微信支付系统将自动关闭该预约记录。接口支持幂等，幂等标识为out_reservation_no，幂等有效性为5年。
+  parameters:
+    - $ref: ../../../../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - sub_mchid
+          - sp_appid
+          - out_reservation_no
+          - transfer_scene_id
+          - estimated_date
+          - reserve_remark
+          - notify_url
+        properties:
+          sub_mchid:
+            type: string
+            description: 二级商户号
+            example: '1900001109'
+          sp_appid:
+            type: string
+            description: 服务商AppID
+            example: wxf636efh567hg4356
+          sub_appid:
+            type: string
+            description: 二级商户AppID
+            example: wxf636efh567hg4356
+          out_reservation_no:
+            type: string
+            description: 商户预约单号
+            example: plfk2020042013
+          transfer_scene_id:
+            type: string
+            description: 转账场景ID
+            example: '1000'
+          estimated_date:
+            type: string
+            description: 预计最晚转账日期
+            example: '2019-11-22'
+          estimated_max_amount:
+            type: number
+            description: 预计最大转账金额
+            example: 400000
+          exact_amount:
+            type: number
+            description: 准确转账金额
+            example: 100000
+          openid:
+            type: string
+            description: 收款用户OpenID
+            example: o-MYE42l80oelYMDE34nYD456Xoy
+          user_real_name:
+            type: string
+            format: base64
+            description: 收款用户姓名
+            example: 757b340b45ebef5467rter35gf464344v3542sdf4t6re4tb4f54ty45t4yyry45
+          reserve_remark:
+            type: string
+            description: 预约备注
+            example: 由于存在收益波动，实际到账资金可能不等于当前金额
+          notify_url:
+            type: string
+            description: 商户回调地址
+            example: https://www.weixin.qq.com/wxpay/pay.php
+          scene_report_data:
+            type: object
+            description: 场景报备信息
+            properties:
+              insurance_policy:
+                type: object
+                description: 保险保单报备信息
+                required:
+                  - product_registration_no
+                  - policy_no
+                  - name
+                properties:
+                  product_registration_no:
+                    type: string
+                    description: 保险产品备案编号
+                    example: '40058541257'
+                  policy_no:
+                    type: string
+                    description: 保险单号
+                    example: '202301011651'
+                  name:
+                    type: string
+                    description: 保险名称
+                    example: 养老保险
+                  withdrawal_no:
+                    type: string
+                    description: 取现单号
+                    example: '202310410941'
+                  claim_no:
+                    type: string
+                    description: 理赔单号
+                    example: '202310410941'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - sub_mchid
+          - out_reservation_no
+          - reservation_id
+          - accept_time
+          - state
+          - package_info
+        properties:
+          sub_mchid:
+            type: string
+            description: 二级商户号
+            example: '1900001109'
+          out_reservation_no:
+            type: string
+            description: 商户预约单号
+            example: plfk2020042013
+          reservation_id:
+            type: string
+            description: 微信转账预约单号
+            example: '1330000071100999991182020050700019480001'
+          accept_time:
+            type: string
+            format: rfc3339
+            description: 预约记录受理时间
+            example: '2015-05-20T13:29:35.120+08:00'
+          state:
+            type: string
+            description: 预约记录状态
+            example: ACCEPTED
+            enum:
+              - ACCEPTED
+              - CONFIRMED
+              - CLOSED
+          package_info:
+            type: string
+            description: 跳转微信支付用户确认预约页的package信息
+            example: affffddafdfafddffda==

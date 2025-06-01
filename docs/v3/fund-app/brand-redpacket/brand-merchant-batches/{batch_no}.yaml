@@ -1,0 +1,164 @@
+get:
+  x-last-updated-at: 2025.04.15
+  x-role:
+    - 普通商户
+  tags:
+    - 品牌红包
+  summary: 微信支付批次单号查询批次单
+  description: 普通直连商户可以通过该接口查询品牌红包批次单以及指定状态的品牌红包明细单
+  parameters:
+    - name: batch_no
+      in: path
+      required: true
+      type: string
+      description: 微信支付品牌红包批次单号
+      example: '1030000071100999991182020050700019480001'
+    - name: need_query_detail
+      in: query
+      type: boolean
+      description: 是否需要查询品牌红包明细单
+    - name: detail_state
+      in: query
+      type: string
+      description: 品牌红包明细单状态
+      enum:
+        - DETAIL_VIEW_ALL
+        - DETAIL_VIEW_SUCCESS
+        - DETAIL_VIEW_FAIL
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - brand_mchid
+          - batch_no
+          - out_batch_no
+          - batch_state
+          - batch_name
+          - batch_remark
+          - total_amount
+          - total_num
+          - create_time
+          - success_amount
+          - success_num
+          - fail_amount
+          - fail_num
+        properties:
+          brand_mchid:
+            type: string
+            description: 品牌主商户号
+            example: '1900001109'
+          batch_no:
+            type: string
+            description: 微信支付品牌红包批次单号
+            example: '1210000071100999991182020050700019480001'
+          out_batch_no:
+            type: string
+            description: 商家品牌红包批次单号
+            example: plfk2020042013
+          brand_id:
+            type: number
+            format: integer
+            description: 品牌ID
+            example: 1234
+          template_id:
+            type: string
+            description: 品牌红包模板ID
+            example: '123400001'
+          brand_appid:
+            type: string
+            description: 品牌AppID
+            example: wxf636efh567hg4356
+          batch_state:
+            type: string
+            description: 批次单状态
+            example: ACCEPTED
+            enum:
+              - WAIT_PAY #商户员工确认付款阶段
+              - ACCEPTED #批次已受理成功
+              - PROCESSING #已开始处理批次内的品牌红包明细单
+              - FINISHED #批次内的所有品牌红包明细单都已处理完成
+              - CLOSED #可查询具体的批次关闭原因确认
+          batch_name:
+            type: string
+            description: 品牌红包批次名称
+            example: 双十一营销用品牌红包
+          batch_remark:
+            type: string
+            description: 品牌红包批次备注
+            example: 双十一营销用品牌红包
+          close_reason:
+            type: string
+            description: 品牌红包批次单关闭原因
+            example: MERCHANT_REVOCATION
+            enum:
+              - MERCHANT_REVOCATION
+              - SYSTEM_OVERDUE_CLOSE
+          total_amount:
+            type: number
+            format: integer
+            description: 总金额
+            example: 10000
+          total_num:
+            type: number
+            format: integer
+            description: 总笔数
+            example: 10
+          create_time:
+            type: string
+            format: rfc3339
+            description: 品牌红包批次创建时间
+            example: '2015-05-20T13:29:35.120+08:00'
+          update_time:
+            type: string
+            format: rfc3339
+            description: 品牌红包批次更新时间
+            example: '2015-05-20T13:29:35.120+08:00'
+          success_amount:
+            type: number
+            format: integer
+            description: 发放成功金额
+            example: 10000
+          success_num:
+            type: number
+            format: integer
+            description: 发放成功笔数
+            example: 10
+          fail_amount:
+            type: number
+            format: integer
+            description: 发放失败金额
+            example: 10000
+          fail_num:
+            type: number
+            format: integer
+            description: 发放失败笔数
+            example: 10
+          detail_list:
+            type: array
+            description: 品牌红包明细列表
+            items:
+              type: object
+              required:
+                - transfer_detail_no
+                - out_detail_no
+                - detail_state
+              properties:
+                transfer_detail_no:
+                  type: string
+                  description: 微信支付品牌红包明细单号
+                  example: '1220000071100999991182020050700019500100'
+                out_detail_no:
+                  type: string
+                  description: 商家品牌红包明细单号
+                  example: x23zy545Bd5436
+                detail_state:
+                  type: string
+                  description: 品牌红包明细单状态
+                  example: DETAIL_SUCCESS
+                  enum:
+                    - DETAIL_INIT #系统转账校验中
+                    - DETAIL_WAIT_PAY #待商户确认，符合免密条件时，系统会自动扭转为发送中
+                    - DETAIL_PROCESSING #正在处理中，品牌红包发送结果尚未明确
+                    - DETAIL_SUCCESS #发送成功
+                    - DETAIL_FAIL #需要确认失败原因后，再决定是否重新对该笔品牌红包明细单进行发送（并非整个品牌红包批次单）

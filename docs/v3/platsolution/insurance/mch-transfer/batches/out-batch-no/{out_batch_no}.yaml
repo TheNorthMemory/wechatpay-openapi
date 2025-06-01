@@ -1,0 +1,188 @@
+get:
+  x-last-updated-at: 2025.03.11
+  x-role:
+    - 服务商
+  tags:
+    - 资金应用∙转账
+  summary: 商户转账批次单号查询批次单
+  description: 商家批次单号查单接口。商户可以通过该接口查询转账批次单以及指定状态的转账明细单。返回消息中包含微信批次单号、批次状态、批次类型、转账总金额、转账总笔数、成功金额、失败金额等信息。
+  parameters:
+    - name: out_batch_no
+      in: path
+      required: true
+      type: string
+      description: 商家批次单号
+      example: sjzz20230223
+    - name: sub_mchid
+      in: query
+      required: true
+      type: string
+      description: 二级商户号
+      example: '1900102208'
+    - name: need_query_detail
+      in: query
+      required: true
+      type: boolean
+      description: 是否查询转账明细单
+    - name: offset
+      in: query
+      type: number
+      description: 请求资源起始位置
+      default: 0
+    - name: limit
+      in: query
+      type: number
+      description: 最大资源条数
+      default: 20
+    - name: detail_state
+      in: query
+      type: string
+      description: 明细状态
+      example: ALL
+      enum:
+       - ALL #全部
+       - WAIT_PAY #待二级商户员工（转账验密人）确认, 符合免确认条件时, 系统会自动扭转为转账中
+       - SUCCESS #转账成功
+       - FAIL #需要确认失败原因后，再决定是否重新发起对该笔明细单的转账（并非整个转账批次单）
+       - BANK_REFUND #银行返回转账成功后，拒绝入账，资金会返回商户账户。
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - transfer_batch
+        properties:
+          transfer_batch:
+            type: object
+            description: 转账批次单
+            required:
+              - out_batch_no
+              - batch_id
+              - sp_appid
+              - sub_mchid
+              - batch_state
+              - batch_name
+              - batch_remark
+              - total_amount
+              - total_num
+              - create_time
+              - success_amount
+              - success_num
+              - failed_amount
+              - failed_num
+              - transfer_scene_id
+            properties:
+              out_batch_no:
+                type: string
+                description: 商家批次单号
+                example: sjzz20230223
+              batch_id:
+                type: string
+                description: 商家转账批次单号
+                example: '131000011085109987515042023022300246500006'
+              sp_appid:
+                type: string
+                description: 服务商应用ID
+                example: wxf636efh567hg4356
+              sub_mchid:
+                type: string
+                description: 二级商户号
+                example: '1900000109'
+              sub_appid:
+                type: string
+                description: 二级商户应用ID
+                example: wxf636efh567hg4356
+              batch_state:
+                type: string
+                description: 批次状态
+                example: ACCEPTED
+                enum:
+                  - ACCEPTED
+                  - PROCESSING
+                  - COMPLETED
+                  - CLOSED
+              batch_name:
+                type: string
+                description: 批次名称
+                example: 2023年2月深圳分部转账单
+              batch_remark:
+                type: string
+                description: 批次备注
+                example: 2023年2月深圳分部报销单
+              close_reason:
+                type: string
+                description: 批次关闭原因
+                example: MERCHANT_REVOCATION
+                enum:
+                  - MERCHANT_REVOCATION
+                  - OVERDUE_CLOSE
+              total_amount:
+                type: number
+                description: 转账总金额
+                example: 4000000
+              total_num:
+                type: number
+                description: 转账总笔数
+                example: 200
+              create_time:
+                type: string
+                format: rfc3339
+                description: 批次创建时间
+                example: '2023-02-23T13:29:35+08:00'
+              success_amount:
+                type: number
+                description: 转账成功金额
+                example: 3900000
+              success_num:
+                type: number
+                description: 转账成功笔数
+                example: 199
+              failed_amount:
+                type: number
+                description: 转账失败金额
+                example: 100000
+              failed_num:
+                type: number
+                description: 转账失败笔数
+                example: 1
+              transfer_scene_id:
+                type: string
+                description: 转账场景ID
+                example: '1000'
+          data:
+            type: array
+            description: 转账明细单列表
+            items:
+              type: object
+              required:
+                - detail_id
+                - out_detail_no
+                - detail_state
+              properties:
+                detail_id:
+                  type: string
+                  description: 商家转账明细单号
+                  example: '132000011085109987515042023022300246521006'
+                out_detail_no:
+                  type: string
+                  description: 商家明细单号
+                  example: x23zy545Bd5436
+                detail_state:
+                  type: string
+                  description: 明细状态
+                  example: INIT
+                  enum:
+                    - INIT #系统转账校验中
+                    - ALL #全部
+                    - WAIT_PAY #待确认
+                    - SUCCESS #转账成功
+                    - FAIL #转账失败
+                    - BANK_REFUND #银行返回转账成功后，拒绝入账，资金会返回商户账户
+          offset:
+            type: number
+            description: 请求资源起始位置
+            example: 0
+          limit:
+            type: number
+            description: 最大资源条数
+            example: 20

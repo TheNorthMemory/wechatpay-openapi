@@ -1,0 +1,135 @@
+get:
+  x-last-updated-at: 2025.04.15
+  x-role:
+    - 普通商户
+  tags:
+    - 品牌红包
+  summary: 商家明细单号查询明细单
+  description: 普通直连商户可以通过该接口查询单笔品牌红包明细单。建议商户发放品牌红包后，间隔1分钟以上再调用该接口查单，避免查询失败
+  parameters:
+    - name: out_batch_no
+      in: path
+      required: true
+      type: string
+      description: 商家品牌红包批次单号
+      example: plfk2020042013
+    - name: out_detail_no
+      in: path
+      required: true
+      type: string
+      description: 商家品牌红包明细单号
+      example: x23zy545Bd5436
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - brand_mchid
+          - out_batch_no
+          - batch_no
+          - out_detail_no
+          - detail_no
+          - detail_state
+          - amount
+          - remark
+          - openid
+          - update_time
+          - brand_id
+          - template_id
+        properties:
+          brand_mchid:
+            type: string
+            description: 品牌主商户号
+            example: '1900001109'
+          out_batch_no:
+            type: string
+            description: 商家品牌红包批次单号
+            example: plfk2020042013
+          batch_no:
+            type: string
+            description: 微信支付品牌红包批次单号
+            example: '1210000071100999991182020050700019480001'
+          out_detail_no:
+            type: string
+            description: 商家品牌红包明细单号
+            example: x23zy545Bd5436
+          detail_no:
+            type: string
+            description: 微信支付品牌红包明细单号
+            example: '1220000071100999991182020050700019500100'
+          detail_state:
+            type: string
+            description: 品牌红包明细单状态
+            example: DETAIL_SUCCESS
+            enum:
+              - DETAIL_INIT #系统转账校验中
+              - DETAIL_WAIT_PAY #待商户确认，符合免密条件时，系统会自动扭转为发送中
+              - DETAIL_PROCESSING #正在处理中，品牌红包发送结果尚未明确
+              - DETAIL_SUCCESS #发送成功
+              - DETAIL_FAIL #需要确认失败原因后，再决定是否重新对该笔品牌红包明细单进行发送（并非整个品牌红包批次单）
+          amount:
+            type: number
+            format: integer
+            description: 红包金额
+            example: 10000
+          remark:
+            type: string
+            description: 红包备注
+            example: 来自XX的红包
+          fail_reason:
+            type: string
+            description: 失败原因
+            example: ACCOUNT_FROZEN
+            enum:
+              - ACCOUNT_FROZEN #该用户账户被冻结
+              - REAL_NAME_CHECK_FAIL #收款人未实名认证，需要用户完成微信实名认证
+              - NAME_NOT_CORRECT #收款人姓名校验不通过，请核实信息
+              - OPENID_INVALID #OpenID格式错误或者不属于商家公众账号
+              - TRANSFER_QUOTA_EXCEED #超过用户单笔收款区间，核实产品设置是否准确
+              - DAY_RECEIVED_QUOTA_EXCEED #超过用户单日收款额度，核实产品设置是否准确
+              - DAY_RECEIVED_COUNT_EXCEED #超过用户单日收款次数，核实产品设置是否准确
+              - PRODUCT_AUTH_CHECK_FAIL #未开通该权限或权限被冻结，请核实产品权限状态
+              - OVERDUE_CLOSE #该笔转账已关闭
+              - ACCOUNT_NOT_EXIST #该用户账户不存在
+              - TRANSFER_RISK #该笔转账可能存在风险，已被微信拦截
+              - USER_ACCOUNT_LIMIT #用户账户收款受限，请引导用户在微信支付查看详情
+              - FAIL_REASON_UNKNOWN #失败原因未知
+              - PAYER_ACCOUNT_ABNORMAL #商户账户付款受限，可前往商户平台获取解除功能限制指引
+              - PAYEE_ACCOUNT_ABNORMAL #用户账户收款异常，请联系用户完善其在微信支付的身份信息以继续收款
+              - USER_RECEIVE_OVERDUE #用户逾期未领取
+              - REMARK_NOT_CORRECT #红包备注设置失败，请修改后再试
+              - MERCHANT_REJECT #商户员工（转账验密人）已驳回转账
+              - MERCHANT_NOT_CONFIRM #商户员工（转账验密人）超时未验密
+              - BLOCK_B2C_USERLIMITAMOUNT_BSRULE_MONTH #超出用户单月转账收款20w限额，本月不支持继续向该用户付款
+          openid:
+            type: string
+            description: 接收红包用户OpenID
+            example: o-MYE42l80oelYMDE34nYD456Xoy
+          user_name:
+            type: string
+            format: base64
+            description: 接收红包用户姓名
+            example: 757b340b45ebef5467rter35gf464344v3542sdf4t6re4tb4f54ty45t4yyry45
+          initiate_time:
+            type: string
+            format: rfc3339
+            description: 品牌红包发起时间
+            example: '2015-05-20T13:29:35.120+08:00'
+          update_time:
+            type: string
+            format: rfc3339
+            description: 品牌红包更新时间
+            example: '2015-05-20T13:29:35.120+08:00'
+          brand_id:
+            type: number
+            format: integer
+            description: 品牌ID
+            example: 1234
+          template_id:
+            type: string
+            description: 品牌红包模板ID
+            example: '123400001'
+          brand_appid:
+            type: string
+            description: 品牌AppID
+            example: wxf636efh567hg4356

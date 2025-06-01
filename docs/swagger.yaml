@@ -4,10 +4,10 @@ basePath: ''
 info:
   title: 微信支付OpenAPI文档
   description: >
-    整理自[官方文档中心](https://pay.weixin.qq.com/wiki/doc/apiv3/index.shtml)
+    整理自官方文档中心[普通商户](https://pay.weixin.qq.com/doc/v3/merchant/4012062524) [合作伙伴](https://pay.weixin.qq.com/doc/v3/partner/4012069852) [全球](https://pay.weixin.qq.com/doc/global/v3/zh)
     本[项目/工具地址](https://github.com/TheNorthMemory/wechatpay-openapi)
     **访问第一次加载比较慢，请耐心等待大约1-2分钟不等(小文件下载比较多)。**
-  version: 1.1.5
+  version: 1.1.6
 schemes:
   - https
 consumes:
@@ -22,6 +22,7 @@ tags:
   - name: 基础支付∙退款
   - name: 刷脸支付
   - name: 免密支付
+  - name: 微信分付
   - name: 资金应用∙分账
   - name: 资金应用∙转账
   - name: 资金应用∙转账∙用户确认模式
@@ -700,6 +701,16 @@ paths:
     $ref: ./v3/express/users/{openid}/transform.yaml
   /v3/facemch/users/{face_sid}:
     $ref: ./v3/facemch/users/{face_sid}.yaml
+  /v3/fund-app/brand-redpacket/brand-merchant-batches:
+    $ref: ./v3/fund-app/brand-redpacket/brand-merchant-batches.yaml
+  /v3/fund-app/brand-redpacket/brand-merchant-batches/{batch_no}:
+    $ref: ./v3/fund-app/brand-redpacket/brand-merchant-batches/{batch_no}.yaml
+  /v3/fund-app/brand-redpacket/brand-merchant-batches/{batch_no}/details/{detail_no}:
+    $ref: ./v3/fund-app/brand-redpacket/brand-merchant-batches/{batch_no}/details/{detail_no}.yaml
+  /v3/fund-app/brand-redpacket/brand-merchant-out-batches/{out_batch_no}:
+    $ref: ./v3/fund-app/brand-redpacket/brand-merchant-out-batches/{out_batch_no}.yaml
+  /v3/fund-app/brand-redpacket/brand-merchant-out-batches/{out_batch_no}/out-details/{out_detail_no}:
+    $ref: ./v3/fund-app/brand-redpacket/brand-merchant-out-batches/{out_batch_no}/out-details/{out_detail_no}.yaml
   /v3/fund-app/mch-transfer/elecsign/out-bill-no:
     $ref: ./v3/fund-app/mch-transfer/elecsign/out-bill-no.yaml
   /v3/fund-app/mch-transfer/elecsign/out-bill-no/{out_bill_no}:
@@ -714,14 +725,20 @@ paths:
     $ref: ./v3/fund-app/mch-transfer/transfer-bills/out-bill-no/{out_bill_no}.yaml
   /v3/fund-app/mch-transfer/transfer-bills/out-bill-no/{out_bill_no}/cancel:
     $ref: ./v3/fund-app/mch-transfer/transfer-bills/out-bill-no/{out_bill_no}/cancel.yaml
+  /v3/fund-app/mch-transfer/transfer-bills/pre-transfer-with-authorization:
+    $ref: ./v3/fund-app/mch-transfer/transfer-bills/pre-transfer-with-authorization.yaml
   /v3/fund-app/mch-transfer/transfer-bills/transfer-bill-no/{transfer_bill_no}:
     $ref: ./v3/fund-app/mch-transfer/transfer-bills/transfer-bill-no/{transfer_bill_no}.yaml
+  /v3/fund-app/mch-transfer/transfer-bills/transfer:
+    $ref: ./v3/fund-app/mch-transfer/transfer-bills/transfer.yaml
   /v3/fund-app/mch-transfer/transfer-to-qq-wallet-bills:
     $ref: ./v3/fund-app/mch-transfer/transfer-to-qq-wallet-bills.yaml
   /v3/fund-app/mch-transfer/transfer-to-qq-wallet-bills/{out_bill_no}:
     $ref: ./v3/fund-app/mch-transfer/transfer-to-qq-wallet-bills/{out_bill_no}.yaml
   /v3/fund-app/mch-transfer/transfer-to-qq-wallet-bills/{out_bill_no}/cancel:
     $ref: ./v3/fund-app/mch-transfer/transfer-to-qq-wallet-bills/{out_bill_no}/cancel.yaml
+  /v3/fund-app/mch-transfer/user-confirm-authorization/out-authorization-no/{out_authorization_no}:
+    $ref: ./v3/fund-app/mch-transfer/user-confirm-authorization/out-authorization-no/{out_authorization_no}.yaml
   /v3/funds-to-oversea/bill-download-url:
     $ref: ./v3/funds-to-oversea/bill-download-url.yaml
   /v3/funds-to-oversea/orders:
@@ -866,6 +883,10 @@ paths:
     $ref: ./v3/lovefeast/users/{openid}/orders/brand-id/{brand_id}.yaml
   /v3/lovefeast/users/{openid}/orders/out-trade-no/{out_trade_no}:
     $ref: ./v3/lovefeast/users/{openid}/orders/out-trade-no/{out_trade_no}.yaml
+  /v3/marketing/bank-favor/users/{openid}/bank-multi-activity:
+    $ref: ./v3/marketing/bank-favor/users/{openid}/bank-multi-activity.yaml
+  /v3/marketing/bank-favor/users/{openid}/coupons/{coupon_id}:
+    $ref: ./v3/marketing/bank-favor/users/{openid}/coupons/{coupon_id}.yaml
   /v3/marketing/bank/packages/{package_id}/tasks:
     $ref: ./v3/marketing/bank/packages/{package_id}/tasks.yaml
   /v3/marketing/busifavor/callbacks:
@@ -1054,6 +1075,10 @@ paths:
     $ref: ./v3/mchalterapply/mchsubjectalterapplyment/{apply_id}/revoke.yaml
   /v3/mchalterapply/mchsubjectalterapplyment/merchant/{merchant_code}/out-request-no/{out_request_no}:
     $ref: ./v3/mchalterapply/mchsubjectalterapplyment/merchant/{merchant_code}/out-request-no/{out_request_no}.yaml
+  /v3/merchant-risk-manage/ec-trade-risk/query-risk-trades:
+    $ref: ./v3/merchant-risk-manage/ec-trade-risk/query-risk-trades.yaml
+  /v3/merchant-risk-manage/ec-trade-risk/recv-dispose-result:
+    $ref: ./v3/merchant-risk-manage/ec-trade-risk/recv-dispose-result.yaml
   /v3/merchant-risk-manage/report-trade-union-information:
     $ref: ./v3/merchant-risk-manage/report-trade-union-information.yaml
   /v3/merchant-risk-manage/trade-risk-information:
@@ -1178,6 +1203,10 @@ paths:
     $ref: ./v3/offlinefacemch/organizations/{organization_id}/users/user-id/{user_id}/terminate-contract.yaml
   /v3/offlinefacemch/tokens:
     $ref: ./v3/offlinefacemch/tokens.yaml
+  /v3/palmservice/authorization/openid/{openid}:
+    $ref: ./v3/palmservice/authorization/openid/{openid}.yaml
+  /v3/palmservice/authorization/preauthorize:
+    $ref: ./v3/palmservice/authorization/preauthorize.yaml
   /v3/papay/contracts/{contract_id}/fail-notify:
     $ref: ./v3/papay/contracts/{contract_id}/fail-notify.yaml
   /v3/papay/contracts/{contract_id}/notify:
@@ -1208,6 +1237,8 @@ paths:
     $ref: ./v3/papay/insurance-sign/policy_periods/plan-id/{plan_id}/out-contract-code/{out_contract_code}.yaml
   /v3/papay/insurance-sign/policy-periods/plan-id/{plan_id}/contract-id/{contract_id}/modify:
     $ref: ./v3/papay/insurance-sign/policy-periods/plan-id/{plan_id}/contract-id/{contract_id}/modify.yaml
+  /v3/papay/pay/harmony/transactions/apply:
+    $ref: ./v3/papay/pay/harmony/transactions/apply.yaml
   /v3/papay/pay/partner/schedules/contract-id/{contract_id}:
     $ref: ./v3/papay/pay/partner/schedules/contract-id/{contract_id}.yaml
   /v3/papay/pay/partner/schedules/contract-id/{contract_id}/schedule:
@@ -1282,10 +1313,14 @@ paths:
     $ref: ./v3/pay-devices/printers/{device_id}/print-orders.yaml
   /v3/pay-devices/printers/{device_id}/print-orders/{print_order_no}:
     $ref: ./v3/pay-devices/printers/{device_id}/print-orders/{print_order_no}.yaml
+  /v3/pay/acquiring-bank/transactions/exposure:
+    $ref: ./v3/pay/acquiring-bank/transactions/exposure.yaml
   /v3/pay/partner/transactions/app:
     $ref: ./v3/pay/partner/transactions/app.yaml
   /v3/pay/partner/transactions/codepay:
     $ref: ./v3/pay/partner/transactions/codepay.yaml
+  /v3/pay/partner/transactions/exposure:
+    $ref: ./v3/pay/partner/transactions/exposure.yaml
   /v3/pay/partner/transactions/h5:
     $ref: ./v3/pay/partner/transactions/h5.yaml
   /v3/pay/partner/transactions/id/{transaction_id}:
@@ -1294,6 +1329,8 @@ paths:
     $ref: ./v3/pay/partner/transactions/jsapi-with-contract.yaml
   /v3/pay/partner/transactions/jsapi:
     $ref: ./v3/pay/partner/transactions/jsapi.yaml
+  /v3/pay/partner/transactions/miniprogram:
+    $ref: ./v3/pay/partner/transactions/miniprogram.yaml
   /v3/pay/partner/transactions/native:
     $ref: ./v3/pay/partner/transactions/native.yaml
   /v3/pay/partner/transactions/out-trade-no/{out_trade_no}:
@@ -1308,6 +1345,8 @@ paths:
     $ref: ./v3/pay/transactions/app.yaml
   /v3/pay/transactions/codepay:
     $ref: ./v3/pay/transactions/codepay.yaml
+  /v3/pay/transactions/exposure:
+    $ref: ./v3/pay/transactions/exposure.yaml
   /v3/pay/transactions/h5:
     $ref: ./v3/pay/transactions/h5.yaml
   /v3/pay/transactions/id/{transaction_id}:
@@ -1556,6 +1595,32 @@ paths:
     $ref: ./v3/platsolution/ecommerce/settle/prepay-settle-orders.yaml
   /v3/platsolution/ecommerce/settle/prepay-settle-orders/{settle_batch_no}:
     $ref: ./v3/platsolution/ecommerce/settle/prepay-settle-orders/{settle_batch_no}.yaml
+  /v3/platsolution/insurance/mch-transfer/batches/apply:
+    $ref: ./v3/platsolution/insurance/mch-transfer/batches/apply.yaml
+  /v3/platsolution/insurance/mch-transfer/batches/batch-id/{batch_id}:
+    $ref: ./v3/platsolution/insurance/mch-transfer/batches/batch-id/{batch_id}.yaml
+  /v3/platsolution/insurance/mch-transfer/batches/batch-id/{batch_id}/details/detail-id/{detail_id}:
+    $ref: ./v3/platsolution/insurance/mch-transfer/batches/batch-id/{batch_id}/details/detail-id/{detail_id}.yaml
+  /v3/platsolution/insurance/mch-transfer/batches/detail-receipts/out-batch-no/{out_batch_no}/out-detail-no/{out_detail_no}:
+    $ref: ./v3/platsolution/insurance/mch-transfer/batches/detail-receipts/out-batch-no/{out_batch_no}/out-detail-no/{out_detail_no}.yaml
+  /v3/platsolution/insurance/mch-transfer/batches/detail-receipts/out-batch-no/{out_batch_no}/out-detail-no/{out_detail_no}/apply:
+    $ref: ./v3/platsolution/insurance/mch-transfer/batches/detail-receipts/out-batch-no/{out_batch_no}/out-detail-no/{out_detail_no}/apply.yaml
+  /v3/platsolution/insurance/mch-transfer/batches/out-batch-no/{out_batch_no}:
+    $ref: ./v3/platsolution/insurance/mch-transfer/batches/out-batch-no/{out_batch_no}.yaml
+  /v3/platsolution/insurance/mch-transfer/batches/out-batch-no/{out_batch_no}/details/out-detail-no/{out_detail_no}:
+    $ref: ./v3/platsolution/insurance/mch-transfer/batches/out-batch-no/{out_batch_no}/details/out-detail-no/{out_detail_no}.yaml
+  /v3/platsolution/insurance/mch-transfer/batches/summary-receipts/out-batch-no/{out_batch_no}:
+    $ref: ./v3/platsolution/insurance/mch-transfer/batches/summary-receipts/out-batch-no/{out_batch_no}.yaml
+  /v3/platsolution/insurance/mch-transfer/batches/summary-receipts/out-batch-no/{out_batch_no}/apply:
+    $ref: ./v3/platsolution/insurance/mch-transfer/batches/summary-receipts/out-batch-no/{out_batch_no}/apply.yaml
+  /v3/platsolution/insurance/mch-transfer/reservation/apply:
+    $ref: ./v3/platsolution/insurance/mch-transfer/reservation/apply.yaml
+  /v3/platsolution/insurance/mch-transfer/reservation/out-reservation-no/{out_reservation_no}:
+    $ref: ./v3/platsolution/insurance/mch-transfer/reservation/out-reservation-no/{out_reservation_no}.yaml
+  /v3/platsolution/insurance/mch-transfer/reservation/out-reservation-no/{out_reservation_no}/close:
+    $ref: ./v3/platsolution/insurance/mch-transfer/reservation/out-reservation-no/{out_reservation_no}/close.yaml
+  /v3/platsolution/insurance/mch-transfer/reservation/reservation-id/{reservation_id}:
+    $ref: ./v3/platsolution/insurance/mch-transfer/reservation/reservation-id/{reservation_id}.yaml
   /v3/platsolution/mch-transfer/batches/apply:
     $ref: ./v3/platsolution/mch-transfer/batches/apply.yaml
   /v3/platsolution/mch-transfer/batches/batch-id/{batch_id}:

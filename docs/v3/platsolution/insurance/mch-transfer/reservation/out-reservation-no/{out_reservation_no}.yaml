@@ -1,0 +1,123 @@
+get:
+  x-last-updated-at: 2025.01.21
+  x-role:
+    - 服务商
+  tags:
+    - 资金应用∙转账
+  summary: 商户预约单号查询预约商家转账记录
+  description: 商户可通过接口查询预约商家转账记录详情。预计最晚转账日期、预计最大转账金额等预约相关信息，仅在预约记录状态为已预约或已关闭且关闭原因不为用户超时未确认、商户通过API主动关闭已受理的记录、预约失败后关闭时返回。API提供的查询时限为3个月，创建时间超过3个月的预约记录不支持查询。前置条件：通过申请预约商家转账接口成功创建预约商家转账记录
+  parameters:
+    - name: out_reservation_no
+      in: path
+      required: true
+      type: string
+      description: 商户预约单号
+      example: plfk2020042013
+    - name: sub_mchid
+      in: query
+      required: true
+      type: string
+      description: 二级商户号
+      example: '1900001109'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - sp_mchid
+          - sub_mchid
+          - sp_appid
+          - reservation_id
+          - out_reservation_no
+          - transfer_scene_id
+          - openid
+          - state
+          - accept_time
+        properties:
+          sp_mchid:
+            type: string
+            description: 服务商商户号
+            example: '1900001109'
+          sub_mchid:
+            type: string
+            description: 二级商户号
+            example: '1900001109'
+          sp_appid:
+            type: string
+            description: 服务商AppID
+            example: wxf636efh567hg4356
+          sub_appid:
+            type: string
+            description: 二级商户AppID
+            example: wxf636efh567hg4356
+          reservation_id:
+            type: string
+            description: 微信转账预约单号
+            example: '1330000071100999991182020050700019480001'
+          out_reservation_no:
+            type: string
+            description: 商户预约单号
+            example: plfk2020042013
+          transfer_scene_id:
+            type: string
+            description: 转账场景ID
+            example: '1000'
+          estimated_date:
+            type: string
+            description: 预计最晚转账日期
+            example: '2019-11-22'
+          estimated_max_amount:
+            type: number
+            description: 预计最大转账金额
+            example: 400000
+          exact_amount:
+            type: number
+            description: 准确转账金额
+            example: 100000
+          openid:
+            type: string
+            description: 收款用户OpenID
+            example: o-MYE42l80oelYMDE34nYD456Xoy
+          bank_type:
+            type: string
+            description: 收款银行类型
+            example: ICBC_DEBIT
+          state:
+            type: string
+            description: 预约记录状态
+            example: ACCEPTED
+            enum:
+              - ACCEPTED
+              - CONFIRMED
+              - CLOSED
+          accept_time:
+            type: string
+            description: 预约记录受理的时间
+            example: '2015-05-20T13:29:35.120+08:00'
+          reserve_time:
+            type: string
+            description: 预约记录用户确认预约的时间
+            example: '2015-05-20T13:29:35.120+08:00'
+          close_info:
+            type: object
+            description: 预约记录的关闭信息
+            required:
+              - close_time
+              - close_reason
+            properties:
+              close_time:
+                type: string
+                description: 预约记录关闭的时间
+                example: '2015-05-20T13:29:35.120+08:00'
+              close_reason:
+                type: string
+                description: 预约记录关闭的原因
+                example: USER_OVERDUE_UNCONFIRMED
+                enum:
+                  - USER_OVERDUE_UNCONFIRMED #用户超时未确认，系统自动关闭
+                  - CLOSE_CONFIRMED_VIA_MCH_API #商户通过API主动关闭已预约的记录
+                  - CLOSE_ACCEPTED_VIA_MCH_API #商户通过API主动关闭已受理的记录
+                  - TRANSFER_FINISHED #转账成功后，系统自动关闭
+                  - OVERDUE_NOT_TRANSFER #商户在预计最晚转账日期之前，未发起或发起转账但转账失败，系统自动关闭。
+                  - RESERVE_FAIL #因业务规则限制或者预约流程不合法，系统自动关闭
+                  - USER_CLOSE #用户确认后，主动关闭预约

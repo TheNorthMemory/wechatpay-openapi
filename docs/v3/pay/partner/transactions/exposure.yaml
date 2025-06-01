@@ -1,0 +1,67 @@
+post:
+  x-last-updated-at: 2025.04.18
+  x-role:
+    - 服务商
+  tags:
+    - 微信分付
+  summary: 微信分付-支付方式前置服务
+  description: 服务商查询微信分付曝光建议
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - sp_appid
+          - sp_mchid
+          - sub_appid
+          - out_trade_no
+          - payer
+        properties:
+          sp_appid:
+            type: string
+            description: 服务商应用ID
+            example: wx8888888888888888
+          sp_mchid:
+            type: string
+            description: 服务商户号
+            example: '1230000109'
+          sub_appid:
+            type: string
+            description: 子商户/二级商户应用ID
+            example: wxd678efh567hg6999
+          sub_mchid:
+            type: string
+            description: 子商户号/二级商户号
+            example: '1900000109'
+          payer:
+            type: object
+            description: 支付者
+            properties:
+              sp_openid:
+                type: string
+                description: 用户服务商标识
+                example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+              phone_number_hash:
+                type: string
+                description: 用户手机号的哈希值
+                example: ABDEF3445546456B
+          out_trade_no:
+            type: string
+            description: 商户订单号
+            example: '1217752501201407033233368018'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - fqf_exposure
+        properties:
+          fqf_exposure:
+            type: boolean
+            description: 是否建议曝光微信分付
+          market_exposure_token:
+            type: string
+            description: 曝光凭证
+            example: 'Dfkdsf324+-LKFD='

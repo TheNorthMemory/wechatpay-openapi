@@ -1,0 +1,39 @@
+post:
+  x-last-updated-at: 2025.04.29
+  x-role:
+    - 服务商
+  tags:
+    - 微信刷掌
+  summary: 服务关联预授权
+  description: 模式一：在刷掌原生小程序完成开通刷掌服务后，继续授权商家刷掌服务，跳转到商家侧，触发商家调用预授权；模式二：商家主动发起授权，先调用预授权接口，再跳转刷掌小程序
+  parameters:
+    - name: _
+      in: body
+      schema:
+        type: object
+        required:
+          - openid
+        properties:
+          openid:
+            type: string
+            description: OpenID
+            example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+          preauthorize_session_id:
+            type: string
+            description: 预授权会话ID
+            example: '181167098309019291163'
+          organization_id:
+            type: string
+            description: 机构ID
+            example: '1004'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - permission_token
+        properties:
+          permission_token:
+            type: string
+            description: 预授权token
+            example: toaken_sdafkdshjfldsajfafgjdasg

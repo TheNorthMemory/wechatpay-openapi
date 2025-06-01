@@ -1,0 +1,51 @@
+post:
+  x-last-updated-at: 2025.01.21
+  x-role:
+    - 服务商
+  tags:
+    - 资金应用∙转账
+  summary: 申请商家转账批次电子回单
+  description: 商家转账批次汇总电子回单申请受理接口，商户通过该接口可以申请受理商家转账批次汇总电子回单。
+  parameters:
+    - name: out_batch_no
+      in: path
+      required: true
+      type: string
+      description: 商家批次单号
+      example: sjzz20230223
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - sub_mchid
+        properties:
+          sub_mchid:
+            type: string
+            description: 二级商户号
+            example: '1900102208'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - sub_mchid
+          - out_batch_no
+          - receipt_state
+        properties:
+          sub_mchid:
+            type: string
+            description: 二级商户号
+            example: '1900000109'
+          out_batch_no:
+            type: string
+            description: 商家批次单号
+            example: sjzz20230223
+          receipt_state:
+            type: string
+            description: 电子回单状态
+            example: ACCEPTED
+            enum:
+              - ACCEPTED
+              - FINISHED

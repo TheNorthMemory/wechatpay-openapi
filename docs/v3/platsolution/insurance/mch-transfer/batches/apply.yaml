@@ -1,0 +1,129 @@
+post:
+  x-last-updated-at: 2025.01.21
+  x-role:
+    - 服务商
+  tags:
+    - 资金应用∙转账
+  summary: 受理商家转账
+  description: 发起商家转账接口。商户可以通过该接口同时向多个已经确认预约的用户进行转账操作。注意：受理成功将返回批次单号，此时并不代表转账成功，请通过查单接口查询单据的付款状态。接口支持幂等，幂等标识为out_batch_no，幂等有效性为5年。
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - sub_mchid
+          - sp_appid
+          - out_batch_no
+          - batch_name
+          - batch_remark
+          - total_amount
+          - total_num
+          - transfer_scene_id
+          - transfer_detail_list
+          - notify_url
+        properties:
+          sub_mchid:
+            type: string
+            description: 二级商户号
+            example: '1900001109'
+          sp_appid:
+            type: string
+            description: 服务商AppID
+            example: wxf636efh567hg4356
+          sub_appid:
+            type: string
+            description: 二级商户AppID
+            example: wxf636efh567hg4356
+          out_batch_no:
+            type: string
+            description: 商家批次单号
+            example: sjzz20230223
+          batch_name:
+            type: string
+            description: 批次名称
+            example: 2023年2月深圳分部报销单
+          batch_remark:
+            type: string
+            description: 批次备注
+            example: 2023年2月深圳分部报销单
+          total_amount:
+            type: number
+            description: 转账总金额
+            example: 4000000
+          total_num:
+            type: number
+            description: 转账总笔数
+            example: 200
+          transfer_scene_id:
+            type: string
+            description: 转账场景ID
+            example: '1000'
+          transfer_detail_list:
+            type: array
+            description: 转账明细列表
+            items:
+              type: object
+              required:
+                - out_detail_no
+                - transfer_amount
+                - transfer_remark
+                - reservation_id
+                - openid
+              properties:
+                out_detail_no:
+                  type: string
+                  description: 商家明细单号
+                  example: x23zy545Bd5436
+                transfer_amount:
+                  type: number
+                  description: 转账金额
+                  example: 200000
+                transfer_remark:
+                  type: string
+                  description: 转账备注
+                  example: 2023年2月报销
+                reservation_id:
+                  type: string
+                  description: 微信转账预约单号
+                  example: '1330000071100999991182020050700019480001'
+                openid:
+                  type: string
+                  description: 收款用户OpenID
+                  example: o-MYE42l80oelYMDE34nYD456Xoy
+          notify_url:
+            type: string
+            description: 商户回调地址
+            example: https://www.weixin.qq.com/wxpay/pay.php
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - out_batch_no
+          - batch_id
+          - create_time
+        properties:
+          out_batch_no:
+            type: string
+            description: 商家批次单号
+            example: sjzz20230223
+          batch_id:
+            type: string
+            description: 商家转账批次单号
+            example: '131000011085109987515042023022300246500006'
+          create_time:
+            type: string
+            format: rfc3339
+            description: 批次创建时间
+            example: '2023-02-23T13:29:35+08:00'
+          batch_state:
+            type: string
+            description: 批次状态
+            example: ACCEPTED
+            enum:
+              - ACCEPTED
+              - PROCESSING
+              - COMPLETED
+              - CLOSED

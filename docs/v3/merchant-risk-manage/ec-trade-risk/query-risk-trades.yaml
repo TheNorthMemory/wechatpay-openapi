@@ -1,0 +1,92 @@
+post:
+  x-last-updated-at: 2025.03.14
+  x-role:
+    - 普通商户
+    - 服务商
+  tags:
+    - 风险管理
+  summary: 查询风险订单
+  description: 商户可调用该接口，查询风险订单，从而进行之后的风险管控&生态建设。
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        properties:
+          sp_mchid:
+            type: string
+            description: 服务商商户号
+            example: '1900000109'
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1900009231'
+          mchid:
+            type: string
+            description: 商户号
+            example: '1900009231'
+          start_time:
+            type: string
+            format: rfc3339
+            description: 开始时间
+            example: '2025-05-20T13:29:35+08:00'
+          end_time:
+            type: string
+            format: rfc3339
+            description: 结束时间
+            example: '2025-05-20T13:29:35+08:00'
+          page_index:
+            type: number
+            description: 查询页码
+            default: 1
+            example: 1
+          page_size:
+            type: number
+            description: 查询页大小
+            default: 10
+            example: 10
+  responses:
+    '200':
+      schema:
+        type: object
+        properties:
+          total_num:
+            type: number
+            description: 总风险订单数
+            example: 10
+          risk_trade_list:
+            type: array
+            description: 风险订单列表
+            items:
+              type: object
+              properties:
+                mchid:
+                  type: string
+                  description: 商户号
+                  example: '1900009231'
+                out_trade_no:
+                  type: string
+                  description: 商户订单号
+                  example: '20150806125346'
+                risk_type:
+                  type: number
+                  description: 风险类型
+                  example: 1
+                  enum:
+                    - 1
+                    - 2
+                    - 3
+                    - 4
+                risk_level:
+                  type: number
+                  description: 风险等级
+                  example: 1
+                  enum:
+                    - 1
+                    - 2
+                    - 3
+                risk_discove_time:
+                  type: string
+                  description: 投诉单状态
+                  example: '2020-12-01T16:18:12+08:00'

@@ -1,0 +1,99 @@
+post:
+  x-last-updated-at: 2024.12.31
+  x-role:
+    - 普通商户
+  tags:
+    - 委托代扣
+  summary: 代扣受理扣款
+  description: 商户调用本接口发起委托代扣扣款。系统受理扣款请求后，异步进行扣款，并通过商户指定的回调地址通知扣费结果。本接口只返回受理结果，若受理成功，后续扣费结果将通过「委托代扣支付结果通知API」通知，商户也可调用「查询订单」接口获取订单状态。
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - appid
+          - out_trade_no
+          - description
+          - transaction_notify_url
+          - contract_id
+          - amount
+          - harmony_account_id
+        properties:
+          appid:
+            type: string
+            description: 应用ID
+            example: wxd678efh567hg6787
+          out_trade_no:
+            type: string
+            description: 商户订单号
+            example: '1217752501201407033233368018'
+          description:
+            type: string
+            description: 商品描述
+            example: Image形象店-深圳腾大-QQ公仔
+          transaction_notify_url:
+            type: string
+            description: 通知地址
+            example: https://www.qq.com/
+          contract_id:
+            type: string
+            description: 委托代扣协议ID
+            example: '123124412412423431'
+          amount:
+            type: object
+            description: 扣费金额信息
+            required:
+              - total
+            properties:
+              total:
+                type: number
+                description: 金额
+                example: 1
+              currency:
+                type: string
+                description: 货币类型
+                example: CNY
+          goods_tag:
+            type: string
+            description: 订单优惠标记
+            example: DISCOUNTS
+          attach:
+            type: string
+            description: 附加数据
+            example: 自定义数据
+          harmony_account_id:
+            type: string
+            description: 鸿蒙账户id
+            example: example_harmony_account_id
+          mcc:
+            type: string
+            description: 商户类别码
+            example: '5734'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - out_trade_no
+          - amount
+        properties:
+          out_trade_no:
+            type: string
+            description: 商户订单号
+            example: '1217752501201407033233368018'
+          amount:
+            type: object
+            description: 扣费金额信息
+            required:
+              - total
+            properties:
+              total:
+                type: number
+                description: 金额
+                example: 1
+              currency:
+                type: string
+                description: 货币类型
+                example: CNY

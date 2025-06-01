@@ -1,0 +1,118 @@
+get:
+  x-last-updated-at: 2025.05.13
+  x-role:
+    - 直连商户
+  tags:
+    - 运营工具∙代金券
+  summary: 查询绑定多笔立减活动的代金券详情
+  description: 通过此接口可查询绑定多笔立减活动的代金券信息，包括代金券的基础信息、状态等。
+  parameters:
+    - name: openid
+      in: path
+      required: true
+      type: string
+      description: 用户标识ID
+      example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+    - name: coupon_id
+      in: path
+      required: true
+      type: string
+      description: 代金券ID
+      example: '9856888'
+    - name: appid
+      in: query
+      required: true
+      type: string
+      description: 公众账号ID
+      example: wx57849631bb367f52
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - stock_creator_mchid
+          - stock_id
+          - coupon_id
+          - coupon_name
+          - coupon_state
+          - receive_time
+          - available_begin_time
+          - available_end_time
+          - activity_id
+          - max_use_number
+          - available_number
+          - used_number
+        properties:
+          stock_creator_mchid:
+            type: string
+            description: 创建批次的商户号
+            example: '9800064'
+          stock_id:
+            type: string
+            description: 批次号
+            example: '9865888'
+          coupon_id:
+            type: string
+            description: 代金券id
+            example: '98674556'
+          coupon_name:
+            type: string
+            description: 代金券名称
+            example: 微信支付代金券
+          coupon_state:
+            type: string
+            description: 券状态
+            example: COUPON_STATE_UNKNOW
+            enum:
+              - COUPON_STATE_UNKNOW
+              - COUPON_STATE_SEND
+              - COUPON_STATE_USED
+              - COUPON_STATE_EXPIRED
+          receive_time:
+            type: string
+            format: rfc3339
+            description: 领券时间
+            example: '2015-05-20T13:29:35.120+08:00'
+          available_begin_time:
+            type: string
+            format: rfc3339
+            description: 可用开始时间
+            example: '2015-05-20T13:29:35.120+08:00'
+          available_end_time:
+            type: string
+            format: rfc3339
+            description: 可用结束时间
+            example: '2015-05-20T13:29:35.120+08:00'
+          activity_id:
+            type: string
+            description: 活动ID
+            example: '186745560'
+          max_use_number:
+            type: number
+            format: integer
+            description: 最大使用次数
+            example: 5
+          available_number:
+            type: number
+            format: integer
+            description: 可用次数
+            example: 3
+          used_number:
+            type: number
+            format: integer
+            description: 已使用次数
+            example: 2
+          use_amount_list:
+            type: object
+            description: 已用金额列表
+            properties:
+              used_amounts:
+                type: array
+                description: 已用金额
+                items:
+                  type: string
+                  example: '200'
+          openid:
+            type: string
+            description: 用户标识ID
+            example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o

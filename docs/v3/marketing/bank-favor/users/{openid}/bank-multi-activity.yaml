@@ -1,0 +1,58 @@
+post:
+  x-last-updated-at: 2025.05.13
+  x-role:
+    - 直连商户
+  tags:
+    - 运营工具∙代金券
+  summary: 给指定用户报名多笔立减活动
+  description: 商户平台创建活动后，可以调用此接口给指定用户报名多笔立减活动。
+  parameters:
+    - name: openid
+      in: path
+      required: true
+      type: string
+      description: 用户标识ID
+      example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - stock_id
+          - activity_id
+          - appid
+          - out_request_no
+          - stock_creator_mchid
+        properties:
+          stock_id:
+            type: string
+            description: 批次号
+            example: '100088'
+          activity_id:
+            type: string
+            description: 活动ID
+            example: '186745560'
+          out_request_no:
+            type: string
+            description: 发券凭证
+            example: '1002600620019090123143254435'
+          appid:
+            type: string
+            description: 公众账号ID
+            example: wx1234567889999
+          stock_creator_mchid:
+            type: string
+            description: 创建批次的商户号
+            example: '9800064'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - coupon_id
+        properties:
+          coupon_id:
+            type: string
+            description: 代金券id
+            example: '98674556'

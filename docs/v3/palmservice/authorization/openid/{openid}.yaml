@@ -1,0 +1,46 @@
+get:
+  x-last-updated-at: 2025.04.28
+  x-role:
+    - 服务商
+  tags:
+    - 微信刷掌
+  summary: 查询刷掌授权
+  description: 商户通过该接口查询用户授权状态
+  parameters:
+    - name: openid
+      in: path
+      type: string
+      required: true
+      description: OpenID
+      example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+    - name: organization_id
+      in: query
+      type: string
+      required: true
+      description: 机构ID
+      example: '1004'
+  responses:
+    '200':
+      schema:
+        type: object
+        properties:
+          openid:
+            type: string
+            description: OpenID
+            example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+          organization_id:
+            type: string
+            description: 机构ID
+            example: '1004'
+          state:
+            type: string
+            description: 授权状态
+            enum:
+              - AUTHORIZATION_STATE_NONE #未授权
+              - AUTHORIZATION_STATE_ON #已开通校园刷掌授权
+              - AUTHORIZATION_STATE_OFF #已关闭校园刷掌授权
+          authorize_time:
+            type: string
+            format: rfc3339
+            description: 授权时间
+            example: '2018-06-08T10:34:56+08:00'

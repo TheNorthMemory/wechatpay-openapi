@@ -1,0 +1,77 @@
+get:
+  x-last-updated-at: 2025.05.16
+  x-role:
+    - 普通商户
+  tags:
+    - 资金应用∙转账∙用户确认模式
+  summary: 商户单号查询自动收款授权
+  description: 根据商户单号用户自动收款授权的详细信息。
+  parameters:
+    - name: out_authorization_no
+      in: path
+      required: true
+      type: string
+      description: 商户侧授权单号
+      example: plfk2020042013
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - out_authorization_no
+          - appid
+          - openid
+          - user_display_name
+          - authorization_id
+          - state
+          - authorize_time
+        properties:
+          out_authorization_no:
+            type: string
+            description: 商户侧授权单号
+            example: plfk2020042013
+          appid:
+            type: string
+            description: 商户AppID
+            example: wxf636efh567hg4356
+          openid:
+            type: string
+            description: 收款用户OpenID
+            example: o-MYE42l80oelYMDE34nYD456Xoy
+          user_display_name:
+            type: string
+            description: 用户展示名称
+            example: wx_123456
+          authorization_id:
+            type: string
+            description: 微信自动收款授权单号
+            example: '201202504101000123456789012'
+          state:
+            type: string
+            description: 单据状态
+            example: TAKING_EFFECT
+            enum:
+              - TAKING_EFFECT #用户已确认授权，授权生效中，可发起转账到授权对应的用户
+              - CLOSED #用户或商户系统关闭，无法转账至该授权对应的用户
+          authorize_time:
+            type: string
+            description: 用户确认授权的时间
+            example: '2015-05-20T13:29:35.120+08:00'
+          close_info:
+            type: object
+            description: 自动收款授权的关闭信息
+            required:
+              - close_time
+              - close_reason
+            properties:
+              close_time:
+                type: string
+                description: 关闭时间
+                example: '2015-05-20T13:29:35.120+08:00'
+              close_reason:
+                type: string
+                description: 自动收款授权的原因
+                example: CLOSE_VIA_MCH_API
+                enum:
+                  - CLOSE_VIA_MCH_API #商户通过API主动关闭授权
+                  - USER_CLOSE #用户确认后，主动关闭授权

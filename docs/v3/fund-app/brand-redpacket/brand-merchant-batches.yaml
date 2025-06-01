@@ -1,0 +1,133 @@
+post:
+  x-last-updated-at: 2025.04.15
+  x-role:
+    - 普通商户
+  tags:
+    - 品牌红包
+  summary: 品牌商户发放红包
+  description: 普通直连商户可以通过该接口，向多个用户发放品牌红包，微信支付视任何不同“发起的普通直连商户商户号+商家品牌红包批次单号（out_batch_no）”的请求为一个全新的批次。在未查询到明确的品牌红包批次单处理结果之前，请勿修改商家品牌红包批次单号重新提交！如有发生，普通直连商户应当自行承担因此产生的所有损失和责任。
+  parameters:
+    - $ref: '../../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - brand_id
+          - brand_appid
+          - scene
+          - template_id
+          - out_batch_no
+          - batch_name
+          - batch_remark
+          - total_amount
+          - total_num
+          - detail_list
+        properties:
+          brand_id:
+            type: number
+            format: integer
+            description: 品牌ID
+            example: 1234
+          brand_appid:
+            type: string
+            description: 品牌AppID
+            example: wxf636efh567hg4356
+          scene:
+            type: string
+            description: 品牌红包发放场景
+            example: CUSTOM_SEND
+            enum:
+              - CUSTOM_SEND
+          template_id:
+            type: string
+            description: 品牌红包模板ID
+            example: '123400001'
+          out_batch_no:
+            type: string
+            description: 商家品牌红包批次单号
+            example: plfk2020042013
+          batch_name:
+            type: string
+            description: 品牌红包批次名称
+            example: 双十一营销用品牌红包
+          batch_remark:
+            type: string
+            description: 品牌红包批次备注
+            example: 双十一营销用品牌红包
+          total_amount:
+            type: number
+            format: integer
+            description: 总金额
+            example: 10000
+          total_num:
+            type: number
+            format: integer
+            description: 总笔数
+            example: 10
+          detail_list:
+            type: array
+            description: 品牌红包明细列表
+            items:
+              type: object
+              required:
+                - out_detail_no
+                - amount
+                - openid
+                - remark
+              properties:
+                out_detail_no:
+                  type: string
+                  description: 商家品牌红包明细单号
+                  example: x23zy545Bd5436
+                amount:
+                  type: number
+                  format: integer
+                  description: 红包金额（单位：分）
+                  example: 100
+                openid:
+                  type: string
+                  description: 接收红包用户OpenID
+                  example: o-MYE42l80oelYMDE34nYD456Xoy
+                user_name:
+                  type: string
+                  format: base64
+                  description: 接收红包用户姓名
+                  example: 757b340b45ebef5467rter35gf464344v3542sdf4t6re4tb4f54ty45t4yyry45
+                remark:
+                  type: string
+                  description: 红包备注
+                  example: 来自XX的红包
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - out_batch_no
+          - transfer_bill_no
+          - create_time
+          - state
+        properties:
+          out_batch_no:
+            type: string
+            description: 商家品牌红包批次单号
+            example: plfk2020042013
+          batch_no:
+            type: string
+            description: 微信支付品牌红包批次单号
+            example: '1210000071100999991182020050700019480001'
+          create_time:
+            type: string
+            description: 品牌红包批次创建时间
+            example: '2015-05-20T13:29:35.120+08:00'
+          batch_state:
+            type: string
+            description: 批次单状态
+            example: ACCEPTED
+            enum:
+              - WAIT_PAY #商户员工确认付款阶段
+              - ACCEPTED #批次已受理成功
+              - PROCESSING #已开始处理批次内的品牌红包明细单
+              - FINISHED #批次内的所有品牌红包明细单都已处理完成
+              - CLOSED #可查询具体的批次关闭原因确认

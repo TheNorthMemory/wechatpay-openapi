@@ -1,0 +1,80 @@
+post:
+  x-last-updated-at: 2025.03.14
+  x-role:
+    - 普通商户
+    - 服务商
+  tags:
+    - 风险管理
+  summary: 回传处置结果
+  description: 商户查询订单风险后，调用该接口回传对风险订单/风险商户的调查、处置信息。
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - out_trade_no
+        properties:
+          sp_mchid:
+            type: string
+            description: 服务商商户号
+            example: '1900000109'
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1900009231'
+          mchid:
+            type: string
+            description: 商户号
+            example: '1900009231'
+          out_trade_no:
+            type: string
+            description: 商户订单号
+            example: '20150806125346'
+          final_risk_result:
+            type: number
+            description: 最终风险结论
+            example: 1
+            enum:
+              - 1
+              - 2
+          final_risk_type:
+            type: number
+            description: 最终风险类型
+            example: 1
+            enum:
+              - 1
+              - 2
+              - 3
+              - 4
+          disp_conclusion:
+            type: array
+            description: 处置结论
+            items:
+              type: number
+              example: 1
+              enum:
+                - 1
+                - 2
+                - 3
+          disp_addition:
+            type: string
+            description: 处置补充
+            example: example_disp_addition
+          exist_complaint:
+            type: boolean
+            description: 是否有投诉
+          refund_amount:
+            type: number
+            description: 退款金额
+            example: 100
+  responses:
+    '200':
+      schema:
+        type: object
+        properties:
+          rsp_msg:
+            type: string
+            description: 返回描述
+            example: ok

@@ -3,6 +3,7 @@
 namespace WeChatPay\OpenAPI;
 
 /**
+ * @property-read V3\Webizpay $webizpay
  * @property-read V3\Vehicle $vehicle
  * @property-read V3\Transferdownload $transferdownload
  * @property-read V3\TransferDetail $transferDetail

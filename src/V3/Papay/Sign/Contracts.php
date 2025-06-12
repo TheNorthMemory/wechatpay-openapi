@@ -4,6 +4,7 @@ namespace WeChatPay\OpenAPI\V3\Papay\Sign;
 
 /**
  * @property-read Contracts\PlanId $planId
+ * @property-read Contracts\HarmonyPlanId $harmonyPlanId
  */
 interface Contracts
 {

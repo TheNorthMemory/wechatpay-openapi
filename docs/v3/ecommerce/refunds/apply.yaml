@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2024.09.29
+  x-last-updated-at: 2025.06.19
   x-role:
     - 电商平台
   tags:
@@ -37,6 +37,14 @@ post:
             type: string
             description: 二级商户APPID
             example: wx8888888888888888
+          combine_mchid:
+            type: string
+            description: 还款服务商商户号
+            example: '1230000109'
+          combine_out_trade_no:
+            type: string
+            description: 还款订单号
+            example: P20150806125346
           combine_transaction_id:
             type: string
             description: 交易单微信支付订单号

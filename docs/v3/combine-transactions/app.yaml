@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2025.01.16
+  x-last-updated-at: 2025.05.29
   x-role:
     - 电商平台
     - 服务商
@@ -170,6 +170,12 @@ post:
             type: string
             description: 通知地址
             example: 'https://yourapp.com/notify'
+          trade_scenario:
+            type: string
+            description: 交易场景
+            example: RECOMMERCE
+            enum:
+              - RECOMMERCE
           limit_pay:
             type: array
             description: 指定支付方式

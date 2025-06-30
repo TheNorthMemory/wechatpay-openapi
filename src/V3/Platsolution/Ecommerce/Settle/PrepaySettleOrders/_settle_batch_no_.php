@@ -6,6 +6,7 @@ use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Promise\PromiseInterface;
 
 /**
+ * @property-read _settle_batch_no_\ApplyAbnormalSettle $applyAbnormalSettle
  */
 interface _settle_batch_no_
 {

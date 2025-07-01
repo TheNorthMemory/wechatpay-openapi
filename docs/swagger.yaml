@@ -7,7 +7,7 @@ info:
     整理自官方文档中心[普通商户](https://pay.weixin.qq.com/doc/v3/merchant/4012062524) [合作伙伴](https://pay.weixin.qq.com/doc/v3/partner/4012069852) [全球](https://pay.weixin.qq.com/doc/global/v3/zh)
     本[项目/工具地址](https://github.com/TheNorthMemory/wechatpay-openapi)
     **访问第一次加载比较慢，请耐心等待大约1-2分钟不等(小文件下载比较多)。**
-  version: 1.1.6
+  version: 1.1.7
 schemes:
   - https
 consumes:
@@ -453,6 +453,10 @@ paths:
     $ref: ./v2/xdc/apiv2sandbox/pay/micropay.yaml
   /xdc/apiv2sandbox/pay/orderquery:
     $ref: ./v2/xdc/apiv2sandbox/pay/orderquery.yaml
+  /v3/abnormal-fund-processing/receipts/{receipt_id}:
+    $ref: ./v3/abnormal-fund-processing/receipts/{receipt_id}.yaml
+  /v3/abnormal-fund-processing/receipts/{receipt_id}/transfer-instructions:
+    $ref: ./v3/abnormal-fund-processing/receipts/{receipt_id}/transfer-instructions.yaml
   /v3/apply4sub/sub_merchants/{sub_mchid}/application/{application_no}:
     $ref: ./v3/apply4sub/sub_merchants/{sub_mchid}/application/{application_no}.yaml
   /v3/apply4sub/sub_merchants/{sub_mchid}/modify-settlement:
@@ -1597,6 +1601,8 @@ paths:
     $ref: ./v3/platsolution/ecommerce/settle/prepay-settle-orders.yaml
   /v3/platsolution/ecommerce/settle/prepay-settle-orders/{settle_batch_no}:
     $ref: ./v3/platsolution/ecommerce/settle/prepay-settle-orders/{settle_batch_no}.yaml
+  /v3/platsolution/ecommerce/settle/prepay-settle-orders/{settle_batch_no}/apply-abnormal-settle:
+    $ref: ./v3/platsolution/ecommerce/settle/prepay-settle-orders/{settle_batch_no}/apply-abnormal-settle.yaml
   /v3/platsolution/insurance/mch-transfer/batches/apply:
     $ref: ./v3/platsolution/insurance/mch-transfer/batches/apply.yaml
   /v3/platsolution/insurance/mch-transfer/batches/batch-id/{batch_id}:
@@ -1761,3 +1767,27 @@ paths:
     $ref: ./v3/vehicle/transactions/parking.yaml
   /v3/webhooks:
     $ref: ./v3/webhooks.yaml
+  /v3/webizpay/bill/proof:
+    $ref: ./v3/webizpay/bill/proof.yaml
+  /v3/webizpay/bill/trade-bill:
+    $ref: ./v3/webizpay/bill/trade-bill.yaml
+  /v3/webizpay/employees/{employee_id}/out-quota-cards/{out_card_no}:
+    $ref: ./v3/webizpay/employees/{employee_id}/out-quota-cards/{out_card_no}.yaml
+  /v3/webizpay/employees/{employee_id}/quota-cards:
+    $ref: ./v3/webizpay/employees/{employee_id}/quota-cards.yaml
+  /v3/webizpay/employees/{employee_id}/quota-cards/{card_no}:
+    $ref: ./v3/webizpay/employees/{employee_id}/quota-cards/{card_no}.yaml
+  /v3/webizpay/employees/{employee_id}/quota-cards/{card_no}/cancel:
+    $ref: ./v3/webizpay/employees/{employee_id}/quota-cards/{card_no}/cancel.yaml
+  /v3/webizpay/employees/{employee_id}/quota-cards/{card_no}/payment-url:
+    $ref: ./v3/webizpay/employees/{employee_id}/quota-cards/{card_no}/payment-url.yaml
+  /v3/webizpay/employees/{employee_id}/revoke:
+    $ref: ./v3/webizpay/employees/{employee_id}/revoke.yaml
+  /v3/webizpay/stores/entity-matches:
+    $ref: ./v3/webizpay/stores/entity-matches.yaml
+  /v3/webizpay/stores/entity-matches/{batch_id}:
+    $ref: ./v3/webizpay/stores/entity-matches/{batch_id}.yaml
+  /v3/webizpay/users/{user_id}/authorization-state:
+    $ref: ./v3/webizpay/users/{user_id}/authorization-state.yaml
+  /v3/webizpay/users/{user_id}/authorization-url:
+    $ref: ./v3/webizpay/users/{user_id}/authorization-url.yaml

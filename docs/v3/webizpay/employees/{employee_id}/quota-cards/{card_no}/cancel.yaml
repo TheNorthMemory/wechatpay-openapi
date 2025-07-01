@@ -1,0 +1,82 @@
+post:
+  x-last-updated-at: 2025.05.09
+  x-role:
+    - 服务商
+  tags:
+    - 企业支付
+  summary: 企业商户发起员工开通企业支付授权
+  description: 企业商户发起员工开通企业支付授权。该接口允许服务商为指定出资子商户下的员工发起企业支付授权申请，系统将生成一个授权链接，员工可通过该链接完成授权操作。授权成功后，企业可为该员工下发企业支付额度卡，员工可使用额度卡进行支付。
+  parameters:
+    - name: employee_id
+      in: path
+      required: true
+      type: string
+      description: 微信授权关系ID
+      example: WeBizPay_a968402a-73bb-43e2-9e1a-8371b0ca3d7c
+    - name: card_no
+      in: path
+      required: true
+      type: string
+      description: 企业支付额度卡卡号
+      example: '1068019671702503425'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - sp_mchid
+          - sub_mchid
+          - reason
+        properties:
+          sp_mchid:
+            type: string
+            description: 服务商商户号
+            example: '12341234'
+          sub_mchid:
+            type: string
+            description: 出资子商户号
+            example: '43214321'
+          reason:
+            type: string
+            description: 作废原因
+            example: 商户主动作废
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - sp_mchid
+          - sub_mchid
+          - employee_id
+          - card_no
+          - card_state
+        properties:
+          sp_mchid:
+            type: string
+            description: 服务商商户号
+            example: '12341234'
+          sub_mchid:
+            type: string
+            description: 出资子商户号
+            example: '43214321'
+          employee_id:
+            type: string
+            description: 微信授权关系ID
+            example: WeBizPay_a968402a-73bb-43e2-9e1a-8371b0ca3d7c
+          card_no:
+            type: string
+            description: 企业支付额度卡卡号
+            example: '1068019671702503425'
+          card_state:
+            type: string
+            description: 卡片状态
+            example: DISABLED
+            enum:
+              - ACTIVE
+              - DISABLED
+          card_disabled_time:
+            type: string
+            format: rfc3339
+            description: 卡片失效时间
+            example: '2023-06-08T10:34:56+08:00'

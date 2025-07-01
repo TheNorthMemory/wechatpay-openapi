@@ -1,0 +1,74 @@
+get:
+  x-last-updated-at: 2025.05.09
+  x-role:
+    - 服务商
+  tags:
+    - 企业支付
+  summary: 查询门店主体匹配结果
+  description: 查询门店主体匹配结果。该接口允许服务商查询之前发起的门店主体匹配批次结果，包括各门店统一社会信用代码是否存在满足条件的微信支付商户号。通过此接口可获取匹配结果详情，确认哪些门店可以使用企业支付功能。
+  parameters:
+    - name: batch_id
+      in: path
+      required: true
+      type: string
+      description: 微信支付主体匹配批次单号
+      example: 1030000071201xxxxx
+    - name: sp_mchid
+      in: query
+      required: true
+      type: string
+      description: 服务商商户号
+      example: '12341234'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - sp_mchid
+          - out_batch_id
+          - batch_id
+          - state
+        properties:
+          sp_mchid:
+            type: string
+            description: 服务商商户号
+            example: '12341234'
+          out_batch_id:
+            type: string
+            description: 商户主体匹配批次单号
+            example: batch12345678
+          batch_id:
+            type: string
+            description: 微信支付主体匹配批次单号
+            example: 1030000071201xxxxx
+          state:
+            type: string
+            description: 批次状态
+            example: ACCEPTED
+            enum:
+              - ACCEPTED
+              - IN_PROGRESS
+              - COMPLETED
+              - CLOSED
+          match_results:
+            type: array
+            description: 主体匹配明细列表
+            items:
+              type: object
+              required:
+                - organization_code
+                - store_name
+                - has_valid_mchid
+              properties:
+                organization_code:
+                  type: string
+                  description: 门店统一社会信用代码
+                  example: 91110000710926094P
+                store_name:
+                  type: string
+                  description: 门店名称
+                  example: 微信小店
+                has_valid_mchid:
+                  type: boolean
+                  description: 是否存在满足条件微信支付商户号
+                  example: true

@@ -1,0 +1,105 @@
+post:
+  x-last-updated-at: 2025.05.09
+  x-role:
+    - 服务商
+  tags:
+    - 企业支付
+  summary: 企业商户为员工下发企业支付额度卡
+  description: 企业商户为员工下发企业支付额度卡。该接口允许服务商为已授权的员工下发企业支付额度卡，设置卡片名称、额度、备注等信息，员工可使用该额度卡进行企业支付。企业可根据不同业务场景（如差旅报销、日常办公等）为员工发放不同类型的额度卡，便于费用管理和控制。
+  parameters:
+    - name: employee_id
+      in: path
+      required: true
+      type: string
+      description: 微信授权关系ID
+      example: WeBizPay_a968402a-73bb-43e2-9e1a-8371b0ca3d7c
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - sp_mchid
+          - sub_mchid
+          - card_template_id
+          - amount
+          - card_name
+          - out_card_no
+          - effective_end_time
+        properties:
+          sp_mchid:
+            type: string
+            description: 服务商商户号
+            example: '12341234'
+          sub_mchid:
+            type: string
+            description: 出资子商户号
+            example: '43214321'
+          card_template_id:
+            type: string
+            description: 企业支付卡模板ID
+            example: template_123
+          amount:
+            type: number
+            description: 卡片总金额
+            example: 10000
+          card_name:
+            type: string
+            description: 卡片名称
+            example: 报销额度卡
+          out_card_no:
+            type: string
+            description: 商户卡号
+            example: mch_card_123456
+          effective_end_time:
+            type: string
+            format: rfc3339
+            description: 卡片有效期
+            example: '2023-12-31T23:59:59+08:00'
+          card_remark:
+            type: string
+            description: 卡片备注
+            example: 2023年1月差旅报销
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - sp_mchid
+          - sub_mchid
+          - out_card_no
+          - employee_id
+          - card_no
+          - effective_begin_time
+          - effective_end_time
+        properties:
+          sp_mchid:
+            type: string
+            description: 服务商商户号
+            example: '12341234'
+          sub_mchid:
+            type: string
+            description: 出资子商户号
+            example: '43214321'
+          out_card_no:
+            type: string
+            description: 商户卡号
+            example: mch_card_123456
+          employee_id:
+            type: string
+            description: 微信授权关系ID
+            example: WeBizPay_a968402a-73bb-43e2-9e1a-8371b0ca3d7c
+          card_no:
+            type: string
+            description: 企业支付额度卡卡号
+            example: '1068019671702503425'
+          effective_begin_time:
+            type: string
+            format: rfc3339
+            description: 卡片生效时间
+            example: '2023-01-01T23:59:59+08:00'
+          effective_end_time:
+            type: string
+            format: rfc3339
+            description: 卡片有效期
+            example: '2023-12-31T23:59:59+08:00'

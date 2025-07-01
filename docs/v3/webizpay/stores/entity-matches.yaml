@@ -1,0 +1,88 @@
+post:
+  x-last-updated-at: 2025.05.09
+  x-role:
+    - 服务商
+  tags:
+    - 企业支付
+  summary: 发起门店主体匹配
+  description: 发起门店主体匹配。该接口允许服务商批量查询门店主体是否已在微信支付开通相关支付产品，匹配结果可用于后续企业支付业务的开展。企业可通过此接口确认合作门店的支付能力，提前了解是否可以使用企业支付功能进行消费。
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - sp_mchid
+          - out_batch_id
+        properties:
+          sp_mchid:
+            type: string
+            description: 服务商商户号
+            example: '12341234'
+          out_batch_id:
+            type: string
+            description: 商户主体匹配批次单号
+            example: batch12345678
+          match_details:
+            type: array
+            description: 主体匹配明细列表
+            items:
+              type: object
+              required:
+                - organization_code
+                - store_name
+                - product_type
+              properties:
+                organization_code:
+                  type: string
+                  description: 门店统一社会信用代码
+                  example: 91110000710926094P
+                store_name:
+                  type: string
+                  description: 门店名称
+                  example: 微信小店
+                product_type:
+                  type: string
+                  description: 需要查询的支付产品
+                  example: CODE_PAY
+                  enum:
+                    - CODE_PAY
+                    - NONE
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - sp_mchid
+          - out_batch_id
+          - batch_id
+          - time
+          - state
+        properties:
+          sp_mchid:
+            type: string
+            description: 服务商商户号
+            example: '12341234'
+          out_batch_id:
+            type: string
+            description: 商户主体匹配批次单号
+            example: batch12345678
+          batch_id:
+            type: string
+            description: 微信支付主体匹配批次单号
+            example: 1030000071201xxxxx
+          time:
+            type: string
+            format: rfc3339
+            description: 批次创建时间
+            example: '2023-06-08T10:34:56+08:00'
+          state:
+            type: string
+            description: 批次状态
+            example: ACCEPTED
+            enum:
+              - ACCEPTED
+              - IN_PROGRESS
+              - COMPLETED
+              - CLOSED

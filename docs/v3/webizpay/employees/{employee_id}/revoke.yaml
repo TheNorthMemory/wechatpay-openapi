@@ -1,0 +1,72 @@
+post:
+  x-last-updated-at: 2025.05.16
+  x-role:
+    - 服务商
+  tags:
+    - 企业支付
+  summary: 企业商户发起解除员工企业支付授权
+  description: 企业商户发起解除员工企业支付授权。该接口允许服务商解除指定出资子商户下特定员工的企业支付授权关系，解除授权后员工将无法继续使用企业支付功能，已发放的额度卡将自动失效。企业可通过此接口管理离职员工或需要取消授权的员工。
+  parameters:
+    - name: employee_id
+      in: path
+      required: true
+      type: string
+      description: 微信授权关系ID
+      example: WeBizPay_a968402a-73bb-43e2-9e1a-8371b0ca3d7c
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - sp_mchid
+          - sub_mchid
+        properties:
+          sp_mchid:
+            type: string
+            description: 服务商商户号
+            example: '12341234'
+          sub_mchid:
+            type: string
+            description: 出资子商户号
+            example: '43214321'
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - sp_mchid
+          - sub_mchid
+          - user_id
+          - authorization_state
+          - authorization_revoked_time
+          - reason
+        properties:
+          sp_mchid:
+            type: string
+            description: 服务商商户号
+            example: '12341234'
+          sub_mchid:
+            type: string
+            description: 出资子商户号
+            example: '43214321'
+          user_id:
+            type: string
+            description: 商户企业员工ID
+            example: employee123
+          authorization_state:
+            type: string
+            description: 员工企业支付权限状态
+            example: REVOKED
+            enum:
+              - REVOKED
+              - AUTHORIZED
+          authorization_revoked_time:
+            type: string
+            format: rfc3339
+            description: 员工企业支付失效时间
+            example: '2023-12-31T23:59:59+08:00'
+          reason:
+            type: string
+            description: 作废原因
+            example: 用户主动撤销

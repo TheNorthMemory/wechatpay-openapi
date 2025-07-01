@@ -1,0 +1,86 @@
+post:
+  x-last-updated-at: 2025.05.09
+  x-role:
+    - 服务商
+  tags:
+    - 企业支付
+  summary: 企业商户发起员工开通企业支付授权
+  description: 企业商户发起员工开通企业支付授权。该接口允许服务商为指定出资子商户下的员工发起企业支付授权申请，系统将生成一个授权链接，员工可通过该链接完成授权操作。授权成功后，企业可为该员工下发企业支付额度卡，员工可使用额度卡进行支付。
+  parameters:
+    - name: user_id
+      in: path
+      required: true
+      type: string
+      description: 企业员工ID
+      example: '123456'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - sp_mchid
+          - sub_mchid
+          - application_type
+        properties:
+          sp_mchid:
+            type: string
+            description: 服务商商户号
+            example: '12341234'
+          sub_mchid:
+            type: string
+            description: 出资子商户号
+            example: '43214321'
+          application_type:
+            type: string
+            description: 发起授权应用类型
+            example: H5
+            enum:
+              - H5
+              - MINIPROGRAM
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - sp_mchid
+          - sub_mchid
+          - user_id
+          - application_type
+        properties:
+          sp_mchid:
+            type: string
+            description: 服务商商户号
+            example: '12341234'
+          sub_mchid:
+            type: string
+            description: 出资子商户号
+            example: '43214321'
+          user_id:
+            type: string
+            description: 企业员工ID
+            example: '123456'
+          authorization_url:
+            type: string
+            description: 跳转链接
+            example: 'weixin://dl/liteapp?url=https%3A%2F%2Fliteapp.wxpapp.weixin.qq.com%2Fq%2FgjoM7g%3Ftoken%3D123%23wechat_pay'
+          expire_time:
+            type: string
+            format: rfc3339
+            description: 链接失效时间
+            example: '2023-06-08T10:34:56+08:00'
+          application_type:
+            type: string
+            description: 发起授权应用类型
+            example: H5
+            enum:
+              - H5
+              - MINIPROGRAM
+          mp_query:
+            type: string
+            description: 小程序查询参数
+            example: token=123
+          mp_business_type:
+            type: string
+            description: 小程序业务类型
+            example: liteAppWebizPayRegister

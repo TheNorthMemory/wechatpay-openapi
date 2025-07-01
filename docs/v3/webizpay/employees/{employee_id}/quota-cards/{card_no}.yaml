@@ -1,0 +1,142 @@
+get:
+  x-last-updated-at: 2025.05.09
+  x-role:
+    - 服务商
+  tags:
+    - 企业支付
+  summary: 企业商户查询企业支付额度卡
+  description: 企业商户查询企业支付额度卡。该接口允许服务商查询指定员工的企业支付额度卡详情，包括卡片金额、可用金额、有效期、使用记录等信息。企业可通过此接口了解额度卡的使用情况，进行费用追踪和报销管理。
+  parameters:
+    - name: employee_id
+      in: path
+      required: true
+      type: string
+      description: 微信授权关系ID
+      example: WeBizPay_a968402a-73bb-43e2-9e1a-8371b0ca3d7c
+    - name: card_no
+      in: path
+      required: true
+      type: string
+      description: 企业支付额度卡卡号
+      example: '1068019671702503425'
+    - name: sp_mchid
+      in: query
+      required: true
+      type: string
+      description: 服务商商户号
+      example: '12341234'
+    - name: sub_mchid
+      in: query
+      required: true
+      type: string
+      description: 出资子商户号
+      example: '43214321'
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - sp_mchid
+          - sub_mchid
+          - card_no
+          - out_card_no
+          - employee_id
+          - card_template_id
+          - card_rule
+          - refund_rule
+          - amount
+          - remain_amount
+          - effective_end_time
+          - effective_begin_time
+          - card_state
+          - card_name
+        properties:
+          sp_mchid:
+            type: string
+            description: 服务商商户号
+            example: '12341234'
+          sub_mchid:
+            type: string
+            description: 出资子商户号
+            example: '43214321'
+          card_no:
+            type: string
+            description: 企业支付额度卡卡号
+            example: '1068019671702503425'
+          out_card_no:
+            type: string
+            description: 商户卡号
+            example: mch_card_123456
+          employee_id:
+            type: string
+            description: 微信授权关系ID
+            example: WeBizPay_a968402a-73bb-43e2-9e1a-8371b0ca3d7c
+          card_template_id:
+            type: string
+            description: 企业支付卡模板ID
+            example: template_123
+          card_rule:
+            type: string
+            description: 使用规则
+            example: SINGLE
+            enum:
+              - SINGLE
+              - MULTIPLE
+          refund_rule:
+            type: string
+            description: 退款规则
+            example: RETURN
+            enum:
+              - RETURN
+              - NOT_RETURN
+          amount:
+            type: number
+            description: 卡片总金额
+            example: 10000
+          remain_amount:
+            type: number
+            description: 卡片可用金额
+            example: 8000
+          effective_end_time:
+            type: string
+            format: rfc3339
+            description: 卡片有效期
+            example: '2023-12-31T23:59:59+08:00'
+          effective_begin_time:
+            type: string
+            format: rfc3339
+            description: 卡片生效时间
+            example: '2023-01-01T23:59:59+08:00'
+          card_state:
+            type: string
+            description: 卡片状态
+            example: ACTIVE
+            enum:
+              - ACTIVE
+              - DISABLED
+          card_name:
+            type: string
+            description: 卡片名称
+            example: 报销额度卡
+          reason:
+            type: string
+            description: 失效原因
+            example: 有效期结束
+          card_usage_time:
+            type: string
+            format: rfc3339
+            description: 卡片使用时间
+            example: '2023-12-31T23:59:59+08:00'
+          transaction_id:
+            type: string
+            description: 卡片关联微信支付订单号
+            example: '4200000123202306081234567890'
+          card_disabled_time:
+            type: string
+            format: rfc3339
+            description: 卡片失效时间
+            example: '2023-12-31T23:59:59+08:00'
+          card_remark:
+            type: string
+            description: 卡片备注
+            example: 2023年1月差旅报销

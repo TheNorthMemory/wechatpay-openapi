@@ -1,0 +1,123 @@
+post:
+  x-last-updated-at: 2025.06.11
+  x-role:
+    - 电商平台
+  tags:
+    - 收付通∙个人收款
+  summary: 个人收款-申请异常结算批次单处理
+  description: 申请异常结算批次单处理
+  parameters:
+    - name: settle_batch_no
+      in: path
+      required: true
+      type: string
+      description: 微信支付结算批次单号
+      example: '123685544886666'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - individual_auth_id
+          - out_abnormal_settle_batch_no
+          - abnormal_settle_type
+        properties:
+          individual_auth_id:
+            type: string
+            description: 商品单个人收款方受理授权ID
+            example: '256322110225'
+          out_abnormal_settle_batch_no:
+            type: string
+            description: 商户异常结算批次单号
+            example: '1236698745558870'
+          abnormal_settle_type:
+            type: string
+            description: 异常结算批次单处理方式
+            example: TRANSFER_TO_ORIGINAL_RECEIVE_USER
+            enum:
+              - TRANSFER_TO_ORIGINAL_RECEIVE_USER
+          description:
+            type: string
+            description: 异常处理说明
+            example: xx结算失败，转付至原用户
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - out_settle_batch_no
+          - settle_batch_no
+          - individual_auth_id
+          - description
+          - state
+          - trade_scenario
+          - create_time
+        properties:
+          out_settle_batch_no:
+            type: string
+            description: 商户结算批次单号
+          settle_batch_no:
+            type: string
+            description: 微信支付结算批次单号
+          individual_auth_id:
+            type: string
+            description: 商品单个人收款方受理授权ID
+          description:
+            type: string
+            description: 收款方描述
+          state:
+            type: string
+            description: 批次状态
+            enum:
+              - ACCEPTED #结算已受理
+              - RECEIVED #用户入账成功
+              - SUCCESS #结算完成
+              - DEDUCT_FEE_FAIL #用户入账成功扣费失败
+              - ABNORMAL #结算异常
+              - ABNORMAL_SETTLE_SUCCESS #异常结算处理申请成功
+          trade_scenario:
+            type: string
+            description: 交易场景
+            enum:
+              - RECOMMERCE
+          create_time:
+            type: string
+            format: rfc3339
+            description: 批次创建时间
+          finish_time:
+            type: string
+            format: rfc3339
+            description: 批次完成时间
+          abnormal_type:
+            type: string
+            description: 异常原因类型
+            enum:
+              - AUTH_RELATIONSHIP_INVALID
+              - USER_PAY_QUOTA_LIMIT
+          abnormal_settle_result:
+            type: object
+            description: 异常结算处理结果
+            required:
+              - abnormal_settle_type
+              - apply_success_time
+              - abnormal_fund_receipt_id
+              - out_abnormal_settle_batch_no
+            properties:
+              abnormal_settle_type:
+                type: string
+                description: 异常结算批次单处理方式
+                enum:
+                  - TRANSFER_TO_ORIGINAL_RECEIVE_USER
+              apply_success_time:
+                type: string
+                format: rfc3339
+                description: 批次创建时间
+              abnormal_fund_receipt_id:
+                type: string
+                description: 微信支付异常资金付款单号
+                example: '2123685544886666'
+              out_abnormal_settle_batch_no:
+                type: string
+                description: 商户异常结算批次单号
+                example: '1236698745558870'

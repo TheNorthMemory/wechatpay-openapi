@@ -1,0 +1,71 @@
+post:
+  x-last-updated-at: 2025.05.09
+  x-role:
+    - 服务商
+  tags:
+    - 企业支付
+  summary: 申请企业商户企业支付业务账单
+  description: 申请企业商户企业支付业务账单。该接口允许服务商为指定出资子商户申请特定日期的企业支付业务账单，仅支持申请三个月内的账单数据。业务账单包含交易明细，可用于企业对账和财务分析。
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - sp_mchid
+          - sub_mchid
+          - date
+          - type
+        properties:
+          sp_mchid:
+            type: string
+            description: 服务商商户号
+            example: '12341234'
+          sub_mchid:
+            type: string
+            description: 出资子商户号
+            example: '43214321'
+          date:
+            type: string
+            description: 账单日期
+            example: '2025-04-23'
+          type:
+            type: string
+            description: 账单类型
+            example: QYZFALL
+            enum:
+              - QYZFALL
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - sp_mchid
+          - sub_mchid
+          - date
+          - type
+          - download_url
+        properties:
+          sp_mchid:
+            type: string
+            description: 服务商商户号
+            example: '12341234'
+          sub_mchid:
+            type: string
+            description: 出资子商户号
+            example: '43214321'
+          date:
+            type: string
+            description: 账单日期
+            example: '2025-04-23'
+          type:
+            type: string
+            description: 账单类型
+            example: QYZFALL
+            enum:
+              - QYZFALL
+          download_url:
+            type: string
+            description: 账单下载地址
+            example: 'https://api.mch.weixin.qq.com/v3/billdownload/file?token=xxx'

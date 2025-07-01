@@ -1,0 +1,80 @@
+get:
+  x-last-updated-at: 2025.05.09
+  x-role:
+    - 服务商
+  tags:
+    - 企业支付
+  summary: 企业商户查询企业员工开通授权状态
+  description: 企业商户查询企业员工开通授权状态。该接口允许服务商查询指定出资子商户下特定员工的企业支付授权状态，包括授权状态、授权时间和解除授权时间等信息。服务商可通过此接口确认员工是否已开通企业支付功能，是后续发放额度卡的前提条件。
+  parameters:
+    - name: user_id
+      in: path
+      required: true
+      type: string
+      description: 企业员工ID
+      example: '123456'
+    - name: sp_mchid
+      in: query
+      required: true
+      type: string
+      description: 服务商商户号
+      example: '12341234'
+    - name: sub_mchid
+      in: query
+      required: true
+      type: string
+      description: 出资子商户号
+      example: '43214321'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - sp_mchid
+          - sub_mchid
+          - user_id
+        properties:
+          sp_mchid:
+            type: string
+            description: 服务商商户号
+            example: '12341234'
+          sub_mchid:
+            type: string
+            description: 出资子商户号
+            example: '43214321'
+          user_id:
+            type: string
+            description: 企业员工ID
+            example: '123456'
+          employee_list:
+            type: array
+            description: 微信授权关系列表
+            items:
+              type: object
+              required:
+                - employee_id
+                - authorization_state
+                - authorization_time
+                - authorization_revoked_time
+              properties:
+                employee_id:
+                  type: string
+                  description: 微信授权关系ID
+                  example: WeBizPay_a968402a-73bb-43e2-9e1a-8371b0ca3d7c
+                authorization_state:
+                  type: string
+                  description: 授权状态
+                  example: AUTHORIZED
+                  enum:
+                    - AUTHORIZED
+                    - REVOKED
+                authorization_time:
+                  type: string
+                  format: rfc3339
+                  description: 授权时间
+                  example: '2023-06-08T10:34:56+08:00'
+                authorization_revoked_time:
+                  type: string
+                  format: rfc3339
+                  description: 解除授权时间
+                  example: '2023-06-08T10:34:56+08:00'

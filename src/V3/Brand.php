@@ -4,6 +4,7 @@ namespace WeChatPay\OpenAPI\V3;
 
 /**
  * @property-read Brand\Profitsharing $profitsharing
+ * @property-read Brand\Partner $partner
  */
 interface Brand
 {

@@ -6,6 +6,7 @@ namespace WeChatPay\OpenAPI\V3\Marketing;
  * @property-read Busifavor\Users $users
  * @property-read Busifavor\Subsidy $subsidy
  * @property-read Busifavor\Stocks $stocks
+ * @property-read Busifavor\ProductCoupons $productCoupons
  * @property-read Busifavor\Coupons $coupons
  * @property-read Busifavor\Callbacks $callbacks
  */

@@ -6,6 +6,7 @@ use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Promise\PromiseInterface;
 
 /**
+ * @property-read _out_authorization_no_\Close $close
  */
 interface _out_authorization_no_
 {

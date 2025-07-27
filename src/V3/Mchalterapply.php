@@ -4,6 +4,7 @@ namespace WeChatPay\OpenAPI\V3;
 
 /**
  * @property-read Mchalterapply\Mchsubjectalterapplyment $mchsubjectalterapplyment
+ * @property-read Mchalterapply\Mchcontactalterapplyment $mchcontactalterapplyment
  */
 interface Mchalterapply
 {

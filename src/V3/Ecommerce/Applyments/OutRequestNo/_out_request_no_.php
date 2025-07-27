@@ -6,6 +6,7 @@ use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Promise\PromiseInterface;
 
 /**
+ * @property-read _out_request_no_\Revoke $revoke
  */
 interface _out_request_no_
 {

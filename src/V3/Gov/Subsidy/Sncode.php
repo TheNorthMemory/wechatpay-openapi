@@ -1,0 +1,12 @@
+<?php declare(strict_types=1);/* Generated file. DO NOT EDIT! */
+
+namespace WeChatPay\OpenAPI\V3\Gov\Subsidy;
+
+/**
+ * @property-read Sncode\Lock $lock
+ * @property-read Sncode\Query $query
+ * @property-read Sncode\Unlock $unlock
+ */
+interface Sncode
+{
+}

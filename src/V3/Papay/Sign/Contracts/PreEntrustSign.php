@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);/* Generated file. DO NOT EDIT! */
 
-namespace WeChatPay\OpenAPI\V3\Papay\EntrustSign\Contracts;
+namespace WeChatPay\OpenAPI\V3\Papay\Sign\Contracts;
 
 use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Promise\PromiseInterface;
@@ -12,7 +12,7 @@ interface PreEntrustSign
     /**
      * 代扣预签约(同步模式)
      * @param array<string,mixed> $options
-     * @link https://wechatpay.im/openapi/v3/papay/entrust-sign/contracts/pre-entrust-sign
+     * @link https://wechatpay.im/openapi/v3/papay/sign/contracts/pre-entrust-sign
      */
     public function post(array $options = [
         'json' => [
@@ -41,7 +41,7 @@ interface PreEntrustSign
     /**
      * 代扣预签约(异步模式)
      * @param array<string,mixed> $options
-     * @link https://wechatpay.im/openapi/v3/papay/entrust-sign/contracts/pre-entrust-sign
+     * @link https://wechatpay.im/openapi/v3/papay/sign/contracts/pre-entrust-sign
      */
     public function postAsync(array $options = [
         'json' => [

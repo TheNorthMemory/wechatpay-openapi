@@ -4,6 +4,7 @@ namespace WeChatPay\OpenAPI\V3\Ecommerce;
 
 /**
  * @property-read Account\CancelApplications $cancelApplications
+ * @property-read Account\ApplyCancelWithdraw $applyCancelWithdraw
  */
 interface Account
 {

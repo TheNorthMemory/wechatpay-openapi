@@ -28,7 +28,7 @@ interface Stocks
                     'available_end_time' => '2015-05-20T13:29:35+08:00',
                     'available_day_after_receive' => 3,
                     'available_week' => [
-                        'week_day' => [1, 2],
+                        'week_day' => [1],
                         'available_day_time' => [[
                             'begin_time' => 3600,
                             'end_time' => 86399,
@@ -118,7 +118,7 @@ interface Stocks
                     'available_end_time' => '2015-05-20T13:29:35+08:00',
                     'available_day_after_receive' => 3,
                     'available_week' => [
-                        'week_day' => [1, 2],
+                        'week_day' => [1],
                         'available_day_time' => [[
                             'begin_time' => 3600,
                             'end_time' => 86399,

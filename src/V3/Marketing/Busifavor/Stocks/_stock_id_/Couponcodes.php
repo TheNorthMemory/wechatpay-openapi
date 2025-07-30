@@ -18,7 +18,7 @@ interface Couponcodes
     public function post(array $options = [
         'stock_id' => '98065001',
         'json' => [
-            'coupon_code_list' => ['string'],
+            'coupon_code_list' => ['ABC9588200'],
             'upload_request_no' => '100002322019090134234sfdf',
         ],
     ]): ResponseInterface;
@@ -31,7 +31,7 @@ interface Couponcodes
     public function postAsync(array $options = [
         'stock_id' => '98065001',
         'json' => [
-            'coupon_code_list' => ['string'],
+            'coupon_code_list' => ['ABC9588200'],
             'upload_request_no' => '100002322019090134234sfdf',
         ],
     ]): PromiseInterface;

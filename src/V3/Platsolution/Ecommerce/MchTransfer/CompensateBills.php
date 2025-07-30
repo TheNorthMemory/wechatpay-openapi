@@ -20,9 +20,10 @@ interface CompensateBills
     public function post(array $options = [
         'json' => [
             'receiver' => [
-                'type' => 'MERCHANT',
+                'type' => 'TRANSACTION_USER',
                 'transaction_info' => [
                     'transaction_id' => '1217752501201407033233368018',
+                    'type' => 'WXPAY',
                 ],
             ],
             'out_bill_no' => 'plfk2020042013',
@@ -42,9 +43,10 @@ interface CompensateBills
     public function postAsync(array $options = [
         'json' => [
             'receiver' => [
-                'type' => 'MERCHANT',
+                'type' => 'TRANSACTION_USER',
                 'transaction_info' => [
                     'transaction_id' => '1217752501201407033233368018',
+                    'type' => 'WXPAY',
                 ],
             ],
             'out_bill_no' => 'plfk2020042013',

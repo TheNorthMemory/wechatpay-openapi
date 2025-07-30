@@ -18,9 +18,10 @@ interface PreTransfer
         'json' => [
             'sp_appid' => 'wx8888888888888888',
             'receiver' => [
-                'type' => 'MERCHANT',
+                'type' => 'TRANSACTION_USER',
                 'transaction_info' => [
                     'transaction_id' => '1217752501201407033233368018',
+                    'type' => 'WXPAY',
                 ],
             ],
             'out_bill_no' => 'plfk2020042013',
@@ -42,9 +43,10 @@ interface PreTransfer
         'json' => [
             'sp_appid' => 'wx8888888888888888',
             'receiver' => [
-                'type' => 'MERCHANT',
+                'type' => 'TRANSACTION_USER',
                 'transaction_info' => [
                     'transaction_id' => '1217752501201407033233368018',
+                    'type' => 'WXPAY',
                 ],
             ],
             'out_bill_no' => 'plfk2020042013',

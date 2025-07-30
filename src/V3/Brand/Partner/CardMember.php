@@ -5,7 +5,7 @@ namespace WeChatPay\OpenAPI\V3\Brand\Partner;
 /**
  * @property-read CardMember\UserCards $userCards
  * @property-read CardMember\Cards $cards
- * @property-read CardMember\OpenUserCardTokens $openUserCardTokens
+ * @property-read CardMember\PreAuthTokens $preAuthTokens
  * @property-read CardMember\UserFeeds $userFeeds
  */
 interface CardMember

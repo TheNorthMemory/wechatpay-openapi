@@ -25,6 +25,8 @@ interface Apply
                 'currency' => 'CNY',
             ],
             'notify_url' => 'https://www.weixin.qq.com/wxpay/pay.php',
+            'available_recharge_channels' => ['BANK_TRANSFER'],
+            'remark' => 'example_remark',
         ],
     ]): ResponseInterface;
 
@@ -44,6 +46,8 @@ interface Apply
                 'currency' => 'CNY',
             ],
             'notify_url' => 'https://www.weixin.qq.com/wxpay/pay.php',
+            'available_recharge_channels' => ['BANK_TRANSFER'],
+            'remark' => 'example_remark',
         ],
     ]): PromiseInterface;
 }

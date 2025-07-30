@@ -21,6 +21,7 @@ interface PreTransfer
                 'type' => 'MERCHANT',
                 'transaction_info' => [
                     'transaction_id' => '1217752501201407033233368018',
+                    'type' => 'WXPAY',
                 ],
             ],
             'out_bill_no' => 'plfk2020042013',
@@ -42,6 +43,7 @@ interface PreTransfer
                 'type' => 'MERCHANT',
                 'transaction_info' => [
                     'transaction_id' => '1217752501201407033233368018',
+                    'type' => 'WXPAY',
                 ],
             ],
             'out_bill_no' => 'plfk2020042013',

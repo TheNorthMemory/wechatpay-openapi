@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2025.01.23
+  x-last-updated-at: 2025.07.29
   x-role:
     - 服务商
   tag:
@@ -45,6 +45,7 @@ post:
             description: 员工状态
             enum:
               - EFFECTIVE
+              - DELETED
           create_time:
             type: string
             format: rfc3339

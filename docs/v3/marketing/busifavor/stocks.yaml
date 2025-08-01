@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2021.10.24
+  x-last-updated-at: 2025.07.25
   x-role:
     - 直连商户
   tags:
@@ -42,6 +42,10 @@ post:
             type: string
             description: 批次类型
             example: NORMAL
+            enum:
+              - NORMAL
+              - DISCOUNT
+              - EXCHANGE
           coupon_use_rule:
             type: object
             description: 核销规则
@@ -75,7 +79,9 @@ post:
                       week_day:
                         type: array
                         description: 可用星期数
-                        example: 1, 2
+                        items:
+                          type: integer
+                          example: 1
                       available_day_time:
                         type: array
                         description: 当天可用时间段
@@ -157,6 +163,11 @@ post:
                 type: string
                 description: 核销方式
                 example: OFF_LINE
+                enum:
+                  - OFF_LINE
+                  - MINI_PROGRAMS
+                  - SELF_CONSUME
+                  - PAYMENT_CODE
               mini_programs_appid:
                 type: string
                 description: 小程序appid
@@ -252,6 +263,10 @@ post:
                 type: string
                 description: code展示模式
                 example: BARCODE
+                enum:
+                  - NOT_SHOW
+                  - BARCODE
+                  - QRCODE
           display_pattern_info:
             type: object
             description: 样式信息
@@ -272,6 +287,17 @@ post:
                 type: string
                 description: 背景颜色
                 example: Color020
+                enum:
+                  - Color010
+                  - Color020
+                  - Color030
+                  - Color040
+                  - Color050
+                  - Color060
+                  - Color070
+                  - Color080
+                  - Color090
+                  - Color100
               coupon_image_url:
                 type: string
                 description: 券详情图片
@@ -301,6 +327,10 @@ post:
             type: string
             description: 券code模式
             example: WECHATPAY_MODE
+            enum:
+              - WECHATPAY_MODE
+              - MERCHANT_API
+              - MERCHANT_UPLOAD
           notify_config:
             type: object
             description: 事件通知配置

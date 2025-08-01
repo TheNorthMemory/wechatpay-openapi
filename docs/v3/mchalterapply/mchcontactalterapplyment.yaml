@@ -1,0 +1,89 @@
+post:
+  x-last-updated-at: 2025.07.17
+  x-role:
+    - 电商平台
+    - 服务商
+  tags:
+    - 变更超管
+  summary: 提交超管变更申请单
+  description: 服务商使用该接口提交商家超级管理员变更申请，帮助商家修改超级管理员资料。
+  parameters:
+    - $ref: '../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - merchant_code
+          - out_request_no
+          - finance_institution
+          - legal_person_info
+        properties:
+          merchant_code:
+            type: string
+            description: 商户号
+            example: '2492185251'
+          out_request_no:
+            type: string
+            description: 业务申请编号
+            example: '1900013511_10000'
+          contact_info:
+            type: object
+            description: 超级管理员信息
+            properties:
+              contact_name:
+                type: string
+                format: base64
+                description: 超级管理员姓名
+                example: pVd1HJ6zyvPedzGaV+X3IdGdbDnuC4Eelw/wDa4SzfeespQO/0kjiwfqdfg==
+              contact_id_doc_type:
+                type: string
+                description: 超级管理员证件类型
+                example: IDENTIFICATION_TYPE_IDCARD
+                enum:
+                  - IDENTIFICATION_TYPE_IDCARD #中国大陆居民-身份证
+                  - IDENTIFICATION_TYPE_OVERSEA_PASSPORT #其他国家或地区居民-护照
+                  - IDENTIFICATION_TYPE_HONGKONG_PASSPORT #中国香港居民--来往内地通行证
+                  - IDENTIFICATION_TYPE_MACAO_PASSPORT #中国澳门居民--来往内地通行证
+                  - IDENTIFICATION_TYPE_TAIWAN_PASSPORT #中国台湾居民--来往大陆通行证
+                  - IDENTIFICATION_TYPE_FOREIGN_RESIDENT #外国人居留证
+                  - IDENTIFICATION_TYPE_HONGKONG_MACAO_RESIDENT #港澳居民证
+                  - IDENTIFICATION_TYPE_TAIWAN_RESIDENT #台湾居民证
+              contact_id_card_number:
+                type: string
+                format: base64
+                description: 超级管理员身份证件号码
+                example: pVd1HJ6zmty7/mYNxLMpRSvMRtelw/wDa4SzfeespQO/0kjiwfqdfg==
+              contact_id_doc_copy:
+                type: string
+                format: MediaId
+                description: 超级管理员证件正面照片
+              contact_id_doc_copy_back:
+                type: string
+                format: MediaId
+                description: 超级管理员证件反面照片
+              contact_period_begin:
+                type: string
+                description: 超级管理员证件有效期开始时间
+              contact_period_end:
+                type: string
+                description: 超级管理员证件有效期结束时间
+              business_authorization_letter:
+                type: string
+                format: MediaId
+                description: 业务办理授权函
+              mobile_phone:
+                type: string
+                format: base64
+                description: 超级管理员手机
+                example: pVd1HJ6zyvPedzGaV+X3qtmrq9bb9tPROvwia4ibL+F6mfjbzQIzfb3HHLEjZ4YiNWWNeespQO/0kjiwfqdfg==
+  responses:
+    '200':
+      schema:
+        type: object
+        properties:
+          apply_id:
+            type: string
+            description: 申请单号
+            example: '20220617143306000013906025001'

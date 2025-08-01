@@ -1,0 +1,120 @@
+post:
+  x-last-updated-at: 2025.04.07
+  x-role:
+    - 电商平台
+    - 服务商
+  tags:
+    - 国补专区
+    - 浙江
+  summary: sn码锁定
+  description: sn码锁定
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - create_user
+          - province
+          - sn
+          - goods_bar_code
+          - goods_type
+          - goods_name
+          - trans_orderid
+          - order_price
+          - sell_orderid
+          - req_ssn
+          - req_time
+        properties:
+          create_user:
+            type: string
+            description: 发起方
+          province:
+            type: string
+            description: 省份代码
+          manufact_cert_code:
+            type: string
+            description: 厂商统一 社会信用 代码
+          sn:
+            type: string
+            description: 商品 SN码
+          goods_bar_code:
+            type: string
+            description: 商品条码
+          goods_type:
+            type: string
+            description: 商品品类
+          goods_name:
+            type: string
+            description: 商品名称
+          goods_model:
+            type: string
+            description: 商品型号
+          imei1:
+            type: string
+            description: IMEI_1 码
+          imei2:
+            type: string
+            description: IMEI_2 码
+          trans_orderid:
+            type: string
+            description: 交易订单号
+          order_price:
+            type: string
+            description: 订单金额
+          acquire_code:
+            type: string
+            description: 收单机构
+          sell_orderid:
+            type: string
+            description: 销售订单号
+          city:
+            type: string
+            description: 市级区域代码
+          county:
+            type: string
+            description: 区县区域代码
+          is_ai_product:
+            type: string
+            description: 是否 AI 产品
+          sale_time:
+            type: string
+            description: 销售时间
+          mfr_info:
+            type: string
+            description: 厂商信息
+          brand:
+            type: string
+            description: 具体品牌
+          sale_models:
+            type: string
+            description: 渠道类型
+          req_ssn:
+            type: string
+            description: 请求流水号
+          req_time:
+            type: string
+            description: 请求时间
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - resp_code
+          - resp_desc
+        properties:
+          resp_code:
+            type: string
+            description: 响应码
+            example: '000000'
+          resp_desc:
+            type: string
+            description: 响应描述
+            example: 成功
+          imei1:
+            type: string
+            description: IMEI_1 码
+          imei2:
+            type: string
+            description: IMEI_2 码

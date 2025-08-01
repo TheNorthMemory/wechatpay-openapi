@@ -7,7 +7,7 @@ info:
     整理自官方文档中心[普通商户](https://pay.weixin.qq.com/doc/v3/merchant/4012062524) [合作伙伴](https://pay.weixin.qq.com/doc/v3/partner/4012069852) [全球](https://pay.weixin.qq.com/doc/global/v3/zh)
     本[项目/工具地址](https://github.com/TheNorthMemory/wechatpay-openapi)
     **访问第一次加载比较慢，请耐心等待大约1-2分钟不等(小文件下载比较多)。**
-  version: 1.1.7
+  version: 1.1.8
 schemes:
   - https
 consumes:
@@ -499,6 +499,28 @@ paths:
     $ref: ./v3/bill/tradebill.yaml
   /v3/billdownload/file:
     $ref: ./v3/billdownload/file.yaml
+  /v3/brand/partner/card-member/cards:
+    $ref: ./v3/brand/partner/card-member/cards.yaml
+  /v3/brand/partner/card-member/cards/{card_id}:
+    $ref: ./v3/brand/partner/card-member/cards/{card_id}.yaml
+  /v3/brand/partner/card-member/cards/{card_id}/invalidate:
+    $ref: ./v3/brand/partner/card-member/cards/{card_id}/invalidate.yaml
+  /v3/brand/partner/card-member/pre-auth-tokens:
+    $ref: ./v3/brand/partner/card-member/pre-auth-tokens.yaml
+  /v3/brand/partner/card-member/user-cards:
+    $ref: ./v3/brand/partner/card-member/user-cards.yaml
+  /v3/brand/partner/card-member/user-cards/{user_card_code}:
+    $ref: ./v3/brand/partner/card-member/user-cards/{user_card_code}.yaml
+  /v3/brand/partner/card-member/user-cards/{user_card_code}/confirm:
+    $ref: ./v3/brand/partner/card-member/user-cards/{user_card_code}/confirm.yaml
+  /v3/brand/partner/card-member/user-cards/{user_card_code}/invalidate:
+    $ref: ./v3/brand/partner/card-member/user-cards/{user_card_code}/invalidate.yaml
+  /v3/brand/partner/card-member/user-cards/import-by-openid:
+    $ref: ./v3/brand/partner/card-member/user-cards/import-by-openid.yaml
+  /v3/brand/partner/card-member/user-cards/import-by-phone:
+    $ref: ./v3/brand/partner/card-member/user-cards/import-by-phone.yaml
+  /v3/brand/partner/card-member/user-feeds:
+    $ref: ./v3/brand/partner/card-member/user-feeds.yaml
   /v3/brand/profitsharing/brand-configs/{brand_mchid}:
     $ref: ./v3/brand/profitsharing/brand-configs/{brand_mchid}.yaml
   /v3/brand/profitsharing/finish-order:
@@ -581,6 +603,8 @@ paths:
     $ref: ./v3/ebike/charge/transactions/out-trade-no/{out_trade_no}.yaml
   /v3/ebike/charge/users/{openid}/contract:
     $ref: ./v3/ebike/charge/users/{openid}/contract.yaml
+  /v3/ecommerce/account/apply-cancel-withdraw/confirm:
+    $ref: ./v3/ecommerce/account/apply-cancel-withdraw/confirm.yaml
   /v3/ecommerce/account/cancel-applications:
     $ref: ./v3/ecommerce/account/cancel-applications.yaml
   /v3/ecommerce/account/cancel-applications/media:
@@ -589,10 +613,18 @@ paths:
     $ref: ./v3/ecommerce/account/cancel-applications/out-apply-no/{out_apply_no}.yaml
   /v3/ecommerce/applyments/{applyment_id}:
     $ref: ./v3/ecommerce/applyments/{applyment_id}.yaml
+  /v3/ecommerce/applyments/{applyment_id}/revoke:
+    $ref: ./v3/ecommerce/applyments/{applyment_id}/revoke.yaml
   /v3/ecommerce/applyments/:
     $ref: ./v3/ecommerce/applyments/{empty}.yaml
   /v3/ecommerce/applyments/out-request-no/{out_request_no}:
     $ref: ./v3/ecommerce/applyments/out-request-no/{out_request_no}.yaml
+  /v3/ecommerce/applyments/out-request-no/{out_request_no}/revoke:
+    $ref: ./v3/ecommerce/applyments/out-request-no/{out_request_no}/revoke.yaml
+  /v3/ecommerce/applyments/submit-account-hosting-applyment:
+    $ref: ./v3/ecommerce/applyments/submit-account-hosting-applyment.yaml
+  /v3/ecommerce/applyments/submit-sign-verify-info:
+    $ref: ./v3/ecommerce/applyments/submit-sign-verify-info.yaml
   /v3/ecommerce/bill/fundflowbill:
     $ref: ./v3/ecommerce/bill/fundflowbill.yaml
   /v3/ecommerce/combine-papay/contracts/plan-id/{plan_id}/out-contract-code/{out_contract_code}:
@@ -723,6 +755,26 @@ paths:
     $ref: ./v3/fund-app/mch-transfer/elecsign/transfer-bill-no.yaml
   /v3/fund-app/mch-transfer/elecsign/transfer-bill-no/{transfer_bill_no}:
     $ref: ./v3/fund-app/mch-transfer/elecsign/transfer-bill-no/{transfer_bill_no}.yaml
+  /v3/fund-app/mch-transfer/partner/charity-budget:
+    $ref: ./v3/fund-app/mch-transfer/partner/charity-budget.yaml
+  /v3/fund-app/mch-transfer/partner/charity-budget/{out_budget_no}:
+    $ref: ./v3/fund-app/mch-transfer/partner/charity-budget/{out_budget_no}.yaml
+  /v3/fund-app/mch-transfer/partner/charity-budget/{out_budget_no}/unlock:
+    $ref: ./v3/fund-app/mch-transfer/partner/charity-budget/{out_budget_no}/unlock.yaml
+  /v3/fund-app/mch-transfer/partner/charity-transfer-bills:
+    $ref: ./v3/fund-app/mch-transfer/partner/charity-transfer-bills.yaml
+  /v3/fund-app/mch-transfer/partner/charity-transfer-bills/out-transfer-no/{out_transfer_no}:
+    $ref: ./v3/fund-app/mch-transfer/partner/charity-transfer-bills/out-transfer-no/{out_transfer_no}.yaml
+  /v3/fund-app/mch-transfer/partner/sub-mch-authorizations:
+    $ref: ./v3/fund-app/mch-transfer/partner/sub-mch-authorizations.yaml
+  /v3/fund-app/mch-transfer/partner/sub-mch-authorizations/{sub_mchid}:
+    $ref: ./v3/fund-app/mch-transfer/partner/sub-mch-authorizations/{sub_mchid}.yaml
+  /v3/fund-app/mch-transfer/partner/transfer-bills:
+    $ref: ./v3/fund-app/mch-transfer/partner/transfer-bills.yaml
+  /v3/fund-app/mch-transfer/partner/transfer-bills/out-bill-no/{out_bill_no}:
+    $ref: ./v3/fund-app/mch-transfer/partner/transfer-bills/out-bill-no/{out_bill_no}.yaml
+  /v3/fund-app/mch-transfer/partner/transfer-bills/out-bill-no/{out_bill_no}/cancel:
+    $ref: ./v3/fund-app/mch-transfer/partner/transfer-bills/out-bill-no/{out_bill_no}/cancel.yaml
   /v3/fund-app/mch-transfer/transfer-bills:
     $ref: ./v3/fund-app/mch-transfer/transfer-bills.yaml
   /v3/fund-app/mch-transfer/transfer-bills/out-bill-no/{out_bill_no}:
@@ -743,6 +795,8 @@ paths:
     $ref: ./v3/fund-app/mch-transfer/transfer-to-qq-wallet-bills/{out_bill_no}/cancel.yaml
   /v3/fund-app/mch-transfer/user-confirm-authorization/out-authorization-no/{out_authorization_no}:
     $ref: ./v3/fund-app/mch-transfer/user-confirm-authorization/out-authorization-no/{out_authorization_no}.yaml
+  /v3/fund-app/mch-transfer/user-confirm-authorization/out-authorization-no/{out_authorization_no}/close:
+    $ref: ./v3/fund-app/mch-transfer/user-confirm-authorization/out-authorization-no/{out_authorization_no}/close.yaml
   /v3/funds-to-oversea/bill-download-url:
     $ref: ./v3/funds-to-oversea/bill-download-url.yaml
   /v3/funds-to-oversea/orders:
@@ -871,6 +925,74 @@ paths:
     $ref: ./v3/goldplan/merchants/open-advertising-show.yaml
   /v3/goldplan/merchants/set-advertising-industry-filter:
     $ref: ./v3/goldplan/merchants/set-advertising-industry-filter.yaml
+  /v3/gov/subsidy/audit/cup/invalid:
+    $ref: ./v3/gov/subsidy/audit/cup/invalid.yaml
+  /v3/gov/subsidy/audit/cup/query:
+    $ref: ./v3/gov/subsidy/audit/cup/query.yaml
+  /v3/gov/subsidy/audit/cup/refund/sync:
+    $ref: ./v3/gov/subsidy/audit/cup/refund/sync.yaml
+  /v3/gov/subsidy/audit/cup/update:
+    $ref: ./v3/gov/subsidy/audit/cup/update.yaml
+  /v3/gov/subsidy/audit/cup/upload:
+    $ref: ./v3/gov/subsidy/audit/cup/upload.yaml
+  /v3/gov/subsidy/companies/query:
+    $ref: ./v3/gov/subsidy/companies/query.yaml
+  /v3/gov/subsidy/goods/upload:
+    $ref: ./v3/gov/subsidy/goods/upload.yaml
+  /v3/gov/subsidy/n-qualifications/sync:
+    $ref: ./v3/gov/subsidy/n-qualifications/sync.yaml
+  /v3/gov/subsidy/qualification:
+    $ref: ./v3/gov/subsidy/qualification.yaml
+  /v3/gov/subsidy/qualifications/passthrough/cancel:
+    $ref: ./v3/gov/subsidy/qualifications/passthrough/cancel.yaml
+  /v3/gov/subsidy/qualifications/passthrough/claim:
+    $ref: ./v3/gov/subsidy/qualifications/passthrough/claim.yaml
+  /v3/gov/subsidy/qualifications/passthrough/query:
+    $ref: ./v3/gov/subsidy/qualifications/passthrough/query.yaml
+  /v3/gov/subsidy/qualifications/query:
+    $ref: ./v3/gov/subsidy/qualifications/query.yaml
+  /v3/gov/subsidy/qualifications/sync:
+    $ref: ./v3/gov/subsidy/qualifications/sync.yaml
+  /v3/gov/subsidy/sncode/lock:
+    $ref: ./v3/gov/subsidy/sncode/lock.yaml
+  /v3/gov/subsidy/sncode/query:
+    $ref: ./v3/gov/subsidy/sncode/query.yaml
+  /v3/gov/subsidy/sncode/unlock:
+    $ref: ./v3/gov/subsidy/sncode/unlock.yaml
+  /v3/gov/subsidy/transactions/query:
+    $ref: ./v3/gov/subsidy/transactions/query.yaml
+  /v3/gov/subsidy/transactions/summary/query-day:
+    $ref: ./v3/gov/subsidy/transactions/summary/query-day.yaml
+  /v3/gov/subsidy/transactions/sync:
+    $ref: ./v3/gov/subsidy/transactions/sync.yaml
+  /v3/gov/subsidy/zhejiang/authcode/cancel:
+    $ref: ./v3/gov/subsidy/zhejiang/authcode/cancel.yaml
+  /v3/gov/subsidy/zhejiang/authcode/commit:
+    $ref: ./v3/gov/subsidy/zhejiang/authcode/commit.yaml
+  /v3/gov/subsidy/zhejiang/authcode/issue:
+    $ref: ./v3/gov/subsidy/zhejiang/authcode/issue.yaml
+  /v3/gov/subsidy/zhejiang/authcode/refund:
+    $ref: ./v3/gov/subsidy/zhejiang/authcode/refund.yaml
+  /v3/gov/subsidy/zhejiang/authcode/try:
+    $ref: ./v3/gov/subsidy/zhejiang/authcode/try.yaml
+  /v3/gov/subsidy/zhejiang/goods/query:
+    $ref: ./v3/gov/subsidy/zhejiang/goods/query.yaml
+  /v3/gov/subsidy/zhejiang/n-qualifications/confirm:
+    $ref: ./v3/gov/subsidy/zhejiang/n-qualifications/confirm.yaml
+  /v3/gov/subsidy/zhejiang/qualifications/alter:
+    $ref: ./v3/gov/subsidy/zhejiang/qualifications/alter.yaml
+  /v3/gov/subsidy/zhejiang/qualifications/claim:
+    $ref: ./v3/gov/subsidy/zhejiang/qualifications/claim.yaml
+  /v3/gov/subsidy/zhejiang/qualifications/query:
+    $ref: ./v3/gov/subsidy/zhejiang/qualifications/query.yaml
+  /v3/gov/subsidy/zhejiang/qualifications/sync:
+    $ref: ./v3/gov/subsidy/zhejiang/qualifications/sync.yaml
+  /v3/gov/subsidy/zhejiang/sncode/lock:
+    $ref: ./v3/gov/subsidy/zhejiang/sncode/lock.yaml
+  /v3/gov/subsidy/zhejiang/sncode/query:
+    $ref: ./v3/gov/subsidy/zhejiang/sncode/query.yaml
+  /v3/gov/subsidy/zhejiang/sncode/unlock:
+    $ref: ./v3/gov/subsidy/zhejiang/sncode/unlock.yaml
   /v3/hire-power-bank/insurance-orders:
     $ref: ./v3/hire-power-bank/insurance-orders.yaml
   /v3/hire-power-bank/insurance-orders/{out_order_no}:
@@ -909,6 +1031,8 @@ paths:
     $ref: ./v3/marketing/busifavor/coupons/send.yaml
   /v3/marketing/busifavor/coupons/use:
     $ref: ./v3/marketing/busifavor/coupons/use.yaml
+  /v3/marketing/busifavor/product-coupons/send:
+    $ref: ./v3/marketing/busifavor/product-coupons/send.yaml
   /v3/marketing/busifavor/stocks:
     $ref: ./v3/marketing/busifavor/stocks.yaml
   /v3/marketing/busifavor/stocks/{stock_id}:
@@ -1069,8 +1193,22 @@ paths:
     $ref: ./v3/mch_operate/risk/withdrawl-apply/applyment-id/{applyment_id}.yaml
   /v3/mch_operate/risk/withdrawl-apply/out-request-no/{out_request_no}:
     $ref: ./v3/mch_operate/risk/withdrawl-apply/out-request-no/{out_request_no}.yaml
+  /v3/mch-operation-manage/enhanced-due-diligence/{due_diligence_id}:
+    $ref: ./v3/mch-operation-manage/enhanced-due-diligence/{due_diligence_id}.yaml
+  /v3/mch-operation-manage/enhanced-due-diligence/{due_diligence_id}/submit:
+    $ref: ./v3/mch-operation-manage/enhanced-due-diligence/{due_diligence_id}/submit.yaml
+  /v3/mch-operation-manage/enhanced-due-diligence/{due_diligence_id}/upload:
+    $ref: ./v3/mch-operation-manage/enhanced-due-diligence/{due_diligence_id}/upload.yaml
   /v3/mch-operation-manage/merchant-limitations/sub-mchid/{sub_mchid}:
     $ref: ./v3/mch-operation-manage/merchant-limitations/sub-mchid/{sub_mchid}.yaml
+  /v3/mchalterapply/mchcontactalterapplyment:
+    $ref: ./v3/mchalterapply/mchcontactalterapplyment.yaml
+  /v3/mchalterapply/mchcontactalterapplyment/{apply_id}:
+    $ref: ./v3/mchalterapply/mchcontactalterapplyment/{apply_id}.yaml
+  /v3/mchalterapply/mchcontactalterapplyment/{apply_id}/revoke:
+    $ref: ./v3/mchalterapply/mchcontactalterapplyment/{apply_id}/revoke.yaml
+  /v3/mchalterapply/mchcontactalterapplyment/merchant/{merchant_code}/out-request-no/{out_request_no}:
+    $ref: ./v3/mchalterapply/mchcontactalterapplyment/merchant/{merchant_code}/out-request-no/{out_request_no}.yaml
   /v3/mchalterapply/mchsubjectalterapplyment:
     $ref: ./v3/mchalterapply/mchsubjectalterapplyment.yaml
   /v3/mchalterapply/mchsubjectalterapplyment/{apply_id}:
@@ -1215,8 +1353,6 @@ paths:
     $ref: ./v3/papay/contracts/{contract_id}/fail-notify.yaml
   /v3/papay/contracts/{contract_id}/notify:
     $ref: ./v3/papay/contracts/{contract_id}/notify.yaml
-  /v3/papay/entrust-sign/contracts/pre-entrust-sign:
-    $ref: ./v3/papay/entrust-sign/contracts/pre-entrust-sign.yaml
   /v3/papay/insurance-pay/policy-periods/contract-id/{contract_id}/policy-period-id/{policy_period_id}:
     $ref: ./v3/papay/insurance-pay/policy-periods/contract-id/{contract_id}/policy-period-id/{policy_period_id}.yaml
   /v3/papay/insurance-pay/policy-periods/contract-id/{contract_id}/policy-period-id/{policy_period_id}/schedule:
@@ -1277,6 +1413,8 @@ paths:
     $ref: ./v3/papay/sign/contracts/plan-id/{plan_id}/out-contract-code/{out_contract_code}.yaml
   /v3/papay/sign/contracts/plan-id/{plan_id}/out-contract-code/{out_contract_code}/terminate:
     $ref: ./v3/papay/sign/contracts/plan-id/{plan_id}/out-contract-code/{out_contract_code}/terminate.yaml
+  /v3/papay/sign/contracts/pre-entrust-sign:
+    $ref: ./v3/papay/sign/contracts/pre-entrust-sign.yaml
   /v3/papay/sign/partner/contracts/plan-id/{plan_id}/out-contract-code/{out_contract_code}:
     $ref: ./v3/papay/sign/partner/contracts/plan-id/{plan_id}/out-contract-code/{out_contract_code}.yaml
   /v3/papay/sign/partner/contracts/plan-id/{plan_id}/out-contract-code/{out_contract_code}/terminate:
@@ -1697,6 +1835,12 @@ paths:
     $ref: ./v3/refund/domestic/refunds/{out_refund_no}.yaml
   /v3/refund/domestic/refunds/{refund_id}/apply-abnormal-refund:
     $ref: ./v3/refund/domestic/refunds/{refund_id}/apply-abnormal-refund.yaml
+  /v3/repayment/combine-transactions/partner/out-trade-no/{combine_out_trade_no}:
+    $ref: ./v3/repayment/combine-transactions/partner/out-trade-no/{combine_out_trade_no}.yaml
+  /v3/repayment/combine-transactions/partner/out-trade-no/{combine_out_trade_no}/close:
+    $ref: ./v3/repayment/combine-transactions/partner/out-trade-no/{combine_out_trade_no}/close.yaml
+  /v3/repayment/combine-transactions/partner/prepay:
+    $ref: ./v3/repayment/combine-transactions/partner/prepay.yaml
   /v3/smartguide/guides:
     $ref: ./v3/smartguide/guides.yaml
   /v3/smartguide/guides/{guide_id}:

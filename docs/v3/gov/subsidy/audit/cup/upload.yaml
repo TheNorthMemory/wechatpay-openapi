@@ -1,0 +1,275 @@
+post:
+  x-last-updated-at: 2025.06.24
+  x-role:
+    - 电商平台
+    - 服务商
+  tags:
+    - 国补专区
+    - 上海/福建/重庆
+  summary: 上传审核数据
+  description: 上传审核数据
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - org_no
+          - sub_mchnt_cd
+          - sub_mchnt_nm
+          - online_no
+          - mchnt_order_id
+          - upload_time
+          - notify_url
+          - prod_id
+          - brand_nm
+          - prod_model
+          - plat_form
+          - payer_tp
+          - sales_at
+          - actual_at
+          - trans_tm
+          - mchnt_cd
+          - discount_at
+          - sn_code
+          - invoice_info
+          - track_info
+        properties:
+          org_no:
+            type: string
+            description: 分公司机构代码
+          sub_mchnt_cd:
+            type: string
+            description: 店铺编码
+          sub_mchnt_nm:
+            type: string
+            description: 店铺名称
+          store_nm:
+            type: string
+            description: 门店名称
+          online_no:
+            type: string
+            description: 线上平台订单号
+          mchnt_order_id:
+            type: string
+            description: 商户订单号
+          upload_time:
+            type: string
+            description: 审核记录上传时间
+          notify_url:
+            type: string
+            description: 审核结果通知地址
+          prod_id:
+            type: string
+            description: 品类
+          eng_grade:
+            type: string
+            description: 能效
+          brand_nm:
+            type: string
+            description: 品牌
+          prod_model:
+            type: string
+            description: 型号
+          sales_chnl:
+            type: string
+            description: 销售方式（线上或线下）
+          plat_form:
+            type: string
+            description: 电商平台方
+          payer_tp:
+            type: string
+            description: 支付方式类型
+          trade_in_order_id:
+            type: string
+            description: 收旧订单号
+          trade_in_at:
+            type: string
+            description: 收旧价格
+          is_trade_in:
+            type: string
+            description: 收旧价格是否统计
+          sales_at:
+            type: string
+            description: 订单金额
+          actual_at:
+            type: string
+            description: 实付金额
+          trans_tm:
+            type: string
+            description: 交易时间
+          mchnt_cd:
+            type: string
+            description: 商户编码
+          mer_sub_at:
+            type: string
+            description: 商家优惠金额
+          discount_at:
+            type: string
+            description: 国补优惠金额
+          image01:
+            type: string
+            description: 其他图片1
+          image02:
+            type: string
+            description: 其他图片2
+          image03:
+            type: string
+            description: 其他图片3
+          image04:
+            type: string
+            description: 其他图片4
+          image05:
+            type: string
+            description: 其他图片5
+          image06:
+            type: string
+            description: 其他图片6
+          image07:
+            type: string
+            description: 其他图片7
+          image08:
+            type: string
+            description: 其他图片8
+          image09:
+            type: string
+            description: 其他图片9
+          image10:
+            type: string
+            description: 其他图片10
+          commitment_letter_photo:
+            type: string
+            description: 收旧承诺函照片
+          commitment_letter_photo_format:
+            type: string
+            description: 收旧承诺函照片格式
+          device_photo:
+            type: string
+            description: 收旧设备外观照片
+          device_photo_format:
+            type: string
+            description: 收旧设备外观照片格式
+          pack_and_active_photo:
+            type: string
+            description: 包含完整外包装及sn码的激活照片
+          bar_code:
+            type: string
+            description: 商品条码
+          sn_code:
+            type: string
+            description: SN码
+          imei1:
+            type: string
+            description: IMEI1
+          imei2:
+            type: string
+            description: IMEI2
+          register_model:
+            type: string
+            description: 能效或水效网备案登记型号
+          record_number:
+            type: string
+            description: 能效或水效备案号
+          eng_grade_standard:
+            type: string
+            description: 能效或水效执行的国家标准名称
+          invoice_info:
+            type: object
+            description: 发票信息
+            properties:
+              invoice_cd:
+                type: string
+                description: 发票代码
+              invoice_no:
+                type: string
+                description: 发票号码
+              invoice_dt:
+                type: string
+                description: 开票日期
+              invoice_link:
+                type: string
+                description: 发票链接
+              invoice_tp:
+                type: string
+                description: 发票类型
+              invoice_ck_cd:
+                type: string
+                description: 发票校验码
+              nm:
+                type: string
+                description: 发票上购买人姓名
+              tax:
+                type: string
+                description: 税价合计
+              invoice_tax_amt:
+                type: string
+                description: 发票税额
+              sales_ent_nm:
+                type: string
+                description: 销售企业名称
+              tax_payer:
+                type: string
+                description: 销售方纳税人识别号
+              num:
+                type: string
+                description: 数量
+              service_nm:
+                type: string
+                description: 货物或应税劳务服务名称（含型号）
+          track_info:
+            type: object
+            description: 物流信息
+            properties:
+              tracking_no:
+                type: string
+                description: 物流单号
+              tracking_company:
+                type: string
+                description: 物流公司
+              usr_prov:
+                type: string
+                description: 收货省
+              usr_city:
+                type: string
+                description: 收货市
+              usr_area:
+                type: string
+                description: 收货区县
+              usr_addr:
+                type: string
+                description: 收货地址
+              tracking_type:
+                type: string
+                description: 物流类型
+              delivery_method:
+                type: string
+                description: 提货方式
+              shipping_addr:
+                type: string
+                description: 发货地址
+              delivery_time:
+                type: string
+                description: 签收时间
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - code
+          - msg
+        properties:
+          code:
+            type: string
+            description: 响应码
+            example: '000000'
+          msg:
+            type: string
+            description: 响应描述
+            example: 成功
+          sub_code:
+            type: string
+            description: 详细应答码
+          sub_msg:
+            type: string
+            description: 详细应答码描述

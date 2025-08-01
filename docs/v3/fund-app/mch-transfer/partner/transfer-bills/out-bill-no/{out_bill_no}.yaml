@@ -1,0 +1,99 @@
+get:
+  x-last-updated-at: 2025.07.29
+  x-role:
+    - 服务商
+  tags:
+    - 资金应用∙转账∙用户确认模式
+  summary: 商户单号查询转账单
+  description: 商家转账用户确认模式下，根据商户单号查询转账单的详细信息
+  parameters:
+    - name: out_bill_no
+      in: path
+      required: true
+      type: string
+      description: 商户单号
+      example: plfk2020042013
+    - name: sub_mchid
+      in: query
+      required: true
+      type: string
+      description: 二级商户号
+      example: '1900001121'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - sub_mchid
+          - mchid
+          - out_bill_no
+          - transfer_bill_no
+          - appid
+          - state
+          - transfer_amount
+          - transfer_remark
+          - create_time
+          - update_time
+        properties:
+          sub_mchid:
+            type: string
+            description: 二级商户号
+            example: '1900001121'
+          mchid:
+            type: string
+            description: 商户号
+            example: '1900001109'
+          out_bill_no:
+            type: string
+            description: 商户单号
+            example: plfk2020042013
+          transfer_bill_no:
+            type: string
+            description: 商家转账订单号
+            example: '1330000071100999991182020050700019480001'
+          appid:
+            type: string
+            description: 商户AppID
+            example: wxf636efh567hg4356
+          state:
+            type: string
+            description: 单据状态
+            example: ACCEPTED
+            enum:
+              - ACCEPTED #转账已受理
+              - PROCESSING #转账处理中，转账结果尚未明确，如一直处于此状态，建议检查账户余额是否足够
+              - WAIT_USER_CONFIRM #待收款用户确认，可拉起微信收款确认页面进行收款确认
+              - TRANSFERING #转账结果尚未明确，可拉起微信收款确认页面再次重试确认收款
+              - SUCCESS #转账成功
+              - FAIL #转账失败
+              - CANCELING #商户撤销请求受理成功，该笔转账正在撤销中
+              - CANCELLED #转账撤销完成
+          transfer_amount:
+            type: number
+            description: 转账金额
+            example: 400000
+          transfer_remark:
+            type: string
+            description: 转账备注
+            example: 2020年4月报销
+          fail_reason:
+            type: string
+            description: 失败原因
+            example: PAYEE_ACCOUNT_ABNORMAL
+          openid:
+            type: string
+            description: 收款用户OpenID
+            example: o-MYE42l80oelYMDE34nYD456Xoy
+          user_name:
+            type: string
+            format: base64
+            description: 收款用户姓名
+            example: 757b340b45ebef5467rter35gf464344v3542sdf4t6re4tb4f54ty45t4yyry45
+          create_time:
+            type: string
+            description: 单据创建时间
+            example: '2015-05-20T13:29:35.120+08:00'
+          update_time:
+            type: string
+            description: 最后一次状态变更时间
+            example: '2015-05-20T13:29:35.120+08:00'

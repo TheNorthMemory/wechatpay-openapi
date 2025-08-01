@@ -1,0 +1,32 @@
+post:
+  x-last-updated-at: 2025.07.22
+  x-role:
+    - 电商平台
+    - 服务商
+  tags:
+    - 收付通∙进件
+  summary: 撤销申请单-使用业务申请编号
+  description: 平台服务商提交申请单后需要进行撤销操作时，可调用该撤销申请单接口，仅当申请单状态为资料校验中、待账户验证、审核中、已驳回、待签约、已冻结时才允许撤销。
+  parameters:
+    - name: out_request_no
+      in: path
+      required: true
+      type: string
+      description: 业务申请编号
+      example: APPLYMENT_00000000001
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - applyment_id
+          - out_request_no
+        properties:
+          applyment_id:
+            type: integer
+            description: 微信支付申请单号
+            example: 2000002124775691
+          out_request_no:
+            type: string
+            description: 业务申请编号
+            example: APPLYMENT_00000000001

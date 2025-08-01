@@ -1,0 +1,79 @@
+post:
+  x-last-updated-at: 2025.04.07
+  x-role:
+    - 电商平台
+    - 服务商
+  tags:
+    - 国补专区
+    - 浙江
+  summary: 查询补贴资格
+  description: 查询补贴资格
+  parameters:
+    - $ref: '../../../../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - cert_no
+          - req_ssn
+        properties:
+          cert_no:
+            type: string
+            format: base64
+            description: 证件号码
+            example: 1axtI9EZUr0343c89xQznxau+cRWPKP4YhVAoj/mEoNSgJh0nvuqQJ1cdL==
+          cate_code:
+            type: string
+            description: 品类编码
+            example: A01
+          req_ssn:
+            type: string
+            description: 请求流水号
+            example: '123'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - resp_code
+          - resp_desc
+        properties:
+          resp_code:
+            type: string
+            description: 响应码
+            example: '000000'
+          resp_desc:
+            type: string
+            description: 响应描述
+            example: 操作成功
+          data:
+            type: array
+            description: 资格信息
+            items:
+              type: object
+              required:
+                - cate_code
+                - state
+              properties:
+                cate_code:
+                  type: string
+                  description: 品类编码
+                  example: A01
+                status:
+                  type: string
+                  description: 状态信息
+                  example: 尚未领取资格
+                status_code:
+                  type: string
+                  description: 状态编码
+                  example: '00'
+                  enum:
+                    - '00'
+                    - '01'
+                    - '02'
+                    - '03'
+                    - '04'
+                    - '05'
+                    - '06'

@@ -1,0 +1,174 @@
+post:
+  x-last-updated-at: 2025.05.29
+  x-role:
+    - 服务商
+  tags:
+    - 还款支付
+  summary: 还款下单
+  description: 还款下单，只能使用还款对应的查单、关单接口
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - combine_mchid
+          - combine_out_trade_no
+          - sub_orders
+        properties:
+          combine_out_trade_no:
+            type: string
+            description: 还款单订单号
+            example: '1217752501201407033233368018'
+          combine_mchid:
+            type: string
+            description: 还款服务商商户号
+            example: '1230000109'
+          sub_orders:
+            type: array
+            description: 还款明细单信息列表
+            maxItems: 10
+            items:
+              type: object
+              required:
+                - mchid
+                - out_trade_no
+                - amount
+                - attach
+                - description
+              properties:
+                mchid:
+                  type: string
+                  description: 还款单发起商户号
+                  example: '1230000109'
+                sub_mchid:
+                  type: string
+                  description: 子商户号
+                  example: '1900000109'
+                out_trade_no:
+                  type: string
+                  description: 还款明细单订单号
+                  example: '20150806125346'
+                amount:
+                  type: object
+                  description: 订单金额
+                  required:
+                    - total_amount
+                    - currency
+                  properties:
+                    total_amount:
+                      type: number
+                      description: 标价金额
+                      example: 10
+                    currency:
+                      type: string
+                      description: 标价币种
+                      example: CNY
+                attach:
+                  type: string
+                  description: 附加数据
+                  example: 深圳分店
+                description:
+                  type: string
+                  description: 商品描述
+                  example: 某某放心借
+                settle_info:
+                  type: object
+                  description: 结算信息
+                  properties:
+                    profit_sharing:
+                      type: boolean
+                      description: 是否指定分账
+                    subsidy_amount:
+                      type: integer
+                      description: 补差金额
+                      example: 10
+          time_expire:
+            type: string
+            format: rfc3339
+            description: 交易结束时间
+            example: '2018-06-08T10:34:56+08:00'
+          notify_url:
+            type: string
+            description: 通知地址
+            example: https://yourapp.com/notify
+          h5_info:
+            type: object
+            description: H5调起支付场景信息
+            required:
+              - combine_appid
+              - payer_client_ip
+              - type
+              - app_url
+            properties:
+              combine_appid:
+                type: string
+                description: 还款服务商APPID
+                example: wxd678efh567hg6787
+              payer_client_ip:
+                type: string
+                description: 用户终端IP
+                example: 127.0.0.1
+              type:
+                type: string
+                description: 场景类型
+                example: iOS
+                enum:
+                  - iOS
+                  - Android
+                  - Wap
+              app_name:
+                type: string
+                description: 应用名称
+                example: 王者荣耀
+              app_url:
+                type: string
+                description: 网站URL
+                example: 'https://pay.qq.com'
+              bundle_id:
+                type: string
+                description: iOS平台BundleID
+                example: com.tencent.wzryiOS
+              package_name:
+                type: string
+                description: Android平台PackageName
+                example: com.tencent.tmgp.sgame
+          app_info:
+            type: object
+            description: APP调起支付场景信息
+            required:
+              - combine_appid
+            properties:
+              combine_appid:
+                type: string
+                description: 还款服务商APPID
+                example: wxd678efh567hg6787
+          miniprogram_info:
+            type: object
+            description: 小程序调起支付场景信息
+            required:
+              - combine_appid
+              - openid
+            properties:
+              combine_appid:
+                type: string
+                description: 还款服务商APPID
+                example: wxd678efh567hg6787
+              openid:
+                type: string
+                description: 用户标识
+                example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+  responses:
+    '200':
+      schema:
+        type: object
+        properties:
+          prepay_id:
+            type: string
+            description: 预支付交易会话标识
+            example: wx201410272009395522657a690389285100
+          h5_url:
+            type: string
+            description: 支付跳转链接
+            example: 'https://wx.tenpay.com/cgi-bin/mmpayweb-bin/checkmweb?prepay_id=wx2016121516420242444321ca0631331346&package=1405458241'

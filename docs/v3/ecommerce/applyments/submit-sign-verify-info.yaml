@@ -1,0 +1,62 @@
+post:
+  x-last-updated-at: 2025.07.17
+  x-role:
+    - 电商平台
+  tags:
+    - 收付通∙进件
+  summary: 平台代理签约核身
+  description: 接口适用场景：账号托管类平台商户进件申请流程中，在申请单中声明“走平台代理签约和代理核身入驻模式”时，可使用该接口传入代理签约和代理核身的信息。
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - out_request_no
+          - organization_type
+          - account_info
+          - contact_info
+          - sales_scene_info
+          - merchant_shortname
+        properties:
+          out_request_no:
+            type: string
+            description: 业务申请编号
+            example: '1900013511_10000'
+          applyment_id:
+            type: integer
+            description: 微信支付申请单号
+            example: 2000002124775691
+          pre_sign_time:
+            type: string
+            description: 预签署微信支付协议时间
+            example: '2018-06-08T10:34:56+08:00'
+          proxy_verify_identity_info:
+            type: object
+            description: 平台代理核身信息
+            required:
+              - verify_identity_type
+              - verify_identity_result
+            properties:
+              verify_identity_type:
+                type: string
+                description: 核身方式
+                example: VERIFY_IDENTITY_TYPE_FACE_TO_FACE
+                enum:
+                  - VERIFY_IDENTITY_TYPE_FACE_TO_FACE
+                  - VERIFY_IDENTITY_TYPE_REMOTE
+              verify_identity_result:
+                type: boolean
+                description: 核身结果
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - applyment_id
+        properties:
+          applyment_id:
+            type: integer
+            description: 微信支付申请单号
+            example: 2000002124775691

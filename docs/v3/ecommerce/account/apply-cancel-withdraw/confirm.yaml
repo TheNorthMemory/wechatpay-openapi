@@ -1,0 +1,57 @@
+post:
+  x-last-updated-at: 2025.03.13
+  x-role:
+    - 电商平台
+  tags:
+    - 收付通∙注销
+  summary: 平台代商户确认注销
+  description: 电商平台发起申请后, 单据为待商户确认注销状态时，通过该接口代替商户执行确认操作
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - sub_mchid
+          - confirm_time
+          - cancel_contract_version
+        properties:
+          applyment_id:
+            type: string
+            description: 微信支付注销单号
+            example: X202410241010125346
+          out_request_no:
+            type: string
+            description: 商户注销申请单号
+            example: P202410241010125346
+          sub_mchid:
+            type: string
+            description: 二级商户号
+            example: '1900000109'
+          confirm_time:
+            type: string
+            format: rfc3339
+            description: 注销确认时间
+            example: '2015-05-20T13:29:35.120+08:00'
+          cancel_contract_version:
+            type: string
+            description: 注销协议版本号
+            example: V20241213
+  responses:
+    '200':
+      schema:
+        type: object
+        properties:
+          applyment_id:
+            type: string
+            description: 微信支付注销单号
+            example: X202410241010125346
+          out_request_no:
+            type: string
+            description: 商户注销申请单号
+            example: P202410241010125346
+          sub_mchid:
+            type: string
+            description: 二级商户号
+            example: '1900000109'

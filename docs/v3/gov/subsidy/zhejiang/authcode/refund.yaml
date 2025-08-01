@@ -1,0 +1,98 @@
+post:
+  x-last-updated-at: 2025.04.07
+  x-role:
+    - 电商平台
+    - 服务商
+  tags:
+    - 国补专区
+    - 浙江
+  summary: 品类凭证码上报撤销
+  description: 品类凭证码上报撤销
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - sp_serial_no
+          - cred_frozen_no
+          - trans_date
+          - trans_time
+          - auth_code
+          - req_ssn
+        properties:
+          sp_serial_no:
+            type: string
+            description: 接入方请求流水号
+          cred_frozen_no:
+            type: string
+            description: 冻结流水号
+          trans_date:
+            type: string
+            description: 交易日期
+          trans_time:
+            type: string
+            description: 交易时间
+          order_no:
+            type: string
+            description: 商户订单号
+          subsidy_amt:
+            type: number
+            description: 政府补贴金额
+          add_code:
+            type: string
+            description: 收货地区编码
+          address:
+            type: string
+            description: 收货地址
+          sale_models:
+            type: string
+            description: 销售方式(0-线上/1-线下)
+            enum:
+              - '0'
+              - '1'
+          uniscid:
+            type: string
+            description: 统一社会信息代码(18 位，请与营业 执照上保持一致)
+          barcode:
+            type: string
+            description: 商品条码(13 位或 14 位)
+          auth_code:
+            type: string
+            description: 品类凭证码
+          req_ssn:
+            type: string
+            description: 请求流水号
+            example: '123'
+          bank_name:
+            type: string
+            description: 银行机构名称
+          bank_subsidy:
+            type: string
+            description: 银行补贴金额(都是正数，以元为单 位)
+          plat_subsidy:
+            type: string
+            description: 交易平台补贴金额(都是正数，以元 为单位)
+          corp_name:
+            type: string
+            description: 销售企业名称
+          brand:
+            type: string
+            description: 家电品牌
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - resp_code
+          - resp_desc
+        properties:
+          resp_code:
+            type: string
+            description: 响应码
+            example: '000000'
+          resp_desc:
+            type: string
+            description: 响应描述
+            example: 成功

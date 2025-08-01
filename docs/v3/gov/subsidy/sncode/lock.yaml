@@ -1,0 +1,114 @@
+post:
+  x-last-updated-at: 2025.06.24
+  x-role:
+    - 电商平台
+    - 服务商
+  tags:
+    - 国补专区
+    - 江苏
+  summary: sn码锁定
+  description: 用户支付成功后，在具体的3c商品出库时要调用此接口锁定sn。如果sn被使用过了，就要解锁。
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - appliance_id
+          - out_trade_no
+          - brand
+          - qualification_region_code
+          - sn_code
+          - manufacturer_info
+          - barcode
+          - spec_model
+          - product_type
+        properties:
+          appliance_id:
+            type: number
+            format: integer
+            description: 消费品类ID
+            example: 1
+            enum:
+              - 1 #电视机
+              - 2 #电冰箱
+              - 3 #洗衣机
+              - 4 #空调
+              - 5 #电脑
+              - 6 #热水器
+              - 7 #吸油烟机
+              - 8 #家用灶具
+              - 9 #空调2
+              - 10 #空调3
+              - 11 #微波炉
+              - 12 #净水器
+              - 13 #洗碗机
+              - 14 #电饭煲
+              - 15 #手机
+              - 16 #平板
+              - 17 #智能手表手环
+          out_trade_no:
+            type: string
+            description: 商户支付订单号
+            example: vmall_250120131959_993_4494
+          brand:
+            type: string
+            description: 家电品牌
+            example: 海尔
+          qualification_region_code:
+            type: number
+            format: integer
+            description: 使用的资格的地区编码
+            example: 310100
+          sn_code:
+            type: string
+            description: S/N码
+            example: fallervuh
+          manufacturer_info:
+            type: string
+            description: 厂商信息
+          barcode:
+            type: string
+            description: 商品条码
+            example: '6901010101098'
+          spec_model:
+            type: string
+            description: 规格型号
+            example: YOGA Air 15s ILL9
+          product_type:
+            type: string
+            description: 产品类型
+            example: COMMON_PRODUCT
+            enum:
+              - COMMON_PRODUCT #普通产品
+              - AI_PRODUCT #AI产品
+          sale_time:
+            type: string
+            format: rfc3339
+            description: 销售时间
+            example: '2025-01-14T19:55:06+08:00'
+          imei1:
+            type: string
+            description: imei1编码
+            example: '358882046176540'
+          imei2:
+            type: string
+            description: imei2编码
+            example: '358882046176540'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - code
+          - message
+        properties:
+          code:
+            type: string
+            description: 响应码
+            example: '000000'
+          message:
+            type: string
+            description: 响应描述
+            example: 成功

@@ -1,0 +1,291 @@
+get:
+  x-last-updated-at: 2025.07.18
+  x-role:
+    - 服务商
+  tags:
+    - 商户尽职调查
+  summary: 查询子商户强化尽调单信息
+  description: 查询子商户强化尽调单信息
+  parameters:
+    - name: due_diligence_id
+      in: path
+      required: true
+      type: string
+      description: 尽调单号
+      example: 123000110_2_2190381dakdajois1283i12jo
+    - name: sub_mchid
+      type: string
+      in: query
+      required: true
+      description: 子商户号
+      example: '123000110'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - due_diligence_id
+          - sub_mchid
+          - due_diligence_state
+          - deadline_time
+        properties:
+          due_diligence_id:
+            type: string
+            description: 尽调单号
+            example: 123000110_2_2190381dakdajois1283i12jo
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '123000110'
+          due_diligence_state:
+            type: string
+            description: 尽调单状态
+            example: 'DUE_DILIGENCE_STATE_COLLECTING'
+            enum:
+              - DUE_DILIGENCE_STATE_COLLECTING #待填写
+              - DUE_DILIGENCE_STATE_AUDITING #审核中
+              - DUE_DILIGENCE_STATE_REJECTED #已驳回
+              - DUE_DILIGENCE_STATE_EXPIRED #已过期
+              - DUE_DILIGENCE_STATE_CANCELLED #已终止
+              - DUE_DILIGENCE_STATE_FINISHED #已完成
+          reject_reason:
+            type: string
+            format: jsonObjectLike
+            description: 驳回原因
+            x-json:
+              type: object
+              properties:
+                audit_detail_by_item:
+                  type: array
+                  description: 审核原因集合
+                  items:
+                    type: object
+                    properties:
+                      audit_result:
+                        type: number
+                        description: 审核结果
+                      item_id:
+                        type: number
+                        description: 审核的资料项ID
+                      reject_reason_to_merchant:
+                        type: string
+                        description: 展示给商户的审核结果
+          deadline_time:
+            type: string
+            format: rfc3339
+            description: 截止时间
+            example: '2015-05-20T13:29:35+08:00'
+          terminal_time:
+            type: string
+            format: rfc3339
+            description: 终止时间
+            example: '2015-05-20T13:29:35+08:00'
+          submit_time:
+            type: string
+            format: rfc3339
+            description: 提交时间
+            example: '2015-05-20T13:29:35+08:00'
+          reject_time:
+            type: string
+            format: rfc3339
+            description: 驳回时间
+            example: '2015-05-20T13:29:35+08:00'
+          complete_time:
+            type: string
+            format: rfc3339
+            description: 完成时间
+            example: '2015-05-20T13:29:35+08:00'
+          submission_template:
+            type: string
+            format: jsonObjectLike
+            description: 尽调要求提交的资料
+            x-json:
+              type: object
+              required:
+                - record_fields
+              properties:
+                record_fields:
+                  type: array
+                  description: 资料项集合
+                  items:
+                    type: object
+                    properties:
+                      check_rule:
+                        type: object
+                        description: 校验规则
+                        properties:
+                          min_length:
+                            type: number
+                            description: 字符串最小长度
+                          max_length:
+                            type: number
+                            description: 字符串最大长度
+                          enum_file_exts:
+                            type: array
+                            description: 限制提交的文件后缀
+                            items:
+                              type: string
+                              enum:
+                                - png
+                                - jpg
+                                - jpeg
+                          max_file_size:
+                            type: number
+                            description: 限制文件提交大小，单位M
+                          enum_keys:
+                            type: array
+                            items:
+                              type: number
+                              description: 枚举可选的字段枚举值
+                          enum_values:
+                            type: array
+                            items:
+                              type: string
+                              description: 展示给商户看的枚举可选的字段列表
+                      disabled:
+                        type: number
+                        description: 是否允许修改内容
+                        enum:
+                          - 0
+                          - 1
+                      field_data:
+                        type: string
+                        description: 资料项值(单值类型)
+                      field_name:
+                        type: string
+                        description: 资料项英文名
+                      hidden:
+                        type: number
+                        description: 是否隐藏资料项
+                      item_id:
+                        type: string
+                        description: 资料项ID
+                      name:
+                        type: string
+                        description: 资料项中文名
+                      need_encrypt:
+                        type: boolean
+                        description: 提交内容需要加密
+                      placeholder:
+                        type: string
+                        description: 输入占位文案
+                      required:
+                        type: number
+                        description:  是否必填
+                        enum:
+                          - 0
+                          - 1
+                      tips:
+                        type: string
+                        description: 资料项填写提示
+                      tooltip:
+                        type: string
+                        description: 叹号悬浮提示语
+                      type:
+                        type: number
+                        description: 资料项类型
+                        enum:
+                          - 1
+                          - 2
+                          - 11
+                          - 15
+                      use_permanently_date:
+                        type: number
+                        description: 日期类型是否可勾选“长期有效”
+                        enum:
+                          - 0
+                          - 1
+          submission_data:
+            type: string
+            description: 尽调已经提交的资料
+            format: jsonObjectLike
+            x-json:
+              type: object
+              required:
+                - record_fields
+              properties:
+                record_fields:
+                  type: array
+                  description: 资料项集合
+                  items:
+                    type: object
+                    properties:
+                      item_id:
+                        type: string
+                        description: 资料项ID
+                      field_name:
+                        type: string
+                        description: 资料项英文名
+                      name:
+                        type: string
+                        description: 资料项中文名
+                      type:
+                        type: number
+                        description: 资料项类型
+                        enum:
+                          - 1
+                          - 2
+                          - 11
+                          - 15
+                      tips:
+                        type: string
+                        description: 资料项填写提示
+                      placeholder:
+                        type: string
+                        description: 输入框占位文案
+                      tooltip:
+                        type: string
+                        description: 叹号悬浮提示语
+                      required:
+                        type: number
+                        description: 是否必须提交
+                        enum:
+                          - 0
+                          - 1
+                      check_rule:
+                        type: object
+                        description: 校验规则
+                        properties:
+                          min_length:
+                            type: number
+                            description: 字符串最小长度
+                          max_length:
+                            type: number
+                            description: 字符串最大长度
+                          enum_file_exts:
+                            type: array
+                            description: 限制提交的文件后缀
+                            items:
+                              type: string
+                              enum:
+                                - png
+                                - jpg
+                                - jpeg
+                          max_file_size:
+                            type: number
+                            description: 限制文件提交大小，单位M
+                          enum_keys:
+                            type: array
+                            items:
+                              type: number
+                              description: 枚举可选的字段枚举值
+                          enum_values:
+                            type: array
+                            items:
+                              type: string
+                              description: 展示给商户看的枚举可选的字段列表
+                      relations:
+                        type: array
+                        description: 资料项关联规则集合<br/>(不同资料项ID取交集*且*，相同资料项ID不同资料项值取并集*或*)
+                        items:
+                          type: object
+                          properties:
+                            source_key:
+                              type: number
+                              description: 关联的资料项ID
+                            source_value:
+                              type: string
+                              description: 关联的资料项值
+                      need_encrypt:
+                        type: boolean
+                        description: 提交内容需要加密

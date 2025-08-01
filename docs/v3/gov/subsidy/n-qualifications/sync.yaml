@@ -1,0 +1,247 @@
+post:
+  x-last-updated-at: 2025.06.24
+  x-role:
+    - 电商平台
+    - 服务商
+  tags:
+    - 国补专区
+    - 江苏
+  summary: N品类同步资格核销信息
+  description: 给地方补贴用的，同步核销信息。用于核销N品类的资格，3.6的是核销8大品类的，核销的品类不同
+  parameters:
+    - $ref: '../../../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - real_name
+          - id_card_number
+          - phone_number
+          - out_trade_no
+          - receive_region_code
+          - brand
+          - address
+          - qualification_region_code
+          - seller_name
+          - license_number
+          - spec_model
+          - invoice_num
+          - product_type
+          - order_amount
+          - discount_amount
+          - mch_order_id
+          - invoice_time
+          - purchaser_name
+          - sale_model
+          - identity_document_type
+          - invoice_address_code
+          - tax_authority_code
+          - transaction_time
+          - cate_state
+          - cate_code
+        properties:
+          real_name:
+            type: string
+            format: base64
+            description: 自然人姓名
+            example: OEimkKuua8igpd+0YDgqF2Z61l=
+          id_card_number:
+            type: string
+            format: base64
+            description: 自然人证件号
+            example: 1axtI9EZUr0343c89xQznxau+cRWPKP4YhVAoj/mEoNSgJh0nvuqQJ1cdL==
+          phone_number:
+            type: string
+            format: base64
+            description: 手机号
+            example: 1axtI9EZUr0343c89xQznxau+cRWPKP4YhVAoj/nunesXwq9ogPnSj7EDA==
+          appliance_id:
+            type: number
+            format: integer
+            description: 消费品类ID
+            example: 1
+            enum:
+              - 1 #电视机
+              - 2 #电冰箱
+              - 3 #洗衣机
+              - 4 #空调
+              - 5 #电脑
+              - 6 #热水器
+              - 7 #吸油烟机
+              - 8 #家用灶具
+              - 9 #空调2
+              - 10 #空调3
+              - 11 #微波炉
+              - 12 #净水器
+              - 13 #洗碗机
+              - 14 #电饭煲
+              - 15 #手机
+              - 16 #平板
+              - 17 #智能手表手环
+          out_trade_no:
+            type: string
+            description: 商户支付订单号
+            example: vmall_250120131959_993_4494
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '123456'
+          energy_grade:
+            type: string
+            description: 能效等级
+            example: FIRST_LEVEL
+            enum:
+              - FIRST_LEVEL
+              - SECOND_LEVEL
+              - ENERGY_GRADE_UNKNOWN
+          receive_region_code:
+            type: string
+            description: 收货地区编码
+            example: '110101'
+          brand:
+            type: string
+            description: 家电品牌
+            example: 海尔
+          address:
+            type: string
+            description: 收货地址
+            example: 深圳市南山区
+          qualification_region_code:
+            type: number
+            format: integer
+            description: 使用的资格的地区编码
+            example: 310100
+          seller_name:
+            type: string
+            description: 销售企业名称
+            example: 联想（北京）信息技术有限公司
+          license_number:
+            type: string
+            description: 统一社会信息代码
+            example: 91110108397173806M
+          logistics_num:
+            type: string
+            description: 物流单号
+            example: '123456789'
+          delivery_time:
+            type: string
+            format: rfc3339
+            description: 签收时间
+            example: '2025-01-14T19:55:06+08:00'
+          invoice_num:
+            type: string
+            description: 发票号
+            example: '031001900204'
+          product_type:
+            type: string
+            description: 产品类型
+            example: COMMON_PRODUCT
+            enum:
+              - COMMON_PRODUCT #普通产品
+              - AI_PRODUCT #AI产品
+          pc_type:
+            type: string
+            description: 类型(台式、笔记本)，当品类为电脑时必填
+            example: DESKTOP
+            enum:
+              - DESKTOP
+              - LAPTOP
+              - COMPUTER_TYPE_UNKNOWN
+          order_amount:
+            type: number
+            format: integer
+            description: 订单金额
+            example: 10000
+          discount_amount:
+            type: number
+            format: integer
+            description: 优惠金额，单位为分，**注意:只传国补相关优惠，其他非国补的优惠不可叠加在这里**
+            example: 2000
+          mch_order_id:
+            type: string
+            description: 线上平台订单编号
+            example: '123456789'
+          invoice_time:
+            type: string
+            format: rfc3339
+            description: 开票日期
+            example: '2025-01-14T19:55:06+08:00'
+          purchaser_name:
+            type: string
+            description: 购买方名称
+            example: 小弟弟
+          sale_model:
+            type: string
+            description: 销售方式
+            example: SALE_MODEL_OFFLINE
+            enum:
+              - SALE_MODEL_ONLINE
+              - SALE_MODEL_OFFLINE
+          identity_document_type:
+            type: string
+            description: 证件类型
+            example: ID_DOC_TYPE_ID_CARD
+            enum:
+              - ID_DOC_TYPE_ID_CARD #身份证号
+              - ID_DOC_TYPE_MAINLAND_TRAVEL_PERMIT_FOR_HK_MC #回乡证（港澳居民来往内地通行证）
+              - ID_DOC_TYPE_MAINLAND_TRAVEL_PERMIT_FOR_TW #台胞证（台湾居民来往大陆通行证）
+          invoice_address_code:
+            type: string
+            description: 发票开具地(地址编码）
+            example: '310100'
+          tax_authority_code:
+            type: string
+            description: 税务机关代码
+            example: '2525252'
+          transaction_time:
+            type: string
+            format: rfc3339
+            description: 交易完成或商品退回时间
+            example: '2025-01-14T19:55:06+08:00'
+          cate_state:
+            type: string
+            description: 品类状态
+            example: CATE_STATE_REDEEM
+            enum:
+              - CATE_STATE_REDEEM #已核销
+              - CATE_STATE_REFUND #已退回
+          longitude:
+            type: string
+            description: 经度
+          latitude:
+            type: string
+            description: 纬度
+          cate_code:
+            type: string
+            description: 品类编码
+            example: JS06
+          coupon_code:
+            type: string
+            description: 券码
+            example: '6901010101098'
+          invoice_code:
+            type: string
+            description: 发票代码
+            example: '310100'
+          refund_id:
+            type: string
+            description: 线上平台退款交易编号
+            example: '123456789'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - code
+          - message
+        properties:
+          code:
+            type: string
+            description: 响应码
+            example: '000000'
+          message:
+            type: string
+            description: 响应描述
+            example: 成功

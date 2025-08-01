@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2019.11.08
+  x-last-updated-at: 2025.07.25
   x-role:
     - 直连商户
   tags:
@@ -27,7 +27,7 @@ post:
             items:
               type: string
               description: 券code
-            example: [ABC9588200, ABC9588201]
+              example: ABC9588200
           upload_request_no:
             type: string
             description: 请求业务单据号

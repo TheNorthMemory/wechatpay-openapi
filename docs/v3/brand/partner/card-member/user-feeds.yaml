@@ -1,0 +1,82 @@
+post:
+  x-last-updated-at: 2025.06.22
+  x-role:
+    - 服务商
+  tags:
+    - 商家名片会员
+  summary: 创建用户动态信息
+  description: 通过此接口同步非微信支付渠道的会员动态信息到微信支付商家名片会员
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - brand_id
+          - card_id
+          - user_card_code
+          - openid
+          - out_request_no
+          - cell_message
+        properties:
+          brand_id:
+            type: string
+            description: 品牌ID
+            example: '1004'
+          card_id:
+            type: string
+            description: 会员卡模板ID
+            example: pbLatjvWOibDc5-TBnbUk1pD12o0
+          user_card_code:
+            type: string
+            description: 会员卡code
+            example: '478515832665'
+          openid:
+            type: string
+            description: 用户标识
+            example: obLatjnx9gnqzS4myYGmLZ7LgLBA
+          out_request_no:
+            type: string
+            description: 商家请求单号
+            example: 100002322019090134234sfdf
+          cell_message:
+            type: string
+            description: 会员动态内容
+            example: '15_1200_1'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - brand_id
+          - card_id
+          - user_card_code
+          - openid
+          - out_request_no
+          - cell_message
+        properties:
+          brand_id:
+            type: string
+            description: 品牌ID
+            example: '1004'
+          card_id:
+            type: string
+            description: 会员卡模板ID
+            example: pbLatjvWOibDc5-TBnbUk1pD12o0
+          user_card_code:
+            type: string
+            description: 会员卡code
+            example: '478515832665'
+          openid:
+            type: string
+            description: 用户标识
+            example: obLatjnx9gnqzS4myYGmLZ7LgLBA
+          out_request_no:
+            type: string
+            description: 商家请求单号
+            example: 100002322019090134234sfdf
+          cell_message:
+            type: string
+            description: 会员动态内容
+            example: '15_1200_1'

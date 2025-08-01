@@ -1,0 +1,191 @@
+post:
+  x-last-updated-at: 2025.04.07
+  x-role:
+    - 电商平台
+    - 服务商
+  tags:
+    - 国补专区
+    - 浙江
+  summary: 商品信息查询
+  description: 商品信息查询
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - category_id
+          - name
+          - mobile
+          - add_code
+          - cert_no
+          - cert_type
+          - req_ssn
+        properties:
+          goods_bar_code:
+            type: string
+            description: 商品条码
+          province:
+            type: string
+            description: 省份代码
+          req_ssn:
+            type: string
+            description: 请求流水号
+            example: '123'
+          req_time:
+            type: string
+            description: 请求时间
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - resp_code
+          - resp_desc
+          - goods_bar_code
+          - seq_id
+          - province
+          - code_type
+          - goods_type
+          - goods_name
+          - logo_name
+          - goods_model
+          - basis_price
+          - manufact_cert_code
+          - manufact_price
+        properties:
+          resp_code:
+            type: string
+            description: 响应码
+            example: '000000'
+          resp_desc:
+            type: string
+            description: 响应描述
+            example: 成功
+          goods_bar_code:
+            type: string
+            description: 商品条码
+          seq_id:
+            type: string
+            description: 本记录唯一ID
+          province:
+            type: string
+            description: 省份代码
+          code_type:
+            type: string
+            description: 条码类型
+            enum:
+              - '001'
+              - '002'
+          goods_type:
+            type: string
+            description: 商品品类
+          goods_name:
+            type: string
+            description: 商品名称
+          logo_name:
+            type: string
+            description: 品牌名称
+          goods_model:
+            type: string
+            description: 商品型号
+          basis_price:
+            type: string
+            description: 基准价格
+          manufact_cert_code:
+            type: string
+            description: 厂商统一社会信用代码
+          manufact_price:
+            type: string
+            description: 厂商指导零售价
+          energy_effciency:
+            type: string
+            description: 能效标识
+          energy_reg_code:
+            type: string
+            description: 能效备案编号
+          energy_reg_model:
+            type: string
+            description: 能效备案型号
+          reg_3c_code:
+            type: string
+            description: 3C 认证编号
+          water_effciency:
+            type: string
+            description: 水效标识
+          expire_date:
+            type: string
+            description: 有效期
+          description:
+            type: string
+            description: 产品描述
+          gpc:
+            type: string
+            description: gpc 分类代码
+          net_content:
+            type: string
+            description: 净含量
+          unit_code:
+            type: string
+            description: 净含量单位代码
+          origin:
+            type: string
+            description: 原产国
+          city:
+            type: string
+            description: 市级区域代码
+          county:
+            type: string
+            description: 区县区域代码
+          data_state:
+            type: string
+            description: 数据状态
+          remark:
+            type: string
+            description: 备注
+          upload_state:
+            type: string
+            description: 上送状态
+          expire_time:
+            type: string
+            description: 失效时间
+          is_ai_product:
+            type: string
+            description: 是否 AI 产品
+          device_type:
+            type: string
+            description: 设备类型
+          manufact_code:
+            type: string
+            description: 厂商识别代码
+          manufact_login_date:
+            type: string
+            description: 厂商注册日期
+          manufact_logout_date:
+            type: string
+            description: 厂商失效日期
+          manufact_logout_flag:
+            type: string
+            description: 厂商失效标识
+          manufact_register_addr:
+            type: string
+            description: 厂商注册地址
+          manufact_valid_date:
+            type: string
+            description: 厂商过期日期
+          manufact_firm_name:
+            type: string
+            description: 厂商企业名称
+          price_unit:
+            type: string
+            description: 企业定价单位
+          sale_date:
+            type: string
+            description: 上市日期
+          pc_type:
+            type: string
+            description: PC 类型
+          msg_src_platform:
+            type: string
+            description: 上送平台编码

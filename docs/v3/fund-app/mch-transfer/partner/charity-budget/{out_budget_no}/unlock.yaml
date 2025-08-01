@@ -1,0 +1,96 @@
+post:
+  x-last-updated-at: 2025.07.10
+  x-role:
+    - 服务商
+  tags:
+    - 资金应用∙公益捐赠
+  summary: 解锁公益捐赠预算
+  description: 解锁公益捐赠预算 注：单个商户的接口频率限制为100次/s
+  parameters:
+    - name: out_budget_no
+      in: path
+      required: true
+      type: string
+      description: 商户预算单号
+      example: budget202506300102
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - sponsor_mchid
+          - activity_remark
+        properties:
+          sponsor_mchid:
+            type: string
+            description: 出资商户号
+            example: '1900001109'
+          activity_remark:
+            type: string
+            description: 解锁备注
+            example: 公益活动结束，解锁资金
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - sp_mchid
+          - out_budget_no
+          - budget_id
+          - amount
+          - sponsor_mchid
+          - activity_name
+          - activity_remark
+          - state
+          - unlock_remark
+          - locked_time
+          - finished_time
+        properties:
+          sp_mchid:
+            type: string
+            description: 服务商商户号
+            example: '1900001109'
+          out_budget_no:
+            type: string
+            description: 商户预算单号
+            example: budget202506300102
+          budget_id:
+            type: string
+            description: 微信支付预算单号
+            example: '1182020050700019480001'
+          amount:
+            type: number
+            description: 预算总金额
+            example: 20000000
+          sponsor_mchid:
+            type: string
+            description: 出资商户号
+            example: '1900001109'
+          activity_name:
+            type: string
+            description: 活动名称
+            example: 公益企业配捐活动
+          activity_remark:
+            type: string
+            description: 活动说明
+            example: 公益活动开始于9月1日，帮助困难儿童筹款活动
+          state:
+            type: string
+            description: 预算单状态
+            example: FINISHED
+            enum:
+              - FINISHED
+          unlock_remark:
+            type: string
+            description: 撤销说明
+          locked_time:
+            type: string
+            format: rfc3339
+            description: 资金锁定时间
+            example: '2015-05-20T13:29:35+08:00'
+          finished_time:
+            type: string
+            format: rfc3339
+            description: 完成时间
+            example: '2015-05-20T13:29:35+08:00'

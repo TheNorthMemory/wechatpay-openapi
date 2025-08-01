@@ -1,0 +1,72 @@
+post:
+  x-last-updated-at: 2025.06.24
+  x-role:
+    - 电商平台
+    - 服务商
+  tags:
+    - 国补专区
+    - 江苏
+  summary: 交易信息查询
+  description: 交易信息查询
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - qualification_region_code
+          - order_number_list
+        properties:
+          qualification_region_code:
+            type: number
+            format: integer
+            description: 使用的资格的地区编码
+            example: 310100
+          order_number_list:
+            type: array
+            description: 商户订单号数组
+            items:
+              type: string
+              example: vmall_250120131959_993_4494
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - code
+          - message
+          - shop_order_list
+        properties:
+          code:
+            type: string
+            description: 响应码
+            example: '000000'
+          message:
+            type: string
+            description: 响应描述
+            example: 成功
+          shop_order_list:
+            type: array
+            description: 订单状态数组
+            items:
+              type: object
+              properties:
+                shop_order_number:
+                  type: string
+                  description: 单号
+                collect_state:
+                  type: string
+                  description: 归集状态枚举
+                  example: COLLECT_STATE_NOT_COLLECT
+                  enum:
+                    - COLLECT_STATE_NOT_COLLECT #未归集
+                    - COLLECT_STATE_COLLECTED #已归集
+                    - COLLECT_STATE_COLLECTION_FAILED #归集失败
+                cate_state:
+                  type: string
+                  description: 品类状态
+                  enum:
+                    - CATE_STATE_REDEEM #已核销
+                    - CATE_STATE_REFUND #已退回
+

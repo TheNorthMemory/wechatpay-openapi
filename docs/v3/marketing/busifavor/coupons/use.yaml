@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2019.08.20
+  x-last-updated-at: 2025.07.25
   x-role:
     - 直连商户
   tags:
@@ -42,6 +42,18 @@ post:
             type: string
             description: 用户标识
             example: xsd3434454567676
+          out_trade_no:
+            type: string
+            description: 商户订单号
+            example: '190000001'
+          mch_id:
+            type: string
+            description: 下单商户号
+            example: '190000001'
+          transaction_id:
+            type: string
+            description: 微信支付订单号
+            example: '4200000001856498491'
   responses:
     '200':
       schema:

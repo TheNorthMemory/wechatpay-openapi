@@ -60,6 +60,8 @@ post:
     [个人收款-结算回调通知](https://pay.weixin.qq.com/docs/merchant/apis/personal-collections/settlement-notice.html)
     [转账到QQ钱包终态通知](https://pay.weixin.qq.com/doc/v3/merchant/4014301851)
     [自动收款授权结果通知](https://pay.weixin.qq.com/doc/v3/merchant/4014512908)
+    [商家名片会员卡事件通知](https://pay.weixin.qq.com/doc/v3/partner/4015283692)
+    [预算申请结果回调通知](https://pay.weixin.qq.com/doc/v3/partner/4015555114)
   parameters:
     - name: Wechatpay-Nonce
       required: true
@@ -274,6 +276,8 @@ WechatpayNotificationEventType:
     [个人收款-结算回调通知](https://pay.weixin.qq.com/docs/merchant/apis/personal-collections/settlement-notice.html)
     [转账到QQ钱包终态通知](https://pay.weixin.qq.com/doc/v3/merchant/4014301851)
     [自动收款授权结果通知](https://pay.weixin.qq.com/doc/v3/merchant/4014512908)
+    [商家名片会员卡事件通知](https://pay.weixin.qq.com/doc/v3/partner/4015283692)
+    [预算申请结果回调通知](https://pay.weixin.qq.com/doc/v3/partner/4015555114)
   enum:
     # @see                        [会员积分服务授权通知](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter8_6_6.shtml)
     - MALL_AUTH.ACTIVATE_CARD     #会员积分服务授权通知
@@ -370,3 +374,13 @@ WechatpayNotificationEventType:
     - MCHTRANSFER.QQWALLETBILL.FINISHED
     # @see [自动收款授权结果通知](https://pay.weixin.qq.com/doc/v3/merchant/4014512908)
     - MCHTRANSFER.AUTHORIZATION.CONFIRMED
+    # @see [商家名片会员卡事件通知](https://pay.weixin.qq.com/doc/v3/partner/4015283692)
+    - MEMBERCARDSP.USER_CARD.CREATE
+    # @see [商家名片会员卡事件通知](https://pay.weixin.qq.com/doc/v3/partner/4015283692)
+    - MEMBERCARDSP.USER_CARD.DELETE
+    # @see [预算申请结果回调通知](https://pay.weixin.qq.com/doc/v3/partner/4015555114)
+    - BUDGET.LOCKED
+    # @see [预算申请结果回调通知](https://pay.weixin.qq.com/doc/v3/partner/4015555114)
+    - BUDGET.CLOSED
+    # @see [预算申请结果回调通知](https://pay.weixin.qq.com/doc/v3/partner/4015555114)
+    - BUDGET.FINISHED

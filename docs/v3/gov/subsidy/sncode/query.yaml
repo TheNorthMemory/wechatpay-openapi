@@ -1,0 +1,67 @@
+post:
+  x-last-updated-at: 2025.06.24
+  x-role:
+    - 电商平台
+    - 服务商
+  tags:
+    - 国补专区
+    - 江苏
+  summary: 查询sn码状态
+  description: 查询sn码是否被使用了，可以在支付后，3c商品出库前查询，当然不查询直接调用后面的sn锁定也可以。
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - sn_code_list
+          - qualification_region_code
+        properties:
+          sn_code_list:
+            type: array
+            description: S/N码集合
+            maxLength: 50
+            items:
+              type: string
+              example: 9CC0AC186027
+          qualification_region_code:
+            type: number
+            format: integer
+            description: 使用的资格的地区编码
+            example: 310100
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - goods_sn_list
+        properties:
+          goods_sn_list:
+            type: array
+            description: sn码状态数组
+            items:
+              type: object
+              required:
+                - sn_code
+                - state
+              properties:
+                sn_code:
+                  type: string
+                  description: S/N码
+                  example: fallervuh
+                state:
+                  type: string
+                  description: 状态
+                  example: SNCODE_STATE_UNKNOWN
+                  enum:
+                    - SNCODE_STATE_UNKNOWN
+                    - SNCODE_STATE_SELLABLE
+                    - SNCODE_STATE_NOT_SELLABLE
+                not_sellable_reason:
+                  type: string
+                  description: 不可售的原因
+                  example: NOT_SELLABLE_REASON_NOT_FOUND
+                  enum:
+                    - NOT_SELLABLE_REASON_USED
+                    - NOT_SELLABLE_REASON_NOT_FOUND

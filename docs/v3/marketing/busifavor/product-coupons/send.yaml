@@ -1,0 +1,73 @@
+post:
+  x-last-updated-at: 2025.07.15
+  x-role:
+    - 直连商户
+  tags:
+    - 运营工具∙商家券
+  summary: 向用户发放商品券
+  description: 商户可通过该接口向指定用户发放关联了商品信息的商家券，未关联商品信息的商家券不支持通过该接口发放；支持指定券 code 发放或系统自动分配券 code。
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - openid
+          - appid
+          - stock_id
+          - out_request_no
+          - coupon_type
+        properties:
+          openid:
+            type: string
+            description: 用户标识
+            example: xsd3434454567676
+          appid:
+            type: string
+            description: 公众账号ID
+            example: wx1234567889999
+          stock_id:
+            type: string
+            description: 批次号
+            example: '12312354'
+          out_request_no:
+            type: string
+            description: 发券凭证
+            example: '2335465'
+          coupon_code:
+            type: string
+            description: 券code
+            example: '202007019999'
+          coupon_type:
+            type: string
+            description: 券类型
+            example: NORMAL
+            enum:
+              - NORMAL
+              - MEMBER
+          member_card_id:
+            type: string
+            description: 会员卡ID
+            example: pbLatjvWOibDc5-TBnbUk1pD12o0
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - stock_id
+          - coupon_code
+          - out_request_no
+        properties:
+          stock_id:
+            type: string
+            description: 批次号
+            example: '1262260000000268'
+          coupon_code:
+            type: string
+            description: 券code
+            example: '2312323'
+          out_request_no:
+            type: string
+            description: 发券凭证
+            example: '2335465'

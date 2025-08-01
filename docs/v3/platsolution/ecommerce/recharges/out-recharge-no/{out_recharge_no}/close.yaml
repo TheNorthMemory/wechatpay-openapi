@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2024.09.04
+  x-last-updated-at: 2025.07.29
   x-role:
     - 服务商
   tag:
@@ -57,15 +57,14 @@ post:
             enum:
               - BANK_TRANSFER
               - QR_RECHARGE
+              - ONLINE_BANK
           account_type:
             type: string
             description: 充值入账账户
             example: DEPOSIT
             enum:
               - DEPOSIT
-              - BASIC
               - OPERATION
-              - FEES
           recharge_state:
             type: string
             description: 充值状态
@@ -80,8 +79,7 @@ post:
             example: ECOMMERCE_DEPOSIT
             enum:
               - ECOMMERCE_DEPOSIT
-              - ECOMMERCE_BANK_TRANSFER
-              - NORMAL_BANK_TRANSFER
+              - ECOMMERCE_PAYMENT
           recharge_state_desc:
             type: string
             description: 充值状态描述
@@ -126,6 +124,10 @@ post:
                 type: string
                 description: 银行卡号后四位
                 example: '0722'
+              bank_account_name:
+                type: string
+                description: 银行账户名称
+                example: 某某某有限公司
           qr_recharge_info:
             type: object
             description: 扫码充值的付款信息
@@ -141,6 +143,41 @@ post:
                 enum:
                   - ADMIN
                   - STAFF
+          online_bank_recharge_info:
+            type: object
+            description: 网银充值的付款信息
+            properties:
+              bill_no:
+                type: string
+                description: 银行交易订单号
+                example: '110240620400046628001252733345'
+              return_time:
+                type: string
+                description: 网银充值退回时间
+                example: '2015-05-20T13:29:35+08:00'
+              return_reason:
+                type: string
+                description: 网银充值退回原因
+                example: 银行转账充值金额与申请充值金额不一致
+              bank_name:
+                type: string
+                description: 开户银行名称
+                example: 中国银行
+              online_bank_type:
+                type: string
+                description: 网银类型
+                example: ONLINE_BANK_TYPE_CORPORATE
+                enum:
+                  - ONLINE_BANK_TYPE_CORPORATE
+                  - ONLINE_BANK_TYPE_PERSONAL
+              bank_card_tail:
+                type: string
+                description: 银行卡号后四位
+                example: '0722'
+              bank_account_name:
+                type: string
+                description: 银行账户名称
+                example: 某某某有限公司
           accept_time:
             type: string
             description: 受理充值时间
@@ -153,3 +190,13 @@ post:
             type: string
             description: 关闭充值时间
             example: '2015-05-20T13:29:35+08:00'
+          available_recharge_channels:
+            type: array
+            description: 可用充值渠道列表
+            items:
+              type: string
+              example: BANK_TRANSFER
+              enum:
+                - BANK_TRANSFER
+                - QR_RECHARGE
+                - ONLINE_BANK

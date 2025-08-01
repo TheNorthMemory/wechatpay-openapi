@@ -1,0 +1,124 @@
+post:
+  x-last-updated-at: 2025.07.10
+  x-role:
+    - 服务商
+  tags:
+    - 资金应用∙公益捐赠
+  summary: 发起公益捐赠
+  description: 服务商商户可通过此接口发起公益捐赠 接口返回的HTTP状态码及错误码，仅代表本次请求的结果，不能代表订单状态。接口返回的HTTP状态码为200，且状态为ACCEPT时，可认为发起公益捐赠。接口返回的HTTP状态码不为200时，请商户务必不要立即更换商户订单单号重试。注：单个商户的接口频率限制为100次/s
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - out_budget_no
+          - out_transfer_no
+          - sponsor_mchid
+          - receive_mchid
+          - transfer_remark
+          - amount
+        properties:
+          out_budget_no:
+            type: string
+            description: 商户预算单号
+            example: budget202506300102
+          out_transfer_no:
+            type: string
+            description: 商户公益捐赠单号
+            example: trans202506300102
+          transaction_info:
+            type: object
+            description: 关联的交易单号
+            required:
+              - transaction_type
+              - transaction_id
+            properties:
+              transaction_type:
+                type: string
+                description: 订单类型
+                example: WXPAY
+                enum:
+                  - WXPAY
+              transaction_id:
+                type: string
+                description: 订单号
+                example: '4217752501201407033233368018'
+          sponsor_mchid:
+            type: string
+            description: 出资商户号
+            example: '1900001109'
+          receive_mchid:
+            type: string
+            description: 收款商户号
+            example: '1900001109'
+          amount:
+            type: number
+            description: 预算总金额
+            example: 20000000
+          transfer_remark:
+            type: string
+            description: 捐赠备注
+            example: 帮助受助群体爱心捐款
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - out_budget_no
+          - budget_id
+          - out_transfer_no
+          - transfer_id
+          - amount
+          - transfer_remark
+          - receive_mchid
+          - state
+          - create_time
+        properties:
+          out_budget_no:
+            type: string
+            description: 商户预算单号
+            example: budget202506300102
+          budget_id:
+            type: string
+            description: 微信支付预算单号
+            example: '1182020050700019480001'
+          out_transfer_no:
+            type: string
+            description: 商户公益捐赠单号
+            example: trans202506300102
+          transfer_id:
+            type: string
+            description: 微信支付公益捐赠单号
+            example: '4217752501201407033233368018'
+          amount:
+            type: number
+            description: 预算总金额
+            example: 20000000
+          transfer_remark:
+            type: string
+            description: 捐赠备注
+            example: 帮助受助群体爱心捐款
+          receive_mchid:
+            type: string
+            description: 收款商户号
+            example: '1900001109'
+          state:
+            type: string
+            description: 捐赠状态
+            example: SUCCESS
+            enum:
+              - ACCEPTED
+              - SUCCESS
+              - CLOSE
+          create_time:
+            type: string
+            format: rfc3339
+            description: 捐赠单创建时间
+            example: '2015-05-20T13:29:35+08:00'
+          success_time:
+            type: string
+            format: rfc3339
+            description: 捐赠完成时间
+            example: '2015-05-20T13:29:35+08:00'

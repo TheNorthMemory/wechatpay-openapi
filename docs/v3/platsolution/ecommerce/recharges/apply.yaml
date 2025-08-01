@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2024.10.12
+  x-last-updated-at: 2025.07.29
   x-role:
     - 服务商
   tag:
@@ -34,17 +34,14 @@ post:
             example: ECOMMERCE_DEPOSIT
             enum:
               - ECOMMERCE_DEPOSIT
-              - ECOMMERCE_BANK_TRANSFER
-              - NORMAL_BANK_TRANSFER
+              - ECOMMERCE_PAYMENT
           account_type:
             type: string
             description: 充值入账账户
             example: DEPOSIT
             enum:
               - DEPOSIT
-              - BASIC
               - OPERATION
-              - FEES
           recharge_amount:
             type: object
             description: 充值金额
@@ -61,6 +58,20 @@ post:
             type: string
             description: 商户回调地址
             example: https://www.weixin.qq.com/wxpay/pay.php
+          available_recharge_channels:
+            type: array
+            description: 可用充值渠道列表
+            items:
+              type: string
+              example: BANK_TRANSFER
+              enum:
+                - BANK_TRANSFER
+                - QR_RECHARGE
+                - ONLINE_BANK
+          remark:
+            type: string
+            description: 充值备注
+            example: example_remark
   responses:
     '200':
       schema:

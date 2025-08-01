@@ -1,0 +1,99 @@
+post:
+  x-last-updated-at: 2025.04.07
+  x-role:
+    - 电商平台
+    - 服务商
+  tags:
+    - 国补专区
+    - 浙江
+  summary: 预核销品类凭证码
+  description: 预核销品类凭证码
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - sp_serial_no
+          - mchnt_no
+          - term_no
+          - auth_code
+          - category
+          - county_code
+        properties:
+          sp_serial_no:
+            type: string
+            description: 接入方请求流水号
+          mchnt_no:
+            type: string
+            description: 商户号
+          term_no:
+            type: string
+            description: 终端号
+          auth_code:
+            type: string
+            description: 品类凭证码
+          category:
+            type: string
+            description: 品类编码
+            example: A01
+          county_code:
+            type: string
+            description: 区县编码
+            example: '330000'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - resp_code
+          - resp_desc
+          - cred_frozen_no
+          - event_id
+          - event_title
+          - discount_mode
+          - category_id
+        properties:
+          resp_code:
+            type: string
+            description: 响应码
+            example: '000000'
+          resp_desc:
+            type: string
+            description: 响应描述
+            example: 成功
+          cred_frozen_no:
+            type: string
+            description: 冻结流水号
+          event_id:
+            type: string
+            description: 活动号
+          event_title:
+            type: string
+            description: 活动标题
+          discount_mode:
+            type: number
+            description: 优惠模式
+            enum:
+              - DIS_FLAG #优惠标记;(仅用于线下)
+              - DIS_CALC #优惠计算;(仅用于线下)
+              - DIS_SMKT #接入方自营销;(仅用于在线 电商)
+          amount:
+            type: number
+            description: 原订单金额
+          discount_amt:
+            type: number
+            description: 优惠金额
+          pay_amt:
+            type: number
+            description: 实付金额
+          channel_dis_flag:
+            type: string
+            description: 渠道优惠标记
+          channel_evt_no:
+            type: string
+            description: 渠道活动号列表
+          category_id:
+            type: string
+            description: 品类编码

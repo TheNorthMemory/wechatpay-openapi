@@ -1,0 +1,285 @@
+post:
+  x-last-updated-at: 2025.06.22
+  x-role:
+    - 服务商
+  tags:
+    - 商家名片会员
+  summary: 同步会员开通结果
+  description: 所有会员卡新开卡，我们回调给商家，商家还需要再同步给我们才算开卡成功（但是导入不用）
+  parameters:
+    - $ref: '../../../../../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
+    - name: user_card_code
+      in: path
+      required: true
+      type: string
+      description: 会员卡code
+      example: '478515832665'
+    - name: card_id
+      in: query
+      required: true
+      type: string
+      description: 会员卡模版ID
+      example: pbLatjvWOibDc5-TBnbUk1pD12o0
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - brand_id
+          - openid
+          - user_card_confirm_state
+        properties:
+          brand_id:
+            type: string
+            description: 品牌ID
+            example: '1004'
+          openid:
+            type: string
+            description: 用户标识
+            example: obLatjnx9gnqzS4myYGmLZ7LgLBA
+          card_color:
+            type: string
+            description: 卡背景颜色
+            example: '#FFFF00'
+          card_picture_url:
+            type: string
+            description: 卡背景图URL
+            example: https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/0
+          phone_number:
+            type: string
+            format: base64
+            description: 加密的手机号
+            example: vvysDQeEaH3I+wRh14St0abIkvQyFgh/fbWY==
+          level:
+            type: string
+            description: 等级
+            example: 钻石会员
+          valid_date_information:
+            type: object
+            description: 会员卡有效期
+            required:
+              - type
+            properties:
+              type:
+                type: string
+                description: 有效期类型
+                enum:
+                  - FIX_TIME_RANGE #固定时间范围内有效
+                  - FIX_TERM       #相对时间范围内有效
+                  - PERMANENT      #永久有效
+              available_begin_time:
+                type: string
+                format: rfc3339
+                description: 有效期开始时间
+                example: '2020-05-20T13:29:35.120+08:00'
+              available_end_time:
+                type: string
+                format: rfc3339
+                description: 有效期结束时间
+                example: '2030-05-20T13:29:35.120+08:00'
+              available_day_after_receive:
+                type: integer
+                description: 生效后N天内有效
+                example: 200
+          user_information:
+            type: object
+            description: 用户开卡时填写的个人信息
+            properties:
+              common_field_list:
+                type: array
+                description: 平台提供的通用开卡信息字段
+                items:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                      description: 平台提供的通用开卡信息字段
+                      enum:
+                        - USER_FORM_FLAG_SEX      #性别
+                        - USER_FORM_FLAG_NAME     #姓名
+                        - USER_FORM_FLAG_BIRTHDAY #生日
+                        - USER_FORM_FLAG_ADDRESS  #地址
+                        - USER_FORM_FLAG_EMAIL    #邮箱
+                        - USER_FORM_FLAG_CITY     #城市
+                    value:
+                      type: string
+                      format: base64
+                      description: 加密的用户开卡时填写的个人信息
+                      example: vvysDQeEaH3I+wRh14St0abIkvQyFgh/fbWY==
+              custom_field_list:
+                type: array
+                description: 商户自定义的开卡信息字段
+                items:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                      description: 字段名称
+                      example: 喜欢的运动
+                    user_chosen_values:
+                      type: array
+                      description: 加密的用户选择的字段值列表
+                      items:
+                        type: string
+                        format: base64
+                        example: vvysDQeEaH3I+wRh14St0abIkvQyFgh/fbWY==
+          attach:
+            type: string
+            description: 商家数据包
+            example: 自定义数据说明
+          user_card_confirm_state:
+            type: string
+            description: 会员开卡状态
+            enum:
+              - CREATE_CARD_SUCCESS
+              - CREATE_CARD_FAIL
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - user_card_code
+          - card_id
+          - openid
+          - brand_id
+          - card_type
+          - valid_date_information
+          - pickup_time
+          - user_card_state
+        properties:
+          user_card_code:
+            type: string
+            description: 会员卡code
+            example: '478515832665'
+          card_id:
+            type: string
+            description: 会员卡模板ID
+            example: pbLatjvWOibDc5-TBnbUk1pD12o0
+          openid:
+            type: string
+            description: 用户标识
+            example: obLatjnx9gnqzS4myYGmLZ7LgLBA
+          card_color:
+            type: string
+            description: 卡背景颜色
+            example: '#FFFF00'
+          card_picture_url:
+            type: string
+            description: 卡背景图URL
+            example: https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/0
+          brand_id:
+            type: string
+            description: 品牌ID
+            example: '1004'
+          card_type:
+            type: string
+            description: 会员卡类型
+            enum:
+              - PURCHASE
+              - NORMAL
+              - BALANCE
+          phone_number:
+            type: string
+            format: base64
+            description: 加密的手机号
+            example: vvysDQeEaH3I+wRh14St0abIkvQyFgh/fbWY==
+          level:
+            type: string
+            description: 等级
+            example: 钻石会员
+          valid_date_information:
+            type: object
+            description: 会员卡有效期
+            required:
+              - type
+            properties:
+              type:
+                type: string
+                description: 有效期类型
+                enum:
+                  - FIX_TIME_RANGE #固定时间范围内有效
+                  - FIX_TERM       #相对时间范围内有效
+                  - PERMANENT      #永久有效
+              available_begin_time:
+                type: string
+                format: rfc3339
+                description: 有效期开始时间
+                example: '2020-05-20T13:29:35.120+08:00'
+              available_end_time:
+                type: string
+                format: rfc3339
+                description: 有效期结束时间
+                example: '2030-05-20T13:29:35.120+08:00'
+              available_day_after_receive:
+                type: integer
+                description: 生效后N天内有效
+                example: 200
+          pickup_time:
+              type: string
+              format: rfc3339
+              description: 领取时间
+              example: '2020-05-20T13:29:35.120+08:00'
+          user_information:
+            type: object
+            description: 用户开卡时填写的个人信息
+            properties:
+              common_field_list:
+                type: array
+                description: 平台提供的通用开卡信息字段
+                items:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                      description: 平台提供的通用开卡信息字段
+                      enum:
+                        - USER_FORM_FLAG_SEX      #性别
+                        - USER_FORM_FLAG_NAME     #姓名
+                        - USER_FORM_FLAG_BIRTHDAY #生日
+                        - USER_FORM_FLAG_ADDRESS  #地址
+                        - USER_FORM_FLAG_EMAIL    #邮箱
+                        - USER_FORM_FLAG_CITY     #城市
+                    value:
+                      type: string
+                      format: base64
+                      description: 加密的用户开卡时填写的个人信息
+                      example: vvysDQeEaH3I+wRh14St0abIkvQyFgh/fbWY==
+              custom_field_list:
+                type: array
+                description: 商户自定义的开卡信息字段
+                items:
+                  type: object
+                  properties:
+                    name:
+                      type: string
+                      description: 字段名称
+                      example: 喜欢的运动
+                    user_chosen_values:
+                      type: array
+                      description: 加密的用户选择的字段值列表
+                      items:
+                        type: string
+                        format: base64
+                        example: vvysDQeEaH3I+wRh14St0abIkvQyFgh/fbWY==
+          attach:
+            type: string
+            description: 商家数据包
+            example: 自定义数据说明
+          user_card_state:
+            type: string
+            description: 用户会员卡状态
+            enum:
+              - UNACTIVATED
+              - EFFECTIVE
+              - EXPIRED
+              - INVALID
+          invalid_reason:
+            type: string
+            description: 作废原因
+            example: 传入的自定义作废原因
+          invalid_time:
+            type: string
+            format: rfc3339
+            description: 作废时间
+            example: '2020-05-20T13:29:35.120+08:00'

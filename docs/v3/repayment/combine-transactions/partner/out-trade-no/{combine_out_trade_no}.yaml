@@ -1,0 +1,126 @@
+get:
+  x-last-updated-at: 2025.05.29
+  x-role:
+    - 服务商
+  tags:
+    - 还款支付
+  summary: 还款单查询
+  description: 商户通过还款单查询订单API查询订单状态，完成下一步的业务逻辑。
+  parameters:
+    - name: combine_out_trade_no
+      in: path
+      type: string
+      required: true
+      description: 还款单订单号
+      example: P20150806125346
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - combine_appid
+          - combine_mchid
+          - combine_out_trade_no
+          - combine_transaction_id
+        properties:
+          combine_appid:
+            type: string
+            description: 还款服务商APPID
+            example: wxd678efh567hg6787
+          combine_mchid:
+            type: string
+            description: 还款服务商商户号
+            example: '1900000109'
+          combine_out_trade_no:
+            type: string
+            description: 还款单订单号
+            example: P20150806125346
+          combine_transaction_id:
+            type: string
+            description: 还款单微信支付订单号
+            example: '1217752501201407033233368018'
+          combine_payer_info:
+            type: object
+            description: 还款支付者信息
+            required:
+              - openid
+            properties:
+              openid:
+                type: string
+                description: 用户服务商标识
+                example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+          sub_orders:
+            type: array
+            description: 还款明细单信息列表
+            items:
+              type: object
+              required:
+                - mchid
+                - out_trade_no
+              properties:
+                mchid:
+                  type: string
+                  description: 还款单发起商户号
+                  example: '1900000109'
+                sub_mchid:
+                  type: string
+                  description: 子商户号
+                  example: '1900000109'
+                out_trade_no:
+                  type: string
+                  description: 还款明细单订单号
+                  example: '20150806125346'
+                transaction_id:
+                  type: string
+                  description: 还款明细单微信支付订单号
+                  example: '1009660380201506130728806387'
+                trade_type:
+                  type: string
+                  description: 交易类型
+                  example: REPAYMENT
+                  enum:
+                    - REPAYMENT
+                trade_state:
+                  type: string
+                  description: 交易状态
+                  example: SUCCESS
+                  enum:
+                    - SUCCESS
+                    - NOTPAY
+                    - CLOSED
+                bank_type:
+                  type: string
+                  description: 付款银行
+                  example: CMC
+                attach:
+                  type: string
+                  description: 附加数据
+                  example: 深圳分店
+                success_time:
+                  type: string
+                  format: rfc3339
+                  description: 支付完成时间
+                  example: '2015-05-20T13:29:35.120+08:00'
+                amount:
+                  type: object
+                  description: 子单金额信息
+                  required:
+                    - total_amount
+                    - payer_amount
+                  properties:
+                    total_amount:
+                      type: integer
+                      description: 标价金额
+                      example: 100
+                    currency:
+                      type: string
+                      description: 标价币种
+                      example: CNY
+                    payer_amount:
+                      type: integer
+                      description: 现金支付金额
+                      example: 10
+                    payer_currency:
+                      type: string
+                      description: 现金支付币种
+                      example: CNY

@@ -1,0 +1,47 @@
+post:
+  x-last-updated-at: 2025.05.29
+  x-role:
+    - 服务商
+  tags:
+    - 还款支付
+  summary: 商户关单
+  description: 还款单支付订单只能使用此还款单关单api完成关单。还款单支付关单接口不支持关闭部分还款单， 关单的还款单订单号、还款单发起商户号、还款明细单个数、还款明细单订单号、子商户号必须与下单时完全一致。
+  parameters:
+    - name: combine_out_trade_no
+      in: path
+      type: string
+      required: true
+      description: 还款单订单号
+      example: '1217752501201407033233368018'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - sub_orders
+        properties:
+          sub_orders:
+            type: array
+            description: 还款明细单信息列表
+            maxItems: 10
+            items:
+              type: object
+              required:
+                - mchid
+                - out_trade_no
+              properties:
+                mchid:
+                  type: string
+                  description: 还款单发起商户号
+                  example: '1900000109'
+                out_trade_no:
+                  type: string
+                  description: 还款明细单订单号
+                  example: '20150806125346'
+                sub_mchid:
+                  type: string
+                  description: 二级商户号
+                  example: '1900000109'
+  responses:
+    204: {}

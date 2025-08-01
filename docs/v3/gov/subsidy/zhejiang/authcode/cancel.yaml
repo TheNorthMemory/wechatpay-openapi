@@ -1,0 +1,59 @@
+post:
+  x-last-updated-at: 2025.04.07
+  x-role:
+    - 电商平台
+    - 服务商
+  tags:
+    - 国补专区
+    - 浙江
+  summary: 品类凭证码预核销撤销
+  description: 品类凭证码预核销撤销
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - sp_serial_no
+          - cred_frozen_no
+          - trans_date
+          - trans_time
+          - auth_code
+          - req_ssn
+        properties:
+          sp_serial_no:
+            type: string
+            description: 接入方请求流水号
+          cred_frozen_no:
+            type: string
+            description: 冻结流水号
+          trans_date:
+            type: string
+            description: 交易日期
+          trans_time:
+            type: string
+            description: 交易时间
+          auth_code:
+            type: string
+            description: 品类凭证码
+          req_ssn:
+            type: string
+            description: 请求流水号
+            example: '123'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - resp_code
+          - resp_desc
+        properties:
+          resp_code:
+            type: string
+            description: 响应码
+            example: '000000'
+          resp_desc:
+            type: string
+            description: 响应描述
+            example: 成功

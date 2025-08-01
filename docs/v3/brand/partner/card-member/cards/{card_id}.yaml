@@ -1,0 +1,904 @@
+get:
+  x-last-updated-at: 2025.06.22
+  x-role:
+    - 服务商
+  tags:
+    - 商家名片会员
+  summary: 查询会员卡模板信息
+  description: 通过此接口可查询指定会员卡模板的所有信息
+  parameters:
+    - name: card_id
+      in: path
+      required: true
+      type: string
+      description: 会员卡模板ID
+      example: pbLatjvWOibDc5-TBnbUk1pD12o0
+    - name: brand_id
+      in: query
+      required: true
+      type: string
+      description: 品牌id
+      example: '1004'
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - card_id
+          - brand_id
+          - appid
+          - card_type
+          - card_title
+          - card_color
+          - card_picture_url
+          - code_mode
+          - code_type
+          - benefits
+          - notify_url
+          - valid_date_information
+          - state
+          - create_time
+          - update_time
+        properties:
+          card_id:
+            type: string
+            description: 会员卡模板ID
+            example: pbLatjvWOibDc5-TBnbUk1pD12o0
+          brand_id:
+            type: string
+            description: 品牌ID
+            example: '1004'
+          appid:
+            type: string
+            description: 商户AppId
+            example: wxea9c30890f48d5ae
+          card_type:
+            type: string
+            description: 会员卡类型
+            enum:
+              - PURCHASE
+              - NORMAL
+              - BALANCE
+          card_title:
+            type: string
+            description: 卡名称
+            example: 测试卡
+          card_color:
+            type: string
+            description: 卡背景颜色
+            example: '#FFFF00'
+          card_picture_url:
+            type: string
+            description: 卡背景图URL
+            example: https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/0
+          code_mode:
+            type: string
+            description: 会员卡code分配类型
+            enum:
+              - SYSTEM_ALLOCATE   #系统分配
+              - MERCHANT_ALLOCATE #商户预存
+          code_type:
+            type: string
+            description: 会员码型
+            enum:
+              - NONE_CODE            #不显示任何码型
+              - BAR_CODE             #条形码
+              - QR_CODE              #二维码
+              - BAR_CODE_AND_QR_CODE #条形码和二维码
+              - JUMP_MINI_PROGRAM    #跳转商家小程序
+          code_jump_information:
+            type: object
+            description: 会员码跳转信息
+            properties:
+              jump_appid:
+                type: string
+                description: 会员码跳转AppID
+                example: wxea9c30a90fs8d3fe
+              jump_path:
+                type: string
+                description: 会员码跳转路径
+                example: /pages/code/code
+          benefits:
+            type: string
+            description: 会员权益
+            example: 会员折扣、专属价
+          notify_url:
+            type: string
+            description: 回调地址
+            example: https://www.weixin.qq.com/wxpay/notify.php
+          need_pinned:
+            type: boolean
+            description: 是否置顶
+          need_display_level:
+            type: boolean
+            description: 是否展示会员等级
+          init_level:
+            type: string
+            description: 会员初始等级
+            example: 白银会员
+          service_phone:
+            type: string
+            description: 服务电话
+            example: 010-8877xxxx
+          legal_agreement:
+            type: string
+            description: 商家法务协议
+            example: 商家需在 48 小时内发货，若商品存在质量问题，用户可在 7 天内申请退货。
+          valid_date_information:
+            type: object
+            description: 会员卡有效期
+            required:
+              - type
+            properties:
+              type:
+                type: string
+                description: 有效期类型
+                enum:
+                  - FIX_TIME_RANGE #固定时间范围内有效
+                  - FIX_TERM       #相对时间范围内有效
+                  - PERMANENT      #永久有效
+              available_begin_time:
+                type: string
+                format: rfc3339
+                description: 有效期开始时间
+                example: '2020-05-20T13:29:35.120+08:00'
+              available_end_time:
+                type: string
+                format: rfc3339
+                description: 有效期结束时间
+                example: '2030-05-20T13:29:35.120+08:00'
+              available_day_after_receive:
+                type: integer
+                description: 生效后N天内有效
+                example: 200
+          points_information:
+            type: object
+            description: 积分信息
+            properties:
+              jump_appid:
+                type: string
+                description: 积分跳转AppID
+                example: wxea9c30a90fs8d3fe
+              jump_path:
+                type: string
+                description: 积分跳转路径
+                example: /pages/points/points
+          balance_information:
+            type: object
+            description: 储值信息
+            properties:
+              jump_appid:
+                type: string
+                description: 储值小程序AppID
+                example: wxea9c30a90fs8d3fe
+              jump_path:
+                type: string
+                description: 储值小程序路径
+                example: /pages/balance/balance
+          purchase_information:
+            type: object
+            description: 付费会员信息
+            properties:
+              price:
+                type: number
+                format: integer
+                description: 付费会员价格
+                example: 100
+              jump_appid:
+                type: string
+                description: 付费会员跳转AppID
+                example: wxea9c30a90fs8d3fe
+              jump_path:
+                type: string
+                description: 付费会员跳转路径
+                example: /pages/purchase/purchase
+          user_information:
+            type: object
+            description: 用户开卡信息
+            properties:
+              common_field_list:
+                type: array
+                description: 平台提供的通用开卡信息字段
+                items:
+                  type: string
+                  description: 平台提供的通用开卡信息字段
+                  enum:
+                    - USER_FORM_FLAG_SEX      #性别
+                    - USER_FORM_FLAG_NAME     #姓名
+                    - USER_FORM_FLAG_BIRTHDAY #生日
+                    - USER_FORM_FLAG_ADDRESS  #地址
+                    - USER_FORM_FLAG_EMAIL    #邮箱
+                    - USER_FORM_FLAG_CITY     #城市
+              custom_field_list:
+                type: array
+                description: 商户自定义的开卡信息字段
+                items:
+                  type: object
+                  properties:
+                    type:
+                      type: string
+                      description: 商户自定义的开卡信息字段类型
+                      enum:
+                        - CHECK_BOX #自定义多选
+                        - RADIO     #自定义单选
+                    name:
+                      type: string
+                      description: 字段名称
+                      example: 喜欢的运动
+                    values:
+                      type: array
+                      description: 字段值
+                      items:
+                        type: string
+                        example: 篮球
+          state:
+            type: string
+            description: 状态
+            enum:
+              - CARD_EFFECTIVE
+              - CARD_INVALID
+          create_time:
+            type: string
+            description: 创建时间
+            example: '2020-05-20T13:29:35.120+08:00'
+          update_time:
+            type: string
+            description: 更新时间
+            example: '2020-05-20T13:29:35.120+08:00'
+patch:
+  x-last-updated-at: 2025.06.22
+  x-role:
+    - 服务商
+  tags:
+    - 商家名片会员
+  summary: 修改会员卡模板信息
+  description: 通过此接口可更新会员卡的信息，包括基本信息、储值信息、开卡信息、补充说明
+  parameters:
+    - name: card_id
+      in: path
+      required: true
+      type: string
+      description: 会员卡模板ID
+      example: pbLatjvWOibDc5-TBnbUk1pD12o0
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - brand_id
+        properties:
+          brand_id:
+            type: string
+            description: 品牌ID
+            example: '1004'
+          card_title:
+            type: string
+            description: 卡名称
+            example: 测试卡
+          card_color:
+            type: string
+            description: 卡背景颜色
+            example: '#FFFF00'
+          card_picture_url:
+            type: string
+            description: 卡背景图URL
+            example: https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/0
+          code_jump_information:
+            type: object
+            description: 会员码跳转信息
+            properties:
+              jump_appid:
+                type: string
+                description: 会员码跳转AppID
+                example: wxea9c30a90fs8d3fe
+              jump_path:
+                type: string
+                description: 会员码跳转路径
+                example: /pages/code/code
+          benefits:
+            type: string
+            description: 会员权益
+            example: 会员折扣、专属价
+          notify_url:
+            type: string
+            description: 回调地址
+            example: https://www.weixin.qq.com/wxpay/notify.php
+          need_pinned:
+            type: boolean
+            description: 是否置顶
+          need_display_level:
+            type: boolean
+            description: 是否展示会员等级
+          init_level:
+            type: string
+            description: 会员初始等级
+            example: 白银会员
+          service_phone:
+            type: string
+            description: 服务电话
+            example: 010-8877xxxx
+          legal_agreement:
+            type: string
+            description: 商家法务协议
+            example: 商家需在 48 小时内发货，若商品存在质量问题，用户可在 7 天内申请退货。
+          valid_date_information:
+            type: object
+            description: 会员卡有效期
+            required:
+              - type
+            properties:
+              type:
+                type: string
+                description: 有效期类型
+                enum:
+                  - FIX_TIME_RANGE #固定时间范围内有效
+                  - FIX_TERM       #相对时间范围内有效
+                  - PERMANENT      #永久有效
+              available_begin_time:
+                type: string
+                format: rfc3339
+                description: 有效期开始时间
+                example: '2020-05-20T13:29:35.120+08:00'
+              available_end_time:
+                type: string
+                format: rfc3339
+                description: 有效期结束时间
+                example: '2030-05-20T13:29:35.120+08:00'
+              available_day_after_receive:
+                type: integer
+                description: 生效后N天内有效
+                example: 200
+          points_information:
+            type: object
+            description: 积分信息
+            properties:
+              jump_appid:
+                type: string
+                description: 积分跳转AppID
+                example: wxea9c30a90fs8d3fe
+              jump_path:
+                type: string
+                description: 积分跳转路径
+                example: /pages/points/points
+          balance_information:
+            type: object
+            description: 储值信息
+            properties:
+              jump_appid:
+                type: string
+                description: 储值小程序AppID
+                example: wxea9c30a90fs8d3fe
+              jump_path:
+                type: string
+                description: 储值小程序路径
+                example: /pages/balance/balance
+          purchase_information:
+            type: object
+            description: 付费会员信息
+            properties:
+              price:
+                type: number
+                format: integer
+                description: 付费会员价格
+                example: 100
+              jump_appid:
+                type: string
+                description: 付费会员跳转AppID
+                example: wxea9c30a90fs8d3fe
+              jump_path:
+                type: string
+                description: 付费会员跳转路径
+                example: /pages/purchase/purchase
+          user_information:
+            type: object
+            description: 用户开卡信息
+            properties:
+              common_field_list:
+                type: array
+                description: 平台提供的通用开卡信息字段
+                items:
+                  type: string
+                  description: 平台提供的通用开卡信息字段
+                  enum:
+                    - USER_FORM_FLAG_SEX      #性别
+                    - USER_FORM_FLAG_NAME     #姓名
+                    - USER_FORM_FLAG_BIRTHDAY #生日
+                    - USER_FORM_FLAG_ADDRESS  #地址
+                    - USER_FORM_FLAG_EMAIL    #邮箱
+                    - USER_FORM_FLAG_CITY     #城市
+              custom_field_list:
+                type: array
+                description: 商户自定义的开卡信息字段
+                items:
+                  type: object
+                  properties:
+                    type:
+                      type: string
+                      description: 商户自定义的开卡信息字段类型
+                      enum:
+                        - CHECK_BOX #自定义多选
+                        - RADIO     #自定义单选
+                    name:
+                      type: string
+                      description: 字段名称
+                      example: 喜欢的运动
+                    values:
+                      type: array
+                      description: 字段值
+                      items:
+                        type: string
+                        example: 篮球
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - card_id
+          - brand_id
+          - appid
+          - card_type
+          - card_title
+          - card_color
+          - card_picture_url
+          - code_mode
+          - code_type
+          - benefits
+          - notify_url
+          - valid_date_information
+          - state
+          - create_time
+          - update_time
+        properties:
+          card_id:
+            type: string
+            description: 会员卡模板ID
+            example: pbLatjvWOibDc5-TBnbUk1pD12o0
+          brand_id:
+            type: string
+            description: 品牌ID
+            example: '1004'
+          appid:
+            type: string
+            description: 商户AppId
+            example: wxea9c30890f48d5ae
+          card_type:
+            type: string
+            description: 会员卡类型
+            enum:
+              - PURCHASE
+              - NORMAL
+              - BALANCE
+          card_title:
+            type: string
+            description: 卡名称
+            example: 测试卡
+          card_color:
+            type: string
+            description: 卡背景颜色
+            example: '#FFFF00'
+          card_picture_url:
+            type: string
+            description: 卡背景图URL
+            example: https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/0
+          code_mode:
+            type: string
+            description: 会员卡code分配类型
+            enum:
+              - SYSTEM_ALLOCATE   #系统分配
+              - MERCHANT_ALLOCATE #商户预存
+          code_type:
+            type: string
+            description: 会员码型
+            enum:
+              - NONE_CODE            #不显示任何码型
+              - BAR_CODE             #条形码
+              - QR_CODE              #二维码
+              - BAR_CODE_AND_QR_CODE #条形码和二维码
+              - JUMP_MINI_PROGRAM    #跳转商家小程序
+          code_jump_information:
+            type: object
+            description: 会员码跳转信息
+            properties:
+              jump_appid:
+                type: string
+                description: 会员码跳转AppID
+                example: wxea9c30a90fs8d3fe
+              jump_path:
+                type: string
+                description: 会员码跳转路径
+                example: /pages/code/code
+          benefits:
+            type: string
+            description: 会员权益
+            example: 会员折扣、专属价
+          notify_url:
+            type: string
+            description: 回调地址
+            example: https://www.weixin.qq.com/wxpay/notify.php
+          need_pinned:
+            type: boolean
+            description: 是否置顶
+          need_display_level:
+            type: boolean
+            description: 是否展示会员等级
+          init_level:
+            type: string
+            description: 会员初始等级
+            example: 白银会员
+          service_phone:
+            type: string
+            description: 服务电话
+            example: 010-8877xxxx
+          legal_agreement:
+            type: string
+            description: 商家法务协议
+            example: 商家需在 48 小时内发货，若商品存在质量问题，用户可在 7 天内申请退货。
+          valid_date_information:
+            type: object
+            description: 会员卡有效期
+            required:
+              - type
+            properties:
+              type:
+                type: string
+                description: 有效期类型
+                enum:
+                  - FIX_TIME_RANGE #固定时间范围内有效
+                  - FIX_TERM       #相对时间范围内有效
+                  - PERMANENT      #永久有效
+              available_begin_time:
+                type: string
+                format: rfc3339
+                description: 有效期开始时间
+                example: '2020-05-20T13:29:35.120+08:00'
+              available_end_time:
+                type: string
+                format: rfc3339
+                description: 有效期结束时间
+                example: '2030-05-20T13:29:35.120+08:00'
+              available_day_after_receive:
+                type: integer
+                description: 生效后N天内有效
+                example: 200
+          points_information:
+            type: object
+            description: 积分信息
+            properties:
+              jump_appid:
+                type: string
+                description: 积分跳转AppID
+                example: wxea9c30a90fs8d3fe
+              jump_path:
+                type: string
+                description: 积分跳转路径
+                example: /pages/points/points
+          balance_information:
+            type: object
+            description: 储值信息
+            properties:
+              jump_appid:
+                type: string
+                description: 储值小程序AppID
+                example: wxea9c30a90fs8d3fe
+              jump_path:
+                type: string
+                description: 储值小程序路径
+                example: /pages/balance/balance
+          purchase_information:
+            type: object
+            description: 付费会员信息
+            properties:
+              price:
+                type: number
+                format: integer
+                description: 付费会员价格
+                example: 100
+              jump_appid:
+                type: string
+                description: 付费会员跳转AppID
+                example: wxea9c30a90fs8d3fe
+              jump_path:
+                type: string
+                description: 付费会员跳转路径
+                example: /pages/purchase/purchase
+          user_information:
+            type: object
+            description: 用户开卡信息
+            properties:
+              common_field_list:
+                type: array
+                description: 平台提供的通用开卡信息字段
+                items:
+                  type: string
+                  description: 平台提供的通用开卡信息字段
+                  enum:
+                    - USER_FORM_FLAG_SEX      #性别
+                    - USER_FORM_FLAG_NAME     #姓名
+                    - USER_FORM_FLAG_BIRTHDAY #生日
+                    - USER_FORM_FLAG_ADDRESS  #地址
+                    - USER_FORM_FLAG_EMAIL    #邮箱
+                    - USER_FORM_FLAG_CITY     #城市
+              custom_field_list:
+                type: array
+                description: 商户自定义的开卡信息字段
+                items:
+                  type: object
+                  properties:
+                    type:
+                      type: string
+                      description: 商户自定义的开卡信息字段类型
+                      enum:
+                        - CHECK_BOX #自定义多选
+                        - RADIO     #自定义单选
+                    name:
+                      type: string
+                      description: 字段名称
+                      example: 喜欢的运动
+                    values:
+                      type: array
+                      description: 字段值
+                      items:
+                        type: string
+                        example: 篮球
+          state:
+            type: string
+            description: 状态
+            enum:
+              - CARD_EFFECTIVE
+              - CARD_INVALID
+          create_time:
+            type: string
+            description: 创建时间
+            example: '2020-05-20T13:29:35.120+08:00'
+          update_time:
+            type: string
+            description: 更新时间
+            example: '2020-05-20T13:29:35.120+08:00'
+delete:
+  x-last-updated-at: 2025.06.22
+  x-role:
+    - 服务商
+  tags:
+    - 商家名片会员
+  summary: 删除会员卡模板
+  description: 商户可调用此api删除会员卡。删除后，商家将无法通过任何渠道再投放该会员卡。
+  parameters:
+    - name: card_id
+      in: path
+      required: true
+      type: string
+      description: 会员卡模板ID
+      example: pbLatjvWOibDc5-TBnbUk1pD12o0
+    - name: brand_id
+      in: query
+      required: true
+      type: string
+      description: 品牌id
+      example: '1004'
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - card_id
+          - brand_id
+          - appid
+          - card_type
+          - card_title
+          - card_color
+          - card_picture_url
+          - code_mode
+          - code_type
+          - benefits
+          - notify_url
+          - valid_date_information
+          - state
+          - create_time
+          - update_time
+        properties:
+          card_id:
+            type: string
+            description: 会员卡模板ID
+            example: pbLatjvWOibDc5-TBnbUk1pD12o0
+          brand_id:
+            type: string
+            description: 品牌ID
+            example: '1004'
+          appid:
+            type: string
+            description: 商户AppId
+            example: wxea9c30890f48d5ae
+          card_type:
+            type: string
+            description: 会员卡类型
+            enum:
+              - PURCHASE
+              - NORMAL
+              - BALANCE
+          card_title:
+            type: string
+            description: 卡名称
+            example: 测试卡
+          card_color:
+            type: string
+            description: 卡背景颜色
+            example: '#FFFF00'
+          card_picture_url:
+            type: string
+            description: 卡背景图URL
+            example: https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/0
+          code_mode:
+            type: string
+            description: 会员卡code分配类型
+            enum:
+              - SYSTEM_ALLOCATE   #系统分配
+              - MERCHANT_ALLOCATE #商户预存
+          code_type:
+            type: string
+            description: 会员码型
+            enum:
+              - NONE_CODE            #不显示任何码型
+              - BAR_CODE             #条形码
+              - QR_CODE              #二维码
+              - BAR_CODE_AND_QR_CODE #条形码和二维码
+              - JUMP_MINI_PROGRAM    #跳转商家小程序
+          code_jump_information:
+            type: object
+            description: 会员码跳转信息
+            properties:
+              jump_appid:
+                type: string
+                description: 会员码跳转AppID
+                example: wxea9c30a90fs8d3fe
+              jump_path:
+                type: string
+                description: 会员码跳转路径
+                example: /pages/code/code
+          benefits:
+            type: string
+            description: 会员权益
+            example: 会员折扣、专属价
+          notify_url:
+            type: string
+            description: 回调地址
+            example: https://www.weixin.qq.com/wxpay/notify.php
+          need_pinned:
+            type: boolean
+            description: 是否置顶
+          need_display_level:
+            type: boolean
+            description: 是否展示会员等级
+          init_level:
+            type: string
+            description: 会员初始等级
+            example: 白银会员
+          service_phone:
+            type: string
+            description: 服务电话
+            example: 010-8877xxxx
+          legal_agreement:
+            type: string
+            description: 商家法务协议
+            example: 商家需在 48 小时内发货，若商品存在质量问题，用户可在 7 天内申请退货。
+          valid_date_information:
+            type: object
+            description: 会员卡有效期
+            required:
+              - type
+            properties:
+              type:
+                type: string
+                description: 有效期类型
+                enum:
+                  - FIX_TIME_RANGE #固定时间范围内有效
+                  - FIX_TERM       #相对时间范围内有效
+                  - PERMANENT      #永久有效
+              available_begin_time:
+                type: string
+                format: rfc3339
+                description: 有效期开始时间
+                example: '2020-05-20T13:29:35.120+08:00'
+              available_end_time:
+                type: string
+                format: rfc3339
+                description: 有效期结束时间
+                example: '2030-05-20T13:29:35.120+08:00'
+              available_day_after_receive:
+                type: integer
+                description: 生效后N天内有效
+                example: 200
+          points_information:
+            type: object
+            description: 积分信息
+            properties:
+              jump_appid:
+                type: string
+                description: 积分跳转AppID
+                example: wxea9c30a90fs8d3fe
+              jump_path:
+                type: string
+                description: 积分跳转路径
+                example: /pages/points/points
+          balance_information:
+            type: object
+            description: 储值信息
+            properties:
+              jump_appid:
+                type: string
+                description: 储值小程序AppID
+                example: wxea9c30a90fs8d3fe
+              jump_path:
+                type: string
+                description: 储值小程序路径
+                example: /pages/balance/balance
+          purchase_information:
+            type: object
+            description: 付费会员信息
+            properties:
+              price:
+                type: number
+                format: integer
+                description: 付费会员价格
+                example: 100
+              jump_appid:
+                type: string
+                description: 付费会员跳转AppID
+                example: wxea9c30a90fs8d3fe
+              jump_path:
+                type: string
+                description: 付费会员跳转路径
+                example: /pages/purchase/purchase
+          user_information:
+            type: object
+            description: 用户开卡信息
+            properties:
+              common_field_list:
+                type: array
+                description: 平台提供的通用开卡信息字段
+                items:
+                  type: string
+                  description: 平台提供的通用开卡信息字段
+                  enum:
+                    - USER_FORM_FLAG_SEX      #性别
+                    - USER_FORM_FLAG_NAME     #姓名
+                    - USER_FORM_FLAG_BIRTHDAY #生日
+                    - USER_FORM_FLAG_ADDRESS  #地址
+                    - USER_FORM_FLAG_EMAIL    #邮箱
+                    - USER_FORM_FLAG_CITY     #城市
+              custom_field_list:
+                type: array
+                description: 商户自定义的开卡信息字段
+                items:
+                  type: object
+                  properties:
+                    type:
+                      type: string
+                      description: 商户自定义的开卡信息字段类型
+                      enum:
+                        - CHECK_BOX #自定义多选
+                        - RADIO     #自定义单选
+                    name:
+                      type: string
+                      description: 字段名称
+                      example: 喜欢的运动
+                    values:
+                      type: array
+                      description: 字段值
+                      items:
+                        type: string
+                        example: 篮球
+          state:
+            type: string
+            description: 状态
+            enum:
+              - CARD_EFFECTIVE
+              - CARD_INVALID
+          create_time:
+            type: string
+            description: 创建时间
+            example: '2020-05-20T13:29:35.120+08:00'
+          update_time:
+            type: string
+            description: 更新时间
+            example: '2020-05-20T13:29:35.120+08:00'

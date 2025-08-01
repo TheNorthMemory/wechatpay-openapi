@@ -1,0 +1,135 @@
+post:
+  x-last-updated-at: 2025.04.07
+  x-role:
+    - 电商平台
+    - 服务商
+  tags:
+    - 国补专区
+    - 浙江
+  summary: n品类核销
+  description: n品类核销
+  parameters:
+    - $ref: '../../../../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - sp_serial_no
+          - cred_frozen_no
+          - trans_date
+          - trans_time
+          - auth_code
+          - req_ssn
+        properties:
+          data:
+            type: array
+            description: 品类集合
+            items:
+              type: object
+              required:
+                - cate_code
+                - cert_no
+                - name
+                - operation_time
+                - sales
+                - status
+                - subsidy
+                - tel
+                - add_code
+                - address
+                - sale_models
+                - brand
+                - activity_add_code
+                - uniscid
+                - corp_name
+                - serial_num
+              properties:
+                cate_code:
+                  type: string
+                  description: 品类编码
+                cert_no:
+                  type: string
+                  format: base64
+                  description: 证件号码（身份证中字母需 大写，不要有空格
+                grade:
+                  type: string
+                  description: 能耗等级（一级/二级），品类编码 A开头必填，其他非必填
+                name:
+                  type: string
+                  format: base64
+                  description: 姓名
+                operation_time:
+                  type: string
+                  description: 交易完成或商品退回时间戳（调用 System.currentTimeMillis 方法）
+                bank_name:
+                  type: string
+                  description: 银行机构名称
+                bank_subsidy:
+                  type: string
+                  description: 银行补贴金额（都是正数，以元为单位）
+                plat_subsidy:
+                  type: string
+                  description: 交易平台补贴金额（都是正数，以元为单位）
+                sales:
+                  type: string
+                  description: 销售金额（都是正数，以元为单位）
+                status:
+                  type: string
+                  description: 品类状态（0-已核销/1-已退回）
+                subsidy:
+                  type: string
+                  description: 政府补贴金额（都是正数，以元为单位）
+                tel:
+                  type: string
+                  format: base64
+                  description: 手机号
+                add_code:
+                  type: string
+                  description: 收货地区编码（例如：110 101）6 位数字
+                address:
+                  type: string
+                  format: base64
+                  description: 收货地址（例如：xx 街道 xx 小区）
+                sale_models:
+                  type: string
+                  description: 销售方式（0-线上/1-线下）
+                brand:
+                  type: string
+                  description: 家电品牌
+                activity_add_code:
+                  type: string
+                  description: 活动资金地区编码（例如：110 101）6 位数字
+                uniscid:
+                  type: string
+                  description: 统一社会信息代码（18 位，请与营业执照上保持一致）
+                corp_name:
+                  type: string
+                  description: 销售企业名称（不超过 100 位，请与营业执照上保持一致）
+                serial_num:
+                  type: string
+                  description: 数据流水号，保证平台唯一
+          req_ssn:
+            type: string
+            description: 请求流水号
+            example: '123'
+          req_time:
+            type: string
+            description: 请求时间
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - resp_code
+          - resp_desc
+        properties:
+          resp_code:
+            type: string
+            description: 响应码
+            example: '000000'
+          resp_desc:
+            type: string
+            description: 响应描述
+            example: 成功

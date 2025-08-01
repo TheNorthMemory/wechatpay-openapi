@@ -1,0 +1,84 @@
+get:
+  x-last-updated-at: 2025.07.29
+  x-role:
+    - 服务商
+  tags:
+    - 资金应用∙转账∙用户确认模式
+  summary: 查询子商户商家转账授权状态
+  description: 查询子商户商家转账授权状态 注：单个商户的接口频率限制为100次/s
+  parameters:
+    - name: sub_mchid
+      in: path
+      required: true
+      type: string
+      description: 二级商户号
+      example: '1900001121'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - sub_mchid
+          - out_apply_no
+          - appid
+          - openid
+          - user_display_name
+          - authorization_id
+          - state
+          - authorize_time
+        properties:
+          sub_mchid:
+            type: string
+            description: 二级商户号
+            example: '1900001121'
+          state:
+            type: string
+            description: 授权状态
+            example: AUTHORIZED
+            enum:
+              - AUTHORIZED
+              - UNAUTHORIZED
+              - CANCELED
+          apply_order:
+            type: object
+            description: 授权申请单
+            required:
+              - sub_mchid
+              - out_apply_no
+              - state
+              - accept_time
+              - update_time
+            properties:
+              sub_mchid:
+                type: string
+                description: 二级商户号
+                example: '1900001121'
+              out_apply_no:
+                type: string
+                description: 商户申请单号
+                example: apply2020042013
+              state:
+                type: string
+                description: 授权申请单状态
+                example: INVITED
+                enum:
+                  - INVITED
+                  - PASSED
+                  - REJECTED
+                  - EXPIRED
+              accept_time:
+                type: string
+                description: 授权申请受理时间
+                example: '2015-05-20T13:29:35.120+08:00'
+              update_time:
+                type: string
+                description: 最后一次状态变更时间
+                example: '2015-05-20T13:29:35.120+08:00'
+          authorization_time:
+            type: string
+            description: 授权时间
+            example: '2015-05-20T13:29:35.120+08:00'
+          cancel_authorization_time:
+            type: string
+            description: 解除授权时间
+            example: '2015-05-20T13:29:35.120+08:00'

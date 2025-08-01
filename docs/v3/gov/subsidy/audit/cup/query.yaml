@@ -1,0 +1,79 @@
+post:
+  x-last-updated-at: 2025.06.24
+  x-role:
+    - 电商平台
+    - 服务商
+  tags:
+    - 国补专区
+    - 上海/福建/重庆
+  summary: 查询审核结果
+  description: 查询审核结果
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - org_no
+          - mchnt_order_id
+          - upload_time
+        properties:
+          org_no:
+            type: string
+            description: 分公司机构代码
+          mchnt_order_id:
+            type: string
+            description: 商户订单号
+          upload_time:
+            type: string
+            description: 审核记录上传时间
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - code
+          - message
+        properties:
+          code:
+            type: string
+            description: 响应码
+            example: '000000'
+          msg:
+            type: string
+            description: 响应描述
+            example: 成功
+          sub_code:
+            type: string
+            description: 详细应答码
+          sub_msg:
+            type: string
+            description: 详细应答码描述
+          mchnt_order_id:
+            type: string
+            description: 商户订单号
+          verify_status:
+            type: string
+            description: 核验结果
+          verify_status_desc:
+            type: string
+            description: 核验结果描述
+          audit_status:
+            type: string
+            description: 审核结果
+          audit_status_desc:
+            type: string
+            description: 审核结果描述
+          trade_status:
+            type: string
+            description: 订单状态
+          refund_at:
+            type: string
+            description: 退货金额
+          refund_dt:
+            type: string
+            description: 退货日期
+          org_no:
+            type: string
+            description: 分公司机构代码

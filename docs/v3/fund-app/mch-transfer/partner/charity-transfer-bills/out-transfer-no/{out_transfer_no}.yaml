@@ -1,0 +1,88 @@
+get:
+  x-last-updated-at: 2025.07.10
+  x-role:
+    - 服务商
+  tags:
+    - 资金应用∙公益捐赠
+  summary: 商户单号查询公益捐赠详情
+  description: 根据商户单号查询公益捐赠单的详细信息。 注意 API只支持查询最近30天内的捐赠单，超过30天可以通过资金账单对账确认。转账单中涉及金额的字段单位为“分”。单个商户100QPS
+  parameters:
+    - name: out_transfer_no
+      in: path
+      required: true
+      type: string
+      description: 商户公益捐赠单号
+      example: trans202506300102
+    - name: sponsor_mchid
+      in: query
+      required: true
+      type: string
+      description: 出资商户号
+      example: '1900001109'
+    - name: out_budget_no
+      in: query
+      required: true
+      type: string
+      description: 商户预算单号
+      example: budget202506030102
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - out_budget_no
+          - budget_id
+          - out_transfer_no
+          - transfer_id
+          - amount
+          - transfer_remark
+          - receive_mchid
+          - state
+          - create_time
+        properties:
+          out_budget_no:
+            type: string
+            description: 商户预算单号
+            example: budget202506300102
+          budget_id:
+            type: string
+            description: 微信支付预算单号
+            example: '1182020050700019480001'
+          out_transfer_no:
+            type: string
+            description: 商户公益捐赠单号
+            example: trans202506300102
+          transfer_id:
+            type: string
+            description: 微信支付公益捐赠单号
+            example: '4217752501201407033233368018'
+          amount:
+            type: number
+            description: 预算总金额
+            example: 20000000
+          transfer_remark:
+            type: string
+            description: 捐赠备注
+            example: 帮助受助群体爱心捐款
+          receive_mchid:
+            type: string
+            description: 收款商户号
+            example: '1900001109'
+          state:
+            type: string
+            description: 捐赠状态
+            example: SUCCESS
+            enum:
+              - ACCEPTED
+              - SUCCESS
+              - CLOSE
+          create_time:
+            type: string
+            format: rfc3339
+            description: 捐赠单创建时间
+            example: '2015-05-20T13:29:35+08:00'
+          success_time:
+            type: string
+            format: rfc3339
+            description: 捐赠完成时间
+            example: '2015-05-20T13:29:35+08:00'

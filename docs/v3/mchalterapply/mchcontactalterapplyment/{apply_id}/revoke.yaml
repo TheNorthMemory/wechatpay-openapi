@@ -1,0 +1,35 @@
+post:
+  x-last-updated-at: 2025.07.17
+  x-role:
+    - 电商平台
+    - 服务商
+  tags:
+    - 变更超管
+  summary: 撤销超管变更申请单
+  description: 当申请单状态为编辑中/审核中/已驳回时，才支持撤销
+  parameters:
+    - name: apply_id
+      in: path
+      required: true
+      type: string
+      description: 微信支付申请单号
+      example: '20220617143306000013906025001'
+  responses:
+    '200':
+      schema:
+        type: object
+        properties:
+          apply_id:
+            type: string
+            description: 申请单号
+            example: '20220617143306000013906025001'
+          state:
+            type: string
+            description: 申请单状态
+            example: APPLYMENT_STATE_CANCELED
+            enum:
+              - APPLYMENT_STATE_AUDITING #审核中
+              - APPLYMENT_STATE_REJECTED #已驳回
+              - APPLYMENT_STATE_MODIFING #资料修改中
+              - APPLYMENT_STATE_FINISHED #已完成
+              - APPLYMENT_STATE_CANCELED #已作废

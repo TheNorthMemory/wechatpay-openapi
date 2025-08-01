@@ -1,0 +1,57 @@
+post:
+  x-last-updated-at: 2025.06.24
+  x-role:
+    - 电商平台
+    - 服务商
+  tags:
+    - 国补专区
+    - 江苏
+  summary: 企业信息查询
+  description: 企业信息查询
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - qualification_region_code
+          - license_number
+        properties:
+          qualification_region_code:
+            type: number
+            format: integer
+            description: 使用的资格的地区编码
+            example: 310100
+          license_number:
+            type: string
+            description: 统一社会信息代码
+            example: 91110108397173806M
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - code
+          - message
+        properties:
+          company_name:
+            type: string
+            description: 企业名称
+            example: 联想（北京）信息技术有限公司
+          collect_state:
+            type: string
+            description: 归集状态枚举
+            example: COLLECT_STATE_NOT_COLLECT
+            enum:
+              - COLLECT_STATE_NOT_COLLECT #未归集
+              - COLLECT_STATE_COLLECTED #已归集
+              - COLLECT_STATE_COLLECTION_FAILED #归集失败
+          code:
+            type: string
+            description: 响应码
+            example: '000000'
+          message:
+            type: string
+            description: 响应描述
+            example: 成功

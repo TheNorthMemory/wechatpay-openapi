@@ -92,6 +92,10 @@ get:
                 type: string
                 description: 批次类型
                 example: NORMAL
+                enum:
+                  - NORMAL
+                  - DISCOUNT
+                  - EXCHANGE
               transferable:
                 type: boolean
                 description: 是否允许转赠
@@ -134,7 +138,9 @@ get:
                           week_day:
                             type: array
                             description: 可用星期数
-                            example: 1, 2
+                            items:
+                              type: integer
+                              example: 1
                           available_day_time:
                             type: array
                             description: 当天可用时间段
@@ -216,6 +222,11 @@ get:
                     type: string
                     description: 核销方式
                     example: OFF_LINE
+                    enum:
+                      - OFF_LINE
+                      - MINI_PROGRAMS
+                      - SELF_CONSUME
+                      - PAYMENT_CODE
                   mini_programs_appid:
                     type: string
                     description: 小程序appid
@@ -268,6 +279,10 @@ get:
                     type: string
                     description: code展示模式
                     example: BARCODE
+                    enum:
+                      - NOT_SHOW
+                      - BARCODE
+                      - QRCODE
               display_pattern_info:
                 type: object
                 description: 样式信息
@@ -288,6 +303,17 @@ get:
                     type: string
                     description: 背景颜色
                     example: Color020
+                    enum:
+                      - Color010
+                      - Color020
+                      - Color030
+                      - Color040
+                      - Color050
+                      - Color060
+                      - Color070
+                      - Color080
+                      - Color090
+                      - Color100
                   coupon_image_url:
                     type: string
                     description: 券详情图片

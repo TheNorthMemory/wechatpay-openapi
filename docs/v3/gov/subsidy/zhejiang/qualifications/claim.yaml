@@ -1,0 +1,73 @@
+post:
+  x-last-updated-at: 2025.04.07
+  x-role:
+    - 电商平台
+    - 服务商
+  tags:
+    - 国补专区
+    - 浙江
+  summary: 领取资格
+  description: 领取资格
+  parameters:
+    - $ref: '../../../../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - cate_code
+          - cert_no
+          - name
+          - tel
+          - req_ssn
+        properties:
+          cate_code:
+            type: string
+            description: 品类编码
+            example: A01
+          cert_no:
+            type: string
+            format: base64
+            description: 证件号码
+            example: 1axtI9EZUr0343c89xQznxau+cRWPKP4YhVAoj/mEoNSgJh0nvuqQJ1cdL==
+          name:
+            type: string
+            format: base64
+            description: 姓名
+            example: OEimkKuua8igpd+0YDgqF2Z61l=
+          tel:
+            type: string
+            format: base64
+            description: 手机号
+            example: 1axtI9EZUr0343c89xQznxau+cRWPKP4YhVAoj/nunesXwq9ogPnSj7EDA==
+          cert_type:
+            type: string
+            description: 证件类型
+            example: '1'
+            enum:
+              - '1'
+              - '2'
+              - '3'
+              - '4'
+              - '5'
+          req_ssn:
+            type: string
+            description: 请求流水号
+            example: '123'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - resp_code
+          - resp_desc
+        properties:
+          resp_code:
+            type: string
+            description: 响应码
+            example: '000000'
+          resp_desc:
+            type: string
+            description: 响应描述
+            example: 成功

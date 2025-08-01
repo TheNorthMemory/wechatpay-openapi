@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2025.01.21
+  x-last-updated-at: 2025.07.25
   x-role:
     - 服务商
   tag:
@@ -42,6 +42,13 @@ post:
                     type: string
                     description: 交易订单号
                     example: '1217752501201407033233368018'
+                  type:
+                    type: string
+                    description: 转账接收方订单类型
+                    example: WXPAY
+                    enum:
+                      - WXPAY
+                      - WXVALUE
           out_bill_no:
             type: string
             description: 商户单号

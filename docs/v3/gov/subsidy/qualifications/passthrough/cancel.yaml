@@ -1,0 +1,98 @@
+post:
+  x-last-updated-at: 2025.06.24
+  x-role:
+    - 电商平台
+    - 服务商
+  tags:
+    - 国补专区
+    - 江苏
+  summary: 取消资格(透传模式)
+  description: 取消资格
+  parameters:
+    - $ref: '../../../../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - real_name
+          - id_card_number
+          - phone_number
+          - appliance_id
+          - qualification_region_code
+          - identity_document_type
+          - longitude
+          - latitude
+        properties:
+          real_name:
+            type: string
+            format: base64
+            description: 自然人姓名
+            example: OEimkKuua8igpd+0YDgqF2Z61l=
+          id_card_number:
+            type: string
+            format: base64
+            description: 自然人证件号
+            example: 1axtI9EZUr0343c89xQznxau+cRWPKP4YhVAoj/mEoNSgJh0nvuqQJ1cdL==
+          phone_number:
+            type: string
+            format: base64
+            description: 手机号
+            example: 1axtI9EZUr0343c89xQznxau+cRWPKP4YhVAoj/nunesXwq9ogPnSj7EDA==
+          appliance_id:
+            type: number
+            format: integer
+            description: 消费品类ID
+            example: 1
+            enum:
+              - 1 #电视机
+              - 2 #电冰箱
+              - 3 #洗衣机
+              - 4 #空调
+              - 5 #电脑
+              - 6 #热水器
+              - 7 #吸油烟机
+              - 8 #家用灶具
+              - 9 #空调2
+              - 10 #空调3
+              - 11 #微波炉
+              - 12 #净水器
+              - 13 #洗碗机
+              - 14 #电饭煲
+              - 15 #手机
+              - 16 #平板
+              - 17 #智能手表手环
+          qualification_region_code:
+            type: number
+            format: integer
+            description: 使用的资格的地区编码
+            example: 310100
+          out_request_no:
+            type: string
+            description: 请求序号
+            example: vmall_250120131959_993_4494
+          identity_document_type:
+            type: string
+            description: 证件类型
+            example: ID_DOC_TYPE_ID_CARD
+            enum:
+              - ID_DOC_TYPE_ID_CARD #身份证号
+              - ID_DOC_TYPE_MAINLAND_TRAVEL_PERMIT_FOR_HK_MC #回乡证（港澳居民来往内地通行证）
+              - ID_DOC_TYPE_MAINLAND_TRAVEL_PERMIT_FOR_TW #台胞证（台湾居民来往大陆通行证）
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - code
+          - message
+        properties:
+          code:
+            type: string
+            description: 响应码
+            example: '000000'
+          message:
+            type: string
+            description: 响应描述
+            example: 成功

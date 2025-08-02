@@ -1001,6 +1001,8 @@ paths:
     $ref: ./v3/hire-power-bank/user-qualifications/{openid}.yaml
   /v3/industry-coupon/tokens:
     $ref: ./v3/industry-coupon/tokens.yaml
+  /v3/iotmanage/device-inspections/{device_sn}:
+    $ref: ./v3/iotmanage/device-inspections/{device_sn}.yaml
   /v3/iotmanage/devices:
     $ref: ./v3/iotmanage/devices.yaml
   /v3/lovefeast/brands/{brand_id}:

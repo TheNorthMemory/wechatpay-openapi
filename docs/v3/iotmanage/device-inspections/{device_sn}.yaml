@@ -1,0 +1,72 @@
+get:
+  x-last-updated-at: 2020.04.27
+  x-role:
+    - 服务商
+  tags:
+    - 刷脸支付
+  summary: 获取出厂检查结果
+  description: '[官方文档](https://pay.weixin.qq.com/wiki/doc/wxfacepay/tool/factory-check-data-api.html)'
+  parameters:
+    - name: device_sn
+      type: string
+      in: path
+      required: true
+      description: 设备序列号
+      example: AAAAA123456789012345678
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - device_sn
+          - wired_mac
+          - wireless_mac
+          - bluetooth_mac
+          - app_version
+          - camera_sn
+          - imei
+          - result
+          - inspect_time
+        properties:
+          device_sn:
+            type: string
+            description: 设备序列号
+          wired_mac:
+            type: string
+            description: 有线网卡MAC地址
+          wireless_mac:
+            type: string
+            description: 无线网卡MAC地址
+          bluetooth_mac:
+            type: string
+            description: 蓝牙MAC地址
+          app_version:
+            type: string
+            description: 刷脸应用版本号
+          camera_sn:
+            type: string
+            description: 摄像头序列号
+          imei:
+            type: string
+            description: 国际移动设备识别码
+          result:
+            type: string
+            description: 查询结果
+            enum:
+              - SUCCESS
+              - WARN
+              - FAIL
+          errors:
+            type: array
+            description: 错误信息
+            items:
+              type: string
+          warnings:
+            type: array
+            description: 告警信息
+            items:
+              type: string
+          inspect_time:
+            type: string
+            format: rfc3339
+            description: 查询时间

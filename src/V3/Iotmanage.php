@@ -3,6 +3,7 @@
 namespace WeChatPay\OpenAPI\V3;
 
 /**
+ * @property-read Iotmanage\DeviceInspections $deviceInspections
  * @property-read Iotmanage\Devices $devices
  */
 interface Iotmanage

@@ -281,8 +281,6 @@ paths:
     $ref: ./v2/papay/partner/entrustweb.yaml
   /papay/partner/h5entrustweb:
     $ref: ./v2/papay/partner/h5entrustweb.yaml
-  /papay/partner/paporderquery:
-    $ref: ./v2/papay/partner/paporderquery.yaml
   /papay/partner/preentrustweb:
     $ref: ./v2/papay/partner/preentrustweb.yaml
   /papay/partner/querycontract:
@@ -315,6 +313,8 @@ paths:
     $ref: ./v2/pay/paporderquery.yaml
   /pay/pappayapply:
     $ref: ./v2/pay/pappayapply.yaml
+  /pay/partner/paporderquery:
+    $ref: ./v2/pay/partner/paporderquery.yaml
   /pay/partner/pappayapply:
     $ref: ./v2/pay/partner/pappayapply.yaml
   /pay/profitsharingaddreceiver:

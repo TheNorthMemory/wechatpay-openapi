@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);/* Generated file. DO NOT EDIT! */
 
-namespace WeChatPay\OpenAPI\V2\Papay\Partner;
+namespace WeChatPay\OpenAPI\V2\Pay\Partner;
 
 use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Promise\PromiseInterface;
@@ -12,7 +12,7 @@ interface Paporderquery
     /**
      * 查询订单(同步模式)
      * @param array<string,mixed> $options
-     * @link https://wechatpay.im/openapi/v2/papay/partner/paporderquery
+     * @link https://wechatpay.im/openapi/v2/pay/partner/paporderquery
      */
     public function post(array $options = [
         'xml' => [
@@ -28,7 +28,7 @@ interface Paporderquery
     /**
      * 查询订单(异步模式)
      * @param array<string,mixed> $options
-     * @link https://wechatpay.im/openapi/v2/papay/partner/paporderquery
+     * @link https://wechatpay.im/openapi/v2/pay/partner/paporderquery
      */
     public function postAsync(array $options = [
         'xml' => [

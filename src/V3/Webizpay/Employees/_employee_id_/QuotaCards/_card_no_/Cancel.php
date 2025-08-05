@@ -10,7 +10,7 @@ use GuzzleHttp\Promise\PromiseInterface;
 interface Cancel
 {
     /**
-     * 企业商户发起员工开通企业支付授权(同步模式)
+     * 企业商户作废员工企业支付额度卡(同步模式)
      * @param array<string,mixed> $options
      * @link https://wechatpay.im/openapi/v3/webizpay/employees/%7Bemployee_id%7D/quota-cards/%7Bcard_no%7D/cancel
      */
@@ -25,7 +25,7 @@ interface Cancel
     ]): ResponseInterface;
 
     /**
-     * 企业商户发起员工开通企业支付授权(异步模式)
+     * 企业商户作废员工企业支付额度卡(异步模式)
      * @param array<string,mixed> $options
      * @link https://wechatpay.im/openapi/v3/webizpay/employees/%7Bemployee_id%7D/quota-cards/%7Bcard_no%7D/cancel
      */

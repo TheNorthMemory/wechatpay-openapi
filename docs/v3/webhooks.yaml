@@ -62,6 +62,11 @@ post:
     [自动收款授权结果通知](https://pay.weixin.qq.com/doc/v3/merchant/4014512908)
     [商家名片会员卡事件通知](https://pay.weixin.qq.com/doc/v3/partner/4015283692)
     [预算申请结果回调通知](https://pay.weixin.qq.com/doc/v3/partner/4015555114)
+    [关系授权完成通知](https://pay.weixin.qq.com/doc/v3/partner/4014612130)
+    [关系解除授权后通知](https://pay.weixin.qq.com/doc/v3/partner/4015764414)
+    [企业支付额度卡支付成功后通知](https://pay.weixin.qq.com/doc/v3/partner/4015764398)
+    [企业支付额度卡失效后通知](https://pay.weixin.qq.com/doc/v3/partner/4015764389)
+    [企业支付额度卡退款成功后通知](https://pay.weixin.qq.com/doc/v3/partner/4015764405)
   parameters:
     - name: Wechatpay-Nonce
       required: true
@@ -278,6 +283,11 @@ WechatpayNotificationEventType:
     [自动收款授权结果通知](https://pay.weixin.qq.com/doc/v3/merchant/4014512908)
     [商家名片会员卡事件通知](https://pay.weixin.qq.com/doc/v3/partner/4015283692)
     [预算申请结果回调通知](https://pay.weixin.qq.com/doc/v3/partner/4015555114)
+    [关系授权完成通知](https://pay.weixin.qq.com/doc/v3/partner/4014612130)
+    [关系解除授权后通知](https://pay.weixin.qq.com/doc/v3/partner/4015764414)
+    [企业支付额度卡支付成功后通知](https://pay.weixin.qq.com/doc/v3/partner/4015764398)
+    [企业支付额度卡失效后通知](https://pay.weixin.qq.com/doc/v3/partner/4015764389)
+    [企业支付额度卡退款成功后通知](https://pay.weixin.qq.com/doc/v3/partner/4015764405)
   enum:
     # @see                        [会员积分服务授权通知](https://pay.weixin.qq.com/wiki/doc/apiv3/apis/chapter8_6_6.shtml)
     - MALL_AUTH.ACTIVATE_CARD     #会员积分服务授权通知
@@ -384,3 +394,13 @@ WechatpayNotificationEventType:
     - BUDGET.CLOSED
     # @see [预算申请结果回调通知](https://pay.weixin.qq.com/doc/v3/partner/4015555114)
     - BUDGET.FINISHED
+    # @see [企业支付额度卡失效后通知](https://pay.weixin.qq.com/doc/v3/partner/4015764389)
+    - WEBIZPAY.QUOTACARDEXPIRED
+    # @see [企业支付额度卡支付成功后通知](https://pay.weixin.qq.com/doc/v3/partner/4015764398)
+    - WEBIZPAY.PAYMENTSUCCESS
+    # @see [企业支付额度卡退款成功后通知](https://pay.weixin.qq.com/doc/v3/partner/4015764405)
+    - WEBIZPAY.PAYMENTREFUNDSUCCESS
+    # @see [关系解除授权后通知](https://pay.weixin.qq.com/doc/v3/partner/4015764414)
+    - WEBIZPAY.REVOKED
+    # @see [关系授权完成通知](https://pay.weixin.qq.com/doc/v3/partner/4014612130)
+    - WEBIZPAY.AUTHORIZED

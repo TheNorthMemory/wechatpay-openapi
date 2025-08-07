@@ -9,6 +9,7 @@ namespace WeChatPay\OpenAPI;
  * @property-read V3\TransferDetail $transferDetail
  * @property-read V3\Transfer $transfer
  * @property-read V3\Transactions $transactions
+ * @property-read V3\TransactionBlock $transactionBlock
  * @property-read V3\TaxiInvoice $taxiInvoice
  * @property-read V3\Smartguide $smartguide
  * @property-read V3\Settle $settle
@@ -44,6 +45,7 @@ namespace WeChatPay\OpenAPI;
  * @property-read V3\Mchalterapply $mchalterapply
  * @property-read V3\Mch_operate $mch_operate
  * @property-read V3\MchOperationManage $mchOperationManage
+ * @property-read V3\MchManage $mchManage
  * @property-read V3\Marketing $marketing
  * @property-read V3\Lovefeast $lovefeast
  * @property-read V3\Iotmanage $iotmanage

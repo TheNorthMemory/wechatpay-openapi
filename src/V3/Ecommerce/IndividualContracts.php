@@ -3,6 +3,8 @@
 namespace WeChatPay\OpenAPI\V3\Ecommerce;
 
 /**
+ * @property-read IndividualContracts\PreEntrustSign $preEntrustSign
+ * @property-read IndividualContracts\OutContractCode $outContractCode
  * @property-read IndividualContracts\_openid_ $_openid_
  */
 interface IndividualContracts

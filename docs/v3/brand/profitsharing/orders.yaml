@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2023.05.23
+  x-last-updated-at: 2025.08.21
   x-role:
     - 服务商
   tags:
@@ -61,6 +61,10 @@ post:
                   type: string
                   description: 分账接收方类型
                   example: MERCHANT_ID
+                  enum:
+                    - MERCHANT_ID
+                    - PERSONAL_OPENID
+                    - PERSONAL_SUB_OPENID
                 account:
                   type: string
                   description: 分账接收方账号
@@ -130,6 +134,10 @@ post:
                   type: string
                   description: 接收方类型
                   example: MERCHANT_ID
+                  enum:
+                    - MERCHANT_ID
+                    - PERSONAL_OPENID
+                    - PERSONAL_SUB_OPENID
                 account:
                   type: string
                   description: 接收方账号
@@ -146,14 +154,28 @@ post:
                   type: string
                   description: 分账结果
                   example: SUCCESS
+                  enum:
+                    - PENDING
+                    - SUCCESS
+                    - CLOSED
                 finish_time:
                   type: string
+                  format: rfc3339
                   description: 分账完成时间
                   example: '2015-05-20T13:29:35.120+08:00'
                 fail_reason:
                   type: string
                   description: 分账失败原因
                   example: NO_RELATION
+                  enum:
+                    - ACCOUNT_ABNORMAL
+                    - NO_RELATION
+                    - RECEIVER_HIGH_RISK
+                    - RECEIVER_REAL_NAME_NOT_VERIFIED
+                    - NO_AUTH
+                    - RECEIVER_RECEIPT_LIMIT
+                    - PAYER_ACCOUNT_ABNORMAL
+                    - INVALID_REQUEST
                 detail_id:
                   type: string
                   description: 分账明细单号
@@ -162,8 +184,11 @@ post:
             type: string
             description: 分账单状态
             example: PROCESSING
+            enum:
+              - PROCESSING
+              - FINISHED
 get:
-  x-last-updated-at: 2023.05.23
+  x-last-updated-at: 2025.08.21
   x-role:
     - 服务商
   tags:
@@ -260,13 +285,22 @@ get:
                   example: SUCCESS
                 finish_time:
                   type: string
+                  format: rfc3339
                   description: 完成时间
                   example: '2015-05-20T13:29:35.120+08:00'
                 fail_reason:
                   type: string
                   description: 分账失败原因
-                  enum: [ACCOUNT_ABNORMAL, NO_RELATION, RECEIVER_HIGH_RISK]
                   example: NO_RELATION
+                  enum:
+                    - ACCOUNT_ABNORMAL
+                    - NO_RELATION
+                    - RECEIVER_HIGH_RISK
+                    - RECEIVER_REAL_NAME_NOT_VERIFIED
+                    - NO_AUTH
+                    - RECEIVER_RECEIPT_LIMIT
+                    - PAYER_ACCOUNT_ABNORMAL
+                    - INVALID_REQUEST
                 detail_id:
                   type: string
                   description: 分账明细单号

@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2020.03.18
+  x-last-updated-at: 2025.08.21
   x-role:
     - 服务商
   tags:
@@ -35,6 +35,10 @@ post:
             type: string
             description: 分账接收方类型
             example: MERCHANT_ID
+            enum:
+              - MERCHANT_ID
+              - PERSONAL_OPENID
+              - PERSONAL_SUB_OPENID
           account:
             type: string
             description: 分账接收方账号
@@ -71,6 +75,10 @@ post:
             type: string
             description: 分账接收方类型
             example: MERCHANT_ID
+            enum:
+              - MERCHANT_ID
+              - PERSONAL_OPENID
+              - PERSONAL_SUB_OPENID
           account:
             type: string
             description: 分账接收方账号

@@ -1,0 +1,547 @@
+post:
+  x-last-updated-at: 2025.01.09
+  x-role:
+    - 从业机构（银行）
+  tags:
+    - 医保支付
+  summary: 医保自费混合收款下单
+  description: 从业机构调用该接口向微信医保后台下单
+  parameters:
+    - $ref: '../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - mix_pay_type
+          - order_type
+          - appid
+          - sub_appid
+          - sub_mchid
+          - sub_openid
+          - payer
+          - out_trade_no
+          - serial_no
+          - city_id
+          - med_inst_name
+          - med_inst_no
+          - total_fee
+          - callback_url
+        properties:
+          mix_pay_type:
+            type: string
+            description: 混合支付类型
+            example: CASH_AND_INSURANCE
+            enum:
+              - UNKNOWN_MIX_PAY_TYPE #未知的混合支付类型，会被拦截。
+              - CASH_ONLY #只向微信支付下单，没有向医保局下单。
+              - INSURANCE_ONLY #只向医保局下单，没有向微信支付下单。
+              - CASH_AND_INSURANCE #向医保局下单，也向微信支付下单。
+          order_type:
+            type: string
+            description: 订单类型
+            example: REG_PAY
+            enum:
+              - UNKNOWN_ORDER_TYPE #未知类型，会被拦截
+              - REG_PAY #挂号支付
+              - DIAG_PAY #诊间支付
+              - COVID_EXAM_PAY #新冠检测费用（核酸）
+              - IN_HOSP_PAY #住院费支付
+              - PHARMACY_PAY #药店支付
+              - INSURANCE_PAY #保险费支付
+              - INT_REG_PAY #互联网医院挂号支付
+              - INT_RE_DIAG_PAY #互联网医院复诊支付
+              - INT_RX_PAY #互联网医院处方支付
+              - COVID_ANTIGEN_PAY #新冠抗原检测
+              - MED_PAY #药费支付
+          appid:
+            type: string
+            description: 从业机构的公众号ID
+            example: wx8888888888888888
+          sub_appid:
+            type: string
+            description: 医疗机构的公众号ID
+            example: wxd678efh567hg6999
+          sub_mchid:
+            type: string
+            description: 医疗机构的商户号
+            example: '1900000109'
+          sub_openid:
+            type: string
+            description: 用户在医疗机构AppID下的唯一标识
+            example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+          payer:
+            type: object
+            description: 支付人身份信息
+            required:
+              - name
+              - id_digest
+              - card_type
+            properties:
+              name:
+                type: string
+                format: base64
+                description: 真实姓名
+              id_digest:
+                type: string
+                format: base64
+                description: 个人身份ID摘要
+              card_type:
+                type: string
+                description: 证件类型
+                example: ID_CARD
+                enum:
+                  - UNKNOWN_USER_CARD_TYPE #未知证件类型
+                  - ID_CARD #身份证
+                  - HOUSEHOLD_REGISTRATION #户口本
+                  - FOREIGNER_PASSPORT #外国人护照
+                  - MAINLAND_TRAVEL_PERMIT_FOR_TW #台湾居民来往大陆通行证
+                  - MAINLAND_TRAVEL_PERMIT_FOR_MO #澳门居民往来内地通行证
+                  - MAINLAND_TRAVEL_PERMIT_FOR_HK #香港居民往来内地通行证
+                  - FOREIGN_PERMANENT_RESIDENT #外国人永久居留证
+          pay_for_relatives:
+            type: boolean
+            description: 是否代亲属支付
+          relative:
+            type: object
+            description: 亲属身份信息
+            required:
+              - name
+              - id_digest
+              - card_type
+            properties:
+              name:
+                type: string
+                format: base64
+                description: 真实姓名
+              id_digest:
+                type: string
+                format: base64
+                description: 个人身份ID摘要
+              card_type:
+                type: string
+                description: 证件类型
+                example: ID_CARD
+                enum:
+                  - UNKNOWN_USER_CARD_TYPE #未知证件类型
+                  - ID_CARD #身份证
+                  - HOUSEHOLD_REGISTRATION #户口本
+                  - FOREIGNER_PASSPORT #外国人护照
+                  - MAINLAND_TRAVEL_PERMIT_FOR_TW #台湾居民来往大陆通行证
+                  - MAINLAND_TRAVEL_PERMIT_FOR_MO #澳门居民往来内地通行证
+                  - MAINLAND_TRAVEL_PERMIT_FOR_HK #香港居民往来内地通行证
+                  - FOREIGN_PERMANENT_RESIDENT #外国人永久居留证
+          out_trade_no:
+            type: string
+            description: 从业机构订单号
+            example: '202204022005169952975171534816'
+          serial_no:
+            type: string
+            description: 医疗机构订单号
+            example: '1217752501201'
+          pay_order_id:
+            type: string
+            description: 医保局返回的支付单ID
+            example: ORD530100202204022006350000021
+          geo_location:
+            type: string
+            description: 用户定位信息
+            example: 102.682296,25.054260
+          city_id:
+            type: string
+            description: 城市ID
+            example: '530100'
+          med_inst_name:
+            type: string
+            description: 医疗机构名称
+            example: 北大医院
+          med_inst_no:
+            type: string
+            description: 医疗机构编码
+            example: '1217752501201407033233368318'
+          med_ins_order_create_time:
+            type: string
+            format: rfc3339
+            description: 医保下单时间
+            example: '2018-06-08T10:34:56+08:00'
+          total_fee:
+            type: integer
+            description: 使用该接口下单的总金额
+            example: 202000
+          med_ins_gov_fee:
+            type: integer
+            description: 医保局结算后，医保统筹支付金额
+            example: 100000
+          med_ins_self_fee:
+            type: integer
+            description: 医保局结算后，医保个账支付金额
+            example: 45000
+          med_ins_other_fee:
+            type: integer
+            description: 医保局结算后，医保其他支付金额
+            example: 5000
+          med_ins_cash_fee:
+            type: integer
+            description: 医保局结算后，需要自费的金额
+            example: 50000
+          wechat_pay_cash_fee:
+            type: integer
+            description: 实际需要用户微信支付的金额
+            example: 42000
+          cash_add_detail:
+            type: array
+            description: 现金补充列表
+            items:
+              type: object
+              required:
+                - cash_add_fee
+                - cash_add_type
+              properties:
+                cash_add_fee:
+                  type: integer
+                  description: 现金补充金额
+                  example: 2000
+                cash_add_type:
+                  type: string
+                  description: 现金补充类型
+                  example: FREIGHT
+                  enum:
+                    - DEFAULT_ADD_TYPE
+                    - FREIGHT
+                    - OTHER_MEDICAL_EXPENSES
+          cash_reduce_detail:
+            type: array
+            description: 现金减免列表
+            items:
+              type: object
+              required:
+                - cash_reduce_fee
+                - cash_reduce_type
+              properties:
+                cash_reduce_fee:
+                  type: integer
+                  description: 现金减免金额
+                  example: 10000
+                cash_reduce_type:
+                  type: string
+                  description: 现金减免类型
+                  example: DEFAULT_REDUCE_TYPE
+                  enum:
+                    - DEFAULT_REDUCE_TYPE
+                    - HOSPITAL_REDUCE
+                    - PHARMACY_DISCOUNT
+                    - DISCOUNT
+                    - PRE_PAYMENT
+                    - DEPOSIT_DEDUCTION
+          callback_url:
+            type: string
+            description: 回调通知URL
+            example: https://www.weixin.qq.com/wxpay/pay.php
+          prepay_id:
+            type: string
+            description: 自费预下单ID
+            example: wx201410272009395522657a690389285100
+          passthrough_request_content:
+            type: string
+            format: jsonObjectLike
+            description: 医疗机构透传给医保的数据
+            example: '{}'
+            x-json:
+              type: object
+              properties:
+                payAuthNo:
+                  type: string
+                  example: AUTH****
+                payOrdId:
+                  type: string
+                  example: ORD****
+                setlLatlnt:
+                  type: string
+                  example: 118.096435,24.485407
+          extends:
+            type: string
+            description: 扩展字段
+            example: '{}'
+          attach:
+            type: string
+            description: 附加数据
+            example: '{}'
+          channel_no:
+            type: string
+            description: 渠道号
+            example: AAGN9uhZc5EGyRdairKW7Qnu
+          med_ins_test_env:
+            type: boolean
+            description: 是否到医保局测试环境下单
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - mix_trade_no
+          - mix_pay_status
+          - self_pay_status
+          - med_ins_pay_status
+          - mix_pay_type
+          - order_type
+          - appid
+          - sub_appid
+          - sub_mchid
+          - sub_openid
+          - out_trade_no
+          - serial_no
+          - city_id
+          - med_inst_name
+          - med_inst_no
+          - total_fee
+          - callback_url
+        properties:
+          mix_trade_no:
+            type: string
+            description: 医保自费混合订单号
+            example: '1217752501201407033233368318'
+          mix_pay_status:
+            type: string
+            description: 医保自费混合订单支付状态
+            example: MIX_PAY_SUCCESS
+            enum:
+              - UNKNOWN_MIX_PAY_STATUS #未知类型，需报错
+              - MIX_PAY_CREATED #等待支付
+              - MIX_PAY_SUCCESS #支付成功
+              - MIX_PAY_REFUND #自费和医保均已退款
+              - MIX_PAY_FAIL #支付失败
+          self_pay_status:
+            type: string
+            description: 混合订单中自费部分的支付状态
+            example: SELF_PAY_SUCCESS
+            enum:
+              - UNKNOWN_SELF_PAY_STATUS #未知类型，需报错
+              - SELF_PAY_CREATED #等待支付
+              - SELF_PAY_SUCCESS #支付成功
+              - SELF_PAY_REFUND #已退款
+              - SELF_PAY_FAIL #支付失败
+              - NO_SELF_PAY #订单不含自费部分
+          med_ins_pay_status:
+            type: string
+            description: 混合订单中自费部分的支付状态
+            example: MED_INS_PAY_SUCCESS
+            enum:
+              - UNKNOWN_MED_INS_PAY_STATUS #未知类型，需报错
+              - MED_INS_PAY_CREATED #等待支付
+              - MED_INS_PAY_SUCCESS #支付成功
+              - MED_INS_PAY_REFUND #已退款
+              - MED_INS_PAY_FAIL #支付失败
+              - NO_MED_INS_PAY #订单不含医保部分
+          paid_time:
+            type: string
+            description: 订单支付时间
+            example: '2018-06-08T10:34:56+08:00'
+          passthrough_response_content:
+            type: string
+            format: jsonObjectLike
+            description: 支付完成后医保局返回内容
+            example: '{}'
+            x-json:
+              type: object
+              properties:
+                payAuthNo:
+                  type: string
+                  example: AUTH****
+                payOrdId:
+                  type: string
+                  example: ORD****
+                setlLatlnt:
+                  type: string
+                  example: 118.096435,24.485407
+          mix_pay_type:
+            type: string
+            description: 混合支付类型
+            example: CASH_AND_INSURANCE
+            enum:
+              - UNKNOWN_MIX_PAY_TYPE #未知的混合支付类型，会被拦截。
+              - CASH_ONLY #只向微信支付下单，没有向医保局下单。
+              - INSURANCE_ONLY #只向医保局下单，没有向微信支付下单。
+              - CASH_AND_INSURANCE #向医保局下单，也向微信支付下单。
+          order_type:
+            type: string
+            description: 订单类型
+            example: REG_PAY
+            enum:
+              - UNKNOWN_ORDER_TYPE #未知类型，会被拦截
+              - REG_PAY #挂号支付
+              - DIAG_PAY #诊间支付
+              - COVID_EXAM_PAY #新冠检测费用（核酸）
+              - IN_HOSP_PAY #住院费支付
+              - PHARMACY_PAY #药店支付
+              - INSURANCE_PAY #保险费支付
+              - INT_REG_PAY #互联网医院挂号支付
+              - INT_RE_DIAG_PAY #互联网医院复诊支付
+              - INT_RX_PAY #互联网医院处方支付
+              - COVID_ANTIGEN_PAY #新冠抗原检测
+              - MED_PAY #药费支付
+          appid:
+            type: string
+            description: 从业机构的公众号ID
+            example: wx8888888888888888
+          sub_appid:
+            type: string
+            description: 医疗机构的公众号ID
+            example: wxd678efh567hg6999
+          sub_mchid:
+            type: string
+            description: 医疗机构的商户号
+            example: '1900000109'
+          sub_openid:
+            type: string
+            description: 用户在医疗机构AppID下的唯一标识
+            example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+          pay_for_relatives:
+            type: boolean
+            description: 是否代亲属支付
+          out_trade_no:
+            type: string
+            description: 从业机构订单号
+            example: '202204022005169952975171534816'
+          serial_no:
+            type: string
+            description: 医疗机构订单号
+            example: '1217752501201'
+          pay_order_id:
+            type: string
+            description: 医保局返回的支付单ID
+            example: ORD530100202204022006350000021
+          pay_auth_no:
+            type: string
+            description: 医保局返回的支付授权码
+            example: AUTH530100202204022006310000034
+          geo_location:
+            type: string
+            description: 用户定位信息
+            example: 102.682296,25.054260
+          city_id:
+            type: string
+            description: 城市ID
+            example: '530100'
+          med_inst_name:
+            type: string
+            description: 医疗机构名称
+            example: 北大医院
+          med_inst_no:
+            type: string
+            description: 医疗机构编码
+            example: '1217752501201407033233368318'
+          med_ins_order_create_time:
+            type: string
+            format: rfc3339
+            description: 医保下单时间
+            example: '2018-06-08T10:34:56+08:00'
+          total_fee:
+            type: integer
+            description: 使用该接口下单的总金额
+            example: 202000
+          med_ins_gov_fee:
+            type: integer
+            description: 医保局结算后，医保统筹支付金额
+            example: 100000
+          med_ins_self_fee:
+            type: integer
+            description: 医保局结算后，医保个账支付金额
+            example: 45000
+          med_ins_other_fee:
+            type: integer
+            description: 医保局结算后，医保其他支付金额
+            example: 5000
+          med_ins_cash_fee:
+            type: integer
+            description: 医保局结算后，需要自费的金额
+            example: 50000
+          wechat_pay_cash_fee:
+            type: integer
+            description: 实际需要用户微信支付的金额
+            example: 42000
+          cash_add_detail:
+            type: array
+            description: 现金补充列表
+            items:
+              type: object
+              required:
+                - cash_add_fee
+                - cash_add_type
+              properties:
+                cash_add_fee:
+                  type: integer
+                  description: 现金补充金额
+                  example: 2000
+                cash_add_type:
+                  type: string
+                  description: 现金补充类型
+                  example: FREIGHT
+                  enum:
+                    - DEFAULT_ADD_TYPE
+                    - FREIGHT
+                    - OTHER_MEDICAL_EXPENSES
+          cash_reduce_detail:
+            type: array
+            description: 现金减免列表
+            items:
+              type: object
+              required:
+                - cash_reduce_fee
+                - cash_reduce_type
+              properties:
+                cash_reduce_fee:
+                  type: integer
+                  description: 现金减免金额
+                  example: 10000
+                cash_reduce_type:
+                  type: string
+                  description: 现金减免类型
+                  example: DEFAULT_REDUCE_TYPE
+                  enum:
+                    - DEFAULT_REDUCE_TYPE
+                    - HOSPITAL_REDUCE
+                    - PHARMACY_DISCOUNT
+                    - DISCOUNT
+                    - PRE_PAYMENT
+                    - DEPOSIT_DEDUCTION
+          callback_url:
+            type: string
+            description: 回调通知URL
+            example: https://www.weixin.qq.com/wxpay/pay.php
+          prepay_id:
+            type: string
+            description: 自费预下单ID
+            example: wx201410272009395522657a690389285100
+          passthrough_request_content:
+            type: string
+            format: jsonObjectLike
+            description: 医疗机构透传给医保的数据
+            example: '{}'
+            x-json:
+              type: object
+              properties:
+                payAuthNo:
+                  type: string
+                  example: AUTH****
+                payOrdId:
+                  type: string
+                  example: ORD****
+                setlLatlnt:
+                  type: string
+                  example: 118.096435,24.485407
+          extends:
+            type: string
+            description: 扩展字段
+            example: '{}'
+          attach:
+            type: string
+            description: 附加数据
+            example: '{}'
+          channel_no:
+            type: string
+            description: 渠道号
+            example: AAGN9uhZc5EGyRdairKW7Qnu
+          med_ins_test_env:
+            type: boolean
+            description: 是否到医保局测试环境下单

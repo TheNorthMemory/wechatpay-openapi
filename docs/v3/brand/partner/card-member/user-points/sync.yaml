@@ -1,0 +1,82 @@
+post:
+  x-last-updated-at: 2025.08.20
+  x-role:
+    - 服务商
+  tags:
+    - 商家名片会员
+  summary: 同步积分余额
+  description: 通过此接口可同步指定用户的会员卡积分余额。接口限频：按服务商商户号维度 5次/秒
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - out_request_no
+          - brand_id
+          - card_id
+          - openid
+          - user_card_code
+          - point_balance
+        properties:
+          out_request_no:
+            type: string
+            description: 商家请求单号
+            example: '100002322019090134234sfdf'
+          brand_id:
+            type: string
+            description: 品牌ID
+            example: '1004'
+          card_id:
+            type: string
+            description: 会员卡模板ID
+            example: pbLatjvWOibDc5-TBnbUk1pD12o0
+          openid:
+            type: string
+            description: 用户标识
+            example: obLatjnx9gnqzS4myYGmLZ7LgLBA
+          user_card_code:
+            type: string
+            description: 会员卡code
+            example: '478515832665'
+          point_balance:
+            type: integer
+            description: 积分余额
+            example: 1000
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - out_request_no
+          - brand_id
+          - card_id
+          - openid
+          - user_card_code
+          - point_balance
+        properties:
+          out_request_no:
+            type: string
+            description: 商家请求单号
+            example: '100002322019090134234sfdf'
+          brand_id:
+            type: string
+            description: 品牌ID
+            example: '1004'
+          card_id:
+            type: string
+            description: 会员卡模板ID
+            example: pbLatjvWOibDc5-TBnbUk1pD12o0
+          openid:
+            type: string
+            description: 用户标识
+            example: obLatjnx9gnqzS4myYGmLZ7LgLBA
+          user_card_code:
+            type: string
+            description: 会员卡code
+            example: '478515832665'
+          point_balance:
+            type: integer
+            description: 积分余额
+            example: 1000

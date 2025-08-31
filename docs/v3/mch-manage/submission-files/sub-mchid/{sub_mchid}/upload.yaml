@@ -1,0 +1,54 @@
+post:
+  x-last-updated-at: 2025.05.21
+  x-role:
+    - 服务商
+  tags:
+    - 商户管理记录
+  summary: 上传商户提交资料文件
+  description: 商户在提交资料时，可通过本接口上传所需的文件
+  consumes:
+    - multipart/form-data
+  parameters:
+    - name: sub_mchid
+      in: path
+      required: true
+      type: string
+      description: 子商户号
+      example: '123000110'
+    - name: submission_file
+      in: formData
+      type: file
+      description: 资料文件
+      required: true
+    - name: meta
+      in: formData
+      required: true
+      type: string
+      format: jsonObjectLike
+      description: 媒体文件元信息`JSON`格式字符串
+      schema:
+        type: object
+        properties:
+          file_name:
+            type: string
+            description: 文件名称
+            example: demo.png
+          file_digest:
+            type: string
+            description: 文件摘要
+            example: B94D27B9934D3E08A52E52D7DA7DABFAC484EFE37A5380EE9088F7ACE2EFCDE9
+          item_id:
+            type: number
+            description: 资料项唯一id
+            example: 56
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - file_id
+        properties:
+          file_id:
+            type: string
+            description: 文件标识ID
+            example: V1_E1W7MchDBewmOMGmKSMCgh5

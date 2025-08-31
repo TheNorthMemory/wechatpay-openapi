@@ -1,0 +1,393 @@
+get:
+  x-last-updated-at: 2025.05.21
+  x-role:
+    - 服务商
+  tags:
+    - 商户管理记录
+  summary: 分页查询子商户名下的商户管理记录
+  description: 通过该接口可用于分页查询子商户名下的商户管理记录
+  parameters:
+    - name: sub_mchid
+      in: path
+      required: true
+      type: string
+      description: 子商户号
+      example: '123000110'
+    - name: limit
+      in: query
+      required: true
+      type: number
+      description: 最大资源条数
+      example: 5
+    - name: offset
+      in: query
+      type: number
+      description: 请求资源起始位置
+      example: 10
+    - name: manage_record_type
+      in: query
+      required: true
+      type: string
+      description: 商户管理记录类型
+      example: FUNCTIONAL_LIMIT_RECORD
+      enum:
+        - FUNCTIONAL_LIMIT_RECORD
+        - INVESTIGATE_RECORD
+    - name: manage_record_state
+      in: query
+      type: string
+      description: 商户管理记录状态
+      example: PENDING
+      enum:
+        - PENDING
+        - SUBMITTED
+        - EXPIRED
+        - UNDER_REVIEW
+        - RECOVERED
+        - REJECTED
+  responses:
+    '200':
+      schema:
+        type: object
+        properties:
+          offset:
+            type: number
+            description: 请求资源起始位置
+            example: 10
+          limit:
+            type: number
+            description: 最大资源条数
+            example: 5
+          total_count:
+            type: number
+            description: 资源总条数
+            example: 1234
+          data:
+            type: array
+            description: 商户管理记录详情列表
+            items:
+              type: object
+              properties:
+                sub_mchid:
+                  type: string
+                  description: 子商户号
+                  example: '123000110'
+                manage_record_id:
+                  type: string
+                  description: 商户管理记录ID
+                  example: M1210999900435123451697535102441
+                manage_record_type:
+                  type: string
+                  description: 商户管理记录类型
+                  example: FUNCTIONAL_LIMIT_RECORD
+                  enum:
+                    - FUNCTIONAL_LIMIT_RECORD
+                    - INVESTIGATE_RECORD
+                manage_time:
+                  type: string
+                  format: rfc3339
+                  description: 管控时间
+                  example: '2018-06-08T10:34:56+08:00'
+                manage_reason:
+                  type: string
+                  description: 管控原因
+                  example: 涉嫌信用卡套现
+                limit_ability:
+                  type: string
+                  description: 限制功能
+                  example: 关闭支付权限，关闭提现权限
+                recover_way:
+                  type: string
+                  description: 解除管控方式
+                  example: SUBMIT_INFORMATION
+                  enum:
+                    - SUBMIT_INFORMATION
+                    - VERIFY_INACTIVE_MERCHANT_IDENTITY
+                    - MODIFY_ORGANIZATION_INFORMATION
+                    - OTHER
+                allow_submit:
+                  type: boolean
+                  description: 是否允许提交资料
+                forbid_submit_reason:
+                  type: string
+                  description: 禁止提交资料原因
+                  example: 应平台管理要求，此单据不支持申诉
+                submit_start_time:
+                  type: string
+                  format: rfc3339
+                  description: 可提交资料开始时间
+                  example: '2018-06-08T10:34:56+08:00'
+                submit_end_time:
+                  type: string
+                  format: rfc3339
+                  description: 可提交资料结束时间
+                  example: '2018-06-08T10:34:56+08:00'
+                manage_record_state:
+                  type: string
+                  description: 商户管理记录状态
+                  example: PENDING
+                  enum:
+                    - PENDING
+                    - SUBMITTED
+                    - EXPIRED
+                    - UNDER_REVIEW
+                    - RECOVERED
+                    - REJECTED
+                recover_time:
+                  type: string
+                  format: rfc3339
+                  description: 解除管控时间
+                  example: '2018-06-08T10:34:56+08:00'
+                recover_reason:
+                  type: string
+                  description: 解除管控原因
+                  example: MERCHANT_SUBMIT_RECOVER
+                  enum:
+                    - MERCHANT_SUBMIT_RECOVER
+                    - MERCHANT_OPERATE_RECOVER
+                    - PLATFORM_AUTO_RECOVER
+                reject_reason:
+                  type: string
+                  description: 申诉驳回原因
+                  example: 身份证信息遮挡，请上传清晰的身份证图片
+                approve_time:
+                  type: string
+                  format: rfc3339
+                  description: 可提交资料结束时间
+                  example: '2018-06-08T10:34:56+08:00'
+                requested_item_info:
+                  type: string
+                  description: 要求提交的资料
+                  format: jsonObjectLike
+                  example: '{"record_fields":[]}'
+                  x-json:
+                    type: object
+                    required:
+                      - record_fields
+                    properties:
+                      record_fields:
+                        type: array
+                        description: 资料项集合
+                        items:
+                          type: object
+                          properties:
+                            item_id:
+                              type: string
+                              description: 资料项ID
+                            field_name:
+                              type: string
+                              description: 资料项英文名
+                            name:
+                              type: string
+                              description: 资料项中文名
+                            type:
+                              type: number
+                              description: 资料项类型
+                              enum:
+                                - 1
+                                - 2
+                                - 3
+                                - 4
+                                - 5
+                                - 6
+                            repeated_field_data:
+                              type: string
+                              format: jsonArrayLike
+                              description: 补充资料项多值`JSON`格式
+                              example: '[]'
+                              x-json:
+                                type: array
+                                x-key: field_data
+                                description: 补充资料项
+                                items:
+                                  type: object
+                                  properties:
+                                    longitude:
+                                      type: string
+                                      description: 经度值
+                                    latitude:
+                                      type: string
+                                      description: 纬度值
+                                    province:
+                                      type: string
+                                      description: 省份
+                                    city:
+                                      type: string
+                                      description: 城市
+                                    area:
+                                      type: string
+                                      description: 区域
+                                    street:
+                                      type: string
+                                      description: 街道
+                                    address:
+                                      type: string
+                                      description: 详细地址
+                                    name:
+                                      type: string
+                                      description: 地址名
+                                    wechat_order_id:
+                                      type: string
+                                      description: 微信支付订单号
+                                    merchant_order_id:
+                                      type: string
+                                      description: 商户订单号
+                                    trade_time:
+                                      type: string
+                                      description: 交易时间+08:00东八区时间
+                                    trade_money_amount:
+                                      type: string
+                                      description: 交易金额
+                                    trade_goods:
+                                      type: string
+                                      description: 调单商品
+                                    logistic_flag:
+                                      type: number
+                                      description: 是否物流
+                                      enum:
+                                        - 0
+                                        - 1
+                                    evidence_img_list:
+                                      type: array
+                                      description: 凭证图片信息
+                                      items:
+                                        type: string
+                                        example: 凭证图片1
+                            tips:
+                              type: string
+                              description: 资料项填写提示
+                            placeholder:
+                              type: string
+                              description: 输入框占位文案
+                            tooltip:
+                              type: string
+                              description: 叹号悬浮提示语
+                            required:
+                              type: number
+                              description: 是否必须提交
+                              enum:
+                                - 0
+                                - 1
+                            need_encrypt:
+                              type: boolean
+                              description: 提交内容需要加密
+                            string_check_rule:
+                              type: object
+                              description: 字符串校验规则
+                              properties:
+                                min_string_length:
+                                  type: number
+                                  description: 字符串最小长度
+                                max_string_length:
+                                  type: number
+                                  description: 字符串最大长度
+                                validator:
+                                  type: string
+                                  description: 校验规则
+                                  enum:
+                                    - number
+                                    - phone
+                                    - idcard
+                                    - url
+                                    - email
+                            enum_check_rule:
+                              type: object
+                              description: 枚举校验规则
+                              properties:
+                                min_list_length:
+                                  type: number
+                                  description: 最小列表长度
+                                max_list_length:
+                                  type: number
+                                  description: 最大列表长度
+                                enum_values:
+                                  type: array
+                                  items:
+                                    type: string
+                                    description: 展示给商户看的枚举可选的字段列表
+                            file_check_rule:
+                              type: object
+                              description: 文件校验规则
+                              properties:
+                                min_list_length:
+                                  type: number
+                                  description: 最小列表长度
+                                max_list_length:
+                                  type: number
+                                  description: 最大列表长度
+                                enum_file_exts:
+                                  type: array
+                                  description: 限制提交的文件后缀
+                                  items:
+                                    type: string
+                                    enum:
+                                      - png
+                                      - jpg
+                                      - jpeg
+                                      - mp4
+                                      - avi
+                                      - mov
+                                      - wmv
+                                      - pdf
+                                      - doc
+                                      - docx
+                                      - csv
+                                      - xlsx
+                                max_file_size:
+                                  type: number
+                                  description: 限制文件提交大小，单位M
+                            time_interval_check_rule:
+                              type: object
+                              description: 时间区间校验规则
+                              properties:
+                                min_list_length:
+                                  type: number
+                                  description: 最小列表长度
+                                  example: 2
+                                max_list_length:
+                                  type: number
+                                  description: 最大列表长度
+                                  example: 2
+                            order_interval_check_rule:
+                              type: object
+                              description: 订单类型校验规则
+                              properties:
+                                min_list_length:
+                                  type: number
+                                  description: 最小列表长度
+                                max_list_length:
+                                  type: number
+                                  description: 最大列表长度
+                                enum_file_exts:
+                                  type: array
+                                  description: 限制提交的文件后缀
+                                  items:
+                                    type: string
+                                    enum:
+                                      - png
+                                      - jpg
+                                      - jpeg
+                                      - mp4
+                                      - avi
+                                      - mov
+                                      - wmv
+                                      - pdf
+                                      - doc
+                                      - docx
+                                      - csv
+                                      - xlsx
+                                max_file_size:
+                                  type: number
+                                  description: 限制文件提交大小，单位M
+                            relations:
+                              type: array
+                              description: 资料项关联规则集合<br/>(不同资料项ID取交集*且*，相同资料项ID不同资料项值取并集*或*)
+                              items:
+                                type: object
+                                properties:
+                                  source_key:
+                                    type: number
+                                    description: 关联的资料项ID
+                                  source_value:
+                                    type: string
+                                    description: 关联的资料项值

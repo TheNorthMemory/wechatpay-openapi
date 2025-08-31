@@ -1,0 +1,49 @@
+get:
+  x-last-updated-at: 2025.08.13
+  x-role:
+    - 电商平台
+  tags:
+    - 收付通∙个人收款
+  summary: 根据业务申请单号查签约信息
+  description: 商户通过预签约接口生成预签约id，当用户通过微信SDK拉起微信支付客户端的签约页面并完成签约后，可以通过预签约id查询到对应的签约信息和用户openid
+  parameters:
+    - name: out_contract_code
+      in: path
+      required: true
+      type: string
+      description: 业务申请单号
+      example: APPLYMENT_00000000001
+    - name: appid
+      in: query
+      required: true
+      type: string
+      description: 签约和付款的微信小程序AppID
+      example: wxd678efh567h23787
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - signed_time
+          - auth_state
+        properties:
+          individual_auth_id:
+            type: string
+            description: 授权ID
+            example: '1900000109'
+          signed_time:
+            type: string
+            format: rfc3339
+            description: 签约时间
+            example: '2018-06-08T10:34:56+08:00'
+          auth_state:
+            type: string
+            description: 授权状态
+            example: AUTHORIZED
+            enum:
+              - AUTHORIZED
+              - UNAUTHORIZED
+          individual_openid:
+            type: string
+            description: 用户OpenID
+            example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o

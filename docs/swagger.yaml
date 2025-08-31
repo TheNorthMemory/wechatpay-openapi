@@ -521,6 +521,10 @@ paths:
     $ref: ./v3/brand/partner/card-member/user-cards/import-by-phone.yaml
   /v3/brand/partner/card-member/user-feeds:
     $ref: ./v3/brand/partner/card-member/user-feeds.yaml
+  /v3/brand/partner/card-member/user-points/exchange-coupon/confirm:
+    $ref: ./v3/brand/partner/card-member/user-points/exchange-coupon/confirm.yaml
+  /v3/brand/partner/card-member/user-points/sync:
+    $ref: ./v3/brand/partner/card-member/user-points/sync.yaml
   /v3/brand/profitsharing/brand-configs/{brand_mchid}:
     $ref: ./v3/brand/profitsharing/brand-configs/{brand_mchid}.yaml
   /v3/brand/profitsharing/finish-order:
@@ -653,6 +657,10 @@ paths:
     $ref: ./v3/ecommerce/fund/withdraw/out-request-no/{out_request_no}.yaml
   /v3/ecommerce/individual-contracts/{openid}:
     $ref: ./v3/ecommerce/individual-contracts/{openid}.yaml
+  /v3/ecommerce/individual-contracts/out-contract-code/{out_contract_code}:
+    $ref: ./v3/ecommerce/individual-contracts/out-contract-code/{out_contract_code}.yaml
+  /v3/ecommerce/individual-contracts/pre-entrust-sign/app:
+    $ref: ./v3/ecommerce/individual-contracts/pre-entrust-sign/app.yaml
   /v3/ecommerce/mch-transfer/authorizations:
     $ref: ./v3/ecommerce/mch-transfer/authorizations.yaml
   /v3/ecommerce/mch-transfer/authorizations/{sub_mchid}:
@@ -793,6 +801,8 @@ paths:
     $ref: ./v3/fund-app/mch-transfer/transfer-to-qq-wallet-bills/{out_bill_no}.yaml
   /v3/fund-app/mch-transfer/transfer-to-qq-wallet-bills/{out_bill_no}/cancel:
     $ref: ./v3/fund-app/mch-transfer/transfer-to-qq-wallet-bills/{out_bill_no}/cancel.yaml
+  /v3/fund-app/mch-transfer/user-confirm-authorization:
+    $ref: ./v3/fund-app/mch-transfer/user-confirm-authorization.yaml
   /v3/fund-app/mch-transfer/user-confirm-authorization/out-authorization-no/{out_authorization_no}:
     $ref: ./v3/fund-app/mch-transfer/user-confirm-authorization/out-authorization-no/{out_authorization_no}.yaml
   /v3/fund-app/mch-transfer/user-confirm-authorization/out-authorization-no/{out_authorization_no}/close:
@@ -1195,6 +1205,14 @@ paths:
     $ref: ./v3/mch_operate/risk/withdrawl-apply/applyment-id/{applyment_id}.yaml
   /v3/mch_operate/risk/withdrawl-apply/out-request-no/{out_request_no}:
     $ref: ./v3/mch_operate/risk/withdrawl-apply/out-request-no/{out_request_no}.yaml
+  /v3/mch-manage/mch-manage-records/{manage_record_id}:
+    $ref: ./v3/mch-manage/mch-manage-records/{manage_record_id}.yaml
+  /v3/mch-manage/mch-manage-records/{manage_record_id}/mch-manage-submissions:
+    $ref: ./v3/mch-manage/mch-manage-records/{manage_record_id}/mch-manage-submissions.yaml
+  /v3/mch-manage/mch-manage-records/sub-mchid/{sub_mchid}:
+    $ref: ./v3/mch-manage/mch-manage-records/sub-mchid/{sub_mchid}.yaml
+  /v3/mch-manage/submission-files/sub-mchid/{sub_mchid}/upload:
+    $ref: ./v3/mch-manage/submission-files/sub-mchid/{sub_mchid}/upload.yaml
   /v3/mch-operation-manage/enhanced-due-diligence/{due_diligence_id}:
     $ref: ./v3/mch-operation-manage/enhanced-due-diligence/{due_diligence_id}.yaml
   /v3/mch-operation-manage/enhanced-due-diligence/{due_diligence_id}/submit:
@@ -1219,6 +1237,14 @@ paths:
     $ref: ./v3/mchalterapply/mchsubjectalterapplyment/{apply_id}/revoke.yaml
   /v3/mchalterapply/mchsubjectalterapplyment/merchant/{merchant_code}/out-request-no/{out_request_no}:
     $ref: ./v3/mchalterapply/mchsubjectalterapplyment/merchant/{merchant_code}/out-request-no/{out_request_no}.yaml
+  /v3/med-ins/orders:
+    $ref: ./v3/med-ins/orders.yaml
+  /v3/med-ins/orders/mix-trade-no/{mix_trade_no}:
+    $ref: ./v3/med-ins/orders/mix-trade-no/{mix_trade_no}.yaml
+  /v3/med-ins/orders/out-trade-no/{out_trade_no}:
+    $ref: ./v3/med-ins/orders/out-trade-no/{out_trade_no}.yaml
+  /v3/med-ins/refunds/notify:
+    $ref: ./v3/med-ins/refunds/notify.yaml
   /v3/merchant-risk-manage/ec-trade-risk/query-risk-trades:
     $ref: ./v3/merchant-risk-manage/ec-trade-risk/query-risk-trades.yaml
   /v3/merchant-risk-manage/ec-trade-risk/recv-dispose-result:
@@ -1871,6 +1897,14 @@ paths:
     $ref: ./v3/taxi-invoice/user-taxi-order/find-by-token.yaml
   /v3/taxi-invoice/user-taxi-orders:
     $ref: ./v3/taxi-invoice/user-taxi-orders.yaml
+  /v3/transaction-block/transaction-block-records/{block_record_id}:
+    $ref: ./v3/transaction-block/transaction-block-records/{block_record_id}.yaml
+  /v3/transaction-block/transaction-block-records/sub-mchid/{sub_mchid}:
+    $ref: ./v3/transaction-block/transaction-block-records/sub-mchid/{sub_mchid}.yaml
+  /v3/transaction-block/transaction-block-submissions/{block_submission_id}:
+    $ref: ./v3/transaction-block/transaction-block-submissions/{block_submission_id}.yaml
+  /v3/transaction-block/transaction-block-submissions/sub-mchid/{sub_mchid}:
+    $ref: ./v3/transaction-block/transaction-block-submissions/sub-mchid/{sub_mchid}.yaml
   /v3/transfer-detail/electronic-receipts:
     $ref: ./v3/transfer-detail/electronic-receipts.yaml
   /v3/transfer/batches:

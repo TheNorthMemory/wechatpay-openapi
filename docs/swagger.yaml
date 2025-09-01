@@ -7,7 +7,7 @@ info:
     整理自官方文档中心[普通商户](https://pay.weixin.qq.com/doc/v3/merchant/4012062524) [合作伙伴](https://pay.weixin.qq.com/doc/v3/partner/4012069852) [全球](https://pay.weixin.qq.com/doc/global/v3/zh)
     本[项目/工具地址](https://github.com/TheNorthMemory/wechatpay-openapi)
     **访问第一次加载比较慢，请耐心等待大约1-2分钟不等(小文件下载比较多)。**
-  version: 1.1.8
+  version: 1.1.9
 schemes:
   - https
 consumes:

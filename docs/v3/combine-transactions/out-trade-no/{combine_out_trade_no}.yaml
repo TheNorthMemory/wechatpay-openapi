@@ -1,5 +1,5 @@
 get:
-  x-last-updated-at: 2024.10.22
+  x-last-updated-at: 2025.09.02
   x-role:
     - 电商平台
     - 服务商
@@ -75,10 +75,21 @@ get:
                   type: string
                   description: 交易类型
                   example: JSAPI
+                  enum:
+                    - NATIVE
+                    - JSAPI
+                    - APP
+                    - MWEB
                 trade_state:
                   type: string
                   description: 交易状态
                   example: SUCCESS
+                  enum:
+                    - SUCCESS
+                    - REFUND
+                    - NOTPAY
+                    - CLOSED
+                    - PAYERROR
                 bank_type:
                   type: string
                   description: 付款银行
@@ -112,6 +123,79 @@ get:
                   type: string
                   description: 用户子标识
                   example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+                promotion_detail:
+                  type: array
+                  description: 优惠信息列表
+                  items:
+                    type: object
+                    properties:
+                      coupon_id:
+                        type: string
+                        description: 券ID
+                      name:
+                        type: string
+                        description: 优惠名称
+                      scope:
+                        type: string
+                        description: 优惠范围
+                        enum:
+                          - GLOBAL #全场代金券
+                          - SINGLE #单品优惠
+                      type:
+                        type: string
+                        description: 优惠类型
+                        enum:
+                          - CASH   #充值
+                          - NOCASH #预充值
+                      amount:
+                        type: integer
+                        description: 优惠券面额
+                      stock_id:
+                        type: string
+                        description: 活动批次ID
+                      wechatpay_contribute:
+                        type: integer
+                        description: 微信出资
+                      merchant_contribute:
+                        type: integer
+                        description: 商户出资
+                      other_contribute:
+                        type: integer
+                        description: 其他出资
+                      currency:
+                        type: string
+                        description: 优惠币种
+                        example: CNY
+                      goods_detail:
+                        type: array
+                        description: 单品列表
+                        items:
+                          type: object
+                          required:
+                            - goods_id
+                            - quantity
+                            - unit_price
+                          properties:
+                            goods_id:
+                              type: string
+                              description: 商品编码
+                              example: 商品编码
+                            quantity:
+                              type: integer
+                              description: 商品数量
+                              example: 1
+                            unit_price:
+                              type: integer
+                              description: 商品单价
+                              example: 828800
+                            discount_amount:
+                              type: integer
+                              description: 商品优惠金额
+                              example: 1
+                            goods_remark:
+                              type: string
+                              description: 商品备注
+                              example: 商品备注信息
                 amount:
                   type: object
                   description: 订单金额

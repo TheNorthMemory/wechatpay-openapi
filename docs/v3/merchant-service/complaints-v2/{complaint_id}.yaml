@@ -1,5 +1,5 @@
 get:
-  x-last-updated-at: 2024.09.11
+  x-last-updated-at: 2025.08.28
   x-role:
     - 服务商
     - 渠道商
@@ -36,6 +36,7 @@ get:
             example: '200201820200101080076610000'
           complaint_time:
             type: string
+            format: rfc3339
             description: 投诉时间
             example: '2015-05-20T13:29:35.120+08:00'
           complaint_detail:
@@ -46,6 +47,10 @@ get:
             type: string
             description: 投诉单状态
             example: PENDING
+            enum:
+              - PENDING
+              - PROCESSING
+              - PROCESSED
           complainted_mchid:
             type: string
             description: 被诉商户号
@@ -139,6 +144,10 @@ get:
             type: string
             description: 问题类型
             example: REFUND
+            enum:
+              - REFUND
+              - SERVICE_NOT_WORK
+              - OTHERS
           apply_refund_amount:
             type: integer
             description: 申请退款金额
@@ -146,7 +155,12 @@ get:
           user_tag_list:
             type: array
             description: 用户标签列表
-            example: '[TRUSTED]'
+            items:
+              type: string
+              example: TRUSTED
+              enum:
+                - TRUSTED
+                - HIGH_RISK
           additional_info:
             type: object
             description: 补充信息
@@ -155,12 +169,15 @@ get:
                 type: string
                 description: 补充信息类型
                 example: SHARE_POWER_TYPE
+                enum:
+                  - SHARE_POWER_TYPE
               share_power_info:
                 type: object
                 description: 充电宝投诉相关信息
                 properties:
                   return_time:
                     type: string
+                    format: rfc3339
                     description: 归还时间
                     example: '2015-05-20T13:29:35+08:00'
                   return_address_info:

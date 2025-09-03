@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2024.09.11
+  x-last-updated-at: 2025.08.28
   x-role: [直连商户, 服务商, 渠道商]
   tags:
     - 风险合规∙消费者投诉
@@ -34,7 +34,7 @@ post:
             description: 通知地址
             example: https://www.xxx.com/notify
 get:
-  x-last-updated-at: 2024.09.11
+  x-last-updated-at: 2025.08.28
   x-role: [直连商户, 服务商, 渠道商]
   tags:
     - 风险合规∙消费者投诉
@@ -57,7 +57,7 @@ get:
             description: 通知地址
             example: https://www.xxx.com/notify
 put:
-  x-last-updated-at: 2024.09.11
+  x-last-updated-at: 2025.08.28
   x-role: [直连商户, 服务商, 渠道商]
   tags:
     - 风险合规∙消费者投诉
@@ -92,7 +92,7 @@ put:
             description: 通知地址
             example: https://www.xxx.com/notify
 delete:
-  x-last-updated-at: 2024.09.11
+  x-last-updated-at: 2025.08.28
   x-role: [直连商户, 服务商, 渠道商]
   tags:
     - 风险合规∙消费者投诉

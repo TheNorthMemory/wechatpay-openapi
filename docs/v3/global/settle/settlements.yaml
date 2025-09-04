@@ -1,5 +1,5 @@
 get:
-  x-last-updated-at: 2022.08.04
+  x-last-updated-at: 2025.01.07
   x-role:
     - 直连模式
     - 机构模式
@@ -126,6 +126,36 @@ get:
                   enum:
                     - CHINA_MAINLAND
                     - CHINA_HONGKONG
+                split_amount:
+                  type: object
+                  description: 分账业务金额
+                  required:
+                    - settled
+                    - unsettle
+                    - currency
+                    - pay
+                    - refund
+                  properties:
+                    settled:
+                      type: integer
+                      description: 已结算金额
+                      example: 123
+                    unsettle:
+                      type: integer
+                      description: 未结算金额
+                      example: 123
+                    currency:
+                      type: string
+                      description: 结算币种
+                      example: HKD
+                    pay:
+                      type: integer
+                      description: 支付金额
+                      example: 123
+                    refund:
+                      type: integer
+                      description: 退款金额
+                      example: 123
           total_count:
             type: integer
             description: 总记录条数

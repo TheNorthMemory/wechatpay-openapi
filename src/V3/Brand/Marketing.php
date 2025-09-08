@@ -3,9 +3,8 @@
 namespace WeChatPay\OpenAPI\V3\Brand;
 
 /**
- * @property-read Partner\Store $store
- * @property-read Partner\CardMember $cardMember
+ * @property-read Marketing\ShakeActivities $shakeActivities
  */
-interface Partner
+interface Marketing
 {
 }

@@ -8,6 +8,7 @@ namespace WeChatPay\OpenAPI\V3;
  * @property-read Marketing\ShoppingReceipt $shoppingReceipt
  * @property-read Marketing\Paygiftactivity $paygiftactivity
  * @property-read Marketing\Partnerships $partnerships
+ * @property-read Marketing\Partner $partner
  * @property-read Marketing\MembercardOpen $membercardOpen
  * @property-read Marketing\MembercardActivity $membercardActivity
  * @property-read Marketing\GoodsSubsidyActivity $goodsSubsidyActivity

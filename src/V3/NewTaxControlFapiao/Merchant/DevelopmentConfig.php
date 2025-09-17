@@ -19,6 +19,7 @@ interface DevelopmentConfig
             'callback_url' => 'https://pay.weixin.qq.com/callback',
             'sub_mch_code' => '1900000109',
             'show_fapiao_cell' => true,
+            'support_vat_fapiao' => true,
         ],
     ]): ResponseInterface;
 
@@ -32,6 +33,7 @@ interface DevelopmentConfig
             'callback_url' => 'https://pay.weixin.qq.com/callback',
             'sub_mch_code' => '1900000109',
             'show_fapiao_cell' => true,
+            'support_vat_fapiao' => true,
         ],
     ]): PromiseInterface;
 

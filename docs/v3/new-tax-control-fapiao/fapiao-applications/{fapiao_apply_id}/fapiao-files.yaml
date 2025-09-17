@@ -1,5 +1,5 @@
 get:
-  x-last-updated-at: 2023.08.16
+  x-last-updated-at: 2025.09.03
   x-role:
     - 普通商户
     - 服务商
@@ -50,3 +50,10 @@ get:
                   type: string
                   description: 发票状态
                   example: ISSUE_ACCEPTED
+                  enum:
+                    - ISSUE_ACCEPTED #开票申请已受理
+                    - ISSUED #发票已开具
+                    - REVERSE_ACCEPTED #冲红申请已受理
+                    - REVERSED #发票已冲红
+                    - ISSUE_FAILED #发票开具已失败，数电发票模式特有字段
+                    - REVERSE_FAILED #发票冲红已失败，数电发票模式特有字段

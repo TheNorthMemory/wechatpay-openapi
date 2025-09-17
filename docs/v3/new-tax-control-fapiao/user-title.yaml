@@ -1,5 +1,5 @@
 get:
-  x-last-updated-at: 2023.10.12
+  x-last-updated-at: 2025.09.03
   x-role:
     - 直连商户
     - 服务商
@@ -20,6 +20,9 @@ get:
       required: true
       description: 开票场景
       example: WITH_WECHATPAY
+      enum:
+        - WITH_WECHATPAY
+        - WITHOUT_WECHATPAY
     - name: fapiao_apply_id
       type: string
       in: query
@@ -38,6 +41,9 @@ get:
             type: string
             description: 购买方类型
             example: ORGANIZATION
+            enum:
+              - INDIVIDUAL
+              - ORGANIZATION
           name:
             type: string
             description: 名称
@@ -64,9 +70,30 @@ get:
             example: '62001234567890'
           phone:
             type: string
+            format: base64
             description: 手机号
             example: pVd1HJ6zyvPedzGaV+X3qtmrq9bb9tPttdY+aQ6za
           email:
             type: string
+            format: base64
             description: 邮箱地址
             example: pVd1HJ6zyvPedzGaV+X3qtmrq9bb9tPttdY+aQ6za
+          amount:
+            type: integer
+            description: 订单金额
+            example: 1000
+          out_trade_no:
+            type: string
+            description: 商户订单号
+            example: order_20200701_123456
+          fapiao_bill_type:
+            type: string
+            description: 开具的发票类型
+            example: COMM_FAPIAO
+            enum:
+              - COMM_FAPIAO
+              - VAT_FAPIAO
+          user_apply_message:
+            type: string
+            description: 留言信息
+            example: 用户留言

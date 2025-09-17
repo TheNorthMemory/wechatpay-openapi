@@ -29,6 +29,10 @@ interface InsertCards
                 'bank_account' => '62001234567890',
                 'phone' => '18507550000',
                 'email' => '123110@qq.com',
+                'amount' => 1000,
+                'out_trade_no' => 'order_20200701_123456',
+                'fapiao_bill_type' => 'COMM_FAPIAO',
+                'user_apply_message' => '用户留言',
             ],
             'fapiao_card_information' => [[
                 'fapiao_media_id' => 'ASNFZ4mrze/+3LqYdlQyEA==',
@@ -95,6 +99,10 @@ interface InsertCards
                 'bank_account' => '62001234567890',
                 'phone' => '18507550000',
                 'email' => '123110@qq.com',
+                'amount' => 1000,
+                'out_trade_no' => 'order_20200701_123456',
+                'fapiao_bill_type' => 'COMM_FAPIAO',
+                'user_apply_message' => '用户留言',
             ],
             'fapiao_card_information' => [[
                 'fapiao_media_id' => 'ASNFZ4mrze/+3LqYdlQyEA==',

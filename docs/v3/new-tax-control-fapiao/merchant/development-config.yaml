@@ -1,5 +1,5 @@
 patch:
-  x-last-updated-at: 2023.10.12
+  x-last-updated-at: 2025.09.03
   x-role:
     - 直连商户
     - 服务商
@@ -7,7 +7,7 @@ patch:
   tags:
     - 经营工具∙电子发票
   summary: 配置开发选项
-  description: 配置开发选项(例如回调地址等) [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter4_8_18.shtml)
+  description: 配置开发选项（例如回调地址、全部账单展示开发票入口开关），该配置对其绑定的同主体商户号也生效。
   parameters:
     - name: _
       in: body
@@ -27,6 +27,10 @@ patch:
             type: boolean
             description: 全部账单展示开发票入口开关
             example: false
+          support_vat_fapiao:
+            type: boolean
+            description: 商户是否支持开电子专票
+            example: false
   responses:
     '200':
       schema:
@@ -41,6 +45,10 @@ patch:
           show_fapiao_cell:
             type: boolean
             description: 全部账单展示开发票入口开关
+            example: false
+          support_vat_fapiao:
+            type: boolean
+            description: 商户是否支持开电子专票
             example: false
 get:
   x-last-updated-at: 2023.10.12
@@ -67,4 +75,8 @@ get:
           show_fapiao_cell:
             type: boolean
             description: 全部账单展示开发票入口开关
+            example: false
+          support_vat_fapiao:
+            type: boolean
+            description: 商户是否支持开电子专票
             example: false

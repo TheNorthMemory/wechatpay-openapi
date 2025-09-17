@@ -34,6 +34,9 @@ post:
             type: string
             description: 插卡场景
             example: WITH_WECHATPAY
+            enum:
+              - WITH_WECHATPAY
+              - WITHOUT_WECHATPAY
           buyer_information:
             type: object
             description: 购买方信息
@@ -45,6 +48,9 @@ post:
                 type: string
                 description: 购买方类型
                 example: ORGANIZATION
+                enum:
+                  - INDIVIDUAL
+                  - ORGANIZATION
               name:
                 type: string
                 description: 名称
@@ -79,6 +85,25 @@ post:
                 format: base64
                 description: 邮箱地址
                 example: 123110@qq.com
+              amount:
+                type: integer
+                description: 订单金额
+                example: 1000
+              out_trade_no:
+                type: string
+                description: 商户订单号
+                example: order_20200701_123456
+              fapiao_bill_type:
+                type: string
+                description: 开具的发票类型
+                example: COMM_FAPIAO
+                enum:
+                  - COMM_FAPIAO
+                  - VAT_FAPIAO
+              user_apply_message:
+                type: string
+                description: 留言信息
+                example: 用户留言
           fapiao_card_information:
             type: array
             description: 电子发票卡券信息列表
@@ -112,6 +137,7 @@ post:
                   example: '044001911211'
                 fapiao_time:
                   type: string
+                  format: rfc3339
                   description: 开票时间
                   example: '2020-07-01T12:00:00+08:00'
                 check_code:
@@ -245,6 +271,12 @@ post:
                         type: string
                         description: 税收优惠政策标识
                         example: NO_FAVORABLE
+                        enum:
+                          - NO_FAVORABLE #无优惠
+                          - OUTSIDE_VAT #不征税
+                          - VAT_EXEMPT #免税
+                          - NORMAL_ZERO_RATED #普通零税率
+                          - EXPORT_ZERO_RATED #出口零税率
                       discount:
                         type: boolean
                         description: 是否折扣行

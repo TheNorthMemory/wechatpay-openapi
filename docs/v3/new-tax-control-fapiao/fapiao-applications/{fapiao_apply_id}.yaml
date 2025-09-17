@@ -1,5 +1,5 @@
 get:
-  x-last-updated-at: 2022.01.25
+  x-last-updated-at: 2025.09.03
   x-role:
     - 直连商户
     - 服务商
@@ -61,6 +61,13 @@ get:
                   type: string
                   description: 发票状态
                   example: ISSUED
+                  enum:
+                    - ISSUE_ACCEPTED #开票申请已受理
+                    - ISSUED #发票已开具
+                    - REVERSE_ACCEPTED #冲红申请已受理
+                    - REVERSED #发票已冲红
+                    - ISSUE_FAILED #发票开具已失败，数电发票模式特有字段
+                    - REVERSE_FAILED #发票冲红已失败，数电发票模式特有字段
                 blue_fapiao:
                   type: object
                   description: 蓝字发票信息
@@ -86,9 +93,10 @@ get:
                     password:
                       type: string
                       description: 密码
-                      example: 006>299-375/326>2+7/*0-+<351059<80<4*/5>+<11631+*3030/5*37+/-243159658+013>3409*044>4-/1+/9->*>69501*6+21997--21
+                      example: 006>299-375/326>2+7/*0-+<351059<80<4*/5>+<11631+*3030/5*37+
                     fapiao_time:
                       type: string
+                      format: rfc3339
                       description: 开票时间
                       example: '2020-07-01T12:00:00+08:00'
                 red_fapiao:
@@ -116,9 +124,10 @@ get:
                     password:
                       type: string
                       description: 密码
-                      example: 006>299-375/326>2+7/*0-+<351059<80<4*/5>+<11631+*3030/5*37+/-243159658+013>3409*044>4-/1+/9->*>69501*6+21997--21
+                      example: 006>299-375/326>2+7/*0-+<351059<80<4*/5>+<11631+*3030/5*37+
                     fapiao_time:
                       type: string
+                      format: rfc3339
                       description: 开票时间
                       example: '2020-07-01T12:00:00+08:00'
                 card_information:
@@ -149,6 +158,11 @@ get:
                       type: string
                       description: 发票卡券状态
                       example: INSERT_ACCEPTED
+                      enum:
+                        - INSERT_ACCEPTED
+                        - INSERTED
+                        - DISCARD_ACCEPTED
+                        - DISCARDED
                 total_amount:
                   type: integer
                   description: 总价税合计
@@ -204,6 +218,9 @@ get:
                       type: string
                       description: 购买方类型
                       example: ORGANIZATION
+                      enum:
+                        - INDIVIDUAL
+                        - ORGANIZATION
                     name:
                       type: string
                       description: 名称
@@ -230,12 +247,33 @@ get:
                       example: '62001234567890'
                     phone:
                       type: string
+                      format: base64
                       description: 手机号
                       example: pVd1HJ6zyvPedzGaV+X3qtmrq9bb9tPttdY+aQ6zB
                     email:
                       type: string
+                      format: base64
                       description: 邮箱地址
                       example: pVd1HJ6zyvPedzGaV+X3qtmrq9bb9tPttdY+aQ6za
+                    amount:
+                      type: integer
+                      description: 订单金额
+                      example: 1000
+                    out_trade_no:
+                      type: string
+                      description: 商户订单号
+                      example: order_20200701_123456
+                    fapiao_bill_type:
+                      type: string
+                      description: 开具的发票类型
+                      example: COMM_FAPIAO
+                      enum:
+                        - COMM_FAPIAO
+                        - VAT_FAPIAO
+                    user_apply_message:
+                      type: string
+                      description: 留言信息
+                      example: 用户留言
                 extra_information:
                   type: object
                   description: 附加信息
@@ -315,6 +353,12 @@ get:
                         type: string
                         description: 税收优惠政策标识
                         example: NO_FAVORABLE
+                        enum:
+                          - NO_FAVORABLE #无优惠
+                          - OUTSIDE_VAT #不征税
+                          - VAT_EXEMPT #免税
+                          - NORMAL_ZERO_RATED #普通零税率
+                          - EXPORT_ZERO_RATED #出口零税率
                       discount:
                         type: boolean
                         description: 是否折扣行
@@ -322,3 +366,11 @@ get:
                   type: string
                   description: 备注信息
                   example: 备注
+                fapiao_error_code:
+                  type: string
+                  description: 开票失败错误码
+                  example: BIZ_ERROR
+                fapiao_error_message:
+                  type: string
+                  description: 开票失败原因
+                  example: 开票失败。授信额度不足，请联系主管税务机关或者登录电子税务局提额/申报。

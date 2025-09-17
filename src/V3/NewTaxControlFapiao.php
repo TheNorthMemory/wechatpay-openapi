@@ -5,6 +5,7 @@ namespace WeChatPay\OpenAPI\V3;
 /**
  * @property-read NewTaxControlFapiao\UserTitle $userTitle
  * @property-read NewTaxControlFapiao\Merchant $merchant
+ * @property-read NewTaxControlFapiao\Fapiaomerchant $fapiaomerchant
  * @property-read NewTaxControlFapiao\FapiaoApplications $fapiaoApplications
  * @property-read NewTaxControlFapiao\CardTemplate $cardTemplate
  */

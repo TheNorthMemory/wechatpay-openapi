@@ -3,6 +3,7 @@
 namespace WeChatPay\OpenAPI\V3\NewTaxControlFapiao\Merchant;
 
 /**
+ * @property-read _sub_mchid_\CheckStatus $checkStatus
  * @property-read _sub_mchid_\Check $check
  */
 interface _sub_mchid_

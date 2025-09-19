@@ -1,5 +1,5 @@
 get:
-  x-last-updated-at: 2024.06.14
+  x-last-updated-at: 2025.09.15
   x-role:
     - 服务商
   tags:
@@ -30,6 +30,7 @@ get:
             items:
               type: string
               enum:
+                - NO_TRANSACTION_AND_RECHARGE #关闭收单和充值
                 - NO_PAYMENT #关闭付款
                 - NO_WITHDRAWAL #关闭提现
                 - NO_REFUND #关闭退款
@@ -42,18 +43,61 @@ get:
             items:
               type: object
               properties:
+                limitation_case_id:
+                  type: string
+                  description: 商户被该原因管控的单据号
+                  example: A20250819155047774441874
                 limitation_reason:
                   type: string
+                  description: 商户被管控原因
+                  example: 入驻后180天无账户动账
+                limitation_reason_describe:
+                  type: string
                   description: 商户被管控原因描述
-                  example: 经营证照异常
+                  example: 当前商户号入驻后长时间无账户动账，请重新确认开户意愿并核实身份
                 recover_way:
                   type: string
                   description: 商户被该原因管控的解脱路径
-                  example: 修改主体资料
+                  example: MODIFY_SUBJECT_INFORMATION
+                  enum:
+                    - IRRECOVERABLE #不可恢复
+                    - MODIFY_SUBJECT_INFORMATION #修改主体资料
+                    - MODIFY_SETTLE_ACCOUNT_INFORMATION #修改结算银行账户
+                    - VERIFY_INACTIVE_MERCHANT_IDENTITY #核实商户身份
+                    - SUBMIT_OFFLINE_BUSINESS_SCENARIO_INFORMATION #提交线下经营场景信息
+                    - SUBMIT_INFORMATION_FOR_APPEAL #提交相关信息申诉
+                    - RESOLVE_TRANSACTION_DISPUTES #解决交易纠纷
+                    - MODIFY_ADMINISTRATOR_INFORMATION #修改超级管理员
+                    - CALL_CUSTOMER_SERVICE_AT_95017 #拨打微信支付客服电话95017
+                    - UPDATE_BUSINESS_SCENARIO_INFORMATION #更新经营场景信息
+                    - SUBMIT_CDD_INFORMATION #填写尽调信息
+                    - WAITING_FOR_PLATFORM_REVIEW #等待平台审核
+                    - SUBMIT_UBO_INFORMATION #补充受益所有人信息
+                recover_way_param:
+                  type: string
+                  description: 商户被该原因管控的解脱路径参数
+                  example: '100200300112233'
                 recover_help_url:
                   type: string
                   description: 商户被该原因管控的解脱帮助链接
                   example: https://kf.qq.com
+                limitation_action_type:
+                  type: string
+                  description: 处置方式
+                  example: LIMIT_ACTION_TYPE_IMMEDIATE_CONTROL
+                  enum:
+                    - LIMIT_ACTION_TYPE_IMMEDIATE_CONTROL #立即管控
+                    - LIMIT_ACTION_TYPE_DELAY_CONTROL #延迟管控
+                limitation_start_date:
+                  type: string
+                  format: rfc3339
+                  description: 预计管控开始时间
+                  example: '2025-06-08T10:34:56+08:00'
+                limitation_date:
+                  type: string
+                  format: rfc3339
+                  description: 商户被该原因管控的时间
+                  example: '2025-06-08T10:34:56+08:00'
                 limitation_reason_type:
                   type: string
                   description: 商户被管控原因类型
@@ -64,6 +108,11 @@ get:
                     - SETTLE_ACCOUNT_ABNORMAL #结算信息异常
                     - RISK_ABNORMAL #风险异常
                     - OTHER #其他
+                    - INSPECT_ABNORMAL #巡检异常
+                    - INVALID_REPRESENTATIVE_INFORMATION #法定代表人/负责人资料异常
+                    - INVALID_BUSINESS_STATUS #经营状态异常
+                    - INVALID_BUSINESS_LICENSE #经营证照资料异常
+                    - INVALID_BENEFICIARY_INFORMATION #受益所有人资料异常
                 relate_limitations:
                   type: array
                   description: 商户被该原因管控的能力列表

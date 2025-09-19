@@ -3,6 +3,7 @@
 namespace WeChatPay\OpenAPI\V3;
 
 /**
+ * @property-read MedIns\Refunds $refunds
  * @property-read MedIns\Orders $orders
  */
 interface MedIns

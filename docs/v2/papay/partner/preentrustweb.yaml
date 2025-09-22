@@ -1,4 +1,5 @@
 post:
+  x-last-updated-at: 2025.09.19
   tags:
     - APIv2∙委托扣款
   x-role:
@@ -169,6 +170,16 @@ post:
             description: 签名
             example: C380BEC2BFD727A4B6845133519F3AD6
             maxLength: 32
+          miniprogram_username:
+            type: string
+            description: 跳转签约小程序的username
+            example: gh_xxxxxxxxxxxxx
+            maxLength: 32
+          miniprogram_path:
+            type: string
+            description: 跳转签约小程序的path
+            example: pages/index/index?sign_scene=app&domain_type=cn&pre_entrustweb_id=xxxxxxxxxx
+            maxLength: 256
           pre_entrustweb_id:
             type: string
             description: 预签约id

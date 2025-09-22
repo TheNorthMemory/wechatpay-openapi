@@ -1,8 +1,9 @@
 post:
+  x-last-updated-at: 2025.09.19
   tags:
     - APIv2∙委托扣款
   x-role:
-    - 服务商
+    - 普通商户
   summary: APP纯签约
   description: 外部App拉起微信客户端发起签约前，需先后台调用预签约接口完成预签约，获取pre_entrustweb_id，再拉起微信客户端，完成签约，返回App。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api/wxpay_v2/papay/chapter5_2.shtml)
   consumes:
@@ -159,6 +160,16 @@ post:
             description: 签名
             example: C380BEC2BFD727A4B6845133519F3AD6
             maxLength: 32
+          miniprogram_username:
+            type: string
+            description: 跳转签约小程序的username
+            example: gh_xxxxxxxxxxxxx
+            maxLength: 32
+          miniprogram_path:
+            type: string
+            description: 跳转签约小程序的path
+            example: pages/index/index?sign_scene=app&domain_type=cn&pre_entrustweb_id=xxxxxxxxxx
+            maxLength: 256
           pre_entrustweb_id:
             type: string
             description: 预签约id

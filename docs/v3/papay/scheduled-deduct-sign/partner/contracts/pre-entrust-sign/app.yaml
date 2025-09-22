@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2023.12.21
+  x-last-updated-at: 2025.09.19
   x-role:
     - 服务商
   tags:
@@ -101,3 +101,11 @@ post:
             type: string
             description: 预签约ID
             example: 5778aadY9nltAsZzXixCkFIGYnV2V
+          miniprogram_username:
+            type: string
+            description: 跳转签约小程序的username
+            example: gh_xxxxxxxxxxxxx
+          miniprogram_path:
+            type: string
+            description: 跳转签约小程序的path
+            example: pages/index/index?sign_scene=app&domain_type=cn&pre_entrustweb_id=xxxxxxxxxx

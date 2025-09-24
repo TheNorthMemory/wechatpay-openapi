@@ -79,6 +79,7 @@ namespace WeChatPay\OpenAPI;
  * @property-read V3\Applyment4sub $applyment4sub
  * @property-read V3\Apply4subject $apply4subject
  * @property-read V3\Apply4sub $apply4sub
+ * @property-read V3\AggracctBc $aggracctBc
  * @property-read V3\AbnormalFundProcessing $abnormalFundProcessing
  * @property-read V3\Statements $statements
  * @property-read V3\Certificates $certificates

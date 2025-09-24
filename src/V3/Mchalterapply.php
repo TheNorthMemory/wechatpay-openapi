@@ -3,6 +3,7 @@
 namespace WeChatPay\OpenAPI\V3;
 
 /**
+ * @property-read Mchalterapply\Merchantnamealterapplyment $merchantnamealterapplyment
  * @property-read Mchalterapply\Mchsubjectalterapplyment $mchsubjectalterapplyment
  * @property-read Mchalterapply\Mchcontactalterapplyment $mchcontactalterapplyment
  */

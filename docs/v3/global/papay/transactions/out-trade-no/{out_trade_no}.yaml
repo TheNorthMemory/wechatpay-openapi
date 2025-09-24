@@ -1,5 +1,5 @@
 get:
-  x-last-updated-at: 2022.08.04
+  x-last-updated-at: 2025.01.07
   x-role:
     - 直连模式
     - 机构模式
@@ -31,7 +31,7 @@ get:
           - sub_mchid
           - sp_appid
           - out_trade_no
-          - id
+          - transaction_id
           - trade_type
           - bank_type
           - success_time
@@ -68,7 +68,7 @@ get:
             type: string
             description: 商户订单号
             example: '1217752501201407033233368018'
-          id:
+          transaction_id:
             type: string
             description: 微信支付订单号
             example: '4200000000002104083200000488'

@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2022.08.04
+  x-last-updated-at: 2025.01.07
   x-role:
     - 直连模式
     - 机构模式
@@ -13,6 +13,13 @@ post:
       required: true
       schema:
         type: object
+        required:
+          - description
+          - notify_url
+          - out_trade_no
+          - merchant_category_code
+          - contract_id
+          - amount
         properties:
           appid:
             type: string
@@ -86,15 +93,11 @@ post:
                 example: 128.0.0.1
   responses:
     '200':
+      schema:
         type: object
         required:
-          - mchid
-          - appid
-          - sp_mchid
-          - sub_mchid
-          - sp_appid
           - out_trade_no
-          - id
+          - transaction_id
           - trade_type
           - bank_type
           - success_time
@@ -131,7 +134,7 @@ post:
             type: string
             description: 商户订单号
             example: '1217752501201407033233368018'
-          id:
+          transaction_id:
             type: string
             description: 微信支付订单号
             example: '4200000000002104083200000488'
@@ -142,19 +145,29 @@ post:
           trade_type:
             type: string
             description: 交易类型
-            example: APP
+            example: AUTH
+            enum:
+              - AUTH
           bank_type:
             type: string
             description: 付款银行
             example: CMC
           success_time:
             type: string
+            format: rfc3339
             description: 支付完成时间
             example: '2018-06-08T10:34:56+08:00'
           trade_state:
             type: string
             description: 交易状态
             example: SUCCESS
+            enum:
+              - SUCCESS #支付成功
+              - REFUND #转入退款
+              - NOTPAY #未支付
+              - CLOSED #已关闭
+              - PAYERROR #支付失败
+              - USERPAYING #用户支付中
           trade_state_desc:
             type: string
             description: 交易状态描述
@@ -210,6 +223,7 @@ post:
                     example: SETTLEMENT_RATE
                     enum:
                       - SETTLEMENT_RATE
+                      - USERPAYMENT_RATE
                   rate:
                     type: integer
                     description: 汇率值

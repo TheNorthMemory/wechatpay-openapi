@@ -10,7 +10,7 @@ use GuzzleHttp\Promise\PromiseInterface;
 interface _applyment_id_
 {
     /**
-     * 微信支付销提现申请单号查询提现申请单状态(同步模式)
+     * 微信支付注销提现申请单号查询申请单状态(同步模式)
      * @param array<string,mixed> $options
      * @link https://wechatpay.im/openapi/v3/ecommerce/account/apply-cancel-withdraw/applyment-id/%7Bapplyment_id%7D
      */
@@ -19,7 +19,7 @@ interface _applyment_id_
     ]): ResponseInterface;
 
     /**
-     * 微信支付销提现申请单号查询提现申请单状态(异步模式)
+     * 微信支付注销提现申请单号查询申请单状态(异步模式)
      * @param array<string,mixed> $options
      * @link https://wechatpay.im/openapi/v3/ecommerce/account/apply-cancel-withdraw/applyment-id/%7Bapplyment_id%7D
      */

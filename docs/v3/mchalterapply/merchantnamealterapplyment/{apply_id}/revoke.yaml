@@ -1,0 +1,31 @@
+post:
+  x-last-updated-at: 2025.09.24
+  x-role:
+    - 电商平台
+    - 服务商
+  tags:
+    - 修改商家简称
+  summary: 撤销商户简称变更申请单
+  description: 当申请单状态为编辑中/审核中/已驳回时，才支持撤销
+  parameters:
+    - name: apply_id
+      in: path
+      required: true
+      type: string
+      description: 微信支付申请单号
+      example: '20220617143306000013906025001'
+  responses:
+    '200':
+      schema:
+        type: object
+        properties:
+          apply_id:
+            type: string
+            description: 申请单号
+            example: '20220617143306000013906025001'
+          state:
+            type: string
+            description: 申请单状态
+            example: APPLYMENT_STATE_CANCELED
+            enum:
+              - APPLYMENT_STATE_CANCELED #已作废

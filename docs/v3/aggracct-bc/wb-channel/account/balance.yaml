@@ -1,0 +1,35 @@
+get:
+  x-last-updated-at: 2025.09.11
+  x-role:
+    - 直连商户
+  tags:
+    - 渠道服务
+  summary: 查询渠道额度
+  description: 接口限频：单查询渠道额度目标商户号100qps
+  parameters:
+    - $ref: '../../../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
+    - name: mchid
+      type: string
+      required: true
+      in: query
+      description: 微信支付商户号
+      example: '1900016681'
+    - name: bal_account_no
+      type: string
+      format: base64
+      required: true
+      in: query
+      description: 额度台账号
+      example: 8609cb22e1774a50a930e414cc71eca06121bc
+  responses:
+    '200':
+      schema:
+        type: object
+        properties:
+          in_transit_reduction_exist:
+            type: boolean
+            description: 是否存在在途减额指令
+          balance:
+            type: integer
+            description: 额度台账号额度
+            example: 1

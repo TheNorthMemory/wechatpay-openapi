@@ -1,0 +1,64 @@
+post:
+  x-last-updated-at: 2025.08.04
+  x-role:
+    - 服务商
+  tags:
+    - 运营工具∙商品券
+  summary: 设置商品券事件通知地址
+  description: 服务商可以通过本接口设置商品券相关事件的回调地址，该地址配置为服务商维度配置，该服务商下的所有商品券相关事件均会通知到该地址。
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - notify_url
+        properties:
+          notify_url:
+            type: string
+            description: 通知URL地址
+            example: https://pay.weixin.qq.com
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - notify_url
+          - update_time
+        properties:
+          notify_url:
+            type: string
+            description: 通知URL地址
+            example: https://pay.weixin.qq.com
+          update_time:
+            type: string
+            format: rfc3339
+            description: 修改时间
+            example: '2015-05-20T13:29:35+08:00'
+get:
+  x-last-updated-at: 2025.08.04
+  x-role:
+    - 服务商
+  tags:
+    - 运营工具∙商品券
+  summary: 获取商品券事件通知地址
+  description: 服务商可以通过本接口查询商品券相关事件的回调地址，该地址配置为服务商维度配置，该服务商下的所有商品券相关事件均会通知到该地址。前置条件：服务商已经配置商品券事件通知地址
+  parameters: []
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - notify_url
+          - update_time
+        properties:
+          notify_url:
+            type: string
+            description: 通知URL地址
+            example: https://pay.weixin.qq.com
+          update_time:
+            type: string
+            format: rfc3339
+            description: 修改时间
+            example: '2015-05-20T13:29:35+08:00'

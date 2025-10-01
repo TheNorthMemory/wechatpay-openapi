@@ -1,0 +1,41 @@
+post:
+  x-last-updated-at: 2025.08.04
+  x-role:
+    - 服务商
+  tags:
+    - 经营工具∙品牌门店
+  summary: 解绑收款商户号
+  description: 解绑品牌门店的收款商户号。解绑成功后，商户号不能再为门店收款。
+  parameters:
+    - name: store_id
+      in: path
+      required: true
+      type: string
+      description: 品牌门店ID
+      example: '20488000'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - brand_id
+          - mchid
+        properties:
+          brand_id:
+            type: string
+            description: 品牌ID
+            example: '123456789'
+          mchid:
+            type: string
+            description: 门店收款商户号
+            example: '1230000109'
+  responses:
+    '200':
+      schema:
+        type: object
+        properties:
+          failed_reason:
+            type: string
+            description: 解绑失败原因
+            example: 'example_failed_reason'

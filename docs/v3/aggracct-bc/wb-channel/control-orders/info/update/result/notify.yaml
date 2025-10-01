@@ -1,0 +1,61 @@
+post:
+  x-last-updated-at: 2025.09.15
+  x-role:
+    - 直连商户
+  tags:
+    - 渠道服务
+  summary: 资料更新请求审核结果回调通知
+  description: 微信支付侧提交资料更新申请后，此接口接收微众更新请求审核结果回调通知。限频：200/分钟
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - out_request_no
+          - mchid
+          - bal_account_no
+          - punish_scene
+        properties:
+          out_request_no:
+            type: string
+            description: 资料更新请求单号
+            example: htozr8denqegbt6tk6u10iymo7yww5pn
+          mchid:
+            type: string
+            description: 商户号
+            example: '1900016681'
+          audit_result:
+            type: string
+            description: 审核结果
+            example: PASS
+            enum:
+              - PASS
+              - REJECT
+          audit_finish_time:
+            type: string
+            format: rfc3339
+            description: 审核完成时间
+            example: '2015-05-20T13:29:35+08:00'
+          attach_info:
+            type: string
+            description: 业务附属信息
+            example: updateidcard
+          fail_code:
+            type: string
+            description: 审核驳回错误码
+            example: '1001'
+          fail_msg:
+            type: string
+            description: 审核驳回错误原因
+            example: IDCARD_ILLEGAL
+  responses:
+    '200':
+      schema:
+        type: object
+        properties:
+          ret_msg:
+            type: string
+            description: 接口返回信息
+            example: SUCC

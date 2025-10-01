@@ -1,0 +1,42 @@
+post:
+  x-last-updated-at: 2025.08.04
+  x-role:
+    - 服务商
+  tags:
+    - 运营工具∙商品券
+  summary: 图片上传
+  description: 商品券接口调用过程中需要传入各种图片URL，请使用本接口上传图片到微信支付，并使用接口返回的URL。
+  consumes:
+    - multipart/form-data
+  parameters:
+    - name: file
+      in: formData
+      type: file
+      description: 图片文件
+      required: true
+    - name: meta
+      in: formData
+      required: true
+      type: string
+      format: jsonObjectLike
+      description: 媒体文件元信息`JSON`格式字符串
+      schema:
+        type: object
+        properties:
+          filename:
+            type: string
+            description: 文件名称
+          sha256:
+            type: string
+            description: 文件摘要
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - media_url
+        properties:
+          media_url:
+            type: string
+            description: 媒体文件URL地址
+            example: https://qpic.cn/xxx

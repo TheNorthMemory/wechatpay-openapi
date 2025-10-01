@@ -1,0 +1,58 @@
+get:
+  x-last-updated-at: 2025.09.24
+  x-role:
+    - 电商平台
+    - 服务商
+  tags:
+    - 修改商家简称
+  summary: 查询商户简称申请单状态-使用业务单号和商户号
+  description: 使用业务单号查询申请单状态
+  parameters:
+    - name: merchant_code
+      in: path
+      required: true
+      type: string
+      description: 微信支付商户号
+      example: '1900006491'
+    - name: out_request_no
+      in: path
+      required: true
+      type: string
+      description: 业务申请编号
+      example: '1900013511_10000'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - apply_id
+          - out_request_no
+          - merchant_code
+          - state
+        properties:
+          apply_id:
+            type: string
+            description: 申请单号
+            example: '20220617143306000013906025001'
+          out_request_no:
+            type: string
+            description: 业务申请编号
+            example: '1900013511_10000'
+          merchant_code:
+            type: string
+            description: 微信支付商户号
+            example: '1900006491'
+          state:
+            type: string
+            description: 申请单状态
+            example: APPLYMENT_STATE_EDITTING
+            enum:
+              - APPLYMENT_STATE_AUDITING #审核中
+              - APPLYMENT_STATE_REJECTED #已驳回
+              - APPLYMENT_STATE_MODIFING #资料修改中
+              - APPLYMENT_STATE_FINISHED #已完成
+              - APPLYMENT_STATE_CANCELED #已作废
+          audit_reject_reason:
+            type: string
+            description: 总体驳回原因
+            example: 身份证背面识别失败，请上传更清晰的身份证图片。

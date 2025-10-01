@@ -1,0 +1,116 @@
+get:
+  x-last-updated-at: 2025.09.03
+  x-role:
+    - 服务商
+    - 渠道商
+  tags:
+    - 经营工具∙电子发票
+  summary: 检查子商户开票功能状态
+  description: 服务商检查子商户的电子发票功能状态是否正常，若商户已经开通API开票功能并已对服务商授权，则返回成功。
+  parameters:
+    - name: sub_mchid
+      in: path
+      required: true
+      type: string
+      description: 子商户号
+      example: '1900000109'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - sub_mchid
+        properties:
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1900000109'
+          third_mode:
+            type: object
+            description: 第三方开票模式
+            required:
+              - status
+            properties:
+              status:
+                type: string
+                description: 第三方/自建发票能力接入状态
+                example: ENABLED
+                enum:
+                  - DISABLED
+                  - ENABLED
+          digital_tax_mode:
+            type: object
+            description: 数电发票模式
+            required:
+              - status
+            properties:
+              status:
+                type: string
+                description: 接入状态
+                example: ENABLED
+                enum:
+                  - APPROVAL_PENDING #请等待当地税务机关审批
+                  - ACCESS_CONFIRMED_PENDING #请商户法定代表人/财务负责人登陆电子税局或者国家税务总局乐企数字开放平台进行确认
+                  - ABILITY_CONFIRMED_PENDING #请商户法定代表人/财务负责人登录电子税局进行能力授权确认
+                  - BILLING_PERSON_REGISTER_PENDING #请商户法定代表人/财务负责人登陆电子税局进行开票员设置
+                  - BILLING_PERSON_CONFIRMED_PENDING #请开票员登陆电子税局-乐企进行授权
+                  - SECURITY_SETTING_PENDING #请商户法定代表人/财务负责人登陆电子税局进行设置开票安全验证有效期
+                  - APPLY_FAILED #税局申请不通过，请查看接入失败原因
+                  - DISABLED #未接入或商户解除授权，请重新发起能力邀请商户确认授权
+                  - ENABLED #商户数电开票能力，税局接入完成
+                  - RESOURCE_EXPIRED #商户使用的数电服务商资源过期，请联系数电服务商
+              billing_person_info:
+                type: object
+                description: 开票人信息
+                properties:
+                  id:
+                    type: string
+                    description: 开票人ID
+                    example: '187776276864872'
+                  name:
+                    type: string
+                    description: 开票人姓名
+                    example: 张伟
+              access_time:
+                type: string
+                format: rfc3339
+                description: 接入时间
+                example: '2020-07-01T00:00:00+08:00'
+              expired_time:
+                type: string
+                format: rfc3339
+                description: 过期时间
+                example: '2020-07-02T00:00:00+08:00'
+              access_fail_reason:
+                type: string
+                description: 接入失败原因
+                example: 失败原因
+              ability_info:
+                type: array
+                description: 能力信息
+                items:
+                  type: object
+                  required:
+                    - type
+                    - status
+                  properties:
+                    type:
+                      type: string
+                      description: 能力类型
+                      example: BASE_ABILITY
+                      enum:
+                        - BASE_ABILITY
+                        - REAL_ESTATE_ABILITY
+                    status:
+                      type: string
+                      description: 能力授权状态
+                      example: AUTHORIZED
+                      enum:
+                        - AUTHORIZED #数电开通能力已授权
+                        - AUTHORIZE_PENDING #需要财务负责人或者法定代表人，登录电子税局系统，进行开票能力授权
+                        - DEAUTHORIZED #商户已经解除与联用平台在税局系统的关联关系
+                        - AUTHORIZE_FAILED #能力授权失败
+                    authorize_fail_reason:
+                      type: string
+                      description: 能力授权失败原因
+                      example: 失败原因

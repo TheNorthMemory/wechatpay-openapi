@@ -1,0 +1,64 @@
+post:
+  x-last-updated-at: 2025.09.09
+  x-role:
+    - 直连商户
+  tags:
+    - 渠道服务
+  summary: 解除对微众台账的管控
+  description: 接口仅受理，解管成功或失败后，可以通知发起方（需发起方提供通知地址）。接口支持重入，重入有效期1年。限频：200/分钟
+  parameters:
+    - $ref: '../../../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - out_request_no
+          - related_webank_punish_no
+          - related_wxpay_punish_no
+          - mchid
+          - bal_account_no
+          - recover_reason
+        properties:
+          out_request_no:
+            type: string
+            description: 微众解管单号
+            example: example_out_request_no
+          related_webank_punish_no:
+            type: string
+            description: 关联微众管控单号
+            example: example_related_webank_punish_no
+          related_wxpay_punish_no:
+            type: string
+            description: 关联微信支付管控单号
+            example: example_related_wxpay_punish_no
+          mchid:
+            type: string
+            description: 目标解管商户号
+            example: example_mchid
+          bal_account_no:
+            type: string
+            format: base64
+            description: 目标解管台账ID
+            example: example_bal_account_no
+          recover_reason:
+            type: string
+            description: 解管原因描述
+            example: example_recover_reason
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - wxpay_recover_no
+          - out_request_no
+        properties:
+          wxpay_recover_no:
+            type: string
+            description: 微信支付解管单号
+            example: example_wxpay_recover_no
+          out_request_no:
+            type: string
+            description: 微众解管单号
+            example: example_out_request_no

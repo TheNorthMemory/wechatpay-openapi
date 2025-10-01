@@ -1,0 +1,154 @@
+post:
+  x-last-updated-at: 2025.03.13
+  x-role:
+    - 服务商
+  tags:
+    - 收付通∙注销
+  summary: 提交注销提现申请
+  description: 本接口用于商户号注销、商户号注销及提现。当平台二级商户需要注销商户号，或需要注销商户号并提现商户号可用余额的商户，由其所属的平台商户调用此接口发起申请。
+  parameters:
+    - $ref: '../../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - sub_mchid
+          - out_request_no
+          - payee_info
+        properties:
+          sub_mchid:
+            type: string
+            description: 二级商户号
+            example: '1900000109'
+          out_request_no:
+            type: string
+            description: 商户注销申请单号
+            example: P202410241010125346
+          withdraw:
+            type: string
+            description: 是否提取资金
+            example: APPLY_WITHDRAW
+            enum:
+              - APPLY_WITHDRAW
+              - NOT_APPLY_WITHDRAW
+          payee_info:
+            type: object
+            description: 收款账号信息
+            required:
+              - account_type
+              - bank_account_info
+            properties:
+              account_type:
+                type: string
+                description: 账户类型
+                example: ACCOUNT_TYPE_CORPORATE
+                enum:
+                  - ACCOUNT_TYPE_CORPORATE
+                  - ACCOUNT_TYPE_PERSONAL
+              bank_account_info:
+                type: object
+                description: 银行账户
+                required:
+                  - account_name
+                  - account_bank
+                  - account_number
+                properties:
+                  account_name:
+                    type: string
+                    format: base64
+                    description: 开户名称
+                    example: AOZdYGISxo4y44/UgZ69b0zZXkw==
+                  account_bank:
+                    type: string
+                    description: 开户银行
+                    example: 工商银行
+                  bank_branch_id:
+                    type: string
+                    description: 开户银行联行号
+                    example: '402713354941'
+                  bank_name:
+                    type: string
+                    description: 开户银行全称（含支行）
+                    example: '402713354941'
+                  account_number:
+                    type: string
+                    format: base64
+                    description: 银行账号
+                    example: d+xT+MQCvrLHeorwC+w==
+              identity_info:
+                type: object
+                description: 收款人账号对应的证件信息
+                required:
+                  - identification_name
+                  - identification_no
+                properties:
+                  id_doc_type:
+                    type: string
+                    description: 证件类型
+                    example: IDENTIFICATION_TYPE_IDCARD
+                    enum:
+                      - IDENTIFICATION_TYPE_IDCARD #中国大陆居民-身份证
+                      - IDENTIFICATION_TYPE_OVERSEA_PASSPORT #其他国家或地区居民-护照
+                      - IDENTIFICATION_TYPE_HONGKONG_PASSPORT #中国香港居民-来往内地通行证
+                      - IDENTIFICATION_TYPE_MACAO_PASSPORT #中国澳门居民-来往内地通行证
+                      - IDENTIFICATION_TYPE_TAIWAN_PASSPORT #中国台湾居民-来往大陆通行证
+                      - IDENTIFICATION_TYPE_FOREIGN_RESIDENT #外国人居留证
+                      - IDENTIFICATION_TYPE_HONGKONG_MACAO_RESIDENT #港澳居民证
+                      - IDENTIFICATION_TYPE_TAIWAN_RESIDENT #台湾居民证
+                  identification_name:
+                    type: string
+                    format: base64
+                    description: 证件姓名
+                    example: pVd1HJ6zyvPedzfg==
+                  identification_no:
+                    type: string
+                    format: base64
+                    description: 证件号码
+                    example: AOZdYGISxo4y44/UgZ69bkw==
+          proof_medias:
+            type: array
+            description: 付款申请材料
+            items:
+              type: object
+              required:
+                - proof_media_type
+                - proof_media
+              properties:
+                proof_media_type:
+                  type: string
+                  description: 申请证明材料类型
+                  example: WITHDRAWAL_APPLICATION
+                  enum:
+                    - WITHDRAWAL_APPLICATION
+                proof_media:
+                  type: string
+                  format: MediaId
+                  description: 证明材料照片
+                  example: jTpGmxUX3FBWVQ5NJTZvlKXQ
+          additional_materials:
+            type: array
+            description: 其他补充材料
+            items:
+              type: string
+              description: 照片MediaID
+              format: MediaId
+              example: jTpGmxUX3FBWVQ5NFQ
+          remark:
+            type: string
+            description: 备注
+            example: 特殊理由
+  responses:
+    '200':
+      schema:
+        type: object
+        properties:
+          applyment_id:
+            type: string
+            description: 微信支付注销提现申请单号
+            example: '20220101332222'
+          out_request_no:
+            type: string
+            description: 商户注销提现申请单号
+            example: '1234567'

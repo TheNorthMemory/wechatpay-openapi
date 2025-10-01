@@ -1,0 +1,81 @@
+get:
+  x-last-updated-at: 2025.09.03
+  x-role:
+    - 服务商
+    - 渠道商
+  tags:
+    - 经营工具∙电子发票
+  summary: 获取邀请商户开通服务商电子发票能力
+  description: 服务商通过填写发票模式，发票开通能力等信息，获取邀请商户开通服务商电子发票能力的链接，展示给商户，进行授权开通服务商电子发票能力。
+  parameters:
+    - $ref: '../../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
+    - name: operation_type
+      type: string
+      required: true
+      in: query
+      description: 操作类型
+      example: AUTH_BINDING
+      enum:
+        - AUTH_BINDING
+    - name: fapiao_mode
+      type: string
+      required: true
+      in: query
+      description: 开票模式
+      example: THIRD_OR_SELF_FAPIAO
+      enum:
+        - THIRD_OR_SELF_FAPIAO
+        - TENCENT_DIGITAL_TAX
+    - name: fapiao_ability_type_list
+      type: array
+      in: query
+      description: 发票能力类型
+      items:
+        type: string
+        example: BASE_ABILITY
+        enum:
+          - BASE_ABILITY
+          - REAL_ESTATE_ABILITY
+    - name: invite_channel
+      type: string
+      in: query
+      description: 服务商邀请渠道
+      example: miniprogram
+    - name: operate_user
+      type: string
+      format: base64
+      in: query
+      description: 操作人员
+      example: mI7HGEJ4Q2B91IGjHZu/Gthm
+    - name: invite_code
+      type: string
+      in: query
+      required: true
+      description: 服务商邀请code
+      example: code_20200101_123
+    - name: sub_mchid
+      type: string
+      in: query
+      description: 子商户号
+      example: '1900000109'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - invite_url
+          - miniprogram_appid
+          - miniprogram_path
+        properties:
+          invite_url:
+            type: string
+            description: 邀请开通二维码链接
+            example: https://wxacurl.cn?xxx=
+          miniprogram_appid:
+            type: string
+            description: 开通小程序AppID
+            example: wxb1170446a4c0a5a2
+          miniprogram_path:
+            type: string
+            description: 开通小程序跳转路径
+            example: pages/xxxPage

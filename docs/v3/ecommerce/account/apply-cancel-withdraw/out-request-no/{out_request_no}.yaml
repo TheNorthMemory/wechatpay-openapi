@@ -1,0 +1,125 @@
+get:
+  x-last-updated-at: 2025.03.13
+  x-role:
+    - 服务商
+  tags:
+    - 收付通∙注销
+  summary: 商户注销提现申请单号查询申请单状态
+  description: 电商平台发起申请后, 电商平台调用此接口查询审批和出款进度
+  parameters:
+    - name: out_request_no
+      in: path
+      required: true
+      type: string
+      description: 商户注销提现申请号
+      example: P202410241010125346
+  responses:
+    '200':
+      schema:
+        type: object
+        properties:
+          applyment_id:
+            type: string
+            description: 微信支付注销提现申请单号
+            example: X202410241010125346
+          out_request_no:
+            type: string
+            description: 商户注销提现申请单号
+            example: P202410241010125346
+          cancel_state:
+            type: string
+            description: 注销提现申请单状态
+            example: FUND_PROCESSING
+            enum:
+              - ACCEPTED #已受理
+              - REVIEWING #审核中
+              - REJECTED #审批驳回
+              - WAITING_MERCHANT_CONFIRM #等待商户确认
+              - REVOKED #已撤销
+              - SYSTEM_PROCESSING #系统处理中
+              - CANCELED #已注销
+              - FUND_PROCESSING #资金处理中
+              - FINISH #注销完成
+          cancel_state_description:
+            type: string
+            description: 注销提现申请单状态描述
+            example: 资金处理中
+          withdraw:
+            type: string
+            description: 是否提取资金
+            example: APPLY_WITHDRAW
+            enum:
+              - APPLY_WITHDRAW
+              - NOT_APPLY_WITHDRAW
+          withdraw_state:
+            type: string
+            description: 提现状态
+            example: WITHDRAW_PROCESSING
+            enum:
+              - WITHDRAW_PROCESSING
+              - WITHDRAW_EXCEPTION
+              - WITHDRAW_SUCCEED
+          withdraw_state_description:
+            type: stringde
+            description: 提现状态描述
+            example: 提现处理中
+          account_withdraw_result:
+            type: array
+            description: 账户提现结果
+            items:
+              type: object
+              required:
+               - out_account_type
+               - pay_state
+               - state_description
+              properties:
+                out_account_type:
+                  type: string
+                  description: 二级商户号的出款子账户类型
+                  example: BASIC_ACCOUNT
+                  enum:
+                    - BASIC_ACCOUNT #商户的基本户
+                    - OPERATE_ACCOUNT #商户的运营账户
+                    - MARGIN_ACCOUNT #商户的保证金户
+                    - TRADE_FEE_ACCOUNT #商户的手续费账户
+                pay_state:
+                  type: string
+                  description: 付款状态
+                  enum:
+                    - PAY_PROCESSING #处理中
+                    - PAY_SUCCEED #付款成功
+                    - PAY_FAIL #付款失败
+                    - BANK_REFUNDED #银行退票
+                state_description:
+                  type: string
+                  description: 付款状态描述
+                  example: 付款成功
+          modify_time:
+            type: string
+            format: rfc3339
+            description: 最后更新时间
+            example: '2015-05-20T13:29:35+08:00'
+          sub_mchid:
+            type: string
+            description: 申请注销的二级商户号
+            example: '1900000109'
+          account_info:
+            type: array
+            description: 账户信息
+            items:
+              type: object
+              required:
+                - out_account_type
+              properties:
+                out_account_type:
+                  type: string
+                  description: 二级商户号的出款子账户类型
+                  enum:
+                    - BASIC_ACCOUNT #商户的基本户
+                    - OPERATE_ACCOUNT #商户的运营账户
+                    - MARGIN_ACCOUNT #商户的保证金户
+                    - TRADE_FEE_ACCOUNT #商户的手续费账户
+                amount:
+                  type: integer
+                  description: 账户金额
+                  example: 101

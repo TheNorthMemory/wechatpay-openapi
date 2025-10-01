@@ -1,0 +1,555 @@
+patch:
+  x-last-updated-at: 2025.08.04
+  x-role:
+    - 服务商
+  tags:
+    - 运营工具∙商品券
+  summary: 修改商品券
+  description: 品牌方可以通过该接口修改商品券信息。注：修改只会对新发的券生效，历史已经发放给用户的券不会改变。
+  parameters:
+    - name: product_coupon_id
+      in: path
+      required: true
+      type: string
+      description: 商品券ID
+      example: '1000000013'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - brand_id
+          - out_request_no
+          - scope
+          - type
+          - usage_mode
+          - display_info
+        properties:
+          brand_id:
+            type: string
+            description: 品牌ID
+            example: '120344'
+          out_request_no:
+            type: string
+            description: 修改请求单号
+            example: '34657_20250101_123456'
+          display_info:
+            type: object
+            description: 展示信息
+            required:
+              - name
+              - image_url
+              - background_url
+            properties:
+              name:
+                type: string
+                description: 商品券名称
+                example: 全场满100立打8折
+              image_url:
+                type: string
+                description: 商品券图片
+                example: https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/xxx
+              background_url:
+                type: string
+                description: 商品券背景图
+                example: https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/xxx
+              detail_image_url_list:
+                type: array
+                description: 商品券详情图列表
+                items:
+                  type: string
+                  example: https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/xxx
+              original_price:
+                type: integer
+                description: 商品原价
+                example: 10000
+              combo_package_list:
+                type: array
+                description: 套餐组合
+                items:
+                  type: object
+                  required:
+                    - name
+                    - pick_count
+                    - choice_list
+                  properties:
+                    name:
+                      type: string
+                      description: 套餐名
+                      example: 咖啡2选1
+                    pick_count:
+                      type: integer
+                      description: 可选单品数量
+                      example: 3
+                    choice_list:
+                      type: array
+                      description: 单品列表
+                      items:
+                        type: object
+                        required:
+                          - name
+                          - price
+                          - count
+                        properties:
+                          name:
+                            type: string
+                            description: 单品名称
+                            example: 美式
+                          price:
+                            type: integer
+                            description: 单品价格
+                            example: 10000
+                          count:
+                            type: integer
+                            description: 单品数量
+                            example: 2
+                          image_url:
+                            type: string
+                            description: 单品图片
+                            example: https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/xxx
+                          mini_program_appid:
+                            type: string
+                            description: 单品跳转小程序AppID
+                            example: wx4fd12345678
+                          mini_program_path:
+                            type: string
+                            description: 单品跳转小程序路径
+                            example: /pages/index/index
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - product_coupon_id
+          - state
+          - brand_id
+          - scope
+          - type
+          - usage_mode
+          - display_info
+        properties:
+          product_coupon_id:
+            type: string
+            description: 商品券ID
+            example: '1000000013'
+          state:
+            type: string
+            description: 商品券状态
+            enum:
+              - AUDITING
+              - EFFECTIVE
+              - DEACTIVATED
+          brand_id:
+            type: string
+            description: 品牌ID
+            example: '120344'
+          scope:
+            type: string
+            description: 优惠范围
+            example: ALL
+            enum:
+              - ALL
+              - SINGLE
+          type:
+            type: string
+            description: 商品券类型
+            example: NORMAL
+            enum:
+              - NORMAL
+              - DISCOUNT
+              - EXCHANGE
+          usage_mode:
+            type: string
+            description: 使用模式
+            example: SINGLE
+            enum:
+              - SINGLE
+              - SEQUENTIAL
+          single_usage_info:
+            type: object
+            description: 单券模式信息
+            properties:
+              normal_coupon:
+                type: object
+                description: 满减券使用规则
+                required:
+                  - threshold
+                  - discount_amount
+                properties:
+                  threshold:
+                    type: integer
+                    description: 门槛金额
+                    example: 10000
+                  discount_amount:
+                    type: integer
+                    description: 固定减免金额
+                    example: 1
+              discount_coupon:
+                type: object
+                description: 折扣券使用规则
+                required:
+                  - threshold
+                  - percent_off
+                properties:
+                  threshold:
+                    type: integer
+                    description: 门槛金额
+                    example: 10000
+                  percent_off:
+                    type: integer
+                    description: 固定减免百分比
+                    example: 20
+          sequential_usage_info:
+            type: object
+            description: 多次优惠模式信息
+            required:
+              - type
+              - count
+              - available_days
+            properties:
+              type:
+                type: string
+                description: 多次优惠规则类型
+                example: INCREMENTAL
+                enum:
+                  - INCREMENTAL
+                  - EQUAL
+              count:
+                type: integer
+                description: 可使用次数
+                example: 15
+              available_days:
+                type: integer
+                description: 多次优惠有效天数
+                example: 365
+              interval_days:
+                type: integer
+                description: 多次优惠使用间隔天数
+                example: 0
+          display_info:
+            type: object
+            description: 展示信息
+            required:
+              - name
+              - image_url
+              - background_url
+            properties:
+              name:
+                type: string
+                description: 商品券名称
+                example: 全场满100立打8折
+              image_url:
+                type: string
+                description: 商品券图片
+                example: https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/xxx
+              background_url:
+                type: string
+                description: 商品券背景图
+                example: https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/xxx
+              detail_image_url_list:
+                type: array
+                description: 商品券详情图列表
+                items:
+                  type: string
+                  example: https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/xxx
+              original_price:
+                type: integer
+                description: 商品原价
+                example: 10000
+              combo_package_list:
+                type: array
+                description: 套餐组合
+                items:
+                  type: object
+                  required:
+                    - name
+                    - pick_count
+                    - choice_list
+                  properties:
+                    name:
+                      type: string
+                      description: 套餐名
+                      example: 咖啡2选1
+                    pick_count:
+                      type: integer
+                      description: 可选单品数量
+                      example: 3
+                    choice_list:
+                      type: array
+                      description: 单品列表
+                      items:
+                        type: object
+                        required:
+                          - name
+                          - price
+                          - count
+                        properties:
+                          name:
+                            type: string
+                            description: 单品名称
+                            example: 美式
+                          price:
+                            type: integer
+                            description: 单品价格
+                            example: 10000
+                          count:
+                            type: integer
+                            description: 单品数量
+                            example: 2
+                          image_url:
+                            type: string
+                            description: 单品图片
+                            example: https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/xxx
+                          mini_program_appid:
+                            type: string
+                            description: 单品跳转小程序AppID
+                            example: wx4fd12345678
+                          mini_program_path:
+                            type: string
+                            description: 单品跳转小程序路径
+                            example: /pages/index/index
+          out_product_no:
+            type: string
+            description: 外部商品ID
+            example: Product_1234567890
+          deactivate_request_no:
+            type: string
+            description: 失效请求单号
+          deactivate_time:
+            type: string
+            format: rfc3339
+            description: 失效时间
+            example: '2025-08-31T23:59:59+08:00'
+          deactivate_reason:
+            type: string
+            description: 失效原因
+get:
+  x-last-updated-at: 2025.08.04
+  x-role:
+    - 服务商
+  tags:
+    - 运营工具∙商品券
+  summary: 查询商品券
+  description: 品牌方可以通过该接口查询商品券的详细信息，但不包括商品券的批次信息。
+  parameters:
+    - name: product_coupon_id
+      in: path
+      required: true
+      type: string
+      description: 商品券ID
+      example: '1000000013'
+    - name: brand_id
+      in: query
+      required: true
+      type: string
+      description: 品牌ID
+      example: '120344'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - product_coupon_id
+          - state
+          - brand_id
+          - scope
+          - type
+          - usage_mode
+          - display_info
+        properties:
+          product_coupon_id:
+            type: string
+            description: 商品券ID
+            example: '1000000013'
+          state:
+            type: string
+            description: 商品券状态
+            enum:
+              - AUDITING
+              - EFFECTIVE
+              - DEACTIVATED
+          brand_id:
+            type: string
+            description: 品牌ID
+            example: '120344'
+          scope:
+            type: string
+            description: 优惠范围
+            example: ALL
+            enum:
+              - ALL
+              - SINGLE
+          type:
+            type: string
+            description: 商品券类型
+            example: NORMAL
+            enum:
+              - NORMAL
+              - DISCOUNT
+              - EXCHANGE
+          usage_mode:
+            type: string
+            description: 使用模式
+            example: SINGLE
+            enum:
+              - SINGLE
+              - SEQUENTIAL
+          single_usage_info:
+            type: object
+            description: 单券模式信息
+            properties:
+              normal_coupon:
+                type: object
+                description: 满减券使用规则
+                required:
+                  - threshold
+                  - discount_amount
+                properties:
+                  threshold:
+                    type: integer
+                    description: 门槛金额
+                    example: 10000
+                  discount_amount:
+                    type: integer
+                    description: 固定减免金额
+                    example: 1
+              discount_coupon:
+                type: object
+                description: 折扣券使用规则
+                required:
+                  - threshold
+                  - percent_off
+                properties:
+                  threshold:
+                    type: integer
+                    description: 门槛金额
+                    example: 10000
+                  percent_off:
+                    type: integer
+                    description: 固定减免百分比
+                    example: 20
+          sequential_usage_info:
+            type: object
+            description: 多次优惠模式信息
+            required:
+              - type
+              - count
+              - available_days
+            properties:
+              type:
+                type: string
+                description: 多次优惠规则类型
+                example: INCREMENTAL
+                enum:
+                  - INCREMENTAL
+                  - EQUAL
+              count:
+                type: integer
+                description: 可使用次数
+                example: 15
+              available_days:
+                type: integer
+                description: 多次优惠有效天数
+                example: 365
+              interval_days:
+                type: integer
+                description: 多次优惠使用间隔天数
+                example: 0
+          display_info:
+            type: object
+            description: 展示信息
+            required:
+              - name
+              - image_url
+              - background_url
+            properties:
+              name:
+                type: string
+                description: 商品券名称
+                example: 全场满100立打8折
+              image_url:
+                type: string
+                description: 商品券图片
+                example: https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/xxx
+              background_url:
+                type: string
+                description: 商品券背景图
+                example: https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/xxx
+              detail_image_url_list:
+                type: array
+                description: 商品券详情图列表
+                items:
+                  type: string
+                  example: https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/xxx
+              original_price:
+                type: integer
+                description: 商品原价
+                example: 10000
+              combo_package_list:
+                type: array
+                description: 套餐组合
+                items:
+                  type: object
+                  required:
+                    - name
+                    - pick_count
+                    - choice_list
+                  properties:
+                    name:
+                      type: string
+                      description: 套餐名
+                      example: 咖啡2选1
+                    pick_count:
+                      type: integer
+                      description: 可选单品数量
+                      example: 3
+                    choice_list:
+                      type: array
+                      description: 单品列表
+                      items:
+                        type: object
+                        required:
+                          - name
+                          - price
+                          - count
+                        properties:
+                          name:
+                            type: string
+                            description: 单品名称
+                            example: 美式
+                          price:
+                            type: integer
+                            description: 单品价格
+                            example: 10000
+                          count:
+                            type: integer
+                            description: 单品数量
+                            example: 2
+                          image_url:
+                            type: string
+                            description: 单品图片
+                            example: https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/xxx
+                          mini_program_appid:
+                            type: string
+                            description: 单品跳转小程序AppID
+                            example: wx4fd12345678
+                          mini_program_path:
+                            type: string
+                            description: 单品跳转小程序路径
+                            example: /pages/index/index
+          out_product_no:
+            type: string
+            description: 外部商品ID
+            example: Product_1234567890
+          deactivate_request_no:
+            type: string
+            description: 失效请求单号
+          deactivate_time:
+            type: string
+            format: rfc3339
+            description: 失效时间
+            example: '2025-08-31T23:59:59+08:00'
+          deactivate_reason:
+            type: string
+            description: 失效原因

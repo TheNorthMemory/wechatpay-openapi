@@ -1,0 +1,92 @@
+get:
+  x-last-updated-at: 2025.09.11
+  x-role:
+    - 直连商户
+  tags:
+    - 渠道服务
+  summary: 查询特殊减额结果
+  description: 接口限频：单特殊减额目标商户号100qps
+  parameters:
+    - $ref: '../../../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
+    - name: out_request_no
+      type: string
+      required: true
+      in: path
+      description: 特殊减额单号
+      example: htozr8denqegbt6tk6u10iymo7yww5pn
+    - name: mchid
+      type: string
+      required: true
+      in: query
+      description: 微信支付商户号
+      example: '1900016681'
+    - name: bal_account_no
+      type: string
+      format: base64
+      required: true
+      in: query
+      description: 额度台账号
+      example: 8609cb22e1774a50a930e414cc71eca06121bc
+  responses:
+    '200':
+      schema:
+        type: object
+        properties:
+          mchid:
+            type: string
+            description: 微信支付商户号
+            example: '1900016681'
+          bal_account_no:
+            type: string
+            format: base64
+            description: 额度台账号
+            example: 8609cb22e1774a50a930e414cc71eca06121bc
+          out_request_no:
+            type: string
+            description: 特殊减额单号
+            example: htozr8denqegbt6tk6u10iymo7yww5pn
+          reduction_type:
+            type: string
+            description: 特殊减额类型
+            example: JUDICIAL_DEDUCTION
+            enum:
+              - FINANCIAL_PENALTY
+              - JUDICIAL_DEDUCTION
+          amount:
+            type: integer
+            description: 减额金额
+            example: 1
+          state:
+            type: string
+            description: 处理结果
+            example: SUCCESS
+            enum:
+              - PROCESSING
+              - SUCCESS
+              - FAILED
+          reason:
+            type: string
+            description: 特殊减额原因
+            example: 司法案件号：202508080009
+          quota_change_no:
+            type: string
+            description: 微信支付额度变更单号
+            example: m6a6dx8iit7m932dx03ue2lw2ofo2r88
+          success_time:
+            type: string
+            format: rfc3339
+            description: 成功时间
+            example: '2015-05-20T13:29:35+08:00'
+          fail_time:
+            type: string
+            format: rfc3339
+            description: 失败时间
+            example: '2015-05-20T13:29:35+08:00'
+          fail_reason:
+            type: string
+            description: 失败原因
+            example: BALANCE_NOT_ENOUGH
+            enum:
+              - BALANCE_NOT_ENOUGH #余额不足
+              - RECEIPT_NOT_EXIST_CLOSED #单据不存在，已关单
+              - TIME_OUT_CLOSED #系统异常处理超时，关单

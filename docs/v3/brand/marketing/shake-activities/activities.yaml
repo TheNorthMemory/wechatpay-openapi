@@ -1,0 +1,159 @@
+get:
+  x-last-updated-at: 2025.08.04
+  x-role:
+    - 服务商
+  tags:
+    - 经营工具∙摇优惠
+  summary: 查询摇优惠活动列表
+  description: 通过此接口可查询指定某品牌的所有摇优惠活动列表
+  parameters:
+    - name: brand_id
+      in: query
+      required: true
+      type: string
+      description: 品牌ID
+      example: '120344'
+    - name: limit
+      in: query
+      type: integer
+      required: true
+      minimum: 1
+      maximum: 100
+      description: 分页大小
+      example: 5
+    - name: offset
+      in: query
+      type: integer
+      required: true
+      description: 分页页码
+      example: 10
+    - name: activity_state
+      in: query
+      type: string
+      nullable: true
+      description: 活动状态
+      example: CREATED
+      enum:
+        - CREATED #已创建
+        - DELIVERING #投放中
+        - EXPIRED #已过期
+        - PAUSED #已暂停
+        - TERMINATED #已终止
+    - name: audit_state
+      in: query
+      type: string
+      nullable: true
+      example: PENDING
+      enum:
+        - PENDING
+        - APPROVED
+        - REJECTED
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - offset
+          - limit
+          - total_count
+        properties:
+          offset:
+            type: integer
+            description: 分页页码
+          limit:
+            type: integer
+            description: 分页大小
+          total_count:
+            type: integer
+            description: 总数
+          data:
+            type: array
+            description: 摇一摇有优惠活动列表
+            items:
+              type: object
+              required:
+                - id
+                - name
+                - activity_state
+                - audit_state
+                - available_quota
+                - total_quota
+                - delivery_mode
+                - time_range
+              properties:
+                id:
+                  type: string
+                  description: 活动id
+                name:
+                  type: string
+                  description: 活动名称
+                activity_state:
+                  type: string
+                  description: 活动状态
+                  enum:
+                    - CREATED #已创建
+                    - DELIVERING #投放中
+                    - EXPIRED #已过期
+                    - PAUSED #已暂停
+                    - TERMINATED #已终止
+                audit_state:
+                  type: string
+                  example: PENDING
+                  enum:
+                    - PENDING
+                    - APPROVED
+                    - REJECTED
+                available_quota:
+                  type: integer
+                  description: 可用库存
+                  example: 1
+                total_quota:
+                  type: integer
+                  description: 总库存
+                  example: 1
+                delivery_mode:
+                  type: string
+                  description: 投放模式
+                  example: SMART
+                  enum:
+                    - SMART
+                    - TARGETED
+                time_range:
+                  type: object
+                  description: 投放时间范围
+                  required:
+                    - start_time
+                    - end_time
+                  properties:
+                    start_time:
+                      type: string
+                      format: rfc3339
+                      description: 开始时间
+                      example: '2015-05-20T13:29:35+08:00'
+                    end_time:
+                      type: string
+                      format: rfc3339
+                      description: 结束时间
+                      example: '2015-05-20T13:29:35+08:00'
+                product_coupon:
+                  type: object
+                  description: 商品券
+                  required:
+                    - product_coupon_id
+                  properties:
+                    product_coupon_id:
+                      type: string
+                      description: 商品券ID
+                      example: example_product_coupon_id
+                    stock_list:
+                      type: array
+                      description: 商品券批次列表
+                      items:
+                        type: object
+                        required:
+                          - stock_id
+                        properties:
+                          stock_id:
+                            type: string
+                            description: 批次ID
+                            example: example_stock_id

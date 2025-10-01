@@ -1,0 +1,89 @@
+post:
+  x-last-updated-at: 2025.08.04
+  x-role:
+    - 服务商
+  tags:
+    - 运营工具∙商品券
+  summary: 批次关联门店
+  description: 品牌方可以通过该接口将品牌的门店列表与商品券批次关联 前置条件：已创建商品券批次且批次的 store_scope 为 SPECIFIC
+  parameters:
+    - name: product_coupon_id
+      in: path
+      required: true
+      type: string
+      description: 商品券ID
+      example: '1000000013'
+    - name: stock_id
+      in: path
+      required: true
+      type: string
+      description: 批次ID
+      example: '1000000013001'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - brand_id
+          - store_list
+        properties:
+          brand_id:
+            type: string
+            description: 品牌ID
+            example: '120344'
+          store_list:
+            type: array
+            description: 门店列表
+            items:
+              type: object
+              required:
+                - store_id
+              properties:
+                store_id:
+                  type: string
+                  description: 门店ID
+                  example: '100000001'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - total_count
+        properties:
+          total_count:
+            type: integer
+            description: 去重后门店总数
+            example: 100
+          success_store_list:
+            type: array
+            description: 关联成功的门店列表
+            items:
+              type: object
+              required:
+                - store_id
+              properties:
+                store_id:
+                  type: string
+                  description: 门店ID
+                  example: '100000001'
+          failed_store_list:
+            type: array
+            description: 关联失败的门店列表
+            items:
+              type: object
+              required:
+                - store_id
+                - code
+                - message
+              properties:
+                store_id:
+                  type: string
+                  description: 门店ID
+                  example: '100000001'
+                code:
+                  type: string
+                  description: 失败错误码
+                message:
+                  type: string
+                  description: 失败错误信息

@@ -7,7 +7,7 @@ info:
     整理自官方文档中心[普通商户](https://pay.weixin.qq.com/doc/v3/merchant/4012062524) [合作伙伴](https://pay.weixin.qq.com/doc/v3/partner/4012069852) [全球](https://pay.weixin.qq.com/doc/global/v3/zh)
     本[项目/工具地址](https://github.com/TheNorthMemory/wechatpay-openapi)
     **访问第一次加载比较慢，请耐心等待大约1-2分钟不等(小文件下载比较多)。**
-  version: 1.1.9
+  version: 1.1.10
 schemes:
   - https
 consumes:
@@ -457,6 +457,20 @@ paths:
     $ref: ./v3/abnormal-fund-processing/receipts/{receipt_id}.yaml
   /v3/abnormal-fund-processing/receipts/{receipt_id}/transfer-instructions:
     $ref: ./v3/abnormal-fund-processing/receipts/{receipt_id}/transfer-instructions.yaml
+  /v3/aggracct-bc/wb-channel/account/balance:
+    $ref: ./v3/aggracct-bc/wb-channel/account/balance.yaml
+  /v3/aggracct-bc/wb-channel/control-orders/{out_request_no}:
+    $ref: ./v3/aggracct-bc/wb-channel/control-orders/{out_request_no}.yaml
+  /v3/aggracct-bc/wb-channel/control-orders/info/update/result/notify:
+    $ref: ./v3/aggracct-bc/wb-channel/control-orders/info/update/result/notify.yaml
+  /v3/aggracct-bc/wb-channel/control-orders/punish:
+    $ref: ./v3/aggracct-bc/wb-channel/control-orders/punish.yaml
+  /v3/aggracct-bc/wb-channel/control-orders/recover:
+    $ref: ./v3/aggracct-bc/wb-channel/control-orders/recover.yaml
+  /v3/aggracct-bc/wb-channel/special-reduction:
+    $ref: ./v3/aggracct-bc/wb-channel/special-reduction.yaml
+  /v3/aggracct-bc/wb-channel/special-reduction/{out_request_no}:
+    $ref: ./v3/aggracct-bc/wb-channel/special-reduction/{out_request_no}.yaml
   /v3/apply4sub/sub_merchants/{sub_mchid}/application/{application_no}:
     $ref: ./v3/apply4sub/sub_merchants/{sub_mchid}/application/{application_no}.yaml
   /v3/apply4sub/sub_merchants/{sub_mchid}/modify-settlement:
@@ -499,6 +513,8 @@ paths:
     $ref: ./v3/bill/tradebill.yaml
   /v3/billdownload/file:
     $ref: ./v3/billdownload/file.yaml
+  /v3/brand/marketing/shake-activities/activities:
+    $ref: ./v3/brand/marketing/shake-activities/activities.yaml
   /v3/brand/partner/card-member/cards:
     $ref: ./v3/brand/partner/card-member/cards.yaml
   /v3/brand/partner/card-member/cards/{card_id}:
@@ -525,6 +541,14 @@ paths:
     $ref: ./v3/brand/partner/card-member/user-points/exchange-coupon/confirm.yaml
   /v3/brand/partner/card-member/user-points/sync:
     $ref: ./v3/brand/partner/card-member/user-points/sync.yaml
+  /v3/brand/partner/store/brandstores:
+    $ref: ./v3/brand/partner/store/brandstores.yaml
+  /v3/brand/partner/store/brandstores/{store_id}:
+    $ref: ./v3/brand/partner/store/brandstores/{store_id}.yaml
+  /v3/brand/partner/store/brandstores/{store_id}/bindrecipient:
+    $ref: ./v3/brand/partner/store/brandstores/{store_id}/bindrecipient.yaml
+  /v3/brand/partner/store/brandstores/{store_id}/unbindrecipient:
+    $ref: ./v3/brand/partner/store/brandstores/{store_id}/unbindrecipient.yaml
   /v3/brand/profitsharing/brand-configs/{brand_mchid}:
     $ref: ./v3/brand/profitsharing/brand-configs/{brand_mchid}.yaml
   /v3/brand/profitsharing/finish-order:
@@ -607,8 +631,14 @@ paths:
     $ref: ./v3/ebike/charge/transactions/out-trade-no/{out_trade_no}.yaml
   /v3/ebike/charge/users/{openid}/contract:
     $ref: ./v3/ebike/charge/users/{openid}/contract.yaml
+  /v3/ecommerce/account/apply-cancel-withdraw:
+    $ref: ./v3/ecommerce/account/apply-cancel-withdraw.yaml
+  /v3/ecommerce/account/apply-cancel-withdraw/applyment-id/{applyment_id}:
+    $ref: ./v3/ecommerce/account/apply-cancel-withdraw/applyment-id/{applyment_id}.yaml
   /v3/ecommerce/account/apply-cancel-withdraw/confirm:
     $ref: ./v3/ecommerce/account/apply-cancel-withdraw/confirm.yaml
+  /v3/ecommerce/account/apply-cancel-withdraw/out-request-no/{out_request_no}:
+    $ref: ./v3/ecommerce/account/apply-cancel-withdraw/out-request-no/{out_request_no}.yaml
   /v3/ecommerce/account/cancel-applications:
     $ref: ./v3/ecommerce/account/cancel-applications.yaml
   /v3/ecommerce/account/cancel-applications/media:
@@ -1161,6 +1191,44 @@ paths:
     $ref: ./v3/marketing/membercard-open/phonenumber-member/search.yaml
   /v3/marketing/membercard-open/user/cards:
     $ref: ./v3/marketing/membercard-open/user/cards.yaml
+  /v3/marketing/partner/product-coupon/media/upload-image:
+    $ref: ./v3/marketing/partner/product-coupon/media/upload-image.yaml
+  /v3/marketing/partner/product-coupon/notify-configs:
+    $ref: ./v3/marketing/partner/product-coupon/notify-configs.yaml
+  /v3/marketing/partner/product-coupon/product-coupons:
+    $ref: ./v3/marketing/partner/product-coupon/product-coupons.yaml
+  /v3/marketing/partner/product-coupon/product-coupons/{product_coupon_id}:
+    $ref: ./v3/marketing/partner/product-coupon/product-coupons/{product_coupon_id}.yaml
+  /v3/marketing/partner/product-coupon/product-coupons/{product_coupon_id}/deactivate:
+    $ref: ./v3/marketing/partner/product-coupon/product-coupons/{product_coupon_id}/deactivate.yaml
+  /v3/marketing/partner/product-coupon/product-coupons/{product_coupon_id}/stocks:
+    $ref: ./v3/marketing/partner/product-coupon/product-coupons/{product_coupon_id}/stocks.yaml
+  /v3/marketing/partner/product-coupon/product-coupons/{product_coupon_id}/stocks/{stock_id}:
+    $ref: ./v3/marketing/partner/product-coupon/product-coupons/{product_coupon_id}/stocks/{stock_id}.yaml
+  /v3/marketing/partner/product-coupon/product-coupons/{product_coupon_id}/stocks/{stock_id}/associate-stores:
+    $ref: ./v3/marketing/partner/product-coupon/product-coupons/{product_coupon_id}/stocks/{stock_id}/associate-stores.yaml
+  /v3/marketing/partner/product-coupon/product-coupons/{product_coupon_id}/stocks/{stock_id}/associated-stores:
+    $ref: ./v3/marketing/partner/product-coupon/product-coupons/{product_coupon_id}/stocks/{stock_id}/associated-stores.yaml
+  /v3/marketing/partner/product-coupon/product-coupons/{product_coupon_id}/stocks/{stock_id}/deactivate:
+    $ref: ./v3/marketing/partner/product-coupon/product-coupons/{product_coupon_id}/stocks/{stock_id}/deactivate.yaml
+  /v3/marketing/partner/product-coupon/product-coupons/{product_coupon_id}/stocks/{stock_id}/disassociate-stores:
+    $ref: ./v3/marketing/partner/product-coupon/product-coupons/{product_coupon_id}/stocks/{stock_id}/disassociate-stores.yaml
+  /v3/marketing/partner/product-coupon/product-coupons/{product_coupon_id}/stocks/{stock_id}/update-budget:
+    $ref: ./v3/marketing/partner/product-coupon/product-coupons/{product_coupon_id}/stocks/{stock_id}/update-budget.yaml
+  /v3/marketing/partner/product-coupon/product-coupons/{product_coupon_id}/stocks/{stock_id}/upload-coupon-codes:
+    $ref: ./v3/marketing/partner/product-coupon/product-coupons/{product_coupon_id}/stocks/{stock_id}/upload-coupon-codes.yaml
+  /v3/marketing/partner/product-coupon/users/{openid}/coupons:
+    $ref: ./v3/marketing/partner/product-coupon/users/{openid}/coupons.yaml
+  /v3/marketing/partner/product-coupon/users/{openid}/coupons/{coupon_code}:
+    $ref: ./v3/marketing/partner/product-coupon/users/{openid}/coupons/{coupon_code}.yaml
+  /v3/marketing/partner/product-coupon/users/{openid}/coupons/{coupon_code}/confirm:
+    $ref: ./v3/marketing/partner/product-coupon/users/{openid}/coupons/{coupon_code}/confirm.yaml
+  /v3/marketing/partner/product-coupon/users/{openid}/coupons/{coupon_code}/deactivate:
+    $ref: ./v3/marketing/partner/product-coupon/users/{openid}/coupons/{coupon_code}/deactivate.yaml
+  /v3/marketing/partner/product-coupon/users/{openid}/coupons/{coupon_code}/return:
+    $ref: ./v3/marketing/partner/product-coupon/users/{openid}/coupons/{coupon_code}/return.yaml
+  /v3/marketing/partner/product-coupon/users/{openid}/coupons/{coupon_code}/use:
+    $ref: ./v3/marketing/partner/product-coupon/users/{openid}/coupons/{coupon_code}/use.yaml
   /v3/marketing/partnerships:
     $ref: ./v3/marketing/partnerships.yaml
   /v3/marketing/partnerships/build:
@@ -1237,6 +1305,14 @@ paths:
     $ref: ./v3/mchalterapply/mchsubjectalterapplyment/{apply_id}/revoke.yaml
   /v3/mchalterapply/mchsubjectalterapplyment/merchant/{merchant_code}/out-request-no/{out_request_no}:
     $ref: ./v3/mchalterapply/mchsubjectalterapplyment/merchant/{merchant_code}/out-request-no/{out_request_no}.yaml
+  /v3/mchalterapply/merchantnamealterapplyment:
+    $ref: ./v3/mchalterapply/merchantnamealterapplyment.yaml
+  /v3/mchalterapply/merchantnamealterapplyment/{apply_id}:
+    $ref: ./v3/mchalterapply/merchantnamealterapplyment/{apply_id}.yaml
+  /v3/mchalterapply/merchantnamealterapplyment/{apply_id}/revoke:
+    $ref: ./v3/mchalterapply/merchantnamealterapplyment/{apply_id}/revoke.yaml
+  /v3/mchalterapply/merchantnamealterapplyment/merchant/{merchant_code}/out-request-no/{out_request_no}:
+    $ref: ./v3/mchalterapply/merchantnamealterapplyment/merchant/{merchant_code}/out-request-no/{out_request_no}.yaml
   /v3/med-ins/orders:
     $ref: ./v3/med-ins/orders.yaml
   /v3/med-ins/orders/mix-trade-no/{mix_trade_no}:
@@ -1335,8 +1411,18 @@ paths:
     $ref: ./v3/new-tax-control-fapiao/fapiao-applications/{fapiao_apply_id}/insert-cards.yaml
   /v3/new-tax-control-fapiao/fapiao-applications/{fapiao_apply_id}/reverse:
     $ref: ./v3/new-tax-control-fapiao/fapiao-applications/{fapiao_apply_id}/reverse.yaml
+  /v3/new-tax-control-fapiao/fapiao-applications/issue-general:
+    $ref: ./v3/new-tax-control-fapiao/fapiao-applications/issue-general.yaml
+  /v3/new-tax-control-fapiao/fapiao-applications/real-estate-leasing:
+    $ref: ./v3/new-tax-control-fapiao/fapiao-applications/real-estate-leasing.yaml
   /v3/new-tax-control-fapiao/fapiao-applications/upload-fapiao-file:
     $ref: ./v3/new-tax-control-fapiao/fapiao-applications/upload-fapiao-file.yaml
+  /v3/new-tax-control-fapiao/fapiaomerchant/getspinviteurl:
+    $ref: ./v3/new-tax-control-fapiao/fapiaomerchant/getspinviteurl.yaml
+  /v3/new-tax-control-fapiao/fapiaomerchant/listspinvitemchinfo:
+    $ref: ./v3/new-tax-control-fapiao/fapiaomerchant/listspinvitemchinfo.yaml
+  /v3/new-tax-control-fapiao/merchant/{sub_mchid}/check-status:
+    $ref: ./v3/new-tax-control-fapiao/merchant/{sub_mchid}/check-status.yaml
   /v3/new-tax-control-fapiao/merchant/{sub_mchid}/check:
     $ref: ./v3/new-tax-control-fapiao/merchant/{sub_mchid}/check.yaml
   /v3/new-tax-control-fapiao/merchant/base-information:

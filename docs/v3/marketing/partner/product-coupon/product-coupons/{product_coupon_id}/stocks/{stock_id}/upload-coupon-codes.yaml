@@ -1,0 +1,76 @@
+post:
+  x-last-updated-at: 2025.08.04
+  x-role:
+    - 服务商
+  tags:
+    - 运营工具∙商品券
+  summary: 预上传券Code
+  description: 品牌方可以通过该接口为商品券批次预上传券Code 前置条件：已创建商品券批次，商品券批次的 coupon_code_mode 配置为 UPLOAD
+  parameters:
+    - name: product_coupon_id
+      in: path
+      required: true
+      type: string
+      description: 商品券ID
+      example: '1000000013'
+    - name: stock_id
+      in: path
+      required: true
+      type: string
+      description: 批次ID
+      example: '1000000013001'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - brand_id
+          - out_request_no
+          - code_list
+        properties:
+          brand_id:
+            type: string
+            description: 品牌ID
+            example: '120344'
+          out_request_no:
+            type: string
+            description: 请求单号
+            example: '34657_20250101_123456'
+          code_list:
+            type: array
+            description: 券Code列表
+            items:
+              type: string
+              example: vCode_1234567890
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - total_count
+        properties:
+          total_count:
+            type: integer
+            description: 去重后券Code总数
+            example: 100
+          success_code_list:
+            type: array
+            description: 上传成功的券Code列表
+            items:
+              type: string
+          failed_code_list:
+            type: array
+            description: 上传失败的券Code列表
+            items:
+              type: string
+          already_exist_code_list:
+            type: array
+            description: 已经存在的券Code列表
+            items:
+              type: string
+          duplicate_code_list:
+            type: array
+            description: 重复的券Code列表
+            items:
+              type: string

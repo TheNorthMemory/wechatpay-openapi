@@ -1,0 +1,326 @@
+delete:
+  x-last-updated-at: 2025.08.04
+  x-role:
+    - 服务商
+  tags:
+    - 经营工具∙品牌门店
+  summary: 删除品牌门店
+  description: 根据品牌门店ID，删除品牌门店。
+  parameters:
+    - name: store_id
+      in: path
+      required: true
+      type: string
+      description: 品牌门店ID
+      example: '20488000'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        properties:
+          brand_id:
+            type: string
+            description: 品牌ID
+            example: '123456789'
+  responses:
+    '204': {}
+patch:
+  x-last-updated-at: 2025.08.04
+  x-role:
+    - 服务商
+  tags:
+    - 经营工具∙品牌门店
+  summary: 更新品牌门店
+  description: 根据品牌门店ID，修改品牌门店资料。
+  parameters:
+    - name: store_id
+      in: path
+      required: true
+      type: string
+      description: 品牌门店ID
+      example: '20488000'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        properties:
+          store_basics:
+            type: object
+            description: 门店基础信息
+            properties:
+              store_reference_id:
+                type: string
+                description: 商家门店编号
+                example: MDL001
+              branch_name:
+                type: string
+                description: 门店名称
+                example: 海岸城店
+          store_address:
+            type: object
+            description: 门店地址信息
+            required:
+              - address_code
+              - address_detail
+            properties:
+              address_code:
+                type: string
+                description: 门店省市编码
+                example: '440305'
+              address_detail:
+                type: string
+                description: 门店地址
+                example: 深南大道10000号腾讯大厦1楼
+              address_complements:
+                type: string
+                description: 门店地址辅助描述
+                example: 地铁A口右侧100米
+              longitude:
+                type: string
+                description: 门店经度
+                example: '112.63484'
+              latitude:
+                type: string
+                description: 门店纬度
+                example: '37.75464'
+          store_business:
+            type: object
+            description: 门店经营信息
+            properties:
+              service_phone:
+                type: string
+                description: 门店服务电话
+                example: '0755-86013388'
+              business_hours:
+                type: string
+                description: 门店经营时间
+                example: '周一至周五 09:00-20:00|周六至周日 10:00-22:00'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - store_id
+        properties:
+          brand_id:
+            type: string
+            description: 品牌ID
+            example: '123456789'
+          store_id:
+            type: string
+            description: 品牌门店ID
+            example: '20488000'
+          store_state:
+            type: string
+            description: 门店状态
+            example: OPEN
+            enum:
+              - OPEN
+              - CREATING
+              - CLOSED
+          review_reject_reason:
+            type: string
+            description: 审核失败原因
+            example: 通过核实，您提交的电话错误，请核实手机号码或座机号码是否正确
+          store_basics:
+            type: object
+            description: 门店基础信息
+            properties:
+              store_reference_id:
+                type: string
+                description: 商家门店编号
+                example: MDL001
+              branch_name:
+                type: string
+                description: 门店名称
+                example: 海岸城店
+          store_address:
+            type: object
+            description: 门店地址信息
+            required:
+              - address_code
+              - address_detail
+            properties:
+              address_code:
+                type: string
+                description: 门店省市编码
+                example: '440305'
+              address_detail:
+                type: string
+                description: 门店地址
+                example: 深南大道10000号腾讯大厦1楼
+              address_complements:
+                type: string
+                description: 门店地址辅助描述
+                example: 地铁A口右侧100米
+              longitude:
+                type: string
+                description: 门店经度
+                example: '112.63484'
+              latitude:
+                type: string
+                description: 门店纬度
+                example: '37.75464'
+          store_business:
+            type: object
+            description: 门店经营信息
+            properties:
+              service_phone:
+                type: string
+                description: 门店服务电话
+                example: '0755-86013388'
+              business_hours:
+                type: string
+                description: 门店经营时间
+                example: '周一至周五 09:00-20:00|周六至周日 10:00-22:00'
+          store_recipient:
+            type: array
+            description: 门店收款信息
+            items:
+              type: object
+              required:
+                - mchid
+              properties:
+                mchid:
+                  type: string
+                  description: 门店收款商户号
+                  example: '1230000109'
+                company_name:
+                  type: string
+                  description: 门店收款主体
+                  example: 腾讯科技（深圳）有限公司
+                recipient_state:
+                  type: string
+                  description: 收款绑定状态
+                  example: CONFIRMED
+                  enum:
+                    - CONFIRMED #门店已绑定此收款商户号
+                    - ADMIN_REJECTED #商户管理员已拒绝
+                    - CONFIRMING #商户号管理员确认中
+                    - TIMEOUT_REJECTED #由于商户管理员确认超时，系统自动拒绝此绑定
+get:
+  x-last-updated-at: 2025.08.04
+  x-role:
+    - 服务商
+  tags:
+    - 经营工具∙品牌门店
+  summary: 查询品牌门店
+  description: 根据品牌门店ID，查询品牌门店。
+  parameters:
+    - name: store_id
+      in: path
+      required: true
+      type: string
+      description: 品牌门店ID
+      example: '20488000'
+    - name: brand_id
+      in: query
+      required: true
+      type: string
+      description: 品牌ID
+      example: '123456789'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - store_id
+        properties:
+          brand_id:
+            type: string
+            description: 品牌ID
+            example: '123456789'
+          store_id:
+            type: string
+            description: 品牌门店ID
+            example: '20488000'
+          store_state:
+            type: string
+            description: 门店状态
+            example: OPEN
+            enum:
+              - OPEN
+              - CREATING
+              - CLOSED
+          review_reject_reason:
+            type: string
+            description: 审核失败原因
+            example: 通过核实，您提交的电话错误，请核实手机号码或座机号码是否正确
+          store_basics:
+            type: object
+            description: 门店基础信息
+            properties:
+              store_reference_id:
+                type: string
+                description: 商家门店编号
+                example: MDL001
+              branch_name:
+                type: string
+                description: 门店名称
+                example: 海岸城店
+          store_address:
+            type: object
+            description: 门店地址信息
+            required:
+              - address_code
+              - address_detail
+            properties:
+              address_code:
+                type: string
+                description: 门店省市编码
+                example: '440305'
+              address_detail:
+                type: string
+                description: 门店地址
+                example: 深南大道10000号腾讯大厦1楼
+              address_complements:
+                type: string
+                description: 门店地址辅助描述
+                example: 地铁A口右侧100米
+              longitude:
+                type: string
+                description: 门店经度
+                example: '112.63484'
+              latitude:
+                type: string
+                description: 门店纬度
+                example: '37.75464'
+          store_business:
+            type: object
+            description: 门店经营信息
+            properties:
+              service_phone:
+                type: string
+                description: 门店服务电话
+                example: '0755-86013388'
+              business_hours:
+                type: string
+                description: 门店经营时间
+                example: '周一至周五 09:00-20:00|周六至周日 10:00-22:00'
+          store_recipient:
+            type: array
+            description: 门店收款信息
+            items:
+              type: object
+              required:
+                - mchid
+              properties:
+                mchid:
+                  type: string
+                  description: 门店收款商户号
+                  example: '1230000109'
+                company_name:
+                  type: string
+                  description: 门店收款主体
+                  example: 腾讯科技（深圳）有限公司
+                recipient_state:
+                  type: string
+                  description: 收款绑定状态
+                  example: CONFIRMED
+                  enum:
+                    - CONFIRMED #门店已绑定此收款商户号
+                    - ADMIN_REJECTED #商户管理员已拒绝
+                    - CONFIRMING #商户号管理员确认中
+                    - TIMEOUT_REJECTED #由于商户管理员确认超时，系统自动拒绝此绑定

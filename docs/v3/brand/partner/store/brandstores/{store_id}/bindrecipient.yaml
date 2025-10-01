@@ -1,0 +1,67 @@
+post:
+  x-last-updated-at: 2025.08.04
+  x-role:
+    - 服务商
+  tags:
+    - 经营工具∙品牌门店
+  summary: 绑定收款商户号
+  description: 给品牌门店绑定收款商户号。绑定成功后，商户号可为门店收款。一个门店目前最多只能绑定三个收款商户号。
+  parameters:
+    - name: store_id
+      in: path
+      required: true
+      type: string
+      description: 品牌门店ID
+      example: '20488000'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - brand_id
+          - mchid
+          - company_name
+        properties:
+          brand_id:
+            type: string
+            description: 品牌ID
+            example: '123456789'
+          mchid:
+            type: string
+            description: 门店收款商户号
+            example: '1230000109'
+          company_name:
+            type: string
+            description: 门店收款主体
+            example: 腾讯科技（深圳）有限公司
+  responses:
+    '200':
+      schema:
+        type: object
+        properties:
+          brand_id:
+            type: string
+            description: 品牌ID
+            example: '123456789'
+          store_id:
+            type: string
+            description: 品牌门店ID
+            example: '20488000'
+          mchid:
+            type: string
+            description: 门店收款商户号
+            example: '1230000109'
+          company_name:
+            type: string
+            description: 门店收款主体
+            example: 腾讯科技（深圳）有限公司
+          recipient_state:
+            type: string
+            description: 收款绑定状态
+            example: CONFIRMED
+            enum:
+              - CONFIRMED #门店已绑定此收款商户号
+              - ADMIN_REJECTED #商户管理员已拒绝
+              - CONFIRMING #商户号管理员确认中
+              - TIMEOUT_REJECTED #由于商户管理员确认超时，系统自动拒绝此绑定

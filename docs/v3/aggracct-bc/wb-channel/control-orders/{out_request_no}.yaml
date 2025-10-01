@@ -1,0 +1,205 @@
+get:
+  x-last-updated-at: 2025.09.09
+  x-role:
+    - 直连商户
+  tags:
+    - 渠道服务
+  summary: 查询控制单
+  description: 根据外部单号查询管控单、解管单。管控单：未解管时支持长期查询，解管后支持1年查询。解管单：支持1年查询。限频：200/分钟
+  parameters:
+    - $ref: '../../../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
+    - name: out_request_no
+      type: string
+      required: true
+      in: path
+      description: 微众管控/解管单号
+      example: out_request_no_example
+    - name: control_type
+      type: string
+      required: true
+      in: query
+      description: 控制单类型
+      example: PUNISH
+      enum:
+        - PUNISH
+        - RECOVER
+    - name: mchid
+      type: string
+      required: true
+      in: query
+      description: 微信支付商户号
+      example: '1900016681'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - control_scene
+        properties:
+          control_scene:
+            type: string
+            description: 控制场景
+            example: PUNISH
+            enum:
+              - PUNISH
+              - RECOVER
+          punish_order:
+            type: object
+            description: 管控单
+            required:
+              - wxpay_punish_no
+              - out_request_no
+              - mchid
+              - punish_scene
+              - punish_rule_version
+              - punish_accept_time
+              - punish_state
+            properties:
+              wxpay_punish_no:
+                type: string
+                description: 微信管控单号
+                example: example_wxpay_punish_no
+              out_request_no:
+                type: string
+                description: 微众管控单号
+                example: example_out_request_no
+              mchid:
+                type: string
+                description: 目标下管商户号
+                example: example_mchid
+              punish_scene:
+                type: integer
+                description: 管控场景
+                example: 1
+              punish_rule_version:
+                type: integer
+                description: 管控场景规则版本号
+                example: 1
+              punish_reason:
+                type: string
+                description: 管控原因
+                example: example_punish_reason
+              punish_start_time:
+                type: string
+                format: rfc3339
+                description: 管控开始时间
+                example: '2015-05-20T13:29:35+08:00'
+              punish_end_time:
+                type: string
+                format: rfc3339
+                description: 管控结束时间
+                example: '2015-05-20T13:29:35+08:00'
+              punish_accept_time:
+                type: string
+                format: rfc3339
+                description: 管控受理时间
+                example: '2015-05-20T13:29:35+08:00'
+              punish_finish_time:
+                type: string
+                format: rfc3339
+                description: 管控执行完成时间
+                example: '2015-05-20T13:29:35+08:00'
+              punish_state:
+                type: string
+                description: 管控状态
+                example: EXECUTING
+                enum:
+                  - EXECUTING
+                  - SUCCESS
+                  - FAILED
+              effect_state:
+                type: string
+                description: 生效状态
+                example: ACTIVE
+                enum:
+                  - ACTIVE
+                  - RECOVERED
+              control_action:
+                type: array
+                description: 管控方案
+                items:
+                  type: string
+                  example: DISABLE_RECEIVE
+                  enum:
+                    - DISABLE_RECEIVE #不可收款
+                    - DISABLE_WITHDRAWAL #不可提现
+                    - DISABLE_PAY #不可付款
+                    - DISABLE_REFUND #不可退款
+                    - DISABLE_CLOSE_MERCHANT #关闭商户注销
+              error_message:
+                type: string
+                description: 执行失败错误信息
+                example: example_error_message
+              error_code:
+                type: string
+                description: 执行失败错误码
+                example: example_error_code
+          recover_order:
+            type: object
+            description: 解管单
+            required:
+              - wxpay_recover_no
+              - out_request_no
+              - related_wxpay_punish_no
+              - mchid
+              - punish_scene
+              - punish_rule_version
+              - recover_accept_time
+              - recover_finish_time
+              - recover_state
+              - recover_reason
+            properties:
+              wxpay_recover_no:
+                type: string
+                description: 微信支付解管单号
+                example: example_wxpay_recover_no
+              out_request_no:
+                type: string
+                description: 微众解管单号
+                example: example_out_request_no
+              related_wxpay_punish_no:
+                type: string
+                description: 关联微信支付管控单号
+                example: example_related_wxpay_punish_no
+              mchid:
+                type: string
+                description: 目标解管商户号
+                example: example_mchid
+              punish_scene:
+                type: string
+                description: 管控场景
+                example: example_punish_scene
+              punish_rule_version:
+                type: string
+                description: 管控场景规则版本号
+                example: example_punish_rule_version
+              recover_accept_time:
+                type: string
+                format: rfc3339
+                description: 解管受理时间
+                example: '2015-05-20T13:29:35+08:00'
+              recover_finish_time:
+                type: string
+                format: rfc3339
+                description: 解管执行完成时间
+                example: '2015-05-20T13:29:35+08:00'
+              recover_state:
+                type: string
+                description: 解管状态
+                example: EXECUTING
+                enum:
+                  - EXECUTING
+                  - SUCCESS
+                  - FAILED
+              recover_reason:
+                type: string
+                description: 解管原因描述
+                example: example_recover_reason
+              error_message:
+                type: string
+                description: 执行失败错误信息
+                example: example_error_message
+              error_code:
+                type: string
+                description: 执行失败错误码
+                example: example_error_code

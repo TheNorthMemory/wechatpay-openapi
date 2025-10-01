@@ -1,0 +1,64 @@
+get:
+  x-last-updated-at: 2025.08.04
+  x-role:
+    - 服务商
+  tags:
+    - 运营工具∙商品券
+  summary: 查询批次关联门店列表
+  description: 品牌方可以通过该接口分页查询商品券批次所关联的门店列表 前置条件：已创建商品券批次且批次的 store_scope 为 SPECIFIC
+  parameters:
+    - name: product_coupon_id
+      in: path
+      required: true
+      type: string
+      description: 商品券ID
+      example: '1000000013'
+    - name: stock_id
+      in: path
+      required: true
+      type: string
+      description: 批次ID
+      example: '1000000013001'
+    - name: page_size
+      in: query
+      type: integer
+      description: 分页大小
+      example: 20
+    - name: page_token
+      in: query
+      type: string
+      description: 分页Token
+      example: MTIzMjUK
+    - name: brand_id
+      in: query
+      required: true
+      type: string
+      description: 品牌ID
+      example: '120344'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - total_count
+        properties:
+          total_count:
+            type: integer
+            description: 总个数
+            example: 100
+          next_page_token:
+            type: string
+            description: 下一页Token
+            example: MTIzNDUK
+          store_list:
+            type: array
+            description: 门店列表
+            items:
+              type: object
+              required:
+                - store_id
+              properties:
+                store_id:
+                  type: string
+                  description: 门店ID
+                  example: '100000001'

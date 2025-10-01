@@ -1,0 +1,143 @@
+get:
+  x-last-updated-at: 2025.09.03
+  x-role:
+    - 服务商
+    - 渠道商
+  tags:
+    - 经营工具∙电子发票
+  summary: 获取邀请开通的商户信息
+  description: 通过时间范围，邀请的code等参数查询服务商邀请的商户信息，支持分页查询。
+  parameters:
+    - name: query_time_start
+      type: string
+      format: rfc3339
+      required: true
+      in: query
+      description: 查询时间起
+      example: '2020-07-01T12:00:00+08:00'
+    - name: query_time_end
+      type: string
+      format: rfc3339
+      required: true
+      in: query
+      description: 查询时间止
+      example: '2020-07-02T12:00:00+08:00'
+    - name: offset
+      type: integer
+      required: true
+      in: query
+      description: 本次查询的起始位置
+      example: 10
+    - name: limit
+      type: integer
+      required: true
+      in: query
+      description: 本次查询的最大数量
+      example: 1
+    - name: invite_code
+      type: string
+      in: query
+      description: 服务商邀请code
+      example: code_20200101_123
+    - name: mch_invite_status
+      type: string
+      required: true
+      in: query
+      description: 商户邀请状态
+      example: MCH_INVITE_SUCC
+      enum:
+        - MCH_INVITE_SUCC
+        - MCH_INVITE_FAILED
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - total_count
+          - limit
+          - offset
+        properties:
+          total_count:
+            type: integer
+            description: 总数
+            example: 50
+          offset:
+            type: integer
+            description: 本次查询的起始位置
+            example: 10
+          limit:
+            type: integer
+            description: 本次查询的最大数量
+            example: 1
+          links:
+            type: object
+            description: 相关链接
+            properties:
+              next:
+                type: string
+                description: 下一页链接
+                example: /v3/new-tax-control-fapiao/xxx?offset=2&limit=5
+              prev:
+                type: string
+                description: 上一页链接
+                example: /v3/new-tax-control-fapiao/xxx?offset=0&limit=5
+              self:
+                type: string
+                description: 当前链接
+                example: /v3/new-tax-control-fapiao/xxx?offset=1&limit=5
+          mch_invite_result_list:
+            type: array
+            description: 邀请的商户结果
+            items:
+              type: object
+              required:
+                - mch_invite_status
+                - ep_name
+                - tax_id
+                - invite_code
+                - operate_time
+              properties:
+                sub_mchid:
+                  type: string
+                  description: 子商户号
+                  example: '1900000109'
+                mch_invite_status:
+                  type: string
+                  description: 商户邀请的状态
+                  example: MCH_INVITE_SUCC
+                  enum:
+                    - MCH_INVITE_SUCC
+                    - MCH_INVITE_FAILED
+                ep_name:
+                  type: string
+                  description: 商户名称
+                  example: 示例（深圳）有限公司
+                tax_id:
+                  type: string
+                  description: 商户税号
+                  example: 9144050071126766XG
+                invite_code:
+                  type: string
+                  description: 服务商邀请code
+                  example: code_20200101_123
+                operate_time:
+                  type: string
+                  format: rfc3339
+                  description: 商户操作时间
+                  example: '2020-07-01T00:00:00+08:00'
+                invite_failed_code:
+                  type: string
+                  description: 商户邀请失败错误码
+                  example: UNKNOWN_TAX_INFO
+                  enum:
+                    - UNKNOWN_TAX_INFO
+                    - INVALID_COMPANY_INFO
+                    - NOT_MEET_ACCESS_CONDITION
+                    - NOT_IN_PILOT_SCOPE
+                    - MISSING_TAX_AUTHORITY_CODE
+                    - MERCHANT_INFO_NOT_SET
+                    - UNKNOWN_ERROR
+                invite_failed_reason:
+                  type: string
+                  description: 商户邀请失败的原因
+                  example: 示例失败原因

@@ -1,11 +1,12 @@
 get:
-  x-last-updated-at: 2021.05.11
+  x-last-updated-at: 2025.09.29
   x-role:
+    - 直连商户
     - 服务商
   tags:
     - 资金应用∙分账
-  summary: 查询剩余待分金额API
-  description: 可调用此接口查询订单剩余待分金额 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_1_6.shtml)
+  summary: 查询剩余待分金额
+  description: 可调用此接口查询订单剩余待分金额
   parameters:
     - name: transaction_id
       in: path

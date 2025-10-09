@@ -1,11 +1,11 @@
 get:
-  x-last-updated-at: 2021.05.11
+  x-last-updated-at: 2025.09.29
   x-role:
     - 服务商
   tags:
     - 资金应用∙分账
-  summary: 查询最大分账比例API
-  description: 可调用此接口查询特约商户设置的允许服务商分账的最大比例 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_1_7.shtml)
+  summary: 查询最大分账比例
+  description: 可调用此接口查询特约商户设置的允许服务商分账的最大比例
   parameters:
     - name: sub_mchid
       in: path

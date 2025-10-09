@@ -1,11 +1,12 @@
 post:
-  x-last-updated-at: 2021.05.11
+  x-last-updated-at: 2025.09.29
   x-role:
+    - 直连商户
     - 服务商
   tags:
     - 资金应用∙分账
-  summary: 添加分账接收方API
-  description: 服务商发起添加分账接收方请求，建立分账接收方列表。后续可通过发起分账请求，将分账方商户结算后的资金，分到该分账接收方 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_1_8.shtml)
+  summary: 添加分账接收方
+  description: 服务商发起添加分账接收方请求，建立分账接收方列表。后续可通过发起分账请求，将分账方商户结算后的资金，分到该分账接收方
   parameters:
     - $ref: '../../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
     - name: _
@@ -35,6 +36,10 @@ post:
             type: string
             description: 分账接收方类型
             example: MERCHANT_ID
+            enum:
+              - MERCHANT_ID
+              - PERSONAL_OPENID
+              - PERSONAL_SUB_OPENID
           account:
             type: string
             description: 分账接收方帐号
@@ -81,6 +86,10 @@ post:
             type: string
             description: 分账接收方类型
             example: MERCHANT_ID
+            enum:
+              - MERCHANT_ID
+              - PERSONAL_OPENID
+              - PERSONAL_SUB_OPENID
           account:
             type: string
             description: 分账接收方账号
@@ -94,6 +103,18 @@ post:
             type: string
             description: 与分账方的关系类型
             example: SERVICE_PROVIDER
+            enum:
+              - SERVICE_PROVIDER #服务商
+              - STORE #门店
+              - STAFF #员工
+              - STORE_OWNER #店主
+              - PARTNER #合作伙伴
+              - HEADQUARTER #总部
+              - BRAND #品牌方
+              - DISTRIBUTOR #分销商
+              - USER #用户
+              - SUPPLIER #供应商
+              - CUSTOM #自定义
           custom_relation:
             type: string
             description: 自定义的分账关系

@@ -1,13 +1,13 @@
 get:
-  x-last-updated-at: 2025.01.20
+  x-last-updated-at: 2025.09.29
   x-role:
     - 直连商户
     - 电商平台
     - 服务商
   tags:
     - 资金应用∙分账
-  summary: 申请分账账单API
-  description: 微信支付按天提供分账账单文件，商户可以通过该接口获取账单文件的下载地址。文件内包含分账相关的金额、时间等信息，供商户核对到账等情况。[官方文档](https://pay.weixin.qq.com/doc/v3/merchant/4012529628) [官方文档](https://pay.weixin.qq.com/doc/v3/partner/4012761140) [官方文档](https://pay.weixin.qq.com/doc/v3/partner/4012715572) [官方文档](https://pay.weixin.qq.com/doc/v3/partner/4012715572) [官方文档](https://pay.weixin.qq.com/doc/v3/partner/4012715572) [官方文档](https://pay.weixin.qq.com/doc/v3/partner/4012715572) [官方文档](https://pay.weixin.qq.com/doc/v3/partner/4012715572) [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_1_11.shtml)
+  summary: 申请分账账单
+  description: 微信支付按天提供分账账单文件，商户可以通过该接口获取账单文件的下载地址。文件内包含分账相关的金额、时间等信息，供商户核对到账等情况。
   parameters:
     - name: sub_mchid
       in: query
@@ -45,6 +45,8 @@ get:
             type: string
             description: 哈希类型
             example: SHA1
+            enum:
+              - SHA1
           hash_value:
             type: string
             description: 哈希值

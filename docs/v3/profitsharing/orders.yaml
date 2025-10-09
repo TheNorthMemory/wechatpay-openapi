@@ -1,11 +1,12 @@
 post:
-  x-last-updated-at: 2022.06.14
+  x-last-updated-at: 2025.09.29
   x-role:
+    - 直连商户
     - 服务商
   tags:
     - 资金应用∙分账
-  summary: 请求分账API
-  description: 微信订单支付成功后，服务商代特约商户发起分账请求，将结算后的资金分到分账接收方 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_1_1.shtml)
+  summary: 请求分账
+  description: 微信订单支付成功后，服务商代特约商户发起分账请求，将结算后的资金分到分账接收方
   parameters:
     - $ref: '../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
     - name: _
@@ -14,7 +15,6 @@ post:
       schema:
         type: object
         required:
-          - appid
           - transaction_id
           - out_order_no
           - unfreeze_unsplit
@@ -54,6 +54,10 @@ post:
                   type: string
                   description: 分账接收方类型
                   example: MERCHANT_ID
+                  enum:
+                    - MERCHANT_ID
+                    - PERSONAL_OPENID
+                    - PERSONAL_SUB_OPENID
                 account:
                   type: string
                   description: 分账接收方帐号
@@ -104,6 +108,9 @@ post:
             type: string
             description: 分账单状态
             example: FINISHED
+            enum:
+              - PROCESSING
+              - FINISHED
           receivers:
             type: array
             description: 分账接收方列表
@@ -115,7 +122,6 @@ post:
                 - type
                 - account
                 - result
-                - fail_reason
                 - create_time
                 - finish_time
               properties:
@@ -131,6 +137,10 @@ post:
                   type: string
                   description: 分账接收方类型
                   example: MERCHANT_ID
+                  enum:
+                    - MERCHANT_ID
+                    - PERSONAL_OPENID
+                    - PERSONAL_SUB_OPENID
                 account:
                   type: string
                   description: 分账接收方帐号
@@ -139,19 +149,34 @@ post:
                   type: string
                   description: 分账结果
                   example: SUCCESS
+                  enum:
+                    - PENDING
+                    - SUCCESS
+                    - CLOSED
                 fail_reason:
                   type: string
                   description: 分账失败原因
                   example: ACCOUNT_ABNORMAL
+                  enum:
+                    - ACCOUNT_ABNORMAL #分账接收账户异常
+                    - NO_RELATION #分账关系已解除
+                    - RECEIVER_HIGH_RISK #高风险接收方
+                    - RECEIVER_REAL_NAME_NOT_VERIFIED #接收方未实名
+                    - NO_AUTH #分账权限已解除
+                    - RECEIVER_RECEIPT_LIMIT #超出用户月收款限额
+                    - PAYER_ACCOUNT_ABNORMAL #分出方账户异常
+                    - INVALID_REQUEST #描述参数设置失败
                 detail_id:
                   type: string
                   description: 分账明细单号
                   example: '36011111111111111111111'
                 create_time:
                   type: string
+                  format: rfc3339
                   description: 分账创建时间
                   example: '2015-05-20T13:29:35.120+08:00'
                 finish_time:
                   type: string
+                  format: rfc3339
                   description: 分账完成时间
                   example: '2015-05-20T13:29:35.120+08:00'

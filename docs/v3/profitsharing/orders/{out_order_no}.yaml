@@ -1,11 +1,12 @@
 get:
-  x-last-updated-at: 2021.05.11
+  x-last-updated-at: 2025.09.29
   x-role:
+    - 直连商户
     - 服务商
   tags:
     - 资金应用∙分账
-  summary: 查询分账结果API
-  description: 发起分账请求后，可调用此接口查询分账结果 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_1_2.shtml)
+  summary: 查询分账结果
+  description: 发起分账请求后，可调用此接口查询分账结果
   parameters:
     - name: sub_mchid
       in: query
@@ -14,11 +15,13 @@ get:
       example: '1900000109'
     - name: transaction_id
       in: query
+      required: true
       type: string
       description: 微信订单号
       example: '4208450740201411110007820472'
     - name: out_order_no
       in: path
+      required: true
       type: string
       description: 商户分账单号
       example: P20150806125346
@@ -52,6 +55,10 @@ get:
             type: string
             description: 分账单状态
             example: FINISHED
+            enum:
+              - PENDING
+              - SUCCESS
+              - CLOSED
           receivers:
             type: array
             description: 分账接收方列表
@@ -63,7 +70,6 @@ get:
                 - type
                 - account
                 - result
-                - fail_reason
                 - create_time
                 - finish_time
               properties:
@@ -79,6 +85,10 @@ get:
                   type: string
                   description: 分账接收方类型
                   example: MERCHANT_ID
+                  enum:
+                    - MERCHANT_ID
+                    - PERSONAL_OPENID
+                    - PERSONAL_SUB_OPENID
                 account:
                   type: string
                   description: 分账接收方帐号
@@ -87,6 +97,15 @@ get:
                   type: string
                   description: 分账结果
                   example: SUCCESS
+                  enum:
+                    - ACCOUNT_ABNORMAL #分账接收账户异常
+                    - NO_RELATION #分账关系已解除
+                    - RECEIVER_HIGH_RISK #高风险接收方
+                    - RECEIVER_REAL_NAME_NOT_VERIFIED #接收方未实名
+                    - NO_AUTH #分账权限已解除
+                    - RECEIVER_RECEIPT_LIMIT #超出用户月收款限额
+                    - PAYER_ACCOUNT_ABNORMAL #分出方账户异常
+                    - INVALID_REQUEST #描述参数设置失败
                 fail_reason:
                   type: string
                   description: 分账失败原因
@@ -97,9 +116,11 @@ get:
                   example: '36011111111111111111111'
                 create_time:
                   type: string
+                  format: rfc3339
                   description: 分账创建时间
                   example: '2015-05-20T13:29:35.120+08:00'
                 finish_time:
                   type: string
+                  format: rfc3339
                   description: 分账完成时间
                   example: '2015-05-20T13:29:35.120+08:00'

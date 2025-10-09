@@ -1,11 +1,12 @@
 post:
-  x-last-updated-at: 2021.05.11
+  x-last-updated-at: 2025.09.29
   x-role:
+    - 直连商户
     - 服务商
   tags:
     - 资金应用∙分账
-  summary: 删除分账接收方API
-  description: 服务商发起删除分账接收方请求。删除后，不支持将分账方商户结算后的资金，分到该分账接收方 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter8_1_9.shtml)
+  summary: 删除分账接收方
+  description: 服务商发起删除分账接收方请求。删除后，不支持将分账方商户结算后的资金，分到该分账接收方
   parameters:
     - name: _
       in: body
@@ -33,6 +34,10 @@ post:
             type: string
             description: 分账接收方类型
             example: MERCHANT_ID
+            enum:
+              - MERCHANT_ID
+              - PERSONAL_OPENID
+              - PERSONAL_SUB_OPENID
           account:
             type: string
             description: 分账接收方账号
@@ -53,6 +58,10 @@ post:
             type: string
             description: 分账接收方类型
             example: MERCHANT_ID
+            enum:
+              - MERCHANT_ID
+              - PERSONAL_OPENID
+              - PERSONAL_SUB_OPENID
           account:
             type: string
             description: 分账接收方账号

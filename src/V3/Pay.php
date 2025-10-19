@@ -5,6 +5,7 @@ namespace WeChatPay\OpenAPI\V3;
 /**
  * @property-read Pay\Transactions $transactions
  * @property-read Pay\Partner $partner
+ * @property-read Pay\Instal $instal
  * @property-read Pay\AcquiringBank $acquiringBank
  */
 interface Pay

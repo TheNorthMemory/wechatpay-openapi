@@ -65,6 +65,15 @@ interface App
                 'contract_display_account' => '微信代扣用户A',
                 'notify_url' => 'https://yourapp.com/notify',
             ],
+            'subsidy_info' => [
+                'subsidy_detail' => [[
+                    'subsidy_period_type' => 'PERIOD',
+                    'subsidy_plan' => [[
+                        'subsidy_installment_num' => 3,
+                        'subsidy_percent' => 100,
+                    ],],
+                ],],
+            ],
         ],
         'headers' => [
             'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',
@@ -126,6 +135,15 @@ interface App
                 'plan_id' => 12535,
                 'contract_display_account' => '微信代扣用户A',
                 'notify_url' => 'https://yourapp.com/notify',
+            ],
+            'subsidy_info' => [
+                'subsidy_detail' => [[
+                    'subsidy_period_type' => 'PERIOD',
+                    'subsidy_plan' => [[
+                        'subsidy_installment_num' => 3,
+                        'subsidy_percent' => 100,
+                    ],],
+                ],],
             ],
         ],
         'headers' => [

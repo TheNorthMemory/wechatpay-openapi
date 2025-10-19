@@ -61,6 +61,52 @@ post:
                     type: boolean
                     description: 是否指定分账
                     example: false
+          - type: object
+            properties:
+              subsidy_info:
+                type: object
+                description: 贴息信息(微信分付)
+                properties:
+                  subsidy_detail:
+                    type: array
+                    description: 贴息详情列表
+                    items:
+                      type: object
+                      required:
+                        - subsidy_period_type
+                        - subsidy_plan
+                      properties:
+                        subsidy_period_type:
+                          type: string
+                          description: 贴息方案类型
+                          example: PERIOD
+                          enum:
+                            - DAILY  #随时还
+                            - PERIOD #分期还
+                        subsidy_plan:
+                          type: array
+                          description: 贴息方案列表
+                          items:
+                            type: object
+                            required:
+                              - subsidy_installment_num
+                              - subsidy_percent
+                            properties:
+                              subsidy_installment_num:
+                                type: integer
+                                description: 贴息期数
+                                example: 3
+                                enum:
+                                  - 3
+                                  - 6
+                                  - 12
+                              subsidy_percent:
+                                type: integer
+                                description: 贴息比例
+                                example: 100
+                                enum:
+                                  - 0
+                                  - 100
   responses:
     200:
       schema:

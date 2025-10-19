@@ -31,3 +31,19 @@ get:
                 $ref: '../../../../definitions/Transaction.yaml#PayerDirection'
               amount:
                 $ref: '../../../../definitions/Transaction.yaml#PayerAmount'
+          - type: object
+            properties:
+              installment_info:
+                type: object
+                description: 使用的商户贴息信息(微信分付)
+                required:
+                  - use_subsidy
+                  - selected_installment_number
+                properties:
+                  use_subsidy:
+                    type: boolean
+                    description: 是否使用了商户贴息
+                  selected_installment_number:
+                    type: integer
+                    description: 用户实际选择分期期数
+                    example: 3

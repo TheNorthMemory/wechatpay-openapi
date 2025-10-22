@@ -4,6 +4,7 @@ namespace WeChatPay\OpenAPI\V3\Marketing;
 
 /**
  * @property-read Partner\ProductCoupon $productCoupon
+ * @property-read Partner\DeliveryPlan $deliveryPlan
  */
 interface Partner
 {

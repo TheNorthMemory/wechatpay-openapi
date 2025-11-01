@@ -7,7 +7,7 @@ info:
     整理自官方文档中心[普通商户](https://pay.weixin.qq.com/doc/v3/merchant/4012062524) [合作伙伴](https://pay.weixin.qq.com/doc/v3/partner/4012069852) [全球](https://pay.weixin.qq.com/doc/global/v3/zh)
     本[项目/工具地址](https://github.com/TheNorthMemory/wechatpay-openapi)
     **访问第一次加载比较慢，请耐心等待大约1-2分钟不等(小文件下载比较多)。**
-  version: 1.1.10
+  version: 1.1.11
 schemes:
   - https
 consumes:
@@ -793,6 +793,8 @@ paths:
     $ref: ./v3/fund-app/mch-transfer/elecsign/transfer-bill-no.yaml
   /v3/fund-app/mch-transfer/elecsign/transfer-bill-no/{transfer_bill_no}:
     $ref: ./v3/fund-app/mch-transfer/elecsign/transfer-bill-no/{transfer_bill_no}.yaml
+  /v3/fund-app/mch-transfer/partner/budget/{out_budget_no}/electronic-receipts:
+    $ref: ./v3/fund-app/mch-transfer/partner/budget/{out_budget_no}/electronic-receipts.yaml
   /v3/fund-app/mch-transfer/partner/charity-budget:
     $ref: ./v3/fund-app/mch-transfer/partner/charity-budget.yaml
   /v3/fund-app/mch-transfer/partner/charity-budget/{out_budget_no}:
@@ -1113,12 +1115,16 @@ paths:
     $ref: ./v3/marketing/favor/stocks/{stock_id}/merchants.yaml
   /v3/marketing/favor/stocks/{stock_id}/pause:
     $ref: ./v3/marketing/favor/stocks/{stock_id}/pause.yaml
+  /v3/marketing/favor/stocks/{stock_id}/refund-flow-by-day:
+    $ref: ./v3/marketing/favor/stocks/{stock_id}/refund-flow-by-day.yaml
   /v3/marketing/favor/stocks/{stock_id}/refund-flow:
     $ref: ./v3/marketing/favor/stocks/{stock_id}/refund-flow.yaml
   /v3/marketing/favor/stocks/{stock_id}/restart:
     $ref: ./v3/marketing/favor/stocks/{stock_id}/restart.yaml
   /v3/marketing/favor/stocks/{stock_id}/start:
     $ref: ./v3/marketing/favor/stocks/{stock_id}/start.yaml
+  /v3/marketing/favor/stocks/{stock_id}/use-flow-by-day:
+    $ref: ./v3/marketing/favor/stocks/{stock_id}/use-flow-by-day.yaml
   /v3/marketing/favor/stocks/{stock_id}/use-flow:
     $ref: ./v3/marketing/favor/stocks/{stock_id}/use-flow.yaml
   /v3/marketing/favor/users/{openid}/coupons:
@@ -1191,6 +1197,16 @@ paths:
     $ref: ./v3/marketing/membercard-open/phonenumber-member/search.yaml
   /v3/marketing/membercard-open/user/cards:
     $ref: ./v3/marketing/membercard-open/user/cards.yaml
+  /v3/marketing/partner/delivery-plan/{sp_mchid}/notify-url:
+    $ref: ./v3/marketing/partner/delivery-plan/{sp_mchid}/notify-url.yaml
+  /v3/marketing/partner/delivery-plan/delivery-plans:
+    $ref: ./v3/marketing/partner/delivery-plan/delivery-plans.yaml
+  /v3/marketing/partner/delivery-plan/delivery-plans/{brand_id}/delivery-plans:
+    $ref: ./v3/marketing/partner/delivery-plan/delivery-plans/{brand_id}/delivery-plans.yaml
+  /v3/marketing/partner/delivery-plan/delivery-plans/{plan_id}:
+    $ref: ./v3/marketing/partner/delivery-plan/delivery-plans/{plan_id}.yaml
+  /v3/marketing/partner/delivery-plan/delivery-plans/{plan_id}/terminate:
+    $ref: ./v3/marketing/partner/delivery-plan/delivery-plans/{plan_id}/terminate.yaml
   /v3/marketing/partner/product-coupon/media/upload-image:
     $ref: ./v3/marketing/partner/product-coupon/media/upload-image.yaml
   /v3/marketing/partner/product-coupon/notify-configs:
@@ -1573,6 +1589,10 @@ paths:
     $ref: ./v3/pay-devices/printers/{device_id}/print-orders/{print_order_no}.yaml
   /v3/pay/acquiring-bank/transactions/exposure:
     $ref: ./v3/pay/acquiring-bank/transactions/exposure.yaml
+  /v3/pay/instal/exposure:
+    $ref: ./v3/pay/instal/exposure.yaml
+  /v3/pay/instal/partner/exposure:
+    $ref: ./v3/pay/instal/partner/exposure.yaml
   /v3/pay/partner/transactions/app:
     $ref: ./v3/pay/partner/transactions/app.yaml
   /v3/pay/partner/transactions/codepay:

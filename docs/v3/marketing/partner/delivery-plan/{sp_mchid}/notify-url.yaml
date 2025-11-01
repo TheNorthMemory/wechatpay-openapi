@@ -1,0 +1,38 @@
+post:
+  x-last-updated-at: 2025.09.27
+  x-role:
+    - 服务商
+  tags:
+    - 运营工具∙商品券
+  summary: 设置投放计划回调地址
+  description: 投放计划创建后，如果设置了回调地址，当投放计划的状态 `plan_state` 或者审批状态 `audit_state` 发生变更时，会回调给品牌方。
+  parameters:
+    - name: sp_mchid
+      in: path
+      required: true
+      type: string
+      description: 服务商商户号
+      example: '298689900'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - notify_url
+        properties:
+          notify_url:
+            type: string
+            description: 通知url地址
+            example: 'https://pay.weixin.qq.com'
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - notify_url
+        properties:
+          notify_url:
+            type: string
+            description: 通知地址
+            example: 'https://pay.weixin.qq.com'

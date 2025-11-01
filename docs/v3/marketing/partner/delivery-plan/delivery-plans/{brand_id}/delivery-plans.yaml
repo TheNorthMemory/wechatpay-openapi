@@ -1,0 +1,133 @@
+get:
+  x-last-updated-at: 2025.09.27
+  x-role:
+    - 服务商
+  tags:
+    - 运营工具∙商品券
+  summary: 分页查询投放计划列表
+  description: 分页查询投放计划列表
+  parameters:
+    - name: brand_id
+      in: path
+      required: true
+      type: string
+      description: 品牌ID
+      example: '40016'
+    - name: page_size
+      in: query
+      type: integer
+      description: 分页大小
+      example: 5
+    - name: offset
+      in: query
+      type: integer
+      description: 分页起始位置
+      example: 10
+    - name: plan_state
+      in: query
+      type: string
+      description: 投放计划线上状态
+      example: PLAN_CREATED
+      enum:
+        - PLAN_CREATING #创建中
+        - PLAN_CREATED #创建成功
+        - PLAN_TERMINATING #终止中
+        - PLAN_TERMINATED #已终止
+        - PLAN_EXPIRED #已过期
+        - PLAN_DELIVERING #投放中
+        - PLAN_PAUSED #已暂停
+    - name: audit_state
+      in: query
+      type: string
+      description: 投放计划审核状态
+      example: '12000'
+      enum:
+        - AUDIT_INITIAL #初始化
+        - AUDIT_PROCESSING #审批中
+        - AUDIT_PASSED #审批通过
+        - AUDIT_REJECTED #审批拒绝
+    - name: plan_id
+      in: query
+      type: string
+      description: 投放计划ID
+      example: '12000'
+  responses:
+    200:
+      schema:
+        type: object
+        properties:
+          total_count:
+            type: integer
+            description: 资源总条数
+            example: 1234
+          plan_list:
+            type: array
+            description: 投放计划列表
+            items:
+              type: object
+              required:
+                - plan_id
+                - plan_name
+                - plan_state
+                - stock_id
+                - product_coupon_id
+                - brand_id
+              properties:
+                plan_id:
+                  type: string
+                  description: 投放计划ID
+                  example: '12000'
+                plan_name:
+                  type: string
+                  description: 投放计划名称
+                  example: 冬季饮料投放
+                plan_state:
+                  type: string
+                  description: 投放计划状态
+                  example: PLAN_CREATED
+                  enum:
+                    - PLAN_CREATING #创建中
+                    - PLAN_CREATED #创建成功
+                    - PLAN_TERMINATING #终止中
+                    - PLAN_TERMINATED #已终止
+                    - PLAN_EXPIRED #已过期
+                    - PLAN_DELIVERING #投放中
+                    - PLAN_PAUSED #已暂停
+                delivery_start_time:
+                  type: string
+                  format: rfc3339
+                  description: 开始可用时间
+                  example: '2025-01-01T00:00:00+08:00'
+                delivery_end_time:
+                  type: string
+                  format: rfc3339
+                  description: 结束可用时间
+                  example: '2025-01-01T00:00:00+08:00'
+                stock_id:
+                  type: string
+                  description: 批次ID
+                  example: '701246876221757924829194755312'
+                product_coupon_id:
+                  type: string
+                  description: 商品券ID
+                  example: '701146876221757924829193824428'
+                recommend_word:
+                  type: string
+                  description: 营销标签
+                  example: 天天有惊喜
+                brand_id:
+                  type: string
+                  description: 品牌ID
+                  example: '40016'
+                total_count:
+                  type: integer
+                  description: 总库存
+                  example: 11000
+                user_limit:
+                  type: integer
+                  description: 单用户限领
+                  example: 5
+                daily_limit:
+                  type: integer
+                  description: 单日限领
+                  example: 100

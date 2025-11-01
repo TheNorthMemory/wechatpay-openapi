@@ -1,0 +1,17 @@
+post:
+  x-last-updated-at: 2025.09.27
+  x-role:
+    - 服务商
+  tags:
+    - 运营工具∙商品券
+  summary: 终止投放计划
+  description: 终止投放计划
+  parameters:
+    - name: plan_id
+      in: path
+      required: true
+      type: string
+      description: 投放计划ID
+      example: '12000'
+  responses:
+    204: {}

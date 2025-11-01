@@ -1,0 +1,43 @@
+get:
+  x-last-updated-at: 2025.09.08
+  x-role:
+    - 直连商户
+    - 服务商
+  tags:
+    - 运营工具∙代金券
+  summary: 获取批次退款明细下载链接
+  description: 注意：1. 核销账单明细新增合单相关字段:【是否合单订单】【微信支付合单单号】【合单优惠 总金额】【合单订单总金额】；2. 账单明细设备号字段格式采用base64，消除历史乱码问题；3. 账单文件下载链接响应不包含微信接口响应的签名值，因此需要跳过验签的流程；
+  parameters:
+    - name: stock_id
+      in: path
+      required: true
+      type: string
+      description: 批次号
+      example: '12356458'
+    - name: bill_date
+      in: query
+      required: true
+      type: string
+      description: 账单日期
+      example: '2025-08-09'
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - url
+          - stock_refundflow_hash
+          - stock_refundflow_count
+        properties:
+          url:
+            type: string
+            description: 下载链接
+            example: 'https://download-service.wechatpay.cn/mkt/storage/bill/download?bill_params=ABAn6jAYAAABAA32ad52c3a1CSjwrN5j6Vx_8UMI5i'
+          stock_refundflow_hash:
+            type: string
+            description: 账单文件摘要
+            example: 8ae0eb442c408d2e90d669d6f4ad6b7e6e049d6f
+          stock_refundflow_count:
+            type: string
+            description: 账单记录总条数
+            example: '2030'

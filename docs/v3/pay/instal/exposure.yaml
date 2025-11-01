@@ -1,0 +1,55 @@
+post:
+  x-last-updated-at: 2025.09.29
+  x-role:
+    - 普通商户
+  tags:
+    - 微信分付
+  summary: 商户贴息-获取微信分付曝光建议
+  description: 获取微信分付曝光建议
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - mchid
+          - appid
+          - user_id_type
+        properties:
+          mchid:
+            type: string
+            description: 直连商户号
+            example: '1230000109'
+          appid:
+            type: string
+            description: 应用AppID
+            example: wxd678efh567hg6787
+          user_id_type:
+            type: string
+            description: 用户ID的类型
+            example: OPENID
+            enum:
+              - UNKNOWN_USER_ID_TYPE #未知类型
+              - OPENID #普通商户的OpenID
+              - PHONE_NO #手机号
+              - SP_OPENID #服务商的OpenID
+              - SUB_OPENID #子商户的OpenID
+          openid:
+            type: string
+            description: 用户标识
+            example: '123456789'
+          phone_number_hash:
+            type: string
+            description: 用户手机号的十六进制字符串
+            example: EF879546FFFF
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - recommend_exposure
+        properties:
+          recommend_exposure:
+            type: boolean
+            description: 是否建议曝光微信分付

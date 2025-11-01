@@ -1,0 +1,178 @@
+post:
+  x-last-updated-at: 2025.10.09
+  x-role:
+    - 服务商
+  tags:
+    - 资金应用∙公益捐赠
+  summary: 申请预算出资的电子回单
+  description: 申请预算出资的电子回单。指定了收款商户号，表示获取按日及按收款方汇总的电子回单，否则表示获取仅按日汇总的电子回单。前置条件：只支持查询T-1的最近180天内的汇总电子回单。 注：单个服务商商户的接口频率限制为20次/s
+  parameters:
+    - name: out_budget_no
+      in: path
+      required: true
+      type: string
+      description: 商户预算单号
+      example: budget202506300102
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - start_date
+          - end_date
+          - sponsor_mchid
+        properties:
+          start_date:
+            type: string
+            description: 开始日期
+            example: '2025-09-01'
+          end_date:
+            type: string
+            description: 结束日期
+            example: '2025-09-30'
+          sponsor_mchid:
+            type: string
+            description: 出资商户号
+            example: '1900001109'
+          receiver_mchid:
+            type: string
+            description: 收款商户号
+            example: '1900102209'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - out_budget_no
+          - start_date
+          - end_date
+          - sponsor_mchid
+          - receipt_state
+          - accept_id
+        properties:
+          out_budget_no:
+            type: string
+            description: 商户预算单号
+            example: budget202506300102
+          start_date:
+            type: string
+            description: 开始日期
+            example: '2025-09-01'
+          end_date:
+            type: string
+            description: 结束日期
+            example: '2025-09-30'
+          sponsor_mchid:
+            type: string
+            description: 出资商户号
+            example: '1900001109'
+          receiver_mchid:
+            type: string
+            description: 收款商户号
+            example: '1900102209'
+          receipt_state:
+            type: string
+            description: 电子回单状态
+            example: FINISHED
+            enum:
+              - ACCEPTED
+              - FINISHED
+          accept_id:
+            type: string
+            description: 受理凭证
+            example: c2RmYWtqampqampsZmFza2xmanNhbGZqc2FrZmpzbGZqc2tsZmp
+          hash_type:
+            type: string
+            description: 电子回单文件的hash方法
+            example: SHA256
+            enum:
+              - SHA256
+              - SM3
+          hash_value:
+            type: string
+            description: 电子回单文件的hash值
+            example: DE731F35146A0BEFADE5DB9D1E468D96C01CA8898119C674FEE9F11F4DBE5529
+          download_url:
+            type: string
+            description: 电子回单下载地址
+            example: https://api.mch.weixin.qq.com/v3/billdownload/file?token=token
+get:
+  x-last-updated-at: 2025.10.09
+  x-role:
+    - 服务商
+  tags:
+    - 资金应用∙公益捐赠
+  summary: 查询预算出资的电子回单
+  description: 查询预算出资的电子回单。 注：单个服务商商户的接口频率限制为50次/s
+  parameters:
+    - name: out_budget_no
+      in: path
+      required: true
+      type: string
+      description: 商户预算单号
+      example: budget202506300102
+    - name: accept_id
+      in: query
+      required: true
+      type: string
+      description: 受理凭证
+      example: c2RmYWtqampqampsZmFza2xmanNhbGZqc2FrZmpzbGZqc2tsZmp
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - out_budget_no
+          - start_date
+          - end_date
+          - sponsor_mchid
+          - receipt_state
+          - accept_id
+        properties:
+          out_budget_no:
+            type: string
+            description: 商户预算单号
+            example: budget202506300102
+          start_date:
+            type: string
+            description: 开始日期
+            example: '2025-09-01'
+          end_date:
+            type: string
+            description: 结束日期
+            example: '2025-09-30'
+          sponsor_mchid:
+            type: string
+            description: 出资商户号
+            example: '1900001109'
+          receiver_mchid:
+            type: string
+            description: 收款商户号
+            example: '1900102209'
+          receipt_state:
+            type: string
+            description: 电子回单状态
+            example: FINISHED
+            enum:
+              - ACCEPTED
+              - FINISHED
+          accept_id:
+            type: string
+            description: 受理凭证
+            example: c2RmYWtqampqampsZmFza2xmanNhbGZqc2FrZmpzbGZqc2tsZmp
+          hash_type:
+            type: string
+            description: 电子回单文件的hash方法
+            example: SHA256
+            enum:
+              - SHA256
+              - SM3
+          hash_value:
+            type: string
+            description: 电子回单文件的hash值
+            example: DE731F35146A0BEFADE5DB9D1E468D96C01CA8898119C674FEE9F11F4DBE5529
+          download_url:
+            type: string
+            description: 电子回单下载地址
+            example: https://api.mch.weixin.qq.com/v3/billdownload/file?token=token

@@ -1,0 +1,142 @@
+post:
+  x-last-updated-at: 2025.09.27
+  x-role:
+    - 服务商
+  tags:
+    - 运营工具∙商品券
+  summary: 创建投放计划
+  description: 创建投放计划
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - out_request_no
+          - brand_id
+          - product_coupon_id
+          - stock_id
+        properties:
+          out_request_no:
+            type: string
+            description: 创建请求单号
+            example: asdf-1234-40016
+          brand_id:
+            type: string
+            description: 创建投放计划的品牌ID
+            example: '40016'
+          product_coupon_id:
+            type: string
+            description: 商品券ID
+            example: '701146876221757924829193824428'
+          stock_id:
+            type: string
+            description: 批次ID
+            example: '701246876221757924829194755312'
+          plan_name:
+            type: string
+            description: 投放计划名称
+            example: 冬季饮料投放
+          total_count:
+            type: integer
+            description: 总库存
+            example: 1
+          user_limit:
+            type: integer
+            description: 单用户限领
+            example: 1
+          daily_limit:
+            type: integer
+            description: 单日限领
+            example: 1
+          delivery_start_time:
+            type: string
+            format: rfc3339
+            description: 开始可用时间
+            example: '2025-01-01T00:00:00+08:00'
+          delivery_end_time:
+            type: string
+            format: rfc3339
+            description: 结束可用时间
+            example: '2025-01-01T00:00:00+08:00'
+          recommend_word:
+            type: string
+            description: 营销标签
+            example: 天天有惊喜
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - plan
+        properties:
+          plan:
+            type: object
+            description: 投放计划详情
+            required:
+              - plan_id
+              - plan_name
+              - plan_state
+              - stock_id
+              - product_coupon_id
+              - brand_id
+            properties:
+              plan_id:
+                type: string
+                description: 投放计划ID
+                example: '12000'
+              plan_name:
+                type: string
+                description: 投放计划名称
+                example: 冬季饮料投放
+              plan_state:
+                type: string
+                description: 投放计划状态
+                example: PLAN_CREATED
+                enum:
+                  - PLAN_CREATING #创建中
+                  - PLAN_CREATED #创建成功
+                  - PLAN_TERMINATING #终止中
+                  - PLAN_TERMINATED #已终止
+                  - PLAN_EXPIRED #已过期
+                  - PLAN_DELIVERING #投放中
+                  - PLAN_PAUSED #已暂停
+              delivery_start_time:
+                type: string
+                format: rfc3339
+                description: 开始可用时间
+                example: '2025-01-01T00:00:00+08:00'
+              delivery_end_time:
+                type: string
+                format: rfc3339
+                description: 结束可用时间
+                example: '2025-01-01T00:00:00+08:00'
+              stock_id:
+                type: string
+                description: 批次ID
+                example: '701246876221757924829194755312'
+              product_coupon_id:
+                type: string
+                description: 商品券ID
+                example: '701146876221757924829193824428'
+              recommend_word:
+                type: string
+                description: 营销标签
+                example: 天天有惊喜
+              brand_id:
+                type: string
+                description: 品牌ID
+                example: '40016'
+              total_count:
+                type: integer
+                description: 总库存
+                example: 11000
+              user_limit:
+                type: integer
+                description: 单用户限领
+                example: 5
+              daily_limit:
+                type: integer
+                description: 单日限领
+                example: 100

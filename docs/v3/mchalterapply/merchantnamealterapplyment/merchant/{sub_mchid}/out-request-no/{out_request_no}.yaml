@@ -1,5 +1,5 @@
 get:
-  x-last-updated-at: 2025.09.24
+  x-last-updated-at: 2025.09.28
   x-role:
     - 电商平台
     - 服务商
@@ -8,11 +8,11 @@ get:
   summary: 查询商户简称申请单状态-使用业务单号和商户号
   description: 使用业务单号查询申请单状态
   parameters:
-    - name: merchant_code
+    - name: sub_mchid
       in: path
       required: true
       type: string
-      description: 微信支付商户号
+      description: 二级商户号
       example: '1900006491'
     - name: out_request_no
       in: path
@@ -27,7 +27,7 @@ get:
         required:
           - apply_id
           - out_request_no
-          - merchant_code
+          - sub_mchid
           - state
         properties:
           apply_id:
@@ -38,9 +38,9 @@ get:
             type: string
             description: 业务申请编号
             example: '1900013511_10000'
-          merchant_code:
+          sub_mchid:
             type: string
-            description: 微信支付商户号
+            description: 二级商户号
             example: '1900006491'
           state:
             type: string

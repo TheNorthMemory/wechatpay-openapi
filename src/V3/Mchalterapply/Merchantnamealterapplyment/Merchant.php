@@ -3,7 +3,7 @@
 namespace WeChatPay\OpenAPI\V3\Mchalterapply\Merchantnamealterapplyment;
 
 /**
- * @property-read Merchant\_merchant_code_ $_merchant_code_
+ * @property-read Merchant\_sub_mchid_ $_sub_mchid_
  */
 interface Merchant
 {

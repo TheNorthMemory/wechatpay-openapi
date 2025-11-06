@@ -1,0 +1,73 @@
+post:
+  x-last-updated-at: 2025.11.03
+  x-role:
+    - 服务商
+  tags:
+    - 资金应用∙转账∙用户确认模式
+  summary: 申请单笔转账电子回单
+  description: 商户可以 指定商户单号通过该接口申请 商家转账用户确认模式转账单据 对应的电子回单。微信支付会在校验满足回单申请条件后受理回单的申请，商户后续可以通过电子回单查询接口查询回单处理进度。
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - sub_mchid
+          - out_bill_no
+        properties:
+          sub_mchid:
+            type: string
+            description: 二级商户号
+            example: '1900001121'
+          out_bill_no:
+            type: string
+            description: 商户转账单号
+            example: plfk2020042013
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - sub_mchid
+          - out_bill_no
+          - state
+          - create_time
+        properties:
+          sub_mchid:
+            type: string
+            description: 二级商户号
+            example: '1900001121'
+          out_bill_no:
+            type: string
+            description: 商户转账单号
+            example: plfk2020042013
+          state:
+            type: string
+            description: 申请单状态
+            example: GENERATING
+            enum:
+              - GENERATING
+              - FINISHED
+          create_time:
+            type: string
+            description: 申请单创建时间
+            example: '2015-05-20T13:29:35.120+08:00'
+          update_time:
+            type: string
+            description: 申请单更新时间
+            example: '2015-05-20T13:29:35.120+08:00'
+          hash_type:
+            type: string
+            description: 回单文件摘要类型
+            example: SM3
+            enum:
+              - SM3
+          hash_value:
+            type: string
+            description: 回单文件摘要值
+            example: DE731F35146A0BEFADE5DB9D1E468D96C01CA8898119C674FEE9F11F4DBE5529
+          download_url:
+            type: string
+            description: 回单文件下载地址
+            example: https://api.mch.weixin.qq.com/v3/billdownload/file?token=token

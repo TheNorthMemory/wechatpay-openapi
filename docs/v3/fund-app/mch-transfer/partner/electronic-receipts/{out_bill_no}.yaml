@@ -1,0 +1,68 @@
+get:
+  x-last-updated-at: 2025.11.03
+  x-role:
+    - 服务商
+  tags:
+    - 资金应用∙转账∙用户确认模式
+  summary: 查询单笔转账电子回单
+  description: 商户可以通过该接口查看回单申请进度。请务必对比下载的回单文件的摘要值与查询接口返回的摘要值的一致性，确保得到的回单文件的真实性和完整性。下载地址的有效期为10分钟，超过10分钟后需要重新通过该接口获取下载地址（不需要重新申请）。
+  parameters:
+    - name: out_bill_no
+      in: path
+      required: true
+      type: string
+      description: 商户转账单号
+      example: plfk2020042013
+    - name: sub_mchid
+      in: query
+      required: true
+      type: string
+      description: 二级商户号
+      example: '1900001121'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - sub_mchid
+          - out_bill_no
+          - state
+          - create_time
+        properties:
+          sub_mchid:
+            type: string
+            description: 二级商户号
+            example: '1900001121'
+          out_bill_no:
+            type: string
+            description: 商户转账单号
+            example: plfk2020042013
+          state:
+            type: string
+            description: 申请单状态
+            example: GENERATING
+            enum:
+              - GENERATING
+              - FINISHED
+          create_time:
+            type: string
+            description: 申请单创建时间
+            example: '2015-05-20T13:29:35.120+08:00'
+          update_time:
+            type: string
+            description: 申请单更新时间
+            example: '2015-05-20T13:29:35.120+08:00'
+          hash_type:
+            type: string
+            description: 回单文件摘要类型
+            example: SM3
+            enum:
+              - SM3
+          hash_value:
+            type: string
+            description: 回单文件摘要值
+            example: DE731F35146A0BEFADE5DB9D1E468D96C01CA8898119C674FEE9F11F4DBE5529
+          download_url:
+            type: string
+            description: 回单文件下载地址
+            example: https://api.mch.weixin.qq.com/v3/billdownload/file?token=token

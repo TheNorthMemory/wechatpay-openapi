@@ -805,6 +805,10 @@ paths:
     $ref: ./v3/fund-app/mch-transfer/partner/charity-transfer-bills.yaml
   /v3/fund-app/mch-transfer/partner/charity-transfer-bills/out-transfer-no/{out_transfer_no}:
     $ref: ./v3/fund-app/mch-transfer/partner/charity-transfer-bills/out-transfer-no/{out_transfer_no}.yaml
+  /v3/fund-app/mch-transfer/partner/electronic-receipts:
+    $ref: ./v3/fund-app/mch-transfer/partner/electronic-receipts.yaml
+  /v3/fund-app/mch-transfer/partner/electronic-receipts/{out_bill_no}:
+    $ref: ./v3/fund-app/mch-transfer/partner/electronic-receipts/{out_bill_no}.yaml
   /v3/fund-app/mch-transfer/partner/sub-mch-authorizations:
     $ref: ./v3/fund-app/mch-transfer/partner/sub-mch-authorizations.yaml
   /v3/fund-app/mch-transfer/partner/sub-mch-authorizations/{sub_mchid}:
@@ -1327,8 +1331,8 @@ paths:
     $ref: ./v3/mchalterapply/merchantnamealterapplyment/{apply_id}.yaml
   /v3/mchalterapply/merchantnamealterapplyment/{apply_id}/revoke:
     $ref: ./v3/mchalterapply/merchantnamealterapplyment/{apply_id}/revoke.yaml
-  /v3/mchalterapply/merchantnamealterapplyment/merchant/{merchant_code}/out-request-no/{out_request_no}:
-    $ref: ./v3/mchalterapply/merchantnamealterapplyment/merchant/{merchant_code}/out-request-no/{out_request_no}.yaml
+  /v3/mchalterapply/merchantnamealterapplyment/merchant/{sub_mchid}/out-request-no/{out_request_no}:
+    $ref: ./v3/mchalterapply/merchantnamealterapplyment/merchant/{sub_mchid}/out-request-no/{out_request_no}.yaml
   /v3/med-ins/orders:
     $ref: ./v3/med-ins/orders.yaml
   /v3/med-ins/orders/mix-trade-no/{mix_trade_no}:

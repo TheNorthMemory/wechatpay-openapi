@@ -6,6 +6,7 @@ use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Promise\PromiseInterface;
 
 /**
+ * @property-read ApplyCancelWithdraw\ValidateCancel $validateCancel
  * @property-read ApplyCancelWithdraw\OutRequestNo $outRequestNo
  * @property-read ApplyCancelWithdraw\ApplymentId $applymentId
  * @property-read ApplyCancelWithdraw\Confirm $confirm

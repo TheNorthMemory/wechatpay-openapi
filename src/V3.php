@@ -66,6 +66,7 @@ namespace WeChatPay\OpenAPI;
  * @property-read V3\Ebike $ebike
  * @property-read V3\DiscountCard $discountCard
  * @property-read V3\Customs $customs
+ * @property-read V3\CreditRepayment $creditRepayment
  * @property-read V3\Compliance $compliance
  * @property-read V3\CombineTransactions $combineTransactions
  * @property-read V3\Catering $catering

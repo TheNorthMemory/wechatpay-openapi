@@ -1,0 +1,76 @@
+post:
+  x-last-updated-at: 2025.10.30
+  x-role:
+    - 服务商
+  tags:
+    - 品牌∙交易连接名片
+  summary: 解除已生效交易连接名片场景
+  description: 接口适用场景：当服务商配置交易连接名片后，交易连接名片配置状态为“已生效”时，可调用该接口请求解除连接关系。
+  parameters:
+    - in: body
+      name: _
+      required: true
+      schema:
+        type: object
+        required:
+          - brand_id
+          - payment_scene
+        properties:
+          brand_id:
+            type: string
+            description: 品牌ID
+            example: '1004'
+          payment_scene:
+            type: string
+            description: 交易场景类型
+            example: MINI_PROGRAM
+            enum:
+              - MINI_PROGRAM
+              - APP
+              - PAYMENT_SCORE
+              - PAYMENT_CODE
+          appid:
+            type: string
+            description: 公众账号ID
+            example: wxea9c30890f48d5ae
+          card_link_mchid:
+            type: string
+            description: 商户号
+            example: '111222333'
+          service_id:
+            type: string
+            description: 服务ID
+            example: '00005000000000548218251086296300'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - brand_id
+          - payment_scene
+        properties:
+          brand_id:
+            type: string
+            description: 品牌ID
+            example: '1004'
+          payment_scene:
+            type: string
+            description: 交易场景类型
+            example: MINI_PROGRAM
+            enum:
+              - MINI_PROGRAM
+              - APP
+              - PAYMENT_SCORE
+              - PAYMENT_CODE
+          appid:
+            type: string
+            description: 公众账号ID
+            example: wxea9c30890f48d5ae
+          card_link_mchid:
+            type: string
+            description: 商户号
+            example: '111222333'
+          service_id:
+            type: string
+            description: 服务ID
+            example: '00005000000000548218251086296300'

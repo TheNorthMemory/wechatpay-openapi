@@ -1,0 +1,37 @@
+post:
+  x-last-updated-at: 2025.10.30
+  x-role:
+    - 服务商
+  tags:
+    - 品牌∙交易连接名片
+  summary: 撤销交易连接名片配置申请
+  description: 接口适用场景：当服务商配置交易连接名片后，可调用该接口撤销“已发起但未生效”状态的交易连接名片申请。
+  parameters:
+    - in: body
+      name: _
+      required: true
+      schema:
+        type: object
+        required:
+          - business_code
+          - brand_id
+        properties:
+          business_code:
+            type: string
+            description: 业务申请编号
+            example: 1900013511_10000
+          brand_id:
+            type: string
+            description: 品牌ID
+            example: '1004'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - business_code
+        properties:
+          business_code:
+            type: string
+            description: 业务申请编号
+            example: 1900013511_10000

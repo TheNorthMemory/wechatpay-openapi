@@ -1,0 +1,74 @@
+post:
+  x-last-updated-at: 2025.09.19
+  x-role:
+    - 服务商
+  tags:
+    - 自动还款
+  summary: APP预签约自动还款协议
+  description: APP预签约
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - appid
+          - plan_id
+          - out_contract_code
+          - display_name
+          - contract_notify_url
+          - repayment_day
+          - repayment_amount_limit
+        properties:
+          appid:
+            type: string
+            description: 商户AppID
+            example: wxd678efh567hg6787
+          plan_id:
+            type: string
+            description: 模板ID
+            example: '123'
+          out_contract_code:
+            type: string
+            description: 服务商签约协议号
+            example: '100001256'
+          display_name:
+            type: string
+            description: 用户展示名称
+            example: '*明'
+          contract_notify_url:
+            type: string
+            description: 签约结果通知地址
+            example: https://pay.weixin.qq.com
+          repayment_day:
+            type: integer
+            description: 还款日
+            example: 1
+          repayment_amount_limit:
+            type: string
+            description: 还款金额上限
+            example: '10000'
+          sub_merchant_code:
+            type: string
+            description: 子商户号
+            example: example_sub_merchant_code
+          sub_appid:
+            type: string
+            description: 子商户AppID
+            example: example_sub_appid
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - presign_token
+        properties:
+          presign_token:
+            type: string
+            description: 预签约码
+            example: example_presign_token
+          redirect_service:
+            type: string
+            description: 跳转到的签约服务提供方
+            example: example_redirect_service

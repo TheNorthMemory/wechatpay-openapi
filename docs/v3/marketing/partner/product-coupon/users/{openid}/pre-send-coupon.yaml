@@ -1,0 +1,66 @@
+post:
+  x-last-updated-at: 2025.11.07
+  x-role:
+    - 服务商
+  tags:
+    - 运营工具∙商品券
+  summary: 向用户预发放商品券
+  description: 品牌方可以通过本接口向用户预发放指定商品券批次，并使用返回的token在领券组件中完成发券，当用户已领取过时使用相同参数获取的token拉起的领券组件会返回已领取状态，能否发放受限于商品券批次的发放限额：1. 商品券批次总预算; 2. 商品券批次每日预算（如果有）; 3. 商品券批次每人限领（如果有）
+  parameters:
+    - name: openid
+      in: path
+      required: true
+      type: string
+      description: 用户OpenID
+      example: oh-394z-6CGkNoJrsDLTTUKiAnp4
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - brand_id
+          - product_coupon_id
+          - stock_id
+          - appid
+          - send_request_no
+        properties:
+          brand_id:
+            type: string
+            description: 品牌ID
+            example: '120344'
+          product_coupon_id:
+            type: string
+            description: 商品券ID
+            example: '1000000013'
+          stock_id:
+            type: string
+            description: 批次ID
+            example: '1000000013001'
+          coupon_code:
+            type: string
+            description: 用户商品券Code
+            example: '123446565767'
+          appid:
+            type: string
+            description: 公众账号AppID
+            example: 'wx233544546545989'
+          send_request_no:
+            type: string
+            description: 发券请求单号
+            example: '34657_20250101_123456'
+          attach:
+            type: string
+            description: 自定义附加信息
+            example: example_attach
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - token
+        properties:
+          token:
+            type: string
+            description: 预发券token
+            example: ABBpZjCfAAABAAAAAACmTrRvExc7XKea-

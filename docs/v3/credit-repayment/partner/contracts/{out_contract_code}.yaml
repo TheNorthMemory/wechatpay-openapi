@@ -1,0 +1,77 @@
+get:
+  x-last-updated-at: 2025.09.19
+  x-role:
+    - 服务商
+  tags:
+    - 自动还款
+  summary: 查询自动还款协议
+  description: 使用服务商签约协议号查询自动还款协议详情
+  parameters:
+    - name: out_contract_code
+      in: path
+      required: true
+      type: string
+      description: 服务商签约协议号
+      example: '100005698'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - contract_id
+          - plan_id
+          - out_contract_code
+          - display_name
+          - contract_state
+        properties:
+          contract_id:
+            type: string
+            description: 协议ID
+            example: '100005698'
+          plan_id:
+            type: string
+            description: 模板ID
+            example: '123'
+          out_contract_code:
+            type: string
+            description: 服务商签约协议号
+            example: '100001256'
+          display_name:
+            type: string
+            description: 用户展示名称
+            example: '*明'
+          contract_state:
+            type: string
+            description: 协议状态
+            example: CONTRACT_STATE_INVALID
+            enum:
+              - CONTRACT_STATE_INVALID
+              - CONTRACT_STATE_EFFECTIVE
+              - CONTRACT_STATE_TERMINATED
+          contract_signed_time:
+            type: string
+            format: rfc3339
+            description: 协议签署时间
+            example: '2021-11-20T13:29:35+08:00'
+          contract_terminated_time:
+            type: string
+            format: rfc3339
+            description: 协议解约时间
+            example: '2021-11-20T13:29:35+08:00'
+          contract_termination_mode:
+            type: string
+            description: 协议解约方式
+            example: TERMINATION_MODE_BY_USER
+            enum:
+              - TERMINATION_MODE_INVALID #无效值
+              - TERMINATION_MODE_BY_USER #用户解约
+              - TERMINATION_MODE_BY_MERCHANT #商户解约
+              - TERMINATION_MODE_BY_CUSTOMER_SERVICE #客服解约
+          contract_termination_remark:
+            type: string
+            description: 协议解约备注
+            example: example_contract_termination_remark
+          repayment_day:
+            type: integer
+            description: 还款日
+            example: 1

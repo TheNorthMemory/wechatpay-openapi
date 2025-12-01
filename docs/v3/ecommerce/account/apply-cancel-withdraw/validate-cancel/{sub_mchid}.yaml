@@ -1,0 +1,87 @@
+get:
+  x-last-updated-at: 2025.11.05
+  x-role:
+    - 服务商
+  tags:
+    - 收付通∙注销
+  summary: 商户注销资格校验
+  description: 电商平台发起注销提现申请前，可通过该接口判断商户是否满足注销条件
+  parameters:
+    - name: sub_mchid
+      in: path
+      required: true
+      type: string
+      description: 申请注销的二级商户号
+      example: '1900000109'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - sub_mchid
+          - merchant_state
+          - validate_result
+          - account_info
+        properties:
+          sub_mchid:
+            type: string
+            description: 注销检查的二级商户号
+            example: P202410241010125346
+          merchant_state:
+            type: string
+            description: 注销提现申请单状态
+            example: NORMAL
+            enum:
+              - NORMAL
+              - HAS_BEEN_CANCELLED
+          validate_result:
+            type: string
+            description: 注销资格检查结果
+            example: ALLOW_CANCEL_WITHDRAW
+            enum:
+              - ALLOW_CANCEL_WITHDRAW
+              - NOT_ALLOW_CANCEL_WITHDRAW
+          account_info:
+            type: array
+            description: 账户信息
+            items:
+              type: object
+              required:
+                - out_account_type
+                - amount
+              properties:
+                out_account_type:
+                  type: string
+                  description: 商户资金账户余额
+                  enum:
+                    - BASIC_ACCOUNT #商户的基本户
+                    - OPERATE_ACCOUNT #商户的运营账户
+                    - MARGIN_ACCOUNT #商户的保证金户
+                    - TRADE_FEE_ACCOUNT #商户的手续费账户
+                amount:
+                  type: integer
+                  description: 账户金额
+                  example: 101
+          block_reasons:
+            type: array
+            description: 不可发起注销原因
+            items:
+              type: object
+              required:
+               - out_account_type
+               - pay_state
+               - state_description
+              properties:
+                type:
+                  type: string
+                  description: 二级商户号的出款子账户类型
+                  example: CONSUMER_COMPLAINT_UNPROCESSED
+                  enum:
+                    - CONSUMER_COMPLAINT_UNPROCESSED #消费者投诉未处理
+                    - HAS_BLOCKING_CONTROL #存在不可注销管控
+                    - FUNDS_PENDING_PROCESSING #商户资金待处理
+                    - OTHER_REASON #其他原因
+                description:
+                  type: string
+                  description: 原因描述
+                  example: 该商户存在冻结资金或在途资金，请先处理资金再申请注销

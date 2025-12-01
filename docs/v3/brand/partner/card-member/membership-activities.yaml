@@ -1,0 +1,357 @@
+post:
+  x-last-updated-at: 2025.11.14
+  x-role:
+    - 服务商
+  tags:
+    - 商家名片会员活动
+  summary: 创建品牌会员发券活动
+  description: 通过此接口可以创建一个品牌会员发券活动，创建成功将获得活动ID。该接口需要配合品牌会员组件使用，创建活动的中的券，将会在品牌会员组件调用时展示。
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - out_request_no
+          - brand_id
+          - card_id
+          - activity_channel
+          - title
+          - sub_title
+          - begin_time
+          - end_time
+          - apply_total
+          - product_coupon_stock_list
+        properties:
+          out_request_no:
+            type: string
+            description: 商户请求单号
+            example: 100002322019090134234sfdf
+          brand_id:
+            type: string
+            description: 品牌ID
+            example: '1004'
+          card_id:
+            type: string
+            description: 会员卡ID
+            example: pbLatjvWOibDc5-TBnbUk1pD12o0
+          activity_channel:
+            type: string
+            description: 活动渠道
+            example: MECHANT_APP_COMPONENT
+            enum:
+              - MECHANT_APP_COMPONENT
+          title:
+            type: string
+            description: 活动主标题
+            example: 入会享券
+          sub_title:
+            type: string
+            description: 活动主标题
+            example: 5张满减券
+          begin_time:
+            type: string
+            format: rfc3339
+            description: 活动开始时间
+            example: '2020-01-20T13:29:35.120+08:00'
+          end_time:
+            type: string
+            format: rfc3339
+            description: 活动结束时间
+            example: '2020-01-29T13:29:35.120+08:00'
+          apply_total:
+            type: integer
+            description: 活动总库存
+            example: 1000
+          product_coupon_stock_list:
+            type: array
+            description: 商品券批次列表
+            items:
+              type: object
+              required:
+                - product_coupon_id
+                - stock_id
+              properties:
+                product_coupon_id:
+                  type: string
+                  description: 商品券ID
+                  example: '701138812971763025610907319729'
+                stock_id:
+                  type: string
+                  description: 批次ID
+                  example: '98065001'
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - out_request_no
+          - brand_id
+          - card_id
+          - activity_channel
+          - title
+          - sub_title
+          - begin_time
+          - end_time
+          - apply_total
+          - apply_available
+          - product_coupon_stock_list
+          - activity_id
+          - activity_state
+          - create_time
+          - modify_time
+        properties:
+          out_request_no:
+            type: string
+            description: 商户请求单号
+            example: 100002322019090134234sfdf
+          brand_id:
+            type: string
+            description: 品牌ID
+            example: '1004'
+          card_id:
+            type: string
+            description: 会员卡ID
+            example: pbLatjvWOibDc5-TBnbUk1pD12o0
+          activity_channel:
+            type: string
+            description: 活动渠道
+            example: MECHANT_APP_COMPONENT
+            enum:
+              - MECHANT_APP_COMPONENT
+          title:
+            type: string
+            description: 活动主标题
+            example: 入会享券
+          sub_title:
+            type: string
+            description: 活动主标题
+            example: 5张满减券
+          begin_time:
+            type: string
+            format: rfc3339
+            description: 活动开始时间
+            example: '2020-01-20T13:29:35.120+08:00'
+          end_time:
+            type: string
+            format: rfc3339
+            description: 活动结束时间
+            example: '2020-01-29T13:29:35.120+08:00'
+          apply_total:
+            type: integer
+            description: 活动总库存
+            example: 1000
+          apply_available:
+            type: integer
+            description: 活动剩余库存
+            example: 1000
+          product_coupon_stock_list:
+            type: array
+            description: 商品券批次列表
+            items:
+              type: object
+              required:
+                - product_coupon_id
+                - stock_id
+              properties:
+                product_coupon_id:
+                  type: string
+                  description: 商品券ID
+                  example: '701138812971763025610907319729'
+                stock_id:
+                  type: string
+                  description: 批次ID
+                  example: '98065001'
+          activity_id:
+            type: string
+            description: 活动ID
+            example: '371067'
+          activity_state:
+            type: string
+            description: 活动状态
+            example: MEMBERSHIP_ACTIVITY_CREATED
+            enum:
+              - MEMBERSHIP_ACTIVITY_CREATED
+              - MEMBERSHIP_ACTIVITY_EFFECTIVE
+              - MEMBERSHIP_ACTIVITY_TERMINATED
+              - MEMBERSHIP_ACTIVITY_EXPIRED
+          create_time:
+            type: string
+            format: rfc3339
+            description: 创建时间
+            example: '2015-05-20T13:29:35.120+08:00'
+          modify_time:
+            type: string
+            format: rfc3339
+            description: 更新时间
+            example: '2015-05-20T13:29:35.120+08:00'
+get:
+  x-last-updated-at: 2025.11.14
+  x-role:
+    - 服务商
+  tags:
+    - 商家名片会员活动
+  summary: 查询品牌会员发券活动列表
+  description: 查询符合条件的品牌会员发券活动列表 接口限频：按服务商商户号维度 5次/秒
+  parameters:
+    - name: brand_id
+      in: query
+      required: true
+      type: string
+      description: 品牌id
+      example: '1004'
+    - name: card_id
+      in: query
+      type: string
+      description: 会员卡模板ID
+      example: pbLatjvWOibDc5-TBnbUk1pD12o0
+    - name: activity_state
+      in: query
+      type: string
+      description: 活动状态
+      example: MEMBERSHIP_ACTIVITY_CREATED
+      enum:
+        - MEMBERSHIP_ACTIVITY_CREATED
+        - MEMBERSHIP_ACTIVITY_EFFECTIVE
+        - MEMBERSHIP_ACTIVITY_TERMINATED
+        - MEMBERSHIP_ACTIVITY_EXPIRED
+    - name: offset
+      in: query
+      required: true
+      type: integer
+      description: 请求资源起始位置
+      example: 10
+    - name: limit
+      in: query
+      required: true
+      type: integer
+      description: 最大资源条数
+      example: 5
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - offset
+          - limit
+          - total_count
+        properties:
+          data:
+            type: array
+            description: 活动列表
+            items:
+              type: object
+              required:
+                - out_request_no
+                - brand_id
+                - card_id
+                - activity_channel
+                - title
+                - sub_title
+                - begin_time
+                - end_time
+                - apply_total
+                - apply_available
+                - product_coupon_stock_list
+                - activity_id
+                - activity_state
+                - create_time
+                - modify_time
+              properties:
+                out_request_no:
+                  type: string
+                  description: 商户请求单号
+                  example: 100002322019090134234sfdf
+                brand_id:
+                  type: string
+                  description: 品牌ID
+                  example: '1004'
+                card_id:
+                  type: string
+                  description: 会员卡ID
+                  example: pbLatjvWOibDc5-TBnbUk1pD12o0
+                activity_channel:
+                  type: string
+                  description: 活动渠道
+                  example: MECHANT_APP_COMPONENT
+                  enum:
+                    - MECHANT_APP_COMPONENT
+                title:
+                  type: string
+                  description: 活动主标题
+                  example: 入会享券
+                sub_title:
+                  type: string
+                  description: 活动主标题
+                  example: 5张满减券
+                begin_time:
+                  type: string
+                  format: rfc3339
+                  description: 活动开始时间
+                  example: '2020-01-20T13:29:35.120+08:00'
+                end_time:
+                  type: string
+                  format: rfc3339
+                  description: 活动结束时间
+                  example: '2020-01-29T13:29:35.120+08:00'
+                apply_total:
+                  type: integer
+                  description: 活动总库存
+                  example: 1000
+                apply_available:
+                  type: integer
+                  description: 活动剩余库存
+                  example: 1000
+                product_coupon_stock_list:
+                  type: array
+                  description: 商品券批次列表
+                  items:
+                    type: object
+                    required:
+                      - product_coupon_id
+                      - stock_id
+                    properties:
+                      product_coupon_id:
+                        type: string
+                        description: 商品券ID
+                        example: '701138812971763025610907319729'
+                      stock_id:
+                        type: string
+                        description: 批次ID
+                        example: '98065001'
+                activity_id:
+                  type: string
+                  description: 活动ID
+                  example: '371067'
+                activity_state:
+                  type: string
+                  description: 活动状态
+                  example: MEMBERSHIP_ACTIVITY_CREATED
+                  enum:
+                    - MEMBERSHIP_ACTIVITY_CREATED
+                    - MEMBERSHIP_ACTIVITY_EFFECTIVE
+                    - MEMBERSHIP_ACTIVITY_TERMINATED
+                    - MEMBERSHIP_ACTIVITY_EXPIRED
+                create_time:
+                  type: string
+                  format: rfc3339
+                  description: 创建时间
+                  example: '2015-05-20T13:29:35.120+08:00'
+                modify_time:
+                  type: string
+                  format: rfc3339
+                  description: 更新时间
+                  example: '2015-05-20T13:29:35.120+08:00'
+          offset:
+            type: integer
+            description: 请求资源起始位置
+            example: 10
+          limit:
+            type: integer
+            description: 最大资源条数
+            example: 5
+          total_count:
+            type: integer
+            description: 资源总条数
+            example: 1234

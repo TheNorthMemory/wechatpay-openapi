@@ -1,0 +1,175 @@
+post:
+  x-last-updated-at: 2025.10.30
+  x-role:
+    - 服务商
+  tags:
+    - 品牌∙交易连接名片
+  summary: 添加交易连接名片规则申请
+  description: 本接口面向服务商（不包括银行、支付机构、电商平台），用于配置交易连接名片规则，配置完成后，用户在相应交易场景支付成功后，点击微信支付公众号向用户下发的支付凭证，将跳转商家名片。交易连接名片规则是判断“哪个支付凭证可跳转商家名片”的依据。
+  parameters:
+    - in: body
+      name: _
+      required: true
+      schema:
+        type: object
+        required:
+          - business_code
+          - brand_id
+          - payment_scene
+        properties:
+          business_code:
+            type: string
+            description: 业务申请编号
+            example: 1900013511_10000
+          brand_id:
+            type: string
+            description: 品牌ID
+            example: '1004'
+          payment_scene:
+            type: string
+            description: 交易场景类型
+            example: MINI_PROGRAM
+            enum:
+              - MINI_PROGRAM
+              - APP
+              - PAYMENT_SCORE
+              - PAYMENT_CODE
+          appid:
+            type: string
+            description: 公众账号ID
+            example: wxea9c30890f48d5ae
+          card_link_mchid:
+            type: string
+            description: 商户号
+            example: '111222333'
+          service_id:
+            type: string
+            description: 服务ID
+            example: '00005000000000548218251086296300'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - business_code
+          - brand_id
+          - payment_scene
+        properties:
+          business_code:
+            type: string
+            description: 业务申请编号
+            example: 1900013511_10000
+          brand_id:
+            type: string
+            description: 品牌ID
+            example: '1004'
+          payment_scene:
+            type: string
+            description: 交易场景类型
+            example: MINI_PROGRAM
+            enum:
+              - MINI_PROGRAM
+              - APP
+              - PAYMENT_SCORE
+              - PAYMENT_CODE
+          appid:
+            type: string
+            description: 公众账号ID
+            example: wxea9c30890f48d5ae
+          card_link_mchid:
+            type: string
+            description: 商户号
+            example: '111222333'
+          service_id:
+            type: string
+            description: 服务ID
+            example: '00005000000000548218251086296300'
+get:
+  x-last-updated-at: 2025.10.30
+  x-role:
+    - 服务商
+  tags:
+    - 品牌∙交易连接名片
+  summary: 查询已生效交易连接名片规则
+  description: 服务商可调用该接口查询品牌下已生效的交易连接名片规则列表。
+  parameters:
+    - name: brand_id
+      in: query
+      required: true
+      type: string
+      description: 品牌ID
+      example: '120344'
+    - name: payment_scene
+      in: query
+      type: string
+      nullable: true
+      description: 交易场景类型
+      example: MINI_PROGRAM
+      enum:
+        - MINI_PROGRAM
+        - APP
+        - PAYMENT_SCORE
+        - PAYMENT_CODE
+    - name: page_index
+      in: query
+      type: integer
+      description: 查询页码
+      example: 1
+    - name: page_size
+      in: query
+      type: integer
+      description: 查询页大小
+      example: 50
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - offset
+          - limit
+          - total_count
+        properties:
+          brand_id:
+            type: string
+            description: 品牌ID
+            example: '1004'
+          page_index:
+            type: integer
+            description: 查询页码
+          page_size:
+            type: integer
+            description: 查询页大小
+          total_num:
+            type: integer
+            description: 总数
+          active_link_list:
+            type: array
+            description: 已生效连接列表
+            items:
+              type: object
+              required:
+                - payment_scene
+              properties:
+                payment_scene:
+                  type: string
+                  description: 交易场景类型
+                  example: MINI_PROGRAM
+                  enum:
+                    - MINI_PROGRAM
+                    - APP
+                    - PAYMENT_SCORE
+                    - PAYMENT_CODE
+                appid_list:
+                  type: array
+                  description: 公众账号ID
+                  items:
+                    type: string
+                    example: wxea9c30890f48d5ae
+                card_link_mchid:
+                  type: string
+                  description: 商户号
+                  example: '111222333'
+                service_id:
+                  type: string
+                  description: 服务ID
+                  example: '00005000000000548218251086296300'

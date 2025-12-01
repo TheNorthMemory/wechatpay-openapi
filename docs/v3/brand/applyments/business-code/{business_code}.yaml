@@ -1,0 +1,63 @@
+get:
+  x-last-updated-at: 2025.10.17
+  x-role:
+    - 服务商
+  tags:
+    - 经营工具∙品牌入驻
+  summary: 根据业务申请编号查询申请状态
+  description: 接口适用场景：当服务商提交申请单后，需要定期调用此接口查询申请单的审核状态。
+  parameters:
+    - name: business_code
+      in: path
+      required: true
+      type: string
+      description: 业务申请编号
+      example: 1900013511_10000
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - applyment_id
+          - business_code
+          - applyment_state
+          - applyment_state_desc
+        properties:
+          applyment_id:
+            type: string
+            description: 微信支付申请单号
+            example: '2000002124775691'
+          business_code:
+            type: string
+            description: 业务申请编号
+            example: 1900013511_10000
+          applyment_state:
+            type: string
+            description: 申请状态
+            example: APPLYMENT_STATE_WAITING_AUTH
+            enum:
+              - APPLYMENT_STATE_UNKNOWN #未知状态，非终态
+              - APPLYMENT_STATE_UNSUBMITTED #申请未提交，非终态
+              - APPLYMENT_STATE_WAITING_VALIDATE #待主体意愿确认，非终态
+              - APPLYMENT_STATE_WAITING_AUDIT #资料审核中，非终态
+              - APPLYMENT_STATE_WAITING_AUTH #待授权确认，非终态
+              - APPLYMENT_STATE_OPEN_ACCOUNT #开号中，非终态
+              - APPLYMENT_STATE_FINISH #入驻完成，终态
+              - APPLYMENT_STATE_AUDIT_REJECTED #审核驳回，非终态
+              - APPLYMENT_STATE_CANCELED #申请撤销，终态
+          applyment_state_desc:
+            type: string
+            description: 申请状态说明
+            example: 待授权确认
+          authorization_confirmation_qr_code:
+            type: string
+            description: 授权确认二维码链接
+            example: https://pay.weixin.qq.com/xdc/partnerapply4brandweb/get-auth-code?applyId=200000212476&sign=b207b673049a32c858f3aabd7d27c7ec
+          reject_reason:
+            type: string
+            description: 驳回原因
+            example: 具体驳回原因xxx
+          brand_id:
+            type: string
+            description: 品牌ID
+            example: '123455667'

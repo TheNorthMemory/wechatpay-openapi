@@ -1,0 +1,39 @@
+post:
+  x-last-updated-at: 2025.10.17
+  x-role:
+    - 服务商
+  tags:
+    - 经营工具∙品牌入驻
+  summary: 撤销申请
+  description: 平台服务商提交申请后需要进行撤销操作时，可调用该撤销申请接口，仅当申请状态为初始化、未提交、待主体意愿确认、审核中、已驳回时才允许撤销。
+  parameters:
+    - in: body
+      name: _
+      required: true
+      schema:
+        type: object
+        properties:
+          applyment_id:
+            type: string
+            description: 微信支付申请单号
+            example: '2000002124775691'
+          business_code:
+            type: string
+            description: 业务申请编号
+            example: 1900013511_10000
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - applyment_id
+          - business_code
+        properties:
+          applyment_id:
+            type: string
+            description: 微信支付申请单号
+            example: '2000002124775691'
+          business_code:
+            type: string
+            description: 业务申请编号
+            example: 1900013511_10000

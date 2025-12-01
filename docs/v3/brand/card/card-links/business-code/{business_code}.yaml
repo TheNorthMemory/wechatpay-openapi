@@ -1,0 +1,74 @@
+get:
+  x-last-updated-at: 2025.10.30
+  x-role:
+    - 服务商
+  tags:
+    - 品牌∙交易连接名片
+  summary: 根据业务申请编号查询添加申请状态
+  description: 接口适用场景：服务商申请添加交易连接名片规则后，可调用此接口查询申请状态。
+  parameters:
+    - name: business_code
+      in: path
+      required: true
+      type: string
+      description: 业务申请编号
+      example: 1900013511_10000
+    - name: brand_id
+      in: query
+      required: true
+      type: string
+      description: 品牌ID
+      example: '120344'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - business_code
+          - brand_id
+          - payment_scene
+          - configuration_state
+        properties:
+          business_code:
+            type: string
+            description: 业务申请编号
+            example: 1900013511_10000
+          brand_id:
+            type: string
+            description: 品牌ID
+            example: '1004'
+          payment_scene:
+            type: string
+            description: 交易场景类型
+            example: MINI_PROGRAM
+            enum:
+              - MINI_PROGRAM
+              - APP
+              - PAYMENT_SCORE
+              - PAYMENT_CODE
+          appid:
+            type: string
+            description: 公众账号ID
+            example: wxea9c30890f48d5ae
+          card_link_mchid:
+            type: string
+            description: 商户号
+            example: '111222333'
+          service_id:
+            type: string
+            description: 服务ID
+            example: '00005000000000548218251086296300'
+          configuration_state:
+            type: string
+            description: 交易连接名片配置状态
+            example: AUDIT_REJECT
+            enum:
+              - WAITING_AUDIT
+              - AUDIT_REJECT
+              - WAITING_CONFIRMATION
+              - MERCHANT_ADMIN_REJECT
+              - IN_EFFECT
+          reject_reason:
+            type: string
+            description: 驳回原因
+            example: 具体驳回原因xxx

@@ -7,7 +7,7 @@ info:
     整理自官方文档中心[普通商户](https://pay.weixin.qq.com/doc/v3/merchant/4012062524) [合作伙伴](https://pay.weixin.qq.com/doc/v3/partner/4012069852) [全球](https://pay.weixin.qq.com/doc/global/v3/zh)
     本[项目/工具地址](https://github.com/TheNorthMemory/wechatpay-openapi)
     **访问第一次加载比较慢，请耐心等待大约1-2分钟不等(小文件下载比较多)。**
-  version: 1.1.11
+  version: 1.1.12
 schemes:
   - https
 consumes:
@@ -513,6 +513,22 @@ paths:
     $ref: ./v3/bill/tradebill.yaml
   /v3/billdownload/file:
     $ref: ./v3/billdownload/file.yaml
+  /v3/brand/applyments:
+    $ref: ./v3/brand/applyments.yaml
+  /v3/brand/applyments/applyment-id/{applyment_id}:
+    $ref: ./v3/brand/applyments/applyment-id/{applyment_id}.yaml
+  /v3/brand/applyments/business-code/{business_code}:
+    $ref: ./v3/brand/applyments/business-code/{business_code}.yaml
+  /v3/brand/applyments/cancel-applyment:
+    $ref: ./v3/brand/applyments/cancel-applyment.yaml
+  /v3/brand/card/card-links:
+    $ref: ./v3/brand/card/card-links.yaml
+  /v3/brand/card/card-links/business-code/{business_code}:
+    $ref: ./v3/brand/card/card-links/business-code/{business_code}.yaml
+  /v3/brand/card/card-links/cancel-applyment:
+    $ref: ./v3/brand/card/card-links/cancel-applyment.yaml
+  /v3/brand/card/card-links/unbind-card-link:
+    $ref: ./v3/brand/card/card-links/unbind-card-link.yaml
   /v3/brand/marketing/shake-activities/activities:
     $ref: ./v3/brand/marketing/shake-activities/activities.yaml
   /v3/brand/partner/card-member/cards:
@@ -521,6 +537,12 @@ paths:
     $ref: ./v3/brand/partner/card-member/cards/{card_id}.yaml
   /v3/brand/partner/card-member/cards/{card_id}/invalidate:
     $ref: ./v3/brand/partner/card-member/cards/{card_id}/invalidate.yaml
+  /v3/brand/partner/card-member/membership-activities:
+    $ref: ./v3/brand/partner/card-member/membership-activities.yaml
+  /v3/brand/partner/card-member/membership-activities/{activity_id}:
+    $ref: ./v3/brand/partner/card-member/membership-activities/{activity_id}.yaml
+  /v3/brand/partner/card-member/membership-activities/{activity_id}/terminate:
+    $ref: ./v3/brand/partner/card-member/membership-activities/{activity_id}/terminate.yaml
   /v3/brand/partner/card-member/pre-auth-tokens:
     $ref: ./v3/brand/partner/card-member/pre-auth-tokens.yaml
   /v3/brand/partner/card-member/user-cards:
@@ -607,6 +629,12 @@ paths:
     $ref: ./v3/compliance/inactive-merchant-identity-verification/merchants.yaml
   /v3/compliance/inactive-merchant-identity-verification/merchants/{sub_mchid}/verifications/{verification_id}:
     $ref: ./v3/compliance/inactive-merchant-identity-verification/merchants/{sub_mchid}/verifications/{verification_id}.yaml
+  /v3/credit-repayment/partner/contracts/{out_contract_code}:
+    $ref: ./v3/credit-repayment/partner/contracts/{out_contract_code}.yaml
+  /v3/credit-repayment/partner/contracts/app-presign:
+    $ref: ./v3/credit-repayment/partner/contracts/app-presign.yaml
+  /v3/credit-repayment/partner/contracts/terminate:
+    $ref: ./v3/credit-repayment/partner/contracts/terminate.yaml
   /v3/discount-card/cards:
     $ref: ./v3/discount-card/cards.yaml
   /v3/discount-card/cards/{out_card_code}:
@@ -639,6 +667,8 @@ paths:
     $ref: ./v3/ecommerce/account/apply-cancel-withdraw/confirm.yaml
   /v3/ecommerce/account/apply-cancel-withdraw/out-request-no/{out_request_no}:
     $ref: ./v3/ecommerce/account/apply-cancel-withdraw/out-request-no/{out_request_no}.yaml
+  /v3/ecommerce/account/apply-cancel-withdraw/validate-cancel/{sub_mchid}:
+    $ref: ./v3/ecommerce/account/apply-cancel-withdraw/validate-cancel/{sub_mchid}.yaml
   /v3/ecommerce/account/cancel-applications:
     $ref: ./v3/ecommerce/account/cancel-applications.yaml
   /v3/ecommerce/account/cancel-applications/media:
@@ -1249,6 +1279,8 @@ paths:
     $ref: ./v3/marketing/partner/product-coupon/users/{openid}/coupons/{coupon_code}/return.yaml
   /v3/marketing/partner/product-coupon/users/{openid}/coupons/{coupon_code}/use:
     $ref: ./v3/marketing/partner/product-coupon/users/{openid}/coupons/{coupon_code}/use.yaml
+  /v3/marketing/partner/product-coupon/users/{openid}/pre-send-coupon:
+    $ref: ./v3/marketing/partner/product-coupon/users/{openid}/pre-send-coupon.yaml
   /v3/marketing/partnerships:
     $ref: ./v3/marketing/partnerships.yaml
   /v3/marketing/partnerships/build:

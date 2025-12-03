@@ -7,6 +7,7 @@ use GuzzleHttp\Promise\PromiseInterface;
 
 /**
  * @property-read _product_coupon_id_\Stocks $stocks
+ * @property-read _product_coupon_id_\StockBundles $stockBundles
  * @property-read _product_coupon_id_\Deactivate $deactivate
  */
 interface _product_coupon_id_

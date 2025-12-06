@@ -23,6 +23,7 @@ interface Orders
             'appid' => 'wx8888888888888888',
             'sub_appid' => 'wxd678efh567hg6999',
             'sub_mchid' => '1900000109',
+            'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
             'sub_openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
             'payer' => [
                 'name' => '',
@@ -38,6 +39,7 @@ interface Orders
             'out_trade_no' => '202204022005169952975171534816',
             'serial_no' => '1217752501201',
             'pay_order_id' => 'ORD530100202204022006350000021',
+            'pay_auth_no' => 'AUTH530100202204022006310000034',
             'geo_location' => '102.682296,25.054260',
             'city_id' => '530100',
             'med_inst_name' => '北大医院',
@@ -86,6 +88,7 @@ interface Orders
             'appid' => 'wx8888888888888888',
             'sub_appid' => 'wxd678efh567hg6999',
             'sub_mchid' => '1900000109',
+            'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
             'sub_openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
             'payer' => [
                 'name' => '',
@@ -101,6 +104,7 @@ interface Orders
             'out_trade_no' => '202204022005169952975171534816',
             'serial_no' => '1217752501201',
             'pay_order_id' => 'ORD530100202204022006350000021',
+            'pay_auth_no' => 'AUTH530100202204022006310000034',
             'geo_location' => '102.682296,25.054260',
             'city_id' => '530100',
             'med_inst_name' => '北大医院',

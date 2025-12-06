@@ -10,7 +10,7 @@ use GuzzleHttp\Promise\PromiseInterface;
 interface _out_trade_no_
 {
     /**
-     * 使用从业机构订单号查看下单结果(同步模式)
+     * 使用商户订单号查看下单结果(同步模式)
      * @param array<string,mixed> $options
      * @link https://wechatpay.im/openapi/v3/med-ins/orders/out-trade-no/%7Bout_trade_no%7D
      */
@@ -22,7 +22,7 @@ interface _out_trade_no_
     ]): ResponseInterface;
 
     /**
-     * 使用从业机构订单号查看下单结果(异步模式)
+     * 使用商户订单号查看下单结果(异步模式)
      * @param array<string,mixed> $options
      * @link https://wechatpay.im/openapi/v3/med-ins/orders/out-trade-no/%7Bout_trade_no%7D
      */

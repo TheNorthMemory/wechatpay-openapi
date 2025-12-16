@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);/* Generated file. DO NOT EDIT! */
 
-namespace WeChatPay\OpenAPI\V2\Mmpaymkttransfers;
+namespace WeChatPay\OpenAPI\V2\Mmpaysptrans;
 
 use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Promise\PromiseInterface;
@@ -12,7 +12,7 @@ interface Query_bank
     /**
      * 查询企业付款银行卡(同步模式)
      * @param array<string,mixed> $options
-     * @link https://wechatpay.im/openapi/v2/mmpaymkttransfers/query_bank
+     * @link https://wechatpay.im/openapi/v2/mmpaysptrans/query_bank
      */
     public function post(array $options = [
         'xml' => [
@@ -25,7 +25,7 @@ interface Query_bank
     /**
      * 查询企业付款银行卡(异步模式)
      * @param array<string,mixed> $options
-     * @link https://wechatpay.im/openapi/v2/mmpaymkttransfers/query_bank
+     * @link https://wechatpay.im/openapi/v2/mmpaysptrans/query_bank
      */
     public function postAsync(array $options = [
         'xml' => [

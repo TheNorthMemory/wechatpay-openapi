@@ -6,7 +6,6 @@ namespace WeChatPay\OpenAPI\V2;
  * @property-read Mmpaymkttransfers\Promotion $promotion
  * @property-read Mmpaymkttransfers\Gethbinfo $gethbinfo
  * @property-read Mmpaymkttransfers\Gettransferinfo $gettransferinfo
- * @property-read Mmpaymkttransfers\Query_bank $query_bank
  * @property-read Mmpaymkttransfers\Query_coupon_stock $query_coupon_stock
  * @property-read Mmpaymkttransfers\Querycouponsinfo $querycouponsinfo
  * @property-read Mmpaymkttransfers\Queryworkwxredpack $queryworkwxredpack

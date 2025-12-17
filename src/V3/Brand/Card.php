@@ -4,6 +4,7 @@ namespace WeChatPay\OpenAPI\V3\Brand;
 
 /**
  * @property-read Card\CardLinks $cardLinks
+ * @property-read Card\CardConfigs $cardConfigs
  */
 interface Card
 {

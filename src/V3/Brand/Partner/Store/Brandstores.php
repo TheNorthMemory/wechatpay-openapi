@@ -61,4 +61,32 @@ interface Brandstores
             ],
         ],
     ]): PromiseInterface;
+
+    /**
+     * 列表查询品牌门店信息(同步模式)
+     * @param array<string,mixed> $options
+     * @link https://wechatpay.im/openapi/v3/brand/partner/store/brandstores#get
+     */
+    public function get(array $options = [
+        'query' => [
+            'brand_id' => '120344',
+            'store_state' => 'OPEN',
+            'offset' => 100,
+            'limit' => 50,
+        ],
+    ]): ResponseInterface;
+
+    /**
+     * 列表查询品牌门店信息(异步模式)
+     * @param array<string,mixed> $options
+     * @link https://wechatpay.im/openapi/v3/brand/partner/store/brandstores#get
+     */
+    public function getAsync(array $options = [
+        'query' => [
+            'brand_id' => '120344',
+            'store_state' => 'OPEN',
+            'offset' => 100,
+            'limit' => 50,
+        ],
+    ]): PromiseInterface;
 }

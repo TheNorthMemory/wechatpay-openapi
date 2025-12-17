@@ -7,6 +7,8 @@ use GuzzleHttp\Promise\PromiseInterface;
 
 /**
  * @property-read _store_id_\Bindrecipient $bindrecipient
+ * @property-read _store_id_\Close $close
+ * @property-read _store_id_\Resume $resume
  * @property-read _store_id_\Unbindrecipient $unbindrecipient
  */
 interface _store_id_

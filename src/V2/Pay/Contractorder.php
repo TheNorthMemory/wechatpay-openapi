@@ -18,6 +18,8 @@ interface Contractorder
         'xml' => [
             'appid' => 'wxcbda96de0b165486',
             'mch_id' => '1200009811',
+            'sub_mch_id' => '1900000100',
+            'sub_appid' => 'wx8888888888888888',
             'contract_mchid' => '1200009811',
             'contract_appid' => 'wxcbda96de0b165486',
             'out_trade_no' => '123456',
@@ -35,6 +37,7 @@ interface Contractorder
             'product_id' => '12235413214070356458058',
             'limit_pay' => 'no_credit',
             'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
+            'sub_openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
             'plan_id' => '123',
             'contract_code' => '100001256',
             'request_serial' => '1695',
@@ -52,6 +55,8 @@ interface Contractorder
         'xml' => [
             'appid' => 'wxcbda96de0b165486',
             'mch_id' => '1200009811',
+            'sub_mch_id' => '1900000100',
+            'sub_appid' => 'wx8888888888888888',
             'contract_mchid' => '1200009811',
             'contract_appid' => 'wxcbda96de0b165486',
             'out_trade_no' => '123456',
@@ -69,6 +74,7 @@ interface Contractorder
             'product_id' => '12235413214070356458058',
             'limit_pay' => 'no_credit',
             'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
+            'sub_openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
             'plan_id' => '123',
             'contract_code' => '100001256',
             'request_serial' => '1695',

@@ -5,6 +5,7 @@ namespace WeChatPay\OpenAPI\V3\Marketing\Partner\ProductCoupon\Users;
 /**
  * @property-read _openid_\Coupons $coupons
  * @property-read _openid_\CouponBundles $couponBundles
+ * @property-read _openid_\PreSendCouponBundle $preSendCouponBundle
  * @property-read _openid_\PreSendCoupon $preSendCoupon
  */
 interface _openid_

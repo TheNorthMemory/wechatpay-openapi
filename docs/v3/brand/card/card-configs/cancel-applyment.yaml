@@ -1,0 +1,63 @@
+post:
+  x-last-updated-at: 2025.11.13
+  x-role:
+    - 服务商
+  tags:
+    - 品牌∙商家名片配置
+  summary: 撤销商家名片配置申请
+  description: 平台服务商可调用本接口撤销处于非发布状态的配置申请。
+  parameters:
+    - in: body
+      name: _
+      required: true
+      schema:
+        type: object
+        required:
+          - brand_id
+        properties:
+          business_code:
+            type: string
+            description: 业务申请编号
+            example: 1900013511_10000
+          applyment_id:
+            type: string
+            description: 微信支付申请单号
+            example: '1111111111'
+          brand_id:
+            type: string
+            description: 品牌ID
+            example: '1004'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - business_code
+          - applyment_id
+          - brand_id
+          - applyment_state
+        properties:
+          business_code:
+            type: string
+            description: 业务申请编号
+            example: 1900013511_10000
+          applyment_id:
+            type: string
+            description: 微信支付申请单号
+            example: '1111111111'
+          brand_id:
+            type: string
+            description: 品牌ID
+            example: '1004'
+          applyment_state:
+            type: string
+            description: 申请单状态
+            example: CANCELED
+            enum:
+              - STATE_UNKNOWN #状态未知，非终态
+              - DRAFTING #配置中，非终态
+              - AUDITING #审核中，非终态
+              - AUDIT_REJECTED #审核驳回，终态
+              - PENDING_PUBLISH #待发布，非终态
+              - PUBLISHED #已发布，终态
+              - CANCELED #已撤销，终态

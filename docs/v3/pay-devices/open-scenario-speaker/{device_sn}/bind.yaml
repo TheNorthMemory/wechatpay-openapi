@@ -1,0 +1,61 @@
+post:
+  x-last-updated-at: 2025.11.21
+  x-role:
+    - 服务商
+  tags:
+    - 支付码牌∙音箱
+  summary: 绑定音箱设备码牌
+  description: 通过该接口登记以下信息：服务商商户号、设备sn、码牌上的url链接、收款商户号
+  parameters:
+    - name: device_sn
+      in: path
+      required: true
+      type: string
+      description: 设备sn
+      example: ABCDEF
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - sub_mchid
+          - code_url
+        properties:
+          sub_mchid:
+            type: string
+            description: 子商户
+            example: '1900000001'
+          code_url:
+            type: string
+            description: 收款链接url
+            example: URl:weixin://wxpay/s/An4baqw
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - sub_mchid
+          - device_sn
+          - bind_state
+          - code_url
+        properties:
+          sub_mchid:
+            type: string
+            description: 子商户
+            example: '1900000001'
+          device_sn:
+            type: string
+            description: 设备sn
+            example: example_device_sn
+          bind_state:
+            type: string
+            description: 绑定状态
+            example: OPEN_SCENARIO_SPEAKER_BIND_STATE_UNBOND
+            enum:
+              - OPEN_SCENARIO_SPEAKER_BIND_STATE_UNBOND
+              - OPEN_SCENARIO_SPEAKER_BIND_STATE_BINDED
+          code_url:
+            type: string
+            description: 收款链接url
+            example: URl:weixin://wxpay/s/An4baqw

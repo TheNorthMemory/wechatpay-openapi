@@ -1,0 +1,109 @@
+post:
+  x-last-updated-at: 2025.12.05
+  x-role:
+    - 服务商
+  tags:
+    - 自动还款
+  summary: 发起还款
+  description: 商户在发起还款之前，需要先调用预约还款接口；只有成功预约还款之后才能发起还款
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - contract_id
+          - out_trade_no
+          - out_record_id
+          - deduct_amount
+          - notify_url
+        properties:
+          contract_id:
+            type: string
+            description: 还款协议ID
+            example: '20251105000000123456789'
+          out_trade_no:
+            type: string
+            description: 商户侧交易单号
+            example: '1217752501201407033233368018'
+          out_record_id:
+            type: string
+            description: 商户侧预约还款单号
+            example: 1234567abcde
+          deduct_amount:
+            type: string
+            description: 还款金额
+            example: '10000'
+          notify_url:
+            type: string
+            description: 商户回调地址
+            example: wxd678efh567hg6787
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - out_trade_no
+          - out_record_id
+          - appid
+          - sub_appid
+          - openid
+          - contract_id
+          - order_state
+          - deduct_amount
+          - description
+        properties:
+          out_trade_no:
+            type: string
+            description: 商户侧交易单号
+            example: '1217752501201407033233368018'
+          out_record_id:
+            type: string
+            description: 商户侧预约还款单号
+            example: 123456abcde
+          appid:
+            type: string
+            description: 商户AppID
+            example: wxcbda96de0b165486
+          sub_appid:
+            type: string
+            description: 子商户AppID
+            example: wxcbda96de0b165489
+          openid:
+            type: string
+            description: 用户标识
+            example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+          contract_id:
+            type: string
+            description: 还款协议ID
+            example: '20251105000000123456789'
+          order_state:
+            type: string
+            description: 还款单状态
+            example: DEDUCT_ORDER_STATE_PENDING
+            enum:
+              - DEDUCT_ORDER_STATE_PENDING #待处理
+              - DEDUCT_ORDER_STATE_NOT_PAY #待还款
+              - DEDUCT_ORDER_STATE_PAY_SUCCESS #还款成功
+              - DEDUCT_ORDER_STATE_PAY_FAIL #还款失败
+          deduct_amount:
+            type: string
+            description: 还款金额
+            example: '10000'
+          pay_success_amount:
+            type: string
+            description: 实际还款金额
+            example: '10000'
+          description:
+            type: string
+            description: 产品描述
+            example: 信贷还款
+          attach:
+            type: string
+            description: 商户数据包
+            example: 备注
+          transaction_id:
+            type: string
+            description: 微信支付的支付单号
+            example: '1009660380201506130728806387'

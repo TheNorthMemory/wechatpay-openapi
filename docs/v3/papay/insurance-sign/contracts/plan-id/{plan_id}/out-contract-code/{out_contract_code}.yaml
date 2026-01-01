@@ -1,11 +1,11 @@
 get:
-  x-last-updated-at: 2024.11.12
+  x-last-updated-at: 2025.11.28
   x-role:
     - 普通商户
   tags:
     - 委托代扣∙保险业
-  summary: 保险商户查询保险自动续费协议API
-  description: 商户可通过本接口查询已经签订的保险自动续费协议。 前置条件：用户签约成功，商户已经成功获取过保险保险自动续费协议。[官方文档](https://pay.weixin.qq.com/docs/merchant/apis/insurance-entrusted-payment/operate-contract/get-contract-by-code.html)
+  summary: 保险商户查询保险自动续费协议
+  description: 商户可通过本接口查询已经签订的保险自动续费协议。 前置条件：用户签约成功，商户已经成功获取过保险保险自动续费协议。
   parameters:
     - name: out_contract_code
       in: path
@@ -60,6 +60,12 @@ get:
             type: string
             description: 委托代扣协议状态
             example: SIGNED
+            enum:
+              - SIGNED
+              - TERMINATED
+              - SIGN_FAILED
+              - TO_BE_RENEWED
+              - TERMINATE_PENDING
           contract_signed_time:
             type: string
             format: rfc3339
@@ -81,6 +87,12 @@ get:
                 type: string
                 description: 协议解约方式
                 example: USER_TERMINATE
+                enum:
+                  - USER_TERMINATE
+                  - MCH_API_TERMINATE
+                  - WEPAY_WEB_TERMINATE
+                  - CUSTOMER_SERVICE_TERMINATE
+                  - SYSTEM_TERMINATE
               contract_terminated_time:
                 type: string
                 format: rfc3339
@@ -98,3 +110,11 @@ get:
             type: string
             description: 商户侧用户标识
             example: 用户A
+          revoke_terminate_contract_redirect_url:
+            type: string
+            description: 跳转撤销解约小程序的路径
+            example: pages/PwdExemptContract/index
+          revoke_terminate_contract_redirect_appid:
+            type: string
+            description: 跳转撤销解约小程序的appid
+            example: wxbd687630cd02ce1d

@@ -1,11 +1,11 @@
 post:
-  x-last-updated-at: 2025.09.19
+  x-last-updated-at: 2025.12.05
   x-role:
     - 服务商
   tags:
     - 自动还款
-  summary: APP预签约自动还款协议
-  description: APP预签约
+  summary: H5预签约自动还款协议
+  description: 服务商调用本接口预先指定签约信息，进行预签约。在完成预签约后，服务商会得到对应的预签约码（presign_token）。服务商H5再携带预签约码参数拉起微信客户端的签约页面，让用户完成签约。签约完成后，将返回服务商H5。若用户同意本次流程，则微信支付会通过服务商指定的回调地址通知签约结果；若用户未同意或者流程执行失败，则不通知签约结果。在发起签约后，服务商签约协议号不能再重复使用，包括签约失败的协议、签约成功后解约的协议及签约成功生效中的协议。服务商可通过查询协议接口确认服务商签约协议号是否已经使用。注意：服务商获取到的预签约码有效期为10分钟。10分钟后，预签约码失效。此时，如果再携带预签约ID跳转到微信客户端进行签约，则将报错。
   parameters:
     - $ref: '../../../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
     - name: _
@@ -111,18 +111,22 @@ post:
                 type: string
                 description: 商户回调地址
                 example: https://www.test.com
+          jump_info:
+            type: object
+            description: 跳转控制信息
+            properties:
+              jump_appid:
+                type: string
+                description: 签约完后要跳转到的应用AppID
+                example: example_jump_appid
   responses:
     '200':
       schema:
         type: object
         required:
-          - presign_token
+          - redirect_url
         properties:
-          presign_token:
+          redirect_url:
             type: string
-            description: 预签约码
-            example: example_presign_token
-          redirect_service:
-            type: string
-            description: 跳转到的签约服务提供方
-            example: example_redirect_service
+            description: 拉起微信支付签约页的URL
+            example: https://payapp.weixin.qq.com/xxx?presign_token=wx12334

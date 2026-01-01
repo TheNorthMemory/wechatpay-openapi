@@ -1,11 +1,11 @@
 post:
-  x-last-updated-at: 2024.11.12
+  x-last-updated-at: 2025.11.18
   x-role:
     - 普通商户
   tags:
     - 委托代扣∙保险业
-  summary: 保险商户通过商户协议号解除保险自动续费协议API
-  description: 通过商户协议号解约协议, 商户可以通过该接口发起签约协议的解约。 前置条件 对应的签约协议是已生效状态的签约协议。[官方文档](https://pay.weixin.qq.com/docs/merchant/apis/insurance-entrusted-payment/operate-contract/terminate-contract-by-code.html)
+  summary: 保险商户通过商户协议号解除保险自动续费协议
+  description: 通过商户协议号解约协议, 商户可以通过该接口发起签约协议的解约。 前置条件 对应的签约协议是已生效状态的签约协议。
   parameters:
     - name: plan_id
       in: path
@@ -72,6 +72,12 @@ post:
             type: string
             description: 委托代扣协议状态
             example: SIGNED
+            enum:
+              - SIGNED
+              - TERMINATED
+              - SIGN_FAILED
+              - TO_BE_RENEWED
+              - TERMINATE_PENDING
           contract_signed_time:
             type: string
             format: rfc3339
@@ -93,6 +99,12 @@ post:
                 type: string
                 description: 协议解约方式
                 example: USER_TERMINATE
+                enum:
+                  - USER_TERMINATE
+                  - MCH_API_TERMINATE
+                  - WEPAY_WEB_TERMINATE
+                  - CUSTOMER_SERVICE_TERMINATE
+                  - SYSTEM_TERMINATE
               contract_terminated_time:
                 type: string
                 format: rfc3339

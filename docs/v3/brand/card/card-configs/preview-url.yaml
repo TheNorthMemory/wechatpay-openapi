@@ -1,0 +1,57 @@
+get:
+  x-last-updated-at: 2025.11.20
+  x-role:
+    - 服务商
+  tags:
+    - 品牌∙商家名片配置
+  summary: 获取商家名片预览二维码
+  description: 本接口用于在商家名片配置申请提交后、正式发布提交前，当预览二维码链接失效时，由平台服务商重新获取有效的预览链接，以便商家验证各跳转路径是否符合业务预期。
+  parameters:
+    - name: business_code
+      in: query
+      type: string
+      description: 业务申请编号
+      example: 1900013511_10000
+    - name: applyment_id
+      in: query
+      type: string
+      description: 微信支付申请单号
+      example: '1111111111'
+    - name: brand_id
+      in: query
+      required: true
+      type: string
+      description: 品牌ID
+      example: '120344'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - business_code
+          - applyment_id
+          - brand_id
+          - card_preview_url
+          - url_expired_time
+        properties:
+          business_code:
+            type: string
+            description: 业务申请编号
+            example: 1900013511_10000
+          applyment_id:
+            type: string
+            description: 微信支付申请单号
+            example: '1111111111'
+          brand_id:
+            type: string
+            description: 品牌ID
+            example: '1004'
+          card_preview_url:
+            type: string
+            description: 商家名片预览二维码链接
+            example: 'https://pay.weixin.qq.com/xdc/mchcardinfomgrweb/miniapp?link_id=12345'
+          url_expired_time:
+            type: string
+            format: rfc3339
+            description: 预览二维码链接过期时间
+            example: '2025-05-20T13:29:35+08:00'

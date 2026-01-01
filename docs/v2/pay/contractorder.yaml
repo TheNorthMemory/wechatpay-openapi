@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2025.09.24
+  x-last-updated-at: 2025.11.18
   tags:
     - APIv2∙委托扣款
   summary: 支付中签约
@@ -44,6 +44,16 @@ post:
             type: string
             description: 商户号
             example: '1200009811'
+            maxLength: 32
+          sub_mch_id:
+            type: string
+            description: 子商户号
+            example: '1900000100'
+            maxLength: 32
+          sub_appid:
+            type: string
+            description: 子商户公众账号ID
+            example: wx8888888888888888
             maxLength: 32
           contract_mchid:
             type: string
@@ -146,6 +156,12 @@ post:
           openid:
             type: string
             description: 用户标识
+            example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+            maxLength: 128
+            nullable: true
+          sub_openid:
+            type: string
+            description: 用户子标识
             example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
             maxLength: 128
             nullable: true
@@ -266,6 +282,16 @@ post:
             description: 预签约错误描述
             example: 已签约
             nullable: true
+          sub_mch_id:
+            type: string
+            description: 子商户号
+            example: '1900000100'
+            maxLength: 32
+          sub_appid:
+            type: string
+            description: 子商户公众账号ID
+            example: wx8888888888888888
+            maxLength: 32
           prepay_id:
             type: string
             description: 预支付交易会话标识

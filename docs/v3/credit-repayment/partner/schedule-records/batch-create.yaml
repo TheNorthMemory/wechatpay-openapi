@@ -1,0 +1,138 @@
+post:
+  x-last-updated-at: 2025.12.05
+  x-role:
+    - 服务商
+  tags:
+    - 自动还款
+  summary: 预约还款
+  description: 商户在发起还款前，需要调用该接口进行预约还款
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - contract_id
+          - appid
+          - openid
+          - schedule_items
+        properties:
+          contract_id:
+            type: string
+            description: 还款协议ID
+            example: '20251105000000123456789'
+          appid:
+            type: string
+            description: 商户AppID
+            example: wxd678efh567hg6787
+          openid:
+            type: string
+            description: 用户标识
+            example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+          schedule_items:
+            type: array
+            description: 预约还款项列表
+            items:
+              type: object
+              required:
+                - out_record_id
+                - sub_mchid
+                - sub_appid
+                - repayment_amount
+                - min_repayment_amount
+                - repayment_date
+                - description
+              properties:
+                out_record_id:
+                  type: string
+                  description: 商户侧预约还款单号
+                  example: 1234567abcde
+                sub_mchid:
+                  type: string
+                  description: 子商户号
+                  example: '1900000109'
+                sub_appid:
+                  type: string
+                  description: 子商户AppID
+                  example: wxcbda96de0b165489
+                repayment_amount:
+                  type: string
+                  description: 应还款金额
+                  example: '10000'
+                min_repayment_amount:
+                  type: string
+                  description: 最低还款金额
+                  example: '2000'
+                repayment_date:
+                  type: string
+                  description: 还款日期
+                  example: '2025-11-18'
+                description:
+                  type: string
+                  description: 产品描述
+                  example: 信贷还款
+                attach:
+                  type: string
+                  description: 商户数据包
+                  example: 备注信息
+  responses:
+    '200':
+      schema:
+        type: object
+        properties:
+          schedule_records:
+            type: array
+            description: 预约还款记录列表
+            items:
+              type: object
+              required:
+                - out_record_id
+                - appid
+                - sub_appid
+                - repayment_amount
+                - min_repayment_amount
+                - repayment_date
+                - description
+                - openid
+              properties:
+                out_record_id:
+                  type: string
+                  description: 商户侧预约还款单号
+                  example: 1234567abcde
+                appid:
+                  type: string
+                  description: 商户AppID
+                  example: wxd678efh567hg6787
+                sub_appid:
+                  type: string
+                  description: 子商户AppID
+                  example: wxcbda96de0b165489
+                contract_id:
+                  type: string
+                  description: 还款协议ID
+                  example: '20251105000000123456789'
+                repayment_amount:
+                  type: string
+                  description: 应还款金额
+                  example: '10000'
+                min_repayment_amount:
+                  type: string
+                  description: 最低还款金额
+                  example: '2000'
+                repayment_date:
+                  type: string
+                  description: 还款日期
+                  example: '2025-11-18'
+                description:
+                  type: string
+                  description: 产品描述
+                  example: 信贷还款
+                attach:
+                  type: string
+                  description: 商户数据包
+                  example: 备注信息
+                openid:
+                  type: string
+                  description: 用户标识
+                  example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o

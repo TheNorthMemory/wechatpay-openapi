@@ -1,0 +1,41 @@
+post:
+  x-last-updated-at: 2025.11.21
+  x-role:
+    - 服务商
+  tags:
+    - 支付码牌∙交易
+  summary: 支付码牌/点餐码牌交易回传
+  description: 支付码牌/点餐码牌交易回传
+  parameters:
+    - name: transaction_id
+      in: path
+      required: true
+      type: string
+      description: 商户提现单号
+      example: '20190611222222222200000000012122'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - sub_mchid
+          - code_url
+          - out_trade_no
+          - device_sn
+        properties:
+          sub_mchid:
+            type: string
+            description: 子商户
+            example: '1900000001'
+          code_url:
+            type: string
+            description: 收款链接url
+            example: URl:weixin://wxpay/s/An4baqw
+          out_trade_no:
+            type: string
+            description: 商户订单号
+            example: example_out_trade_no
+  responses:
+    '204':
+      schema: {}

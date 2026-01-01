@@ -1,11 +1,12 @@
 get:
-  x-last-updated-at: 2024.12.05
+  x-last-updated-at: 2025.12.04
   x-role:
+    - 普通商户
     - 从业机构（银行）
   tags:
     - 医保支付
-  summary: 使用从业机构订单号查看下单结果
-  description: 从业机构使用从业机构订单号、医疗机构商户号，通过该接口主动查询订单状态，完成下一步的业务逻辑。当下单没有返回信息时，可以通过此接口查询下单结果，如果查询返回订单不存在，则可以重试下单。
+  summary: 使用商户订单号查看下单结果
+  description: 商户使用商户订单号，通过该接口主动查询订单状态，完成下一步的业务逻辑。当下单没有返回信息时，可以通过此接口查询下单结果，如果查询返回订单不存在，则可以重试下单。
   parameters:
     - name: out_trade_no
       in: path
@@ -16,7 +17,6 @@ get:
     - name: sub_mchid
       in: query
       type: string
-      required: true
       description: 医疗机构的商户号
       example: '1900000109'
   responses:
@@ -31,9 +31,6 @@ get:
           - mix_pay_type
           - order_type
           - appid
-          - sub_appid
-          - sub_mchid
-          - sub_openid
           - out_trade_no
           - serial_no
           - city_id
@@ -137,6 +134,10 @@ get:
             type: string
             description: 医疗机构的商户号
             example: '1900000109'
+          openid:
+            type: string
+            description: 用户在appid下的唯一标识
+            example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
           sub_openid:
             type: string
             description: 用户在医疗机构AppID下的唯一标识

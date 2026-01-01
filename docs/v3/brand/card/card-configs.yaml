@@ -1,0 +1,199 @@
+post:
+  x-last-updated-at: 2025.11.13
+  x-role:
+    - 服务商
+  tags:
+    - 品牌∙商家名片配置
+  summary: 提交商家名片配置申请
+  description: 本接口面向服务商（不包括银行、支付机构、电商平台），用于提交商家名片配置申请，支持配置商家服务列表（用户可点击跳转至小程序或网页）和多渠道客服信息（包括自研客服、客服电话等），配置提交后返回名片预览二维码链接供商家验证跳转路径是否符合预期。
+  parameters:
+    - in: body
+      name: _
+      required: true
+      schema:
+        type: object
+        required:
+          - business_code
+          - brand_id
+          - brand_customer_service
+        properties:
+          business_code:
+            type: string
+            description: 业务申请编号
+            example: 1900013511_10000
+          brand_id:
+            type: string
+            description: 品牌ID
+            example: '1004'
+          brand_mini_program_info:
+            type: object
+            description: 品牌小程序信息
+            required:
+              - appid
+            properties:
+              appid:
+                type: string
+                description: 公众账号ID
+                example: wx1234567890abcdef
+              default_jump_path:
+                type: string
+                description: 小程序默认跳转路径
+                example: pages/shop/index
+          brand_customer_service:
+            type: object
+            description: 品牌客服信息
+            required:
+              - customer_service_type
+            properties:
+              customer_service_type:
+                type: string
+                description: 客服类型
+                example: MINI_PROGRAM
+                enum:
+                  - MINI_PROGRAM
+                  - CUSTOMIZE_WEB
+                  - CUSTOMIZE_MP
+                  - SERVICE_PHONE
+              customer_service_phone:
+                type: string
+                description: 客服电话
+                example: '12345678900'
+              customer_service_path:
+                type: string
+                description: 客服路径
+                example: pages/service/index
+              appid:
+                type: string
+                description: 公众账号ID
+                example: wx1234567890abcdef
+          service_list:
+            type: array
+            description: 服务列表
+            items:
+              type: object
+              required:
+                - service_jump_type
+                - service_jump_path
+              properties:
+                service_classify_name:
+                  type: string
+                  description: 服务分类名称
+                  example: 会员服务
+                service_name:
+                  type: string
+                  description: 服务名称
+                  example: 会员中心
+                service_jump_type:
+                  type: string
+                  description: 服务跳转类型
+                  example: JUMP_MINI_PROGRAM
+                  enum:
+                    - JUMP_MINI_PROGRAM
+                    - JUMP_WEB_PAGE
+                service_jump_path:
+                  type: string
+                  description: 服务跳转路径
+                  example: pages/shop/index
+                appid:
+                  type: string
+                  description: 公众账号ID
+                  example: wx1234567890abcdef
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - business_code
+          - brand_id
+          - applyment_id
+          - card_preview_url
+        properties:
+          business_code:
+            type: string
+            description: 业务申请编号
+            example: 1900013511_10000
+          brand_id:
+            type: string
+            description: 品牌ID
+            example: '1004'
+          applyment_id:
+            type: string
+            description: 微信支付申请单号
+            example: '1111111111'
+          card_preview_url:
+            type: string
+            description: 商家名片预览二维码链接
+            example: 'https://pay.weixin.qq.com/xdc/mchcardinfomgrweb/miniapp?link_id=12345'
+get:
+  x-last-updated-at: 2025.11.13
+  x-role:
+    - 服务商
+  tags:
+    - 品牌∙商家名片配置
+  summary: 查询商家名片配置申请状态
+  description: 接口适用场景：服务商提交配置商家名片配置申请后，可调用此接口查询申请状态。
+  parameters:
+    - name: business_code
+      in: query
+      type: string
+      description: 业务申请编号
+      example: 1900013511_10000
+    - name: applyment_id
+      in: query
+      type: string
+      description: 微信支付申请单号
+      example: '1111111111'
+    - name: brand_id
+      in: query
+      required: true
+      type: string
+      description: 品牌ID
+      example: '120344'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - business_code
+          - applyment_id
+          - brand_id
+          - applyment_state
+        properties:
+          business_code:
+            type: string
+            description: 业务申请编号
+            example: 1900013511_10000
+          applyment_id:
+            type: string
+            description: 微信支付申请单号
+            example: '1111111111'
+          brand_id:
+            type: string
+            description: 品牌ID
+            example: '1004'
+          applyment_state:
+            type: string
+            description: 申请单状态
+            example: AUDIT_REJECTED
+            enum:
+              - STATE_UNKNOWN #状态未知，非终态
+              - DRAFTING #配置中，非终态
+              - AUDITING #审核中，非终态
+              - AUDIT_REJECTED #审核驳回，终态
+              - PENDING_PUBLISH #待发布，非终态
+              - PUBLISHED #已发布，终态
+              - CANCELED #已撤销，终态
+          scheduled_publish_time:
+            type: string
+            format: rfc3339
+            description: 定时发布时间
+            example: '2025-05-20T13:29:35+08:00'
+          reject_reason:
+            type: string
+            description: 驳回原因
+            example: 驳回原因xxx
+          actual_publish_time:
+            type: string
+            format: rfc3339
+            description: 实际发布时间
+            example: '2025-05-20T13:29:35+08:00'

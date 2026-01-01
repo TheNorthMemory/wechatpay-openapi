@@ -1,0 +1,149 @@
+post:
+  x-last-updated-at: 2024.12.19
+  x-role:
+    - 电商平台
+    - 服务商
+  tags:
+    - 收付通∙提现
+  summary: 二级商户按日终余额预约提现
+  description: 二级商户按日终余额预约提现API帮助二级商户发起基本户提现。提现金额按前一天日终余额计算，当前余额少于前一天日终余额时退化为按当前余额计算（请求参数需额外设置该选项）。预计当日到账，具体以实际银行处理为准。
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - sub_mchid
+          - out_request_no
+          - calculate_amount_type
+        properties:
+          sub_mchid:
+            type: string
+            description: 特约商户号
+            example: '1900000109'
+          out_request_no:
+            type: string
+            description: 商户提现单号
+            example: '20190611222222222200000000012122'
+          calculate_amount_type:
+            type: string
+            description: 计算提现金额方式
+            example: ONLY_DAY_END_BALANCE
+            enum:
+              - ONLY_DAY_END_BALANCE
+              - ALLOW_CURRENT_BALANCE
+          remark:
+            type: string
+            description: 提现备注
+            example: 交易提现
+          bank_memo:
+            type: string
+            description: 银行附言
+            example: 微信支付提现
+          notify_url:
+            type: string
+            description: 提现结果通知地址
+            example: https://yourapp.com/notify
+          reserve_amount:
+            type: integer
+            description: 留存额
+            example: 100
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - sp_mchid
+          - sub_mchid
+          - status
+          - withdraw_id
+          - out_request_no
+          - total_amount
+          - create_time
+          - update_time
+          - account_type
+          - account_number
+          - account_bank
+        properties:
+          sp_mchid:
+            type: string
+            description: 收付通平台商户号
+            example: '222212131'
+          sub_mchid:
+            type: string
+            description: 特约商户号
+            example: '1900000109'
+          status:
+            type: string
+            description: 单据状态
+            example: CREATED
+            enum:
+              - CREATED
+              - PROCESSING
+              - FINISHED
+              - ABNORMAL
+          withdraw_id:
+            type: string
+            description: 微信支付提现单号
+            example: '12321937198237912739132791732912793127931279317929791239112123'
+          out_request_no:
+            type: string
+            description: 商户提现单号
+            example: '20190611222222222200000000012122'
+          total_amount:
+            type: integer
+            description: 提现金额
+            example: 100
+          success_amount:
+            type: integer
+            description: 提现成功金额
+            example: 0
+          fail_amount:
+            type: integer
+            description: 提现失败金额
+            example: 0
+          refund_amount:
+            type: integer
+            description: 提现退票金额
+            example: 0
+          create_time:
+            type: string
+            format: rfc3339
+            description: 发起提现时间
+          update_time:
+            type: string
+            format: rfc3339
+            description: 提现状态更新时间
+          reason:
+            type: string
+            description: 失败原因
+            example: 卡号错误
+          remark:
+            type: string
+            description: 提现备注
+            example: 交易提现
+          bank_memo:
+            type: string
+            description: 银行附言
+            example: 微信支付提现
+          account_type:
+            type: string
+            description: 出款账户类型
+            example: BASIC
+            enum:
+              - BASIC
+              - OPERATION
+              - FEES
+          account_number:
+            type: string
+            description: 入账银行账号后四位
+            example: '1178'
+          account_bank:
+            type: string
+            description: 入账银行
+            example: 招商银行
+          bank_name:
+            type: string
+            description: 入账银行全称（含支行）
+            example: 中国工商银行股份有限公司深圳软件园支行

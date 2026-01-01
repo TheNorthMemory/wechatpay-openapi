@@ -1,0 +1,604 @@
+patch:
+  x-last-updated-at: 2025.11.20
+  x-role:
+    - 服务商
+  tags:
+    - 运营工具∙商品券∙批次组
+  summary: 修改商品券批次组
+  description: 服务商可以通过该接口同步修改商品券批次组内所有批次的基本信息，包括展示信息、通知配置。展示信息修改不会影响已经发放的用户商品券。
+  parameters:
+    - name: product_coupon_id
+      in: path
+      required: true
+      type: string
+      description: 商品券ID
+      example: '1000000013'
+    - name: stock_bundle_id
+      in: path
+      required: true
+      type: string
+      description: 批次组ID
+      example: '1000000013001'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - brand_id
+          - out_request_no
+        properties:
+          out_request_no:
+            type: string
+            description: 修改请求单号
+            example: '34657_20250101_123456'
+          remark:
+            type: string
+            description: 备注
+            example: 疯狂星期四项目专用
+          usage_rule_display_info:
+            type: object
+            description: 券使用规则展示信息
+            required:
+              - coupon_usage_method_list
+              - usage_description
+            properties:
+              coupon_usage_method_list:
+                type: array
+                description: 券使用方式列表
+                items:
+                  type: string
+                  enum:
+                    - OFFLINE
+                    - MINI_PROGRAM
+                    - APP
+                    - PAYMENT_CODE
+              mini_program_appid:
+                type: string
+                description: 小程序AppID
+                example: wx1234567890
+              mini_program_path:
+                type: string
+                description: 小程序跳转路径
+                example: /pages/index/product
+              app_path:
+                type: string
+                description: APP跳转路径
+              usage_description:
+                type: string
+                description: 券使用说明
+                example: 工作日可用
+              coupon_available_store_info:
+                type: object
+                description: 券可用门店信息
+                required:
+                  - description
+                properties:
+                  description:
+                    type: string
+                    description: 券可用门店描述
+                    example: 所有门店可用，可使用小程序查看门店列表
+                  mini_program_appid:
+                    type: string
+                    description: 小程序AppID
+                    example: wx1234567890
+                  mini_program_path:
+                    type: string
+                    description: 小程序跳转路径
+                    example: /pages/index/product
+          coupon_display_info:
+            type: object
+            description: 用户商品券展示信息
+            properties:
+              code_display_mode:
+                type: string
+                description: 用户商品券Code展示模式
+                example: QRCODE
+                enum:
+                  - INVISIBLE
+                  - BARCODE
+                  - QRCODE
+              background_color:
+                type: string
+                description: 背景颜色
+                example: Color020
+                enum:
+                  - Color010
+                  - Color020
+                  - Color030
+                  - Color040
+                  - Color050
+                  - Color060
+                  - Color070
+                  - Color080
+                  - Color090
+                  - Color100
+              entrance_mini_program:
+                type: object
+                description: 小程序入口
+                required:
+                  - appid
+                  - path
+                  - entrance_wording
+                  - guidance_wording
+                properties:
+                  appid:
+                    type: string
+                    description: 小程序appid
+                    example: wx234545656765876
+                  path:
+                    type: string
+                    description: 小程序跳转路径
+                    example: /path/index/index
+                  entrance_wording:
+                    type: string
+                    description: 入口文案
+                    example: 欢迎选购
+                  guidance_wording:
+                    type: string
+                    description: 引导文案
+                    example: 获取更多优惠
+              entrance_official_account:
+                type: object
+                description: 公众号入口
+                required:
+                  - appid
+                properties:
+                  appid:
+                    type: string
+                    description: 公众号AppID
+                    example: wx1234567890
+              entrance_finder:
+                type: object
+                description: 视频号入口
+                required:
+                  - finder_id
+                  - finder_video_id
+                  - finder_video_cover_image_url
+                properties:
+                  finder_id:
+                    type: string
+                    description: 视频号ID
+                    example: gh_12345678
+                  finder_video_id:
+                    type: string
+                    description: 视频号视频ID
+                    example: UDFsdf24df34dD456Hdf34
+                  finder_video_cover_image_url:
+                    type: string
+                    description: 视频号封面图
+                    example: https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/xxx
+          notify_config:
+            type: object
+            description: 事件通知配置
+            properties:
+              notify_appid:
+                type: string
+                description: 事件通知appid
+                example: wx23232232323
+          store_scope:
+            type: string
+            description: 可用门店范围
+            example: NONE
+            enum:
+              - NONE
+              - ALL
+              - SPECIFIC
+          brand_id:
+            type: string
+            description: 品牌ID
+            example: '120344'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - stock_bundle_id
+          - stock_list
+        properties:
+          stock_bundle_id:
+            type: string
+            description: 批次组ID
+            example: '1000000013001'
+          stock_list:
+            type: array
+            description: 批次列表
+            items:
+              type: object
+              required:
+                - product_coupon_id
+                - stock_id
+                - coupon_code_mode
+                - stock_send_rule
+                - stock_bundle_info
+                - usage_rule_display_info
+                - coupon_display_info
+                - notify_config
+                - store_scope
+                - sent_count_info
+                - state
+                - brand_id
+              properties:
+                product_coupon_id:
+                  type: string
+                  description: 商品券ID
+                  example: '1000000013'
+                stock_id:
+                  type: string
+                  description: 批次ID
+                  example: '1000000013001'
+                remark:
+                  type: string
+                  description: 备注
+                coupon_code_mode:
+                  type: string
+                  description: 券Code分配模式
+                  example: WECHATPAY
+                  enum:
+                    - WECHATPAY
+                    - UPLOAD
+                coupon_code_count_info:
+                  type: object
+                  description: 品牌方预上传的券Code数量信息
+                  required:
+                    - total_count
+                    - available_count
+                  properties:
+                    total_count:
+                      type: integer
+                      description: 已上传的Code总数
+                      example: 10000
+                    available_count:
+                      type: integer
+                      description: 当前可用的Code
+                      example: 999
+                stock_send_rule:
+                  type: object
+                  description: 发放规则
+                  required:
+                    - max_count
+                    - max_count_per_user
+                  properties:
+                    max_count:
+                      type: integer
+                      description: 发放次数总上限
+                      example: 100000
+                    max_count_per_day:
+                      type: integer
+                      description: 每日发放次数上限
+                      example: 100000000
+                    max_count_per_user:
+                      type: integer
+                      description: 每个用户领取次数上限
+                      example: 5
+                progressive_bundle_usage_rule:
+                  type: object
+                  description: 多次优惠使用规则
+                  required:
+                    - coupon_available_period
+                  properties:
+                    coupon_available_period:
+                      type: object
+                      description: 券可核销时间
+                      required:
+                        - available_begin_time
+                        - available_end_time
+                      properties:
+                        available_begin_time:
+                          type: string
+                          format: rfc3339
+                          description: 开始时间
+                          example: '2025-08-01T00:00:00+08:00'
+                        available_end_time:
+                          type: string
+                          format: rfc3339
+                          description: 结束时间
+                          example: '2025-08-31T23:59:59+08:00'
+                        available_days:
+                          type: integer
+                          description: 生效后N天内有效
+                          example: 30
+                        wait_days_after_receive:
+                          type: integer
+                          description: 领取后N天开始生效
+                          example: 1
+                        weekly_available_period:
+                          type: object
+                          description: 每周固定可用时间
+                          properties:
+                            day_list:
+                              type: array
+                              description: 每周可用星期数
+                              items:
+                                type: string
+                                enum:
+                                  - MONDAY
+                                  - TUESDAY
+                                  - WEDNESDAY
+                                  - THURSDAY
+                                  - FRIDAY
+                                  - SATURDAY
+                                  - SUNDAY
+                            day_period_list:
+                              type: array
+                              description: 当天可用时间段
+                              items:
+                                type: object
+                                required:
+                                  - begin_time
+                                  - end_time
+                                properties:
+                                  begin_time:
+                                    type: integer
+                                    description: 当天可用开始时间
+                                    example: 60
+                                  end_time:
+                                    type: integer
+                                    description: 当天可用结束时间
+                                    example: 86399
+                        irregular_available_period_list:
+                          type: array
+                          description: 无规律的可用时间段
+                          items:
+                            type: object
+                            required:
+                              - begin_time
+                              - end_time
+                            properties:
+                              begin_time:
+                                type: string
+                                format: rfc3339
+                                description: 开始时间
+                                example: '2025-08-01T00:00:00+08:00'
+                              end_time:
+                                type: string
+                                format: rfc3339
+                                description: 结束时间
+                                example: '2025-08-31T23:59:59+08:00'
+                    normal_coupon:
+                      type: object
+                      description: 满减券使用规则
+                      required:
+                        - threshold
+                        - discount_amount
+                      properties:
+                        threshold:
+                          type: integer
+                          description: 门槛金额
+                          example: 10000
+                        discount_amount:
+                          type: integer
+                          description: 固定减免金额
+                          example: 1
+                    discount_coupon:
+                      type: object
+                      description: 折扣券使用规则
+                      required:
+                        - threshold
+                        - percent_off
+                      properties:
+                        threshold:
+                          type: integer
+                          description: 门槛金额
+                          example: 10000
+                        percent_off:
+                          type: integer
+                          description: 固定减免百分比
+                          example: 20
+                    exchange_coupon:
+                      type: object
+                      description: 兑换券使用规则
+                      required:
+                        - threshold
+                        - exchange_price
+                      properties:
+                        threshold:
+                          type: integer
+                          description: 门槛金额
+                          example: 10000
+                        exchange_price:
+                          type: integer
+                          description: 固定兑换价格
+                          example: 20
+                stock_bundle_info:
+                  type: object
+                  required:
+                    - stock_bundle_id
+                    - stock_bundle_index
+                  description: 批次组信息
+                  properties:
+                    stock_bundle_id:
+                      type: string
+                      description: 批次组ID
+                      example: '712315129419284901'
+                    stock_bundle_index:
+                      type: integer
+                      description: 批次在批次组内的次序
+                      example: 0
+                usage_rule_display_info:
+                  type: object
+                  description: 券使用规则展示信息
+                  required:
+                    - coupon_usage_method_list
+                    - usage_description
+                  properties:
+                    coupon_usage_method_list:
+                      type: array
+                      description: 券使用方式列表
+                      items:
+                        type: string
+                        enum:
+                          - OFFLINE
+                          - MINI_PROGRAM
+                          - APP
+                          - PAYMENT_CODE
+                    mini_program_appid:
+                      type: string
+                      description: 小程序AppID
+                      example: wx1234567890
+                    mini_program_path:
+                      type: string
+                      description: 小程序跳转路径
+                      example: /pages/index/product
+                    app_path:
+                      type: string
+                      description: APP跳转路径
+                    usage_description:
+                      type: string
+                      description: 券使用说明
+                      example: 工作日可用
+                    coupon_available_store_info:
+                      type: object
+                      description: 券可用门店信息
+                      required:
+                        - description
+                      properties:
+                        description:
+                          type: string
+                          description: 券可用门店描述
+                          example: 所有门店可用，可使用小程序查看门店列表
+                        mini_program_appid:
+                          type: string
+                          description: 小程序AppID
+                          example: wx1234567890
+                        mini_program_path:
+                          type: string
+                          description: 小程序跳转路径
+                          example: /pages/index/product
+                coupon_display_info:
+                  type: object
+                  description: 用户商品券展示信息
+                  properties:
+                    code_display_mode:
+                      type: string
+                      description: 用户商品券Code展示模式
+                      example: QRCODE
+                      enum:
+                        - INVISIBLE
+                        - BARCODE
+                        - QRCODE
+                    background_color:
+                      type: string
+                      description: 背景颜色
+                      example: Color020
+                      enum:
+                        - Color010
+                        - Color020
+                        - Color030
+                        - Color040
+                        - Color050
+                        - Color060
+                        - Color070
+                        - Color080
+                        - Color090
+                        - Color100
+                    entrance_mini_program:
+                      type: object
+                      description: 小程序入口
+                      required:
+                        - appid
+                        - path
+                        - entrance_wording
+                        - guidance_wording
+                      properties:
+                        appid:
+                          type: string
+                          description: 小程序appid
+                          example: wx234545656765876
+                        path:
+                          type: string
+                          description: 小程序跳转路径
+                          example: /path/index/index
+                        entrance_wording:
+                          type: string
+                          description: 入口文案
+                          example: 欢迎选购
+                        guidance_wording:
+                          type: string
+                          description: 引导文案
+                          example: 获取更多优惠
+                    entrance_official_account:
+                      type: object
+                      description: 公众号入口
+                      required:
+                        - appid
+                      properties:
+                        appid:
+                          type: string
+                          description: 公众号AppID
+                          example: wx1234567890
+                    entrance_finder:
+                      type: object
+                      description: 视频号入口
+                      required:
+                        - finder_id
+                        - finder_video_id
+                        - finder_video_cover_image_url
+                      properties:
+                        finder_id:
+                          type: string
+                          description: 视频号ID
+                          example: gh_12345678
+                        finder_video_id:
+                          type: string
+                          description: 视频号视频ID
+                          example: UDFsdf24df34dD456Hdf34
+                        finder_video_cover_image_url:
+                          type: string
+                          description: 视频号封面图
+                          example: https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/xxx
+                notify_config:
+                  type: object
+                  description: 事件通知配置
+                  properties:
+                    notify_appid:
+                      type: string
+                      description: 事件通知appid
+                      example: wx23232232323
+                store_scope:
+                  type: string
+                  description: 可用门店范围
+                  example: NONE
+                  enum:
+                    - NONE
+                    - ALL
+                    - SPECIFIC
+                sent_count_info:
+                  type: object
+                  description: 已发放次数
+                  required:
+                    - total_count
+                    - today_count
+                  properties:
+                    total_count:
+                      type: integer
+                      description: 已发放总次数
+                      example: 0
+                    today_count:
+                      type: integer
+                      description: 当天已发放次数
+                      example: 0
+                state:
+                  type: string
+                  description: 批次状态
+                  enum:
+                    - AUDITING
+                    - SENDING
+                    - PAUSED
+                    - STOPPED
+                    - DEACTIVATED
+                deactivate_request_no:
+                  type: string
+                  description: 失效请求单号
+                deactivate_time:
+                  type: string
+                  format: rfc3339
+                  description: 失效时间
+                  example: '2025-08-31T23:59:59+08:00'
+                deactivate_reason:
+                  type: string
+                  description: 失效原因
+                brand_id:
+                  type: string
+                  description: 品牌ID
+                  example: '120344'

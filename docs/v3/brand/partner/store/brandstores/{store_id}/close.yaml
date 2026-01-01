@@ -1,0 +1,48 @@
+post:
+  x-last-updated-at: 2025.12.06
+  x-role:
+    - 服务商
+  tags:
+    - 经营工具∙品牌门店
+  summary: 暂停门店营业
+  description: 将门店状态从“营业中”变更为“停业中”，暂停营业后，门店相关信息将对用户隐藏。
+  parameters:
+    - name: store_id
+      in: path
+      required: true
+      type: string
+      description: 品牌门店ID
+      example: '20488000'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - brand_id
+        properties:
+          brand_id:
+            type: string
+            description: 品牌ID
+            example: '123456789'
+  responses:
+    '200':
+      schema:
+        type: object
+        properties:
+          brand_id:
+            type: string
+            description: 品牌ID
+            example: '123456789'
+          store_id:
+            type: string
+            description: 品牌门店ID
+            example: '20488000'
+          store_state:
+            type: string
+            description: 门店状态
+            example: CLOSED
+            enum:
+              - OPEN
+              - CREATING
+              - CLOSED

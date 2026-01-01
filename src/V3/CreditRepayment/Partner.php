@@ -3,6 +3,8 @@
 namespace WeChatPay\OpenAPI\V3\CreditRepayment;
 
 /**
+ * @property-read Partner\ScheduleRecords $scheduleRecords
+ * @property-read Partner\DeductOrders $deductOrders
  * @property-read Partner\Contracts $contracts
  */
 interface Partner

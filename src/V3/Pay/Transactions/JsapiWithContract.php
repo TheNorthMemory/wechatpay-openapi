@@ -10,7 +10,7 @@ use GuzzleHttp\Promise\PromiseInterface;
 interface JsapiWithContract
 {
     /**
-     * JSAPI下单并授权(同步模式)
+     * JSAPI下单并授权/签约(同步模式)
      * @param array<string,mixed> $options
      * @link https://wechatpay.im/openapi/v3/pay/transactions/jsapi-with-contract
      */
@@ -59,12 +59,19 @@ interface JsapiWithContract
             'contract_info' => [
                 'token' => '201710180325670965',
                 'password_free_contract_id' => '201710180325670965',
+                'plan_id' => '3484306348',
+                'contract_mchid' => '1200009811',
+                'contract_appid' => 'wxcbda96de0b165486',
+                'contract_code' => '100001256',
+                'request_serial' => '1695',
+                'contract_display_account' => '123456',
+                'contract_notify_url' => 'https://yoursite.com',
             ],
         ],
     ]): ResponseInterface;
 
     /**
-     * JSAPI下单并授权(异步模式)
+     * JSAPI下单并授权/签约(异步模式)
      * @param array<string,mixed> $options
      * @link https://wechatpay.im/openapi/v3/pay/transactions/jsapi-with-contract
      */
@@ -113,6 +120,13 @@ interface JsapiWithContract
             'contract_info' => [
                 'token' => '201710180325670965',
                 'password_free_contract_id' => '201710180325670965',
+                'plan_id' => '3484306348',
+                'contract_mchid' => '1200009811',
+                'contract_appid' => 'wxcbda96de0b165486',
+                'contract_code' => '100001256',
+                'request_serial' => '1695',
+                'contract_display_account' => '123456',
+                'contract_notify_url' => 'https://yoursite.com',
             ],
         ],
     ]): PromiseInterface;

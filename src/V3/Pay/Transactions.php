@@ -5,6 +5,7 @@ namespace WeChatPay\OpenAPI\V3\Pay;
 /**
  * @property-read Transactions\OutTradeNo $outTradeNo
  * @property-read Transactions\Id $id
+ * @property-read Transactions\AppWithContract $appWithContract
  * @property-read Transactions\App $app
  * @property-read Transactions\Codepay $codepay
  * @property-read Transactions\Exposure $exposure

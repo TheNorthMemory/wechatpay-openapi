@@ -1,42 +1,33 @@
 <?php declare(strict_types=1);/* Generated file. DO NOT EDIT! */
 
-namespace WeChatPay\OpenAPI\V3\Pay\Partner\Transactions;
+namespace WeChatPay\OpenAPI\V3\Pay\Transactions;
 
 use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Promise\PromiseInterface;
 
 /**
  */
-interface JsapiWithContract
+interface AppWithContract
 {
     /**
-     * JSAPI下单并授权/签约(同步模式)
+     * APP下单并签约(同步模式)
      * @param array<string,mixed> $options
-     * @link https://wechatpay.im/openapi/v3/pay/partner/transactions/jsapi-with-contract
+     * @link https://wechatpay.im/openapi/v3/pay/transactions/app-with-contract
      */
     public function post(array $options = [
         'json' => [
-            'sp_appid' => 'wx8888888888888888',
-            'sp_mchid' => '1230000109',
-            'sub_appid' => 'wxd678efh567hg6999',
-            'sub_mchid' => '1900000109',
+            'appid' => 'wxd678efh567hg6787',
+            'mchid' => '1230000109',
             'description' => 'Image形象店-深圳腾大-QQ公仔',
             'out_trade_no' => '1217752501201407033233368018',
             'time_expire' => '2018-06-08T10:34:56+08:00',
-            'attach' => '自定义数据',
+            'attach' => '自定义数据说明',
             'notify_url' => 'https://www.weixin.qq.com/wxpay/pay.php',
             'goods_tag' => 'WXG',
-            'settle_info' => [
-                'profit_sharing' => true,
-            ],
             'support_fapiao' => true,
             'amount' => [
                 'total' => 100,
                 'currency' => 'CNY',
-            ],
-            'payer' => [
-                'sp_openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
-                'sub_openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
             ],
             'detail' => [
                 'cost_price' => 608800,
@@ -59,9 +50,10 @@ interface JsapiWithContract
                     'address' => '广东省深圳市南山区科技中一道10000号',
                 ],
             ],
+            'settle_info' => [
+                'profit_sharing' => true,
+            ],
             'contract_info' => [
-                'password_free_contract_id' => '201710180325670965',
-                'token' => '201710180325670965',
                 'plan_id' => '3484306348',
                 'contract_mchid' => '1200009811',
                 'contract_appid' => 'wxcbda96de0b165486',
@@ -74,33 +66,24 @@ interface JsapiWithContract
     ]): ResponseInterface;
 
     /**
-     * JSAPI下单并授权/签约(异步模式)
+     * APP下单并签约(异步模式)
      * @param array<string,mixed> $options
-     * @link https://wechatpay.im/openapi/v3/pay/partner/transactions/jsapi-with-contract
+     * @link https://wechatpay.im/openapi/v3/pay/transactions/app-with-contract
      */
     public function postAsync(array $options = [
         'json' => [
-            'sp_appid' => 'wx8888888888888888',
-            'sp_mchid' => '1230000109',
-            'sub_appid' => 'wxd678efh567hg6999',
-            'sub_mchid' => '1900000109',
+            'appid' => 'wxd678efh567hg6787',
+            'mchid' => '1230000109',
             'description' => 'Image形象店-深圳腾大-QQ公仔',
             'out_trade_no' => '1217752501201407033233368018',
             'time_expire' => '2018-06-08T10:34:56+08:00',
-            'attach' => '自定义数据',
+            'attach' => '自定义数据说明',
             'notify_url' => 'https://www.weixin.qq.com/wxpay/pay.php',
             'goods_tag' => 'WXG',
-            'settle_info' => [
-                'profit_sharing' => true,
-            ],
             'support_fapiao' => true,
             'amount' => [
                 'total' => 100,
                 'currency' => 'CNY',
-            ],
-            'payer' => [
-                'sp_openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
-                'sub_openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
             ],
             'detail' => [
                 'cost_price' => 608800,
@@ -123,9 +106,10 @@ interface JsapiWithContract
                     'address' => '广东省深圳市南山区科技中一道10000号',
                 ],
             ],
+            'settle_info' => [
+                'profit_sharing' => true,
+            ],
             'contract_info' => [
-                'password_free_contract_id' => '201710180325670965',
-                'token' => '201710180325670965',
                 'plan_id' => '3484306348',
                 'contract_mchid' => '1200009811',
                 'contract_appid' => 'wxcbda96de0b165486',

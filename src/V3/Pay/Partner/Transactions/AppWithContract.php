@@ -7,12 +7,12 @@ use GuzzleHttp\Promise\PromiseInterface;
 
 /**
  */
-interface JsapiWithContract
+interface AppWithContract
 {
     /**
-     * JSAPI下单并授权/签约(同步模式)
+     * APP下单并签约(同步模式)
      * @param array<string,mixed> $options
-     * @link https://wechatpay.im/openapi/v3/pay/partner/transactions/jsapi-with-contract
+     * @link https://wechatpay.im/openapi/v3/pay/partner/transactions/app-with-contract
      */
     public function post(array $options = [
         'json' => [
@@ -34,10 +34,6 @@ interface JsapiWithContract
                 'total' => 100,
                 'currency' => 'CNY',
             ],
-            'payer' => [
-                'sp_openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
-                'sub_openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
-            ],
             'detail' => [
                 'cost_price' => 608800,
                 'invoice_id' => '微信123',
@@ -60,8 +56,6 @@ interface JsapiWithContract
                 ],
             ],
             'contract_info' => [
-                'password_free_contract_id' => '201710180325670965',
-                'token' => '201710180325670965',
                 'plan_id' => '3484306348',
                 'contract_mchid' => '1200009811',
                 'contract_appid' => 'wxcbda96de0b165486',
@@ -74,9 +68,9 @@ interface JsapiWithContract
     ]): ResponseInterface;
 
     /**
-     * JSAPI下单并授权/签约(异步模式)
+     * APP下单并签约(异步模式)
      * @param array<string,mixed> $options
-     * @link https://wechatpay.im/openapi/v3/pay/partner/transactions/jsapi-with-contract
+     * @link https://wechatpay.im/openapi/v3/pay/partner/transactions/app-with-contract
      */
     public function postAsync(array $options = [
         'json' => [
@@ -98,10 +92,6 @@ interface JsapiWithContract
                 'total' => 100,
                 'currency' => 'CNY',
             ],
-            'payer' => [
-                'sp_openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
-                'sub_openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
-            ],
             'detail' => [
                 'cost_price' => 608800,
                 'invoice_id' => '微信123',
@@ -124,8 +114,6 @@ interface JsapiWithContract
                 ],
             ],
             'contract_info' => [
-                'password_free_contract_id' => '201710180325670965',
-                'token' => '201710180325670965',
                 'plan_id' => '3484306348',
                 'contract_mchid' => '1200009811',
                 'contract_appid' => 'wxcbda96de0b165486',

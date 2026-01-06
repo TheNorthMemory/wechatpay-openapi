@@ -1,21 +1,18 @@
 <?php declare(strict_types=1);/* Generated file. DO NOT EDIT! */
 
-namespace WeChatPay\OpenAPI\V3\FundApp\MchTransfer\Partner;
+namespace WeChatPay\OpenAPI\V3\FundApp\MchTransfer\Partner\TransferBills;
 
 use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Promise\PromiseInterface;
 
 /**
- * @property-read TransferBills\OutBillNo $outBillNo
- * @property-read TransferBills\PreTransferWithAuthorization $preTransferWithAuthorization
- * @property-read TransferBills\Transfer $transfer
  */
-interface TransferBills
+interface PreTransferWithAuthorization
 {
     /**
-     * 发起转账(同步模式)
+     * 发起转账并完成自动收款授权(同步模式)
      * @param array<string,mixed> $options
-     * @link https://wechatpay.im/openapi/v3/fund-app/mch-transfer/partner/transfer-bills
+     * @link https://wechatpay.im/openapi/v3/fund-app/mch-transfer/partner/transfer-bills/pre-transfer-with-authorization
      */
     public function post(array $options = [
         'json' => [
@@ -33,6 +30,11 @@ interface TransferBills
                 'info_type' => '活动名称',
                 'info_content' => '注册会员有礼',
             ],],
+            'authorization_info' => [
+                'user_display_name' => 'wx_123456',
+                'out_authorization_no' => 'plfk2020042013',
+                'authorization_notify_url' => 'https://www.weixin.qq.com/wxpay/pay.php',
+            ],
         ],
         'headers' => [
             'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',
@@ -40,9 +42,9 @@ interface TransferBills
     ]): ResponseInterface;
 
     /**
-     * 发起转账(异步模式)
+     * 发起转账并完成自动收款授权(异步模式)
      * @param array<string,mixed> $options
-     * @link https://wechatpay.im/openapi/v3/fund-app/mch-transfer/partner/transfer-bills
+     * @link https://wechatpay.im/openapi/v3/fund-app/mch-transfer/partner/transfer-bills/pre-transfer-with-authorization
      */
     public function postAsync(array $options = [
         'json' => [
@@ -60,6 +62,11 @@ interface TransferBills
                 'info_type' => '活动名称',
                 'info_content' => '注册会员有礼',
             ],],
+            'authorization_info' => [
+                'user_display_name' => 'wx_123456',
+                'out_authorization_no' => 'plfk2020042013',
+                'authorization_notify_url' => 'https://www.weixin.qq.com/wxpay/pay.php',
+            ],
         ],
         'headers' => [
             'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',

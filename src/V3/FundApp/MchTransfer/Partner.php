@@ -3,6 +3,7 @@
 namespace WeChatPay\OpenAPI\V3\FundApp\MchTransfer;
 
 /**
+ * @property-read Partner\UserConfirmAuthorizations $userConfirmAuthorizations
  * @property-read Partner\TransferBills $transferBills
  * @property-read Partner\SubMchAuthorizations $subMchAuthorizations
  * @property-read Partner\ElectronicReceipts $electronicReceipts

@@ -18,16 +18,16 @@ interface Build
         'json' => [
             'partner' => [
                 'type' => 'APPID | MERCHANT',
-                'appid' => '',
-                'merchant_id' => '',
+                'appid' => 'wx4e1916a585d1f4e9',
+                'merchant_id' => '2480029552',
             ],
             'authorized_data' => [
                 'business_type' => 'FAVOR_STOCK | BUSIFAVOR_STOCK',
-                'stock_id' => '',
+                'stock_id' => '2433405',
             ],
         ],
         'headers' => [
-            'Idempotency-Key' => '',
+            'Idempotency-Key' => '12345',
         ],
     ]): ResponseInterface;
 
@@ -40,16 +40,16 @@ interface Build
         'json' => [
             'partner' => [
                 'type' => 'APPID | MERCHANT',
-                'appid' => '',
-                'merchant_id' => '',
+                'appid' => 'wx4e1916a585d1f4e9',
+                'merchant_id' => '2480029552',
             ],
             'authorized_data' => [
                 'business_type' => 'FAVOR_STOCK | BUSIFAVOR_STOCK',
-                'stock_id' => '',
+                'stock_id' => '2433405',
             ],
         ],
         'headers' => [
-            'Idempotency-Key' => '',
+            'Idempotency-Key' => '12345',
         ],
     ]): PromiseInterface;
 }

@@ -9,6 +9,7 @@ use GuzzleHttp\Promise\PromiseInterface;
  * @property-read _code_\Bonus $bonus
  * @property-read _code_\Activate $activate
  * @property-read _code_\Rights $rights
+ * @property-read _code_\SetServiceModuleData $setServiceModuleData
  * @property-read _code_\Unavailable $unavailable
  */
 interface _code_

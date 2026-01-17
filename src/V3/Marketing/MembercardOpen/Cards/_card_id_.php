@@ -7,6 +7,7 @@ use GuzzleHttp\Promise\PromiseInterface;
 
 /**
  * @property-read _card_id_\Users $users
+ * @property-read _card_id_\ServiceModules $serviceModules
  * @property-read _card_id_\PhoneMembercard $phoneMembercard
  * @property-read _card_id_\Codes $codes
  * @property-read _card_id_\DecryptCode $decryptCode

@@ -21,6 +21,9 @@ interface Import
             'code' => '478515832665',
             'out_request_no' => '100002322019090134234sfdf',
         ],
+        'headers' => [
+            'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',
+        ],
     ]): ResponseInterface;
 
     /**
@@ -34,6 +37,9 @@ interface Import
             'encrypted_phone_number' => 'vvysDQeEaH3I+wRh14St0aaKSE2j4mAFON3kzNexb/SYkHZNJAuCittaW4wpGj7U+h9A==',
             'code' => '478515832665',
             'out_request_no' => '100002322019090134234sfdf',
+        ],
+        'headers' => [
+            'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',
         ],
     ]): PromiseInterface;
 }

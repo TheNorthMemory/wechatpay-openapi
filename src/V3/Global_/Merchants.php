@@ -63,6 +63,7 @@ interface Merchants
                 'h5_website_url' => 'https://qq.com',
                 'domains' => ['www.qq.com'],
             ],
+            'attach' => '555588889999',
         ],
         'headers' => [
             'Idempotency-Key' => 'GzPCeo963zXKcO2hDVD8AjXIpgrj',
@@ -123,6 +124,7 @@ interface Merchants
                 'h5_website_url' => 'https://qq.com',
                 'domains' => ['www.qq.com'],
             ],
+            'attach' => '555588889999',
         ],
         'headers' => [
             'Idempotency-Key' => 'GzPCeo963zXKcO2hDVD8AjXIpgrj',

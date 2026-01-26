@@ -6,6 +6,7 @@ namespace WeChatPay\OpenAPI\V3\Marketing\Partner;
  * @property-read ProductCoupon\Users $users
  * @property-read ProductCoupon\ProductCoupons $productCoupons
  * @property-read ProductCoupon\Media $media
+ * @property-read ProductCoupon\ImageGenerationTasks $imageGenerationTasks
  * @property-read ProductCoupon\NotifyConfigs $notifyConfigs
  */
 interface ProductCoupon

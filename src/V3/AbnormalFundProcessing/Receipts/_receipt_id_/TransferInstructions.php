@@ -6,6 +6,7 @@ use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Promise\PromiseInterface;
 
 /**
+ * @property-read TransferInstructions\_out_instruction_no_ $_out_instruction_no_
  */
 interface TransferInstructions
 {
@@ -18,8 +19,10 @@ interface TransferInstructions
         'receipt_id' => '0100011742874700562078230000',
         'json' => [
             'out_instruction_no' => '1200002',
-            'appid' => ['wxf636efh567hg4356'],
-            'transfer_mode' => 'TRANSFER_TO_ORIGINAL_RECEIVE_USER',
+            'transfer_mode' => 'TRANSFER_TO_ORIGINAL_RECEIVE_USER | TRANSFER_MODE_TO_ORIGINAL_RECEIVE_MERCHANT | TRANSFER_MODE_TO_SPECIFIED_RECEIVE_MERCHANT',
+            'receiver' => [
+                'mchid' => '1900001108',
+            ],
             'notify_url' => 'https://weixin.qq.com',
         ],
     ]): ResponseInterface;
@@ -33,8 +36,10 @@ interface TransferInstructions
         'receipt_id' => '0100011742874700562078230000',
         'json' => [
             'out_instruction_no' => '1200002',
-            'appid' => ['wxf636efh567hg4356'],
-            'transfer_mode' => 'TRANSFER_TO_ORIGINAL_RECEIVE_USER',
+            'transfer_mode' => 'TRANSFER_TO_ORIGINAL_RECEIVE_USER | TRANSFER_MODE_TO_ORIGINAL_RECEIVE_MERCHANT | TRANSFER_MODE_TO_SPECIFIED_RECEIVE_MERCHANT',
+            'receiver' => [
+                'mchid' => '1900001108',
+            ],
             'notify_url' => 'https://weixin.qq.com',
         ],
     ]): PromiseInterface;

@@ -3,6 +3,7 @@
 namespace WeChatPay\OpenAPI\V3\Marketing\Busifavor;
 
 /**
+ * @property-read ProductCoupons\PreSend $preSend
  * @property-read ProductCoupons\Send $send
  */
 interface ProductCoupons

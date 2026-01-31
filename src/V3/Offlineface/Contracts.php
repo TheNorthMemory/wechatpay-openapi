@@ -3,8 +3,8 @@
 namespace WeChatPay\OpenAPI\V3\Offlineface;
 
 /**
- * @property-read Contracts\_contract_id_ $_contract_id_
  * @property-read Contracts\Presign $presign
+ * @property-read Contracts\_contract_id_ $_contract_id_
  */
 interface Contracts
 {

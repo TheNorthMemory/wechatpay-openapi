@@ -10,7 +10,7 @@ use GuzzleHttp\Promise\PromiseInterface;
 interface Authindex
 {
     /**
-     * 通过code换取accesstoken(同步模式)
+     * 授权获取code(同步模式)
      * @param array<string,mixed> $options
      * @link https://wechatpay.im/openapi/v2/appauth/authindex
      */
@@ -27,7 +27,7 @@ interface Authindex
     ]): ResponseInterface;
 
     /**
-     * 通过code换取accesstoken(异步模式)
+     * 授权获取code(异步模式)
      * @param array<string,mixed> $options
      * @link https://wechatpay.im/openapi/v2/appauth/authindex
      */

@@ -4,9 +4,9 @@ namespace WeChatPay\OpenAPI\V3\AggracctBc\WbChannel;
 
 /**
  * @property-read ControlOrders\Info $info
- * @property-read ControlOrders\_out_request_no_ $_out_request_no_
  * @property-read ControlOrders\Punish $punish
  * @property-read ControlOrders\Recover $recover
+ * @property-read ControlOrders\_out_request_no_ $_out_request_no_
  */
 interface ControlOrders
 {

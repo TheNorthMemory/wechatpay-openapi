@@ -6,9 +6,9 @@ use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Promise\PromiseInterface;
 
 /**
- * @property-read Authentications\_authenticate_number_ $_authenticate_number_
  * @property-read Authentications\PreOrderWithAuth $preOrderWithAuth
  * @property-read Authentications\PreOrder $preOrder
+ * @property-read Authentications\_authenticate_number_ $_authenticate_number_
  */
 interface Authentications
 {

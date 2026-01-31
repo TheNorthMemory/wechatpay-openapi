@@ -26,8 +26,6 @@ interface BatchCreate
                 'repayment_amount' => '10000',
                 'min_repayment_amount' => '2000',
                 'repayment_date' => '2025-11-18',
-                'description' => '信贷还款',
-                'attach' => '备注信息',
             ],],
         ],
     ]): ResponseInterface;
@@ -49,8 +47,6 @@ interface BatchCreate
                 'repayment_amount' => '10000',
                 'min_repayment_amount' => '2000',
                 'repayment_date' => '2025-11-18',
-                'description' => '信贷还款',
-                'attach' => '备注信息',
             ],],
         ],
     ]): PromiseInterface;

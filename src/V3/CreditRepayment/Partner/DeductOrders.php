@@ -22,6 +22,8 @@ interface DeductOrders
             'out_record_id' => '1234567abcde',
             'deduct_amount' => '10000',
             'notify_url' => 'wxd678efh567hg6787',
+            'description' => '信贷还款',
+            'attach' => '备注',
         ],
     ]): ResponseInterface;
 
@@ -37,6 +39,8 @@ interface DeductOrders
             'out_record_id' => '1234567abcde',
             'deduct_amount' => '10000',
             'notify_url' => 'wxd678efh567hg6787',
+            'description' => '信贷还款',
+            'attach' => '备注',
         ],
     ]): PromiseInterface;
 }

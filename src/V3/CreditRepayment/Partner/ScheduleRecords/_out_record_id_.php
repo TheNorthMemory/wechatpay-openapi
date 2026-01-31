@@ -10,7 +10,7 @@ use GuzzleHttp\Promise\PromiseInterface;
 interface _out_record_id_
 {
     /**
-     * 查询预约还款结果(同步模式)
+     * 查询预约还款记录(同步模式)
      * @param array<string,mixed> $options
      * @link https://wechatpay.im/openapi/v3/credit-repayment/partner/schedule-records/%7Bout_record_id%7D
      */
@@ -22,7 +22,7 @@ interface _out_record_id_
     ]): ResponseInterface;
 
     /**
-     * 查询预约还款结果(异步模式)
+     * 查询预约还款记录(异步模式)
      * @param array<string,mixed> $options
      * @link https://wechatpay.im/openapi/v3/credit-repayment/partner/schedule-records/%7Bout_record_id%7D
      */

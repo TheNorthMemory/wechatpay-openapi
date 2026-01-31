@@ -74,6 +74,7 @@ namespace WeChatPay\OpenAPI;
  * @property-read V3\Catering $catering
  * @property-read V3\Capital $capital
  * @property-read V3\Businesscircle $businesscircle
+ * @property-read V3\BrandBasic $brandBasic
  * @property-read V3\Brand $brand
  * @property-read V3\Billdownload $billdownload
  * @property-read V3\Bill $bill

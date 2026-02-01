@@ -21,7 +21,6 @@ get:
           - out_trade_no
           - out_record_id
           - appid
-          - sub_appid
           - openid
           - contract_id
           - order_state

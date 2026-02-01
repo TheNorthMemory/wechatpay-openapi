@@ -11,6 +11,7 @@ post:
       type: string
       description: 业务请求幂等值
       required: true
+      example: '12345'
     - name: _
       in: body
       required: true
@@ -32,9 +33,11 @@ post:
               appid:
                 type: string
                 description: 合作方APPID
+                example: wx4e1916a585d1f4e9
               merchant_id:
                 type: string
                 description: 合作方商户ID
+                example: '2480029552'
           authorized_data:
             type: object
             required: [business_type]
@@ -49,6 +52,7 @@ post:
               stock_id:
                 type: string
                 description: 授权批次ID
+                example: '2433405'
   responses:
     200:
       schema:

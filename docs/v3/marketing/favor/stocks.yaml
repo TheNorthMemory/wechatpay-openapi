@@ -61,6 +61,7 @@ get:
             example: 1
           data:
             type: array
+            description: 批次详情
             items:
               allOf:
                 - $ref: '../../../definitions/FavorCouponStock.yaml#StockBase'

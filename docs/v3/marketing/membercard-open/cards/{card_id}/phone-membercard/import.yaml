@@ -1,13 +1,14 @@
 post:
-  x-last-updated-at: 2021.10.29
+  x-last-updated-at: 2025.01.09
   x-role:
     - 直连商户
     - 服务商
   tags:
     - 会员卡
   summary: 根据手机号导入用户会员卡API
-  description: 商户可通过加密后的用户手机号，将存量会员通过接口导入至微信侧后台。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_14.shtml)
+  description: 商户可通过加密后的用户手机号，将存量会员通过接口导入至微信侧后台。
   parameters:
+    - $ref: '../../../../../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
     - name: card_id
       in: path
       required: true
@@ -25,6 +26,7 @@ post:
         properties:
           encrypted_phone_number:
             type: string
+            format: base64
             description: 用户加密手机号
             example: vvysDQeEaH3I+wRh14St0aaKSE2j4mAFON3kzNexb/SYkHZNJAuCittaW4wpGj7U+h9A==
           code:

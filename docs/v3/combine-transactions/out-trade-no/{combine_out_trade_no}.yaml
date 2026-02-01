@@ -52,7 +52,7 @@ get:
                 example: 'POS1:1'
           sub_orders:
             type: array
-            description: 子单信息
+            description: 商品单信息
             items:
               type: object
               required:
@@ -109,7 +109,7 @@ get:
                   example: '1009660380201506130728806387'
                 out_trade_no:
                   type: string
-                  description: 子单商户订单号
+                  description: 商品单商户订单号
                   example: '20150806125346'
                 sub_mchid:
                   type: string

@@ -38,11 +38,8 @@ post:
               required:
                 - out_record_id
                 - sub_mchid
-                - sub_appid
                 - repayment_amount
-                - min_repayment_amount
                 - repayment_date
-                - description
               properties:
                 out_record_id:
                   type: string
@@ -68,14 +65,6 @@ post:
                   type: string
                   description: 还款日期
                   example: '2025-11-18'
-                description:
-                  type: string
-                  description: 产品描述
-                  example: 信贷还款
-                attach:
-                  type: string
-                  description: 商户数据包
-                  example: 备注信息
   responses:
     '200':
       schema:
@@ -89,11 +78,9 @@ post:
               required:
                 - out_record_id
                 - appid
-                - sub_appid
                 - repayment_amount
                 - min_repayment_amount
                 - repayment_date
-                - description
                 - openid
               properties:
                 out_record_id:
@@ -124,14 +111,6 @@ post:
                   type: string
                   description: 还款日期
                   example: '2025-11-18'
-                description:
-                  type: string
-                  description: 产品描述
-                  example: 信贷还款
-                attach:
-                  type: string
-                  description: 商户数据包
-                  example: 备注信息
                 openid:
                   type: string
                   description: 用户标识

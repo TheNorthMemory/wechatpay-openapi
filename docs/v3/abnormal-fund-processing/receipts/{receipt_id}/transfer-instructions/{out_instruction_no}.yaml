@@ -1,0 +1,109 @@
+get:
+  x-last-updated-at: 2025.11.20
+  x-role:
+    - 电商平台
+  tags:
+    - 收付通∙个人收款
+  summary: 查询在途异常资金付款指令执行结果
+  description: 发起在途异常资金付款后，可通过该接口快速查询相关指令单的流程状态。注：接口限频100次/秒。
+  parameters:
+    - name: receipt_id
+      in: path
+      required: true
+      type: string
+      description: 微信支付在途异常资金付款单号
+      example: '0100011742874700562078230000'
+    - name: out_instruction_no
+      in: path
+      required: true
+      type: string
+      description: 商户侧指令编号
+      example: '1200002'
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - out_instruction_no
+          - commander
+          - transfer_mode
+          - instruction_state
+          - notify_url
+        properties:
+          out_instruction_no:
+            type: string
+            description: 商户侧指令编号
+            example: '1200002'
+          commander:
+            type: object
+            description: 在途异常资金付款指令的发起方
+            required:
+              - operator
+            properties:
+              operator:
+                type: string
+                description: 发起在途异常资金付款请求的角色
+                example: MERCHANT
+                enum:
+                  - MERCHANT
+              mchid:
+                type: string
+                description: 微信支付商户号
+                example: '990055040'
+          transfer_mode:
+            type: string
+            description: 付款方式
+            example: TRANSFER_TO_ORIGINAL_RECEIVE_USER
+            enum:
+              - TRANSFER_TO_ORIGINAL_RECEIVE_USER
+              - TRANSFER_MODE_TO_ORIGINAL_RECEIVE_MERCHANT
+              - TRANSFER_MODE_TO_SPECIFIED_RECEIVE_MERCHANT
+          receiver:
+            type: object
+            description: 收款方
+            properties:
+              account_type:
+                type: string
+                description: 入账账户类型
+                example: OTHERS
+              openid:
+                type: string
+                description: 入账用户OpenID
+              appid:
+                type: string
+                description: 商户AppID
+              mchid:
+                type: string
+                description: 入账商户号
+                example: '1900001108'
+          instruction_state:
+            type: string
+            description: 在途异常资金付款指令状态
+            enum:
+              - INSTRUCTION_STATE_PENDING
+              - INSTRUCTION_STATE_IN_PROGRESS
+              - INSTRUCTION_STATE_CLOSED
+              - INSTRUCTION_STATE_SUCCESS
+          create_time:
+            type: string
+            format: rfc3339
+            description: 在途异常资金付款指令创建时间
+            example: '2018-06-08T10:34:56+08:00'
+          success_time:
+            type: string
+            format: rfc3339
+            description: 入账成功时间
+            example: '2018-06-08T10:34:56+08:00'
+          close_time:
+            type: string
+            format: rfc3339
+            description: 在途异常资金付款指令关闭时间
+            example: '2018-06-08T10:34:56+08:00'
+          notify_url:
+            type: string
+            description: 回调通知地址
+            example: https://weixin.qq.com
+          instruction_instance_id:
+            type: string
+            description: 微信支付在途异常资金付款指令执行流水号
+            example: '01010100021769054237638333570000010001'

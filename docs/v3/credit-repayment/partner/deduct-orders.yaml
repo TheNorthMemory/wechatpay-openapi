@@ -18,6 +18,7 @@ post:
           - out_record_id
           - deduct_amount
           - notify_url
+          - description
         properties:
           contract_id:
             type: string
@@ -39,6 +40,14 @@ post:
             type: string
             description: 商户回调地址
             example: wxd678efh567hg6787
+          description:
+            type: string
+            description: 产品描述
+            example: 信贷还款
+          attach:
+            type: string
+            description: 商户数据包
+            example: 备注
   responses:
     '200':
       schema:
@@ -47,7 +56,6 @@ post:
           - out_trade_no
           - out_record_id
           - appid
-          - sub_appid
           - openid
           - contract_id
           - order_state

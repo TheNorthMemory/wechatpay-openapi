@@ -1,11 +1,11 @@
 post:
-  x-last-updated-at: 2024.03.27
+  x-last-updated-at: 2026.01.14
   x-role:
     - 机构模式
   tags:
     - 跨境∙进件
   summary: 子商户进件（融合钱包）
-  description: 机构提交子商户资料，微信支付系统会为每个子商户创建子商户号。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter4_2_1.shtml)
+  description: 机构提交子商户资料，微信支付系统会为每个子商户创建子商户号。
   parameters:
     - $ref: '../../definitions/Parameters.yaml#/HTTP_IDEMPOTENCY_KEY'
     - $ref: '../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
@@ -201,6 +201,10 @@ post:
                   type: string
                   description: 域名
                   example: www.qq.com
+          attach:
+            type: string
+            description: 附加信息
+            example: '555588889999'
   responses:
     '200':
       schema:

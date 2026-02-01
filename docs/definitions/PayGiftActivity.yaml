@@ -78,6 +78,7 @@ ActivityBase:
             type: string
 StepSendRuleBase:
   type: object
+  description: 阶梯送发放规则
   required: [award_type, merchant_option]
   properties:
     award_type:

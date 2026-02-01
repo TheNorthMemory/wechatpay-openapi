@@ -1,11 +1,12 @@
 post:
-  x-last-updated-at: 2024.05.21
+  x-last-updated-at: 2025.12.31
   x-role:
     - 服务商
   tags:
     - 免密支付
-  summary: JSAPI下单并授权
-  description: 商户系统先通过预签约生成token或者用户免密签约后，再调用该接口在微信支付服务后台生成预支付交易单，返回正确的预支付交易会话标识后再按JSAPI方式调起支付。[官方文档](https://pay.weixin.qq.com/docs/partner/apis/hide-partner-jsapi-payment/partner-jsons/partner-jsapi-contract-prepay.html)
+    - 支付中签约
+  summary: JSAPI下单并授权/签约
+  description: 商户系统先通过预签约生成token或者用户免密签约后，再调用该接口在微信支付服务后台生成预支付交易单，返回正确的预支付交易会话标识后再按JSAPI方式调起支付。
   parameters:
     - name: _
       in: body
@@ -183,13 +184,43 @@ post:
           contract_info:
             type: object
             description: 签约授权信息
-            required:
-              - password_free_contract_id
             properties:
               password_free_contract_id:
                 type: string
                 description: 免密协议ID
                 example: '201710180325670965'
+              token:
+                type: string
+                description: 扣费服务预授权token
+                example: '201710180325670965'
+              plan_id:
+                type: string
+                description: 模板ID
+                example: '3484306348'
+              contract_mchid:
+                type: string
+                description: 签约商户号
+                example: '1200009811'
+              contract_appid:
+                type: string
+                description: 签约AppID
+                example: wxcbda96de0b165486
+              contract_code:
+                type: string
+                description: 签约协议号
+                example: '100001256'
+              request_serial:
+                type: string
+                description: 请求序列号
+                example: '1695'
+              contract_display_account:
+                type: string
+                description: 用户账户展示名称
+                example: '123456'
+              contract_notify_url:
+                type: string
+                description: 签约信息通知URL
+                example: https://yoursite.com
   responses:
     '200':
       schema:

@@ -1,11 +1,11 @@
 get:
-  x-last-updated-at: 2022.08.04
+  x-last-updated-at: 2026.01.14
   x-role:
     - 机构模式
   tags:
     - 跨境∙进件
   summary: 查询子商户（融合钱包）
-  description: 用于机构查询子商户创建是否成功，接口只提供单个子商户信息查询。 [官方文档](https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter4_2_2.shtml)
+  description: 用于机构查询子商户创建是否成功，接口只提供单个子商户信息查询。
   parameters:
     - name: sp_appid
       type: string
@@ -159,15 +159,71 @@ get:
                 type: string
                 description: 负责人证件号码
                 example: 5555-8888
+          h5_payment:
+            type: object
+            description: H5支付权限详情
+            properties:
+              audit_reject_detail:
+                type: string
+                description: H5驳回详情
+                example: 商户证书不符合要求
+              h5_authorization_state:
+                type: string
+                description: H5支付权限状态
+                example: APPROVED
+                enum:
+                  - APPROVED #已有H5权限
+                  - UNAUTHORIZED #未获得H5权限，也未申请过H5权限
+                  - UNDER_REVIEW #H5权限申请当前在审核中
+                  - REJECTED #H5权限申请被驳回
+                  - UNDER_PUNISHMENT #曾经申请并获得H5权限，但当前权限被处罚，请联系BD处理；
+                  - APPLICATION_FAILED #H5权限申请单创建失败
+          sub_merchant_state:
+            type: object
+            description: 子商户状态信息
+            properties:
+              sub_merchant_status:
+                type: string
+                description: 子商户状态
+                example: OPERATING
+                enum:
+                  - OPERATING
+                  - PENDING
+                  - DEACTIVATED
+                  - CLOSED
+                  - INCOMPLETE_APPLICATION
+              application_status:
+                type: string
+                description: 子商户入驻状态
+                example: INCOMPLETE_APPLICATION
+                enum:
+                  - INCOMPLETE_APPLICATION
+                  - UNDER_REVIEW
+                  - REJECTED
+              application_reject_detail:
+                type: object
+                description: 子商户入驻驳回详情
+                properties:
+                  field:
+                    type: string
+                    description: 驳回字段
+                    example: name
+                  reason:
+                    type: string
+                    description: 驳回原因
+                    example: Merchant name is invalid
+          attach:
+            type: string
+            description: 附加信息
+            example: '555588889999'
 patch:
-  x-version:
-    - 2024.03.07
+  x-last-updated-at: 2026.01.14
   x-role:
     - 机构模式
   tags:
     - 跨境∙进件
   summary: 修改子商户（融合钱包）
-  description: 用于机构子商户创建成功后，接口提供子商户信息修改 [官方文档](https://pay.weixin.qq.com/wiki/doc/api_external/ch/apis/chapter4_2_3.shtml)
+  description: 用于机构子商户创建成功后，接口提供子商户信息修改
   parameters:
     - $ref: '../../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
     - name: _

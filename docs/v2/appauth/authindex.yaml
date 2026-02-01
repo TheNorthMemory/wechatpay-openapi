@@ -3,7 +3,7 @@ get:
   x-last-updated-at: 2021.11.10
   tags:
     - APIv2∙实名校验
-  summary: 通过code换取accesstoken
+  summary: 授权获取code
   description: 使用标准OAuth2.0协议接入微信支付，在用户授权的条件下，将可以做到访问用户资源，使用接口调用用户功能（如获取用户实名信息等 [官方文档](https://pay.weixin.qq.com/wiki/doc/api/realnameauth.php?chapter=60_1&index=2)
   consumes:
     - application/xml

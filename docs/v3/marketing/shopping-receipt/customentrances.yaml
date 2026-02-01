@@ -1,17 +1,26 @@
 post:
-  x-last-updated-at: 2022.09.27
+  x-last-updated-at: 2024.11.18
   x-role:
     - 服务商
   tags:
     - 经营工具∙电子小票
   summary: 创建自定义入口
-  description: '接口介绍：该接口为电子小票自定义入口创建接口，商家可以通过该接口为品牌创建自定义入口展示内容。[官方文档](https://pay.weixin.qq.com/docs/partner/apis/shopping-receipt/custom-entrances/create-custom-entrance.html)'
+  description: '接口介绍：该接口为电子小票自定义入口创建接口，商家可以通过该接口为品牌创建自定义入口展示内容。'
   parameters:
     - name: _
       in: body
       required: true
       schema:
         type: object
+        required:
+          - custom_entrance_type
+          - subtitle
+          - start_time
+          - end_time
+          - custom_entrance_state
+          - brand_id
+          - out_request_no
+          - jump_link
         properties:
           custom_entrance_type:
             type: string
@@ -40,6 +49,9 @@ post:
             type: string
             description: 设置自定义入口的状态，ONLINE-在线对用户展示，OFFLINE-下线对用户不展示 可选取值
             example: ONLINE
+            enum:
+              - ONLINE
+              - OFFLINE
           brand_id:
             type: string
             description: 自定义入口的归属品牌ID
@@ -51,6 +63,9 @@ post:
           jump_link:
             type: object
             description: 自定义入口跳转信息
+            required:
+              - mini_programs_appid
+              - mini_programs_path
             properties:
               mini_programs_appid:
                 type: string
@@ -64,6 +79,17 @@ post:
     '200':
       schema:
         type: object
+        required:
+          - custom_entrance_type
+          - subtitle
+          - start_time
+          - end_time
+          - custom_entrance_state
+          - brand_id
+          - create_time
+          - modify_time
+          - out_request_no
+          - jump_link
         properties:
           custom_entrance_type:
             type: string
@@ -84,6 +110,9 @@ post:
             type: string
             description: 设置自定义入口的状态，ONLINE-在线对用户展示，OFFLINE-下线对用户不展示 可选取值
             example: ONLINE
+            enum:
+              - ONLINE
+              - OFFLINE
           start_time:
             type: string
             format: rfc3339
@@ -115,6 +144,9 @@ post:
           jump_link:
             type: object
             description: 自定义入口跳转信息
+            required:
+              - mini_programs_appid
+              - mini_programs_path
             properties:
               mini_programs_appid:
                 type: string

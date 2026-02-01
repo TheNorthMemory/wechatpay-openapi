@@ -1,10 +1,10 @@
 post:
   x-api-cert-required: true
-  x-last-updated-at: 2024.03.07
+  x-last-updated-at: 2026.01.14
   tags:
     - 跨境∙进件
   summary: 进件子商户
-  description: 机构提交子商户资料，微信支付系统会为每个子商户创建子商户号。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/sub_merchant_entry/chapter3_1.shtml)
+  description: 机构提交子商户资料，微信支付系统会为每个子商户创建子商户号。
   consumes:
     - application/xml
   produces:
@@ -213,9 +213,12 @@ post:
               description: 域名列表
               items:
                 type: string
+          attach:
+            type: string
+            description: 附加信息
+            example: '555588889999'
   responses:
     '200':
-      description: ''
       schema:
         allOf:
           - type: object

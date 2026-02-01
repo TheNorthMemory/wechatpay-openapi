@@ -141,6 +141,7 @@ get:
             description: 分页大小
           data:
             type: array
+            description: 结果集
             items:
               allOf:
                 - $ref: '../../../../../definitions/FavorCouponStock.yaml#CouponOwner'

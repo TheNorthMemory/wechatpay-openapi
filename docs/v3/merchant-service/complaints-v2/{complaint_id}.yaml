@@ -208,3 +208,6 @@ get:
             type: boolean
             description: 是否需即时服务用户
             example: true
+          is_agent_mode:
+            type: boolean
+            description: 是否是智能体投诉

@@ -1,0 +1,52 @@
+post:
+  x-last-updated-at: 2025.12.08
+  x-role:
+    - 服务商
+  tags:
+    - 运营工具∙商家券
+  summary: 向用户预发放商品券
+  description: 商户通过本接口向用户预发放指定商品券批次，并使用返回的token在「小程序发券组件」中完成发券。支持发放两种商品券：单券模式：用户只能使用一次，使用后券失效。多次优惠模式：用户可以按顺序多次使用，每次核销成功后会发放下一次优惠机会，直到用完为止。
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - brand_id
+          - product_coupon_id
+          - stock_id
+          - appid
+          - send_request_no
+        properties:
+          stock_id:
+            type: string
+            description: 批次ID
+            example: '1000000013001'
+          coupon_code:
+            type: string
+            description: 用户商品券Code
+            example: '123446565767'
+          appid:
+            type: string
+            description: 公众账号AppID
+            example: 'wx233544546545989'
+          openid:
+            type: string
+            description: 用户OpenID
+            example: oh-394z-6CGkNoJrsDLTTUKiAnp4
+          send_request_no:
+            type: string
+            description: 发券请求单号
+            example: '34657_20250101_123456'
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - token
+        properties:
+          token:
+            type: string
+            description: 预发券token
+            example: ABBpZjCfAAABAAAAAACmTrRvExc7XKea-

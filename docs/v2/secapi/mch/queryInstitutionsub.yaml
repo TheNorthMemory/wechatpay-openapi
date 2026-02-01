@@ -1,10 +1,10 @@
 post:
   x-api-cert-required: true
-  x-last-updated-at: 2024.03.27
+  x-last-updated-at: 2026.01.14
   tags:
     - 跨境∙进件
   summary: 查询子商户
-  description: 用于机构查询子商户创建是否成功，接口只提供单个子商户信息查询。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/sub_merchant_entry/chapter3_2.shtml)
+  description: 用于机构查询子商户创建是否成功，接口只提供单个子商户信息查询。
   consumes:
     - application/xml
   produces:
@@ -41,7 +41,6 @@ post:
             example: C380BEC2BFD727A4B6845133519F3AD6
   responses:
     '200':
-      description: ''
       schema:
         allOf:
           - type: object
@@ -284,3 +283,7 @@ post:
                       reason:
                         type: string
                         description: 原因
+              attach:
+                type: string
+                description: 附加信息
+                example: '555588889999'

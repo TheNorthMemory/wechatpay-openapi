@@ -1,0 +1,128 @@
+post:
+  x-last-updated-at: 2026.01.13
+  x-role:
+    - 直连商户
+    - 服务商
+  tags:
+    - 会员卡∙服务项
+  summary: 设置会员服务项用户信息
+  description: 可根据用户当前的服务状态和信息，调用该接口更新当前用户的会员服务信息：包括展示在会员卡面上的服务信息和服务消息触达
+  parameters:
+    - name: card_id
+      in: path
+      required: true
+      type: string
+      description: 会员卡id
+      example: pbLatjvWOibDc5-TBnbUk1pD12o0
+    - name: code
+      in: path
+      required: true
+      type: string
+      description: 会员卡code
+      example: '478515832665'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - out_request_no
+          - service_module_id
+          - state_setting
+        properties:
+          out_request_no:
+            type: string
+            description: 商户请求单号
+            example: 100002322019090134234sfdf
+          service_module_id:
+            type: string
+            description: 会员服务项ID
+            example: '666'
+          state_setting:
+            type: object
+            description: 服务状态设置
+            required:
+              - state_id
+              - content_template_data
+            properties:
+              state_id:
+                type: string
+                description: 状态ID
+                example: CHECKED_IN
+              content_template_data:
+                type: object
+                description: 内容模板设置
+                properties:
+                  field_list:
+                    type: array
+                    description: 服务内容列表
+                    items:
+                      type: object
+                      required:
+                        - field_id
+                        - field_value
+                      properties:
+                        field_id:
+                          type: string
+                          description: 内容字段ID
+                          example: hotel_name
+                        field_value:
+                          type: string
+                          description: 内容字段值
+                          example: 深圳市南山区滨海路700号
+                  action_setting:
+                    type: object
+                    description: 操作设置
+                    required:
+                      - action_name
+                      - jump_miniprogram
+                    properties:
+                      action_name:
+                        type: string
+                        description: 操作名称
+                        example: 一键开锁
+                      jump_miniprogram:
+                        type: object
+                        description: 跳转小程序
+                        required:
+                          - appid
+                          - path
+                        properties:
+                          appid:
+                            type: string
+                            description: 小程序appid
+                            example: wx37178d097a6851d8
+                          path:
+                            type: string
+                            description: 小程序path
+                            example: pages/index/index
+              message_template_setting:
+                type: object
+                description: 消息模板设置
+                required:
+                  - message_template_id
+                  - field_list
+                properties:
+                  message_template_id:
+                    type: string
+                    description: 模板消息ID
+                    example: 9bJgRNz9XG248XZ-a0nDKH3Vt_vaTp32fRP1LWvxjzI
+                  field_list:
+                    type: array
+                    description: 服务内容列表
+                    items:
+                      type: object
+                      required:
+                        - field_id
+                        - field_value
+                      properties:
+                        field_id:
+                          type: string
+                          description: 内容字段ID
+                          example: hotel_name
+                        field_value:
+                          type: string
+                          description: 内容字段值
+                          example: 深圳市南山区滨海路700号
+  responses:
+    204: {}

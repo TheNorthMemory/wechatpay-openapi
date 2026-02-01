@@ -1,11 +1,11 @@
 get:
-  x-last-updated-at: 2022.09.27
+  x-last-updated-at: 2024.11.18
   x-role:
     - 服务商
   tags:
     - 经营工具∙电子小票
   summary: 查询自定义入口
-  description: '该接口为电子小票自定义入口查询接口，商家可以通过该接口查询品牌的自定义入口展示内容。[官方文档](https://pay.weixin.qq.com/docs/partner/apis/shopping-receipt/custom-entrances/query-custom-entrance.html)'
+  description: '该接口为电子小票自定义入口查询接口，商家可以通过该接口查询品牌的自定义入口展示内容。'
   parameters:
     - name: brand_id
       in: path
@@ -17,6 +17,17 @@ get:
     '200':
       schema:
         type: object
+        required:
+          - custom_entrance_type
+          - subtitle
+          - start_time
+          - end_time
+          - custom_entrance_state
+          - brand_id
+          - create_time
+          - modify_time
+          - out_request_no
+          - jump_link
         properties:
           custom_entrance_type:
             type: string
@@ -37,6 +48,9 @@ get:
             type: string
             description: 设置自定义入口的状态，ONLINE-在线对用户展示，OFFLINE-下线对用户不展示 可选取值
             example: ONLINE
+            enum:
+              - ONLINE
+              - OFFLINE
           start_time:
             type: string
             format: rfc3339
@@ -68,6 +82,9 @@ get:
           jump_link:
             type: object
             description: 自定义入口跳转信息
+            required:
+              - mini_programs_appid
+              - mini_programs_path
             properties:
               mini_programs_appid:
                 type: string
@@ -78,13 +95,13 @@ get:
                 description: 自定义入口跳转小程序的path
                 example: /pages/bonus/bonus
 patch:
-  x-last-updated-at: 2022.09.27
+  x-last-updated-at: 2024.11.18
   x-role:
     - 服务商
   tags:
     - 经营工具∙电子小票
   summary: 更新自定义入口
-  description: '该接口为电子小票自定义入口更新接口，商家可以通过该接口为品牌更新自定义入口展示内容。[官方文档](https://pay.weixin.qq.com/docs/partner/apis/shopping-receipt/custom-entrances/update-custom-entrance.html)'
+  description: '该接口为电子小票自定义入口更新接口，商家可以通过该接口为品牌更新自定义入口展示内容。'
   parameters:
     - name: brand_id
       in: path
@@ -97,6 +114,8 @@ patch:
       required: true
       schema:
         type: object
+        required:
+          - out_request_no
         properties:
           custom_entrance_type:
             type: string
@@ -117,6 +136,9 @@ patch:
             type: string
             description: 设置自定义入口的状态，ONLINE-在线对用户展示，OFFLINE-下线对用户不展示 可选取值
             example: ONLINE
+            enum:
+              - ONLINE
+              - OFFLINE
           start_time:
             type: string
             format: rfc3339
@@ -134,6 +156,9 @@ patch:
           jump_link:
             type: object
             description: 自定义入口跳转信息
+            required:
+              - mini_programs_appid
+              - mini_programs_path
             properties:
               mini_programs_appid:
                 type: string
@@ -147,6 +172,17 @@ patch:
     '200':
       schema:
         type: object
+        required:
+          - custom_entrance_type
+          - subtitle
+          - start_time
+          - end_time
+          - custom_entrance_state
+          - brand_id
+          - create_time
+          - modify_time
+          - out_request_no
+          - jump_link
         properties:
           custom_entrance_type:
             type: string
@@ -167,6 +203,9 @@ patch:
             type: string
             description: 设置自定义入口的状态，ONLINE-在线对用户展示，OFFLINE-下线对用户不展示 可选取值
             example: ONLINE
+            enum:
+              - ONLINE
+              - OFFLINE
           start_time:
             type: string
             format: rfc3339
@@ -198,6 +237,9 @@ patch:
           jump_link:
             type: object
             description: 自定义入口跳转信息
+            required:
+              - mini_programs_appid
+              - mini_programs_path
             properties:
               mini_programs_appid:
                 type: string

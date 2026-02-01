@@ -1,0 +1,56 @@
+post:
+  x-last-updated-at: 2026.01.13
+  x-role:
+    - 直连商户
+  tags:
+    - 运营工具∙代金券
+  summary: 修改可用单品编码
+  description: 可通过该接口修改增删商品编码，至少需要保留一个商品编码。
+  parameters:
+    - name: stock_id
+      in: path
+      required: true
+      type: string
+      description: 批次号
+      example: '9865000'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - stock_creator_mchid
+        properties:
+          stock_creator_mchid:
+            type: string
+            description: 创建批次的商户号
+            example: '8956000'
+          add_goods_id_list:
+            type: array
+            description: 增加单品编码列表
+            items:
+              type: string
+              example: '8956000'
+          delete_goods_id_list:
+            type: array
+            description: 删除单品编码列表
+            items:
+              type: string
+              example: '8956000'
+  responses:
+    "200":
+      schema:
+        type: object
+        required:
+          - pause_time
+          - stock_id
+        properties:
+          pause_time:
+            type: string
+            format: rfc3339
+            description: 生效时间
+            example: '2015-05-20T13:29:35+08:00'
+          stock_id:
+            type: string
+            description: 批次号
+            example: '9865000'

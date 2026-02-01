@@ -30,7 +30,7 @@ post:
             example: wxd678efh567hg6787
           sub_orders:
             type: array
-            description: 子单信息
+            description: 商品单信息
             maxItems: 50
             items:
               type: object
@@ -44,7 +44,7 @@ post:
                   example: '1900000109'
                 out_trade_no:
                   type: string
-                  description: 子单商户订单号
+                  description: 商品单商户订单号
                   example: '20150806125346'
                 individual_auth_id:
                   type: string

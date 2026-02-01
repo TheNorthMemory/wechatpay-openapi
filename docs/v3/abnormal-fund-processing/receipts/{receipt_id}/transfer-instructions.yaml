@@ -27,17 +27,21 @@ post:
             type: string
             description: 商户侧指令编号
             example: '1200002'
-          appid:
-            type: array
-            description: 商户AppID
-            items:
-              type: string
-              example: 'wxf636efh567hg4356'
           transfer_mode:
             type: string
             description: 付款方式
             enum:
               - TRANSFER_TO_ORIGINAL_RECEIVE_USER
+              - TRANSFER_MODE_TO_ORIGINAL_RECEIVE_MERCHANT
+              - TRANSFER_MODE_TO_SPECIFIED_RECEIVE_MERCHANT
+          receiver:
+            type: object
+            description: 收款方
+            properties:
+              mchid:
+                type: string
+                description: 入账商户号
+                example: '1900001108'
           notify_url:
             type: string
             description: 回调通知地址
@@ -128,16 +132,32 @@ post:
                 description: 付款方式
                 enum:
                   - TRANSFER_TO_ORIGINAL_RECEIVE_USER
+                  - TRANSFER_MODE_TO_ORIGINAL_RECEIVE_MERCHANT
+                  - TRANSFER_MODE_TO_SPECIFIED_RECEIVE_MERCHANT
+              receiver:
+                type: object
+                description: 收款方
+                properties:
+                  mchid:
+                    type: string
+                    description: 入账商户号
+                    example: '1900001108'
+              instruction_state:
+                type: string
+                description: 在途异常资金付款指令状态
+                enum:
+                  - INSTRUCTION_STATE_PENDING
+                  - INSTRUCTION_STATE_IN_PROGRESS
+                  - INSTRUCTION_STATE_CLOSED
+                  - INSTRUCTION_STATE_SUCCESS
+              create_time:
+                type: string
+                description: 在途异常资金付款单据创建时间
+                example: '2018-06-08T10:34:56+08:00'
               success_time:
                 type: string
                 description: 入账成功时间
                 example: '2018-06-08T10:34:56+08:00'
-              appid:
-                type: array
-                description: 商户AppID
-                items:
-                  type: string
-                  example: 'wxf636efh567hg4356'
               notify_url:
                 type: string
                 description: 回调通知地址

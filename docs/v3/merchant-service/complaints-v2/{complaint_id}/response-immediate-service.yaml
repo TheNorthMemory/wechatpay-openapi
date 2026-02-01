@@ -1,0 +1,422 @@
+post:
+  x-last-updated-at: 2026.01.22
+  x-role:
+    - 普通商户
+    - 服务商
+  tags:
+    - 风险合规∙消费者投诉
+  summary: 回复需要即时服务的投诉单
+  description: 商户可通过调用此接口，针对需要即时服务的投诉单（need_immediate_service为true）提交内容回复用户。此接口支持使用新版消息格式（NormalMessage），可发送富文本、图片、按钮组等多种消息类型。
+  parameters:
+    - name: complaint_id
+      in: path
+      required: true
+      type: string
+      description: 投诉单号
+      example: '200201820200101080076610000'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - complainted_mchid
+          - message
+          - idempotent_id
+        properties:
+          complainted_mchid:
+            type: string
+            description: 被诉商户号
+            example: '1900012181'
+          message:
+            type: object
+            description: 消息内容
+            properties:
+              blocks:
+                type: array
+                description: 消息内容
+                items:
+                  type: object
+                  properties:
+                    type:
+                      type: string
+                      description: 消息块类型
+                      example: TEXT
+                      enum:
+                        - TEXT
+                        - IMAGE
+                        - LINK
+                        - FAQ_LIST
+                        - BUTTON
+                        - BUTTON_GROUP
+                    text:
+                      type: object
+                      description: 文本
+                      properties:
+                        text:
+                          type: string
+                          description: 文本
+                          example: example_text
+                        color:
+                          type: string
+                          description: 文本颜色
+                          example: DEFAULT
+                          enum:
+                            - DEFAULT
+                            - SECONDARY
+                        is_bold:
+                          type: boolean
+                          description: 是否粗体
+                    image:
+                      type: object
+                      description: 图片
+                      properties:
+                        media_id:
+                          type: string
+                          format: MediaId
+                          description: 媒体ID
+                          example: example_media_id
+                        image_style_type:
+                          type: string
+                          description: 图片样式类型
+                          example: IMAGE_STYLE_TYPE_NARROW
+                          enum:
+                            - IMAGE_STYLE_TYPE_NARROW
+                            - IMAGE_STYLE_TYPE_WIDE
+                    link:
+                      type: object
+                      description: 链接
+                      properties:
+                        text:
+                          type: string
+                          description: 文本
+                          example: example_text
+                        action:
+                          type: object
+                          description: 动作
+                          properties:
+                            action_type:
+                              type: string
+                              description: 动作类型
+                              example: ACTION_TYPE_SEND_MESSAGE
+                              enum:
+                                - ACTION_TYPE_SEND_MESSAGE
+                                - ACTION_TYPE_JUMP_URL
+                                - ACTION_TYPE_JUMP_MINI_PROGRAM
+                            jump_url:
+                              type: string
+                              description: 跳转链接
+                              example: example_jump_url
+                            mini_program_jump_info:
+                              type: object
+                              description: 跳转小程序信息
+                              required:
+                                - appid
+                              properties:
+                                appid:
+                                  type: string
+                                  description: 跳转小程序APPID
+                                  example: example_appid
+                                path:
+                                  type: string
+                                  description: 跳转小程序页面PATH
+                                  example: example_path
+                                text:
+                                  type: string
+                                  description: 跳转小程序页面名称
+                                  example: example_text
+                            message_info:
+                              type: object
+                              description: 回复消息内容
+                              required:
+                                - content
+                              properties:
+                                content:
+                                  type: string
+                                  description: 回复的消息内容
+                                  example: example_content
+                                custom_data:
+                                  type: string
+                                  description: 自定义透传字段
+                                  example: example_custom_data
+                            action_id:
+                              type: string
+                              description: 动作id
+                              example: example_action_id
+                        invalid_info:
+                          type: object
+                          description: 失效配置
+                          properties:
+                            expired_time:
+                              type: string
+                              format: rfc3339
+                              description: 过期时间
+                              example: '2015-05-20T13:29:35+08:00'
+                            multi_clickable:
+                              type: boolean
+                              description: 是否可以多次点击
+                    faq_list:
+                      type: object
+                      description: FAQ列表
+                      properties:
+                        faqs:
+                          type: array
+                          description: FAQ列表
+                          items:
+                            type: object
+                            properties:
+                              faq_id:
+                                type: string
+                                description: faq的id
+                                example: example_faq_id
+                              faq_title:
+                                type: string
+                                description: faq内容
+                                example: example_faq_title
+                              action:
+                                type: object
+                                description: 动作
+                                properties:
+                                  action_type:
+                                    type: string
+                                    description: 动作类型
+                                    example: ACTION_TYPE_SEND_MESSAGE
+                                    enum:
+                                      - ACTION_TYPE_SEND_MESSAGE
+                                      - ACTION_TYPE_JUMP_URL
+                                      - ACTION_TYPE_JUMP_MINI_PROGRAM
+                                  jump_url:
+                                    type: string
+                                    description: 跳转链接
+                                    example: example_jump_url
+                                  mini_program_jump_info:
+                                    type: object
+                                    description: 跳转小程序信息
+                                    required:
+                                      - appid
+                                    properties:
+                                      appid:
+                                        type: string
+                                        description: 跳转小程序APPID
+                                        example: example_appid
+                                      path:
+                                        type: string
+                                        description: 跳转小程序页面PATH
+                                        example: example_path
+                                      text:
+                                        type: string
+                                        description: 跳转小程序页面名称
+                                        example: example_text
+                                  message_info:
+                                    type: object
+                                    description: 回复消息内容
+                                    required:
+                                      - content
+                                    properties:
+                                      content:
+                                        type: string
+                                        description: 回复的消息内容
+                                        example: example_content
+                                      custom_data:
+                                        type: string
+                                        description: 自定义透传字段
+                                        example: example_custom_data
+                                  action_id:
+                                    type: string
+                                    description: 动作id
+                                    example: example_action_id
+                    button:
+                      type: object
+                      description: 按钮
+                      properties:
+                        text:
+                          type: string
+                          description: 文本
+                          example: example_text
+                        action:
+                          type: object
+                          description: 动作
+                          properties:
+                            action_type:
+                              type: string
+                              description: 动作类型
+                              example: ACTION_TYPE_SEND_MESSAGE
+                              enum:
+                                - ACTION_TYPE_SEND_MESSAGE
+                                - ACTION_TYPE_JUMP_URL
+                                - ACTION_TYPE_JUMP_MINI_PROGRAM
+                            jump_url:
+                              type: string
+                              description: 跳转链接
+                              example: example_jump_url
+                            mini_program_jump_info:
+                              type: object
+                              description: 跳转小程序信息
+                              required:
+                                - appid
+                              properties:
+                                appid:
+                                  type: string
+                                  description: 跳转小程序APPID
+                                  example: example_appid
+                                path:
+                                  type: string
+                                  description: 跳转小程序页面PATH
+                                  example: example_path
+                                text:
+                                  type: string
+                                  description: 跳转小程序页面名称
+                                  example: example_text
+                            message_info:
+                              type: object
+                              description: 回复消息内容
+                              required:
+                                - content
+                              properties:
+                                content:
+                                  type: string
+                                  description: 回复的消息内容
+                                  example: example_content
+                                custom_data:
+                                  type: string
+                                  description: 自定义透传字段
+                                  example: example_custom_data
+                            action_id:
+                              type: string
+                              description: 动作id
+                              example: example_action_id
+                        invalid_info:
+                          type: object
+                          description: 失效配置
+                          properties:
+                            expired_time:
+                              type: string
+                              format: rfc3339
+                              description: 过期时间
+                              example: '2015-05-20T13:29:35+08:00'
+                            multi_clickable:
+                              type: boolean
+                              description: 是否可以多次点击
+                    button_group:
+                      type: object
+                      description: 按钮组
+                      properties:
+                        buttons:
+                          type: array
+                          description: 按钮组
+                          items:
+                            type: object
+                            properties:
+                              text:
+                                type: string
+                                description: 文本
+                                example: example_text
+                              action:
+                                type: object
+                                description: 动作
+                                properties:
+                                  action_type:
+                                    type: string
+                                    description: 动作类型
+                                    example: ACTION_TYPE_SEND_MESSAGE
+                                    enum:
+                                      - ACTION_TYPE_SEND_MESSAGE
+                                      - ACTION_TYPE_JUMP_URL
+                                      - ACTION_TYPE_JUMP_MINI_PROGRAM
+                                  jump_url:
+                                    type: string
+                                    description: 跳转链接
+                                    example: example_jump_url
+                                  mini_program_jump_info:
+                                    type: object
+                                    description: 跳转小程序信息
+                                    required:
+                                      - appid
+                                    properties:
+                                      appid:
+                                        type: string
+                                        description: 跳转小程序APPID
+                                        example: example_appid
+                                      path:
+                                        type: string
+                                        description: 跳转小程序页面PATH
+                                        example: example_path
+                                      text:
+                                        type: string
+                                        description: 跳转小程序页面名称
+                                        example: example_text
+                                  message_info:
+                                    type: object
+                                    description: 回复消息内容
+                                    required:
+                                      - content
+                                    properties:
+                                      content:
+                                        type: string
+                                        description: 回复的消息内容
+                                        example: example_content
+                                      custom_data:
+                                        type: string
+                                        description: 自定义透传字段
+                                        example: example_custom_data
+                                  action_id:
+                                    type: string
+                                    description: 动作id
+                                    example: example_action_id
+                              invalid_info:
+                                type: object
+                                description: 失效配置
+                                properties:
+                                  expired_time:
+                                    type: string
+                                    format: rfc3339
+                                    description: 过期时间
+                                    example: '2015-05-20T13:29:35+08:00'
+                                  multi_clickable:
+                                    type: boolean
+                                    description: 是否可以多次点击
+                        button_layout:
+                          type: string
+                          description: 按钮布局方式
+                          example: LAYOUT_HORIZONTAL
+                          enum:
+                            - LAYOUT_UNKNOWN
+                            - LAYOUT_HORIZONTAL
+                            - LAYOUT_VERTICAL
+                        invalid_info:
+                          type: object
+                          description: 失效配置
+                          properties:
+                            expired_time:
+                              type: string
+                              format: rfc3339
+                              description: 过期时间
+                              example: '2015-05-20T13:29:35+08:00'
+                            multi_clickable:
+                              type: boolean
+                              description: 是否可以多次点击
+              sender_identity:
+                type: string
+                description: 发送者身份类别
+                example: UNKNOWN
+                enum:
+                  - UNKNOWN
+                  - MANUAL
+                  - MACHINE
+              custom_data:
+                type: string
+                description: 自定义透传信息
+                example: example_custom_data
+          idempotent_id:
+            type: string
+            description: 幂等ID
+            example: 550e8400-e29b-41d4-a716-446655440000
+  responses:
+    '200':
+      schema:
+        type: object
+        properties:
+          log_id:
+            type: string
+            description: 操作流水号
+            example: '300285320210322170000071077'

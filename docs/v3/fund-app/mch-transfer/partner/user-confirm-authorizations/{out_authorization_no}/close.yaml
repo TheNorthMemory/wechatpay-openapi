@@ -1,0 +1,96 @@
+post:
+  x-last-updated-at: 2025.12.09
+  x-role:
+    - 服务商
+  tags:
+    - 资金应用∙转账∙用户确认模式
+  summary: 解除免确认收款授权
+  description: 根据商户单号解除免确认收款授权。注：单个商户的接口频率限制为50次/s
+  parameters:
+    - name: out_authorization_no
+      in: path
+      required: true
+      type: string
+      description: 商户侧授权单号
+      example: plfk2020042013
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - out_authorization_no
+          - appid
+          - openid
+          - user_display_name
+          - authorization_id
+          - state
+          - authorize_time
+        properties:
+          out_authorization_no:
+            type: string
+            description: 商户侧授权单号
+            example: plfk2020042013
+          appid:
+            type: string
+            description: 商户AppID
+            example: wxf636efh567hg4356
+          openid:
+            type: string
+            description: 收款用户OpenID
+            example: o-MYE42l80oelYMDE34nYD456Xoy
+          user_display_name:
+            type: string
+            description: 用户展示名称
+            example: wx_123456
+          authorization_id:
+            type: string
+            description: 微信自动收款授权单号
+            example: '201202504101000123456789012'
+          state:
+            type: string
+            description: 单据状态
+            example: CLOSED
+            enum:
+              - CLOSED #用户或商户系统关闭，无法转账至该授权对应的用户
+          authorize_time:
+            type: string
+            description: 用户确认授权的时间
+            example: '2015-05-20T13:29:35.120+08:00'
+          close_info:
+            type: object
+            description: 自动收款授权的关闭信息
+            required:
+              - close_time
+              - close_reason
+            properties:
+              close_time:
+                type: string
+                description: 关闭时间
+                example: '2015-05-20T13:29:35.120+08:00'
+              close_reason:
+                type: string
+                description: 自动收款授权的原因
+                example: CLOSE_VIA_MCH_API
+                enum:
+                  - CLOSE_VIA_MCH_API #商户通过API主动关闭授权
+          transfer_scene_id:
+            type: string
+            description: 转账场景ID
+            example: '1000'
+            enum:
+              - '1000'
+              - '1002'
+              - '1004'
+              - '1005'
+              - '1009'
+              - '1010'
+              - '1011'
+              - '1013'
+          user_recv_perception:
+            type: string
+            description: 用户收款感知
+            example: 现金奖励
+          create_time:
+            type: string
+            description: 单据创建时间
+            example: '2015-05-20T13:29:35.120+08:00'

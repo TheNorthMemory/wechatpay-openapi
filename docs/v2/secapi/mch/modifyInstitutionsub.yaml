@@ -1,10 +1,10 @@
 post:
   x-api-cert-required: true
-  x-last-updated-at: 2024.03.07
+  x-last-updated-at: 2026.01.14
   tags:
     - 跨境∙进件
   summary: 修改子商户API
-  description: 用于机构子商户创建成功后，接口提供子商户信息修改。[官方文档](https://pay.weixin.qq.com/wiki/doc/api/wxpay/ch/sub_merchant_entry/chapter3_3.shtml)
+  description: 用于机构子商户创建成功后，接口提供子商户信息修改。
   consumes:
     - application/xml
   produces:
@@ -215,7 +215,6 @@ post:
                 type: string
   responses:
     '200':
-      description: ''
       schema:
         allOf:
           - type: object

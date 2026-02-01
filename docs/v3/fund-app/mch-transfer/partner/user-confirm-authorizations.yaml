@@ -1,0 +1,87 @@
+post:
+  x-last-updated-at: 2025.12.09
+  x-role:
+    - 服务商
+  tags:
+    - 资金应用∙转账∙用户确认模式
+  summary: 申请免确认收款授权
+  description: 商户调用该接口申请免确认收款授权，用户需在24小时内完成授权，过期未完成需更换单号重新操作。注：单个商户的接口频率限制为50次/s
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - out_authorization_no
+          - appid
+          - openid
+          - transfer_scene_id
+          - user_display_name
+          - authorization_notify_url
+        properties:
+          out_authorization_no:
+            type: string
+            description: 商户侧授权单号
+            example: plfk2020042013
+          appid:
+            type: string
+            description: 商户AppID
+            example: '102022609'
+          openid:
+            type: string
+            description: 收款用户OpenID
+            example: o-MYE42l80oelYMDE34nYD456Xoy
+          transfer_scene_id:
+            type: string
+            description: 转账场景ID
+            example: '1000'
+            enum:
+              - '1000'
+              - '1002'
+              - '1004'
+              - '1005'
+              - '1009'
+              - '1010'
+              - '1011'
+              - '1013'
+          user_display_name:
+            type: string
+            description: 用户展示名称
+            example: wx_123456
+          user_recv_perception:
+            type: string
+            description: 用户收款感知
+            example: 现金奖励
+          authorization_notify_url:
+            type: string
+            description: 授权结果通知地址
+            example: https://www.weixin.qq.com/wxpay/pay.php
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - out_authorization_no
+          - state
+          - create_time
+          - package_info
+        properties:
+          out_authorization_no:
+            type: string
+            description: 商户侧授权单号
+            example: plfk2020042013
+          state:
+            type: string
+            description: 单据状态
+            example: WAIT_USER_CONFIRM
+            enum:
+              - WAIT_USER_CONFIRM #待收款用户确认，可拉起微信收款确认页面进行收款确认
+          create_time:
+            type: string
+            description: 单据创建时间
+            example: '2015-05-20T13:29:35+08:00'
+          package_info:
+            type: string
+            description: 跳转领取页面的package信息
+            example: affffddafdfafddffda==

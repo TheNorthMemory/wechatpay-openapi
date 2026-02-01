@@ -1,0 +1,83 @@
+get:
+  x-last-updated-at: 2026.01.26
+  x-role:
+    - 服务商
+  tags:
+    - 运营工具∙商品券
+  summary: 查询图片生成任务执行结果
+  description: 查询图片生成任务执行结果。频率限制：500/s
+  parameters:
+    - name: task_id
+      in: path
+      required: true
+      type: string
+      description: 图片生成的任务ID
+      example: image_generation_task_1
+    - name: brand_id
+      in: query
+      required: true
+      type: string
+      description: 品牌ID
+      example: '120344'
+    - name: image_generation_type
+      in: query
+      required: true
+      type: string
+      description: 图片生成类型
+      example: COMBINE_IMAGE
+      enum:
+        - COMBINE_IMAGE
+        - CUT_OUT
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - brand_id
+          - task_id
+          - image_generation_type
+          - task_state
+        properties:
+          brand_id:
+            type: string
+            description: 品牌ID
+            example: '120344'
+          task_id:
+            type: string
+            description: 图片生成的任务ID
+            example: image_generation_task_1
+          image_generation_type:
+            type: string
+            description: 图片生成类型
+            example: COMBINE_IMAGE
+            enum:
+              - COMBINE_IMAGE
+              - CUT_OUT
+          task_state:
+            type: string
+            description: 任务状态
+            example: PROCESSING
+            enum:
+              - PROCESSING
+              - FAIL
+              - SUCCESS
+          combine_image_result:
+            type: object
+            description: 拼图结果
+            required:
+              - image_url
+            properties:
+              image_url:
+                type: string
+                description: 生成的图片URL
+                example: https://wxpaylogo.qpic.cn/wxpaylogo/example.jpg
+          cut_out_result:
+            type: object
+            description: 生成商品图结果
+            required:
+              - image_url
+            properties:
+              image_url:
+                type: string
+                description: 生成的图片URL
+                example: https://wxpaylogo.qpic.cn/wxpaylogo/example.jpg

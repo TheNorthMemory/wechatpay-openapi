@@ -81,7 +81,7 @@ post:
                   example: 哈哈哈小店
                 out_trade_no:
                   type: string
-                  description: 商品单订单号
+                  description: 商品单商户订单号
                   example: '20150806125346'
                 amount:
                   type: object

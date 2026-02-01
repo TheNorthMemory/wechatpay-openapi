@@ -1,0 +1,255 @@
+post:
+  x-last-updated-at: 2026.01.14
+  x-role:
+    - 直连商户
+  tags:
+    - 微信保单服务
+  summary: 上传保单
+  description: 在用户完成授权后（商户可通过授权完成回调通知或主动调用查询授权信息接口确认授权状态），商户通过此接口将保单的详细信息同步至微信支付平台。
+  parameters:
+    - $ref: '../../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - out_insurance_no
+          - insurance_name
+          - insured_name_list
+          - insurance_company_code
+          - effective_time
+          - expired_time
+          - coverage_detail
+          - support_renewal
+          - policy_type
+          - policy_state
+          - plan_id
+          - out_contract_code
+          - policy_periods
+          - appid
+          - openid
+        properties:
+          out_insurance_no:
+            type: string
+            description: 商户保险编号
+            example: Auisihsiahishishi4hihsid123418id
+          insured_name_list:
+            type: array
+            description: 被保险人姓名列表
+            items:
+              type: string
+              format: base64
+              example: tCk1JSUV2QUlCQURBTkJna3Foa2lHOXcwQ
+          insurance_company_code:
+            type: string
+            description: 承保公司代码
+            example: '1001'
+          effective_time:
+            type: string
+            format: rfc3339
+            description: 保单生效时间
+            example: '2025-09-21T17:11:12+08:00'
+          expired_time:
+            type: string
+            format: rfc3339
+            description: 保单失效时间
+            example: '2025-09-21T17:11:12+08:00'
+          coverage_detail:
+            type: string
+            description: 保障详情
+            example: 可保190种疾病，确诊一次性赔付
+          support_renewal:
+            type: boolean
+            description: 是否支持续保
+          start_renewal_time:
+            type: string
+            format: rfc3339
+            description: 可续保开始时间
+            example: '2025-09-21T17:11:12+08:00'
+          end_renewal_time:
+            type: string
+            format: rfc3339
+            description: 可续保结束时间
+            example: '2025-09-21T17:11:12+08:00'
+          policy_type:
+            type: string
+            description: 保单类型
+            example: POLICY_TYPE_OTHER
+            enum:
+              - POLICY_TYPE_OTHER  #其余险
+              - POLICY_TYPE_MEDICAL  #医疗险
+              - POLICY_TYPE_ACCIDENT  #意外险
+              - POLICY_TYPE_CRITICAL  #重疾险
+              - POLICY_TYPE_CAR  # 车险
+              - POLICY_TYPE_LIFE  #人寿险
+              - POLICY_TYPE_PROPERTY  #家财险
+              - POLICY_TYPE_PET  #宠物险
+              - POLICY_TYPE_ANNUITY  #年金险
+          car_number:
+            type: string
+            description: 车牌信息
+            example: 粤B·AB123
+          pet_name:
+            type: string
+            description: 宠物名称
+            example: 小狗
+          address:
+            type: string
+            description: 地址信息
+            example: 上海市浦东新区晨晖路1001号
+          policy_state:
+            type: string
+            description: 保单状态
+            example: POLICY_STATE_ISSUING
+            enum:
+              - POLICY_STATE_ISSUING
+              - POLICY_STATE_APPROVED
+              - POLICY_STATE_DECLINED
+              - POLICY_STATE_INACTIVE
+          policy_code:
+            type: string
+            description: 保司保单号
+            example: Coisihsiaxishishi4hihsid1ii411co
+          plan_id:
+            type: number
+            description: 委托代扣模板ID
+            example: 12535
+          out_contract_code:
+            type: string
+            description: 商户签约协议号
+            example: wxwtdk20200910100000
+          policy_periods:
+            type: array
+            description: 保单的扣费周期列表
+            items:
+              type: number
+              description: 保险扣费周期编号
+              example: 1
+          appid:
+            type: string
+            description: 商户APPID
+            example: wxd678efh567hg6787
+          openid:
+            type: string
+            description: 用户在商户公众号内的身份标识
+            example: oYobu0MVnQfWpSMOYJz2AHPG_gQw
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - out_insurance_no
+          - insurance_name
+          - insured_name_list
+          - insurance_company_code
+          - effective_time
+          - expired_time
+          - coverage_detail
+          - support_renewal
+          - policy_type
+          - policy_state
+          - plan_id
+          - out_contract_code
+          - policy_periods
+        properties:
+          out_insurance_no:
+            type: string
+            description: 商户保险编号
+            example: Auisihsiahishishi4hihsid123418id
+          insurance_name:
+            type: string
+            description: 保险名称
+            example: 微医保·百万医疗险
+          insured_name_list:
+            type: array
+            description: 被保险人姓名列表
+            items:
+              type: string
+              format: base64
+              example: tCk1JSUV2QUlCQURBTkJna3Foa2lHOXcwQ
+          insurance_company_code:
+            type: string
+            description: 承保公司代码
+            example: '1001'
+          effective_time:
+            type: string
+            format: rfc3339
+            description: 保单生效时间
+            example: '2025-09-21T17:11:12+08:00'
+          expired_time:
+            type: string
+            format: rfc3339
+            description: 保单失效时间
+            example: '2025-09-21T17:11:12+08:00'
+          coverage_detail:
+            type: string
+            description: 保障详情
+            example: 可保190种疾病，确诊一次性赔付
+          support_renewal:
+            type: boolean
+            description: 是否支持续保
+          start_renewal_time:
+            type: string
+            format: rfc3339
+            description: 可续保开始时间
+            example: '2025-09-21T17:11:12+08:00'
+          end_renewal_time:
+            type: string
+            format: rfc3339
+            description: 可续保结束时间
+            example: '2025-09-21T17:11:12+08:00'
+          policy_type:
+            type: string
+            description: 保单类型
+            example: POLICY_TYPE_OTHER
+            enum:
+              - POLICY_TYPE_OTHER  #其余险
+              - POLICY_TYPE_MEDICAL  #医疗险
+              - POLICY_TYPE_ACCIDENT  #意外险
+              - POLICY_TYPE_CRITICAL  #重疾险
+              - POLICY_TYPE_CAR  # 车险
+              - POLICY_TYPE_LIFE  #人寿险
+              - POLICY_TYPE_PROPERTY  #家财险
+              - POLICY_TYPE_PET  #宠物险
+              - POLICY_TYPE_ANNUITY  #年金险
+          car_number:
+            type: string
+            description: 车牌信息
+            example: 粤B·AB123
+          pet_name:
+            type: string
+            description: 宠物名称
+            example: 小狗
+          address:
+            type: string
+            description: 地址信息
+            example: 上海市浦东新区晨晖路1001号
+          policy_state:
+            type: string
+            description: 保单状态
+            example: POLICY_STATE_ISSUING
+            enum:
+              - POLICY_STATE_ISSUING
+              - POLICY_STATE_APPROVED
+              - POLICY_STATE_DECLINED
+              - POLICY_STATE_INACTIVE
+          policy_code:
+            type: string
+            description: 保司保单号
+            example: Coisihsiaxishishi4hihsid1ii411co
+          plan_id:
+            type: number
+            description: 委托代扣模板ID
+            example: 12535
+          out_contract_code:
+            type: string
+            description: 商户签约协议号
+            example: wxwtdk20200910100000
+          policy_periods:
+            type: array
+            description: 保单的扣费周期列表
+            items:
+              type: number
+              description: 保险扣费周期编号
+              example: 1

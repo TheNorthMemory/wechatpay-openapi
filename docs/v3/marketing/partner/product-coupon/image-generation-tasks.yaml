@@ -1,0 +1,139 @@
+post:
+  x-last-updated-at: 2026.01.26
+  x-role:
+    - 服务商
+  tags:
+    - 运营工具∙商品券
+  summary: 提交图片生成任务
+  description: 根据类型生成图片，结果将通过回调的方式告知，或通过主动查询接口获取生成结果。频率限制：500/s
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - brand_id
+          - task_id
+          - image_generation_type
+        properties:
+          brand_id:
+            type: string
+            description: 品牌ID
+            example: '120344'
+          task_id:
+            type: string
+            description: 图片生成的任务ID
+            example: image_generation_task_1
+          image_generation_type:
+            type: string
+            description: 图片生成类型
+            example: COMBINE_IMAGE
+            enum:
+              - COMBINE_IMAGE
+              - CUT_OUT
+          combine_image:
+            type: object
+            description: 拼图数据
+            required:
+              - scope
+              - type
+              - usage_mode
+            properties:
+              scope:
+                type: string
+                description: 优惠范围
+                example: ALL
+                enum:
+                  - ALL
+                  - SINGLE
+              type:
+                type: string
+                description: 商品券类型
+                example: NORMAL
+                enum:
+                  - NORMAL
+                  - DISCOUNT
+                  - EXCHANGE
+              usage_mode:
+                type: string
+                description: 使用模式
+                example: SINGLE
+                enum:
+                  - SINGLE
+                  - PROGRESSIVE_BUNDLE
+              normal_coupon:
+                type: object
+                description: 满减券使用规则
+                required:
+                  - threshold
+                  - discount_amount
+                properties:
+                  threshold:
+                    type: integer
+                    description: 门槛金额
+                    example: 10000
+                  discount_amount:
+                    type: integer
+                    description: 固定减免金额
+                    example: 1
+              discount_coupon:
+                type: object
+                description: 折扣券使用规则
+                required:
+                  - threshold
+                  - percent_off
+                properties:
+                  threshold:
+                    type: integer
+                    description: 门槛金额
+                    example: 10000
+                  percent_off:
+                    type: integer
+                    description: 固定减免百分比
+                    example: 20
+              exchange_coupon:
+                type: object
+                description: 兑换券使用规则
+                required:
+                  - threshold
+                  - exchange_price
+                properties:
+                  threshold:
+                    type: integer
+                    description: 门槛金额
+                    example: 10000
+                  exchange_price:
+                    type: integer
+                    description: 固定兑换价格
+                    example: 20
+              background_color:
+                type: string
+                description: 背景颜色色值
+                example: '#ff5733'
+          cut_out:
+            type: object
+            description: 抠图数据
+            required:
+              - image_url
+            properties:
+              image_url:
+                type: string
+                description: 商品图URL
+                example: https://wxpaylogo.qpic.cn/wxpaylogo/example.jpg
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - task_id
+          - brand_id
+        properties:
+          task_id:
+            type: string
+            description: 图片生成的任务ID
+            example: image_generation_task_1
+          brand_id:
+            type: string
+            description: 品牌ID
+            example: '120344'

@@ -38,6 +38,7 @@ post:
               - out_contract_code
               - display_name
               - contract_state
+              - repayment_amount_limit
             properties:
               contract_id:
                 type: string
@@ -73,7 +74,7 @@ post:
                 format: rfc3339
                 description: 协议解约时间
                 example: '2021-11-20T13:29:35+08:00'
-              contract_termination_mode:
+              contract_terminated_mode:
                 type: string
                 description: 协议解约方式
                 example: TERMINATION_MODE_BY_USER
@@ -90,3 +91,15 @@ post:
                 type: integer
                 description: 还款日
                 example: 1
+              openid:
+                type: string
+                description: 用户服务商标识
+                example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+              appid:
+                type: string
+                description: 服务商AppID
+                example: wxd678efh567hg6787
+              repayment_amount_limit:
+                type: integer
+                description: 还款金额上限
+                example: 10000

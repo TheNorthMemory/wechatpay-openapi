@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2022.09.27
+  x-last-updated-at: 2025.01.09
   x-role:
     - 服务商
   tags:
@@ -7,7 +7,7 @@ post:
   summary: 上传电子小票
   consumes:
     - multipart/form-data
-  description: '商户将支付成功回传的参数填入指定字段，可以给指定微信支付订单上传电子小票。 上传成功后，用户可以在账单详情页看到商户上传的电子小票。[官方文档](https://pay.weixin.qq.com/docs/partner/apis/shopping-receipt/shopping-receipts/upload-shopping-receipt.html)'
+  description: '商户将支付成功回传的参数填入指定字段，可以给指定微信支付订单上传电子小票。 上传成功后，用户可以在账单详情页看到商户上传的电子小票。'
   parameters:
     - $ref: '../../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
     - name: meta
@@ -18,6 +18,10 @@ post:
       description: 电子小票上传信息`JSON`格式字符串
       schema:
         type: object
+        required:
+          - transaction_id
+          - openid
+          - sha256
         properties:
           transaction_id:
             type: string
@@ -58,10 +62,21 @@ post:
     '200':
       schema:
         type: object
+        required:
+          - receipt
         properties:
           receipt:
             type: object
             description: 电子小票上传信息
+            required:
+              - receipt_id
+              - state
+              - transaction_id
+              - openid
+              - sha256
+              - image_type
+              - create_time
+              - modify_time
             properties:
               receipt_id:
                 type: string
@@ -119,7 +134,7 @@ post:
                 properties:
                   consultation_phone_number:
                     type: string
-                    format: rsa-pubkey-encrypted
+                    format: base64
                     description: 品牌售后部门的咨询电话。
                     example: pVd1HJ6v/69bDnuC4EL5Kz4jBHLiCa8MRtelw/wDa4SzfeespQO/0kjiwfqdfg==
               upload_time:

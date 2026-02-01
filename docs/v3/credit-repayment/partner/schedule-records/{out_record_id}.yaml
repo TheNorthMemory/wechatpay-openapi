@@ -1,11 +1,11 @@
 get:
-  x-last-updated-at: 2025.12.05
+  x-last-updated-at: 2026.01.14
   x-role:
     - 服务商
   tags:
     - 自动还款
-  summary: 查询预约还款结果
-  description: 查询预约还款记录
+  summary: 查询预约还款记录
+  description: 商户可调用该接口来查询之前发起的预约还款记录
   parameters:
     - name: out_record_id
       in: path
@@ -26,11 +26,9 @@ get:
         required:
           - out_record_id
           - appid
-          - sub_appid
           - repayment_amount
           - min_repayment_amount
           - repayment_date
-          - description
           - openid
         properties:
           out_record_id:
@@ -61,14 +59,6 @@ get:
             type: string
             description: 还款日期
             example: '2025-11-18'
-          description:
-            type: string
-            description: 产品描述
-            example: 信贷还款
-          attach:
-            type: string
-            description: 商户数据包
-            example: 备注信息
           openid:
             type: string
             description: 用户标识

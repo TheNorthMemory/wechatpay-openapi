@@ -8,6 +8,7 @@ use GuzzleHttp\Promise\PromiseInterface;
 /**
  * @property-read _stock_id_\Items $items
  * @property-read _stock_id_\Merchants $merchants
+ * @property-read _stock_id_\ModifyGoodsId $modifyGoodsId
  * @property-read _stock_id_\Pause $pause
  * @property-read _stock_id_\RefundFlowByDay $refundFlowByDay
  * @property-read _stock_id_\RefundFlow $refundFlow

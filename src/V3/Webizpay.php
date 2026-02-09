@@ -7,6 +7,7 @@ namespace WeChatPay\OpenAPI\V3;
  * @property-read Webizpay\Stores $stores
  * @property-read Webizpay\Employees $employees
  * @property-read Webizpay\Bill $bill
+ * @property-read Webizpay\AvailMchRanges $availMchRanges
  */
 interface Webizpay
 {

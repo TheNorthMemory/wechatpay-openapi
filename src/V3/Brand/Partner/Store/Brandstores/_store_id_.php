@@ -45,6 +45,7 @@ interface _store_id_
     public function patch(array $options = [
         'store_id' => '20488000',
         'json' => [
+            'brand_id' => '123456789',
             'store_basics' => [
                 'store_reference_id' => 'MDL001',
                 'branch_name' => '海岸城店',
@@ -71,6 +72,7 @@ interface _store_id_
     public function patchAsync(array $options = [
         'store_id' => '20488000',
         'json' => [
+            'brand_id' => '123456789',
             'store_basics' => [
                 'store_reference_id' => 'MDL001',
                 'branch_name' => '海岸城店',

@@ -12,6 +12,7 @@ namespace WeChatPay\OpenAPI\V3;
  * @property-read Global_\Micropay $micropay
  * @property-read Global_\Merchants $merchants
  * @property-read Global_\MerchantStorage $merchantStorage
+ * @property-read Global_\MerchantService $merchantService
  * @property-read Global_\Merchant $merchant
  * @property-read Global_\Customs $customs
  * @property-read Global_\Certificates $certificates

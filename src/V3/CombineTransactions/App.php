@@ -44,7 +44,6 @@ interface App
                 'sub_appid' => 'wxd678efh567hg6999',
             ],],
             'combine_payer_info' => [
-                'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
                 'identity' => [
                     'type' => 'IDCARD',
                     'number' => '6B46824C852FA29AAC3DCE6BFD852E27',
@@ -115,7 +114,6 @@ interface App
                 'sub_appid' => 'wxd678efh567hg6999',
             ],],
             'combine_payer_info' => [
-                'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
                 'identity' => [
                     'type' => 'IDCARD',
                     'number' => '6B46824C852FA29AAC3DCE6BFD852E27',

@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);/* Generated file. DO NOT EDIT! */
 
-namespace WeChatPay\OpenAPI\V3\Global_\MerchantStorage\File;
+namespace WeChatPay\OpenAPI\V3\Global_\MerchantService\Images;
 
 use Psr\Http\Message\ResponseInterface;
 use GuzzleHttp\Promise\PromiseInterface;
@@ -10,7 +10,7 @@ use GuzzleHttp\Promise\PromiseInterface;
 interface Upload
 {
     /**
-     * 上传文件(同步模式)
+     * 商户上传反馈图片(同步模式)
      *
      * ```php
      * $media   = new \WeChatPay\Util\MediaUtil('file:///path/to/image.jpg');
@@ -22,12 +22,12 @@ interface Upload
      * ```
      *
      * @param array<string,mixed> $options
-     * @link https://wechatpay.im/openapi/v3/global/merchant-storage/file/upload
+     * @link https://wechatpay.im/openapi/v3/global/merchant-service/images/upload
      */
     public function post(array $options = []): ResponseInterface;
 
     /**
-     * 上传文件(异步模式)
+     * 商户上传反馈图片(异步模式)
      *
      * ```php
      * $media   = new \WeChatPay\Util\MediaUtil('file:///path/to/image.jpg');
@@ -39,7 +39,7 @@ interface Upload
      * ```
      *
      * @param array<string,mixed> $options
-     * @link https://wechatpay.im/openapi/v3/global/merchant-storage/file/upload
+     * @link https://wechatpay.im/openapi/v3/global/merchant-service/images/upload
      */
     public function postAsync(array $options = []): PromiseInterface;
 }

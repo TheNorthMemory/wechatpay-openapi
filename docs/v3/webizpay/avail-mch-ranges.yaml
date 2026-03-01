@@ -1,0 +1,84 @@
+post:
+  x-last-updated-at: 2026.01.15
+  x-role:
+    - 服务商
+  tags:
+    - 企业支付
+  summary: 创建可用商户范围
+  description: 创建可用商户范围。该接口允许服务商创建新的可用商户范围，用于限制额度卡的可用商户范围。服务商可以根据业务需要创建基于统一社会信用代码或微信支付订单号的商户范围，便于管理不同场景下的额度卡使用限制。
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - sp_mchid
+          - identifier_type
+        properties:
+          sp_mchid:
+            type: string
+            description: 服务商商户号
+            example: '12341234'
+          identifier_type:
+            type: string
+            description: 商户标识类型
+            example: ORGANIZATION_CODE
+            enum:
+              - ORGANIZATION_CODE
+              - TRANSACTION_ID
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - range_id
+        properties:
+          range_id:
+            type: string
+            description: 可用商户范围id
+            example: 89f5123e-5ad4-4e0e-89b1-63ced0c798c5
+get:
+  x-last-updated-at: 2026.01.15
+  x-role:
+    - 服务商
+  tags:
+    - 企业支付
+  summary: 查询可用商户范围列表
+  description: 查询可用商户范围列表。该接口允许服务商查询已创建的所有可用商户范围ID列表。通过此接口可以获取服务商下所有的可用商户范围，便于后续的范围管理和额度卡配置。
+  parameters:
+    - name: sp_mchid
+      in: query
+      required: true
+      type: string
+      description: 服务商商户号
+      example: '12341234'
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - sp_mchid
+          - range_list
+        properties:
+          sp_mchid:
+            type: string
+            description: 服务商商户号
+            example: '12341234'
+          range_list:
+            type: array
+            description: 可用商户范围列表
+            items:
+              type: object
+              properties:
+                range_id:
+                  type: string
+                  description: 可用商户范围id
+                  example: 89f5123e-5ad4-4e0e-89b1-63ced0c798c5
+                identifier_type:
+                  type: string
+                  description: 商户标识类型
+                  example: ORGANIZATION_CODE
+                  enum:
+                    - ORGANIZATION_CODE
+                    - TRANSACTION_ID

@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2025.12.06
+  x-last-updated-at: 2025.12.16
   x-role:
     - 服务商
   tags:
@@ -29,6 +29,8 @@ post:
     '200':
       schema:
         type: object
+        required:
+          - brand_id
         properties:
           brand_id:
             type: string

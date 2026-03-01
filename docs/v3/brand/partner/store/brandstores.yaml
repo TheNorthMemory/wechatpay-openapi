@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2025.08.04
+  x-last-updated-at: 2025.12.02
   x-role:
     - 服务商
   tags:
@@ -12,6 +12,9 @@ post:
       required: true
       schema:
         type: object
+        required:
+          - brand_id
+          - store_address
         properties:
           brand_id:
             type: string
@@ -73,7 +76,7 @@ post:
       schema:
         type: object
         required:
-          - store_id
+          - brand_id
         properties:
           brand_id:
             type: string
@@ -91,6 +94,14 @@ post:
               - OPEN
               - CREATING
               - CLOSED
+          audit_state:
+            type: string
+            description: 审核状态
+            example: SUCCESS
+            enum:
+              - SUCCESS
+              - PROCESSING
+              - REJECTED
           review_reject_reason:
             type: string
             description: 审核失败原因
@@ -172,7 +183,7 @@ post:
                     - CONFIRMING #商户号管理员确认中
                     - TIMEOUT_REJECTED #由于商户管理员确认超时，系统自动拒绝此绑定
 get:
-  x-last-updated-at: 2025.12.06
+  x-last-updated-at: 2025.12.16
   x-role:
     - 服务商
   tags:

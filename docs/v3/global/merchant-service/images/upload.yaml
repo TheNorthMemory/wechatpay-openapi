@@ -1,0 +1,45 @@
+post:
+  x-last-updated-at: 2026.01.27
+  x-role:
+    - 服务商
+    - 渠道商
+    - 从业机构
+  tags:
+    - 风险合规∙消费者投诉
+  consumes:
+    - multipart/form-data
+  summary: 商户上传反馈图片API
+  description: 商户上传反馈图片的接口。 将媒体图片进行二进制转换，得到的媒体图片二进制内容，在请求body中上传此二进制内容。 媒体图片只支持jpg、png、bmp格式，文件大小不能超过2M。
+  parameters:
+    - name: file
+      in: formData
+      type: file
+      description: 图片文件
+      required: true
+    - name: meta
+      in: formData
+      required: true
+      type: string
+      format: jsonObjectLike
+      description: 媒体文件元信息`JSON`格式字符串
+      schema:
+        type: object
+        properties:
+          filename:
+            type: string
+            description: 文件名称
+          sha256:
+            type: string
+            description: 文件摘要
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - media_id
+        properties:
+          media_id:
+            type: string
+            format: MediaId
+            description: 媒体文件标识ID
+            example: file752398_7983424

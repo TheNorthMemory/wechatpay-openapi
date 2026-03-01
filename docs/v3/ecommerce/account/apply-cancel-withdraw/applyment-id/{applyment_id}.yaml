@@ -1,5 +1,5 @@
 get:
-  x-last-updated-at: 2025.03.13
+  x-last-updated-at: 2025.09.26
   x-role:
     - 服务商
   tags:
@@ -17,6 +17,12 @@ get:
     '200':
       schema:
         type: object
+        required:
+          - applyment_id
+          - out_request_no
+          - cancel_state
+          - cancel_state_description
+          - sub_mchid
         properties:
           applyment_id:
             type: string
@@ -110,6 +116,7 @@ get:
               type: object
               required:
                 - out_account_type
+                - amount
               properties:
                 out_account_type:
                   type: string
@@ -123,3 +130,11 @@ get:
                   type: integer
                   description: 账户金额
                   example: 101
+          confirm_cancel:
+            type: object
+            description: 用于引导商户超级管理员确认注销的信息
+            properties:
+              confirm_cancel_url:
+                type: string
+                description: 确认商户注销的页面url
+                example: https://pay.weixin.qq.com/some_page?param_name=param_value

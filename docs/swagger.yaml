@@ -7,7 +7,7 @@ info:
     整理自官方文档中心[普通商户](https://pay.weixin.qq.com/doc/v3/merchant/4012062524) [合作伙伴](https://pay.weixin.qq.com/doc/v3/partner/4012069852) [全球](https://pay.weixin.qq.com/doc/global/v3/zh)
     本[项目/工具地址](https://github.com/TheNorthMemory/wechatpay-openapi)
     **访问第一次加载比较慢，请耐心等待大约1-2分钟不等(小文件下载比较多)。**
-  version: 1.1.14
+  version: 1.1.15
 schemes:
   - https
 consumes:
@@ -933,6 +933,22 @@ paths:
     $ref: ./v3/global/customs/redeclare.yaml
   /v3/global/customs/verify-certificate:
     $ref: ./v3/global/customs/verify-certificate.yaml
+  /v3/global/merchant-service/complaint-notifications:
+    $ref: ./v3/global/merchant-service/complaint-notifications.yaml
+  /v3/global/merchant-service/complaints:
+    $ref: ./v3/global/merchant-service/complaints.yaml
+  /v3/global/merchant-service/complaints/{complaint_id}:
+    $ref: ./v3/global/merchant-service/complaints/{complaint_id}.yaml
+  /v3/global/merchant-service/complaints/{complaint_id}/complete:
+    $ref: ./v3/global/merchant-service/complaints/{complaint_id}/complete.yaml
+  /v3/global/merchant-service/complaints/{complaint_id}/negotiation-historys:
+    $ref: ./v3/global/merchant-service/complaints/{complaint_id}/negotiation-historys.yaml
+  /v3/global/merchant-service/complaints/{complaint_id}/response:
+    $ref: ./v3/global/merchant-service/complaints/{complaint_id}/response.yaml
+  /v3/global/merchant-service/images/upload:
+    $ref: ./v3/global/merchant-service/images/upload.yaml
+  /v3/global/merchant-service/images/{media_id}:
+    $ref: ./v3/global/merchant-service/images/{media_id}.yaml
   /v3/global/merchant-storage/file/upload:
     $ref: ./v3/global/merchant-storage/file/upload.yaml
   /v3/global/merchant/h5/permission/applications:
@@ -1117,6 +1133,8 @@ paths:
     $ref: ./v3/hire-power-bank/user-qualifications/{openid}.yaml
   /v3/industry-coupon/tokens:
     $ref: ./v3/industry-coupon/tokens.yaml
+  /v3/industry-rebate/retail-industry/transactions:
+    $ref: ./v3/industry-rebate/retail-industry/transactions.yaml
   /v3/industry-rebate/transactions/{transaction_id}:
     $ref: ./v3/industry-rebate/transactions/{transaction_id}.yaml
   /v3/inspolicymgr/deduct/authorizations:
@@ -2195,6 +2213,12 @@ paths:
     $ref: ./v3/vehicle/transactions/parking.yaml
   /v3/webhooks:
     $ref: ./v3/webhooks.yaml
+  /v3/webizpay/avail-mch-ranges:
+    $ref: ./v3/webizpay/avail-mch-ranges.yaml
+  /v3/webizpay/avail-mch-ranges/{range_id}/merchant-identifiers:
+    $ref: ./v3/webizpay/avail-mch-ranges/{range_id}/merchant-identifiers.yaml
+  /v3/webizpay/avail-mch-ranges/{range_id}/merchant-identifiers/{merchant_identifier}:
+    $ref: ./v3/webizpay/avail-mch-ranges/{range_id}/merchant-identifiers/{merchant_identifier}.yaml
   /v3/webizpay/bill/proof:
     $ref: ./v3/webizpay/bill/proof.yaml
   /v3/webizpay/bill/trade-bill:

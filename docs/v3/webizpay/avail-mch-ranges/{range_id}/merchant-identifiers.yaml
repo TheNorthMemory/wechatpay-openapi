@@ -1,0 +1,109 @@
+post:
+  x-last-updated-at: 2026.01.15
+  x-role:
+    - 服务商
+  tags:
+    - 企业支付
+  summary: 添加商户标识
+  description: 添加商户标识。该接口允许服务商向已存在的可用商户范围中添加商户标识。根据商户标识类型，可以添加统一社会信用代码或微信支付订单号，用于精确控制额度卡的可用范围。
+  parameters:
+    - name: range_id
+      in: path
+      required: true
+      type: string
+      description: 可用商户范围id
+      example: 89f5123e-5ad4-4e0e-89b1-63ced0c798c5
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - sp_mchid
+          - merchant_identifier
+        properties:
+          sp_mchid:
+            type: string
+            description: 服务商商户号
+            example: '12341234'
+          merchant_identifier:
+            type: string
+            description: 商户标识值
+            example: 91110000710926094P
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - range_id
+        properties:
+          range_id:
+            type: string
+            description: 可用商户范围id
+            example: 89f5123e-5ad4-4e0e-89b1-63ced0c798c5
+get:
+  x-last-updated-at: 2026.01.15
+  x-role:
+    - 服务商
+  tags:
+    - 企业支付
+  summary: 查询商户标识列表
+  description: 查询商户标识列表。该接口允许服务商查询指定可用商户范围内的所有商户标识。支持分页查询，便于管理大量的商户数据，了解范围内包含的具体商户信息。
+  parameters:
+    - name: range_id
+      in: path
+      required: true
+      type: string
+      description: 可用商户范围id
+      example: 89f5123e-5ad4-4e0e-89b1-63ced0c798c5
+    - name: sp_mchid
+      in: query
+      required: true
+      type: string
+      description: 服务商商户号
+      example: '12341234'
+    - name: offset
+      in: query
+      required: true
+      type: integer
+      description: 分页开始位置
+      example: 0
+    - name: limit
+      in: query
+      required: true
+      type: integer
+      description: 分页大小
+      example: 100
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - data
+          - offset
+          - limit
+          - count
+          - total_count
+        properties:
+          offset:
+            type: integer
+            description: 分页开始位置
+            example: 0
+          limit:
+            type: integer
+            description: 分页大小
+            example: 100
+          count:
+            type: integer
+            description: 实际返回数量
+            example: 100
+          total_count:
+            type: integer
+            description: 总数量
+            example: 1000
+          data:
+            type: array
+            description: 商户标识列表
+            items:
+              type: string
+              example: 91110000710926094P

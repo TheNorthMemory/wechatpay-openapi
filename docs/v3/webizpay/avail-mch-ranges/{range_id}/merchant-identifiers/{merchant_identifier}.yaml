@@ -1,0 +1,44 @@
+delete:
+  x-last-updated-at: 2026.01.15
+  x-role:
+    - 服务商
+  tags:
+    - 企业支付
+  summary: 删除商户标识
+  description: 删除商户标识。该接口允许服务商从已存在的可用商户范围中删除商户标识。当某个商户标识不再需要被包含在范围内时，可以通过此接口进行移除操作。
+  parameters:
+    - name: range_id
+      in: path
+      required: true
+      type: string
+      description: 可用商户范围id
+      example: 89f5123e-5ad4-4e0e-89b1-63ced0c798c5
+    - name: merchant_identifier
+      in: path
+      required: true
+      type: string
+      description: 商户标识值
+      example: 91110000710926094P
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - sp_mchid
+        properties:
+          sp_mchid:
+            type: string
+            description: 服务商商户号
+            example: '12341234'
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - range_id
+        properties:
+          range_id:
+            type: string
+            description: 可用商户范围id
+            example: 89f5123e-5ad4-4e0e-89b1-63ced0c798c5

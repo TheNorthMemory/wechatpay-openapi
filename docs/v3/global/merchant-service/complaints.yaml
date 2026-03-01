@@ -1,0 +1,251 @@
+get:
+  x-last-updated-at: 2026.01.27
+  x-role:
+    - 直连商户
+    - 服务商
+    - 渠道商
+  tags:
+    - 风险合规∙消费者投诉
+  summary: 查询投诉单列表
+  description: 商户可通过调用此接口，查询指定时间段的所有用户投诉信息，以分页输出查询结果。对于服务商、渠道商，可通过调用此接口，查询指定特约商户号下的投诉信息，若不指定，则查询的是名下所有特约商户投诉信息。
+  parameters:
+    - name: limit
+      in: query
+      type: integer
+      description: 分页大小
+      example: 5
+    - name: offset
+      in: query
+      type: integer
+      description: 分页开始位置
+      example: 10
+    - name: begin_date
+      in: query
+      type: string
+      format: date
+      description: 开始日期
+      required: true
+      example: '2019-01-01'
+    - name: end_date
+      in: query
+      type: string
+      format: date
+      description: 结束日期
+      required: true
+      example: '2019-01-01'
+    - name: complainted_mchid
+      in: query
+      type: string
+      description: 诉商户号
+      example: '1900012181'
+    - name: mch_language
+      in: query
+      type: string
+      description: 商户语言
+      example: zh_CN
+      enum:
+        - ZH_CN #简体中文
+        - ZH_TW #台湾繁体中文
+        - ZH_HK #香港繁体中文
+        - EN #英语
+        - JA #日语
+        - KO #韩语
+        - TH #泰语
+        - VI #越南语
+        - RU #俄罗斯语
+        - DE #德语
+        - FR #法语
+        - AR #阿拉伯语
+        - ES #西班牙语
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - offset
+          - limit
+        properties:
+          data:
+            type: array
+            description: 用户投诉信息详情
+            items:
+              type: object
+              required:
+                - complaint_id
+                - complaint_time
+                - complaint_detail
+                - complaint_state
+                - complainted_mchid
+                - complaint_full_refunded
+                - incoming_user_response
+                - user_complaint_times
+              properties:
+                complaint_id:
+                  type: string
+                  description: 投诉单号
+                  example: '200201820200101080076610000'
+                complaint_time:
+                  type: string
+                  format: rfc3339
+                  description: 投诉时间
+                  example: '2015-05-20T13:29:35.120+08:00'
+                complaint_detail:
+                  type: string
+                  description: 投诉详情
+                  example: 反馈一个重复扣费的问题
+                complaint_state:
+                  type: string
+                  description: 投诉单状态
+                  example: PENDING
+                  enum:
+                    - PENDING
+                    - PROCESSING
+                    - PROCESSED
+                complainted_mchid:
+                  type: string
+                  description: 被诉商户号
+                  example: '1900012181'
+                payer_phone:
+                  type: string
+                  format: base64
+                  description: 投诉人联系方式
+                  example: Qe41VhP/sGdNeTHMQGlxCWiUyHu6XNO9GCYln2Luv4HhwJzZBfcL12sB+PgZcS5NhePBog30NgJ1xRaK+gbGDKwpg==
+                complaint_order_info:
+                  type: array
+                  description: 投诉单关联订单信息
+                  items:
+                    type: object
+                    required:
+                      - transaction_id
+                      - out_trade_no
+                      - settlement_amount
+                      - settlement_refunded_amount
+                      - settlement_currency
+                      - payer_amount
+                      - payer_refunded_amount
+                      - payer_currency
+                      - trade_time
+                    properties:
+                      transaction_id:
+                        type: string
+                        description: 微信订单号
+                        example: '4200000404201909069117582536'
+                      out_trade_no:
+                        type: string
+                        description: 商户订单号
+                        example: '20190906154617947762231'
+                      settlement_amount:
+                        type: integer
+                        description: 结算币种金额
+                        example: 1000
+                      settlement_refunded_amount:
+                        type: string
+                        description: 结算币种累计已退款金额
+                        example: 0
+                      settlement_currency:
+                        type: string
+                        description: 结算币种
+                        example: HKD
+                      payer_amount:
+                        type: integer
+                        description: 订单金额
+                        example: 922
+                      payer_refunded_amount:
+                        type: integer
+                        description: 支付币种累计已退款金额
+                        example: 0
+                      payer_currency:
+                        type: string
+                        description: 支付币种
+                        example: CNY
+                      trade_time:
+                        type: string
+                        format: rfc3339
+                        description: 交易时间
+                        example: '2015-05-20T13:29:35.120+08:00'
+                complaint_full_refunded:
+                  type: boolean
+                  description: 投诉单是否已全额退款
+                is_overdue:
+                  type: boolean
+                  description: 是否超时
+                priority:
+                  type: string
+                  description: 优先级
+                  example: PRIORITY
+                  enum:
+                    - PRIORITY
+                    - GENERAL
+                incoming_user_response:
+                  type: boolean
+                  description: 是否有待回复的用户留言
+                user_complaint_times:
+                  type: integer
+                  description: 用户投诉次数
+                  example: 1
+                complaint_media_list:
+                  type: array
+                  description: 投诉资料列表
+                  items:
+                    type: object
+                    required:
+                      - media_type
+                      - media_url
+                    properties:
+                      media_type:
+                        type: string
+                        description: 媒体文件业务类型
+                        example: USER_COMPLAINT_IMAGE
+                        enum:
+                          - USER_COMPLAINT_IMAGE
+                          - OPERATION_IMAGE
+                      media_url:
+                        type: array
+                        description: 媒体文列表
+                        items:
+                          type: string
+                          description: 媒体文件URL
+                          example: https://api.mch.weixin.qq.com/v3/merchant-service/images/xxxxx
+                problem_description:
+                  type: string
+                  description: 问题描述
+                  example: 不满意商家服务
+                complaint_detail_trans:
+                  type: string
+                  description: 投诉详情翻译
+                  example: 不满意商家服务
+                service_order_info:
+                  type: array
+                  description: 投诉单关联服务单信息
+                  items:
+                    type: object
+                    properties:
+                      order_id:
+                        type: string
+                        description: 微信支付服务订单号
+                        example: '15646546545165651651'
+                      out_order_no:
+                        type: string
+                        description: 商户服务订单号
+                        example: 1234323JKHDFE1243252
+                      state:
+                        type: string
+                        description: 支付分服务单状态
+                        example: DOING
+                        enum:
+                          - DOING
+                          - REVOKED
+                          - WAITPAY
+                          - DONE
+          limit:
+            type: integer
+            description: 分页大小
+            example: 5
+          offset:
+            type: integer
+            description: 分页开始位置
+            example: 10
+          total_count:
+            type: integer
+            description: 投诉总条数
+            example: 1000

@@ -1,0 +1,74 @@
+post:
+  x-last-updated-at: 2026.01.08
+  x-role:
+    - 服务商
+  tags:
+    - 智慧经营
+  summary: 回传SN和商品编码
+  description: 智慧经营4.0回传SN和商品编码
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - sub_mchid
+          - code_url
+          - out_trade_no
+          - device_sn
+        properties:
+          brand_id:
+            type: string
+            description: 品牌ID
+            example: '120344'
+          transaction_id:
+            type: string
+            description: 微信支付订单号
+            example: '20190611222222222200000000012122'
+          out_trade_no:
+            type: string
+            description: 商户订单号
+            example: example_out_trade_no
+          sub_mchid:
+            type: string
+            description: 子商户号
+            example: '1900000001'
+          device_id:
+            type: string
+            description: 设备号
+            example: example_device_id
+          goods_detail:
+            type: array
+            description: 单品列表
+            items:
+              type: object
+              required:
+                - barcode
+                - goods_name
+                - quantity
+                - price
+              properties:
+                barcode:
+                  type: string
+                  description: 商品编码
+                  example: example_barcode
+                merchant_goods_id:
+                  type: string
+                  description: 商家商品编码
+                  example: '1001'
+                goods_name:
+                  type: string
+                  description: 商品名称
+                  example: iPhoneX 256G
+                quantity:
+                  type: number
+                  description: 商品数量
+                  example: 1
+                price:
+                  type: number
+                  description: 商品单价
+                  example: 528800
+  responses:
+    '204':
+      schema: {}

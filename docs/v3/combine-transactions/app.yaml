@@ -131,10 +131,6 @@ post:
             type: object
             description: 支付者
             properties:
-              openid:
-                type: string
-                description: 用户标识
-                example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
               identity:
                 type: object
                 description: 实名支付(需单独申请权限)

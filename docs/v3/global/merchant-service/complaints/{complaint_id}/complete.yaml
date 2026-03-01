@@ -1,0 +1,32 @@
+post:
+  x-last-updated-at: 2026.01.27
+  x-role:
+    - 服务商
+    - 渠道商
+    - 从业机构
+  tags:
+    - 风险合规∙消费者投诉
+  summary: 反馈处理完成
+  description: 商户可通过调用此接口，反馈投诉单已处理完成。投诉单处理完成后系统将对用户下发满意度评价。请务必在真实处理完用户投诉后再调此接口，避免因投诉未妥善处理造成用户重复投诉。重复投诉率将是考核客诉处理质量的重要指标之一。
+  parameters:
+    - name: complaint_id
+      in: path
+      type: string
+      description: 投诉单号
+      required: true
+      example: '200201820200101080076610000'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - complainted_mchid
+        properties:
+          complainted_mchid:
+            type: string
+            description: 被诉商户号
+            example: '1900012181'
+  responses:
+    '204':
+      schema: {}

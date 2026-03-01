@@ -1,0 +1,147 @@
+get:
+  x-last-updated-at: 2026.01.27
+  x-role:
+    - 服务商
+    - 渠道商
+    - 从业机构
+  tags:
+    - 风险合规∙消费者投诉
+  summary: 查询投诉协商历史
+  description: 商户可通过调用此接口，查询指定投诉的用户商户协商历史，以分页输出查询结果，方便商户根据处理历史来制定后续处理方案。[官方文档](https://pay.weixin.qq.com/docs/partner/apis/consumer-complaint/complaints/query-negotiation-history-v2.html) [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3_partner/apis/chapter10_2_12.shtml)
+  parameters:
+    - name: complaint_id
+      type: string
+      in: path
+      description: 投诉单号
+      required: true
+      example: '200201820200101080076610000'
+    - name: limit
+      type: integer
+      in: query
+      description: 分页大小
+      example: 50
+    - name: offset
+      type: integer
+      in: query
+      description: 分页开始位置
+      example: 10
+    - name: mch_language
+      in: query
+      type: string
+      description: 商户语言
+      example: zh_CN
+      enum:
+        - ZH_CN #简体中文
+        - ZH_TW #台湾繁体中文
+        - ZH_HK #香港繁体中文
+        - EN #英语
+        - JA #日语
+        - KO #韩语
+        - TH #泰语
+        - VI #越南语
+        - RU #俄罗斯语
+        - DE #德语
+        - FR #法语
+        - AR #阿拉伯语
+        - ES #西班牙语
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - limit
+          - offset
+        properties:
+          data:
+            type: array
+            description: 投诉协商历史
+            items:
+              type: object
+              required:
+                - log_id
+                - operator
+                - operate_time
+                - operate_type
+              properties:
+                log_id:
+                  type: string
+                  description: 操作流水号
+                  example: '300285320210322170000071077'
+                operator:
+                  type: string
+                  description: 操作人
+                  example: 投诉人
+                operate_time:
+                  type: string
+                  format: rfc3339
+                  description: 操作时间
+                  example: '2015-05-20T13:29:35.120+08:00'
+                operate_type:
+                  type: string
+                  description: 操作类型
+                  example: USER_CREATE_COMPLAINT
+                  enum:
+                    - USER_CREATE_COMPLAINT  #用户提交投诉
+                    - USER_CONTINUE_COMPLAINT  #用户继续投诉
+                    - USER_RESPONSE  #用户留言
+                    - PLATFORM_RESPONSE  #平台留言
+                    - MERCHANT_RESPONSE  #商户留言
+                    - MERCHANT_CONFIRM_COMPLETE  #商户申请结单
+                    - USER_CREATE_COMPLAINT_SYSTEM_MESSAGE  #用户提交投诉系统通知
+                    - COMPLAINT_FULL_REFUNDED_SYSTEM_MESSAGE  #投诉单发起全额退款系统通知
+                    - USER_CONTINUE_COMPLAINT_SYSTEM_MESSAGE  #用户继续投诉系统通知
+                    - USER_REVOKE_COMPLAINT  #用户主动撤诉（只存在于历史投诉单的协商历史中）
+                    - USER_COMFIRM_COMPLAINT  #用户确认投诉解决（只存在于历史投诉单的协商历史中）
+                    - PLATFORM_HELP_APPLICATION  #平台催办
+                    - USER_APPLY_PLATFORM_HELP  #用户申请平台协助
+                    - MERCHANT_APPROVE_REFUND  #商户同意退款申请
+                    - MERCHANT_REFUSE_RERUND  #商户拒绝退款申请, 此时操作内容里展示拒绝原因
+                    - USER_SUBMIT_SATISFACTION  #用户提交满意度调查结果,此时操作内容里会展示满意度分数
+                    - SERVICE_ORDER_CANCEL  #服务订单已取消
+                    - SERVICE_ORDER_COMPLETE  #服务订单已完成
+                    - COMPLAINT_PARTIAL_REFUNDED_SYSTEM_MESSAGE  #投诉单发起部分退款系统通知
+                    - COMPLAINT_REFUND_RECEIVED_SYSTEM_MESSAGE  #投诉单退款到账系统通知
+                    - COMPLAINT_ENTRUSTED_REFUND_SYSTEM_MESSAGE  #投诉单受托退款系统通知
+                operate_details:
+                  type: string
+                  description: 操作内容
+                  example: 已与用户电话沟通解决
+                image_list:
+                  type: array
+                  items:
+                    type: string
+                    format: url
+                    description: 图片凭证
+                    example: https://qpic.cn/xxx
+                complaint_media_list:
+                  type: object
+                  description: 操作资料列表
+                  required:
+                    - media_type
+                    - media_url
+                  properties:
+                    media_type:
+                      type: string
+                      description: 媒体文件业务类型
+                      example: USER_COMPLAINT_IMAGE
+                      enum:
+                        - USER_COMPLAINT_IMAGE
+                        - OPERATION_IMAGE
+                    media_url:
+                      type: array
+                      items:
+                        type: string
+                        format: url
+                        description: 媒体文件请求url
+                        example: https://api.mch.weixin.qq.com/v3/merchant-service/images/xxxxx
+          limit:
+            type: integer
+            description: 分页大小
+          offset:
+            type: integer
+            description: 分页开始位置
+            example: 50
+          total_count:
+            type: integer
+            description: 投诉协商历史总条数
+            example: 1000

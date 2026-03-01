@@ -4,6 +4,7 @@ namespace WeChatPay\OpenAPI\V3;
 
 /**
  * @property-read IndustryRebate\Transactions $transactions
+ * @property-read IndustryRebate\RetailIndustry $retailIndustry
  */
 interface IndustryRebate
 {

@@ -26,8 +26,12 @@ interface Orders
                 'receiver_account' => '1900000109',
                 'amount' => 190,
                 'description' => '分给商户1900000109',
+                'receiver_name' => 'hu89ohu89ohu89o',
             ],],
             'finish' => true,
+        ],
+        'headers' => [
+            'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',
         ],
     ]): ResponseInterface;
 
@@ -47,8 +51,12 @@ interface Orders
                 'receiver_account' => '1900000109',
                 'amount' => 190,
                 'description' => '分给商户1900000109',
+                'receiver_name' => 'hu89ohu89ohu89o',
             ],],
             'finish' => true,
+        ],
+        'headers' => [
+            'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',
         ],
     ]): PromiseInterface;
 

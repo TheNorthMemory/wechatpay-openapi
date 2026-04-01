@@ -47,6 +47,8 @@ interface Applyments
                     'license' => 'jTpGmxUXqRTvDujqhThn4ReFxikqJ5YW6zFQ',
                     'authorization_begin_time' => '2025-09-08',
                     'authorization_end_time' => '2035-09-08',
+                    'certificate_list' => ['jTpGmxUX3FBWVQ5NJTZvvDujqhThn4Re'],
+                    'license_list' => ['jTpGmxUX3FBWVQ5NJTZvvDujqhThn4Re'],
                 ],
                 'logo_trademark_registration_certificate' => [
                     'certificate' => 'jTpGmxUXqRTvDujqhThn4ReFxikqJ5YW6zFQ',
@@ -59,8 +61,11 @@ interface Applyments
                     'license' => 'jTpGmxUXqRTvDujqhThn4ReFxikqJ5YW6zFQ',
                     'authorization_begin_time' => '2025-09-08',
                     'authorization_end_time' => '2035-09-08',
+                    'certificate_list' => ['jTpGmxUX3FBWVQ5NJTZvvDujqhThn4Re'],
+                    'license_list' => ['jTpGmxUX3FBWVQ5NJTZvvDujqhThn4Re'],
                 ],
                 'no_trademark_addition_prove' => 'jTpGmxUX3FBWVQ5NJTZvvDujqhThn4ReFxikqJ5YW6zFQ',
+                'no_trademark_addition_prove_list' => ['jTpGmxUX3FBWVQ5NJTZvvDujqhThn4Re'],
             ],
         ],
         'headers' => [
@@ -103,6 +108,8 @@ interface Applyments
                     'license' => 'jTpGmxUXqRTvDujqhThn4ReFxikqJ5YW6zFQ',
                     'authorization_begin_time' => '2025-09-08',
                     'authorization_end_time' => '2035-09-08',
+                    'certificate_list' => ['jTpGmxUX3FBWVQ5NJTZvvDujqhThn4Re'],
+                    'license_list' => ['jTpGmxUX3FBWVQ5NJTZvvDujqhThn4Re'],
                 ],
                 'logo_trademark_registration_certificate' => [
                     'certificate' => 'jTpGmxUXqRTvDujqhThn4ReFxikqJ5YW6zFQ',
@@ -115,8 +122,11 @@ interface Applyments
                     'license' => 'jTpGmxUXqRTvDujqhThn4ReFxikqJ5YW6zFQ',
                     'authorization_begin_time' => '2025-09-08',
                     'authorization_end_time' => '2035-09-08',
+                    'certificate_list' => ['jTpGmxUX3FBWVQ5NJTZvvDujqhThn4Re'],
+                    'license_list' => ['jTpGmxUX3FBWVQ5NJTZvvDujqhThn4Re'],
                 ],
                 'no_trademark_addition_prove' => 'jTpGmxUX3FBWVQ5NJTZvvDujqhThn4ReFxikqJ5YW6zFQ',
+                'no_trademark_addition_prove_list' => ['jTpGmxUX3FBWVQ5NJTZvvDujqhThn4Re'],
             ],
         ],
         'headers' => [

@@ -21,6 +21,8 @@ interface TransferInstructions
             'out_instruction_no' => '1200002',
             'transfer_mode' => 'TRANSFER_TO_ORIGINAL_RECEIVE_USER | TRANSFER_MODE_TO_ORIGINAL_RECEIVE_MERCHANT | TRANSFER_MODE_TO_SPECIFIED_RECEIVE_MERCHANT',
             'receiver' => [
+                'openid' => 'eoCuiA7RW33Tc3jtz_5CNLegC9kN0',
+                'appid' => 'wxf636efh567hg4356',
                 'mchid' => '1900001108',
             ],
             'notify_url' => 'https://weixin.qq.com',
@@ -38,6 +40,8 @@ interface TransferInstructions
             'out_instruction_no' => '1200002',
             'transfer_mode' => 'TRANSFER_TO_ORIGINAL_RECEIVE_USER | TRANSFER_MODE_TO_ORIGINAL_RECEIVE_MERCHANT | TRANSFER_MODE_TO_SPECIFIED_RECEIVE_MERCHANT',
             'receiver' => [
+                'openid' => 'eoCuiA7RW33Tc3jtz_5CNLegC9kN0',
+                'appid' => 'wxf636efh567hg4356',
                 'mchid' => '1900001108',
             ],
             'notify_url' => 'https://weixin.qq.com',

@@ -95,9 +95,6 @@ unifiedorder.request:
             description: 单品列表
             items:
               type: object
-              required:
-                - quantity
-                - price
               properties:
                 goods_id:
                   type: string
@@ -119,6 +116,22 @@ unifiedorder.request:
                   type: number
                   description: 商品单价
                   example: 528800
+                goods_category:
+                  type: string
+                  description: 商品种类
+                  example: '123789'
+                body:
+                  type: string
+                  description: 商品描述
+                  example: 苹果手机
+                category:
+                  type: string
+                  description: 商品种类
+                  example: FOOD_BEVERAGE
+                mcc:
+                  type: integer
+                  description: 商品MCC码
+                  example: 5942
     attach:
       type: string
       description: 附加数据
@@ -435,6 +448,14 @@ unifiedorder.response:
                       type: string
                       description: 商品编码
                       example: 商品编码
+                    goods_remark:
+                      type: string
+                      description: 商品备注
+                      example: 商品备注
+                    discount_amount:
+                      type: number
+                      description: 商品优惠金额
+                      example: 1
                     wxpay_goods_id:
                       type: string
                       description: 微信支付商品编码

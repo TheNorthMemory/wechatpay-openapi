@@ -1,18 +1,18 @@
 post:
-  x-last-updated-at: 2020.09.14
+  x-last-updated-at: 2025.09.29
   x-role: [电商平台]
   tags:
     - 收付通∙分账
   summary: 请求分账API
   description: 微信订单支付成功后，由电商平台发起分账请求，将结算后的资金分给分账接收方。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/profitsharing/chapter3_1.shtml)
   parameters:
+    - $ref: '../../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
     - name: _
       in: body
       required: true
       schema:
         type: object
         required:
-          - appid
           - sub_mchid
           - transaction_id
           - out_order_no
@@ -63,6 +63,11 @@ post:
                   type: string
                   description: 分账描述
                   example: 分给商户1900000109
+                receiver_name:
+                  type: string
+                  format: base64
+                  description: 分账个人接收方姓名
+                  example: hu89ohu89ohu89o
           finish:
             type: boolean
             description: 是否分账完成
@@ -75,6 +80,7 @@ post:
           - transaction_id
           - out_order_no
           - order_id
+          - receivers
         properties:
           sub_mchid:
             type: string
@@ -92,8 +98,57 @@ post:
             type: string
             description: 微信分账单号
             example: '6754760740201411110007865434'
+          status:
+            $ref: '../../../definitions/Enumerations.yaml#ProfitSharingOrderState'
+          receivers:
+            type: array
+            description: 分账接收方列表
+            items:
+              type: object
+              required:
+                - amount
+                - description
+                - finish_time
+                - type
+                - receiver_account
+                - detail_id
+              properties:
+                amount:
+                  type: integer
+                  description: 分账金额
+                  example: 190
+                description:
+                  type: string
+                  description: 分账描述
+                  example: 分给商户1900000109
+                result:
+                  type: string
+                  description: 分账结果
+                  $ref: '../../../definitions/Enumerations.yaml#ProfitSharingResult'
+                finish_time:
+                  type: string
+                  format: rfc3339
+                  description: 完成时间
+                  example: '2015-05-20T13:29:35.120+08:00'
+                fail_reason:
+                  type: string
+                  description: 分账失败原因
+                  $ref: '../../../definitions/Enumerations.yaml#ProfitSharingFailReason'
+                type:
+                  type: string
+                  description: 分账接收方类型
+                  example: MERCHANT_ID
+                  $ref: '../../../definitions/Enumerations.yaml#ProfitSharingReceiverType'
+                receiver_account:
+                  type: string
+                  description: 分账接收方账号
+                  example: '1900000109'
+                detail_id:
+                  type: string
+                  description: 分账明细单号
+                  example: '36011111111111111111111'
 get:
-  x-last-updated-at: 2020.11.06
+  x-last-updated-at: 2025.09.29
   x-role: [电商平台]
   tags:
     - 收付通∙分账
@@ -151,12 +206,12 @@ get:
             items:
               type: object
               required:
-                - receiver_mchid
                 - amount
                 - description
                 - finish_time
                 - type
                 - receiver_account
+                - detail_id
               properties:
                 receiver_mchid:
                   type: string
@@ -192,6 +247,10 @@ get:
                   type: string
                   description: 分账接收方账号
                   example: '1900000109'
+                detail_id:
+                  type: string
+                  description: 分账明细单号
+                  example: '36011111111111111111111'
           close_reason:
             type: string
             description: 关单原因描述，当分账单状态status为CLOSED（处理失败，已关单）时，返回该字段。

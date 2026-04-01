@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2025.10.17
+  x-last-updated-at: 2025.10.23
   x-role:
     - 服务商
   tags:
@@ -108,7 +108,6 @@ post:
                 type: object
                 description: 商标注册证
                 required:
-                  - certificate
                   - name
                   - number
                   - valid_begin_time
@@ -158,11 +157,24 @@ post:
                     type: string
                     description: 商标授权有效期结束时间
                     example: '2035-09-08'
+                  certificate_list:
+                    type: array
+                    description: 商标注册证列表
+                    items:
+                      type: string
+                      format: MediaId
+                      example: jTpGmxUX3FBWVQ5NJTZvvDujqhThn4ReFxikqJ5YW6zFQ
+                  license_list:
+                    type: array
+                    description: 商标许可使用授权书列表
+                    items:
+                      type: string
+                      format: MediaId
+                      example: jTpGmxUX3FBWVQ5NJTZvvDujqhThn4ReFxikqJ5YW6zFQ
               logo_trademark_registration_certificate:
                 type: object
                 description: Logo商标注册证
                 required:
-                  - certificate
                   - name
                   - number
                   - valid_begin_time
@@ -210,11 +222,33 @@ post:
                     type: string
                     description: Logo商标授权有效期结束时间
                     example: '2035-09-08'
+                  certificate_list:
+                    type: array
+                    description: Logo商标注册证列表
+                    items:
+                      type: string
+                      format: MediaId
+                      example: jTpGmxUX3FBWVQ5NJTZvvDujqhThn4ReFxikqJ5YW6zFQ
+                  license_list:
+                    type: array
+                    description: Logo商标许可使用授权书列表
+                    items:
+                      type: string
+                      format: MediaId
+                      example: jTpGmxUX3FBWVQ5NJTZvvDujqhThn4ReFxikqJ5YW6zFQ
               no_trademark_addition_prove:
                 type: string
                 format: MediaId
                 description: 无商标额外证明材料
                 example: jTpGmxUX3FBWVQ5NJTZvvDujqhThn4ReFxikqJ5YW6zFQ
+              no_trademark_addition_prove_list:
+                type: array
+                description: 无商标额外证明材料列表
+                items:
+                  type: string
+                  format: MediaId
+                  description: 无商标额外证明材料
+                  example: jTpGmxUX3FBWVQ5NJTZvvDujqhThn4ReFxikqJ5YW6zFQ
   responses:
     '200':
       schema:

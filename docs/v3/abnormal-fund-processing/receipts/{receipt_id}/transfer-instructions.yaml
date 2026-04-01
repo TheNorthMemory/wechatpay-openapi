@@ -38,6 +38,14 @@ post:
             type: object
             description: 收款方
             properties:
+              openid:
+                type: string
+                description: 入账用户OpenID
+                example: eoCuiA7RW33Tc3jtz_5CNLegC9kN0
+              appid:
+                type: string
+                description: 商户AppID
+                example: wxf636efh567hg4356
               mchid:
                 type: string
                 description: 入账商户号
@@ -138,6 +146,14 @@ post:
                 type: object
                 description: 收款方
                 properties:
+                  openid:
+                    type: string
+                    description: 入账用户OpenID
+                    example: eoCuiA7RW33Tc3jtz_5CNLegC9kN0
+                  appid:
+                    type: string
+                    description: 商户AppID
+                    example: wxf636efh567hg4356
                   mchid:
                     type: string
                     description: 入账商户号

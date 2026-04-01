@@ -37,10 +37,18 @@ post:
             type: string
             description: 文件摘要
             example: B94D27B9934D3E08A52E52D7DA7DABFAC484EFE37A5380EE9088F7ACE2EFCDE9
-          item_id:
-            type: number
-            description: 资料项唯一id
-            example: 56
+    - name: item_id
+      in: formData
+      required: true
+      type: number
+      description: 资料项唯一id
+      example: 56
+    - name: manage_record_id
+      in: formData
+      required: true
+      type: string
+      description: 商户管理记录ID
+      example: 56
   responses:
     200:
       schema:

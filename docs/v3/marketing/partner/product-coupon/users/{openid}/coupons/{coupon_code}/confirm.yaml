@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2025.08.04
+  x-last-updated-at: 2025.11.07
   x-role:
     - 服务商
   tags:
@@ -167,6 +167,31 @@ post:
                     type: string
                     description: 子商户号
                     example: '1234567890'
+              associated_pay_score_order_info:
+                type: object
+                description: 券核销的关联微信支付分订单信息
+                properties:
+                  order_id:
+                    type: string
+                    description: 微信支付服务订单号
+                    example: '4200000000123456789123456789'
+                  out_trade_no:
+                    type: string
+                    description: 商户订单号
+                    example: 'trade_no_20250724123456'
+                  mchid:
+                    type: string
+                    description: 商户号
+                    example: '1234567890'
+                  sub_mchid:
+                    type: string
+                    description: 子商户号
+                    example: '1234567890'
+              saved_amount:
+                type: number
+                format: integer
+                description: 优惠金额
+                example: 0
               return_request_no:
                 type: string
                 description: 退券请求单号
@@ -176,7 +201,7 @@ post:
                 format: rfc3339
                 description: 退券时间
                 example: '2025-07-20T14:29:35+08:00'
-          sequential_usage_detail:
+          progressive_bundle_usage_detail:
             type: object
             description: 多次优惠使用详情
             properties:

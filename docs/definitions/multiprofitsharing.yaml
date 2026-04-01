@@ -148,11 +148,11 @@ multiprofitsharing.response:
               type: object
               required:
                 - type
-                - account
                 - amount
                 - description
                 - detail_id
                 - finish_time
+                - receiver_account
                 - receiver_mchid
                 - result
               properties:
@@ -163,10 +163,6 @@ multiprofitsharing.response:
                     - MERCHANT_ID
                     - PERSONAL_OPENID
                     - PERSONAL_SUB_OPENID
-                account:
-                  type: string
-                  description: 分账接收方账号
-                  example: '190001001'
                 amount:
                   type: number
                   description: 分账金额
@@ -183,6 +179,10 @@ multiprofitsharing.response:
                   type: string
                   description: 分账完成时间
                   example: '20180608170132'
+                receiver_account:
+                  type: string
+                  description: 分账接收方账号
+                  example: '190001001'
                 receiver_mchid:
                   type: string
                   description: 分账接收商户号

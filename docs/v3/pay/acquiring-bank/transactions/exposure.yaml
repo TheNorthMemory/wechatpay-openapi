@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2025.04.18
+  x-last-updated-at: 2026.03.26
   x-role:
     - 从业机构
   tags:
@@ -51,6 +51,10 @@ post:
                 type: string
                 description: 用户手机号的哈希值
                 example: ABDEF3445546456B
+              merchant_openid:
+                type: string
+                description: 用户标识（商户）
+                example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
           out_trade_no:
             type: string
             description: 商户订单号

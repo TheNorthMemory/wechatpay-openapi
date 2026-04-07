@@ -23,6 +23,7 @@ interface Exposure
             'payer' => [
                 'sp_openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
                 'phone_number_hash' => 'ABDEF3445546456B',
+                'sub_openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
             ],
             'out_trade_no' => '1217752501201407033233368018',
         ],
@@ -42,6 +43,7 @@ interface Exposure
             'payer' => [
                 'sp_openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
                 'phone_number_hash' => 'ABDEF3445546456B',
+                'sub_openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
             ],
             'out_trade_no' => '1217752501201407033233368018',
         ],

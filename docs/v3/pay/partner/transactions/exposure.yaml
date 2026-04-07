@@ -47,6 +47,10 @@ post:
                 type: string
                 description: 用户手机号的哈希值
                 example: ABDEF3445546456B
+              sub_openid:
+                type: string
+                description: 用户子商户标识
+                example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
           out_trade_no:
             type: string
             description: 商户订单号

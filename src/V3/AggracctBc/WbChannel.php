@@ -5,6 +5,7 @@ namespace WeChatPay\OpenAPI\V3\AggracctBc;
 /**
  * @property-read WbChannel\SpecialReduction $specialReduction
  * @property-read WbChannel\ControlOrders $controlOrders
+ * @property-read WbChannel\BankChannelAccount $bankChannelAccount
  * @property-read WbChannel\Account $account
  */
 interface WbChannel

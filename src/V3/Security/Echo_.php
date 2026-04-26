@@ -17,8 +17,8 @@ interface Echo_
     public function post(array $options = [
         'json' => [
             'notify_url' => 'https://www.weixin.qq.com/v3/test',
-            'echo_message' => '',
-            'encrypted_echo_message' => '',
+            'echo_message' => 'hello',
+            'encrypted_echo_message' => 'Fx9mh7K5sjqHxxQcgDVhnJ9QdS4nKfcUbuAOj',
         ],
         'headers' => [
             'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',
@@ -33,8 +33,8 @@ interface Echo_
     public function postAsync(array $options = [
         'json' => [
             'notify_url' => 'https://www.weixin.qq.com/v3/test',
-            'echo_message' => '',
-            'encrypted_echo_message' => '',
+            'echo_message' => 'hello',
+            'encrypted_echo_message' => 'Fx9mh7K5sjqHxxQcgDVhnJ9QdS4nKfcUbuAOj',
         ],
         'headers' => [
             'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',

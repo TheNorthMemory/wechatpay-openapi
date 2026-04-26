@@ -17,6 +17,9 @@ interface _application_no_
     public function get(array $options = [
         'sub_mchid' => '1511101111',
         'application_no' => '102329389XXXX',
+        'query' => [
+            'account_number_rule' => 'ACCOUNT_NUMBER_RULE_MASK_V1',
+        ],
     ]): ResponseInterface;
 
     /**
@@ -27,5 +30,8 @@ interface _application_no_
     public function getAsync(array $options = [
         'sub_mchid' => '1511101111',
         'application_no' => '102329389XXXX',
+        'query' => [
+            'account_number_rule' => 'ACCOUNT_NUMBER_RULE_MASK_V1',
+        ],
     ]): PromiseInterface;
 }

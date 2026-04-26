@@ -20,6 +20,7 @@ interface Mchsubjectalterapplyment
         'json' => [
             'merchant_code' => '2492185251',
             'out_request_no' => '1900013511_10000',
+            'alter_scope' => 'ALTER_SCOPE_FULL',
             'organization_type' => 'SUBJECT_TYPE_ENTERPRISE',
             'finance_institution' => true,
             'business_license_info' => [
@@ -73,6 +74,7 @@ interface Mchsubjectalterapplyment
                 'openaccount_approval' => ['MediaId'],
                 'legal_other_prove' => ['MediaId'],
                 'agency_prove' => ['MediaId'],
+                'ubo_prove' => ['MediaId'],
             ],
         ],
         'headers' => [
@@ -89,6 +91,7 @@ interface Mchsubjectalterapplyment
         'json' => [
             'merchant_code' => '2492185251',
             'out_request_no' => '1900013511_10000',
+            'alter_scope' => 'ALTER_SCOPE_FULL',
             'organization_type' => 'SUBJECT_TYPE_ENTERPRISE',
             'finance_institution' => true,
             'business_license_info' => [
@@ -142,6 +145,7 @@ interface Mchsubjectalterapplyment
                 'openaccount_approval' => ['MediaId'],
                 'legal_other_prove' => ['MediaId'],
                 'agency_prove' => ['MediaId'],
+                'ubo_prove' => ['MediaId'],
             ],
         ],
         'headers' => [

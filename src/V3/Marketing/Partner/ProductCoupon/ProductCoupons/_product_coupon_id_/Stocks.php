@@ -94,13 +94,15 @@ interface Stocks
                     'coupon_usage_method_list' => ['OFFLINE'],
                     'mini_program_appid' => 'wx1234567890',
                     'mini_program_path' => '/pages/index/product',
-                    'app_path' => '',
+                    'app_path' => 'https://weixin.qq.com/jump-to-app',
                     'usage_description' => '工作日可用',
                     'coupon_available_store_info' => [
                         'description' => '所有门店可用，可使用小程序查看门店列表',
                         'mini_program_appid' => 'wx1234567890',
                         'mini_program_path' => '/pages/index/product',
                     ],
+                    'app_jump_type' => 'H5',
+                    'passcode_link' => 'passcode_link.example',
                 ],
                 'coupon_display_info' => [
                     'code_display_mode' => 'QRCODE',
@@ -212,13 +214,15 @@ interface Stocks
                     'coupon_usage_method_list' => ['OFFLINE'],
                     'mini_program_appid' => 'wx1234567890',
                     'mini_program_path' => '/pages/index/product',
-                    'app_path' => '',
+                    'app_path' => 'https://weixin.qq.com/jump-to-app',
                     'usage_description' => '工作日可用',
                     'coupon_available_store_info' => [
                         'description' => '所有门店可用，可使用小程序查看门店列表',
                         'mini_program_appid' => 'wx1234567890',
                         'mini_program_path' => '/pages/index/product',
                     ],
+                    'app_jump_type' => 'H5',
+                    'passcode_link' => 'passcode_link.example',
                 ],
                 'coupon_display_info' => [
                     'code_display_mode' => 'QRCODE',

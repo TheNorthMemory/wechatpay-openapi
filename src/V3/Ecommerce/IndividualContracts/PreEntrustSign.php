@@ -4,6 +4,7 @@ namespace WeChatPay\OpenAPI\V3\Ecommerce\IndividualContracts;
 
 /**
  * @property-read PreEntrustSign\App $app
+ * @property-read PreEntrustSign\MiniProgram $miniProgram
  */
 interface PreEntrustSign
 {

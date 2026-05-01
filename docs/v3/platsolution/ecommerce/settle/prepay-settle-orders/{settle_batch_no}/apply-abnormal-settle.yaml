@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2025.06.11
+  x-last-updated-at: 2026.04.24
   x-role:
     - 电商平台
   tags:
@@ -81,6 +81,7 @@ post:
             description: 交易场景
             enum:
               - RECOMMERCE
+              - INDIVIDUALTRADE
           create_time:
             type: string
             format: rfc3339

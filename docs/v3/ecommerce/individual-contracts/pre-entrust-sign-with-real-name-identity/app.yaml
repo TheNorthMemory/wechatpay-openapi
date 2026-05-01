@@ -1,0 +1,57 @@
+post:
+  x-last-updated-at: 2026.04.24
+  x-role:
+    - 电商平台
+  tags:
+    - 收付通∙个人收款
+  summary: APP场景预签约（需要实名验证）
+  description: 商户可调用本接口预先指定签约，生成预签约会话及对应的预签约ID，再携带预签约ID（pre_entrustweb_id）参数，通过微信SDK拉起微信支付客户端的签约页面。通过本接口预签约时，商户需具备实名验证产品权限，要求用户在签约时完成实名验证授权，仅当用户的微信支付实名信息与商户预留一致时才能完成签约。
+  parameters:
+    - $ref: '../../../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - appid
+          - out_contract_code
+          - real_name
+          - cred_type
+          - cred_id
+        properties:
+          appid:
+            type: string
+            description: 签约和付款的AppID
+            example: wxd678efh567h23787
+          out_contract_code:
+            type: string
+            description: 业务申请单号
+            example: APPLYMENT_00000000001
+          real_name:
+            type: string
+            format: base64
+            description: 真实姓名
+            example: pVd1HJ6zyvPedzGaV+X3qtmrq9bb9tP
+          cred_type:
+            type: string
+            description: 证件类型
+            example: ID_CARD
+            enum:
+              - ID_CARD
+          cred_id:
+            type: string
+            format: base64
+            description: 件号码
+            example: MZnwEx6zotwIz6ctW2/iQL5z9
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - pre_entrustweb_id
+        properties:
+          pre_entrustweb_id:
+            type: string
+            description: 预签约id
+            example: 1121_9f3cec22a2d367737674d08d98e5e07b8388495fafedc0eba83c327e8ad720ed_12bfdd59b387c4bff8543de4719a886a

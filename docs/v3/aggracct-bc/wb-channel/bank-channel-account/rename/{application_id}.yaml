@@ -1,0 +1,91 @@
+get:
+  x-last-updated-at: 2026.03.25
+  x-role:
+    - 直连商户
+  tags:
+    - 渠道服务
+  summary: 查询渠道结算银行账户更名申请
+  description: 查询渠道结算银行账户更名申请。
+  parameters:
+    - $ref: '../../../../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
+    - name: application_id
+      type: string
+      required: true
+      in: path
+      description: 微信支付更名受理返回的申请单号
+      example: '11117742499090086455469010028373'
+    - name: mchid
+      type: string
+      required: true
+      in: query
+      description: 目标商户号
+      example: '1900016681'
+    - name: bal_account_no
+      type: string
+      format: base64
+      required: true
+      in: query
+      description: 台账ID
+      example: 8609cb22e1774a50a930e414cc71eca06121bc
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - change_scene
+          - application_id
+          - out_request_no
+          - mchid
+          - bal_account_no
+          - new_account_name
+          - application_state
+        properties:
+          change_scene:
+            type: string
+            description: 变更类型
+            example: SUBJECT_INFO_RENAME
+            enum:
+              - SUBJECT_INFO_RENAME
+          application_id:
+            type: string
+            description: 微信支付更名受理返回的申请单号
+            example: '11117742499090086455469010028373'
+          out_request_no:
+            type: string
+            description: 渠道结算银行账户更名外部系统单号
+            example: htozr8denqegbt6tk6u10iymo7yww5pn
+          mchid:
+            type: string
+            description: 目标商户号
+            example: '1900016681'
+          bal_account_no:
+            type: string
+            format: base64
+            description: 台账ID
+            example: 8609cb22e1774a50a930e414cc71eca06121bc
+          new_account_name:
+            type: string
+            format: base64
+            description: 目标账户名
+            example: 8609cb22e1774a50a930e414cc71eca06121bc
+          application_state:
+            type: string
+            description: 申请单状态
+            example: PROCESSING
+            enum:
+              - PROCESSING
+              - SUCCESS
+              - FAIL
+          finish_time:
+            type: string
+            format: rfc3339
+            description: 完成时间
+            example: '2015-05-20T13:29:35+08:00'
+          fail_code:
+            type: string
+            description: 失败错误码
+            example: AUDIT_REJECT
+          fail_msg:
+            type: string
+            description: 失败原因
+            example: 身份证有效期核验不通过，请检查有效期填写是否正确

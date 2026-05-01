@@ -1,5 +1,5 @@
 get:
-  x-last-updated-at: 2023.08.16
+  x-last-updated-at: 2025.01.21
   x-role:
     - 普通服务商
     - 电商平台
@@ -21,6 +21,14 @@ get:
       type: string
       description: 修改结算账户申请单号
       example: '102329389XXXX'
+    - name: account_number_rule
+      in: query
+      type: string
+      description: 银行账号展示规则
+      example: ACCOUNT_NUMBER_RULE_MASK_V1
+      enum:
+        - ACCOUNT_NUMBER_RULE_MASK_V1
+        - ACCOUNT_NUMBER_RULE_MASK_V2
   responses:
     '200':
       schema:

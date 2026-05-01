@@ -1,5 +1,5 @@
 get:
-  x-last-updated-at: 2025.12.04
+  x-last-updated-at: 2026.03.02
   x-role:
     - 普通商户
     - 从业机构（银行）
@@ -291,3 +291,6 @@ get:
           med_ins_test_env:
             type: boolean
             description: 是否到医保局测试环境下单
+          med_ins_fail_reason:
+            type: string
+            description: 医保支付失败原因

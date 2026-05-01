@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2025.08.22
+  x-last-updated-at: 2025.08.26
   x-role:
     - 普通商户
   tags:
@@ -57,6 +57,27 @@ post:
             type: string
             description: 授权结果通知地址
             example: https://www.weixin.qq.com/wxpay/pay.php
+          scene_info:
+            type: object
+            description: 场景信息
+            properties:
+              client_ip:
+                type: string
+                description: 用户终端IP
+                example: 113.84.136.9
+              device_id:
+                type: string
+                description: 用户设备ID
+                example: 8d67f169fe104008cd20b72573a0c8c9
+              device_type:
+                type: string
+                description: 用户设备类型
+                example: IOS
+                enum:
+                  - IOS
+                  - ANDROID
+                  - HARMONY
+                  - OTHER
   responses:
     '200':
       schema:

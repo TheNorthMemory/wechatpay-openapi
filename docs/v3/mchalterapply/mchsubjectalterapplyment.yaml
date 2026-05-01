@@ -19,8 +19,6 @@ post:
           - merchant_code
           - out_request_no
           - organization_type
-          - finance_institution
-          - legal_person_info
         properties:
           merchant_code:
             type: string
@@ -30,6 +28,14 @@ post:
             type: string
             description: 业务申请编号
             example: '1900013511_10000'
+          alter_scope:
+            type: string
+            description: 主体资料变更范围
+            example: ALTER_SCOPE_FULL
+            enum:
+              - ALTER_SCOPE_FULL
+              - ALTER_SCOPE_BUSINESS_CERT
+              - ALTER_SCOPE_UBO
           organization_type:
             type: string
             description: 主体类型
@@ -326,6 +332,15 @@ post:
               agency_prove:
                 type: array
                 description: 发证机关证明
+                items:
+                  type: string
+                  format: MediaId
+                  description: 图片MediaID
+                example:
+                  - 0P3ng6KTIW4-Q_l2FjmFJBZR9FwczhJehHhAZN6BKXQPcs-VvdSo
+              ubo_prove:
+                type: array
+                description: 受益所有人补充材料
                 items:
                   type: string
                   format: MediaId

@@ -1,5 +1,5 @@
 get:
-  x-last-updated-at: 2025.05.16
+  x-last-updated-at: 2025.08.26
   x-role:
     - 普通商户
   tags:
@@ -22,9 +22,7 @@ get:
           - appid
           - openid
           - user_display_name
-          - authorization_id
           - state
-          - authorize_time
         properties:
           out_authorization_no:
             type: string
@@ -53,6 +51,7 @@ get:
             enum:
               - TAKING_EFFECT #用户已确认授权，授权生效中，可发起转账到授权对应的用户
               - CLOSED #用户或商户系统关闭，无法转账至该授权对应的用户
+              - WAIT_USER_CONFIRM
           authorize_time:
             type: string
             description: 用户确认授权的时间
@@ -75,3 +74,16 @@ get:
                 enum:
                   - CLOSE_VIA_MCH_API #商户通过API主动关闭授权
                   - USER_CLOSE #用户确认后，主动关闭授权
+                  - USER_OVERDUE_UNCONFIRMED
+                  - TRANSFER_RISK
+                  - USER_ACCOUNT_ABNORMAL
+          transfer_scene_id:
+            type: string
+            description: 转账场景ID
+          user_recv_perception:
+            type: string
+            description: 用户收款感知
+          create_time:
+            type: string
+            format: rfc3339
+            description: 单据创建时间

@@ -1,4 +1,5 @@
 post:
+  x-last-updated-at: 2026.04.24
   tags:
     - APIv2∙基础支付
   summary: 提交付款码支付
@@ -12,9 +13,528 @@ post:
       in: body
       required: true
       schema:
-        $ref: '../../definitions/micropay.yaml#/micropay.request'
+        type: object
+        xml:
+          name: xml
+        required:
+          - appid
+          - mch_id
+          - nonce_str
+          - sign
+          - body
+          - out_trade_no
+          - total_fee
+          - spbill_create_ip
+          - auth_code
+        properties:
+          version:
+            type: string
+            description: 接口版本号
+            example: '1.0'
+            maxLength: 32
+          profit_sharing:
+            type: string
+            description: 是否指定服务商分账;Y-是，需要分账;N-否，不分账;字母要求大写，不传默认不分账
+            enum: [N,Y]
+            example: 'N'
+            maxLength: 1
+          deposit:
+            type: string
+            description: 是否押金支付
+            enum: [Y,N]
+            example: 'Y'
+            maxLength: 1
+          appid:
+            type: string
+            description: 公众账号ID
+            example: wx8888888888888888
+            maxLength: 32
+          sub_appid:
+            type: string
+            description: 子商户公众账号ID
+            example: wx8888888888888888
+            maxLength: 32
+            nullable: true
+          mch_id:
+            type: string
+            description: 商户号
+            example: '1900000109'
+            maxLength: 32
+          sub_mch_id:
+            type: string
+            description: 子商户号
+            example: '1900000100'
+            maxLength: 32
+          device_info:
+            type: string
+            description: 设备号
+            example: '013467007045764'
+            maxLength: 32
+            nullable: true
+          nonce_str:
+            type: string
+            description: 随机字符串
+            example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+            maxLength: 32
+          sign:
+            type: string
+            description: 签名
+            example: C380BEC2BFD727A4B6845133519F3AD6
+            maxLength: 32
+          sign_type:
+            type: string
+            description: 签名类型
+            example: HMAC-SHA256
+            maxLength: 32
+            nullable: true
+            enum:
+              - MD5
+              - HMAC-SHA256
+          body:
+            type: string
+            description: 商品描述
+            example: image形象店-深圳腾大- QQ公仔
+            maxLength: 128
+          detail:
+            xml:
+              x-cdata: true
+            type: string
+            format: jsonObjectLike
+            description: 单品优惠活动该字段必传，`JSON`格式字符串
+            maxLength: 6000
+            nullable: true
+            example: '{"cost_price":1,"receipt_id":"wx123","goods_detail":[{"goods_id":"商品编码","wxpay_goods_id":"1001","goods_name":"iPhone6s 16G","quantity":1,"price":1},{"goods_id":"商品编码","wxpay_goods_id":"1002","goods_name":"iPhone6s 32G","quantity":1,"price":1}]}'
+            x-json:
+              type: object
+              description: 单品优惠活动信息
+              required:
+                - goods_detail
+              properties:
+                cost_price:
+                  type: number
+                  description: 订单原价
+                  example: 1
+                receipt_id:
+                  type: string
+                  description: 商品小票ID
+                  example: wx123
+                goods_detail:
+                  type: array
+                  description: 单品列表
+                  items:
+                    type: object
+                    properties:
+                      goods_id:
+                        type: string
+                        description: 商品编码
+                        example: 商品编码
+                      wxpay_goods_id:
+                        type: string
+                        description: 微信支付商品编码
+                        example: '1001'
+                      goods_name:
+                        type: string
+                        description: 商品名称
+                        example: iPhone6s 16G
+                      quantity:
+                        type: number
+                        description: 商品数量
+                        example: 1
+                      price:
+                        type: number
+                        description: 商品单价
+                        example: 528800
+                      goods_category:
+                        type: string
+                        description: 商品种类
+                        example: '123789'
+                      body:
+                        type: string
+                        description: 商品描述
+                        example: 苹果手机
+                      category:
+                        type: string
+                        description: 商品种类
+                        example: FOOD_BEVERAGE
+                      merchant_category_code:
+                        type: integer
+                        description: 商品MCC码
+                        example: 5942
+          attach:
+            type: string
+            description: 附加数据
+            example: 说明
+            maxLength: 127
+            nullable: true
+          out_trade_no:
+            type: string
+            description: 商户订单号
+            example: '1217752501201407033233368018'
+            maxLength: 32
+          total_fee:
+            format: int32
+            type: integer
+            description: 订单金额
+            example: '888'
+          fee_type:
+            type: string
+            description: 货币类型
+            example: CNY
+            maxLength: 16
+            nullable: true
+          spbill_create_ip:
+            type: string
+            description: 终端IP
+            example: 8.8.8.8
+            maxLength: 64
+          goods_tag:
+            type: string
+            description: 订单优惠标记
+            example: '1234'
+            maxLength: 32
+            nullable: true
+          limit_pay:
+            type: string
+            description: 指定支付方式
+            example: no_credit
+            maxLength: 32
+            nullable: true
+          time_start:
+            type: string
+            description: 交易起始时间
+            example: '20091225091010'
+            maxLength: 14
+            nullable: true
+          time_expire:
+            type: string
+            description: 交易结束时间
+            example: '20091227091010'
+            maxLength: 14
+            nullable: true
+          receipt:
+            type: string
+            description: 电子发票入口开放标识
+            example: 'Y'
+            maxLength: 8
+            nullable: true
+          auth_code:
+            type: string
+            description: 授权码
+            example: '120061098828009406'
+            maxLength: 128
+          scene_info:
+            xml:
+              x-cdata: true
+            type: string
+            format: jsonObjectLike
+            description: 场景信息`JSON`格式字符串
+            example: '{"store_info" : {"id": "SZTX001","name": "腾大餐厅","area_code": "440305","address": "科技园中一路腾讯大厦" }}'
+            maxLength: 256
+            nullable: true
+            x-json:
+              type: object
+              required:
+                - store_info
+              properties:
+                store_info:
+                  type: object
+                  description: 实际门店信息
+                  required:
+                    - id
+                  properties:
+                    id:
+                      type: string
+                      description: 门店id
+                      example: SZTX001
+                    name:
+                      type: string
+                      description: 门店名称
+                      example: 腾大餐厅
+                    area_code:
+                      type: string
+                      description: 门店行政区划码
+                      example: '440305'
+                    address:
+                      type: string
+                      description: 门店详细地址
+                      example: 科技园中一路腾讯大厦
   responses:
     '200':
       description: ''
       schema:
-        $ref: '../../definitions/micropay.yaml#/micropay.response'
+        allOf:
+          - type: object
+            xml:
+              name: xml
+            required:
+              - return_code
+              - return_msg
+            properties:
+              return_code:
+                type: string
+                description: 返回状态码
+                example: SUCCESS
+                maxLength: 16
+                enum:
+                  - SUCCESS
+                  - FAIL
+              return_msg:
+                type: string
+                description: 返回信息
+                example: OK
+                maxLength: 128
+          - type: object
+            xml:
+              name: xml
+            required:
+              - appid
+              - mch_id
+              - nonce_str
+              - sign
+              - result_code
+            properties:
+              appid:
+                type: string
+                description: 公众账号ID
+                example: wx8888888888888888
+                maxLength: 32
+              sub_appid:
+                type: string
+                description: 子商户公众账号ID
+                example: wx8888888888888888
+                maxLength: 32
+              mch_id:
+                type: string
+                description: 商户号
+                example: '1900000109'
+                maxLength: 32
+              sub_mch_id:
+                type: string
+                description: 子商户号
+                example: '1900000100'
+                maxLength: 32
+              device_info:
+                type: string
+                description: 设备号
+                example: '013467007045764'
+                maxLength: 32
+                nullable: true
+              nonce_str:
+                type: string
+                description: 随机字符串
+                example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+                maxLength: 32
+              sign:
+                type: string
+                description: 签名
+                example: C380BEC2BFD727A4B6845133519F3AD6
+                maxLength: 32
+              result_code:
+                type: string
+                description: 业务结果
+                example: SUCCESS
+                maxLength: 16
+                enum:
+                  - SUCCESS
+                  - FAIL
+              err_code:
+                type: string
+                description: 错误代码
+                example: SYSTEMERROR
+                maxLength: 32
+                nullable: true
+              err_code_des:
+                type: string
+                description: 错误代码描述
+                example: 系统错误
+                maxLength: 128
+                nullable: true
+          - type: object
+            xml:
+              name: xml
+            required:
+              - openid
+              - is_subscribe
+              - trade_type
+              - bank_type
+              - total_fee
+              - cash_fee
+              - transaction_id
+              - out_trade_no
+              - time_end
+            properties:
+              openid:
+                type: string
+                description: 用户标识
+                example: 'Y'
+                maxLength: 128
+              is_subscribe:
+                type: string
+                description: 是否关注公众账号
+                example: 'N'
+                maxLength: 1
+                depracted: true
+                enum:
+                  - N
+              trade_type:
+                type: string
+                description: 交易类型
+                example: MICROPAY
+                maxLength: 16
+              bank_type:
+                type: string
+                description: 付款银行
+                example: CMC
+                maxLength: 32
+              fee_type:
+                type: string
+                description: 货币类型
+                example: CNY
+                maxLength: 16
+                nullable: true
+              total_fee:
+                format: int32
+                type: integer
+                description: 订单金额
+                example: '888'
+              settlement_total_fee:
+                format: int32
+                type: integer
+                description: 应结订单金额
+                example: '100'
+                nullable: true
+              coupon_fee:
+                format: int32
+                type: integer
+                description: 代金券金额
+                example: '100'
+                nullable: true
+              cash_fee_type:
+                type: string
+                description: 现金支付货币类型
+                example: CNY
+                maxLength: 16
+                nullable: true
+              cash_fee:
+                format: int32
+                type: integer
+                description: 现金支付金额
+                example: '100'
+              transaction_id:
+                type: string
+                description: 微信支付订单号
+                example: '1217752501201407033233368018'
+                maxLength: 32
+              out_trade_no:
+                type: string
+                description: 商户订单号
+                example: '1217752501201407033233368018'
+                maxLength: 32
+              attach:
+                type: string
+                description: 商家数据包
+                example: '123456'
+                maxLength: 128
+                nullable: true
+              time_end:
+                type: string
+                description: 支付完成时间
+                example: '20141030133525'
+                maxLength: 14
+              promotion_detail:
+                type: string
+                description: 营销详情
+                example: 示例见下文
+                maxLength: 6000
+                nullable: true
+          - type: object
+            xml:
+              name: xml
+            properties:
+              promotion_detail:
+                xml:
+                  x-cdata: true
+                type: string
+                format: jsonObjectLike
+                description: 营销详情`JSON`格式字符串
+                maxLength: 6000
+                example: '{"promotion_detail":[{"promotion_id":"109519","name":"单品惠-6","scope":"SINGLE","type":"DISCOUNT","amount":5,"activity_id":"931386","wxpay_contribute":0,"merchant_contribute":0,"other_contribute":5,"goods_detail":[{"goods_id":"a_goods1","goods_remark":"商品备注","quantity":7,"price":1,"discount_amount":4},{"goods_id":"a_goods2","goods_remark":"商品备注","quantity":1,"price":2,"discount_amount":1}]}]}'
+                x-json:
+                  type: object
+                  description: 营销详情`JSON`表达式
+                  required:
+                    - promotion_id
+                    - amount
+                    - activity_id
+                    - goods_detail
+                  properties:
+                    promotion_id:
+                      type: string
+                      description: 券ID
+                    name:
+                      type: string
+                      description: 优惠名称
+                    scope:
+                      type: string
+                      description: 优惠范围
+                      enum:
+                      - GLOBAL
+                      - SINGLE
+                    type:
+                      type: string
+                      description: 优惠类型
+                      enum:
+                        - COUPON
+                        - DISCOUNT
+                    amount:
+                      type: string
+                      description: 优惠券面额
+                    activity_id:
+                      type: string
+                      description: 活动ID
+                    wxpay_contribute:
+                      type: string
+                      description: 微信出资
+                    merchant_contribute:
+                      type: string
+                      description: 商户出资
+                    other_contribute:
+                      type: string
+                      description: 其他出资
+                    goods_detail:
+                      type: array
+                      description: 单品列表
+                      items:
+                        type: object
+                        required:
+                          - quantity
+                          - price
+                        properties:
+                          goods_id:
+                            type: string
+                            description: 商品编码
+                            example: 商品编码
+                          goods_remark:
+                            type: string
+                            description: 商品备注
+                            example: 商品备注
+                          discount_amount:
+                            type: number
+                            description: 商品优惠金额
+                            example: 1
+                          wxpay_goods_id:
+                            type: string
+                            description: 微信支付商品编码
+                            example: '1001'
+                          goods_name:
+                            type: string
+                            description: 商品名称
+                            example: iPhone6s 16G
+                          quantity:
+                            type: number
+                            description: 商品数量
+                            example: 1
+                          price:
+                            type: number
+                            description: 商品单价
+                            example: 528800

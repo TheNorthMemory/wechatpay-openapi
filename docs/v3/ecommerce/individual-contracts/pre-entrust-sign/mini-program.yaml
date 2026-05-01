@@ -4,7 +4,7 @@ post:
     - 电商平台
   tags:
     - 收付通∙个人收款
-  summary: APP场景预签约
+  summary: 小程序场景预签约
   description: 商户可调用本接口预先指定签约，生成预签约会话及对应的预签约ID，再携带预签约ID（pre_entrustweb_id）参数，通过微信SDK拉起微信支付客户端的签约页面。
   parameters:
     - name: _
@@ -15,6 +15,7 @@ post:
         required:
           - appid
           - out_contract_code
+          - openid
         properties:
           appid:
             type: string
@@ -24,6 +25,10 @@ post:
             type: string
             description: 业务申请单号
             example: APPLYMENT_00000000001
+          openid:
+            type: string
+            description: 个人收款方的OpenID
+            example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
   responses:
     '200':
       schema:

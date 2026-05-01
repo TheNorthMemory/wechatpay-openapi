@@ -1,5 +1,5 @@
 get:
-  x-last-updated-at: 2025.08.13
+  x-last-updated-at: 2026.04.24
   x-role:
     - 电商平台
   tags:
@@ -47,3 +47,25 @@ get:
             type: string
             description: 用户OpenID
             example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+          real_name_auth_result:
+            type: object
+            description: 实名授权结果
+            required:
+              - scope
+              - access_token
+              - access_token_expire_time
+            properties:
+              scope:
+                type: string
+                description: 应用授权作用域
+                enum:
+                  - pay_realname
+              access_token:
+                type: string
+                description: 访问令牌
+                example: Ca5sECXTwzkWYXs_do9ZaEeueqVHOtF-nXr51yNll2O97zqk9niwJnmSWxhDJELqoDDVFws6LCBbSulnEAaxCg==
+              access_token_expire_time:
+                type: string
+                format: rfc3339
+                description: 访问令牌过期时间
+                example: '2018-06-08T10:34:56+08:00'

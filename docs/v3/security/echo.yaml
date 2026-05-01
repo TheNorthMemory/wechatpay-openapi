@@ -1,0 +1,44 @@
+post:
+  x-last-updated-at: 2026.04.08
+  x-role: [服务商, 直连商户]
+  tags:
+    - 经营工具∙支付即服务
+  summary: 商户签名验签／加解密测试
+  description: 为商户提供签名、验签、加密、解密的测试能力。商户可以选择用平台证书签名，加密，也可以选择微信支付公钥签名，加密。
+  parameters:
+    - $ref: '../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - echo_message
+        properties:
+          notify_url:
+            type: string
+            description: 商户回调地址
+            example: https://www.weixin.qq.com/v3/test
+          echo_message:
+            type: string
+            description: 回显信息
+            example: hello
+          encrypted_echo_message:
+            type: string
+            format: base64
+            description: 平台证书或微信支付公钥加密测试字段
+            example: Fx9mh7K5sjqHxxQcgDVhnJ9QdS4nKfcUbuAOj
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - echo_message
+        properties:
+          echo_message:
+            type: string
+            description: 回显信息
+          encrypted_echo_message:
+            type: string
+            format: base64
+            description: 平台证书或微信支付公钥加密测试字段

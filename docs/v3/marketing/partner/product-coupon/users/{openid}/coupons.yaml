@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2025.08.04
+  x-last-updated-at: 2025.11.07
   x-role:
     - 服务商
   tags:
@@ -619,6 +619,10 @@ post:
                               format: rfc3339
                               description: 结束时间
                               example: '2025-08-31T23:59:59+08:00'
+                      available_seconds:
+                        type: integer
+                        description: 领取后N秒内有效
+                        example: 3600
                   normal_coupon:
                     type: object
                     description: 满减券使用规则
@@ -744,6 +748,10 @@ post:
                               format: rfc3339
                               description: 结束时间
                               example: '2025-08-31T23:59:59+08:00'
+                      available_seconds:
+                        type: integer
+                        description: 领取后N秒内有效
+                        example: 3600
                   normal_coupon_list:
                     type: array
                     description: 满减券使用规则
@@ -825,7 +833,8 @@ post:
                     example: /pages/index/product
                   app_path:
                     type: string
-                    description: APP跳转路径
+                    description: APP的H5跳转路径
+                    example: https://weixin.qq.com/jump-to-app
                   usage_description:
                     type: string
                     description: 券使用说明
@@ -848,6 +857,17 @@ post:
                         type: string
                         description: 小程序跳转路径
                         example: /pages/index/product
+                  app_jump_type:
+                    type: string
+                    description: APP跳转类型
+                    example: H5
+                    enum:
+                      - H5
+                      - PASSCODE_LINK
+                  passcode_link:
+                    type: string
+                    description: 口令链接
+                    example: passcode_link.example
               coupon_display_info:
                 type: object
                 description: 用户商品券展示信息
@@ -998,7 +1018,7 @@ post:
             description: 品牌ID
             example: '120344'
 get:
-  x-last-updated-at: 2025.09.02
+  x-last-updated-at: 2025.11.07
   x-role:
     - 服务商
   tags:
@@ -1638,6 +1658,10 @@ get:
                                     format: rfc3339
                                     description: 结束时间
                                     example: '2025-08-31T23:59:59+08:00'
+                            available_seconds:
+                              type: integer
+                              description: 领取后N秒内有效
+                              example: 3600
                         normal_coupon:
                           type: object
                           description: 满减券使用规则
@@ -1763,6 +1787,10 @@ get:
                                     format: rfc3339
                                     description: 结束时间
                                     example: '2025-08-31T23:59:59+08:00'
+                            available_seconds:
+                              type: integer
+                              description: 领取后N秒内有效
+                              example: 3600
                         normal_coupon_list:
                           type: array
                           description: 满减券使用规则
@@ -1844,7 +1872,8 @@ get:
                           example: /pages/index/product
                         app_path:
                           type: string
-                          description: APP跳转路径
+                          description: APP的H5跳转路径
+                          example: https://weixin.qq.com/jump-to-app
                         usage_description:
                           type: string
                           description: 券使用说明
@@ -1867,6 +1896,17 @@ get:
                               type: string
                               description: 小程序跳转路径
                               example: /pages/index/product
+                        app_jump_type:
+                          type: string
+                          description: APP跳转类型
+                          example: H5
+                          enum:
+                            - H5
+                            - PASSCODE_LINK
+                        passcode_link:
+                          type: string
+                          description: 口令链接
+                          example: passcode_link.example
                     coupon_display_info:
                       type: object
                       description: 用户商品券展示信息

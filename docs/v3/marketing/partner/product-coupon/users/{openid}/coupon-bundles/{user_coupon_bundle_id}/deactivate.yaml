@@ -651,7 +651,8 @@ post:
                           example: /pages/index/product
                         app_path:
                           type: string
-                          description: APP跳转路径
+                          description: APP的H5跳转路径
+                          example: https://weixin.qq.com/jump-to-app
                         usage_description:
                           type: string
                           description: 券使用说明
@@ -674,6 +675,17 @@ post:
                               type: string
                               description: 小程序跳转路径
                               example: /pages/index/product
+                        app_jump_type:
+                          type: string
+                          description: APP跳转类型
+                          example: H5
+                          enum:
+                            - H5
+                            - PASSCODE_LINK
+                        passcode_link:
+                          type: string
+                          description: 口令链接
+                          example: passcode_link.example
                     coupon_display_info:
                       type: object
                       description: 用户商品券展示信息

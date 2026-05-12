@@ -33,6 +33,9 @@ interface TransferBills
                 'info_type' => '活动名称',
                 'info_content' => '注册会员有礼',
             ],],
+            'user_recv_style' => [
+                'type' => 'CONFIRM_PAGE | RED_PACKET',
+            ],
         ],
         'headers' => [
             'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',
@@ -59,6 +62,9 @@ interface TransferBills
                 'info_type' => '活动名称',
                 'info_content' => '注册会员有礼',
             ],],
+            'user_recv_style' => [
+                'type' => 'CONFIRM_PAGE | RED_PACKET',
+            ],
         ],
         'headers' => [
             'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',

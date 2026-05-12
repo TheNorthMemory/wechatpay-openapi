@@ -85,6 +85,18 @@ post:
                   type: string
                   description: 信息内容
                   example: 注册会员有礼
+          user_recv_style:
+            type: object
+            description: 用户收款样式
+            required:
+              - type
+            properties:
+              type:
+                type: string
+                description: 用户收款样式类型
+                enum:
+                  - CONFIRM_PAGE
+                  - RED_PACKET
   responses:
     '200':
       schema:

@@ -10,7 +10,7 @@ use GuzzleHttp\Promise\PromiseInterface;
 interface Transfer
 {
     /**
-     * 转账（用户自动收款）(同步模式)
+     * 用户授权后转账(同步模式)
      * @param array<string,mixed> $options
      * @link https://wechatpay.im/openapi/v3/fund-app/mch-transfer/transfer-bills/transfer
      */
@@ -30,6 +30,7 @@ interface Transfer
             ],],
             'authorization_id' => '201202504101000123456789012',
             'sponsor_mchid' => '1900001109',
+            'out_authorization_no' => 'plfk2020042013',
         ],
         'headers' => [
             'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',
@@ -37,7 +38,7 @@ interface Transfer
     ]): ResponseInterface;
 
     /**
-     * 转账（用户自动收款）(异步模式)
+     * 用户授权后转账(异步模式)
      * @param array<string,mixed> $options
      * @link https://wechatpay.im/openapi/v3/fund-app/mch-transfer/transfer-bills/transfer
      */
@@ -57,6 +58,7 @@ interface Transfer
             ],],
             'authorization_id' => '201202504101000123456789012',
             'sponsor_mchid' => '1900001109',
+            'out_authorization_no' => 'plfk2020042013',
         ],
         'headers' => [
             'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',

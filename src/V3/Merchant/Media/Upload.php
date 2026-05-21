@@ -10,7 +10,7 @@ use GuzzleHttp\Promise\PromiseInterface;
 interface Upload
 {
     /**
-     * 图片上传(同步模式)
+     * 文件上传(同步模式)
      *
      * ```php
      * $media   = new \WeChatPay\Util\MediaUtil('file:///path/to/image.jpg');
@@ -23,7 +23,7 @@ interface Upload
     public function post(array $options = []): ResponseInterface;
 
     /**
-     * 图片上传(异步模式)
+     * 文件上传(异步模式)
      *
      * ```php
      * $media   = new \WeChatPay\Util\MediaUtil('file:///path/to/image.jpg');

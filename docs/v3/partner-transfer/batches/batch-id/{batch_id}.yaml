@@ -1,5 +1,5 @@
 get:
-  x-last-updated-at: 2021.07.21
+  x-last-updated-at: 2024.11.18
   x-role:
     - 服务商
   tags:
@@ -99,6 +99,10 @@ get:
             type: string
             description: 批次关闭原因
             example: OVERDUE_CLOSE
+            enum:
+              - MERCHANT_REVOCATION
+              - OVERDUE_CLOSE
+              - PAYER_ACCOUNT_ABNORMAL
           total_amount:
             type: integer
             description: 转账总金额

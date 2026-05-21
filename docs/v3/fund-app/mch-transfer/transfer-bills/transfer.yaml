@@ -1,10 +1,10 @@
 post:
-  x-last-updated-at: 2026.04.10
+  x-last-updated-at: 2026.05.08
   x-role:
     - 普通商户
   tags:
     - 资金应用∙转账∙用户确认模式
-  summary: 转账（用户自动收款）
+  summary: 用户授权后转账
   description: 商户可调用该接口转账给自动收款授权对应的用户。
   parameters:
     - $ref: '../../../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
@@ -20,7 +20,6 @@ post:
           - transfer_scene_report_infos
           - transfer_amount
           - transfer_remark
-          - authorization_id
         properties:
           appid:
             type: string
@@ -83,12 +82,16 @@ post:
                   example: 注册会员有礼
           authorization_id:
             type: string
-            description: 微信自动收款授权单号
+            description: 微信免确认收款授权单号
             example: '201202504101000123456789012'
           sponsor_mchid:
             type: string
             description: 出资商户号
             example: '1900001109'
+          out_authorization_no:
+            type: string
+            description: 商户侧授权单号
+            example: plfk2020042013
   responses:
     '200':
       schema:

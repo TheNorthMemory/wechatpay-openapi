@@ -18,6 +18,7 @@ interface IncomeRecords
         'query' => [
             'sub_mchid' => '2480253391',
             'account_type' => 'BASIC',
+            'date' => '2019-06-11',
             'offset' => 0,
             'limit' => 100,
         ],
@@ -32,6 +33,7 @@ interface IncomeRecords
         'query' => [
             'sub_mchid' => '2480253391',
             'account_type' => 'BASIC',
+            'date' => '2019-06-11',
             'offset' => 0,
             'limit' => 100,
         ],

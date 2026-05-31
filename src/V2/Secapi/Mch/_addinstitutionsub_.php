@@ -36,7 +36,7 @@ interface _addinstitutionsub_
             'office_account' => 'wx8888888888888888',
             'mini_program' => 'wx8888888888888888',
             'store_address' => '广东省深圳市南山区科技中一道10000号',
-            'store_photos' => \json_encode([
+            'store_photos' => new \WeChatPay\OpenAPI\JsonStringable([
                 'ySdrxMVb92Rmf9p2n7aJ4nAkJsqjYAt8uWQxBQ_p2Jgs',
                 'ySdVr5RR9cPRAq5FS0BKJxc78190x27psCzAwNzi6VdEI',
                 'yS2xjJ9lhuVwUyQbq0AYmP80p50vVuhdSjsKM',
@@ -52,7 +52,7 @@ interface _addinstitutionsub_
             'settlement_bank_number' => '555588889999',
             'apply_h5_payment' => 'YES',
             'h5_website_url' => 'https://qq.com',
-            'h5_domains' => \json_encode([
+            'h5_domains' => new \WeChatPay\OpenAPI\JsonStringable([
                 'www.qq.com',
                 'www.weixin.com',
             ]),
@@ -89,7 +89,7 @@ interface _addinstitutionsub_
             'office_account' => 'wx8888888888888888',
             'mini_program' => 'wx8888888888888888',
             'store_address' => '广东省深圳市南山区科技中一道10000号',
-            'store_photos' => \json_encode([
+            'store_photos' => new \WeChatPay\OpenAPI\JsonStringable([
                 'ySdrxMVb92Rmf9p2n7aJ4nAkJsqjYAt8uWQxBQ_p2Jgs',
                 'ySdVr5RR9cPRAq5FS0BKJxc78190x27psCzAwNzi6VdEI',
                 'yS2xjJ9lhuVwUyQbq0AYmP80p50vVuhdSjsKM',
@@ -105,7 +105,7 @@ interface _addinstitutionsub_
             'settlement_bank_number' => '555588889999',
             'apply_h5_payment' => 'YES',
             'h5_website_url' => 'https://qq.com',
-            'h5_domains' => \json_encode([
+            'h5_domains' => new \WeChatPay\OpenAPI\JsonStringable([
                 'www.qq.com',
                 'www.weixin.com',
             ]),

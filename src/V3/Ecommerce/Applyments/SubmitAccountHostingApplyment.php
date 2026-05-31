@@ -26,7 +26,7 @@ interface SubmitAccountHostingApplyment
                 'merchant_name' => '腾讯科技有限公司',
                 'legal_person' => '张三',
                 'company_address' => '深圳南山区科苑路',
-                'business_time' => \json_encode([
+                'business_time' => new \WeChatPay\OpenAPI\JsonStringable([
                     '2014-01-01',
                     '长期',
                 ]),
@@ -122,7 +122,7 @@ interface SubmitAccountHostingApplyment
                 'merchant_name' => '腾讯科技有限公司',
                 'legal_person' => '张三',
                 'company_address' => '深圳南山区科苑路',
-                'business_time' => \json_encode([
+                'business_time' => new \WeChatPay\OpenAPI\JsonStringable([
                     '2014-01-01',
                     '长期',
                 ]),

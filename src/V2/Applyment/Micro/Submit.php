@@ -26,7 +26,7 @@ interface Submit
             'id_card_national' => '',
             'id_card_name' => '佑佑',
             'id_card_number' => '',
-            'id_card_valid_time' => \json_encode([
+            'id_card_valid_time' => new \WeChatPay\OpenAPI\JsonStringable([
                 '1970-01-01',
                 '长期',
             ]),
@@ -48,7 +48,7 @@ interface Submit
             'product_desc' => '',
             'rate' => '0.6%',
             'business_addition_desc' => '',
-            'business_addition_pics' => \json_encode([
+            'business_addition_pics' => new \WeChatPay\OpenAPI\JsonStringable([
                 '123',
                 '456',
             ]),
@@ -76,7 +76,7 @@ interface Submit
             'id_card_national' => '',
             'id_card_name' => '佑佑',
             'id_card_number' => '',
-            'id_card_valid_time' => \json_encode([
+            'id_card_valid_time' => new \WeChatPay\OpenAPI\JsonStringable([
                 '1970-01-01',
                 '长期',
             ]),
@@ -98,7 +98,7 @@ interface Submit
             'product_desc' => '',
             'rate' => '0.6%',
             'business_addition_desc' => '',
-            'business_addition_pics' => \json_encode([
+            'business_addition_pics' => new \WeChatPay\OpenAPI\JsonStringable([
                 '123',
                 '456',
             ]),

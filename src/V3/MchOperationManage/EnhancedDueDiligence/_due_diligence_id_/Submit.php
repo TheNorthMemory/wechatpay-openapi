@@ -18,7 +18,7 @@ interface Submit
         'due_diligence_id' => '123000110_2_2190381dakdajois1283i12jo',
         'json' => [
             'sub_mchid' => '123000110',
-            'submit_data' => \json_encode([
+            'submit_data' => new \WeChatPay\OpenAPI\JsonStringable([
                 'record_fields' => [[
                     'item_id' => '',
                     'field_name' => '',
@@ -55,7 +55,7 @@ interface Submit
         'due_diligence_id' => '123000110_2_2190381dakdajois1283i12jo',
         'json' => [
             'sub_mchid' => '123000110',
-            'submit_data' => \json_encode([
+            'submit_data' => new \WeChatPay\OpenAPI\JsonStringable([
                 'record_fields' => [[
                     'item_id' => '',
                     'field_name' => '',

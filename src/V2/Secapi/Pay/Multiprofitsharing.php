@@ -23,7 +23,7 @@ interface Multiprofitsharing
             'sign_type' => 'HMAC-SHA256',
             'transaction_id' => '4208450740201411110007820472',
             'out_order_no' => 'P20150806125346',
-            'receivers' => \json_encode([[
+            'receivers' => new \WeChatPay\OpenAPI\JsonStringable([[
                 'type' => 'MERCHANT_ID | PERSONAL_OPENID | PERSONAL_SUB_OPENID',
                 'account' => '190001001',
                 'amount' => 100,
@@ -48,7 +48,7 @@ interface Multiprofitsharing
             'sign_type' => 'HMAC-SHA256',
             'transaction_id' => '4208450740201411110007820472',
             'out_order_no' => 'P20150806125346',
-            'receivers' => \json_encode([[
+            'receivers' => new \WeChatPay\OpenAPI\JsonStringable([[
                 'type' => 'MERCHANT_ID | PERSONAL_OPENID | PERSONAL_SUB_OPENID',
                 'account' => '190001001',
                 'amount' => 100,

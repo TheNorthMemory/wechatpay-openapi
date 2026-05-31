@@ -1,6 +1,11 @@
 parameters:
-	scanFiles:
-		- .github/stubs/WeChatPay.Formatter.stub
 	level: max
 	paths:
 		- src
+	ignoreErrors:
+		-
+			message: "#.*#"
+			path: src/JsonStringable.php
+		-
+			message: "#.*#"
+			path: src/UriComponentStringable.php

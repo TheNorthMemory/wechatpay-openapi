@@ -41,7 +41,7 @@ interface Applyment
                     'merchant_name' => '',
                     'legal_person' => '',
                     'company_address' => '',
-                    'licence_valid_date' => \json_encode([
+                    'licence_valid_date' => new \WeChatPay\OpenAPI\JsonStringable([
                         '1970-01-01',
                         'forever',
                     ]),
@@ -53,7 +53,7 @@ interface Applyment
                     'merchant_name' => '',
                     'legal_person' => '',
                     'company_address' => '',
-                    'cert_valid_date' => \json_encode([
+                    'cert_valid_date' => new \WeChatPay\OpenAPI\JsonStringable([
                         '1970-01-01',
                         'forever',
                     ]),
@@ -82,7 +82,7 @@ interface Applyment
                 'authorize_letter_copy' => '',
                 'identification_name' => '',
                 'identification_number' => '',
-                'identification_valid_date' => \json_encode([
+                'identification_valid_date' => new \WeChatPay\OpenAPI\JsonStringable([
                     '1970-01-01',
                     'forever',
                 ]),
@@ -142,7 +142,7 @@ interface Applyment
                     'merchant_name' => '',
                     'legal_person' => '',
                     'company_address' => '',
-                    'licence_valid_date' => \json_encode([
+                    'licence_valid_date' => new \WeChatPay\OpenAPI\JsonStringable([
                         '1970-01-01',
                         'forever',
                     ]),
@@ -154,7 +154,7 @@ interface Applyment
                     'merchant_name' => '',
                     'legal_person' => '',
                     'company_address' => '',
-                    'cert_valid_date' => \json_encode([
+                    'cert_valid_date' => new \WeChatPay\OpenAPI\JsonStringable([
                         '1970-01-01',
                         'forever',
                     ]),
@@ -183,7 +183,7 @@ interface Applyment
                 'authorize_letter_copy' => '',
                 'identification_name' => '',
                 'identification_number' => '',
-                'identification_valid_date' => \json_encode([
+                'identification_valid_date' => new \WeChatPay\OpenAPI\JsonStringable([
                     '1970-01-01',
                     'forever',
                 ]),

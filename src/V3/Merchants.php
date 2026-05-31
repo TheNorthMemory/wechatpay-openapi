@@ -43,7 +43,7 @@ interface Merchants
                 'office_account' => 'wx8888888888888888',
                 'mini_program' => 'wx8888888888888888',
                 'store_address' => '10F World Finance Centre (South Office), 11 Canton Road, Tsim Sha Tsui, Hong Kong',
-                'store_photos' => \json_encode([
+                'store_photos' => new \WeChatPay\OpenAPI\JsonStringable([
                     'Media_id1',
                     'Media_id2',
                     'Media_id3',
@@ -98,7 +98,7 @@ interface Merchants
                 'office_account' => 'wx8888888888888888',
                 'mini_program' => 'wx8888888888888888',
                 'store_address' => '10F World Finance Centre (South Office), 11 Canton Road, Tsim Sha Tsui, Hong Kong',
-                'store_photos' => \json_encode([
+                'store_photos' => new \WeChatPay\OpenAPI\JsonStringable([
                     'Media_id1',
                     'Media_id2',
                     'Media_id3',
@@ -154,7 +154,7 @@ interface Merchants
                 'office_account' => 'wx8888888888888888',
                 'mini_program' => 'wx8888888888888888',
                 'store_address' => '10F World Finance Centre (South Office), 11 Canton Road, Tsim Sha Tsui, Hong Kong',
-                'store_photos' => \json_encode([
+                'store_photos' => new \WeChatPay\OpenAPI\JsonStringable([
                     'Media_id1',
                     'Media_id2',
                     'Media_id3',
@@ -209,7 +209,7 @@ interface Merchants
                 'office_account' => 'wx8888888888888888',
                 'mini_program' => 'wx8888888888888888',
                 'store_address' => '10F World Finance Centre (South Office), 11 Canton Road, Tsim Sha Tsui, Hong Kong',
-                'store_photos' => \json_encode([
+                'store_photos' => new \WeChatPay\OpenAPI\JsonStringable([
                     'Media_id1',
                     'Media_id2',
                     'Media_id3',

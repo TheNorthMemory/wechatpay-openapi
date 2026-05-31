@@ -27,7 +27,7 @@ interface Micropay
             'device_info' => '013467007045764',
             'sign_type' => 'HMAC-SHA256',
             'body' => 'image形象店-深圳腾大- QQ公仔',
-            'detail' => \json_encode([
+            'detail' => new \WeChatPay\OpenAPI\JsonStringable([
                 'cost_price' => 1,
                 'receipt_id' => 'wx123',
                 'goods_detail' => [[
@@ -49,7 +49,7 @@ interface Micropay
             'time_expire' => '20091227091010',
             'receipt' => 'Y',
             'auth_code' => '120061098828009406',
-            'scene_info' => \json_encode([
+            'scene_info' => new \WeChatPay\OpenAPI\JsonStringable([
                 'store_info' => [
                     'id' => 'SZTX001',
                     'name' => '腾大餐厅',
@@ -78,7 +78,7 @@ interface Micropay
             'device_info' => '013467007045764',
             'sign_type' => 'HMAC-SHA256',
             'body' => 'image形象店-深圳腾大- QQ公仔',
-            'detail' => \json_encode([
+            'detail' => new \WeChatPay\OpenAPI\JsonStringable([
                 'cost_price' => 1,
                 'receipt_id' => 'wx123',
                 'goods_detail' => [[
@@ -100,7 +100,7 @@ interface Micropay
             'time_expire' => '20091227091010',
             'receipt' => 'Y',
             'auth_code' => '120061098828009406',
-            'scene_info' => \json_encode([
+            'scene_info' => new \WeChatPay\OpenAPI\JsonStringable([
                 'store_info' => [
                     'id' => 'SZTX001',
                     'name' => '腾大餐厅',

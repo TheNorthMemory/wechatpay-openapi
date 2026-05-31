@@ -23,7 +23,7 @@ interface Notification
             'sign_type' => 'HMAC-SHA256',
             'version' => '3.0',
             'trade_scene' => 'PARKING',
-            'scene_info' => \json_encode([
+            'scene_info' => new \WeChatPay\OpenAPI\JsonStringable([
                 'scene_info' => [
                     'start_time' => '20170826104339',
                     'notify_url' => 'https://weixin.qq.com',
@@ -50,7 +50,7 @@ interface Notification
             'sign_type' => 'HMAC-SHA256',
             'version' => '3.0',
             'trade_scene' => 'PARKING',
-            'scene_info' => \json_encode([
+            'scene_info' => new \WeChatPay\OpenAPI\JsonStringable([
                 'scene_info' => [
                     'start_time' => '20170826104339',
                     'notify_url' => 'https://weixin.qq.com',

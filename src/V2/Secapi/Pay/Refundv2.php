@@ -16,7 +16,7 @@ interface Refundv2
      */
     public function post(array $options = [
         'xml' => [
-            'detail' => \json_encode([
+            'detail' => new \WeChatPay\OpenAPI\JsonStringable([
                 'cost_price' => 1,
                 'receipt_id' => 'wx123',
                 'goods_detail' => [[
@@ -52,7 +52,7 @@ interface Refundv2
      */
     public function postAsync(array $options = [
         'xml' => [
-            'detail' => \json_encode([
+            'detail' => new \WeChatPay\OpenAPI\JsonStringable([
                 'cost_price' => 1,
                 'receipt_id' => 'wx123',
                 'goods_detail' => [[

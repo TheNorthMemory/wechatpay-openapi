@@ -23,7 +23,7 @@ interface Unifiedorder
             'device_info' => '013467007045764',
             'sign_type' => 'HMAC-SHA256',
             'body' => '腾讯充值中心-QQ会员充值',
-            'detail' => \json_encode([
+            'detail' => new \WeChatPay\OpenAPI\JsonStringable([
                 'cost_price' => 1,
                 'receipt_id' => 'wx123',
                 'goods_detail' => [[
@@ -48,7 +48,7 @@ interface Unifiedorder
             'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
             'sub_openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
             'receipt' => 'Y',
-            'scene_info' => \json_encode([
+            'scene_info' => new \WeChatPay\OpenAPI\JsonStringable([
                 'store_info' => [
                     'id' => 'SZTX001',
                     'name' => '腾大餐厅',
@@ -73,7 +73,7 @@ interface Unifiedorder
             'device_info' => '013467007045764',
             'sign_type' => 'HMAC-SHA256',
             'body' => '腾讯充值中心-QQ会员充值',
-            'detail' => \json_encode([
+            'detail' => new \WeChatPay\OpenAPI\JsonStringable([
                 'cost_price' => 1,
                 'receipt_id' => 'wx123',
                 'goods_detail' => [[
@@ -98,7 +98,7 @@ interface Unifiedorder
             'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
             'sub_openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
             'receipt' => 'Y',
-            'scene_info' => \json_encode([
+            'scene_info' => new \WeChatPay\OpenAPI\JsonStringable([
                 'store_info' => [
                     'id' => 'SZTX001',
                     'name' => '腾大餐厅',

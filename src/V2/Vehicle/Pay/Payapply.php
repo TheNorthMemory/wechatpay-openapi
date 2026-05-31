@@ -33,7 +33,7 @@ interface Payapply
             'trade_scene' => 'PARKING',
             'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
             'profit_sharing' => 'Y',
-            'scene_info' => \json_encode([
+            'scene_info' => new \WeChatPay\OpenAPI\JsonStringable([
                 'scene_info' => [
                     'start_time' => '20170826104339',
                     'end_time' => '20170826114339',
@@ -73,7 +73,7 @@ interface Payapply
             'trade_scene' => 'PARKING',
             'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
             'profit_sharing' => 'Y',
-            'scene_info' => \json_encode([
+            'scene_info' => new \WeChatPay\OpenAPI\JsonStringable([
                 'scene_info' => [
                     'start_time' => '20170826104339',
                     'end_time' => '20170826114339',

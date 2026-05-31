@@ -21,7 +21,7 @@ interface Profitsharingaddreceiver
             'appid' => 'wx8888888888888888',
             'sub_appid' => 'wx8888888888888888',
             'sign_type' => 'HMAC-SHA256',
-            'receiver' => \json_encode([
+            'receiver' => new \WeChatPay\OpenAPI\JsonStringable([
                 'type' => 'MERCHANT_ID | PERSONAL_OPENID | PERSONAL_SUB_OPENID',
                 'account' => '190001001',
                 'name' => '示例商户全称',
@@ -43,7 +43,7 @@ interface Profitsharingaddreceiver
             'appid' => 'wx8888888888888888',
             'sub_appid' => 'wx8888888888888888',
             'sign_type' => 'HMAC-SHA256',
-            'receiver' => \json_encode([
+            'receiver' => new \WeChatPay\OpenAPI\JsonStringable([
                 'type' => 'MERCHANT_ID | PERSONAL_OPENID | PERSONAL_SUB_OPENID',
                 'account' => '190001001',
                 'name' => '示例商户全称',

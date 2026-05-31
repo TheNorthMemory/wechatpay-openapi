@@ -28,7 +28,7 @@ interface Combinedorder
             'trade_type' => 'JSAPI',
             'product_id' => '1234567890',
             'combine_openid' => '120061098828009406',
-            'scene_info' => \json_encode([
+            'scene_info' => new \WeChatPay\OpenAPI\JsonStringable([
                 'device_id' => 'POS1:1',
                 'payer_client_ip' => '14.17.22.32',
                 'h5_info' => [
@@ -39,7 +39,7 @@ interface Combinedorder
                     'package_name' => '',
                 ],
             ]),
-            'sub_order_list' => \json_encode([
+            'sub_order_list' => new \WeChatPay\OpenAPI\JsonStringable([
                 'order_num' => 2,
                 'order_list' => [[
                     'appid' => 'wxdace645e0bc2c424',
@@ -76,7 +76,7 @@ interface Combinedorder
             'trade_type' => 'JSAPI',
             'product_id' => '1234567890',
             'combine_openid' => '120061098828009406',
-            'scene_info' => \json_encode([
+            'scene_info' => new \WeChatPay\OpenAPI\JsonStringable([
                 'device_id' => 'POS1:1',
                 'payer_client_ip' => '14.17.22.32',
                 'h5_info' => [
@@ -87,7 +87,7 @@ interface Combinedorder
                     'package_name' => '',
                 ],
             ]),
-            'sub_order_list' => \json_encode([
+            'sub_order_list' => new \WeChatPay\OpenAPI\JsonStringable([
                 'order_num' => 2,
                 'order_list' => [[
                     'appid' => 'wxdace645e0bc2c424',

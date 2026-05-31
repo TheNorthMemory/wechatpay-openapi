@@ -61,7 +61,7 @@ interface Orders
             ],],
             'callback_url' => 'https://www.weixin.qq.com/wxpay/pay.php',
             'prepay_id' => 'wx201410272009395522657a690389285100',
-            'passthrough_request_content' => \json_encode([
+            'passthrough_request_content' => new \WeChatPay\OpenAPI\JsonStringable([
                 'payAuthNo' => 'AUTH****',
                 'payOrdId' => 'ORD****',
                 'setlLatlnt' => '118.096435,24.485407',
@@ -126,7 +126,7 @@ interface Orders
             ],],
             'callback_url' => 'https://www.weixin.qq.com/wxpay/pay.php',
             'prepay_id' => 'wx201410272009395522657a690389285100',
-            'passthrough_request_content' => \json_encode([
+            'passthrough_request_content' => new \WeChatPay\OpenAPI\JsonStringable([
                 'payAuthNo' => 'AUTH****',
                 'payOrdId' => 'ORD****',
                 'setlLatlnt' => '118.096435,24.485407',

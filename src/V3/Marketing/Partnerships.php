@@ -18,12 +18,12 @@ interface Partnerships
      */
     public function get(array $options = [
         'query' => [
-            'partner' => \json_encode([
+            'partner' => new \WeChatPay\OpenAPI\JsonStringable([
                 'type' => 'APPID | MERCHANT',
                 'appid' => 'wx4e1916a585d1f4e9',
                 'merchant_id' => '2480029552',
             ]),
-            'authorized_data' => \json_encode([
+            'authorized_data' => new \WeChatPay\OpenAPI\JsonStringable([
                 'business_type' => 'FAVOR_STOCK | BUSIFAVOR_STOCK',
                 'stock_id' => '2433405',
             ]),
@@ -39,12 +39,12 @@ interface Partnerships
      */
     public function getAsync(array $options = [
         'query' => [
-            'partner' => \json_encode([
+            'partner' => new \WeChatPay\OpenAPI\JsonStringable([
                 'type' => 'APPID | MERCHANT',
                 'appid' => 'wx4e1916a585d1f4e9',
                 'merchant_id' => '2480029552',
             ]),
-            'authorized_data' => \json_encode([
+            'authorized_data' => new \WeChatPay\OpenAPI\JsonStringable([
                 'business_type' => 'FAVOR_STOCK | BUSIFAVOR_STOCK',
                 'stock_id' => '2433405',
             ]),

@@ -33,7 +33,7 @@ interface Payapply
             'trade_type' => 'PAP',
             'contract_id' => 'Wx15463511252015071056489715',
             'trade_scene' => 'METRO',
-            'scene_info' => \json_encode([
+            'scene_info' => new \WeChatPay\OpenAPI\JsonStringable([
                 'scene_info' => [
                     'start_time' => '20170826104339',
                     'end_time' => '20170826114339',
@@ -78,7 +78,7 @@ interface Payapply
             'trade_type' => 'PAP',
             'contract_id' => 'Wx15463511252015071056489715',
             'trade_scene' => 'METRO',
-            'scene_info' => \json_encode([
+            'scene_info' => new \WeChatPay\OpenAPI\JsonStringable([
                 'scene_info' => [
                     'start_time' => '20170826104339',
                     'end_time' => '20170826114339',

@@ -20,7 +20,7 @@ interface Closecombinedorder
             'combine_mch_id' => '1900000109',
             'sign_type' => 'HMAC-SHA256',
             'combine_out_trade_no' => '1217752501201407033233368018',
-            'sub_order_list' => \json_encode([[
+            'sub_order_list' => new \WeChatPay\OpenAPI\JsonStringable([[
                 'mchid' => '1900009001',
                 'out_trade_no' => 'OD201708030001',
             ],]),
@@ -38,7 +38,7 @@ interface Closecombinedorder
             'combine_mch_id' => '1900000109',
             'sign_type' => 'HMAC-SHA256',
             'combine_out_trade_no' => '1217752501201407033233368018',
-            'sub_order_list' => \json_encode([[
+            'sub_order_list' => new \WeChatPay\OpenAPI\JsonStringable([[
                 'mchid' => '1900009001',
                 'out_trade_no' => 'OD201708030001',
             ],]),

@@ -30,12 +30,12 @@ interface Sendredpack
             'act_name' => '猜灯谜抢红包活动',
             'remark' => '猜越多得越多，快来抢！',
             'scene_id' => 'PRODUCT_8',
-            'risk_info' => \urlencode(\WeChatPay\Formatter::queryStringLike([
+            'risk_info' => new \WeChatPay\OpenAPI\UriComponentStringable([
                 'posttime' => 1717171199,
                 'mobile' => '122344545',
                 'deviceid' => 'IOS',
                 'clientversion' => '234134',
-            ])),
+            ]),
         ],
         'security' => true,
     ]): ResponseInterface;
@@ -61,12 +61,12 @@ interface Sendredpack
             'act_name' => '猜灯谜抢红包活动',
             'remark' => '猜越多得越多，快来抢！',
             'scene_id' => 'PRODUCT_8',
-            'risk_info' => \urlencode(\WeChatPay\Formatter::queryStringLike([
+            'risk_info' => new \WeChatPay\OpenAPI\UriComponentStringable([
                 'posttime' => 1717171199,
                 'mobile' => '122344545',
                 'deviceid' => 'IOS',
                 'clientversion' => '234134',
-            ])),
+            ]),
         ],
         'security' => true,
     ]): PromiseInterface;

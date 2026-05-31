@@ -36,7 +36,7 @@ interface _modifyinstitutionsub_
             'office_account' => 'wx8888888888888888',
             'mini_program' => 'wx8888888888888888',
             'store_address' => '广东省深圳市南山区科技中一道10000号',
-            'store_photos' => \json_encode([
+            'store_photos' => new \WeChatPay\OpenAPI\JsonStringable([
                 'Media_id1',
                 'Media_id2',
                 'Media_id3',
@@ -52,7 +52,7 @@ interface _modifyinstitutionsub_
             'settlement_bank_number' => '555588889999',
             'apply_h5_payment' => 'YES',
             'h5_website_url' => 'https://qq.com',
-            'h5_domains' => \json_encode([
+            'h5_domains' => new \WeChatPay\OpenAPI\JsonStringable([
                 'www.qq.com',
                 'www.weixin.com',
             ]),
@@ -88,7 +88,7 @@ interface _modifyinstitutionsub_
             'office_account' => 'wx8888888888888888',
             'mini_program' => 'wx8888888888888888',
             'store_address' => '广东省深圳市南山区科技中一道10000号',
-            'store_photos' => \json_encode([
+            'store_photos' => new \WeChatPay\OpenAPI\JsonStringable([
                 'Media_id1',
                 'Media_id2',
                 'Media_id3',
@@ -104,7 +104,7 @@ interface _modifyinstitutionsub_
             'settlement_bank_number' => '555588889999',
             'apply_h5_payment' => 'YES',
             'h5_website_url' => 'https://qq.com',
-            'h5_domains' => \json_encode([
+            'h5_domains' => new \WeChatPay\OpenAPI\JsonStringable([
                 'www.qq.com',
                 'www.weixin.com',
             ]),

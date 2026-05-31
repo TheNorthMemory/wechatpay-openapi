@@ -23,7 +23,7 @@ interface Facepay
             'sub_mch_id' => '1900000100',
             'device_info' => '013467007045764',
             'body' => 'image形象店-深圳腾大- QQ公仔',
-            'detail' => \json_encode([
+            'detail' => new \WeChatPay\OpenAPI\JsonStringable([
                 'goods_detail' => [[
                     'goods_id' => '商品编码',
                     'wxpay_goods_id' => '1001',
@@ -63,7 +63,7 @@ interface Facepay
             'sub_mch_id' => '1900000100',
             'device_info' => '013467007045764',
             'body' => 'image形象店-深圳腾大- QQ公仔',
-            'detail' => \json_encode([
+            'detail' => new \WeChatPay\OpenAPI\JsonStringable([
                 'goods_detail' => [[
                     'goods_id' => '商品编码',
                     'wxpay_goods_id' => '1001',

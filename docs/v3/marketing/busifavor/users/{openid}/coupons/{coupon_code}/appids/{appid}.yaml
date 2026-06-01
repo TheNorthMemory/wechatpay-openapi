@@ -33,7 +33,13 @@ get:
                 type: string
                 description: 券code
               coupon_state:
-                $ref: '../../../../../../../../definitions/Enumerations.yaml#/CouponState'
+                allOf:
+                  - $ref: '../../../../../../../../definitions/Enumerations.yaml#/CouponState'
+                  - enum:
+                    - PENDING_REDEEM
+                    - REDEEM_CONFIRMING
+                    - REDEEM_FAILED
+                    - REDEEM_EXPIRED
               stock_id:
                 type: string
                 description: 批次号

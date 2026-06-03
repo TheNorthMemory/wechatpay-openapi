@@ -13,6 +13,11 @@ get:
       type: string
       description: 商户侧授权单号
       example: plfk2020042013
+    - name: is_display_authorization
+      in: query
+      type: boolean
+      description: 是否展示用户授权信息
+      example: true
   responses:
     '200':
       schema:
@@ -87,3 +92,7 @@ get:
             type: string
             format: rfc3339
             description: 单据创建时间
+          package_info:
+            type: string
+            description: 跳转领取页面的package信息
+            example: affffddafdfafddffda==

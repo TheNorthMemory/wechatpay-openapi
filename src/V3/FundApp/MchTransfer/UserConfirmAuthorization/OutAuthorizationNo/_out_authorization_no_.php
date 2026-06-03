@@ -17,6 +17,9 @@ interface _out_authorization_no_
      */
     public function get(array $options = [
         'out_authorization_no' => 'plfk2020042013',
+        'query' => [
+            'is_display_authorization' => true,
+        ],
     ]): ResponseInterface;
 
     /**
@@ -26,5 +29,8 @@ interface _out_authorization_no_
      */
     public function getAsync(array $options = [
         'out_authorization_no' => 'plfk2020042013',
+        'query' => [
+            'is_display_authorization' => true,
+        ],
     ]): PromiseInterface;
 }

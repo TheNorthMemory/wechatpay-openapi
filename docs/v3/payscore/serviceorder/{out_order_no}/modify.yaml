@@ -101,7 +101,7 @@ post:
                 example: HG123456
               materiel_no:
                 type: string
-                description: 物料编码
+                description: 物料URL
                 example: example_materiel_no
   responses:
     '200':

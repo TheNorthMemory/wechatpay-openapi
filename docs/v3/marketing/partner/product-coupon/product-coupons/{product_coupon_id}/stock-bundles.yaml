@@ -265,6 +265,7 @@ post:
                     enum:
                       - H5
                       - PASSCODE_LINK
+                      - USAGE_GUIDE
                   passcode_link:
                     type: string
                     description: 口令链接
@@ -652,6 +653,7 @@ post:
                       enum:
                         - H5
                         - PASSCODE_LINK
+                        - USAGE_GUIDE
                     passcode_link:
                       type: string
                       description: 口令链接

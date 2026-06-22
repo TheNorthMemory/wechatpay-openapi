@@ -15,7 +15,7 @@ interface _business_code_
      * @link https://wechatpay.im/openapi/v3/brand/card/card-links/business-code/%7Bbusiness_code%7D
      */
     public function get(array $options = [
-        'business_code' => '190001351110000',
+        'business_code' => '1900013511_10000',
         'query' => [
             'brand_id' => '120344',
         ],
@@ -27,7 +27,7 @@ interface _business_code_
      * @link https://wechatpay.im/openapi/v3/brand/card/card-links/business-code/%7Bbusiness_code%7D
      */
     public function getAsync(array $options = [
-        'business_code' => '190001351110000',
+        'business_code' => '1900013511_10000',
         'query' => [
             'brand_id' => '120344',
         ],

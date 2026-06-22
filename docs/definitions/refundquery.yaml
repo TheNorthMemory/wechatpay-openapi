@@ -282,7 +282,7 @@ refundquery.response:
         refund_recv_accout_$n:
           type: string
           description: 退款入账账户
-          example: 招商银行信用卡0403
+          example: 招商银行信用卡
           maxLength: 64
         refund_success_time_$n:
           type: string

@@ -19,7 +19,7 @@ interface CardLinks
      */
     public function post(array $options = [
         'json' => [
-            'business_code' => '190001351110000',
+            'business_code' => '1900013511_10000',
             'brand_id' => '1004',
             'payment_scene' => 'MINI_PROGRAM',
             'appid' => 'wxea9c30890f48d5ae',
@@ -35,7 +35,7 @@ interface CardLinks
      */
     public function postAsync(array $options = [
         'json' => [
-            'business_code' => '190001351110000',
+            'business_code' => '1900013511_10000',
             'brand_id' => '1004',
             'payment_scene' => 'MINI_PROGRAM',
             'appid' => 'wxea9c30890f48d5ae',

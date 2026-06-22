@@ -16,7 +16,7 @@ interface Publish
      */
     public function post(array $options = [
         'json' => [
-            'business_code' => '190001351110000',
+            'business_code' => '1900013511_10000',
             'applyment_id' => '1111111111',
             'brand_id' => '1004',
             'publish_type' => 'SCHEDULED_PUBLISH',
@@ -31,7 +31,7 @@ interface Publish
      */
     public function postAsync(array $options = [
         'json' => [
-            'business_code' => '190001351110000',
+            'business_code' => '1900013511_10000',
             'applyment_id' => '1111111111',
             'brand_id' => '1004',
             'publish_type' => 'SCHEDULED_PUBLISH',

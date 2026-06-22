@@ -19,7 +19,7 @@ interface CardConfigs
      */
     public function post(array $options = [
         'json' => [
-            'business_code' => '190001351110000',
+            'business_code' => '1900013511_10000',
             'brand_id' => '1004',
             'brand_mini_program_info' => [
                 'appid' => 'wx1234567890abcdef',
@@ -48,7 +48,7 @@ interface CardConfigs
      */
     public function postAsync(array $options = [
         'json' => [
-            'business_code' => '190001351110000',
+            'business_code' => '1900013511_10000',
             'brand_id' => '1004',
             'brand_mini_program_info' => [
                 'appid' => 'wx1234567890abcdef',
@@ -77,7 +77,7 @@ interface CardConfigs
      */
     public function get(array $options = [
         'query' => [
-            'business_code' => '190001351110000',
+            'business_code' => '1900013511_10000',
             'applyment_id' => '1111111111',
             'brand_id' => '120344',
         ],
@@ -90,7 +90,7 @@ interface CardConfigs
      */
     public function getAsync(array $options = [
         'query' => [
-            'business_code' => '190001351110000',
+            'business_code' => '1900013511_10000',
             'applyment_id' => '1111111111',
             'brand_id' => '120344',
         ],

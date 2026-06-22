@@ -155,7 +155,7 @@ post:
           user_received_account:
             type: string
             description: 退款入账账户
-            example: 招商银行信用卡0403
+            example: 招商银行信用卡
           success_time:
             type: string
             description: 退款成功时间

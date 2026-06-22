@@ -72,7 +72,7 @@ get:
           recv_account:
             type: string
             description: 退款入账账户
-            example: 招商银行信用卡0403
+            example: 招商银行信用卡
           fund_source:
             type: string
             description: 退款资金来源

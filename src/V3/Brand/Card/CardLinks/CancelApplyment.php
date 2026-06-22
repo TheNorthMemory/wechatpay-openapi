@@ -16,7 +16,7 @@ interface CancelApplyment
      */
     public function post(array $options = [
         'json' => [
-            'business_code' => '190001351110000',
+            'business_code' => '1900013511_10000',
             'brand_id' => '1004',
         ],
     ]): ResponseInterface;
@@ -28,7 +28,7 @@ interface CancelApplyment
      */
     public function postAsync(array $options = [
         'json' => [
-            'business_code' => '190001351110000',
+            'business_code' => '1900013511_10000',
             'brand_id' => '1004',
         ],
     ]): PromiseInterface;

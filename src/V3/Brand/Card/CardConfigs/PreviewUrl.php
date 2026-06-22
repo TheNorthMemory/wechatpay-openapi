@@ -16,7 +16,7 @@ interface PreviewUrl
      */
     public function get(array $options = [
         'query' => [
-            'business_code' => '190001351110000',
+            'business_code' => '1900013511_10000',
             'applyment_id' => '1111111111',
             'brand_id' => '120344',
         ],
@@ -29,7 +29,7 @@ interface PreviewUrl
      */
     public function getAsync(array $options = [
         'query' => [
-            'business_code' => '190001351110000',
+            'business_code' => '1900013511_10000',
             'applyment_id' => '1111111111',
             'brand_id' => '120344',
         ],

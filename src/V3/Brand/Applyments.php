@@ -19,7 +19,7 @@ interface Applyments
      */
     public function post(array $options = [
         'json' => [
-            'business_code' => '190001351110000',
+            'business_code' => '1900013511_10000',
             'admin_info' => [
                 'admin_name' => 'U2FsdGVkX1+3vZQv5+9JhTq3Xy6LdKjP0o9iYx5W7vRtNqY',
                 'id_doc_type' => 'IDENTIFICATION_TYPE_MAINLAND_ID_CARD | IDENTIFICATION_TYPE_HONGKONG | IDENTIFICATION_TYPE_MACAO | IDENTIFICATION_TYPE_TAIWAN',
@@ -80,7 +80,7 @@ interface Applyments
      */
     public function postAsync(array $options = [
         'json' => [
-            'business_code' => '190001351110000',
+            'business_code' => '1900013511_10000',
             'admin_info' => [
                 'admin_name' => 'U2FsdGVkX1+3vZQv5+9JhTq3Xy6LdKjP0o9iYx5W7vRtNqY',
                 'id_doc_type' => 'IDENTIFICATION_TYPE_MAINLAND_ID_CARD | IDENTIFICATION_TYPE_HONGKONG | IDENTIFICATION_TYPE_MACAO | IDENTIFICATION_TYPE_TAIWAN',

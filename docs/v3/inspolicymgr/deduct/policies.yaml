@@ -29,6 +29,7 @@ post:
           - policy_periods
           - appid
           - openid
+          - free_insurance
         properties:
           out_insurance_no:
             type: string
@@ -112,9 +113,9 @@ post:
             description: 保司保单号
             example: Coisihsiaxishishi4hihsid1ii411co
           plan_id:
-            type: number
+            type: string
             description: 委托代扣模板ID
-            example: 12535
+            example: '12535'
           out_contract_code:
             type: string
             description: 商户签约协议号
@@ -134,6 +135,51 @@ post:
             type: string
             description: 用户在商户公众号内的身份标识
             example: oYobu0MVnQfWpSMOYJz2AHPG_gQw
+          free_insurance:
+            type: boolean
+            description: 是否为赠险
+          combined_payment:
+            type: boolean
+            description: 是否与其它保单合并扣费
+          payment_method:
+            type: string
+            description: 缴费方式
+            enum:
+              - PAYMENT_METHOD_OTHER
+              - PAYMENT_METHOD_PERIOD
+              - PAYMENT_METHOD_LUMP_SUM
+          period_premium_mode:
+            type: string
+            description: 期交保费模式
+            enum:
+              - PERIOD_PREMIUM_MODE_EQUAL
+              - PERIOD_PREMIUM_MODE_FIRST_DIFF
+              - PERIOD_PREMIUM_MODE_MULTI_DIFF
+          payment_period:
+            type: string
+            description: 缴费周期
+            enum:
+              - PAYMENT_PERIOD_DAY
+              - PAYMENT_PERIOD_WEEK
+              - PAYMENT_PERIOD_BIWEEKLY
+              - PAYMENT_PERIOD_MONTH
+              - PAYMENT_PERIOD_QUARTER
+              - PAYMENT_PERIOD_HALF_YEAR
+              - PAYMENT_PERIOD_YEAR
+          first_period_amount:
+            type: integer
+            description: 首期保费金额
+            example: 8000
+          subsequent_period_amount:
+            type: integer
+            description: 后续每期保费金额
+            example: 5000
+          coverage_term_type:
+            type: string
+            description: 保障期限类型
+            enum:
+              - COVERAGE_TERM_TYPE_FIXED_DATE
+              - COVERAGE_TERM_TYPE_LIFETIME
   responses:
     '200':
       schema:
@@ -152,6 +198,7 @@ post:
           - plan_id
           - out_contract_code
           - policy_periods
+          - free_insurance
         properties:
           out_insurance_no:
             type: string
@@ -239,9 +286,9 @@ post:
             description: 保司保单号
             example: Coisihsiaxishishi4hihsid1ii411co
           plan_id:
-            type: number
+            type: string
             description: 委托代扣模板ID
-            example: 12535
+            example: '12535'
           out_contract_code:
             type: string
             description: 商户签约协议号
@@ -253,3 +300,48 @@ post:
               type: number
               description: 保险扣费周期编号
               example: 1
+          free_insurance:
+            type: boolean
+            description: 是否为赠险
+          combined_payment:
+            type: boolean
+            description: 是否与其它保单合并扣费
+          payment_method:
+            type: string
+            description: 缴费方式
+            enum:
+              - PAYMENT_METHOD_OTHER
+              - PAYMENT_METHOD_PERIOD
+              - PAYMENT_METHOD_LUMP_SUM
+          period_premium_mode:
+            type: string
+            description: 期交保费模式
+            enum:
+              - PERIOD_PREMIUM_MODE_EQUAL
+              - PERIOD_PREMIUM_MODE_FIRST_DIFF
+              - PERIOD_PREMIUM_MODE_MULTI_DIFF
+          payment_period:
+            type: string
+            description: 缴费周期
+            enum:
+              - PAYMENT_PERIOD_DAY
+              - PAYMENT_PERIOD_WEEK
+              - PAYMENT_PERIOD_BIWEEKLY
+              - PAYMENT_PERIOD_MONTH
+              - PAYMENT_PERIOD_QUARTER
+              - PAYMENT_PERIOD_HALF_YEAR
+              - PAYMENT_PERIOD_YEAR
+          first_period_amount:
+            type: integer
+            description: 首期保费金额
+            example: 8000
+          subsequent_period_amount:
+            type: integer
+            description: 后续每期保费金额
+            example: 5000
+          coverage_term_type:
+            type: string
+            description: 保障期限类型
+            enum:
+              - COVERAGE_TERM_TYPE_FIXED_DATE
+              - COVERAGE_TERM_TYPE_LIFETIME

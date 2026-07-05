@@ -21,6 +21,26 @@ get:
       in: query
       description: 额度台账号
       example: 8609cb22e1774a50a930e414cc71eca06121bc
+    - name: card_no
+      in: query
+      type: string
+      format: base64
+      description: 卡号
+      example: example_card_no
+    - name: sgn_no
+      in: query
+      type: string
+      description: 商户子账户协议号
+      example: example_sgn_no
+    - name: req_scene
+      in: query
+      type: string
+      description: 请求场景
+      example: SJT_CONVENIENT_SETTLEMENT_SERVICE_MERCHANT
+      enum:
+        - SJT_CONVENIENT_SETTLEMENT_SERVICE_MERCHANT
+        - SJT_MICRO_MERCHANT
+        - WX_SHOP_CONVENIENT_SETTLEMENT_SERVICE_MERCHANT
   responses:
     '200':
       schema:

@@ -46,6 +46,23 @@ post:
             type: string
             description: 解管原因描述
             example: example_recover_reason
+          card_no:
+            type: string
+            format: base64
+            description: 目标下管卡号
+            example: example_card_no
+          sgn_no:
+            type: string
+            description: 目标下管商户子账户协议号
+            example: example_sgn_no
+          req_scene:
+            type: string
+            description: 请求场景
+            example: SJT_CONVENIENT_SETTLEMENT_SERVICE_MERCHANT
+            enum:
+              - SJT_CONVENIENT_SETTLEMENT_SERVICE_MERCHANT
+              - SJT_MICRO_MERCHANT
+              - WX_SHOP_CONVENIENT_SETTLEMENT_SERVICE_MERCHANT
   responses:
     '200':
       schema:

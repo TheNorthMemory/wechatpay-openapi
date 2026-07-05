@@ -50,6 +50,13 @@ post:
             type: string
             description: 审核驳回错误原因
             example: IDCARD_ILLEGAL
+          scene:
+            type: string
+            description: 场景
+            enum:
+              - '01'
+              - '02'
+              - '03'
   responses:
     '200':
       schema:

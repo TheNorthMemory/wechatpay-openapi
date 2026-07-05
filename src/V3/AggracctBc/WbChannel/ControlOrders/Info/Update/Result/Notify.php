@@ -23,6 +23,7 @@ interface Notify
             'attach_info' => 'updateidcard',
             'fail_code' => '1001',
             'fail_msg' => 'IDCARD_ILLEGAL',
+            'scene' => '01 | 02 | 03',
         ],
     ]): ResponseInterface;
 
@@ -40,6 +41,7 @@ interface Notify
             'attach_info' => 'updateidcard',
             'fail_code' => '1001',
             'fail_msg' => 'IDCARD_ILLEGAL',
+            'scene' => '01 | 02 | 03',
         ],
     ]): PromiseInterface;
 }

@@ -48,6 +48,23 @@ post:
             type: string
             description: 特殊减额原因
             example: 司法案件号：202508080009
+          card_no:
+            type: string
+            format: base64
+            description: 卡号
+            example: example_card_no
+          sgn_no:
+            type: string
+            description: 商户账户协议号
+            example: example_sgn_no
+          req_scene:
+            type: string
+            description: 请求场景
+            example: SJT_CONVENIENT_SETTLEMENT_SERVICE_MERCHANT
+            enum:
+              - SJT_CONVENIENT_SETTLEMENT_SERVICE_MERCHANT
+              - SJT_MICRO_MERCHANT
+              - WX_SHOP_CONVENIENT_SETTLEMENT_SERVICE_MERCHANT
   responses:
     '200':
       schema:

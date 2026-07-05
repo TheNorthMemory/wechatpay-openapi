@@ -45,6 +45,30 @@ post:
             format: rfc3339
             description: 管控结束时间
             example: '2015-05-20T13:29:35+08:00'
+          card_no:
+            type: string
+            format: base64
+            description: 目标下管卡号
+            example: example_card_no
+          sgn_no:
+            type: string
+            description: 目标下管商户子账户协议号
+            example: example_sgn_no
+          req_scene:
+            type: string
+            description: 请求场景
+            example: SJT_CONVENIENT_SETTLEMENT_SERVICE_MERCHANT
+            enum:
+              - SJT_CONVENIENT_SETTLEMENT_SERVICE_MERCHANT
+              - SJT_MICRO_MERCHANT
+              - WX_SHOP_CONVENIENT_SETTLEMENT_SERVICE_MERCHANT
+          fund_repatriation_strategy:
+            type: string
+            description: 微众资金划回策略
+            example: ALL_FORBIDDEN
+            enum:
+              - ALL_FORBIDDEN
+              - ALL_ALLOWED_WHEN_UNIQUE
   responses:
     '200':
       schema:

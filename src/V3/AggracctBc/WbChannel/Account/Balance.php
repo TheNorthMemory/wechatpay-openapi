@@ -18,6 +18,9 @@ interface Balance
         'query' => [
             'mchid' => '1900016681',
             'bal_account_no' => '8609cb22e1774a50a930e414cc71eca06121bc',
+            'card_no' => 'example_card_no',
+            'sgn_no' => 'example_sgn_no',
+            'req_scene' => 'SJT_CONVENIENT_SETTLEMENT_SERVICE_MERCHANT',
         ],
         'headers' => [
             'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',
@@ -33,6 +36,9 @@ interface Balance
         'query' => [
             'mchid' => '1900016681',
             'bal_account_no' => '8609cb22e1774a50a930e414cc71eca06121bc',
+            'card_no' => 'example_card_no',
+            'sgn_no' => 'example_sgn_no',
+            'req_scene' => 'SJT_CONVENIENT_SETTLEMENT_SERVICE_MERCHANT',
         ],
         'headers' => [
             'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',

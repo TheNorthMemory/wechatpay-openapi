@@ -21,6 +21,26 @@ get:
       in: query
       description: 额度台账号
       example: 8609cb22e1774a50a930e414cc71eca06121bc
+    - name: card_no
+      in: query
+      type: string
+      format: base64
+      description: 卡号
+      example: example_card_no
+    - name: sgn_no
+      in: query
+      type: string
+      description: 商户子账户协议号
+      example: example_sgn_no
+    - name: req_scene
+      in: query
+      type: string
+      description: 请求场景
+      example: SJT_CONVENIENT_SETTLEMENT_SERVICE_MERCHANT
+      enum:
+        - SJT_CONVENIENT_SETTLEMENT_SERVICE_MERCHANT
+        - SJT_MICRO_MERCHANT
+        - WX_SHOP_CONVENIENT_SETTLEMENT_SERVICE_MERCHANT
   responses:
     '200':
       schema:
@@ -42,6 +62,7 @@ get:
             enum:
               - '1'
               - '2'
+              - '3'
           merchant_id_type:
             type: string
             description: 主体证件类型
@@ -50,10 +71,12 @@ get:
               - '12'
           merchant_name:
             type: string
+            format: base64
             description: 主体证件登记名称
             example: '江西米高文化传媒有限测试公司'
           merchant_id_no:
             type: string
+            format: base64
             description: 主体证件号码
             example: '91360735MA35RDY220'
           effective_date:
@@ -126,6 +149,14 @@ get:
                 format: base64
                 description: 法定代表人居住地址
                 example: '江西省赣州市石城县琴江镇东南路山河馨城7-401室'
+              legal_representative_issue_authority:
+                type: string
+                description: 法定代表人发证机关
+                example: 江西省赣州市石城县公安局
+              legal_representative_nation:
+                type: string
+                description: 法定代表人民族
+                example: 汉族
           beneficial_owner:
             type: array
             description: 受益所有人信息列表
@@ -183,3 +214,12 @@ get:
                   format: base64
                   description: 受益所有人居住地址
                   example: '江西省赣州市石城县琴江镇东南路山河馨城7-401室'
+          card_no:
+            type: string
+            format: base64
+            description: 卡号
+            example: example_card_no
+          sgn_no:
+            type: string
+            description: 商户子账户协议号
+            example: example_sgn_no

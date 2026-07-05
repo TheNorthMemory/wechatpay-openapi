@@ -23,6 +23,9 @@ interface SpecialReduction
             'reduction_type' => 'JUDICIAL_DEDUCTION',
             'amount' => 1,
             'reason' => '司法案件号：202508080009',
+            'card_no' => 'example_card_no',
+            'sgn_no' => 'example_sgn_no',
+            'req_scene' => 'SJT_CONVENIENT_SETTLEMENT_SERVICE_MERCHANT',
         ],
         'headers' => [
             'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',
@@ -42,6 +45,9 @@ interface SpecialReduction
             'reduction_type' => 'JUDICIAL_DEDUCTION',
             'amount' => 1,
             'reason' => '司法案件号：202508080009',
+            'card_no' => 'example_card_no',
+            'sgn_no' => 'example_sgn_no',
+            'req_scene' => 'SJT_CONVENIENT_SETTLEMENT_SERVICE_MERCHANT',
         ],
         'headers' => [
             'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',

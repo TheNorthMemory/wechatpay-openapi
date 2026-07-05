@@ -22,6 +22,10 @@ interface Punish
             'punish_scene' => 1,
             'punish_reason' => 'example_punish_reason',
             'punish_end_time' => '2015-05-20T13:29:35+08:00',
+            'card_no' => 'example_card_no',
+            'sgn_no' => 'example_sgn_no',
+            'req_scene' => 'SJT_CONVENIENT_SETTLEMENT_SERVICE_MERCHANT',
+            'fund_repatriation_strategy' => 'ALL_FORBIDDEN',
         ],
         'headers' => [
             'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',
@@ -41,6 +45,10 @@ interface Punish
             'punish_scene' => 1,
             'punish_reason' => 'example_punish_reason',
             'punish_end_time' => '2015-05-20T13:29:35+08:00',
+            'card_no' => 'example_card_no',
+            'sgn_no' => 'example_sgn_no',
+            'req_scene' => 'SJT_CONVENIENT_SETTLEMENT_SERVICE_MERCHANT',
+            'fund_repatriation_strategy' => 'ALL_FORBIDDEN',
         ],
         'headers' => [
             'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',

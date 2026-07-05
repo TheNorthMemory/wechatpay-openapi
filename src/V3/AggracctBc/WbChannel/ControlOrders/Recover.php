@@ -22,6 +22,9 @@ interface Recover
             'mchid' => 'example_mchid',
             'bal_account_no' => 'example_bal_account_no',
             'recover_reason' => 'example_recover_reason',
+            'card_no' => 'example_card_no',
+            'sgn_no' => 'example_sgn_no',
+            'req_scene' => 'SJT_CONVENIENT_SETTLEMENT_SERVICE_MERCHANT',
         ],
         'headers' => [
             'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',
@@ -41,6 +44,9 @@ interface Recover
             'mchid' => 'example_mchid',
             'bal_account_no' => 'example_bal_account_no',
             'recover_reason' => 'example_recover_reason',
+            'card_no' => 'example_card_no',
+            'sgn_no' => 'example_sgn_no',
+            'req_scene' => 'SJT_CONVENIENT_SETTLEMENT_SERVICE_MERCHANT',
         ],
         'headers' => [
             'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',

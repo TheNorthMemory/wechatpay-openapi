@@ -30,6 +30,7 @@ namespace WeChatPay\OpenAPI;
  * @property-read V3\PasswordExemptContract $passwordExemptContract
  * @property-read V3\PartnerTransfer $partnerTransfer
  * @property-read V3\PartnerPapay $partnerPapay
+ * @property-read V3\Parking $parking
  * @property-read V3\Papay $papay
  * @property-read V3\Palmservice $palmservice
  * @property-read V3\Offlinefacemch $offlinefacemch

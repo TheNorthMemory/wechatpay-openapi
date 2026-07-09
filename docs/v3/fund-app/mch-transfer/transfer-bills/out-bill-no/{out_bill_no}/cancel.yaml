@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2024.10.14
+  x-last-updated-at: 2025.03.18
   x-role:
     - 普通商户
   tags:
@@ -35,7 +35,11 @@ post:
             type: string
             description: 单据状态
             example: CANCELING
+            enum:
+              - CANCELING
+              - CANCELLED
           update_time:
             type: string
+            format: rfc3339
             description: 最后一次单据状态变更时间
             example: '2015-05-20T13:29:35.120+08:00'

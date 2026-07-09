@@ -1,5 +1,5 @@
 get:
-  x-last-updated-at: 2024.10.14
+  x-last-updated-at: 2026.07.08
   x-role:
     - 普通商户
   tags:
@@ -48,6 +48,15 @@ get:
             type: string
             description: 单据状态
             example: ACCEPTED
+            enum:
+              - ACCEPTED
+              - PROCESSING
+              - WAIT_USER_CONFIRM
+              - TRANSFERING
+              - SUCCESS
+              - FAIL
+              - CANCELING
+              - CANCELLED
           transfer_amount:
             type: number
             description: 转账金额
@@ -66,13 +75,16 @@ get:
             example: o-MYE42l80oelYMDE34nYD456Xoy
           user_name:
             type: string
+            format: base64
             description: 收款用户姓名
             example: 757b340b45ebef5467rter35gf464344v3542sdf4t6re4tb4f54ty45t4yyry45
           create_time:
             type: string
+            format: rfc3339
             description: 单据创建时间
             example: '2015-05-20T13:29:35.120+08:00'
           update_time:
             type: string
+            format: rfc3339
             description: 最后一次状态变更时间
             example: '2015-05-20T13:29:35.120+08:00'

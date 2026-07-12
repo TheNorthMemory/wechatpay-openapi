@@ -294,6 +294,7 @@ post:
                 enum:
                   - ALL
                   - SINGLE
+                  - CATEGORY
               type:
                 type: string
                 description: 商品券类型
@@ -1334,6 +1335,7 @@ get:
                       enum:
                         - ALL
                         - SINGLE
+                        - CATEGORY
                     type:
                       type: string
                       description: 商品券类型

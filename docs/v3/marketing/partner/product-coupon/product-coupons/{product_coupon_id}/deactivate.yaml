@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2025.08.04
+  x-last-updated-at: 2025.11.07
   x-role:
     - 服务商
   tags:
@@ -70,6 +70,7 @@ post:
             enum:
               - ALL
               - SINGLE
+              - CATEGORY
           type:
             type: string
             description: 商品券类型

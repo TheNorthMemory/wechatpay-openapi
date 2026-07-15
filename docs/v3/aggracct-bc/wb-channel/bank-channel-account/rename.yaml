@@ -38,6 +38,14 @@ post:
             example: SUBJECT_INFO_RENAME
             enum:
               - SUBJECT_INFO_RENAME
+          req_scene:
+            type: string
+            description: 请求场景
+            example: SJT_CONVENIENT_SETTLEMENT_SERVICE_MERCHANT
+            enum:
+              - SJT_CONVENIENT_SETTLEMENT_SERVICE_MERCHANT
+              - SJT_MICRO_MERCHANT
+              - WX_SHOP_CONVENIENT_SETTLEMENT_SERVICE_MERCHANT
   responses:
     '200':
       schema:

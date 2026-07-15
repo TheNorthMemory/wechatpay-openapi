@@ -5,6 +5,7 @@ namespace WeChatPay\OpenAPI\V3\AggracctBc\WbChannel;
 /**
  * @property-read Account\Balance $balance
  * @property-read Account\Mch_archives $mch_archives
+ * @property-read Account\Mch_media $mch_media
  */
 interface Account
 {

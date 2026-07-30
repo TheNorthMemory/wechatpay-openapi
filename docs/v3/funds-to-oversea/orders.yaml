@@ -114,6 +114,31 @@ post:
                 type: string
                 description: 收款人识别号
                 example: ID123112312
+          presale_info:
+            type: object
+            description: 预售信息
+            required:
+              - type
+              - total_amount
+            properties:
+              type:
+                type: string
+                description: 订单类型
+                enum:
+                  - DEPOSIT
+                  - BALANCE
+              total_amount:
+                type: integer
+                description: 预售订单总金额
+                example: 10
+              deposit_transaction_id:
+                type: string
+                description: 关联定金订单号
+                example: '4208450740201411110007820472'
+              balance_transaction_id:
+                type: string
+                description: 关联尾款订单号
+                example: '4208450740201411110007820472'
   responses:
     '200':
       schema:
@@ -137,7 +162,7 @@ post:
           order_id:
             type: string
             description: 微信出境单号
-            example: '42000000000_123123'
+            example: 42000000000_123123
           result:
             type: string
             description: 出境结果

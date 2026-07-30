@@ -1,6 +1,7 @@
 post:
-  x-last-updated-at: 2019.09.11
-  x-role: [电商平台]
+  x-last-updated-at: 2025.09.29
+  x-role:
+    - 电商平台
   tags:
     - 收付通∙分账
   summary: 请求分账回退API
@@ -45,6 +46,9 @@ post:
             type: string
             description: 回退描述
             example: 分账回退
+          transaction_id:
+            type: string
+            description: 微信订单号
   responses:
     200:
       schema:
@@ -104,8 +108,9 @@ post:
             description: 完成时间
             example: '2015-05-20T13:29:35.120+08:00'
 get:
-  x-last-updated-at: 2020.04.30
-  x-role: [电商平台]
+  x-last-updated-at: 2025.09.29
+  x-role:
+    - 电商平台
   tags:
     - 收付通∙分账
   summary: 查询分账回退结果API

@@ -17,7 +17,7 @@ post:
           - out_order_id
           - sub_mchid
           - transaction_id
-          - refund_id
+          - supplement_info
           - amount
         properties:
           out_return_no:
@@ -36,9 +36,9 @@ post:
             type: string
             description: 微信订单号
             example: '420000000000000010'
-          refund_id:
+          supplement_info:
             type: string
-            description: 微信退款单号
+            description: 退回凭证补充信息
             example: '5017752501201407033233368018'
           amount:
             type: integer
@@ -79,9 +79,9 @@ post:
             type: string
             description: 微信订单号
             example: '420000000000000010'
-          refund_id:
+          supplement_info:
             type: string
-            description: 微信退款单号
+            description: 退回凭证补充信息
             example: '5017752501201407033233368018'
           amount:
             type: integer
@@ -109,3 +109,5 @@ post:
             type: string
             description: 失败原因
             example: RETURN_AMOUNT_NOT_ENOUGH
+            enum:
+              - RETURN_AMOUNT_NOT_ENOUGH

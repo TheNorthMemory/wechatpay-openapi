@@ -68,6 +68,9 @@ post:
                     type: string
                     description: 开户银行联行号
                     example: '402713354941'
+                  bank_branch_name:
+                    type: string
+                    description: 开户银行全称（含支行）
                   bank_name:
                     type: string
                     description: 开户银行全称（含支行）

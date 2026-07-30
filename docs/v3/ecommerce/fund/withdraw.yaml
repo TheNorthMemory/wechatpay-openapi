@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2020.11.30
+  x-last-updated-at: 2024.12.19
   x-role:
     - 电商平台
     - 服务商
@@ -47,6 +47,10 @@ post:
               - BASIC
               - OPERATION
               - FEES
+          notify_url:
+            type: string
+            description: 提现结果通知地址
+            example: https://weixin.qq.com/a-fake-notify-url
   responses:
     '200':
       schema:

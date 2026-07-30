@@ -212,6 +212,12 @@ post:
                 ubo_period_end:
                   type: string
                   description: 证件有效期结束时间
+                ubo_id_doc_period_begin:
+                  type: string
+                  description: 证件有效期开始时间
+                ubo_id_doc_period_end:
+                  type: string
+                  description: 证件有效期结束时间
           account_info:
             type: object
             description: 结算银行账户
@@ -243,7 +249,7 @@ post:
                 example: '402713354941'
               bank_name:
                 type: string
-                description: '开户银行全称 （含支行]'
+                description: 开户银行全称（含支行）
                 example: 施秉县农村信用合作联社城关信用社
               account_number:
                 type: string
@@ -294,6 +300,14 @@ post:
                 type: string
                 format: MediaId
                 description: 业务办理授权函
+              contact_id_doc_period_begin:
+                type: string
+                description: 超级管理员证件有效期开始时间
+                example: '2019-06-06'
+              contact_id_doc_period_end:
+                type: string
+                description: 超级管理员证件有效期结束时间
+                example: '2026-06-06'
               mobile_phone:
                 type: string
                 format: base64
@@ -351,6 +365,10 @@ post:
           proxy_sign_verify_mode:
             type: boolean
             description: 是否走平台代理签约和代理核身入驻模式
+          id_card_complete_statement:
+            type: string
+            format: MediaId
+            description: 法人影印件信息辅助填写的平台声明
   responses:
     '200':
       schema:

@@ -1,6 +1,8 @@
 post:
-  x-last-updated-at: 2020.03.27
-  x-role: [服务商, 渠道商]
+  x-last-updated-at: 2024.11.18
+  x-role:
+    - 服务商
+    - 渠道商
   tags:
     - 经营工具∙点金计划
   summary: 点金计划管理API
@@ -11,7 +13,9 @@ post:
       required: true
       schema:
         type: object
-        required: [sub_mchid, operation_type]
+        required:
+          - sub_mchid
+          - operation_type
         properties:
           sub_mchid:
             type: string
@@ -19,11 +23,19 @@ post:
             example: '1234567890'
           operation_type:
             $ref: '../../../definitions/Enumerations.yaml#OperationType'
+          operation_pay_scene:
+            type: string
+            description: 支付场景
+            enum:
+              - JSAPI_AND_MINIPROGRAM
+              - JSAPI
+              - MINIPROGRAM
   responses:
-    200:
+    '200':
       schema:
         type: object
-        required: [sub_mchid]
+        required:
+          - sub_mchid
         properties:
           sub_mchid:
             type: string

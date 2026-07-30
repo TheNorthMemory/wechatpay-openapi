@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2021.10.27
+  x-last-updated-at: 2024.11.18
   x-role:
     - 电商平台
     - 服务商
@@ -97,6 +97,14 @@ post:
                       type: integer
                       description: 补差金额
                       example: 10
+                sub_risk_info:
+                  type: string
+                  description: 子单风控信息
+                  example: 'ip:202.106.196.115;last_oid:ox6zi6jKVxWVxxxx-xWlkMxxxx7E;device:%27Android%3B12%3BHUAWEI%3BADA-AL00%27;'
+          risk_info:
+            type: string
+            description: 风控信息
+            example: 'ip:202.106.196.115;last_oid:ox6zi6jKVxWVxxxx-xWlkMxxxx7E;device:%27Android%3B12%3BHUAWEI%3BADA-AL00%27;'
   responses:
     '200':
       schema:

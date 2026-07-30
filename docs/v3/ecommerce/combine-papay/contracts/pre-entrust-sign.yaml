@@ -43,6 +43,10 @@ post:
           return_app:
             type: boolean
             description: 返回app标识
+          attach:
+            type: string
+            description: 商户数据包
+            example: example_attach
   responses:
     '200':
       schema:

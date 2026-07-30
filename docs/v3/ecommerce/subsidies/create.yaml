@@ -1,6 +1,7 @@
 post:
-  x-last-updated-at: 2020.09.15
-  x-role: [电商平台]
+  x-last-updated-at: 2024.11.04
+  x-role:
+    - 电商平台
   tags:
     - 收付通∙补差
   summary: 请求补差API
@@ -37,6 +38,10 @@ post:
             type: string
             description: 微信退款单号
             example: '3008450740201411110007820472'
+          out_subsidy_no:
+            type: string
+            description: 商户补差单号
+            example: P20150806125347
   responses:
     200:
       schema:

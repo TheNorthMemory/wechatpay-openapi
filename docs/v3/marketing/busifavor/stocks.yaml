@@ -114,6 +114,10 @@ post:
                     type: integer
                     description: 领取后N天开始生效
                     example: 7
+                  available_second_after_receive:
+                    type: integer
+                    description: 领取后N秒内有效
+                    enum: 3600
               fixed_normal_coupon:
                 type: object
                 description: 固定面额满减券使用规则

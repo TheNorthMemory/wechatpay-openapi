@@ -14,6 +14,7 @@ post:
         type: object
         required:
           - sub_mchid
+          - operator_identification
           - confirm_time
           - cancel_contract_version
         properties:
@@ -29,6 +30,10 @@ post:
             type: string
             description: 二级商户号
             example: '1900000109'
+          operator_identification:
+            type: string
+            description: 平台确认操作人标识
+            example: id1102
           confirm_time:
             type: string
             format: rfc3339

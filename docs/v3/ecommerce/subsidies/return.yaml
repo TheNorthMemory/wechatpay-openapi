@@ -1,6 +1,7 @@
 post:
-  x-last-updated-at: 2019.09.12
-  x-role: [电商平台]
+  x-last-updated-at: 2024.11.04
+  x-role:
+    - 电商平台
   tags:
     - 收付通∙补差
   summary: 请求补差回退API
@@ -43,6 +44,26 @@ post:
             type: string
             description: 补差回退描述
             example: 测试备注
+          subsidy_id:
+            type: string
+            description: 微信补差单号
+            example: '3008450740201411110007820472'
+          from:
+            type: array
+            description: 回退出资账户及金额
+            items:
+              type: object
+              properties:
+                account:
+                  type: string
+                  description: 出资账户类型
+                  enum:
+                    - AVAILABLE
+                    - UNAVAILABLE
+                amount:
+                  type: integer
+                  description: 出资金额
+                  example: 10
   responses:
     200:
       schema:

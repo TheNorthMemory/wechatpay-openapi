@@ -71,6 +71,11 @@ post:
                   type: string
                   description: 商品单发起商户号
                   example: '1230000109'
+                order_service_type:
+                  type: string
+                  description: 商品服务类型
+                  enum:
+                    - INDIVIDUALTRADE
                 individual_auth_id:
                   type: string
                   description: 商品单个人收款方受理授权ID

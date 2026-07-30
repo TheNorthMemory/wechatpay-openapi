@@ -18,7 +18,7 @@ post:
           - openid
           - transfer_scene_id
           - user_display_name
-          - authorization_notify_url
+          - notify_url
         properties:
           out_authorization_no:
             type: string
@@ -53,7 +53,7 @@ post:
             type: string
             description: 用户收款感知
             example: 现金奖励
-          authorization_notify_url:
+          notify_url:
             type: string
             description: 授权结果通知地址
             example: https://www.weixin.qq.com/wxpay/pay.php

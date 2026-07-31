@@ -23,6 +23,7 @@ interface Returnorders
             'return_mchid' => '86693852',
             'amount' => 10,
             'description' => '分账回退',
+            'transaction_id' => '',
         ],
     ]): ResponseInterface;
 
@@ -40,6 +41,7 @@ interface Returnorders
             'return_mchid' => '86693852',
             'amount' => 10,
             'description' => '分账回退',
+            'transaction_id' => '',
         ],
     ]): PromiseInterface;
 

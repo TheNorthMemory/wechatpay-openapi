@@ -31,6 +31,13 @@ interface MiniProgram
                     'total' => 1,
                     'currency' => 'CNY',
                 ],
+                'policy_coverage_detail' => [
+                    'policy_amount' => '50000',
+                    'policy_clauses' => [[
+                        'clause_name' => 'example_clause_name',
+                        'clause_quota' => 'example_clause_quota',
+                    ],],
+                ],
             ],],
             'amount' => [
                 'total' => 1,
@@ -77,6 +84,13 @@ interface MiniProgram
                 'estimated_deduct_amount' => [
                     'total' => 1,
                     'currency' => 'CNY',
+                ],
+                'policy_coverage_detail' => [
+                    'policy_amount' => '50000',
+                    'policy_clauses' => [[
+                        'clause_name' => 'example_clause_name',
+                        'clause_quota' => 'example_clause_quota',
+                    ],],
                 ],
             ],],
             'amount' => [

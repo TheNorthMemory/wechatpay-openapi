@@ -36,7 +36,9 @@ interface Transactions
                     'profit_sharing' => true,
                     'subsidy_amount' => 10,
                 ],
+                'sub_risk_info' => 'ip:202.106.196.115;last_oid:ox6zi6jKVxWVxxxx-xWlkMxxxx7E;device:%27Android%3B12%3BHUAWEI%3BADA-AL00%27;',
             ],],
+            'risk_info' => 'ip:202.106.196.115;last_oid:ox6zi6jKVxWVxxxx-xWlkMxxxx7E;device:%27Android%3B12%3BHUAWEI%3BADA-AL00%27;',
         ],
     ]): ResponseInterface;
 
@@ -66,7 +68,9 @@ interface Transactions
                     'profit_sharing' => true,
                     'subsidy_amount' => 10,
                 ],
+                'sub_risk_info' => 'ip:202.106.196.115;last_oid:ox6zi6jKVxWVxxxx-xWlkMxxxx7E;device:%27Android%3B12%3BHUAWEI%3BADA-AL00%27;',
             ],],
+            'risk_info' => 'ip:202.106.196.115;last_oid:ox6zi6jKVxWVxxxx-xWlkMxxxx7E;device:%27Android%3B12%3BHUAWEI%3BADA-AL00%27;',
         ],
     ]): PromiseInterface;
 }

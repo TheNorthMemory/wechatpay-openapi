@@ -35,6 +35,7 @@ interface Serviceorder
                 'name' => '满20减1元',
                 'description' => '不与其他优惠叠加',
                 'count' => 2,
+                'amount' => 40000,
             ],],
             'risk_fund' => [
                 'name' => 'DEPOSIT',
@@ -83,6 +84,7 @@ interface Serviceorder
                 'name' => '满20减1元',
                 'description' => '不与其他优惠叠加',
                 'count' => 2,
+                'amount' => 40000,
             ],],
             'risk_fund' => [
                 'name' => 'DEPOSIT',

@@ -21,6 +21,7 @@ interface Create
             'amount' => 10,
             'description' => '测试备注',
             'refund_id' => '3008450740201411110007820472',
+            'out_subsidy_no' => 'P20150806125347',
         ],
     ]): ResponseInterface;
 
@@ -36,6 +37,7 @@ interface Create
             'amount' => 10,
             'description' => '测试备注',
             'refund_id' => '3008450740201411110007820472',
+            'out_subsidy_no' => 'P20150806125347',
         ],
     ]): PromiseInterface;
 }

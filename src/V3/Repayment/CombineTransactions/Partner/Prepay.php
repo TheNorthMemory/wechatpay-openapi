@@ -51,6 +51,18 @@ interface Prepay
                 'combine_appid' => 'wxd678efh567hg6787',
                 'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
             ],
+            'combine_payer_info' => [
+                'identity' => [
+                    'type' => 'IDCARD | HONGKONG_MACAO | HONGKONG_MACAO_RESIDENT | TAIWAN_RESIDENT',
+                    'number' => '',
+                    'name' => '',
+                ],
+            ],
+            'wechat_web_info' => [
+                'combine_appid' => '',
+                'openid' => '',
+                'webview_url' => '',
+            ],
         ],
     ]): ResponseInterface;
 
@@ -95,6 +107,18 @@ interface Prepay
             'miniprogram_info' => [
                 'combine_appid' => 'wxd678efh567hg6787',
                 'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
+            ],
+            'combine_payer_info' => [
+                'identity' => [
+                    'type' => 'IDCARD | HONGKONG_MACAO | HONGKONG_MACAO_RESIDENT | TAIWAN_RESIDENT',
+                    'number' => '',
+                    'name' => '',
+                ],
+            ],
+            'wechat_web_info' => [
+                'combine_appid' => '',
+                'openid' => '',
+                'webview_url' => '',
             ],
         ],
     ]): PromiseInterface;

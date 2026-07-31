@@ -37,6 +37,7 @@ interface PrepaySettleOrders
                     ],
                 ],],
             ],],
+            'receive_type_template_id' => 0,
         ],
     ]): ResponseInterface;
 
@@ -67,6 +68,7 @@ interface PrepaySettleOrders
                     ],
                 ],],
             ],],
+            'receive_type_template_id' => 0,
         ],
     ]): PromiseInterface;
 }

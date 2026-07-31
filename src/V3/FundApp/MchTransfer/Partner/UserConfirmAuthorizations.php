@@ -23,7 +23,7 @@ interface UserConfirmAuthorizations
             'transfer_scene_id' => '1000',
             'user_display_name' => 'wx_123456',
             'user_recv_perception' => '现金奖励',
-            'authorization_notify_url' => 'https://www.weixin.qq.com/wxpay/pay.php',
+            'notify_url' => 'https://www.weixin.qq.com/wxpay/pay.php',
         ],
     ]): ResponseInterface;
 
@@ -40,7 +40,7 @@ interface UserConfirmAuthorizations
             'transfer_scene_id' => '1000',
             'user_display_name' => 'wx_123456',
             'user_recv_perception' => '现金奖励',
-            'authorization_notify_url' => 'https://www.weixin.qq.com/wxpay/pay.php',
+            'notify_url' => 'https://www.weixin.qq.com/wxpay/pay.php',
         ],
     ]): PromiseInterface;
 }

@@ -28,6 +28,7 @@ interface Miniprogram
             ],
             'sub_orders' => [[
                 'mchid' => '1230000109',
+                'order_service_type' => 'INDIVIDUALTRADE',
                 'individual_auth_id' => '1900000109',
                 'individual_name' => '哈哈哈小店',
                 'out_trade_no' => '20150806125346',
@@ -63,6 +64,7 @@ interface Miniprogram
             ],
             'sub_orders' => [[
                 'mchid' => '1230000109',
+                'order_service_type' => 'INDIVIDUALTRADE',
                 'individual_auth_id' => '1900000109',
                 'individual_name' => '哈哈哈小店',
                 'out_trade_no' => '20150806125346',

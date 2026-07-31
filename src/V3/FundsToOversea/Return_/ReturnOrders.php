@@ -21,7 +21,7 @@ interface ReturnOrders
             'sub_mchid' => '123456',
             'out_order_id' => 'merchant_1123123',
             'transaction_id' => '420000000000000010',
-            'refund_id' => '5017752501201407033233368018',
+            'supplement_info' => '5017752501201407033233368018',
             'amount' => 100,
         ],
     ]): ResponseInterface;
@@ -37,7 +37,7 @@ interface ReturnOrders
             'sub_mchid' => '123456',
             'out_order_id' => 'merchant_1123123',
             'transaction_id' => '420000000000000010',
-            'refund_id' => '5017752501201407033233368018',
+            'supplement_info' => '5017752501201407033233368018',
             'amount' => 100,
         ],
     ]): PromiseInterface;

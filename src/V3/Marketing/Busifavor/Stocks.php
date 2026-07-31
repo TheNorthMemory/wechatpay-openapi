@@ -39,6 +39,7 @@ interface Stocks
                         'end_time' => '2015-05-20T13:29:35+08:00',
                     ],],
                     'wait_days_after_receive' => 7,
+                    'available_second_after_receive' => 0,
                 ],
                 'fixed_normal_coupon' => [
                     'discount_amount' => 5,
@@ -129,6 +130,7 @@ interface Stocks
                         'end_time' => '2015-05-20T13:29:35+08:00',
                     ],],
                     'wait_days_after_receive' => 7,
+                    'available_second_after_receive' => 0,
                 ],
                 'fixed_normal_coupon' => [
                     'discount_amount' => 5,

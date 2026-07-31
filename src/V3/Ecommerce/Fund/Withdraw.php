@@ -24,6 +24,7 @@ interface Withdraw
             'remark' => '交易提现',
             'bank_memo' => '微信支付提现',
             'account_type' => 'BASIC',
+            'notify_url' => 'https://weixin.qq.com/a-fake-notify-url',
         ],
     ]): ResponseInterface;
 
@@ -40,6 +41,7 @@ interface Withdraw
             'remark' => '交易提现',
             'bank_memo' => '微信支付提现',
             'account_type' => 'BASIC',
+            'notify_url' => 'https://weixin.qq.com/a-fake-notify-url',
         ],
     ]): PromiseInterface;
 }

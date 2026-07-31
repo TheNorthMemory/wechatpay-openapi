@@ -26,6 +26,9 @@ interface DepositAfterSalesCompensationBills
                     'transaction_id' => '1217752501201407033233368018',
                     'type' => 'WXPAY',
                 ],
+                'user_info' => [
+                    'sp_openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
+                ],
             ],
             'out_bill_no' => 'plfk2020042013',
             'amount' => 10000,
@@ -50,6 +53,9 @@ interface DepositAfterSalesCompensationBills
                 'transaction_info' => [
                     'transaction_id' => '1217752501201407033233368018',
                     'type' => 'WXPAY',
+                ],
+                'user_info' => [
+                    'sp_openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
                 ],
             ],
             'out_bill_no' => 'plfk2020042013',

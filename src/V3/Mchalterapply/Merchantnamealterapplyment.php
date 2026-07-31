@@ -18,9 +18,9 @@ interface Merchantnamealterapplyment
      */
     public function post(array $options = [
         'json' => [
-            'merchant_code' => '2492185251',
+            'sub_mchid' => '2492185251',
             'out_request_no' => '1900013511_10000',
-            'merchant_shortname' => 'example_merchant_shortname',
+            'merchant_shortname' => '新疆大枣专卖店',
         ],
     ]): ResponseInterface;
 
@@ -31,9 +31,9 @@ interface Merchantnamealterapplyment
      */
     public function postAsync(array $options = [
         'json' => [
-            'merchant_code' => '2492185251',
+            'sub_mchid' => '2492185251',
             'out_request_no' => '1900013511_10000',
-            'merchant_shortname' => 'example_merchant_shortname',
+            'merchant_shortname' => '新疆大枣专卖店',
         ],
     ]): PromiseInterface;
 }

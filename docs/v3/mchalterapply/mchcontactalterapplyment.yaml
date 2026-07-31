@@ -74,11 +74,11 @@ post:
               contact_id_doc_period_begin:
                 type: string
                 description: 超级管理员证件有效期开始时间
-                example: 2019-06-06
+                example: '2019-06-06'
               contact_id_doc_period_end:
                 type: string
                 description: 超级管理员证件有效期结束时间
-                example: 2026-06-06
+                example: '2026-06-06'
               business_authorization_letter:
                 type: string
                 format: MediaId

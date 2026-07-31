@@ -18,6 +18,7 @@ interface Changegoldplanstatus
         'json' => [
             'sub_mchid' => '1234567890',
             'operation_type' => 'OPEN | CLOSE',
+            'operation_pay_scene' => 'JSAPI_AND_MINIPROGRAM | JSAPI | MINIPROGRAM',
         ],
     ]): ResponseInterface;
 
@@ -30,6 +31,7 @@ interface Changegoldplanstatus
         'json' => [
             'sub_mchid' => '1234567890',
             'operation_type' => 'OPEN | CLOSE',
+            'operation_pay_scene' => 'JSAPI_AND_MINIPROGRAM | JSAPI | MINIPROGRAM',
         ],
     ]): PromiseInterface;
 }

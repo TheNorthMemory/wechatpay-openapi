@@ -23,6 +23,7 @@ interface PreEntrustSign
             'contract_display_account' => '微信代扣用户A',
             'notify_url' => 'https://yourapp.com/notify',
             'return_app' => true,
+            'attach' => 'example_attach',
         ],
     ]): ResponseInterface;
 
@@ -39,6 +40,7 @@ interface PreEntrustSign
             'contract_display_account' => '微信代扣用户A',
             'notify_url' => 'https://yourapp.com/notify',
             'return_app' => true,
+            'attach' => 'example_attach',
         ],
     ]): PromiseInterface;
 }

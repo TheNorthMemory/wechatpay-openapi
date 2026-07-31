@@ -26,6 +26,7 @@ interface QuotaCards
             'out_card_no' => 'mch_card_123456',
             'effective_end_time' => '2023-12-31T23:59:59+08:00',
             'card_remark' => '2023年1月差旅报销',
+            'avail_mch_range_id' => 'range_12345678',
         ],
     ]): ResponseInterface;
 
@@ -45,6 +46,7 @@ interface QuotaCards
             'out_card_no' => 'mch_card_123456',
             'effective_end_time' => '2023-12-31T23:59:59+08:00',
             'card_remark' => '2023年1月差旅报销',
+            'avail_mch_range_id' => 'range_12345678',
         ],
     ]): PromiseInterface;
 }

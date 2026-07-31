@@ -42,6 +42,7 @@ interface App
                     'subsidy_amount' => 10,
                 ],
                 'sub_appid' => 'wxd678efh567hg6999',
+                'profit_sharing' => true,
             ],],
             'combine_payer_info' => [
                 'identity' => [
@@ -112,6 +113,7 @@ interface App
                     'subsidy_amount' => 10,
                 ],
                 'sub_appid' => 'wxd678efh567hg6999',
+                'profit_sharing' => true,
             ],],
             'combine_payer_info' => [
                 'identity' => [

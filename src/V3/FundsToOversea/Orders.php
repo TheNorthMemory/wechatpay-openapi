@@ -40,6 +40,12 @@ interface Orders
             'payee_info' => [
                 'payee_id' => 'ID123112312',
             ],
+            'presale_info' => [
+                'type' => 'DEPOSIT | BALANCE',
+                'total_amount' => 10,
+                'deposit_transaction_id' => '4208450740201411110007820472',
+                'balance_transaction_id' => '4208450740201411110007820472',
+            ],
         ],
     ]): ResponseInterface;
 
@@ -72,6 +78,12 @@ interface Orders
             ],
             'payee_info' => [
                 'payee_id' => 'ID123112312',
+            ],
+            'presale_info' => [
+                'type' => 'DEPOSIT | BALANCE',
+                'total_amount' => 10,
+                'deposit_transaction_id' => '4208450740201411110007820472',
+                'balance_transaction_id' => '4208450740201411110007820472',
             ],
         ],
     ]): PromiseInterface;

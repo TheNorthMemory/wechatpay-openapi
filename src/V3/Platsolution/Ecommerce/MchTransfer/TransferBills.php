@@ -25,6 +25,7 @@ interface TransferBills
                 'type' => 'MERCHANT',
                 'mch_info' => [
                     'mch_id' => '1900001108',
+                    'mchid' => '1900001108',
                 ],
             ],
             'out_bill_no' => 'plfk2020042013',
@@ -48,6 +49,7 @@ interface TransferBills
                 'type' => 'MERCHANT',
                 'mch_info' => [
                     'mch_id' => '1900001108',
+                    'mchid' => '1900001108',
                 ],
             ],
             'out_bill_no' => 'plfk2020042013',

@@ -22,6 +22,7 @@ interface Registerdeductinfo
             'sub_mchid' => '1900000109',
             'channel_id' => '1230000109',
             'out_trade_no' => '1234323JKHDFE1243252',
+            'sub_appid' => 'wxd678efh567hg6999',
         ],
     ]): ResponseInterface;
 
@@ -38,6 +39,7 @@ interface Registerdeductinfo
             'sub_mchid' => '1900000109',
             'channel_id' => '1230000109',
             'out_trade_no' => '1234323JKHDFE1243252',
+            'sub_appid' => 'wxd678efh567hg6999',
         ],
     ]): PromiseInterface;
 }

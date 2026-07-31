@@ -63,6 +63,8 @@ interface SubmitAccountHostingApplyment
                 'ubo_id_doc_address' => '',
                 'ubo_period_begin' => '',
                 'ubo_period_end' => '',
+                'ubo_id_doc_period_begin' => '',
+                'ubo_id_doc_period_end' => '',
             ],],
             'account_info' => [
                 'bank_account_type' => '75',
@@ -82,6 +84,8 @@ interface SubmitAccountHostingApplyment
                 'contact_period_begin' => '',
                 'contact_period_end' => '',
                 'business_authorization_letter' => '',
+                'contact_id_doc_period_begin' => '2019-06-06',
+                'contact_id_doc_period_end' => '2026-06-06',
                 'mobile_phone' => 'pVd1HJ6zyvPedzGaV+X3qtmrq9bb9tPROvwia4ibL+F6mfjbzQIzfb3HHLEjZ4YiNWWNeespQO/0kjiwfqdfg==',
             ],
             'sales_scene_info' => [
@@ -99,6 +103,7 @@ interface SubmitAccountHostingApplyment
             'business_addition_pics' => ['MediaId'],
             'business_addition_desc' => ['MediaId'],
             'proxy_sign_verify_mode' => true,
+            'id_card_complete_statement' => '',
         ],
         'headers' => [
             'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',
@@ -159,6 +164,8 @@ interface SubmitAccountHostingApplyment
                 'ubo_id_doc_address' => '',
                 'ubo_period_begin' => '',
                 'ubo_period_end' => '',
+                'ubo_id_doc_period_begin' => '',
+                'ubo_id_doc_period_end' => '',
             ],],
             'account_info' => [
                 'bank_account_type' => '75',
@@ -178,6 +185,8 @@ interface SubmitAccountHostingApplyment
                 'contact_period_begin' => '',
                 'contact_period_end' => '',
                 'business_authorization_letter' => '',
+                'contact_id_doc_period_begin' => '2019-06-06',
+                'contact_id_doc_period_end' => '2026-06-06',
                 'mobile_phone' => 'pVd1HJ6zyvPedzGaV+X3qtmrq9bb9tPROvwia4ibL+F6mfjbzQIzfb3HHLEjZ4YiNWWNeespQO/0kjiwfqdfg==',
             ],
             'sales_scene_info' => [
@@ -195,6 +204,7 @@ interface SubmitAccountHostingApplyment
             'business_addition_pics' => ['MediaId'],
             'business_addition_desc' => ['MediaId'],
             'proxy_sign_verify_mode' => true,
+            'id_card_complete_statement' => '',
         ],
         'headers' => [
             'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',

@@ -22,6 +22,11 @@ interface Return_
             'refund_id' => '3008450740201411110007820472',
             'amount' => 10,
             'description' => '测试备注',
+            'subsidy_id' => '3008450740201411110007820472',
+            'from' => [[
+                'account' => 'AVAILABLE | UNAVAILABLE',
+                'amount' => 10,
+            ],],
         ],
     ]): ResponseInterface;
 
@@ -38,6 +43,11 @@ interface Return_
             'refund_id' => '3008450740201411110007820472',
             'amount' => 10,
             'description' => '测试备注',
+            'subsidy_id' => '3008450740201411110007820472',
+            'from' => [[
+                'account' => 'AVAILABLE | UNAVAILABLE',
+                'amount' => 10,
+            ],],
         ],
     ]): PromiseInterface;
 }

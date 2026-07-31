@@ -40,6 +40,7 @@ interface Jsapi
                     'subsidy_amount' => 10,
                 ],
                 'sub_appid' => 'wxd678efh567hg6999',
+                'profit_sharing' => true,
             ],],
             'combine_payer_info' => [
                 'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
@@ -100,6 +101,7 @@ interface Jsapi
                     'subsidy_amount' => 10,
                 ],
                 'sub_appid' => 'wxd678efh567hg6999',
+                'profit_sharing' => true,
             ],],
             'combine_payer_info' => [
                 'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',

@@ -25,6 +25,7 @@ interface Guides
             'mobile' => '',
             'qr_code' => '',
             'avatar' => '',
+            'group_qrcode' => 'https://work.weixin.qq.com/xxxxxxx',
         ],
         'headers' => [
             'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',
@@ -46,6 +47,7 @@ interface Guides
             'mobile' => '',
             'qr_code' => '',
             'avatar' => '',
+            'group_qrcode' => 'https://work.weixin.qq.com/xxxxxxx',
         ],
         'headers' => [
             'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',

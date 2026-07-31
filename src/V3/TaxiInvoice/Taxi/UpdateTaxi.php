@@ -23,6 +23,7 @@ interface UpdateTaxi
             'deputy_license' => '6298416',
             'region_id' => 510100,
             'invoice_flag' => 'INVOICE',
+            'taxi_state' => 'IN_OPERATION | OUT_OPERATION',
         ],
     ]): ResponseInterface;
 
@@ -40,6 +41,7 @@ interface UpdateTaxi
             'deputy_license' => '6298416',
             'region_id' => 510100,
             'invoice_flag' => 'INVOICE',
+            'taxi_state' => 'IN_OPERATION | OUT_OPERATION',
         ],
     ]): PromiseInterface;
 }

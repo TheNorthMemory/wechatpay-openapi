@@ -72,6 +72,7 @@ interface Cards
                 ],],
                 'remark' => '备注',
             ],
+            'token' => 'ESvqG19gjw0qiiy1eeRA4VusLrOmIYQOMJ8rXX2V',
         ],
     ]): ResponseInterface;
 
@@ -137,6 +138,7 @@ interface Cards
                 ],],
                 'remark' => '备注',
             ],
+            'token' => 'ESvqG19gjw0qiiy1eeRA4VusLrOmIYQOMJ8rXX2V',
         ],
     ]): PromiseInterface;
 }

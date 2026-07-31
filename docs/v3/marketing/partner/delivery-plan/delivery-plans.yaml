@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2025.09.27
+  x-last-updated-at: 2025.12.31
   x-role:
     - 服务商
   tags:
@@ -64,6 +64,18 @@ post:
             type: string
             description: 营销标签
             example: 天天有惊喜
+          reuse_coupon_config:
+            type: boolean
+            description: 是否复用商品券和批次信息
+          usage_mode:
+            type: string
+            description: 使用模式
+            enum:
+              - SINGLE
+              - PROGRESSIVE_BUNDLE
+          stock_bundle_id:
+            type: string
+            description: 投放批次组ID
   responses:
     200:
       schema:

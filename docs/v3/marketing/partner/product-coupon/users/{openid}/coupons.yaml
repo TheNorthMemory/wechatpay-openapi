@@ -53,6 +53,24 @@ post:
             type: string
             description: 自定义附加信息
             example: example_attach
+          coupon_tag_info:
+            type: object
+            description: 用户商品券标签信息
+            properties:
+              coupon_tag_list:
+                type: array
+                description: 用户商品券标签列表
+                items:
+                  type: string
+                  enum:
+                    - MEMBER
+              member_tag_info:
+                type: object
+                description: 会员标签信息
+                properties:
+                  member_card_id:
+                    type: string
+                    description: 会员卡模板ID
   responses:
     '200':
       schema:

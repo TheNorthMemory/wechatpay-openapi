@@ -25,6 +25,12 @@ interface Coupons
             'appid' => 'wx233544546545989',
             'send_request_no' => '34657_20250101_123456',
             'attach' => 'example_attach',
+            'coupon_tag_info' => [
+                'coupon_tag_list' => ['MEMBER'],
+                'member_tag_info' => [
+                    'member_card_id' => '',
+                ],
+            ],
         ],
     ]): ResponseInterface;
 
@@ -43,6 +49,12 @@ interface Coupons
             'appid' => 'wx233544546545989',
             'send_request_no' => '34657_20250101_123456',
             'attach' => 'example_attach',
+            'coupon_tag_info' => [
+                'coupon_tag_list' => ['MEMBER'],
+                'member_tag_info' => [
+                    'member_card_id' => '',
+                ],
+            ],
         ],
     ]): PromiseInterface;
 

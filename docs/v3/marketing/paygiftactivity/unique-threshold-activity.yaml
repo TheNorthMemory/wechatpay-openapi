@@ -1,10 +1,13 @@
 post:
-  x-last-updated-at: 2020.06.09
-  x-role: [微信支付商户, 服务商, 渠道商]
+  x-last-updated-at: 2024.11.18
+  x-role:
+    - 微信支付商户
+    - 服务商
+    - 渠道商
   tags:
     - 运营工具∙支付有礼
   summary: 创建全场满额送活动API
-  description: 商户可以创建满额送活动，用户支付后送全场券，提升交易额。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/paygiftactivity/chapter3_2.shtml)
+  description: 商户可以创建满额送活动，用户支付后送全场券，提升交易额。
   parameters:
     - name: _
       in: body
@@ -25,11 +28,29 @@ post:
                         description: 发券商户号列表
                         items:
                           type: string
+              advanced_setting:
+                type: object
+                properties:
+                  payment_method_information:
+                    type: object
+                    description: 支付方式信息
+                    properties:
+                      payment_method:
+                        type: string
+                        description: 支付方式
+                        enum:
+                          - CFT
+                          - SPECIFIC_BANK_CARD
+                      bank_abbreviation:
+                        type: string
+                        description: 银行简称
   responses:
     200:
       schema:
         type: object
-        required: [activity_id, create_time]
+        required:
+          - activity_id
+          - create_time
         properties:
           activity_id:
             type: string

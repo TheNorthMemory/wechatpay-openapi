@@ -50,6 +50,9 @@ patch:
                 type: string
                 description: 营销标签
                 example: 天天有惊喜
+          out_request_no:
+            type: string
+            description: 修改请求单号
   responses:
     200:
       schema:

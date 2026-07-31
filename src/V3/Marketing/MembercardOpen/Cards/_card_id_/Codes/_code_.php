@@ -53,6 +53,8 @@ interface _code_
                 'add_balance' => 100,
                 'balance_remark' => '购买一杯珍珠奶茶，消耗30元',
             ],
+            'need_inform_balance' => true,
+            'need_inform_level' => true,
         ],
     ]): ResponseInterface;
 
@@ -75,6 +77,8 @@ interface _code_
                 'add_balance' => 100,
                 'balance_remark' => '购买一杯珍珠奶茶，消耗30元',
             ],
+            'need_inform_balance' => true,
+            'need_inform_level' => true,
         ],
     ]): PromiseInterface;
 }

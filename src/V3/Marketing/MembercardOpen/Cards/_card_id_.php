@@ -56,6 +56,7 @@ interface _card_id_
                 'available_end_time' => '2030-05-20T13:29:35.120+08:00',
                 'available_day_after_receive' => 200,
                 'wait_days_after_receive' => 2,
+                'available_begin_time' => '2020-05-20T13:29:35.120+08:00',
             ],
             'need_display_level' => true,
             'init_level' => '白银会员',
@@ -80,6 +81,9 @@ interface _card_id_
                 'appid' => 'wxea9c30890f48d5ae',
                 'path' => 'pages/statement/statement',
             ],
+            'code_mode' => 'SYSTEM_ALLOCATE',
+            'code_type' => 'BAR_CODE',
+            'need_dynamic_code' => true,
         ],
     ]): ResponseInterface;
 
@@ -103,6 +107,7 @@ interface _card_id_
                 'available_end_time' => '2030-05-20T13:29:35.120+08:00',
                 'available_day_after_receive' => 200,
                 'wait_days_after_receive' => 2,
+                'available_begin_time' => '2020-05-20T13:29:35.120+08:00',
             ],
             'need_display_level' => true,
             'init_level' => '白银会员',
@@ -127,6 +132,9 @@ interface _card_id_
                 'appid' => 'wxea9c30890f48d5ae',
                 'path' => 'pages/statement/statement',
             ],
+            'code_mode' => 'SYSTEM_ALLOCATE',
+            'code_type' => 'BAR_CODE',
+            'need_dynamic_code' => true,
         ],
     ]): PromiseInterface;
 

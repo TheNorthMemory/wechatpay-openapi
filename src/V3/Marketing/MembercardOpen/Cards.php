@@ -34,6 +34,7 @@ interface Cards
                 'available_begin_time' => '2020-05-20T13:29:35.120+08:00',
                 'available_end_time' => '2030-05-20T13:29:35.120+08:00',
                 'available_day_after_receive' => 200,
+                'wait_days_after_receive' => 1,
             ],
             'code_mode' => 'SYSTEM_ALLOCATE | MERCHANT_DEPOSIT | REAL_TIME',
             'need_display_level' => true,
@@ -59,6 +60,7 @@ interface Cards
                 'appid' => 'wxea9c30890f48d5ae',
                 'path' => 'pages/statement/statement',
             ],
+            'need_dynamic_code' => true,
         ],
     ]): ResponseInterface;
 
@@ -86,6 +88,7 @@ interface Cards
                 'available_begin_time' => '2020-05-20T13:29:35.120+08:00',
                 'available_end_time' => '2030-05-20T13:29:35.120+08:00',
                 'available_day_after_receive' => 200,
+                'wait_days_after_receive' => 1,
             ],
             'code_mode' => 'SYSTEM_ALLOCATE | MERCHANT_DEPOSIT | REAL_TIME',
             'need_display_level' => true,
@@ -111,6 +114,7 @@ interface Cards
                 'appid' => 'wxea9c30890f48d5ae',
                 'path' => 'pages/statement/statement',
             ],
+            'need_dynamic_code' => true,
         ],
     ]): PromiseInterface;
 

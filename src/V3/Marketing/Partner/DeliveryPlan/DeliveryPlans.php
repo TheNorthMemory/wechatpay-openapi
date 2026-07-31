@@ -29,6 +29,9 @@ interface DeliveryPlans
             'delivery_start_time' => '2025-01-01T00:00:00+08:00',
             'delivery_end_time' => '2025-01-01T00:00:00+08:00',
             'recommend_word' => '天天有惊喜',
+            'reuse_coupon_config' => true,
+            'usage_mode' => 'SINGLE | PROGRESSIVE_BUNDLE',
+            'stock_bundle_id' => '',
         ],
     ]): ResponseInterface;
 
@@ -50,6 +53,9 @@ interface DeliveryPlans
             'delivery_start_time' => '2025-01-01T00:00:00+08:00',
             'delivery_end_time' => '2025-01-01T00:00:00+08:00',
             'recommend_word' => '天天有惊喜',
+            'reuse_coupon_config' => true,
+            'usage_mode' => 'SINGLE | PROGRESSIVE_BUNDLE',
+            'stock_bundle_id' => '',
         ],
     ]): PromiseInterface;
 }

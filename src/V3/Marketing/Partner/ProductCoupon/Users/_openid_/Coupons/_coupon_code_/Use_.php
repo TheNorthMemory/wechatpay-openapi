@@ -31,6 +31,14 @@ interface Use_
             ],
             'out_request_no' => '34657_20250101_123456',
             'sequential_coupon_index' => 0,
+            'store_id' => '',
+            'associated_pay_score_order_info' => [
+                'order_id' => '',
+                'out_order_no' => '',
+                'mchid' => '',
+                'sub_mchid' => '',
+            ],
+            'saved_amount' => 0,
         ],
     ]): ResponseInterface;
 
@@ -56,6 +64,14 @@ interface Use_
             ],
             'out_request_no' => '34657_20250101_123456',
             'sequential_coupon_index' => 0,
+            'store_id' => '',
+            'associated_pay_score_order_info' => [
+                'order_id' => '',
+                'out_order_no' => '',
+                'mchid' => '',
+                'sub_mchid' => '',
+            ],
+            'saved_amount' => 0,
         ],
     ]): PromiseInterface;
 }

@@ -83,6 +83,7 @@ interface ProductCoupons
                             'begin_time' => '2025-08-01T00:00:00+08:00',
                             'end_time' => '2025-08-31T23:59:59+08:00',
                         ],],
+                        'available_seconds' => 0,
                     ],
                     'normal_coupon' => [
                         'threshold' => 10000,
@@ -241,6 +242,7 @@ interface ProductCoupons
                             'begin_time' => '2025-08-01T00:00:00+08:00',
                             'end_time' => '2025-08-31T23:59:59+08:00',
                         ],],
+                        'available_seconds' => 0,
                     ],
                     'normal_coupon' => [
                         'threshold' => 10000,

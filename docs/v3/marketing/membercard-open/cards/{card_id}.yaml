@@ -1,12 +1,12 @@
 get:
-  x-last-updated-at: 2021.01.07
+  x-last-updated-at: 2024.09.20
   x-role:
     - 直连商户
     - 服务商
   tags:
     - 会员卡∙基础功能
   summary: 查询会员卡模板信息API
-  description: 通过此接口可查询指定会员卡模板的所有信息 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_2.shtml)
+  description: 通过此接口可查询指定会员卡模板的所有信息
   parameters:
     - name: card_id
       in: path
@@ -19,14 +19,14 @@ get:
       schema:
         $ref: '../../../../definitions/MemberCard.yaml#Record'
 patch:
-  x-last-updated-at: 2021.01.07
+  x-last-updated-at: 2024.09.20
   x-role:
     - 直连商户
     - 服务商
   tags:
     - 会员卡∙基础功能
   summary: 修改会员卡模板信息API
-  description: 通过此接口可更新会员卡的信息，包括基本信息、储值信息、开卡信息、补充说明 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_9.shtml)
+  description: 通过此接口可更新会员卡的信息，包括基本信息、储值信息、开卡信息、补充说明
   parameters:
     - name: card_id
       in: path
@@ -90,6 +90,10 @@ patch:
                 type: integer
                 description: 领取后N天开始生效
                 example: 2
+              available_begin_time:
+                type: string
+                description: 有效期开始时间
+                example: '2020-05-20T13:29:35.120+08:00'
           need_display_level:
             type: boolean
             description: 是否展示会员等级
@@ -171,17 +175,38 @@ patch:
                 type: string
                 description: 跳转小程序path
                 example: pages/statement/statement
+          code_mode:
+            type: string
+            description: 会员卡code分配类型
+            example: SYSTEM_ALLOCATE
+            enum:
+              - SYSTEM_ALLOCATE
+              - MERCHANT_DEPOSIT
+              - REAL_TIME
+          code_type:
+            type: string
+            description: 会员码型
+            example: BAR_CODE
+            enum:
+              - BAR_CODE
+              - QRCODE
+              - BAR_CODE_AND_QRCODE
+              - NONE_CODE
+          need_dynamic_code:
+            type: boolean
+            description: 是否启用动态码
+            example: false
   responses:
     204: {}
 delete:
-  x-last-updated-at: 2020.07.15
+  x-last-updated-at: 2024.09.20
   x-role:
     - 直连商户
     - 服务商
   tags:
     - 会员卡∙基础功能
   summary: 删除会员卡模板API
-  description: 商户可调用此api删除会员卡。删除后，商家将无法通过任何渠道再投放该会员卡。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_11.shtml)
+  description: 商户可调用此api删除会员卡。删除后，商家将无法通过任何渠道再投放该会员卡。
   parameters:
     - name: card_id
       in: path

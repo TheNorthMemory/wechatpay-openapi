@@ -1,6 +1,9 @@
 post:
-  x-last-updated-at: 2020.12.27
-  x-role: [直连商户, 服务商, 渠道商]
+  x-last-updated-at: 2024.11.18
+  x-role:
+    - 直连商户
+    - 服务商
+    - 渠道商
   tags:
     - 运营工具∙代金券
   summary: 创建代金券批次API
@@ -13,6 +16,30 @@ post:
         allOf:
           - $ref: '../../../definitions/FavorCouponStock.yaml#StockBase'
           - $ref: '../../../definitions/FavorCouponStock.yaml#StockExtra'
+          - type: object
+            properties:
+              pattern_info:
+                type: object
+                properties:
+                  jump_target:
+                    type: string
+                    description: 卡包跳转目标
+                    enum:
+                      - PAYMENT_CODE
+                      - MINI_PROGRAM
+                      - DEFAULT_PAGE
+                  mini_program_appid:
+                    type: string
+                    description: 小程序appid
+                  mini_program_path:
+                    type: string
+                    description: 小程序path
+              coupon_use_rule:
+                type: object
+                properties:
+                  combine_use:
+                    type: boolean
+                    description: 是否可叠加其他优惠
   responses:
     200:
       schema:

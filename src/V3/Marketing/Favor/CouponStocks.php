@@ -37,6 +37,9 @@ interface CouponStocks
                 'merchant_name' => '',
                 'background_color' => 'Color010 | Color020 | Color030 | Color040',
                 'coupon_image' => '',
+                'jump_target' => 'PAYMENT_CODE | MINI_PROGRAM | DEFAULT_PAGE',
+                'mini_program_appid' => '',
+                'mini_program_path' => '',
             ],
             'coupon_use_rule' => [
                 'coupon_available_time' => [
@@ -73,6 +76,7 @@ interface CouponStocks
                 'available_items' => ['123321'],
                 'unavailable_items' => ['789987'],
                 'available_merchants' => ['9856000'],
+                'combine_use' => true,
             ],
             'out_request_no' => '',
             'ext_info' => '{"exinfo1":"1234","exinfo2":"3456"}',
@@ -107,6 +111,9 @@ interface CouponStocks
                 'merchant_name' => '',
                 'background_color' => 'Color010 | Color020 | Color030 | Color040',
                 'coupon_image' => '',
+                'jump_target' => 'PAYMENT_CODE | MINI_PROGRAM | DEFAULT_PAGE',
+                'mini_program_appid' => '',
+                'mini_program_path' => '',
             ],
             'coupon_use_rule' => [
                 'coupon_available_time' => [
@@ -143,6 +150,7 @@ interface CouponStocks
                 'available_items' => ['123321'],
                 'unavailable_items' => ['789987'],
                 'available_merchants' => ['9856000'],
+                'combine_use' => true,
             ],
             'out_request_no' => '',
             'ext_info' => '{"exinfo1":"1234","exinfo2":"3456"}',

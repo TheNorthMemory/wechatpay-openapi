@@ -82,6 +82,28 @@ post:
             type: integer
             description: 多次优惠索引
             example: 0
+          store_id:
+            type: string
+            description: 核销门店ID
+          associated_pay_score_order_info:
+            type: object
+            description: 关联微信支付分订单信息
+            properties:
+              order_id:
+                type: string
+                description: 微信支付服务订单号
+              out_order_no:
+                type: string
+                description: 商户服务订单号
+              mchid:
+                type: string
+                description: 商户号
+              sub_mchid:
+                type: string
+                description: 子商户号
+          saved_amount:
+            type: integer
+            description: 优惠金额
   responses:
     '200':
       schema:

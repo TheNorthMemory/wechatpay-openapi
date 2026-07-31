@@ -26,6 +26,7 @@ interface _plan_id_
                 'daily_limit' => 1,
                 'recommend_word' => '天天有惊喜',
             ],
+            'out_request_no' => '',
         ],
     ]): ResponseInterface;
 
@@ -45,6 +46,7 @@ interface _plan_id_
                 'daily_limit' => 1,
                 'recommend_word' => '天天有惊喜',
             ],
+            'out_request_no' => '',
         ],
     ]): PromiseInterface;
 }

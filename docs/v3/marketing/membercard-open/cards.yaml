@@ -1,12 +1,12 @@
 post:
-  x-last-updated-at: 2021.01.07
+  x-last-updated-at: 2024.09.20
   x-role:
     - 直连商户
     - 服务商
   tags:
     - 会员卡∙基础功能
   summary: 创建会员卡模板API
-  description: 通过此接口可以创建一张会员卡模板，创建成功将获得会员卡模板card_id [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_1.shtml)
+  description: 通过此接口可以创建一张会员卡模板，创建成功将获得会员卡模板card_id
   parameters:
     - name: _
       in: body
@@ -94,6 +94,10 @@ post:
                 type: integer
                 description: 生效后N天内有效
                 example: 200
+              wait_days_after_receive:
+                type: integer
+                description: 领取后N天开始生效
+                example: 1
           code_mode:
             $ref: '../../../definitions/Enumerations.yaml#MemberCardCodeMode'
           need_display_level:
@@ -178,19 +182,23 @@ post:
                 type: string
                 description: 跳转小程序path
                 example: pages/statement/statement
+          need_dynamic_code:
+            type: boolean
+            description: 是否启用动态码
+            example: false
   responses:
     200:
       schema:
         $ref: '../../../definitions/MemberCard.yaml#Record'
 get:
-  x-last-updated-at: 2023.11.28
+  x-last-updated-at: 2024.09.20
   x-role:
     - 直连商户
     - 服务商
   tags:
     - 会员卡∙基础功能
   summary: 查询会员卡模板列表API
-  description: 通过此接口可查询指定某品牌的所有会员卡模板列表 [官方文档](https://pay.weixin.qq.com/docs/merchant/apis/membership-card/member-card-base/list-member-card.html) [官方文档](https://pay.weixin.qq.com/docs/partner/apis/membership-card/member-card-base/list-member-card.html) [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter3_3.shtml)
+  description: 通过此接口可查询指定某品牌的所有会员卡模板列表
   parameters:
     - name: brand_id
       in: query

@@ -323,6 +323,9 @@ post:
                               format: rfc3339
                               description: 结束时间
                               example: '2025-08-31T23:59:59+08:00'
+                      available_seconds:
+                        type: integer
+                        description: 领取后N秒内有效
                   normal_coupon:
                     type: object
                     description: 满减券使用规则

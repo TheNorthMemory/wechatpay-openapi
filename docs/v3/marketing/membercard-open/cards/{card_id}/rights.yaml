@@ -1,12 +1,12 @@
 patch:
-  x-last-updated-at: 2020.10.22
+  x-last-updated-at: 2024.11.18
   x-role:
     - 直连商户
     - 服务商
   tags:
     - 会员卡∙权益设置
   summary: 设置会员卡模板权益项API
-  description: 通过此接口商家可设置是否在用户的会员卡详情页展示积分、优惠、发票等权益及服务模块 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/marketing/membercard_open/chapter5_1.shtml)
+  description: 通过此接口商家可设置是否在用户的会员卡详情页展示积分、优惠、发票等权益及服务模块
   parameters:
     - name: card_id
       in: path
@@ -94,5 +94,67 @@ patch:
                 type: string
                 description: 会员专享价跳转path
                 example: pages/favor/favor
+              member_price_title:
+                type: string
+                description: 会员专享价标题
+                example: MEMBER_PRICE
+                enum:
+                  - MEMBER_PRICE
+                  - MEMBER_ACTIVITY
+              favor_module_title:
+                type: string
+                description: 会员优惠栏目名称
+                example: FAVOR
+                enum:
+                  - FAVOR
+                  - VIP
+          show_fapiao:
+            type: boolean
+            description: 是否展示会员发票
+            example: false
+          fapiao:
+            type: object
+            description: 会员发票
+            properties:
+              fapiao_jump_word:
+                type: string
+                description: 发票跳转文案
+                example: 查看我的发票
+              fapiao_jump_appid:
+                type: string
+                description: 发票跳转AppID
+                example: wxea9c30a90fs8d3fe
+              fapiao_jump_path:
+                type: string
+                description: 发票跳转path
+                example: pages/fapiao/fapiao
+          show_guide:
+            type: boolean
+            description: 是否展示会员专属咨询
+            example: false
+          guide:
+            type: object
+            description: 会员专属咨询信息
+            properties:
+              staff_name:
+                type: string
+                description: 联系人名字
+                example: 酒店管家-何小明
+              head_image_url:
+                type: string
+                description: 联系人头像
+                example: https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/0
+              contact_information_name:
+                type: string
+                description: 联系方式
+                example: 微信号
+              contact_information_value:
+                type: string
+                description: 联系信息值
+                example: weixin123
+              phone_number:
+                type: string
+                description: 联系电话
+                example: 0755-12345677
   responses:
     204: {}

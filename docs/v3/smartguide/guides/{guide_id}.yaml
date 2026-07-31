@@ -1,6 +1,8 @@
 patch:
-  x-last-updated-at: 2020.07.10
-  x-role: [服务商, 直连商户]
+  x-last-updated-at: 2025.01.09
+  x-role:
+    - 服务商
+    - 直连商户
   tags:
     - 经营工具∙支付即服务
   summary: 服务人员信息更新API
@@ -17,7 +19,6 @@ patch:
       in: body
       schema:
         type: object
-        x-is-sensitive: [name, mobile]
         properties:
           sub_mchid:
             type: string
@@ -39,5 +40,9 @@ patch:
             type: string
             format: url
             description: 头像URL
+          group_qrcode:
+            type: string
+            description: 群二维码URL
+            example: https://work.weixin.qq.com/xxxxxxx
   responses:
     204: {}

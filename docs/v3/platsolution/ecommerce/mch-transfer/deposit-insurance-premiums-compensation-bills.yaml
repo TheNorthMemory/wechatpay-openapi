@@ -48,11 +48,18 @@ post:
                 description: 赔付单信息
                 required:
                   - transaction_id
+                  - type
                 properties:
                   transaction_id:
                     type: string
                     description: 交易订单号
                     example: '1217752501201407033233368018'
+                  type:
+                    type: string
+                    description: 赔付单类型
+                    enum:
+                      - WXPAY
+                      - WXVALUE
           out_bill_no:
             type: string
             description: 商户单号

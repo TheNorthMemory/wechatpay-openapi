@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2024.11.19
+  x-last-updated-at: 2026.04.24
   x-role:
     - 电商平台
   tags:
@@ -107,6 +107,12 @@ post:
                             type: string
                             description: 币种
                             example: CNY
+          receive_type_template_id:
+            type: integer
+            description: 收款类型模板ID
+            enum:
+              - 1
+              - 2
   responses:
     '200':
       schema:

@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2025.01.21
+  x-last-updated-at: 2025.03.21
   x-role:
     - 服务商
   tag:
@@ -53,6 +53,14 @@ post:
                     enum:
                       - WXPAY
                       - WXVALUE
+              user_info:
+                type: object
+                description: 转账接收方用户
+                properties:
+                  sp_openid:
+                    type: string
+                    description: 转账接收方用户 openid
+                    example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
           out_bill_no:
             type: string
             description: 商户单号

@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2025.01.21
+  x-last-updated-at: 2025.03.21
   x-role:
     - 服务商
   tag:
@@ -51,6 +51,10 @@ post:
                 description: 转账接收方商户信息
                 properties:
                   mch_id:
+                    type: string
+                    description: 商户号
+                    example: '1900001108'
+                  mchid:
                     type: string
                     description: 商户号
                     example: '1900001108'

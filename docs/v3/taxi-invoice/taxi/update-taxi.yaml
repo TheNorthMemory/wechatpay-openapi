@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2023.01.13
+  x-last-updated-at: 2024.11.18
   x-role:
     - 服务商
   tags:
@@ -46,6 +46,12 @@ post:
             type: string
             description: 开票标记
             example: INVOICE
+          taxi_state:
+            type: string
+            description: 出租车状态
+            enum:
+              - IN_OPERATION
+              - OUT_OPERATION
   responses:
     '200':
       schema:

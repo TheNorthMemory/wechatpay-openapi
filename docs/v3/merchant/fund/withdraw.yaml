@@ -1,10 +1,11 @@
 post:
-  x-last-updated-at: 2020.09.28
-  x-role: [电商平台]
+  x-last-updated-at: 2024.12.19
+  x-role:
+    - 电商平台
   tags:
     - 收付通∙提现
   summary: 电商平台提现API
-  description: 电商平台通过该接口可将其平台的收入进行提现 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/ecommerce/fund/chapter3_5.shtml)
+  description: 收付通平台通过该接口可将其平台的收入进行预约提现。该预约提现申请提交后，系统将在次日发起提现，预计当日到账。具体到账时间以实际银行处理为准。
   parameters:
     - name: _
       in: body
@@ -34,8 +35,11 @@ post:
             example: xx平台提现
           account_type:
             $ref: '../../../definitions/Enumerations.yaml#BillAccountType'
+          notify_url:
+            type: string
+            description: 提现结果通知地址
   responses:
-    200:
+    '200':
       schema:
         type: object
         required:

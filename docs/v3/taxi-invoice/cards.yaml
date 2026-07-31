@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2023.01.13
+  x-last-updated-at: 2024.11.18
   x-role:
     - 服务商
   tags:
@@ -255,6 +255,10 @@ post:
                 type: string
                 description: 备注信息
                 example: 备注
+          token:
+            type: string
+            description: 获取乘客行程单详情的凭证
+            example: ESvqG19gjw0qiiy1eeRA4VusLrOmIYQOMJ8rXX2V
   responses:
     '200':
       schema:

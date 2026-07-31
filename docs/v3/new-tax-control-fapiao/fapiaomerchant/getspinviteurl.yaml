@@ -36,6 +36,7 @@ get:
         enum:
           - BASE_ABILITY
           - REAL_ESTATE_ABILITY
+          - PASSENGER_TRANSPORT_ABILITY
           - REFINED_OIL_ABILITY
     - name: invite_channel
       type: string

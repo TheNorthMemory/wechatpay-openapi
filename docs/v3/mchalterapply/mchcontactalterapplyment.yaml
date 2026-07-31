@@ -31,6 +31,14 @@ post:
           contact_info:
             type: object
             description: 超级管理员信息
+            required:
+              - contact_name
+              - contact_id_doc_type
+              - contact_id_card_number
+              - contact_id_doc_copy
+              - contact_id_doc_period_begin
+              - contact_id_doc_period_end
+              - mobile_phone
             properties:
               contact_name:
                 type: string
@@ -63,12 +71,14 @@ post:
                 type: string
                 format: MediaId
                 description: 超级管理员证件反面照片
-              contact_period_begin:
+              contact_id_doc_period_begin:
                 type: string
                 description: 超级管理员证件有效期开始时间
-              contact_period_end:
+                example: 2019-06-06
+              contact_id_doc_period_end:
                 type: string
                 description: 超级管理员证件有效期结束时间
+                example: 2026-06-06
               business_authorization_letter:
                 type: string
                 format: MediaId

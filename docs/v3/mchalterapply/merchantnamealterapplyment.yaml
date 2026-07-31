@@ -14,13 +14,13 @@ post:
       schema:
         type: object
         required:
-          - merchant_code
+          - sub_mchid
           - out_request_no
           - merchant_shortname
         properties:
-          merchant_code:
+          sub_mchid:
             type: string
-            description: 商户号
+            description: 二级商户号
             example: '2492185251'
           out_request_no:
             type: string
@@ -29,7 +29,7 @@ post:
           merchant_shortname:
             type: string
             description: 商户简称
-            example: example_merchant_shortname
+            example: 新疆大枣专卖店
   responses:
     '200':
       schema:

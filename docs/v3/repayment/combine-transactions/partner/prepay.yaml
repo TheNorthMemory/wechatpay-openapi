@@ -159,6 +159,50 @@ post:
                 type: string
                 description: 用户标识
                 example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+          combine_payer_info:
+            type: object
+            description: 支付者信息
+            properties:
+              identity:
+                type: object
+                description: 实名支付
+                required:
+                  - type
+                  - number
+                  - name
+                properties:
+                  type:
+                    type: string
+                    description: 类型
+                    enum:
+                      - IDCARD #身份证
+                      - HONGKONG_MACAO #港澳回乡证
+                      - HONGKONG_MACAO_RESIDENT #港澳居住证
+                      - TAIWAN_RESIDENT #台湾居住证
+                      - FOREIGN_RESIDENT #外国人永居证
+                      - OVERSEA_PASSPORT #护照
+                      - TAIWAN_COMPATRIOT_PERMIT #台胞证
+                  number:
+                    type: string
+                    format: base64
+                    description: 加密后的证件号
+                  name:
+                    type: string
+                    format: base64
+                    description: 加密后的姓名
+          wechat_web_info:
+            type: object
+            description: 微信内网页调起支付场景信息
+            properties:
+              combine_appid:
+                type: string
+                description: 还款服务商APPID
+              openid:
+                type: string
+                description: 用户标识
+              webview_url:
+                type: string
+                description: 网页经营场景URL
   responses:
     '200':
       schema:

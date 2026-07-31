@@ -1,6 +1,8 @@
 post:
-  x-last-updated-at: 2020.09.15
-  x-role: [服务商, 直连商户]
+  x-last-updated-at: 2025.01.09
+  x-role:
+    - 服务商
+    - 直连商户
   tags:
     - 经营工具∙支付即服务
   summary: 服务人员注册API
@@ -12,8 +14,14 @@ post:
       required: true
       schema:
         type: object
-        required: [corpid, store_id, userid, name, mobile, qr_code, avatar]
-        x-is-sensitive: [name, mobile]
+        required:
+          - corpid
+          - store_id
+          - userid
+          - name
+          - mobile
+          - qr_code
+          - avatar
         properties:
           sub_mchid:
             type: string
@@ -43,11 +51,16 @@ post:
             type: string
             format: url
             description: 头像URL
+          group_qrcode:
+            type: string
+            description: 群二维码URL
+            example: https://work.weixin.qq.com/xxxxxxx
   responses:
     200:
       schema:
         type: object
-        required: [guide_id]
+        required:
+          - guide_id
         properties:
           guide_id:
             type: string
@@ -55,12 +68,13 @@ post:
             example: LLA3WJ6DSZUfiaZDS79FH5Wm5m4X69TBic
 get:
   x-last-updated-at: 2020.09.15
-  x-role: [服务商, 直连商户]
+  x-role:
+    - 服务商
+    - 直连商户
   tags:
     - 经营工具∙支付即服务
   summary: 服务人员查询API
   description: 用于服务商/商户开发者查询已注册的服务人员ID等信息。 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/wxpay/smartguide/chapter3_3.shtml)
-  x-is-sensitive: [mobile]
   parameters:
     - $ref: '../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
     - name: sub_mchid
@@ -99,7 +113,8 @@ get:
     200:
       schema:
         type: object
-        required: [guide_id]
+        required:
+          - guide_id
         properties:
           total_count:
             type: integer
@@ -118,7 +133,6 @@ get:
             items:
               type: object
               description: 服务人员信息
-              x-is-sensitive: [name, mobile]
               properties:
                 guide_id:
                   type: string

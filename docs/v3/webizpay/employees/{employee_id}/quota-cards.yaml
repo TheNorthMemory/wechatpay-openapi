@@ -60,6 +60,10 @@ post:
             type: string
             description: 卡片备注
             example: 2023年1月差旅报销
+          avail_mch_range_id:
+            type: string
+            description: 可用商户范围ID
+            example: range_12345678
   responses:
     200:
       schema:

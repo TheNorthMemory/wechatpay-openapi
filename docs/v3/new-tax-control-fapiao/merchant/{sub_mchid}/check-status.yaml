@@ -100,6 +100,7 @@ get:
                       example: BASE_ABILITY
                       enum:
                         - BASE_ABILITY
+                        - PASSENGER_TRANSPORT_ABILITY
                         - REAL_ESTATE_ABILITY
                     status:
                       type: string

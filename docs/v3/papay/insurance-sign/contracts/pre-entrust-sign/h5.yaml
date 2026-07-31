@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2024.11.12
+  x-last-updated-at: 2025.02.20
   x-role:
     - 普通商户
   tags:
@@ -87,6 +87,28 @@ post:
                       type: string
                       description: 货币类型
                       example: CNY
+                policy_coverage_detail:
+                  type: object
+                  description: 保障详情
+                  properties:
+                    policy_amount:
+                      type: string
+                      description: 保单额度
+                      example: '50000'
+                    policy_clauses:
+                      type: array
+                      description: 保险条款列表
+                      items:
+                        type: object
+                        properties:
+                          clause_name:
+                            type: string
+                            description: 条款内容
+                            example: example_clause_name
+                          clause_quota:
+                            type: string
+                            description: 条款额度
+                            example: example_clause_quota
           amount:
             type: object
             description: 扣费金额信息

@@ -1,0 +1,68 @@
+post:
+  x-last-updated-at: 2026.06.29
+  x-role:
+    - 普通服务商
+  tags:
+    - 停车缴费服务
+  summary: 同步非临停扩展支付
+  description: 对商户提供非临停扩展支付数据同步接口（仅落库，不参与临停停车单）。适用对象与普通服务商一致，支持普通商户、普通服务商、平台商户（电商模式），与既有停车提醒 API 相同。
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - out_trade_no
+          - fee_items
+          - pay_time
+        properties:
+          out_trade_no:
+            type: string
+            maxLength: 64
+            description: 商户支付订单号
+            example: "TRADE202407041530001"
+          fee_items:
+            type: array
+            minItems: 1
+            description: 费用明细列表
+            items:
+              type: object
+              required:
+                - fee_type
+                - amount
+              properties:
+                fee_type:
+                  type: string
+                  description: 费用类型
+                  enum:
+                    - EXT_PARKING_PAYMENT_FEE_TYPE_UNKNOWN
+                    - EXT_PARKING_PAYMENT_FEE_TYPE_MONTHLY
+                    - EXT_PARKING_PAYMENT_FEE_TYPE_QUARTERLY
+                    - EXT_PARKING_PAYMENT_FEE_TYPE_MEMBER
+                  example: "EXT_PARKING_PAYMENT_FEE_TYPE_MONTHLY"
+                amount:
+                  type: integer
+                  description: 金额（单位为分）
+                  example: 5000
+            example:
+              - fee_type: "EXT_PARKING_PAYMENT_FEE_TYPE_MONTHLY"
+                amount: 5000
+              - fee_type: "EXT_PARKING_PAYMENT_FEE_TYPE_MEMBER"
+                amount: 2000
+          pay_time:
+            type: integer
+            description: 支付时间（秒级时间戳）
+            example: 1719128975
+          wx_parking_lot_id:
+            type: string
+            maxLength: 64
+            description: 微信停车场ID
+            example: "21232735744117624001123604298240"
+          wx_trade_no:
+            type: string
+            maxLength: 64
+            description: 微信支付订单号
+            example: "4200001999202407041234567890"
+  responses:
+    204: {}

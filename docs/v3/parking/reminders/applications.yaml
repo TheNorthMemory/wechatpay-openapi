@@ -1,0 +1,461 @@
+get:
+  x-last-updated-at: 2026.06.29
+  x-role:
+    - 普通服务商
+  tags:
+    - 停车缴费服务
+  summary: 查询停车场进件申请单列表
+  description: 对商户提供查询停车场进件申请单列表接口
+  parameters:
+    - name: out_parking_lot_id
+      in: query
+      required: true
+      type: string
+      description: 商户停车场ID
+      example: lot_sz_tencent_001
+    - name: offset
+      in: query
+      type: integer
+      description: 偏移量
+      example: 0
+    - name: limit
+      in: query
+      type: integer
+      description: 条数
+      example: 10
+  responses:
+    '200':
+      schema:
+        type: object
+        properties:
+          application_list:
+            type: array
+            items:
+              type: object
+              properties:
+                parking_lot_audit_no:
+                  type: string
+                  maxLength: 64
+                  description: 停车场进件审核单号
+                  example: "PLA202604230001"
+                audit_status:
+                  type: string
+                  description: 审核状态
+                  enum:
+                    - AUDIT_STATUS_UNKNOWN
+                    - AUDIT_STATUS_PENDING
+                    - AUDIT_STATUS_WITHDRAWN
+                    - AUDIT_STATUS_APPROVED
+                    - AUDIT_STATUS_REJECTED
+                  example: "AUDIT_STATUS_UNKNOWN"
+                submit_time:
+                  type: integer
+                  description: 提交时间
+                  example: 1719128975
+                parking_lot:
+                  type: object
+                  properties:
+                    parking_lot_name:
+                      type: string
+                      maxLength: 128
+                      description: 停车场名称
+                      example: "腾讯大厦停车场"
+                    out_parking_lot_id:
+                      type: string
+                      maxLength: 64
+                      description: 商户停车场ID
+                      example: "lot_sz_tencent_001"
+                    parking_lot_address:
+                      type: string
+                      maxLength: 256
+                      description: 停车场地址
+                      example: "广东省深圳市南山区科技中一道10000号"
+                    longitude:
+                      type: string
+                      maxLength: 16
+                      description: 停车场经度
+                      example: "113.934528"
+                    latitude:
+                      type: string
+                      maxLength: 16
+                      description: 停车场纬度
+                      example: "22.540503"
+                    parking_lot_type:
+                      type: string
+                      description: 停车场类型
+                      enum:
+                        - PARKING_LOT_TYPE_UNKNOWN
+                        - PARKING_LOT_TYPE_BUSINESS_DISTRICT
+                        - PARKING_LOT_TYPE_OFFICE_BUILDING
+                        - PARKING_LOT_TYPE_TRANSPORTATION_HUB
+                        - PARKING_LOT_TYPE_RESIDENTIAL_AREA
+                        - PARKING_LOT_TYPE_PARK_AREA
+                        - PARKING_LOT_TYPE_OTHER_PUBLIC_FACILITY
+                      example: "PARKING_LOT_TYPE_UNKNOWN"
+                    phone_number:
+                      type: string
+                      maxLength: 20
+                      description: 客服联系电话
+                      example: "0755-86013388"
+                    parking_sign_url:
+                      type: string
+                      maxLength: 512
+                      description: 收费告示牌url
+                      example: "https://example.com/parking_sign.jpg"
+                    notification_text_list:
+                      type: array
+                      items:
+                        type: string
+                        maxLength: 128
+                      description: 停车场优惠文案
+                      example: ["example_notification_text_list"]
+                    payment_mini_prog_appid:
+                      type: string
+                      maxLength: 32
+                      description: 商家支付小程序appid
+                      example: "wx1234567890abcdef"
+                    payment_path:
+                      type: string
+                      maxLength: 256
+                      description: 商家支付路径
+                      example: "/pages/pay/index?park_uuid=xxx"
+                    parking_order_mini_prog_appid:
+                      type: string
+                      maxLength: 32
+                      description: 商家停车订单小程序appid
+                      example: "wx1234567890abcdef"
+                    parking_order_path:
+                      type: string
+                      maxLength: 256
+                      description: 商家停车订单路径
+                      example: "/pages/order/index"
+                    charging_rule:
+                      type: object
+                      properties:
+                        rule_type:
+                          type: string
+                          description: 收费规则类型
+                          enum:
+                            - CHARGING_RULE_UNKNOWN
+                            - CHARGING_RULE_FIXED_INTERVAL
+                            - CHARGING_RULE_SEGMENT
+                            - CHARGING_RULE_PER_ENTRY
+                          example: "CHARGING_RULE_UNKNOWN"
+                        fee_limit_type:
+                          type: string
+                          description: 收费金额限制类型
+                          enum:
+                            - FEE_LIMIT_UNKNOWN
+                            - FEE_LIMIT_AGGREGATE
+                            - FEE_LIMIT_SINGLE
+                          example: "FEE_LIMIT_UNKNOWN"
+                        daily_limit_type:
+                          type: string
+                          description: 计费周期类型
+                          enum:
+                            - DAILY_LIMIT_UNKNOWN
+                            - DAILY_LIMIT_ROLLING_24H
+                            - DAILY_LIMIT_CALENDAR_DAY
+                          example: "DAILY_LIMIT_UNKNOWN"
+                        time_rounding_type:
+                          type: string
+                          description: 不满一小时取整方式
+                          enum:
+                            - TIME_ROUND_UNKNOWN
+                            - TIME_ROUND_DOWN
+                            - TIME_ROUND_UP
+                          example: "TIME_ROUND_UNKNOWN"
+                        free_entry_duration:
+                          type: integer
+                          description: 入场免费时间
+                          example: 1
+                        free_exit_duration:
+                          type: integer
+                          description: 出场免费时间
+                          example: 1
+                        fixed_interval_rule:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              day_type:
+                                type: string
+                                description: 日期类型
+                                enum:
+                                  - DAY_TYPE_UNKNOWN
+                                  - DAY_TYPE_WEEKDAY
+                                  - DAY_TYPE_HOLIDAY
+                                  - DAY_TYPE_ALL_DAY
+                                example: "DAY_TYPE_UNKNOWN"
+                              start_time:
+                                type: string
+                                maxLength: 5
+                                description: 时段开始时间
+                                example: "08:00"
+                              end_time:
+                                type: string
+                                maxLength: 5
+                                description: 时段结束时间
+                                example: "22:00"
+                              vehicle_type:
+                                type: string
+                                description: 车辆类型
+                                enum:
+                                  - VEHICLE_TYPE_UNKNOWN
+                                  - VEHICLE_TYPE_SMALL
+                                  - VEHICLE_TYPE_LARGE
+                                  - VEHICLE_TYPE_EXTRA_LARGE
+                                  - VEHICLE_TYPE_ALL_TYPE
+                                example: "VEHICLE_TYPE_UNKNOWN"
+                              plate_type:
+                                type: string
+                                description: 车牌类型
+                                enum:
+                                  - PLATE_TYPE_UNKNOWN
+                                  - PLATE_TYPE_TEMPORARY
+                                  - PLATE_TYPE_MONTHLY
+                                  - PLATE_TYPE_FREE
+                                  - PLATE_TYPE_PREPAID
+                                  - PLATE_TYPE_OTHERS
+                                example: "PLATE_TYPE_UNKNOWN"
+                              first_duration:
+                                type: integer
+                                description: 首段收费时长
+                                example: 1
+                              first_amount:
+                                type: integer
+                                description: 首段收费金额
+                                example: 1
+                              interval_duration:
+                                type: integer
+                                description: 间隔收费时长
+                                example: 1
+                              interval_amount:
+                                type: integer
+                                description: 间隔收费金额
+                                example: 1
+                              interval_max_amount:
+                                type: integer
+                                description: 间隔时段收费封顶
+                                example: 1
+                              max_fee_per_day:
+                                type: integer
+                                description: 单日最大收款金额
+                                example: 1
+                              free_period_charging_mode:
+                                type: string
+                                description: 免费时段收取模式
+                                enum:
+                                  - FREE_PERIOD_CHARGING_UNKNOWN
+                                  - FREE_PERIOD_CHARGING_ONCE_PER_ENTRY
+                                  - FREE_PERIOD_CHARGING_ONCE_PER_24_HOURS
+                                  - FREE_PERIOD_CHARGING_ONCE_PER_CALENDAR_DAY
+                                  - FREE_PERIOD_CHARGING_CUMULATIVE_QUOTA_CALCULATION
+                                example: "FREE_PERIOD_CHARGING_UNKNOWN"
+                              free_period_calculation_mode:
+                                type: string
+                                description: 免费时段计算方式
+                                enum:
+                                  - FREE_PERIOD_CAL_UNKNOWN
+                                  - FREE_PERIOD_CAL_CONCURRENT_START
+                                  - FREE_PERIOD_CAL_SEQUENTIAL_START
+                                example: "FREE_PERIOD_CAL_UNKNOWN"
+                              is_green_vehicle_free_parking:
+                                type: boolean
+                                description: 新能源是否免停
+                                example: false
+                              first_duration_mode:
+                                type: string
+                                description: 首段收费模式
+                                enum:
+                                  - FIRST_DURATION_MODE_UNKNOWN
+                                  - FIRST_DURATION_MODE_ONLY_FIRST_DURATION
+                                  - FIRST_DURATION_MODE_EVERY_FIRST_DURATION
+                                example: "FIRST_DURATION_MODE_UNKNOWN"
+                        duration_segment_rule:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              day_type:
+                                type: string
+                                description: 日期类型
+                                enum:
+                                  - DAY_TYPE_UNKNOWN
+                                  - DAY_TYPE_WEEKDAY
+                                  - DAY_TYPE_HOLIDAY
+                                  - DAY_TYPE_ALL_DAY
+                                example: "DAY_TYPE_UNKNOWN"
+                              start_time:
+                                type: string
+                                maxLength: 5
+                                description: 时段开始时间
+                                example: "08:00"
+                              end_time:
+                                type: string
+                                maxLength: 5
+                                description: 时段结束时间
+                                example: "22:00"
+                              vehicle_type:
+                                type: string
+                                description: 车辆类型
+                                enum:
+                                  - VEHICLE_TYPE_UNKNOWN
+                                  - VEHICLE_TYPE_SMALL
+                                  - VEHICLE_TYPE_LARGE
+                                  - VEHICLE_TYPE_EXTRA_LARGE
+                                  - VEHICLE_TYPE_ALL_TYPE
+                                example: "VEHICLE_TYPE_UNKNOWN"
+                              plate_type:
+                                type: string
+                                description: 车牌类型
+                                enum:
+                                  - PLATE_TYPE_UNKNOWN
+                                  - PLATE_TYPE_TEMPORARY
+                                  - PLATE_TYPE_MONTHLY
+                                  - PLATE_TYPE_FREE
+                                  - PLATE_TYPE_PREPAID
+                                  - PLATE_TYPE_OTHERS
+                                example: "PLATE_TYPE_UNKNOWN"
+                              charge_mode:
+                                type: string
+                                description: 收费模式
+                                enum:
+                                  - UNKNOWN
+                                  - INTERVAL
+                                  - ONE_TIME
+                                example: "UNKNOWN"
+                              duration_from:
+                                type: integer
+                                description: 停车时长起始
+                                example: 1
+                              duration_to:
+                                type: integer
+                                description: 停车时长结束
+                                example: 1
+                              fixed_amount:
+                                type: integer
+                                description: 固定收费金额
+                                example: 1
+                              interval_min:
+                                type: integer
+                                description: 间隔时段
+                                example: 1
+                              interval_amount:
+                                type: integer
+                                description: 间隔收费金额
+                                example: 1
+                              interval_max_amount:
+                                type: integer
+                                description: 间隔时段收费封顶
+                                example: 1
+                              max_fee_per_day:
+                                type: integer
+                                description: 单日最大收款金额
+                                example: 1
+                        pre_entry_rule:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              day_type:
+                                type: string
+                                description: 日期类型
+                                enum:
+                                  - DAY_TYPE_UNKNOWN
+                                  - DAY_TYPE_WEEKDAY
+                                  - DAY_TYPE_HOLIDAY
+                                  - DAY_TYPE_ALL_DAY
+                                example: "DAY_TYPE_UNKNOWN"
+                              start_time:
+                                type: string
+                                maxLength: 5
+                                description: 时段开始时间
+                                example: "08:00"
+                              end_time:
+                                type: string
+                                maxLength: 5
+                                description: 时段结束时间
+                                example: "22:00"
+                              vehicle_type:
+                                type: string
+                                description: 车辆类型
+                                enum:
+                                  - VEHICLE_TYPE_UNKNOWN
+                                  - VEHICLE_TYPE_SMALL
+                                  - VEHICLE_TYPE_LARGE
+                                  - VEHICLE_TYPE_EXTRA_LARGE
+                                  - VEHICLE_TYPE_ALL_TYPE
+                                example: "VEHICLE_TYPE_UNKNOWN"
+                              plate_type:
+                                type: string
+                                description: 车牌类型
+                                enum:
+                                  - PLATE_TYPE_UNKNOWN
+                                  - PLATE_TYPE_TEMPORARY
+                                  - PLATE_TYPE_MONTHLY
+                                  - PLATE_TYPE_FREE
+                                  - PLATE_TYPE_PREPAID
+                                  - PLATE_TYPE_OTHERS
+                                example: "PLATE_TYPE_UNKNOWN"
+                              amount:
+                                type: integer
+                                description: 收费金额
+                                example: 1
+                              max_fee_per_day:
+                                type: integer
+                                description: 单日最大收款金额
+                                example: 1
+                        holiday_mode:
+                          type: string
+                          description: 节假日模式
+                          enum:
+                            - HOLIDAY_MODE_UNKNOWN
+                            - HOLIDAY_MODE_LEGAL_MODY
+                            - HOLIDAY_MODE_CALENDAR_MODY
+                            - HOLIDAY_MODE_FINANCIAL_MODY
+                          example: "HOLIDAY_MODE_UNKNOWN"
+                        aggregate_limit_mode:
+                          type: string
+                          description: 累计限额模式
+                          enum:
+                            - AGGREGATE_LIMIT_MODE_UNKNOWN
+                            - AGGREGATE_LIMIT_MODE_NORMAL
+                            - AGGREGATE_LIMIT_MODE_MIN
+                          example: "AGGREGATE_LIMIT_MODE_UNKNOWN"
+                        first_charge_time_mode:
+                          type: string
+                          description: 首次计费时间模式
+                          enum:
+                            - FIRST_CHARGE_TIME_MODE_UNKNOWN
+                            - FIRST_CHARGE_TIME_MODE_ENTER
+                            - FIRST_CHARGE_TIME_MODE_AFTER_FREE
+                          example: "FIRST_CHARGE_TIME_MODE_UNKNOWN"
+                audit_comment:
+                  type: object
+                  properties:
+                    fields:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          field:
+                            type: string
+                            maxLength: 128
+                            description: 字段名
+                            example: "parking_lot_name"
+                          comment:
+                            type: string
+                            maxLength: 512
+                            description: 审核意见
+                            example: "停车场名称不符合规范"
+                    recommendation:
+                      type: string
+                      maxLength: 512
+                      description: 改进建议
+                      example: "请补充完整收费告示牌图片"
+          wx_parking_lot_id:
+            type: string
+            maxLength: 64
+            description: 微信停车场ID
+            example: "21232735744117624001123604298240"

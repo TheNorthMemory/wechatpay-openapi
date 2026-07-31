@@ -1,0 +1,30 @@
+post:
+  x-last-updated-at: 2026.06.29
+  x-role:
+    - 普通服务商
+  tags:
+    - 停车缴费服务
+  summary: 撤回停车场进件申请
+  description: 对商户提供撤回停车场进件申请接口
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - parking_lot_audit_no
+          - out_parking_lot_id
+        properties:
+          parking_lot_audit_no:
+            type: string
+            maxLength: 64
+            description: 停车场进件审核单号
+            example: "PLA202604230001"
+          out_parking_lot_id:
+            type: string
+            maxLength: 64
+            description: 商户停车场ID
+            example: "lot_sz_tencent_001"
+  responses:
+    204: {}

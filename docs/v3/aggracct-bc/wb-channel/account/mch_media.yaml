@@ -1,0 +1,69 @@
+get:
+  x-last-updated-at: 2026.07.14
+  x-role:
+    - 直连商户
+  tags:
+    - 渠道服务
+  summary: 查询商户影像件资料
+  description: 查询商户影像件资料 接口限频：接口维度100次/分钟
+  parameters:
+    - name: mchid
+      type: string
+      in: query
+      description: 微信支付商户号
+      example: mchid_example
+    - name: platform_trx_id
+      type: string
+      in: query
+      description: 微信支付业务申请单号
+      example: platform_trx_id_example
+    - name: business_scene
+      required: true
+      in: query
+      type: string
+      description: 业务场景
+      example: SJT_MICRO_PLUS_OPEN_ACCOUNT
+      enum:
+        - SJT_MICRO_PLUS_OPEN_ACCOUNT
+        - SJT_MICRO_PLUS_UPDATE_INFO
+        - GET_BY_MEDIA_ID
+    - name: mch_media_type
+      in: query
+      type: string
+      description: 影像件类型
+      example: ID_CARD_FRONT
+      enum:
+        - ID_CARD_FRONT
+        - ID_CARD_BACK
+        - STORE_FRONT
+        - STORE_INTERIOR
+    - name: media_id
+      in: query
+      type: string
+      description: 影像件资料ID
+      example: media_id_example
+  responses:
+    '200':
+      schema:
+        type: object
+        properties:
+          media_content:
+            type: string
+            description: 文件内容
+          media_type:
+            type: string
+            description: 文件类型
+            enum:
+              - jpg
+              - png
+              - bmp
+              - jpeg
+          media_sm3:
+            type: string
+            description: 文件摘要
+          key:
+            type: string
+            description: sm4密钥
+          media_id:
+            type: string
+            description: 影像件资料ID

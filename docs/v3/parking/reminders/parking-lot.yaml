@@ -1,0 +1,82 @@
+get:
+  x-last-updated-at: 2026.06.29
+  x-role:
+    - 普通服务商
+  tags:
+    - 停车缴费服务
+  summary: 查询停车场信息
+  description: 对商户提供查询停车场信息接口，返回停车场基础信息、启用状态及未启用/下线原因。适用对象与普通服务商一致，支持普通商户、普通服务商、平台商户（电商模式），与既有停车提醒 API 相同。
+  parameters:
+    - name: out_parking_lot_id
+      in: query
+      description: 商户停车场ID
+      required: false
+      type: string
+      maxLength: 64
+      example: "lot_sz_tencent_001"
+    - name: wx_parking_lot_id
+      in: query
+      description: 微信停车场ID
+      required: false
+      type: string
+      maxLength: 64
+      example: "21232735744117624001123604298240"
+  responses:
+    200:
+      schema:
+        type: object
+        properties:
+          wx_parking_lot_id:
+            type: string
+            maxLength: 64
+            description: 微信停车场ID
+            example: "21232735744117624001123604298240"
+          out_parking_lot_id:
+            type: string
+            maxLength: 64
+            description: 商户停车场ID
+            example: "lot_sz_tencent_001"
+          parking_lot_name:
+            type: string
+            maxLength: 128
+            description: 停车场名称
+            example: "腾讯大厦停车场"
+          parking_lot_address:
+            type: string
+            maxLength: 256
+            description: 停车场地址
+            example: "广东省深圳市南山区科技中一道10000号"
+          payment_mini_prog_appid:
+            type: string
+            maxLength: 32
+            description: 支付小程序appid
+            example: "wx1234567890abcdef"
+          payment_mini_prog_path:
+            type: string
+            maxLength: 256
+            description: 支付小程序path
+            example: "/pages/pay/index"
+          parking_order_mini_prog_appid:
+            type: string
+            maxLength: 32
+            description: 停车订单小程序appid
+            example: "wx1234567890abcdef"
+          parking_order_mini_prog_path:
+            type: string
+            maxLength: 256
+            description: 停车订单小程序path
+            example: "/pages/order/index"
+          enabled_state:
+            type: string
+            description: 启用状态，停车场启用状态
+            enum:
+              - ENABLED_STATE_UNKNOWN
+              - ENABLED_STATE_NOT_ENABLED
+              - ENABLED_STATE_ENABLED
+              - ENABLED_STATE_OFFLINE
+            example: "ENABLED_STATE_UNKNOWN"
+          reason:
+            type: string
+            maxLength: 256
+            description: 原因
+            example: "进场时延过高"

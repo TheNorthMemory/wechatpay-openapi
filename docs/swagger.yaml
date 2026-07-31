@@ -7,7 +7,7 @@ info:
     整理自官方文档中心[普通商户](https://pay.weixin.qq.com/doc/v3/merchant/4012062524) [合作伙伴](https://pay.weixin.qq.com/doc/v3/partner/4012069852) [全球](https://pay.weixin.qq.com/doc/global/v3/zh)
     本[项目/工具地址](https://github.com/TheNorthMemory/wechatpay-openapi)
     **访问第一次加载比较慢，请耐心等待大约1-2分钟不等(小文件下载比较多)。**
-  version: 1.1.19
+  version: 1.1.20
 schemes:
   - https
 consumes:
@@ -277,6 +277,8 @@ paths:
     $ref: ./v2/papay/entrustweb.yaml
   /papay/h5entrustweb:
     $ref: ./v2/papay/h5entrustweb.yaml
+  /papay/partner/deletecontract:
+    $ref: ./v2/papay/partner/deletecontract.yaml
   /papay/partner/entrustweb:
     $ref: ./v2/papay/partner/entrustweb.yaml
   /papay/partner/h5entrustweb:
@@ -463,6 +465,8 @@ paths:
     $ref: ./v3/aggracct-bc/wb-channel/account/balance.yaml
   /v3/aggracct-bc/wb-channel/account/mch_archives:
     $ref: ./v3/aggracct-bc/wb-channel/account/mch_archives.yaml
+  /v3/aggracct-bc/wb-channel/account/mch_media:
+    $ref: ./v3/aggracct-bc/wb-channel/account/mch_media.yaml
   /v3/aggracct-bc/wb-channel/bank-channel-account/rename:
     $ref: ./v3/aggracct-bc/wb-channel/bank-channel-account/rename.yaml
   /v3/aggracct-bc/wb-channel/bank-channel-account/rename/{application_id}:
@@ -1567,6 +1571,8 @@ paths:
     $ref: ./v3/new-tax-control-fapiao/fapiao-applications.yaml
   /v3/new-tax-control-fapiao/fapiao-applications/issue-general:
     $ref: ./v3/new-tax-control-fapiao/fapiao-applications/issue-general.yaml
+  /v3/new-tax-control-fapiao/fapiao-applications/issue-passenger-transport:
+    $ref: ./v3/new-tax-control-fapiao/fapiao-applications/issue-passenger-transport.yaml
   /v3/new-tax-control-fapiao/fapiao-applications/issue-refined-oil:
     $ref: ./v3/new-tax-control-fapiao/fapiao-applications/issue-refined-oil.yaml
   /v3/new-tax-control-fapiao/fapiao-applications/real-estate-leasing:
@@ -1697,6 +1703,26 @@ paths:
     $ref: ./v3/papay/sign/partner/contracts/plan-id/{plan_id}/out-contract-code/{out_contract_code}.yaml
   /v3/papay/sign/partner/contracts/plan-id/{plan_id}/out-contract-code/{out_contract_code}/terminate:
     $ref: ./v3/papay/sign/partner/contracts/plan-id/{plan_id}/out-contract-code/{out_contract_code}/terminate.yaml
+  /v3/parking/reminders/application:
+    $ref: ./v3/parking/reminders/application.yaml
+  /v3/parking/reminders/application/query:
+    $ref: ./v3/parking/reminders/application/query.yaml
+  /v3/parking/reminders/application/withdraw:
+    $ref: ./v3/parking/reminders/application/withdraw.yaml
+  /v3/parking/reminders/applications:
+    $ref: ./v3/parking/reminders/applications.yaml
+  /v3/parking/reminders/entry:
+    $ref: ./v3/parking/reminders/entry.yaml
+  /v3/parking/reminders/exit:
+    $ref: ./v3/parking/reminders/exit.yaml
+  /v3/parking/reminders/ext-payment:
+    $ref: ./v3/parking/reminders/ext-payment.yaml
+  /v3/parking/reminders/parking-fee:
+    $ref: ./v3/parking/reminders/parking-fee.yaml
+  /v3/parking/reminders/parking-lot:
+    $ref: ./v3/parking/reminders/parking-lot.yaml
+  /v3/parking/reminders/payment:
+    $ref: ./v3/parking/reminders/payment.yaml
   /v3/partner-papay/contracts/{contract_id}/fail-notify:
     $ref: ./v3/partner-papay/contracts/{contract_id}/fail-notify.yaml
   /v3/partner-papay/contracts/{contract_id}/notify:

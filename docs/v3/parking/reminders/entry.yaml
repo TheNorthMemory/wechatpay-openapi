@@ -1,0 +1,104 @@
+post:
+  x-last-updated-at: 2026.06.29
+  x-role:
+    - 普通服务商
+  tags:
+    - 停车缴费服务
+  summary: 同步车辆入场通知
+  description: 对商户提供同步车辆入场通知接口
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - out_serial_number
+          - parking_id
+          - plate_number
+          - enter_timestamp
+          - plate_color
+          - car_type
+          - vehicle_type
+        properties:
+          out_serial_number:
+            type: string
+            maxLength: 64
+            description: 商户停车单号
+            example: "PARK202407041530001"
+          parking_id:
+            type: string
+            maxLength: 64
+            description: 微信停车场ID
+            example: "WXPARK001"
+          plate_number:
+            type: string
+            maxLength: 16
+            description: 车牌号
+            example: "粤B12345"
+          enter_timestamp:
+            type: integer
+            description: 车辆入场时间
+            example: 1720078200
+          plate_color:
+            type: string
+            enum:
+              - PLATE_COLOR_UNKNOWN
+              - PLATE_COLOR_BLUE
+              - PLATE_COLOR_YELLOW
+              - PLATE_COLOR_BLACK
+              - PLATE_COLOR_WHITE
+              - PLATE_COLOR_GREEN
+              - PLATE_COLOR_YELLOW_GREEN
+              - PLATE_COLOR_AGRICULTURAL_YELLOW
+              - PLATE_COLOR_OTHER
+            description: 车牌颜色
+            example: "PLATE_COLOR_BLUE"
+          car_type:
+            type: string
+            enum:
+              - PLATE_TYPE_UNKNOWN
+              - PLATE_TYPE_TEMPORARY
+              - PLATE_TYPE_MONTHLY
+              - PLATE_TYPE_FREE
+              - PLATE_TYPE_PREPAID
+              - PLATE_TYPE_OTHERS
+            description: 车辆性质
+            example: "PLATE_TYPE_TEMPORARY"
+          vehicle_type:
+            type: string
+            enum:
+              - VEHICLE_TYPE_UNKNOWN
+              - VEHICLE_TYPE_SMALL
+              - VEHICLE_TYPE_LARGE
+              - VEHICLE_TYPE_EXTRA_LARGE
+              - VEHICLE_TYPE_ALL_TYPE
+            description: 车辆类型
+            example: "VEHICLE_TYPE_SMALL"
+          entrance_number:
+            type: string
+            maxLength: 128
+            description: 停车场入口编号
+            example: "A01"
+          entrance_name:
+            type: string
+            maxLength: 64
+            description: 停车场入口名称
+            example: "南门入口"
+          discount_template_id:
+            type: array
+            items:
+              type: integer
+            maxItems: 3
+            description: 优惠信息模板ID
+            example: [1001, 1002]
+  responses:
+    '200':
+      schema:
+        type: object
+        properties:
+          serial_number:
+            type: string
+            maxLength: 64
+            description: 微信停车单号
+            example: "WX202604230001"

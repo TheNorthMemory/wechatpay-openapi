@@ -1,0 +1,83 @@
+post:
+  x-last-updated-at: 2026.06.29
+  x-role:
+    - 普通服务商
+  tags:
+    - 停车缴费服务
+  summary: 查询停车费用
+  description: 对商户提供查询停车费用接口
+  parameters:
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - out_serial_number
+        properties:
+          out_serial_number:
+            type: string
+            maxLength: 64
+            description: 商户停车单号
+            example: "PARK202407041530001"
+          plate_number:
+            type: string
+            maxLength: 16
+            description: 车牌号
+            example: "粤B12345"
+          out_parking_id:
+            type: string
+            maxLength: 64
+            description: 商户停车场ID
+            example: "lot_sz_tencent_001"
+  responses:
+    200:
+      schema:
+        type: object
+        properties:
+          total_amount:
+            type: integer
+            description: 当前总费用
+            example: 1500
+          parking_timestamp:
+            type: integer
+            description: 已停时长
+            example: 3600
+          parking_state:
+            type: string
+            description: 停车状态
+            enum:
+              - PARKING_STATE_UNKNOWN
+              - PARKING_STATE_ENTERED
+              - PARKING_STATE_EXIT_GATE
+              - PARKING_STATE_EXITED
+              - PARKING_STATE_UNEXPECTED_CLOSE
+            example: "PARKING_STATE_ENTERED"
+          pay_state:
+            type: string
+            description: 支付状态
+            enum:
+              - PAY_STATUS_UNKNOWN
+              - PAY_STATUS_UNPAID
+              - PAY_STATUS_PAID
+            example: "PAY_STATUS_UNPAID"
+          allowed_exit_timestamp:
+            type: integer
+            description: 免费待出场时间
+            example: 600
+          next_raise_price:
+            type: integer
+            description: 下一次跳价价格
+            example: 200
+          next_raise_timestamp:
+            type: integer
+            description: 下一次跳价时间
+            example: 1720082400
+          payable_amount:
+            type: integer
+            description: 应付金额
+            example: 1500
+          paid_amount:
+            type: integer
+            description: 已付金额
+            example: 0

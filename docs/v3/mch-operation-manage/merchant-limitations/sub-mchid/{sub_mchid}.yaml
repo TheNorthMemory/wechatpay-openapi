@@ -1,5 +1,5 @@
 get:
-  x-last-updated-at: 2025.09.15
+  x-last-updated-at: 2025.09.26
   x-role:
     - 服务商
   tags:
@@ -73,6 +73,12 @@ get:
                     - SUBMIT_CDD_INFORMATION #填写尽调信息
                     - WAITING_FOR_PLATFORM_REVIEW #等待平台审核
                     - SUBMIT_UBO_INFORMATION #补充受益所有人信息
+                    - SIGN_ANTI_FRAUD_PLEDGE_AND_VERIFY_FACE #签署反诈承诺书并刷脸核实身份
+                    - CONTACT_APPROPRIATE_AUTHORITY_FOR_CONSULTATION #联系有权机关咨询
+                    - MODIFY_ABBREVIATION_INFORMATION #修改商户简称
+                    - CONFIRM_BUSINESS_TYPE #确认经营类型
+                    - SUBMIT_ONLINE_BUSINESS_SCENARIO_INFORMATION #提交线上经营场景信息
+                    - CONTACT_SERVICE_PROVIDER #联系服务商处理
                 recover_way_param:
                   type: string
                   description: 商户被该原因管控的解脱路径参数

@@ -120,6 +120,7 @@ post:
             enum:
               - AVAILABLE
               - UNSETTLED
+              - PREPAID
   responses:
     200:
       schema:

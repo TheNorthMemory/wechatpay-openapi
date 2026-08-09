@@ -147,6 +147,33 @@ post:
                   type: string
                   description: 分账明细单号
                   example: '36011111111111111111111'
+                abnormal_status:
+                  type: string
+                  description: 异常处理状态
+                  enum:
+                    - ABNORMAL_PENDING
+                    - ABNORMAL_FINISHED
+                    - ABNORMAL_CLOSED
+                funds_abnormal_closed_reason:
+                  type: string
+                  description: 异常处理关单原因
+                  enum:
+                    - CLOSED_REASON_TIMEOUT
+                    - CLOSED_REASON_RESTRICT_TRANSFER
+                funds_abnormal_redirect_id:
+                  type: string
+                  description: 微信支付在途异常资金付款单号
+                  example: '0100011742874700562078230000'
+                funds_abnormal_receivers:
+                  type: array
+                  description: 平台接收异常资金商户号或运营主体列表
+                  items:
+                    type: object
+                    properties:
+                      mchid:
+                        type: string
+                        description: 平台接收异常资金商户号
+                        example: '1900000001'
 get:
   x-last-updated-at: 2025.09.29
   x-role: [电商平台]
@@ -255,6 +282,33 @@ get:
             type: string
             description: 关单原因描述，当分账单状态status为CLOSED（处理失败，已关单）时，返回该字段。
             example: NO_AUTH
+          abnormal_status:
+            type: string
+            description: 异常处理状态
+            enum:
+              - ABNORMAL_PENDING
+              - ABNORMAL_FINISHED
+              - ABNORMAL_CLOSED
+          funds_abnormal_closed_reason:
+            type: string
+            description: 异常处理关单原因
+            enum:
+              - CLOSED_REASON_TIMEOUT
+              - CLOSED_REASON_RESTRICT_TRANSFER
+          funds_abnormal_redirect_id:
+            type: string
+            description: 微信支付在途异常资金付款单号
+            example: '0100011742874700562078230000'
+          funds_abnormal_receivers:
+            type: array
+            description: 平台接收异常资金商户号或运营主体列表
+            items:
+              type: object
+              properties:
+                mchid:
+                  type: string
+                  description: 平台接收异常资金商户号
+                  example: '1900000001'
           finish_amount:
             type: integer
             description: 分账完结的分账金额，单位为分， 仅当查询分账完结的执行结果时，存在本字段。

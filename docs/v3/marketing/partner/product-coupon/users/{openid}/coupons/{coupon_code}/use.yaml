@@ -165,6 +165,7 @@ post:
               - MERCHANT_CARD #名片优惠，通过名片优惠渠道发放
               - MEMBER #会员优惠，通过会员优惠渠道发放
               - SMALL_ACTIVITY #小活动，通过小活动渠道发放
+              - RECEIVE_COMPONENT #小程序领券组件
           confirm_request_no:
             type: string
             description: 确认请求单号

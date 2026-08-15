@@ -180,6 +180,18 @@ post:
             enum:
               - COVERAGE_TERM_TYPE_FIXED_DATE
               - COVERAGE_TERM_TYPE_LIFETIME
+          payee_mchid:
+            type: string
+            description: 收款方商户号
+            example: '1900000109'
+          payee_appid:
+            type: string
+            description: 收款方公众账号ID
+            example: wx7f3f0032b6e6f0cc
+          payee_openid:
+            type: string
+            description: 收款方用户标识
+            example: oYobu0MVnQfWpSMOYJz2AHPG_gQw
   responses:
     '200':
       schema:

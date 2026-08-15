@@ -22,6 +22,8 @@ interface Authorizations
             'plan_id' => '12535',
             'out_contract_code' => 'wxwtdk20200910100000',
             'insurance_name' => '微医保·百万医疗险',
+            'payee_mchid' => '1900000109',
+            'payee_appid' => 'wx7f3f0032b6e6f0cc',
         ],
     ]): ResponseInterface;
 
@@ -37,6 +39,8 @@ interface Authorizations
             'plan_id' => '12535',
             'out_contract_code' => 'wxwtdk20200910100000',
             'insurance_name' => '微医保·百万医疗险',
+            'payee_mchid' => '1900000109',
+            'payee_appid' => 'wx7f3f0032b6e6f0cc',
         ],
     ]): PromiseInterface;
 }

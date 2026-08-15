@@ -40,6 +40,14 @@ post:
             type: string
             description: 保险名称
             example: 微医保·百万医疗险
+          payee_mchid:
+            type: string
+            description: 收款方商户号
+            example: '1900000109'
+          payee_appid:
+            type: string
+            description: 收款方公众账号ID
+            example: wx7f3f0032b6e6f0cc
   responses:
     '200':
       schema:

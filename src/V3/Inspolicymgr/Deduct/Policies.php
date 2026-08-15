@@ -45,6 +45,9 @@ interface Policies
             'first_period_amount' => 8000,
             'subsequent_period_amount' => 5000,
             'coverage_term_type' => 'COVERAGE_TERM_TYPE_FIXED_DATE | COVERAGE_TERM_TYPE_LIFETIME',
+            'payee_mchid' => '1900000109',
+            'payee_appid' => 'wx7f3f0032b6e6f0cc',
+            'payee_openid' => 'oYobu0MVnQfWpSMOYJz2AHPG_gQw',
         ],
         'headers' => [
             'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',
@@ -86,6 +89,9 @@ interface Policies
             'first_period_amount' => 8000,
             'subsequent_period_amount' => 5000,
             'coverage_term_type' => 'COVERAGE_TERM_TYPE_FIXED_DATE | COVERAGE_TERM_TYPE_LIFETIME',
+            'payee_mchid' => '1900000109',
+            'payee_appid' => 'wx7f3f0032b6e6f0cc',
+            'payee_openid' => 'oYobu0MVnQfWpSMOYJz2AHPG_gQw',
         ],
         'headers' => [
             'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',

@@ -41,6 +41,7 @@ post:
                           - TAIWAN_RESIDENT
                           - FOREIGN_RESIDENT
                           - OVERSEA_PASSPORT
+                          - PHONE_NUMBER
                       number:
                         type: string
                         format: base64

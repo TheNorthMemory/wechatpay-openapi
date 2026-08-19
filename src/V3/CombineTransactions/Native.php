@@ -48,7 +48,7 @@ interface Native
                 'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
                 'sub_openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
                 'identity' => [
-                    'type' => 'IDCARD',
+                    'type' => 'IDCARD | HONGKONG_MACAO | HONGKONG_MACAO_RESIDENT | TAIWAN_RESIDENT',
                     'number' => '6B46824C852FA29AAC3DCE6BFD852E27',
                     'name' => '6B46824C852FA29AAC3DCE6BFD852E27',
                 ],
@@ -98,7 +98,7 @@ interface Native
                 'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
                 'sub_openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
                 'identity' => [
-                    'type' => 'IDCARD',
+                    'type' => 'IDCARD | HONGKONG_MACAO | HONGKONG_MACAO_RESIDENT | TAIWAN_RESIDENT',
                     'number' => '6B46824C852FA29AAC3DCE6BFD852E27',
                     'name' => '6B46824C852FA29AAC3DCE6BFD852E27',
                 ],

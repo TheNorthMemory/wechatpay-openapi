@@ -149,6 +149,12 @@ post:
                     description: 证件类型
                     enum:
                       - IDCARD
+                      - HONGKONG_MACAO
+                      - HONGKONG_MACAO_RESIDENT
+                      - TAIWAN_RESIDENT
+                      - FOREIGN_RESIDENT
+                      - OVERSEA_PASSPORT
+                      - PHONE_NUMBER
                   number:
                     type: string
                     format: base64

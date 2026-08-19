@@ -46,7 +46,7 @@ interface App
             ],],
             'combine_payer_info' => [
                 'identity' => [
-                    'type' => 'IDCARD',
+                    'type' => 'IDCARD | HONGKONG_MACAO | HONGKONG_MACAO_RESIDENT | TAIWAN_RESIDENT',
                     'number' => '6B46824C852FA29AAC3DCE6BFD852E27',
                     'name' => '6B46824C852FA29AAC3DCE6BFD852E27',
                 ],
@@ -117,7 +117,7 @@ interface App
             ],],
             'combine_payer_info' => [
                 'identity' => [
-                    'type' => 'IDCARD',
+                    'type' => 'IDCARD | HONGKONG_MACAO | HONGKONG_MACAO_RESIDENT | TAIWAN_RESIDENT',
                     'number' => '6B46824C852FA29AAC3DCE6BFD852E27',
                     'name' => '6B46824C852FA29AAC3DCE6BFD852E27',
                 ],

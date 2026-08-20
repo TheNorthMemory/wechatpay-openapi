@@ -13,6 +13,7 @@ namespace WeChatPay\OpenAPI\V3;
  * @property-read Ecommerce\Bill $bill
  * @property-read Ecommerce\Applyments $applyments
  * @property-read Ecommerce\Account $account
+ * @property-read Ecommerce\SubjectSubMerchants $subjectSubMerchants
  */
 interface Ecommerce
 {

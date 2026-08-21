@@ -24,6 +24,7 @@ get:
     - name: cert_number
       in: query
       type: string
+      format: base64
       required: true
       description: 证件号码
       example: Iuas%2BxWj7ma0t%

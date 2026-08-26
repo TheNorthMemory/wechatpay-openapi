@@ -3,6 +3,7 @@
 namespace WeChatPay\OpenAPI\V3\Global_;
 
 /**
+ * @property-read Merchant\Media $media
  * @property-read Merchant\H5 $h5
  */
 interface Merchant

@@ -21,6 +21,7 @@ interface Mch_archives
             'card_no' => 'example_card_no',
             'sgn_no' => 'example_sgn_no',
             'req_scene' => 'SJT_CONVENIENT_SETTLEMENT_SERVICE_MERCHANT',
+            'fetch_scope' => 'SUBJECT_AND_BENEFICIAL_OWNER',
         ],
         'headers' => [
             'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',
@@ -39,6 +40,7 @@ interface Mch_archives
             'card_no' => 'example_card_no',
             'sgn_no' => 'example_sgn_no',
             'req_scene' => 'SJT_CONVENIENT_SETTLEMENT_SERVICE_MERCHANT',
+            'fetch_scope' => 'SUBJECT_AND_BENEFICIAL_OWNER',
         ],
         'headers' => [
             'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',

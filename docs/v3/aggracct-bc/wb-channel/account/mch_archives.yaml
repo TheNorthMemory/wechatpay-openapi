@@ -41,6 +41,16 @@ get:
         - SJT_CONVENIENT_SETTLEMENT_SERVICE_MERCHANT
         - SJT_MICRO_MERCHANT
         - WX_SHOP_CONVENIENT_SETTLEMENT_SERVICE_MERCHANT
+    - name: fetch_scope
+      in: query
+      type: string
+      description: 拉取范围
+      example: SUBJECT_AND_BENEFICIAL_OWNER
+      enum:
+        - SUBJECT_AND_BENEFICIAL_OWNER
+        - SUBJECT
+        - BENEFICIAL_OWNER
+        - MERCHANT
   responses:
     '200':
       schema:
@@ -223,3 +233,13 @@ get:
             type: string
             description: 商户子账户协议号
             example: example_sgn_no
+          merchant_info:
+            type: object
+            description: 商户号信息
+            properties:
+              shop_state:
+                type: string
+                description: 店铺状态
+                enum:
+                  - OPERATING
+                  - CLOSED

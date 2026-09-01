@@ -7,7 +7,7 @@ info:
     整理自官方文档中心[普通商户](https://pay.weixin.qq.com/doc/v3/merchant/4012062524) [合作伙伴](https://pay.weixin.qq.com/doc/v3/partner/4012069852) [全球](https://pay.weixin.qq.com/doc/global/v3/zh)
     本[项目/工具地址](https://github.com/TheNorthMemory/wechatpay-openapi)
     **访问第一次加载比较慢，请耐心等待大约1-2分钟不等(小文件下载比较多)。**
-  version: 1.1.20
+  version: 1.1.21
 schemes:
   - https
 consumes:
@@ -801,6 +801,8 @@ paths:
     $ref: ./v3/ecommerce/refunds/{refund_id}/apply-abnormal-refund.yaml
   /v3/ecommerce/refunds/{refund_id}/return-advance:
     $ref: ./v3/ecommerce/refunds/{refund_id}/return-advance.yaml
+  /v3/ecommerce/subject-sub-merchants:
+    $ref: ./v3/ecommerce/subject-sub-merchants.yaml
   /v3/ecommerce/subsidies/cancel:
     $ref: ./v3/ecommerce/subsidies/cancel.yaml
   /v3/ecommerce/subsidies/create:
@@ -975,6 +977,8 @@ paths:
     $ref: ./v3/global/merchant/h5/permission/domain/applications/{applyment_id}.yaml
   /v3/global/merchant/h5/permission/{sub_mchid}:
     $ref: ./v3/global/merchant/h5/permission/{sub_mchid}.yaml
+  /v3/global/merchant/media/upload:
+    $ref: ./v3/global/merchant/media/upload.yaml
   /v3/global/merchants:
     $ref: ./v3/global/merchants.yaml
   /v3/global/merchants/{sub_mchid}:

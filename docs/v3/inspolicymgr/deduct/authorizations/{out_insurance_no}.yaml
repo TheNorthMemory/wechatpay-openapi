@@ -60,3 +60,12 @@ get:
             format: rfc3339
             description: 用户授权时间
             example: '2025-09-21T17:11:12+08:00'
+          feedback_reason:
+            type: string
+            description: 保单反馈原因
+            enum:
+              - FEEDBACK_REASON_UPLOADED
+              - FEEDBACK_REASON_NOT_COMPLETED_INSURED
+              - FEEDBACK_REASON_POLICY_HOLDER_CHANGED
+              - FEEDBACK_REASON_TEST_POLICY
+              - FEEDBACK_REASON_PENDING_INVESTIGATION

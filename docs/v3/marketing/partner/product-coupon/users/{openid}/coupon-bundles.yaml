@@ -59,6 +59,9 @@ post:
                 items:
                   type: string
                   example: MEMBER
+                  enum:
+                    - MEMBER
+                    - MEMBER_ACTIVITY
               member_tag_info:
                 type: object
                 required:
@@ -860,6 +863,7 @@ post:
                         example: MEMBER
                         enum:
                           - MEMBER
+                          - MEMBER_ACTIVITY
                     member_tag_info:
                       type: object
                       description: 会员标签信息

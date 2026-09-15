@@ -49,6 +49,7 @@ get:
                 - BRAND_PRODUCT_AUTHORITY_APPID_MANAGE
                 - BRAND_PRODUCT_AUTHORITY_FINDER_MANAGE
                 - BRAND_PRODUCT_AUTHORITY_CATEGORY_MANAGE
+                - BRAND_PRODUCT_AUTHORITY_MULTI_DISCOUNT
           update_time:
             type: string
             format: rfc3339

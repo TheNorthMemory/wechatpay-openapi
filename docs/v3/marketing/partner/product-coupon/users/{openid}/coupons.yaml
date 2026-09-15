@@ -64,6 +64,7 @@ post:
                   type: string
                   enum:
                     - MEMBER
+                    - MEMBER_ACTIVITY
               member_tag_info:
                 type: object
                 description: 会员标签信息

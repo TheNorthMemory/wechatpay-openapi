@@ -79,6 +79,7 @@ get:
                     - CONFIRM_BUSINESS_TYPE #确认经营类型
                     - SUBMIT_ONLINE_BUSINESS_SCENARIO_INFORMATION #提交线上经营场景信息
                     - CONTACT_SERVICE_PROVIDER #联系服务商处理
+                    - UPDATE_DEVICE_BUSINESS_ADDRESS #补充设备经营地址信息
                 recover_way_param:
                   type: string
                   description: 商户被该原因管控的解脱路径参数

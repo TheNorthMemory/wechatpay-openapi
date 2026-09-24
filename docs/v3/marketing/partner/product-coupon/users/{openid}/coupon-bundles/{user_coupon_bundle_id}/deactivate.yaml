@@ -132,6 +132,7 @@ post:
                     - MEMBER
                     - SMALL_ACTIVITY
                     - RECEIVE_COMPONENT
+                    - STICKER_GIFT
                 confirm_request_no:
                   type: string
                   description: 确认请求单号

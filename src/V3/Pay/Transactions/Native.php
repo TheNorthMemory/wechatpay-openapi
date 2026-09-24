@@ -56,6 +56,7 @@ interface Native
                     'type' => 'IDCARD | HONGKONG_MACAO | HONGKONG_MACAO_RESIDENT | TAIWAN_RESIDENT',
                     'number' => '6B46824C852FA29AAC3DCE6BFD852E27',
                     'name' => '6B46824C852FA29AAC3DCE6BFD852E27',
+                    'is_encrypted' => true,
                 ],
             ],
             'settle_info' => [
@@ -114,6 +115,7 @@ interface Native
                     'type' => 'IDCARD | HONGKONG_MACAO | HONGKONG_MACAO_RESIDENT | TAIWAN_RESIDENT',
                     'number' => '6B46824C852FA29AAC3DCE6BFD852E27',
                     'name' => '6B46824C852FA29AAC3DCE6BFD852E27',
+                    'is_encrypted' => true,
                 ],
             ],
             'settle_info' => [

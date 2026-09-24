@@ -52,6 +52,9 @@ post:
                         format: base64
                         description: 加密后的姓名
                         example: 6B46824C852FA29AAC3DCE6BFD852E27
+                      is_encrypted:
+                        type: boolean
+                        description: 身份信息是否加密
   responses:
     200:
       schema:

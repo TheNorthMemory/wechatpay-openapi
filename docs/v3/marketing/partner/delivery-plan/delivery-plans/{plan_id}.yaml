@@ -82,15 +82,13 @@ patch:
               plan_state:
                 type: string
                 description: 投放计划状态
-                example: PLAN_CREATED
+                example: CREATED
                 enum:
-                  - PLAN_CREATING #创建中
-                  - PLAN_CREATED #创建成功
-                  - PLAN_TERMINATING #终止中
-                  - PLAN_TERMINATED #已终止
-                  - PLAN_EXPIRED #已过期
-                  - PLAN_DELIVERING #投放中
-                  - PLAN_PAUSED #已暂停
+                  - CREATED #创建成功
+                  - TERMINATED #已终止
+                  - EXPIRED #已过期
+                  - DELIVERING #投放中
+                  - PAUSED #已暂停
               delivery_start_time:
                 type: string
                 format: rfc3339
@@ -105,10 +103,20 @@ patch:
                 type: string
                 description: 批次ID
                 example: '701246876221757924829194755312'
+              stock_bundle_id:
+                type: string
+                description: 投放批次组ID
+                example: '123456789'
               product_coupon_id:
                 type: string
                 description: 商品券ID
                 example: '701146876221757924829193824428'
+              usage_mode:
+                type: string
+                description: 使用模式
+                enum:
+                  - SINGLE
+                  - PROGRESSIVE_BUNDLE
               recommend_word:
                 type: string
                 description: 营销标签
@@ -129,3 +137,9 @@ patch:
                 type: integer
                 description: 单日限领
                 example: 100
+              reuse_coupon_config:
+                type: boolean
+                description: 是否复用商品券和批次信息
+              exclude_expired_coupon_from_limit:
+                type: boolean
+                description: 过期券不占用领取次数

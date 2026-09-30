@@ -31,7 +31,8 @@ interface DeliveryPlans
             'recommend_word' => '天天有惊喜',
             'reuse_coupon_config' => true,
             'usage_mode' => 'SINGLE | PROGRESSIVE_BUNDLE',
-            'stock_bundle_id' => '',
+            'stock_bundle_id' => '123456789',
+            'exclude_expired_coupon_from_limit' => true,
         ],
     ]): ResponseInterface;
 
@@ -55,7 +56,8 @@ interface DeliveryPlans
             'recommend_word' => '天天有惊喜',
             'reuse_coupon_config' => true,
             'usage_mode' => 'SINGLE | PROGRESSIVE_BUNDLE',
-            'stock_bundle_id' => '',
+            'stock_bundle_id' => '123456789',
+            'exclude_expired_coupon_from_limit' => true,
         ],
     ]): PromiseInterface;
 }

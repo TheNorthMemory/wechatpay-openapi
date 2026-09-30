@@ -19,7 +19,7 @@ interface DeliveryPlans
         'query' => [
             'page_size' => 5,
             'offset' => 10,
-            'plan_state' => 'PLAN_CREATED',
+            'plan_state' => 'CREATED',
             'audit_state' => '12000',
             'plan_id' => '12000',
         ],
@@ -35,7 +35,7 @@ interface DeliveryPlans
         'query' => [
             'page_size' => 5,
             'offset' => 10,
-            'plan_state' => 'PLAN_CREATED',
+            'plan_state' => 'CREATED',
             'audit_state' => '12000',
             'plan_id' => '12000',
         ],

@@ -63,6 +63,9 @@ interface Unifiedorder
             'user_type' => 'IDCARD',
             'user_creid' => '43102119910910512X',
             'user_truename' => '周星星',
+            'sub_appid' => 'wx8888888888888888',
+            'sub_mch_id' => '1900000109',
+            'sub_openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
         ],
     ]): ResponseInterface;
 
@@ -120,6 +123,9 @@ interface Unifiedorder
             'user_type' => 'IDCARD',
             'user_creid' => '43102119910910512X',
             'user_truename' => '周星星',
+            'sub_appid' => 'wx8888888888888888',
+            'sub_mch_id' => '1900000109',
+            'sub_openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
         ],
     ]): PromiseInterface;
 }

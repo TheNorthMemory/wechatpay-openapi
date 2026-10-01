@@ -20,6 +20,8 @@ interface Queryorder
             'mch_id' => '10000098',
             'transaction_id' => '1009660380201506130728806387',
             'sign_type' => 'HMAC-SHA256',
+            'contract_id' => 'Wx15463511252015071056489715',
+            'version' => '2.0',
         ],
     ]): ResponseInterface;
 
@@ -34,6 +36,8 @@ interface Queryorder
             'mch_id' => '10000098',
             'transaction_id' => '1009660380201506130728806387',
             'sign_type' => 'HMAC-SHA256',
+            'contract_id' => 'Wx15463511252015071056489715',
+            'version' => '2.0',
         ],
     ]): PromiseInterface;
 }

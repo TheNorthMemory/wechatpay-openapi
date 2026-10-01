@@ -71,6 +71,9 @@ post:
                 example: H5
                 maxLength: 16
                 nullable: true
+                enum:
+                  - APP #通过APP跳转
+                  - H5 #通过公众号H5跳转
               openid:
                 type: string
                 description: 用户标识

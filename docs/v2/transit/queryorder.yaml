@@ -62,6 +62,16 @@ post:
                 description: 签名
                 example: EE088059BBC9141264F8D14293AD6C4BB94CEA8C08AA98FBF93E262D445F8FF5
                 maxLength: 64
+              contract_id:
+                type: string
+                description: 委托代扣协议id
+                example: Wx15463511252015071056489715
+                maxLength: 32
+              version:
+                type: string
+                description: 接口版本号
+                example: '2.0'
+                maxLength: 32
   responses:
     '200':
       description: ''

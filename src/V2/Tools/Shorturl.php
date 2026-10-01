@@ -20,6 +20,8 @@ interface Shorturl
             'mch_id' => '1900000109',
             'long_url' => 'weixin：//wxpay/bizpayurl?sign=XXXXX&appid=XXXXX&mch_id=XXXXX&product_id=XXXXXX&time_stamp=XXXXXX&nonce_str=XXXXX',
             'sign_type' => 'HMAC-SHA256',
+            'sub_appid' => 'wx8888888888888888',
+            'sub_mch_id' => '1900000109',
         ],
     ]): ResponseInterface;
 
@@ -34,6 +36,8 @@ interface Shorturl
             'mch_id' => '1900000109',
             'long_url' => 'weixin：//wxpay/bizpayurl?sign=XXXXX&appid=XXXXX&mch_id=XXXXX&product_id=XXXXXX&time_stamp=XXXXXX&nonce_str=XXXXX',
             'sign_type' => 'HMAC-SHA256',
+            'sub_appid' => 'wx8888888888888888',
+            'sub_mch_id' => '1900000109',
         ],
     ]): PromiseInterface;
 }

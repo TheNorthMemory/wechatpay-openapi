@@ -30,6 +30,7 @@ interface Sendredpack
             'act_name' => '猜灯谜抢红包活动',
             'remark' => '猜越多得越多，快来抢！',
             'scene_id' => 'PRODUCT_8',
+            'notify_way' => 'MINI_PROGRAM_JSAPI',
             'risk_info' => new \WeChatPay\OpenAPI\UriComponentStringable([
                 'posttime' => 1717171199,
                 'mobile' => '122344545',
@@ -61,6 +62,7 @@ interface Sendredpack
             'act_name' => '猜灯谜抢红包活动',
             'remark' => '猜越多得越多，快来抢！',
             'scene_id' => 'PRODUCT_8',
+            'notify_way' => 'MINI_PROGRAM_JSAPI',
             'risk_info' => new \WeChatPay\OpenAPI\UriComponentStringable([
                 'posttime' => 1717171199,
                 'mobile' => '122344545',

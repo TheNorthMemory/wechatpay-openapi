@@ -43,6 +43,7 @@ interface Contractorder
             'request_serial' => '1695',
             'contract_display_account' => '123',
             'contract_notify_url' => 'http://yoursite.com',
+            'sign_type' => 'MD5',
         ],
     ]): ResponseInterface;
 
@@ -80,6 +81,7 @@ interface Contractorder
             'request_serial' => '1695',
             'contract_display_account' => '123',
             'contract_notify_url' => 'http://yoursite.com',
+            'sign_type' => 'MD5',
         ],
     ]): PromiseInterface;
 }

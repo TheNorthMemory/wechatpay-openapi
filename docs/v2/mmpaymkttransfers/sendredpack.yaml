@@ -121,6 +121,11 @@ post:
               - PRODUCT_6 #保险回馈
               - PRODUCT_7 #彩票派奖
               - PRODUCT_8 #税务刮奖
+          notify_way:
+            type: string
+            description: 通知用户形式
+            example: MINI_PROGRAM_JSAPI
+            maxLength: 256
           risk_info:
             type: string
             description: 活动信息

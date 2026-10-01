@@ -289,6 +289,21 @@ post:
             maxLength: 64
             example: 周星星
             nullable: true
+          sub_appid:
+            type: string
+            description: 子商户公众账号ID
+            example: wx8888888888888888
+            maxLength: 32
+          sub_mch_id:
+            type: string
+            description: 子商户号
+            example: '1900000109'
+            maxLength: 32
+          sub_openid:
+            type: string
+            description: 用户子标识
+            example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
+            maxLength: 128
   responses:
     '200':
       description: ''

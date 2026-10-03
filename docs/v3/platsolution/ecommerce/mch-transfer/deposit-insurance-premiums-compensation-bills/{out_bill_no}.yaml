@@ -13,6 +13,12 @@ get:
       type: string
       description: 商户单号
       example: plfk2020042013
+    - name: sub_mchid
+      in: query
+      type: string
+      required: true
+      description: 二级商户号
+      example: '1900001109'
   responses:
     '200':
       schema:

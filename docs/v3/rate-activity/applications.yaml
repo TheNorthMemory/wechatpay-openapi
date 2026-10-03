@@ -54,6 +54,22 @@ post:
                       type: string
                       description: 材料ID
                       example: SCHOOL_QUALIFICATION_PROVEMENT
+                      enum:
+                        - SCHOOL_QUALIFICATION_PROOF #学校资质证明
+                        - COOPERATION_QUALIFICATION_PROOF #合作资质证明
+                        - ACTIVITY_RATE_COMMITMENT #优惠费率承诺函
+                        - CANTEEN_ENVIRONMENT_PHOTO #食堂内部用餐环境照片
+                        - CANTEEN_FRONT_PHOTO #食堂门头照片
+                        - SCHOOL_LICENSE_PROOF #办学许可证
+                        - QUALIFICATION_PROOF #机构资质证明
+                        - STORE_TENANCY_PROOF #门店租赁相关证明
+                        - STORE_DOOR_PHOTO #门头照片
+                        - FOOD_QUALIFICATION_PROOF #食品经营相关资质
+                        - PARKING_QUALIFICATION_PROOF #停车场资质证明
+                        - PARKINGAREA_PHOTO #停车场实际经营场景照
+                        - MEDICAL_INSTITUTION_PRATICE_LICENSE #医疗机构执业许可证
+                        - HOSPITAL_FRONTDOOR_PHOTO #医院门头照
+                        - TRADE_QUALIFICATION_PROOF #外贸资质证明
                     apply_material_information:
                       type: array
                       items:

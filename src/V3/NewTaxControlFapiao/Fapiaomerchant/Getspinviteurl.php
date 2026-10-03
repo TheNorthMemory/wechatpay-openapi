@@ -23,6 +23,7 @@ interface Getspinviteurl
             'operate_user' => 'mI7HGEJ4Q2B91IGjHZu/Gthm',
             'invite_code' => 'code_20200101_123',
             'sub_mchid' => '1900000109',
+            'taxpayer_id' => '',
         ],
         'headers' => [
             'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',
@@ -43,6 +44,7 @@ interface Getspinviteurl
             'operate_user' => 'mI7HGEJ4Q2B91IGjHZu/Gthm',
             'invite_code' => 'code_20200101_123',
             'sub_mchid' => '1900000109',
+            'taxpayer_id' => '',
         ],
         'headers' => [
             'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',

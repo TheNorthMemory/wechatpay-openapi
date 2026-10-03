@@ -36,6 +36,7 @@ post:
                 enum:
                   - MERCHANT
                   - TRANSACTION_USER
+                  - WXPAY_USER #微信支付用户
               transaction_info:
                 type: object
                 description: 转账接收方订单信息

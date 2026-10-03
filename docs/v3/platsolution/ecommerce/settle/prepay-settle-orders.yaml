@@ -47,6 +47,7 @@ post:
             example: RECOMMERCE
             enum:
               - RECOMMERCE
+              - INDIVIDUALTRADE #个人交易
           settle_info_list:
             type: array
             description: 结算信息列表
@@ -85,10 +86,16 @@ post:
                         type: string
                         description: 结算类型
                         example: RECEIVE
+                        enum:
+                          - RECEIVE #收款
+                          - DEDUCTION #交易款扣除平台商户相关服务费用
                       receiver_type:
                         type: string
                         description: 接收方类型
                         example: MERCHANT
+                        enum:
+                          - MERCHANT #微信支付商户
+                          - USER #微信支付用户
                       receiver_account:
                         type: string
                         description: 接收方账号

@@ -40,6 +40,7 @@ post:
             enum:
               - FINANCIAL_PENALTY
               - JUDICIAL_DEDUCTION
+              - REDUCTION_TYPE_UNKNOWN #未知
           amount:
             type: integer
             description: 减额金额

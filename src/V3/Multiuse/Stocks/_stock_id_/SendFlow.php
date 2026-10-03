@@ -16,6 +16,10 @@ interface SendFlow
      */
     public function get(array $options = [
         'stock_id' => '9856888',
+        'query' => [
+            'begin_date' => '20250601',
+            'end_date' => '20250605',
+        ],
     ]): ResponseInterface;
 
     /**
@@ -25,5 +29,9 @@ interface SendFlow
      */
     public function getAsync(array $options = [
         'stock_id' => '9856888',
+        'query' => [
+            'begin_date' => '20250601',
+            'end_date' => '20250605',
+        ],
     ]): PromiseInterface;
 }

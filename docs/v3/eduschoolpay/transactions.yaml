@@ -98,6 +98,13 @@ post:
                 type: string
                 description: 消费场景类型
                 example: CANTEEN
+                enum:
+                  - CANTEEN #食堂
+                  - SHOP #学校超市或小卖部
+                  - INFIRMARY #校医院
+                  - TRAFFIC #校内交通
+                  - OTHERS #校内其他消费场景
+                  - LARGE #大额场景
           device_info:
             type: object
             description: 设备信息

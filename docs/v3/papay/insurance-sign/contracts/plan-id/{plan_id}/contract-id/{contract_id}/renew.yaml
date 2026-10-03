@@ -62,6 +62,8 @@ post:
                       type: string
                       description: 货币类型
                       example: CNY
+                      enum:
+                        - CNY #扣费货币类型-人民币
   responses:
     '204':
       schema: {}

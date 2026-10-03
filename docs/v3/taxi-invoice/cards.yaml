@@ -113,6 +113,9 @@ post:
                     type: string
                     description: 购买方类型
                     example: CORPORATION
+                    enum:
+                      - CORPORATION #公司
+                      - INDIVIDUAL #个体工商户
                   name:
                     type: string
                     description: 名称
@@ -248,6 +251,12 @@ post:
                       type: string
                       description: 税收优惠政策标识
                       example: NO_FAVORABLE
+                      enum:
+                        - NO_FAVORABLE #无优惠
+                        - OUTSIDE_VAT #不征税
+                        - VAT_EXEMPT #免税
+                        - NORMAL_ZERO_RATED #普通零税率
+                        - EXPORT_ZERO_RATED #出口零税率
                     discount:
                       type: boolean
                       description: 是否折扣行

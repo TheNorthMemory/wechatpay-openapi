@@ -37,6 +37,10 @@ post:
             type: string
             description: 特约商户授权类型
             example: INFORMATION_AUTHORIZATION_TYPE
+            enum:
+              - INFORMATION_AUTHORIZATION_TYPE #表示使用特约商户用户信息，出款方服务商。自 2026 年 6 月 29 日起，该授权类型将停止支持。
+              - FUND_AUTHORIZATION_TYPE #表示使用特约商户的资金，出款方为特约商户，用户信息为服务商AppID对应的OpenID
+              - INFORMATION_AND_FUND_AUTHORIZATION_TYPE #表示使用特约商户的用户信息且出款方为特约商户
           out_batch_no:
             type: string
             description: 商家批次单号
@@ -98,10 +102,22 @@ post:
             type: string
             description: 用工类型
             example: LONG_TERM_EMPLOYMENT
+            enum:
+              - LONG_TERM_EMPLOYMENT #长期用工：有劳务合同关系的长期用工
+              - SHORT_TERM_EMPLOYMENT #短期用工：有劳务合同关系的短期用工
+              - COOPERATION_EMPLOYMENT #合作关系：有业务服务、合作关系的人员
           employment_scene:
             type: string
             description: 用工场景
             example: LOGISTICS
+            enum:
+              - LOGISTICS #物流
+              - MANUFACTURING #制造业
+              - HOTEL #酒店
+              - CATERING #餐饮业
+              - EVENT #活动促销
+              - RETAIL #零售
+              - OTHERS #其他
   responses:
     '200':
       schema:

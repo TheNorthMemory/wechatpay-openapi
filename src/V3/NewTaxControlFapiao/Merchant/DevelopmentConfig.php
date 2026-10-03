@@ -42,12 +42,20 @@ interface DevelopmentConfig
      * @param array<string,mixed> $options
      * @link https://wechatpay.im/openapi/v3/new-tax-control-fapiao/merchant/development-config#get
      */
-    public function get(array $options = []): ResponseInterface;
+    public function get(array $options = [
+        'query' => [
+            'sub_mch_code' => '1900000109',
+        ],
+    ]): ResponseInterface;
 
     /**
      * 查询商户配置的开发选项(异步模式)
      * @param array<string,mixed> $options
      * @link https://wechatpay.im/openapi/v3/new-tax-control-fapiao/merchant/development-config#get
      */
-    public function getAsync(array $options = []): PromiseInterface;
+    public function getAsync(array $options = [
+        'query' => [
+            'sub_mch_code' => '1900000109',
+        ],
+    ]): PromiseInterface;
 }

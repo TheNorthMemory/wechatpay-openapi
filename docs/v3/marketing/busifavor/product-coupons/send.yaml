@@ -54,20 +54,24 @@ post:
     '200':
       schema:
         type: object
-        required:
-          - stock_id
-          - coupon_code
-          - out_request_no
         properties:
-          stock_id:
-            type: string
-            description: 批次号
-            example: '1262260000000268'
-          coupon_code:
-            type: string
-            description: 券code
-            example: '2312323'
-          out_request_no:
-            type: string
-            description: 发券凭证
-            example: '2335465'
+          send_coupon_result:
+            type: object
+            description: 发券结果
+            required:
+              - stock_id
+              - out_request_no
+              - coupon_code
+            properties:
+              stock_id:
+                type: string
+                description: 批次号
+                example: '1262260000000268'
+              out_request_no:
+                type: string
+                description: 发券凭证
+                example: '2335465'
+              coupon_code:
+                type: string
+                description: 券code
+                example: '2312323'

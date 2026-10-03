@@ -116,10 +116,22 @@ post:
             type: string
             description: 补差回退单据状态
             example: SUCCESS
+            enum:
+              - SUCCESS #补差回退成功
+              - FAIL #补差回退失败
+              - RETURN_RECEIPT_ACCEPTED #补差回退已受理
+              - RETURN_RECEIPT_SUCCESS #补差回退成功
+              - RETURN_RECEIPT_FAIL #补差回退失败
           fail_reason:
             type: string
             description: 补差回退失败原因
             example: INSUFFICIENT_BALANCE
+            enum:
+              - INSUFFICIENT_BALANCE #扣款商户余额不足
+              - RISK_BLOCK #商户风控拦截
+              - OTHER #其他原因
+              - RETURN_RECEIPT_INSUFFICIENT_BALANCE #扣款商户余额不足
+              - RETURN_RECEIPT_OTHER #其他原因
           return_done_time:
             type: string
             description: 补差回退完成时间

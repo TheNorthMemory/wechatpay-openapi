@@ -13,6 +13,18 @@ get:
       type: string
       description: 批次号
       example: '9856888'
+    - name: begin_date
+      in: query
+      type: string
+      required: false
+      description: 账单开始时间
+      example: '20250601'
+    - name: end_date
+      in: query
+      type: string
+      required: false
+      description: 账单结束时间
+      example: '20250605'
   responses:
     '200':
       schema:

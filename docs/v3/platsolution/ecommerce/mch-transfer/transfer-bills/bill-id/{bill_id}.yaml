@@ -23,6 +23,12 @@ get:
         - PLATFORM_AFTER_SALES_COMPENSATION
         - INSURANCE_CLAIM
         - DEPOSIT_AFTER_SALES_COMPENSATION
+    - name: sub_mchid
+      in: query
+      type: string
+      required: false
+      description: 二级商户号
+      example: '1900001109'
   responses:
     '200':
       schema:

@@ -55,6 +55,7 @@ post:
           state:
             type: string
             description: 商品券状态
+            example: DEACTIVATED
             enum:
               - AUDITING
               - EFFECTIVE
@@ -86,6 +87,7 @@ post:
             enum:
               - SINGLE
               - SEQUENTIAL
+              - PROGRESSIVE_BUNDLE #多次优惠，由一组批次组成，每阶梯次序对应一个批次。用户按顺序使用，每次核销后发放下一张券，直到用完为止
           single_usage_info:
             type: object
             description: 单券模式信息
@@ -236,6 +238,7 @@ post:
           deactivate_request_no:
             type: string
             description: 失效请求单号
+            example: 34657_20250101_123456
           deactivate_time:
             type: string
             format: rfc3339
@@ -244,3 +247,16 @@ post:
           deactivate_reason:
             type: string
             description: 失效原因
+            example: 商品券信息有误，重新创建
+          progressive_bundle_usage_info:
+            type: object
+            description: 多次优惠模式信息
+            required:
+              - count
+            properties:
+              count:
+                type: integer
+                description: 可使用次数
+              interval_days:
+                type: integer
+                description: 多次优惠使用间隔天数

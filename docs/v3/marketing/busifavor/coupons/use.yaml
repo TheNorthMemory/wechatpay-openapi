@@ -54,6 +54,13 @@ post:
             type: string
             description: 微信支付订单号
             example: '4200000001856498491'
+          saved_amount:
+            type: integer
+            description: 优惠金额
+          sub_mch_id:
+            type: string
+            description: 下单子商户号
+            example: '190000002'
   responses:
     '200':
       schema:

@@ -197,6 +197,30 @@ post:
                       format: rfc3339
                       description: 退券时间
                       example: '2025-07-20T14:29:35+08:00'
+                    associated_pay_score_order_info:
+                      type: object
+                      description: 券核销的关联微信支付分订单信息
+                      properties:
+                        order_id:
+                          type: string
+                          description: 微信支付服务订单号
+                          example: '1000000000201908301055157220022'
+                        out_order_no:
+                          type: string
+                          description: 商户服务订单号
+                          example: order_no_20250724123456
+                        mchid:
+                          type: string
+                          description: 商户号
+                          example: '1234567890'
+                        sub_mchid:
+                          type: string
+                          description: 子商户号
+                          example: '1234567890'
+                    saved_amount:
+                      type: integer
+                      description: 优惠金额
+                      example: 1000
                 user_product_coupon_bundle_info:
                   type: object
                   description: 用户券组信息
@@ -241,6 +265,7 @@ post:
                     state:
                       type: string
                       description: 商品券状态
+                      example: AUDITING
                       enum:
                         - AUDITING
                         - EFFECTIVE
@@ -409,6 +434,7 @@ post:
                     deactivate_request_no:
                       type: string
                       description: 失效请求单号
+                      example: '1002600620019090123143254436'
                     deactivate_time:
                       type: string
                       format: rfc3339
@@ -417,6 +443,7 @@ post:
                     deactivate_reason:
                       type: string
                       description: 失效原因
+                      example: 商品已下架
                 stock:
                   type: object
                   description: 批次信息
@@ -444,6 +471,7 @@ post:
                     remark:
                       type: string
                       description: 备注
+                      example: 满减券
                     coupon_code_mode:
                       type: string
                       description: 券Code分配模式
@@ -569,6 +597,10 @@ post:
                                     format: rfc3339
                                     description: 结束时间
                                     example: '2025-08-31T23:59:59+08:00'
+                            available_seconds:
+                              type: integer
+                              description: 领取后N秒内有效
+                              example: 3600
                         normal_coupon:
                           type: object
                           description: 满减券使用规则
@@ -808,6 +840,7 @@ post:
                     state:
                       type: string
                       description: 批次状态
+                      example: SENDING
                       enum:
                         - AUDITING
                         - SENDING
@@ -817,6 +850,7 @@ post:
                     deactivate_request_no:
                       type: string
                       description: 失效请求单号
+                      example: '1002600620019090123143254436'
                     deactivate_time:
                       type: string
                       format: rfc3339
@@ -825,6 +859,7 @@ post:
                     deactivate_reason:
                       type: string
                       description: 失效原因
+                      example: 批次信息有误，重新创建
                     brand_id:
                       type: string
                       description: 品牌ID
@@ -859,6 +894,7 @@ post:
                         member_card_id:
                           type: string
                           description: 会员卡模板ID
+                          example: MemberCardId_1234567890
                 brand_id:
                   type: string
                   description: 品牌ID

@@ -78,6 +78,7 @@ post:
               - SIGN_IN
               - INSURANCE
               - CONTRACT
+              - NORMAL #普通核身类型，可用于用户注册认证等
   responses:
     '200':
       schema:

@@ -60,6 +60,11 @@ get:
       in: query
       description: 子商户号
       example: '1900000109'
+    - name: taxpayer_id
+      in: query
+      type: string
+      required: false
+      description: 受邀请商户税号
   responses:
     '200':
       schema:

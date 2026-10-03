@@ -33,6 +33,8 @@ interface Refunds
                 ],],
                 'total' => 888,
                 'currency' => 'CNY',
+                'account' => '',
+                'amount' => 0,
             ],
             'goods_detail' => [[
                 'merchant_goods_id' => '1217752501201407033233368018',
@@ -67,6 +69,8 @@ interface Refunds
                 ],],
                 'total' => 888,
                 'currency' => 'CNY',
+                'account' => '',
+                'amount' => 0,
             ],
             'goods_detail' => [[
                 'merchant_goods_id' => '1217752501201407033233368018',

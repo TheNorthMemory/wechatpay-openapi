@@ -29,6 +29,11 @@ interface Partnerships
             ]),
             'limit' => 50,
             'offset' => 0,
+            'partner.type' => 'APPID | MERCHANT',
+            'partner.appid' => '',
+            'partner.merchant_id' => '',
+            'authorized_data.business_type' => 'FAVOR_STOCK | BUSIFAVOR_STOCK',
+            'authorized_data.stock_id' => '',
         ],
     ]): ResponseInterface;
 
@@ -50,6 +55,11 @@ interface Partnerships
             ]),
             'limit' => 50,
             'offset' => 0,
+            'partner.type' => 'APPID | MERCHANT',
+            'partner.appid' => '',
+            'partner.merchant_id' => '',
+            'authorized_data.business_type' => 'FAVOR_STOCK | BUSIFAVOR_STOCK',
+            'authorized_data.stock_id' => '',
         ],
     ]): PromiseInterface;
 }

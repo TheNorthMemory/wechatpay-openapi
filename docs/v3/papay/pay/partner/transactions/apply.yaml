@@ -63,6 +63,8 @@ post:
                 type: string
                 description: 货币类型
                 example: CNY
+                enum:
+                  - CNY #预计扣费货币类型-人民币
           goods_tag:
             type: string
             description: 订单优惠标记

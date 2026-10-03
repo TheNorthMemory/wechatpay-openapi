@@ -130,6 +130,10 @@ post:
                 profit_sharing:
                   type: boolean
                   description: 是否指定分账(settle_info.profit_sharing高权重)
+                order_service_type:
+                  type: string
+                  description: 商品服务类型
+                  example: INDIVIDUALTRADE
           combine_payer_info:
             type: object
             description: 支付者
@@ -163,6 +167,10 @@ post:
                     format: base64
                     description: 加密后的姓名
                     example: 6B46824C852FA29AAC3DCE6BFD852E27
+              openid:
+                type: string
+                description: 用户标识
+                example: oUpF8uMuAJO_M2pxb1Q9zNjWeS6o
           time_start:
             type: string
             format: rfc3339

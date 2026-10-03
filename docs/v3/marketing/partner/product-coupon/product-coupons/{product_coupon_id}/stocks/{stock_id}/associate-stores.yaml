@@ -84,6 +84,8 @@ post:
                 code:
                   type: string
                   description: 失败错误码
+                  example: INVALID_REQUEST
                 message:
                   type: string
                   description: 失败错误信息
+                  example: 门店ID非法或不属于当前品牌

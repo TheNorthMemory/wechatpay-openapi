@@ -73,6 +73,8 @@ post:
                     type: string
                     description: 货币类型
                     example: CNY
+                    enum:
+                      - CNY #扣费货币类型-人民币
               description:
                 type: string
                 description: 商品描述

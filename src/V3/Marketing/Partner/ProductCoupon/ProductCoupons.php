@@ -59,7 +59,7 @@ interface ProductCoupons
             ],
             'out_product_no' => 'Product_1234567890',
             'stock' => [
-                'remark' => '',
+                'remark' => '8月工作日有效批次',
                 'coupon_code_mode' => 'WECHATPAY',
                 'stock_send_rule' => [
                     'max_count' => 100000,
@@ -166,6 +166,87 @@ interface ProductCoupons
                 ],
                 'store_scope' => 'NONE',
             ],
+            'progressive_bundle_usage_info' => [
+                'count' => 3,
+                'interval_days' => 1,
+            ],
+            'stock_bundle' => [
+                'remark' => '8月工作日有效批次',
+                'coupon_code_mode' => 'UPLOAD',
+                'stock_send_rule' => [
+                    'max_count' => 10000000,
+                    'max_count_per_day' => 0,
+                    'max_count_per_user' => 1,
+                ],
+                'progressive_bundle_usage_rule' => [
+                    'coupon_available_period' => [
+                        'available_begin_time' => '2025-08-01T00:00:00+08:00',
+                        'available_end_time' => '2025-08-31T23:59:59+08:00',
+                        'available_days' => 30,
+                        'wait_days_after_receive' => 0,
+                        'weekly_available_period' => [
+                            'day_list' => ['MONDAY'],
+                            'day_period_list' => [[
+                                'begin_time' => 0,
+                                'end_time' => 0,
+                            ],],
+                        ],
+                        'irregular_available_period_list' => [[
+                            'begin_time' => '',
+                            'end_time' => '',
+                        ],],
+                        'available_seconds' => 0,
+                    ],
+                    'normal_coupon_list' => [[
+                        'threshold' => 0,
+                        'discount_amount' => 0,
+                    ],],
+                    'discount_coupon_list' => [[
+                        'threshold' => 10000,
+                        'percent_off' => 50,
+                    ],],
+                    'exchange_coupon_list' => [[
+                        'threshold' => 0,
+                        'exchange_price' => 0,
+                    ],],
+                ],
+                'usage_rule_display_info' => [
+                    'coupon_usage_method_list' => ['OFFLINE'],
+                    'mini_program_appid' => 'wx1234567890',
+                    'mini_program_path' => '/pages/index/product',
+                    'app_path' => '',
+                    'usage_description' => '工作日可用',
+                    'coupon_available_store_info' => [
+                        'description' => '所有门店可用，可使用小程序查看门店列表',
+                        'mini_program_appid' => 'wx1234567890',
+                        'mini_program_path' => '/pages/index/store-list',
+                    ],
+                    'app_jump_type' => 'H5 | PASSCODE_LINK | USAGE_GUIDE',
+                    'passcode_link' => '',
+                ],
+                'coupon_display_info' => [
+                    'code_display_mode' => 'QRCODE',
+                    'background_color' => 'Color010',
+                    'entrance_mini_program' => [
+                        'appid' => 'wx1234567890',
+                        'path' => '/pages/index/product',
+                        'entrance_wording' => '欢迎选购',
+                        'guidance_wording' => '获取更多优惠',
+                    ],
+                    'entrance_official_account' => [
+                        'appid' => 'wx1234567890',
+                    ],
+                    'entrance_finder' => [
+                        'finder_id' => 'gh_12345678',
+                        'finder_video_id' => 'UDFsdf24df34dD456Hdf34',
+                        'finder_video_cover_image_url' => 'https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/xxx',
+                    ],
+                ],
+                'notify_config' => [
+                    'notify_appid' => 'wx4fd12345678',
+                ],
+                'store_scope' => 'NONE',
+            ],
         ],
     ]): ResponseInterface;
 
@@ -218,7 +299,7 @@ interface ProductCoupons
             ],
             'out_product_no' => 'Product_1234567890',
             'stock' => [
-                'remark' => '',
+                'remark' => '8月工作日有效批次',
                 'coupon_code_mode' => 'WECHATPAY',
                 'stock_send_rule' => [
                     'max_count' => 100000,
@@ -322,6 +403,87 @@ interface ProductCoupons
                 ],
                 'notify_config' => [
                     'notify_appid' => 'wx23232232323',
+                ],
+                'store_scope' => 'NONE',
+            ],
+            'progressive_bundle_usage_info' => [
+                'count' => 3,
+                'interval_days' => 1,
+            ],
+            'stock_bundle' => [
+                'remark' => '8月工作日有效批次',
+                'coupon_code_mode' => 'UPLOAD',
+                'stock_send_rule' => [
+                    'max_count' => 10000000,
+                    'max_count_per_day' => 0,
+                    'max_count_per_user' => 1,
+                ],
+                'progressive_bundle_usage_rule' => [
+                    'coupon_available_period' => [
+                        'available_begin_time' => '2025-08-01T00:00:00+08:00',
+                        'available_end_time' => '2025-08-31T23:59:59+08:00',
+                        'available_days' => 30,
+                        'wait_days_after_receive' => 0,
+                        'weekly_available_period' => [
+                            'day_list' => ['MONDAY'],
+                            'day_period_list' => [[
+                                'begin_time' => 0,
+                                'end_time' => 0,
+                            ],],
+                        ],
+                        'irregular_available_period_list' => [[
+                            'begin_time' => '',
+                            'end_time' => '',
+                        ],],
+                        'available_seconds' => 0,
+                    ],
+                    'normal_coupon_list' => [[
+                        'threshold' => 0,
+                        'discount_amount' => 0,
+                    ],],
+                    'discount_coupon_list' => [[
+                        'threshold' => 10000,
+                        'percent_off' => 50,
+                    ],],
+                    'exchange_coupon_list' => [[
+                        'threshold' => 0,
+                        'exchange_price' => 0,
+                    ],],
+                ],
+                'usage_rule_display_info' => [
+                    'coupon_usage_method_list' => ['OFFLINE'],
+                    'mini_program_appid' => 'wx1234567890',
+                    'mini_program_path' => '/pages/index/product',
+                    'app_path' => '',
+                    'usage_description' => '工作日可用',
+                    'coupon_available_store_info' => [
+                        'description' => '所有门店可用，可使用小程序查看门店列表',
+                        'mini_program_appid' => 'wx1234567890',
+                        'mini_program_path' => '/pages/index/store-list',
+                    ],
+                    'app_jump_type' => 'H5 | PASSCODE_LINK | USAGE_GUIDE',
+                    'passcode_link' => '',
+                ],
+                'coupon_display_info' => [
+                    'code_display_mode' => 'QRCODE',
+                    'background_color' => 'Color010',
+                    'entrance_mini_program' => [
+                        'appid' => 'wx1234567890',
+                        'path' => '/pages/index/product',
+                        'entrance_wording' => '欢迎选购',
+                        'guidance_wording' => '获取更多优惠',
+                    ],
+                    'entrance_official_account' => [
+                        'appid' => 'wx1234567890',
+                    ],
+                    'entrance_finder' => [
+                        'finder_id' => 'gh_12345678',
+                        'finder_video_id' => 'UDFsdf24df34dD456Hdf34',
+                        'finder_video_cover_image_url' => 'https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/xxx',
+                    ],
+                ],
+                'notify_config' => [
+                    'notify_appid' => 'wx4fd12345678',
                 ],
                 'store_scope' => 'NONE',
             ],

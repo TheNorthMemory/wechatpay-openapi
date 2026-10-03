@@ -13,6 +13,14 @@ get:
       description: 特约商户/二级商户号
       required: true
       example: '1900006491'
+    - name: account_number_rule
+      in: query
+      type: string
+      required: false
+      description: 银行账号展示规则
+      enum:
+        - ACCOUNT_NUMBER_RULE_MASK_V1 #银行账号展示规则掩码v1，保留前2位和最后2位，中间用*代替
+        - ACCOUNT_NUMBER_RULE_MASK_V2 #银行账号展示规则掩码v2，保留前6位和最后4位，中间用*代替
   responses:
     '200':
       schema:

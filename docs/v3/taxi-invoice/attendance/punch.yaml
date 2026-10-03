@@ -35,6 +35,9 @@ post:
             type: string
             description: 事件类型
             example: SIGN_IN
+            enum:
+              - SIGN_IN #签到
+              - SIGN_OUT #签退
           region_id:
             type: integer
             description: 行政区划ID

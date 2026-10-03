@@ -168,6 +168,9 @@ post:
                     type: string
                     description: 激活类型
                     example: AUTO_ACTIVATE
+                    enum:
+                      - AUTO_ACTIVATE #一键激活；自动激活类型，在用户领卡后由微信自动激活
+                      - JUMP_ACTIVATE #跳转激活；跳转激活类型，用户领卡后，由商家调用API激活
                   activate_url:
                     type: string
                     description: 跳转激活的url
@@ -201,6 +204,12 @@ post:
                         items:
                           type: string
                           example: APP
+                          enum:
+                            - APP #APP支付场景
+                            - MICROPAY #付款码支付
+                            - PAP #委托代扣
+                            - MINIPROGRAM #小程序支付
+                            - FACEPAY #刷脸支付
                   limit_bank:
                     type: string
                     description: 指定银行的简称

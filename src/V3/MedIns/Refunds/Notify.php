@@ -23,6 +23,9 @@ interface Notify
             'med_refund__other_fee' => 45000,
             'refund_time' => '2018-06-08T10:34:56+08:00',
             'out_refund_no' => 'R202204022005169952975171534816',
+            'med_refund_gov_fee' => 0,
+            'med_refund_self_fee' => 0,
+            'med_refund_other_fee' => 0,
         ],
         'query' => [
             'mix_trade_no' => '1217752501201407033233368318',
@@ -43,6 +46,9 @@ interface Notify
             'med_refund__other_fee' => 45000,
             'refund_time' => '2018-06-08T10:34:56+08:00',
             'out_refund_no' => 'R202204022005169952975171534816',
+            'med_refund_gov_fee' => 0,
+            'med_refund_self_fee' => 0,
+            'med_refund_other_fee' => 0,
         ],
         'query' => [
             'mix_trade_no' => '1217752501201407033233368318',

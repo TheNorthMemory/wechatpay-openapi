@@ -100,6 +100,7 @@ post:
                       - IDENTIFICATION_TYPE_FOREIGN_RESIDENT #外国人居留证
                       - IDENTIFICATION_TYPE_HONGKONG_MACAO_RESIDENT #港澳居民证
                       - IDENTIFICATION_TYPE_TAIWAN_RESIDENT #台湾居民证
+                      - IDENTIFICATION_TYPE_ID_CARD #中国大陆居民-身份证
                   identification_name:
                     type: string
                     format: base64

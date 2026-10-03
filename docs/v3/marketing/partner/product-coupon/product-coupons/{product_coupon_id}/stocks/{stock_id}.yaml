@@ -229,6 +229,7 @@ patch:
           remark:
             type: string
             description: 备注
+            example: 8月工作日有效批次
           coupon_code_mode:
             type: string
             description: 券Code分配模式
@@ -354,6 +355,9 @@ patch:
                           format: rfc3339
                           description: 结束时间
                           example: '2025-08-31T23:59:59+08:00'
+                  available_seconds:
+                    type: integer
+                    description: 领取后N秒内有效
               normal_coupon:
                 type: object
                 description: 满减券使用规则
@@ -712,6 +716,7 @@ patch:
           state:
             type: string
             description: 批次状态
+            example: SENDING
             enum:
               - AUDITING
               - SENDING
@@ -788,6 +793,7 @@ get:
           remark:
             type: string
             description: 备注
+            example: 8月工作日有效批次
           coupon_code_mode:
             type: string
             description: 券Code分配模式
@@ -913,6 +919,9 @@ get:
                           format: rfc3339
                           description: 结束时间
                           example: '2025-08-31T23:59:59+08:00'
+                  available_seconds:
+                    type: integer
+                    description: 领取后N秒内有效
               normal_coupon:
                 type: object
                 description: 满减券使用规则
@@ -1271,6 +1280,7 @@ get:
           state:
             type: string
             description: 批次状态
+            example: SENDING
             enum:
               - AUDITING
               - SENDING
@@ -1292,3 +1302,136 @@ get:
             type: string
             description: 品牌ID
             example: '120344'
+          progressive_bundle_usage_rule:
+            type: object
+            description: 多次优惠使用规则
+            required:
+              - coupon_available_period
+            properties:
+              coupon_available_period:
+                type: object
+                description: 券可核销时间
+                required:
+                  - available_begin_time
+                  - available_end_time
+                properties:
+                  available_begin_time:
+                    type: string
+                    format: rfc3339
+                    description: 批次开始时间
+                  available_end_time:
+                    type: string
+                    format: rfc3339
+                    description: 批次结束时间
+                  available_days:
+                    type: integer
+                    description: 券生效后N天内可用
+                  wait_days_after_receive:
+                    type: integer
+                    description: 领券后需等待N天才生效
+                  weekly_available_period:
+                    type: object
+                    description: 每周固定可用时间
+                    required:
+                      - day_list
+                    properties:
+                      day_list:
+                        type: array
+                        description: 每周可用星期数
+                        items:
+                          type: string
+                          enum:
+                            - MONDAY #周一可用
+                            - TUESDAY #周二可用
+                            - WEDNESDAY #周三可用
+                            - THURSDAY #周四可用
+                            - FRIDAY #周五可用
+                            - SATURDAY #周六可用
+                            - SUNDAY #周日可用
+                      day_period_list:
+                        type: array
+                        description: 当天可用时间段
+                        items:
+                          type: object
+                          required:
+                            - begin_time
+                            - end_time
+                          properties:
+                            begin_time:
+                              type: integer
+                              description: 当天可用开始时间
+                            end_time:
+                              type: integer
+                              description: 当天可用结束时间
+                  irregular_available_period_list:
+                    type: array
+                    description: 指定可用时间段
+                    items:
+                      type: object
+                      required:
+                        - begin_time
+                        - end_time
+                      properties:
+                        begin_time:
+                          type: string
+                          format: rfc3339
+                          description: 开始时间
+                        end_time:
+                          type: string
+                          format: rfc3339
+                          description: 结束时间
+                  available_seconds:
+                    type: integer
+                    description: 领取后N秒内有效
+              normal_coupon:
+                type: object
+                description: 满减券使用规则
+                required:
+                  - threshold
+                  - discount_amount
+                properties:
+                  threshold:
+                    type: integer
+                    description: 门槛金额
+                  discount_amount:
+                    type: integer
+                    description: 固定减免金额
+              discount_coupon:
+                type: object
+                description: 折扣券使用规则
+                required:
+                  - threshold
+                  - percent_off
+                properties:
+                  threshold:
+                    type: integer
+                    description: 门槛金额
+                  percent_off:
+                    type: integer
+                    description: 固定减免百分比
+              exchange_coupon:
+                type: object
+                description: 兑换券使用规则
+                required:
+                  - threshold
+                  - exchange_price
+                properties:
+                  threshold:
+                    type: integer
+                    description: 门槛金额
+                  exchange_price:
+                    type: integer
+                    description: 固定兑换价格
+          stock_bundle_info:
+            type: object
+            description: 批次组信息
+            required:
+              - stock_bundle_id
+              - stock_bundle_index
+            properties:
+              stock_bundle_id:
+                type: string
+                description: 批次所属批次组ID
+              stock_bundle_index:
+                type: integer
+                description: 批次在批次组内的次序

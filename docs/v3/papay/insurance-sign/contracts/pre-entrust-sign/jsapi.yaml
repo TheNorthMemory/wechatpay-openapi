@@ -87,6 +87,8 @@ post:
                       type: string
                       description: 货币类型
                       example: CNY
+                      enum:
+                        - CNY #扣费货币类型-人民币
                 policy_coverage_detail:
                   type: object
                   description: 保障详情
@@ -123,6 +125,8 @@ post:
                 type: string
                 description: 货币类型
                 example: CNY
+                enum:
+                  - CNY #扣费货币类型-人民币
           out_trade_no:
             type: string
             description: 商户订单号

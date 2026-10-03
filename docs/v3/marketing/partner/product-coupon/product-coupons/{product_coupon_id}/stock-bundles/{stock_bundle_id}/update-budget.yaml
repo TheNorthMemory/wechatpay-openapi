@@ -102,6 +102,7 @@ post:
                 remark:
                   type: string
                   description: 备注
+                  example: 满减券
                 coupon_code_mode:
                   type: string
                   description: 券Code分配模式
@@ -227,6 +228,10 @@ post:
                                 format: rfc3339
                                 description: 结束时间
                                 example: '2025-08-31T23:59:59+08:00'
+                        available_seconds:
+                          type: integer
+                          description: 领取后N秒内有效
+                          example: 3600
                     normal_coupon:
                       type: object
                       description: 满减券使用规则
@@ -466,6 +471,7 @@ post:
                 state:
                   type: string
                   description: 批次状态
+                  example: SENDING
                   enum:
                     - AUDITING
                     - SENDING
@@ -475,6 +481,7 @@ post:
                 deactivate_request_no:
                   type: string
                   description: 失效请求单号
+                  example: '1002600620019090123143254436'
                 deactivate_time:
                   type: string
                   format: rfc3339
@@ -483,6 +490,7 @@ post:
                 deactivate_reason:
                   type: string
                   description: 失效原因
+                  example: 批次信息有误，重新创建
                 brand_id:
                   type: string
                   description: 品牌ID

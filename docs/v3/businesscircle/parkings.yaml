@@ -45,6 +45,9 @@ post:
             type: string
             description: 状态
             example: IN
+            enum:
+              - IN #用户开车进入商圈
+              - OUT #用户开车离开商圈
           time:
             type: string
             description: 时间

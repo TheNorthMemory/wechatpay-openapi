@@ -145,6 +145,7 @@ post:
                       enum:
                         - TON
                         - LETER
+                        - LITER #升
                     quantity:
                       type: integer
                       description: 数量

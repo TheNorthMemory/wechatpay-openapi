@@ -18,6 +18,7 @@ interface _bill_id_
         'bill_id' => '1330000071100999991182020050700019480001',
         'query' => [
             'business_type' => 'DEPOSIT_COMPENSATION',
+            'sub_mchid' => '1900001109',
         ],
     ]): ResponseInterface;
 
@@ -30,6 +31,7 @@ interface _bill_id_
         'bill_id' => '1330000071100999991182020050700019480001',
         'query' => [
             'business_type' => 'DEPOSIT_COMPENSATION',
+            'sub_mchid' => '1900001109',
         ],
     ]): PromiseInterface;
 }

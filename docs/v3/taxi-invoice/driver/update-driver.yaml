@@ -69,6 +69,8 @@ post:
                     type: string
                     description: 哈希类型
                     example: MD5
+                    enum:
+                      - MD5 #MD5算法
                   hash_value:
                     type: string
                     description: 哈希值

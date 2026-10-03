@@ -49,6 +49,10 @@ post:
             type: string
             description: 签约模式
             example: LIMIT_BANK_CARD
+            enum:
+              - DEFAULT #轮询银行卡或零钱扣款。
+              - LIMIT_BANK_CARD #扣款时只能从该卡扣款，无法从其他卡或零钱扣款。
+              - PRIORITY_BANK_CARD #扣款时优先从该卡扣款，扣款失败可轮询其他银行卡或零钱扣款。
           downgrade_default_contract:
             type: boolean
             description: 允许降级为普通签约模式
@@ -69,6 +73,8 @@ post:
                 format: base64
                 description: 证件类型
                 example: IDENTITY_CARD
+                enum:
+                  - IDENTITY_CARD #身份证
               id_card_number:
                 type: string
                 format: base64

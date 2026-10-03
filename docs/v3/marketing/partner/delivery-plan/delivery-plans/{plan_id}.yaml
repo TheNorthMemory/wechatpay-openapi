@@ -53,6 +53,7 @@ patch:
           out_request_no:
             type: string
             description: 修改请求单号
+            example: abcd-1234-1000
   responses:
     200:
       schema:
@@ -114,6 +115,7 @@ patch:
               usage_mode:
                 type: string
                 description: 使用模式
+                example: SINGLE
                 enum:
                   - SINGLE
                   - PROGRESSIVE_BUNDLE

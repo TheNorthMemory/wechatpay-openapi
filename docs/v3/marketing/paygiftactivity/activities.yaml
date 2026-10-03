@@ -29,6 +29,14 @@ get:
       nullable: true
       allOf:
         - $ref: '../../../definitions/Enumerations.yaml#ActivityStatus'
+      enum:
+        - ACT_STATUS_UNKNOWN #状态未知
+        - CREATE_ACT_STATUS #已创建
+        - ONGOING_ACT_STATUS #运行中
+        - TERMINATE_ACT_STATUS #已终止
+        - STOP_ACT_STATUS #已暂停
+        - OVER_TIME_ACT_STATUS #已过期
+        - CREATE_ACT_FAILED #创建活动失败
     - name: award_type
       in: query
       type: string
@@ -76,4 +84,4 @@ get:
                                   items:
                                     type: string
                         step_send_rule:
-                            $ref: '../../../definitions/PayGiftActivity.yaml#StepSendRuleBase'
+                          $ref: '../../../definitions/PayGiftActivity.yaml#StepSendRuleBase'

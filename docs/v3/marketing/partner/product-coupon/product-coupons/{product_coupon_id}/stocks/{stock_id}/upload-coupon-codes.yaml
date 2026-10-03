@@ -64,6 +64,20 @@ post:
             description: 上传失败的券Code列表
             items:
               type: string
+              required:
+                - coupon_code
+                - code
+                - message
+              properties:
+                coupon_code:
+                  type: string
+                  description: 券Code
+                code:
+                  type: string
+                  description: 错误码
+                message:
+                  type: string
+                  description: 错误信息
           already_exist_code_list:
             type: array
             description: 已经存在的券Code列表

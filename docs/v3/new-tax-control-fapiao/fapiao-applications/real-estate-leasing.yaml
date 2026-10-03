@@ -143,6 +143,15 @@ post:
                       type: string
                       description: 单位
                       example: 次
+                      enum:
+                        - METER #米
+                        - SQUARE_METER #平方米
+                        - SQUARE_KILOMETER #平方千米
+                        - HECTARE #公顷
+                        - SQUARE_KILOMETER_ABBREVIATION #k㎡
+                        - SQUARE_METER_ABBREVIATION #㎡
+                        - HECTARE_ABBREVIATION #h㎡
+                        - MU #亩
                     quantity:
                       type: integer
                       description: 数量

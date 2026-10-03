@@ -26,6 +26,9 @@ post:
           - med_refund__other_fee
           - refund_time
           - out_refund_no
+          - med_refund_gov_fee
+          - med_refund_self_fee
+          - med_refund_other_fee
         properties:
           sub_mchid:
             type: string
@@ -56,6 +59,15 @@ post:
             type: string
             description: 从业机构退款单号
             example: R202204022005169952975171534816
+          med_refund_gov_fee:
+            type: integer
+            description: 医保统筹退款金额
+          med_refund_self_fee:
+            type: integer
+            description: 医保个账退款金额
+          med_refund_other_fee:
+            type: integer
+            description: 医保其他退款金额
   responses:
     '204':
       schema: {}

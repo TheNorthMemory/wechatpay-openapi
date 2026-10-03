@@ -28,7 +28,7 @@ interface Coupons
             'coupon_tag_info' => [
                 'coupon_tag_list' => ['MEMBER'],
                 'member_tag_info' => [
-                    'member_card_id' => '',
+                    'member_card_id' => 'MemberCardId_1234567890',
                 ],
             ],
         ],
@@ -52,7 +52,7 @@ interface Coupons
             'coupon_tag_info' => [
                 'coupon_tag_list' => ['MEMBER'],
                 'member_tag_info' => [
-                    'member_card_id' => '',
+                    'member_card_id' => 'MemberCardId_1234567890',
                 ],
             ],
         ],
@@ -73,6 +73,7 @@ interface Coupons
             'page_size' => 20,
             'page_token' => 'MTIzMjUK',
             'brand_id' => '120344',
+            'user_coupon_bundle_id' => '',
         ],
     ]): ResponseInterface;
 
@@ -91,6 +92,7 @@ interface Coupons
             'page_size' => 20,
             'page_token' => 'MTIzMjUK',
             'brand_id' => '120344',
+            'user_coupon_bundle_id' => '',
         ],
     ]): PromiseInterface;
 }

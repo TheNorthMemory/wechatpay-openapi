@@ -16,6 +16,9 @@ interface _out_bill_no_
      */
     public function get(array $options = [
         'out_bill_no' => 'plfk2020042013',
+        'query' => [
+            'sub_mchid' => '1900001109',
+        ],
     ]): ResponseInterface;
 
     /**
@@ -25,5 +28,8 @@ interface _out_bill_no_
      */
     public function getAsync(array $options = [
         'out_bill_no' => 'plfk2020042013',
+        'query' => [
+            'sub_mchid' => '1900001109',
+        ],
     ]): PromiseInterface;
 }

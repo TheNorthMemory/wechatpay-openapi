@@ -260,10 +260,11 @@ interface Stocks
     public function get(array $options = [
         'product_coupon_id' => '1000000013',
         'query' => [
-            'state' => 'AUDITING | SENDING | PAUSED | STOPPED',
+            'state' => 'DEACTIVATED',
             'page_size' => 20,
             'page_token' => 'MTIzMjUK',
             'brand_id' => '120344',
+            'stock_bundle_id' => '712315129419284901',
         ],
     ]): ResponseInterface;
 
@@ -275,10 +276,11 @@ interface Stocks
     public function getAsync(array $options = [
         'product_coupon_id' => '1000000013',
         'query' => [
-            'state' => 'AUDITING | SENDING | PAUSED | STOPPED',
+            'state' => 'DEACTIVATED',
             'page_size' => 20,
             'page_token' => 'MTIzMjUK',
             'brand_id' => '120344',
+            'stock_bundle_id' => '712315129419284901',
         ],
     ]): PromiseInterface;
 }

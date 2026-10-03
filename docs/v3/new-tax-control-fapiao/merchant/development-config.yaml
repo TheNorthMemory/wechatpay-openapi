@@ -60,7 +60,13 @@ get:
     - 经营工具∙电子发票
   summary: 查询商户配置的开发选项
   description: 查询商户配置的开发选项 [官方文档](https://pay.weixin.qq.com/wiki/doc/apiv3/Offline/apis/chapter4_8_19.shtml)
-  parameters: []
+  parameters:
+    - name: sub_mch_code
+      in: query
+      type: string
+      required: false
+      description: 子商户号
+      example: '1900000109'
   responses:
     '200':
       schema:

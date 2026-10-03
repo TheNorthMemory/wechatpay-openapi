@@ -64,6 +64,8 @@ post:
                       type: string
                       description: 货币类型
                       example: CNY
+                      enum:
+                        - CNY #扣费货币类型-人民币
           allow_cancel_scheduled:
             type: boolean
             description: 是否允许取消预约

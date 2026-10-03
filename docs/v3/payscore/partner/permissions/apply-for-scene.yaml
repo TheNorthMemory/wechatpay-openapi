@@ -47,6 +47,8 @@ post:
             type: string
             description: 授权场景
             example: TRANSACTION
+            enum:
+              - TRANSACTION #微信支付交易中授权场景
           transaction_scene_info:
             type: object
             description: 微信支付交易中授权附带的参数

@@ -231,6 +231,25 @@ post:
                 format: rfc3339
                 description: 退券时间
                 example: '2025-07-20T14:29:35+08:00'
+              associated_pay_score_order_info:
+                type: object
+                description: 券核销的关联微信支付分订单信息
+                properties:
+                  order_id:
+                    type: string
+                    description: 微信支付服务订单号
+                  out_order_no:
+                    type: string
+                    description: 商户服务订单号
+                  mchid:
+                    type: string
+                    description: 商户号
+                  sub_mchid:
+                    type: string
+                    description: 子商户号
+              saved_amount:
+                type: integer
+                description: 优惠金额
           sequential_usage_detail:
             type: object
             description: 多次优惠使用详情
@@ -339,6 +358,7 @@ post:
               state:
                 type: string
                 description: 商品券状态
+                example: EFFECTIVE
                 enum:
                   - AUDITING
                   - EFFECTIVE
@@ -370,6 +390,7 @@ post:
                 enum:
                   - SINGLE
                   - SEQUENTIAL
+                  - PROGRESSIVE_BUNDLE #多次优惠，由一组批次组成，每阶梯次序对应一个批次。用户按顺序使用，每次核销后发放下一张券，直到用完为止
               single_usage_info:
                 type: object
                 description: 单券模式信息
@@ -528,6 +549,18 @@ post:
               deactivate_reason:
                 type: string
                 description: 失效原因
+              progressive_bundle_usage_info:
+                type: object
+                description: 多次优惠模式信息
+                required:
+                  - count
+                properties:
+                  count:
+                    type: integer
+                    description: 可使用次数
+                  interval_days:
+                    type: integer
+                    description: 多次优惠使用间隔天数
           stock:
             type: object
             description: 批次信息
@@ -555,6 +588,7 @@ post:
               remark:
                 type: string
                 description: 备注
+                example: 8月工作日有效批次
               coupon_code_mode:
                 type: string
                 description: 券Code分配模式
@@ -680,6 +714,9 @@ post:
                               format: rfc3339
                               description: 结束时间
                               example: '2025-08-31T23:59:59+08:00'
+                      available_seconds:
+                        type: integer
+                        description: 领取后N秒内有效
                   normal_coupon:
                     type: object
                     description: 满减券使用规则
@@ -1038,6 +1075,7 @@ post:
               state:
                 type: string
                 description: 批次状态
+                example: SENDING
                 enum:
                   - AUDITING
                   - SENDING
@@ -1059,6 +1097,139 @@ post:
                 type: string
                 description: 品牌ID
                 example: '120344'
+              progressive_bundle_usage_rule:
+                type: object
+                description: 多次优惠使用规则
+                required:
+                  - coupon_available_period
+                properties:
+                  coupon_available_period:
+                    type: object
+                    description: 券可核销时间
+                    required:
+                      - available_begin_time
+                      - available_end_time
+                    properties:
+                      available_begin_time:
+                        type: string
+                        format: rfc3339
+                        description: 批次开始时间
+                      available_end_time:
+                        type: string
+                        format: rfc3339
+                        description: 批次结束时间
+                      available_days:
+                        type: integer
+                        description: 券生效后N天内可用
+                      wait_days_after_receive:
+                        type: integer
+                        description: 领券后需等待N天才生效
+                      weekly_available_period:
+                        type: object
+                        description: 每周固定可用时间
+                        required:
+                          - day_list
+                        properties:
+                          day_list:
+                            type: array
+                            description: 每周可用星期数
+                            items:
+                              type: string
+                              enum:
+                                - MONDAY #周一可用
+                                - TUESDAY #周二可用
+                                - WEDNESDAY #周三可用
+                                - THURSDAY #周四可用
+                                - FRIDAY #周五可用
+                                - SATURDAY #周六可用
+                                - SUNDAY #周日可用
+                          day_period_list:
+                            type: array
+                            description: 当天可用时间段
+                            items:
+                              type: object
+                              required:
+                                - begin_time
+                                - end_time
+                              properties:
+                                begin_time:
+                                  type: integer
+                                  description: 当天可用开始时间
+                                end_time:
+                                  type: integer
+                                  description: 当天可用结束时间
+                      irregular_available_period_list:
+                        type: array
+                        description: 指定可用时间段
+                        items:
+                          type: object
+                          required:
+                            - begin_time
+                            - end_time
+                          properties:
+                            begin_time:
+                              type: string
+                              format: rfc3339
+                              description: 开始时间
+                            end_time:
+                              type: string
+                              format: rfc3339
+                              description: 结束时间
+                      available_seconds:
+                        type: integer
+                        description: 领取后N秒内有效
+                  normal_coupon:
+                    type: object
+                    description: 满减券使用规则
+                    required:
+                      - threshold
+                      - discount_amount
+                    properties:
+                      threshold:
+                        type: integer
+                        description: 门槛金额
+                      discount_amount:
+                        type: integer
+                        description: 固定减免金额
+                  discount_coupon:
+                    type: object
+                    description: 折扣券使用规则
+                    required:
+                      - threshold
+                      - percent_off
+                    properties:
+                      threshold:
+                        type: integer
+                        description: 门槛金额
+                      percent_off:
+                        type: integer
+                        description: 固定减免百分比
+                  exchange_coupon:
+                    type: object
+                    description: 兑换券使用规则
+                    required:
+                      - threshold
+                      - exchange_price
+                    properties:
+                      threshold:
+                        type: integer
+                        description: 门槛金额
+                      exchange_price:
+                        type: integer
+                        description: 固定兑换价格
+              stock_bundle_info:
+                type: object
+                description: 批次组信息
+                required:
+                  - stock_bundle_id
+                  - stock_bundle_index
+                properties:
+                  stock_bundle_id:
+                    type: string
+                    description: 批次所属批次组ID
+                  stock_bundle_index:
+                    type: integer
+                    description: 批次在批次组内的次序
           attach:
             type: string
             description: 自定义附加信息
@@ -1071,3 +1242,95 @@ post:
             type: string
             description: 品牌ID
             example: '120344'
+          progressive_bundle_usage_detail:
+            type: object
+            description: 多次优惠使用详情
+            properties:
+              use_request_no:
+                type: string
+                description: 券核销请求单号
+              use_time:
+                type: string
+                format: rfc3339
+                description: 券核销时间
+              return_request_no:
+                type: string
+                description: 退券请求单号
+              return_time:
+                type: string
+                format: rfc3339
+                description: 退券时间
+              associated_order_info:
+                type: object
+                description: 券核销的微信支付订单信息
+                properties:
+                  transaction_id:
+                    type: string
+                    description: 微信支付单号
+                  out_trade_no:
+                    type: string
+                    description: 商户订单号
+                  mchid:
+                    type: string
+                    description: 商户号
+                  sub_mchid:
+                    type: string
+                    description: 子商户号
+              associated_pay_score_order_info:
+                type: object
+                description: 券核销的关联微信支付分订单信息
+                properties:
+                  order_id:
+                    type: string
+                    description: 微信支付服务订单号
+                  out_order_no:
+                    type: string
+                    description: 商户服务订单号
+                  mchid:
+                    type: string
+                    description: 商户号
+                  sub_mchid:
+                    type: string
+                    description: 子商户号
+              saved_amount:
+                type: integer
+                description: 优惠金额
+          user_product_coupon_bundle_info:
+            type: object
+            description: 用户券组信息
+            required:
+              - user_coupon_bundle_id
+              - user_coupon_bundle_index
+              - total_count
+              - used_count
+            properties:
+              user_coupon_bundle_id:
+                type: string
+                description: 用户券组ID
+              user_coupon_bundle_index:
+                type: integer
+                description: 用户券组内索引
+              total_count:
+                type: integer
+                description: 总可使用次数
+              used_count:
+                type: integer
+                description: 已使用次数
+          coupon_tag_info:
+            type: object
+            description: 用户商品券标签信息
+            properties:
+              coupon_tag_list:
+                type: array
+                description: 用户商品券标签列表
+                items:
+                  type: string
+                  enum:
+                    - MEMBER #会员标签，标识该用户商品券为会员券
+              member_tag_info:
+                type: object
+                description: 会员标签信息
+                properties:
+                  member_card_id:
+                    type: string
+                    description: 会员卡模板ID

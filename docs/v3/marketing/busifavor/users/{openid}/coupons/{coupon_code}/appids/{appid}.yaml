@@ -74,3 +74,39 @@ get:
                 type: string
                 format: rfc3339
                 description: 券核销时间
+              associate_out_trade_no:
+                type: string
+                description: 关联的商户订单号
+                example: '2000-01-01T00:00:00+08:00'
+              return_request_no:
+                type: string
+                description: 回退请求单号
+                example: MCHRETURN202003101234
+              return_time:
+                type: string
+                description: 券回退时间
+                example: '2020-07-31T13:29:35+08:00'
+              deactivate_request_no:
+                type: string
+                description: 失效请求单号
+                example: MCHRETURN202003101234
+              deactivate_time:
+                type: string
+                description: 券失效时间
+                example: '2020-07-31T13:29:35+08:00'
+              deactivate_reason:
+                type: string
+                description: 失效原因
+                example: 此券使用时间错误
+              associate_mch_id:
+                type: string
+                description: 关联的下单商户号
+                example: '190000001'
+              associate_transaction_id:
+                type: string
+                description: 关联的微信支付订单号
+                example: '4200000001856498491'
+              associate_sub_mch_id:
+                type: string
+                description: 关联的下单子商户号
+                example: '190000002'

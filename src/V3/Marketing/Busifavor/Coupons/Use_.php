@@ -25,6 +25,8 @@ interface Use_
             'out_trade_no' => '190000001',
             'mch_id' => '190000001',
             'transaction_id' => '4200000001856498491',
+            'saved_amount' => 0,
+            'sub_mch_id' => '190000002',
         ],
     ]): ResponseInterface;
 
@@ -44,6 +46,8 @@ interface Use_
             'out_trade_no' => '190000001',
             'mch_id' => '190000001',
             'transaction_id' => '4200000001856498491',
+            'saved_amount' => 0,
+            'sub_mch_id' => '190000002',
         ],
     ]): PromiseInterface;
 }

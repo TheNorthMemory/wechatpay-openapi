@@ -45,6 +45,10 @@ post:
             type: string
             description: 退款资金来源
             example: AVAILABLE
+            enum:
+              - AVAILABLE #仅对老资金流商户适用，指定从可用余额账户出资
+              - UNSETTLED #仅对出行预付押金退款适用，指定从未结算资金出资。
+              - PREPAID #仅对预付订单退款适用，指定从未结算资金出资。
           amount:
             type: object
             description: 金额信息
@@ -70,6 +74,9 @@ post:
                       type: string
                       description: 出资账户类型
                       example: AVAILABLE
+                      enum:
+                        - AVAILABLE #可用余额
+                        - UNAVAILABLE #不可用余额
                     amount:
                       type: integer
                       description: 出资金额
@@ -82,6 +89,12 @@ post:
                 type: string
                 description: 退款币种
                 example: CNY
+              account:
+                type: string
+                description: 出资账户类型
+              amount:
+                type: integer
+                description: 出资金额
           goods_detail:
             type: array
             description: 退款商品

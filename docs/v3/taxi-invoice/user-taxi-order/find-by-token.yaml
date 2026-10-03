@@ -35,6 +35,9 @@ get:
       type: string
       description: 授权模式
       example: ORDER_AUTH
+      enum:
+        - ORDER_AUTH #协议授权的基础上，还需对每笔订单进行授权
+        - PROTOCOL_AUTH #用户同意协议，授权查询
   responses:
     '200':
       schema:

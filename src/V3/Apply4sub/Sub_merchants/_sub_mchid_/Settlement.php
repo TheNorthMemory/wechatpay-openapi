@@ -16,6 +16,9 @@ interface Settlement
      */
     public function get(array $options = [
         'sub_mchid' => '1900006491',
+        'query' => [
+            'account_number_rule' => 'ACCOUNT_NUMBER_RULE_MASK_V1 | ACCOUNT_NUMBER_RULE_MASK_V2',
+        ],
     ]): ResponseInterface;
 
     /**
@@ -25,5 +28,8 @@ interface Settlement
      */
     public function getAsync(array $options = [
         'sub_mchid' => '1900006491',
+        'query' => [
+            'account_number_rule' => 'ACCOUNT_NUMBER_RULE_MASK_V1 | ACCOUNT_NUMBER_RULE_MASK_V2',
+        ],
     ]): PromiseInterface;
 }

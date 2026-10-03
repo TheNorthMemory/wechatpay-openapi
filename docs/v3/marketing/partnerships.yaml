@@ -62,6 +62,37 @@ get:
       type: integer
       description: 分页页码
       default: 0
+    - name: partner.type
+      in: query
+      type: string
+      required: true
+      description: 合作方类别
+      enum:
+        - APPID #合作方为Appid
+        - MERCHANT #合作方为商户
+    - name: partner.appid
+      in: query
+      type: string
+      required: false
+      description: 合作方Appid
+    - name: partner.merchant_id
+      in: query
+      type: string
+      required: false
+      description: 合作方商户ID
+    - name: authorized_data.business_type
+      in: query
+      type: string
+      required: true
+      description: 授权业务类别
+      enum:
+        - FAVOR_STOCK #授权业务类型-代金券批次
+        - BUSIFAVOR_STOCK #授权业务类型-商家券批次
+    - name: authorized_data.stock_id
+      in: query
+      type: string
+      required: false
+      description: 授权批次ID
   responses:
     '200':
       schema:

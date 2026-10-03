@@ -114,6 +114,7 @@ get:
                 usage_mode:
                   type: string
                   description: 使用模式
+                  example: SINGLE
                   enum:
                     - SINGLE
                     - PROGRESSIVE_BUNDLE

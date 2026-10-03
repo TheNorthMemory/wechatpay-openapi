@@ -43,6 +43,7 @@ interface App
                 ],
                 'sub_appid' => 'wxd678efh567hg6999',
                 'profit_sharing' => true,
+                'order_service_type' => 'INDIVIDUALTRADE',
             ],],
             'combine_payer_info' => [
                 'identity' => [
@@ -50,6 +51,7 @@ interface App
                     'number' => '6B46824C852FA29AAC3DCE6BFD852E27',
                     'name' => '6B46824C852FA29AAC3DCE6BFD852E27',
                 ],
+                'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
             ],
             'time_start' => '2019-12-31T15:59:60+08:00',
             'time_expire' => '2019-12-31T15:59:60+08:00',
@@ -114,6 +116,7 @@ interface App
                 ],
                 'sub_appid' => 'wxd678efh567hg6999',
                 'profit_sharing' => true,
+                'order_service_type' => 'INDIVIDUALTRADE',
             ],],
             'combine_payer_info' => [
                 'identity' => [
@@ -121,6 +124,7 @@ interface App
                     'number' => '6B46824C852FA29AAC3DCE6BFD852E27',
                     'name' => '6B46824C852FA29AAC3DCE6BFD852E27',
                 ],
+                'openid' => 'oUpF8uMuAJO_M2pxb1Q9zNjWeS6o',
             ],
             'time_start' => '2019-12-31T15:59:60+08:00',
             'time_expire' => '2019-12-31T15:59:60+08:00',

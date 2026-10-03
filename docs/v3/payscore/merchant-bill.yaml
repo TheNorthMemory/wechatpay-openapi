@@ -27,6 +27,8 @@ get:
       type: string
       description: 加密算法
       example: AEAD_AES_256_GCM
+      enum:
+        - AEAD_AES_256_GCM #账单使用AEAD_AES_256_GCM加密算法进行加密
     - name: service_id
       in: query
       required: true

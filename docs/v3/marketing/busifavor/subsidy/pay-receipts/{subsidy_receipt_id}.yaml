@@ -65,10 +65,23 @@ get:
             type: string
             description: 补差付款单据状态
             example: SUCCESS
+            enum:
+              - ACCEPTED #受理成功
+              - SUCCESS #补差补款成功
+              - FAIL #补差付款失败
+              - RETURNING #补差回退中
+              - PARTIAL_RETURN #补差部分回退
+              - FULL_RETURN #补差全额回退
           fail_reason:
             type: string
             description: 补差付款失败原因
             example: INSUFFICIENT_BALANCE
+            enum:
+              - INSUFFICIENT_BALANCE #扣款商户余额不足
+              - NOT_INCOMESPLIT_ORDER #非分账订单
+              - EXCEED_SUBSIDY_AMOUNT_QUOTA #超出订单补差总额限制
+              - EXCEED_SUBSIDY_COUNT_QUOTA #超出订单补差总数限制
+              - OTHER #其他原因
           success_time:
             type: string
             description: 补差付款完成时间

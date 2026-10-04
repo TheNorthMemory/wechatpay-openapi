@@ -11,6 +11,7 @@ get:
       type: string
       format: jsonObjectLike
       description: 合作方信息`JSON`格式字符串
+      example: '{"type":"APPID","appid":"wx4e1916a585d1f4e9","merchant_id":"2480029552"}'
       default: '{"type":"APPID","appid":"wx4e1916a585d1f4e9"}'
       x-json:
         type: object
@@ -36,6 +37,7 @@ get:
       type: string
       format: jsonObjectLike
       description: 被授权数据`JSON`格式字符串
+      example: '{"business_type":"FAVOR_STOCK","stock_id":"2433405"}'
       default: '{"business_type":"FAVOR_STOCK","stock_id":"2433405"}'
       x-json:
         type: object
@@ -56,43 +58,14 @@ get:
       in: query
       type: integer
       description: 分页大小
+      example: 5
       default: 50
     - name: offset
       in: query
       type: integer
       description: 分页页码
+      example: 10
       default: 0
-    - name: partner.type
-      in: query
-      type: string
-      required: true
-      description: 合作方类别
-      enum:
-        - APPID #合作方为Appid
-        - MERCHANT #合作方为商户
-    - name: partner.appid
-      in: query
-      type: string
-      required: false
-      description: 合作方Appid
-    - name: partner.merchant_id
-      in: query
-      type: string
-      required: false
-      description: 合作方商户ID
-    - name: authorized_data.business_type
-      in: query
-      type: string
-      required: true
-      description: 授权业务类别
-      enum:
-        - FAVOR_STOCK #授权业务类型-代金券批次
-        - BUSIFAVOR_STOCK #授权业务类型-商家券批次
-    - name: authorized_data.stock_id
-      in: query
-      type: string
-      required: false
-      description: 授权批次ID
   responses:
     '200':
       schema:
@@ -123,6 +96,9 @@ get:
                       type: string
                       description: 合作方类别
                       example: APPID
+                      enum:
+                        - APPID #合作方为Appid
+                        - MERCHANT #合作方为商户
                     appid:
                       type: string
                       description: 合作方APPID
@@ -141,6 +117,9 @@ get:
                       type: string
                       description: 授权业务类别
                       example: FAVOR_STOCK
+                      enum:
+                        - FAVOR_STOCK #授权业务类型-代金券批次
+                        - BUSIFAVOR_STOCK #授权业务类型-商家券批次
                     stock_id:
                       type: string
                       description: 授权批次ID

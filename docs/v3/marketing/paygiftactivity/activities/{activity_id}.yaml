@@ -10,6 +10,7 @@ get:
       in: path
       type: string
       description: 活动id
+      example: '10028001'
       required: true
   responses:
     200:
@@ -20,6 +21,7 @@ get:
               activity_id:
                 type: string
                 description: 活动id
+                example: '10028001'
               activity_type:
                 $ref: '../../../../definitions/Enumerations.yaml#ActivityType'
               activity_status:
@@ -27,9 +29,11 @@ get:
               creator_merchant_id:
                 type: string
                 description: 创建商户号
+                example: '10000022'
               belong_merchant_id:
                 type: string
                 description: 所属商户号
+                example: '10000022'
               pause_time:
                 type: string
                 format: rfc3339
@@ -44,10 +48,12 @@ get:
                 type: string
                 format: rfc3339
                 description: 活动创建时间
+                example: '2015-05-20T13:29:35.120+08:00'
               update_time:
                 type: string
                 format: rfc3339
                 description: 活动更新时间
+                example: '2015-05-20T13:29:35.120+08:00'
           - $ref: '../../../../definitions/PayGiftActivity.yaml#ActivityBase'
           - type: object
             properties:
@@ -56,4 +62,4 @@ get:
                 description: 活动奖品发放规则
                 properties:
                   full_send_rule:
-                      $ref: '../../../../definitions/PayGiftActivity.yaml#FullSendRuleBase'
+                    $ref: '../../../../definitions/PayGiftActivity.yaml#FullSendRuleBase'

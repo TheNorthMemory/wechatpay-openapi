@@ -11,16 +11,19 @@ get:
       required: true
       type: integer
       description: 分页页码
+      example: 1
     - name: limit
       in: query
       required: true
       type: integer
       description: 分页大小
+      example: 8
     - name: stock_creator_mchid
       in: query
       required: true
       type: string
       description: 创建批次的商户号
+      example: '9856888'
     - name: create_start_time
       in: query
       type: string
@@ -36,6 +39,7 @@ get:
     - name: status
       in: query
       type: string
+      example: paused
       allOf:
         - $ref: '../../../definitions/Enumerations.yaml#FavorStockStatus'
   responses:
@@ -73,11 +77,13 @@ get:
                     distributed_coupons:
                       type: integer
                       description: 已发券数量
+                      example: 100
                 - type: object
                   properties:
                     business_type:
                       type: string
                       description: 业务类型
+                      example: MULTIUSE
                       enum:
                         - MULTIUSE
                     available_region_list:
@@ -89,18 +95,28 @@ get:
                           type:
                             type: string
                             description: 类型
+                            example: PROVINCE
+                            enum:
+                              - PROVINCE #地域信息精确到省级
+                              - CITY #地域信息精确到市级
+                              - DISTRICT #地域信息精确到区级
+                              - COUNTRY #地域信息精确到国家级
                           province:
                             type: string
                             description: 省
+                            example: 广东省
                           city:
                             type: string
                             description: 市
+                            example: 深圳市
                           district:
                             type: string
                             description: 区
+                            example: 南山区
                           country:
                             type: string
                             description: 国家
+                            example: 中国大陆
                       example:
                         - type: PROVINCE
                           province: 广东省
@@ -114,3 +130,7 @@ get:
                         type: string
                       example:
                         - 餐饮
+                    card_id:
+                      type: string
+                      description: 卡包ID
+                      example: pX2-vjoeC94Nn-r2g5GjDwkfFH7E

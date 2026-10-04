@@ -161,26 +161,6 @@ patch:
                     type: string
                     description: 公众号AppID
                     example: wx1234567890
-              entrance_finder:
-                type: object
-                description: 视频号入口
-                required:
-                  - finder_id
-                  - finder_video_id
-                  - finder_video_cover_image_url
-                properties:
-                  finder_id:
-                    type: string
-                    description: 视频号ID
-                    example: gh_12345678
-                  finder_video_id:
-                    type: string
-                    description: 视频号视频ID
-                    example: UDFsdf24df34dD456Hdf34
-                  finder_video_cover_image_url:
-                    type: string
-                    description: 视频号封面图
-                    example: https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/xxx
           notify_config:
             type: object
             description: 事件通知配置
@@ -558,26 +538,6 @@ patch:
                           type: string
                           description: 公众号AppID
                           example: wx1234567890
-                    entrance_finder:
-                      type: object
-                      description: 视频号入口
-                      required:
-                        - finder_id
-                        - finder_video_id
-                        - finder_video_cover_image_url
-                      properties:
-                        finder_id:
-                          type: string
-                          description: 视频号ID
-                          example: gh_12345678
-                        finder_video_id:
-                          type: string
-                          description: 视频号视频ID
-                          example: UDFsdf24df34dD456Hdf34
-                        finder_video_cover_image_url:
-                          type: string
-                          description: 视频号封面图
-                          example: https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/xxx
                 notify_config:
                   type: object
                   description: 事件通知配置

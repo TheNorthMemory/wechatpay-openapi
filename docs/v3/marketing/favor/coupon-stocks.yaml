@@ -24,6 +24,7 @@ post:
                   jump_target:
                     type: string
                     description: 卡包跳转目标
+                    example: PAYMENT_CODE
                     enum:
                       - PAYMENT_CODE
                       - MINI_PROGRAM
@@ -31,9 +32,11 @@ post:
                   mini_program_appid:
                     type: string
                     description: 小程序appid
+                    example: wx23232232323
                   mini_program_path:
                     type: string
                     description: 小程序path
+                    example: /path/index/index
               coupon_use_rule:
                 type: object
                 properties:

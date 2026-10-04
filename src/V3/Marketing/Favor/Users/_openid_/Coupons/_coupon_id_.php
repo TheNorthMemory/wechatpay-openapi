@@ -15,10 +15,10 @@ interface _coupon_id_
      * @link https://wechatpay.im/openapi/v3/marketing/favor/users/%7Bopenid%7D/coupons/%7Bcoupon_id%7D
      */
     public function get(array $options = [
-        'openid' => '',
-        'coupon_id' => '',
+        'openid' => 'Openid_example',
+        'coupon_id' => '9856888',
         'query' => [
-            'appid' => '',
+            'appid' => 'appid_example',
         ],
     ]): ResponseInterface;
 
@@ -28,10 +28,10 @@ interface _coupon_id_
      * @link https://wechatpay.im/openapi/v3/marketing/favor/users/%7Bopenid%7D/coupons/%7Bcoupon_id%7D
      */
     public function getAsync(array $options = [
-        'openid' => '',
-        'coupon_id' => '',
+        'openid' => 'Openid_example',
+        'coupon_id' => '9856888',
         'query' => [
-            'appid' => '',
+            'appid' => 'appid_example',
         ],
     ]): PromiseInterface;
 }

@@ -11,22 +11,27 @@ get:
       required: true
       type: string
       description: 用户openid
+      example: Openid_example
     - name: coupon_id
       in: path
       required: true
       type: string
       description: 代金券id
+      example: '9856888'
     - name: appid
       in: query
       required: true
       type: string
       description: 公众账号ID
+      example: appid_example
   responses:
     200:
       schema:
         allOf:
           - $ref: '../../../../../../definitions/FavorCouponStock.yaml#CouponOwner'
           - type: object
+            required:
+              - no_cash
             properties:
               available_balance:
                 type: number
@@ -35,5 +40,32 @@ get:
               business_type:
                 type: string
                 description: 业务类型
+                example: MULTIUSE
                 enum:
                   - MULTIUSE
+              no_cash:
+                type: boolean
+                description: 是否无资金流
+              out_request_no:
+                type: string
+                description: 商户单据号
+                example: example_out_request_no
+              discount_msg:
+                type: object
+                description: 折扣券信息
+                required:
+                  - discount_amount_max
+                  - discount_percent
+                properties:
+                  discount_amount_max:
+                    type: integer
+                    description: 最高折扣金额
+                    example: 100
+                  discount_percent:
+                    type: integer
+                    description: 折扣百分比
+                    example: 88
+                  transaction_minimum:
+                    type: integer
+                    description: 门槛
+                    example: 100

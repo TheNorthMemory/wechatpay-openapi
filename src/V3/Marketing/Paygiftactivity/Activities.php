@@ -17,10 +17,10 @@ interface Activities
      */
     public function get(array $options = [
         'query' => [
-            'offset' => 0,
-            'limit' => 0,
-            'activity_name' => '',
-            'activity_status' => 'ACT_STATUS_UNKNOWN | CREATE_ACT_STATUS | ONGOING_ACT_STATUS | TERMINATE_ACT_STATUS',
+            'offset' => 1,
+            'limit' => 20,
+            'activity_name' => '良品铺子回馈活动',
+            'activity_status' => 'ACT_STATUS_UNKNOWN',
             'award_type' => 'BUSIFAVOR',
         ],
     ]): ResponseInterface;
@@ -32,10 +32,10 @@ interface Activities
      */
     public function getAsync(array $options = [
         'query' => [
-            'offset' => 0,
-            'limit' => 0,
-            'activity_name' => '',
-            'activity_status' => 'ACT_STATUS_UNKNOWN | CREATE_ACT_STATUS | ONGOING_ACT_STATUS | TERMINATE_ACT_STATUS',
+            'offset' => 1,
+            'limit' => 20,
+            'activity_name' => '良品铺子回馈活动',
+            'activity_status' => 'ACT_STATUS_UNKNOWN',
             'award_type' => 'BUSIFAVOR',
         ],
     ]): PromiseInterface;

@@ -203,33 +203,6 @@ patch:
                     type: integer
                     description: 固定减免百分比
                     example: 20
-          sequential_usage_info:
-            type: object
-            description: 多次优惠模式信息
-            required:
-              - type
-              - count
-              - available_days
-            properties:
-              type:
-                type: string
-                description: 多次优惠规则类型
-                example: INCREMENTAL
-                enum:
-                  - INCREMENTAL
-                  - EQUAL
-              count:
-                type: integer
-                description: 可使用次数
-                example: 15
-              available_days:
-                type: integer
-                description: 多次优惠有效天数
-                example: 365
-              interval_days:
-                type: integer
-                description: 多次优惠使用间隔天数
-                example: 0
           display_info:
             type: object
             description: 展示信息
@@ -447,33 +420,6 @@ get:
                     type: integer
                     description: 固定减免百分比
                     example: 20
-          sequential_usage_info:
-            type: object
-            description: 多次优惠模式信息
-            required:
-              - type
-              - count
-              - available_days
-            properties:
-              type:
-                type: string
-                description: 多次优惠规则类型
-                example: INCREMENTAL
-                enum:
-                  - INCREMENTAL
-                  - EQUAL
-              count:
-                type: integer
-                description: 可使用次数
-                example: 15
-              available_days:
-                type: integer
-                description: 多次优惠有效天数
-                example: 365
-              interval_days:
-                type: integer
-                description: 多次优惠使用间隔天数
-                example: 0
           display_info:
             type: object
             description: 展示信息

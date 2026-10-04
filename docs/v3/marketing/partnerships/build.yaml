@@ -27,6 +27,7 @@ post:
               type:
                 type: string
                 description: 合作方类别
+                example: APPID
                 enum:
                   - APPID
                   - MERCHANT
@@ -46,6 +47,7 @@ post:
               business_type:
                 type: string
                 description: 授权业务类别
+                example: FAVOR_STOCK
                 enum:
                   - FAVOR_STOCK
                   - BUSIFAVOR_STOCK
@@ -67,15 +69,18 @@ post:
               type:
                 type: string
                 description: 合作方类别
+                example: APPID
                 enum:
                   - APPID
                   - MERCHANT
               appid:
                 type: string
                 description: 合作方APPID
+                example: wx4e1916a585d1f4e9
               merchant_id:
                 type: string
                 description: 合作方商户ID
+                example: '2480029552'
           authorized_data:
             type: object
             required: [business_type]
@@ -84,23 +89,28 @@ post:
               business_type:
                 type: string
                 description: 授权业务类别
+                example: FAVOR_STOCK
                 enum:
                   - FAVOR_STOCK
                   - BUSIFAVOR_STOCK
               stock_id:
                 type: string
                 description: 授权批次ID
+                example: '2433405'
           state:
             $ref: '../../../definitions/Enumerations.yaml#State'
           build_time:
             type: string
             format: rfc3339
             description: 建立合作关系时间
+            example: '2015-05-20T13:29:35.120+08:00'
           create_time:
             type: string
             format: rfc3339
             description: 创建时间
+            example: '2015-05-20T13:29:35.120+08:00'
           update_time:
             type: string
             format: rfc3339
             description: 更新时间
+            example: '2015-05-20T13:29:35.120+08:00'

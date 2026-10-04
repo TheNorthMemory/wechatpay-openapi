@@ -25,9 +25,9 @@ interface _stock_id_
      * @link https://wechatpay.im/openapi/v3/marketing/favor/stocks/%7Bstock_id%7D
      */
     public function get(array $options = [
-        'stock_id' => '',
+        'stock_id' => '9856888',
         'query' => [
-            'stock_creator_mchid' => '',
+            'stock_creator_mchid' => '123456',
         ],
     ]): ResponseInterface;
 
@@ -37,9 +37,9 @@ interface _stock_id_
      * @link https://wechatpay.im/openapi/v3/marketing/favor/stocks/%7Bstock_id%7D
      */
     public function getAsync(array $options = [
-        'stock_id' => '',
+        'stock_id' => '9856888',
         'query' => [
-            'stock_creator_mchid' => '',
+            'stock_creator_mchid' => '123456',
         ],
     ]): PromiseInterface;
 }

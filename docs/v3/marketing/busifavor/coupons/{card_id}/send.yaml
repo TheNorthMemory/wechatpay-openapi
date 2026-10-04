@@ -10,6 +10,7 @@ post:
       in: path
       type: string
       description: 消费卡ID
+      example: pIJMr5MMiIkO_93VtPyIiEk2DZ4w
       required: true
     - name: _
       in: body
@@ -21,16 +22,20 @@ post:
           appid:
             type: string
             description: 消费卡归属appid
+            example: wxc0b84a53ed8e8d29
           openid:
             type: string
             description: 用户openid
+            example: obLatjhnqgy2syxrXVM3MJirbkdI
           out_request_no:
             type: string
             description: 商户单据号
+            example: oTYhjfdsahnssddj_0136
           send_time:
             type: string
             format: rfc3339
             description: 请求发卡时间
+            example: '2019-12-31T13:29:35.120+08:00'
   responses:
     200:
       schema:

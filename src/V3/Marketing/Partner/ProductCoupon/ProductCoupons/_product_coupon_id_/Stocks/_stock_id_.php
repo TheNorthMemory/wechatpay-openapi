@@ -53,11 +53,6 @@ interface _stock_id_
                 'entrance_official_account' => [
                     'appid' => 'wx1234567890',
                 ],
-                'entrance_finder' => [
-                    'finder_id' => 'gh_12345678',
-                    'finder_video_id' => 'UDFsdf24df34dD456Hdf34',
-                    'finder_video_cover_image_url' => 'https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/xxx',
-                ],
             ],
             'notify_config' => [
                 'notify_appid' => 'wx23232232323',
@@ -103,11 +98,6 @@ interface _stock_id_
                 ],
                 'entrance_official_account' => [
                     'appid' => 'wx1234567890',
-                ],
-                'entrance_finder' => [
-                    'finder_id' => 'gh_12345678',
-                    'finder_video_id' => 'UDFsdf24df34dD456Hdf34',
-                    'finder_video_cover_image_url' => 'https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/xxx',
                 ],
             ],
             'notify_config' => [

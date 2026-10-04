@@ -23,7 +23,138 @@ get:
   responses:
     200:
       schema:
-        $ref: '../../../../../../definitions/MemberCard.yaml#CodeRecord'
+        allOf:
+          - $ref: ../../../../../../definitions/MemberCard.yaml#CodeRecord
+          - type: object
+            properties:
+              service_modules:
+                type: array
+                description: 用户当前服务项
+                items:
+                  type: object
+                  required:
+                    - service_module_id
+                  properties:
+                    service_module_id:
+                      type: string
+                      description: 会员服务项id
+                      example: '666'
+                    state_setting:
+                      type: object
+                      description: 服务状态设置
+                      required:
+                        - state_id
+                        - content_template_data
+                      properties:
+                        state_id:
+                          type: string
+                          description: 状态id
+                          example: CHECKED_IN
+                        content_template_data:
+                          type: object
+                          description: 内容模版设置
+                          required:
+                            - field_list
+                          properties:
+                            field_list:
+                              type: array
+                              description: 服务内容列表
+                              items:
+                                type: object
+                                required:
+                                  - field_id
+                                  - field_value
+                                properties:
+                                  field_id:
+                                    type: string
+                                    description: 内容字段id
+                                    example: hotel_name
+                                  field_value:
+                                    type: string
+                                    description: 内容字段值
+                                    example: 深圳市南山区滨海路700号
+                            action_setting:
+                              type: object
+                              description: 操作设置
+                              required:
+                                - action_name
+                                - jump_miniprogram
+                              properties:
+                                action_name:
+                                  type: string
+                                  description: 操作名称
+                                  example: 一键开锁
+                                jump_miniprogram:
+                                  type: object
+                                  description: 跳转小程序
+                                  required:
+                                    - appid
+                                    - path
+                                  properties:
+                                    appid:
+                                      type: string
+                                      description: 小程序AppID
+                                      example: wx37178d097a6851d8
+                                    path:
+                                      type: string
+                                      description: 小程序path
+                                      example: pages/index/index
+                        message_template_setting:
+                          type: object
+                          description: 消息模版设置
+                          required:
+                            - message_template_id
+                            - field_list
+                          properties:
+                            message_template_id:
+                              type: string
+                              description: 模版消息id
+                              example: 9bJgRNz9XG248XZ-a0nDKH3Vt_vaTp32fRP1LWvxjzI
+                            field_list:
+                              type: array
+                              description: 模板消息字段列表
+                              items:
+                                type: object
+                                required:
+                                  - field_id
+                                  - field_value
+                                properties:
+                                  field_id:
+                                    type: string
+                                    description: 消息字段id
+                                    example: keyword1
+                                  field_value:
+                                    type: string
+                                    description: 消息字段的值
+                                    example: 深圳市南山区滨海路700号
+              member_price_word:
+                type: string
+                description: 会员专享价文案
+              fapiao_jump_word:
+                type: string
+                description: 发票跳转文案
+              guide:
+                type: object
+                description: 客服联系信息
+                required:
+                  - staff_name
+                  - head_image_url
+                properties:
+                  staff_name:
+                    type: string
+                    description: 联系人名字
+                  head_image_url:
+                    type: string
+                    description: 联系人头像
+                  contact_information_name:
+                    type: string
+                    description: 联系方式
+                  contact_information_value:
+                    type: string
+                    description: 联系信息值
+                  phone_number:
+                    type: string
+                    description: 联系电话
 patch:
   x-last-updated-at: 2024.11.18
   x-role:

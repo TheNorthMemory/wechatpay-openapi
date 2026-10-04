@@ -32,12 +32,6 @@ interface ProductCoupons
                     'percent_off' => 20,
                 ],
             ],
-            'sequential_usage_info' => [
-                'type' => 'INCREMENTAL',
-                'count' => 15,
-                'available_days' => 365,
-                'interval_days' => 0,
-            ],
             'display_info' => [
                 'name' => '全场满100立打8折',
                 'image_url' => 'https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/xxx',
@@ -97,37 +91,6 @@ interface ProductCoupons
                         'threshold' => 10000,
                         'exchange_price' => 20,
                     ],
-                ],
-                'sequential_usage_rule' => [
-                    'coupon_available_period' => [
-                        'available_begin_time' => '2025-08-01T00:00:00+08:00',
-                        'available_end_time' => '2025-08-31T23:59:59+08:00',
-                        'wait_days_after_receive' => 30,
-                        'weekly_available_period' => [
-                            'day_list' => ['MONDAY'],
-                            'day_period_list' => [[
-                                'begin_time' => 60,
-                                'end_time' => 86399,
-                            ],],
-                        ],
-                        'irregular_available_period_list' => [[
-                            'begin_time' => '2025-08-01T00:00:00+08:00',
-                            'end_time' => '2025-08-31T23:59:59+08:00',
-                        ],],
-                    ],
-                    'normal_coupon_list' => [[
-                        'threshold' => 10000,
-                        'discount_amount' => 1,
-                    ],],
-                    'discount_coupon_list' => [[
-                        'threshold' => 10000,
-                        'percent_off' => 20,
-                    ],],
-                    'exchange_coupon_list' => [[
-                        'threshold' => 10000,
-                        'exchange_price' => 20,
-                    ],],
-                    'special_first' => true,
                 ],
                 'usage_rule_display_info' => [
                     'coupon_usage_method_list' => ['OFFLINE'],
@@ -272,12 +235,6 @@ interface ProductCoupons
                     'percent_off' => 20,
                 ],
             ],
-            'sequential_usage_info' => [
-                'type' => 'INCREMENTAL',
-                'count' => 15,
-                'available_days' => 365,
-                'interval_days' => 0,
-            ],
             'display_info' => [
                 'name' => '全场满100立打8折',
                 'image_url' => 'https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/xxx',
@@ -337,37 +294,6 @@ interface ProductCoupons
                         'threshold' => 10000,
                         'exchange_price' => 20,
                     ],
-                ],
-                'sequential_usage_rule' => [
-                    'coupon_available_period' => [
-                        'available_begin_time' => '2025-08-01T00:00:00+08:00',
-                        'available_end_time' => '2025-08-31T23:59:59+08:00',
-                        'wait_days_after_receive' => 30,
-                        'weekly_available_period' => [
-                            'day_list' => ['MONDAY'],
-                            'day_period_list' => [[
-                                'begin_time' => 60,
-                                'end_time' => 86399,
-                            ],],
-                        ],
-                        'irregular_available_period_list' => [[
-                            'begin_time' => '2025-08-01T00:00:00+08:00',
-                            'end_time' => '2025-08-31T23:59:59+08:00',
-                        ],],
-                    ],
-                    'normal_coupon_list' => [[
-                        'threshold' => 10000,
-                        'discount_amount' => 1,
-                    ],],
-                    'discount_coupon_list' => [[
-                        'threshold' => 10000,
-                        'percent_off' => 20,
-                    ],],
-                    'exchange_coupon_list' => [[
-                        'threshold' => 10000,
-                        'exchange_price' => 20,
-                    ],],
-                    'special_first' => true,
                 ],
                 'usage_rule_display_info' => [
                     'coupon_usage_method_list' => ['OFFLINE'],

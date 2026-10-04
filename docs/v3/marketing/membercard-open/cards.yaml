@@ -189,7 +189,61 @@ post:
   responses:
     200:
       schema:
-        $ref: '../../../definitions/MemberCard.yaml#Record'
+        allOf:
+          - $ref: ../../../definitions/MemberCard.yaml#Record
+          - type: object
+            properties:
+              favor:
+                type: object
+                description: 会员优惠
+                required:
+                  - show_coupon
+                properties:
+                  show_coupon:
+                    type: boolean
+                    description: 是否展示优惠券
+                  member_price_word:
+                    type: string
+                    description: 会员专享价文案
+                  member_price_appid:
+                    type: string
+                    description: 会员专享价跳转AppID
+                  member_price_path:
+                    type: string
+                    description: 会员专享价跳转path
+                  member_price_title:
+                    type: string
+                    description: 会员专享价标题
+                  favor_module_title:
+                    type: string
+                    description: 会员优惠栏目名称
+              service_modules:
+                type: array
+                description: 会员服务项
+                items:
+                  type: object
+                  required:
+                    - service_module_id
+                  properties:
+                    service_module_id:
+                      type: string
+                      description: 会员服务项id
+                    jump_miniprogram:
+                      type: object
+                      description: 跳转小程序
+                      required:
+                        - appid
+                        - path
+                      properties:
+                        appid:
+                          type: string
+                          description: 小程序AppID
+                        path:
+                          type: string
+                          description: 小程序path
+              need_dynamic_code:
+                type: boolean
+                description: 是否启用动态码
 get:
   x-last-updated-at: 2024.09.20
   x-role:
@@ -215,6 +269,7 @@ get:
       required: true
       type: integer
       description: 分页页码
+      example: 0
       default: 0
     - name: limit
       in: query
@@ -234,12 +289,15 @@ get:
           total_count:
             type: integer
             description: 总数量
+            example: 20
           limit:
             type: integer
             description: 分页大小
+            example: 20
           offset:
             type: integer
             description: 分页页码
+            example: 1
             default: 0
           data:
             type: array

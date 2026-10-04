@@ -15,12 +15,12 @@ interface Send
      * @link https://wechatpay.im/openapi/v3/marketing/busifavor/coupons/%7Bcard_id%7D/send
      */
     public function post(array $options = [
-        'card_id' => '',
+        'card_id' => 'pIJMr5MMiIkO_93VtPyIiEk2DZ4w',
         'json' => [
-            'appid' => '',
-            'openid' => '',
-            'out_request_no' => '',
-            'send_time' => '',
+            'appid' => 'wxc0b84a53ed8e8d29',
+            'openid' => 'obLatjhnqgy2syxrXVM3MJirbkdI',
+            'out_request_no' => 'oTYhjfdsahnssddj_0136',
+            'send_time' => '2019-12-31T13:29:35.120+08:00',
         ],
     ]): ResponseInterface;
 
@@ -30,12 +30,12 @@ interface Send
      * @link https://wechatpay.im/openapi/v3/marketing/busifavor/coupons/%7Bcard_id%7D/send
      */
     public function postAsync(array $options = [
-        'card_id' => '',
+        'card_id' => 'pIJMr5MMiIkO_93VtPyIiEk2DZ4w',
         'json' => [
-            'appid' => '',
-            'openid' => '',
-            'out_request_no' => '',
-            'send_time' => '',
+            'appid' => 'wxc0b84a53ed8e8d29',
+            'openid' => 'obLatjhnqgy2syxrXVM3MJirbkdI',
+            'out_request_no' => 'oTYhjfdsahnssddj_0136',
+            'send_time' => '2019-12-31T13:29:35.120+08:00',
         ],
     ]): PromiseInterface;
 }

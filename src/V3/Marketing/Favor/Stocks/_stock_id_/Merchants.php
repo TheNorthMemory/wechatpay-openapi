@@ -15,11 +15,11 @@ interface Merchants
      * @link https://wechatpay.im/openapi/v3/marketing/favor/stocks/%7Bstock_id%7D/merchants
      */
     public function get(array $options = [
-        'stock_id' => '',
+        'stock_id' => '9865000',
         'query' => [
-            'offset' => 0,
-            'limit' => '',
-            'stock_creator_mchid' => '',
+            'offset' => 10,
+            'limit' => '10',
+            'stock_creator_mchid' => '9865000',
         ],
     ]): ResponseInterface;
 
@@ -29,11 +29,11 @@ interface Merchants
      * @link https://wechatpay.im/openapi/v3/marketing/favor/stocks/%7Bstock_id%7D/merchants
      */
     public function getAsync(array $options = [
-        'stock_id' => '',
+        'stock_id' => '9865000',
         'query' => [
-            'offset' => 0,
-            'limit' => '',
-            'stock_creator_mchid' => '',
+            'offset' => 10,
+            'limit' => '10',
+            'stock_creator_mchid' => '9865000',
         ],
     ]): PromiseInterface;
 }

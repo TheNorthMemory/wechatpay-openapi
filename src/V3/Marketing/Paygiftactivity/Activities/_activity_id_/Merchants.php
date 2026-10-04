@@ -17,7 +17,7 @@ interface Merchants
      * @link https://wechatpay.im/openapi/v3/marketing/paygiftactivity/activities/%7Bactivity_id%7D/merchants
      */
     public function get(array $options = [
-        'activity_id' => '',
+        'activity_id' => '126002309',
         'query' => [
             'offset' => 0,
             'limit' => 20,
@@ -30,7 +30,7 @@ interface Merchants
      * @link https://wechatpay.im/openapi/v3/marketing/paygiftactivity/activities/%7Bactivity_id%7D/merchants
      */
     public function getAsync(array $options = [
-        'activity_id' => '',
+        'activity_id' => '126002309',
         'query' => [
             'offset' => 0,
             'limit' => 20,

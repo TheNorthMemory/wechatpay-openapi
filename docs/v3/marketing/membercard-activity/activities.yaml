@@ -261,6 +261,11 @@ post:
             type: string
             description: 活动的当前状态
             example: ONGOING
+            enum:
+              - CREATED #已创建，调用创建活动API成功后该活动状态
+              - ONGOING #运行中，当活动正式开始的时候活动状态
+              - TERMINATED #已终止，调用终止活动API接口活动状态
+              - OVER_TIME #已过期，当前活动时间超过结束时间
           create_time:
             type: string
             description: 创建时间
@@ -281,6 +286,11 @@ post:
             type: string
             description: 活动类型
             example: NON_MEMBER_AFTERPAY
+            enum:
+              - NON_MEMBER_AFTERPAY #支付后开卡有礼活动（说明：非会员用户在商户侧消费完成后，可曝光在微信支付成功页面的开卡有礼活动）
+              - MEMBER_AFTERPAY #支付后老会员有礼活动 （会员用户在商户侧消费完成后，可曝光在微信支付成功页面的老会员有礼活动）
+              - NON_MEMBER_MINIPROGRAM #支付前场景开卡有礼活动（说明：覆盖扫码/小程序场景，对于非会员用户，访问开卡组件时可看到开卡有礼活动信息，开卡后获得对应优惠券）
+              - MEMBER_MINIPROGRAM #支付前场景老会员有礼活动（说明：覆盖扫码/小程序场景，对于会员用户，访问开卡组件时可直接获得活动设置的优惠券）
           begin_time:
             type: string
             description: 活动开始时间
@@ -411,6 +421,9 @@ post:
                     type: string
                     description: 激活类型
                     example: AUTO_ACTIVATE
+                    enum:
+                      - AUTO_ACTIVATE #一键激活；自动激活类型，在用户领卡后由微信自动激活
+                      - JUMP_ACTIVATE #跳转激活；跳转激活类型，用户领卡后，由商家调用API激活
                   activate_url:
                     type: string
                     description: 跳转激活的url
@@ -543,6 +556,11 @@ get:
                   type: string
                   description: 活动的当前状态
                   example: ONGOING
+                  enum:
+                    - CREATED #已创建，调用创建活动API成功后该活动状态
+                    - ONGOING #运行中，当活动正式开始的时候活动状态
+                    - TERMINATED #已终止，调用终止活动API接口活动状态
+                    - OVER_TIME #已过期，当前活动时间超过结束时间
                 create_time:
                   type: string
                   description: 创建时间
@@ -563,6 +581,11 @@ get:
                   type: string
                   description: 活动类型
                   example: NON_MEMBER_AFTERPAY
+                  enum:
+                    - NON_MEMBER_AFTERPAY #支付后开卡有礼活动（说明：非会员用户在商户侧消费完成后，可曝光在微信支付成功页面的开卡有礼活动）
+                    - MEMBER_AFTERPAY #支付后老会员有礼活动 （会员用户在商户侧消费完成后，可曝光在微信支付成功页面的老会员有礼活动）
+                    - NON_MEMBER_MINIPROGRAM #支付前场景开卡有礼活动（说明：覆盖扫码/小程序场景，对于非会员用户，访问开卡组件时可看到开卡有礼活动信息，开卡后获得对应优惠券）
+                    - MEMBER_MINIPROGRAM #支付前场景老会员有礼活动（说明：覆盖扫码/小程序场景，对于会员用户，访问开卡组件时可直接获得活动设置的优惠券）
                 begin_time:
                   type: string
                   description: 活动开始时间
@@ -693,6 +716,9 @@ get:
                           type: string
                           description: 激活类型
                           example: AUTO_ACTIVATE
+                          enum:
+                            - AUTO_ACTIVATE #一键激活；自动激活类型，在用户领卡后由微信自动激活
+                            - JUMP_ACTIVATE #跳转激活；跳转激活类型，用户领卡后，由商家调用API激活
                         activate_url:
                           type: string
                           description: 跳转激活的url

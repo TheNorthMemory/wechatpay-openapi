@@ -58,7 +58,6 @@ interface _card_id_
                 'wait_days_after_receive' => 2,
                 'available_begin_time' => '2020-05-20T13:29:35.120+08:00',
             ],
-            'need_display_level' => true,
             'init_level' => '白银会员',
             'balance_information' => [
                 'need_balance' => true,
@@ -109,7 +108,6 @@ interface _card_id_
                 'wait_days_after_receive' => 2,
                 'available_begin_time' => '2020-05-20T13:29:35.120+08:00',
             ],
-            'need_display_level' => true,
             'init_level' => '白银会员',
             'balance_information' => [
                 'need_balance' => true,

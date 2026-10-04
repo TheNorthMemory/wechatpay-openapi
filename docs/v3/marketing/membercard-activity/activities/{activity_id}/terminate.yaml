@@ -29,3 +29,8 @@ post:
             type: string
             description: 终止时间
             example: '2015-05-20T13:29:35.120+08:00'
+          creterminate_timeate_time:
+            type: string
+            format: rfc3339
+            description: 终止时间
+            example: '2015-05-20T13:29:35.120+08:00'

@@ -15,7 +15,7 @@ interface Terminate
      * @link https://wechatpay.im/openapi/v3/marketing/paygiftactivity/activities/%7Bactivity_id%7D/terminate
      */
     public function post(array $options = [
-        'activity_id' => '',
+        'activity_id' => '10028001',
     ]): ResponseInterface;
 
     /**
@@ -24,6 +24,6 @@ interface Terminate
      * @link https://wechatpay.im/openapi/v3/marketing/paygiftactivity/activities/%7Bactivity_id%7D/terminate
      */
     public function postAsync(array $options = [
-        'activity_id' => '',
+        'activity_id' => '10028001',
     ]): PromiseInterface;
 }

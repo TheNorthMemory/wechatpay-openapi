@@ -10,6 +10,7 @@ post:
       in: path
       type: string
       description: 活动id
+      example: '126002309'
       required: true
     - name: _
       in: body

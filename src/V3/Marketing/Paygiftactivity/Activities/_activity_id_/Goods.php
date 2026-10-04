@@ -15,7 +15,7 @@ interface Goods
      * @link https://wechatpay.im/openapi/v3/marketing/paygiftactivity/activities/%7Bactivity_id%7D/goods
      */
     public function get(array $options = [
-        'activity_id' => '',
+        'activity_id' => '10028001',
         'query' => [
             'offset' => 1,
             'limit' => 20,
@@ -28,7 +28,7 @@ interface Goods
      * @link https://wechatpay.im/openapi/v3/marketing/paygiftactivity/activities/%7Bactivity_id%7D/goods
      */
     public function getAsync(array $options = [
-        'activity_id' => '',
+        'activity_id' => '10028001',
         'query' => [
             'offset' => 1,
             'limit' => 20,

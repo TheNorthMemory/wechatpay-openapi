@@ -30,7 +30,6 @@ interface Use_
                 'sub_mchid' => '1234567890',
             ],
             'out_request_no' => '34657_20250101_123456',
-            'sequential_coupon_index' => 0,
             'store_id' => '',
             'associated_pay_score_order_info' => [
                 'order_id' => '',
@@ -63,7 +62,6 @@ interface Use_
                 'sub_mchid' => '1234567890',
             ],
             'out_request_no' => '34657_20250101_123456',
-            'sequential_coupon_index' => 0,
             'store_id' => '',
             'associated_pay_score_order_info' => [
                 'order_id' => '',

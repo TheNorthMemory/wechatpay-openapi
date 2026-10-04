@@ -34,13 +34,8 @@ post:
       schema:
         type: object
         required:
-          - media_url
           - image_url
         properties:
-          media_url:
-            type: string
-            description: 媒体文件URL地址
-            example: https://qpic.cn/xxx
           image_url:
             type: string
             description: 图片URL

@@ -15,7 +15,7 @@ interface Delete
      * @link https://wechatpay.im/openapi/v3/marketing/paygiftactivity/activities/%7Bactivity_id%7D/merchants/delete
      */
     public function post(array $options = [
-        'activity_id' => '',
+        'activity_id' => '126002309',
         'json' => [
             'merchant_id_list' => ['100123456'],
             'delete_request_no' => '100002322019090134234sfdf',
@@ -28,7 +28,7 @@ interface Delete
      * @link https://wechatpay.im/openapi/v3/marketing/paygiftactivity/activities/%7Bactivity_id%7D/merchants/delete
      */
     public function postAsync(array $options = [
-        'activity_id' => '',
+        'activity_id' => '126002309',
         'json' => [
             'merchant_id_list' => ['100123456'],
             'delete_request_no' => '100002322019090134234sfdf',

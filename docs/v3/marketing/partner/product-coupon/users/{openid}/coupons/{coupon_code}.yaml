@@ -57,7 +57,6 @@ get:
           - send_channel
           - product_coupon
           - stock
-          - brand_id
         properties:
           coupon_code:
             type: string
@@ -188,88 +187,6 @@ get:
               saved_amount:
                 type: integer
                 description: 优惠金额
-          sequential_usage_detail:
-            type: object
-            description: 多次优惠使用详情
-            properties:
-              total_count:
-                type: integer
-                description: 总可使用次数
-                example: 10
-              used_count:
-                type: integer
-                description: 已使用次数
-                example: 3
-              detail_item_list:
-                type: array
-                description: 轮次使用详情列表
-                items:
-                  type: object
-                  properties:
-                    detail_state:
-                      type: string
-                      description: 轮次使用详情状态
-                      example: USED
-                      enum:
-                        - PENDING #待生效，尚未到达可用开始时间
-                        - EFFECTIVE #已生效，已到达可用开始时间
-                        - USED #已核销
-                        - EXPIRED #已过期，已超过有效期，不再可用
-                        - DELETED #已删除，用户主动删除
-                        - DEACTIVATED #已失效，品牌方主动调用失效用户商品券接口使用户商品券失效
-                    valid_begin_time:
-                      type: string
-                      format: rfc3339
-                      description: 有效期开始时间
-                      example: '2025-07-20T14:29:35+08:00'
-                    valid_end_time:
-                      type: string
-                      format: rfc3339
-                      description: 有效期结束时间
-                      example: '2025-07-20T14:29:35+08:00'
-                    use_request_no:
-                      type: string
-                      description: 核销请求单号
-                      example: MCHUSE202003101234
-                    use_time:
-                      type: string
-                      format: rfc3339
-                      description: 核销时间
-                      example: '2025-07-20T14:29:35+08:00'
-                    associated_order_info:
-                      type: object
-                      description: 关联微信支付订单信息
-                      properties:
-                        transaction_id:
-                          type: string
-                          description: 微信支付单号
-                          example: '4200000000123456789123456789'
-                        out_trade_no:
-                          type: string
-                          description: 商户订单号
-                          example: 'trade_no_20250724123456'
-                        mchid:
-                          type: string
-                          description: 商户号
-                          example: '1234567890'
-                        sub_mchid:
-                          type: string
-                          description: 子商户号
-                          example: '1234567890'
-                    return_request_no:
-                      type: string
-                      description: 退券请求单号
-                      example: MCHRETURN202003101234
-                    return_time:
-                      type: string
-                      format: rfc3339
-                      description: 退券时间
-                      example: '2025-07-20T14:29:35+08:00'
-                    delete_time:
-                      type: string
-                      format: rfc3339
-                      description: 删除时间
-                      example: '2025-07-20T14:29:35+08:00'
           product_coupon:
             type: object
             description: 商品券信息
@@ -356,33 +273,6 @@ get:
                         type: integer
                         description: 固定减免百分比
                         example: 20
-              sequential_usage_info:
-                type: object
-                description: 多次优惠模式信息
-                required:
-                  - type
-                  - count
-                  - available_days
-                properties:
-                  type:
-                    type: string
-                    description: 多次优惠规则类型
-                    example: INCREMENTAL
-                    enum:
-                      - INCREMENTAL
-                      - EQUAL
-                  count:
-                    type: integer
-                    description: 可使用次数
-                    example: 15
-                  available_days:
-                    type: integer
-                    description: 多次优惠有效天数
-                    example: 365
-                  interval_days:
-                    type: integer
-                    description: 多次优惠使用间隔天数
-                    example: 0
               display_info:
                 type: object
                 description: 展示信息
@@ -693,140 +583,6 @@ get:
                         type: integer
                         description: 固定兑换价格
                         example: 20
-              sequential_usage_rule:
-                type: object
-                description: 多次优惠使用规则
-                required:
-                  - coupon_available_period
-                properties:
-                  coupon_available_period:
-                    type: object
-                    description: 券可核销时间
-                    required:
-                      - available_begin_time
-                      - available_end_time
-                    properties:
-                      available_begin_time:
-                        type: string
-                        format: rfc3339
-                        description: 开始时间
-                        example: '2025-08-01T00:00:00+08:00'
-                      available_end_time:
-                        type: string
-                        format: rfc3339
-                        description: 结束时间
-                        example: '2025-08-31T23:59:59+08:00'
-                      wait_days_after_receive:
-                        type: integer
-                        description: 领取后N天开始生效
-                        example: 1
-                      weekly_available_period:
-                        type: object
-                        description: 每周固定可用时间
-                        properties:
-                          day_list:
-                            type: array
-                            description: 每周可用星期数
-                            items:
-                              type: string
-                              enum:
-                                - MONDAY
-                                - TUESDAY
-                                - WEDNESDAY
-                                - THURSDAY
-                                - FRIDAY
-                                - SATURDAY
-                                - SUNDAY
-                          day_period_list:
-                            type: array
-                            description: 当天可用时间段
-                            items:
-                              type: object
-                              required:
-                                - begin_time
-                                - end_time
-                              properties:
-                                begin_time:
-                                  type: integer
-                                  description: 当天可用开始时间
-                                  example: 60
-                                end_time:
-                                  type: integer
-                                  description: 当天可用结束时间
-                                  example: 86399
-                      irregular_available_period_list:
-                        type: array
-                        description: 无规律的可用时间段
-                        items:
-                          type: object
-                          required:
-                            - begin_time
-                            - end_time
-                          properties:
-                            begin_time:
-                              type: string
-                              format: rfc3339
-                              description: 开始时间
-                              example: '2025-08-01T00:00:00+08:00'
-                            end_time:
-                              type: string
-                              format: rfc3339
-                              description: 结束时间
-                              example: '2025-08-31T23:59:59+08:00'
-                  normal_coupon_list:
-                    type: array
-                    description: 满减券使用规则
-                    items:
-                      type: object
-                      required:
-                        - threshold
-                        - discount_amount
-                      properties:
-                        threshold:
-                          type: integer
-                          description: 门槛金额
-                          example: 10000
-                        discount_amount:
-                          type: integer
-                          description: 固定减免金额
-                          example: 1
-                  discount_coupon_list:
-                    type: array
-                    description: 折扣券使用规则列表
-                    items:
-                      type: object
-                      required:
-                        - threshold
-                        - percent_off
-                      properties:
-                        threshold:
-                          type: integer
-                          description: 门槛金额
-                          example: 10000
-                        percent_off:
-                          type: integer
-                          description: 固定减免百分比
-                          example: 20
-                  exchange_coupon_list:
-                    type: array
-                    description: 兑换券使用规则列表
-                    items:
-                      type: object
-                      required:
-                        - threshold
-                        - exchange_price
-                      properties:
-                        threshold:
-                          type: integer
-                          description: 门槛金额
-                          example: 10000
-                        exchange_price:
-                          type: integer
-                          description: 固定兑换价格
-                          example: 20
-                  special_first:
-                    type: boolean
-                    description: 多次优惠是否提供首笔特惠
               usage_rule_display_info:
                 type: object
                 description: 券使用规则展示信息
@@ -1169,10 +925,6 @@ get:
             type: string
             description: 渠道自定义信息
             example: example_channel_custom_info
-          brand_id:
-            type: string
-            description: 品牌ID
-            example: '120344'
           progressive_bundle_usage_detail:
             type: object
             description: 多次优惠使用详情

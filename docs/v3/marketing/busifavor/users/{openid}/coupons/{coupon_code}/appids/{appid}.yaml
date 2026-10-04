@@ -32,6 +32,7 @@ get:
               coupon_code:
                 type: string
                 description: 券code
+                example: '123446565767'
               coupon_state:
                 allOf:
                   - $ref: '../../../../../../../../definitions/Enumerations.yaml#/CouponState'
@@ -40,9 +41,11 @@ get:
                     - REDEEM_CONFIRMING
                     - REDEEM_FAILED
                     - REDEEM_EXPIRED
+                example: SENDED
               stock_id:
                 type: string
                 description: 批次号
+                example: '1002323'
               transferable:
                 type: boolean
                 description: 是否允许转赠
@@ -55,25 +58,31 @@ get:
               send_request_no:
                 type: string
                 description: 发券请求单号
+                example: MCHSEND202003101234
               use_request_no:
                 type: string
                 description: 核销请求单号
+                example: MCHUSE202003101234
               available_start_time:
                 type: string
                 format: rfc3339
                 description: 券可使用开始时间
+                example: '2019-12-30T13:29:35+08:00'
               expire_time:
                 type: string
                 format: rfc3339
                 description: 券过期时间
+                example: '2019-12-31T13:29:35+08:00'
               receive_time:
                 type: string
                 format: rfc3339
                 description: 券领券时间
+                example: '2019-12-30T13:29:35+08:00'
               use_time:
                 type: string
                 format: rfc3339
                 description: 券核销时间
+                example: '2019-12-31T13:29:35+08:00'
               associate_out_trade_no:
                 type: string
                 description: 关联的商户订单号

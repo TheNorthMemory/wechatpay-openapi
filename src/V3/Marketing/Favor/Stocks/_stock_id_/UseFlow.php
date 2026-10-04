@@ -15,7 +15,7 @@ interface UseFlow
      * @link https://wechatpay.im/openapi/v3/marketing/favor/stocks/%7Bstock_id%7D/use-flow
      */
     public function get(array $options = [
-        'stock_id' => '',
+        'stock_id' => '9865000',
     ]): ResponseInterface;
 
     /**
@@ -24,6 +24,6 @@ interface UseFlow
      * @link https://wechatpay.im/openapi/v3/marketing/favor/stocks/%7Bstock_id%7D/use-flow
      */
     public function getAsync(array $options = [
-        'stock_id' => '',
+        'stock_id' => '9865000',
     ]): PromiseInterface;
 }

@@ -11,6 +11,7 @@ post:
       required: true
       type: string
       description: 批次号
+      example: '8965000'
     - name: _
       in: body
       required: true

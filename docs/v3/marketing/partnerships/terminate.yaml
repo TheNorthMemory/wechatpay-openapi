@@ -27,6 +27,7 @@ post:
               type:
                 type: string
                 description: 合作方类别
+                example: APPID
                 enum:
                   - APPID
                   - MERCHANT
@@ -46,6 +47,7 @@ post:
               business_type:
                 type: string
                 description: 授权业务类别
+                example: FAVOR_STOCK
                 enum:
                   - FAVOR_STOCK
                   - BUSIFAVOR_STOCK

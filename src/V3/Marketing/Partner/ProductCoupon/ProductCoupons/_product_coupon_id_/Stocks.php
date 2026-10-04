@@ -60,37 +60,6 @@ interface Stocks
                         'exchange_price' => 20,
                     ],
                 ],
-                'sequential_usage_rule' => [
-                    'coupon_available_period' => [
-                        'available_begin_time' => '2025-08-01T00:00:00+08:00',
-                        'available_end_time' => '2025-08-31T23:59:59+08:00',
-                        'wait_days_after_receive' => 1,
-                        'weekly_available_period' => [
-                            'day_list' => ['MONDAY'],
-                            'day_period_list' => [[
-                                'begin_time' => 60,
-                                'end_time' => 86399,
-                            ],],
-                        ],
-                        'irregular_available_period_list' => [[
-                            'begin_time' => '2025-08-01T00:00:00+08:00',
-                            'end_time' => '2025-08-31T23:59:59+08:00',
-                        ],],
-                    ],
-                    'normal_coupon_list' => [[
-                        'threshold' => 10000,
-                        'discount_amount' => 1,
-                    ],],
-                    'discount_coupon_list' => [[
-                        'threshold' => 10000,
-                        'percent_off' => 20,
-                    ],],
-                    'exchange_coupon_list' => [[
-                        'threshold' => 10000,
-                        'exchange_price' => 20,
-                    ],],
-                    'special_first' => true,
-                ],
                 'usage_rule_display_info' => [
                     'coupon_usage_method_list' => ['OFFLINE'],
                     'mini_program_appid' => 'wx1234567890',
@@ -116,11 +85,6 @@ interface Stocks
                     ],
                     'entrance_official_account' => [
                         'appid' => 'wx1234567890',
-                    ],
-                    'entrance_finder' => [
-                        'finder_id' => 'gh_12345678',
-                        'finder_video_id' => 'UDFsdf24df34dD456Hdf34',
-                        'finder_video_cover_image_url' => 'https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/xxx',
                     ],
                 ],
                 'notify_config' => [
@@ -181,37 +145,6 @@ interface Stocks
                         'exchange_price' => 20,
                     ],
                 ],
-                'sequential_usage_rule' => [
-                    'coupon_available_period' => [
-                        'available_begin_time' => '2025-08-01T00:00:00+08:00',
-                        'available_end_time' => '2025-08-31T23:59:59+08:00',
-                        'wait_days_after_receive' => 1,
-                        'weekly_available_period' => [
-                            'day_list' => ['MONDAY'],
-                            'day_period_list' => [[
-                                'begin_time' => 60,
-                                'end_time' => 86399,
-                            ],],
-                        ],
-                        'irregular_available_period_list' => [[
-                            'begin_time' => '2025-08-01T00:00:00+08:00',
-                            'end_time' => '2025-08-31T23:59:59+08:00',
-                        ],],
-                    ],
-                    'normal_coupon_list' => [[
-                        'threshold' => 10000,
-                        'discount_amount' => 1,
-                    ],],
-                    'discount_coupon_list' => [[
-                        'threshold' => 10000,
-                        'percent_off' => 20,
-                    ],],
-                    'exchange_coupon_list' => [[
-                        'threshold' => 10000,
-                        'exchange_price' => 20,
-                    ],],
-                    'special_first' => true,
-                ],
                 'usage_rule_display_info' => [
                     'coupon_usage_method_list' => ['OFFLINE'],
                     'mini_program_appid' => 'wx1234567890',
@@ -237,11 +170,6 @@ interface Stocks
                     ],
                     'entrance_official_account' => [
                         'appid' => 'wx1234567890',
-                    ],
-                    'entrance_finder' => [
-                        'finder_id' => 'gh_12345678',
-                        'finder_video_id' => 'UDFsdf24df34dD456Hdf34',
-                        'finder_video_cover_image_url' => 'https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/xxx',
                     ],
                 ],
                 'notify_config' => [

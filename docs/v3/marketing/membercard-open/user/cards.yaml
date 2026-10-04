@@ -24,12 +24,14 @@ get:
       required: true
       type: integer
       description: 分页页码
+      example: 0
       default: 0
     - name: limit
       in: query
       required: true
       type: integer
       description: 分页大小
+      example: 20
   responses:
     200:
       schema:

@@ -77,6 +77,9 @@ post:
             type: string
             description: 任务状态
             example: PROCESSING
+            enum:
+              - PROCESSING #上传任务处理中，请等待
+              - FINISHED #上传任务已处理完成，任务上传的文件中的用户已导入到号码包中
           success_count:
             type: integer
             description: 成功数
@@ -175,6 +178,9 @@ get:
                   type: string
                   description: 任务状态
                   example: PROCESSING
+                  enum:
+                    - PROCESSING #上传任务处理中，请等待
+                    - FINISHED #上传任务已处理完成，任务上传的文件中的用户已导入到号码包中
                 success_count:
                   type: integer
                   description: 成功数

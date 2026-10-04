@@ -37,9 +37,9 @@ interface CouponStocks
                 'merchant_name' => '',
                 'background_color' => 'Color010 | Color020 | Color030 | Color040',
                 'coupon_image' => '',
-                'jump_target' => 'PAYMENT_CODE | MINI_PROGRAM | DEFAULT_PAGE',
-                'mini_program_appid' => '',
-                'mini_program_path' => '',
+                'jump_target' => 'PAYMENT_CODE',
+                'mini_program_appid' => 'wx23232232323',
+                'mini_program_path' => '/path/index/index',
             ],
             'coupon_use_rule' => [
                 'coupon_available_time' => [
@@ -111,9 +111,9 @@ interface CouponStocks
                 'merchant_name' => '',
                 'background_color' => 'Color010 | Color020 | Color030 | Color040',
                 'coupon_image' => '',
-                'jump_target' => 'PAYMENT_CODE | MINI_PROGRAM | DEFAULT_PAGE',
-                'mini_program_appid' => '',
-                'mini_program_path' => '',
+                'jump_target' => 'PAYMENT_CODE',
+                'mini_program_appid' => 'wx23232232323',
+                'mini_program_path' => '/path/index/index',
             ],
             'coupon_use_rule' => [
                 'coupon_available_time' => [

@@ -38,12 +38,14 @@ post:
                       payment_method:
                         type: string
                         description: 支付方式
+                        example: CFT
                         enum:
                           - CFT
                           - SPECIFIC_BANK_CARD
                       bank_abbreviation:
                         type: string
                         description: 银行简称
+                        example: AHRCUB_CREDIT
   responses:
     200:
       schema:
@@ -55,7 +57,9 @@ post:
           activity_id:
             type: string
             description: 活动id
+            example: '10028001'
           create_time:
             type: string
             format: rfc3339
             description: 创建时间
+            example: '2015-05-20T13:29:35.120+08:00'

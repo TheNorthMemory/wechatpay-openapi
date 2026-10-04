@@ -16,7 +16,7 @@ interface Coupons
      * @link https://wechatpay.im/openapi/v3/marketing/favor/users/%7Bopenid%7D/coupons
      */
     public function post(array $options = [
-        'openid' => '',
+        'openid' => 'Openid_example',
         'json' => [
             'stock_id' => '9856000',
             'out_request_no' => '89560002019101000121',
@@ -33,7 +33,7 @@ interface Coupons
      * @link https://wechatpay.im/openapi/v3/marketing/favor/users/%7Bopenid%7D/coupons
      */
     public function postAsync(array $options = [
-        'openid' => '',
+        'openid' => 'Openid_example',
         'json' => [
             'stock_id' => '9856000',
             'out_request_no' => '89560002019101000121',
@@ -50,14 +50,13 @@ interface Coupons
      * @link https://wechatpay.im/openapi/v3/marketing/favor/users/%7Bopenid%7D/coupons#get
      */
     public function get(array $options = [
-        'openid' => '',
+        'openid' => 'Openid_example',
         'query' => [
-            'appid' => '',
-            'stock_id' => '',
-            'status' => 'SENDED | USED',
-            'creator_mchid' => '',
-            'sender_mchid' => '',
-            'available_mchid' => '',
+            'appid' => 'appid_example',
+            'stock_id' => '9865000',
+            'status' => 'USED',
+            'creator_mchid' => '9865002',
+            'available_mchid' => '9865000',
             'offset' => 0,
             'limit' => 20,
             'business_type' => 'MULTIUSE',
@@ -70,14 +69,13 @@ interface Coupons
      * @link https://wechatpay.im/openapi/v3/marketing/favor/users/%7Bopenid%7D/coupons#get
      */
     public function getAsync(array $options = [
-        'openid' => '',
+        'openid' => 'Openid_example',
         'query' => [
-            'appid' => '',
-            'stock_id' => '',
-            'status' => 'SENDED | USED',
-            'creator_mchid' => '',
-            'sender_mchid' => '',
-            'available_mchid' => '',
+            'appid' => 'appid_example',
+            'stock_id' => '9865000',
+            'status' => 'USED',
+            'creator_mchid' => '9865002',
+            'available_mchid' => '9865000',
             'offset' => 0,
             'limit' => 20,
             'business_type' => 'MULTIUSE',

@@ -15,7 +15,7 @@ interface Pause
      * @link https://wechatpay.im/openapi/v3/marketing/favor/stocks/%7Bstock_id%7D/pause
      */
     public function post(array $options = [
-        'stock_id' => '',
+        'stock_id' => '实例值',
         'json' => [
             'stock_creator_mchid' => '8956000',
         ],
@@ -27,7 +27,7 @@ interface Pause
      * @link https://wechatpay.im/openapi/v3/marketing/favor/stocks/%7Bstock_id%7D/pause
      */
     public function postAsync(array $options = [
-        'stock_id' => '',
+        'stock_id' => '实例值',
         'json' => [
             'stock_creator_mchid' => '8956000',
         ],

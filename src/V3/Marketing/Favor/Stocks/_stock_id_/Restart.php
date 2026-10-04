@@ -15,7 +15,7 @@ interface Restart
      * @link https://wechatpay.im/openapi/v3/marketing/favor/stocks/%7Bstock_id%7D/restart
      */
     public function post(array $options = [
-        'stock_id' => '',
+        'stock_id' => '8965000',
         'json' => [
             'stock_creator_mchid' => '8956000',
         ],
@@ -27,7 +27,7 @@ interface Restart
      * @link https://wechatpay.im/openapi/v3/marketing/favor/stocks/%7Bstock_id%7D/restart
      */
     public function postAsync(array $options = [
-        'stock_id' => '',
+        'stock_id' => '8965000',
         'json' => [
             'stock_creator_mchid' => '8956000',
         ],

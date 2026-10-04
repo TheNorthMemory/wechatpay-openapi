@@ -17,12 +17,12 @@ interface Stocks
      */
     public function get(array $options = [
         'query' => [
-            'offset' => 0,
-            'limit' => 0,
-            'stock_creator_mchid' => '',
+            'offset' => 1,
+            'limit' => 8,
+            'stock_creator_mchid' => '9856888',
             'create_start_time' => '2015-05-20T13:29:35.120+08:00',
             'create_end_time' => '2015-05-20T13:29:35.120+08:00',
-            'status' => 'unactivated | audit | running | stoped',
+            'status' => 'paused',
         ],
     ]): ResponseInterface;
 
@@ -33,12 +33,12 @@ interface Stocks
      */
     public function getAsync(array $options = [
         'query' => [
-            'offset' => 0,
-            'limit' => 0,
-            'stock_creator_mchid' => '',
+            'offset' => 1,
+            'limit' => 8,
+            'stock_creator_mchid' => '9856888',
             'create_start_time' => '2015-05-20T13:29:35.120+08:00',
             'create_end_time' => '2015-05-20T13:29:35.120+08:00',
-            'status' => 'unactivated | audit | running | stoped',
+            'status' => 'paused',
         ],
     ]): PromiseInterface;
 }

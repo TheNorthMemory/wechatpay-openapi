@@ -11,6 +11,7 @@ get:
       required: true
       type: string
       description: 批次号
+      example: '9865000'
   responses:
     200:
       schema:

@@ -19,7 +19,7 @@ interface Cards
             'openid' => 'obLatjnx9gnqzS4myYGmLZ7LgLBA',
             'appid' => 'wxea9c30890f48d5ae',
             'offset' => 0,
-            'limit' => 0,
+            'limit' => 20,
         ],
     ]): ResponseInterface;
 
@@ -33,7 +33,7 @@ interface Cards
             'openid' => 'obLatjnx9gnqzS4myYGmLZ7LgLBA',
             'appid' => 'wxea9c30890f48d5ae',
             'offset' => 0,
-            'limit' => 0,
+            'limit' => 20,
         ],
     ]): PromiseInterface;
 }

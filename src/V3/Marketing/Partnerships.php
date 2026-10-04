@@ -27,13 +27,8 @@ interface Partnerships
                 'business_type' => 'FAVOR_STOCK | BUSIFAVOR_STOCK',
                 'stock_id' => '2433405',
             ]),
-            'limit' => 50,
-            'offset' => 0,
-            'partner.type' => 'APPID | MERCHANT',
-            'partner.appid' => '',
-            'partner.merchant_id' => '',
-            'authorized_data.business_type' => 'FAVOR_STOCK | BUSIFAVOR_STOCK',
-            'authorized_data.stock_id' => '',
+            'limit' => 5,
+            'offset' => 10,
         ],
     ]): ResponseInterface;
 
@@ -53,13 +48,8 @@ interface Partnerships
                 'business_type' => 'FAVOR_STOCK | BUSIFAVOR_STOCK',
                 'stock_id' => '2433405',
             ]),
-            'limit' => 50,
-            'offset' => 0,
-            'partner.type' => 'APPID | MERCHANT',
-            'partner.appid' => '',
-            'partner.merchant_id' => '',
-            'authorized_data.business_type' => 'FAVOR_STOCK | BUSIFAVOR_STOCK',
-            'authorized_data.stock_id' => '',
+            'limit' => 5,
+            'offset' => 10,
         ],
     ]): PromiseInterface;
 }

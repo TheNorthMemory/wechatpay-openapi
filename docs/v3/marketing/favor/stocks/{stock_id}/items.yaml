@@ -11,21 +11,25 @@ get:
       required: true
       type: string
       description: 批次号
+      example: '9865000'
     - name: stock_creator_mchid
       in: query
       required: true
       type: string
       description: 创建批次的商户号
+      example: '9865000'
     - name: offset
       in: query
       required: true
       type: integer
       description: 分页页码
+      example: 10
     - name: limit
       in: query
       required: true
       type: string
       description: 分页大小
+      example: '10'
   responses:
     200:
       schema:

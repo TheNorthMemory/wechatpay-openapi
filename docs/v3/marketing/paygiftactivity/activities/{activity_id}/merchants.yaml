@@ -10,6 +10,7 @@ get:
       in: path
       type: string
       description: 活动id
+      example: '126002309'
       required: true
     - name: offset
       in: query
@@ -37,9 +38,11 @@ get:
           total_count:
             type: integer
             description: 总数
+            example: 30
           activity_id:
             type: string
             description: 活动id
+            example: '126002309'
           data:
             type: array
             description: 结果集
@@ -49,14 +52,18 @@ get:
                 mchid:
                   type: string
                   description: 商户号
+                  example: '6002309'
                 merchant_name:
                   type: string
                   description: 商户名称
+                  example: 良品铺子
                 create_time:
                   type: string
                   format: rfc3339
                   description: 创建时间
+                  example: '2015-05-20T13:29:35.120+08:00'
                 update_time:
                   type: string
                   format: rfc3339
                   description: 更新时间
+                  example: '2015-05-20T13:29:35.120+08:00'

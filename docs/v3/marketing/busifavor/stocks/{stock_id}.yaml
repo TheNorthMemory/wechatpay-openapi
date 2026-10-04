@@ -332,6 +332,7 @@ get:
           stock_state:
             type: string
             description: 批次状态
+            example: UNAUDIT
             enum:
               - UNAUDIT
               - RUNNING

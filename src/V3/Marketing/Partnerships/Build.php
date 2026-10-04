@@ -17,12 +17,12 @@ interface Build
     public function post(array $options = [
         'json' => [
             'partner' => [
-                'type' => 'APPID | MERCHANT',
+                'type' => 'APPID',
                 'appid' => 'wx4e1916a585d1f4e9',
                 'merchant_id' => '2480029552',
             ],
             'authorized_data' => [
-                'business_type' => 'FAVOR_STOCK | BUSIFAVOR_STOCK',
+                'business_type' => 'FAVOR_STOCK',
                 'stock_id' => '2433405',
             ],
         ],
@@ -39,12 +39,12 @@ interface Build
     public function postAsync(array $options = [
         'json' => [
             'partner' => [
-                'type' => 'APPID | MERCHANT',
+                'type' => 'APPID',
                 'appid' => 'wx4e1916a585d1f4e9',
                 'merchant_id' => '2480029552',
             ],
             'authorized_data' => [
-                'business_type' => 'FAVOR_STOCK | BUSIFAVOR_STOCK',
+                'business_type' => 'FAVOR_STOCK',
                 'stock_id' => '2433405',
             ],
         ],

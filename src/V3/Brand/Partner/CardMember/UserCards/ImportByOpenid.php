@@ -31,13 +31,16 @@ interface ImportByOpenid
                     'user_chosen_values' => ['vvysDQeEaH3I+wRh14St0abIkvQyFgh/'],
                 ],],
             ],
-            'date_information' => [
+            'pickup_time' => '2020-05-20T13:29:35.120+08:00',
+            'card_color' => '#FFFF00',
+            'card_picture_url' => 'https://wxpaylogo.qpic.cn/wxpaylogo/PiajxSqBRaEIPAeia7Imvtsn7sYGNcEj33YzVvJF88ECQ19LXId8ZL2Q/0',
+            'level' => '钻石会员',
+            'valid_date_information' => [
                 'type' => 'FIX_TIME_RANGE | FIX_TERM | PERMANENT',
                 'available_begin_time' => '2020-05-20T13:29:35.120+08:00',
-                'available_end_time' => '2030-05-20T13:29:35.120+08:00',
-                'available_day_after_receive' => 200,
+                'available_end_time' => '2020-05-20T13:29:35.120+08:00',
+                'available_day_after_receive' => 30,
             ],
-            'pickup_time' => '2020-05-20T13:29:35.120+08:00',
         ],
         'headers' => [
             'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',
@@ -66,13 +69,16 @@ interface ImportByOpenid
                     'user_chosen_values' => ['vvysDQeEaH3I+wRh14St0abIkvQyFgh/'],
                 ],],
             ],
-            'date_information' => [
+            'pickup_time' => '2020-05-20T13:29:35.120+08:00',
+            'card_color' => '#FFFF00',
+            'card_picture_url' => 'https://wxpaylogo.qpic.cn/wxpaylogo/PiajxSqBRaEIPAeia7Imvtsn7sYGNcEj33YzVvJF88ECQ19LXId8ZL2Q/0',
+            'level' => '钻石会员',
+            'valid_date_information' => [
                 'type' => 'FIX_TIME_RANGE | FIX_TERM | PERMANENT',
                 'available_begin_time' => '2020-05-20T13:29:35.120+08:00',
-                'available_end_time' => '2030-05-20T13:29:35.120+08:00',
-                'available_day_after_receive' => 200,
+                'available_end_time' => '2020-05-20T13:29:35.120+08:00',
+                'available_day_after_receive' => 30,
             ],
-            'pickup_time' => '2020-05-20T13:29:35.120+08:00',
         ],
         'headers' => [
             'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',

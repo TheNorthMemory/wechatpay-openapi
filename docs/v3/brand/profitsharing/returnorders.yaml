@@ -141,6 +141,7 @@ get:
       in: query
       type: string
       description: 商户分账单号
+      example: P20190806125346
   responses:
     200:
       schema:

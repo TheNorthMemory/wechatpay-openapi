@@ -40,9 +40,7 @@ interface Confirm
                 ],],
             ],
             'attach' => '自定义数据说明',
-            'user_card_confirm_state' => 'CREATE_CARD_SUCCESS | CREATE_CARD_FAIL',
-        ],
-        'query' => [
+            'user_card_confirm_state' => 'CREATE_CARD_SUCCESS | CREATE_CARD_FAIL | CREATE_CARD_ALREADY_EXISTS',
             'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',
         ],
         'headers' => [
@@ -81,9 +79,7 @@ interface Confirm
                 ],],
             ],
             'attach' => '自定义数据说明',
-            'user_card_confirm_state' => 'CREATE_CARD_SUCCESS | CREATE_CARD_FAIL',
-        ],
-        'query' => [
+            'user_card_confirm_state' => 'CREATE_CARD_SUCCESS | CREATE_CARD_FAIL | CREATE_CARD_ALREADY_EXISTS',
             'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',
         ],
         'headers' => [

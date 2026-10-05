@@ -39,6 +39,10 @@ post:
                 type: string
                 description: 小程序默认跳转路径
                 example: pages/shop/index
+              button_text:
+                type: string
+                description: 小程序跳转按钮文案
+                example: 前往小程序
           brand_customer_service:
             type: object
             description: 品牌客服信息
@@ -54,6 +58,7 @@ post:
                   - CUSTOMIZE_WEB
                   - CUSTOMIZE_MP
                   - SERVICE_PHONE
+                  - WECOM #企业微信客服：企业微信官方提供的微信客服组件，详细见 [概述](https://developer.work.weixin.qq.com/document/path/99370)
               customer_service_phone:
                 type: string
                 description: 客服电话
@@ -107,6 +112,7 @@ post:
           - brand_id
           - applyment_id
           - card_preview_url
+          - url_expired_time
         properties:
           business_code:
             type: string
@@ -124,6 +130,11 @@ post:
             type: string
             description: 商家名片预览二维码链接
             example: 'https://pay.weixin.qq.com/xdc/mchcardinfomgrweb/miniapp?link_id=12345'
+          url_expired_time:
+            type: string
+            format: rfc3339
+            description: 预览二维码链接过期时间
+            example: '2025-05-20T13:29:35+08:00'
 get:
   x-last-updated-at: 2025.11.13
   x-role:

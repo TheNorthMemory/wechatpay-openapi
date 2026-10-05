@@ -68,6 +68,8 @@ get:
               - WAITING_CONFIRMATION
               - MERCHANT_ADMIN_REJECT
               - IN_EFFECT
+              - STATE_UNKNOWN #「状态未知，非终态」连接规则建立中，请稍后
+              - CANCELED #「已撤销，终态」交易链路请求被撤销，如仍需添加请更换业务申请编号重新调用 [配置交易连接名片](./4016333302.md) 接口
           reject_reason:
             type: string
             description: 驳回原因

@@ -46,7 +46,7 @@ post:
           - member_information
           - state
           - create_time
-          - update_time
+          - modify_time
         properties:
           out_request_no:
             type: string
@@ -265,7 +265,8 @@ post:
             type: string
             description: 创建时间
             example: '2020-05-20T13:29:35.120+08:00'
-          update_time:
+          modify_time:
             type: string
+            format: rfc3339
             description: 更新时间
             example: '2020-05-20T13:29:35.120+08:00'

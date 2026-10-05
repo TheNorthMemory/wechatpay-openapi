@@ -38,7 +38,9 @@ get:
           - valid_date_information
           - state
           - create_time
-          - update_time
+          - out_request_no
+          - member_information
+          - modify_time
         properties:
           card_id:
             type: string
@@ -241,8 +243,28 @@ get:
             type: string
             description: 创建时间
             example: '2020-05-20T13:29:35.120+08:00'
-          update_time:
+          out_request_no:
             type: string
+            description: 商家请求单号
+            example: 100002322019090134234sfdf
+          member_information:
+            type: object
+            description: 会员中心信息
+            required:
+              - jump_appid
+              - jump_path
+            properties:
+              jump_appid:
+                type: string
+                description: 会员中心跳转AppID
+                example: wxea9c30a90fs8d3fe
+              jump_path:
+                type: string
+                description: 会员中心跳转路径
+                example: /pages/points/points
+          modify_time:
+            type: string
+            format: rfc3339
             description: 更新时间
             example: '2020-05-20T13:29:35.120+08:00'
 patch:
@@ -310,18 +332,10 @@ patch:
           need_display_level:
             type: boolean
             description: 是否展示会员等级
-          init_level:
-            type: string
-            description: 会员初始等级
-            example: 白银会员
           service_phone:
             type: string
             description: 服务电话
             example: 010-8877xxxx
-          legal_agreement:
-            type: string
-            description: 商家法务协议
-            example: 商家需在 48 小时内发货，若商品存在质量问题，用户可在 7 天内申请退货。
           valid_date_information:
             type: object
             description: 会员卡有效期
@@ -429,6 +443,21 @@ patch:
                       items:
                         type: string
                         example: 篮球
+          member_information:
+            type: object
+            description: 会员中心信息
+            required:
+              - jump_appid
+              - jump_path
+            properties:
+              jump_appid:
+                type: string
+                description: 会员中心跳转AppID
+                example: wxea9c30a90fs8d3fe
+              jump_path:
+                type: string
+                description: 会员中心跳转路径
+                example: /pages/points/points
   responses:
     200:
       schema:
@@ -448,7 +477,9 @@ patch:
           - valid_date_information
           - state
           - create_time
-          - update_time
+          - out_request_no
+          - member_information
+          - modify_time
         properties:
           card_id:
             type: string
@@ -651,8 +682,28 @@ patch:
             type: string
             description: 创建时间
             example: '2020-05-20T13:29:35.120+08:00'
-          update_time:
+          out_request_no:
             type: string
+            description: 商家请求单号
+            example: 100002322019090134234sfdf
+          member_information:
+            type: object
+            description: 会员中心信息
+            required:
+              - jump_appid
+              - jump_path
+            properties:
+              jump_appid:
+                type: string
+                description: 会员中心跳转AppID
+                example: wxea9c30a90fs8d3fe
+              jump_path:
+                type: string
+                description: 会员中心跳转路径
+                example: /pages/points/points
+          modify_time:
+            type: string
+            format: rfc3339
             description: 更新时间
             example: '2020-05-20T13:29:35.120+08:00'
 delete:

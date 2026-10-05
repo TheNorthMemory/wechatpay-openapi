@@ -54,9 +54,7 @@ interface _card_id_
             'notify_url' => 'https://www.weixin.qq.com/wxpay/notify.php',
             'need_pinned' => true,
             'need_display_level' => true,
-            'init_level' => '白银会员',
             'service_phone' => '010-8877xxxx',
-            'legal_agreement' => '商家需在 48 小时内发货，若商品存在质量问题，用户可在 7 天内申请退货。',
             'valid_date_information' => [
                 'type' => 'FIX_TIME_RANGE | FIX_TERM | PERMANENT',
                 'available_begin_time' => '2020-05-20T13:29:35.120+08:00',
@@ -83,6 +81,10 @@ interface _card_id_
                     'name' => '喜欢的运动',
                     'values' => ['篮球'],
                 ],],
+            ],
+            'member_information' => [
+                'jump_appid' => 'wxea9c30a90fs8d3fe',
+                'jump_path' => '/pages/points/points',
             ],
         ],
     ]): ResponseInterface;
@@ -107,9 +109,7 @@ interface _card_id_
             'notify_url' => 'https://www.weixin.qq.com/wxpay/notify.php',
             'need_pinned' => true,
             'need_display_level' => true,
-            'init_level' => '白银会员',
             'service_phone' => '010-8877xxxx',
-            'legal_agreement' => '商家需在 48 小时内发货，若商品存在质量问题，用户可在 7 天内申请退货。',
             'valid_date_information' => [
                 'type' => 'FIX_TIME_RANGE | FIX_TERM | PERMANENT',
                 'available_begin_time' => '2020-05-20T13:29:35.120+08:00',
@@ -136,6 +136,10 @@ interface _card_id_
                     'name' => '喜欢的运动',
                     'values' => ['篮球'],
                 ],],
+            ],
+            'member_information' => [
+                'jump_appid' => 'wxea9c30a90fs8d3fe',
+                'jump_path' => '/pages/points/points',
             ],
         ],
     ]): PromiseInterface;

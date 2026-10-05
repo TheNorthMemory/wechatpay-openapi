@@ -22,9 +22,8 @@ interface Confirm
             'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',
             'openid' => 'obLatjnx9gnqzS4myYGmLZ7LgLBA',
             'user_card_code' => '478515832665',
-            'state' => 'POINT_EXCHANGE_COUPON_SUCCESS',
-            'coupon_code' => '123446565767',
-            'fail_reason' => '积分不足',
+            'result' => 'POINT_EXCHANGE_COUPON_ALLOW | POINT_EXCHANGE_COUPON_REJECT',
+            'reject_reason' => '积分不足',
         ],
     ]): ResponseInterface;
 
@@ -41,9 +40,8 @@ interface Confirm
             'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',
             'openid' => 'obLatjnx9gnqzS4myYGmLZ7LgLBA',
             'user_card_code' => '478515832665',
-            'state' => 'POINT_EXCHANGE_COUPON_SUCCESS',
-            'coupon_code' => '123446565767',
-            'fail_reason' => '积分不足',
+            'result' => 'POINT_EXCHANGE_COUPON_ALLOW | POINT_EXCHANGE_COUPON_REJECT',
+            'reject_reason' => '积分不足',
         ],
     ]): PromiseInterface;
 }

@@ -30,8 +30,13 @@ post:
         type: object
         required:
           - business_code
+          - brand_id
         properties:
           business_code:
             type: string
             description: 业务申请编号
             example: 1900013511_10000
+          brand_id:
+            type: string
+            description: 品牌ID
+            example: '123456'

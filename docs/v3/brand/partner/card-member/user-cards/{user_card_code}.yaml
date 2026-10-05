@@ -44,6 +44,8 @@ get:
           - valid_date_information
           - pickup_time
           - user_card_state
+          - create_time
+          - modify_time
         properties:
           user_card_code:
             type: string
@@ -113,10 +115,10 @@ get:
                 description: 生效后N天内有效
                 example: 200
           pickup_time:
-              type: string
-              format: rfc3339
-              description: 领取时间
-              example: '2020-05-20T13:29:35.120+08:00'
+            type: string
+            format: rfc3339
+            description: 领取时间
+            example: '2020-05-20T13:29:35.120+08:00'
           user_information:
             type: object
             description: 用户开卡时填写的个人信息
@@ -180,6 +182,16 @@ get:
             format: rfc3339
             description: 作废时间
             example: '2020-05-20T13:29:35.120+08:00'
+          create_time:
+            type: string
+            format: rfc3339
+            description: 创建时间
+            example: '2020-05-20T13:29:35.120+08:00'
+          modify_time:
+            type: string
+            format: rfc3339
+            description: 更新时间
+            example: '2020-05-20T13:29:35.120+08:00'
 patch:
   x-last-updated-at: 2025.06.22
   x-role:
@@ -195,17 +207,13 @@ patch:
       type: string
       description: 会员卡code
       example: '478515832665'
-    - name: card_id
-      in: query
-      required: true
-      type: string
-      description: 会员卡模板ID
-      example: pbLatjvWOibDc5-TBnbUk1pD12o0
     - name: _
       in: body
       required: true
       schema:
         type: object
+        required:
+          - card_id
         properties:
           brand_id:
             type: string
@@ -259,11 +267,6 @@ patch:
                 type: integer
                 description: 生效后N天内有效
                 example: 200
-          pickup_time:
-              type: string
-              format: rfc3339
-              description: 领取时间
-              example: '2020-05-20T13:29:35.120+08:00'
           user_information:
             type: object
             description: 用户开卡时填写的个人信息
@@ -310,6 +313,10 @@ patch:
             type: string
             description: 商家数据包
             example: 自定义数据说明
+          card_id:
+            type: string
+            description: 会员卡模板ID
+            example: pbLatjvWOibDc5-TBnbUk1pD12o0
   responses:
     200:
       schema:
@@ -323,6 +330,8 @@ patch:
           - valid_date_information
           - pickup_time
           - user_card_state
+          - create_time
+          - modify_time
         properties:
           user_card_code:
             type: string
@@ -392,10 +401,10 @@ patch:
                 description: 生效后N天内有效
                 example: 200
           pickup_time:
-              type: string
-              format: rfc3339
-              description: 领取时间
-              example: '2020-05-20T13:29:35.120+08:00'
+            type: string
+            format: rfc3339
+            description: 领取时间
+            example: '2020-05-20T13:29:35.120+08:00'
           user_information:
             type: object
             description: 用户开卡时填写的个人信息
@@ -458,4 +467,14 @@ patch:
             type: string
             format: rfc3339
             description: 作废时间
+            example: '2020-05-20T13:29:35.120+08:00'
+          create_time:
+            type: string
+            format: rfc3339
+            description: 创建时间
+            example: '2020-05-20T13:29:35.120+08:00'
+          modify_time:
+            type: string
+            format: rfc3339
+            description: 更新时间
             example: '2020-05-20T13:29:35.120+08:00'

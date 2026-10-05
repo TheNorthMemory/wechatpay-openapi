@@ -13,18 +13,6 @@ post:
       type: string
       description: 会员卡code
       example: '478515832665'
-    - name: brand_id
-      in: query
-      required: true
-      type: string
-      description: 品牌id
-      example: '1004'
-    - name: card_id
-      in: query
-      required: true
-      type: string
-      description: 会员卡模版ID
-      example: pbLatjvWOibDc5-TBnbUk1pD12o0
     - name: _
       in: body
       required: true
@@ -32,6 +20,8 @@ post:
         type: object
         required:
           - openid
+          - brand_id
+          - card_id
         properties:
           openid:
             type: string
@@ -41,6 +31,14 @@ post:
             type: string
             description: 作废原因
             example: 传入的自定义作废原因
+          brand_id:
+            type: string
+            description: 品牌ID
+            example: '1004'
+          card_id:
+            type: string
+            description: 会员卡模板ID
+            example: pbLatjvWOibDc5-TBnbUk1pD12o0
   responses:
     200:
       schema:
@@ -54,6 +52,8 @@ post:
           - valid_date_information
           - pickup_time
           - user_card_state
+          - create_time
+          - modify_time
         properties:
           user_card_code:
             type: string
@@ -123,10 +123,10 @@ post:
                 description: 生效后N天内有效
                 example: 200
           pickup_time:
-              type: string
-              format: rfc3339
-              description: 领取时间
-              example: '2020-05-20T13:29:35.120+08:00'
+            type: string
+            format: rfc3339
+            description: 领取时间
+            example: '2020-05-20T13:29:35.120+08:00'
           user_information:
             type: object
             description: 用户开卡时填写的个人信息
@@ -189,4 +189,14 @@ post:
             type: string
             format: rfc3339
             description: 作废时间
+            example: '2020-05-20T13:29:35.120+08:00'
+          create_time:
+            type: string
+            format: rfc3339
+            description: 创建时间
+            example: '2020-05-20T13:29:35.120+08:00'
+          modify_time:
+            type: string
+            format: rfc3339
+            description: 更新时间
             example: '2020-05-20T13:29:35.120+08:00'

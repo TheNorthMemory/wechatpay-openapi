@@ -19,8 +19,6 @@ interface Invalidate
         'json' => [
             'openid' => 'obLatjnx9gnqzS4myYGmLZ7LgLBA',
             'invalid_reason' => '传入的自定义作废原因',
-        ],
-        'query' => [
             'brand_id' => '1004',
             'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',
         ],
@@ -36,8 +34,6 @@ interface Invalidate
         'json' => [
             'openid' => 'obLatjnx9gnqzS4myYGmLZ7LgLBA',
             'invalid_reason' => '传入的自定义作废原因',
-        ],
-        'query' => [
             'brand_id' => '1004',
             'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',
         ],

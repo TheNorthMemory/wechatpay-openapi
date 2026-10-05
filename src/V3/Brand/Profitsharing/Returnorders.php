@@ -53,7 +53,7 @@ interface Returnorders
             'sub_mchid' => '1900000109',
             'out_return_no' => 'R20190516001',
             'order_id' => '4208450740201411110007820472',
-            'out_order_no' => '',
+            'out_order_no' => 'P20190806125346',
         ],
     ]): ResponseInterface;
 
@@ -67,7 +67,7 @@ interface Returnorders
             'sub_mchid' => '1900000109',
             'out_return_no' => 'R20190516001',
             'order_id' => '4208450740201411110007820472',
-            'out_order_no' => '',
+            'out_order_no' => 'P20190806125346',
         ],
     ]): PromiseInterface;
 }

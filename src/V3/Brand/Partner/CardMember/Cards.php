@@ -63,6 +63,11 @@ interface Cards
                     'values' => ['篮球'],
                 ],],
             ],
+            'out_request_no' => '100002322019090134234sfdf',
+            'member_information' => [
+                'jump_appid' => 'wxea9c30a90fs8d3fe',
+                'jump_path' => '/pages/points/points',
+            ],
         ],
     ]): ResponseInterface;
 
@@ -118,6 +123,11 @@ interface Cards
                     'name' => '喜欢的运动',
                     'values' => ['篮球'],
                 ],],
+            ],
+            'out_request_no' => '100002322019090134234sfdf',
+            'member_information' => [
+                'jump_appid' => 'wxea9c30a90fs8d3fe',
+                'jump_path' => '/pages/points/points',
             ],
         ],
     ]): PromiseInterface;

@@ -18,7 +18,7 @@ post:
           - user_card_code
           - openid
           - out_request_no
-          - cell_message
+          - cell
         properties:
           brand_id:
             type: string
@@ -40,10 +40,10 @@ post:
             type: string
             description: 商家请求单号
             example: 100002322019090134234sfdf
-          cell_message:
+          cell:
             type: string
             description: 会员动态内容
-            example: '15_1200_1'
+            example: 15_1200_1
   responses:
     '200':
       schema:
@@ -52,9 +52,8 @@ post:
           - brand_id
           - card_id
           - user_card_code
-          - openid
           - out_request_no
-          - cell_message
+          - cell
         properties:
           brand_id:
             type: string
@@ -68,15 +67,11 @@ post:
             type: string
             description: 会员卡code
             example: '478515832665'
-          openid:
-            type: string
-            description: 用户标识
-            example: obLatjnx9gnqzS4myYGmLZ7LgLBA
           out_request_no:
             type: string
             description: 商家请求单号
             example: 100002322019090134234sfdf
-          cell_message:
+          cell:
             type: string
             description: 会员动态内容
-            example: '15_1200_1'
+            example: 15_1200_1

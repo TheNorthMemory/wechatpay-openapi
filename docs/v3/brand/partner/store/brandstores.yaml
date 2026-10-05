@@ -231,12 +231,15 @@ get:
           offset:
             type: integer
             description: 分页起始位置
+            example: 100
           limit:
             type: integer
             description: 分页条数
+            example: 20
           total_count:
             type: integer
             description: 门店总数
+            example: 230
           data:
             type: array
             description: 品牌门店列表

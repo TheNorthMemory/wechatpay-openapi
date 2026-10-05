@@ -136,12 +136,15 @@ get:
           page_index:
             type: integer
             description: 查询页码
+            example: 1
           page_size:
             type: integer
             description: 查询页大小
+            example: 10
           total_num:
             type: integer
             description: 总数
+            example: 1
           active_link_list:
             type: array
             description: 已生效连接列表

@@ -21,7 +21,7 @@ interface UserFeeds
             'user_card_code' => '478515832665',
             'openid' => 'obLatjnx9gnqzS4myYGmLZ7LgLBA',
             'out_request_no' => '100002322019090134234sfdf',
-            'cell_message' => '15_1200_1',
+            'cell' => '15_1200_1',
         ],
     ]): ResponseInterface;
 
@@ -37,7 +37,7 @@ interface UserFeeds
             'user_card_code' => '478515832665',
             'openid' => 'obLatjnx9gnqzS4myYGmLZ7LgLBA',
             'out_request_no' => '100002322019090134234sfdf',
-            'cell_message' => '15_1200_1',
+            'cell' => '15_1200_1',
         ],
     ]): PromiseInterface;
 }

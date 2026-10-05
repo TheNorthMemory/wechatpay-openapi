@@ -24,6 +24,7 @@ interface CardConfigs
             'brand_mini_program_info' => [
                 'appid' => 'wx1234567890abcdef',
                 'default_jump_path' => 'pages/shop/index',
+                'button_text' => '前往小程序',
             ],
             'brand_customer_service' => [
                 'customer_service_type' => 'MINI_PROGRAM',
@@ -53,6 +54,7 @@ interface CardConfigs
             'brand_mini_program_info' => [
                 'appid' => 'wx1234567890abcdef',
                 'default_jump_path' => 'pages/shop/index',
+                'button_text' => '前往小程序',
             ],
             'brand_customer_service' => [
                 'customer_service_type' => 'MINI_PROGRAM',

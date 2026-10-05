@@ -24,6 +24,8 @@ post:
           - benefits
           - notify_url
           - valid_date_information
+          - out_request_no
+          - member_information
         properties:
           brand_id:
             type: string
@@ -212,6 +214,25 @@ post:
                       items:
                         type: string
                         example: 篮球
+          out_request_no:
+            type: string
+            description: 商家请求单号
+            example: 100002322019090134234sfdf
+          member_information:
+            type: object
+            description: 会员中心信息
+            required:
+              - jump_appid
+              - jump_path
+            properties:
+              jump_appid:
+                type: string
+                description: 会员中心跳转AppID
+                example: wxea9c30a90fs8d3fe
+              jump_path:
+                type: string
+                description: 会员中心跳转路径
+                example: /pages/points/points
   responses:
     200:
       schema:
@@ -232,6 +253,11 @@ post:
           - state
           - create_time
           - update_time
+          - out_request_no
+          - member_information
+          - state
+          - create_time
+          - modify_time
         properties:
           card_id:
             type: string
@@ -438,6 +464,41 @@ post:
               type: string
               description: 更新时间
               example: '2020-05-20T13:29:35.120+08:00'
+          out_request_no:
+            type: string
+            description: 商家请求单号
+            example: 100002322019090134234sfdf
+          member_information:
+            type: object
+            description: 会员中心信息
+            required:
+              - jump_appid
+              - jump_path
+            properties:
+              jump_appid:
+                type: string
+                description: 会员中心跳转AppID
+                example: wxea9c30a90fs8d3fe
+              jump_path:
+                type: string
+                description: 会员中心跳转路径
+                example: /pages/points/points
+          state:
+            type: string
+            description: 状态
+            enum:
+              - CARD_EFFECTIVE #生效中
+              - CARD_INVALID #已失效
+          create_time:
+            type: string
+            format: rfc3339
+            description: 创建时间
+            example: '2020-05-20T13:29:35.120+08:00'
+          modify_time:
+            type: string
+            format: rfc3339
+            description: 更新时间
+            example: '2020-05-20T13:29:35.120+08:00'
 get:
   x-last-updated-at: 2025.06.22
   x-role:
@@ -464,6 +525,7 @@ get:
       in: query
       type: integer
       description: 分页页码
+      example: 0
       default: 0
     - name: limit
       in: query
@@ -512,6 +574,11 @@ get:
                 - state
                 - create_time
                 - update_time
+                - out_request_no
+                - member_information
+                - state
+                - create_time
+                - modify_time
               properties:
                 card_id:
                   type: string
@@ -718,3 +785,38 @@ get:
                     type: string
                     description: 更新时间
                     example: '2020-05-20T13:29:35.120+08:00'
+                out_request_no:
+                  type: string
+                  description: 商家请求单号
+                  example: 100002322019090134234sfdf
+                member_information:
+                  type: object
+                  description: 会员中心信息
+                  required:
+                    - jump_appid
+                    - jump_path
+                  properties:
+                    jump_appid:
+                      type: string
+                      description: 会员中心跳转AppID
+                      example: wxea9c30a90fs8d3fe
+                    jump_path:
+                      type: string
+                      description: 会员中心跳转路径
+                      example: /pages/points/points
+                state:
+                  type: string
+                  description: 状态
+                  enum:
+                    - CARD_EFFECTIVE #生效中
+                    - CARD_INVALID #已失效
+                create_time:
+                  type: string
+                  format: rfc3339
+                  description: 创建时间
+                  example: '2020-05-20T13:29:35.120+08:00'
+                modify_time:
+                  type: string
+                  format: rfc3339
+                  description: 更新时间
+                  example: '2020-05-20T13:29:35.120+08:00'

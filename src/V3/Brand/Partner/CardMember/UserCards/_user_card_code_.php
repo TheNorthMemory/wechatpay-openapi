@@ -59,7 +59,6 @@ interface _user_card_code_
                 'available_end_time' => '2030-05-20T13:29:35.120+08:00',
                 'available_day_after_receive' => 200,
             ],
-            'pickup_time' => '2020-05-20T13:29:35.120+08:00',
             'user_information' => [
                 'common_field_list' => [[
                     'name' => 'USER_FORM_FLAG_SEX | USER_FORM_FLAG_NAME | USER_FORM_FLAG_BIRTHDAY | USER_FORM_FLAG_ADDRESS',
@@ -71,8 +70,6 @@ interface _user_card_code_
                 ],],
             ],
             'attach' => '自定义数据说明',
-        ],
-        'query' => [
             'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',
         ],
     ]): ResponseInterface;
@@ -97,7 +94,6 @@ interface _user_card_code_
                 'available_end_time' => '2030-05-20T13:29:35.120+08:00',
                 'available_day_after_receive' => 200,
             ],
-            'pickup_time' => '2020-05-20T13:29:35.120+08:00',
             'user_information' => [
                 'common_field_list' => [[
                     'name' => 'USER_FORM_FLAG_SEX | USER_FORM_FLAG_NAME | USER_FORM_FLAG_BIRTHDAY | USER_FORM_FLAG_ADDRESS',
@@ -109,8 +105,6 @@ interface _user_card_code_
                 ],],
             ],
             'attach' => '自定义数据说明',
-        ],
-        'query' => [
             'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',
         ],
     ]): PromiseInterface;

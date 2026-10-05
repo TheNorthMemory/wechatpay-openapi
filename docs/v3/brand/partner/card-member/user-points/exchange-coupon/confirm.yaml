@@ -19,7 +19,7 @@ post:
           - card_id
           - openid
           - user_card_code
-          - state
+          - result
         properties:
           record_id:
             type: string
@@ -45,20 +45,15 @@ post:
             type: string
             description: 会员卡code
             example: '478515832665'
-          state:
+          result:
             type: string
-            description: 积分兑券状态
-            example: POINT_EXCHANGE_COUPON_SUCCESS
+            description: 积分兑券结果
             enum:
-              - POINT_EXCHANGE_COUPON_SUCCESS
-              - POINT_EXCHANGE_COUPON_FAIL
-          coupon_code:
+              - POINT_EXCHANGE_COUPON_ALLOW #允许积分兑券
+              - POINT_EXCHANGE_COUPON_REJECT #拒绝积分兑券
+          reject_reason:
             type: string
-            description: 兑券成功的券code
-            example: '123446565767'
-          fail_reason:
-            type: string
-            description: 兑券失败原因
+            description: 拒绝兑券原因
             example: 积分不足
   responses:
     '200':
@@ -72,6 +67,9 @@ post:
           - openid
           - user_card_code
           - state
+          - product_coupon_id
+          - product_coupon_stock_type
+          - stock_id
         properties:
           record_id:
             type: string
@@ -108,7 +106,22 @@ post:
             type: string
             description: 兑券成功的券code
             example: '123446565767'
-          fail_reason:
+          product_coupon_id:
             type: string
-            description: 兑券失败原因
+            description: 商品券ID
+            example: '200000001'
+          product_coupon_stock_type:
+            type: string
+            description: 商品券批次类型
+            enum:
+              - PRODUCT_COUPON_STOCK_TYPE_BUSI_FAVOR #基于商家券创建的商品券
+              - PRODUCT_COUPON_STOCK_TYPE_CASH_FAVOR #基于代金券创建的商品券
+              - PRODUCT_COUPON_STOCK_TYPE_BRAND_FAVOR #商品券2.0
+          stock_id:
+            type: string
+            description: 批次ID
+            example: '100232301'
+          reject_reason:
+            type: string
+            description: 拒绝兑券原因
             example: 积分不足

@@ -281,6 +281,7 @@ post:
                 enum:
                   - NORMAL
                   - BLOCK
+                  - BLOCKED #异常状态，用户不可以使用车主服务
               deduct_mode:
                 type: string
                 description: 发起扣费方式

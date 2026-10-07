@@ -232,6 +232,7 @@ post:
                   - USERPAYING
                   - PAYERROR
                   - ACCEPT
+                  - PAY_FAIL #支付失败(其他原因，如银行返回失败)
               bank_type:
                 type: string
                 description: 付款银行
@@ -322,3 +323,13 @@ post:
                 example: 支付失败，请重新下单支付
                 maxLength: 256
                 nullable: true
+              user_repaid:
+                type: string
+                description: ⽤户是否已还款
+                example: Y
+                maxLength: 1
+              contract_id:
+                type: string
+                description: 委托代扣协议id
+                example: Wx15463511252015071056489715
+                maxLength: 32

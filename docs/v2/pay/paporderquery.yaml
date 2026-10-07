@@ -181,6 +181,7 @@ post:
                   - USERPAYING
                   - PAYERROR
                   - ACCEPT
+                  - PAY_FAIL #支付失败(其他原因，如银行返回失败)
               bank_type:
                 type: string
                 description: 付款银行

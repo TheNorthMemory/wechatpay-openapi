@@ -109,3 +109,11 @@ post:
                 example: '-----BEGIN RSA PUBLIC KEY-----...-----END RSA PUBLIC KEY-----'
                 maxLength: 2048
                 nullable: true
+              err_code:
+                type: string
+                description: 错误代码
+                maxLength: 32
+              err_code_des:
+                type: string
+                description: 错误代码描述
+                maxLength: 128

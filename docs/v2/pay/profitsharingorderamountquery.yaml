@@ -88,3 +88,13 @@ post:
                 description: 签名
                 example: C380BEC2BFD727A4B6845133519F3AD6C380BEC2BFD727A4B6845133519F3AD6
                 maxLength: 64
+              error_code:
+                type: string
+                description: 错误代码
+                example: SYSTEMERROR
+                maxLength: 32
+              error_msg:
+                type: string
+                description: 返回信息
+                example: 参数格式校验错误
+                maxLength: 256

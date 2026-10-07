@@ -231,6 +231,9 @@ post:
                   - USERPAYING
                   - PAYERROR
                   - ACCEPT
+                  - PAY_FAIL #支付失败(其他原因，如银行返回失败)
+                  - SETTLING #押金消费已受理
+                  - CONSUMED #押金消费成功
               bank_type:
                 type: string
                 description: 付款银行
@@ -404,3 +407,45 @@ post:
                 description: 押金消费金额
                 example: '888'
                 nullable: true
+              detail:
+                type: string
+                format: jsonObjectLike
+                description: 商品详情
+                maxLength: 8192
+                xml:
+                  x-cdata: true
+                x-json:
+                  type: object
+                  description: 商品详情`JSON`表达式
+                  required:
+                    - goods_detail
+                  properties:
+                    goods_detail:
+                      type: array
+                      description: 单品列表
+                      items:
+                        type: object
+                        required:
+                          - quantity
+                          - price
+                        properties:
+                          goods_id:
+                            type: string
+                            description: 商品编码
+                            example: 商品编码
+                          wxpay_goods_id:
+                            type: string
+                            description: 微信支付商品编码
+                            example: '1001'
+                          goods_name:
+                            type: string
+                            description: 商品名称
+                            example: iPhone6s 16G
+                          quantity:
+                            type: number
+                            description: 商品数量
+                            example: 1
+                          price:
+                            type: number
+                            description: 商品单价
+                            example: 528800

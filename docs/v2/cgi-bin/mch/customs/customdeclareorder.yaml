@@ -243,6 +243,7 @@ post:
                   - SUCCESS #申报成功
                   - FAIL #申报失败
                   - EXCEPT #海关接口异常
+                  - UNDECLARED #未申报
               transaction_id:
                 type: string
                 description: 微信支付订单号

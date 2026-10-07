@@ -139,8 +139,21 @@ post:
                 example: SYSTEMERROR
                 maxLength: 32
                 nullable: true
+                enum:
+                  - SYSTEMERROR #系统错误
+                  - URLFORMATERROR #URL格式错误
               short_url:
                 type: string
                 description: URL链接
                 example: weixin：//wxpay/s/XXXXXX
                 maxLength: 64
+              sub_appid:
+                type: string
+                description: 子商户公众账号ID
+                example: wx8888888888888888
+                maxLength: 32
+              sub_mch_id:
+                type: string
+                description: 子商户号
+                example: '1900000109'
+                maxLength: 32

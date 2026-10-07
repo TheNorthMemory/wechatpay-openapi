@@ -538,3 +538,13 @@ post:
                             type: number
                             description: 商品单价
                             example: 528800
+              sub_openid:
+                type: string
+                description: 用户子标识
+                example: Y
+                maxLength: 128
+              sub_is_subscribe:
+                type: string
+                description: 该字段已废弃
+                example: N
+                maxLength: 1

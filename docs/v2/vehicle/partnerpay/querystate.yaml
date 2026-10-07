@@ -107,6 +107,7 @@ post:
                 maxLength: 16
                 enum:
                   - '3.0'
+                  - '2.0'
   responses:
     '200':
       description: ''
@@ -267,6 +268,10 @@ post:
                             example: ETC
                             maxLength: 32
                             nullable: true
+                            enum:
+                              - MTC
+                              - ETC
+                              - ETC;MTC
                           common_use_flag:
                             type: string
                             description: 常用车牌标志

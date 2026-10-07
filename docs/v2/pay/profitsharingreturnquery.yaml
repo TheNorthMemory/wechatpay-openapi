@@ -13,74 +13,74 @@ post:
       required: true
       schema:
         allOf:
-        - type: object
-          xml:
-            name: xml
-          required:
-            - mch_id
-            - appid
-            - nonce_str
-            - sign
-            - sign_type
-            - out_return_no
-            - return_account_type
-            - return_account
-            - return_amount
-            - description
-          properties:
-            mch_id:
-              type: string
-              description: 商户号
-              example: '1900000100'
-              maxLength: 32
-            sub_mch_id:
-              type: string
-              description: 子商户号
-              example: '1900000109'
-              maxLength: 32
-            appid:
-              type: string
-              description: 公众账号ID
-              example: wx8888888888888888
-              maxLength: 32
-            sub_appid:
-              type: string
-              description: 子商户公众账号ID
-              example: wx8888888888888888
-              maxLength: 32
-              nullable: true
-            nonce_str:
-              type: string
-              description: 随机字符串
-              example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
-              maxLength: 32
-            sign:
-              type: string
-              description: 签名
-              example: C380BEC2BFD727A4B6845133519F3AD6C380BEC2BFD727A4B6845133519F3AD6
-              maxLength: 64
-            sign_type:
-              type: string
-              description: 签名类型
-              example: HMAC-SHA256
-              maxLength: 32
-              enum:
-                - HMAC-SHA256
-            order_id:
-              type: string
-              description: 微信分账单号
-              example: '3008450740201411110007820472'
-              maxLength: 64
-            out_order_no:
-              type: string
-              description: 商户分账单号
-              example: P20150806125346
-              maxLength: 64
-            out_return_no:
-              type: string
-              description: 商户回退单号
-              example: 'R20190516001'
-              maxLength: 32
+          - type: object
+            xml:
+              name: xml
+            required:
+              - mch_id
+              - appid
+              - nonce_str
+              - sign
+              - sign_type
+              - out_return_no
+              - return_account_type
+              - return_account
+              - return_amount
+              - description
+            properties:
+              mch_id:
+                type: string
+                description: 商户号
+                example: '1900000100'
+                maxLength: 32
+              sub_mch_id:
+                type: string
+                description: 子商户号
+                example: '1900000109'
+                maxLength: 32
+              appid:
+                type: string
+                description: 公众账号ID
+                example: wx8888888888888888
+                maxLength: 32
+              sub_appid:
+                type: string
+                description: 子商户公众账号ID
+                example: wx8888888888888888
+                maxLength: 32
+                nullable: true
+              nonce_str:
+                type: string
+                description: 随机字符串
+                example: 5K8264ILTKCH16CQ2502SI8ZNMTM67VS
+                maxLength: 32
+              sign:
+                type: string
+                description: 签名
+                example: C380BEC2BFD727A4B6845133519F3AD6C380BEC2BFD727A4B6845133519F3AD6
+                maxLength: 64
+              sign_type:
+                type: string
+                description: 签名类型
+                example: HMAC-SHA256
+                maxLength: 32
+                enum:
+                  - HMAC-SHA256
+              order_id:
+                type: string
+                description: 微信分账单号
+                example: '3008450740201411110007820472'
+                maxLength: 64
+              out_order_no:
+                type: string
+                description: 商户分账单号
+                example: P20150806125346
+                maxLength: 64
+              out_return_no:
+                type: string
+                description: 商户回退单号
+                example: 'R20190516001'
+                maxLength: 32
   responses:
     '200':
       description: ''
@@ -198,3 +198,13 @@ post:
                 description: 完成时间
                 example: '20180608170132'
                 maxLength: 16
+              error_code:
+                type: string
+                description: 错误代码
+                example: SYSTEMERROR
+                maxLength: 32
+              error_msg:
+                type: string
+                description: 返回信息
+                example: 参数格式校验错误
+                maxLength: 256

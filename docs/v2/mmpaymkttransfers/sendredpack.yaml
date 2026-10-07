@@ -232,3 +232,6 @@ post:
             description: 微信单号
             example: '100000000020150520314766074200'
             maxLength: 32
+          package:
+            type: string
+            description: Jsapi的入参

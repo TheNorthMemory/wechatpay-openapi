@@ -75,9 +75,6 @@ post:
           - total_num
           - total_amount
           - send_time
-          - openid
-          - amount
-          - rcv_time
         properties:
           return_code:
             type: string
@@ -219,6 +216,10 @@ post:
                 nullable: true
                 items:
                   type: object
+                  required:
+                    - openid
+                    - amount
+                    - rcv_time
                   properties:
                     openid:
                       type: string

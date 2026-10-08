@@ -1,0 +1,57 @@
+post:
+  x-last-updated-at: 2026.07.06
+  x-role:
+    - 直连商户
+    - 服务商
+  tags:
+    - 会员卡∙运营投放
+  summary: 确认用户入会
+  description: 商户完成内部开卡动作后，调用该接口告知微信侧用户入会动作是否成功
+  parameters:
+    - name: card_id
+      in: path
+      required: true
+      type: string
+      description: 会员卡id
+      example: pbLatjvWOibDc5-TBnbUk1pD12o0
+    - name: code
+      in: path
+      required: true
+      type: string
+      description: 会员卡code
+      example: '478515832665'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - user_card_confirm_state
+        properties:
+          fail_reason:
+            type: string
+            description: 入会失败原因
+          user_card_confirm_state:
+            type: string
+            description: 会员卡开卡状态
+            enum:
+              - DEFAULT #默认值，无实际业务含义
+              - CREATE_CARD_SUCCESS #开卡成功
+              - CREATE_CARD_FAIL #开卡失败
+              - CREATE_CARD_ALREADY_EXISTS #开卡成功但已在其他渠道入会
+  responses:
+    200:
+      schema:
+        type: object
+        required:
+          - card_id
+          - code
+        properties:
+          card_id:
+            type: string
+            description: 会员卡模板ID
+            example: pbLatjvWOibDc5-TBnbUk1pD12o0
+          code:
+            type: string
+            description: 会员卡code
+            example: '478515832665'

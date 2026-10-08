@@ -143,28 +143,4 @@ interface _card_id_
             ],
         ],
     ]): PromiseInterface;
-
-    /**
-     * 删除会员卡模板(同步模式)
-     * @param array<string,mixed> $options
-     * @link https://wechatpay.im/openapi/v3/brand/partner/card-member/cards/%7Bcard_id%7D#delete
-     */
-    public function delete(array $options = [
-        'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',
-        'query' => [
-            'brand_id' => '1004',
-        ],
-    ]): ResponseInterface;
-
-    /**
-     * 删除会员卡模板(异步模式)
-     * @param array<string,mixed> $options
-     * @link https://wechatpay.im/openapi/v3/brand/partner/card-member/cards/%7Bcard_id%7D#delete
-     */
-    public function deleteAsync(array $options = [
-        'card_id' => 'pbLatjvWOibDc5-TBnbUk1pD12o0',
-        'query' => [
-            'brand_id' => '1004',
-        ],
-    ]): PromiseInterface;
 }

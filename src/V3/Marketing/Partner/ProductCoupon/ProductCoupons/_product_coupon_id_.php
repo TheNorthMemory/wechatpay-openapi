@@ -41,6 +41,7 @@ interface _product_coupon_id_
                     ],],
                 ],],
             ],
+            'available_product_no_list' => ['string'],
         ],
     ]): ResponseInterface;
 
@@ -73,6 +74,7 @@ interface _product_coupon_id_
                     ],],
                 ],],
             ],
+            'available_product_no_list' => ['string'],
         ],
     ]): PromiseInterface;
 

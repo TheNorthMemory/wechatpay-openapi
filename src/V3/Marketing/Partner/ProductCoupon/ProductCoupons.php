@@ -118,11 +118,6 @@ interface ProductCoupons
                     'entrance_official_account' => [
                         'appid' => 'wx1234567890',
                     ],
-                    'entrance_finder' => [
-                        'finder_id' => 'gh_12345678',
-                        'finder_video_id' => 'UDFsdf24df34dD456Hdf34',
-                        'finder_video_cover_image_url' => 'https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/xxx',
-                    ],
                 ],
                 'notify_config' => [
                     'notify_appid' => 'wx23232232323',
@@ -199,17 +194,14 @@ interface ProductCoupons
                     'entrance_official_account' => [
                         'appid' => 'wx1234567890',
                     ],
-                    'entrance_finder' => [
-                        'finder_id' => 'gh_12345678',
-                        'finder_video_id' => 'UDFsdf24df34dD456Hdf34',
-                        'finder_video_cover_image_url' => 'https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/xxx',
-                    ],
                 ],
                 'notify_config' => [
                     'notify_appid' => 'wx4fd12345678',
                 ],
                 'store_scope' => 'NONE',
             ],
+            'show_as_exchange' => true,
+            'available_product_no_list' => ['string'],
         ],
     ]): ResponseInterface;
 
@@ -321,11 +313,6 @@ interface ProductCoupons
                     'entrance_official_account' => [
                         'appid' => 'wx1234567890',
                     ],
-                    'entrance_finder' => [
-                        'finder_id' => 'gh_12345678',
-                        'finder_video_id' => 'UDFsdf24df34dD456Hdf34',
-                        'finder_video_cover_image_url' => 'https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/xxx',
-                    ],
                 ],
                 'notify_config' => [
                     'notify_appid' => 'wx23232232323',
@@ -402,17 +389,14 @@ interface ProductCoupons
                     'entrance_official_account' => [
                         'appid' => 'wx1234567890',
                     ],
-                    'entrance_finder' => [
-                        'finder_id' => 'gh_12345678',
-                        'finder_video_id' => 'UDFsdf24df34dD456Hdf34',
-                        'finder_video_cover_image_url' => 'https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/xxx',
-                    ],
                 ],
                 'notify_config' => [
                     'notify_appid' => 'wx4fd12345678',
                 ],
                 'store_scope' => 'NONE',
             ],
+            'show_as_exchange' => true,
+            'available_product_no_list' => ['string'],
         ],
     ]): PromiseInterface;
 }

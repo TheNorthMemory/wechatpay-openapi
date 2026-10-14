@@ -38,6 +38,7 @@ interface Use_
                 'sub_mchid' => '',
             ],
             'saved_amount' => 0,
+            'use_product_no_list' => ['string'],
         ],
     ]): ResponseInterface;
 
@@ -70,6 +71,7 @@ interface Use_
                 'sub_mchid' => '',
             ],
             'saved_amount' => 0,
+            'use_product_no_list' => ['string'],
         ],
     ]): PromiseInterface;
 }

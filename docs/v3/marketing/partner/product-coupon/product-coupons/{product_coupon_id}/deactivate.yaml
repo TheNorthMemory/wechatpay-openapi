@@ -233,3 +233,11 @@ post:
               interval_days:
                 type: integer
                 description: 多次优惠使用间隔天数
+          show_as_exchange:
+            type: boolean
+            description: 是否展示兑换价
+          available_product_no_list:
+            type: array
+            description: 可用商品编码列表
+            items:
+              type: string

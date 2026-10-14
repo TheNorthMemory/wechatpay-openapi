@@ -471,26 +471,6 @@ post:
                         type: string
                         description: 公众号AppID
                         example: wx1234567890
-                  entrance_finder:
-                    type: object
-                    description: 视频号入口
-                    required:
-                      - finder_id
-                      - finder_video_id
-                      - finder_video_cover_image_url
-                    properties:
-                      finder_id:
-                        type: string
-                        description: 视频号ID
-                        example: gh_12345678
-                      finder_video_id:
-                        type: string
-                        description: 视频号视频ID
-                        example: UDFsdf24df34dD456Hdf34
-                      finder_video_cover_image_url:
-                        type: string
-                        description: 视频号封面图
-                        example: https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/xxx
               notify_config:
                 type: object
                 description: 事件通知配置
@@ -757,22 +737,6 @@ post:
                         type: string
                         description: 公众号AppID
                         example: wx1234567890
-                  entrance_finder:
-                    type: object
-                    description: 视频号入口
-                    properties:
-                      finder_id:
-                        type: string
-                        description: 视频号ID
-                        example: gh_12345678
-                      finder_video_id:
-                        type: string
-                        description: 视频号视频ID
-                        example: UDFsdf24df34dD456Hdf34
-                      finder_video_cover_image_url:
-                        type: string
-                        description: 视频号封面图
-                        example: https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/xxx
               notify_config:
                 type: object
                 description: 事件通知配置
@@ -789,6 +753,14 @@ post:
                   - NONE #无关联门店，该批次对外不展示可用门店信息
                   - ALL #所有门店可用，该批次在品牌下的所有门店可用，品牌无需为该批次关联门店列表
                   - SPECIFIC #特定门店可用，品牌需调用关联门店接口关联门店，关联后该批次在关联的门店可用
+          show_as_exchange:
+            type: boolean
+            description: 是否展示兑换价
+          available_product_no_list:
+            type: array
+            description: 可用商品编码列表
+            items:
+              type: string
   responses:
     '200':
       schema:
@@ -1273,26 +1245,6 @@ post:
                         type: string
                         description: 公众号AppID
                         example: wx1234567890
-                  entrance_finder:
-                    type: object
-                    description: 视频号入口
-                    required:
-                      - finder_id
-                      - finder_video_id
-                      - finder_video_cover_image_url
-                    properties:
-                      finder_id:
-                        type: string
-                        description: 视频号ID
-                        example: gh_12345678
-                      finder_video_id:
-                        type: string
-                        description: 视频号视频ID
-                        example: UDFsdf24df34dD456Hdf34
-                      finder_video_cover_image_url:
-                        type: string
-                        description: 视频号封面图
-                        example: https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/xxx
               notify_config:
                 type: object
                 description: 事件通知配置
@@ -1647,22 +1599,6 @@ post:
                               type: string
                               description: 公众号AppID
                               example: wx1234567890
-                        entrance_finder:
-                          type: object
-                          description: 视频号入口
-                          properties:
-                            finder_id:
-                              type: string
-                              description: 视频号ID
-                              example: gh_12345678
-                            finder_video_id:
-                              type: string
-                              description: 视频号视频ID
-                              example: UDFsdf24df34dD456Hdf34
-                            finder_video_cover_image_url:
-                              type: string
-                              description: 视频号封面图
-                              example: https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/xxx
                     notify_config:
                       type: object
                       description: 事件通知配置
@@ -1715,3 +1651,11 @@ post:
                       type: string
                       description: 品牌ID
                       example: '120344'
+          show_as_exchange:
+            type: boolean
+            description: 是否展示兑换价
+          available_product_no_list:
+            type: array
+            description: 可用商品编码列表
+            items:
+              type: string

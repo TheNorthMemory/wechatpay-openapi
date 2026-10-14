@@ -116,6 +116,11 @@ patch:
                             type: string
                             description: 单品跳转小程序路径
                             example: /pages/index/index
+          available_product_no_list:
+            type: array
+            description: 可用商品编码列表
+            items:
+              type: string
   responses:
     '200':
       schema:
@@ -312,6 +317,14 @@ patch:
               interval_days:
                 type: integer
                 description: 多次优惠使用间隔天数
+          show_as_exchange:
+            type: boolean
+            description: 是否展示兑换价
+          available_product_no_list:
+            type: array
+            description: 可用商品编码列表
+            items:
+              type: string
 get:
   x-last-updated-at: 2025.11.07
   x-role:
@@ -529,3 +542,11 @@ get:
               interval_days:
                 type: integer
                 description: 多次优惠使用间隔天数
+          show_as_exchange:
+            type: boolean
+            description: 是否展示兑换价
+          available_product_no_list:
+            type: array
+            description: 可用商品编码列表
+            items:
+              type: string

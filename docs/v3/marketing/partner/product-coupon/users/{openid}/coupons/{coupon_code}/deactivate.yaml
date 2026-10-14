@@ -201,6 +201,11 @@ post:
               saved_amount:
                 type: integer
                 description: 优惠金额
+              use_product_no_list:
+                type: array
+                description: 核销商品编码列表
+                items:
+                  type: string
           product_coupon:
             type: object
             description: 商品券信息
@@ -396,6 +401,14 @@ post:
                   interval_days:
                     type: integer
                     description: 多次优惠使用间隔天数
+              show_as_exchange:
+                type: boolean
+                description: 是否展示兑换价
+              available_product_no_list:
+                type: array
+                description: 可用商品编码列表
+                items:
+                  type: string
           stock:
             type: object
             description: 批次信息
@@ -722,26 +735,6 @@ post:
                         type: string
                         description: 公众号AppID
                         example: wx1234567890
-                  entrance_finder:
-                    type: object
-                    description: 视频号入口
-                    required:
-                      - finder_id
-                      - finder_video_id
-                      - finder_video_cover_image_url
-                    properties:
-                      finder_id:
-                        type: string
-                        description: 视频号ID
-                        example: gh_12345678
-                      finder_video_id:
-                        type: string
-                        description: 视频号视频ID
-                        example: UDFsdf24df34dD456Hdf34
-                      finder_video_cover_image_url:
-                        type: string
-                        description: 视频号封面图
-                        example: https://wxpaylogo.qpic.cn/wxpaylogo/xxxxx/xxx
               notify_config:
                 type: object
                 description: 事件通知配置
@@ -817,6 +810,7 @@ post:
                   type: string
                   enum:
                     - MEMBER #会员标签，标识该用户商品券为会员券
+                    - MEMBER_ACTIVITY #会员活动标签，标识该用户券为会员活动券
               member_tag_info:
                 type: object
                 description: 会员标签信息

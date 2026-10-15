@@ -86,6 +86,10 @@ interface _card_id_
                 'jump_appid' => 'wxea9c30a90fs8d3fe',
                 'jump_path' => '/pages/points/points',
             ],
+            'legal_agreement' => '商家需在 48 小时内发货，若商品存在质量问题，用户可在 7 天内申请退货。',
+            'init_level' => '白银会员',
+            'support_user_active_join' => true,
+            'purchase_membership' => true,
         ],
     ]): ResponseInterface;
 
@@ -141,6 +145,10 @@ interface _card_id_
                 'jump_appid' => 'wxea9c30a90fs8d3fe',
                 'jump_path' => '/pages/points/points',
             ],
+            'legal_agreement' => '商家需在 48 小时内发货，若商品存在质量问题，用户可在 7 天内申请退货。',
+            'init_level' => '白银会员',
+            'support_user_active_join' => true,
+            'purchase_membership' => true,
         ],
     ]): PromiseInterface;
 }

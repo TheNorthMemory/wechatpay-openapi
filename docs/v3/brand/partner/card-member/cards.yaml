@@ -233,6 +233,12 @@ post:
                 type: string
                 description: 会员中心跳转路径
                 example: /pages/points/points
+          support_user_active_join:
+            type: boolean
+            description: 是否支持用户主动入会
+          purchase_membership:
+            type: boolean
+            description: 是否为付费会员
   responses:
     200:
       schema:
@@ -499,6 +505,12 @@ post:
             format: rfc3339
             description: 更新时间
             example: '2020-05-20T13:29:35.120+08:00'
+          support_user_active_join:
+            type: boolean
+            description: 是否支持用户主动入会
+          purchase_membership:
+            type: boolean
+            description: 是否为付费会员
 get:
   x-last-updated-at: 2025.06.22
   x-role:
@@ -820,3 +832,9 @@ get:
                   format: rfc3339
                   description: 更新时间
                   example: '2020-05-20T13:29:35.120+08:00'
+                support_user_active_join:
+                  type: boolean
+                  description: 是否支持用户主动入会
+                purchase_membership:
+                  type: boolean
+                  description: 是否为付费会员

@@ -68,6 +68,8 @@ interface Cards
                 'jump_appid' => 'wxea9c30a90fs8d3fe',
                 'jump_path' => '/pages/points/points',
             ],
+            'support_user_active_join' => true,
+            'purchase_membership' => true,
         ],
     ]): ResponseInterface;
 
@@ -129,6 +131,8 @@ interface Cards
                 'jump_appid' => 'wxea9c30a90fs8d3fe',
                 'jump_path' => '/pages/points/points',
             ],
+            'support_user_active_join' => true,
+            'purchase_membership' => true,
         ],
     ]): PromiseInterface;
 

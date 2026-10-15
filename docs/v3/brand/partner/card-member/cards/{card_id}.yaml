@@ -267,6 +267,12 @@ get:
             format: rfc3339
             description: 更新时间
             example: '2020-05-20T13:29:35.120+08:00'
+          support_user_active_join:
+            type: boolean
+            description: 是否支持用户主动入会
+          purchase_membership:
+            type: boolean
+            description: 是否为付费会员
 patch:
   x-last-updated-at: 2025.06.22
   x-role:
@@ -458,6 +464,20 @@ patch:
                 type: string
                 description: 会员中心跳转路径
                 example: /pages/points/points
+          legal_agreement:
+            type: string
+            description: 商家法务协议
+            example: 商家需在 48 小时内发货，若商品存在质量问题，用户可在 7 天内申请退货。
+          init_level:
+            type: string
+            description: 会员初始等级
+            example: 白银会员
+          support_user_active_join:
+            type: boolean
+            description: 是否支持用户主动入会
+          purchase_membership:
+            type: boolean
+            description: 是否为付费会员
   responses:
     200:
       schema:
@@ -706,3 +726,9 @@ patch:
             format: rfc3339
             description: 更新时间
             example: '2020-05-20T13:29:35.120+08:00'
+          support_user_active_join:
+            type: boolean
+            description: 是否支持用户主动入会
+          purchase_membership:
+            type: boolean
+            description: 是否为付费会员

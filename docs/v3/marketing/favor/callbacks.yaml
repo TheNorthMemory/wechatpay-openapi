@@ -28,6 +28,9 @@ get:
             type: string
             description: 通知地址
             example: api.weixin.qq.com
+          appid:
+            type: string
+            description: 公众账号ID
 post:
   x-last-updated-at: 2019.09.27
   x-role: [直连商户, 服务商, 渠道商]
@@ -57,6 +60,9 @@ post:
             type: boolean
             description: 回调开关
             example: true
+          appid:
+            type: string
+            description: 公众账号ID
   responses:
     200:
       schema:
@@ -73,3 +79,6 @@ post:
             type: string
             description: 通知地址
             example: api.weixin.qq.com
+          appid:
+            type: string
+            description: 公众账号ID

@@ -41,6 +41,7 @@ interface Callbacks
             'mchid' => '9856888',
             'notify_url' => 'https://pay.weixin.qq.com',
             'switch' => true,
+            'appid' => '',
         ],
     ]): ResponseInterface;
 
@@ -54,6 +55,7 @@ interface Callbacks
             'mchid' => '9856888',
             'notify_url' => 'https://pay.weixin.qq.com',
             'switch' => true,
+            'appid' => '',
         ],
     ]): PromiseInterface;
 }

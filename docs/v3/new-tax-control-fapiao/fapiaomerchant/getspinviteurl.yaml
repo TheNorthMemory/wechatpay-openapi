@@ -65,6 +65,7 @@ get:
       type: string
       required: false
       description: 受邀请商户税号
+      example: '202003261233701778'
   responses:
     '200':
       schema:

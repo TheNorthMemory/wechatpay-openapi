@@ -82,7 +82,3 @@ get:
             type: boolean
             description: 全部账单展示开发票入口开关
             example: false
-          support_vat_fapiao:
-            type: boolean
-            description: 商户是否支持开电子专票
-            example: false

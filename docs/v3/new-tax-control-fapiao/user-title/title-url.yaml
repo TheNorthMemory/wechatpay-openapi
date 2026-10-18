@@ -73,10 +73,6 @@ get:
       schema:
         type: object
         properties:
-          title_url:
-            type: string
-            description: 抬头填写链接
-            example: https://payapp.weixin.qq.com
           miniprogram_appid:
             type: string
             description: 抬头填写小程序AppID

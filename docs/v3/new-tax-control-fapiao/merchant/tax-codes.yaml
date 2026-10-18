@@ -39,6 +39,7 @@ get:
           offset:
             type: integer
             description: 本次查询的起始位置
+            example: 0
           limit:
             type: integer
             description: 本次查询的最大数量
@@ -94,6 +95,12 @@ get:
                   type: string
                   description: 税收优惠政策标识
                   example: NO_FAVORABLE
+                  enum:
+                    - NO_FAVORABLE #无优惠
+                    - OUTSIDE_VAT #不征税
+                    - VAT_EXEMPT #免税
+                    - NORMAL_ZERO_RATED #普通零税率
+                    - EXPORT_ZERO_RATED #出口零税率
           total_count:
             type: integer
             description: 总记录数

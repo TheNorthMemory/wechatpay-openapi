@@ -102,6 +102,7 @@ get:
                         - BASE_ABILITY
                         - PASSENGER_TRANSPORT_ABILITY
                         - REAL_ESTATE_ABILITY
+                        - REFINED_OIL_ABILITY #成品油能力（适合石油石化等行业）
                     status:
                       type: string
                       description: 能力授权状态

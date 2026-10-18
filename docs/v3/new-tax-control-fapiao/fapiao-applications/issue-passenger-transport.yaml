@@ -141,6 +141,7 @@ post:
                     unit:
                       type: string
                       description: 单位
+                      example: 位
                     quantity:
                       type: integer
                       description: 数量

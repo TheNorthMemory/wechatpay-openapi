@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2021.11.22
+  x-last-updated-at: 2025.12.03
   x-role:
     - 直连商户
     - 服务商
@@ -36,10 +36,14 @@ post:
             type: string
             description: 发票文件的类型为PDF
             example: PDF
+            enum:
+              - PDF
           digest_alogrithm:
             type: string
             description: 文件摘要算法
             example: SM3
+            enum:
+              - SM3
           digest:
             type: string
             description: 文件摘要

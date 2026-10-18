@@ -144,7 +144,6 @@ post:
                       example: TON
                       enum:
                         - TON
-                        - LETER
                         - LITER #升
                     quantity:
                       type: integer

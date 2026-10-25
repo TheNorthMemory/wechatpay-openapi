@@ -18,7 +18,6 @@ interface Unlock
         'out_budget_no' => 'budget202506300102',
         'json' => [
             'sponsor_mchid' => '1900001109',
-            'activity_remark' => '公益活动结束，解锁资金',
         ],
     ]): ResponseInterface;
 
@@ -31,7 +30,6 @@ interface Unlock
         'out_budget_no' => 'budget202506300102',
         'json' => [
             'sponsor_mchid' => '1900001109',
-            'activity_remark' => '公益活动结束，解锁资金',
         ],
     ]): PromiseInterface;
 }

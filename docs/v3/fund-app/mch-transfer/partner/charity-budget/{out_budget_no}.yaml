@@ -70,14 +70,11 @@ get:
               - LOCKED
               - FINISHED
               - CLOSED
+              - UNLOCKING #待释放，受理解锁预算单成功后，预算单会由LOCKED转变为UNLOCKING状态
           confirm_url:
             type: string
             description: 确认出资页面地址
             example: https://www.weixin.qq.com/wxpay/pay.php
-          super_admin_wxid_mask:
-            type: string
-            description: 商户号超管微信号掩码
-            example: ca***ye
           remain_amount:
             type: number
             description: 剩余预算金额
@@ -100,3 +97,13 @@ get:
             format: rfc3339
             description: 关闭时间
             example: '2015-05-20T13:29:35+08:00'
+          unlocked_amount:
+            type: integer
+            description: 解锁金额
+            example: 10000
+          closed_reason:
+            type: string
+            description: 预算关闭原因
+            enum:
+              - MCH_OVERDUE_UNCONFIRMED #商户超时未确认，系统自动关闭预算单
+              - CLOSE_VIA_MCH_API #商户通过API主动关闭未确认的预算单

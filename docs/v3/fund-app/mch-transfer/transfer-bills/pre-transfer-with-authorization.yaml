@@ -105,10 +105,6 @@ post:
                 type: string
                 description: 自动收款授权结果通知地址
                 example: https://www.weixin.qq.com/wxpay/pay.php
-          sponsor_mchid:
-            type: string
-            description: 出资商户号
-            example: '1900001109'
   responses:
     '200':
       schema:

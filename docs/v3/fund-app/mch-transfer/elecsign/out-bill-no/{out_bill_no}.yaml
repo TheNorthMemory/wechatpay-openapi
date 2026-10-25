@@ -1,5 +1,5 @@
 get:
-  x-last-updated-at: 2024.12.05
+  x-last-updated-at: 2025.03.21
   x-role:
     - 普通商户
   tags:
@@ -53,7 +53,3 @@ get:
             type: string
             description: 回单文件下载地址
             example: https://api.mch.weixin.qq.com/v3/transferbilldownload/elecvoucherfile?source=elecsign&token=xxx
-          fail_reason:
-            type: string
-            description: 失败原因
-            example: 转账单据不存在

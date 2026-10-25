@@ -132,10 +132,6 @@ post:
               - FAIL #转账失败
               - CANCELING #商户撤销请求受理成功，该笔转账正在撤销中
               - CANCELLED #转账撤销完成
-          fail_reason:
-            type: string
-            description: 失败原因
-            example: PAYEE_ACCOUNT_ABNORMAL
           package_info:
             type: string
             description: 跳转领取页面的package信息

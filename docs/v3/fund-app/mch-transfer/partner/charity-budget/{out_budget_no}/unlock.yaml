@@ -20,16 +20,11 @@ post:
         type: object
         required:
           - sponsor_mchid
-          - activity_remark
         properties:
           sponsor_mchid:
             type: string
             description: 出资商户号
             example: '1900001109'
-          activity_remark:
-            type: string
-            description: 解锁备注
-            example: 公益活动结束，解锁资金
   responses:
     '200':
       schema:
@@ -81,9 +76,11 @@ post:
             example: FINISHED
             enum:
               - FINISHED
+              - UNLOCKING #待释放，受理解锁预算单成功后，预算单会由LOCKED转变为UNLOCKING状态
           unlock_remark:
             type: string
             description: 撤销说明
+            example: 公益活动结束，解锁资金
           locked_time:
             type: string
             format: rfc3339

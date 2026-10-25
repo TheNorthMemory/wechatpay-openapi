@@ -76,6 +76,9 @@ get:
                 enum:
                   - CLOSE_VIA_MCH_API #商户通过API主动关闭授权
                   - USER_CLOSE #用户确认后，主动关闭授权
+                  - USER_OVERDUE_UNCONFIRMED #用户超时未确认授权
+                  - TRANSFER_RISK #转账存在风险
+                  - USER_ACCOUNT_ABNORMAL #用户收款账户异常
           transfer_scene_id:
             type: string
             description: 转账场景ID

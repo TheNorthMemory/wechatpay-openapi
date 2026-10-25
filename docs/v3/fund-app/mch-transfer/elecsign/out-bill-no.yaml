@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2024.10.14
+  x-last-updated-at: 2025.03.21
   x-role:
     - 普通商户
   tags:
@@ -31,6 +31,10 @@ post:
             type: string
             description: 申请单状态
             example: GENERATING
+            enum:
+              - GENERATING #表示当前电子回单已受理成功并在处理中
+              - FINISHED #表示当前电子回单已处理完成
+              - FAILED #表示当前电子回单生成失败，失败原因字段会返回具体的失败原因
           create_time:
             type: string
             description: 申请单创建时间

@@ -42,10 +42,6 @@ post:
             type: string
             description: 转账备注
             example: 2020年4月报销
-          notify_url:
-            type: string
-            description: 通知地址
-            example: https://www.weixin.qq.com/wxpay/pay.php
           user_recv_perception:
             type: string
             description: 用户收款感知
@@ -84,10 +80,6 @@ post:
             type: string
             description: 微信免确认收款授权单号
             example: '201202504101000123456789012'
-          sponsor_mchid:
-            type: string
-            description: 出资商户号
-            example: '1900001109'
           out_authorization_no:
             type: string
             description: 商户侧授权单号

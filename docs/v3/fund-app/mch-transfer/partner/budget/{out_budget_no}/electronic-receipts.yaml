@@ -78,6 +78,7 @@ post:
             enum:
               - ACCEPTED
               - FINISHED
+              - FAILED #已失败
           accept_id:
             type: string
             description: 受理凭证
@@ -97,6 +98,10 @@ post:
             type: string
             description: 电子回单下载地址
             example: https://api.mch.weixin.qq.com/v3/billdownload/file?token=token
+          fail_reason:
+            type: string
+            description: 失败原因
+            example: ' 查询结果为0条记录'
 get:
   x-last-updated-at: 2025.10.09
   x-role:
@@ -157,6 +162,7 @@ get:
             enum:
               - ACCEPTED
               - FINISHED
+              - FAILED #已失败
           accept_id:
             type: string
             description: 受理凭证
@@ -176,3 +182,7 @@ get:
             type: string
             description: 电子回单下载地址
             example: https://api.mch.weixin.qq.com/v3/billdownload/file?token=token
+          fail_reason:
+            type: string
+            description: 失败原因
+            example: ' 查询结果为0条记录'

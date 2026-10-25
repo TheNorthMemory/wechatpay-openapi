@@ -85,13 +85,16 @@ get:
           transfer_scene_id:
             type: string
             description: 转账场景ID
+            example: '1000'
           user_recv_perception:
             type: string
             description: 用户收款感知
+            example: 现金奖励
           create_time:
             type: string
             format: rfc3339
             description: 单据创建时间
+            example: '2015-05-20T13:29:35.120+08:00'
           package_info:
             type: string
             description: 跳转领取页面的package信息

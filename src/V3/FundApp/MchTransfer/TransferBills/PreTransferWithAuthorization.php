@@ -34,7 +34,6 @@ interface PreTransferWithAuthorization
                 'out_authorization_no' => 'plfk2020042013',
                 'authorization_notify_url' => 'https://www.weixin.qq.com/wxpay/pay.php',
             ],
-            'sponsor_mchid' => '1900001109',
         ],
         'headers' => [
             'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',
@@ -66,7 +65,6 @@ interface PreTransferWithAuthorization
                 'out_authorization_no' => 'plfk2020042013',
                 'authorization_notify_url' => 'https://www.weixin.qq.com/wxpay/pay.php',
             ],
-            'sponsor_mchid' => '1900001109',
         ],
         'headers' => [
             'Wechatpay-Serial' => 'PUB_KEY_ID_0114232134912410000000000000',

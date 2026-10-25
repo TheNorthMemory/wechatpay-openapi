@@ -35,6 +35,8 @@ post:
           - transfer_bill_no
           - state
           - update_time
+          - mchid
+          - appid
         properties:
           sub_mchid:
             type: string
@@ -90,3 +92,11 @@ post:
             type: string
             description: 最后一次单据状态变更时间
             example: '2015-05-20T13:29:35.120+08:00'
+          mchid:
+            type: string
+            description: 商户号
+            example: '1900001109'
+          appid:
+            type: string
+            description: 商户AppID
+            example: wxf636efh567hg4356

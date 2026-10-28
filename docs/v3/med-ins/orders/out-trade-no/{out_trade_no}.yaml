@@ -294,3 +294,4 @@ get:
           med_ins_fail_reason:
             type: string
             description: 医保支付失败原因
+            example: 订单自费同步流水号与渠道查询交易传入不一致，请调用方确认数据

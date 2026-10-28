@@ -245,3 +245,8 @@ post:
                             nullable: true
                             enum:
                               - COMMON_USE
+              common_use_flag:
+                type: string
+                description: 常用车牌标志
+                example: COMMON_USE
+                maxLength: 16

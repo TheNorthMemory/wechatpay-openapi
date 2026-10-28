@@ -71,38 +71,10 @@ post:
       schema:
         type: object
         properties:
-          mchid:
-            type: string
-            description: 微信支付商户号
-            example: '1900016681'
-          bal_account_no:
-            type: string
-            format: base64
-            description: 额度台账号
-            example: 8609cb22e1774a50a930e414cc71eca06121bc
           out_request_no:
             type: string
             description: 特殊减额单号
             example: htozr8denqegbt6tk6u10iymo7yww5pn
-          reduction_type:
-            type: string
-            description: 特殊减额类型
-            example: JUDICIAL_DEDUCTION
-            enum:
-              - FINANCIAL_PENALTY
-              - JUDICIAL_DEDUCTION
-          amount:
-            type: integer
-            description: 减额金额
-            example: 1
-          state:
-            type: string
-            description: 处理结果
-            example: SUCCESS
-            enum:
-              - PROCESSING
-              - SUCCESS
-              - FAILED
           reason:
             type: string
             description: 特殊减额原因
@@ -116,16 +88,3 @@ post:
             format: rfc3339
             description: 成功时间
             example: '2015-05-20T13:29:35+08:00'
-          fail_time:
-            type: string
-            format: rfc3339
-            description: 失败时间
-            example: '2015-05-20T13:29:35+08:00'
-          fail_reason:
-            type: string
-            description: 失败原因
-            example: BALANCE_NOT_ENOUGH
-            enum:
-              - BALANCE_NOT_ENOUGH #余额不足
-              - RECEIPT_NOT_EXIST_CLOSED #单据不存在，已关单
-              - TIME_OUT_CLOSED #系统异常处理超时，关单

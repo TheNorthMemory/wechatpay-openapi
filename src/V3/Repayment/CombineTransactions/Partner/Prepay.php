@@ -63,6 +63,7 @@ interface Prepay
                 'openid' => '',
                 'webview_url' => '',
             ],
+            'combine_description' => '',
         ],
     ]): ResponseInterface;
 
@@ -120,6 +121,7 @@ interface Prepay
                 'openid' => '',
                 'webview_url' => '',
             ],
+            'combine_description' => '',
         ],
     ]): PromiseInterface;
 }

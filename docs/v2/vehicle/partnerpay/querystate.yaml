@@ -278,3 +278,8 @@ post:
                             example: COMMON_USE
                             maxLength: 16
                             nullable: true
+              common_use_flag:
+                type: string
+                description: 常用车牌标志
+                example: COMMON_USE
+                maxLength: 16

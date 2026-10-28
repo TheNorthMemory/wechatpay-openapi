@@ -1,5 +1,5 @@
 post:
-  x-last-updated-at: 2025.01.09
+  x-last-updated-at: 2026.03.02
   x-role:
     - 从业机构（银行）
   tags:
@@ -21,9 +21,6 @@ post:
         required:
           - sub_mchid
           - med_refund_total_fee
-          - med_refund__gov_fee
-          - med_refund__self_fee
-          - med_refund__other_fee
           - refund_time
           - out_refund_no
           - med_refund_gov_fee
@@ -38,18 +35,6 @@ post:
             type: integer
             description: 医保退款的总金额
             example: 45000
-          med_refund__gov_fee:
-            type: integer
-            description: 医保统筹退款金额
-            example: 45000
-          med_refund__self_fee:
-            type: integer
-            description: 医保个账退款金额
-            example: 45000
-          med_refund__other_fee:
-            type: integer
-            description: 医保其他退款金额
-            example: 45000
           refund_time:
             type: string
             format: rfc3339
@@ -62,12 +47,15 @@ post:
           med_refund_gov_fee:
             type: integer
             description: 医保统筹退款金额
+            example: 45000
           med_refund_self_fee:
             type: integer
             description: 医保个账退款金额
+            example: 45000
           med_refund_other_fee:
             type: integer
             description: 医保其他退款金额
+            example: 45000
   responses:
     '204':
       schema: {}

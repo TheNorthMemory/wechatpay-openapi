@@ -56,8 +56,8 @@ get:
             example: TRANSFER_TO_ORIGINAL_RECEIVE_USER
             enum:
               - TRANSFER_TO_ORIGINAL_RECEIVE_USER
-              - TRANSFER_MODE_TO_ORIGINAL_RECEIVE_MERCHANT
-              - TRANSFER_MODE_TO_SPECIFIED_RECEIVE_MERCHANT
+              - TRANSFER_TO_ORIGINAL_RECEIVE_MERCHANT #付款至原收款商户
+              - TRANSFER_TO_SPECIFIED_RECEIVE_MERCHANT #付款到指定的收款商户
           receiver:
             type: object
             description: 收款方
@@ -107,3 +107,7 @@ get:
             type: string
             description: 微信支付在途异常资金付款指令执行流水号
             example: '01010100021769054237638333570000010001'
+          close_reason:
+            type: string
+            description: 在途异常资金付款指令关闭原因
+            example: 收款方商户状态异常

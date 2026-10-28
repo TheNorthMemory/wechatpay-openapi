@@ -32,8 +32,6 @@ post:
             description: 付款方式
             enum:
               - TRANSFER_TO_ORIGINAL_RECEIVE_USER
-              - TRANSFER_MODE_TO_ORIGINAL_RECEIVE_MERCHANT
-              - TRANSFER_MODE_TO_SPECIFIED_RECEIVE_MERCHANT
               - TRANSFER_TO_ORIGINAL_RECEIVE_MERCHANT #付款至原收款商户
               - TRANSFER_TO_SPECIFIED_RECEIVE_MERCHANT #付款到指定的收款商户
           receiver:
@@ -142,8 +140,8 @@ post:
                 description: 付款方式
                 enum:
                   - TRANSFER_TO_ORIGINAL_RECEIVE_USER
-                  - TRANSFER_MODE_TO_ORIGINAL_RECEIVE_MERCHANT
-                  - TRANSFER_MODE_TO_SPECIFIED_RECEIVE_MERCHANT
+                  - TRANSFER_TO_ORIGINAL_RECEIVE_MERCHANT #付款至原收款商户
+                  - TRANSFER_TO_SPECIFIED_RECEIVE_MERCHANT #付款到指定的收款商户
               receiver:
                 type: object
                 description: 收款方

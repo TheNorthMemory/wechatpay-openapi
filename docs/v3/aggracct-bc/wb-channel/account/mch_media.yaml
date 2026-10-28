@@ -50,6 +50,7 @@ get:
           media_content:
             type: string
             description: 文件内容
+            example: example_media_content
           media_type:
             type: string
             description: 文件类型
@@ -61,9 +62,12 @@ get:
           media_sm3:
             type: string
             description: 文件摘要
+            example: example_media_sm3
           key:
             type: string
             description: sm4密钥
+            example: example_key
           media_id:
             type: string
             description: 影像件资料ID
+            example: example_media_id

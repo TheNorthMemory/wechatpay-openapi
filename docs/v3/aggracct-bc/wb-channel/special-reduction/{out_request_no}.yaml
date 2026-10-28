@@ -72,6 +72,7 @@ get:
             enum:
               - FINANCIAL_PENALTY
               - JUDICIAL_DEDUCTION
+              - REDUCTION_TYPE_UNKNOWN #未知
           amount:
             type: integer
             description: 减额金额
@@ -84,6 +85,7 @@ get:
               - PROCESSING
               - SUCCESS
               - FAILED
+              - STATE_UNKNOWN #未知
           reason:
             type: string
             description: 特殊减额原因
@@ -110,3 +112,13 @@ get:
               - BALANCE_NOT_ENOUGH #余额不足
               - RECEIPT_NOT_EXIST_CLOSED #单据不存在，已关单
               - TIME_OUT_CLOSED #系统异常处理超时，关单
+              - FAIL_REASON_UNKNOWN #未知
+              - RECEIPT_NOT_EXIST #单据不存在，已关单
+          card_no:
+            type: string
+            description: 卡号
+            example: example_card_no
+          sgn_no:
+            type: string
+            description: 商户子账户协议号
+            example: example_sgn_no

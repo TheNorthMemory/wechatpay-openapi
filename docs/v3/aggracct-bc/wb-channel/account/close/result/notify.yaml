@@ -1,0 +1,71 @@
+post:
+  x-last-updated-at: 2026.10.15
+  x-role:
+    - 直连商户
+  tags:
+    - 渠道服务
+  summary: 微众注销及解管完成通知
+  description: 仅微众技术商户可调用。微信支付将本次注销及解管结果可靠持久化成功后，应答 ret_msg 返回 SUCCESS。持久化由微信支付完成，调用方收到 SUCCESS 即表示该结果已保存。同一申请单使用相同的 result 和 finish_time 重复通知时，按幂等成功处理：不重复落库，仍返回 ret_msg=SUCCESS。同一申请单使用不同的 result 或 finish_time 重复通知时，不覆盖已保存结果，返回 400-INVALID_REQUEST。注销流程尚未进入等待通知阶段时接口返回失败，请稍后使用相同参数重试。接口限频：单接口100次/秒
+  parameters:
+    - $ref: '../../../../../../definitions/Parameters.yaml#/HTTP_WECHATPAY_SERIAL'
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - mchid
+          - bal_account_no
+          - punish_scene
+          - platform_trx_id
+          - result
+          - finish_time
+          - req_scene
+        properties:
+          mchid:
+            type: string
+            description: 商户号
+            example: '1900016681'
+          platform_trx_id:
+            type: string
+            description: 功能关闭变更申请单号
+            example: '11117742499090086455469010028373'
+          result:
+            type: string
+            description: 完成结果
+            example: SUCCESS
+          finish_time:
+            type: string
+            format: rfc3339
+            description: 注销及解管完成时间
+            example: '2015-05-20T13:29:35+08:00'
+          bal_account_no:
+            type: string
+            format: base64
+            description: 本次注销的支用台账号
+            example: Cf80Dpbwo2cexDDB2k5W/DZyefMg8nCvBgty1OCebYcg
+          card_no:
+            type: string
+            format: base64
+            description: 本次注销卡号
+            example: FMbf1tn2F0NRYCJp1BW76oVoMuzBL00kPke7D
+          sgn_no:
+            type: string
+            description: 本次注销商户子账户协议号
+            example: '20240520153000001234'
+          req_scene:
+            type: string
+            description: 请求场景
+            enum:
+              - SJT_CONVENIENT_SETTLEMENT_SERVICE_MERCHANT #经营账户-结算便利服务商户
+              - SJT_MICRO_MERCHANT #经营账户-微商户
+              - WX_SHOP_CONVENIENT_SETTLEMENT_SERVICE_MERCHANT #微信小店-结算便利服务商户
+  responses:
+    '200':
+      schema:
+        type: object
+        properties:
+          ret_msg:
+            type: string
+            description: 接口返回信息
+            example: SUCCESS

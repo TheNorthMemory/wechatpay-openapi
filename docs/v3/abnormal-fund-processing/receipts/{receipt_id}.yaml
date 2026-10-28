@@ -71,8 +71,8 @@ get:
               - out_instruction_no
               - commander
               - transfer_mode
-              - appid
               - notify_url
+              - instruction_state
             properties:
               out_instruction_no:
                 type: string
@@ -99,17 +99,48 @@ get:
                 description: 付款方式
                 enum:
                   - TRANSFER_TO_ORIGINAL_RECEIVE_USER
+                  - TRANSFER_TO_ORIGINAL_RECEIVE_MERCHANT #付款至原收款商户
+                  - TRANSFER_TO_SPECIFIED_RECEIVE_MERCHANT #付款到指定的收款商户
               success_time:
                 type: string
                 description: 入账成功时间
                 example: '2018-06-08T10:34:56+08:00'
-              appid:
-                type: array
-                description: 商户AppID
-                items:
-                  type: string
-                  example: 'wxf636efh567hg4356'
               notify_url:
                 type: string
                 description: 回调通知地址
                 example: https://weixin.qq.com
+              receiver:
+                type: object
+                description: 收款方
+                properties:
+                  account_type:
+                    type: string
+                    description: 入账账户类型
+                    example: OTHERS
+                  openid:
+                    type: string
+                    description: 入账用户OpenID
+                    example: eoCuiA7RW33Tc3jtz_5CNLegC9kN0
+                  appid:
+                    type: string
+                    description: 商户AppID
+                    example: wxf636efh567hg4356
+                  mchid:
+                    type: string
+                    description: 入账商户号
+              instruction_state:
+                type: string
+                description: 在途异常资金付款指令状态
+                enum:
+                  - INSTRUCTION_STATE_PENDING #待执行
+                  - INSTRUCTION_STATE_IN_PROGRESS #执行中
+                  - INSTRUCTION_STATE_CLOSED #已关闭，此时可更换商户侧指令编号，并重新发起付款指令
+                  - INSTRUCTION_STATE_SUCCESS #执行成功，可通过查询在途异常资金付款结果接口，进一步确认付款结果
+              create_time:
+                type: string
+                format: rfc3339
+                description: 在途异常资金付款指令创建时间
+                example: '2023-10-01T12:34:56+08:00'
+              instruction_instance_id:
+                type: string
+                description: 微信支付在途异常资金付款指令执行流水号

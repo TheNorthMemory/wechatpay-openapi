@@ -203,6 +203,9 @@ post:
               webview_url:
                 type: string
                 description: 网页经营场景URL
+          combine_description:
+            type: string
+            description: 订单描述
   responses:
     '200':
       schema:

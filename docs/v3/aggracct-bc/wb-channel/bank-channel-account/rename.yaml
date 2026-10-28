@@ -104,6 +104,8 @@ post:
             type: string
             description: 失败错误码
             example: AUDIT_REJECT
+            enum:
+              - AUDIT_REJECT #审核驳回
           fail_msg:
             type: string
             description: 失败原因

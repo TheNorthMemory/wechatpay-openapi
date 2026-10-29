@@ -34,3 +34,13 @@ get:
   responses:
     '204':
       schema: {}
+    '200':
+      schema:
+        type: object
+        properties:
+          points_commit_status:
+            type: string
+            description: 商圈会员待积分状态
+            enum:
+              - PENDING #商圈会员有待提交的积分记录，可引导会员跳转插件提交积分申请
+              - FINISHED #商圈会员没有待提交的积分记录

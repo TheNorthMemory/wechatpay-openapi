@@ -25,6 +25,9 @@ interface Notify
             'points_update_time' => '2020-05-20T13:29:35.120+08:00',
             'no_points_remarks' => '商品不参与积分活动',
             'total_points' => 888888,
+            'shop_name' => '微信支付旗舰店',
+            'point_type' => 'WECHATPAY_POINTS | UNIFIED_MCH_POINTS',
+            'shop_number' => '123456',
         ],
     ]): ResponseInterface;
 
@@ -44,6 +47,9 @@ interface Notify
             'points_update_time' => '2020-05-20T13:29:35.120+08:00',
             'no_points_remarks' => '商品不参与积分活动',
             'total_points' => 888888,
+            'shop_name' => '微信支付旗舰店',
+            'point_type' => 'WECHATPAY_POINTS | UNIFIED_MCH_POINTS',
+            'shop_number' => '123456',
         ],
     ]): PromiseInterface;
 }

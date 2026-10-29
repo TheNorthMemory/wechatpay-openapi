@@ -41,6 +41,10 @@ get:
             type: string
             description: 授权状态
             example: UNAUTHORIZED
+            enum:
+              - UNAUTHORIZED #顾客无授权商圈进行支付即积分的记录
+              - AUTHORIZED #顾客已授权商圈进行支付即积分的能力
+              - DEAUTHORIZED #顾客已取消授权商圈进行支付即积分的能力
           authorize_time:
             type: string
             description: 授权时间

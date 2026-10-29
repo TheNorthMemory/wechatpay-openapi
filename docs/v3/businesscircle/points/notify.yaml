@@ -57,5 +57,19 @@ post:
             type: integer
             description: 顾客积分总额
             example: 888888
+          shop_name:
+            type: string
+            description: 门店名称
+            example: 微信支付旗舰店
+          point_type:
+            type: string
+            description: 积分类型
+            enum:
+              - WECHATPAY_POINTS #微信支付推送的商圈内交易通知所对应的积分，不传积分类型时默认按此类型处理
+              - UNIFIED_MCH_POINTS #商圈可识别的统收商户号交易所对应的积分，需同时传入门店名称
+          shop_number:
+            type: string
+            description: 门店编号
+            example: '123456'
   responses:
     204: {}

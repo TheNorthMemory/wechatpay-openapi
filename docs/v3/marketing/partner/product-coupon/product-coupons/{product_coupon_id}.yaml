@@ -133,6 +133,7 @@ patch:
           - type
           - usage_mode
           - display_info
+          - business_mode
         properties:
           product_coupon_id:
             type: string
@@ -325,6 +326,11 @@ patch:
             description: 可用商品编码列表
             items:
               type: string
+          business_mode:
+            type: string
+            description: 业务模式
+            enum:
+              - FREE #普通券，用户可直接领取。
 get:
   x-last-updated-at: 2025.11.07
   x-role:
@@ -358,6 +364,7 @@ get:
           - type
           - usage_mode
           - display_info
+          - business_mode
         properties:
           product_coupon_id:
             type: string
@@ -550,3 +557,8 @@ get:
             description: 可用商品编码列表
             items:
               type: string
+          business_mode:
+            type: string
+            description: 业务模式
+            enum:
+              - FREE #普通券，用户可直接领取。

@@ -761,6 +761,11 @@ post:
             description: 可用商品编码列表
             items:
               type: string
+          business_mode:
+            type: string
+            description: 业务模式
+            enum:
+              - FREE #普通券，用户可直接领取，此时批次与批次组均不配置 `trade_info`。
   responses:
     '200':
       schema:
@@ -774,6 +779,7 @@ post:
           - usage_mode
           - display_info
           - stock
+          - business_mode
         properties:
           product_coupon_id:
             type: string
@@ -1659,3 +1665,8 @@ post:
             description: 可用商品编码列表
             items:
               type: string
+          business_mode:
+            type: string
+            description: 业务模式
+            enum:
+              - FREE #普通券，用户可直接领取，此时批次与批次组均不配置 `trade_info`。

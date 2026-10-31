@@ -202,6 +202,7 @@ interface ProductCoupons
             ],
             'show_as_exchange' => true,
             'available_product_no_list' => ['string'],
+            'business_mode' => 'FREE',
         ],
     ]): ResponseInterface;
 
@@ -397,6 +398,7 @@ interface ProductCoupons
             ],
             'show_as_exchange' => true,
             'available_product_no_list' => ['string'],
+            'business_mode' => 'FREE',
         ],
     ]): PromiseInterface;
 }

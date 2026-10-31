@@ -41,6 +41,7 @@ post:
                   type: string
                   format: MediaId
                   description: 图片MediaID
+                  example: abc123456
   responses:
     '200':
       schema:

@@ -30,6 +30,7 @@ post:
           out_order_no:
             type: string
             description: 商户分账单号
+            example: P20150806125346
           out_return_no:
             type: string
             description: 商户回退单号
@@ -49,6 +50,7 @@ post:
           transaction_id:
             type: string
             description: 微信订单号
+            example: '4208450740201411110007820472'
   responses:
     200:
       schema:
@@ -63,6 +65,7 @@ post:
           - return_no
           - result
           - finish_time
+          - transaction_id
         properties:
           sub_mchid:
             type: string
@@ -107,6 +110,10 @@ post:
             format: rfc3339
             description: 完成时间
             example: '2015-05-20T13:29:35.120+08:00'
+          transaction_id:
+            type: string
+            description: 微信订单号
+            example: '4208450740201411110007820472'
 get:
   x-last-updated-at: 2025.09.29
   x-role:
@@ -120,22 +127,26 @@ get:
       in: query
       type: string
       description: 二级商户号
+      example: '1900000109'
       required: true
     - name: order_id
       in: query
       nullable: true
       type: string
       description: 微信订单号
+      example: '4208450740201411110007820472'
     - name: out_order_no
       in: query
       nullable: true
       type: string
       description: 商户分账单号
+      example: P20190806125346
     - name: out_return_no
       in: query
       required: true
       type: string
       description: 商户回退单号
+      example: R20190516001
   responses:
     200:
       schema:
@@ -150,6 +161,7 @@ get:
           - return_no
           - result
           - finish_time
+          - transaction_id
         properties:
           sub_mchid:
             type: string
@@ -194,3 +206,7 @@ get:
             format: rfc3339
             description: 完成时间
             example: '2015-05-20T13:29:35.120+08:00'
+          transaction_id:
+            type: string
+            description: 微信订单号
+            example: '4208450740201411110007820472'

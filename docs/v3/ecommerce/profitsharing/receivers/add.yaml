@@ -36,11 +36,6 @@ post:
             type: string
             description: 接收方名称
             example: 张三网络公司
-          encrypted_name:
-            type: string
-            format: base64
-            description: 接收方名称的密文
-            example: hu89ohu89ohu89o
           relation_type:
             type: string
             description: 与分账方的关系类型

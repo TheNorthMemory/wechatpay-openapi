@@ -20,7 +20,6 @@ interface Add
             'type' => 'MERCHANT_ID',
             'account' => '190001001',
             'name' => '张三网络公司',
-            'encrypted_name' => 'hu89ohu89ohu89o',
             'relation_type' => 'SUPPLIER',
         ],
         'headers' => [
@@ -39,7 +38,6 @@ interface Add
             'type' => 'MERCHANT_ID',
             'account' => '190001001',
             'name' => '张三网络公司',
-            'encrypted_name' => 'hu89ohu89ohu89o',
             'relation_type' => 'SUPPLIER',
         ],
         'headers' => [

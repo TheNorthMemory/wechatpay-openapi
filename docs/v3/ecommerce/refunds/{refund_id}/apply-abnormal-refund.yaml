@@ -171,10 +171,10 @@ post:
                 type: string
                 description: 退款币种
                 example: CNY
-              refund_fee:
-                type: number
-                description: 手续费退款金额
-                example: 100
+              advance:
+                type: integer
+                description: 垫付金额
+                example: 888
           promotion_detail:
             type: array
             description: 优惠退款信息
@@ -207,41 +207,6 @@ post:
                   type: number
                   description: 优惠退款金额
                   example: 100
-                goods_detail:
-                  type: array
-                  description: 商品列表
-                  items:
-                    type: object
-                    required:
-                      - merchant_goods_id
-                      - unit_price
-                      - refund_amount
-                      - refund_quantity
-                    properties:
-                      merchant_goods_id:
-                        type: string
-                        description: 商户侧商品编码
-                        example: '1217752501201407033233368018'
-                      wechatpay_goods_id:
-                        type: string
-                        description: 微信侧商品编码
-                        example: '1001'
-                      goods_name:
-                        type: string
-                        description: 商品名称
-                        example: iPhone6s 16G
-                      unit_price:
-                        type: number
-                        description: 商品单价
-                        example: 528800
-                      refund_amount:
-                        type: number
-                        description: 商品退款金额
-                        example: 528800
-                      refund_quantity:
-                        type: number
-                        description: 商品退货数量
-                        example: 1
           refund_account:
             type: string
             description: 退款出资商户

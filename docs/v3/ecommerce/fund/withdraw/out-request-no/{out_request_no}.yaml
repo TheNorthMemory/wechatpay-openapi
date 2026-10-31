@@ -48,6 +48,7 @@ get:
           withdraw_id:
             type: string
             description: 微信支付提现单号
+            example: '12321937198237912739132791732912793127931279317929791239112123'
           out_request_no:
             type: string
             description: 商户提现单号
@@ -59,9 +60,11 @@ get:
           create_time:
             type: string
             description: 发起提现时间
+            example: '2015-05-20T13:29:35.120+08:00'
           update_time:
             type: string
             description: 提现状态更新时间
+            example: '2015-05-20T13:29:35.120+08:00'
           reason:
             type: string
             description: 失败原因

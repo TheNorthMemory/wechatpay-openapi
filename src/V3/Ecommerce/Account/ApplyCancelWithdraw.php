@@ -29,8 +29,7 @@ interface ApplyCancelWithdraw
                     'account_name' => 'AOZdYGISxo4y44/UgZ69b0zZXkw==',
                     'account_bank' => '工商银行',
                     'bank_branch_id' => '402713354941',
-                    'bank_branch_name' => '',
-                    'bank_name' => '402713354941',
+                    'bank_branch_name' => '施秉县农村信用合作联社城关信用社',
                     'account_number' => 'd+xT+MQCvrLHeorwC+w==',
                 ],
                 'identity_info' => [
@@ -67,8 +66,7 @@ interface ApplyCancelWithdraw
                     'account_name' => 'AOZdYGISxo4y44/UgZ69b0zZXkw==',
                     'account_bank' => '工商银行',
                     'bank_branch_id' => '402713354941',
-                    'bank_branch_name' => '',
-                    'bank_name' => '402713354941',
+                    'bank_branch_name' => '施秉县农村信用合作联社城关信用社',
                     'account_number' => 'd+xT+MQCvrLHeorwC+w==',
                 ],
                 'identity_info' => [

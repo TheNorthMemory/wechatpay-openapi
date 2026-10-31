@@ -205,13 +205,6 @@ post:
                   type: string
                   format: base64
                   description: 证件居住地址
-                ubo_period_begin:
-                  type: string
-                  format: date
-                  description: 证件有效期开始时间
-                ubo_period_end:
-                  type: string
-                  description: 证件有效期结束时间
                 ubo_id_doc_period_begin:
                   type: string
                   description: 证件有效期开始时间
@@ -290,16 +283,6 @@ post:
                 type: string
                 format: MediaId
                 description: 超级管理员证件反面照片
-              contact_period_begin:
-                type: string
-                description: 超级管理员证件有效期开始时间
-              contact_period_end:
-                type: string
-                description: 超级管理员证件有效期结束时间
-              business_authorization_letter:
-                type: string
-                format: MediaId
-                description: 业务办理授权函
               contact_id_doc_period_begin:
                 type: string
                 description: 超级管理员证件有效期开始时间

@@ -64,6 +64,10 @@ get:
             type: string
             description: 委托代扣协议状态
             example: SIGNED
+            enum:
+              - NOT_SIGNED #未签约。
+              - SIGNED #已签约。
+              - TERMINATED #已解约。
           contract_signed_time:
             type: string
             description: 协议签署时间
@@ -84,6 +88,12 @@ get:
                 type: string
                 description: 协议解约方式
                 example: MCH_API_TERMINATE
+                enum:
+                  - USER_TERMINATE #用户主动解约
+                  - MCH_API_TERMINATE #商户通过API发起的解约
+                  - WEPAY_WEB_TERMINATE #商户在商户平台发起的解约
+                  - CUSTOM_SERVICE_TERMINATE #用户联系微信支付客服发起的解约
+                  - SYSTEM_TERMINATE #微信支付系统主动发起的解约
               contract_terminated_time:
                 type: string
                 description: 协议解约时间
@@ -96,3 +106,7 @@ get:
             type: string
             description: 用户openid
             example: o-MYE42l80oelYMDE34nYD456Xoy
+          attach:
+            type: string
+            description: 附加数据
+            example: example_attach

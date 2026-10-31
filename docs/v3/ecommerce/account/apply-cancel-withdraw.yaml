@@ -71,10 +71,7 @@ post:
                   bank_branch_name:
                     type: string
                     description: 开户银行全称（含支行）
-                  bank_name:
-                    type: string
-                    description: 开户银行全称（含支行）
-                    example: '402713354941'
+                    example: 施秉县农村信用合作联社城关信用社
                   account_number:
                     type: string
                     format: base64

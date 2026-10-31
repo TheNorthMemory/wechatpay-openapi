@@ -73,3 +73,9 @@ post:
             type: string
             description: 商户签约协议号
             example: wxwtdk20200910100000
+          miniprogram_username:
+            type: string
+            description: 跳转签约小程序的username
+          miniprogram_path:
+            type: string
+            description: 跳转签约小程序的path

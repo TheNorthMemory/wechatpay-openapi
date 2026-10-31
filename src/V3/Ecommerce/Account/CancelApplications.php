@@ -22,7 +22,7 @@ interface CancelApplications
             'out_apply_no' => '2019061122222222122',
             'application_info' => [[
                 'application_type' => 'SP_CANCEL_ACCOUNT_APPLICATION | SUB_CANCEL_ACCOUNT_APPLICATION',
-                'application_media_id' => '',
+                'application_media_id' => 'abc123456',
             ],],
         ],
     ]): ResponseInterface;
@@ -38,7 +38,7 @@ interface CancelApplications
             'out_apply_no' => '2019061122222222122',
             'application_info' => [[
                 'application_type' => 'SP_CANCEL_ACCOUNT_APPLICATION | SUB_CANCEL_ACCOUNT_APPLICATION',
-                'application_media_id' => '',
+                'application_media_id' => 'abc123456',
             ],],
         ],
     ]): PromiseInterface;

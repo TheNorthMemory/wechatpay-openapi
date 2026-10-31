@@ -72,11 +72,3 @@ post:
             type: string
             description: 商户提现单号
             example: '20190611222222222200000000012122'
-          account_type:
-            type: string
-            description: 出款账户类型
-            example: BASIC
-            enum:
-              - BASIC
-              - OPERATION
-              - FEES

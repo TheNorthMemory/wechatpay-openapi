@@ -64,6 +64,10 @@ post:
             type: string
             description: 授权状态
             example: AUTHORIZE_PROCESSING
+            enum:
+              - AUTHORIZE_PROCESSING #授权申请正在处理中，请稍后查询授权结果
+              - AUTHORIZED #二级商户授权商家转账已授权
+              - UNAUTHORIZED #未授权
           accept_time:
             type: string
             description: 授权申请受理时间

@@ -18,12 +18,12 @@ interface Returnorders
         'json' => [
             'sub_mchid' => '1900000109',
             'order_id' => '3008450740201411110007820472',
-            'out_order_no' => '',
+            'out_order_no' => 'P20150806125346',
             'out_return_no' => 'R20190516001',
             'return_mchid' => '86693852',
             'amount' => 10,
             'description' => '分账回退',
-            'transaction_id' => '',
+            'transaction_id' => '4208450740201411110007820472',
         ],
     ]): ResponseInterface;
 
@@ -36,12 +36,12 @@ interface Returnorders
         'json' => [
             'sub_mchid' => '1900000109',
             'order_id' => '3008450740201411110007820472',
-            'out_order_no' => '',
+            'out_order_no' => 'P20150806125346',
             'out_return_no' => 'R20190516001',
             'return_mchid' => '86693852',
             'amount' => 10,
             'description' => '分账回退',
-            'transaction_id' => '',
+            'transaction_id' => '4208450740201411110007820472',
         ],
     ]): PromiseInterface;
 
@@ -52,10 +52,10 @@ interface Returnorders
      */
     public function get(array $options = [
         'query' => [
-            'sub_mchid' => '',
-            'order_id' => '',
-            'out_order_no' => '',
-            'out_return_no' => '',
+            'sub_mchid' => '1900000109',
+            'order_id' => '4208450740201411110007820472',
+            'out_order_no' => 'P20190806125346',
+            'out_return_no' => 'R20190516001',
         ],
     ]): ResponseInterface;
 
@@ -66,10 +66,10 @@ interface Returnorders
      */
     public function getAsync(array $options = [
         'query' => [
-            'sub_mchid' => '',
-            'order_id' => '',
-            'out_order_no' => '',
-            'out_return_no' => '',
+            'sub_mchid' => '1900000109',
+            'order_id' => '4208450740201411110007820472',
+            'out_order_no' => 'P20190806125346',
+            'out_return_no' => 'R20190516001',
         ],
     ]): PromiseInterface;
 }

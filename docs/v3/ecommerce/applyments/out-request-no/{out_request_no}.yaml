@@ -45,9 +45,12 @@ get:
             properties:
               account_name:
                 type: string
+                format: base64
                 description: 付款户名
+                example: aOf7Gk2qT26kakkuTZpbFAn7Mb7
               account_no:
                 type: string
+                format: base64
                 description: 付款卡号
                 example: 9nZYDEvBT4rDdICA3ZYXshYqeOSslSjSauAE+as7mAEDJly+DgRuVs74msmKUH8pl+3oA==
               pay_amount:
@@ -115,3 +118,6 @@ get:
               - UNSIGNED
               - SIGNED
               - NOT_SIGNABLE
+          wxpay_sign_required:
+            type: boolean
+            description: 是否要求走微信支付签约模式

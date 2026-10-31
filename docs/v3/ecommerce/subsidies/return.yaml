@@ -117,3 +117,23 @@ post:
             format: rfc3339
             description: 补差回退完成时间
             example: '2015-05-20T13:29:35.120+08:00'
+          subsidy_id:
+            type: string
+            description: 微信补差单号
+            example: '3008450740201411110007820472'
+          from:
+            type: array
+            description: 回退出资账户及金额
+            items:
+              type: object
+              properties:
+                account:
+                  type: string
+                  description: 出资账户类型
+                  enum:
+                    - AVAILABLE #可用余额
+                    - UNAVAILABLE #不可用余额
+                amount:
+                  type: integer
+                  description: 出资金额
+                  example: 10

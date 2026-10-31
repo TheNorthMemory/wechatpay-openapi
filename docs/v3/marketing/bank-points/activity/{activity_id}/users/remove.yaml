@@ -1,0 +1,40 @@
+post:
+  x-last-updated-at: 2026.05.28
+  x-role:
+    - 直连商户
+  tags:
+    - 运营工具∙积分兑券
+  summary: 移除活动目标人群
+  description: 注：因积分资产会随时变动，为提高用户体验，银行侧可通过api剔除“已积分余额不满足要求”或“因其他原因不满足要求”的用户。预计系统应答后2-3h完成曝光剔除，因此上传的剔除名单与实际剔除成功的名单可能存在一定误差，请知悉！
+  parameters:
+    - name: activity_id
+      in: path
+      required: true
+      type: string
+      description: 希望剔除用户的活动id
+      example: activity_id_example
+    - name: _
+      in: body
+      required: true
+      schema:
+        type: object
+        required:
+          - contract_id
+        properties:
+          contract_id:
+            type: array
+            description: 希望剔除的用户对应的协议号id
+            items:
+              type: string
+              example: example_contract_id
+  responses:
+    '200':
+      schema:
+        type: object
+        required:
+          - activity_id
+        properties:
+          activity_id:
+            type: string
+            description: 剔除完毕的活动id
+            example: example_activity_id

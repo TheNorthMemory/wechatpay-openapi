@@ -14,6 +14,7 @@ namespace WeChatPay\OpenAPI\V3;
  * @property-read Marketing\GoodsSubsidyActivity $goodsSubsidyActivity
  * @property-read Marketing\Favor $favor
  * @property-read Marketing\Busifavor $busifavor
+ * @property-read Marketing\BankPoints $bankPoints
  * @property-read Marketing\BankFavor $bankFavor
  * @property-read Marketing\Bank $bank
  */

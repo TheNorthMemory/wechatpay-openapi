@@ -7,7 +7,7 @@ info:
     整理自官方文档中心[普通商户](https://pay.weixin.qq.com/doc/v3/merchant/4012062524) [合作伙伴](https://pay.weixin.qq.com/doc/v3/partner/4012069852) [全球](https://pay.weixin.qq.com/doc/global/v3/zh)
     本[项目/工具地址](https://github.com/TheNorthMemory/wechatpay-openapi)
     **访问第一次加载比较慢，请耐心等待大约1-2分钟不等(小文件下载比较多)。**
-  version: 1.1.22
+  version: 1.1.23
 schemes:
   - https
 consumes:
@@ -463,6 +463,8 @@ paths:
     $ref: ./v3/abnormal-fund-processing/receipts/{receipt_id}/transfer-instructions/{out_instruction_no}.yaml
   /v3/aggracct-bc/wb-channel/account/balance:
     $ref: ./v3/aggracct-bc/wb-channel/account/balance.yaml
+  /v3/aggracct-bc/wb-channel/account/close/result/notify:
+    $ref: ./v3/aggracct-bc/wb-channel/account/close/result/notify.yaml
   /v3/aggracct-bc/wb-channel/account/mch_archives:
     $ref: ./v3/aggracct-bc/wb-channel/account/mch_archives.yaml
   /v3/aggracct-bc/wb-channel/account/mch_media:
@@ -1177,6 +1179,8 @@ paths:
     $ref: ./v3/marketing/bank-favor/users/{openid}/bank-multi-activity.yaml
   /v3/marketing/bank-favor/users/{openid}/coupons/{coupon_id}:
     $ref: ./v3/marketing/bank-favor/users/{openid}/coupons/{coupon_id}.yaml
+  /v3/marketing/bank-points/activity/{activity_id}/users/remove:
+    $ref: ./v3/marketing/bank-points/activity/{activity_id}/users/remove.yaml
   /v3/marketing/bank/packages/{package_id}/tasks:
     $ref: ./v3/marketing/bank/packages/{package_id}/tasks.yaml
   /v3/marketing/busifavor/callbacks:
@@ -1297,6 +1301,8 @@ paths:
     $ref: ./v3/marketing/membercard-open/cards/{card_id}/codes/{code}/bonus/commit.yaml
   /v3/marketing/membercard-open/cards/{card_id}/codes/{code}/bonus/prepare:
     $ref: ./v3/marketing/membercard-open/cards/{card_id}/codes/{code}/bonus/prepare.yaml
+  /v3/marketing/membercard-open/cards/{card_id}/codes/{code}/confirm:
+    $ref: ./v3/marketing/membercard-open/cards/{card_id}/codes/{code}/confirm.yaml
   /v3/marketing/membercard-open/cards/{card_id}/codes/{code}/rights:
     $ref: ./v3/marketing/membercard-open/cards/{card_id}/codes/{code}/rights.yaml
   /v3/marketing/membercard-open/cards/{card_id}/codes/{code}/set-service-module-data:
